@@ -3,23 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_VPIV_DIMENSION">
-    <summary>
-      <para>Specifies how to access a resource that is used in a video processor input view.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is used with the <see cref="D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC" /> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-enumerations">Direct3D 11 Video Enumerations</seealso>
-    <seealso cref="ID3D11VideoDevice.CreateVideoProcessorInputView" />
+    <summary>Specifies how to access a resource that is used in a video processor input view.</summary>
   </member>
   <member name="D3D11_VPIV_DIMENSION.D3D11_VPIV_DIMENSION_UNKNOWN">
-    <summary>
-      <para>Not a valid value.</para>
-    </summary>
+    <summary>Not a valid value.</summary>
   </member>
   <member name="D3D11_VPIV_DIMENSION.D3D11_VPIV_DIMENSION_TEXTURE2D">
-    <summary>
-      <para>The resource will be accessed as a 2D texture.</para>
-    </summary>
+    <summary>The resource will be accessed as a 2D texture.</summary>
   </member>
 </doc>

@@ -3,104 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1SvgGlyphStyle.GetFill">
-    <summary>
-      <para>Returns the requested fill parameters.</para>
-    </summary>
-    <param name="brush">
-      <para>Type: <b><see cref="ID2D1Brush" />**</b></para>
-      <para>Describes how the area is painted.</para>
-    </param>
-    <seealso cref="ID2D1SvgGlyphStyle" />
+    <summary>Returns the requested fill parameters.</summary>
+    <param name="brush">Describes how the area is painted.</param>
   </member>
   <member name="ID2D1SvgGlyphStyle.GetStroke">
-    <summary>
-      <para>Returns the requested stroke parameters. Any parameters that are non-null will receive the value of the requested parameter.</para>
-    </summary>
-    <param name="brush">
-      <para>Type: <b><see cref="ID2D1Brush" />**</b></para>
-      <para>Describes how the stroke is painted.</para>
-    </param>
-    <param name="strokeWidth">
-      <para>Type: <b>FLOAT*</b></para>
-      <para>The 'context-value' for the 'stroke-width' property.</para>
-    </param>
-    <param name="dashes">
-      <para>Type: <b>FLOAT*</b></para>
-      <para>The 'context-value' for the 'stroke-dasharray'
-property.</para>
-    </param>
-    <param name="dashesCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The the number of dashes in the dash array.</para>
-    </param>
-    <param name="dashOffset">
-      <para>Type: <b>FLOAT*</b></para>
-      <para>The 'context-value' for the 'stroke-dashoffset' property.</para>
-    </param>
-    <seealso cref="ID2D1SvgGlyphStyle" />
+    <summary>Returns the requested stroke parameters. Any parameters that are non-null will receive the value of the requested parameter.</summary>
+    <param name="brush">Describes how the stroke is painted.</param>
+    <param name="strokeWidth">The 'context-value' for the 'stroke-width' property.</param>
+    <param name="dashes">The 'context-value' for the 'stroke-dasharray' property.</param>
+    <param name="dashesCount">The the number of dashes in the dash array.</param>
+    <param name="dashOffset">The 'context-value' for the 'stroke-dashoffset' property.</param>
   </member>
   <member name="ID2D1SvgGlyphStyle.GetStrokeDashesCount">
-    <summary>
-      <para>Returns the number of dashes in the dash array.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>UINT32</b></para>
-      <para>Returns the number of dashes in the dash array.</para>
-    </returns>
-    <seealso cref="ID2D1SvgGlyphStyle" />
+    <summary>Returns the number of dashes in the dash array.</summary>
+    <returns>Returns the number of dashes in the dash array.</returns>
   </member>
   <member name="ID2D1SvgGlyphStyle.SetFill">
-    <summary>
-      <para>Provides values to an SVG glyph for fill.</para>
-    </summary>
-    <param name="brush">
-      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
-      <para>Describes how the area is painted.  A null brush will cause the context-fill value to come from
-the <see cref="defaultFillBrush" />. If the defaultFillBrush is also null, the context-fill value will be 'none'.
-To set the ‘context-fill’ value, this method uses the provided brush with its opacity set to 1. To set the ‘context-fill-opacity’ value, this method uses the opacity of the provided brush.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1SvgGlyphStyle" />
+    <summary>Provides values to an SVG glyph for fill.</summary>
+    <param name="brush">Describes how the area is painted. A null brush will cause the context-fill value to come from the <see cref="defaultFillBrush" />. If the defaultFillBrush is also null, the context-fill value will be 'none'. To set the ‘context-fill’ value, this method uses the provided brush with its opacity set to 1. To set the ‘context-fill-opacity’ value, this method uses the opacity of the provided brush.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1SvgGlyphStyle.SetStroke">
-    <summary>
-      <para>Provides values to an SVG glyph for stroke properties. The brush with opacity
-set to 1 is used as the 'context-stroke'. The opacity of the brush is used as
-the 'context-stroke-opacity' value.</para>
-    </summary>
-    <param name="brush">
-      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
-      <para>Describes how the stroke is painted. A null brush will cause the context-stroke value to be none.</para>
-    </param>
-    <param name="strokeWidth">
-      <para>Type: <b>FLOAT</b></para>
-      <para>Specifies the 'context-value' for the 'stroke-width' property.</para>
-    </param>
-    <param name="dashes">
-      <para>Type: <b>const FLOAT*</b></para>
-      <para>Specifies the 'context-value' for the 'stroke-dasharray'
-property. A null value will cause the stroke-dasharray to be set to 'none'.</para>
-    </param>
-    <param name="dashesCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The the number of dashes in the dash array.</para>
-    </param>
-    <param name="dashOffset">
-      <para>Type: <b>FLOAT</b></para>
-      <para>Specifies the 'context-value' for the 'stroke-dashoffset' property.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1SvgGlyphStyle" />
+    <summary>Provides values to an SVG glyph for stroke properties. The brush with opacity set to 1 is used as the 'context-stroke'. The opacity of the brush is used as the 'context-stroke-opacity' value.</summary>
+    <param name="brush">Describes how the stroke is painted. A null brush will cause the context-stroke value to be none.</param>
+    <param name="strokeWidth">Specifies the 'context-value' for the 'stroke-width' property.</param>
+    <param name="dashes">Specifies the 'context-value' for the 'stroke-dasharray' property. A null value will cause the stroke-dasharray to be set to 'none'.</param>
+    <param name="dashesCount">The the number of dashes in the dash array.</param>
+    <param name="dashOffset">Specifies the 'context-value' for the 'stroke-dashoffset' property.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1SvgGlyphStyle">
-    <summary>
-      <para>This object supplies the values for context-fill, context-stroke, and context-value that are used when rendering SVG glyphs.</para>
-    </summary>
+    <summary>This object supplies the values for context-fill, context-stroke, and context-value that are used when rendering SVG glyphs.</summary>
   </member>
 </doc>

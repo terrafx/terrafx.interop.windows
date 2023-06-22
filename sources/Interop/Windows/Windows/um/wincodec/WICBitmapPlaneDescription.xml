@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICBitmapPlaneDescription">
-    <summary>
-      <para>Specifies the pixel format and size of a component plane.</para>
-    </summary>
-    <seealso cref="IWICPlanarBitmapSourceTransform.CopyPixels" />
-    <seealso cref="IWICPlanarBitmapSourceTransform.DoesSupportTransform" />
+    <summary>Specifies the pixel format and size of a component plane.</summary>
   </member>
   <member name="WICBitmapPlaneDescription.Format">
-    <summary>
-      <para>Describes the pixel format of the plane.</para>
-    </summary>
+    <summary>Describes the pixel format of the plane.</summary>
   </member>
   <member name="WICBitmapPlaneDescription.Width">
-    <summary>
-      <para>Component width of the plane.</para>
-    </summary>
+    <summary>Component width of the plane.</summary>
   </member>
   <member name="WICBitmapPlaneDescription.Height">
-    <summary>
-      <para>Component height of the plane.</para>
-    </summary>
+    <summary>Component height of the plane.</summary>
   </member>
 </doc>

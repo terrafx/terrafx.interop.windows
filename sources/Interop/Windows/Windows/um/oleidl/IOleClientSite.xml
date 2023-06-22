@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IOleClientSite.GetContainer">
-    <summary>
-      <para>Retrieves a pointer to the object's container.</para>
-    </summary>
-    <param name="ppContainer">
-      <para>Address of <see cref="IOleContainer" /> pointer variable that receives the interface pointer to the container object. If an error occurs, the implementation must set <i>ppContainer</i> to <b>NULL</b>.</para>
-    </param>
+    <summary>Retrieves a pointer to the object's container.</summary>
+    <param name="ppContainer">Address of <see cref="IOleContainer" /> pointer variable that receives the interface pointer to the container object. If an error occurs, the implementation must set <i>ppContainer</i> to <b>NULL</b>.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -16,48 +12,38 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>OLE_E_NOT_SUPPORTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OLE_E_NOT_SUPPORTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The client site is in an OLE 1 container.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The client site is in an OLE 1 container.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOINTERFACE</b>
-            </para>
-          </description>
-          <description>
-            <para>The container does not implement the <see cref="IOleContainer" /> interface.</para>
-          </description>
-        </item>
+          <description>The container does not implement the <see cref="IOleContainer" /> interface.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If a container supports links to its embedded objects, implementing <b>GetContainer</b> enables link clients to enumerate the container's objects and recursively traverse a containment hierarchy. This method is optional but recommended for all containers that expect to support links to their embedded objects.</para>
-      <para>Link clients can traverse a hierarchy of compound-document objects by recursively calling <b>GetContainer</b> to get a pointer to the link source's container; followed by <see cref="QueryInterface" /> to get a pointer to the container's <see cref="IOleObject" /> interface and, finally, <see cref="IOleObject.GetClientSite" /> to get the container's client site in its container.</para>
-      <para>Simple containers that do not support links to their embedded objects probably do not need to implement this method. Instead, they can return E_NOINTERFACE and set <i>ppContainer</i> to <b>NULL</b>.</para>
-    </remarks>
-    <seealso cref="IOleClientSite" />
   </member>
   <member name="IOleClientSite.GetMoniker">
-    <summary>
-      <para>Retrieves a moniker for the object's client site. An object can force the assignment of its own or its container's moniker by specifying a value for <i>dwAssign</i>.</para>
-    </summary>
-    <param name="dwAssign">
-      <para>Specifies whether to get a moniker only if one already exists, force assignment of a moniker, create a temporary moniker, or remove a moniker that has been assigned. In practice, you will usually request that the container force assignment of the moniker. Possible values are taken from the <see cref="OLEGETMONIKER" /> enumeration.</para>
-    </param>
-    <param name="dwWhichMoniker">
-      <para>Specifies whether to return the container's moniker, the object's moniker relative to the container, or the object's full moniker. In practice, you will usually request the object's full moniker. Possible values are taken from the <see cref="OLEWHICHMK" /> enumeration.</para>
-    </param>
-    <param name="ppmk">
-      <para>A pointer to an <see cref="IMoniker" /> pointer variable that receives the interface pointer to the moniker for the object's client site. If an error occurs, the implementation must set <i>ppmk</i> to <b>NULL</b>. Each time a container receives a call to <b>IOleClientSite.GetMoniker</b>, it must increase the reference count on the <i>ppmk</i> pointer it returns. It is the caller's responsibility to call <see cref="Release" /> when it is finished with the pointer.</para>
-    </param>
+    <summary>Retrieves a moniker for the object's client site. An object can force the assignment of its own or its container's moniker by specifying a value for <i>dwAssign</i>.</summary>
+    <param name="dwAssign">Specifies whether to get a moniker only if one already exists, force assignment of a moniker, create a temporary moniker, or remove a moniker that has been assigned. In practice, you will usually request that the container force assignment of the moniker. Possible values are taken from the <see cref="OLEGETMONIKER" /> enumeration.</param>
+    <param name="dwWhichMoniker">Specifies whether to return the container's moniker, the object's moniker relative to the container, or the object's full moniker. In practice, you will usually request the object's full moniker. Possible values are taken from the <see cref="OLEWHICHMK" /> enumeration.</param>
+    <param name="ppmk">A pointer to an <see cref="IMoniker" /> pointer variable that receives the interface pointer to the moniker for the object's client site. If an error occurs, the implementation must set <i>ppmk</i> to <b>NULL</b>. Each time a container receives a call to <b>IOleClientSite.GetMoniker</b>, it must increase the reference count on the <i>ppmk</i> pointer it returns. It is the caller's responsibility to call <see cref="Release" /> when it is finished with the pointer.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -65,48 +51,28 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>This container cannot assign monikers to objects. This is the case with OLE 1 containers.</para>
-          </description>
-        </item>
+          <description>This container cannot assign monikers to objects. This is the case with OLE 1 containers.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Containers implement <b>GetMoniker</b> as a way of passing out monikers for their embedded objects to clients that need to link to those objects.</para>
-      <para>When a link is made to an embedded object or to a pseudo-object within it (a range of cells in a spreadsheet, for example), the object needs a moniker to construct the composite moniker indicating the source of the link. If the embedded object does not already have a moniker, it can call <b>GetMoniker</b> to request one.</para>
-      <para>Every container that expects to contain links to embeddings should support <b>GetMoniker</b> to give out OLEWHICHMK_CONTAINER, thus enabling link tracking when the link client and link source files move, but maintain the same relative position.</para>
-      <para>An object must not persistently store its full moniker or its container's moniker, because these can change while the object is not loaded. For example, either the container or the object could be renamed, in which event, storing the container's moniker or the object's full moniker would make it impossible for a client to track a link to the object.</para>
-      <para>In some very specialized cases, an object may no longer need a moniker previously assigned to it and may wish to have it removed as an optimization. In such cases, the object can call <b>GetMoniker</b> with OLEGETMONIKER_UNASSIGN to have the moniker removed.</para>
-    </remarks>
-    <seealso cref="IOleClientSite" />
-    <seealso cref="IOleClientSite.GetMoniker" />
-    <seealso cref="IOleObject.SetMoniker" />
   </member>
   <member name="IOleClientSite.OnShowWindow">
-    <summary>
-      <para>Notifies a container when an embedded object's window is about to become visible or invisible. This method does not apply to an object that is activated in place and therefore has no window separate from that of its container.</para>
-    </summary>
-    <param name="fShow">
-      <para>Indicates whether an object's window is open (TRUE) or closed (FALSE).</para>
-    </param>
-    <returns>
-      <para>This method returns S_OK on success.</para>
-    </returns>
-    <remarks>
-      <para>An embedded object calls <b>OnShowWindow</b> to keep its container informed when the object is open in a window. This window may or may not be currently visible to the end user. The container uses this information to shade the object's client site when the object is displayed in a window, and to remove the shading when the object is not. A shaded object, having received this notification, knows that it already has an open window and therefore can respond to being double-clicked by bringing this window quickly to the top, instead of launching its application in order to obtain a new one.</para>
-    </remarks>
-    <seealso cref="IOleClientSite" />
+    <summary>Notifies a container when an embedded object's window is about to become visible or invisible. This method does not apply to an object that is activated in place and therefore has no window separate from that of its container.</summary>
+    <param name="fShow">Indicates whether an object's window is open (TRUE) or closed (FALSE).</param>
+    <returns>This method returns S_OK on success.</returns>
   </member>
   <member name="IOleClientSite.RequestNewObjectLayout">
-    <summary>
-      <para>Asks a container to resize the display site for embedded objects.</para>
-    </summary>
+    <summary>Asks a container to resize the display site for embedded objects.</summary>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -114,27 +80,23 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Client site does not support requests for new layout.</para>
-          </description>
-        </item>
+          <description>Client site does not support requests for new layout.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method can either increase or decrease the space. Currently, there is no standard mechanism by which a container can negotiate how much room an object would like. When such a negotiation is defined, responding to this method will be optional for containers.</para>
-    </remarks>
-    <seealso cref="IOleClientSite" />
   </member>
   <member name="IOleClientSite.SaveObject">
-    <summary>
-      <para>Saves the embedded object associated with the client site. This function is synchronous; by the time it returns, the save will be completed.</para>
-    </summary>
+    <summary>Saves the embedded object associated with the client site. This function is synchronous; by the time it returns, the save will be completed.</summary>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -142,29 +104,23 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The operation has failed.</para>
-          </description>
-        </item>
+          <description>The operation has failed.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>An embedded object calls <b>SaveObject</b> to ask its container to save it to persistent storage when an end user chooses the File Update or Exit commands. The call is synchronous, meaning that by the time it returns, the save operation will be completed.</para>
-      <para>Calls to <b>SaveObject</b> occur in most implementations of <see cref="IOleObject.Close" />. Normally, when a container tells an object to close, the container passes a flag specifying whether the object should save itself before closing, prompt the user for instructions, or close without saving itself. If an object is instructed to save itself, either by its container or an end user, it calls <b>SaveObject</b> to ask the container application to save the object's contents before the object closes itself. If a container instructs an object not to save itself, the object should not call <b>SaveObject</b>.</para>
-    </remarks>
-    <seealso cref="IOleClientSite" />
-    <seealso cref="IOleObject.Close" />
   </member>
   <member name="IOleClientSite.ShowObject">
-    <summary>
-      <para>Asks a container to display its object to the user. This method ensures that the container itself is visible and not minimized.</para>
-    </summary>
+    <summary>Asks a container to display its object to the user. This method ensures that the container itself is visible and not minimized.</summary>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -172,33 +128,26 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>OLE_E_NOT_SUPPORTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OLE_E_NOT_SUPPORTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Client site is in an OLE 1 container.</para>
-          </description>
-        </item>
+          <description>Client site is in an OLE 1 container.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>After a link client binds to a link source, it commonly calls <see cref="IOleObject.DoVerb" /> on the link source, usually requesting the source to perform some action requiring that it display itself to the user. As part of its implementation of <b>IOleObject.DoVerb</b>, the link source can call <b>ShowObject</b>, which forces the client to show the link source as best it can. If the link source's container is itself an embedded object, it will recursively invoke <b>ShowObject</b> on its own container.</para>
-      <para>Having called the <b>ShowObject</b> method, a link source has no guarantee of being appropriately displayed because its container may not be able to do so at the time of the call. The <b>ShowObject</b> method does not guarantee visibility, only that the container will do the best it can.</para>
-    </remarks>
-    <seealso cref="IOleClientSite" />
-    <seealso cref="IOleObject.DoVerb" />
   </member>
   <member name="IOleClientSite">
     <summary>
-      <para>Provides the primary means by which an embedded object obtains information about the location and extent of its display site, its moniker, its user interface, and other resources provided by its container. An object server calls <b>IOleClientSite</b> to request services from the container. A container must provide one instance of <b>IOleClientSite</b> for every compound-document object it contains.
-<b>Note</b>  This interface is not supported for use across machine boundaries.</para>
+      <para>Provides the primary means by which an embedded object obtains information about the location and extent of its display site, its moniker, its user interface, and other resources provided by its container. An object server calls <b>IOleClientSite</b> to request services from the container. A container must provide one instance of <b>IOleClientSite</b> for every compound-document object it contains.</para>
+      <div>
+        <b>Note</b>  This interface is not supported for use across machine boundaries.</div>
     </summary>
-    <seealso cref="IOleControlSite" />
-    <seealso cref="IOleDocumentSite" />
-    <seealso cref="IOleInPlaceSite" />
-    <seealso cref="IOleObject.GetClientSite" />
   </member>
 </doc>

@@ -3,30 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFARGB">
-    <summary>
-      <para>Describes an ARGB color value.</para>
-    </summary>
-    <seealso cref="MFPaletteEntry Union" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <summary>Describes an ARGB color value.</summary>
   </member>
   <member name="MFARGB.rgbBlue">
-    <summary>
-      <para>Blue value.</para>
-    </summary>
+    <summary>Blue value.</summary>
   </member>
   <member name="MFARGB.rgbGreen">
-    <summary>
-      <para>Green value.</para>
-    </summary>
+    <summary>Green value.</summary>
   </member>
   <member name="MFARGB.rgbRed">
-    <summary>
-      <para>Red value.</para>
-    </summary>
+    <summary>Red value.</summary>
   </member>
   <member name="MFARGB.rgbAlpha">
-    <summary>
-      <para>Alpha value.</para>
-    </summary>
+    <summary>Alpha value.</summary>
   </member>
 </doc>

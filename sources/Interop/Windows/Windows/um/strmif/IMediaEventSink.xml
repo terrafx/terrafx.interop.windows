@@ -4,28 +4,17 @@
 <doc>
   <member name="IMediaEventSink.Notify">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Notify</code> method notifies the Filter Graph Manager of an event.</para>
     </summary>
-    <param name="EventCode">
-      <para>Identifier of the event.</para>
-    </param>
-    <param name="EventParam1">
-      <para>First event parameter.</para>
-    </param>
-    <param name="EventParam2">
-      <para>Second event parameter.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>The event is queued but not delivered to the application on this thread. For a list of notification codes and event parameter values, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/event-notification-codes">Event Notification Codes</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IMediaEventSink Interface" />
+    <param name="EventCode">Identifier of the event.</param>
+    <param name="EventParam1">First event parameter.</param>
+    <param name="EventParam2">Second event parameter.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IMediaEventSink">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Notifies the Filter Graph Manager of events that occur within the filter graph. Filters use this interface to report events. The Filter Graph Manager exposes this interface.</para>
       <para>Applications do not use <code>IMediaEventSink</code>. To retrieve events, applications use the <see cref="IMediaEventEx" /> interface.</para>
     </summary>

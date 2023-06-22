@@ -3,34 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ENUM_PAGE_FILE_INFORMATION">
-    <summary>
-      <para>Contains information about a pagefile.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/psapi/nc-psapi-penum_page_file_callbacka">EnumPageFilesProc</seealso>
+    <summary>Contains information about a pagefile.</summary>
   </member>
   <member name="ENUM_PAGE_FILE_INFORMATION.cb">
-    <summary>
-      <para>The size of this structure, in bytes.</para>
-    </summary>
+    <summary>The size of this structure, in bytes.</summary>
   </member>
   <member name="ENUM_PAGE_FILE_INFORMATION.Reserved">
-    <summary>
-      <para>This member is reserved.</para>
-    </summary>
+    <summary>This member is reserved.</summary>
   </member>
   <member name="ENUM_PAGE_FILE_INFORMATION.TotalSize">
-    <summary>
-      <para>The total size of the pagefile, in pages.</para>
-    </summary>
+    <summary>The total size of the pagefile, in pages.</summary>
   </member>
   <member name="ENUM_PAGE_FILE_INFORMATION.TotalInUse">
-    <summary>
-      <para>The current pagefile usage, in pages.</para>
-    </summary>
+    <summary>The current pagefile usage, in pages.</summary>
   </member>
   <member name="ENUM_PAGE_FILE_INFORMATION.PeakUsage">
-    <summary>
-      <para>The peak pagefile usage, in pages.</para>
-    </summary>
+    <summary>The peak pagefile usage, in pages.</summary>
   </member>
 </doc>

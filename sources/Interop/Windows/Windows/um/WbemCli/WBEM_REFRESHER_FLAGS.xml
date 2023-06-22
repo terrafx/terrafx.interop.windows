@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WBEM_REFRESHER_FLAGS">
-    <summary>
-      <para>Contains flags that modify the behavior of refresher methods.</para>
-    </summary>
-    <seealso cref="IWbemConfigureRefresher.Remove" />
-    <seealso cref="IWbemRefresher.Refresh" />
+    <summary>Contains flags that modify the behavior of refresher methods.</summary>
   </member>
   <member name="WBEM_REFRESHER_FLAGS.WBEM_FLAG_REFRESH_AUTO_RECONNECT">
-    <summary>
-      <para>If the connection is broken, the refresher attempts to reconnect to the provider automatically.</para>
-    </summary>
+    <summary>If the connection is broken, the refresher attempts to reconnect to the provider automatically.</summary>
   </member>
   <member name="WBEM_REFRESHER_FLAGS.WBEM_FLAG_REFRESH_NO_AUTO_RECONNECT">
-    <summary>
-      <para>If the connection is broken, the refresher does not attempt to reconnect to the provider automatically.</para>
-    </summary>
+    <summary>If the connection is broken, the refresher does not attempt to reconnect to the provider automatically.</summary>
   </member>
 </doc>

@@ -3,28 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SVUIA_STATUS">
-    <summary>
-      <para>Used with the <see cref="IBrowserService2._UIActivateView" /> method to set the state of a browser view.</para>
-    </summary>
+    <summary>Used with the <see cref="IBrowserService2._UIActivateView" /> method to set the state of a browser view.</summary>
   </member>
   <member name="SVUIA_STATUS.SVUIA_DEACTIVATE">
-    <summary>
-      <para>The browser view has been deactivated.</para>
-    </summary>
+    <summary>The browser view has been deactivated.</summary>
   </member>
   <member name="SVUIA_STATUS.SVUIA_ACTIVATE_NOFOCUS">
-    <summary>
-      <para>The browser view is activated and does not have focus.</para>
-    </summary>
+    <summary>The browser view is activated and does not have focus.</summary>
   </member>
   <member name="SVUIA_STATUS.SVUIA_ACTIVATE_FOCUS">
-    <summary>
-      <para>The browser view is activated and has focus.</para>
-    </summary>
+    <summary>The browser view is activated and has focus.</summary>
   </member>
   <member name="SVUIA_STATUS.SVUIA_INPLACEACTIVATE">
-    <summary>
-      <para>The browser view is activated in place.</para>
-    </summary>
+    <summary>The browser view is activated in place.</summary>
   </member>
 </doc>

@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT">
-    <summary>
-      <para>The <b>WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT</b> structure contains the callback function and state for validating the certificate for an HTTP connection.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_certificate_validation_callback">WS_CERTIFICATE_VALIDATION_CALLBACK</seealso>
+    <summary>The <b>WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT</b> structure contains the callback function and state for validating the certificate for an HTTP connection.</summary>
   </member>
   <member name="WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT.callback">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_certificate_validation_callback">WS_CERTIFICATE_VALIDATION_CALLBACK</a> callback that is an application specific callback for validating HTTP certificates.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//windows/desktop/api/webservices/nc-webservices-ws_certificate_validation_callback">WS_CERTIFICATE_VALIDATION_CALLBACK</a> callback that is an application specific callback for validating HTTP certificates.</summary>
   </member>
   <member name="WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT.state">
-    <summary>
-      <para>Application specific state that is made available to the callback when invoked.</para>
-    </summary>
+    <summary>Application specific state that is made available to the callback when invoked.</summary>
   </member>
 </doc>

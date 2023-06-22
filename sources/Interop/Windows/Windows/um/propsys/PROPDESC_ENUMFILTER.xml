@@ -3,47 +3,28 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROPDESC_ENUMFILTER">
-    <summary>
-      <para>Describes the filtered list of property descriptions that is returned.</para>
-    </summary>
-    <remarks>
-      <para>These values are defined in propsys.h and propsys.idl.</para>
-    </remarks>
+    <summary>Describes the filtered list of property descriptions that is returned.</summary>
   </member>
   <member name="PROPDESC_ENUMFILTER.PDEF_ALL">
-    <summary>
-      <para>The list contains all property descriptions in the system.</para>
-    </summary>
+    <summary>The list contains all property descriptions in the system.</summary>
   </member>
   <member name="PROPDESC_ENUMFILTER.PDEF_SYSTEM">
-    <summary>
-      <para>The list contains system property descriptions only. It excludes third-party property descriptions that are registered on the computer.</para>
-    </summary>
+    <summary>The list contains system property descriptions only. It excludes third-party property descriptions that are registered on the computer.</summary>
   </member>
   <member name="PROPDESC_ENUMFILTER.PDEF_NONSYSTEM">
-    <summary>
-      <para>The list contains only third-party property descriptions that are registered on the computer.</para>
-    </summary>
+    <summary>The list contains only third-party property descriptions that are registered on the computer.</summary>
   </member>
   <member name="PROPDESC_ENUMFILTER.PDEF_VIEWABLE">
-    <summary>
-      <para>The list contains only viewable properties, where &lt;typeInfo isViewable="true"&gt;.</para>
-    </summary>
+    <summary>The list contains only viewable properties, where &lt;typeInfo isViewable="true"&gt;.</summary>
   </member>
   <member name="PROPDESC_ENUMFILTER.PDEF_QUERYABLE">
-    <summary>
-      <para>Deprecated in <b>Windows 7 and later</b>. The list contains only queryable properties, where &lt;typeInfo isViewable="true" isQueryable="true"&gt;.</para>
-    </summary>
+    <summary>Deprecated in <b>Windows 7 and later</b>. The list contains only queryable properties, where &lt;typeInfo isViewable="true" isQueryable="true"&gt;.</summary>
   </member>
   <member name="PROPDESC_ENUMFILTER.PDEF_INFULLTEXTQUERY">
     <summary>
-      <para>
-        <b>Deprecated in Windows 7 and later</b>. The list contains only properties to be included in full-text queries.</para>
-    </summary>
+      <b>Deprecated in Windows 7 and later</b>. The list contains only properties to be included in full-text queries.</summary>
   </member>
   <member name="PROPDESC_ENUMFILTER.PDEF_COLUMN">
-    <summary>
-      <para>The list contains only properties that are columns.</para>
-    </summary>
+    <summary>The list contains only properties that are columns.</summary>
   </member>
 </doc>

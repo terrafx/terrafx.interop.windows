@@ -3,39 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PrintDocumentPackageStatus">
-    <summary>
-      <para>Defines a payload to be used by the <see cref="PackageStatusUpdated" /> method. This structure is a generic version of XPS_JOB_STATUS.</para>
-    </summary>
-    <seealso cref="PackageStatusUpdated" />
+    <summary>Defines a payload to be used by the <see cref="PackageStatusUpdated" /> method. This structure is a generic version of XPS_JOB_STATUS.</summary>
   </member>
   <member name="PrintDocumentPackageStatus.JobId">
-    <summary>
-      <para>The job ID.</para>
-    </summary>
+    <summary>The job ID.</summary>
   </member>
   <member name="PrintDocumentPackageStatus.CurrentDocument">
-    <summary>
-      <para>The zero-based index of the most recently processed document.</para>
-    </summary>
+    <summary>The zero-based index of the most recently processed document.</summary>
   </member>
   <member name="PrintDocumentPackageStatus.CurrentPage">
-    <summary>
-      <para>The zero-based index of the most recently processed page in the current document</para>
-    </summary>
+    <summary>The zero-based index of the most recently processed page in the current document</summary>
   </member>
   <member name="PrintDocumentPackageStatus.CurrentPageTotal">
-    <summary>
-      <para>A running total of the number of pages that have been processed by the print job.</para>
-    </summary>
+    <summary>A running total of the number of pages that have been processed by the print job.</summary>
   </member>
   <member name="PrintDocumentPackageStatus.Completion">
-    <summary>
-      <para>The completion status of the job.</para>
-    </summary>
+    <summary>The completion status of the job.</summary>
   </member>
   <member name="PrintDocumentPackageStatus.PackageStatus">
-    <summary>
-      <para>The error state of the job.</para>
-    </summary>
+    <summary>The error state of the job.</summary>
   </member>
 </doc>

@@ -4,17 +4,12 @@
 <doc>
   <member name="IFilterGraph3.SetSyncSourceEx">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetSyncSourceEx</code> method establishes two reference clocks for the filter graph: a primary clock that is used by most of the filters, and a secondary clock that is used only by one specified filter.</para>
     </summary>
-    <param name="pClockForMostOfFilterGraph">
-      <para>Pointer to the <see cref="IReferenceClock" /> interface of the main reference clock. Every filter in the graph uses this clock, except for the filter specified by the <i>pFilter</i> parameter.</para>
-    </param>
-    <param name="pClockForFilter">
-      <para>Pointer to the <b>IReferenceClock</b> interface of the secondary clock. The filter specified by the <i>pFilter</i> parameter uses this clock.</para>
-    </param>
-    <param name="pFilter">
-      <para>Pointer to the <see cref="IBaseFilter" /> interface of a filter in the graph. This filter uses the secondary reference clock.</para>
-    </param>
+    <param name="pClockForMostOfFilterGraph">Pointer to the <see cref="IReferenceClock" /> interface of the main reference clock. Every filter in the graph uses this clock, except for the filter specified by the <i>pFilter</i> parameter.</param>
+    <param name="pClockForFilter">Pointer to the <b>IReferenceClock</b> interface of the secondary clock. The filter specified by the <i>pFilter</i> parameter uses this clock.</param>
+    <param name="pFilter">Pointer to the <see cref="IBaseFilter" /> interface of a filter in the graph. This filter uses the secondary reference clock.</param>
     <returns>
       <para>Returns and <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -22,37 +17,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_NOT_STOPPED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_NOT_STOPPED</b>
-            </para>
-          </description>
-          <description>
-            <para>The filter graph is not stopped.</para>
-          </description>
-        </item>
+          <description>The filter graph is not stopped.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the filter graph is running or paused, this method return VFW_E_NOT_STOPPED.</para>
-      <para>To clear both reference clocks, set all three parameters to <b>NULL</b>. To set a single clock for the entire graph, with no secondary clock, call the <see cref="IMediaFilter.SetSyncSource" /> method on the Filter Graph Manager.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterGraph3 Interface" />
   </member>
   <member name="IFilterGraph3">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IFilterGraph3</code> interface extends the <see cref="IFilterGraph2" /> interface, which contains methods for building filter graphs.</para>
       <para>The Filter Graph Manager implements this interface. Applications can use it when building graphs, to take advantage of the additional methods it provides.</para>
     </summary>

@@ -3,43 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="_SVGIO">
-    <summary>
-      <para>Used with the <see cref="IFolderView.Items" />, <see cref="IFolderView.ItemCount" />, and <see cref="IShellView.GetItemObject" /> methods to restrict or control the items in their collections.</para>
-    </summary>
-    <remarks>
-      <para>The <b>SVGIO</b> type used to refer to members of the <b>_SVGIO</b> enumeration is defined in Shobjidl.h as shown here.</para>
-      <code>typedef int SVGIO;
-</code>
-    </remarks>
+    <summary>Used with the <see cref="IFolderView.Items" />, <see cref="IFolderView.ItemCount" />, and <see cref="IShellView.GetItemObject" /> methods to restrict or control the items in their collections.</summary>
   </member>
   <member name="_SVGIO.SVGIO_BACKGROUND">
-    <summary>
-      <para>0x00000000. Refers to the background of the view. It is used with IID_IContextMenu to get a shortcut menu for the view background and with IID_IDispatch to get a dispatch interface that represents the <a href="https://docs.microsoft.com//windows/desktop/shell/shellfolderview">ShellFolderView</a> object for the view.</para>
-    </summary>
+    <summary>0x00000000. Refers to the background of the view. It is used with IID_IContextMenu to get a shortcut menu for the view background and with IID_IDispatch to get a dispatch interface that represents the <a href="https://docs.microsoft.com//windows/desktop/shell/shellfolderview">ShellFolderView</a> object for the view.</summary>
   </member>
   <member name="_SVGIO.SVGIO_SELECTION">
-    <summary>
-      <para>0x00000001. Refers to the currently selected items. Used with IID_IDataObject to retrieve a data object that represents the selected items.</para>
-    </summary>
+    <summary>0x00000001. Refers to the currently selected items. Used with IID_IDataObject to retrieve a data object that represents the selected items.</summary>
   </member>
   <member name="_SVGIO.SVGIO_ALLVIEW">
-    <summary>
-      <para>0x00000002. Used in the same way as <see cref="SVGIO_SELECTION" /> but refers to all items in the view.</para>
-    </summary>
+    <summary>0x00000002. Used in the same way as <see cref="SVGIO_SELECTION" /> but refers to all items in the view.</summary>
   </member>
   <member name="_SVGIO.SVGIO_CHECKED">
-    <summary>
-      <para>0x00000003. Used in the same way as <see cref="SVGIO_SELECTION" /> but refers to checked items in views where checked mode is supported. For more details on checked mode, see <see cref="FOLDERFLAGS" />.</para>
-    </summary>
+    <summary>0x00000003. Used in the same way as <see cref="SVGIO_SELECTION" /> but refers to checked items in views where checked mode is supported. For more details on checked mode, see <see cref="FOLDERFLAGS" />.</summary>
   </member>
   <member name="_SVGIO.SVGIO_TYPE_MASK">
-    <summary>
-      <para>0x0000000F. Masks all bits but those corresponding to the <see cref="_SVGIO" /> flags.</para>
-    </summary>
+    <summary>0x0000000F. Masks all bits but those corresponding to the <see cref="_SVGIO" /> flags.</summary>
   </member>
   <member name="_SVGIO.SVGIO_FLAG_VIEWORDER">
-    <summary>
-      <para>0x80000000. Returns the items in the order they appear in the view. If this flag is not set, the selected item will be listed first.</para>
-    </summary>
+    <summary>0x80000000. Returns the items in the order they appear in the view. If this flag is not set, the selected item will be listed first.</summary>
   </member>
 </doc>

@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SOLE_AUTHENTICATION_LIST">
-    <summary>
-      <para>Indicates the default authentication information to use with each authentication service. When DCOM negotiates the default authentication service for a proxy, it picks the default authentication information from this list.</para>
-    </summary>
-    <seealso cref="CoInitializeSecurity" />
+    <summary>Indicates the default authentication information to use with each authentication service. When DCOM negotiates the default authentication service for a proxy, it picks the default authentication information from this list.</summary>
   </member>
   <member name="SOLE_AUTHENTICATION_LIST.cAuthInfo">
-    <summary>
-      <para>The count of pointers in the array pointed to by <b>aAuthInfo</b>.</para>
-    </summary>
+    <summary>The count of pointers in the array pointed to by <b>aAuthInfo</b>.</summary>
   </member>
   <member name="SOLE_AUTHENTICATION_LIST.aAuthInfo">
-    <summary>
-      <para>An array of <see cref="SOLE_AUTHENTICATION_INFO" /> structures. Each of these structures contains an identifier for an authentication service, an identifier for the authorization service, and a pointer to authentication information to use with the specified authentication service.</para>
-    </summary>
+    <summary>An array of <see cref="SOLE_AUTHENTICATION_INFO" /> structures. Each of these structures contains an identifier for an authentication service, an identifier for the authorization service, and a pointer to authentication information to use with the specified authentication service.</summary>
   </member>
 </doc>

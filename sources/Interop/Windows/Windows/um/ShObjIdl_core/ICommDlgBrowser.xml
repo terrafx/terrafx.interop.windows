@@ -3,59 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ICommDlgBrowser.IncludeObject">
-    <summary>
-      <para>Allows the common dialog box to filter objects that the view displays.</para>
-    </summary>
-    <param name="ppshv">
-      <para>Type: <b><see cref="IShellView" />*</b></para>
-      <para>A pointer to the view's <see cref="IShellView" /> interface.</para>
-    </param>
-    <param name="pidl">
-      <para>Type: <b>LPCITEMIDLIST</b></para>
-      <para>A PIDL, relative to the folder, that identifies the object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>The browser should return S_OK to include the object in the view, or S_FALSE to hide it.</para>
-    </returns>
-    <remarks>
-      <para>This method is called by the <see cref="IEnumIDList" /> implementation when hosted in file dialog boxes. The enumerator calls this method to let the common dialog box filter out objects that should not be displayed. Typically, the file dialog boxes will get the display text of the item, and filter by the extension.</para>
-      <h3>Note to Calling Applications</h3>
-      <para>Call this method before returning an object in the Shell folder's IDLIST enumerator.</para>
-      <para>When dealing with data sources that have many items, such as libraries and searches, the callback to this method results in poor performance. To avoid that situation, implement <see cref="GetViewFlags" /> and return CDB2GVF_NOINCLUDEITEM. Doing so enables the view to skip calling <b>ICommDlgBrowser.IncludeObject</b>, thereby improving performance.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940358(v=vs.85)">Explorer Browser Search Sample</seealso>
-    <seealso cref="ICommDlgBrowser" />
+    <summary>Allows the common dialog box to filter objects that the view displays.</summary>
+    <param name="ppshv">A pointer to the view's <see cref="IShellView" /> interface.</param>
+    <param name="pidl">A PIDL, relative to the folder, that identifies the object.</param>
+    <returns>The browser should return S_OK to include the object in the view, or S_FALSE to hide it.</returns>
   </member>
   <member name="ICommDlgBrowser.OnDefaultCommand">
-    <summary>
-      <para>Called when a user double-clicks in the view or presses the ENTER key.</para>
-    </summary>
-    <param name="ppshv">
-      <para>Type: <b><see cref="IShellView" />*</b></para>
-      <para>A pointer to the view's <see cref="IShellView" /> interface.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The browser should return S_OK if it has processed the action or S_FALSE to let the view perform the default action.</para>
-      <h3>Note to Calling Applications</h3>
-      <para>This method allows the default command to be handled by the common dialog box instead of the view.</para>
-    </remarks>
-    <seealso cref="ICommDlgBrowser" />
+    <summary>Called when a user double-clicks in the view or presses the ENTER key.</summary>
+    <param name="ppshv">A pointer to the view's <see cref="IShellView" /> interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICommDlgBrowser.OnStateChange">
-    <summary>
-      <para>Called after a state, identified by the <i>uChange</i> parameter, has changed in the <see cref="IShellView" /> interface.</para>
-    </summary>
-    <param name="ppshv">
-      <para>Type: <b><see cref="IShellView" />*</b></para>
-      <para>A pointer to the view's <see cref="IShellView" /> interface.</para>
-    </param>
+    <summary>Called after a state, identified by the <i>uChange</i> parameter, has changed in the <see cref="IShellView" /> interface.</summary>
+    <param name="ppshv">A pointer to the view's <see cref="IShellView" /> interface.</param>
     <param name="uChange">
-      <para>Type: <b>ULONG</b></para>
       <para>Change in the selection state. This parameter can be one of the following values.</para>
       <h4>CDBOSC_SETFOCUS</h4>
       <para>The focus has been set to the view.</para>
@@ -68,26 +29,9 @@
       <h4>CDBOSC_STATECHANGE</h4>
       <para>An item has been checked or unchecked.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is used to let the common file dialog boxes track the state of the view and change its user interface as needed.</para>
-      <h3>Note to Calling Applications</h3>
-      <para>When items in the view are selected, or when the view loses the focus, it needs to call this method to notify the common dialog that either the view state or selection state is changing.</para>
-    </remarks>
-    <seealso cref="ICommDlgBrowser" />
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICommDlgBrowser">
-    <summary>
-      <para>Exposed by the common file dialog boxes to be used when they host a Shell browser. If supported, <b>ICommDlgBrowser</b> exposes methods that allow a Shell view to handle several cases that require different behavior in a dialog box than in a normal Shell view. You obtain an <b>ICommDlgBrowser</b> interface pointer by calling <see cref="QueryInterface" /> on the <see cref="IShellBrowser" /> object.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>Note</b>  In Windows XP and earlier, this interface was defined in Shlobj.h.</para>
-      <para>This interface is implemented only by the common file dialog boxes.</para>
-      <para>Use <b>ICommDlgBrowser</b> when you need to provide special behavior while hosted inside the common dialog boxes.</para>
-    </remarks>
+    <summary>Exposed by the common file dialog boxes to be used when they host a Shell browser. If supported, <b>ICommDlgBrowser</b> exposes methods that allow a Shell view to handle several cases that require different behavior in a dialog box than in a normal Shell view. You obtain an <b>ICommDlgBrowser</b> interface pointer by calling <see cref="QueryInterface" /> on the <see cref="IShellBrowser" /> object.</summary>
   </member>
 </doc>

@@ -3,82 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_RENDER_TARGET_VIEW_DESC">
-    <summary>
-      <para>Specifies the subresources from a resource that are accessible using a render-target view.</para>
-    </summary>
-    <remarks>
-      <para>A render-target-view description is passed into <see cref="ID3D11Device.CreateRenderTargetView" /> to create a render target.</para>
-      <para>A render-target-view cannot use the following formats:</para>
-      <list type="bullet">
-        <item>
-          <description>Any typeless format.</description>
-        </item>
-        <item>
-          <description>DXGI_FORMAT_R32G32B32 if the view will be used to bind a buffer (vertex, index, constant, or stream-output).</description>
-        </item>
-      </list>
-      <para>If the format is set to DXGI_FORMAT_UNKNOWN, then the format of the resource that the view binds to the pipeline will be used.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-structures">Resource Structures</seealso>
+    <summary>Specifies the subresources from a resource that are accessible using a render-target view.</summary>
   </member>
   <member name="D3D11_RENDER_TARGET_VIEW_DESC.Format">
-    <summary>
-      <para>Type: <b><see cref="DXGI_FORMAT" /></b></para>
-      <para>The data format (see <see cref="DXGI_FORMAT" />).</para>
-    </summary>
+    <summary>The data format (see <see cref="DXGI_FORMAT" />).</summary>
   </member>
   <member name="D3D11_RENDER_TARGET_VIEW_DESC.ViewDimension">
-    <summary>
-      <para>Type: <b><see cref="D3D11_RTV_DIMENSION" /></b></para>
-      <para>The resource type (see <see cref="D3D11_RTV_DIMENSION" />), which specifies how the render-target resource will be accessed.</para>
-    </summary>
+    <summary>The resource type (see <see cref="D3D11_RTV_DIMENSION" />), which specifies how the render-target resource will be accessed.</summary>
   </member>
   <member name="D3D11_RENDER_TARGET_VIEW_DESC.Buffer">
-    <summary>
-      <para>Type: <b><see cref="D3D11_BUFFER_RTV" /></b></para>
-      <para>Specifies which buffer elements can be accessed (see <see cref="D3D11_BUFFER_RTV" />).</para>
-    </summary>
+    <summary>Specifies which buffer elements can be accessed (see <see cref="D3D11_BUFFER_RTV" />).</summary>
   </member>
   <member name="D3D11_RENDER_TARGET_VIEW_DESC.Texture1D">
-    <summary>
-      <para>Type: <b><see cref="D3D11_TEX1D_RTV" /></b></para>
-      <para>Specifies the subresources in a 1D texture that can be accessed (see <see cref="D3D11_TEX1D_RTV" />).</para>
-    </summary>
+    <summary>Specifies the subresources in a 1D texture that can be accessed (see <see cref="D3D11_TEX1D_RTV" />).</summary>
   </member>
   <member name="D3D11_RENDER_TARGET_VIEW_DESC.Texture1DArray">
-    <summary>
-      <para>Type: <b><see cref="D3D11_TEX1D_ARRAY_RTV" /></b></para>
-      <para>Specifies the subresources in a 1D texture array that can be accessed (see <see cref="D3D11_TEX1D_ARRAY_RTV" />).</para>
-    </summary>
+    <summary>Specifies the subresources in a 1D texture array that can be accessed (see <see cref="D3D11_TEX1D_ARRAY_RTV" />).</summary>
   </member>
   <member name="D3D11_RENDER_TARGET_VIEW_DESC.Texture2D">
-    <summary>
-      <para>Type: <b><see cref="D3D11_TEX2D_RTV" /></b></para>
-      <para>Specifies the subresources in a 2D texture that can be accessed (see <see cref="D3D11_TEX2D_RTV" />).</para>
-    </summary>
+    <summary>Specifies the subresources in a 2D texture that can be accessed (see <see cref="D3D11_TEX2D_RTV" />).</summary>
   </member>
   <member name="D3D11_RENDER_TARGET_VIEW_DESC.Texture2DArray">
-    <summary>
-      <para>Type: <b><see cref="D3D11_TEX2D_ARRAY_RTV" /></b></para>
-      <para>Specifies the subresources in a 2D texture array that can be accessed (see <see cref="D3D11_TEX2D_ARRAY_RTV" />).</para>
-    </summary>
+    <summary>Specifies the subresources in a 2D texture array that can be accessed (see <see cref="D3D11_TEX2D_ARRAY_RTV" />).</summary>
   </member>
   <member name="D3D11_RENDER_TARGET_VIEW_DESC.Texture2DMS">
-    <summary>
-      <para>Type: <b><see cref="D3D11_TEX2DMS_RTV" /></b></para>
-      <para>Specifies a single subresource because a multisampled 2D texture only contains one subresource (see <see cref="D3D11_TEX2DMS_RTV" />).</para>
-    </summary>
+    <summary>Specifies a single subresource because a multisampled 2D texture only contains one subresource (see <see cref="D3D11_TEX2DMS_RTV" />).</summary>
   </member>
   <member name="D3D11_RENDER_TARGET_VIEW_DESC.Texture2DMSArray">
-    <summary>
-      <para>Type: <b><see cref="D3D11_TEX2DMS_ARRAY_RTV" /></b></para>
-      <para>Specifies the subresources in a multisampled 2D texture array that can be accessed (see <see cref="D3D11_TEX2DMS_ARRAY_RTV" />).</para>
-    </summary>
+    <summary>Specifies the subresources in a multisampled 2D texture array that can be accessed (see <see cref="D3D11_TEX2DMS_ARRAY_RTV" />).</summary>
   </member>
   <member name="D3D11_RENDER_TARGET_VIEW_DESC.Texture3D">
-    <summary>
-      <para>Type: <b><see cref="D3D11_TEX3D_RTV" /></b></para>
-      <para>Specifies subresources in a 3D texture that can be accessed (see <see cref="D3D11_TEX3D_RTV" />).</para>
-    </summary>
+    <summary>Specifies subresources in a 3D texture that can be accessed (see <see cref="D3D11_TEX3D_RTV" />).</summary>
   </member>
 </doc>

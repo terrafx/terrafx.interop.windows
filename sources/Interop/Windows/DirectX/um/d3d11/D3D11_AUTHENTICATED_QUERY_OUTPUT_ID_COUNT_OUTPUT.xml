@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_OUTPUT">
-    <summary>
-      <para>Contains the response to a <b>D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT</b> query.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+    <summary>Contains the response to a <b>D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT</b> query.</summary>
   </member>
   <member name="D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_OUTPUT.Output">
-    <summary>
-      <para>A <see cref="D3D11_AUTHENTICATED_QUERY_OUTPUT" /> structure that contains a Message Authentication Code (MAC) and other data.</para>
-    </summary>
+    <summary>A <see cref="D3D11_AUTHENTICATED_QUERY_OUTPUT" /> structure that contains a Message Authentication Code (MAC) and other data.</summary>
   </member>
   <member name="D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_OUTPUT.DeviceHandle">
-    <summary>
-      <para>A handle to the device.</para>
-    </summary>
+    <summary>A handle to the device.</summary>
   </member>
   <member name="D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_OUTPUT.CryptoSessionHandle">
-    <summary>
-      <para>A handle to the cryptographic session.</para>
-    </summary>
+    <summary>A handle to the cryptographic session.</summary>
   </member>
   <member name="D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_OUTPUT.OutputIDCount">
-    <summary>
-      <para>The number of output IDs associated with the specified device and cryptographic session.</para>
-    </summary>
+    <summary>The number of output IDs associated with the specified device and cryptographic session.</summary>
   </member>
 </doc>

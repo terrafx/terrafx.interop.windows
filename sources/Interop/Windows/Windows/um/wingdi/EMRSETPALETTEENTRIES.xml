@@ -3,37 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRSETPALETTEENTRIES">
-    <summary>
-      <para>The <b>EMRSETPALETTEENTRIES</b> structure contains members for the <see cref="SetPaletteEntries" /> enhanced metafile record.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/dd162769(v=vs.85)">PALETTEENTRY</seealso>
-    <seealso cref="SetPaletteEntries" />
+    <summary>The <b>EMRSETPALETTEENTRIES</b> structure contains members for the <see cref="SetPaletteEntries" /> enhanced metafile record.</summary>
   </member>
   <member name="EMRSETPALETTEENTRIES.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMRSETPALETTEENTRIES.ihPal">
-    <summary>
-      <para>Palette handle index.</para>
-    </summary>
+    <summary>Palette handle index.</summary>
   </member>
   <member name="EMRSETPALETTEENTRIES.iStart">
-    <summary>
-      <para>Index of first entry to set.</para>
-    </summary>
+    <summary>Index of first entry to set.</summary>
   </member>
   <member name="EMRSETPALETTEENTRIES.cEntries">
-    <summary>
-      <para>Number of entries.</para>
-    </summary>
+    <summary>Number of entries.</summary>
   </member>
   <member name="EMRSETPALETTEENTRIES.aPalEntries">
-    <summary>
-      <para>Array of <a href="https://docs.microsoft.com//previous-versions/dd162769(v=vs.85)">PALETTEENTRY</a> structures. Note that <b>peFlags</b> members in the structures do not contain any flags.</para>
-    </summary>
+    <summary>Array of <a href="https://docs.microsoft.com//previous-versions/dd162769(v=vs.85)">PALETTEENTRY</a> structures. Note that <b>peFlags</b> members in the structures do not contain any flags.</summary>
   </member>
 </doc>

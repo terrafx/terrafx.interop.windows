@@ -3,102 +3,51 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CONDITION_OPERATION">
-    <summary>
-      <para>Provides a set of flags to be used with following methods to indicate the operation in
-<see cref="ICondition.GetComparisonInfo" />,
-<see cref="ICondition2.GetLeafConditionInfo" />,
-<see cref="IConditionFactory.MakeLeaf" />,
-<see cref="IConditionFactory2.CreateBooleanLeaf" />,
-<see cref="IConditionFactory2.CreateIntegerLeaf" />,
-<see cref="IConditionFactory2.MakeLeaf" />,
-<see cref="IConditionFactory2.CreateStringLeaf" />, and
-<see cref="IConditionGenerator.GenerateForLeaf" />.</para>
-    </summary>
-    <remarks>
-      <para>Because a resolved condition never has a <b>COP_IMPLICIT</b> operation, applications that evaluate condition trees should not encounter it. However, <b>COP_IMPLICIT</b> could be used in comparing the output of either <see cref="ICondition.GetComparisonInfo" /> or <see cref="ICondition2.GetLeafConditionInfo" /> for a parsed unresolved condition to the output for a resolved condition.</para>
-      <para>In Windows 7, this enumeration is defined in structuredquerycondition.idl and structuredquerycondition.h. Prior to Windows 7 this enumeration was declared in structuredquery.h and structuredquery.idl.</para>
-    </remarks>
-    <seealso cref="CONDITION_CREATION_OPTIONS" />
-    <seealso cref="CONDITION_TYPE" />
-    <seealso cref="ICondition" />
-    <seealso cref="ICondition2" />
-    <seealso cref="IConditionFactory" />
-    <seealso cref="IConditionFactory2" />
-    <seealso cref="IConditionGenerator" />
+    <summary>Provides a set of flags to be used with following methods to indicate the operation in<see cref="ICondition.GetComparisonInfo" />,<see cref="ICondition2.GetLeafConditionInfo" />,<see cref="IConditionFactory.MakeLeaf" />,<see cref="IConditionFactory2.CreateBooleanLeaf" />,<see cref="IConditionFactory2.CreateIntegerLeaf" />,<see cref="IConditionFactory2.MakeLeaf" />,<see cref="IConditionFactory2.CreateStringLeaf" />, and<see cref="IConditionGenerator.GenerateForLeaf" />.</summary>
   </member>
   <member name="CONDITION_OPERATION.COP_IMPLICIT">
-    <summary>
-      <para>An implicit comparison between the value of the property and the value of the constant. For an unresolved condition, <see cref="COP_IMPLICIT" /> means that a user did not type an operation. In contrast, a resolved condition will always have a condition other than the <b>COP_IMPLICIT</b> operation.</para>
-    </summary>
+    <summary>An implicit comparison between the value of the property and the value of the constant. For an unresolved condition, <see cref="COP_IMPLICIT" /> means that a user did not type an operation. In contrast, a resolved condition will always have a condition other than the <b>COP_IMPLICIT</b> operation.</summary>
   </member>
   <member name="CONDITION_OPERATION.COP_EQUAL">
-    <summary>
-      <para>The value of the property and the value of the constant must be equal.</para>
-    </summary>
+    <summary>The value of the property and the value of the constant must be equal.</summary>
   </member>
   <member name="CONDITION_OPERATION.COP_NOTEQUAL">
-    <summary>
-      <para>The value of the property and the value of the constant must not be equal.</para>
-    </summary>
+    <summary>The value of the property and the value of the constant must not be equal.</summary>
   </member>
   <member name="CONDITION_OPERATION.COP_LESSTHAN">
-    <summary>
-      <para>The value of the property must be less than the value of the constant.</para>
-    </summary>
+    <summary>The value of the property must be less than the value of the constant.</summary>
   </member>
   <member name="CONDITION_OPERATION.COP_GREATERTHAN">
-    <summary>
-      <para>The value of the property must be greater than the value of the constant.</para>
-    </summary>
+    <summary>The value of the property must be greater than the value of the constant.</summary>
   </member>
   <member name="CONDITION_OPERATION.COP_LESSTHANOREQUAL">
-    <summary>
-      <para>The value of the property must be less than or equal to the value of the constant.</para>
-    </summary>
+    <summary>The value of the property must be less than or equal to the value of the constant.</summary>
   </member>
   <member name="CONDITION_OPERATION.COP_GREATERTHANOREQUAL">
-    <summary>
-      <para>The value of the property must be greater than or equal to the value of the constant.</para>
-    </summary>
+    <summary>The value of the property must be greater than or equal to the value of the constant.</summary>
   </member>
   <member name="CONDITION_OPERATION.COP_VALUE_STARTSWITH">
-    <summary>
-      <para>The value of the property must begin with the value of the constant.</para>
-    </summary>
+    <summary>The value of the property must begin with the value of the constant.</summary>
   </member>
   <member name="CONDITION_OPERATION.COP_VALUE_ENDSWITH">
-    <summary>
-      <para>The value of the property must end with the value of the constant.</para>
-    </summary>
+    <summary>The value of the property must end with the value of the constant.</summary>
   </member>
   <member name="CONDITION_OPERATION.COP_VALUE_CONTAINS">
-    <summary>
-      <para>The value of the property must contain the value of the constant.</para>
-    </summary>
+    <summary>The value of the property must contain the value of the constant.</summary>
   </member>
   <member name="CONDITION_OPERATION.COP_VALUE_NOTCONTAINS">
-    <summary>
-      <para>The value of the property must not contain the value of the constant.</para>
-    </summary>
+    <summary>The value of the property must not contain the value of the constant.</summary>
   </member>
   <member name="CONDITION_OPERATION.COP_DOSWILDCARDS">
-    <summary>
-      <para>The value of the property must match the value of the constant, where '?' matches any single character and '*' matches any sequence of characters.</para>
-    </summary>
+    <summary>The value of the property must match the value of the constant, where '?' matches any single character and '*' matches any sequence of characters.</summary>
   </member>
   <member name="CONDITION_OPERATION.COP_WORD_EQUAL">
-    <summary>
-      <para>The value of the property must contain a word that is the value of the constant.</para>
-    </summary>
+    <summary>The value of the property must contain a word that is the value of the constant.</summary>
   </member>
   <member name="CONDITION_OPERATION.COP_WORD_STARTSWITH">
-    <summary>
-      <para>The value of the property must contain a word that begins with the value of the constant.</para>
-    </summary>
+    <summary>The value of the property must contain a word that begins with the value of the constant.</summary>
   </member>
   <member name="CONDITION_OPERATION.COP_APPLICATION_SPECIFIC">
-    <summary>
-      <para>The application is free to interpret this in any suitable way.</para>
-    </summary>
+    <summary>The application is free to interpret this in any suitable way.</summary>
   </member>
 </doc>

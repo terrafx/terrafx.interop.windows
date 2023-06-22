@@ -3,29 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_TILED_RESOURCE_COORDINATE">
-    <summary>
-      <para>Describes the coordinates of a tiled resource.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used by the <see cref="CopyTiles" />, <see cref="CopyTileMappings" /> and <see cref="UpdateTileMappings" /> methods.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/cd3dx12-tiled-resource-coordinate">CD3DX12_TILED_RESOURCE_COORDINATE</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-12-structures">Core Structures</seealso>
+    <summary>Describes the coordinates of a tiled resource.</summary>
   </member>
   <member name="D3D12_TILED_RESOURCE_COORDINATE.X">
-    <summary>
-      <para>The x-coordinate of the tiled resource.</para>
-    </summary>
+    <summary>The x-coordinate of the tiled resource.</summary>
   </member>
   <member name="D3D12_TILED_RESOURCE_COORDINATE.Y">
-    <summary>
-      <para>The y-coordinate of the tiled resource.</para>
-    </summary>
+    <summary>The y-coordinate of the tiled resource.</summary>
   </member>
   <member name="D3D12_TILED_RESOURCE_COORDINATE.Z">
-    <summary>
-      <para>The z-coordinate of the tiled resource.</para>
-    </summary>
+    <summary>The z-coordinate of the tiled resource.</summary>
   </member>
   <member name="D3D12_TILED_RESOURCE_COORDINATE.Subresource">
     <summary>

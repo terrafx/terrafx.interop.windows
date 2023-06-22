@@ -4,27 +4,17 @@
 <doc>
   <member name="_AM_INTF_SEARCH_FLAGS">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies the types of object to search, when attempting to find an interface on the filter graph.</para>
     </summary>
-    <remarks>
-      <para>If no flags are set (the default case), it is equivalent to the bitwise <b>OR</b> of all the flags. All filters and pins are searched.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso cref="IAMGraphStreams.FindUpstreamInterface" />
   </member>
   <member name="_AM_INTF_SEARCH_FLAGS.AM_INTF_SEARCH_INPUT_PIN">
-    <summary>
-      <para>Search input pins.</para>
-    </summary>
+    <summary>Search input pins.</summary>
   </member>
   <member name="_AM_INTF_SEARCH_FLAGS.AM_INTF_SEARCH_OUTPUT_PIN">
-    <summary>
-      <para>Search output pins.</para>
-    </summary>
+    <summary>Search output pins.</summary>
   </member>
   <member name="_AM_INTF_SEARCH_FLAGS.AM_INTF_SEARCH_FILTER">
-    <summary>
-      <para>Search filters.</para>
-    </summary>
+    <summary>Search filters.</summary>
   </member>
 </doc>

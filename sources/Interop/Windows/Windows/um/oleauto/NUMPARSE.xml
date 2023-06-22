@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NUMPARSE">
+    <summary>Specifies numeric parsing information.</summary>
+  </member>
+  <member name="NUMPARSE.cDig">
+    <summary>On input, the size of the array. On output, the number of items written to the rgbDig array.</summary>
+  </member>
+  <member name="NUMPARSE.dwInFlags">
+    <summary>
+      <para>Input flags.</para>
+      <h4>NUMPRS_CURRENCY (0x0400)</h4>
+      <h4>NUMPRS_DECIMAL (0x0100)</h4>
+      <h4>NUMPRS_EXPONENT (0x0800)</h4>
+      <h4>NUMPRS_HEX_OCT (0x0040)</h4>
+      <h4>NUMPRS_LEADING_MINUS (0x0100)</h4>
+      <h4>NUMPRS_LEADING_PLUS (0x0004)</h4>
+      <h4>NUMPRS_LEADING_WHITE (0x0001)</h4>
+      <h4>NUMPRS_PARENS (0x0080)</h4>
+      <h4>NUMPRS_STD (0x1FFF)</h4>
+      <h4>NUMPRS_THOUSANDS (0x0200)</h4>
+      <h4>NUMPRS_TRAILING_MINUS (0x0020)</h4>
+      <h4>NUMPRS_TRAILING_PLUS (0x0008)</h4>
+      <h4>NUMPRS_TRAILING_WHITE (0x0002)</h4>
+      <h4>NUMPRS_USE_ALL (0x1000)</h4>
+    </summary>
+  </member>
+  <member name="NUMPARSE.dwOutFlags">
+    <summary>
+      <para>Output flags. Includes all the values for <b>dwInFlags</b>, plus the following values.</para>
+      <h4>NUMPRS_INEXACT (0x20000)</h4>
+      <h4>NUMPRS_NEG (0x10000)</h4>
+    </summary>
+  </member>
+  <member name="NUMPARSE.cchUsed">
+    <summary>Receives the number of characters (from the beginning of the string) that were successfully parsed.</summary>
+  </member>
+  <member name="NUMPARSE.nBaseShift">
+    <summary>The number of bits per digit (3 or 4 for octal and hexadecimal numbers, and zero for decimal).</summary>
+  </member>
+  <member name="NUMPARSE.nPwr10">
+    <summary>The decimal point position.</summary>
+  </member>
+</doc>

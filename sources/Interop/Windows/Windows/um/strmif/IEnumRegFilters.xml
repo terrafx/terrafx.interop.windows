@@ -4,34 +4,20 @@
 <doc>
   <member name="IEnumRegFilters.Clone">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IEnumRegFilters</b> interface is deprecated.</para>
-      <para>This method is not currently implemented and returns E_NOTIMPL.</para>
-    </summary>
-    <param name="ppEnum">
-      <para>Address of a pointer to the duplicate enumerator interface.</para>
-    </param>
-    <returns>
-      <para>Returns E_NOTIMPL.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IEnumRegFilters Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IEnumRegFilters</b> interface is deprecated.</div>This method is not currently implemented and returns E_NOTIMPL.</summary>
+    <param name="ppEnum">Address of a pointer to the duplicate enumerator interface.</param>
+    <returns>Returns E_NOTIMPL.</returns>
   </member>
   <member name="IEnumRegFilters.Next">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IEnumRegFilters</b> interface is deprecated.</para>
-      <para>Fills the array with descriptions of the next set of filters (specified by the <i>cFilters</i> parameter) that meet the requirements specified upon creation of the enumerator.</para>
-    </summary>
-    <param name="cFilters">
-      <para>Number of filters.</para>
-    </param>
-    <param name="apRegFilter">
-      <para>Address of a pointer to an array of <b>REGFILTER</b> pointers.</para>
-    </param>
-    <param name="pcFetched">
-      <para>Pointer to the actual number of filters passed.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IEnumRegFilters</b> interface is deprecated.</div>Fills the array with descriptions of the next set of filters (specified by the <i>cFilters</i> parameter) that meet the requirements specified upon creation of the enumerator.</summary>
+    <param name="cFilters">Number of filters.</param>
+    <param name="apRegFilter">Address of a pointer to an array of <b>REGFILTER</b> pointers.</param>
+    <param name="pcFetched">Pointer to the actual number of filters passed.</param>
     <returns>
       <para>Returns one of the following <b>HRESULT</b> values.</para>
       <list type="table">
@@ -39,118 +25,113 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Unexpected error.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Insufficient memory.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Fewer filters were retrieved than requested.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_ENUM_OUT_OF_SYNC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Unexpected error.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>Fewer filters were retrieved than requested.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_ENUM_OUT_OF_SYNC</b>
-            </para>
-          </description>
-          <description>
-            <para>The enumerator has become invalid. For more information, see Remarks.</para>
-          </description>
-        </item>
+          <description>The enumerator has become invalid. For more information, see Remarks.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The calling application must use the Microsoft Win32 <b>CoTaskMemFree</b> function to free each <b>REGFILTER</b> pointer returned in the array. Do not free the <b>Name</b> member of the <b>REGFILTER</b> structure separately, because <code>IEnumRegFilters.Next</code> allocates memory for this string as part of the <b>REGFILTER</b> structure.</para>
-      <para>If the number of registered filters changes, the state of the enumerator will no longer be consistent with the state of the registry. As a result, this method will return VFW_E_ENUM_OUT_OF_SYNC. You should discard any data obtained from previous calls to the enumerator, because it might be invalid, and update the enumerator by calling the <see cref="Reset" /> method. You can then call the <code>Next</code> method safely.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IEnumRegFilters Interface" />
   </member>
   <member name="IEnumRegFilters.Reset">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IEnumRegFilters</b> interface is deprecated.</para>
-      <para>Resets the enumerator so that the next call to the <see cref="IEnumRegFilters.Next" /> method begins again at the first filter, if any.</para>
-    </summary>
-    <returns>
-      <para>Returns S_OK.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IEnumRegFilters Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IEnumRegFilters</b> interface is deprecated.</div>Resets the enumerator so that the next call to the <see cref="IEnumRegFilters.Next" /> method begins again at the first filter, if any.</summary>
+    <returns>Returns S_OK.</returns>
   </member>
   <member name="IEnumRegFilters.Skip">
     <summary>
-      <para>
-        <b>Note</b>  The <code>IEnumRegFilters</code> interface is deprecated.</para>
-      <para>This method is not currently implemented and returns E_NOTIMPL.</para>
-    </summary>
-    <param name="cFilters">
-      <para>Number of items to skip.</para>
-    </param>
-    <returns>
-      <para>Returns E_NOTIMPL.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IEnumRegFilters Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <code>IEnumRegFilters</code> interface is deprecated.</div>This method is not currently implemented and returns E_NOTIMPL.</summary>
+    <param name="cFilters">Number of items to skip.</param>
+    <returns>Returns E_NOTIMPL.</returns>
   </member>
   <member name="IEnumRegFilters">
     <summary>
-      <para>
-        <b>Note</b>  This interface has been deprecated. New applications should call <see cref="IFilterMapper2.EnumMatchingFilters" />, which enumerates monikers and returns a pointer to the <b>IEnumMoniker</b> interface.</para>
-      <para>This interface provides methods for enumerating registered filters. The <see cref="IFilterMapper.EnumMatchingFilters" /> method returns a pointer to this interface. However, <see cref="IFilterMapper" /> has been deprecated in favor of <see cref="IFilterMapper2" />.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/deprecated-interfaces">Deprecated Interfaces</seealso>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  This interface has been deprecated. New applications should call <see cref="IFilterMapper2.EnumMatchingFilters" />, which enumerates monikers and returns a pointer to the <b>IEnumMoniker</b> interface.</div>This interface provides methods for enumerating registered filters. The <see cref="IFilterMapper.EnumMatchingFilters" /> method returns a pointer to this interface. However, <see cref="IFilterMapper" /> has been deprecated in favor of <see cref="IFilterMapper2" />.</summary>
   </member>
 </doc>

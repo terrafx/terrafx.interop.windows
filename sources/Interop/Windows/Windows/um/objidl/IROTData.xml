@@ -3,35 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IROTData.GetComparisonData">
-    <summary>
-      <para>Retrieves data from a moniker that can be used to test the moniker for equality against another moniker.</para>
-    </summary>
-    <param name="pbData">
-      <para>A pointer to a buffer that receives the comparison data.</para>
-    </param>
-    <param name="cbMax">
-      <para>The length of the buffer specified in <i>pbData</i>.</para>
-    </param>
-    <param name="pcbData">
-      <para>A pointer to a variable that receives the length of the comparison data.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_OUTOFMEMORY and S_OK.</para>
-    </returns>
-    <remarks>
-      <para>The <b>GetComparisonData</b> method is primarily called by the running object table (ROT). The comparison data returned by the method is tested for binary equality against the comparison data returned by another moniker. The <i>pcbData</i> parameter enables the ROT to locate the end of the data retrieved.</para>
-      <h3>Notes to Implementers</h3>
-      <para>The comparison data that you return must uniquely identify the moniker, while still being as short as possible. The comparison data should include information about the internal state of the moniker, as well as the moniker's CLSID. For example, the comparison data for a file moniker would include the path name stored within the moniker, as well as the CLSID of the file moniker implementation. This makes it possible to distinguish two monikers that happen to store similar state information but are instances of different moniker classes.</para>
-      <para>The comparison data for a moniker cannot exceed 2048 bytes in length. For composite monikers, the total length of the comparison data for all of its components cannot exceed 2048 bytes; consequently, if your moniker can be a component within a composite moniker, the comparison data you return must be significantly less than 2048 bytes.</para>
-      <para>If your comparison data is longer than the value specified by the <i>cbMax</i> parameter, you must return an error. Note that when <b>GetComparisonData</b> is called on the components of a composite moniker, the value of <i>cbMax</i> becomes smaller for each moniker in sequence.</para>
-    </remarks>
-    <seealso cref="IROTData" />
+    <summary>Retrieves data from a moniker that can be used to test the moniker for equality against another moniker.</summary>
+    <param name="pbData">A pointer to a buffer that receives the comparison data.</param>
+    <param name="cbMax">The length of the buffer specified in <i>pbData</i>.</param>
+    <param name="pcbData">A pointer to a variable that receives the length of the comparison data.</param>
+    <returns>This method can return the standard return values E_OUTOFMEMORY and S_OK.</returns>
   </member>
   <member name="IROTData">
-    <summary>
-      <para>Implemented by monikers to enable the running object table (ROT) to compare monikers against each other.</para>
-    </summary>
-    <seealso cref="IMoniker" />
-    <seealso cref="IRunningObjectTable" />
+    <summary>Implemented by monikers to enable the running object table (ROT) to compare monikers against each other.</summary>
   </member>
 </doc>

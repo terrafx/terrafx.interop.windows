@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IEnumTfLatticeElements.Clone">
-    <summary>
-      <para>Creates a copy of the enumerator object.</para>
-    </summary>
-    <param name="ppEnum">
-      <para>Pointer to an <see cref="IEnumTfLatticeElements" /> interface pointer that receives the new enumerator.</para>
-    </param>
+    <summary>Creates a copy of the enumerator object.</summary>
+    <param name="ppEnum">Pointer to an <see cref="IEnumTfLatticeElements" /> interface pointer that receives the new enumerator.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,54 +12,53 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The method is not implemented.</para>
-          </description>
-        </item>
+          <description>The method is not implemented.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IEnumTfLatticeElements " />
   </member>
   <member name="IEnumTfLatticeElements.Next">
-    <summary>
-      <para>Obtains the specified number of elements in the enumeration sequence from the current position.</para>
-    </summary>
-    <param name="ulCount">
-      <para>Specifies the number of elements to obtain.</para>
-    </param>
+    <summary>Obtains the specified number of elements in the enumeration sequence from the current position.</summary>
+    <param name="ulCount">Specifies the number of elements to obtain.</param>
     <param name="rgsElements">
       <para>Pointer to an array of <see cref="TF_LMLATTELEMENT" /> structures that receives the requested data. This array must be at least <i>ulCount</i> elements in size.</para>
       <para>The caller must free the <b>bstrText</b> member of every structure obtained using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a> when it is no longer required.</para>
     </param>
-    <param name="pcFetched">
-      <para>Pointer to a ULONG value that receives the number of elements actually obtained. This value can be less than the number of items requested. This parameter can be <b>NULL</b>.</para>
-    </param>
+    <param name="pcFetched">Pointer to a ULONG value that receives the number of elements actually obtained. This value can be less than the number of items requested. This parameter can be <b>NULL</b>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -71,45 +66,48 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method reached the end of the enumeration before the specified number of elements could be obtained.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>The method reached the end of the enumeration before the specified number of elements could be obtained.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>rgsElements</i> is invalid.
-</description>
-        </item>
+            <i>rgsElements</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IEnumTfLatticeElements" />
-    <seealso cref="TF_LMLATTELEMENT " />
   </member>
   <member name="IEnumTfLatticeElements.Reset">
-    <summary>
-      <para>Resets the enumerator object by moving the current position to the beginning of the enumeration sequence.</para>
-    </summary>
+    <summary>Resets the enumerator object by moving the current position to the beginning of the enumeration sequence.</summary>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -117,26 +115,24 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IEnumTfLatticeElements.Skip">
-    <summary>
-      <para>Moves the current position forward in the enumeration sequence by the specified number of elements.</para>
-    </summary>
-    <param name="ulCount">
-      <para>Contains the number of elements to skip.</para>
-    </param>
+    <summary>Moves the current position forward in the enumeration sequence by the specified number of elements.</summary>
+    <param name="ulCount">Contains the number of elements to skip.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -144,32 +140,34 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>The method reached the end of the enumeration before the specified number of elements could be skipped.</para>
-          </description>
-        </item>
+          <description>The method reached the end of the enumeration before the specified number of elements could be skipped.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IEnumTfLatticeElements">
-    <summary>
-      <para>The <b>IEnumTfLatticeElements</b> interface is implemented by the TSF manager to provide an enumeration of lattice elements.</para>
-    </summary>
+    <summary>The <b>IEnumTfLatticeElements</b> interface is implemented by the TSF manager to provide an enumeration of lattice elements.</summary>
   </member>
 </doc>

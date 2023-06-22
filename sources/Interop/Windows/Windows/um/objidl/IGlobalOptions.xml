@@ -3,33 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IGlobalOptions.Query">
-    <summary>
-      <para>Queries the specified global property of the COM runtime.</para>
-    </summary>
-    <param name="dwProperty">
-      <para>The global property of the COM runtime. For a list of properties that can be set with this method, see <see cref="IGlobalOptions" />.</para>
-    </param>
+    <summary>Queries the specified global property of the COM runtime.</summary>
+    <param name="dwProperty">The global property of the COM runtime. For a list of properties that can be set with this method, see <see cref="IGlobalOptions" />.</param>
     <param name="pdwValue">
-      <para>The value of the property.<b>Important</b>  For the COMGLB_APPID property, this parameter receives a pointer to the AppID GUID.</para>
+      <para>The value of the property.<div><b>Important</b>  For the COMGLB_APPID property, this parameter receives a pointer to the AppID GUID.</div></para>
     </param>
-    <returns>
-      <para>The return value is S_OK if the property is queried successfully.</para>
-    </returns>
-    <seealso cref="IGlobalOptions" />
+    <returns>The return value is S_OK if the property is queried successfully.</returns>
   </member>
   <member name="IGlobalOptions.Set">
-    <summary>
-      <para>Sets the specified global property of the COM runtime.</para>
-    </summary>
-    <param name="dwProperty">
-      <para>The global property of the COM runtime. For a list of properties that can be set with this method, see <see cref="IGlobalOptions" />.</para>
-    </param>
+    <summary>Sets the specified global property of the COM runtime.</summary>
+    <param name="dwProperty">The global property of the COM runtime. For a list of properties that can be set with this method, see <see cref="IGlobalOptions" />.</param>
     <param name="dwValue">
-      <para>The value of the property.<b>Important</b>  For the COMGLB_APPID property, this parameter must specify a pointer to the APPID GUID.</para>
+      <para>The value of the property.<div><b>Important</b>  For the COMGLB_APPID property, this parameter must specify a pointer to the APPID GUID.</div></para>
     </param>
-    <returns>
-      <para>The return value is S_OK if the property was set successfully.</para>
-    </returns>
-    <seealso cref="IGlobalOptions" />
+    <returns>The return value is S_OK if the property was set successfully.</returns>
   </member>
 </doc>

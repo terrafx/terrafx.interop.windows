@@ -3,38 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_DRAW_INDEXED_ARGUMENTS">
-    <summary>
-      <para>Describes parameters for drawing indexed instances.</para>
-    </summary>
-    <remarks>
-      <para>The members of this structure serve the same purpose as the parameters of
-<see cref="DrawIndexedInstanced" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-12-structures">Core Structures</seealso>
+    <summary>Describes parameters for drawing indexed instances.</summary>
   </member>
   <member name="D3D12_DRAW_INDEXED_ARGUMENTS.IndexCountPerInstance">
-    <summary>
-      <para>The number of indices read from the index buffer for each instance.</para>
-    </summary>
+    <summary>The number of indices read from the index buffer for each instance.</summary>
   </member>
   <member name="D3D12_DRAW_INDEXED_ARGUMENTS.InstanceCount">
-    <summary>
-      <para>The number of instances to draw.</para>
-    </summary>
+    <summary>The number of instances to draw.</summary>
   </member>
   <member name="D3D12_DRAW_INDEXED_ARGUMENTS.StartIndexLocation">
-    <summary>
-      <para>The location of the first index read by the GPU from the index buffer.</para>
-    </summary>
+    <summary>The location of the first index read by the GPU from the index buffer.</summary>
   </member>
   <member name="D3D12_DRAW_INDEXED_ARGUMENTS.BaseVertexLocation">
-    <summary>
-      <para>A value added to each index before reading a vertex from the vertex buffer.</para>
-    </summary>
+    <summary>A value added to each index before reading a vertex from the vertex buffer.</summary>
   </member>
   <member name="D3D12_DRAW_INDEXED_ARGUMENTS.StartInstanceLocation">
-    <summary>
-      <para>A value added to each index before reading per-instance data from a vertex buffer.</para>
-    </summary>
+    <summary>A value added to each index before reading per-instance data from a vertex buffer.</summary>
   </member>
 </doc>

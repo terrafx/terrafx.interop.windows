@@ -3,28 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SecPkgContext_KeyingMaterialInfoA">
-    <summary>
-      <para>The <b>SecPkgContext_KeyingMaterialInfo</b> structure contains information about the exportable keying material in a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security context</a>.</para>
-    </summary>
+    <summary>The <b>SecPkgContext_KeyingMaterialInfo</b> structure contains information about the exportable keying material in a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security context</a>.</summary>
   </member>
   <member name="SecPkgContext_KeyingMaterialInfoA.cbLabel">
-    <summary>
-      <para>The length, in bytes, of the disambiguating ASCII label, including NUL terminator.</para>
-    </summary>
+    <summary>The length, in bytes, of the disambiguating ASCII label, including NUL terminator.</summary>
   </member>
   <member name="SecPkgContext_KeyingMaterialInfoA.pszLabel">
     <summary>
       <para>A NUL-terminated ASCII string. The NUL terminator will be removed by schannel before mixing in pszLabel.</para>
-      <para>IANA-registered labels should begin with "EXPORTER" to  avoid collisions with existing PRF labels. Labels beginning with "EXPERIMENTAL" may be used without registration.</para>
+      <para>IANA-registered labels should begin with "EXPORTER" to avoid collisions with existing PRF labels. Labels beginning with "EXPERIMENTAL" may be used without registration.</para>
     </summary>
   </member>
-  <member name="SecPkgContext_KeyingMaterialInfoA.cbContextValue">
-    <summary></summary>
-  </member>
+  <member name="SecPkgContext_KeyingMaterialInfoA.cbContextValue"></member>
   <member name="SecPkgContext_KeyingMaterialInfoA.pbContextValue">
-    <summary>
-      <para>The pointer to the application context. Must be <b>NULL</b> if <i>cbContextValue</i> is zero.</para>
-    </summary>
+    <summary>The pointer to the application context. Must be <b>NULL</b> if <i>cbContextValue</i> is zero.</summary>
   </member>
   <member name="SecPkgContext_KeyingMaterialInfoA.cbKeyingMaterial">
     <summary>

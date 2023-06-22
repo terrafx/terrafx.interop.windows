@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.FDICopy">
+    <summary>The <b>FDICopy</b> function extracts files from cabinets.</summary>
+    <param name="hfdi">A valid FDI context handle returned by the <see cref="FDICreate" /> function.</param>
+    <param name="pszCabinet">The name of the cabinet file, excluding any path information, from which to extract files. If a file is split over multiple cabinets, <b>FDICopy</b> allows for subsequent cabinets to be opened.</param>
+    <param name="pszCabPath">
+      <para>The pathname of the cabinet file, but not including the name of the file itself. For example, "C:\MyCabs".</para>
+      <para>The contents of <i>pszCabinet</i> are appended to <i>pszCabPath</i> to create the full pathname of the cabinet.</para>
+    </param>
+    <param name="flags">No flags are currently defined and this parameter should be set to zero.</param>
+    <param name="pfnfdin">Pointer to an application-defined callback notification function to update the application on the status of the decoder. The function should be declared using the <see cref="FNFDINOTIFY" /> macro.</param>
+    <param name="pfnfdid">Not currently used by FDI. This parameter should be set to <b>NULL</b>.</param>
+    <param name="pvUser">Pointer to an application-specified value to pass to the notification function.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>TRUE</b>; otherwise, <b>FALSE</b>.</para>
+      <para>Extended error information is provided in the <see cref="ERF" /> structure used to create the FDI context.</para>
+    </returns>
+  </member>
+  <member name="Windows.FDICreate">
+    <summary>The <b>FDICreate</b> function creates an FDI context.</summary>
+    <param name="pfnalloc">Pointer to an application-defined callback function to allocate memory. The function should be declared using the <see cref="FNALLOC" /> macro.</param>
+    <param name="pfnfree">Pointer to an application-defined callback function to free previously allocated memory. The function should be declared using the <see cref="FNFREE" /> macro.</param>
+    <param name="pfnopen">Pointer to an application-defined callback function to open a file. The function should be declared using the <see cref="FNOPEN" /> macro.</param>
+    <param name="pfnread">Pointer to an application-defined callback function to read data from a file. The function should be declared using the <see cref="FNREAD" /> macro.</param>
+    <param name="pfnwrite">Pointer to an application-defined callback function to write data to a file. The function should be declared using the <see cref="FNWRITE" /> macro.</param>
+    <param name="pfnclose">Pointer to an application-defined callback function to close a file. The function should be declared using the <see cref="FNCLOSE" /> macro.</param>
+    <param name="pfnseek">Pointer to an application-defined callback function to move a file pointer to the specified location. The function should be declared using the <see cref="FNSEEK" /> macro.</param>
+    <param name="cpuType">
+      <para>In the 16-bit version of FDI, specifies the CPU type and can be any of the following values.</para>
+      <div>
+        <b>Note</b>  Expressing the <b>cpuUNKNOWN</b> value is recommended.</div>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>cpuUNKNOWN</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>-1</term>
+              </listheader>
+            </list>
+          </description>
+          <description>FDI should determine the CPU type.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>cpu80286</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Only 80286 instructions can be used.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>cpu80386</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
+            </list>
+          </description>
+          <description>80386 instructions can be used.</description>
+        </listheader>
+      </list>
+    </param>
+    <param name="perf">Pointer to an <see cref="ERF" /> structure that receives the error information.</param>
+    <returns>
+      <para>If the function succeeds, it returns a non-<b>NULL</b> HFDI context pointer; otherwise, it returns <b>NULL</b>.</para>
+      <para>Extended error information is provided in the <see cref="ERF" /> structure.</para>
+    </returns>
+  </member>
+  <member name="Windows.FDIDestroy">
+    <summary>The <b>FDIDestroy</b> function deletes an open FDI context.</summary>
+    <param name="hfdi">A valid FDI context handle returned by the <see cref="FDICreate" /> function.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>TRUE</b>; otherwise, <b>FALSE</b>.</para>
+      <para>Extended error information is provided in the <see cref="ERF" /> structure used to create the FDI context.</para>
+    </returns>
+  </member>
+  <member name="Windows.FDIIsCabinet">
+    <summary>The <b>FDIIsCabinet</b> function determines whether a file is a cabinet and, if it is, returns information about it.</summary>
+    <param name="hfdi">A valid FDI context handle returned by <see cref="FDICreate" />.</param>
+    <param name="hf">An application-defined value to keep track of the opened file. This value must be of the same type as values used by the File I/O functions passed to <see cref="FDICreate" />.</param>
+    <param name="pfdici">Pointer to an <see cref="FDICABINETINFO" /> structure that receives the cabinet details, in the event the file is actually a cabinet.</param>
+    <returns>
+      <para>If the file is a cabinet, the function returns <b>TRUE</b> ; otherwise, <b>FALSE</b>.</para>
+      <para>Extended error information is provided in the <see cref="ERF" /> structure used to create the FDI context.</para>
+    </returns>
+  </member>
+  <member name="Windows.FDITruncateCabinet">
+    <summary>The <b>FDITruncateCabinet</b> function truncates a cabinet file starting at the specified folder number.</summary>
+    <param name="hfdi">A valid FDI context handle returned by the <see cref="FDICreate" /> function.</param>
+    <param name="pszCabinetName">The full cabinet filename.</param>
+    <param name="iFolderToDelete">The index of the first folder to delete.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>TRUE</b>; otherwise, <b>FALSE</b>.</para>
+      <para>Extended error information is provided in the <see cref="ERF" /> structure used to create the FDI context.</para>
+    </returns>
+  </member>
+  <member name="Windows.FNALLOC">
+    <summary>The <b>FNALLOC</b> provides the declaration for the application-defined callback function to allocate memory in an FDI context.</summary>
+    <param name="fn">The number of bytes to allocate.</param>
+  </member>
+  <member name="Windows.FNCLOSE">
+    <summary>The <b>FNCLOSE</b> macro provides the declaration for the application-defined callback function to close a file in an FDI context.</summary>
+    <param name="fn">An application-defined value used to identify the open file.</param>
+  </member>
+  <member name="Windows.FNFDINOTIFY">
+    <summary>The <b>FNFDINOTIFY</b> macro provides the declaration for the application-defined callback notification function to update the application on the status of the decoder.</summary>
+    <param name="fn">
+      <para>The type of notification.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>fdintCABINET_INFO</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00</term>
+              </listheader>
+            </list>
+          </description>
+          <description>General information about the cabinet.<para>When this value is set, the <see cref="FDINOTIFICATION" /> structure is populated with the following information:</para><list type="bullet"><item><description><b>psz1</b> will point to the name of the next cabinet (excluding path information)</description></item><item><description><b>psz2</b> will point to the name of the next disk</description></item><item><description><b>psz3</b> will point to the cabinet path name</description></item><item><description><b>setID</b> will equal the set ID of the current cabinet</description></item><item><description><b>iCabinet</b> will equal the cabinet number within the cabinet set (0 for the first cabinet, 1 for the second cabinet, etc.)</description></item></list>The application should return 0 to indicate success, or -1 to indicate failure, which will abort FDICopy. An <b>fdintCABINET_INFO</b> notification will be provided once for each cabinet opened by <see cref="FDICopy" />; this includes continuation cabinets opened due to files spanning cabinet boundaries.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>fdintPARTIAL_FILE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x01</term>
+              </listheader>
+            </list>
+          </description>
+          <description>First file in the cabinet is a continuation of a file from previous cabinet.<para>When this value is set, the <see cref="FDINOTIFICATION" /> structure is populated with the following information:</para><list type="bullet"><item><description><b>psz1</b> will point to the name of the file continued from a previous cabinet</description></item><item><description><b>psz2</b> will point to the name of the cabinet on which the first segment of the file exists</description></item><item><description><b>psz3</b> will point to the name of the disk on which the first segment of the file exists</description></item></list>The <b>fdintPARTIAL_FILE</b> notification is called for files at the beginning of a cabinet that have continued from a previous cabinet. This notification will occur only when <see cref="FDICopy" /> is started on the second or subsequent cabinet in a series, which has files continued from a previous cabinet. The application should return 0 for success, or -1 to indicate failure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>fdintCOPY_FILE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x02</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Information identifying the file to be copied.<para>When this value is set, the <see cref="FDINOTIFICATION" /> structure is populated with the following information:</para><list type="bullet"><item><description><b>psz1</b> will point to the name of a file in the cabinet; cb will equal the uncompressed size of the file</description></item><item><description><b>date</b> will equal the file's 16-bit MS-DOS date</description></item><item><description><b>time</b> will equal the file's 16-bit MS-DOS time</description></item><item><description><b>attribs</b> will equal the file's 16-bit MS-DOS attributes</description></item></list>The application should return one of three values; 0 to skip (i.e. not copy) the file; -1 (negative one) to abort <see cref="FDICopy" />; or a nonzero (and non-negative-one) file handle that indicates where to write the file. The file handle must be compatible with the <see cref="PFNCLOSE" /> function supplied to <see cref="FDICreate" />. The <b>fdintCOPY_FILE</b> notification is called for each file that starts within the current cabinet, providing the opportunity for the application to request that the file be copied or skipped.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>fdintCLOSE_FILE_INFO</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x03</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Close the file, set relevant information.<para>When this value is set, the <see cref="FDINOTIFICATION" /> structure is populated with the following information:</para><list type="bullet"><item><description><b>psz1</b> will point to the name of a file in the cabinet</description></item><item><description><b>hf</b> will be a file handle (which originated from <b>fdintCOPY_FILE</b>)</description></item><item><description><b>date</b> date will equal the file's 16-bit MS-DOS date</description></item><item><description><b>time</b> time will equal the file's 16-bit MS-DOS time</description></item><item><description><b>attribs</b> attributes will equal the file's 16-bit MS-DOS attributes (minus the _A_EXEC bit)</description></item><item><description><b>cb</b> will equal either 0 or 1, indicating whether the file should be executed after extract (1), or not (0)</description></item></list>It is the responsibility of the application to execute the file if <b>cb</b> equals 1. The <b>fdintCLOSE_FILE_INFO</b> notification is called after all of the data has been written to a target file. The application must close the file (using the provided <b>hf</b> handle), and set the file date, time, and attributes. The application should return <b>TRUE</b> for success, and <b>FALSE</b> or -1 to abort <see cref="FDICopy" />. FDI assumes that the target file was closed, even if this callback returns failure; FDI will not attempt to use <see cref="PFNCLOSE" /> to close the file.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>fdintNEXT_CABINET</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x04</term>
+              </listheader>
+            </list>
+          </description>
+          <description>File continued to next cabinet.<para>When this value is set, the <see cref="FDINOTIFICATION" /> structure is populated with the following information:</para><list type="bullet"><item><description><b>psz1</b> will point to the name of the next cabinet on which the current file is continued</description></item><item><description><b>psz2</b> will be a file handle (which originated from <b>fdintCOPY_FILE</b>)</description></item><item><description><b>psz3</b> will point to the cabinet path information</description></item><item><description><b>fdie</b> will equal a success or error value</description></item></list>This notification is called only if <b>fdintCOPY_FILE</b> is instructed to copy a file, which is continued from a subsequent cabinet, to the current cabinet . Since it is possible for the application to modify the cabinet name, it is important that the cabinet path name, indicated by <b>psz3</b>, be validated before it is returned. Additionally, the application should ensure that the cabinet exists and is readable before returning; if necessary, the application should issue a disk change prompt to confirm.<para>When this function returns to FDI, FDI will verify that the <b>setID</b> and <b>iCabinet</b> fields of the supplied cabinet match the expected values for that cabinet. If not, FDI will continue to send <b>fdintNEXT_CABINET</b> notification messages with the <i>fdie</i> field set to <b>FDIERROR_WRONG_CABINET</b>, until the correct cabinet file is specified, or until this function returns -1 and aborts the <see cref="FDICopy" /> call. If, after returning from this function, the cabinet file is not present, readable, or has been damaged, then the <i>fdie</i> field will equal one of the following values:</para><list type="bullet"><item><description><b>FDIERROR_CABINET_NOT_FOUND</b></description></item><item><description><b>FDIERROR_NOT_A_CABINET</b></description></item><item><description><b>FDIERROR_UNKNOWN_CABINET_VERSION</b></description></item><item><description><b>FDIERROR_CORRUPT_CABINET</b></description></item><item><description><b>FDIERROR_BAD_COMPR_TYPE</b></description></item><item><description><b>FDIERROR_RESERVE_MISMATCH</b></description></item><item><description><b>FDIERROR_WRONG_CABINET</b></description></item></list>If there was no error, <i>fdie</i> will equal FDIERROR_NONE. The application should return 0 to indicate success, or -1 to indicate failure, which will abort <see cref="FDICopy" />.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>fdintENUMERATE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x05</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Enumeration status.</description>
+        </listheader>
+      </list>  ## -see-also<para><see cref="FDICopy" /></para><para><see cref="FDINOTIFICATION" /></para></param>
+  </member>
+  <member name="Windows.FNFREE">
+    <summary>The <b>FNFREE</b> macro provides the declaration for the application-defined callback function to free previously allocated memory in an FDI context.</summary>
+    <param name="fn">Pointer to the allocated memory block to free.</param>
+  </member>
+  <member name="Windows.FNOPEN">
+    <summary>The <b>FNOPEN</b> macro provides the declaration for the application-defined callback function to open a file in an FDI context.</summary>
+    <param name="fn">The name of the file.</param>
+  </member>
+  <member name="Windows.FNREAD">
+    <summary>The <b>FNREAD</b> macro provides the declaration for the application-defined callback function to read data from a file in an FDI context.</summary>
+    <param name="fn">An application-defined value used to identify the open file.</param>
+  </member>
+  <member name="Windows.FNSEEK">
+    <summary>The <b>FNSEEK</b> macro provides the declaration for the application-defined callback function to move a file pointer to the specified location in an FDI context.</summary>
+    <param name="fn">An application-defined value used to identify the open file.</param>
+  </member>
+  <member name="Windows.FNWRITE">
+    <summary>The <b>FNWRITE</b> macro provides the declaration for the application-defined callback function to write data to a file in an FDI context.</summary>
+    <param name="fn">An application-defined value used to identify the open file.</param>
+  </member>
+</doc>

@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="OLECMD">
-    <summary>
-      <para>Associates command flags from the <see cref="OLECMDF" /> enumeration with a command identifier through a call to <see cref="IOleCommandTarget.QueryStatus" />.</para>
-    </summary>
-    <seealso cref="IOleCommandTarget.QueryStatus" />
-    <seealso cref="OLECMDF" />
+    <summary>Associates command flags from the <see cref="OLECMDF" /> enumeration with a command identifier through a call to <see cref="IOleCommandTarget.QueryStatus" />.</summary>
   </member>
   <member name="OLECMD.cmdID">
-    <summary>
-      <para>A command identifier; taken from the <see cref="OLECMDID" /> enumeration.</para>
-    </summary>
+    <summary>A command identifier; taken from the <see cref="OLECMDID" /> enumeration.</summary>
   </member>
   <member name="OLECMD.cmdf">
-    <summary>
-      <para>Flags associated with <b>cmdID</b>; taken from the <see cref="OLECMDF" /> enumeration.</para>
-    </summary>
+    <summary>Flags associated with <b>cmdID</b>; taken from the <see cref="OLECMDF" /> enumeration.</summary>
   </member>
 </doc>

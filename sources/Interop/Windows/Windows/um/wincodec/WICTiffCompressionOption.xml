@@ -3,51 +3,31 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICTiffCompressionOption">
-    <summary>
-      <para>Specifies the Tagged Image File Format (TIFF) compression options.</para>
-    </summary>
+    <summary>Specifies the Tagged Image File Format (TIFF) compression options.</summary>
   </member>
   <member name="WICTiffCompressionOption.WICTiffCompressionDontCare">
-    <summary>
-      <para>Indicates a suitable compression algorithm based on the image and pixel format.</para>
-    </summary>
+    <summary>Indicates a suitable compression algorithm based on the image and pixel format.</summary>
   </member>
   <member name="WICTiffCompressionOption.WICTiffCompressionNone">
-    <summary>
-      <para>Indicates no compression.</para>
-    </summary>
+    <summary>Indicates no compression.</summary>
   </member>
   <member name="WICTiffCompressionOption.WICTiffCompressionCCITT3">
-    <summary>
-      <para>Indicates a CCITT3 compression algorithm. This algorithm is only valid for 1bpp pixel formats.</para>
-    </summary>
+    <summary>Indicates a CCITT3 compression algorithm. This algorithm is only valid for 1bpp pixel formats.</summary>
   </member>
   <member name="WICTiffCompressionOption.WICTiffCompressionCCITT4">
-    <summary>
-      <para>Indicates a CCITT4 compression algorithm. This algorithm is only valid for 1bpp pixel formats.</para>
-    </summary>
+    <summary>Indicates a CCITT4 compression algorithm. This algorithm is only valid for 1bpp pixel formats.</summary>
   </member>
   <member name="WICTiffCompressionOption.WICTiffCompressionLZW">
-    <summary>
-      <para>Indicates a LZW compression algorithm.</para>
-    </summary>
+    <summary>Indicates a LZW compression algorithm.</summary>
   </member>
   <member name="WICTiffCompressionOption.WICTiffCompressionRLE">
-    <summary>
-      <para>Indicates a RLE compression algorithm. This algorithm is only valid for 1bpp pixel formats.</para>
-    </summary>
+    <summary>Indicates a RLE compression algorithm. This algorithm is only valid for 1bpp pixel formats.</summary>
   </member>
   <member name="WICTiffCompressionOption.WICTiffCompressionZIP">
-    <summary>
-      <para>Indicates a ZIP compression algorithm.</para>
-    </summary>
+    <summary>Indicates a ZIP compression algorithm.</summary>
   </member>
   <member name="WICTiffCompressionOption.WICTiffCompressionLZWHDifferencing">
-    <summary>
-      <para>Indicates an LZWH differencing algorithm.</para>
-    </summary>
+    <summary>Indicates an LZWH differencing algorithm.</summary>
   </member>
-  <member name="WICTiffCompressionOption.WICTIFFCOMPRESSIONOPTION_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICTiffCompressionOption.WICTIFFCOMPRESSIONOPTION_FORCE_DWORD"></member>
 </doc>

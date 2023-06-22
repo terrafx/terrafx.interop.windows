@@ -3,81 +3,49 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_CHAIN_PARA">
-    <summary>
-      <para>The <b>CERT_CHAIN_PARA</b> structure establishes the searching and matching criteria to be used in building a certificate chain.</para>
-    </summary>
-    <remarks>
-      <para>The following remarks apply when checking for strong signatures.</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <para>Set the <b>pStrongSignPara</b> member to check for strong signatures when using the <see cref="CertGetCertificateChain" /> or <see cref="CertSelectCertificateChains" /> function.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>If a certificate without a strong signature is found in the chain, the <b>CERT_TRUST_HAS_WEAK_SIGNATURE</b> and <b>CERT_TRUST_IS_NOT_SIGNATURE_VALID</b> errors are set in the <b>dwErrorStatus</b> field of the <see cref="CERT_TRUST_STATUS" /> structure. The <i>ppChainContext</i> parameter of the <see cref="CertGetCertificateChain" /> function and the <i>pprgpSelection</i> parameter of the <see cref="CertSelectCertificateChains" /> function point to a <see cref="CERT_CHAIN_CONTEXT" /> structure which, in turn, points to the  <b>CERT_TRUST_STATUS</b> structure.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>If the chain is strong signed, the public key in the end certificate is checked to determine whether it  satisfies the minimum public key length requirements for a strong signature.  If the condition is not satisfied, the <b>CERT_TRUST_HAS_WEAK_SIGNATURE</b> and <b>CERT_TRUST_IS_NOT_SIGNATURE_VALID</b> errors are set in the <b>dwErrorStatus</b> field of the <see cref="CERT_TRUST_STATUS" /> structure. Set the <b>CERT_CHAIN_STRONG_SIGN_DISABLE_END_CHECK_FLAG</b> value in the <b>dwStrongSignFlags</b> member to disable this check.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>If the <b>CERT_STRONG_SIGN_ENABLE_CRL_CHECK</b> or <b>CERT_STRONG_SIGN_ENABLE_OCSP_CHECK</b> flags are set in the <see cref="CERT_STRONG_SIGN_SERIALIZED_INFO" /> structure referenced by the <see cref="CERT_STRONG_SIGN_PARA" /> structure pointed to by the <b>pStrongSignPara</b> member, and a CRL or OCSP response is found without a strong signature, the CRL or OCSP response will be treated as being offline. That is, the <b>CERT_TRUST_IS_OFFLINE_REVOCATION</b> and <b>CERT_TRUST_REVOCATION_STATUS_UNKNOWN</b> errors are set in the <b>dwErrorStatus</b> field of the <see cref="CERT_TRUST_STATUS" /> structure. Also, the <b>dwRevocationResult</b> member of the <see cref="CERT_REVOCATION_INFO" /> structure is set to <b>NTE_BAD_ALGID</b>.</para>
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="CERT_USAGE_MATCH" />
+    <summary>The <b>CERT_CHAIN_PARA</b> structure establishes the searching and matching criteria to be used in building a certificate chain.</summary>
   </member>
   <member name="CERT_CHAIN_PARA.cbSize">
-    <summary>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="CERT_CHAIN_PARA.RequestedUsage">
-    <summary>
-      <para>Structure indicating the kind of matching necessary to find issuer certificates for building a certificate chain. The structure pointed to indicates whether AND or OR logic is to be used in the matching process. The structure also includes an array of OIDs to be matched.</para>
-    </summary>
+    <summary>Structure indicating the kind of matching necessary to find issuer certificates for building a certificate chain. The structure pointed to indicates whether AND or OR logic is to be used in the matching process. The structure also includes an array of OIDs to be matched.</summary>
   </member>
   <member name="CERT_CHAIN_PARA.RequestedIssuancePolicy">
     <summary>
       <para>Optional structure that indicates the kind of issuance policy constraint matching that applies when building a certificate chain. The structure pointed to indicates whether AND or OR logic is to be used in the matching process. The structure also includes an array of OIDs to be matched.</para>
-      <para>
-        <b>Note</b>  This member can be used only if <b>CERT_CHAIN_PARA_HAS_EXTRA_FIELDS</b> is defined by using the <b>#define</b> directive before including Wincrypt.h. If this value is defined, the application must zero all unused fields.</para>
+      <div>
+        <b>Note</b>  This member can be used only if <b>CERT_CHAIN_PARA_HAS_EXTRA_FIELDS</b> is defined by using the <b>#define</b> directive before including Wincrypt.h. If this value is defined, the application must zero all unused fields.</div>
     </summary>
   </member>
   <member name="CERT_CHAIN_PARA.dwUrlRetrievalTimeout">
     <summary>
       <para>Optional time, in milliseconds, before revocation checking times out. This member is optional.</para>
-      <para>
-        <b>Note</b>  This member can be used only if <b>CERT_CHAIN_PARA_HAS_EXTRA_FIELDS</b> is defined by using the <b>#define</b> directive before including Wincrypt.h. If this value is defined, the application must zero all unused fields.</para>
+      <div>
+        <b>Note</b>  This member can be used only if <b>CERT_CHAIN_PARA_HAS_EXTRA_FIELDS</b> is defined by using the <b>#define</b> directive before including Wincrypt.h. If this value is defined, the application must zero all unused fields.</div>
     </summary>
   </member>
   <member name="CERT_CHAIN_PARA.fCheckRevocationFreshnessTime">
     <summary>
       <para>Optional member. When this flag is <b>TRUE</b>, an attempt is made to retrieve a new CRL if this update is greater than or equal to the current system time minus the <b>dwRevocationFreshnessTime</b> value. If this flag is not set, the CRL's next update time is used.</para>
-      <para>
-        <b>Note</b>  This member can be used only if <b>CERT_CHAIN_PARA_HAS_EXTRA_FIELDS</b> is defined by using the <b>#define</b> directive before including Wincrypt.h. If this value is defined, the application must zero all unused fields.</para>
+      <div>
+        <b>Note</b>  This member can be used only if <b>CERT_CHAIN_PARA_HAS_EXTRA_FIELDS</b> is defined by using the <b>#define</b> directive before including Wincrypt.h. If this value is defined, the application must zero all unused fields.</div>
     </summary>
   </member>
   <member name="CERT_CHAIN_PARA.dwRevocationFreshnessTime">
     <summary>
       <para>The current time, in seconds, minus the CRL's update time of all elements checked.</para>
-      <para>
-        <b>Note</b>  This member can be used only if <b>CERT_CHAIN_PARA_HAS_EXTRA_FIELDS</b> is defined by using the <b>#define</b> directive before including Wincrypt.h. If this value is defined, the application must zero all unused fields.</para>
+      <div>
+        <b>Note</b>  This member can be used only if <b>CERT_CHAIN_PARA_HAS_EXTRA_FIELDS</b> is defined by using the <b>#define</b> directive before including Wincrypt.h. If this value is defined, the application must zero all unused fields.</div>
     </summary>
   </member>
   <member name="CERT_CHAIN_PARA.pftCacheResync">
     <summary>
-      <para>Optional member. When set to a non-<b>NULL</b>  value, information cached before  the time specified is considered to be not valid and cache resynchronization is performed.</para>
+      <para>Optional member. When set to a non-<b>NULL</b> value, information cached before the time specified is considered to be not valid and cache resynchronization is performed.</para>
       <para>
         <b>Windows Vista:  </b>Support for this member begins.</para>
-      <para>
-        <b>Note</b>  This member can be used only if <b>CERT_CHAIN_PARA_HAS_EXTRA_FIELDS</b> is defined by using the <b>#define</b> directive before including Wincrypt.h. If this value is defined, the application must zero all unused fields.</para>
+      <div>
+        <b>Note</b>  This member can be used only if <b>CERT_CHAIN_PARA_HAS_EXTRA_FIELDS</b> is defined by using the <b>#define</b> directive before including Wincrypt.h. If this value is defined, the application must zero all unused fields.</div>
     </summary>
   </member>
   <member name="CERT_CHAIN_PARA.pStrongSignPara">
@@ -85,8 +53,8 @@
       <para>Optional. Specify a pointer to a <see cref="CERT_STRONG_SIGN_PARA" /> structure to enable strong signature checking.</para>
       <para>
         <b>Windows 8 and Windows Server 2012:  </b>Support for this member begins.</para>
-      <para>
-        <b>Note</b>  This member can be used only if <b>CERT_CHAIN_PARA_HAS_EXTRA_FIELDS</b> is defined by using the <b>#define</b> directive before including Wincrypt.h. If this value is defined, the application must zero all unused fields.</para>
+      <div>
+        <b>Note</b>  This member can be used only if <b>CERT_CHAIN_PARA_HAS_EXTRA_FIELDS</b> is defined by using the <b>#define</b> directive before including Wincrypt.h. If this value is defined, the application must zero all unused fields.</div>
     </summary>
   </member>
   <member name="CERT_CHAIN_PARA.dwStrongSignFlags">
@@ -97,28 +65,21 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_CHAIN_STRONG_SIGN_DISABLE_END_CHECK_FLAG</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If the chain is strong signed, the public key in the end certificate will be checked to verify whether it satisfies the minimum public key length requirements for a strong signature. You can specify <b>CERT_CHAIN_STRONG_SIGN_DISABLE_END_CHECK_FLAG</b> to disable default checking.</para>
-          </description>
-        </item>
-      </list>
-      <para>
-        <b>Windows 8 and Windows Server 2012:  </b>Support for this property begins.</para>
-      <para>
-        <b>Note</b>  This member can be used only if <b>CERT_CHAIN_PARA_HAS_EXTRA_FIELDS</b> is defined by using the <b>#define</b> directive before including Wincrypt.h. If this value is defined, the application must zero all unused fields.</para>
-    </summary>
+          <description>If the chain is strong signed, the public key in the end certificate will be checked to verify whether it satisfies the minimum public key length requirements for a strong signature. You can specify <b>CERT_CHAIN_STRONG_SIGN_DISABLE_END_CHECK_FLAG</b> to disable default checking.</description>
+        </listheader>
+      </list> <para><b>Windows 8 and Windows Server 2012:  </b>Support for this property begins.</para><div><b>Note</b>  This member can be used only if <b>CERT_CHAIN_PARA_HAS_EXTRA_FIELDS</b> is defined by using the <b>#define</b> directive before including Wincrypt.h. If this value is defined, the application must zero all unused fields.</div></summary>
   </member>
 </doc>

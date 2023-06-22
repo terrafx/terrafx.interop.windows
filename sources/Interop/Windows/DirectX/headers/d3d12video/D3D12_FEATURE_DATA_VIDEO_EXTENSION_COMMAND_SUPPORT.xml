@@ -3,38 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_SUPPORT">
-    <summary>
-      <para>Provides data for calls to <see cref="ID3D12VideoDevice.CheckFeatureSupport" /> when the feature specified is <see cref="D3D12_FEATURE_VIDEO_EXTENSION_COMMAND_SUPPORT" />. Retrieves video extension command support using command-defined input and output structures.</para>
-    </summary>
+    <summary>Provides data for calls to <see cref="ID3D12VideoDevice.CheckFeatureSupport" /> when the feature specified is <see cref="D3D12_FEATURE_VIDEO_EXTENSION_COMMAND_SUPPORT" />. Retrieves video extension command support using command-defined input and output structures.</summary>
   </member>
   <member name="D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_SUPPORT.NodeIndex">
-    <summary>
-      <para>In multi-adapter operation, this indicates which physical adapter of the device this operation applies to.</para>
-    </summary>
+    <summary>In multi-adapter operation, this indicates which physical adapter of the device this operation applies to.</summary>
   </member>
   <member name="D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_SUPPORT.CommandId">
-    <summary>
-      <para>The unique identifier for the video extension command for which support is queried.</para>
-    </summary>
+    <summary>The unique identifier for the video extension command for which support is queried.</summary>
   </member>
   <member name="D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_SUPPORT.pInputData">
-    <summary>
-      <para>Input data for the capability query allocated by the caller with a size of <i>InputDataSizeInBytes</i>.  This struct is enumerable as the <see cref="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE_CAPS_INPUT" /> parameter stage.</para>
-    </summary>
+    <summary>Input data for the capability query allocated by the caller with a size of <i>InputDataSizeInBytes</i>. This struct is enumerable as the <see cref="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE_CAPS_INPUT" /> parameter stage.</summary>
   </member>
   <member name="D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_SUPPORT.InputDataSizeInBytes">
-    <summary>
-      <para>The byte size of the input data allocation.</para>
-    </summary>
+    <summary>The byte size of the input data allocation.</summary>
   </member>
   <member name="D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_SUPPORT.pOutputData">
-    <summary>
-      <para>Output data for the capability query allocated by the caller with a size of <i>OutputDataSizeInBytes</i>.  This struct is enumerable as the <see cref="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE_CAPS_OUTPUT" /> parameter stage.</para>
-    </summary>
+    <summary>Output data for the capability query allocated by the caller with a size of <i>OutputDataSizeInBytes</i>. This struct is enumerable as the <see cref="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE_CAPS_OUTPUT" /> parameter stage.</summary>
   </member>
   <member name="D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_SUPPORT.OutputDataSizeInBytes">
-    <summary>
-      <para>The byte size of the output data allocation.</para>
-    </summary>
+    <summary>The byte size of the output data allocation.</summary>
   </member>
 </doc>

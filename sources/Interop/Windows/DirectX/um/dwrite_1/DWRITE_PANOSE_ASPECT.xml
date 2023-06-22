@@ -3,59 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_PANOSE_ASPECT">
-    <summary>
-      <para>The <b>DWRITE_PANOSE_ASPECT</b> enumeration contains values that specify the ratio between the width and height of the character face.</para>
-    </summary>
-    <seealso cref="DWRITE_PANOSE" />
+    <summary>The <b>DWRITE_PANOSE_ASPECT</b> enumeration contains values that specify the ratio between the width and height of the character face.</summary>
   </member>
   <member name="DWRITE_PANOSE_ASPECT.DWRITE_PANOSE_ASPECT_ANY">
-    <summary>
-      <para>Any aspect.</para>
-    </summary>
+    <summary>Any aspect.</summary>
   </member>
   <member name="DWRITE_PANOSE_ASPECT.DWRITE_PANOSE_ASPECT_NO_FIT">
-    <summary>
-      <para>No fit for aspect.</para>
-    </summary>
+    <summary>No fit for aspect.</summary>
   </member>
   <member name="DWRITE_PANOSE_ASPECT.DWRITE_PANOSE_ASPECT_SUPER_CONDENSED">
-    <summary>
-      <para>Super condensed aspect.</para>
-    </summary>
+    <summary>Super condensed aspect.</summary>
   </member>
   <member name="DWRITE_PANOSE_ASPECT.DWRITE_PANOSE_ASPECT_VERY_CONDENSED">
-    <summary>
-      <para>Very condensed aspect.</para>
-    </summary>
+    <summary>Very condensed aspect.</summary>
   </member>
   <member name="DWRITE_PANOSE_ASPECT.DWRITE_PANOSE_ASPECT_CONDENSED">
-    <summary>
-      <para>Condensed aspect.</para>
-    </summary>
+    <summary>Condensed aspect.</summary>
   </member>
   <member name="DWRITE_PANOSE_ASPECT.DWRITE_PANOSE_ASPECT_NORMAL">
-    <summary>
-      <para>Normal aspect.</para>
-    </summary>
+    <summary>Normal aspect.</summary>
   </member>
   <member name="DWRITE_PANOSE_ASPECT.DWRITE_PANOSE_ASPECT_EXTENDED">
-    <summary>
-      <para>Extended aspect.</para>
-    </summary>
+    <summary>Extended aspect.</summary>
   </member>
   <member name="DWRITE_PANOSE_ASPECT.DWRITE_PANOSE_ASPECT_VERY_EXTENDED">
-    <summary>
-      <para>Very extended aspect.</para>
-    </summary>
+    <summary>Very extended aspect.</summary>
   </member>
   <member name="DWRITE_PANOSE_ASPECT.DWRITE_PANOSE_ASPECT_SUPER_EXTENDED">
-    <summary>
-      <para>Super extended aspect.</para>
-    </summary>
+    <summary>Super extended aspect.</summary>
   </member>
   <member name="DWRITE_PANOSE_ASPECT.DWRITE_PANOSE_ASPECT_MONOSPACED">
-    <summary>
-      <para>Monospace aspect.</para>
-    </summary>
+    <summary>Monospace aspect.</summary>
   </member>
 </doc>

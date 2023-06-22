@@ -3,33 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NL_ROUTE_ORIGIN">
-    <summary>
-      <para>The NL_ROUTE_ORIGIN enumeration type defines the origin of the IP route.</para>
-    </summary>
+    <summary>The NL_ROUTE_ORIGIN enumeration type defines the origin of the IP route.</summary>
   </member>
   <member name="NL_ROUTE_ORIGIN.NlroManual">
-    <summary>
-      <para>The route is a result of manual configuration.</para>
-    </summary>
+    <summary>The route is a result of manual configuration.</summary>
   </member>
   <member name="NL_ROUTE_ORIGIN.NlroWellKnown">
-    <summary>
-      <para>The route is a well-known route.</para>
-    </summary>
+    <summary>The route is a well-known route.</summary>
   </member>
   <member name="NL_ROUTE_ORIGIN.NlroDHCP">
-    <summary>
-      <para>The route is a result of DHCP configuration.</para>
-    </summary>
+    <summary>The route is a result of DHCP configuration.</summary>
   </member>
   <member name="NL_ROUTE_ORIGIN.NlroRouterAdvertisement">
-    <summary>
-      <para>The route is a result of router advertisement.</para>
-    </summary>
+    <summary>The route is a result of router advertisement.</summary>
   </member>
   <member name="NL_ROUTE_ORIGIN.Nlro6to4">
-    <summary>
-      <para>The route is a result of 6to4 tunneling.</para>
-    </summary>
+    <summary>The route is a result of 6to4 tunneling.</summary>
   </member>
 </doc>

@@ -3,98 +3,38 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDCompositionColorMatrixEffect.SetAlphaMode">
-    <summary>
-      <para>Sets the alpha mode of the output for the color matrix effect.</para>
-    </summary>
-    <param name="mode">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/color-matrix">D2D1_COLORMATRIX_ALPHA_MODE</a></b></para>
-      <para>The alpha mode of the output for the color matrix effect.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionColorMatrixEffect" />
+    <summary>Sets the alpha mode of the output for the color matrix effect.</summary>
+    <param name="mode">The alpha mode of the output for the color matrix effect.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionColorMatrixEffect.SetClampOutput">
-    <summary>
-      <para>Specifies whether the effect clamps color values to between 0 and 1 before the effects passes the values to the next effect in the chain.</para>
-    </summary>
-    <param name="clamp">
-      <para>Type: <b>BOOL</b></para>
-      <para>A boolean value indicating whether the effect clamps color values to between 0 and 1 before the effects passes the values to the next effect in the chain.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionColorMatrixEffect" />
+    <summary>Specifies whether the effect clamps color values to between 0 and 1 before the effects passes the values to the next effect in the chain.</summary>
+    <param name="clamp">A boolean value indicating whether the effect clamps color values to between 0 and 1 before the effects passes the values to the next effect in the chain.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionColorMatrixEffect.SetMatrix">
-    <summary>
-      <para>Sets the matrix used by the effect to multiply the RGBA values of the image.</para>
-    </summary>
+    <summary>Sets the matrix used by the effect to multiply the RGBA values of the image.</summary>
     <param name="matrix">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-5x4-f">D2D1_MATRIX_5X4_F</a></b></para>
       <para>The matrix used by the effect to multiply the RGBA values of the image. The matrix is column major and is applied as shown in the following equation:</para>
-      <para>
-        <img alt="Matrix equation" src="https://docs.microsoft.com/windows/win32/api/dcompmages/color_matrix_formula.png" />
-      </para>
+      <img alt="Matrix equation" src="https://docs.microsoft.com/windows/win32/api/dcomp/images/color_matrix_formula.png" />
     </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionColorMatrixEffect" />
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionColorMatrixEffect.SetMatrixElement">
-    <summary>
-      <para>Sets an element of the color matrix.</para>
-    </summary>
-    <param name="row">
-      <para>Type: <b>int</b></para>
-      <para>The row of the element.</para>
-    </param>
-    <param name="column">
-      <para>Type: <b>int</b></para>
-      <para>The column of the element.</para>
-    </param>
-    <param name="value">
-      <para>Type: <b>float</b></para>
-      <para>The new value of the element.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionColorMatrixEffect" />
+    <summary>Sets an element of the color matrix.</summary>
+    <param name="row">The row of the element.</param>
+    <param name="column">The column of the element.</param>
+    <param name="value">The new value of the element.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionColorMatrixEffect.SetMatrixElement">
-    <summary>
-      <para>Sets an element of the color matrix.</para>
-    </summary>
-    <param name="row">
-      <para>Type: <b>int</b></para>
-      <para>The row of the element.</para>
-    </param>
-    <param name="column">
-      <para>Type: <b>int</b></para>
-      <para>The column of the element.</para>
-    </param>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the element value changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionColorMatrixEffect" />
+    <summary>Sets an element of the color matrix.</summary>
+    <param name="row">The row of the element.</param>
+    <param name="column">The column of the element.</param>
+    <param name="animation">An animation that represents how the element value changes over time. This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionColorMatrixEffect">
-    <summary>
-      <para>The color matrix effect alters the RGBA values of a bitmap.</para>
-    </summary>
-    <seealso cref="IDCompositionFilterEffect" />
+    <summary>The color matrix effect alters the RGBA values of a bitmap.</summary>
   </member>
 </doc>

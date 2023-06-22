@@ -3,16 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICGifCommentExtensionProperties">
-    <summary>
-      <para>Specifies the comment extension metadata properties for a Graphics Interchange Format (GIF) image.</para>
-    </summary>
+    <summary>Specifies the comment extension metadata properties for a Graphics Interchange Format (GIF) image.</summary>
   </member>
   <member name="WICGifCommentExtensionProperties.WICGifCommentExtensionText">
-    <summary>
-      <para>[VT_LPSTR] Indicates the comment text.</para>
-    </summary>
+    <summary>[VT_LPSTR] Indicates the comment text.</summary>
   </member>
-  <member name="WICGifCommentExtensionProperties.WICGifCommentExtensionProperties_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICGifCommentExtensionProperties.WICGifCommentExtensionProperties_FORCE_DWORD"></member>
 </doc>

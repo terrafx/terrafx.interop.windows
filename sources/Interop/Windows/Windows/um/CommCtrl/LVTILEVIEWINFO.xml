@@ -3,190 +3,133 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="LVTILEVIEWINFO">
-    <summary>
-      <para>Provides information about a list-view control when it is displayed in tile view.</para>
-    </summary>
-    <remarks>
-      <para>By default, the dimensions of tiles are determined automatically. To apply a fixed size, supply the correct value or values in <b>sizeTile</b> and set the appropriate flag in <b>dwFlags</b>. Allow enough vertical space for all lines of the label to be displayed. If a line does not fit in the allowed horizontal space, it is terminated with an ellipsis.</para>
-    </remarks>
-    <seealso cref="ListView_GetTileViewInfo" />
-    <seealso cref="ListView_SetTileViewInfo" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/using-list-view-controls">Using List-View Controls</seealso>
+    <summary>Provides information about a list-view control when it is displayed in tile view.</summary>
   </member>
   <member name="LVTILEVIEWINFO.cbSize">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Size of the <b>LVTILEVIEWINFO</b> structure.</para>
-    </summary>
+    <summary>Size of the <b>LVTILEVIEWINFO</b> structure.</summary>
   </member>
   <member name="LVTILEVIEWINFO.dwMask">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>Mask that determines which members are valid. This member may be one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>LVTVIM_TILESIZE</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>LVTVIM_TILESIZE</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <b>sizeTile</b> is valid.
-</description>
-        </item>
-        <item>
+            <b>sizeTile</b> is valid.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>LVTVIM_COLUMNS</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>LVTVIM_COLUMNS</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <b>cLines</b> is valid.
-</description>
-        </item>
-        <item>
+            <b>cLines</b> is valid.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>LVTVIM_LABELMARGIN</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>LVTVIM_LABELMARGIN</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <b>rcLabelMargin</b> is valid.
-</description>
-        </item>
+            <b>rcLabelMargin</b> is valid.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="LVTILEVIEWINFO.dwFlags">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>Flags that determines how the tiles are sized in tile view. This member may be one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>LVTVIF_AUTOSIZE</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>LVTVIF_AUTOSIZE</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Size the tiles automatically.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>LVTVIF_EXTENDED</b>
-          </description>
-          <description>
-            <para>This flag is not supported and should not be used.</para>
-          </description>
-        </item>
-        <item>
+          <description>Size the tiles automatically.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>LVTVIF_FIXEDWIDTH</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>LVTVIF_EXTENDED</b>
+                </term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Apply a fixed width to the tiles.</para>
-          </description>
-        </item>
-        <item>
+          <description>This flag is not supported and should not be used.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>LVTVIF_FIXEDHEIGHT</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>LVTVIF_FIXEDWIDTH</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Apply a fixed height to the tiles.</para>
-          </description>
-        </item>
-        <item>
+          <description>Apply a fixed width to the tiles.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>LVTVIF_FIXEDSIZE</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>LVTVIF_FIXEDHEIGHT</term>
+              </listheader>
             </list>
           </description>
+          <description>Apply a fixed height to the tiles.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Apply a fixed height and width to the tiles.</para>
+            <list type="bullet">
+              <listheader></listheader>
+              <listheader>
+                <term>LVTVIF_FIXEDSIZE</term>
+              </listheader>
+            </list>
           </description>
-        </item>
+          <description>Apply a fixed height and width to the tiles.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="LVTILEVIEWINFO.sizeTile">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</a></b></para>
-      <para>Size of an individual tile. Values for dimensions not specified as fixed in <b>dwFlags</b> are ignored.</para>
-    </summary>
+    <summary>Size of an individual tile. Values for dimensions not specified as fixed in <b>dwFlags</b> are ignored.</summary>
   </member>
   <member name="LVTILEVIEWINFO.cLines">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Maximum number of text lines in each item label, not counting the title.</para>
-    </summary>
+    <summary>Maximum number of text lines in each item label, not counting the title.</summary>
   </member>
   <member name="LVTILEVIEWINFO.rcLabelMargin">
     <summary>
-      <para>Type: <b><see cref="RECT" /></b></para>
-      <para>
-        <see cref="RECT" /> that contains coordinates of the label margin.</para>
-    </summary>
+      <see cref="RECT" /> that contains coordinates of the label margin.</summary>
   </member>
 </doc>

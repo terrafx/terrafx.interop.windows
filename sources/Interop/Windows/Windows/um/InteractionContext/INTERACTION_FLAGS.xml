@@ -3,42 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="INTERACTION_FLAGS">
-    <summary>
-      <para>Specifies the state of an interaction.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ns-interactioncontext-interaction_context_output">INTERACTION_CONTEXT_OUTPUT</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nc-interactioncontext-interaction_context_output_callback">INTERACTION_CONTEXT_OUTPUT_CALLBACK</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/enumerations">Interaction Context Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-registeroutputcallbackinteractioncontext">RegisterOutputCallbackInteractionContext</seealso>
+    <summary>Specifies the state of an interaction.</summary>
   </member>
   <member name="INTERACTION_FLAGS.INTERACTION_FLAG_NONE">
-    <summary>
-      <para>No flags set.</para>
-    </summary>
+    <summary>No flags set.</summary>
   </member>
   <member name="INTERACTION_FLAGS.INTERACTION_FLAG_BEGIN">
-    <summary>
-      <para>The beginning of an interaction.</para>
-    </summary>
+    <summary>The beginning of an interaction.</summary>
   </member>
   <member name="INTERACTION_FLAGS.INTERACTION_FLAG_END">
-    <summary>
-      <para>The end of an interaction (including inertia).</para>
-    </summary>
+    <summary>The end of an interaction (including inertia).</summary>
   </member>
   <member name="INTERACTION_FLAGS.INTERACTION_FLAG_CANCEL">
-    <summary>
-      <para>Interaction canceled. INTERACTION_FLAG_END also set on cancel.</para>
-    </summary>
+    <summary>Interaction canceled. INTERACTION_FLAG_END also set on cancel.</summary>
   </member>
   <member name="INTERACTION_FLAGS.INTERACTION_FLAG_INERTIA">
-    <summary>
-      <para>Inertia being processed.</para>
-    </summary>
+    <summary>Inertia being processed.</summary>
   </member>
   <member name="INTERACTION_FLAGS.INTERACTION_FLAG_MAX">
-    <summary>
-      <para>Maximum number of interactions exceeded.</para>
-    </summary>
+    <summary>Maximum number of interactions exceeded.</summary>
   </member>
 </doc>

@@ -3,14 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STORAGE_OFFLOAD_WRITE_OUTPUT">
-    <summary>
-      <para>Output structure for the <b>DeviceDsmAction_OffloadWrite</b> action of the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_manage_data_set_attributes">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES</a></para>
-      <para>control code.</para>
-    </summary>
-    <seealso cref="DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DevIO/device-management-structures">Device Management Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_manage_data_set_attributes">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES</seealso>
+    <summary>Output structure for the <b>DeviceDsmAction_OffloadWrite</b> action of the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_manage_data_set_attributes">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES</a>control code.</summary>
   </member>
   <member name="STORAGE_OFFLOAD_WRITE_OUTPUT.OffloadWriteFlags">
     <summary>
@@ -20,51 +13,43 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>STORAGE_OFFLOAD_WRITE_RANGE_TRUNCATED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The range written is less than the range specified.</para>
-          </description>
-        </item>
-        <item>
+          <description>The range written is less than the range specified.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>STORAGE_OFFLOAD_TOKEN_INVALID</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The token specified is not valid.</para>
-          </description>
-        </item>
+          <description>The token specified is not valid.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="STORAGE_OFFLOAD_WRITE_OUTPUT.Reserved">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="STORAGE_OFFLOAD_WRITE_OUTPUT.LengthCopied">
-    <summary>
-      <para>The length of the copied content.</para>
-    </summary>
+    <summary>The length of the copied content.</summary>
   </member>
 </doc>

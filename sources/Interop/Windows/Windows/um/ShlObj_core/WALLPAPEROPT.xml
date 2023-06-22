@@ -3,19 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WALLPAPEROPT">
-    <summary>
-      <para>Contains the wallpaper display options. Used with members of the <see cref="IActiveDesktop" /> interface.</para>
-    </summary>
+    <summary>Contains the wallpaper display options. Used with members of the <see cref="IActiveDesktop" /> interface.</summary>
   </member>
   <member name="WALLPAPEROPT.dwSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of this <b>WALLPAPEROPT</b> structure.</para>
-    </summary>
+    <summary>The size of this <b>WALLPAPEROPT</b> structure.</summary>
   </member>
   <member name="WALLPAPEROPT.dwStyle">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The wallpaper style; one of the following values:</para>
       <h4>WPSTYLE_CENTER (0x0)</h4>
       <para>0x0. Center the wallpaper image in its original size, filling the remaining area with a solid background color if image is smaller than screen or cropping image if image is larger.</para>
@@ -28,7 +22,7 @@
       <h4>WPSTYLE_CROPTOFIT (0x4)</h4>
       <para>0x4. <b>Introduced in Windows 7</b>. Enlarge or shrink the image to fill the screen, retaining the aspect ratio of the original image. If necessary, the image is cropped either on the top and bottom or on the left and right as necessary to fit the screen.</para>
       <h4>WPSTYLE_SPAN (0x5)</h4>
-      <para>0x5. <b>Introduced in Windows 8</b>. Spans the wallpaper across multiple monitors. When this value is set, the <b>WPSTYLE_MAX</b> value must also be set.</para>
+      <para>0x5. <b>Introduced in Windows 8</b>. Spans the wallpaper across multiple monitors.</para>
       <h4>WPSTYLE_MAX</h4>
       <para>The maximum legitimate value of these flags, used for validation purposes.</para>
     </summary>

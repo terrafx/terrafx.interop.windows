@@ -3,26 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_COOKIE_MODE">
-    <summary>
-      <para>An enumeration used to specify how to handle HTTP cookies.</para>
-    </summary>
+    <summary>An enumeration used to specify how to handle HTTP cookies.</summary>
   </member>
   <member name="WS_COOKIE_MODE.WS_MANUAL_COOKIE_MODE">
     <summary>
       <para>In this mode, cookies are not processed by the client channel.</para>
-      <para>If a server sends a cookie to the client, the client
-channel will ignore the cookie (it will not include
-the cookie value in subsequent requests).</para>
+      <para>If a server sends a cookie to the client, the client channel will ignore the cookie (it will not include the cookie value in subsequent requests).</para>
       <para>An application can use the <see cref="WS_HTTP_HEADER_MAPPING" /> feature to handle cookies manually, if desired.</para>
     </summary>
   </member>
   <member name="WS_COOKIE_MODE.WS_AUTO_COOKIE_MODE">
     <summary>
-      <para>In this mode, cookies are automatically tracked by
-the channel.</para>
-      <para>If a server sends a cookie to the client,
-the channel will automatically track the cookie and
-will include the cookie in subsequent requests.</para>
+      <para>In this mode, cookies are automatically tracked by the channel.</para>
+      <para>If a server sends a cookie to the client, the channel will automatically track the cookie and will include the cookie in subsequent requests.</para>
     </summary>
   </member>
 </doc>

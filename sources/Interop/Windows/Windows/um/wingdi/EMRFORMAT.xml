@@ -3,15 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRFORMAT">
-    <summary>
-      <para>The <b>EMRFORMAT</b> structure contains information that identifies graphics data in an enhanced metafile. A GDICOMMENT_MULTIFORMATS enhanced metafile public comment contains an array of <b>EMRFORMAT</b> structures.</para>
-    </summary>
-    <remarks>
-      <para>The reference page for <see cref="GdiComment" /> discusses enhanced metafile public comments in general, and the GDICOMMENT_MULTIFORMATS public comment in particular.</para>
-    </remarks>
-    <seealso cref="GdiComment" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <summary>The <b>EMRFORMAT</b> structure contains information that identifies graphics data in an enhanced metafile. A GDICOMMENT_MULTIFORMATS enhanced metafile public comment contains an array of <b>EMRFORMAT</b> structures.</summary>
   </member>
   <member name="EMRFORMAT.dSignature">
     <summary>
@@ -21,14 +13,14 @@
           <description>Identifier</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>ENHMETA_SIGNATURE</description>
           <description>The picture is in enhanced metafile format.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>EPS_SIGNATURE</description>
           <description>The picture is in encapsulated PostScript file format.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -40,21 +32,17 @@
           <description>Version</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>1</description>
           <description>This is the version number of a level 1 encapsulated PostScript file.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="EMRFORMAT.cbData">
-    <summary>
-      <para>The size, in bytes, of the picture data.</para>
-    </summary>
+    <summary>The size, in bytes, of the picture data.</summary>
   </member>
   <member name="EMRFORMAT.offData">
-    <summary>
-      <para>Specifies an offset to the picture data. The offset is figured from the start of the GDICOMMENT_MULTIFORMATS public comment within which this <b>EMRFORMAT</b> structure is embedded. The offset must be a <b>DWORD</b> offset.</para>
-    </summary>
+    <summary>Specifies an offset to the picture data. The offset is figured from the start of the GDICOMMENT_MULTIFORMATS public comment within which this <b>EMRFORMAT</b> structure is embedded. The offset must be a <b>DWORD</b> offset.</summary>
   </member>
 </doc>

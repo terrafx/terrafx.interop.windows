@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_S4U_LOGON">
+    <summary>The <b>KERB_S4U_LOGON</b> structure contains information about a service for user (S4U) logon. This structure is used by the <see cref="LsaLogonUser" /> function with the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">Kerberos</a> package.</summary>
+  </member>
+  <member name="KERB_S4U_LOGON.MessageType">
+    <summary>A value of the <see cref="KERB_LOGON_SUBMIT_TYPE" /> enumeration that identifies the type of logon being requested. This member must be set to <b>KerbS4ULogon</b>.</summary>
+  </member>
+  <member name="KERB_S4U_LOGON.Flags">
+    <summary>
+      <para>Flags that provide more information about the logon.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_S4U_LOGON_FLAG_CHECK_LOGONHOURS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Requests the hours that the user has been logged on.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_S4U_LOGON_FLAG_IDENTIFY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x8</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Requests the identity token.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="KERB_S4U_LOGON.ClientUpn">
+    <summary>
+      <para>A <see cref="UNICODE_STRING" /> that specifies the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/u-gly">user principal name</a> (UPN) of the client. This member cannot be <b>NULL</b>.</para>
+      <para>The <b>Buffer</b> member of the <see cref="UNICODE_STRING" /> structure must point to memory that is contiguous to the <b>KERB_S4U_LOGON</b> structure.</para>
+    </summary>
+  </member>
+  <member name="KERB_S4U_LOGON.ClientRealm">
+    <summary>
+      <para>A <see cref="UNICODE_STRING" /> that specifies the realm of the client, if known. If the realm is not known, this member can be <b>NULL</b>.</para>
+      <para>The <b>Buffer</b> member of the <see cref="UNICODE_STRING" /> structure must point to memory that is contiguous to the <b>KERB_S4U_LOGON</b> structure.</para>
+    </summary>
+  </member>
+</doc>

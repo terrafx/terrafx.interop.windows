@@ -4,37 +4,23 @@
 <doc>
   <member name="DVD_AUDIO_LANG_EXT">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Defines flags that indicate whether an audio stream contains audio language extensions.</para>
     </summary>
-    <remarks>
-      <para>This enumeration is used in the <see cref="IDvdInfo2.GetAudioAttributes" /> and <see cref="IDvdInfo2.GetDefaultAudioLanguage" /> methods.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso cref="IDvdInfo2" />
   </member>
   <member name="DVD_AUDIO_LANG_EXT.DVD_AUD_EXT_NotSpecified">
-    <summary>
-      <para>The DVD doesn't specify an audio language extension for this audio stream.</para>
-    </summary>
+    <summary>The DVD doesn't specify an audio language extension for this audio stream.</summary>
   </member>
   <member name="DVD_AUDIO_LANG_EXT.DVD_AUD_EXT_Captions">
-    <summary>
-      <para>The audio stream contains captions.</para>
-    </summary>
+    <summary>The audio stream contains captions.</summary>
   </member>
   <member name="DVD_AUDIO_LANG_EXT.DVD_AUD_EXT_VisuallyImpaired">
-    <summary>
-      <para>The audio stream contains content for people with low vision.</para>
-    </summary>
+    <summary>The audio stream contains content for people with low vision.</summary>
   </member>
   <member name="DVD_AUDIO_LANG_EXT.DVD_AUD_EXT_DirectorComments1">
-    <summary>
-      <para>The audio stream contains "director comments 1."</para>
-    </summary>
+    <summary>The audio stream contains "director comments 1."</summary>
   </member>
   <member name="DVD_AUDIO_LANG_EXT.DVD_AUD_EXT_DirectorComments2">
-    <summary>
-      <para>The audio stream contains "director comments 2."</para>
-    </summary>
+    <summary>The audio stream contains "director comments 2."</summary>
   </member>
 </doc>

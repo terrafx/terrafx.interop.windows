@@ -3,102 +3,53 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteFont1.GetMetrics">
-    <summary>
-      <para>Obtains design units and common metrics for the font face.
-These metrics are applicable to all the glyphs within a font face and are used by applications for layout calculations.</para>
-    </summary>
-    <param name="fontMetrics">
-      <para>Type: <b><see cref="DWRITE_FONT_METRICS1" />*</b></para>
-      <para>A filled  <see cref="DWRITE_FONT_METRICS1" /> structure that has font metrics for the current font face. The metrics returned by this method are in font design units.</para>
-    </param>
-    <seealso cref="IDWriteFont1" />
+    <summary>Obtains design units and common metrics for the font face. These metrics are applicable to all the glyphs within a font face and are used by applications for layout calculations.</summary>
+    <param name="fontMetrics">A filled <see cref="DWRITE_FONT_METRICS1" /> structure that has font metrics for the current font face. The metrics returned by this method are in font design units.</param>
   </member>
   <member name="IDWriteFont1.GetPanose">
-    <summary>
-      <para>Gets the PANOSE values from the font and is used for font selection and
-matching.</para>
-    </summary>
-    <param name="panose">
-      <para>Type: <b><see cref="DWRITE_PANOSE" />*</b></para>
-      <para>A pointer to the <see cref="DWRITE_PANOSE" /> structure to fill in.</para>
-    </param>
-    <remarks>
-      <para>If the font has no PANOSE values,
-they are set to 'any' (0) and <a href="https://docs.microsoft.com//windows/win32/DirectWrite/direct-write-portal">DirectWrite</a> doesn't simulate those values.</para>
-    </remarks>
-    <seealso cref="IDWriteFont1" />
+    <summary>Gets the PANOSE values from the font and is used for font selection and matching.</summary>
+    <param name="panose">A pointer to the <see cref="DWRITE_PANOSE" /> structure to fill in.</param>
   </member>
   <member name="IDWriteFont1.GetUnicodeRanges">
-    <summary>
-      <para>Retrieves the list of character ranges supported by a font.</para>
-    </summary>
-    <param name="maxRangeCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The maximum number of character ranges passed
-in from the client.</para>
-    </param>
-    <param name="unicodeRanges">
-      <para>Type: <b><see cref="DWRITE_UNICODE_RANGE" />*</b></para>
-      <para>An array of <see cref="DWRITE_UNICODE_RANGE" /> structures that are filled with the character ranges.</para>
-    </param>
-    <param name="actualRangeCount">
-      <para>Type: <b>UINT32*</b></para>
-      <para>A pointer to the actual number of character ranges,
-regardless of the maximum count.</para>
-    </param>
+    <summary>Retrieves the list of character ranges supported by a font.</summary>
+    <param name="maxRangeCount">The maximum number of character ranges passed in from the client.</param>
+    <param name="unicodeRanges">An array of <see cref="DWRITE_UNICODE_RANGE" /> structures that are filled with the character ranges.</param>
+    <param name="actualRangeCount">A pointer to the actual number of character ranges, regardless of the maximum count.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method can return one of these values.</para>
       <list type="table">
         <listheader>
           <description>Return value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>S_OK</para>
+            <list type="bullet">
+              <listheader>
+                <term>S_OK</term>
+              </listheader>
+            </list>
           </description>
+          <description>The method executed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method executed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>E_NOT_SUFFICIENT_BUFFER</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>E_NOT_SUFFICIENT_BUFFER</para>
-          </description>
-          <description>
-            <para>The buffer is too small.  The <i>actualRangeCount</i> was more than the <i>maxRangeCount</i>.</para>
-          </description>
-        </item>
+          <description>The buffer is too small. The <i>actualRangeCount</i> was more than the <i>maxRangeCount</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The list of character ranges supported by a font, is
-useful for scenarios like character picking, glyph display, and
-efficient font selection lookup. GetUnicodeRanges is similar to GDI's
-GetFontUnicodeRanges, except that it returns the full Unicode range,
-not just 16-bit UCS-2.</para>
-      <para>These ranges are from the cmap, not the OS/2.ulCodePageRange1.</para>
-      <para>If this method is unavailable, you can use the <see cref="IDWriteFontFace.GetGlyphIndices" /> method to check for missing glyphs.  The method returns the 0 index for glyphs that aren't present in the font.</para>
-      <para>The <see cref="IDWriteFont.HasCharacter" /> method is often simpler in cases where you need to check a single character or a series of single characters in succession, such as in font fallback.</para>
-    </remarks>
-    <seealso cref="IDWriteFont1" />
   </member>
   <member name="IDWriteFont1.IsMonospacedFont">
-    <summary>
-      <para>Determines if the font is monospaced, that is, the characters are the
-same fixed-pitch width (non-proportional).</para>
-    </summary>
-    <returns>
-      <para>Type: <b>BOOL</b></para>
-      <para>Returns true if the font is monospaced, else it returns false.</para>
-    </returns>
-    <seealso cref="IDWriteFont1" />
+    <summary>Determines if the font is monospaced, that is, the characters are the same fixed-pitch width (non-proportional).</summary>
+    <returns>Returns true if the font is monospaced, else it returns false.</returns>
   </member>
   <member name="IDWriteFont1">
-    <summary>
-      <para>Represents a physical font in a font collection.</para>
-    </summary>
-    <seealso cref="IDWriteFont" />
+    <summary>Represents a physical font in a font collection.</summary>
   </member>
 </doc>

@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_LOCALITY">
-    <summary>
-      <para>Specifies the location of a resource.</para>
-    </summary>
+    <summary>Specifies the location of a resource.</summary>
   </member>
   <member name="DWRITE_LOCALITY.DWRITE_LOCALITY_REMOTE">
-    <summary>
-      <para>The resource is remote, and information about it is unknown, including the file size and date. If you attempt to create a font or file stream, the creation will fail until locality becomes at least partial.</para>
-    </summary>
+    <summary>The resource is remote, and information about it is unknown, including the file size and date. If you attempt to create a font or file stream, the creation will fail until locality becomes at least partial.</summary>
   </member>
   <member name="DWRITE_LOCALITY.DWRITE_LOCALITY_PARTIAL">
-    <summary>
-      <para>The resource is partially local, which means you can query the size and date of the file stream. With this type, you also might be able to create a font face and retrieve the particular glyphs for metrics and drawing, but not all the glyphs will be present.</para>
-    </summary>
+    <summary>The resource is partially local, which means you can query the size and date of the file stream. With this type, you also might be able to create a font face and retrieve the particular glyphs for metrics and drawing, but not all the glyphs will be present.</summary>
   </member>
   <member name="DWRITE_LOCALITY.DWRITE_LOCALITY_LOCAL">
-    <summary>
-      <para>The resource is completely local, and all font functions can be called without concern of missing data or errors related to network connectivity.</para>
-    </summary>
+    <summary>The resource is completely local, and all font functions can be called without concern of missing data or errors related to network connectivity.</summary>
   </member>
 </doc>

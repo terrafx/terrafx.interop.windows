@@ -3,34 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="POINTER_DEVICE_TYPE">
-    <summary>
-      <para>Identifies the pointer device types.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_pointerdevice/enumerations">Enumerations</seealso>
+    <summary>Identifies the pointer device types.</summary>
   </member>
   <member name="POINTER_DEVICE_TYPE.POINTER_DEVICE_TYPE_INTEGRATED_PEN">
-    <summary>
-      <para>Direct pen digitizer (integrated into display).</para>
-    </summary>
+    <summary>Direct pen digitizer (integrated into display).</summary>
   </member>
   <member name="POINTER_DEVICE_TYPE.POINTER_DEVICE_TYPE_EXTERNAL_PEN">
-    <summary>
-      <para>Indirect pen digitizer (not integrated into display).</para>
-    </summary>
+    <summary>Indirect pen digitizer (not integrated into display).</summary>
   </member>
   <member name="POINTER_DEVICE_TYPE.POINTER_DEVICE_TYPE_TOUCH">
-    <summary>
-      <para>Touch digitizer.</para>
-    </summary>
+    <summary>Touch digitizer.</summary>
   </member>
   <member name="POINTER_DEVICE_TYPE.POINTER_DEVICE_TYPE_TOUCH_PAD">
-    <summary>
-      <para>Touchpad digitizer (Windows 8.1 and later).</para>
-    </summary>
+    <summary>Touchpad digitizer (Windows 8.1 and later).</summary>
   </member>
   <member name="POINTER_DEVICE_TYPE.POINTER_DEVICE_TYPE_MAX">
-    <summary>
-      <para>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. You should not use this value.</para>
-    </summary>
+    <summary>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. You should not use this value.</summary>
   </member>
 </doc>

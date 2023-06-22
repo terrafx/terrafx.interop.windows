@@ -4,26 +4,20 @@
 <doc>
   <member name="CRYPT_SMIME_CAPABILITY">
     <summary>
-      <para>The <b>CRYPT_SMIME_CAPABILITY</b> structure specifies a single capability and its associated parameters. Single capabilities are grouped together into a list of
-<see cref="CRYPT_SMIME_CAPABILITIES" /> which can specify a prioritized list of capability preferences.
-<b>Note</b>  The <see cref="CRYPT_SMIME_CAPABILITIES" /> is part of an Internet draft proposal. For a complete definition, see "draft-dusse-s/mime-cert-01.txt" dated May 5, 1997.</para>
+      <para>The <b>CRYPT_SMIME_CAPABILITY</b> structure specifies a single capability and its associated parameters. Single capabilities are grouped together into a list of<see cref="CRYPT_SMIME_CAPABILITIES" /> which can specify a prioritized list of capability preferences.</para>
+      <div>
+        <b>Note</b>  The <see cref="CRYPT_SMIME_CAPABILITIES" /> is part of an Internet draft proposal. For a complete definition, see "draft-dusse-s/mime-cert-01.txt" dated May 5, 1997.</div>
     </summary>
-    <seealso cref="CRYPT_SMIME_CAPABILITIES" />
   </member>
   <member name="CRYPT_SMIME_CAPABILITY.pszObjId">
     <summary>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">Object identifier</a> (OID) for a capability. Capabilities include signature algorithms, <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">symmetric algorithms</a>, and key enciphering algorithms. Also included are non-algorithm capabilities, which are the preference for <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">signed data</a> and the preference for unencrypted messages.</para>
-    </summary>
+      <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">Object identifier</a> (OID) for a capability. Capabilities include signature algorithms, <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">symmetric algorithms</a>, and key enciphering algorithms. Also included are non-algorithm capabilities, which are the preference for <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">signed data</a> and the preference for unencrypted messages.</summary>
   </member>
   <member name="CRYPT_SMIME_CAPABILITY.Parameters">
     <summary>
       <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_OBJID_BLOB</a> structure that contains any parameters associated with the specified capability in <b>pszObjId</b>.</para>
-      <para>
-        <b>Note</b>  For
-<see cref="CryptEncodeObject" /> and
-<see cref="CryptEncodeObjectEx" /> with the <i>dwCertEncodingType</i> set to X509_ASN_ENCODING, if the <b>cbData</b> member of the <b>Parameters</b> member is zero, the encoded parameters are omitted. They are not encoded as a <b>NULL</b> (05 00) as is done when encoding a
-<see cref="CRYPT_ALGORITHM_IDENTIFIER" />. This follows the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">Secure/Multipurpose Internet Mail Extensions</a> (S/MIME) specification for encoding capabilities that requires this omission.</para>
+      <div>
+        <b>Note</b>  For <see cref="CryptEncodeObject" /> and <see cref="CryptEncodeObjectEx" /> with the <i>dwCertEncodingType</i> set to X509_ASN_ENCODING, if the <b>cbData</b> member of the <b>Parameters</b> member is zero, the encoded parameters are omitted. They are not encoded as a <b>NULL</b> (05 00) as is done when encoding a <see cref="CRYPT_ALGORITHM_IDENTIFIER" />. This follows the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">Secure/Multipurpose Internet Mail Extensions</a> (S/MIME) specification for encoding capabilities that requires this omission.</div>
     </summary>
   </member>
 </doc>

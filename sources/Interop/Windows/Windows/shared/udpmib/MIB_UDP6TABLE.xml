@@ -3,43 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIB_UDP6TABLE">
-    <summary>
-      <para>The
-<b>MIB_UDP6TABLE</b> structure contains the User Datagram Protocol (UDP)  listener table for IPv6 on the local computer.</para>
-    </summary>
-    <remarks>
-      <para>The <see cref="GetUdp6Table" /> function enumerates the UDP  endpoints for IPv6 that have been bound to an address on the local computer and returns this information in a <b>MIB_UDP6TABLE</b> structure.</para>
-      <para>This table includes the local IPv6 address, scope ID, and port information for sending and receiving UDP datagrams on the local computer. An array of <see cref="MIB_UDP6ROW" /> structures are contained in the <b>MIB_UDP6TABLE</b> structure.</para>
-      <para>The <b>MIB_UDP6TABLE</b> structure may contain padding for alignment between the <b>dwNumEntries</b> member and the first <see cref="MIB_UDP6ROW" /> array entry in the <b>table</b> member. Padding for alignment may also be present between the <b>MIB_UDP6ROW</b> array entries in the <b>table</b> member. Any access to a <b>MIB_UDP6ROW</b> array entry should assume  padding may exist.</para>
-      <para>The <b>MIB_UDP6TABLE</b> structure contains the UDP listener table for IPv6 on the local computer. The name is based on the definition of this table in RFC 2454 published by the IETF. For more information, see
-<a href="http://tools.ietf.org/html/rfc2454">http://www.ietf.org/rfc/rfc2454.txt</a>. This table contains UDP  endpoints for IPv6 that have been bound to an address. It should be noted that an application can create a UDP socket and bind it to an address for the sole purpose of sending a UDP datagram, with no intention of receiving packets using this socket (functioning as a listener).</para>
-      <para>The <see cref="MIB_UDP6TABLE_OWNER_MODULE" /> structure is an enhanced version of the  <see cref="MIB_UDP6TABLE_OWNER_PID" /> structure that includes any available ownership data for each UDP endpoint in the table.  The <b>MIB_UDP6TABLE_OWNER_PID</b> is an enhanced version of the <b>MIB_UDP6TABLE</b> that includes the process ID (PID) that issued the call to the <see cref="bind" /> function for each UDP endpoint in the table.</para>
-    </remarks>
-    <seealso cref="GetExtendedUdpTable" />
-    <seealso cref="GetUdp6Table" />
-    <seealso cref="GetUdpTable" />
-    <seealso cref="MIB_UDP6ROW" />
-    <seealso cref="MIB_UDP6ROW_OWNER_MODULE" />
-    <seealso cref="MIB_UDP6ROW_OWNER_PID" />
-    <seealso cref="MIB_UDP6TABLE_OWNER_MODULE" />
-    <seealso cref="MIB_UDP6TABLE_OWNER_PID" />
-    <seealso cref="MIB_UDPROW" />
-    <seealso cref="MIB_UDPROW_OWNER_MODULE" />
-    <seealso cref="MIB_UDPROW_OWNER_PID" />
-    <seealso cref="MIB_UDPTABLE" />
-    <seealso cref="MIB_UDPTABLE_OWNER_MODULE" />
-    <seealso cref="MIB_UDPTABLE_OWNER_PID" />
-    <seealso cref="bind" />
+    <summary>The<b>MIB_UDP6TABLE</b> structure contains the User Datagram Protocol (UDP) listener table for IPv6 on the local computer.</summary>
   </member>
   <member name="MIB_UDP6TABLE.dwNumEntries">
-    <summary>
-      <para>The number of entries in the table.</para>
-    </summary>
+    <summary>The number of entries in the table.</summary>
   </member>
   <member name="MIB_UDP6TABLE.table">
-    <summary>
-      <para>A pointer to an array of
-<see cref="MIB_UDP6ROW" /> structures.</para>
-    </summary>
+    <summary>A pointer to an array of<see cref="MIB_UDP6ROW" /> structures.</summary>
   </member>
 </doc>

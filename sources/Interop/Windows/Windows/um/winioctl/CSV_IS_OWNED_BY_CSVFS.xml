@@ -3,19 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CSV_IS_OWNED_BY_CSVFS">
-    <summary>
-      <para>Contains the output for the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_is_volume_owned_bycsvfs">FSCTL_IS_VOLUME_OWNED_BYCSVFS</a> control code
-that determines whether a volume is owned by CSVFS.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_is_volume_owned_bycsvfs">FSCTL_IS_VOLUME_OWNED_BYCSVFS</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/volume-management-structures">Volume Management Structures</seealso>
+    <summary>Contains the output for the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_is_volume_owned_bycsvfs">FSCTL_IS_VOLUME_OWNED_BYCSVFS</a> control code that determines whether a volume is owned by CSVFS.</summary>
   </member>
   <member name="CSV_IS_OWNED_BY_CSVFS.OwnedByCSVFS">
     <summary>
-      <para>
-        <b>TRUE</b> if a volume is owned by CSVFS; otherwise,
-<b>FALSE</b>.</para>
-    </summary>
+      <b>TRUE</b> if a volume is owned by CSVFS; otherwise,<b>FALSE</b>.</summary>
   </member>
 </doc>

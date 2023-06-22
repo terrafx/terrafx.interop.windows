@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxFactory3.CreateAppInstallerReader">
+    <summary>Creates an instance of <see cref="IAppInstallerReader" />, with an optional parameter for specifying the expected digest for the App Installer file.</summary>
+    <param name="inputStream">An <see cref="IStream" /> that provides the contents of an App Installer File.</param>
+    <param name="expectedDigest">An LPCWSTR containing the expected digest, a hashed representation of the App Installer File.</param>
+    <param name="appInstallerReader">Receives the created <b>IAppInstallerReader</b> Instance.</param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an error code that includes, but is not limited to, those in the following table.</para>
+      <para>| Return code | Description | |-------------|-------------| | APPX_E_DIGEST_MISMATCH | The digest for the object doesn't match the digest provided in <i>expectedDigest</i>. |</para>
+    </returns>
+  </member>
+  <member name="IAppxFactory3.CreateManifestReader2">
+    <summary>Creates a read-only manifest object model from contents provided by an <see cref="IStream" />, with an optional parameter for specifying the expected digest for the manifest.</summary>
+    <param name="inputStream">The input stream that delivers the manifest XML for reading. The stream must support <see cref="ISequentialStream.Read" />, <see cref="IStream.Seek" />, and . If these methods fail, their error codes may be passed to and returned by this method.</param>
+    <param name="expectedDigest">An LPCWSTR containing the expected digest, a hashed representation of the manifest file.</param>
+    <param name="manifestReader">The created manifest reader.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code that includes, but is not limited to, those in the following table.</para>
+      <para>| Return code | Description | |-------------|-------------| | APPX_E_INVALID_MANIFEST | The <i>inputStream</i> does not contain syntactically valid XML for the manifest. | | APPX_E_DIGEST_MISMATCH | The digest for the object doesn't match the digest provided in <i>expectedDigest</i>. |</para>
+    </returns>
+  </member>
+  <member name="IAppxFactory3">
+    <summary>Creates objects for reading app packages, manifests, and app installer files.</summary>
+  </member>
+</doc>

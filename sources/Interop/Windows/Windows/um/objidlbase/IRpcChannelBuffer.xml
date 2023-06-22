@@ -3,80 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IRpcChannelBuffer.FreeBuffer">
-    <summary>
-      <para>Frees a previously allocated RPC channel buffer.</para>
-    </summary>
-    <param name="pMessage">
-      <para>A pointer to an <see cref="RPCOLEMESSAGE" /> data structure.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
-    </returns>
-    <seealso cref="IRpcChannelBuffer" />
+    <summary>Frees a previously allocated RPC channel buffer.</summary>
+    <param name="pMessage">A pointer to an <see cref="RPCOLEMESSAGE" /> data structure.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</returns>
   </member>
   <member name="IRpcChannelBuffer.GetBuffer">
-    <summary>
-      <para>Retrieves a buffer into which data can be marshaled for transmission.</para>
-    </summary>
-    <param name="pMessage">
-      <para>A pointer to an <see cref="RPCOLEMESSAGE" /> data structure.</para>
-    </param>
-    <param name="riid">
-      <para>A reference to the identifier of the interface to be marshaled.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
-    </returns>
-    <seealso cref="IRpcChannelBuffer" />
+    <summary>Retrieves a buffer into which data can be marshaled for transmission.</summary>
+    <param name="pMessage">A pointer to an <see cref="RPCOLEMESSAGE" /> data structure.</param>
+    <param name="riid">A reference to the identifier of the interface to be marshaled.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</returns>
   </member>
   <member name="IRpcChannelBuffer.GetDestCtx">
-    <summary>
-      <para>Retrieves the destination context for the RPC channel.</para>
-    </summary>
-    <param name="pdwDestContext">
-      <para>The destination context in which the interface is unmarshaled. Possible values come from the <see cref="MSHCTX" /> enumeration.</para>
-    </param>
-    <param name="ppvDestContext">
-      <para>This parameter is reserved and must be <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
-    </returns>
-    <seealso cref="IRpcChannelBuffer" />
+    <summary>Retrieves the destination context for the RPC channel.</summary>
+    <param name="pdwDestContext">The destination context in which the interface is unmarshaled. Possible values come from the <see cref="MSHCTX" /> enumeration.</param>
+    <param name="ppvDestContext">This parameter is reserved and must be <b>NULL</b>.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</returns>
   </member>
   <member name="IRpcChannelBuffer.IsConnected">
-    <summary>
-      <para>Determines whether the RPC channel is connected.</para>
-    </summary>
-    <returns>
-      <para>If the RPC  channel exists, the return value is <b>TRUE</b>. Otherwise, it is <b>FALSE</b>.</para>
-    </returns>
-    <seealso cref="IRpcChannelBuffer" />
+    <summary>Determines whether the RPC channel is connected.</summary>
+    <returns>If the RPC channel exists, the return value is <b>TRUE</b>. Otherwise, it is <b>FALSE</b>.</returns>
   </member>
   <member name="IRpcChannelBuffer.SendReceive">
-    <summary>
-      <para>Sends a method invocation across an RPC channel to the server stub.</para>
-    </summary>
-    <param name="pMessage">
-      <para>A pointer to an <see cref="RPCOLEMESSAGE" /> structure that has been populated with marshaled data.</para>
-    </param>
-    <param name="pStatus">
-      <para>If not <b>NULL</b>, set to 0 on successful execution.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
-    </returns>
-    <remarks>
-      <para>Before invoking this method, the <see cref="GetBuffer" /> method must have been invoked to allocate a channel buffer. Upon return, the <b>dataRepresentation</b> buffer of the <see cref="RPCOLEMESSAGE" /> structure will have been modified to include the data returned by the method invoked on the server. If the invocation was successful, the RPC channel buffer has been freed; otherwise the caller must free it explicitly by calling <see cref="FreeBuffer" />.</para>
-    </remarks>
-    <seealso cref="IRpcChannelBuffer" />
+    <summary>Sends a method invocation across an RPC channel to the server stub.</summary>
+    <param name="pMessage">A pointer to an <see cref="RPCOLEMESSAGE" /> structure that has been populated with marshaled data.</param>
+    <param name="pStatus">If not <b>NULL</b>, set to 0 on successful execution.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</returns>
   </member>
   <member name="IRpcChannelBuffer">
-    <summary>
-      <para>Marshals data between a COM client proxy and a COM server stub.</para>
-    </summary>
-    <seealso cref="IMarshal" />
-    <seealso cref="IRpcProxyBuffer" />
-    <seealso cref="IRpcStubBuffer" />
+    <summary>Marshals data between a COM client proxy and a COM server stub.</summary>
   </member>
 </doc>

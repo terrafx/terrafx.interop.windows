@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IFsiNamedStreams.get_Count">
-    <summary>
-      <para>Returns the number of the named streams associated with a file in the file system image.</para>
-    </summary>
-    <param name="count">
-      <para>Pointer to a value indicating the total number of named streams in the collection.</para>
-    </param>
+    <summary>Returns the number of the named streams associated with a file in the file system image.</summary>
+    <param name="count">Pointer to a value indicating the total number of named streams in the collection.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -16,37 +12,27 @@
           <description>Return code/value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>E_POINTER</b>
-                </description>
-              </item>
-              <item>
-                <description>Value: 0x80004003</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>Value: 0x80004003</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
-    </remarks>
-    <seealso cref="IFsiNamedStreams" />
   </member>
   <member name="IFsiNamedStreams.get_EnumNamedStreams">
-    <summary>
-      <para>Creates a non-variant enumerator for the collection of the named streams associated with a file in the file system image.</para>
-    </summary>
-    <param name="NewEnum">
-      <para>Pointer to a pointer to an <see cref="IEnumFsiItems" /> object representing a collection of named streams associated with a file.</para>
-    </param>
+    <summary>Creates a non-variant enumerator for the collection of the named streams associated with a file in the file system image.</summary>
+    <param name="NewEnum">Pointer to a pointer to an <see cref="IEnumFsiItems" /> object representing a collection of named streams associated with a file.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -54,58 +40,43 @@
           <description>Return code/value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>E_POINTER</b>
-                </description>
-              </item>
-              <item>
-                <description>Value: 0x80004003</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>Value: 0x80004003</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-          </description>
-        </item>
-        <item>
+          <description>Pointer is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>E_OUTOFMEMORY</b>
-                </description>
-              </item>
-              <item>
-                <description>Value: 0x8007000EL</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>Value: 0x8007000EL</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Failed to allocate required memory.</para>
-          </description>
-        </item>
+          <description>Failed to allocate required memory.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
-    </remarks>
-    <seealso cref="IFsiNamedStreams" />
   </member>
   <member name="IFsiNamedStreams.get_Item">
-    <summary>
-      <para>Retrieves a  single named stream associated with a file in the file system image.</para>
-    </summary>
-    <param name="index">
-      <para>This value indicates the position of the named stream within the  collection.
-The index number is zero-based, i.e. the first item is at location 0 of the collection.</para>
-    </param>
-    <param name="item">
-      <para>Pointer to a pointer to an <see cref="IFsiFileItem2" /> object representing the named stream at the  position specified by <i>index</i>. This parameter is set to <b>NULL</b> if the specified index is not within the collection boundary.</para>
-    </param>
+    <summary>Retrieves a single named stream associated with a file in the file system image.</summary>
+    <param name="index">This value indicates the position of the named stream within the collection. The index number is zero-based, i.e. the first item is at location 0 of the collection.</param>
+    <param name="item">Pointer to a pointer to an <see cref="IFsiFileItem2" /> object representing the named stream at the position specified by <i>index</i>. This parameter is set to <b>NULL</b> if the specified index is not within the collection boundary.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -113,56 +84,42 @@ The index number is zero-based, i.e. the first item is at location 0 of the coll
           <description>Return code/value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>E_POINTER</b>
-                </description>
-              </item>
-              <item>
-                <description>Value: 0x80004003</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>Value: 0x80004003</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-          </description>
-        </item>
-        <item>
+          <description>Pointer is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAPI_E_INVALID_PARAM</b>
-                </description>
-              </item>
-              <item>
-                <description>Value: 0xC0AAB101</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>Value: 0xC0AAB101</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The value specified for parameter '<i>%1!ls!</i>' is invalid.</para>
-          </description>
-        </item>
+          <description>The value specified for parameter '<i>%1!ls!</i>' is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the index number is negative or out of range, this method returns the <b>IMAPI_E_INVALID_PARAM</b>.</para>
-      <para>To fetch an <b>IEnumVARIANT</b> enumerator for all named streams associated with a file, use the <see cref="IFsiNamedStreams.get__NewEnum" /> method.</para>
-      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
-    </remarks>
-    <seealso cref="IFsiNamedStreams" />
   </member>
   <member name="IFsiNamedStreams.get__NewEnum">
-    <summary>
-      <para>Retrieves an <b>IEnumVARIANT</b> list of the named streams associated with a file in the file system image.</para>
-    </summary>
-    <param name="NewEnum">
-      <para>Pointer to a pointer to an <b>IEnumVariant</b> interface that is used to enumerate the named streams associated with a file. The items of the enumeration are variants whose type is <b>VT_BSTR</b>. Use the <b>bstrVal</b> member to retrieve the path to the named stream.</para>
-    </param>
+    <summary>Retrieves an <b>IEnumVARIANT</b> list of the named streams associated with a file in the file system image.</summary>
+    <param name="NewEnum">Pointer to a pointer to an <b>IEnumVariant</b> interface that is used to enumerate the named streams associated with a file. The items of the enumeration are variants whose type is <b>VT_BSTR</b>. Use the <b>bstrVal</b> member to retrieve the path to the named stream.</param>
     <returns>
       <para>S_OK is returned when the number of requested elements (<i>celt</i>) are returned successfully or the number of returned items (<i>pceltFetched</i>) is less than the number of requested elements. The <i>celt</i> and <i>pceltFetched</i> parameters are defined by <b>IEnumVariant</b>.</para>
       <para>Other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
@@ -171,60 +128,40 @@ The index number is zero-based, i.e. the first item is at location 0 of the coll
           <description>Return code/value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>E_POINTER</b>
-                </description>
-              </item>
-              <item>
-                <description>Value: 0x80004003</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>Value: 0x80004003</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-          </description>
-        </item>
-        <item>
+          <description>Pointer is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>E_OUTOFMEMORY</b>
-                </description>
-              </item>
-              <item>
-                <description>Value: 0x8007000EL</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>Value: 0x8007000EL</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Failed to allocate required memory.</para>
-          </description>
-        </item>
+          <description>Failed to allocate required memory.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The enumeration is a snapshot of the named streams associated with the file at the time of the call and will not reflect named streams that are added or removed later on.</para>
-      <para>To retrieve a single named stream, use the <see cref="IFsiNamedStreams.get_Item" /> method.</para>
-      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
-    </remarks>
-    <seealso cref="IFsiNamedStreams" />
   </member>
   <member name="IFsiNamedStreams">
-    <summary>
-      <para>Use this interface to enumerate the named streams associated with a file in a file system image.</para>
-    </summary>
-    <remarks>
-      <para>To access this interface, call the <see cref="IFsiFileItem2.get_FsiNamedStreams" /> method of a file item object representing a standard or 'Real-Time' file.</para>
-      <para>This interface is provided only for file item objects representing regular or 'Real-Time' files. Named streams cannot have other name streams associated with them.</para>
-      <para>UDF must be enabled and set to UDF revision 2.00 or later in order to enable named stream support.</para>
-      <para>This interface is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</seealso>
-    <seealso cref="IFsiFileItem2" />
+    <summary>Use this interface to enumerate the named streams associated with a file in a file system image.</summary>
   </member>
 </doc>

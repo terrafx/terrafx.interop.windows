@@ -4,106 +4,18 @@
 <doc>
   <member name="IMFPMediaPlayerCallback.OnMediaPlayerEvent">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Called by the MFPlay player object to notify the application of a playback event.</para>
     </summary>
-    <param name="pEventHeader">
-      <para>Pointer to an <see cref="MFP_EVENT_HEADER" /> structure that contains information about the event.</para>
-    </param>
-    <remarks>
-      <para>The specific type of playback event is given in the <b>eEventType</b> member of the <see cref="MFP_EVENT_HEADER" /> structure. This structure contains information that is common to all of the event types. Some event types use extended structures. A set of macros is defined for casting the <i>pEventHeader</i> pointer to the correct structure type. For more information, see <see cref="MFP_EVENT_TYPE" />.</para>
-      <para>It is safe to call <see cref="IMFPMediaPlayer" /> and <see cref="IMFPMediaItem" /> methods inside the <b>OnMediaPlayer</b> method. MFPlay is guaranteed not to reenter the <b>OnMediaPlayer</b> method. That is, calls to <b>OnMediaPlayer</b> are serialized, and the method will not be invoked again from inside <b>OnMediaPlayer</b>.</para>
-      <h4>Examples</h4>
-      <para>The following code shows how to cast the <i>pEventHeader</i> parameter to the correct structure type and pass the structure pointer to a handler function. The handler functions are declared at the start of the example. The application would need to provide implementations for these functions.  Note that you do not have to handle every event. For example, if your application never calls <see cref="IMFPMediaPlayer.SetRate" />, you would not need to handle the <b>MFP_EVENT_TYPE_RATE_SET</b> event. In that case, simply omit <b>MFP_EVENT_TYPE_RATE_SET</b> from the <b>switch</b> statement.</para>
-      <code>// Declarations of MFPlay event handler functions.
-
-void OnPlay(MFP_PLAY_EVENT *pEvent);
-void OnPause(MFP_PAUSE_EVENT *pEvent);
-void OnStop(MFP_STOP_EVENT *pEvent);
-void OnPositionSet(MFP_POSITION_SET_EVENT *pEvent);
-void OnRateSet(MFP_RATE_SET_EVENT *pEvent);
-void OnMediaItemCreated(MFP_MEDIAITEM_CREATED_EVENT *pEvent);
-void OnMediaItemSet(MFP_MEDIAITEM_SET_EVENT *pEvent);
-void OnFrameStep(MFP_FRAME_STEP_EVENT *pEvent);
-void OnMediaItemCleared(MFP_MEDIAITEM_CLEARED_EVENT *pEvent);
-void OnMFEvent(MFP_MF_EVENT *pEvent);
-void OnError(MFP_ERROR_EVENT *pEvent);
-void OnPlaybackEnded(MFP_PLAYBACK_ENDED_EVENT *pEvent);
-void OnAquireUserCredential(MFP_ACQUIRE_USER_CREDENTIAL_EVENT *pEvent);
-
-// Implementation of IMFPMediaPlayerCallback.OnMediaPlayerEvent
-void STDMETHODCALLTYPE PlayerCallback.OnMediaPlayerEvent(MFP_EVENT_HEADER * pEventHeader)
-{
-    switch (pEventHeader-&gt;eEventType)
-    {
-    case MFP_EVENT_TYPE_PLAY:
-        OnPlay(MFP_GET_PLAY_EVENT(pEventHeader));
-        break;
-
-    case MFP_EVENT_TYPE_PAUSE:
-        OnPause(MFP_GET_PAUSE_EVENT(pEventHeader));
-        break;
-
-    case MFP_EVENT_TYPE_STOP:
-        OnStop(MFP_GET_STOP_EVENT(pEventHeader));
-        break;
-
-    case MFP_EVENT_TYPE_POSITION_SET:
-        OnPositionSet(MFP_GET_POSITION_SET_EVENT(pEventHeader));
-        break;
-
-    case MFP_EVENT_TYPE_RATE_SET:
-        OnRateSet(MFP_GET_RATE_SET_EVENT(pEventHeader));
-        break;
-
-    case MFP_EVENT_TYPE_MEDIAITEM_CREATED:
-        OnMediaItemCreated(MFP_GET_MEDIAITEM_CREATED_EVENT(pEventHeader));
-        break;
-
-    case MFP_EVENT_TYPE_MEDIAITEM_SET:
-        OnMediaItemSet(MFP_GET_MEDIAITEM_SET_EVENT(pEventHeader));
-        break;
-
-    case MFP_EVENT_TYPE_FRAME_STEP:
-        OnFrameStep(MFP_GET_FRAME_STEP_EVENT(pEventHeader));
-        break;
-
-    case MFP_EVENT_TYPE_MEDIAITEM_CLEARED:
-        OnMediaItemCleared(MFP_GET_MEDIAITEM_CLEARED_EVENT(pEventHeader));
-        break;
-
-    case MFP_EVENT_TYPE_MF:
-        OnMFEvent(MFP_GET_MF_EVENT(pEventHeader));
-        break;
-
-    case MFP_EVENT_TYPE_ERROR:
-        OnError(MFP_GET_ERROR_EVENT(pEventHeader));
-        break;
-
-    case MFP_EVENT_TYPE_PLAYBACK_ENDED:
-        OnPlaybackEnded(MFP_GET_PLAYBACK_ENDED_EVENT(pEventHeader));
-        break;
-
-    case MFP_EVENT_TYPE_ACQUIRE_USER_CREDENTIAL:
-        OnAquireUserCredential(MFP_GET_ACQUIRE_USER_CREDENTIAL_EVENT(pEventHeader));
-        break;
-    }
-}
-
-</code>
-    </remarks>
-    <seealso cref="IMFPMediaPlayerCallback" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+    <param name="pEventHeader">Pointer to an <see cref="MFP_EVENT_HEADER" /> structure that contains information about the event.</param>
   </member>
   <member name="IMFPMediaPlayerCallback">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Callback interface for the <see cref="IMFPMediaPlayer" /> interface.</para>
-      <para>To set the callback, pass an <b>IMFPMediaPlayerCallback</b> pointer to the <see cref="MFPCreateMediaPlayer" />  function in the  <i>pCallback</i>  parameter. The application implements the <b>IMFPMediaPlayerCallback</b> interface.</para>
+      <para>To set the callback, pass an <b>IMFPMediaPlayerCallback</b> pointer to the <see cref="MFPCreateMediaPlayer" /> function in the <i>pCallback</i> parameter. The application implements the <b>IMFPMediaPlayerCallback</b> interface.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
   </member>
 </doc>

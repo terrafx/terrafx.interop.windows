@@ -3,33 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SpatialAudioHrtfEnvironmentType">
-    <summary>
-      <para>Specifies the type of acoustic environment that is simulated when audio is processed for an <see cref="ISpatialAudioObjectForHrtf" />.</para>
-    </summary>
+    <summary>Specifies the type of acoustic environment that is simulated when audio is processed for an <see cref="ISpatialAudioObjectForHrtf" />.</summary>
   </member>
   <member name="SpatialAudioHrtfEnvironmentType.SpatialAudioHrtfEnvironment_Small">
-    <summary>
-      <para>A small room.</para>
-    </summary>
+    <summary>A small room.</summary>
   </member>
   <member name="SpatialAudioHrtfEnvironmentType.SpatialAudioHrtfEnvironment_Medium">
-    <summary>
-      <para>A medium-sized room.</para>
-    </summary>
+    <summary>A medium-sized room.</summary>
   </member>
   <member name="SpatialAudioHrtfEnvironmentType.SpatialAudioHrtfEnvironment_Large">
-    <summary>
-      <para>A large room.</para>
-    </summary>
+    <summary>A large room.</summary>
   </member>
   <member name="SpatialAudioHrtfEnvironmentType.SpatialAudioHrtfEnvironment_Outdoors">
-    <summary>
-      <para>An outdoor space.</para>
-    </summary>
+    <summary>An outdoor space.</summary>
   </member>
   <member name="SpatialAudioHrtfEnvironmentType.SpatialAudioHrtfEnvironment_Average">
-    <summary>
-      <para>Reserved for Microsoft use. Apps should not use this value.</para>
-    </summary>
+    <summary>Reserved for Microsoft use. Apps should not use this value.</summary>
   </member>
 </doc>

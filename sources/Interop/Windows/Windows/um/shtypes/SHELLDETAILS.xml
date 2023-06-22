@@ -3,14 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SHELLDETAILS">
-    <summary>
-      <para>Reports detailed information on an item in a Shell folder.</para>
-    </summary>
-    <seealso cref="IShellDetails.GetDetailsOf" />
+    <summary>Reports detailed information on an item in a Shell folder.</summary>
   </member>
   <member name="SHELLDETAILS.fmt">
     <summary>
-      <para>Type: <b>int</b></para>
       <para>The alignment of the column heading and the subitem text in the column. This member can be one of the following values.</para>
       <h4>LVCFMT_CENTER</h4>
       <para>Text is centered.</para>
@@ -21,19 +17,12 @@
       <para>Text is left-aligned.</para>
       <h4>LVCFMT_RIGHT</h4>
       <para>Text is right-aligned.</para>
-      <h5></h5>
     </summary>
   </member>
   <member name="SHELLDETAILS.cxChar">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The number of average-sized characters in the header.</para>
-    </summary>
+    <summary>The number of average-sized characters in the header.</summary>
   </member>
   <member name="SHELLDETAILS.str">
-    <summary>
-      <para>Type: <b><see cref="STRRET" /></b></para>
-      <para>An <see cref="STRRET" /> structure that includes a string with the requested information. To convert this structure to a string, use <see cref="StrRetToBuf" /> or <see cref="StrRetToStr" />.</para>
-    </summary>
+    <summary>An <see cref="STRRET" /> structure that includes a string with the requested information. To convert this structure to a string, use <see cref="StrRetToBuf" /> or <see cref="StrRetToStr" />.</summary>
   </member>
 </doc>

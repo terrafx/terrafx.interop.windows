@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RO_INIT_TYPE">
+    <summary>Determines the concurrency model used for incoming calls to the objects created by this thread.</summary>
+  </member>
+  <member name="RO_INIT_TYPE.RO_INIT_SINGLETHREADED"></member>
+  <member name="RO_INIT_TYPE.RO_INIT_MULTITHREADED">
+    <summary>Initializes the thread for multi-threaded concurrency. The current thread is initialized in the MTA.</summary>
+  </member>
+</doc>

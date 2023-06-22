@@ -3,48 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STORAGE_PHYSICAL_NODE_DATA">
-    <summary>
-      <para>Specifies the physical device data of a storage node.</para>
-    </summary>
+    <summary>Specifies the physical device data of a storage node.</summary>
   </member>
   <member name="STORAGE_PHYSICAL_NODE_DATA.NodeId">
-    <summary>
-      <para>The hardware ID of the storage node.</para>
-    </summary>
+    <summary>The hardware ID of the storage node.</summary>
   </member>
   <member name="STORAGE_PHYSICAL_NODE_DATA.AdapterCount">
-    <summary>
-      <para>A value of 0 or 1 that indicates the adapter count in the storage node.</para>
-    </summary>
+    <summary>A value of 0 or 1 that indicates the adapter count in the storage node.</summary>
   </member>
   <member name="STORAGE_PHYSICAL_NODE_DATA.AdapterDataLength">
-    <summary>
-      <para>The data length of the storage adapter in the storage node,  in units of kilobytes (1024 bytes).</para>
-    </summary>
+    <summary>The data length of the storage adapter in the storage node, in units of kilobytes (1024 bytes).</summary>
   </member>
   <member name="STORAGE_PHYSICAL_NODE_DATA.AdapterDataOffset">
-    <summary>
-      <para>The data offset from the beginning of the data structure. The buffer contains an array of <see cref="STORAGE_PHYSICAL_ADAPTER_DATA" />.</para>
-    </summary>
+    <summary>The data offset from the beginning of the data structure. The buffer contains an array of <see cref="STORAGE_PHYSICAL_ADAPTER_DATA" />.</summary>
   </member>
   <member name="STORAGE_PHYSICAL_NODE_DATA.DeviceCount">
-    <summary>
-      <para>A value less than or equal to 1.</para>
-    </summary>
+    <summary>A value less than or equal to 1.</summary>
   </member>
   <member name="STORAGE_PHYSICAL_NODE_DATA.DeviceDataLength">
-    <summary>
-      <para>The data length of the storage device in the storage node,  in units of kilobytes (1024 bytes).</para>
-    </summary>
+    <summary>The data length of the storage device in the storage node, in units of kilobytes (1024 bytes).</summary>
   </member>
   <member name="STORAGE_PHYSICAL_NODE_DATA.DeviceDataOffset">
-    <summary>
-      <para>The data offset from the beginning of the data structure. The buffer contains an array of <see cref="STORAGE_PHYSICAL_DEVICE_DATA" />.</para>
-    </summary>
+    <summary>The data offset from the beginning of the data structure. The buffer contains an array of <see cref="STORAGE_PHYSICAL_DEVICE_DATA" />.</summary>
   </member>
-  <member name="STORAGE_PHYSICAL_NODE_DATA.Reserved [3]">
-    <summary>
-      <para>Specifies if the storage adapter is reserved.</para>
-    </summary>
+  <member name="STORAGE_PHYSICAL_NODE_DATA.Reserved">
+    <summary>Specifies if the storage adapter is reserved.</summary>
   </member>
 </doc>

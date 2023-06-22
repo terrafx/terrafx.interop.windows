@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CONNECTDATA">
-    <summary>
-      <para>Describes a connection that exists to a given connection point.</para>
-    </summary>
-    <seealso cref="IConnectionPoint" />
-    <seealso cref="IEnumConnections" />
+    <summary>Describes a connection that exists to a given connection point.</summary>
   </member>
   <member name="CONNECTDATA.pUnk">
-    <summary>
-      <para>A pointer to the <see cref="IUnknown" /> interface on a connected advisory sink. The caller must call <see cref="Release" /> using this pointer when the <b>CONNECTDATA</b> structure is no longer needed. The caller is responsible for calling <b>Release</b> for each <b>CONNECTDATA</b> structure enumerated through <see cref="IEnumConnections.Next" />.</para>
-    </summary>
+    <summary>A pointer to the <see cref="IUnknown" /> interface on a connected advisory sink. The caller must call <see cref="Release" /> using this pointer when the <b>CONNECTDATA</b> structure is no longer needed. The caller is responsible for calling <b>Release</b> for each <b>CONNECTDATA</b> structure enumerated through <see cref="IEnumConnections.Next" />.</summary>
   </member>
   <member name="CONNECTDATA.dwCookie">
-    <summary>
-      <para>Connection where this value is the same token that is returned originally from calls to <see cref="IConnectionPoint.Advise" />. This token can be used to disconnect the sink pointed to by a <b>pUnk</b> by passing <b>dwCookie</b> to <see cref="IConnectionPoint.Unadvise" />.</para>
-    </summary>
+    <summary>Connection where this value is the same token that is returned originally from calls to <see cref="IConnectionPoint.Advise" />. This token can be used to disconnect the sink pointed to by a <b>pUnk</b> by passing <b>dwCookie</b> to <see cref="IConnectionPoint.Unadvise" />.</summary>
   </member>
 </doc>

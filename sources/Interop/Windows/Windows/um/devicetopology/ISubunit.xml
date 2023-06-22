@@ -3,12 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISubunit">
-    <summary>
-      <para>The <b>ISubunit</b> interface represents a hardware subunit (for example, a volume control) that lies in the data path between a client and an audio endpoint device. The client obtains a reference to an <b>ISubunit</b> interface by calling the <see cref="IDeviceTopology.GetSubunit" /> method, or by calling the <b>IPart.QueryInterface</b> method with parameter <i>iid</i> set to <b>REFIID</b> IID_ISubunit.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/devicetopology-api">DeviceTopology API</seealso>
-    <seealso cref="IDeviceTopology.GetSubunit" />
-    <seealso cref="IPart Interface" />
+    <summary>The <b>ISubunit</b> interface represents a hardware subunit (for example, a volume control) that lies in the data path between a client and an audio endpoint device. The client obtains a reference to an <b>ISubunit</b> interface by calling the <see cref="IDeviceTopology.GetSubunit" /> method, or by calling the <b>IPart.QueryInterface</b> method with parameter <i>iid</i> set to <b>REFIID</b> IID_ISubunit.</summary>
   </member>
 </doc>

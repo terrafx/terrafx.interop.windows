@@ -3,40 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DESKTOP_WALLPAPER_POSITION">
-    <summary>
-      <para>Specifies how the desktop wallpaper should be displayed.</para>
-    </summary>
-    <seealso cref="IDesktopWallpaper.GetPosition" />
-    <seealso cref="IDesktopWallpaper.SetPosition" />
+    <summary>Specifies how the desktop wallpaper should be displayed.</summary>
   </member>
   <member name="DESKTOP_WALLPAPER_POSITION.DWPOS_CENTER">
-    <summary>
-      <para>Center the image; do not stretch. This is equivalent to the <a href="https://docs.microsoft.com//windows/desktop/shell/iactivedesktop-flags">WPSTYLE_CENTER</a> style in <see cref="IActiveDesktop" />.</para>
-    </summary>
+    <summary>Center the image; do not stretch. This is equivalent to the <a href="https://docs.microsoft.com//windows/desktop/shell/iactivedesktop-flags">WPSTYLE_CENTER</a> style in <see cref="IActiveDesktop" />.</summary>
   </member>
   <member name="DESKTOP_WALLPAPER_POSITION.DWPOS_TILE">
-    <summary>
-      <para>Tile the image across all monitors. This is equivalent to the <a href="https://docs.microsoft.com//windows/desktop/shell/iactivedesktop-flags">WPSTYLE_TILE</a> style in <see cref="IActiveDesktop" />.</para>
-    </summary>
+    <summary>Tile the image across all monitors. This is equivalent to the <a href="https://docs.microsoft.com//windows/desktop/shell/iactivedesktop-flags">WPSTYLE_TILE</a> style in <see cref="IActiveDesktop" />.</summary>
   </member>
   <member name="DESKTOP_WALLPAPER_POSITION.DWPOS_STRETCH">
-    <summary>
-      <para>Stretch the image to exactly fit on the monitor. This is equivalent to the <a href="https://docs.microsoft.com//windows/desktop/shell/iactivedesktop-flags">WPSTYLE_STRETCH</a> style in <see cref="IActiveDesktop" />.</para>
-    </summary>
+    <summary>Stretch the image to exactly fit on the monitor. This is equivalent to the <a href="https://docs.microsoft.com//windows/desktop/shell/iactivedesktop-flags">WPSTYLE_STRETCH</a> style in <see cref="IActiveDesktop" />.</summary>
   </member>
   <member name="DESKTOP_WALLPAPER_POSITION.DWPOS_FIT">
-    <summary>
-      <para>Stretch the image to exactly the height or width of the monitor without changing its aspect ratio or cropping the image. This can result in <see cref="colored letterbox bars" /> on either side or on above and below of the image. This is equivalent to the <a href="https://docs.microsoft.com//windows/desktop/shell/iactivedesktop-flags">WPSTYLE_KEEPASPECT</a> style in <see cref="IActiveDesktop" />.</para>
-    </summary>
+    <summary>Stretch the image to exactly the height or width of the monitor without changing its aspect ratio or cropping the image. This can result in <see cref="colored letterbox bars" /> on either side or on above and below of the image. This is equivalent to the <a href="https://docs.microsoft.com//windows/desktop/shell/iactivedesktop-flags">WPSTYLE_KEEPASPECT</a> style in <see cref="IActiveDesktop" />.</summary>
   </member>
   <member name="DESKTOP_WALLPAPER_POSITION.DWPOS_FILL">
-    <summary>
-      <para>Stretch the image to fill the screen, cropping the image as necessary to avoid letterbox bars. This is equivalent to the <a href="https://docs.microsoft.com//windows/desktop/shell/iactivedesktop-flags">WPSTYLE_CROPTOFIT</a> style in <see cref="IActiveDesktop" />.</para>
-    </summary>
+    <summary>Stretch the image to fill the screen, cropping the image as necessary to avoid letterbox bars. This is equivalent to the <a href="https://docs.microsoft.com//windows/desktop/shell/iactivedesktop-flags">WPSTYLE_CROPTOFIT</a> style in <see cref="IActiveDesktop" />.</summary>
   </member>
   <member name="DESKTOP_WALLPAPER_POSITION.DWPOS_SPAN">
-    <summary>
-      <para>Spans a single image across all monitors attached to the system. This flag has no <see cref="IActiveDesktop" /> equivalent.</para>
-    </summary>
+    <summary>Spans a single image across all monitors attached to the system. This flag has no <see cref="IActiveDesktop" /> equivalent.</summary>
   </member>
 </doc>

@@ -3,38 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TLIBATTR">
-    <summary>
-      <para>Contains information about a type library. Information from this structure is used to identify the type library and to provide national language support for member names.</para>
-    </summary>
+    <summary>Contains information about a type library. Information from this structure is used to identify the type library and to provide national language support for member names.</summary>
   </member>
   <member name="TLIBATTR.guid">
-    <summary>
-      <para>The globally unique identifier.</para>
-    </summary>
+    <summary>The globally unique identifier.</summary>
   </member>
   <member name="TLIBATTR.lcid">
-    <summary>
-      <para>The locale identifier.</para>
-    </summary>
+    <summary>The locale identifier.</summary>
   </member>
   <member name="TLIBATTR.syskind">
-    <summary>
-      <para>The target hardware platform.</para>
-    </summary>
+    <summary>The target hardware platform.</summary>
   </member>
   <member name="TLIBATTR.wMajorVerNum">
-    <summary>
-      <para>The major version number.</para>
-    </summary>
+    <summary>The major version number.</summary>
   </member>
   <member name="TLIBATTR.wMinorVerNum">
-    <summary>
-      <para>The minor version number.</para>
-    </summary>
+    <summary>The minor version number.</summary>
   </member>
   <member name="TLIBATTR.wLibFlags">
-    <summary>
-      <para>The library flags.</para>
-    </summary>
+    <summary>The library flags.</summary>
   </member>
 </doc>

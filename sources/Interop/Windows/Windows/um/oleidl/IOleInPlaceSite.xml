@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IOleInPlaceSite.CanInPlaceActivate">
-    <summary>
-      <para>Determines whether the container can activate the object in place.</para>
-    </summary>
+    <summary>Determines whether the container can activate the object in place.</summary>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -13,39 +11,35 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The container does not allow in-place activation for this object.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The container does not allow in-place activation for this object.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>An unexpected error has occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Only objects being displayed as DVASPECT_CONTENT can be activated in place.</para>
-      <h3>Notes to Callers</h3>
-      <b>CanInPlaceActivate</b> is called by the client site's immediate child object when this object must activate in place. This function allows the container application to accept or refuse the activation request.
-</remarks>
-    <seealso cref="IOleInPlaceSite" />
   </member>
   <member name="IOleInPlaceSite.DeactivateAndUndo">
-    <summary>
-      <para>Deactivates the object, ends the in-place session, and reverts to the container's saved undo state.</para>
-    </summary>
+    <summary>Deactivates the object, ends the in-place session, and reverts to the container's saved undo state.</summary>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -53,30 +47,23 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unexpected error has occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <h3>Notes to Callers</h3>
-      <para>Called by the active object when the user invokes undo just after activating the object.</para>
-      <h3>Notes to Implementers</h3>
-      <para>Upon completion of this call, the container should call <see cref="IOleInPlaceObject.UIDeactivate" /> to remove the user interface for the object, activate itself, and undo.</para>
-    </remarks>
-    <seealso cref="IOleInPlaceSite" />
   </member>
   <member name="IOleInPlaceSite.DiscardUndoState">
-    <summary>
-      <para>Instructs the container to discard its undo state. The container should not call <see cref="IOleInPlaceObject.ReActivateAndUndo" />.</para>
-    </summary>
+    <summary>Instructs the container to discard its undo state. The container should not call <see cref="IOleInPlaceObject.ReActivateAndUndo" />.</summary>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -84,45 +71,28 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unexpected error has occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If an object is activated in place and the object's associated object application maintains only one level of undo, there is no need to have more than one entry on the undo stack. That is, after a change has been made to the active object that invalidates its undo state saved by the container, there is no need to maintain this undo state in the container.</para>
-      <h3>Notes to Callers</h3>
-      <b>DiscardUndoState</b> is called by the active object while performing some action that would discard the undo state of the object. The in-place object calls this method to notify the container to discard the object's last saved undo state.
-</remarks>
-    <seealso cref="IOleInPlaceSite" />
-    <seealso cref="IOleInPlaceSite.DiscardUndoState" />
   </member>
   <member name="IOleInPlaceSite.GetWindowContext">
-    <summary>
-      <para>Enables an in-place object to retrieve the window interfaces that form the window object hierarchy, and the position in the parent window where the object's in-place activation window should be located.</para>
-    </summary>
-    <param name="ppFrame">
-      <para>A pointer to an <see cref="IOleInPlaceFrame" /> pointer variable that receives the interface pointer to the frame. If an error occurs, the implementation must set <i>ppFrame</i> to <b>NULL</b>.</para>
-    </param>
-    <param name="ppDoc">
-      <para>A pointer to an <see cref="IOleInPlaceUIWindow" /> pointer variable that receives the interface pointer to the document window. If the document window is the same as the frame window, <i>ppDoc</i> is set to <b>NULL</b>. In this case, the object can only use <i>ppFrame</i> or border negotiation. If an error is returned, the implementation must set <i>ppDoc</i> to <b>NULL</b>.</para>
-    </param>
-    <param name="lprcPosRect">
-      <para>A pointer to a <see cref="RECT" /> structure for the rectangle containing the position of the in-place object in the client coordinates of its parent window. If an error is returned, this parameter must be set to <b>NULL</b>.</para>
-    </param>
-    <param name="lprcClipRect">
-      <para>A pointer to a <see cref="RECT" /> structure for the outer rectangle containing the in-place object's position rectangle (<i>lprcPosRect</i>). This rectangle is relative to the client area of the object's parent window. If an error is returned, this parameter must be set to <b>NULL</b>.</para>
-    </param>
-    <param name="lpFrameInfo">
-      <para>A pointer to an <see cref="OLEINPLACEFRAMEINFO" /> structure the container is to fill in with appropriate data. If an error is returned, this parameter must be set to <b>NULL</b>.</para>
-    </param>
+    <summary>Enables an in-place object to retrieve the window interfaces that form the window object hierarchy, and the position in the parent window where the object's in-place activation window should be located.</summary>
+    <param name="ppFrame">A pointer to an <see cref="IOleInPlaceFrame" /> pointer variable that receives the interface pointer to the frame. If an error occurs, the implementation must set <i>ppFrame</i> to <b>NULL</b>.</param>
+    <param name="ppDoc">A pointer to an <see cref="IOleInPlaceUIWindow" /> pointer variable that receives the interface pointer to the document window. If the document window is the same as the frame window, <i>ppDoc</i> is set to <b>NULL</b>. In this case, the object can only use <i>ppFrame</i> or border negotiation. If an error is returned, the implementation must set <i>ppDoc</i> to <b>NULL</b>.</param>
+    <param name="lprcPosRect">A pointer to a <see cref="RECT" /> structure for the rectangle containing the position of the in-place object in the client coordinates of its parent window. If an error is returned, this parameter must be set to <b>NULL</b>.</param>
+    <param name="lprcClipRect">A pointer to a <see cref="RECT" /> structure for the outer rectangle containing the in-place object's position rectangle (<i>lprcPosRect</i>). This rectangle is relative to the client area of the object's parent window. If an error is returned, this parameter must be set to <b>NULL</b>.</param>
+    <param name="lpFrameInfo">A pointer to an <see cref="OLEINPLACEFRAMEINFO" /> structure the container is to fill in with appropriate data. If an error is returned, this parameter must be set to <b>NULL</b>.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -130,68 +100,59 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description> One or more of the supplied pointers is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One or more of the supplied pointers is invalid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>An unexpected error has occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <see cref="OLEINPLACEFRAMEINFO" /> structure provides data needed by OLE to dispatch keystroke accelerators to a container frame while an object is active in place.</para>
-      <para>When an object is activated, it calls <b>GetWindowContext</b> from its container. The container returns the handle to its in-place accelerator table through the <see cref="OLEINPLACEFRAMEINFO" /> structure. Before calling <b>GetWindowContext</b>, the object must provide the size of the <b>OLEINPLACEFRAMEINFO</b> structure by filling in the cb member, pointed to by <i>lpFrameInfo</i>.</para>
-    </remarks>
-    <seealso cref="IOleInPlaceSite" />
   </member>
   <member name="IOleInPlaceSite.OnInPlaceActivate">
-    <summary>
-      <para>Notifies the container that one of its objects is being activated in place.</para>
-    </summary>
+    <summary>Notifies the container that one of its objects is being activated in place.</summary>
     <returns>
-      <para>This method returns S_OK if the container allows the in-place activation.
-Other possible return values include the following.</para>
+      <para>This method returns S_OK if the container allows the in-place activation. Other possible return values include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unexpected error has occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <h3>Notes to Callers</h3>
-      <b>OnInPlaceActivate</b> is called by the active embedded object when it is activated in-place for the first time. The container should note that the object is becoming active.
-<h3>Notes to Implementers</h3><para>A container that supports linking to embedded objects must properly manage the running of its in-place objects when they are UI-inactive and running in the hidden state. To reactivate the in-place object quickly, a container should not call <see cref="IOleObject.Close" /> until the container's <see cref="IOleInPlaceSite.DeactivateAndUndo" /> method is called. To help protect against the object being left in an unstable state if a linking client updates silently, the container should call <see cref="OleLockRunning" /> to lock the object in the running state. This prevents the hidden in-place object from shutting down before it can be saved in its container.</para></remarks>
-    <seealso cref="IOleInPlaceSite" />
   </member>
   <member name="IOleInPlaceSite.OnInPlaceDeactivate">
-    <summary>
-      <para>Notifies the container that the object is no longer active in place.</para>
-    </summary>
+    <summary>Notifies the container that the object is no longer active in place.</summary>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -199,32 +160,24 @@ Other possible return values include the following.</para>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unexpected error has occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <h3>Notes to Callers</h3>
-      <b>OnInPlaceDeactivate</b> is called by an in-place object when it is fully deactivated. This function notifies the container that the object has been deactivated, and it gives the container a chance to run code pertinent to the object's deactivation. In particular, <b>OnInPlaceDeactivate</b> is called as a result of <see cref="IOleInPlaceObject.InPlaceDeactivate" /> being called. Calling <b>OnInPlaceDeactivate</b> indicates that the object can no longer support Undo.
-<h3>Notes to Implementers</h3><para>If the container is holding pointers to the <see cref="IOleInPlaceObject" /> and <see cref="IOleInPlaceActiveObject" /> interface implementations, it should release them after the <b>OnInPlaceDeactivate</b> call.</para></remarks>
-    <seealso cref="IOleInPlaceObject.InPlaceDeactivate" />
-    <seealso cref="IOleInPlaceSite" />
   </member>
   <member name="IOleInPlaceSite.OnPosRectChange">
-    <summary>
-      <para>Notifies the container that the object extents have changed.</para>
-    </summary>
-    <param name="lprcPosRect">
-      <para>A pointer a <see cref="RECT" /> structure that contains the position of the in-place object in the client coordinates of its parent window.</para>
-    </param>
+    <summary>Notifies the container that the object extents have changed.</summary>
+    <param name="lprcPosRect">A pointer a <see cref="RECT" /> structure that contains the position of the in-place object in the client coordinates of its parent window.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -232,79 +185,60 @@ Other possible return values include the following.</para>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The supplied pointer is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The supplied pointer is invalid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>An unexpected error occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <h3>Notes to Callers</h3>
-      <para>The <b>OnPosRectChange</b> method is called by the in-place object.</para>
-      <h3>Notes to Implementers</h3>
-      <para>When the in-place object calls <b>OnPosRectChange</b>, the container must call <see cref="IOleInPlaceObject.SetObjectRects" /> to specify the new position of the in-place window and the clipping rectangle. Only then does the object resize its window.</para>
-      <para>In most cases, the object grows to the right and/or down. There could be cases where the object grows to the left and/or up, as conveyed through <i>lprcPosRect</i>. It is also possible to change the object's position without changing its size.</para>
-    </remarks>
-    <seealso cref="IOleInPlaceObject.SetObjectRects" />
-    <seealso cref="IOleInPlaceSite" />
   </member>
   <member name="IOleInPlaceSite.OnUIActivate">
-    <summary>
-      <para>Notifies the container that the object is about to be activated in place and that the object is going to replace the container's main menu with an in-place composite menu.</para>
-    </summary>
+    <summary>Notifies the container that the object is about to be activated in place and that the object is going to replace the container's main menu with an in-place composite menu.</summary>
     <returns>
-      <para>This method returns S_OK if the container allows the in-place activation.
-Other possible return values include the following.</para>
+      <para>This method returns S_OK if the container allows the in-place activation. Other possible return values include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unexpected error has occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <h3>Notes to Callers</h3>
-      <para>The in-place object calls <b>IOleInPlaceSite.OnUIActivate</b> just before activating its user interface.</para>
-      <h3>Notes to Implementers</h3>
-      <para>The container should remove any user interface associated with its own activation. If the container is itself an embedded object, it should remove its document-level user interface.</para>
-      <para>If there is already an object active in place in the same document, the container should call <see cref="IOleInPlaceObject.UIDeactivate" /> before calling <see cref="OnUIDeactivate" />.</para>
-    </remarks>
-    <seealso cref="IOleInPlaceObject.UIDeactivate" />
-    <seealso cref="IOleInPlaceSite" />
   </member>
   <member name="IOleInPlaceSite.OnUIDeactivate">
-    <summary>
-      <para>Notifies the container that it should reinstall its user interface and take focus, and whether the object has an undoable state.</para>
-    </summary>
-    <param name="fUndoable">
-      <para>Specifies whether the object can undo changes (TRUE) or not (FALSE).</para>
-    </param>
+    <summary>Notifies the container that it should reinstall its user interface and take focus, and whether the object has an undoable state.</summary>
+    <param name="fUndoable">Specifies whether the object can undo changes (TRUE) or not (FALSE).</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -312,33 +246,24 @@ Other possible return values include the following.</para>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unexpected error has occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The object indicates whether it can undo changes through the <i>fUndoable</i> flag. If the object can undo changes, the container can (by the user invoking the <b>Edit Undo</b> command) call the <see cref="IOleInPlaceObject.ReactivateAndUndo" /> method to undo the changes.</para>
-      <h3>Notes to Callers</h3>
-      <b>IOleInPlaceSite.OnUIDeactivate</b> is called by the site's immediate child object when it is deactivating to notify the container that it should reinstall its own user interface components and take focus. The container should wait for the call to <b>IOleInPlaceSite.OnUIDeactivate</b> to complete before fully cleaning up and destroying any composite submenus.
-</remarks>
-    <seealso cref="IOleInPlaceObject.ReactivateAndUndo" />
-    <seealso cref="IOleInPlaceSite" />
   </member>
   <member name="IOleInPlaceSite.Scroll">
-    <summary>
-      <para>Instructs the container to scroll the view of the object by the specified number of pixels.</para>
-    </summary>
-    <param name="scrollExtant">
-      <para>The number of pixels by which to scroll in the X and Y directions.</para>
-    </param>
+    <summary>Instructs the container to scroll the view of the object by the specified number of pixels.</summary>
+    <param name="scrollExtant">The number of pixels by which to scroll in the X and Y directions.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -346,42 +271,37 @@ Other possible return values include the following.</para>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The specified pointer is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The specified pointer is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>An unexpected error has occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>As a result of scrolling, the object's visible rectangle can change. If that happens, the container should give the new clipping rectangle to the object by calling <see cref="IOleInPlaceObject.SetObjectRects" />. The intersection of the <i>lprcClipRect</i> and <i>lprcPosRect</i> rectangles gives the new visible rectangle. See <see cref="IOleInPlaceSite.GetWindowContext" /> for more information.</para>
-      <h3>Notes to Callers</h3>
-      <para>Called by an active, in-place object when it is asking the container to scroll.</para>
-    </remarks>
-    <seealso cref="IOleInPlaceObject.SetObjectRects" />
-    <seealso cref="IOleInPlaceSite" />
   </member>
   <member name="IOleInPlaceSite">
     <summary>
       <para>Manages the interaction between the container and the object's in-place client site. Recall that the client site is the display site for embedded objects, and provides position and conceptual information about the object.</para>
       <para>This interface provides methods that manage in-place objects. With <b>IOleInPlaceSite</b>, you can determine if an object can be activated and manage its activation and deactivation. You can notify the container when one of its objects is being activated and inform the container that a composite menu will replace the container's regular menu. It provides methods that make it possible for the in-place object to retrieve the window object hierarchy, and the position in the parent window where the object should place its in-place activation window. Finally, it determines how the container scrolls the object, manages the object undo state, and notifies the object when its borders have changed.</para>
     </summary>
-    <seealso cref="IOleClientSite" />
-    <seealso cref="IOleWindow" />
   </member>
 </doc>

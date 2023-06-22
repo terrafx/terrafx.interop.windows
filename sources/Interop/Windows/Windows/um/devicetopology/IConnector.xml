@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IConnector.ConnectTo">
-    <summary>
-      <para>The <b>ConnectTo</b> method connects this connector to a connector in another device-topology object.</para>
-    </summary>
-    <param name="pConnectTo">
-      <para>The other connector. This parameter points to the <see cref="IConnector" /> interface of the connector object that represents the connector in the other device topology. The caller is responsible for releasing its counted reference to the <b>IConnector</b> interface when it is no longer needed. The <b>ConnectTo</b> method obtains its own reference to this interface.</para>
-    </param>
+    <summary>The <b>ConnectTo</b> method connects this connector to a connector in another device-topology object.</summary>
+    <param name="pConnectTo">The other connector. This parameter points to the <see cref="IConnector" /> interface of the connector object that represents the connector in the other device topology. The caller is responsible for releasing its counted reference to the <b>IConnector</b> interface when it is no longer needed. The <b>ConnectTo</b> method obtains its own reference to this interface.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -16,54 +12,59 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer <i>pConnectTo</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer <i>pConnectTo</i> is <b>NULL</b>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The current connector and remote connector pointed to by <i>pConnectTo</i>, have the same direction of data flow. A connector with data-flow direction "In" must be connected to another connector with data-flow direction "Out" to create a valid connection in the topology. To determine the data flow of a connector, call <see cref="IConnector.GetDataFlow" />.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The object pointed to by <i>pConnectTo</i> is not a valid connector object.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The current connector and remote connector pointed to by <i>pConnectTo</i>, have the same direction of data flow. A connector with data-flow direction "In" must be connected to another connector with data-flow direction "Out" to create a valid connection in the topology. To determine the data flow of a connector, call <see cref="IConnector.GetDataFlow" />.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HRESULT_FROM_WIN32(ERROR_DEVICE_ALREADY_ATTACHED)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOINTERFACE</b>
-            </para>
-          </description>
-          <description>
-            <para>The object pointed to by <i>pConnectTo</i> is not a valid connector object.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>HRESULT_FROM_WIN32(ERROR_DEVICE_ALREADY_ATTACHED)</b>
-            </para>
-          </description>
-          <description>
-            <para>One of the two connectors is already attached to another connector. For information about this macro, see the Windows SDK documentation.</para>
-          </description>
-        </item>
+          <description>One of the two connectors is already attached to another connector. For information about this macro, see the Windows SDK documentation.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IConnector Interface" />
   </member>
   <member name="IConnector.Disconnect">
-    <summary>
-      <para>The <b>Disconnect</b> method disconnects this connector from another connector.</para>
-    </summary>
+    <summary>The <b>Disconnect</b> method disconnects this connector from another connector.</summary>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -71,37 +72,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTFOUND</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTFOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>This connector is already disconnected.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>This connector is already disconnected.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HRESULT_FROM_WIN32(ERROR_FILE_READ_ONLY)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>HRESULT_FROM_WIN32(ERROR_FILE_READ_ONLY)</b>
-            </para>
-          </description>
-          <description>
-            <para>A permanent connection cannot be disconnected. For information about this macro, see the Windows SDK documentation.</para>
-          </description>
-        </item>
+          <description>A permanent connection cannot be disconnected. For information about this macro, see the Windows SDK documentation.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IConnector Interface" />
   </member>
   <member name="IConnector.GetConnectedTo">
-    <summary>
-      <para>The <b>GetConnectedTo</b> method gets the connector to which this connector is connected.</para>
-    </summary>
-    <param name="ppConTo">
-      <para>Pointer to a pointer variable into which the method writes the address of the <see cref="IConnector" /> interface of the other connector object. Through this method, the caller obtains a counted reference to the interface. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the <b>GetConnectedTo</b> call fails,  <i>*ppConTo</i> is <b>NULL</b>.</para>
-    </param>
+    <summary>The <b>GetConnectedTo</b> method gets the connector to which this connector is connected.</summary>
+    <param name="ppConTo">Pointer to a pointer variable into which the method writes the address of the <see cref="IConnector" /> interface of the other connector object. Through this method, the caller obtains a counted reference to the interface. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the <b>GetConnectedTo</b> call fails, <i>*ppConTo</i> is <b>NULL</b>.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -109,51 +109,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer <i>ppConTo</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer <i>ppConTo</i> is <b>NULL</b>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTFOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>This connector is not connected, or the other side of the connection is not another device topology (for example, a Software_IO connection).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTFOUND</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HRESULT_FROM_WIN32(ERROR_PATH_NOT_FOUND)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>This connector is not connected, or the other side of the connection is not another device topology (for example, a Software_IO connection).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>HRESULT_FROM_WIN32(ERROR_PATH_NOT_FOUND)</b>
-            </para>
-          </description>
-          <description>
-            <para>The device topology on the other side of the connection is not active (that is, the device state is not DEVICE_STATE_ACTIVE).</para>
-          </description>
-        </item>
+          <description>The device topology on the other side of the connection is not active (that is, the device state is not DEVICE_STATE_ACTIVE).</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For code examples that call this method, see the implementations of the GetHardwareDeviceTopology and SelectCaptureDevice functions in <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-topologies">Device Topologies</a>.</para>
-      <para>For information about Software_IO connections, see <see cref="ConnectorType Enumeration" />. For information about the HRESULT_FROM_WIN32 macro, see the Windows SDK documentation. For information about the DEVICE_STATE_NOTPRESENT device state, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-state-xxx-constants">DEVICE_STATE_XXX Constants</a>.</para>
-    </remarks>
-    <seealso cref="IConnector Interface" />
   </member>
   <member name="IConnector.GetConnectorIdConnectedTo">
-    <summary>
-      <para>The <b>GetConnectorIdConnectedTo</b> method gets the global ID of the connector, if any, that this connector is connected to.</para>
-    </summary>
-    <param name="ppwstrConnectorId">
-      <para>Pointer to a string pointer into which the method writes the address of a null-terminated, wide-character string that contains the other connector's global ID. The method allocates the storage for the string. The caller is responsible for freeing the storage, when it is no longer needed, by calling the <b>CoTaskMemFree</b> function. If the <b>GetConnectorIdConnectedTo</b> call fails,  <i>*ppwstrConnectorId</i> is <b>NULL</b>. For information about <b>CoTaskMemFree</b>, see the Windows SDK documentation.</para>
-    </param>
+    <summary>The <b>GetConnectorIdConnectedTo</b> method gets the global ID of the connector, if any, that this connector is connected to.</summary>
+    <param name="ppwstrConnectorId">Pointer to a string pointer into which the method writes the address of a null-terminated, wide-character string that contains the other connector's global ID. The method allocates the storage for the string. The caller is responsible for freeing the storage, when it is no longer needed, by calling the <b>CoTaskMemFree</b> function. If the <b>GetConnectorIdConnectedTo</b> call fails, <i>*ppwstrConnectorId</i> is <b>NULL</b>. For information about <b>CoTaskMemFree</b>, see the Windows SDK documentation.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -161,47 +158,47 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTFOUND</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTFOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>This connector is not connected, or the other side of the connection is not another device topology (for example, a Software_IO connection).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>This connector is not connected, or the other side of the connection is not another device topology (for example, a Software_IO connection).</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Parameter <i>ppwstrConnectorId</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Parameter <i>ppwstrConnectorId</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Out of memory.</para>
-          </description>
-        </item>
+          <description>Out of memory.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A global ID is a string that uniquely identifies a part among all parts in all device topologies in the system. Clients should treat this string as opaque. That is, clients should not attempt to parse the contents of the string to obtain information about the part. The reason is that the string format is undefined and might change from one implementation of the DeviceTopology API to the next.</para>
-    </remarks>
-    <seealso cref="IConnector Interface" />
   </member>
   <member name="IConnector.GetDataFlow">
-    <summary>
-      <para>The <b>GetDataFlow</b> method gets the direction of data flow through this connector.</para>
-    </summary>
+    <summary>The <b>GetDataFlow</b> method gets the direction of data flow through this connector.</summary>
     <param name="pFlow">
       <para>Pointer to a variable into which the method writes the data-flow direction. The direction is one of the following <see cref="DataFlow" /> enumeration values:</para>
       <para>In</para>
@@ -215,30 +212,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer <i>pFlow</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>Pointer <i>pFlow</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For a code example that calls this method, see the implementation of the SelectCaptureDevice function in <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-topologies">Device Topologies</a>.</para>
-    </remarks>
-    <seealso cref="IConnector Interface" />
   </member>
   <member name="IConnector.GetDeviceIdConnectedTo">
-    <summary>
-      <para>The <b>GetDeviceIdConnectedTo</b> method gets the device identifier of the audio device, if any, that this connector is connected to.</para>
-    </summary>
-    <param name="ppwstrDeviceId">
-      <para>Pointer to a string pointer into which the method writes the address of a null-terminated, wide-character string that contains the device identifier of the connected device. The method allocates the storage for the string. The caller is responsible for freeing the storage, when it is no longer needed, by calling the <b>CoTaskMemFree</b> function. If the <b>GetDeviceIdConnectedTo</b> call fails,  <i>*ppwstrDeviceId</i> is <b>NULL</b>. For information about <b>CoTaskMemFree</b>, see the Windows SDK documentation.</para>
-    </param>
+    <summary>The <b>GetDeviceIdConnectedTo</b> method gets the device identifier of the audio device, if any, that this connector is connected to.</summary>
+    <param name="ppwstrDeviceId">Pointer to a string pointer into which the method writes the address of a null-terminated, wide-character string that contains the device identifier of the connected device. The method allocates the storage for the string. The caller is responsible for freeing the storage, when it is no longer needed, by calling the <b>CoTaskMemFree</b> function. If the <b>GetDeviceIdConnectedTo</b> call fails, <i>*ppwstrDeviceId</i> is <b>NULL</b>. For information about <b>CoTaskMemFree</b>, see the Windows SDK documentation.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -246,63 +237,47 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer <i>ppwstrDeviceId</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer <i>ppwstrDeviceId</i> is <b>NULL</b>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTFOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>This connector is not connected, or the other side of the connection is not another device topology (for example, a Software_IO connection).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTFOUND</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_MEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>This connector is not connected, or the other side of the connection is not another device topology (for example, a Software_IO connection).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_MEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Out of memory.</para>
-          </description>
-        </item>
+          <description>Out of memory.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The device identifier obtained from this method can be used as an input parameter to the <see cref="IMMDeviceEnumerator.GetDevice" /> method.</para>
-      <para>This method is functionally equivalent to, but more efficient than, the following series of method calls:</para>
-      <list type="bullet">
-        <item>
-          <description>Call the <see cref="IConnector.GetConnectedTo" /> method to obtain the <see cref="IConnector" /> interface of the "to" connector.</description>
-        </item>
-        <item>
-          <description>Call the <b>IConnector.QueryInterface</b> method (with parameter <i>iid</i> set to <b>REFIID</b> IID_IPart) to obtain the <see cref="IPart" /> interface of the "to" connector.</description>
-        </item>
-        <item>
-          <description>Call the <see cref="IPart.GetTopologyObject" /> method to obtain the <see cref="IDeviceTopology" /> interface of the "to" device (the device that contains the "to" connector).</description>
-        </item>
-        <item>
-          <description>Call the <see cref="IDeviceTopology.GetDeviceId" /> method to obtain the device ID of the "to" device.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IConnector Interface" />
-    <seealso cref="IMMDeviceEnumerator.GetDevice" />
   </member>
   <member name="IConnector.GetType">
-    <summary>
-      <para>The <b>GetType</b> method gets the type of this connector.</para>
-    </summary>
+    <summary>The <b>GetType</b> method gets the type of this connector.</summary>
     <param name="pType">
       <para>Pointer to a variable into which the method writes the connector type. The connector type is one of the following <see cref="ConnectorType" /> enumeration constants:</para>
       <para>Unknown_Connector</para>
@@ -319,46 +294,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer <i>pType</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>Pointer <i>pType</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A connector corresponds to a "pin" in kernel streaming (KS) terminology. The mapping of KS pins to connectors is as follows:</para>
-      <list type="bullet">
-        <item>
-          <description>If the KS pin communication type is KSPIN_COMMUNICATION_SINK, KSPIN_COMMUNICATION_SOURCE, or KSPIN_COMMUNICATION_BOTH, then the connector type is Software_IO.</description>
-        </item>
-        <item>
-          <description>Else, if the pin is part of a physical connection between two KS filters (devices) in the same audio adapter or in different audio adapters, then the connector type is Software_Fixed.</description>
-        </item>
-        <item>
-          <description>Else, if the KS pin category is KSNODETYPE_SPEAKER, KSNODETYPE_MICROPHONE, KSNODETYPE_LINE_CONNECTOR, or KSNODETYPE_SPDIF_INTERFACE, the connector type is Physical_External.</description>
-        </item>
-        <item>
-          <description>Else, for a pin that does not meet any of the preceding criteria, the connector type is Physical_Internal.</description>
-        </item>
-      </list>
-      <para>For more information about KS pins, see the Windows DDK documentation.</para>
-      <para>For a code example that calls the <b>GetType</b> method, see the implementation of the SelectCaptureDevice function in <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-topologies">Device Topologies</a>.</para>
-    </remarks>
-    <seealso cref="IConnector Interface" />
   </member>
   <member name="IConnector.IsConnected">
-    <summary>
-      <para>The <b>IsConnected</b> method indicates whether this connector is connected to another connector.</para>
-    </summary>
-    <param name="pbConnected">
-      <para>Pointer to a <b>BOOL</b> variable into which the method writes the connection state. If the state is <b>TRUE</b>, this connector is connected to another connector. If <b>FALSE</b>, this connector is unconnected.</para>
-    </param>
+    <summary>The <b>IsConnected</b> method indicates whether this connector is connected to another connector.</summary>
+    <param name="pbConnected">Pointer to a <b>BOOL</b> variable into which the method writes the connection state. If the state is <b>TRUE</b>, this connector is connected to another connector. If <b>FALSE</b>, this connector is unconnected.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -366,22 +319,20 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer <i>pbConnected</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>Pointer <i>pbConnected</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For a code example that calls the <b>IsConnected</b> method, see the implementation of the SelectCaptureDevice function in <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-topologies">Device Topologies</a>.</para>
-    </remarks>
-    <seealso cref="IConnector Interface" />
   </member>
   <member name="IConnector">
     <summary>
@@ -397,14 +348,6 @@
         <item>
           <description>A software connection implemented through DMA transfers</description>
         </item>
-      </list>
-      <para>The methods in the <b>IConnector</b> interface can describe various kinds of connectors. A connector has a type (a <see cref="ConnectorType" /> enumeration constant) and a subtype (a GUID obtained from the <see cref="IPart.GetSubType" /> method).</para>
-      <para>A part in a device topology can be either a connector or a subunit. The <see cref="IPart" /> interface provides methods that are common to connectors and subunits.</para>
-      <para>For code examples that use the <b>IConnector</b> interface, see the implementations of the GetHardwareDeviceTopology and SelectCaptureDevice functions in <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-topologies">Device Topologies</a>.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/devicetopology-api">DeviceTopology API</seealso>
-    <seealso cref="IConnector.GetConnectedTo" />
-    <seealso cref="IDeviceTopology.GetConnector" />
+      </list>The methods in the <b>IConnector</b> interface can describe various kinds of connectors. A connector has a type (a <see cref="ConnectorType" /> enumeration constant) and a subtype (a GUID obtained from the <see cref="IPart.GetSubType" /> method).<para>A part in a device topology can be either a connector or a subunit. The <see cref="IPart" /> interface provides methods that are common to connectors and subunits.</para><para>For code examples that use the <b>IConnector</b> interface, see the implementations of the GetHardwareDeviceTopology and SelectCaptureDevice functions in <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-topologies">Device Topologies</a>.</para></summary>
   </member>
 </doc>

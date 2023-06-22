@@ -3,31 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICPersistOptions">
-    <summary>
-      <para>Specifies Windows Imaging Component (WIC) options that are used when initializing a component with a stream.</para>
-    </summary>
-    <seealso cref="GetPersistOptions" />
+    <summary>Specifies Windows Imaging Component (WIC) options that are used when initializing a component with a stream.</summary>
   </member>
   <member name="WICPersistOptions.WICPersistOptionDefault">
-    <summary>
-      <para>The default persist options. The default is <b>WICPersistOptionLittleEndian</b>.</para>
-    </summary>
+    <summary>The default persist options. The default is <b>WICPersistOptionLittleEndian</b>.</summary>
   </member>
   <member name="WICPersistOptions.WICPersistOptionLittleEndian">
-    <summary>
-      <para>The data byte order is little endian.</para>
-    </summary>
+    <summary>The data byte order is little endian.</summary>
   </member>
   <member name="WICPersistOptions.WICPersistOptionBigEndian">
-    <summary>
-      <para>The data byte order is big endian.</para>
-    </summary>
+    <summary>The data byte order is big endian.</summary>
   </member>
   <member name="WICPersistOptions.WICPersistOptionStrictFormat">
     <summary>
       <para>The data format must strictly conform to the specification.</para>
-      <para>
-        <b>Warning</b>  This option is inconsistently implement and should not be relied on.</para>
+      <div>
+        <b>Warning</b>  This option is inconsistently implement and should not be relied on.</div>
     </summary>
   </member>
   <member name="WICPersistOptions.WICPersistOptionNoCacheStream">
@@ -39,13 +30,11 @@
   <member name="WICPersistOptions.WICPersistOptionPreferUTF8">
     <summary>
       <para>Use UTF8 instead of the default UTF16.</para>
-      <para>
-        <b>Note</b>  This option is currently unused by WIC.</para>
+      <div>
+        <b>Note</b>  This option is currently unused by WIC.</div>
     </summary>
   </member>
   <member name="WICPersistOptions.WICPersistOptionMask">
-    <summary>
-      <para>The <see cref="WICPersistOptions" /> mask.</para>
-    </summary>
+    <summary>The <see cref="WICPersistOptions" /> mask.</summary>
   </member>
 </doc>

@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfCompositionView.GetOwnerClsid">
-    <summary>
-      <para>Obtains the class identifier of the text service that created the composition object.</para>
-    </summary>
-    <param name="pclsid">
-      <para>Pointer to a CLSID that receives the class identifier of the text service that owns the composition.</para>
-    </param>
+    <summary>Obtains the class identifier of the text service that created the composition object.</summary>
+    <param name="pclsid">Pointer to a CLSID that receives the class identifier of the text service that owns the composition.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,60 +12,61 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>pclsid</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>pclsid</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The composition has been terminated.</para>
-          </description>
-        </item>
+          <description>The composition has been terminated.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method can be used to enable a text service to filter compositions that it does not own.</para>
-    </remarks>
-    <seealso cref="ITfCompositionView interface" />
   </member>
   <member name="ITfCompositionView.GetRange">
-    <summary>
-      <para>Obtains a range object that contains the text covered by the composition.</para>
-    </summary>
-    <param name="ppRange">
-      <para>Pointer to an <see cref="ITfRange" /> interface pointer that receives the range object. It is possible that the range will have zero length.</para>
-    </param>
+    <summary>Obtains a range object that contains the text covered by the composition.</summary>
+    <param name="ppRange">Pointer to an <see cref="ITfRange" /> interface pointer that receives the range object. It is possible that the range will have zero length.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -77,66 +74,71 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>ppRange</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>An unspecified error occurred.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>ppRange</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The composition has already terminated.</para>
-          </description>
-        </item>
+          <description>The composition has already terminated.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfCompositionView interface" />
-    <seealso cref="ITfRange interface" />
   </member>
   <member name="ITfCompositionView">
-    <summary>
-      <para>The <b>ITfCompositionView</b> interface is implemented by the TSF manager and used by an application to obtain data about a composition view. An instance of this interface is provided by one of the <see cref="ITfContextOwnerCompositionSink" /> methods.</para>
-    </summary>
-    <seealso cref="ITfContextOwnerCompositionSink " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfCompositionView</b> interface is implemented by the TSF manager and used by an application to obtain data about a composition view. An instance of this interface is provided by one of the <see cref="ITfContextOwnerCompositionSink" /> methods.</summary>
   </member>
 </doc>

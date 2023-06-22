@@ -4,29 +4,19 @@
 <doc>
   <member name="WINHTTP_CREDS">
     <summary>
-      <para>The <b>WINHTTP_CREDS</b> structure contains user credential information used for server and proxy authentication.
-<b>Note</b>  This structure has been deprecated. Instead, the use of the <see cref="WINHTTP_CREDS_EX" /> structure is recommended.</para>
+      <para>The <b>WINHTTP_CREDS</b> structure contains user credential information used for server and proxy authentication.</para>
+      <div>
+        <b>Note</b>  This structure has been deprecated. Instead, the use of the <see cref="WINHTTP_CREDS_EX" /> structure is recommended.</div>
     </summary>
-    <remarks>
-      <para>This structure is used with options <b>WINHTTP_OPTION_GLOBAL_SERVER_CREDS</b> and <b>WINHTTP_OPTION_GLOBAL_PROXY_CREDS</b><a href="https://docs.microsoft.com//windows/desktop/WinHttp/option-flags">option flags</a>. These options require the registry key <b>HKLM\Software\Microsoft\Windows\CurrentVersion\Internet Settings!ShareCredsWithWinHttp</b>. This registry key is not present by default.</para>
-      <para>When it is set, WinINet will send credentials  down to WinHTTP. Whenever WinHttp gets an authentication challenge and if there are no credentials set on the current handle, it will use the credentials provided by WinINet. In order to share server credentials in addition to proxy credentials, users needs to set  the <b>WINHTTP_OPTION_USE_GLOBAL_SERVER_CREDENTIALS</b> option flag.</para>
-    </remarks>
-    <seealso cref="WINHTTP_CREDS_EX" />
   </member>
   <member name="WINHTTP_CREDS.lpszUserName">
-    <summary>
-      <para>Pointer to a buffer that contains username.</para>
-    </summary>
+    <summary>Pointer to a buffer that contains username.</summary>
   </member>
   <member name="WINHTTP_CREDS.lpszPassword">
-    <summary>
-      <para>Pointer to a buffer that contains password.</para>
-    </summary>
+    <summary>Pointer to a buffer that contains password.</summary>
   </member>
   <member name="WINHTTP_CREDS.lpszRealm">
-    <summary>
-      <para>Pointer to a buffer that contains realm.</para>
-    </summary>
+    <summary>Pointer to a buffer that contains realm.</summary>
   </member>
   <member name="WINHTTP_CREDS.dwAuthScheme">
     <summary>
@@ -36,49 +26,61 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>WINHTTP_AUTH_SCHEME_BASIC</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WINHTTP_AUTH_SCHEME_BASIC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Use basic authentication.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Use basic authentication.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WINHTTP_AUTH_SCHEME_NTLM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Use NTLM authentication.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WINHTTP_AUTH_SCHEME_NTLM</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>INHTTP_AUTH_SCHEME_DIGEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Use digest authentication.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Use NTLM authentication.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WINHTTP_AUTH_SCHEME_NEGOTIATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>INHTTP_AUTH_SCHEME_DIGEST</b>
-          </description>
-          <description>
-            <para>Use digest authentication.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WINHTTP_AUTH_SCHEME_NEGOTIATE</b>
-          </description>
-          <description>
-            <para>Select between NTLM and Kerberos authentication.</para>
-          </description>
-        </item>
+          <description>Select between NTLM and Kerberos authentication.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="WINHTTP_CREDS.lpszHostName">
-    <summary>
-      <para>Pointer to a buffer that contains hostname.</para>
-    </summary>
+    <summary>Pointer to a buffer that contains hostname.</summary>
   </member>
   <member name="WINHTTP_CREDS.dwPort">
-    <summary>
-      <para>The server connection port.</para>
-    </summary>
+    <summary>The server connection port.</summary>
   </member>
 </doc>

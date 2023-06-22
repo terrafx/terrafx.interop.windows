@@ -5,38 +5,21 @@
   <member name="DML_ELEMENT_WISE_CONSTANT_POW_OPERATOR_DESC">
     <summary>
       <para>Raises each element of <i>InputTensor</i> to the power of <i>Exponent</i>, placing the result into the corresponding element of <i>OutputTensor</i>.</para>
-      <code>f(x) = pow(x, Exponent)
-</code>
+      <code>f(x) = pow(x, Exponent)</code>
       <para>Negative bases are supported for integral exponents, otherwise this operator returns NaN.</para>
       <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias <i>InputTensor</i> during binding.</para>
     </summary>
-    <remarks>
-      <para>Also see the POW operator <see cref="DML_ELEMENT_WISE_POW_OPERATOR_DESC" />, which accepts a second tensor as exponents.</para>
-    </remarks>
-    <seealso cref="DML_ELEMENT_WISE_POW_OPERATOR_DESC" />
   </member>
   <member name="DML_ELEMENT_WISE_CONSTANT_POW_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The input tensor to read from.</para>
-    </summary>
+    <summary>The input tensor to read from.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_CONSTANT_POW_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The output tensor to write the results to.</para>
-    </summary>
+    <summary>The output tensor to write the results to.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_CONSTANT_POW_OPERATOR_DESC.ScaleBias">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_SCALE_BIAS" />*</b></para>
-      <para>An optional scale and bias to apply to the input. If present, this has the effect of applying the function <code>g(x) = x * scale + bias</code> to each <i>input</i> element prior to computing this operator.</para>
-    </summary>
+    <summary>An optional scale and bias to apply to the input. If present, this has the effect of applying the function <code>g(x) = x * scale + bias</code> to each <i>input</i> element prior to computing this operator.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_CONSTANT_POW_OPERATOR_DESC.Exponent">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
-      <para>The exponent that all inputs will be raised to.</para>
-    </summary>
+    <summary>The exponent that all inputs will be raised to.</summary>
   </member>
 </doc>

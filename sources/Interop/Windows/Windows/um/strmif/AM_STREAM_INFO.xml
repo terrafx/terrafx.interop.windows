@@ -4,34 +4,23 @@
 <doc>
   <member name="AM_STREAM_INFO">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The AM_STREAM_INFO structure contains stream-control information.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
-    <seealso cref="IAMStreamControl.GetInfo" />
   </member>
   <member name="AM_STREAM_INFO.tStart">
-    <summary>
-      <para>Time when the pin will start streaming data.</para>
-    </summary>
+    <summary>Time when the pin will start streaming data.</summary>
   </member>
   <member name="AM_STREAM_INFO.tStop">
-    <summary>
-      <para>Time when the pin will stop streaming data.</para>
-    </summary>
+    <summary>Time when the pin will stop streaming data.</summary>
   </member>
   <member name="AM_STREAM_INFO.dwStartCookie">
-    <summary>
-      <para>Value that will be sent with the event notification when the pin starts.</para>
-    </summary>
+    <summary>Value that will be sent with the event notification when the pin starts.</summary>
   </member>
   <member name="AM_STREAM_INFO.dwStopCookie">
-    <summary>
-      <para>Value that will be sent with the event notification when the pin stops.</para>
-    </summary>
+    <summary>Value that will be sent with the event notification when the pin stops.</summary>
   </member>
   <member name="AM_STREAM_INFO.dwFlags">
-    <summary>
-      <para>Bitwise combination of zero or more flags from the <see cref="AM_STREAM_INFO_FLAGS" /> enumeration.</para>
-    </summary>
+    <summary>Bitwise combination of zero or more flags from the <see cref="AM_STREAM_INFO_FLAGS" /> enumeration.</summary>
   </member>
 </doc>

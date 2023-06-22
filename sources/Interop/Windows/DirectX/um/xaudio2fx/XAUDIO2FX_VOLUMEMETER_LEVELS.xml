@@ -3,37 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="XAUDIO2FX_VOLUMEMETER_LEVELS">
-    <summary>
-      <para>Describes parameters for use with the volume meter APO.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used with the <see cref="XAudio2 IXAudio2Voice.GetEffectParameters" /> method.</para>
-      <para>
-        <i>pPeakLevels</i> and <i>pRMSLevels</i> are not returned by <see cref="IXAudio2Voice.GetEffectParameters" />, the arrays are only filled out if they are present. If <i>pPeakLevels</i> and <i>pRMSLevels</i> are used they must be allocated by the application. The application is responsible for freeing the arrays when they are no longer needed.</para>
-      <para>
-        <i>ChannelCount</i> must be set by the application to match the number of channels in the voice the effect is applied to.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--create-an-effect-chain">How to: Create an Effect Chain</seealso>
-    <seealso cref="IXAudio2Voice.SetEffectParameters" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xapo-overview">XAPO Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/structures">XAudio Structures</seealso>
-    <seealso cref="XAudio2CreateVolumeMeter" />
+    <summary>Describes parameters for use with the volume meter APO.</summary>
   </member>
   <member name="XAUDIO2FX_VOLUMEMETER_LEVELS.pPeakLevels">
-    <summary>
-      <para>Array that will be filled with the maximum absolute level for each channel during a processing pass. The array must be at least <i>ChannelCount</i> × sizeof(float) bytes. <i>pPeakLevels</i> may be NULL if <i>pRMSLevels</i> is not NULL.</para>
-    </summary>
+    <summary>Array that will be filled with the maximum absolute level for each channel during a processing pass. The array must be at least <i>ChannelCount</i> × sizeof(float) bytes. <i>pPeakLevels</i> may be NULL if <i>pRMSLevels</i> is not NULL.</summary>
   </member>
   <member name="XAUDIO2FX_VOLUMEMETER_LEVELS.pRMSLevels">
-    <summary>
-      <para>Array that will be filled with root mean square level for each channel during a processing pass. The array must be at least <i>ChannelCount</i> × sizeof(float) bytes. <i>pRMSLevels</i> may be NULL if <i>pPeakLevels</i> is not NULL.</para>
-    </summary>
+    <summary>Array that will be filled with root mean square level for each channel during a processing pass. The array must be at least <i>ChannelCount</i> × sizeof(float) bytes. <i>pRMSLevels</i> may be NULL if <i>pPeakLevels</i> is not NULL.</summary>
   </member>
   <member name="XAUDIO2FX_VOLUMEMETER_LEVELS.ChannelCount">
-    <summary>
-      <para>Number of channels being processed.</para>
-    </summary>
+    <summary>Number of channels being processed.</summary>
   </member>
 </doc>

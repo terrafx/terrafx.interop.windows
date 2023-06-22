@@ -3,66 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STORAGE_PROTOCOL_NVME_DATA_TYPE">
-    <summary>
-      <para>Describes  the type of NVMe protocol-specific data that's to be queried during an <a href="https://docs.microsoft.com/ni-winioctl-ioctl_storage_query_property.md">IOCTL_STORAGE_QUERY_PROPERTY</a> request.</para>
-    </summary>
-    <remarks>
-      <para>When using <a href="https://docs.microsoft.com/ni-winioctl-ioctl_storage_query_property.md">IOCTL_STORAGE_QUERY_PROPERTY</a> to retrieve protocol-specific information in the <see cref="STORAGE_PROTOCOL_DATA_DESCRIPTOR" />, configure the <see cref="STORAGE_PROPERTY_QUERY" /> structure as follows:</para>
-      <list type="bullet">
-        <item>
-          <description>Allocate a buffer that can contains both a <see cref="STORAGE_PROPERTY_QUERY" /> and a <see cref="STORAGE_PROTOCOL_SPECIFIC_DATA" /> structure.</description>
-        </item>
-        <item>
-          <description>Set the <b>PropertyID</b> field to <b>StorageAdapterProtocolSpecificProperty</b> or <b>StorageDeviceProtocolSpecificProperty</b> for a controller or device/namespace request, respectively.</description>
-        </item>
-        <item>
-          <description>Set the <b>QueryType</b> field to <b>PropertyStandardQuery</b>.</description>
-        </item>
-        <item>
-          <description>Fill the <see cref="STORAGE_PROTOCOL_SPECIFIC_DATA" /> structure with the desired values. The start of the <b>STORAGE_PROTOCOL_SPECIFIC_DATA</b> is the <b>AdditionalParameters</b> field of <see cref="STORAGE_PROPERTY_QUERY" />.</description>
-        </item>
-      </list>
-      <para>To specify a type of NVMe protocol-specific information,  configure the <see cref="STORAGE_PROTOCOL_SPECIFIC_DATA" /> structure as follows:</para>
-      <list type="bullet">
-        <item>
-          <description>Set the <b>ProtocolType</b> field to <b>ProtocolTypeNVMe</b>.</description>
-        </item>
-        <item>
-          <description>Set the <b>DataType</b> field to an enumeration value defined by <b>STORAGE_PROTOCOL_NVME_DATA_TYPE</b>:</description>
-        </item>
-        <item>
-          <description>Use <b>NVMeDataTypeIdentify</b> to get Identify Controller data or Identify Namespace data.</description>
-        </item>
-        <item>
-          <description>Use <b>NVMeDataTypeLogPage</b> to get log pages (including SMART/health data).</description>
-        </item>
-        <item>
-          <description>Use <b>NVMeDataTypeFeature</b> to get features of the NVMe drive.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com/ni-winioctl-ioctl_storage_query_property.md">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
-    <seealso cref="STORAGE_PROPERTY_QUERY" />
-    <seealso cref="STORAGE_PROTOCOL_SPECIFIC_DATA" />
+    <summary>Describes the type of NVMe protocol-specific data that's to be queried during an <a href="https://docs.microsoft.com/ni-winioctl-ioctl_storage_query_property.md">IOCTL_STORAGE_QUERY_PROPERTY</a> request.</summary>
   </member>
   <member name="STORAGE_PROTOCOL_NVME_DATA_TYPE.NVMeDataTypeUnknown">
-    <summary>
-      <para>Unknown data type.</para>
-    </summary>
+    <summary>Unknown data type.</summary>
   </member>
   <member name="STORAGE_PROTOCOL_NVME_DATA_TYPE.NVMeDataTypeIdentify">
-    <summary>
-      <para>Identify data type. This can be either Identify Controller data or Identify Namespace data. When this type of data is being queried, the ProtocolDataRequestValue field of <see cref="STORAGE_PROTOCOL_SPECIFIC_DATA" /> will have a value of <b>NVME_IDENTIFY_CNS_CONTROLLER</b> for adapter or <b>NVME_IDENTIFY_CNS_SPECIFIC_NAMESPACE</b> for namespace. If the ProtocolDataRequestValue is <b>NVME_IDENTIFY_CNS_SPECIFIC_NAMESPACE</b>, the ProtocolDataRequestSubValue field from the <b>STORAGE_PROTOCOL_SPECIFIC_DATA</b> structure will have a value of the namespace ID.</para>
-    </summary>
+    <summary>Identify data type. This can be either Identify Controller data or Identify Namespace data. When this type of data is being queried, the ProtocolDataRequestValue field of <see cref="STORAGE_PROTOCOL_SPECIFIC_DATA" /> will have a value of <b>NVME_IDENTIFY_CNS_CONTROLLER</b> for adapter or <b>NVME_IDENTIFY_CNS_SPECIFIC_NAMESPACE</b> for namespace. If the ProtocolDataRequestValue is <b>NVME_IDENTIFY_CNS_SPECIFIC_NAMESPACE</b>, the ProtocolDataRequestSubValue field from the <b>STORAGE_PROTOCOL_SPECIFIC_DATA</b> structure will have a value of the namespace ID.</summary>
   </member>
   <member name="STORAGE_PROTOCOL_NVME_DATA_TYPE.NVMeDataTypeLogPage">
-    <summary>
-      <para>Log page data type.</para>
-    </summary>
+    <summary>Log page data type.</summary>
   </member>
   <member name="STORAGE_PROTOCOL_NVME_DATA_TYPE.NVMeDataTypeFeature">
-    <summary>
-      <para>Feature data type.</para>
-    </summary>
+    <summary>Feature data type.</summary>
   </member>
 </doc>

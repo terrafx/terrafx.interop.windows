@@ -3,64 +3,28 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDirectWriterLock.HaveWriteAccess">
-    <summary>
-      <para>The <b>HaveWriteAccess</b> method indicates whether the write lock has been taken.</para>
-    </summary>
+    <summary>The <b>HaveWriteAccess</b> method indicates whether the write lock has been taken.</summary>
     <returns>
       <para>This method can return one of these values.</para>
-      <para>| Return code | Description |
-|----------------|---------------|
-|S_OK | The storage object is currently locked for write access.|
-|S_FALSE | The storage object is not currently locked for write access.|</para>
+      <para>| Return code | Description | |----------------|---------------| |S_OK | The storage object is currently locked for write access.| |S_FALSE | The storage object is not currently locked for write access.|</para>
     </returns>
-    <seealso cref="IDirectWriterLock.ReleaseWriteAccess" />
-    <seealso cref="IDirectWriterLock.WaitForWriteAccess" />
   </member>
   <member name="IDirectWriterLock.ReleaseWriteAccess">
-    <summary>
-      <para>The <b>ReleaseWriteAccess</b> method releases the write lock previously obtained.</para>
-    </summary>
+    <summary>The <b>ReleaseWriteAccess</b> method releases the write lock previously obtained.</summary>
     <returns>
       <para>This method can return one of these values.</para>
-      <para>| Return code | Description |
-|----------------|---------------|
-|S_OK | The write lock was successfully released.|</para>
+      <para>| Return code | Description | |----------------|---------------| |S_OK | The write lock was successfully released.|</para>
     </returns>
-    <remarks>
-      <para>The writer calls this method to release exclusive access to the storage object previously taken by calling <see cref="IDirectWriterLock.WaitForWriteAccess" />.</para>
-      <para>After the writer calls this method, it is safe to allow readers to reopen the storage again until the next call to <see cref="IDirectWriterLock.WaitForWriteAccess" />.</para>
-    </remarks>
-    <seealso cref="IDirectWriterLock.HaveWriteAccess" />
-    <seealso cref="IDirectWriterLock.WaitForWriteAccess" />
   </member>
   <member name="IDirectWriterLock.WaitForWriteAccess">
-    <summary>
-      <para>The <b>WaitForWriteAccess</b> method obtains exclusive write access to a storage object.</para>
-    </summary>
-    <param name="dwTimeout">
-      <para>Specifies the time in milliseconds that this method blocks while waiting to obtain exclusive write access to the storage object. If <i>dwTimeout</i> is zero, the method does not block waiting for exclusive access for writing. The INFINITE time-out defined in the Platform SDK is allowed for <i>dwTimeout</i>.</para>
-    </param>
+    <summary>The <b>WaitForWriteAccess</b> method obtains exclusive write access to a storage object.</summary>
+    <param name="dwTimeout">Specifies the time in milliseconds that this method blocks while waiting to obtain exclusive write access to the storage object. If <i>dwTimeout</i> is zero, the method does not block waiting for exclusive access for writing. The INFINITE time-out defined in the Platform SDK is allowed for <i>dwTimeout</i>.</param>
     <returns>
       <para>This method can return one of these values.</para>
-      <para>| Return code | Description |
-|----------------|---------------|
-|S_OK | The caller has successfully obtained exclusive write access to the storage.|
-|S_FALSE | This method was called again without an intervening call to IDirectWriterLock.ReleaseWriteAccess.|
-|STG_E_INUSE | The specified time-out expired without obtaining exclusive write access.|</para>
+      <para>| Return code | Description | |----------------|---------------| |S_OK | The caller has successfully obtained exclusive write access to the storage.| |S_FALSE | This method was called again without an intervening call to IDirectWriterLock.ReleaseWriteAccess.| |STG_E_INUSE | The specified time-out expired without obtaining exclusive write access.|</para>
     </returns>
-    <remarks>
-      <para>When a storage is opened in direct mode (STGM_DIRECT) with the STGM_READWRITE|STGM_SHARE_DENY_WRITE, you can call this method to obtain exclusive write access to the storage.</para>
-      <para>This method returns immediately if no readers have the storage open. If the storage is still open for reading, this method blocks for the specified <i>dwTimeout</i> or until the current readers close the storage.</para>
-    </remarks>
-    <seealso cref="IDirectWriterLock.HaveWriteAccess" />
-    <seealso cref="IDirectWriterLock.ReleaseWriteAccess" />
   </member>
   <member name="IDirectWriterLock">
-    <summary>
-      <para>The
-<b>IDirectWriterLock</b> interface enables a single writer to obtain exclusive write access to a root storage object opened in direct mode while allowing concurrent access by multiple readers. This single-writer, multiple-reader mode does not require the overhead of making a snapshot copy of the storage for the readers.</para>
-    </summary>
-    <seealso cref="IStorage" />
-    <seealso cref="StgCreateDocfile" />
+    <summary>The<b>IDirectWriterLock</b> interface enables a single writer to obtain exclusive write access to a root storage object opened in direct mode while allowing concurrent access by multiple readers. This single-writer, multiple-reader mode does not require the overhead of making a snapshot copy of the storage for the readers.</summary>
   </member>
 </doc>

@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_FLOAT3">
-    <summary>
-      <para>A vector with three components.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <summary>A vector with three components.</summary>
   </member>
   <member name="MF_FLOAT3.x">
-    <summary>
-      <para>X component of the vector.</para>
-    </summary>
+    <summary>X component of the vector.</summary>
   </member>
   <member name="MF_FLOAT3.y">
-    <summary>
-      <para>Y component of the vector.</para>
-    </summary>
+    <summary>Y component of the vector.</summary>
   </member>
   <member name="MF_FLOAT3.z">
-    <summary>
-      <para>Z component of the vector.</para>
-    </summary>
+    <summary>Z component of the vector.</summary>
   </member>
 </doc>

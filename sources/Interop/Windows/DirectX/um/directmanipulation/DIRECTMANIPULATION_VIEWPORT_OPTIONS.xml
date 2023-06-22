@@ -3,35 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DIRECTMANIPULATION_VIEWPORT_OPTIONS">
-    <summary>
-      <para>Defines the input behavior options for the viewport.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>DIRECTMANIPULATION_VIEWPORT_OPTIONS</b> is used in the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setviewportoptions">SetViewportOptions</a> method. These flags can be combined to set the input behavior for a viewport.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-enumerations">Direct Manipulation Enumerations</seealso>
+    <summary>Defines the input behavior options for the viewport.</summary>
   </member>
   <member name="DIRECTMANIPULATION_VIEWPORT_OPTIONS.DIRECTMANIPULATION_VIEWPORT_OPTIONS_DEFAULT">
-    <summary>
-      <para>No special behaviors. This is the default value used to set or revert to default behavior.</para>
-    </summary>
+    <summary>No special behaviors. This is the default value used to set or revert to default behavior.</summary>
   </member>
   <member name="DIRECTMANIPULATION_VIEWPORT_OPTIONS.DIRECTMANIPULATION_VIEWPORT_OPTIONS_AUTODISABLE">
-    <summary>
-      <para>At the end of an interaction, the viewport transitions to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_status">DIRECTMANIPULATION_READY</a> and then immediately to <b>DIRECTMANIPULATION_DISABLED</b>. The viewport must be explicitly enabled through the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-enable">Enable</a> method before the next interaction can be processed.</para>
-    </summary>
+    <summary>At the end of an interaction, the viewport transitions to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_status">DIRECTMANIPULATION_READY</a> and then immediately to <b>DIRECTMANIPULATION_DISABLED</b>. The viewport must be explicitly enabled through the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-enable">Enable</a> method before the next interaction can be processed.</summary>
   </member>
   <member name="DIRECTMANIPULATION_VIEWPORT_OPTIONS.DIRECTMANIPULATION_VIEWPORT_OPTIONS_MANUALUPDATE">
     <summary>
-      <para>
-        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationupdatemanager-update">Update</a> must be called to redraw the content within the viewport. The content is not updated automatically during an input event.</para>
-    </summary>
+      <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationupdatemanager-update">Update</a> must be called to redraw the content within the viewport. The content is not updated automatically during an input event.</summary>
   </member>
   <member name="DIRECTMANIPULATION_VIEWPORT_OPTIONS.DIRECTMANIPULATION_VIEWPORT_OPTIONS_INPUT">
-    <summary>
-      <para>All input from a contact associated with the viewport is passed to the UI thread for processing.</para>
-    </summary>
+    <summary>All input from a contact associated with the viewport is passed to the UI thread for processing.</summary>
   </member>
   <member name="DIRECTMANIPULATION_VIEWPORT_OPTIONS.DIRECTMANIPULATION_VIEWPORT_OPTIONS_EXPLICITHITTEST">
     <summary>

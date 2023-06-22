@@ -3,28 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EC_SUBSCRIPTION_RUNTIME_STATUS_ACTIVE_STATUS">
-    <summary>
-      <para>The <b>EC_SUBSCRIPTION_RUNTIME_STATUS_ACTIVE_STATUS</b> enumeration specifies the status of a subscription or an event source with respect to a subscription.</para>
-    </summary>
+    <summary>The <b>EC_SUBSCRIPTION_RUNTIME_STATUS_ACTIVE_STATUS</b> enumeration specifies the status of a subscription or an event source with respect to a subscription.</summary>
   </member>
   <member name="EC_SUBSCRIPTION_RUNTIME_STATUS_ACTIVE_STATUS.EcRuntimeStatusActiveStatusDisabled">
-    <summary>
-      <para>The subscription or event source is disabled.</para>
-    </summary>
+    <summary>The subscription or event source is disabled.</summary>
   </member>
   <member name="EC_SUBSCRIPTION_RUNTIME_STATUS_ACTIVE_STATUS.EcRuntimeStatusActiveStatusActive">
-    <summary>
-      <para>The subscription or event source is running.</para>
-    </summary>
+    <summary>The subscription or event source is running.</summary>
   </member>
   <member name="EC_SUBSCRIPTION_RUNTIME_STATUS_ACTIVE_STATUS.EcRuntimeStatusActiveStatusInactive">
-    <summary>
-      <para>The subscription or event source is inactive. You can query the System event log to see the error events sent by the Event Collector service. Use the <see cref="EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID" /> values to obtain information on why the subscription or source is inactive.</para>
-    </summary>
+    <summary>The subscription or event source is inactive. You can query the System event log to see the error events sent by the Event Collector service. Use the <see cref="EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID" /> values to obtain information on why the subscription or source is inactive.</summary>
   </member>
   <member name="EC_SUBSCRIPTION_RUNTIME_STATUS_ACTIVE_STATUS.EcRuntimeStatusActiveStatusTrying">
-    <summary>
-      <para>The subscription or event source is trying to connect for the first time or is retrying after a problem. When an active subscription runs into a problem, it will retry several times.</para>
-    </summary>
+    <summary>The subscription or event source is trying to connect for the first time or is retrying after a problem. When an active subscription runs into a problem, it will retry several times.</summary>
   </member>
 </doc>

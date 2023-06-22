@@ -3,34 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WAVEOUTCAPS">
-    <summary>
-      <para>The <b>WAVEOUTCAPS</b> structure describes the capabilities of a waveform-audio output device.</para>
-    </summary>
-    <remarks>
-      <para>If a device supports volume changes, the WAVECAPS_VOLUME flag will be set for the <b>dwSupport</b> member. If a device supports separate volume changes on the left and right channels, both the WAVECAPS_VOLUME and the WAVECAPS_LRVOLUME flags will be set for this member.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/waveform-audio">Waveform Audio</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/waveform-structures">Waveform Structures</seealso>
+    <summary>The <b>WAVEOUTCAPS</b> structure describes the capabilities of a waveform-audio output device.</summary>
   </member>
   <member name="WAVEOUTCAPS.wMid">
-    <summary>
-      <para>Manufacturer identifier for the device driver for the device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
-    </summary>
+    <summary>Manufacturer identifier for the device driver for the device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</summary>
   </member>
   <member name="WAVEOUTCAPS.wPid">
-    <summary>
-      <para>Product identifier for the device. Product identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
-    </summary>
+    <summary>Product identifier for the device. Product identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</summary>
   </member>
   <member name="WAVEOUTCAPS.vDriverVersion">
-    <summary>
-      <para>Version number of the device driver for the device. The high-order byte is the major version number, and the low-order byte is the minor version number.</para>
-    </summary>
+    <summary>Version number of the device driver for the device. The high-order byte is the major version number, and the low-order byte is the minor version number.</summary>
   </member>
   <member name="WAVEOUTCAPS.szPname">
-    <summary>
-      <para>Product name in a null-terminated string.</para>
-    </summary>
+    <summary>Product name in a null-terminated string.</summary>
   </member>
   <member name="WAVEOUTCAPS.dwFormats">
     <summary>
@@ -40,77 +25,75 @@
           <description>Format</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>WAVE_FORMAT_1M08</description>
           <description>11.025 kHz, mono, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_1M16</description>
           <description>11.025 kHz, mono, 16-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_1S08</description>
           <description>11.025 kHz, stereo, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_1S16</description>
           <description>11.025 kHz, stereo, 16-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_2M08</description>
           <description>22.05 kHz, mono, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_2M16</description>
           <description>22.05 kHz, mono, 16-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_2S08</description>
           <description>22.05 kHz, stereo, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_2S16</description>
           <description>22.05 kHz, stereo, 16-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_4M08</description>
           <description>44.1 kHz, mono, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_4M16</description>
           <description>44.1 kHz, mono, 16-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_4S08</description>
           <description>44.1 kHz, stereo, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_4S16</description>
           <description>44.1 kHz, stereo, 16-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_96M08</description>
           <description>96 kHz, mono, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_96M16</description>
           <description>96 kHz, mono, 16-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_96S08</description>
           <description>96 kHz, stereo, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_96S16</description>
           <description>96 kHz, stereo, 16-bit</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="WAVEOUTCAPS.wChannels">
-    <summary>
-      <para>Number specifying whether the device supports mono (1) or stereo (2) output.</para>
-    </summary>
+    <summary>Number specifying whether the device supports mono (1) or stereo (2) output.</summary>
   </member>
   <member name="WAVEOUTCAPS.dwSupport">
     <summary>
@@ -120,66 +103,47 @@
           <description>Flag</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>WAVECAPS_LRVOLUME</description>
           <description>Supports separate left and right volume control.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVECAPS_PITCH</description>
           <description>Supports pitch control.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVECAPS_PLAYBACKRATE</description>
           <description>Supports playback rate control.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVECAPS_SYNC</description>
           <description>The driver is synchronous and will block while playing a buffer.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVECAPS_VOLUME</description>
           <description>Supports volume control.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVECAPS_SAMPLEACCURATE</description>
           <description>Returns sample-accurate position information.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="WAVEOUTCAPS">
-    <summary>
-      <para>The <b>WAVEOUTCAPS</b> structure describes the capabilities of a waveform-audio output device.</para>
-    </summary>
-    <remarks>
-      <para>If a device supports volume changes, the WAVECAPS_VOLUME flag will be set for the <b>dwSupport</b> member. If a device supports separate volume changes on the left and right channels, both the WAVECAPS_VOLUME and the WAVECAPS_LRVOLUME flags will be set for this member.</para>
-      <blockquote>
-        <para>[!NOTE]
-The mmeapi.h header defines WAVEOUTCAPS as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/waveform-audio">Waveform Audio</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/waveform-structures">Waveform Structures</seealso>
+    <summary>The <b>WAVEOUTCAPS</b> structure describes the capabilities of a waveform-audio output device.</summary>
   </member>
   <member name="WAVEOUTCAPS.wMid">
-    <summary>
-      <para>Manufacturer identifier for the device driver for the device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
-    </summary>
+    <summary>Manufacturer identifier for the device driver for the device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</summary>
   </member>
   <member name="WAVEOUTCAPS.wPid">
-    <summary>
-      <para>Product identifier for the device. Product identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
-    </summary>
+    <summary>Product identifier for the device. Product identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</summary>
   </member>
   <member name="WAVEOUTCAPS.vDriverVersion">
-    <summary>
-      <para>Version number of the device driver for the device. The high-order byte is the major version number, and the low-order byte is the minor version number.</para>
-    </summary>
+    <summary>Version number of the device driver for the device. The high-order byte is the major version number, and the low-order byte is the minor version number.</summary>
   </member>
   <member name="WAVEOUTCAPS.szPname">
-    <summary>
-      <para>Product name in a null-terminated string.</para>
-    </summary>
+    <summary>Product name in a null-terminated string.</summary>
   </member>
   <member name="WAVEOUTCAPS.dwFormats">
     <summary>
@@ -189,77 +153,75 @@ The mmeapi.h header defines WAVEOUTCAPS as an alias which automatically selects 
           <description>Format</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>WAVE_FORMAT_1M08</description>
           <description>11.025 kHz, mono, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_1M16</description>
           <description>11.025 kHz, mono, 16-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_1S08</description>
           <description>11.025 kHz, stereo, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_1S16</description>
           <description>11.025 kHz, stereo, 16-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_2M08</description>
           <description>22.05 kHz, mono, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_2M16</description>
           <description>22.05 kHz, mono, 16-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_2S08</description>
           <description>22.05 kHz, stereo, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_2S16</description>
           <description>22.05 kHz, stereo, 16-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_4M08</description>
           <description>44.1 kHz, mono, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_4M16</description>
           <description>44.1 kHz, mono, 16-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_4S08</description>
           <description>44.1 kHz, stereo, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_4S16</description>
           <description>44.1 kHz, stereo, 16-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_96M08</description>
           <description>96 kHz, mono, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_96M16</description>
           <description>96 kHz, mono, 16-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_96S08</description>
           <description>96 kHz, stereo, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_96S16</description>
           <description>96 kHz, stereo, 16-bit</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="WAVEOUTCAPS.wChannels">
-    <summary>
-      <para>Number specifying whether the device supports mono (1) or stereo (2) output.</para>
-    </summary>
+    <summary>Number specifying whether the device supports mono (1) or stereo (2) output.</summary>
   </member>
   <member name="WAVEOUTCAPS.dwSupport">
     <summary>
@@ -269,66 +231,47 @@ The mmeapi.h header defines WAVEOUTCAPS as an alias which automatically selects 
           <description>Flag</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>WAVECAPS_LRVOLUME</description>
           <description>Supports separate left and right volume control.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVECAPS_PITCH</description>
           <description>Supports pitch control.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVECAPS_PLAYBACKRATE</description>
           <description>Supports playback rate control.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVECAPS_SYNC</description>
           <description>The driver is synchronous and will block while playing a buffer.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVECAPS_VOLUME</description>
           <description>Supports volume control.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVECAPS_SAMPLEACCURATE</description>
           <description>Returns sample-accurate position information.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="WAVEOUTCAPS">
-    <summary>
-      <para>The <b>WAVEOUTCAPS</b> structure describes the capabilities of a waveform-audio output device.</para>
-    </summary>
-    <remarks>
-      <para>If a device supports volume changes, the WAVECAPS_VOLUME flag will be set for the <b>dwSupport</b> member. If a device supports separate volume changes on the left and right channels, both the WAVECAPS_VOLUME and the WAVECAPS_LRVOLUME flags will be set for this member.</para>
-      <blockquote>
-        <para>[!NOTE]
-The mmeapi.h header defines WAVEOUTCAPS as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/waveform-audio">Waveform Audio</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/waveform-structures">Waveform Structures</seealso>
+    <summary>The <b>WAVEOUTCAPS</b> structure describes the capabilities of a waveform-audio output device.</summary>
   </member>
   <member name="WAVEOUTCAPS.wMid">
-    <summary>
-      <para>Manufacturer identifier for the device driver for the device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
-    </summary>
+    <summary>Manufacturer identifier for the device driver for the device. Manufacturer identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</summary>
   </member>
   <member name="WAVEOUTCAPS.wPid">
-    <summary>
-      <para>Product identifier for the device. Product identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</para>
-    </summary>
+    <summary>Product identifier for the device. Product identifiers are defined in <a href="https://docs.microsoft.com//windows/desktop/Multimedia/manufacturer-and-product-identifiers">Manufacturer and Product Identifiers</a>.</summary>
   </member>
   <member name="WAVEOUTCAPS.vDriverVersion">
-    <summary>
-      <para>Version number of the device driver for the device. The high-order byte is the major version number, and the low-order byte is the minor version number.</para>
-    </summary>
+    <summary>Version number of the device driver for the device. The high-order byte is the major version number, and the low-order byte is the minor version number.</summary>
   </member>
   <member name="WAVEOUTCAPS.szPname">
-    <summary>
-      <para>Product name in a null-terminated string.</para>
-    </summary>
+    <summary>Product name in a null-terminated string.</summary>
   </member>
   <member name="WAVEOUTCAPS.dwFormats">
     <summary>
@@ -338,77 +281,75 @@ The mmeapi.h header defines WAVEOUTCAPS as an alias which automatically selects 
           <description>Format</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>WAVE_FORMAT_1M08</description>
           <description>11.025 kHz, mono, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_1M16</description>
           <description>11.025 kHz, mono, 16-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_1S08</description>
           <description>11.025 kHz, stereo, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_1S16</description>
           <description>11.025 kHz, stereo, 16-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_2M08</description>
           <description>22.05 kHz, mono, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_2M16</description>
           <description>22.05 kHz, mono, 16-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_2S08</description>
           <description>22.05 kHz, stereo, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_2S16</description>
           <description>22.05 kHz, stereo, 16-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_4M08</description>
           <description>44.1 kHz, mono, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_4M16</description>
           <description>44.1 kHz, mono, 16-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_4S08</description>
           <description>44.1 kHz, stereo, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_4S16</description>
           <description>44.1 kHz, stereo, 16-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_96M08</description>
           <description>96 kHz, mono, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_96M16</description>
           <description>96 kHz, mono, 16-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_96S08</description>
           <description>96 kHz, stereo, 8-bit</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVE_FORMAT_96S16</description>
           <description>96 kHz, stereo, 16-bit</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="WAVEOUTCAPS.wChannels">
-    <summary>
-      <para>Number specifying whether the device supports mono (1) or stereo (2) output.</para>
-    </summary>
+    <summary>Number specifying whether the device supports mono (1) or stereo (2) output.</summary>
   </member>
   <member name="WAVEOUTCAPS.dwSupport">
     <summary>
@@ -418,30 +359,30 @@ The mmeapi.h header defines WAVEOUTCAPS as an alias which automatically selects 
           <description>Flag</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>WAVECAPS_LRVOLUME</description>
           <description>Supports separate left and right volume control.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVECAPS_PITCH</description>
           <description>Supports pitch control.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVECAPS_PLAYBACKRATE</description>
           <description>Supports playback rate control.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVECAPS_SYNC</description>
           <description>The driver is synchronous and will block while playing a buffer.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVECAPS_VOLUME</description>
           <description>Supports volume control.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>WAVECAPS_SAMPLEACCURATE</description>
           <description>Returns sample-accurate position information.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>

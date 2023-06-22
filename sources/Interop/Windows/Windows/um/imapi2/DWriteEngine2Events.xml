@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWriteEngine2Events.Update">
-    <summary>
-      <para>Implement this method to receive progress notification of the current write operation.</para>
-    </summary>
+    <summary>Implement this method to receive progress notification of the current write operation.</summary>
     <param name="object">
       <para>The <see cref="IWriteEngine2" /> interface that initiated the write operation.</para>
       <para>This parameter is a <b>MsftWriteEngine2</b> object in script.</para>
@@ -14,32 +12,9 @@
       <para>An <see cref="IWriteEngine2EventArgs" /> interface that you use to determine the progress of the write operation.</para>
       <para>This parameter is a <b>MsftWriteEngine2</b> object in script.</para>
     </param>
-    <returns>
-      <para>Return values are ignored.</para>
-    </returns>
-    <remarks>
-      <para>Notifications are sent in response to calling the <see cref="IWriteEngine2.WriteSection" /> method.</para>
-      <para>Notification is sent:</para>
-      <list type="bullet">
-        <item>
-          <description>Once before the operation begins</description>
-        </item>
-        <item>
-          <description>Every 0.5 seconds during the write operation</description>
-        </item>
-        <item>
-          <description>Once after the operation completes</description>
-        </item>
-      </list>
-      <para>To stop the write process, call the <see cref="IWriteEngine2.CancelWrite" /> method.</para>
-    </remarks>
-    <seealso cref="DWriteEngine2Events" />
-    <seealso cref="IWriteEngine2.WriteSection" />
-    <seealso cref="IWriteEngine2EventArgs" />
+    <returns>Return values are ignored.</returns>
   </member>
   <member name="DWriteEngine2Events">
-    <summary>
-      <para>Implement this interface to receive notifications of the current write operation.</para>
-    </summary>
+    <summary>Implement this interface to receive notifications of the current write operation.</summary>
   </member>
 </doc>

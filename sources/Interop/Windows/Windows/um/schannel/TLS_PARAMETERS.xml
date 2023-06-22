@@ -3,11 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TLS_PARAMETERS">
-    <summary>
-      <para>Indicates TLS parameter restrictions.</para>
-    </summary>
-    <seealso cref="SCH_CREDENTIALS" />
-    <seealso cref="CRYPTO_SETTINGS" />
+    <summary>Indicates TLS parameter restrictions.</summary>
   </member>
   <member name="TLS_PARAMETERS.cAlpnIds">
     <summary>
@@ -28,24 +24,17 @@
     </summary>
   </member>
   <member name="TLS_PARAMETERS.cDisabledCrypto">
-    <summary>
-      <para>The count of entries in the pDisabledCrypto array. It is an error to specify more than SCH_CRED_MAX_SUPPORTED_CRYPTO_SETTINGS.</para>
-    </summary>
+    <summary>The count of entries in the pDisabledCrypto array. It is an error to specify more than SCH_CRED_MAX_SUPPORTED_CRYPTO_SETTINGS.</summary>
   </member>
   <member name="TLS_PARAMETERS.pDisabledCrypto">
-    <summary>
-      <para>An array of pointers to the CRYPTO_SETTINGS structures that express disabled cryptographic settings.</para>
-    </summary>
+    <summary>An array of pointers to the CRYPTO_SETTINGS structures that express disabled cryptographic settings.</summary>
   </member>
   <member name="TLS_PARAMETERS.dwFlags">
     <summary>
       <para>(<i>optional</i>) The flags to pass.</para>
       <para>When TLS_PARAMS_OPTIONAL is set, TLS_PARAMETERS will only be honored if they do not cause the server to terminate the handshake.</para>
       <para>Otherwise, schannel may fail TLS handshakes in order to honor the TLS_PARAMETERS restrictions.</para>
-      <blockquote>
-        <para>[!NOTE]
-TLS_PARAMS_OPTIONAL is valid for server applications only. Must be zero otherwise.</para>
-      </blockquote>
+      <blockquote>[!NOTE] TLS_PARAMS_OPTIONAL is valid for server applications only. Must be zero otherwise.</blockquote>
     </summary>
   </member>
 </doc>

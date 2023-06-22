@@ -4,46 +4,29 @@
 <doc>
   <member name="REGFILTERPINS2">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>REGFILTERPINS2</code> structure contains information for registering a filter through the <see cref="IFilterMapper2" /> interface.</para>
     </summary>
-    <remarks>
-      <para>If you use this structure, set the <b>dwVersion</b> member of the <see cref="REGFILTER2" /> structure to 2.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="REGFILTERPINS2.dwFlags">
-    <summary>
-      <para>Bitwise combination of zero or more <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd377518(v=vs.85)">REG_PINFLAG</a> flags.</para>
-    </summary>
+    <summary>Bitwise combination of zero or more <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd377518(v=vs.85)">REG_PINFLAG</a> flags.</summary>
   </member>
   <member name="REGFILTERPINS2.cInstances">
-    <summary>
-      <para>Number of instances of this pin.</para>
-    </summary>
+    <summary>Number of instances of this pin.</summary>
   </member>
   <member name="REGFILTERPINS2.nMediaTypes">
-    <summary>
-      <para>Number of media types supported by this pin.</para>
-    </summary>
+    <summary>Number of media types supported by this pin.</summary>
   </member>
   <member name="REGFILTERPINS2.lpMediaType">
-    <summary>
-      <para>Pointer to an array of <see cref="REGPINTYPES" /> structures, of size nMediaTypes.</para>
-    </summary>
+    <summary>Pointer to an array of <see cref="REGPINTYPES" /> structures, of size nMediaTypes.</summary>
   </member>
   <member name="REGFILTERPINS2.nMediums">
-    <summary>
-      <para>Number of mediums. Can be zero.</para>
-    </summary>
+    <summary>Number of mediums. Can be zero.</summary>
   </member>
   <member name="REGFILTERPINS2.lpMedium">
-    <summary>
-      <para>Pointer to an array of <see cref="REGPINMEDIUM" /> structures, of size nMediums.</para>
-    </summary>
+    <summary>Pointer to an array of <see cref="REGPINMEDIUM" /> structures, of size nMediums.</summary>
   </member>
   <member name="REGFILTERPINS2.clsPinCategory">
-    <summary>
-      <para>Optional pin category, from the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/pin-property-set">Pin Property Set</a>.</para>
-    </summary>
+    <summary>Optional pin category, from the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/pin-property-set">Pin Property Set</a>.</summary>
   </member>
 </doc>

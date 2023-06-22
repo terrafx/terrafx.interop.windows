@@ -3,14 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="GUIDKIND">
-    <summary>
-      <para>Flags used to specify the kind of information requested from an object in the <see cref="IProvideClassInfo2" />.</para>
-    </summary>
-    <seealso cref="IProvideClassInfo2" />
+    <summary>Flags used to specify the kind of information requested from an object in the <see cref="IProvideClassInfo2" />.</summary>
   </member>
   <member name="GUIDKIND.GUIDKIND_DEFAULT_SOURCE_DISP_IID">
-    <summary>
-      <para>The interface identifier (IID) of the object's outgoing dispinterface, labeled [source, default]. The outgoing interface in question must be derived from <b>IDispatch</b>.</para>
-    </summary>
+    <summary>The interface identifier (IID) of the object's outgoing dispinterface, labeled [source, default]. The outgoing interface in question must be derived from <b>IDispatch</b>.</summary>
   </member>
 </doc>

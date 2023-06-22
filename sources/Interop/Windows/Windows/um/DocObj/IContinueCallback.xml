@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IContinueCallback.FContinue">
-    <summary>
-      <para>Indicates whether a generic operation should continue.</para>
-    </summary>
+    <summary>Indicates whether a generic operation should continue.</summary>
     <returns>
       <para>This method can return the following values.</para>
       <list type="table">
@@ -13,43 +11,38 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Continue the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Continue the operation.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>Cancel the operation as soon as possible.</para>
-          </description>
-        </item>
+          <description>Cancel the operation as soon as possible.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IContinueCallback" />
   </member>
   <member name="IContinueCallback.FContinuePrinting">
-    <summary>
-      <para>Indicates whether a lengthy printing operation should continue.</para>
-    </summary>
-    <param name="nCntPrinted">
-      <para>The total number of pages that have been printed at the time the object receives a call to <b>FContinuePrinting</b>.</para>
-    </param>
-    <param name="nCurPage">
-      <para>The page number of the page being printed at the time the object receives a call to <b>FContinuePrinting</b>.</para>
-    </param>
-    <param name="pwszPrintStatus">
-      <para>A pointer to the message about the current status of the print job. The object being printed may or may not display this message to the user. This parameter can be <b>NULL</b>.</para>
-    </param>
+    <summary>Indicates whether a lengthy printing operation should continue.</summary>
+    <param name="nCntPrinted">The total number of pages that have been printed at the time the object receives a call to <b>FContinuePrinting</b>.</param>
+    <param name="nCurPage">The page number of the page being printed at the time the object receives a call to <b>FContinuePrinting</b>.</param>
+    <param name="pwszPrintStatus">A pointer to the message about the current status of the print job. The object being printed may or may not display this message to the user. This parameter can be <b>NULL</b>.</param>
     <returns>
       <para>This method can return the standard return value E_UNEXPECTED, as well as the following values.</para>
       <list type="table">
@@ -57,33 +50,32 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Continue the printing operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Continue the printing operation.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>Cancel the printing operation as soon as possible.</para>
-          </description>
-        </item>
+          <description>Cancel the printing operation as soon as possible.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Implementations of <see cref="IPrint.Print" /> call this method at periodic intervals during the printing process. The <see cref="IPrint" /> implementation should call back at least after printing each page, so that its client can, if necessary, display useful visual feedback to the user. <b>IPrint.Print</b> can call back multiple times with the same <i>nCntPrinted</i> and <i>nCurPage</i> values, which is sometimes useful when a page being printed is complex and it is appropriate to give a user an opportunity to cancel in mid-page.</para>
-    </remarks>
-    <seealso cref="IContinueCallback" />
-    <seealso cref="IPrint" />
   </member>
   <member name="IContinueCallback">
     <summary>

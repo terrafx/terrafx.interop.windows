@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TOKEN_LINKED_TOKEN">
-    <summary>
-      <para>The <b>TOKEN_LINKED_TOKEN</b> structure contains a handle to a token. This token is linked to the token being queried by the <see cref="GetTokenInformation" /> function or set by the  <see cref="SetTokenInformation" /> function.</para>
-    </summary>
+    <summary>The <b>TOKEN_LINKED_TOKEN</b> structure contains a handle to a token. This token is linked to the token being queried by the <see cref="GetTokenInformation" /> function or set by the <see cref="SetTokenInformation" /> function.</summary>
   </member>
   <member name="TOKEN_LINKED_TOKEN.LinkedToken">
     <summary>

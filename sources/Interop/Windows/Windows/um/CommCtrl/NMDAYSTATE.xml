@@ -3,38 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMDAYSTATE">
-    <summary>
-      <para>Carries information required to process the <a href="https://docs.microsoft.com//windows/desktop/Controls/mcn-getdaystate">MCN_GETDAYSTATE</a> notification code. All members of this structure are for input, except
-<b>prgDayState</b>, which the receiving application must set when processing MCN_GETDAYSTATE.</para>
-    </summary>
+    <summary>Carries information required to process the <a href="https://docs.microsoft.com//windows/desktop/Controls/mcn-getdaystate">MCN_GETDAYSTATE</a> notification code. All members of this structure are for input, except<b>prgDayState</b>, which the receiving application must set when processing MCN_GETDAYSTATE.</summary>
   </member>
   <member name="NMDAYSTATE.nmhdr">
     <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>
-        <see cref="NMHDR" /> structure that contains information about this notification code.</para>
-    </summary>
+      <see cref="NMHDR" /> structure that contains information about this notification code.</summary>
   </member>
   <member name="NMDAYSTATE.stStart">
     <summary>
-      <para>Type: <b><see cref="SYSTEMTIME" /></b></para>
-      <para>
-        <see cref="SYSTEMTIME" /> structure that contains the starting date.</para>
-    </summary>
+      <see cref="SYSTEMTIME" /> structure that contains the starting date.</summary>
   </member>
   <member name="NMDAYSTATE.cDayState">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>INT value specifying the total number of elements that must be in the array at
-<b>prgDayState</b>.</para>
-    </summary>
+    <summary>INT value specifying the total number of elements that must be in the array at<b>prgDayState</b>.</summary>
   </member>
   <member name="NMDAYSTATE.prgDayState">
-    <summary>
-      <para>Type: <b>LPMONTHDAYSTATE</b></para>
-      <para>Address of an array of <a href="https://docs.microsoft.com//windows/desktop/Controls/monthdaystate">MONTHDAYSTATE</a> values. The buffer at this address must be large enough to contain at least
-<b>cDayState</b> elements. The first element in the array corresponds to the date in
-<b>stStart</b>.</para>
-    </summary>
+    <summary>Address of an array of <a href="https://docs.microsoft.com//windows/desktop/Controls/monthdaystate">MONTHDAYSTATE</a> values. The buffer at this address must be large enough to contain at least<b>cDayState</b> elements. The first element in the array corresponds to the date in<b>stStart</b>.</summary>
   </member>
 </doc>

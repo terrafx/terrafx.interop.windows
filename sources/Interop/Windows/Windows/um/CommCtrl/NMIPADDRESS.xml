@@ -3,27 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMIPADDRESS">
-    <summary>
-      <para>Contains information for the <a href="https://docs.microsoft.com//windows/desktop/Controls/ipn-fieldchanged">IPN_FIELDCHANGED</a> notification code.</para>
-    </summary>
+    <summary>Contains information for the <a href="https://docs.microsoft.com//windows/desktop/Controls/ipn-fieldchanged">IPN_FIELDCHANGED</a> notification code.</summary>
   </member>
   <member name="NMIPADDRESS.hdr">
-    <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>An <see cref="NMHDR" /> structure that contains additional information about the notification.</para>
-    </summary>
+    <summary>An <see cref="NMHDR" /> structure that contains additional information about the notification.</summary>
   </member>
   <member name="NMIPADDRESS.iField">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The zero-based number of the field that was changed.</para>
-    </summary>
+    <summary>The zero-based number of the field that was changed.</summary>
   </member>
   <member name="NMIPADDRESS.iValue">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The new value of the field specified in the
-<b>iField</b> member. While processing the <a href="https://docs.microsoft.com//windows/desktop/Controls/ipn-fieldchanged">IPN_FIELDCHANGED</a> notification, this member can be set to any value that is within the range of the field and the control will place this new value in the field.</para>
-    </summary>
+    <summary>The new value of the field specified in the<b>iField</b> member. While processing the <a href="https://docs.microsoft.com//windows/desktop/Controls/ipn-fieldchanged">IPN_FIELDCHANGED</a> notification, this member can be set to any value that is within the range of the field and the control will place this new value in the field.</summary>
   </member>
 </doc>

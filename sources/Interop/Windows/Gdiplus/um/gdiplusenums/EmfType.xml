@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EmfType">
+    <summary>The <b>EmfType</b> enumeration specifies the nature of the records that are placed in an Enhanced Metafile (EMF) file. This enumeration is used by several constructors in the<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-metafile">Metafile</a> class.</summary>
+  </member>
+  <member name="EmfType.EmfTypeEmfOnly">
+    <summary>Specifies that all of the records in the metafile are EMF records, which can be displayed by GDI or GDI+.</summary>
+  </member>
+  <member name="EmfType.EmfTypeEmfPlusOnly">
+    <summary>Specifies that all of the records in the metafile are EMF+ records, which can be displayed by GDI+ but not by GDI.</summary>
+  </member>
+  <member name="EmfType.EmfTypeEmfPlusDual">
+    <summary>Specifies that all EMF+ records in the metafile are associated with an alternate EMF record. Metafiles of type EmfTypeEmfPlusDual can be displayed by GDI or by GDI+.</summary>
+  </member>
+</doc>

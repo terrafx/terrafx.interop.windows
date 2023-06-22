@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE">
-    <summary>
-      <para>Specifies the type of a raytracing acceleration structure.</para>
-    </summary>
-    <remarks>
-      <para>Bottom-level acceleration structures each consist of a set of geometries that are building blocks for a scene. A top-level acceleration structure represents a set of instances of bottom-level acceleration structures.</para>
-    </remarks>
+    <summary>Specifies the type of a raytracing acceleration structure.</summary>
   </member>
   <member name="D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE.D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL">
-    <summary>
-      <para>Top-level acceleration structure.</para>
-    </summary>
+    <summary>Top-level acceleration structure.</summary>
   </member>
   <member name="D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE.D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL">
-    <summary>
-      <para>Bottom-level acceleration structure.</para>
-    </summary>
+    <summary>Bottom-level acceleration structure.</summary>
   </member>
 </doc>

@@ -3,57 +3,34 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FPO_DATA">
-    <summary>
-      <para>Represents the stack frame layout for a function on an x86 computer when frame pointer omission (FPO) optimization is used. The structure is used to locate the base of the call frame.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-pfunction_table_access_routine">FunctionTableAccessProc64</seealso>
-    <seealso cref="STACKFRAME64" />
-    <seealso cref="SymFunctionTableAccess64" />
+    <summary>Represents the stack frame layout for a function on an x86 computer when frame pointer omission (FPO) optimization is used. The structure is used to locate the base of the call frame.</summary>
   </member>
   <member name="FPO_DATA.ulOffStart">
-    <summary>
-      <para>The offset of the first byte of the function code.</para>
-    </summary>
+    <summary>The offset of the first byte of the function code.</summary>
   </member>
   <member name="FPO_DATA.cbProcSize">
-    <summary>
-      <para>The number of bytes in the function.</para>
-    </summary>
+    <summary>The number of bytes in the function.</summary>
   </member>
   <member name="FPO_DATA.cdwLocals">
-    <summary>
-      <para>The number of local variables.</para>
-    </summary>
+    <summary>The number of local variables.</summary>
   </member>
   <member name="FPO_DATA.cdwParams">
-    <summary>
-      <para>The size of the parameters, in <b>DWORD</b>s.</para>
-    </summary>
+    <summary>The size of the parameters, in <b>DWORD</b>s.</summary>
   </member>
   <member name="FPO_DATA.cbProlog">
-    <summary>
-      <para>The number of bytes in the function prolog code.</para>
-    </summary>
+    <summary>The number of bytes in the function prolog code.</summary>
   </member>
   <member name="FPO_DATA.cbRegs">
-    <summary>
-      <para>The number of registers saved.</para>
-    </summary>
+    <summary>The number of registers saved.</summary>
   </member>
   <member name="FPO_DATA.fHasSEH">
-    <summary>
-      <para>A variable that indicates whether the function uses structured exception handling.</para>
-    </summary>
+    <summary>A variable that indicates whether the function uses structured exception handling.</summary>
   </member>
   <member name="FPO_DATA.fUseBP">
-    <summary>
-      <para>A variable that indicates whether the EBP register has been allocated.</para>
-    </summary>
+    <summary>A variable that indicates whether the EBP register has been allocated.</summary>
   </member>
   <member name="FPO_DATA.reserved">
-    <summary>
-      <para>Reserved for future use.</para>
-    </summary>
+    <summary>Reserved for future use.</summary>
   </member>
   <member name="FPO_DATA.cbFrame">
     <summary>
@@ -63,74 +40,66 @@
           <description>Type</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FRAME_FPO</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>FPO frame</para>
-          </description>
-        </item>
-        <item>
+          <description>FPO frame</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FRAME_NONFPO</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Non-FPO frame</para>
-          </description>
-        </item>
-        <item>
+          <description>Non-FPO frame</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FRAME_TRAP</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Trap frame</para>
-          </description>
-        </item>
-        <item>
+          <description>Trap frame</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FRAME_TSS</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>TSS frame</para>
-          </description>
-        </item>
+          <description>TSS frame</description>
+        </listheader>
       </list>
     </summary>
   </member>

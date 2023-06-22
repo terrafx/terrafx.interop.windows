@@ -3,72 +3,29 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFWorkQueueServicesEx.BeginRegisterPlatformWorkQueueWithMMCSSEx">
-    <summary>
-      <para>Registers a platform work queue with Multimedia Class Scheduler Service (MMCSS) using the specified
-class and task id.</para>
-    </summary>
-    <param name="dwPlatformWorkQueue">
-      <para>The id of one of the standard platform work queues.</para>
-    </param>
-    <param name="wszClass">
-      <para>The MMCSS class which the work queue should be registered with.</para>
-    </param>
+    <summary>Registers a platform work queue with Multimedia Class Scheduler Service (MMCSS) using the specified class and task id.</summary>
+    <param name="dwPlatformWorkQueue">The id of one of the standard platform work queues.</param>
+    <param name="wszClass">The MMCSS class which the work queue should be registered with.</param>
     <param name="dwTaskId">
-      <para>The task id which the work queue should be registered with. If <i>dwTaskId</i> is 0, a new MMCSS bucket will be created.</para>
+      <code>The task id which the work queue should be registered with. If &lt;i&gt;dwTaskId&lt;/i&gt; is 0, a new MMCSS bucket will be created.</code>
     </param>
-    <param name="lPriority">
-      <para>The priority.</para>
-    </param>
-    <param name="pCallback">
-      <para>Standard callback used for async operations in Media Foundation.</para>
-    </param>
-    <param name="pState">
-      <para>Standard state used for async operations in Media Foundation.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFWorkQueueServicesEx" />
+    <param name="lPriority">The priority.</param>
+    <param name="pCallback">Standard callback used for async operations in Media Foundation.</param>
+    <param name="pState">Standard state used for async operations in Media Foundation.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFWorkQueueServicesEx.GetPlatformWorkQueueMMCSSPriority">
-    <summary>
-      <para>Gets the priority of the Multimedia Class Scheduler Service (MMCSS)  priority associated with
-the specified platform work queue.</para>
-    </summary>
-    <param name="dwPlatformWorkQueueId">
-      <para>Topology work queue id for which the info will be returned.</para>
-    </param>
-    <param name="plPriority"></param>
-    <returns>
-      <para>Pointer to a buffer allocated by the caller
-that the work queue's MMCSS task id will be copied to.</para>
-    </returns>
-    <seealso cref="IMFWorkQueueServicesEx" />
+    <summary>Gets the priority of the Multimedia Class Scheduler Service (MMCSS) priority associated with the specified platform work queue.</summary>
+    <param name="dwPlatformWorkQueueId">Topology work queue id for which the info will be returned.</param>
+    <returns>Pointer to a buffer allocated by the caller that the work queue's MMCSS task id will be copied to.</returns>
   </member>
   <member name="IMFWorkQueueServicesEx.GetTopologyWorkQueueMMCSSPriority">
-    <summary>
-      <para>Retrieves the Multimedia Class Scheduler Service (MMCSS)  string associated with the given topology work queue.</para>
-    </summary>
-    <param name="dwTopologyWorkQueueId">
-      <para>The id of the topology work queue.</para>
-    </param>
-    <param name="plPriority">
-      <para>Pointer to the buffer the work queue's MMCSS task id will be copied to.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFWorkQueueServicesEx" />
+    <summary>Retrieves the Multimedia Class Scheduler Service (MMCSS) string associated with the given topology work queue.</summary>
+    <param name="dwTopologyWorkQueueId">The id of the topology work queue.</param>
+    <param name="plPriority">Pointer to the buffer the work queue's MMCSS task id will be copied to.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFWorkQueueServicesEx">
-    <summary>
-      <para>Extends the <see cref="IMFWorkQueueServices" /> interface.</para>
-    </summary>
-    <remarks>
-      <para>This interface allows applications to control
-both platform and topology work queues.</para>
-      <para>The <see cref="IMFWorkQueueServices" /> can be obtained from the session by querying     for the <b>MF_WORKQUEUE_SERVICES</b> service.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Extends the <see cref="IMFWorkQueueServices" /> interface.</summary>
   </member>
 </doc>

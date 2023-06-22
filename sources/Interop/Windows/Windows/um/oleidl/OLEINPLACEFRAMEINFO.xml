@@ -3,38 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="OLEINPLACEFRAMEINFO">
-    <summary>
-      <para>Contains information about the accelerators supported by a container during an in-place session. The structure is used in the <see cref="IOleInPlaceSite.GetWindowContext" /> method and the <see cref="OleTranslateAccelerator" /> function.</para>
-    </summary>
-    <remarks>
-      <para>When an object is being in-place activated, its server calls the container's <see cref="IOleInPlaceSite.GetWindowContext" /> method, which fills in an <b>OLEINPLACEFRAMEINFO</b> structure. During an in-place session, the message loop of an EXE server passes a pointer to the <b>OLEINPLACEFRAMEINFO</b> structure to <see cref="OleTranslateAccelerator" />. OLE uses the information in this structure to determine whether a message maps to one of the container's accelerators.</para>
-    </remarks>
-    <seealso cref="IOleInPlaceSite.GetWindowContext" />
-    <seealso cref="OleTranslateAccelerator" />
+    <summary>Contains information about the accelerators supported by a container during an in-place session. The structure is used in the <see cref="IOleInPlaceSite.GetWindowContext" /> method and the <see cref="OleTranslateAccelerator" /> function.</summary>
   </member>
   <member name="OLEINPLACEFRAMEINFO.cb">
-    <summary>
-      <para>The size of this structure, in bytes. The object server must specify sizeof(<b>OLEINPLACEFRAMEINFO</b>) in the structure it passes to <see cref="IOleInPlaceSite.GetWindowContext" />. The container can then use this size to determine the structure's version.</para>
-    </summary>
+    <summary>The size of this structure, in bytes. The object server must specify sizeof(<b>OLEINPLACEFRAMEINFO</b>) in the structure it passes to <see cref="IOleInPlaceSite.GetWindowContext" />. The container can then use this size to determine the structure's version.</summary>
   </member>
   <member name="OLEINPLACEFRAMEINFO.fMDIApp">
-    <summary>
-      <para>Indicates whether the container is an MDI application.</para>
-    </summary>
+    <summary>Indicates whether the container is an MDI application.</summary>
   </member>
   <member name="OLEINPLACEFRAMEINFO.hwndFrame">
-    <summary>
-      <para>A handle to the container's top-level frame window.</para>
-    </summary>
+    <summary>A handle to the container's top-level frame window.</summary>
   </member>
   <member name="OLEINPLACEFRAMEINFO.haccel">
-    <summary>
-      <para>A handle to the accelerator table that the container wants to use during an in-place editing session.</para>
-    </summary>
+    <summary>A handle to the accelerator table that the container wants to use during an in-place editing session.</summary>
   </member>
   <member name="OLEINPLACEFRAMEINFO.cAccelEntries">
-    <summary>
-      <para>The number of accelerators in <b>haccel</b>.</para>
-    </summary>
+    <summary>The number of accelerators in <b>haccel</b>.</summary>
   </member>
 </doc>

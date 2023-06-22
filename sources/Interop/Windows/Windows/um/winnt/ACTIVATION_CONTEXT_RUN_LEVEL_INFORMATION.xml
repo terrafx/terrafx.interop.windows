@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION">
-    <summary>
-      <para>The <b>ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION</b> structure is used by the <see cref="QueryActCtxW" /> function.</para>
-    </summary>
+    <summary>The <b>ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION</b> structure is used by the <see cref="QueryActCtxW" /> function.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION.ulFlags">
-    <summary>
-      <para>This parameter is reserved for future use. This parameter currently returns 0.</para>
-    </summary>
+    <summary>This parameter is reserved for future use. This parameter currently returns 0.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION.RunLevel">
-    <summary>
-      <para>A  <see cref="ACTCTX_REQUESTED_RUN_LEVEL" /> enumeration value that gives the requested run level of the activation context.</para>
-    </summary>
+    <summary>A <see cref="ACTCTX_REQUESTED_RUN_LEVEL" /> enumeration value that gives the requested run level of the activation context.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION.UiAccess">
-    <summary>
-      <para>This parameter returns zero if the <b>uiAccess</b> attribute in the application manifest is false. This parameter returns a non-zero value if the <b>uiAccess</b> attribute in the manifest is true. True means that UI accessibility applications require access higher privileges.</para>
-    </summary>
+    <summary>This parameter returns zero if the <b>uiAccess</b> attribute in the application manifest is false. This parameter returns a non-zero value if the <b>uiAccess</b> attribute in the manifest is true. True means that UI accessibility applications require access higher privileges.</summary>
   </member>
 </doc>

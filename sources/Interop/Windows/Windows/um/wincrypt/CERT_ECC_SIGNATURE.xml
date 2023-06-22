@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_ECC_SIGNATURE">
-    <summary>
-      <para>The <b>CERT_ECC_SIGNATURE</b> structure contains the r and s values for an Elliptic Curve Digital Signature Algorithm (ECDSA) signature.</para>
-    </summary>
-    <remarks>
-      <para>Before encoding, a leading zero byte will be inserted for the <b>r</b> and <b>s</b> members. After decoding, a leading zero byte will be removed from the <b>r</b> and <b>s</b> members if the leading zero is present.</para>
-    </remarks>
+    <summary>The <b>CERT_ECC_SIGNATURE</b> structure contains the r and s values for an Elliptic Curve Digital Signature Algorithm (ECDSA) signature.</summary>
   </member>
   <member name="CERT_ECC_SIGNATURE.r">
-    <summary>
-      <para>The r value of the ECDSA signature. This value is in <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">little-endian</a> order.</para>
-    </summary>
+    <summary>The r value of the ECDSA signature. This value is in <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">little-endian</a> order.</summary>
   </member>
   <member name="CERT_ECC_SIGNATURE.s">
-    <summary>
-      <para>The s value of the ECDSA signature. This value is in little-endian order.</para>
-    </summary>
+    <summary>The s value of the ECDSA signature. This value is in little-endian order.</summary>
   </member>
 </doc>

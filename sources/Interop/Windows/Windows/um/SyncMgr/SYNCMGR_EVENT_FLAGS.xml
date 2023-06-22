@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYNCMGR_EVENT_FLAGS">
-    <summary>
-      <para>Specifies flags for a synchronization event.</para>
-    </summary>
+    <summary>Specifies flags for a synchronization event.</summary>
   </member>
   <member name="SYNCMGR_EVENT_FLAGS.SYNCMGR_EF_NONE">
-    <summary>
-      <para>No flags specified.</para>
-    </summary>
+    <summary>No flags specified.</summary>
   </member>
   <member name="SYNCMGR_EVENT_FLAGS.SYNCMGR_EF_VALID">
-    <summary>
-      <para>Same as <see cref="SYNCMGR_EF_NONE" />.</para>
-    </summary>
+    <summary>Same as <see cref="SYNCMGR_EF_NONE" />.</summary>
   </member>
 </doc>

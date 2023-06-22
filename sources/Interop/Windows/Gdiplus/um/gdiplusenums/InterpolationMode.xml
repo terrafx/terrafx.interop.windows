@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="InterpolationMode">
+    <summary>The <b>InterpolationMode</b> enumeration specifies the algorithm that is used when images are scaled or rotated. This enumeration is used by the <see cref="Graphics.GetInterpolationMode" /> and <see cref="Graphics.SetInterpolationMode" /> methods of the<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> class.</summary>
+  </member>
+  <member name="InterpolationMode.InterpolationModeInvalid">
+    <summary>Used internally</summary>
+  </member>
+  <member name="InterpolationMode.InterpolationModeDefault">
+    <summary>Specifies the default interpolation mode.</summary>
+  </member>
+  <member name="InterpolationMode.InterpolationModeLowQuality">
+    <summary>Specifies a low-quality mode.</summary>
+  </member>
+  <member name="InterpolationMode.InterpolationModeHighQuality">
+    <summary>Specifies a high-quality mode.</summary>
+  </member>
+  <member name="InterpolationMode.InterpolationModeBilinear">
+    <summary>Specifies bilinear interpolation. No prefiltering is done. This mode is not suitable for shrinking an image below 50 percent of its original size.</summary>
+  </member>
+  <member name="InterpolationMode.InterpolationModeBicubic">
+    <summary>Specifies bicubic interpolation. No prefiltering is done. This mode is not suitable for shrinking an image below 25 percent of its original size.</summary>
+  </member>
+  <member name="InterpolationMode.InterpolationModeNearestNeighbor">
+    <summary>Specifies nearest-neighbor interpolation.</summary>
+  </member>
+  <member name="InterpolationMode.InterpolationModeHighQualityBilinear">
+    <summary>Specifies high-quality, bilinear interpolation. Prefiltering is performed to ensure high-quality shrinking.</summary>
+  </member>
+  <member name="InterpolationMode.InterpolationModeHighQualityBicubic">
+    <summary>Specifies high-quality, bicubic interpolation. Prefiltering is performed to ensure high-quality shrinking. This mode produces the highest quality transformed images.</summary>
+  </member>
+</doc>

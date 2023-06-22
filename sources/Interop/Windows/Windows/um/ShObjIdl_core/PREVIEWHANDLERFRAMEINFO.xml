@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PREVIEWHANDLERFRAMEINFO">
-    <summary>
-      <para>Accelerator table structure. Used by <see cref="IPreviewHandlerFrame.GetWindowContext" />.</para>
-    </summary>
+    <summary>Accelerator table structure. Used by <see cref="IPreviewHandlerFrame.GetWindowContext" />.</summary>
   </member>
   <member name="PREVIEWHANDLERFRAMEINFO.haccel">
-    <summary>
-      <para>Type: <b>HACCEL</b></para>
-      <para>A handle to the accelerator table.</para>
-    </summary>
+    <summary>A handle to the accelerator table.</summary>
   </member>
   <member name="PREVIEWHANDLERFRAMEINFO.cAccelEntries">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The number of entries in the accelerator table.</para>
-    </summary>
+    <summary>The number of entries in the accelerator table.</summary>
   </member>
 </doc>

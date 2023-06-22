@@ -3,107 +3,35 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteTextAnalysisSink.SetBidiLevel">
-    <summary>
-      <para>Sets a bidirectional level on the range, which is  called once per  run change (either explicit or resolved implicit).</para>
-    </summary>
-    <param name="textPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The starting position from which to report.</para>
-    </param>
-    <param name="textLength">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of UTF16 units of the reported range.</para>
-    </param>
-    <param name="explicitLevel">
-      <para>Type: <b>UINT8</b></para>
-      <para>The explicit level from the paragraph reading direction and any embedded control codes RLE/RLO/LRE/LRO/PDF, which is determined before any additional rules.</para>
-    </param>
-    <param name="resolvedLevel">
-      <para>Type: <b>UINT8</b></para>
-      <para>The final implicit level considering the
-explicit level and characters' natural directionality, after all
-Bidi rules have been applied.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>A successful code or error code to stop analysis.</para>
-    </returns>
-    <seealso cref="IDWriteTextAnalysisSink" />
+    <summary>Sets a bidirectional level on the range, which is called once per run change (either explicit or resolved implicit).</summary>
+    <param name="textPosition">The starting position from which to report.</param>
+    <param name="textLength">The number of UTF16 units of the reported range.</param>
+    <param name="explicitLevel">The explicit level from the paragraph reading direction and any embedded control codes RLE/RLO/LRE/LRO/PDF, which is determined before any additional rules.</param>
+    <param name="resolvedLevel">The final implicit level considering the explicit level and characters' natural directionality, after all Bidi rules have been applied.</param>
+    <returns>A successful code or error code to stop analysis.</returns>
   </member>
   <member name="IDWriteTextAnalysisSink.SetLineBreakpoints">
-    <summary>
-      <para>Sets line-break opportunities for each character, starting from the specified position.</para>
-    </summary>
-    <param name="textPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The starting text position from which to report.</para>
-    </param>
-    <param name="textLength">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of UTF16 units of the reported range.</para>
-    </param>
-    <param name="lineBreakpoints">
-      <para>Type: <b><see cref="DWRITE_LINE_BREAKPOINT" />*</b></para>
-      <para>A pointer to a structure that contains breaking conditions set for each character from the starting position to the end of the specified range.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>A successful code or error code to stop analysis.</para>
-    </returns>
-    <seealso cref="IDWriteTextAnalysisSink" />
+    <summary>Sets line-break opportunities for each character, starting from the specified position.</summary>
+    <param name="textPosition">The starting text position from which to report.</param>
+    <param name="textLength">The number of UTF16 units of the reported range.</param>
+    <param name="lineBreakpoints">A pointer to a structure that contains breaking conditions set for each character from the starting position to the end of the specified range.</param>
+    <returns>A successful code or error code to stop analysis.</returns>
   </member>
   <member name="IDWriteTextAnalysisSink.SetNumberSubstitution">
-    <summary>
-      <para>Sets the number substitution on the text range affected by the text analysis.</para>
-    </summary>
-    <param name="textPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The starting position from which to report.</para>
-    </param>
-    <param name="textLength">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of UTF16 units of the reported range.</para>
-    </param>
-    <param name="numberSubstitution">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritenumbersubstitution">IDWriteNumberSubstitution</a>*</b></para>
-      <para>An object that holds the appropriate digits and numeric punctuation for a given locale. Use <see cref="IDWriteFactory.CreateNumberSubstitution" /> to create this object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextAnalysisSink" />
+    <summary>Sets the number substitution on the text range affected by the text analysis.</summary>
+    <param name="textPosition">The starting position from which to report.</param>
+    <param name="textLength">The number of UTF16 units of the reported range.</param>
+    <param name="numberSubstitution">An object that holds the appropriate digits and numeric punctuation for a given locale. Use <see cref="IDWriteFactory.CreateNumberSubstitution" /> to create this object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextAnalysisSink.SetScriptAnalysis">
-    <summary>
-      <para>Reports script analysis for the specified text range.</para>
-    </summary>
-    <param name="textPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The starting position from which to report.</para>
-    </param>
-    <param name="textLength">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of UTF16 units of the reported range.</para>
-    </param>
-    <param name="scriptAnalysis">
-      <para>Type: <b>const <see cref="DWRITE_SCRIPT_ANALYSIS" />*</b></para>
-      <para>A pointer to a structure that contains a zero-based index representation of a writing system script and a value indicating whether additional shaping of text is required.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>A successful code or error code to stop analysis.</para>
-    </returns>
-    <seealso cref="IDWriteTextAnalysisSink" />
+    <summary>Reports script analysis for the specified text range.</summary>
+    <param name="textPosition">The starting position from which to report.</param>
+    <param name="textLength">The number of UTF16 units of the reported range.</param>
+    <param name="scriptAnalysis">A pointer to a structure that contains a zero-based index representation of a writing system script and a value indicating whether additional shaping of text is required.</param>
+    <returns>A successful code or error code to stop analysis.</returns>
   </member>
   <member name="IDWriteTextAnalysisSink">
-    <summary>
-      <para>This interface is implemented by the text analyzer's client to receive the
-output of a given text analysis.</para>
-    </summary>
-    <remarks>
-      <para>The text analyzer disregards any current
-state of the analysis sink, therefore, a Set method call on a range overwrites the previously set analysis result of the same range.</para>
-    </remarks>
+    <summary>This interface is implemented by the text analyzer's client to receive the output of a given text analysis.</summary>
   </member>
 </doc>

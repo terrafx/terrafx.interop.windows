@@ -3,14 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SECURITY_ATTRIBUTES">
-    <summary>
-      <para>The <b>SECURITY_ATTRIBUTES</b> structure contains the <see cref="security descriptor" /> for an object and specifies whether the handle retrieved by specifying this structure is inheritable. This structure provides security settings for objects created by various functions, such as <see cref="CreateFile" />, <see cref="CreatePipe" />, <see cref="CreateProcess" />, <see cref="RegCreateKeyEx" />, or <see cref="RegSaveKeyEx" />.</para>
-    </summary>
+    <summary>The <b>SECURITY_ATTRIBUTES</b> structure contains the <see cref="security descriptor" /> for an object and specifies whether the handle retrieved by specifying this structure is inheritable. This structure provides security settings for objects created by various functions, such as <see cref="CreateFile" />, <see cref="CreatePipe" />, <see cref="CreateProcess" />, <see cref="RegCreateKeyEx" />, or <see cref="RegSaveKeyEx" />.</summary>
   </member>
   <member name="SECURITY_ATTRIBUTES.nLength">
-    <summary>
-      <para>The size, in bytes, of this structure. Set this value to the size of the <b>SECURITY_ATTRIBUTES</b> structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure. Set this value to the size of the <b>SECURITY_ATTRIBUTES</b> structure.</summary>
   </member>
   <member name="SECURITY_ATTRIBUTES.lpSecurityDescriptor">
     <summary>
@@ -19,8 +15,6 @@
     </summary>
   </member>
   <member name="SECURITY_ATTRIBUTES.bInheritHandle">
-    <summary>
-      <para>A Boolean value that specifies whether the returned handle is inherited when a new process is created. If this member is <b>TRUE</b>, the new process inherits the handle.</para>
-    </summary>
+    <summary>A Boolean value that specifies whether the returned handle is inherited when a new process is created. If this member is <b>TRUE</b>, the new process inherits the handle.</summary>
   </member>
 </doc>

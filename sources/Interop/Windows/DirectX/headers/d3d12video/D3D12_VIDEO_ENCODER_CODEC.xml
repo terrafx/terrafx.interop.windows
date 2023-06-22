@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_ENCODER_CODEC">
-    <summary>
-      <para>Specifies codecs for Direct3D 12 video encoding.</para>
-    </summary>
+    <summary>Specifies codecs for Direct3D 12 video encoding.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_CODEC.D3D12_VIDEO_ENCODER_CODEC_H264">
-    <summary>
-      <para>H.264 video</para>
-    </summary>
+    <summary>H.264 video</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_CODEC.D3D12_VIDEO_ENCODER_CODEC_HEVC">
-    <summary>
-      <para>High Efficiency Video Coding (HEVC) video</para>
-    </summary>
+    <summary>High Efficiency Video Coding (HEVC) video</summary>
   </member>
 </doc>

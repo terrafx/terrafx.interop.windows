@@ -3,9 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_XML_BUFFER_PROPERTY_ID">
-    <summary>
-      <para>Each XML buffer property is identified by an ID and has an associated
-value.</para>
-    </summary>
+    <summary>Each XML buffer property is identified by an ID and has an associated value.</summary>
   </member>
 </doc>

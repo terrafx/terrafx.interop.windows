@@ -3,820 +3,413 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPropertySystem.EnumeratePropertyDescriptions">
-    <summary>
-      <para>Gets an instance of the subsystem object that implements <see cref="IPropertyDescriptionList" />, to obtain either the entire or a partial list of property descriptions in the system.</para>
-    </summary>
-    <param name="filterOn">
-      <para>Type: <b><see cref="PROPDESC_ENUMFILTER" /></b></para>
-      <para>The list to return. See <see cref="PROPDESC_ENUMFILTER" />. Valid values for this method are 0 through 4.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the desired IID.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>The address of an <see cref="IPropertyDescriptionList" /> interface pointer.</para>
-    </param>
+    <summary>Gets an instance of the subsystem object that implements <see cref="IPropertyDescriptionList" />, to obtain either the entire or a partial list of property descriptions in the system.</summary>
+    <param name="filterOn">The list to return. See <see cref="PROPDESC_ENUMFILTER" />. Valid values for this method are 0 through 4.</param>
+    <param name="riid">A reference to the desired IID.</param>
+    <param name="ppv">The address of an <see cref="IPropertyDescriptionList" /> interface pointer.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Indicates interface is obtained.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Indicates interface is obtained.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>Indicates <i>ppv</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>Indicates <i>ppv</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is not implemented where BUILDING_DOWNLEVEL_LIB is defined.</para>
-      <para>It is recommended that you use the IID_PPV_ARGS macro, defined in objbase.h, to package the <i>riid</i> and <i>ppv</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppv</i>, eliminating the possibility of a coding error.</para>
-    </remarks>
-    <seealso cref="IPropertySystem" />
   </member>
   <member name="IPropertySystem.FormatForDisplay">
-    <summary>
-      <para>Gets a formatted, Unicode string representation of a property value.</para>
-    </summary>
-    <param name="key">
-      <para>Type: <b>REFPROPERTYKEY</b></para>
-      <para>A reference to the requested <see cref="property key" />.</para>
-    </param>
-    <param name="propvar">
-      <para>Type: <b>REFPROPVARIANT</b></para>
-      <para>A reference to a <see cref="PROPVARIANT" /> structure containing the type and value of the property.</para>
-    </param>
-    <param name="pdff">
-      <para>Type: <b><see cref="PROPDESC_FORMAT_FLAGS" /></b></para>
-      <para>The format of the property string. See <see cref="PROPDESC_FORMAT_FLAGS" /> for possible values.</para>
-    </param>
-    <param name="pszText">
-      <para>Type: <b>LPWSTR</b></para>
-      <para>Receives the formatted value as a null-terminated, Unicode string. The calling application must allocate memory for the buffer.</para>
-    </param>
-    <param name="cchText">
-      <para>Type: <b>DWORD</b></para>
-      <para>The length of the buffer at  <i>pszText</i> in <b>WCHAR</b><b>s</b>, including the terminating <b>NULL</b>. The maximum size is 0x8000 (32K).</para>
-    </param>
+    <summary>Gets a formatted, Unicode string representation of a property value.</summary>
+    <param name="key">A reference to the requested <see cref="property key" />.</param>
+    <param name="propvar">A reference to a <see cref="PROPVARIANT" /> structure containing the type and value of the property.</param>
+    <param name="pdff">The format of the property string. See <see cref="PROPDESC_FORMAT_FLAGS" /> for possible values.</param>
+    <param name="pszText">Receives the formatted value as a null-terminated, Unicode string. The calling application must allocate memory for the buffer.</param>
+    <param name="cchText">The length of the buffer at <i>pszText</i> in <b>WCHAR</b><b>s</b>, including the terminating <b>NULL</b>. The maximum size is 0x8000 (32K).</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Formatted string is created.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Formatted string is created.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Formatted string is not created. S_FALSE indicates that the empty string resulted from a VT_EMPTY.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Formatted string is not created. S_FALSE indicates that the empty string resulted from a VT_EMPTY.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Memory allocation failed.</para>
-          </description>
-        </item>
+          <description>Memory allocation failed.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>You must initialize Component Object Model (COM) with <see cref="CoInitialize" /> or <see cref="OleInitialize" /> before calling <see cref="IPropertySystem.FormatForDisplay" />.</para>
-      <para>When it succeeds, this method gets a formatted Unicode string representation of a property value for a specified <see cref="PROPERTYKEY" />, and one or more <see cref="PROPDESC_FORMAT_FLAGS" />. If the <b>PROPERTYKEY</b> is not recognized by the schema subsystem, <see cref="IPropertySystem.FormatForDisplay" /> attempts to format the value according to its <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a>.</para>
-      <para>The purpose of this method is to convert data into a string suitable for display to the user. The value is formatted according to the current locale, the language of the user, the <see cref="PROPDESC_FORMAT_FLAGS" />, and the property description specified by the property key. For information about how the property description schema influences the formatting of the value, see <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-displayinfo">displayInfo</a>, <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">stringFormat</a>, <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-booleanformat">booleanFormat</a>, <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-numberformat">numberFormat</a>, <see cref="NMDATETIMEFORMAT" />,  and <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-enumeratedlist">enumeratedList</a>.  Typically, the <b>PROPDESC_FORMAT_FLAGS</b> are used to modify the format prescribed by the property description.</para>
-      <para>The output string may contain Unicode directional characters.  These nonspacing characters influence the Unicode bidirectional algorithm so that the values appear correctly when a left-to-right (LTR) language is drawn on a right-to-left (RTL) window, and vice versa.  These characters include the following: <code>"\x200e", "\x200f", "\x202a", "\x202b", "\x202c", "\x202d", "\x202e".</code></para>
-      <para>The properties in the following table use special formats and are unaffected by the <see cref="PROPDESC_FORMAT_FLAGS" /> (examples cited are for strings with a current locale set to English; typically, output is localized except where noted).</para>
-      <list type="table">
-        <listheader>
-          <description>Property</description>
-          <description>Format</description>
-        </listheader>
-        <item>
-          <description>System.FileAttributes</description>
-          <description>The following file attributes are converted to letters and appended to create a string (for example, a value of 0x1801 (FILE_ATTRIBUTE_READONLY | FILE_ATTRIBUTE_COMPRESSED | FILE_ATTRIBUTE_OFFLINE) is converted to "RCO"):
-<list type="bullet"><item><description>FILE_ATTRIBUTE_READONLY (0x00000001) - 'R'</description></item><item><description>FILE_ATTRIBUTE_SYSTEM (0x00000004) - 'S'</description></item><item><description>FILE_ATTRIBUTE_ARCHIVE (0x00000020) -'A'</description></item><item><description>FILE_ATTRIBUTE_COMPRESSED (0x00000800) - 'C'</description></item><item><description>FILE_ATTRIBUTE_ENCRYPTED (0x00004000) - 'E'</description></item><item><description>FILE_ATTRIBUTE_OFFLINE (0x00001000) - 'O'</description></item><item><description>FILE_ATTRIBUTE_NOT_CONTENT_INDEXED (0x00002000) - 'I'</description></item></list></description>
-        </item>
-        <item>
-          <description>System.Photo.ISOSpeed</description>
-          <description>For example, "ISO-400".</description>
-        </item>
-        <item>
-          <description>System.Photo.ShutterSpeed</description>
-          <description>
-            <para>The APEX value is converted to an exposure time using this formula:</para>
-            <para>
-              <code>Exposure_time = 2^(-APEX_value)</code>
-            </para>
-            <para>For example, "2 sec."or "1/125 sec.".</para>
-          </description>
-        </item>
-        <item>
-          <description>System.Photo.ExposureTime</description>
-          <description>For example,  "2 sec."or "1/125 sec." </description>
-        </item>
-        <item>
-          <description>System.Photo.Aperture</description>
-          <description>
-            <para>The APEX value is converted to an F number using this formula:</para>
-            <para>
-              <code>F_Number = 2^(APEX_Value / 2)</code>
-            </para>
-            <para>For example, "f/5.6".</para>
-          </description>
-        </item>
-        <item>
-          <description>System.Photo.FNumber</description>
-          <description>For example, "f/5.6".</description>
-        </item>
-        <item>
-          <description>System.Photo.SubjectDistance</description>
-          <description>For example, "15 m"or "250 mm".</description>
-        </item>
-        <item>
-          <description>System.Photo.FocalLength</description>
-          <description>For example,  "50 mm".</description>
-        </item>
-        <item>
-          <description>System.Photo.FlashEnergy</description>
-          <description>For example, "500 bpcs".</description>
-        </item>
-        <item>
-          <description>System.Photo.ExposureBias</description>
-          <description>For example, "-2 step", " 0 step", or "+3 step".</description>
-        </item>
-        <item>
-          <description>System.Computer.DecoratedFreeSpace</description>
-          <description>For example, "105 MB free of 13.2 GB".</description>
-        </item>
-        <item>
-          <description>System.ItemType</description>
-          <description>For example, "Application" or "JPEG Image".</description>
-        </item>
-        <item>
-          <description>System.ControlPanel.Category</description>
-          <description>For example, "Appearance and Personalization".</description>
-        </item>
-        <item>
-          <description>System.ComputerName</description>
-          <description>For example, "LITWARE05 (this computer)" or "testbox07".</description>
-        </item>
-      </list>
-      <para>If the property key does not correspond to a property description in any of the registered property schemas, this method chooses a format based on the type of the value, as described in the following table.</para>
-      <list type="table">
-        <listheader>
-          <description>
-            <b>Type of the value</b>
-          </description>
-          <description>
-            <b>Format</b>
-          </description>
-        </listheader>
-        <item>
-          <description>VT_BOOLEAN</description>
-          <description>Not supported.</description>
-        </item>
-        <item>
-          <description>VT_FILETIME</description>
-          <description>Date/time string as specified by <see cref="PROPDESC_FORMAT_FLAGS" /> and the current locale. PDFF_SHORTTIME and PDFF_SHORTDATE are the default. For example, "11/13/2006 3:22 PM".</description>
-        </item>
-        <item>
-          <description>Numeric VARTYPE</description>
-          <description>Decimal string in the current locale. For example, "42".</description>
-        </item>
-        <item>
-          <description>VT_LPWSTR or other</description>
-          <description>String. Sequences of "\r", "\t", or "\n" are replaced with a single space.</description>
-        </item>
-        <item>
-          <description>VT_VECTOR | anything</description>
-          <description>Semicolon separated values—a semicolon is used regardless of locale.</description>
-        </item>
-      </list>
-    </remarks>
   </member>
   <member name="IPropertySystem.FormatForDisplayAlloc">
-    <summary>
-      <para>Gets a string representation of a property value to an allocated memory buffer.</para>
-    </summary>
-    <param name="key">
-      <para>Type: <b>REFPROPERTYKEY</b></para>
-      <para>A reference to the desired <see cref="PROPERTYKEY" />.</para>
-    </param>
-    <param name="propvar">
-      <para>Type: <b>REFPROPVARIANT</b></para>
-      <para>A reference to a <see cref="PROPVARIANT" /> structure that contains the type and value of the property.</para>
-    </param>
-    <param name="pdff">
-      <para>Type: <b><see cref="PROPDESC_FORMAT_FLAGS" /></b></para>
-      <para>The format of the property string. See <see cref="PROPDESC_FORMAT_FLAGS" />.</para>
-    </param>
-    <param name="ppszDisplay">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>When this method returns, contains a pointer to the formatted value as a null-terminated, Unicode string.</para>
-    </param>
+    <summary>Gets a string representation of a property value to an allocated memory buffer.</summary>
+    <param name="key">A reference to the desired <see cref="PROPERTYKEY" />.</param>
+    <param name="propvar">A reference to a <see cref="PROPVARIANT" /> structure that contains the type and value of the property.</param>
+    <param name="pdff">The format of the property string. See <see cref="PROPDESC_FORMAT_FLAGS" />.</param>
+    <param name="ppszDisplay">When this method returns, contains a pointer to the formatted value as a null-terminated, Unicode string.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Formatted string is created. This string may be returned empty due to an empty input string or from a non-empty value that was formatted as an empty string.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Formatted string is created. This string may be returned empty due to an empty input string or from a non-empty value that was formatted as an empty string.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Formatted string is not created. Indicates that the empty string resulted from a <b>VT_EMPTY</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Formatted string is not created. Indicates that the empty string resulted from a <b>VT_EMPTY</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Indicates allocation failed.</para>
-          </description>
-        </item>
+          <description>Indicates allocation failed.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>You must initialize Component Object Model (COM) with <see cref="CoInitialize" /> or <see cref="OleInitialize" /> before calling <see cref="IPropertySystem.FormatForDisplayAlloc" />.</para>
-      <para>On success, this method gets a formatted Unicode string representation of a property value for a specified <see cref="PROPERTYKEY" />, and one or more <see cref="PROPDESC_FORMAT_FLAGS" />. If the <b>PROPERTYKEY</b> is not recognized by the schema subsystem, <see cref="IPropertySystem.FormatForDisplayAlloc" /> attempts to format the value according to its <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a>.</para>
-      <para>This method allocates memory for the buffer and returns a pointer to it at <i>ppszDisplay</i>. The calling application must use <see cref="CoTaskMemFree" /> to release the string specified by <i>ppszDisplay</i> when it is no longer needed.</para>
-      <para>The purpose of this method is to convert data into a string suitable for display to the user. The value is formatted according to the current locale, the language of the user, the <see cref="PROPDESC_FORMAT_FLAGS" />, and the property description specified by the property key. For information about how the property description schema influences the formatting of the value, see <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-displayinfo">displayInfo</a>, <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">stringFormat</a>, <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-booleanformat">booleanFormat</a>, <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-numberformat">numberFormat</a>, <see cref="NMDATETIMEFORMAT" />,  and <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-enumeratedlist">enumeratedList</a>.  Typically, the <b>PROPDESC_FORMAT_FLAGS</b> are used to modify the format prescribed by the property description.</para>
-      <para>The output string may contain Unicode directional characters.  These nonspacing characters influence the Unicode bidirectional algorithm so that the values appear correctly when a left to right (LTR) language is drawn on a right to left (RTL) window, and vice versa.  These characters include the following: <code>"\x200e", "\x200f", "\x202a", "\x202b", "\x202c", "\x202d", "\x202e".</code></para>
-      <para>The following properties use special formats and are unaffected by the <see cref="PROPDESC_FORMAT_FLAGS" /> (examples cited are for strings with a current locale set to English; typically, output is localized except where noted).</para>
-      <list type="table">
-        <listheader>
-          <description>Property</description>
-          <description>Format</description>
-        </listheader>
-        <item>
-          <description>System.FileAttributes</description>
-          <description>The following file attributes are converted to letters and appended to create a string (for example, a value of 0x1801 (FILE_ATTRIBUTE_READONLY | FILE_ATTRIBUTE_COMPRESSED | FILE_ATTRIBUTE_OFFLINE) is converted to "RCO"):
-<list type="bullet"><item><description>FILE_ATTRIBUTE_READONLY (0x00000001) - 'R'</description></item><item><description>FILE_ATTRIBUTE_SYSTEM (0x00000004) - 'S'</description></item><item><description>FILE_ATTRIBUTE_ARCHIVE (0x00000020) -'A'</description></item><item><description>FILE_ATTRIBUTE_COMPRESSED (0x00000800) - 'C'</description></item><item><description>FILE_ATTRIBUTE_ENCRYPTED (0x00004000) - 'E'</description></item><item><description>FILE_ATTRIBUTE_OFFLINE (0x00001000) - 'O'</description></item><item><description>FILE_ATTRIBUTE_NOT_CONTENT_INDEXED (0x00002000) - 'I'</description></item></list></description>
-        </item>
-        <item>
-          <description>System.Photo.ISOSpeed</description>
-          <description>For example, "ISO-400".</description>
-        </item>
-        <item>
-          <description>System.Photo.ShutterSpeed</description>
-          <description>
-            <para>The APEX value is converted to an exposure time using this formula:</para>
-            <para>
-              <code>Exposure_time = 2^(-APEX_value)</code>
-            </para>
-            <para>For example, "2 sec."or "1/125 sec.".</para>
-          </description>
-        </item>
-        <item>
-          <description>System.Photo.ExposureTime</description>
-          <description>For example, "2 sec."or "1/125 sec."</description>
-        </item>
-        <item>
-          <description>System.Photo.Aperture</description>
-          <description>
-            <para>The APEX value is converted to an F number using this formula:</para>
-            <para>
-              <code>F_Number = 2^(APEX_Value / 2)</code>
-            </para>
-            <para>For example, "f/5.6".</para>
-          </description>
-        </item>
-        <item>
-          <description>System.Photo.FNumber</description>
-          <description>For example, "f/5.6".</description>
-        </item>
-        <item>
-          <description>System.Photo.SubjectDistance</description>
-          <description>For example, "15 m"or "250 mm".</description>
-        </item>
-        <item>
-          <description>System.Photo.FocalLength</description>
-          <description>For example, "50 mm".</description>
-        </item>
-        <item>
-          <description>System.Photo.FlashEnergy</description>
-          <description>For example, "500 bpcs".</description>
-        </item>
-        <item>
-          <description>System.Photo.ExposureBias</description>
-          <description>For example, "-2 step", " 0 step", or "+3 step".</description>
-        </item>
-        <item>
-          <description>System.Computer.DecoratedFreeSpace</description>
-          <description>For example, "105 MB free of 13.2 GB".</description>
-        </item>
-        <item>
-          <description>System.ItemType</description>
-          <description>For example, "Application" or "JPEG Image".</description>
-        </item>
-        <item>
-          <description>System.ControlPanel.Category</description>
-          <description>For example, "Appearance and Personalization".</description>
-        </item>
-        <item>
-          <description>System.ComputerName</description>
-          <description>For example, "LITWARE05 (this computer)" or "testbox07".</description>
-        </item>
-      </list>
-      <para>If the property key does not correspond to a property description in any of the registered property schemas, then this method chooses a format based on the type of the value.</para>
-      <list type="table">
-        <listheader>
-          <description>
-            <b>Type of the value</b>
-          </description>
-          <description>
-            <b>Format</b>
-          </description>
-        </listheader>
-        <item>
-          <description>VT_BOOLEAN</description>
-          <description>Not supported.</description>
-        </item>
-        <item>
-          <description>VT_FILETIME</description>
-          <description>Date/time string as specified by <see cref="PROPDESC_FORMAT_FLAGS" /> and the current locale. PDFF_SHORTTIME and PDFF_SHORTDATE are the default. For example, "11/13/2006 3:22 PM".</description>
-        </item>
-        <item>
-          <description>Numeric VARTYPE</description>
-          <description>Decimal string in the current locale.  For example,  "42". </description>
-        </item>
-        <item>
-          <description>VT_LPWSTR or other</description>
-          <description>Converted to a string. Sequences of "\r", "\t", or "\n" are replaced with a single space.</description>
-        </item>
-        <item>
-          <description>VT_VECTOR | anything</description>
-          <description>Semicolon separated values—a semicolon is used regardless of locale.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IPropertySystem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
   </member>
   <member name="IPropertySystem.GetPropertyDescription">
-    <summary>
-      <para>Gets an instance of the subsystem object that implements <see cref="IPropertyDescription" />, to obtain the property description for a given <see cref="PROPERTYKEY" />.</para>
-    </summary>
-    <param name="propkey">
-      <para>Type: <b>REFPROPERTYKEY</b></para>
-      <para>A reference to the desired property key. See <see cref="PROPERTYKEY" />.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the desired IID.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>The address of an <see cref="IPropertyDescription" /> interface pointer.</para>
-    </param>
+    <summary>Gets an instance of the subsystem object that implements <see cref="IPropertyDescription" />, to obtain the property description for a given <see cref="PROPERTYKEY" />.</summary>
+    <param name="propkey">A reference to the desired property key. See <see cref="PROPERTYKEY" />.</param>
+    <param name="riid">A reference to the desired IID.</param>
+    <param name="ppv">The address of an <see cref="IPropertyDescription" /> interface pointer.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Indicates the interface is obtained.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Indicates the interface is obtained.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Indicates that <i>ppv</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_ELEMENTNOTFOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Indicates that <i>ppv</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TYPE_E_ELEMENTNOTFOUND</b>
-            </para>
-          </description>
-          <description>
-            <para>Indicates that the <see cref="PROPERTYKEY" /> does not exist in the schema subsystem cache.</para>
-          </description>
-        </item>
+          <description>Indicates that the <see cref="PROPERTYKEY" /> does not exist in the schema subsystem cache.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>It is recommended that you use the IID_PPV_ARGS macro, defined in objbase.h, to package the <i>riid</i> and <i>ppv</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppv</i>, eliminating the possibility of a coding error.</para>
-    </remarks>
-    <seealso cref="IPropertySystem" />
   </member>
   <member name="IPropertySystem.GetPropertyDescriptionByName">
-    <summary>
-      <para>Gets an instance of the subsystem object that implements <see cref="IPropertyDescription" />, to obtain the property description for a given canonical name.</para>
-    </summary>
-    <param name="pszCanonicalName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a string that identifies the property.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the desired IID.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>The address of an <see cref="IPropertyDescription" /> interface pointer.</para>
-    </param>
+    <summary>Gets an instance of the subsystem object that implements <see cref="IPropertyDescription" />, to obtain the property description for a given canonical name.</summary>
+    <param name="pszCanonicalName">A pointer to a string that identifies the property.</param>
+    <param name="riid">A reference to the desired IID.</param>
+    <param name="ppv">The address of an <see cref="IPropertyDescription" /> interface pointer.</param>
     <returns>
-      <para>Type: <b>PSSTDAPI</b></para>
       <para>Returns one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Indicates that the interface is obtained.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Indicates that the interface is obtained.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Indicates <i>pszCanonicalName</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_ELEMENTNOTFOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Indicates <i>pszCanonicalName</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TYPE_E_ELEMENTNOTFOUND</b>
-            </para>
-          </description>
-          <description>
-            <para>Indicates that the canonical name does not exist in the schema subsystem cache.</para>
-          </description>
-        </item>
+          <description>Indicates that the canonical name does not exist in the schema subsystem cache.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>It is recommended that you use the IID_PPV_ARGS macro, defined in objbase.h, to package the <i>riid</i> and <i>ppv</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppv</i>, eliminating the possibility of a coding error.</para>
-    </remarks>
-    <seealso cref="IPropertySystem" />
   </member>
   <member name="IPropertySystem.GetPropertyDescriptionListFromString">
-    <summary>
-      <para>Gets an instance of the subsystem object that implements <see cref="IPropertyDescriptionList" />, to obtain an ordered collection of property descriptions, based on the provided string.</para>
-    </summary>
-    <param name="pszPropList">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a string that identifies the property list.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the desired IID.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>The address of an <see cref="IPropertyDescriptionList" /> interface pointer.</para>
-    </param>
+    <summary>Gets an instance of the subsystem object that implements <see cref="IPropertyDescriptionList" />, to obtain an ordered collection of property descriptions, based on the provided string.</summary>
+    <param name="pszPropList">A pointer to a string that identifies the property list.</param>
+    <param name="riid">A reference to the desired IID.</param>
+    <param name="ppv">The address of an <see cref="IPropertyDescriptionList" /> interface pointer.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Indicates interface is obtained.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Indicates interface is obtained.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>Indicates <i>ppv</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>Indicates <i>ppv</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The property description list string ("proplist") syntax consists of a sequence of canonical property names, with flags associated with each property name. The string starts with "prop:". The syntax looks like this: <code>prop:[flags]propertyname[endflags];</code></para>
-      <para>The flags are optional and can be any of those below. Note: These flags translate to the <see cref="PROPDESC_VIEW_FLAGS" /> enum.</para>
-      <list type="table">
-        <listheader>
-          <description>Flag</description>
-          <description>Meaning</description>
-        </listheader>
-        <item>
-          <description>-</description>
-          <description>Sort in reverse order (PDVF_REVERSESORT).</description>
-        </item>
-        <item>
-          <description>0</description>
-          <description>Show by default in both the primary and secondary lists (PDVF_SHOWBYDEFAULT | PDVF_SHOWINPRIMARYLIST | PDVF_SHOWINSECONDARYLIST).</description>
-        </item>
-        <item>
-          <description>1</description>
-          <description>Show in the primary and secondary lists (PDVF_SHOWINPRIMARYLIST | PDVF_SHOWINSECONDARYLIST).</description>
-        </item>
-        <item>
-          <description>2</description>
-          <description>Show in secondary list (PDVF_SHOWINSECONDARYLIST).</description>
-        </item>
-        <item>
-          <description>^</description>
-          <description>Begin a new group (PDVF_BEGINNEWGROUP).</description>
-        </item>
-        <item>
-          <description>/</description>
-          <description>Right align (PDVF_RIGHTALIGN).</description>
-        </item>
-        <item>
-          <description>*</description>
-          <description>Hide if the value is not present.</description>
-        </item>
-        <item>
-          <description>|</description>
-          <description>Center align. (PDVF_CENTERALIGN).</description>
-        </item>
-        <item>
-          <description>~</description>
-          <description>Hide the label. (PDVF_HIDELABEL).</description>
-        </item>
-        <item>
-          <description>#</description>
-          <description>Fill area. (PDVF_FILLAREA).</description>
-        </item>
-        <item>
-          <description>?</description>
-          <description>Hide if unsupported by property handler (PDVF_HIDEIFUNSUPPORTED).</description>
-        </item>
-        <item>
-          <description>&lt;</description>
-          <description>Parse as link (PDVF_PARSEASLINK).</description>
-        </item>
-        <item>
-          <description>&amp;</description>
-          <description>Show as whole link (PDVF_SHOWASWHOLELINK).</description>
-        </item>
-      </list>
-      <para>From the dbfolder and file folder perspective:</para>
-      <list type="table">
-        <listheader>
-          <description>0</description>
-          <description>Show as a column in defview, column chooser menu, and column chooser dialog.</description>
-        </listheader>
-        <item>
-          <description>1</description>
-          <description>Show in the column chooser menu and dialog.</description>
-        </item>
-        <item>
-          <description>2</description>
-          <description>Show in the column chooser dialog.</description>
-        </item>
-        <item>
-          <description>
-            <b>NULL</b>
-          </description>
-          <description>Include in the search results, but hide in the UI.</description>
-        </item>
-      </list>
-      <para>The endflags are also optional and can be the following:</para>
-      <list type="table">
-        <listheader>
-          <description>EndFlag</description>
-          <description>Meaning</description>
-        </listheader>
-        <item>
-          <description>]</description>
-          <description>End column (used for extended tiles view).</description>
-        </item>
-      </list>
-      <para>It is recommended that you use the IID_PPV_ARGS macro, defined in objbase.h, to package the <i>riid</i> and <i>ppv</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppv</i>, eliminating the possibility of a coding error.</para>
-      <para>For more information about property schemas, see
-<a href="https://docs.microsoft.com//windows/desktop/properties/building-property-handlers-property-schemas">Property Schemas</a>.</para>
-    </remarks>
-    <seealso cref="IPropertySystem" />
   </member>
   <member name="IPropertySystem.RefreshPropertySchema">
-    <summary>
-      <para>Not supported.</para>
-    </summary>
+    <summary>Not supported.</summary>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Indicates schema files reloaded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Indicates schema files reloaded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_ACCESSDENIED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_ACCESSDENIED</b>
-            </para>
-          </description>
-          <description>
-            <para>Indicates calling context does not have proper privileges.</para>
-          </description>
-        </item>
+          <description>Indicates calling context does not have proper privileges.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IPropertySystem" />
   </member>
   <member name="IPropertySystem.RegisterPropertySchema">
-    <summary>
-      <para>Informs the schema subsystem of the addition of a property description schema file.</para>
-    </summary>
-    <param name="pszPath">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>Pointer to the file path for the .propdesc file on the local machine.</para>
-    </param>
+    <summary>Informs the schema subsystem of the addition of a property description schema file.</summary>
+    <param name="pszPath">Pointer to the file path for the .propdesc file on the local machine.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Indicates schema is registered.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Indicates schema is registered.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_ACCESSDENIED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Indicates calling context does not have proper privileges.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_ACCESSDENIED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>INPLACE_S_TRUNCATED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Indicates calling context does not have proper privileges.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>INPLACE_S_TRUNCATED</b>
-            </para>
-          </description>
-          <description>
-            <para>Indicates one or more of the property descriptions in the schema was not registered.</para>
-          </description>
-        </item>
+          <description>Indicates one or more of the property descriptions in the schema was not registered.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method informs the schema subsystem of the addition of a property description schema (.propdesc) file, using a file path to the .propdesc file on the local computer. Call this method only when the file has first been installed on the computer. Typically, a setup application calls this method after installing the .propdesc file, which should be stored in the install directory of the application under "Program Files". Multiple calls may be made to <see cref="IPropertySystem.RegisterPropertySchema" /> in order to batch-register multiple schema files.</para>
-      <para>If a failure is encountered that prevents a property description from getting loaded, the cause will be recorded in the application event log. This method fails with E_ACCESSDENIED if the calling context does not have proper privileges, which include write access to HKLM (HKEY_LOCAL_MACHINE). It is the responsibility of the calling application to obtain privileges via limited user account (LUA) mechanisms.</para>
-    </remarks>
-    <seealso cref="IPropertySystem" />
   </member>
   <member name="IPropertySystem.UnregisterPropertySchema">
-    <summary>
-      <para>Informs the schema subsystem of the removal of a property description schema (.propdesc) file, using a file path to the .propdesc file on the local machine.</para>
-    </summary>
-    <param name="pszPath">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>Pointer to the file path for the .propdesc file on the local machine.</para>
-    </param>
+    <summary>Informs the schema subsystem of the removal of a property description schema (.propdesc) file, using a file path to the .propdesc file on the local machine.</summary>
+    <param name="pszPath">Pointer to the file path for the .propdesc file on the local machine.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Indicates schema is unregistered.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Indicates schema is unregistered.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_ACCESSDENIED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_ACCESSDENIED</b>
-            </para>
-          </description>
-          <description>
-            <para>Indicates calling context does not have proper privileges.</para>
-          </description>
-        </item>
+          <description>Indicates calling context does not have proper privileges.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Call this method when the file is being uninstalled from the machine. Typically, a setup application calls this method before or after uninstalling the .propdesc file. This method can be called after the file no longer exists.</para>
-      <para>Call <see cref="IPropertySystem.RefreshPropertySchema" /> in order for the newly-unregistered schema files to be unincorporated from the search index and the schema subsystem cache.</para>
-      <para>This method fails with E_ACCESSDENIED if the calling context does not have proper privileges, which include write access to the local machine. It is the caller's responsibility to obtain privileges via least-privileged user account (LUA) mechanisms.</para>
-    </remarks>
-    <seealso cref="IPropertySystem" />
   </member>
   <member name="IPropertySystem">
-    <summary>
-      <para>Exposes methods that get property descriptions, register and unregister property schemas, enumerate property descriptions, and format property values in a type-strict way.</para>
-    </summary>
-    <remarks>
-      <para>Many of the exported APIs (such as <see cref="PSGetPropertyDescription" />) are simply wrappers around the <see cref="IPropertySystem" /> methods. If your code calls a lot of these helper APIs in sequence, it may be worthwhile to instantiate a single <b>IPropertySystem</b> object, and call the methods directly, rather than calling the helper APIs. (To improve the performance, the helper APIs do obtain a cached instance of the <b>IPropertySystem</b> object.)</para>
-    </remarks>
+    <summary>Exposes methods that get property descriptions, register and unregister property schemas, enumerate property descriptions, and format property values in a type-strict way.</summary>
   </member>
 </doc>

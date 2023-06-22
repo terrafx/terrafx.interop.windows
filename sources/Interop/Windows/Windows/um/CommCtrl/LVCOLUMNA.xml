@@ -3,545 +3,621 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="LVCOLUMNA">
-    <summary>
-      <para>Contains information about a column in report view. This structure is used both for creating and manipulating columns. This structure supersedes the LV_COLUMN structure.</para>
-    </summary>
-    <remarks>
-      <para>If a column is added to a list-view control with index 0 (the leftmost column), it is always LVCFMT_LEFT. Setting other flags on column 0 does not override that alignment. Therefore if you keep inserting columns with index 0, the text in all columns are left-aligned. If you want the first column to be right-aligned or centered you can make a dummy column, then insert one or more columns with index 1 or higher and specify the alignment you require. Finally delete the dummy column.</para>
-      <blockquote>
-        <para>[!NOTE]
-The commctrl.h header defines LVCOLUMN as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/lvm-deletecolumn">LVM_DELETECOLUMN</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/lvm-getcolumn">LVM_GETCOLUMN</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/lvm-insertcolumn">LVM_INSERTCOLUMN</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/lvm-setcolumn">LVM_SETCOLUMN</seealso>
+    <summary>Contains information about a column in report view. This structure is used both for creating and manipulating columns. This structure supersedes the LV_COLUMN structure.</summary>
   </member>
   <member name="LVCOLUMNA.mask">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>Variable specifying which members contain valid information. This member can be zero, or one or more of the following values:</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>LVCF_FMT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCF_FMT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>fmt</b> member is valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCF_WIDTH</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>cx</b> member is valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCF_TEXT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>pszText</b> member is valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCF_SUBITEM</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>iSubItem</b> member is valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCF_IMAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The <b>fmt</b> member is valid.</para>
-          </description>
-        </item>
-        <item>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. The <b>iImage</b> member is valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>LVCF_WIDTH</b>
-          </description>
-          <description>
-            <para>The <b>cx</b> member is valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>LVCF_TEXT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCF_ORDER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The <b>pszText</b> member is valid.</para>
-          </description>
-        </item>
-        <item>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. The <b>iOrder</b> member is valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>LVCF_SUBITEM</b>
-          </description>
-          <description>
-            <para>The <b>iSubItem</b> member is valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>LVCF_IMAGE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCF_MINWIDTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. The <b>iImage</b> member is valid.</para>
-          </description>
-        </item>
-        <item>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b>The <b>cxMin</b> member is valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>LVCF_ORDER</b>
-          </description>
-          <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. The <b>iOrder</b> member is valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>LVCF_MINWIDTH</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCF_DEFAULTWIDTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b>The <b>cxMin</b> member is valid.</para>
-          </description>
-        </item>
-        <item>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b>The <b>cxDefault</b> member is valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>LVCF_DEFAULTWIDTH</b>
-          </description>
-          <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b>The <b>cxDefault</b> member is valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>LVCF_IDEALWIDTH</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCF_IDEALWIDTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b>The <b>cxIdeal</b> member is valid.</para>
-          </description>
-        </item>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b>The <b>cxIdeal</b> member is valid.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="LVCOLUMNA.fmt">
     <summary>
-      <para>Type: <b>int</b></para>
       <para>Alignment of the column header and the subitem text in the column. The alignment of the leftmost column is always LVCFMT_LEFT; it cannot be changed. This member can be a combination of the following values. Note that not all combinations are valid.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>LVCFMT_LEFT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCFMT_LEFT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Text is left-aligned.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCFMT_RIGHT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Text is right-aligned.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCFMT_CENTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Text is centered.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCFMT_JUSTIFYMASK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A bitmask used to select those bits of <b>fmt</b> that control field justification. To check the format of a column, use a logical "and" to combine LCFMT_JUSTIFYMASK with <b>fmt</b>. You can then use a switch statement to determine whether the LVCFMT_LEFT, LVCFMT_RIGHT, or LVCFMT_CENTER bits are set.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCFMT_IMAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Text is left-aligned.</para>
-          </description>
-        </item>
-        <item>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. The item displays an image from an image list.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>LVCFMT_RIGHT</b>
-          </description>
-          <description>
-            <para>Text is right-aligned.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>LVCFMT_CENTER</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCFMT_BITMAP_ON_RIGHT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Text is centered.</para>
-          </description>
-        </item>
-        <item>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. The bitmap appears to the right of text. This does not affect an image from an image list assigned to the header item.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>LVCFMT_JUSTIFYMASK</b>
-          </description>
-          <description>
-            <para>A bitmask used to select those bits of <b>fmt</b> that control field justification. To check the format of a column, use a logical "and" to combine LCFMT_JUSTIFYMASK with <b>fmt</b>. You can then use a switch statement to determine whether the LVCFMT_LEFT, LVCFMT_RIGHT, or LVCFMT_CENTER bits are set.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>LVCFMT_IMAGE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCFMT_COL_HAS_IMAGES</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. The item displays an image from an image list.</para>
-          </description>
-        </item>
-        <item>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. The header item contains an image in the image list.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>LVCFMT_BITMAP_ON_RIGHT</b>
-          </description>
-          <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. The bitmap appears to the right of text. This does not affect an image from an image list assigned to the header item.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>LVCFMT_COL_HAS_IMAGES</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCFMT_FIXED_WIDTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. The header item contains an image in the image list.</para>
-          </description>
-        </item>
-        <item>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b> Can't resize the column; same as HDF_FIXEDWIDTH.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>LVCFMT_FIXED_WIDTH</b>
-          </description>
-          <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b> Can't resize the column; same as HDF_FIXEDWIDTH.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>LVCFMT_NO_DPI_SCALE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCFMT_NO_DPI_SCALE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b> If not set, CCM_DPISCALE will govern scaling up fixed width.</para>
-          </description>
-        </item>
-        <item>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b> If not set, CCM_DPISCALE will govern scaling up fixed width.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>LVCFMT_FIXED_RATIO</b>
-          </description>
-          <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b> Width will augment with the row height.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>LVCFMT_SPLITBUTTON</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCFMT_FIXED_RATIO</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b> Column is a split button (same as HDF_SPLITBUTTON). The header of the column displays a split button (same as HDF_SPLITBUTTON).</para>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b> Width will augment with the row height.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCFMT_SPLITBUTTON</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b> Column is a split button (same as HDF_SPLITBUTTON). The header of the column displays a split button (same as HDF_SPLITBUTTON).</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="LVCOLUMNA.cx">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Width of the column, in pixels.</para>
-    </summary>
+    <summary>Width of the column, in pixels.</summary>
   </member>
   <member name="LVCOLUMNA.pszText">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPTSTR</a></b></para>
-      <para>If column information is being set, this member is the address of a null-terminated string that contains the column header text. If the structure is receiving information about a column, this member specifies the address of the buffer that receives the column header text.</para>
-    </summary>
+    <summary>If column information is being set, this member is the address of a null-terminated string that contains the column header text. If the structure is receiving information about a column, this member specifies the address of the buffer that receives the column header text.</summary>
   </member>
   <member name="LVCOLUMNA.cchTextMax">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Size in <b>TCHAR</b>s of the buffer pointed to by the <b>pszText</b> member. If the structure is not receiving information about a column, this member is ignored.</para>
-    </summary>
+    <summary>Size in <b>TCHAR</b>s of the buffer pointed to by the <b>pszText</b> member. If the structure is not receiving information about a column, this member is ignored.</summary>
   </member>
   <member name="LVCOLUMNA.iSubItem">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Index of subitem associated with the column.</para>
-    </summary>
+    <summary>Index of subitem associated with the column.</summary>
   </member>
   <member name="LVCOLUMNA.iImage">
     <summary>
-      <para>Type: <b>int</b></para>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. Zero-based index of an image within the image list. The specified image will appear within the column.</para>
-    </summary>
+      <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. Zero-based index of an image within the image list. The specified image will appear within the column.</summary>
   </member>
   <member name="LVCOLUMNA.iOrder">
     <summary>
-      <para>Type: <b>int</b></para>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. Zero-based column offset. Column offset is in left-to-right order. For example, zero indicates the leftmost column.</para>
-    </summary>
+      <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. Zero-based column offset. Column offset is in left-to-right order. For example, zero indicates the leftmost column.</summary>
   </member>
   <member name="LVCOLUMNA.cxMin">
     <summary>
-      <para>Type: <b>int</b></para>
-      <para>
-        <b>Windows Vista</b>. Minimum width of the column in pixels.</para>
-    </summary>
+      <b>Windows Vista</b>. Minimum width of the column in pixels.</summary>
   </member>
   <member name="LVCOLUMNA.cxDefault">
     <summary>
-      <para>Type: <b>int</b></para>
-      <para>
-        <b>Windows Vista</b>. Application-defined value typically used to store the default width of the column. This member is ignored by the list-view control.</para>
-    </summary>
+      <b>Windows Vista</b>. Application-defined value typically used to store the default width of the column. This member is ignored by the list-view control.</summary>
   </member>
   <member name="LVCOLUMNA.cxIdeal">
     <summary>
-      <para>Type: <b>int</b></para>
-      <para>
-        <b>Windows Vista</b>. Read-only. The ideal width of the column in pixels, as the column may currently be autosized to a lesser width.</para>
-    </summary>
+      <b>Windows Vista</b>. Read-only. The ideal width of the column in pixels, as the column may currently be autosized to a lesser width.</summary>
   </member>
   <member name="LVCOLUMNA">
-    <summary>
-      <para>Contains information about a column in report view. This structure is used both for creating and manipulating columns. This structure supersedes the LV_COLUMN structure.</para>
-    </summary>
-    <remarks>
-      <para>If a column is added to a list-view control with index 0 (the leftmost column), it is always LVCFMT_LEFT. Setting other flags on column 0 does not override that alignment. Therefore if you keep inserting columns with index 0, the text in all columns are left-aligned. If you want the first column to be right-aligned or centered you can make a dummy column, then insert one or more columns with index 1 or higher and specify the alignment you require. Finally delete the dummy column.</para>
-      <blockquote>
-        <para>[!NOTE]
-The commctrl.h header defines LVCOLUMN as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/lvm-deletecolumn">LVM_DELETECOLUMN</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/lvm-getcolumn">LVM_GETCOLUMN</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/lvm-insertcolumn">LVM_INSERTCOLUMN</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/lvm-setcolumn">LVM_SETCOLUMN</seealso>
+    <summary>Contains information about a column in report view. This structure is used both for creating and manipulating columns. This structure supersedes the LV_COLUMN structure.</summary>
   </member>
   <member name="LVCOLUMNA.mask">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>Variable specifying which members contain valid information. This member can be zero, or one or more of the following values:</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>LVCF_FMT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCF_FMT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>fmt</b> member is valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCF_WIDTH</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>cx</b> member is valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCF_TEXT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>pszText</b> member is valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCF_SUBITEM</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>iSubItem</b> member is valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCF_IMAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The <b>fmt</b> member is valid.</para>
-          </description>
-        </item>
-        <item>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. The <b>iImage</b> member is valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>LVCF_WIDTH</b>
-          </description>
-          <description>
-            <para>The <b>cx</b> member is valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>LVCF_TEXT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCF_ORDER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The <b>pszText</b> member is valid.</para>
-          </description>
-        </item>
-        <item>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. The <b>iOrder</b> member is valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>LVCF_SUBITEM</b>
-          </description>
-          <description>
-            <para>The <b>iSubItem</b> member is valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>LVCF_IMAGE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCF_MINWIDTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. The <b>iImage</b> member is valid.</para>
-          </description>
-        </item>
-        <item>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b>The <b>cxMin</b> member is valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>LVCF_ORDER</b>
-          </description>
-          <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. The <b>iOrder</b> member is valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>LVCF_MINWIDTH</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCF_DEFAULTWIDTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b>The <b>cxMin</b> member is valid.</para>
-          </description>
-        </item>
-        <item>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b>The <b>cxDefault</b> member is valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>LVCF_DEFAULTWIDTH</b>
-          </description>
-          <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b>The <b>cxDefault</b> member is valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>LVCF_IDEALWIDTH</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCF_IDEALWIDTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b>The <b>cxIdeal</b> member is valid.</para>
-          </description>
-        </item>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b>The <b>cxIdeal</b> member is valid.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="LVCOLUMNA.fmt">
     <summary>
-      <para>Type: <b>int</b></para>
       <para>Alignment of the column header and the subitem text in the column. The alignment of the leftmost column is always LVCFMT_LEFT; it cannot be changed. This member can be a combination of the following values. Note that not all combinations are valid.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>LVCFMT_LEFT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCFMT_LEFT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Text is left-aligned.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCFMT_RIGHT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Text is right-aligned.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCFMT_CENTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Text is centered.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCFMT_JUSTIFYMASK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A bitmask used to select those bits of <b>fmt</b> that control field justification. To check the format of a column, use a logical "and" to combine LCFMT_JUSTIFYMASK with <b>fmt</b>. You can then use a switch statement to determine whether the LVCFMT_LEFT, LVCFMT_RIGHT, or LVCFMT_CENTER bits are set.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCFMT_IMAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Text is left-aligned.</para>
-          </description>
-        </item>
-        <item>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. The item displays an image from an image list.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>LVCFMT_RIGHT</b>
-          </description>
-          <description>
-            <para>Text is right-aligned.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>LVCFMT_CENTER</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCFMT_BITMAP_ON_RIGHT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Text is centered.</para>
-          </description>
-        </item>
-        <item>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. The bitmap appears to the right of text. This does not affect an image from an image list assigned to the header item.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>LVCFMT_JUSTIFYMASK</b>
-          </description>
-          <description>
-            <para>A bitmask used to select those bits of <b>fmt</b> that control field justification. To check the format of a column, use a logical "and" to combine LCFMT_JUSTIFYMASK with <b>fmt</b>. You can then use a switch statement to determine whether the LVCFMT_LEFT, LVCFMT_RIGHT, or LVCFMT_CENTER bits are set.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>LVCFMT_IMAGE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCFMT_COL_HAS_IMAGES</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. The item displays an image from an image list.</para>
-          </description>
-        </item>
-        <item>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. The header item contains an image in the image list.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>LVCFMT_BITMAP_ON_RIGHT</b>
-          </description>
-          <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. The bitmap appears to the right of text. This does not affect an image from an image list assigned to the header item.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>LVCFMT_COL_HAS_IMAGES</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCFMT_FIXED_WIDTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. The header item contains an image in the image list.</para>
-          </description>
-        </item>
-        <item>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b> Can't resize the column; same as HDF_FIXEDWIDTH.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>LVCFMT_FIXED_WIDTH</b>
-          </description>
-          <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b> Can't resize the column; same as HDF_FIXEDWIDTH.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>LVCFMT_NO_DPI_SCALE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCFMT_NO_DPI_SCALE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b> If not set, CCM_DPISCALE will govern scaling up fixed width.</para>
-          </description>
-        </item>
-        <item>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b> If not set, CCM_DPISCALE will govern scaling up fixed width.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>LVCFMT_FIXED_RATIO</b>
-          </description>
-          <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b> Width will augment with the row height.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>LVCFMT_SPLITBUTTON</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCFMT_FIXED_RATIO</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b> Column is a split button (same as HDF_SPLITBUTTON). The header of the column displays a split button (same as HDF_SPLITBUTTON).</para>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b> Width will augment with the row height.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LVCFMT_SPLITBUTTON</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00</a> and <b>Windows Vista.</b> Column is a split button (same as HDF_SPLITBUTTON). The header of the column displays a split button (same as HDF_SPLITBUTTON).</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="LVCOLUMNA.cx">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Width of the column, in pixels.</para>
-    </summary>
+    <summary>Width of the column, in pixels.</summary>
   </member>
   <member name="LVCOLUMNA.pszText">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPTSTR</a></b></para>
-      <para>If column information is being set, this member is the address of a null-terminated string that contains the column header text. If the structure is receiving information about a column, this member specifies the address of the buffer that receives the column header text.</para>
-    </summary>
+    <summary>If column information is being set, this member is the address of a null-terminated string that contains the column header text. If the structure is receiving information about a column, this member specifies the address of the buffer that receives the column header text.</summary>
   </member>
   <member name="LVCOLUMNA.cchTextMax">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Size in <b>TCHAR</b>s of the buffer pointed to by the <b>pszText</b> member. If the structure is not receiving information about a column, this member is ignored.</para>
-    </summary>
+    <summary>Size in <b>TCHAR</b>s of the buffer pointed to by the <b>pszText</b> member. If the structure is not receiving information about a column, this member is ignored.</summary>
   </member>
   <member name="LVCOLUMNA.iSubItem">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Index of subitem associated with the column.</para>
-    </summary>
+    <summary>Index of subitem associated with the column.</summary>
   </member>
   <member name="LVCOLUMNA.iImage">
     <summary>
-      <para>Type: <b>int</b></para>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. Zero-based index of an image within the image list. The specified image will appear within the column.</para>
-    </summary>
+      <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. Zero-based index of an image within the image list. The specified image will appear within the column.</summary>
   </member>
   <member name="LVCOLUMNA.iOrder">
     <summary>
-      <para>Type: <b>int</b></para>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. Zero-based column offset. Column offset is in left-to-right order. For example, zero indicates the leftmost column.</para>
-    </summary>
+      <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. Zero-based column offset. Column offset is in left-to-right order. For example, zero indicates the leftmost column.</summary>
   </member>
   <member name="LVCOLUMNA.cxMin">
     <summary>
-      <para>Type: <b>int</b></para>
-      <para>
-        <b>Windows Vista</b>. Minimum width of the column in pixels.</para>
-    </summary>
+      <b>Windows Vista</b>. Minimum width of the column in pixels.</summary>
   </member>
   <member name="LVCOLUMNA.cxDefault">
     <summary>
-      <para>Type: <b>int</b></para>
-      <para>
-        <b>Windows Vista</b>. Application-defined value typically used to store the default width of the column. This member is ignored by the list-view control.</para>
-    </summary>
+      <b>Windows Vista</b>. Application-defined value typically used to store the default width of the column. This member is ignored by the list-view control.</summary>
   </member>
   <member name="LVCOLUMNA.cxIdeal">
     <summary>
-      <para>Type: <b>int</b></para>
-      <para>
-        <b>Windows Vista</b>. Read-only. The ideal width of the column in pixels, as the column may currently be autosized to a lesser width.</para>
-    </summary>
+      <b>Windows Vista</b>. Read-only. The ideal width of the column in pixels, as the column may currently be autosized to a lesser width.</summary>
   </member>
 </doc>

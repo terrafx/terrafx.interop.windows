@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDxcLibrary.CreateBlobFromBlob">
+    <summary>
+      <b>IDxcUtils</b> replaces <b>IDxcLibrary</b>; use <b>IDxcUtils</b> insted.</summary>
+  </member>
+  <member name="IDxcLibrary.CreateBlobFromFile">
+    <summary>
+      <b>IDxcUtils</b> replaces <b>IDxcLibrary</b>; use <b>IDxcUtils</b> insted.</summary>
+  </member>
+  <member name="IDxcLibrary.CreateBlobWithEncodingFromPinned">
+    <summary>
+      <b>IDxcUtils</b> replaces <b>IDxcLibrary</b>; use <b>IDxcUtils</b> insted.</summary>
+  </member>
+  <member name="IDxcLibrary.CreateBlobWithEncodingOnHeapCopy">
+    <summary>
+      <b>IDxcUtils</b> replaces <b>IDxcLibrary</b>; use <b>IDxcUtils</b> insted.</summary>
+  </member>
+  <member name="IDxcLibrary.CreateBlobWithEncodingOnMalloc">
+    <summary>
+      <b>IDxcUtils</b> replaces <b>IDxcLibrary</b>; use <b>IDxcUtils</b> insted.</summary>
+  </member>
+  <member name="IDxcLibrary.CreateIncludeHandler">
+    <summary>
+      <b>IDxcUtils</b> replaces <b>IDxcLibrary</b>; use <b>IDxcUtils</b> insted.</summary>
+  </member>
+  <member name="IDxcLibrary.CreateStreamFromBlobReadOnly">
+    <summary>
+      <b>IDxcUtils</b> replaces <b>IDxcLibrary</b>; use <b>IDxcUtils</b> insted.</summary>
+  </member>
+  <member name="IDxcLibrary.GetBlobAsUtf16">
+    <summary>
+      <b>IDxcUtils</b> replaces <b>IDxcLibrary</b>; use <b>IDxcUtils</b> insted.</summary>
+  </member>
+  <member name="IDxcLibrary.GetBlobAsUtf8">
+    <summary>
+      <b>IDxcUtils</b> replaces <b>IDxcLibrary</b>; use <b>IDxcUtils</b> insted.</summary>
+  </member>
+  <member name="IDxcLibrary.SetMalloc">
+    <summary>
+      <b>IDxcUtils</b> replaces <b>IDxcLibrary</b>; use <b>IDxcUtils</b> insted.</summary>
+  </member>
+  <member name="IDxcLibrary">
+    <summary>
+      <b>IDxcUtils</b> replaces <b>IDxcLibrary</b>; use <b>IDxcUtils</b> insted.</summary>
+  </member>
+</doc>

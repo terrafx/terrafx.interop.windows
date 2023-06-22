@@ -3,45 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SP_DRVINSTALL_PARAMS">
-    <summary>
-      <para>An SP_DRVINSTALL_PARAMS structure contains driver installation parameters associated with a particular driver information element.</para>
-    </summary>
-    <remarks>
-      <para>Starting with Windows 7, an installer or co-installer can set the DNF_REQUESTADDITIONALSOFTWARE flag to indicate that the <a href="https://docs.microsoft.com//windows-hardware/drivers/install/difx-guidelines">driver package</a> requires additional software that may or not be installed in the computer.</para>
-      <para>After the <a href="https://docs.microsoft.com//windows-hardware/drivers/install/difx-guidelines">driver package</a> for the device is installed, the Plug and Play (PnP) manager performs the following steps if the installer sets the DNF_REQUESTADDITIONALSOFTWARE flag:</para>
-      <list type="number">
-        <item>
-          <description>
-            <para>The PnP manager generates a Problem Report and Solution (PRS) error report with the type of <b>RequestAddtionalSoftware</b>. This report contains information about the specific hardware ID of the device and the system architecture of the computer.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>If there is a solution that is provided by the independent hardware vendor (IHV) for the device-specific software, the solution is downloaded to the computer.</para>
-            <para>
-              <b>Note</b>  The download of the solution does not install the software itself.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>If the device-specific software is not installed on the computer, the PnP manager presents the solution to the user and provides a link to download the software. The user can then choose to download and install this software by following the instructions presented in the solution.</para>
-          </description>
-        </item>
-      </list>
-      <b>Note</b>  The installer does not have to set the DNF_REQUESTADDITIONALSOFTWARE flag if the INF file for the <a href="https://docs.microsoft.com//previous-versions/windows/hardware/difxapi/driverpackagepreinstall">driver package</a> has set the <b>RequestAdditionalSoftware </b> flag in the <a href="https://docs.microsoft.com//windows-hardware/drivers/install/inf-controlflags-section">INF ControlFlags Section</a>.
-</remarks>
-    <seealso cref="SetupDiGetDriverInstallParams" />
-    <seealso cref="SetupDiSetDriverInstallParams" />
+    <summary>An SP_DRVINSTALL_PARAMS structure contains driver installation parameters associated with a particular driver information element.</summary>
   </member>
   <member name="SP_DRVINSTALL_PARAMS.cbSize">
-    <summary>
-      <para>The size, in bytes, of the SP_DRVINSTALL_PARAMS structure.</para>
-    </summary>
+    <summary>The size, in bytes, of the SP_DRVINSTALL_PARAMS structure.</summary>
   </member>
   <member name="SP_DRVINSTALL_PARAMS.Rank">
-    <summary>
-      <para>The rank match of this driver. Ranges from 0 to <i>n</i>, where 0 is the most compatible.</para>
-    </summary>
+    <summary>The rank match of this driver. Ranges from 0 to <i>n</i>, where 0 is the most compatible.</summary>
   </member>
   <member name="SP_DRVINSTALL_PARAMS.Flags">
     <summary>
@@ -87,34 +55,12 @@
         <item>
           <description>The driver has an Authenticode signature.</description>
         </item>
-      </list>
-      <para>For more information, see <a href="https://docs.microsoft.com//windows-hardware/drivers/install/driver-signing">Driver Signing</a>.</para>
-      <h4>DNF_INSTALLEDDRIVER (Windows Vista and later versions of Windows)</h4>
-      <para>This <a href="https://docs.microsoft.com//windows-hardware/drivers/">driver node</a> is currently installed for the device. This flag is read-only to installers.</para>
-      <h4>DNF_LEGACYINF</h4>
-      <para>This driver comes from a legacy INF file. This flag is valid only for the NT-based operating system. This flag is read-only to installers.</para>
-      <h4>DNF_NODRIVER</h4>
-      <para>Set if no physical driver is to be installed for this logical driver.</para>
-      <h4>DNF_OEM_F6_INF (Windows XP and later versions of Windows)</h4>
-      <para>Reserved.</para>
-      <h4>DNF_OLD_INET_DRIVER</h4>
-      <para>This driver came from the Internet, but Windows does not currently have access to its source files. This flag is read-only to installers.</para>
-      <para>The system will not install a driver marked with this flag because Windows does not have the source files and would end up prompting the user with an invalid path. The INF for such a driver can be used for everything except for installing devices.</para>
-      <h4>DNF_OLDDRIVER</h4>
-      <para>This driver currently/previously controlled the associated device. This flag is read-only to installers.</para>
-      <h4>DNF_REQUESTADDITIONALSOFTWARE (Windows 7 and later versions of Windows)</h4>
-      <para>Set this flag if the <a href="https://docs.microsoft.com//windows-hardware/drivers/install/difx-guidelines">driver package</a> is only part of the software solution that is needed to operate the device. In this case, the driver package requires the installation of additional software.</para>
-      <para>For more information, see the following Remarks section.</para>
-    </summary>
+      </list>For more information, see <a href="https://docs.microsoft.com//windows-hardware/drivers/install/driver-signing">Driver Signing</a>.<h4>DNF_INSTALLEDDRIVER (Windows Vista and later versions of Windows)</h4><para>This <a href="https://docs.microsoft.com//windows-hardware/drivers/">driver node</a> is currently installed for the device. This flag is read-only to installers.</para><h4>DNF_LEGACYINF</h4><para>This driver comes from a legacy INF file. This flag is valid only for the NT-based operating system. This flag is read-only to installers.</para><h4>DNF_NODRIVER</h4><para>Set if no physical driver is to be installed for this logical driver.</para><h4>DNF_OEM_F6_INF (Windows XP and later versions of Windows)</h4><para>Reserved.</para><h4>DNF_OLD_INET_DRIVER</h4><para>This driver came from the Internet, but Windows does not currently have access to its source files. This flag is read-only to installers.</para><para>The system will not install a driver marked with this flag because Windows does not have the source files and would end up prompting the user with an invalid path. The INF for such a driver can be used for everything except for installing devices.</para><h4>DNF_OLDDRIVER</h4><para>This driver currently/previously controlled the associated device. This flag is read-only to installers.</para><h4>DNF_REQUESTADDITIONALSOFTWARE (Windows 7 and later versions of Windows)</h4><para>Set this flag if the <a href="https://docs.microsoft.com//windows-hardware/drivers/install/difx-guidelines">driver package</a> is only part of the software solution that is needed to operate the device. In this case, the driver package requires the installation of additional software.</para><para>For more information, see the following Remarks section.</para></summary>
   </member>
   <member name="SP_DRVINSTALL_PARAMS.PrivateData">
-    <summary>
-      <para>A field a class installer can use to store private data. Co-installers should not use this field.</para>
-    </summary>
+    <summary>A field a class installer can use to store private data. Co-installers should not use this field.</summary>
   </member>
   <member name="SP_DRVINSTALL_PARAMS.Reserved">
-    <summary>
-      <para>Reserved. For internal use only.</para>
-    </summary>
+    <summary>Reserved. For internal use only.</summary>
   </member>
 </doc>

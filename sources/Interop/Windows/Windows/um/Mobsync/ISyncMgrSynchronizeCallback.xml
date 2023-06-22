@@ -3,393 +3,273 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISyncMgrSynchronizeCallback.DeleteLogError">
-    <summary>
-      <para>Called by the registered application's handler to delete a previously logged ErrorInformation, warning, or error message in the error tab on the synchronization manager status dialog box.</para>
-    </summary>
-    <param name="ErrorID">
-      <para>Type: <b>REFGUID</b></para>
-      <para>The LogError to be deleted. If <i>ErrorID</i> is GUID_NULL all errors logged by the instance of the registered application's handler will be deleted.</para>
-    </param>
-    <param name="dwReserved">
-      <para>Type: <b>DWORD</b></para>
-    </param>
+    <summary>Called by the registered application's handler to delete a previously logged ErrorInformation, warning, or error message in the error tab on the synchronization manager status dialog box.</summary>
+    <param name="ErrorID">The LogError to be deleted. If <i>ErrorID</i> is GUID_NULL all errors logged by the instance of the registered application's handler will be deleted.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method supports the standard return values E_INVALIDARG, E_UNEXPECTED, and E_OUTOFMEMORY, as well as the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The item was successfully deleted from the log.</para>
-          </description>
-        </item>
+          <description>The item was successfully deleted from the log.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ISyncMgrSynchronizeCallback" />
   </member>
   <member name="ISyncMgrSynchronizeCallback.EnableModeless">
-    <summary>
-      <para>Called by the registered application before and after any dialog boxes are displayed from within the <see cref="PrepareForSync" /> and
-<see cref="Synchronize" /> methods.</para>
-    </summary>
+    <summary>Called by the registered application before and after any dialog boxes are displayed from within the <see cref="PrepareForSync" /> and<see cref="Synchronize" /> methods.</summary>
     <param name="fEnable">
-      <para>Type: <b>BOOL</b></para>
-      <para>
-        <b>TRUE</b> if the registered application is requesting permission to display a dialog box or <b>FALSE</b> if the registered application has finished displaying a dialog box.</para>
-    </param>
+      <b>TRUE</b> if the registered application is requesting permission to display a dialog box or <b>FALSE</b> if the registered application has finished displaying a dialog box.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method can return one of these values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Continue the synchronization.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Continue the synchronization.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>The dialog box should not be displayed.</para>
-          </description>
-        </item>
+          <description>The dialog box should not be displayed.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>To request permission to display a dialog box, the registered application first calls <b>ISyncMgrSynchronizeCallback.EnableModeless</b> with <i>fEnable</i> set to <b>TRUE</b>. If S_OK is returned, the registered application may display the dialog box. Once the dialog box has been displayed, the registered application must call <b>ISyncMgrSynchronizeCallback.EnableModeless</b> with <i>fEnable</i> set to <b>FALSE</b> to notify SyncMgr that other items may now display user interface elements.</para>
-    </remarks>
-    <seealso cref="ISyncMgrSynchronizeCallback" />
-    <seealso cref="PrepareForSync" />
-    <seealso cref="Synchronize" />
   </member>
   <member name="ISyncMgrSynchronizeCallback.EstablishConnection">
-    <summary>
-      <para>Called by the registered application's handler when a network connection is required.</para>
-    </summary>
-    <param name="pwszConnection">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>The name of the connection to dial.</para>
-    </param>
-    <param name="dwReserved">
-      <para>Type: <b>DWORD</b></para>
-    </param>
+    <summary>Called by the registered application's handler when a network connection is required.</summary>
+    <param name="pwszConnection">The name of the connection to dial.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method supports the standard return values E_INVALIDARG, E_UNEXPECTED, and E_OUTOFMEMORY, as well as the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The connection was successfully established.</para>
-          </description>
-        </item>
+          <description>The connection was successfully established.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>SyncMgr should use the default autodial connection if <i>pwszConnection</i> is <b>NULL</b>.</para>
-      <para>When an instance of <b>EstablishConnection</b> is called by a handler, SyncMgr tries to establish the connection. If a subsequent
-<b>EstablishConnection</b> is called then SyncMgr attempts the new connection without causing the previous connection to stop responding. All connections remain until all handlers have finished synchronizing. After all handlers have synchronized, then any opened connections are closed by SyncMgr.</para>
-    </remarks>
-    <seealso cref="ISyncMgrSynchronizeCallback" />
   </member>
   <member name="ISyncMgrSynchronizeCallback.LogError">
-    <summary>
-      <para>Called by a registered application to log information, warning, or an error message into the error tab on the synchronization manager status dialog box.</para>
-    </summary>
-    <param name="dwErrorLevel">
-      <para>Type: <b>DWORD</b></para>
-      <para>The error level. Values are taken from the <see cref="SYNCMGRLOGLEVEL" /> enumeration.</para>
-    </param>
-    <param name="pszErrorText">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to error text to be displayed in the error tab.</para>
-    </param>
-    <param name="pSyncLogError">
-      <para>Type: <b>const <see cref="SYNCMGRLOGERRORINFO" />*</b></para>
-      <para>A pointer to the <see cref="SYNCMGRLOGERRORINFO" /> structure that contains additional error information. Registered applications that do not provide this data can pass <b>NULL</b>.</para>
-    </param>
+    <summary>Called by a registered application to log information, warning, or an error message into the error tab on the synchronization manager status dialog box.</summary>
+    <param name="dwErrorLevel">The error level. Values are taken from the <see cref="SYNCMGRLOGLEVEL" /> enumeration.</param>
+    <param name="pszErrorText">A pointer to error text to be displayed in the error tab.</param>
+    <param name="pSyncLogError">A pointer to the <see cref="SYNCMGRLOGERRORINFO" /> structure that contains additional error information. Registered applications that do not provide this data can pass <b>NULL</b>.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>This method supports the standard return values E_INVALIDARG, E_UNEXPECTED, and E_OUTOFMEMORY, and  the following:</para>
+      <para>This method supports the standard return values E_INVALIDARG, E_UNEXPECTED, and E_OUTOFMEMORY, and the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The error information is logged successfully.</para>
-          </description>
-        </item>
+          <description>The error information is logged successfully.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ISyncMgrSynchronizeCallback" />
-    <seealso cref="SYNCMGRLOGERRORINFO" />
-    <seealso cref="SYNCMGRLOGLEVEL" />
   </member>
   <member name="ISyncMgrSynchronizeCallback.PrepareForSyncCompleted">
-    <summary>
-      <para>Called by a registered handler of an application after the
-<see cref="PrepareForSync" /> method is complete.</para>
-    </summary>
-    <param name="hr">
-      <para>Type: <b>HRESULT</b></para>
-      <para>The return value of the <see cref="PrepareForSync" /> method. If S_OK is returned, the synchronization manager calls <see cref="Synchronize" /> for the item. If the <b>HRESULT</b> is set to anything other than S_OK, the synchronization manager releases the handler without calling the <b>Synchronize</b> method.</para>
-    </param>
+    <summary>Called by a registered handler of an application after the<see cref="PrepareForSync" /> method is complete.</summary>
+    <param name="hr">The return value of the <see cref="PrepareForSync" /> method. If S_OK is returned, the synchronization manager calls <see cref="Synchronize" /> for the item. If the <b>HRESULT</b> is set to anything other than S_OK, the synchronization manager releases the handler without calling the <b>Synchronize</b> method.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method can return one of these values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The call is completed successfully.</para>
-          </description>
-        </item>
+          <description>The call is completed successfully.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A registered handler of an application should return as soon as possible from the
-<see cref="PrepareForSync" /> method, and then call this method to notify the synchronization manager  that the registered application is preparing for synchronization.</para>
-      <para>It is acceptable for the registered handler of an application to call this method before returning from the <see cref="PrepareForSync" /> method.</para>
-      <para>The registered handler of an application should not call this method if the
-<see cref="PrepareForSync" /> method returns any value that is different from S_OK.</para>
-    </remarks>
-    <seealso cref="ISyncMgrSynchronizeCallback" />
-    <seealso cref="PrepareForSync" />
-    <seealso cref="Synchronize" />
   </member>
   <member name="ISyncMgrSynchronizeCallback.Progress">
-    <summary>
-      <para>Called by a registered application to update the progress information and determine whether an operation should continue.</para>
-    </summary>
-    <param name="ItemID">
-      <para>Type: <b>REFGUID</b></para>
-      <para>A reference to the item identifier for an item that is being updated.</para>
-    </param>
-    <param name="pSyncProgressItem">
-      <para>Type: <b>const <see cref="SYNCMGRPROGRESSITEM" />*</b></para>
-      <para>A pointer to a <see cref="SYNCMGRPROGRESSITEM" /> structure that contains the updated progress information.</para>
-    </param>
+    <summary>Called by a registered application to update the progress information and determine whether an operation should continue.</summary>
+    <param name="ItemID">A reference to the item identifier for an item that is being updated.</param>
+    <param name="pSyncProgressItem">A pointer to a <see cref="SYNCMGRPROGRESSITEM" /> structure that contains the updated progress information.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method can return one of these values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Continues the synchronization.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Continues the synchronization.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_SYNCMGR_CANCELITEM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Cancels the synchronization on a specified item, as soon as possible.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_SYNCMGR_CANCELITEM</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_SYNCMGR_CANCELALL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Cancels the synchronization on a specified item, as soon as possible.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_SYNCMGR_CANCELALL</b>
-            </para>
-          </description>
-          <description>
-            <para>Cancels the synchronization on all items that are associated with this application, as soon as possible.</para>
-          </description>
-        </item>
+          <description>Cancels the synchronization on all items that are associated with this application, as soon as possible.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Registered applications should call this method to provide normal feedback even when the <see cref="SYNCMGRFLAG_MAYBOTHERUSER" /> flag is set.</para>
-    </remarks>
-    <seealso cref="ISyncMgrSynchronizeCallback" />
-    <seealso cref="SYNCMGRFLAG" />
-    <seealso cref="SYNCMGRPROGRESSITEM" />
   </member>
   <member name="ISyncMgrSynchronizeCallback.ShowErrorCompleted">
-    <summary>
-      <para>Called by the registered application's handler before or after its <see cref="PrepareForSync" /> operation has been completed.</para>
-    </summary>
-    <param name="hr">
-      <para>Type: <b>HRESULT</b></para>
-      <para>Whether <see cref="ShowError" /> was successful. This value is S_SYNCMGR_RETRYSYNC if the registered application's handler requires SyncMgr to retry the synchronization. When this value is returned to SyncMgr both the
-<see cref="PrepareForSync" /> and <see cref="Synchronize" /> methods are called again.</para>
-    </param>
-    <param name="cItems">
-      <para>Type: <b>ULONG</b></para>
-      <para>The number of items in the array pointed to by the <i>pItemIDs</i> parameter. This parameter is ignored unless <i>hrResult</i> is S_SYNCMGR_RETRYSYNC.</para>
-    </param>
-    <param name="pItemIDs">
-      <para>Type: <b>const GUID*</b></para>
-      <para>A pointer to the array of item IDs to pass to
-<see cref="PrepareForSync" /> in the event of a retry. This parameter is ignored unless <i>hrResult</i> is S_SYNCMGR_RETRYSYNC.</para>
-    </param>
+    <summary>Called by the registered application's handler before or after its <see cref="PrepareForSync" /> operation has been completed.</summary>
+    <param name="hr">Whether <see cref="ShowError" /> was successful. This value is S_SYNCMGR_RETRYSYNC if the registered application's handler requires SyncMgr to retry the synchronization. When this value is returned to SyncMgr both the<see cref="PrepareForSync" /> and <see cref="Synchronize" /> methods are called again.</param>
+    <param name="cItems">The number of items in the array pointed to by the <i>pItemIDs</i> parameter. This parameter is ignored unless <i>hrResult</i> is S_SYNCMGR_RETRYSYNC.</param>
+    <param name="pItemIDs">A pointer to the array of item IDs to pass to<see cref="PrepareForSync" /> in the event of a retry. This parameter is ignored unless <i>hrResult</i> is S_SYNCMGR_RETRYSYNC.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method can return one of these values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The operation completed successfully.</para>
-          </description>
-        </item>
+          <description>The operation completed successfully.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <i>pItemIDs</i> parameter is an [in] parameter and the calling function owns the memory pointed to by it. SyncMgr makes a copy of the array before returning.</para>
-      <para>The registered application's handler should return from the <see cref="ShowError" /> method as soon as possible and then call this method to notify SyncMgr that it has completed processing the <b>ShowError</b> call.</para>
-      <para>It is acceptable for the registered application's handler to call this method
-before returning from the <see cref="ShowError" /> method.</para>
-      <para>The registered application's handler should not call this method unless a success code is returned from the <see cref="ShowError" /> method.</para>
-    </remarks>
-    <seealso cref="ISyncMgrSynchronizeCallback" />
-    <seealso cref="ShowError" />
   </member>
   <member name="ISyncMgrSynchronizeCallback.ShowPropertiesCompleted">
-    <summary>
-      <para>Called by the registered application's handler before or after its
-<see cref="ShowProperties" /> operation is completed.</para>
-    </summary>
-    <param name="hr">
-      <para>Type: <b>HRESULT</b></para>
-      <para>Whether the <see cref="ShowProperties" /> was successful.</para>
-    </param>
+    <summary>Called by the registered application's handler before or after its<see cref="ShowProperties" /> operation is completed.</summary>
+    <param name="hr">Whether the <see cref="ShowProperties" /> was successful.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method can return one of these values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Call was completed successfully.</para>
-          </description>
-        </item>
+          <description>Call was completed successfully.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>It is acceptable for the registered application's handler to call this method before returning from the <see cref="ShowProperties" /> method.</para>
-      <para>This method should not be called if the registered application's handler does not return a success code from the <see cref="ShowProperties" /> method.</para>
-    </remarks>
-    <seealso cref="ISyncMgrSynchronizeCallback" />
-    <seealso cref="ShowProperties" />
   </member>
   <member name="ISyncMgrSynchronizeCallback.SynchronizeCompleted">
-    <summary>
-      <para>Called by an application when its <see cref="Synchronize" /> method is complete.</para>
-    </summary>
-    <param name="hr">
-      <para>Type: <b>HRESULT</b></para>
-      <para>The returned result from the <see cref="Synchronize" /> method.</para>
-    </param>
+    <summary>Called by an application when its <see cref="Synchronize" /> method is complete.</summary>
+    <param name="hr">The returned result from the <see cref="Synchronize" /> method.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method can return one of these values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The call is completed successfully.</para>
-          </description>
-        </item>
+          <description>The call is completed successfully.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A registered handler of an application should return from the
-<see cref="Synchronize" /> method as soon as possible, and then call this method to notify the synchronization manager that the synchronization process is complete.</para>
-      <para>It is acceptable for a registered handler of an application to call this method before returning from the <see cref="Synchronize" /> method.</para>
-      <para>However, the registered handler of an application should not call this method if the <see cref="Synchronize" /> method returns any value that is different from S_OK.</para>
-    </remarks>
-    <seealso cref="ISyncMgrSynchronizeCallback" />
-    <seealso cref="Synchronize" />
   </member>
   <member name="ISyncMgrSynchronizeCallback">
-    <summary>
-      <para>Exposes methods that manage the synchronization process.</para>
-    </summary>
-    <remarks>
-      <h3>When to Implement</h3>
-      <para>This interface is implemented by the synchronization manager to receive status, error, and progress information and display the user interface during the synchronization process.</para>
-      <h3>When to Use</h3>
-      <para>Applications should call the methods of this interface as often as possible and must call it before starting each new ItemID to check whether the user has canceled an individual item.</para>
-    </remarks>
-    <seealso cref="ISyncMgrSynchronize" />
+    <summary>Exposes methods that manage the synchronization process.</summary>
   </member>
 </doc>

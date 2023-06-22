@@ -3,200 +3,107 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYSTEM_POWER_CAPABILITIES">
-    <summary>
-      <para>Contains information about the power capabilities of the system.</para>
-    </summary>
-    <seealso cref="CallNtPowerInformation" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">System Power States</seealso>
+    <summary>Contains information about the power capabilities of the system.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.PowerButtonPresent">
-    <summary>
-      <para>If this member is <b>TRUE</b>, there is a system power button.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, there is a system power button.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.SleepButtonPresent">
-    <summary>
-      <para>If this member is <b>TRUE</b>, there is a system sleep button.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, there is a system sleep button.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.LidPresent">
-    <summary>
-      <para>If this member is <b>TRUE</b>, there is a lid switch.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, there is a lid switch.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.SystemS1">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the operating system supports <a href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">sleep state S1</a>.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the operating system supports <a href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">sleep state S1</a>.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.SystemS2">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the operating system supports <a href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">sleep state S2</a>.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the operating system supports <a href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">sleep state S2</a>.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.SystemS3">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the operating system supports <a href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">sleep state S3</a>.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the operating system supports <a href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">sleep state S3</a>.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.SystemS4">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the operating system supports <a href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">sleep state S4</a> (hibernation).</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the operating system supports <a href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">sleep state S4</a> (hibernation).</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.SystemS5">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the operating system supports <a href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">power off state S5</a> (soft off).</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the operating system supports <a href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">power off state S5</a> (soft off).</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.HiberFilePresent">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the system hibernation file is present.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the system hibernation file is present.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.FullWake">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the system supports wake capabilities.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the system supports wake capabilities.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.VideoDimPresent">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the system supports video display dimming
-capabilities.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the system supports video display dimming capabilities.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.ApmPresent">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the system supports APM BIOS power management
-features.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the system supports APM BIOS power management features.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.UpsPresent">
-    <summary>
-      <para>If this member is <b>TRUE</b>, there is an uninterruptible power supply
-(UPS).</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, there is an uninterruptible power supply (UPS).</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.ThermalControl">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the system supports thermal zones.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the system supports thermal zones.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.ProcessorThrottle">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the system supports processor throttling.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the system supports processor throttling.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.ProcessorMinThrottle">
-    <summary>
-      <para>The minimum level of system processor throttling supported, expressed as a percentage.</para>
-    </summary>
+    <summary>The minimum level of system processor throttling supported, expressed as a percentage.</summary>
   </member>
-  <member name="SYSTEM_POWER_CAPABILITIES.ProcessorThrottleScale">
-    <summary></summary>
-  </member>
-  <member name="SYSTEM_POWER_CAPABILITIES.spare2">
-    <summary></summary>
-  </member>
+  <member name="SYSTEM_POWER_CAPABILITIES.ProcessorThrottleScale"></member>
+  <member name="SYSTEM_POWER_CAPABILITIES.spare2"></member>
   <member name="SYSTEM_POWER_CAPABILITIES.ProcessorMaxThrottle">
-    <summary>
-      <para>The maximum level of system processor throttling supported, expressed as a percentage.</para>
-    </summary>
+    <summary>The maximum level of system processor throttling supported, expressed as a percentage.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.FastSystemS4">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the system supports the <a href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">hybrid sleep state</a>.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the system supports the <a href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">hybrid sleep state</a>.</summary>
   </member>
-  <member name="SYSTEM_POWER_CAPABILITIES.Hiberboot">
-    <summary></summary>
-  </member>
+  <member name="SYSTEM_POWER_CAPABILITIES.Hiberboot"></member>
   <member name="SYSTEM_POWER_CAPABILITIES.WakeAlarmPresent">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the platform has support for ACPI wake alarm devices.  For more details on wake alarm devices, please see the ACPI specification section 9.18.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the platform has support for ACPI wake alarm devices. For more details on wake alarm devices, please see the ACPI specification section 9.18.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.AoAc">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the system supports the S0 low power idle model.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the system supports the S0 low power idle model.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.DiskSpinDown">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the system supports allowing the removal of power to
-fixed disk devices.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the system supports allowing the removal of power to fixed disk devices.</summary>
   </member>
-  <member name="SYSTEM_POWER_CAPABILITIES.HiberFileType">
-    <summary></summary>
-  </member>
-  <member name="SYSTEM_POWER_CAPABILITIES.AoAcConnectivitySupported">
-    <summary></summary>
-  </member>
+  <member name="SYSTEM_POWER_CAPABILITIES.HiberFileType"></member>
+  <member name="SYSTEM_POWER_CAPABILITIES.AoAcConnectivitySupported"></member>
   <member name="SYSTEM_POWER_CAPABILITIES.spare3">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.SystemBatteriesPresent">
-    <summary>
-      <para>If this member is <b>TRUE</b>, there are one or more batteries in the system.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, there are one or more batteries in the system.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.BatteriesAreShortTerm">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the system batteries are short-term. Short-term batteries
-are used in uninterruptible power supplies (UPS).</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the system batteries are short-term. Short-term batteries are used in uninterruptible power supplies (UPS).</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.BatteryScale">
-    <summary>
-      <para>A <see cref="BATTERY_REPORTING_SCALE" /> structure
-that contains information about how system battery metrics are reported.</para>
-    </summary>
+    <summary>A <see cref="BATTERY_REPORTING_SCALE" /> structure that contains information about how system battery metrics are reported.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.AcOnLineWake">
-    <summary>
-      <para>The lowest <a href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">system sleep state</a> (Sx) that will generate a wake event when the system is on AC power. This
-member must be one of the <see cref="SYSTEM_POWER_STATE" /></para>
-      <para>enumeration type values.</para>
-    </summary>
+    <summary>The lowest <a href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">system sleep state</a> (Sx) that will generate a wake event when the system is on AC power. This member must be one of the <see cref="SYSTEM_POWER_STATE" />enumeration type values.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.SoftLidWake">
-    <summary>
-      <para>The lowest <a href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">system sleep state</a> (Sx) that will generate a wake event via the lid switch. This member must be
-one of the <see cref="SYSTEM_POWER_STATE" /> enumeration
-type values.</para>
-    </summary>
+    <summary>The lowest <a href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">system sleep state</a> (Sx) that will generate a wake event via the lid switch. This member must be one of the <see cref="SYSTEM_POWER_STATE" /> enumeration type values.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.RtcWake">
     <summary>
-      <para>The lowest <a href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">system sleep state</a> (Sx) supported by hardware that will generate a wake event via the Real Time Clock (RTC). This
-member must be one of the
-<see cref="SYSTEM_POWER_STATE" /> enumeration type
-values.</para>
-      <para>To wake the computer using the RTC, the operating system must also support waking from the sleep state the computer is in when the RTC generates the wake event. Therefore, the  effective lowest sleep state from which an RTC wake event can wake the computer is the lowest sleep state supported by the operating system that is  equal to or higher than  the  value  of <b>RtcWake</b>.  To determine  the sleep states that the operating system supports, check the   <b>SystemS1</b>, <b>SystemS2</b>, <b>SystemS3</b>, and <b>SystemS4</b> members.</para>
+      <para>The lowest <a href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">system sleep state</a> (Sx) supported by hardware that will generate a wake event via the Real Time Clock (RTC). This member must be one of the<see cref="SYSTEM_POWER_STATE" /> enumeration type values.</para>
+      <para>To wake the computer using the RTC, the operating system must also support waking from the sleep state the computer is in when the RTC generates the wake event. Therefore, the effective lowest sleep state from which an RTC wake event can wake the computer is the lowest sleep state supported by the operating system that is equal to or higher than the value of <b>RtcWake</b>. To determine the sleep states that the operating system supports, check the <b>SystemS1</b>, <b>SystemS2</b>, <b>SystemS3</b>, and <b>SystemS4</b> members.</para>
     </summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.MinDeviceWakeState">
-    <summary>
-      <para>The minimum allowable <a href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">system power state</a> supporting wake events. This member must be one of the
-<see cref="SYSTEM_POWER_STATE" /> enumeration type
-values. Note that this state may change as different device drivers are installed on the system.</para>
-    </summary>
+    <summary>The minimum allowable <a href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">system power state</a> supporting wake events. This member must be one of the<see cref="SYSTEM_POWER_STATE" /> enumeration type values. Note that this state may change as different device drivers are installed on the system.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.DefaultLowLatencyWake">
-    <summary>
-      <para>The default <a href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">system power state</a> used if an application calls
-<see cref="RequestWakeupLatency" /> with
-<b>LT_LOWEST_LATENCY</b>. This member must be one of the
-<see cref="SYSTEM_POWER_STATE" /> enumeration type
-values.</para>
-    </summary>
+    <summary>The default <a href="https://docs.microsoft.com//windows/desktop/Power/system-power-states">system power state</a> used if an application calls<see cref="RequestWakeupLatency" /> with<b>LT_LOWEST_LATENCY</b>. This member must be one of the<see cref="SYSTEM_POWER_STATE" /> enumeration type values.</summary>
   </member>
   <member name="SYSTEM_POWER_CAPABILITIES.HiberBoot">
-    <summary>
-      <para>If this member is set to <b>TRUE</b>, the system is currently capable of performing a fast startup transition.  This setting is based on whether the machine is capable of hibernate, whether the machine currently has hibernate enabled (hiberfile exists), and the local and group policy settings for using hibernate (including the Hibernate option in the Power control panel).</para>
-    </summary>
+    <summary>If this member is set to <b>TRUE</b>, the system is currently capable of performing a fast startup transition. This setting is based on whether the machine is capable of hibernate, whether the machine currently has hibernate enabled (hiberfile exists), and the local and group policy settings for using hibernate (including the Hibernate option in the Power control panel).</summary>
   </member>
 </doc>

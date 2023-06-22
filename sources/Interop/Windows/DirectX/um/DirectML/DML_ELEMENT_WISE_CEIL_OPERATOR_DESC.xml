@@ -5,27 +5,17 @@
   <member name="DML_ELEMENT_WISE_CEIL_OPERATOR_DESC">
     <summary>
       <para>Computes the ceiling for each element of <i>InputTensor</i>, placing the result into the corresponding element of <i>OutputTensor</i>. The ceiling of x is the smallest integer that is greater than or equal to x.</para>
-      <code>f(x) = ceil(x)
-</code>
+      <code>f(x) = ceil(x)</code>
       <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias <i>InputTensor</i> during binding.</para>
     </summary>
   </member>
   <member name="DML_ELEMENT_WISE_CEIL_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The input tensor to read from.</para>
-    </summary>
+    <summary>The input tensor to read from.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_CEIL_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The output tensor to write the results to.</para>
-    </summary>
+    <summary>The output tensor to write the results to.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_CEIL_OPERATOR_DESC.ScaleBias">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_SCALE_BIAS" />*</b></para>
-      <para>An optional scale and bias to apply to the input. If present, this has the effect of applying the function <code>g(x) = x * scale + bias</code> to each <i>input</i> element prior to computing this operator.</para>
-    </summary>
+    <summary>An optional scale and bias to apply to the input. If present, this has the effect of applying the function <code>g(x) = x * scale + bias</code> to each <i>input</i> element prior to computing this operator.</summary>
   </member>
 </doc>

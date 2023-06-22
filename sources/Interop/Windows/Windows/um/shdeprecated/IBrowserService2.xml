@@ -3,364 +3,152 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IBrowserService2.ActivatePendingView">
-    <summary>
-      <para>Deprecated. Coordinates state updating while the browser is switching between a current and a pending view.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Coordinates state updating while the browser is switching between a current and a pending view.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.AllowViewResize">
-    <summary>
-      <para>Deprecated. Informs the base class whether to allow view resizing.</para>
-    </summary>
-    <param name="f">
-      <para>Type: <b>BOOL</b></para>
-      <para>A value of type <b>BOOL</b> that indicates whether to allow view resizing.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Informs the base class whether to allow view resizing.</summary>
+    <param name="f">A value of type <b>BOOL</b> that indicates whether to allow view resizing.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.CreateBrowserPropSheetExt">
-    <summary>
-      <para>Deprecated. Allows the derived class to add <b>Folder Options</b> property sheets to the base class.</para>
-    </summary>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>The IID of the interface pointer that should be returned in the <i>ppv</i> parameter.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>The address of a pointer to the interface pointer requested in the <i>riid</i> parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Allows the derived class to add <b>Folder Options</b> property sheets to the base class.</summary>
+    <param name="riid">The IID of the interface pointer that should be returned in the <i>ppv</i> parameter.</param>
+    <param name="ppv">The address of a pointer to the interface pointer requested in the <i>riid</i> parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.CreateViewWindow">
-    <summary>
-      <para>Deprecated. Coordinates the updating of state when creating a new browser view window.</para>
-    </summary>
-    <param name="psvNew">
-      <para>Type: <b><see cref="IShellView" />*</b></para>
-      <para>A pointer to the <see cref="IShellView" /> of the new browser window.</para>
-    </param>
-    <param name="psvOld">
-      <para>Type: <b><see cref="IShellView" />*</b></para>
-      <para>A pointer to the <see cref="IShellView" /> of the old browser window.</para>
-    </param>
-    <param name="prcView">
-      <para>Type: <b>LPRECT</b></para>
-      <para>A pointer to a <see cref="RECT" /> structure that specifies the current dimensions of the browser view.</para>
-    </param>
-    <param name="phwnd">
-      <para>Type: <b>HWND*</b></para>
-      <para>A pointer to the new browser window handle.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Coordinates the updating of state when creating a new browser view window.</summary>
+    <param name="psvNew">A pointer to the <see cref="IShellView" /> of the new browser window.</param>
+    <param name="psvOld">A pointer to the <see cref="IShellView" /> of the old browser window.</param>
+    <param name="prcView">A pointer to a <see cref="RECT" /> structure that specifies the current dimensions of the browser view.</param>
+    <param name="phwnd">A pointer to the new browser window handle.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.ForwardViewMsg">
-    <summary>
-      <para>Deprecated. Calls the <see cref="SendMessage" /> function with a message received by the view, using the <b>_hwndView</b> member of the <see cref="BASEBROWSERDATA" /> structure as the <b>SendMessage</b><i>hWnd</i> parameter.</para>
-    </summary>
-    <param name="uMsg">
-      <para>Type: <b>UINT</b></para>
-      <para>The message to be sent.</para>
-    </param>
-    <param name="wParam">
-      <para>Type: <b>WPARAM</b></para>
-      <para>Additional message-specific information.</para>
-    </param>
-    <param name="lParam">
-      <para>Type: <b>LPARAM</b></para>
-      <para>Additional message-specific information.</para>
-    </param>
-    <returns>
-      <para>Type: <b>LRESULT</b></para>
-      <para>The return value specifies the result of the message processing; it depends on the message sent.</para>
-    </returns>
+    <summary>Deprecated. Calls the <see cref="SendMessage" /> function with a message received by the view, using the <b>_hwndView</b> member of the <see cref="BASEBROWSERDATA" /> structure as the <b>SendMessage</b><i>hWnd</i> parameter.</summary>
+    <param name="uMsg">The message to be sent.</param>
+    <param name="wParam">Additional message-specific information.</param>
+    <param name="lParam">Additional message-specific information.</param>
+    <returns>The return value specifies the result of the message processing; it depends on the message sent.</returns>
   </member>
   <member name="IBrowserService2.GetBaseBrowserData">
-    <summary>
-      <para>Deprecated. Gets a read-only structure containing the protected elements owned by the base class, for the purpose of determining state.</para>
-    </summary>
-    <param name="pbbd">
-      <para>Type: <b>LPCBASEBROWSERDATA*</b></para>
-      <para>A pointer to a <see cref="BASEBROWSERDATA" /> structure that receives the read-only state of the base browser.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is used as an optimization to access the internal state of the base browser. The state should be updated only by the base browser.</para>
-    </remarks>
+    <summary>Deprecated. Gets a read-only structure containing the protected elements owned by the base class, for the purpose of determining state.</summary>
+    <param name="pbbd">A pointer to a <see cref="BASEBROWSERDATA" /> structure that receives the read-only state of the base browser.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.GetFolderSetData">
-    <summary>
-      <para>Deprecated. Gets a structure containing folder information.</para>
-    </summary>
-    <param name="pfsd">
-      <para>Type: <b>tagFolderSetData*</b></para>
-      <para>A pointer to a <see cref="FOLDERSETDATA" /> structure that receives the folder information.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is called by the derived class.</para>
-    </remarks>
+    <summary>Deprecated. Gets a structure containing folder information.</summary>
+    <param name="pfsd">A pointer to a <see cref="FOLDERSETDATA" /> structure that receives the folder information.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.GetViewRect">
-    <summary>
-      <para>Deprecated. Retrieves a value that is used to negotiate the allowed size of the window.</para>
-    </summary>
-    <param name="prc">
-      <para>Type: <b><see cref="RECT" />*</b></para>
-      <para>A pointer to a <b>RECT</b> structure that receives the allowed dimensions.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Retrieves a value that is used to negotiate the allowed size of the window.</summary>
+    <param name="prc">A pointer to a <b>RECT</b> structure that receives the allowed dimensions.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.GetViewWindow">
-    <summary>
-      <para>Deprecated. Provides direct access to the browser view window created by <see cref="IBrowserService2.CreateViewWindow" />.</para>
-    </summary>
-    <param name="phwndView">
-      <para>Type: <b>HWND*</b></para>
-      <para>A pointer to the handle of the browser window.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>IBrowserService2.GetViewWindow</b> retrieves the same handle as found in the <b>_hwndView</b> member of the <see cref="BASEBROWSERDATA" /> structure. This method simply provides direct access to that view, bypassing the need to access the <b>BASEBROWSERDATA</b> structure though a method such as <see cref="IBrowserService2.GetBaseBrowserData" />.</para>
-    </remarks>
+    <summary>Deprecated. Provides direct access to the browser view window created by <see cref="IBrowserService2.CreateViewWindow" />.</summary>
+    <param name="phwndView">A pointer to the handle of the browser window.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.InitializeDownloadManager">
-    <summary>
-      <para>Deprecated. Enables the download manager in the base class.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Enables the download manager in the base class.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.InitializeTransitionSite">
-    <summary>
-      <para>Deprecated. Enables transitions in the browser view window.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Enables transitions in the browser view window.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.InitializeTravelLog">
-    <summary>
-      <para>Deprecated. Allows the derived class to specify a navigation record to be used in a new window.</para>
-    </summary>
-    <param name="ptl">
-      <para>Type: <b><see cref="ITravelLog" />*</b></para>
-      <para>A pointer to an existing <see cref="ITravelLog" /> object to be used for the new window.</para>
-    </param>
-    <param name="dw">
-      <para>Type: <b>DWORD</b></para>
-      <para>The new browser window's ID.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Allows the derived class to specify a navigation record to be used in a new window.</summary>
+    <param name="ptl">A pointer to an existing <see cref="ITravelLog" /> object to be used for the new window.</param>
+    <param name="dw">The new browser window's ID.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.Offline">
-    <summary>
-      <para>Deprecated. Checks for and updates the browser's offline status, synchronizing the state between the base class and any derived classes.</para>
-    </summary>
+    <summary>Deprecated. Checks for and updates the browser's offline status, synchronizing the state between the base class and any derived classes.</summary>
     <param name="iCmd">
-      <para>Type: <b>int</b></para>
       <para>One of the following commands.</para>
       <h4>SBSC_QUERY</h4>
       <para>Queries the offline state. The method's return value contains the answer.</para>
       <h4>SBSC_TOGGLE</h4>
       <para>Toggles the offline state.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>In the case of SBSC_TOGGLE, returns standard error codes. In the case of SBSC_QUERY, returns S_OK if offline, S_FALSE otherwise.</para>
-    </returns>
+    <returns>In the case of SBSC_TOGGLE, returns standard error codes. In the case of SBSC_QUERY, returns S_OK if offline, S_FALSE otherwise.</returns>
   </member>
   <member name="IBrowserService2.OnCommand">
-    <summary>
-      <para>Deprecated. Calls the derived class from the base class on receipt of a <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-command">WM_COMMAND</a> message. The derived class handles the message.</para>
-    </summary>
+    <summary>Deprecated. Calls the derived class from the base class on receipt of a <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-command">WM_COMMAND</a> message. The derived class handles the message.</summary>
     <param name="wParam">
-      <para>Type: <b>WPARAM</b></para>
       <para>Additional information taken from the <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-command">WM_COMMAND</a> message. The high-order word specifies the notification code if the message is from a control. If the message is from an accelerator, this value is 1. If the message is from a menu, this value is zero.</para>
       <para>The low-order word specifies the identifier of the menu item, control, or accelerator.</para>
     </param>
-    <param name="lParam">
-      <para>Type: <b>LPARAM</b></para>
-      <para>Additional information taken from the <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-command">WM_COMMAND</a> message. Handle to the control sending the message if the message is from a control. Otherwise, this parameter is <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>LRESULT</b></para>
-      <para>The return value specifies the result of the command processing; it depends on the command sent.</para>
-    </returns>
+    <param name="lParam">Additional information taken from the <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-command">WM_COMMAND</a> message. Handle to the control sending the message if the message is from a control. Otherwise, this parameter is <b>NULL</b>.</param>
+    <returns>The return value specifies the result of the command processing; it depends on the command sent.</returns>
   </member>
   <member name="IBrowserService2.OnCreate">
-    <summary>
-      <para>Deprecated. Calls the derived class from the base class on receipt of a <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-create">WM_CREATE</a> message. The derived class handles the message.</para>
-    </summary>
-    <param name="pcs">
-      <para>Type: <b>tagCREATESTRUCTW*</b></para>
-      <para>A pointer to a <see cref="CREATESTRUCT" /> structure that receives the initialization parameters passed to the window procedure (WinProc) of the class.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Calls the derived class from the base class on receipt of a <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-create">WM_CREATE</a> message. The derived class handles the message.</summary>
+    <param name="pcs">A pointer to a <see cref="CREATESTRUCT" /> structure that receives the initialization parameters passed to the window procedure (WinProc) of the class.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.OnDestroy">
-    <summary>
-      <para>Deprecated. Calls the derived class from the base class on receipt of a <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-destroy">WM_DESTROY</a> message. The derived class handles the message.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Calls the derived class from the base class on receipt of a <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-destroy">WM_DESTROY</a> message. The derived class handles the message.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.OnFrameWindowActivateBS">
-    <summary>
-      <para>Deprecated. Calls the derived class from the base class in response to a subframe window being activated or deactivated. The derived class determines what to do in response to the action.</para>
-    </summary>
+    <summary>Deprecated. Calls the derived class from the base class in response to a subframe window being activated or deactivated. The derived class determines what to do in response to the action.</summary>
     <param name="fActive">
-      <para>Type: <b>BOOL</b></para>
       <para>The state of the subframe window.</para>
       <h4>TRUE</h4>
       <para>The frame window is activating.</para>
       <h4>FALSE</h4>
       <para>The frame window is deactivating.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.OnNotify">
-    <summary>
-      <para>Deprecated. Calls the derived class from the base class on receipt of a <a href="https://docs.microsoft.com//windows/desktop/Controls/wm-notify">WM_NOTIFY</a> message. The derived class handles the message.</para>
-    </summary>
-    <param name="pnm">
-      <para>Type: <b>tagNMHDR*</b></para>
-      <para>A pointer to a <see cref="NMHDR" /> structure that receives the initialization parameters passed to the window procedure (WinProc) of the class.</para>
-    </param>
-    <returns>
-      <para>Type: <b>LRESULT</b></para>
-      <para>The return value specifies the result of the notification processing; it depends on the notification sent.</para>
-    </returns>
+    <summary>Deprecated. Calls the derived class from the base class on receipt of a <a href="https://docs.microsoft.com//windows/desktop/Controls/wm-notify">WM_NOTIFY</a> message. The derived class handles the message.</summary>
+    <param name="pnm">A pointer to a <see cref="NMHDR" /> structure that receives the initialization parameters passed to the window procedure (WinProc) of the class.</param>
+    <returns>The return value specifies the result of the notification processing; it depends on the notification sent.</returns>
   </member>
   <member name="IBrowserService2.OnSetFocus">
-    <summary>
-      <para>Deprecated. Calls the derived class from the base class on receipt of a <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-setfocus">WM_SETFOCUS</a> message. The derived class handles the message.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Calls the derived class from the base class on receipt of a <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-setfocus">WM_SETFOCUS</a> message. The derived class handles the message.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.OnSize">
-    <summary>
-      <para>Deprecated. Calls the derived class from the base class on receipt of a <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-size">WM_SIZE</a> message. The derived class handles the message.</para>
-    </summary>
-    <param name="wParam">
-      <para>Type: <b>WPARAM</b></para>
-      <para>Additional information provided by the <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-size">WM_SIZE</a> message.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Calls the derived class from the base class on receipt of a <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-size">WM_SIZE</a> message. The derived class handles the message.</summary>
+    <param name="wParam">Additional information provided by the <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-size">WM_SIZE</a> message.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.PutBaseBrowserData">
-    <summary>
-      <para>Deprecated. Gets a structure that allows read/write access to protected members of the base class. Note, however, that state should only be updated by the base browser.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>LPBASEBROWSERDATA</b></para>
-      <para>A pointer to a <see cref="BASEBROWSERDATA" /> structure.</para>
-    </returns>
+    <summary>Deprecated. Gets a structure that allows read/write access to protected members of the base class. Note, however, that state should only be updated by the base browser.</summary>
+    <returns>A pointer to a <see cref="BASEBROWSERDATA" /> structure.</returns>
   </member>
   <member name="IBrowserService2.ReleaseShellView">
-    <summary>
-      <para>Deprecated. Coordinates the view lifetime between the base class and its derived class.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Coordinates the view lifetime between the base class and its derived class.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.SetAcceleratorMenu">
-    <summary>
-      <para>Deprecated. Implemented by a derived class to define menu accelerators that can be used in a call to <see cref="TranslateAcceleratorSB" />.</para>
-    </summary>
-    <param name="hacc">
-      <para>Type: <b>HACCEL</b></para>
-      <para>A handle to an array of <see cref="ACCEL" /> structures, each structure describing a keyboard mnemonic.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Implemented by a derived class to define menu accelerators that can be used in a call to <see cref="TranslateAcceleratorSB" />.</summary>
+    <param name="hacc">A handle to an array of <see cref="ACCEL" /> structures, each structure describing a keyboard mnemonic.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.SetActivateState">
-    <summary>
-      <para>Deprecated. Updates the value of the <b>_uActivateState</b> member of the <see cref="BASEBROWSERDATA" /> structure, which tracks whether the browser view window is in an activated state. The derived class makes this call to the base class.</para>
-    </summary>
-    <param name="u">
-      <para>Type: <b>UINT</b></para>
-      <para>The activation state of the window. This is always the SVUIA_ACTIVATE_FOCUS (0x0002) value from the <see cref="SVUIA_STATUS" /> enumeration defined in Shobjidl.h.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Updates the value of the <b>_uActivateState</b> member of the <see cref="BASEBROWSERDATA" /> structure, which tracks whether the browser view window is in an activated state. The derived class makes this call to the base class.</summary>
+    <param name="u">The activation state of the window. This is always the SVUIA_ACTIVATE_FOCUS (0x0002) value from the <see cref="SVUIA_STATUS" /> enumeration defined in Shobjidl.h.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.SetAsDefFolderSettings">
-    <summary>
-      <para>Deprecated. Sets the folder's current view mode as the default view mode for all folders. Used by the <b>Folder Options</b> dialog.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Sets the folder's current view mode as the default view mode for all folders. Used by the <b>Folder Options</b> dialog.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.SetTopBrowser">
-    <summary>
-      <para>Deprecated. Informs the base class when it becomes the topmost browser instance.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Informs the base class when it becomes the topmost browser instance.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.UpdateSecureLockIcon">
-    <summary>
-      <para>Deprecated. Updates the value of the <b>_eSecureLockIcon</b> member of the <see cref="BASEBROWSERDATA" /> structure, which tracks the icon indicating a secure site, as well as updating the icon itself in the UI.</para>
-    </summary>
+    <summary>Deprecated. Updates the value of the <b>_eSecureLockIcon</b> member of the <see cref="BASEBROWSERDATA" /> structure, which tracks the icon indicating a secure site, as well as updating the icon itself in the UI.</summary>
     <param name="eSecureLock">
-      <para>Type: <b>int</b></para>
       <para>One of the following values indicating the secure lock status. Note that each value is provided in a SET and SUGGEST form. For more details, see <see cref="BASEBROWSERDATA" />.</para>
       <h4>SECURELOCK_NOCHANGE</h4>
       <h4>SECURELOCK_SET_UNSECURE</h4>
@@ -379,368 +167,132 @@
       <h4>SECURELOCK_SUGGEST_FORTEZZA</h4>
       <h4>SECURELOCK_SUGGEST_SECURE128BIT</h4>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>SECURELOCK_SUGGEST_UNSECURE is equivalent to SECURELOCK_FIRSTSUGGEST.</para>
-    </remarks>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.v_CheckZoneCrossing">
-    <summary>
-      <para>Deprecated. Called by the base class to validate a zone crossing when navigating from one page to another.</para>
-    </summary>
-    <param name="pidl">
-      <para>Type: <b>LPCITEMIDLIST</b></para>
-      <para>The PIDL of the navigation destination.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Called by the base class to validate a zone crossing when navigating from one page to another.</summary>
+    <param name="pidl">The PIDL of the navigation destination.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.v_GetViewStream">
-    <summary>
-      <para>Deprecated. Returns a stream used to load or save the view state.</para>
-    </summary>
-    <param name="pidl">
-      <para>Type: <b>LPCITEMIDLIST</b></para>
-      <para>A PIDL that identifies the view.</para>
-    </param>
-    <param name="grfMode">
-      <para>Type: <b>DWORD</b></para>
-      <para>Not used.</para>
-    </param>
-    <param name="pwszName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer that contains the Unicode name of the window.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="IStream" /></b></para>
-      <para>Stream that can be used to load or save the view state.</para>
-    </returns>
+    <summary>Deprecated. Returns a stream used to load or save the view state.</summary>
+    <param name="pidl">A PIDL that identifies the view.</param>
+    <param name="grfMode">Not used.</param>
+    <param name="pwszName">A pointer to a buffer that contains the Unicode name of the window.</param>
+    <returns>Stream that can be used to load or save the view state.</returns>
   </member>
   <member name="IBrowserService2.v_MayGetNextToolbarFocus">
-    <summary>
-      <para>Deprecated. Used when translating accelerators through <see cref="TranslateAcceleratorSB" /> and in checking the cycle of focus between the view and the browser's toolbars.</para>
-    </summary>
-    <param name="lpMsg">
-      <para>Type: <b>LPMSG</b></para>
-      <para>A pointer to a <see cref="MSG" /> that contains the keystroke message.</para>
-    </param>
-    <param name="itbNext">
-      <para>Type: <b>UINT</b></para>
-      <para>The index of the next toolbar, or ITB_VIEW if focus is shifting to the view.</para>
-    </param>
-    <param name="citb">
-      <para>Type: <b>int</b></para>
-      <para>The ID of the current toolbar with focus, or ITB_VIEW if the view has focus.</para>
-    </param>
-    <param name="pptbi">
-      <para>Type: <b>LPTOOLBARITEM*</b></para>
-      <para>A pointer to a <see cref="TOOLBARITEM" /> structure that represents the toolbar receiving the focus.</para>
-    </param>
-    <param name="phwnd">
-      <para>Type: <b>HWND*</b></para>
-      <para>A pointer to the handle of the window that contains the toolbar.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Used when translating accelerators through <see cref="TranslateAcceleratorSB" /> and in checking the cycle of focus between the view and the browser's toolbars.</summary>
+    <param name="lpMsg">A pointer to a <see cref="MSG" /> that contains the keystroke message.</param>
+    <param name="itbNext">The index of the next toolbar, or ITB_VIEW if focus is shifting to the view.</param>
+    <param name="citb">The ID of the current toolbar with focus, or ITB_VIEW if the view has focus.</param>
+    <param name="pptbi">A pointer to a <see cref="TOOLBARITEM" /> structure that represents the toolbar receiving the focus.</param>
+    <param name="phwnd">A pointer to the handle of the window that contains the toolbar.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.v_MayTranslateAccelerator">
-    <summary>
-      <para>Deprecated. Called by a derived class to instruct the base class to proceed with the translation of keyboard mnemonics.</para>
-    </summary>
-    <param name="pmsg">
-      <para>Type: <b><see cref="MSG" />*</b></para>
-      <para>A pointer to a <see cref="MSG" /> that contains the keystroke message.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Called by a derived class to instruct the base class to proceed with the translation of keyboard mnemonics.</summary>
+    <param name="pmsg">A pointer to a <see cref="MSG" /> that contains the keystroke message.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.v_ShowHideChildWindows">
-    <summary>
-      <para>Deprecated. Allows a derived class to update its child windows after a sizing event.</para>
-    </summary>
-    <param name="fChildOnly">
-      <para>Type: <b>BOOL</b></para>
-      <para>A value of type <b>BOOL</b> that indicates whether child windows should be shown or hidden.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Allows a derived class to update its child windows after a sizing event.</summary>
+    <param name="fChildOnly">A value of type <b>BOOL</b> that indicates whether child windows should be shown or hidden.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2.WndProcBS">
-    <summary>
-      <para>Deprecated. Allows a derived class to call the <b>WinProc</b> function of the base class.</para>
-    </summary>
-    <param name="hwnd">
-      <para>Type: <b>HWND</b></para>
-      <para>The handle of the window receiving the message.</para>
-    </param>
-    <param name="uMsg">
-      <para>Type: <b>UINT</b></para>
-      <para>The message received by the window.</para>
-    </param>
-    <param name="wParam">
-      <para>Type: <b>WPARAM</b></para>
-      <para>Additional message information specific to the message type.</para>
-    </param>
-    <param name="lParam">
-      <para>Type: <b>LPARAM</b></para>
-      <para>Additional message information specific to the message type.</para>
-    </param>
-    <returns>
-      <para>Type: <b>LRESULT</b></para>
-      <para>The return value specifies the result of the message processing; it depends on the message sent.</para>
-    </returns>
+    <summary>Deprecated. Allows a derived class to call the <b>WinProc</b> function of the base class.</summary>
+    <param name="hwnd">The handle of the window receiving the message.</param>
+    <param name="uMsg">The message received by the window.</param>
+    <param name="wParam">Additional message information specific to the message type.</param>
+    <param name="lParam">Additional message information specific to the message type.</param>
+    <returns>The return value specifies the result of the message processing; it depends on the message sent.</returns>
   </member>
   <member name="IBrowserService2._CancelPendingNavigationAsync">
-    <summary>
-      <para>Deprecated. Enables a derived class to request that the base class cancel any pending navigation.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Enables a derived class to request that the base class cancel any pending navigation.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._CancelPendingView">
-    <summary>
-      <para>Deprecated. Enables a derived class to request that the base class cancel any pending views.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Enables a derived class to request that the base class cancel any pending views.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._CloseAndReleaseToolbars">
-    <summary>
-      <para>Deprecated. Requests the closing of the browser toolbars hosted by the derived class.</para>
-    </summary>
+    <summary>Deprecated. Requests the closing of the browser toolbars hosted by the derived class.</summary>
     <param name="fClose">
-      <para>Type: <b>BOOL</b></para>
-      <para>
-        <b>TRUE</b> to close the toolbar through <see cref="IDockingWindow.CloseDW" />; <b>FALSE</b> to release the toolbar.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+      <b>TRUE</b> to close the toolbar through <see cref="IDockingWindow.CloseDW" />; <b>FALSE</b> to release the toolbar.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._DisableModeless">
-    <summary>
-      <para>Deprecated. Enables a derived class to ask the base class whether a modal UI is visible. A modal UI blocks minimize and close behavior in the browser window.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Enables a derived class to ask the base class whether a modal UI is visible. A modal UI blocks minimize and close behavior in the browser window.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._ExecChildren">
-    <summary>
-      <para>Deprecated. Enables the derived class to issue a command through the <see cref="IOleCommandTarget.Exec" /> method directly, instead of relying on the base class.</para>
-    </summary>
-    <param name="punkBar">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>A pointer to the <see cref="IUnknown" /> of the <see cref="IOleCommandTarget" /> interface.</para>
-    </param>
+    <summary>Deprecated. Enables the derived class to issue a command through the <see cref="IOleCommandTarget.Exec" /> method directly, instead of relying on the base class.</summary>
+    <param name="punkBar">A pointer to the <see cref="IUnknown" /> of the <see cref="IOleCommandTarget" /> interface.</param>
     <param name="fBroadcast">
-      <para>Type: <b>BOOL</b></para>
-      <para>
-        <b>TRUE</b> to broadcast the command; <b>FALSE</b> otherwise.</para>
-    </param>
-    <param name="pguidCmdGroup">
-      <para>Type: <b>const GUID*</b></para>
-      <para>A pointer to the unique identifier of the command group; can be <b>NULL</b> to specify the standard group.</para>
-    </param>
-    <param name="nCmdID">
-      <para>Type: <b>DWORD</b></para>
-      <para>The command to be executed. This command must belong to the group specified with <i>pguidCmdGroup</i>.</para>
-    </param>
-    <param name="nCmdexecopt">
-      <para>Type: <b>DWORD</b></para>
-      <para>The values taken from the <see cref="OLECMDEXECOPT" /> enumeration, which describe how the object should execute the command.</para>
-    </param>
-    <param name="pvarargIn">
-      <para>Type: <b>VARIANTARG*</b></para>
-      <para>A pointer to a <b>VARIANTARG</b> structure containing input arguments. Can be <b>NULL</b>.</para>
-    </param>
-    <param name="pvarargOut">
-      <para>Type: <b>VARIANTARG*</b></para>
-      <para>A pointer to a <b>VARIANTARG</b> structure to receive command output. Can be <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>For further information, see <see cref="IOleCommandTarget.Exec" />.</para>
-    </remarks>
+      <b>TRUE</b> to broadcast the command; <b>FALSE</b> otherwise.</param>
+    <param name="pguidCmdGroup">A pointer to the unique identifier of the command group; can be <b>NULL</b> to specify the standard group.</param>
+    <param name="nCmdID">The command to be executed. This command must belong to the group specified with <i>pguidCmdGroup</i>.</param>
+    <param name="nCmdexecopt">The values taken from the <see cref="OLECMDEXECOPT" /> enumeration, which describe how the object should execute the command.</param>
+    <param name="pvarargIn">A pointer to a <b>VARIANTARG</b> structure containing input arguments. Can be <b>NULL</b>.</param>
+    <param name="pvarargOut">A pointer to a <b>VARIANTARG</b> structure to receive command output. Can be <b>NULL</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._FindTBar">
-    <summary>
-      <para>Deprecated. Returns the index of a browser toolbar item based on Component Object Model (COM) identity rules.</para>
-    </summary>
-    <param name="punkSrc">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>A pointer to the <see cref="IUnknown" /> of the browser toolbar item.</para>
-    </param>
-    <returns>
-      <para>Type: <b>UINT</b></para>
-      <para>The index of the browser toolbar item.</para>
-    </returns>
+    <summary>Deprecated. Returns the index of a browser toolbar item based on Component Object Model (COM) identity rules.</summary>
+    <param name="punkSrc">A pointer to the <see cref="IUnknown" /> of the browser toolbar item.</param>
+    <returns>The index of the browser toolbar item.</returns>
   </member>
   <member name="IBrowserService2._GetBorderDWHelper">
-    <summary>
-      <para>Deprecated. A helper method for the implementation of <see cref="GetBorderDW" />.</para>
-    </summary>
-    <param name="punkSrc">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>A pointer to an <see cref="IUnknown" /> that represents the object for which the border space is being requested.</para>
-    </param>
-    <param name="lprectBorder">
-      <para>Type: <b>LPRECT</b></para>
-      <para>A pointer to a <see cref="RECT" /> structure that contains the dimensions of the available border space for the browser.</para>
-    </param>
-    <param name="bUseHmonitor">
-      <para>Type: <b>BOOL</b></para>
-      <para>A value of type <b>BOOL</b> that indicates whether to use an <b>HMONITOR</b> to determine the display. <b>TRUE</b> to use the <b>HMONITOR</b>; <b>FALSE</b> to ignore the particular display in the size determination.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. A helper method for the implementation of <see cref="GetBorderDW" />.</summary>
+    <param name="punkSrc">A pointer to an <see cref="IUnknown" /> that represents the object for which the border space is being requested.</param>
+    <param name="lprectBorder">A pointer to a <see cref="RECT" /> structure that contains the dimensions of the available border space for the browser.</param>
+    <param name="bUseHmonitor">A value of type <b>BOOL</b> that indicates whether to use an <b>HMONITOR</b> to determine the display. <b>TRUE</b> to use the <b>HMONITOR</b>; <b>FALSE</b> to ignore the particular display in the size determination.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._GetEffectiveClientArea">
-    <summary>
-      <para>Deprecated. Used with <see cref="IBrowserService2._GetViewBorderRect" /> to negotiate the dimensions of the browser view.</para>
-    </summary>
-    <param name="lprectBorder">
-      <para>Type: <b>LPRECT</b></para>
-      <para>A pointer to a <see cref="RECT" /> structure indicating the dimensions of the available client area.</para>
-    </param>
-    <param name="hmon">
-      <para>Type: <b>HMONITOR</b></para>
-      <para>The handle of the monitor on which the view is displayed.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/hmonitor-and-the-device-context">HMONITOR and the Device Context</seealso>
-    <seealso cref="IBrowserService2" />
+    <summary>Deprecated. Used with <see cref="IBrowserService2._GetViewBorderRect" /> to negotiate the dimensions of the browser view.</summary>
+    <param name="lprectBorder">A pointer to a <see cref="RECT" /> structure indicating the dimensions of the available client area.</param>
+    <param name="hmon">The handle of the monitor on which the view is displayed.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._GetToolbarCount">
-    <summary>
-      <para>Deprecated. Returns the number of toolbars in the browser window.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>int</b></para>
-      <para>The number of toolbars in the browser window.</para>
-    </returns>
-    <remarks>
-      <para>This method is implemented by the derived class.</para>
-    </remarks>
+    <summary>Deprecated. Returns the number of toolbars in the browser window.</summary>
+    <returns>The number of toolbars in the browser window.</returns>
   </member>
   <member name="IBrowserService2._GetToolbarItem">
-    <summary>
-      <para>Deprecated. Gets a specific item from a toolbar.</para>
-    </summary>
-    <param name="itb">
-      <para>Type: <b>int</b></para>
-      <para>The index of the toolbar item to retrieve.</para>
-    </param>
-    <returns>
-      <para>Type: <b>LPTOOLBARITEM</b></para>
-      <para>A pointer to a <see cref="TOOLBARITEM" /> structure that represents a toolbar item.</para>
-    </returns>
-    <remarks>
-      <para>This method is implemented by the derived class.</para>
-    </remarks>
+    <summary>Deprecated. Gets a specific item from a toolbar.</summary>
+    <param name="itb">The index of the toolbar item to retrieve.</param>
+    <returns>A pointer to a <see cref="TOOLBARITEM" /> structure that represents a toolbar item.</returns>
   </member>
   <member name="IBrowserService2._GetViewBorderRect">
-    <summary>
-      <para>Deprecated. Used with <see cref="IBrowserService2._GetEffectiveClientArea" /> to negotiate the size and position of the browser view.</para>
-    </summary>
-    <param name="prc">
-      <para>Type: <b><see cref="RECT" />*</b></para>
-      <para>A pointer to the <see cref="RECT" /> structure stating the dimensions of the browser view's border.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is called by <see cref="IBrowserService2.GetViewRect" />.</para>
-    </remarks>
+    <summary>Deprecated. Used with <see cref="IBrowserService2._GetEffectiveClientArea" /> to negotiate the size and position of the browser view.</summary>
+    <param name="prc">A pointer to the <see cref="RECT" /> structure stating the dimensions of the browser view's border.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._get_itbLastFocus">
-    <summary>
-      <para>Deprecated. Gets the ID of the last toolbar or view that had focus.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>UINT</b></para>
-      <para>Returns the index of the last toolbar with focus, or ITB_VIEW if the focus was last on the view.</para>
-    </returns>
+    <summary>Deprecated. Gets the ID of the last toolbar or view that had focus.</summary>
+    <returns>Returns the index of the last toolbar with focus, or ITB_VIEW if the focus was last on the view.</returns>
   </member>
   <member name="IBrowserService2._Initialize">
-    <summary>
-      <para>Deprecated. Coordinates the initializing of state between the base and the derived classes.</para>
-    </summary>
-    <param name="hwnd">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the current window.</para>
-    </param>
-    <param name="pauto">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>A pointer to the <see cref="IUnknown" /> of the outer object's <see cref="IWebBrowser2" /> automation interface.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Coordinates the initializing of state between the base and the derived classes.</summary>
+    <param name="hwnd">A handle to the current window.</param>
+    <param name="pauto">A pointer to the <see cref="IUnknown" /> of the outer object's <see cref="IWebBrowser2" /> automation interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._LoadToolbars">
-    <summary>
-      <para>Deprecated. Loads the saved state of the browser's toolbars.</para>
-    </summary>
-    <param name="pstm">
-      <para>Type: <b><see cref="IStream" />*</b></para>
-      <para>A pointer to an <see cref="IStream" /> from which to load the state  of the browser's toolbars.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is implemented by the derived class.</para>
-    </remarks>
+    <summary>Deprecated. Loads the saved state of the browser's toolbars.</summary>
+    <param name="pstm">A pointer to an <see cref="IStream" /> from which to load the state of the browser's toolbars.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._MaySaveChanges">
-    <summary>
-      <para>Deprecated. Enables the base class to check whether the browser view needs to save changes before closing.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Enables the base class to check whether the browser view needs to save changes before closing.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._NavigateToPidl">
-    <summary>
-      <para>Deprecated. Navigates the base class to a new location synchronously.</para>
-    </summary>
-    <param name="pidl">
-      <para>Type: <b>LPCITEMIDLIST</b></para>
-      <para>The PIDL identifying the new location.</para>
-    </param>
+    <summary>Deprecated. Navigates the base class to a new location synchronously.</summary>
+    <param name="pidl">The PIDL identifying the new location.</param>
     <param name="grfHLNF">
-      <para>Type: <b>DWORD</b></para>
       <para>The value or values from the <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa740922(v=vs.85)">HLNF</a> enumeration. The following values are also supported.</para>
       <h4>HLNF_CALLERUNTRUSTED</h4>
       <para>0x00200000. The navigation was possibly initiated through a webpage by scripting code already on the system.</para>
@@ -763,225 +315,81 @@
       <h4>HLNF_NEWWINDOWSMANAGED</h4>
       <para>0x80000000. If this navigation results in a new window, the new window should be subject to the Pop-up Manager.</para>
     </param>
-    <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>Not used.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IBrowserService2" />
-    <seealso cref="NavigateToPidl" />
+    <param name="dwFlags">Not used.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._OnFocusChange">
-    <summary>
-      <para>Deprecated. Coordinates focus between the base and the derived class when the focus shifts between the derived class's browser toolbars and its view.</para>
-    </summary>
-    <param name="itb">
-      <para>Type: <b>UINT</b></para>
-      <para>The ID of the toolbar gaining focus, or ITB_VIEW if the view is gaining focus.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Coordinates focus between the base and the derived class when the focus shifts between the derived class's browser toolbars and its view.</summary>
+    <param name="itb">The ID of the toolbar gaining focus, or ITB_VIEW if the view is gaining focus.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._PauseOrResumeView">
-    <summary>
-      <para>Deprecated. Enables a derived class to request the base class to either pause (such as before a minimize operation) or resume the browser view.</para>
-    </summary>
+    <summary>Deprecated. Enables a derived class to request the base class to either pause (such as before a minimize operation) or resume the browser view.</summary>
     <param name="fPaused">
-      <para>Type: <b>BOOL</b></para>
-      <para>
-        <b>TRUE</b> to indicate that the view is to be paused, <b>FALSE</b> otherwise.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+      <b>TRUE</b> to indicate that the view is to be paused, <b>FALSE</b> otherwise.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._put_itbLastFocus">
-    <summary>
-      <para>Deprecated. Sets the last toolbar or the last view with focus.</para>
-    </summary>
-    <param name="itbLastFocus">
-      <para>Type: <b>UINT</b></para>
-      <para>The index of the last toolbar with focus. Set this parameter to ITB_VIEW to indicate that the view had the last focus.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Sets the last toolbar or the last view with focus.</summary>
+    <param name="itbLastFocus">The index of the last toolbar with focus. Set this parameter to ITB_VIEW to indicate that the view had the last focus.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._ResizeNextBorder">
-    <summary>
-      <para>Deprecated. Resizes the border of the browser view in response to the addition or removal of toolbars.</para>
-    </summary>
-    <param name="itb">
-      <para>Type: <b>UINT</b></para>
-      <para>The index of the toolbar that was added or removed.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The implementation of this method calls <see cref="IBrowserService2._ResizeNextBorderHelper" />.</para>
-    </remarks>
+    <summary>Deprecated. Resizes the border of the browser view in response to the addition or removal of toolbars.</summary>
+    <param name="itb">The index of the toolbar that was added or removed.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._ResizeNextBorderHelper">
-    <summary>
-      <para>Deprecated. A helper method used by the implementation of <see cref="IBrowserService2._ResizeNextBorder" />.</para>
-    </summary>
-    <param name="itb">
-      <para>Type: <b>UINT</b></para>
-      <para>The index of the browser toolbar.</para>
-    </param>
-    <param name="bUseHmonitor">
-      <para>Type: <b>BOOL</b></para>
-      <para>A value of type <b>BOOL</b> that indicates whether to use an <b>HMONITOR</b> to determine the display. <b>TRUE</b> to use the <b>HMONITOR</b>; <b>FALSE</b> to ignore the particular display in the size determination.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. A helper method used by the implementation of <see cref="IBrowserService2._ResizeNextBorder" />.</summary>
+    <param name="itb">The index of the browser toolbar.</param>
+    <param name="bUseHmonitor">A value of type <b>BOOL</b> that indicates whether to use an <b>HMONITOR</b> to determine the display. <b>TRUE</b> to use the <b>HMONITOR</b>; <b>FALSE</b> to ignore the particular display in the size determination.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._ResizeView">
-    <summary>
-      <para>Deprecated. Calls <see cref="IBrowserService2._UpdateViewRectSize" />, then updates the browser view by using <see cref="IOleInPlaceActiveObject.ResizeBorder" />.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Calls <see cref="IBrowserService2._UpdateViewRectSize" />, then updates the browser view by using <see cref="IOleInPlaceActiveObject.ResizeBorder" />.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._SaveToolbars">
-    <summary>
-      <para>Deprecated. Saves the state of browser toolbars.</para>
-    </summary>
-    <param name="pstm">
-      <para>Type: <b><see cref="IStream" />*</b></para>
-      <para>A pointer to an <see cref="IStream" /> used to store the browser toolbar's state.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is implemented by the derived class.</para>
-    </remarks>
+    <summary>Deprecated. Saves the state of browser toolbars.</summary>
+    <param name="pstm">A pointer to an <see cref="IStream" /> used to store the browser toolbar's state.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._SendChildren">
-    <summary>
-      <para>Deprecated. Allows the derived class to send a message through the <see cref="SendMessage" /> function directly instead of relying on the base class.</para>
-    </summary>
-    <param name="hwndBar">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the browser window whose window procedure receives the message.</para>
-    </param>
-    <param name="fBroadcast">
-      <para>Type: <b>BOOL</b></para>
-      <para>The <b>BOOL</b> that indicates whether to allow the derived class to broadcast the <see cref="SendMessage" /> function. <b>TRUE</b> to allow broadcasting; <b>FALSE</b> otherwise.</para>
-    </param>
-    <param name="uMsg">
-      <para>Type: <b>UINT</b></para>
-      <para>The message to be sent.</para>
-    </param>
-    <param name="wParam">
-      <para>Type: <b>WPARAM</b></para>
-      <para>Additional message-specific information.</para>
-    </param>
-    <param name="lParam">
-      <para>Type: <b>LPARAM</b></para>
-      <para>Additional message-specific information.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Allows the derived class to send a message through the <see cref="SendMessage" /> function directly instead of relying on the base class.</summary>
+    <param name="hwndBar">A handle to the browser window whose window procedure receives the message.</param>
+    <param name="fBroadcast">The <b>BOOL</b> that indicates whether to allow the derived class to broadcast the <see cref="SendMessage" /> function. <b>TRUE</b> to allow broadcasting; <b>FALSE</b> otherwise.</param>
+    <param name="uMsg">The message to be sent.</param>
+    <param name="wParam">Additional message-specific information.</param>
+    <param name="lParam">Additional message-specific information.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._SetFocus">
-    <summary>
-      <para>Deprecated. Sets the focus on a toolbar or on the browser's view window. Called when translating accelerators through <see cref="TranslateAcceleratorSB" /> or when <see cref="IBrowserService2.v_MayGetNextToolbarFocus" /> fails.</para>
-    </summary>
-    <param name="ptbi">
-      <para>Type: <b>LPTOOLBARITEM</b></para>
-      <para>A pointer to a <see cref="TOOLBARITEM" /> structure that specifies a browser toolbar item.</para>
-    </param>
-    <param name="hwnd">
-      <para>Type: <b>HWND</b></para>
-      <para>The handle of the browser window in which the focus shift is taking place.</para>
-    </param>
-    <param name="lpMsg">
-      <para>Type: <b>LPMSG</b></para>
-      <para>A pointer to a <see cref="MSG" /> that contains a keystroke message that indicates an accelerator.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Sets the focus on a toolbar or on the browser's view window. Called when translating accelerators through <see cref="TranslateAcceleratorSB" /> or when <see cref="IBrowserService2.v_MayGetNextToolbarFocus" /> fails.</summary>
+    <param name="ptbi">A pointer to a <see cref="TOOLBARITEM" /> structure that specifies a browser toolbar item.</param>
+    <param name="hwnd">The handle of the browser window in which the focus shift is taking place.</param>
+    <param name="lpMsg">A pointer to a <see cref="MSG" /> that contains a keystroke message that indicates an accelerator.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._SwitchActivationNow">
-    <summary>
-      <para>Deprecated. Coordinates state updates while switching between current and pending browser views.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is called by <see cref="IBrowserService2.ActivatePendingView" />.</para>
-    </remarks>
+    <summary>Deprecated. Coordinates state updates while switching between current and pending browser views.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._TryShell2Rename">
-    <summary>
-      <para>Deprecated. Coordinates the renaming of the current browser view when the browser is redirected.</para>
-    </summary>
-    <param name="psv">
-      <para>Type: <b><see cref="IShellView" />*</b></para>
-      <para>A pointer to an <see cref="IShellView" /> representing the current browser view.</para>
-    </param>
-    <param name="pidlNew">
-      <para>Type: <b>LPCITEMIDLIST</b></para>
-      <para>A PIDL that indicates the new name of the browser view.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is called in response to <see cref="NotifyRedirect" />.</para>
-    </remarks>
+    <summary>Deprecated. Coordinates the renaming of the current browser view when the browser is redirected.</summary>
+    <param name="psv">A pointer to an <see cref="IShellView" /> representing the current browser view.</param>
+    <param name="pidlNew">A PIDL that indicates the new name of the browser view.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._UIActivateView">
-    <summary>
-      <para>Deprecated. Allows a derived class to request that the base class update the browser view.</para>
-    </summary>
-    <param name="uState">
-      <para>Type: <b>UINT</b></para>
-      <para>A member of the <see cref="SVUIA_STATUS" /> enumeration declaring the browser view's state value.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Allows a derived class to request that the base class update the browser view.</summary>
+    <param name="uState">A member of the <see cref="SVUIA_STATUS" /> enumeration declaring the browser view's state value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2._UpdateViewRectSize">
-    <summary>
-      <para>Deprecated. Called to inform other functions involved in the browser view size negotiations that the allowable browser view dimensions have changed.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Called to inform other functions involved in the browser view size negotiations that the allowable browser view dimensions have changed.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService2">
-    <summary>
-      <para>Deprecated. <b>IBrowserService2</b> extends <see cref="IBrowserService" />. The methods exposed by this interface are analogous to virtual protected methods in normal C++ inheritance. The objects' inheritance hierarchy spans multiple  DLLs. The hierarchy is made up of a base class and several derived classes that correspond to controls including CLSID_WebBrowser and the user's desktop. Objects not in the hierarchy should not implement this interface or use most of its methods.</para>
-    </summary>
-    <remarks>
-      <para>This interface also provides the methods of the <see cref="IBrowserService" /> interface, from which it inherits.</para>
-    </remarks>
+    <summary>Deprecated. <b>IBrowserService2</b> extends <see cref="IBrowserService" />. The methods exposed by this interface are analogous to virtual protected methods in normal C++ inheritance. The objects' inheritance hierarchy spans multiple DLLs. The hierarchy is made up of a base class and several derived classes that correspond to controls including CLSID_WebBrowser and the user's desktop. Objects not in the hierarchy should not implement this interface or use most of its methods.</summary>
   </member>
 </doc>

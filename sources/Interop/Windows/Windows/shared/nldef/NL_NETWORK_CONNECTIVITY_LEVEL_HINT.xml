@@ -3,29 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NL_NETWORK_CONNECTIVITY_LEVEL_HINT">
-    <summary>
-      <para>Defines constants that specify hints about a level of network connectivity.</para>
-    </summary>
+    <summary>Defines constants that specify hints about a level of network connectivity.</summary>
   </member>
   <member name="NL_NETWORK_CONNECTIVITY_LEVEL_HINT.NetworkConnectivityLevelHintUnknown">
-    <summary>
-      <para>Specifies a hint for an unknown level of connectivity. There is a short window of time during Windows (or application container) boot when this value might be returned.</para>
-    </summary>
+    <summary>Specifies a hint for an unknown level of connectivity. There is a short window of time during Windows (or application container) boot when this value might be returned.</summary>
   </member>
   <member name="NL_NETWORK_CONNECTIVITY_LEVEL_HINT.NetworkConnectivityLevelHintNone">
-    <summary>
-      <para>Specifies a hint for no connectivity.</para>
-    </summary>
+    <summary>Specifies a hint for no connectivity.</summary>
   </member>
   <member name="NL_NETWORK_CONNECTIVITY_LEVEL_HINT.NetworkConnectivityLevelHintLocalAccess">
-    <summary>
-      <para>Specifies a hint for local network access only.</para>
-    </summary>
+    <summary>Specifies a hint for local network access only.</summary>
   </member>
   <member name="NL_NETWORK_CONNECTIVITY_LEVEL_HINT.NetworkConnectivityLevelHintInternetAccess">
-    <summary>
-      <para>Specifies a hint for local and internet access.</para>
-    </summary>
+    <summary>Specifies a hint for local and internet access.</summary>
   </member>
   <member name="NL_NETWORK_CONNECTIVITY_LEVEL_HINT.NetworkConnectivityLevelHintConstrainedInternetAccess">
     <summary>
@@ -35,8 +25,6 @@
     </summary>
   </member>
   <member name="NL_NETWORK_CONNECTIVITY_LEVEL_HINT.NetworkConnectivityLevelHintHidden">
-    <summary>
-      <para>Specifies a hint for a network interface that's hidden from normal connectivity (and is not, by default, accessible to applications). This could be because no packets are allowed at all over that network (for example, the adapter flags itself <b>NCF_HIDDEN</b>), or (by default) routes are ignored on that interface (for example, a cellular network is hidden when WiFi is connected).</para>
-    </summary>
+    <summary>Specifies a hint for a network interface that's hidden from normal connectivity (and is not, by default, accessible to applications). This could be because no packets are allowed at all over that network (for example, the adapter flags itself <b>NCF_HIDDEN</b>), or (by default) routes are ignored on that interface (for example, a cellular network is hidden when WiFi is connected).</summary>
   </member>
 </doc>

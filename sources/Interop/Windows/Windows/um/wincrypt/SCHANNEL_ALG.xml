@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SCHANNEL_ALG">
-    <summary>
-      <para>The <b>SCHANNEL_ALG</b> structure contains algorithm and key size information. It is used as the structure passed as <i>pbData</i> in <see cref="CryptSetKeyParam" /> when <i>dwParam</i> is set to KP_SCHANNEL_ALG.</para>
-    </summary>
+    <summary>The <b>SCHANNEL_ALG</b> structure contains algorithm and key size information. It is used as the structure passed as <i>pbData</i> in <see cref="CryptSetKeyParam" /> when <i>dwParam</i> is set to KP_SCHANNEL_ALG.</summary>
   </member>
   <member name="SCHANNEL_ALG.dwUse">
     <summary>
@@ -15,22 +13,30 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>SCHANNEL_MAC_KEY</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SCHANNEL_MAC_KEY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Derive keys to create or verify SSL MAC signatures.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Derive keys to create or verify SSL MAC signatures.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SCHANNEL_ENC_KEY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>SCHANNEL_ENC_KEY</b>
-          </description>
-          <description>
-            <para>Derive keys to encrypt or decrypt data.</para>
-          </description>
-        </item>
+          <description>Derive keys to encrypt or decrypt data.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -42,18 +48,12 @@
     </summary>
   </member>
   <member name="SCHANNEL_ALG.cBits">
-    <summary>
-      <para>Size in bits of the derived keys.</para>
-    </summary>
+    <summary>Size in bits of the derived keys.</summary>
   </member>
   <member name="SCHANNEL_ALG.dwFlags">
-    <summary>
-      <para>This flag can be set to INTERNATIONAL_USAGE (0x00000001), indicating that derived keys must follow SSL export rules.</para>
-    </summary>
+    <summary>This flag can be set to INTERNATIONAL_USAGE (0x00000001), indicating that derived keys must follow SSL export rules.</summary>
   </member>
   <member name="SCHANNEL_ALG.dwReserved">
-    <summary>
-      <para>Reserved for future use. Should be set to zero.</para>
-    </summary>
+    <summary>Reserved for future use. Should be set to zero.</summary>
   </member>
 </doc>

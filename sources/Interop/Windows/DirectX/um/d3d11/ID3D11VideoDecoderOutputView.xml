@@ -3,22 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11VideoDecoderOutputView.GetDesc">
-    <summary>
-      <para>Gets the properties of the video decoder output view.</para>
-    </summary>
-    <param name="pDesc">
-      <para>A pointer to a <see cref="D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC" /> structure. The method fills the structure with the view properties.</para>
-    </param>
-    <seealso cref="ID3D11VideoDecoderOutputView" />
+    <summary>Gets the properties of the video decoder output view.</summary>
+    <param name="pDesc">A pointer to a <see cref="D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC" /> structure. The method fills the structure with the view properties.</param>
   </member>
   <member name="ID3D11VideoDecoderOutputView">
-    <summary>
-      <para>Identifies the output surfaces that can be accessed during video decoding.</para>
-    </summary>
-    <remarks>
-      <para>To get a pointer to this interface, call <see cref="ID3D11VideoDevice.CreateVideoDecoderOutputView" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-interfaces">Direct3D 11 Video Interfaces</seealso>
-    <seealso cref="ID3D11View" />
+    <summary>Identifies the output surfaces that can be accessed during video decoding.</summary>
   </member>
 </doc>

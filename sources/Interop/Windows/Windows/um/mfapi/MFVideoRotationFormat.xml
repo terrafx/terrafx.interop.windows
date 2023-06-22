@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFVideoRotationFormat">
-    <summary>
-      <para>Describes the rotation of the video image in the counter-clockwise direction.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-video-rotation">MF_MT_VIDEO_ROTATION</a> attribute.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Describes the rotation of the video image in the counter-clockwise direction.</summary>
   </member>
   <member name="MFVideoRotationFormat.MFVideoRotationFormat_0">
-    <summary>
-      <para>The image is not rotated.</para>
-    </summary>
+    <summary>The image is not rotated.</summary>
   </member>
   <member name="MFVideoRotationFormat.MFVideoRotationFormat_90">
-    <summary>
-      <para>The image is rotated 90 degrees counter-clockwise.</para>
-    </summary>
+    <summary>The image is rotated 90 degrees counter-clockwise.</summary>
   </member>
   <member name="MFVideoRotationFormat.MFVideoRotationFormat_180">
-    <summary>
-      <para>The image is rotated 180 degrees.</para>
-    </summary>
+    <summary>The image is rotated 180 degrees.</summary>
   </member>
   <member name="MFVideoRotationFormat.MFVideoRotationFormat_270">
-    <summary>
-      <para>The image is rotated 270 degrees counter-clockwise.</para>
-    </summary>
+    <summary>The image is rotated 270 degrees counter-clockwise.</summary>
   </member>
 </doc>

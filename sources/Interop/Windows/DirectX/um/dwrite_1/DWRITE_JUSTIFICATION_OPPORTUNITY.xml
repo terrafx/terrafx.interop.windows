@@ -3,60 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_JUSTIFICATION_OPPORTUNITY">
-    <summary>
-      <para>The <b>DWRITE_JUSTIFICATION_OPPORTUNITY</b> structure specifies justification info per glyph.</para>
-    </summary>
-    <seealso cref="IDWriteTextAnalyzer1.GetJustificationOpportunities" />
-    <seealso cref="IDWriteTextAnalyzer1.JustifyGlyphAdvances" />
+    <summary>The <b>DWRITE_JUSTIFICATION_OPPORTUNITY</b> structure specifies justification info per glyph.</summary>
   </member>
   <member name="DWRITE_JUSTIFICATION_OPPORTUNITY.expansionMinimum">
-    <summary>
-      <para>Minimum amount of expansion to apply to the side of the glyph. This might vary from zero to infinity, typically being zero except for kashida.</para>
-    </summary>
+    <summary>Minimum amount of expansion to apply to the side of the glyph. This might vary from zero to infinity, typically being zero except for kashida.</summary>
   </member>
   <member name="DWRITE_JUSTIFICATION_OPPORTUNITY.expansionMaximum">
-    <summary>
-      <para>Maximum amount of expansion to apply to the side of the glyph. This might vary from zero to infinity, being zero for fixed-size characters and connected scripts, and non-zero for discrete scripts, and non-zero for cursive scripts at expansion points.</para>
-    </summary>
+    <summary>Maximum amount of expansion to apply to the side of the glyph. This might vary from zero to infinity, being zero for fixed-size characters and connected scripts, and non-zero for discrete scripts, and non-zero for cursive scripts at expansion points.</summary>
   </member>
   <member name="DWRITE_JUSTIFICATION_OPPORTUNITY.compressionMaximum">
-    <summary>
-      <para>Maximum amount of compression to apply to the side of the glyph. This might vary from zero up to the glyph cluster size.</para>
-    </summary>
+    <summary>Maximum amount of compression to apply to the side of the glyph. This might vary from zero up to the glyph cluster size.</summary>
   </member>
   <member name="DWRITE_JUSTIFICATION_OPPORTUNITY.expansionPriority">
-    <summary>
-      <para>Priority of this expansion point. Larger priorities are applied later, while priority zero does nothing.</para>
-    </summary>
+    <summary>Priority of this expansion point. Larger priorities are applied later, while priority zero does nothing.</summary>
   </member>
   <member name="DWRITE_JUSTIFICATION_OPPORTUNITY.compressionPriority">
-    <summary>
-      <para>Priority of this compression point. Larger priorities are applied later, while priority zero does nothing.</para>
-    </summary>
+    <summary>Priority of this compression point. Larger priorities are applied later, while priority zero does nothing.</summary>
   </member>
   <member name="DWRITE_JUSTIFICATION_OPPORTUNITY.allowResidualExpansion">
-    <summary>
-      <para>Allow this expansion point to use up any remaining slack space even after all expansion priorities have been used up.</para>
-    </summary>
+    <summary>Allow this expansion point to use up any remaining slack space even after all expansion priorities have been used up.</summary>
   </member>
   <member name="DWRITE_JUSTIFICATION_OPPORTUNITY.allowResidualCompression">
-    <summary>
-      <para>Allow this compression point to use up any remaining space even after all compression priorities have been used up.</para>
-    </summary>
+    <summary>Allow this compression point to use up any remaining space even after all compression priorities have been used up.</summary>
   </member>
   <member name="DWRITE_JUSTIFICATION_OPPORTUNITY.applyToLeadingEdge">
-    <summary>
-      <para>Apply expansion and compression to the leading edge of the glyph. This bit is <b>FALSE</b> (0) for connected scripts, fixed-size characters, and diacritics. It is generally <b>FALSE</b> within a multi-glyph cluster, unless the script allows expansion of glyphs within a cluster, like Thai.</para>
-    </summary>
+    <summary>Apply expansion and compression to the leading edge of the glyph. This bit is <b>FALSE</b> (0) for connected scripts, fixed-size characters, and diacritics. It is generally <b>FALSE</b> within a multi-glyph cluster, unless the script allows expansion of glyphs within a cluster, like Thai.</summary>
   </member>
   <member name="DWRITE_JUSTIFICATION_OPPORTUNITY.applyToTrailingEdge">
-    <summary>
-      <para>Apply expansion and compression to the trailing edge of the glyph. This bit is <b>FALSE</b> (0) for connected scripts, fixed-size characters, and diacritics. It is generally <b>FALSE</b> within a multi-glyph cluster, unless the script allows expansion of glyphs within a cluster, like Thai.</para>
-    </summary>
+    <summary>Apply expansion and compression to the trailing edge of the glyph. This bit is <b>FALSE</b> (0) for connected scripts, fixed-size characters, and diacritics. It is generally <b>FALSE</b> within a multi-glyph cluster, unless the script allows expansion of glyphs within a cluster, like Thai.</summary>
   </member>
   <member name="DWRITE_JUSTIFICATION_OPPORTUNITY.reserved">
-    <summary>
-      <para>Reserved</para>
-    </summary>
+    <summary>Reserved</summary>
   </member>
 </doc>

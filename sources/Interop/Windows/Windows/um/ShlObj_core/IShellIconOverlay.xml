@@ -3,152 +3,130 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IShellIconOverlay.GetOverlayIconIndex">
-    <summary>
-      <para>Gets the index of the icon overlay in the system image list.</para>
-    </summary>
-    <param name="pidl">
-      <para>Type: <b>PCUITEMID_CHILD</b></para>
-      <para>Pointer to an <see cref="ITEMIDLIST" /> structure that identifies the object whose icon is being displayed.</para>
-    </param>
-    <param name="pIconIndex">
-      <para>Type: <b>int*</b></para>
-      <para>Pointer to the index of the icon overlay's image in the system image list. This index is equivalent to the <i>iImage</i> value that is specified when you add an overlay image to a private image list with the <see cref="ImageList.SetOverlayImage" /> function.</para>
-    </param>
+    <summary>Gets the index of the icon overlay in the system image list.</summary>
+    <param name="pidl">Pointer to an <see cref="ITEMIDLIST" /> structure that identifies the object whose icon is being displayed.</param>
+    <param name="pIconIndex">Pointer to the index of the icon overlay's image in the system image list. This index is equivalent to the <i>iImage</i> value that is specified when you add an overlay image to a private image list with the <see cref="ImageList.SetOverlayImage" /> function.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method can return one of these values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The index of an overlay was found.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The index of an overlay was found.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>No overlay exists for this file.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>No overlay exists for this file.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>The PIDL is invalid.</para>
-          </description>
-        </item>
+          <description>The PIDL is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>To retrieve the overlay's image index in the system image list, you must first call <see cref="SHGetIconOverlayIndex" /> to retrieve the overlay index. Then use the <see cref="INDEXTOOVERLAYMASK" /> macro to convert the overlay index into the equivalent image index.</para>
-    </remarks>
-    <seealso cref="IShellIconOverlay" />
   </member>
   <member name="IShellIconOverlay.GetOverlayIndex">
-    <summary>
-      <para>Gets the overlay index in the system image list.</para>
-    </summary>
-    <param name="pidl">
-      <para>Type: <b>PCUITEMID_CHILD</b></para>
-      <para>Pointer to an <see cref="ITEMIDLIST" /> structure that identifies the object whose icon is being displayed.</para>
-    </param>
-    <param name="pIndex">
-      <para>Type: <b>int*</b></para>
-      <para>Pointer to a value that states the overlay index (one-based) in the system image list. This index is equivalent to the <i>iOverlay</i> value that is specified when you add an overlay image to a private image list with the <see cref="ImageList.SetOverlayImage" /> function.</para>
-    </param>
+    <summary>Gets the overlay index in the system image list.</summary>
+    <param name="pidl">Pointer to an <see cref="ITEMIDLIST" /> structure that identifies the object whose icon is being displayed.</param>
+    <param name="pIndex">Pointer to a value that states the overlay index (one-based) in the system image list. This index is equivalent to the <i>iOverlay</i> value that is specified when you add an overlay image to a private image list with the <see cref="ImageList.SetOverlayImage" /> function.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method can return one of these values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The index of an overlay was found.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The index of an overlay was found.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>No overlay exists for this file.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The PIDL is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>No overlay exists for this file.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The argument is invalid, for example, if <i>pIndex</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_PENDING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The PIDL is invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The argument is invalid, for example, if <i>pIndex</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_PENDING</b>
-            </para>
-          </description>
-          <description>
-            <para>The calling application passed OI_ASYNC to signify that the operation of calculating the overlay index will take some time.</para>
-          </description>
-        </item>
+          <description>The calling application passed OI_ASYNC to signify that the operation of calculating the overlay index will take some time.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>To retrieve the overlay index in the system image list, call <see cref="SHGetIconOverlayIndex" />.</para>
-      <para>If you set <i>pIndex</i> to point to OI_ASYNC when you call this method, the Shell icon overlay handler might return E_PENDING instead of storing the overlay index in <i>pIndex</i>. This return value indicates that computing the overlay is a slow operation and should be handled in the background. When an <see cref="IShellIconOverlay" /> implementation returns E_PENDING, it is called back on a background worker thread without the OI_ASYNC flag. If you do not use OI_ASYNC when you call <b>GetOverlayIndex</b>, the overlay handler must compute the overlay index and store the value in <i>pIndex</i> before returning.</para>
-    </remarks>
-    <seealso cref="IShellIconOverlay" />
   </member>
   <member name="IShellIconOverlay">
-    <summary>
-      <para>Exposes methods that are used by a namespace extension to specify icon overlays for the objects it contains.</para>
-    </summary>
-    <remarks>
-      <para>Icon overlays are small images placed at the lower-left corner of the icon that represents a Shell object. They are typically used to add some extra information to the icon. A commonly used icon overlay is the small arrow that indicates that a file or folder icon represents a shortcut.</para>
-      <para>Icon overlays are part of the system image list. They have two identifiers. One is a one-based overlay index that identifies the overlay relative to other overlays in the image list. The other is an image index that identifies the actual image. These two indexes are equivalent to the values that you assign to the <i>iOverlay</i> and <i>iImage</i> parameters, respectively, when you add an icon overlay to a private image list with <see cref="ImageList.SetOverlayImage" />.</para>
-      <para>Before displaying the icon for an object, the Shell calls the associated folder's <b>IShellIconOverlay</b> interface to query whether the object's icon should have an overlay. Typically it calls <see cref="IShellIconOverlay.GetOverlayIndex" /> to request the overlay's overlay index. In some cases, the Shell might call <see cref="IShellIconOverlay.GetOverlayIconIndex" /> to request the overlay's image index. To specify an icon overlay, the methods must return the requested index. Otherwise, they return S_FALSE.</para>
-      <para>To specify an icon overlay, both methods must first retrieve the overlay's overlay index in the system image list by calling <see cref="SHGetIconOverlayIndex" />. When <b>SHGetIconOverlayIndex</b> is called for the first time, the Shell uses the overlay's file name and index within the file to add the image to the system image list. Once an overlay is in the system image list, the Shell simply uses the file name and index as an identifier. You can also use <b>SHGetIconOverlayIndex</b> to retrieve the overlay index of several standard system overlays. <see cref="IShellIconOverlay.GetOverlayIndex" /> simply returns the overlay index to the Shell. <see cref="IShellIconOverlay.GetOverlayIconIndex" /> must use the <see cref="INDEXTOOVERLAYMASK" /> macro to convert the overlay index to the equivalent image index.</para>
-      <para>The number of different icon overlay handlers that the system can support is limited by the amount of space available for icon overlays in the system image list. There are currently fifteen slots allotted for icon overlays, some of which are reserved by the system. For this reason, icon overlays should be specified only if there are no satisfactory alternatives.</para>
-      <para>This interface is implemented by namespace extensions that need to specify icon overlays for their objects.</para>
-      <para>This interface is not typically used by applications.</para>
-    </remarks>
+    <summary>Exposes methods that are used by a namespace extension to specify icon overlays for the objects it contains.</summary>
   </member>
 </doc>

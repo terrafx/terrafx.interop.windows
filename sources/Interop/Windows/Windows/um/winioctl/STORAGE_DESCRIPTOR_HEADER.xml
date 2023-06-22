@@ -3,38 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STORAGE_DESCRIPTOR_HEADER">
-    <summary>
-      <para>Used in conjunction with the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> control code to
-retrieve the properties of a storage device or adapter.</para>
-    </summary>
-    <remarks>
-      <para>The data retrieved by
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> is reported in
-the buffer immediately following this structure.</para>
-    </remarks>
-    <seealso cref="DEVICE_SEEK_PENALTY_DESCRIPTOR" />
-    <seealso cref="DEVICE_TRIM_DESCRIPTOR" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/disk-management-structures">Disk Management Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
-    <seealso cref="STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR" />
-    <seealso cref="STORAGE_ADAPTER_DESCRIPTOR" />
-    <seealso cref="STORAGE_DEVICE_DESCRIPTOR" />
-    <seealso cref="STORAGE_DEVICE_ID_DESCRIPTOR" />
-    <seealso cref="STORAGE_MINIPORT_DESCRIPTOR" />
-    <seealso cref="STORAGE_PROPERTY_QUERY" />
-    <seealso cref="STORAGE_WRITE_CACHE_PROPERTY" />
+    <summary>Used in conjunction with the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> control code to retrieve the properties of a storage device or adapter.</summary>
   </member>
   <member name="STORAGE_DESCRIPTOR_HEADER.Version">
-    <summary>
-      <para>Contains the size of this structure, in bytes. The value of this member will change as members are added to
-the structure.</para>
-    </summary>
+    <summary>Contains the size of this structure, in bytes. The value of this member will change as members are added to the structure.</summary>
   </member>
   <member name="STORAGE_DESCRIPTOR_HEADER.Size">
-    <summary>
-      <para>Specifies the total size of the data returned, in bytes. This may include data that follows this
-structure.</para>
-    </summary>
+    <summary>Specifies the total size of the data returned, in bytes. This may include data that follows this structure.</summary>
   </member>
 </doc>

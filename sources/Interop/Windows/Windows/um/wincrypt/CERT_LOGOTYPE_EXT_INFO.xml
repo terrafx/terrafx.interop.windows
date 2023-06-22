@@ -3,41 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_LOGOTYPE_EXT_INFO">
-    <summary>
-      <para>The <b>CERT_LOGOTYPE_EXT_INFO</b> structure contains a set of logotype information.</para>
-    </summary>
-    <seealso cref="CryptDecodeObject" />
-    <seealso cref="CryptEncodeObject" />
-    <seealso cref="CryptEncodeObjectEx" />
+    <summary>The <b>CERT_LOGOTYPE_EXT_INFO</b> structure contains a set of logotype information.</summary>
   </member>
   <member name="CERT_LOGOTYPE_EXT_INFO.cCommunityLogo">
-    <summary>
-      <para>The number of elements in the <b>rgCommunityLogo</b> array.</para>
-    </summary>
+    <summary>The number of elements in the <b>rgCommunityLogo</b> array.</summary>
   </member>
   <member name="CERT_LOGOTYPE_EXT_INFO.rgCommunityLogo">
-    <summary>
-      <para>An array of <see cref="CERT_LOGOTYPE_INFO" /> structures that contain the community logotypes. The <b>cCommunityLogo</b>  member contains the number of elements in this array.</para>
-    </summary>
+    <summary>An array of <see cref="CERT_LOGOTYPE_INFO" /> structures that contain the community logotypes. The <b>cCommunityLogo</b> member contains the number of elements in this array.</summary>
   </member>
   <member name="CERT_LOGOTYPE_EXT_INFO.pIssuerLogo">
-    <summary>
-      <para>The address of a <see cref="CERT_LOGOTYPE_INFO" /> structure that contains the issuer logotype. This member is optional and may be <b>NULL</b>.</para>
-    </summary>
+    <summary>The address of a <see cref="CERT_LOGOTYPE_INFO" /> structure that contains the issuer logotype. This member is optional and may be <b>NULL</b>.</summary>
   </member>
   <member name="CERT_LOGOTYPE_EXT_INFO.pSubjectLogo">
-    <summary>
-      <para>The address of a <see cref="CERT_LOGOTYPE_INFO" /> structure that contains the subject logotype. This member is optional and may be <b>NULL</b>.</para>
-    </summary>
+    <summary>The address of a <see cref="CERT_LOGOTYPE_INFO" /> structure that contains the subject logotype. This member is optional and may be <b>NULL</b>.</summary>
   </member>
   <member name="CERT_LOGOTYPE_EXT_INFO.cOtherLogo">
-    <summary>
-      <para>The number of elements in the <b>rgOtherLogo</b> array.</para>
-    </summary>
+    <summary>The number of elements in the <b>rgOtherLogo</b> array.</summary>
   </member>
   <member name="CERT_LOGOTYPE_EXT_INFO.rgOtherLogo">
-    <summary>
-      <para>An array of <see cref="CERT_OTHER_LOGOTYPE_INFO" /> structures that contain any other logotypes. The <b>cOtherLogo</b>  member contains the number of elements in this array.</para>
-    </summary>
+    <summary>An array of <see cref="CERT_OTHER_LOGOTYPE_INFO" /> structures that contain any other logotypes. The <b>cOtherLogo</b> member contains the number of elements in this array.</summary>
   </member>
 </doc>

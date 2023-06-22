@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="eAVDecDDStereoDownMixMode">
-    <summary>
-      <para>Specifies the stereo downmix mode for a Dolby Digital audio decoder. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/codecapi-avdecddstereodownmixmode">CODECAPI_AVDecDDStereoDownMixMode</a> property.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies the stereo downmix mode for a Dolby Digital audio decoder. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/codecapi-avdecddstereodownmixmode">CODECAPI_AVDecDDStereoDownMixMode</a> property.</summary>
   </member>
   <member name="eAVDecDDStereoDownMixMode.eAVDecDDStereoDownMixMode_Auto">
-    <summary>
-      <para>The decoder selects the mode automatically.</para>
-    </summary>
+    <summary>The decoder selects the mode automatically.</summary>
   </member>
   <member name="eAVDecDDStereoDownMixMode.eAVDecDDStereoDownMixMode_LtRt">
-    <summary>
-      <para>Left total/right total (Lt/Rt) downmix. (Surround compatible.)</para>
-    </summary>
+    <summary>Left total/right total (Lt/Rt) downmix. (Surround compatible.)</summary>
   </member>
   <member name="eAVDecDDStereoDownMixMode.eAVDecDDStereoDownMixMode_LoRo">
-    <summary>
-      <para>Left only/right only (Lo/Ro) downmix. (Stereo.)</para>
-    </summary>
+    <summary>Left only/right only (Lo/Ro) downmix. (Stereo.)</summary>
   </member>
 </doc>

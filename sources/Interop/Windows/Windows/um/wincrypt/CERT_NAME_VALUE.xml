@@ -3,20 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_NAME_VALUE">
-    <summary>
-      <para>The <b>CERT_NAME_VALUE</b> structure contains a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/r-gly">relative distinguished name</a> (RDN) attribute value. It is like the
-<see cref="CERT_RDN_ATTR" /> structure, except that it does not include the object identifier member that is a member of <b>CERT_RDN_ATTR</b>. As in <b>CERT_RDN_ATTR</b>, the interpretation of the <b>Value</b> member depends on <b>dwValueType</b>.</para>
-    </summary>
-    <seealso cref="CERT_RDN" />
-    <seealso cref="CERT_RDN_ATTR" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
-    <seealso cref="CertRDNValueToStr" />
+    <summary>The <b>CERT_NAME_VALUE</b> structure contains a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/r-gly">relative distinguished name</a> (RDN) attribute value. It is like the<see cref="CERT_RDN_ATTR" /> structure, except that it does not include the object identifier member that is a member of <b>CERT_RDN_ATTR</b>. As in <b>CERT_RDN_ATTR</b>, the interpretation of the <b>Value</b> member depends on <b>dwValueType</b>.</summary>
   </member>
   <member name="CERT_NAME_VALUE.dwValueType">
-    <summary>
-      <para>Indicates the interpretation of the <b>Value</b> member. For documentation on possible values of <b>dwValueType</b>, see
-<see cref="CERT_RDN_ATTR" />.</para>
-    </summary>
+    <summary>Indicates the interpretation of the <b>Value</b> member. For documentation on possible values of <b>dwValueType</b>, see<see cref="CERT_RDN_ATTR" />.</summary>
   </member>
   <member name="CERT_NAME_VALUE.Value">
     <summary>

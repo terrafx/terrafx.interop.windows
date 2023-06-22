@@ -3,63 +3,39 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROCESS_INFORMATION_CLASS">
-    <summary>
-      <para>Indicates a specific class of process information. Values from this enumeration are passed into the <see cref="GetProcessInformation" /> and <see cref="SetProcessInformation" /> functions to specify the type of process information passed in the void pointer argument of the function call.</para>
-    </summary>
+    <summary>Indicates a specific class of process information. Values from this enumeration are passed into the <see cref="GetProcessInformation" /> and <see cref="SetProcessInformation" /> functions to specify the type of process information passed in the void pointer argument of the function call.</summary>
   </member>
   <member name="PROCESS_INFORMATION_CLASS.ProcessMemoryPriority">
-    <summary>
-      <para>The process information is represented by a <see cref="MEMORY_PRIORITY_INFORMATION" /> structure. Allows applications to lower the default memory priority of threads that perform background operations or access files and data that are not expected to be accessed again soon.</para>
-    </summary>
+    <summary>The process information is represented by a <see cref="MEMORY_PRIORITY_INFORMATION" /> structure. Allows applications to lower the default memory priority of threads that perform background operations or access files and data that are not expected to be accessed again soon.</summary>
   </member>
   <member name="PROCESS_INFORMATION_CLASS.ProcessMemoryExhaustionInfo">
-    <summary>
-      <para>The process information is represented by a <see cref="PROCESS_MEMORY_EXHAUSTION_INFO" /> structure. Allows applications to configure a process to terminate if an allocation fails to commit memory.</para>
-    </summary>
+    <summary>The process information is represented by a <see cref="PROCESS_MEMORY_EXHAUSTION_INFO" /> structure. Allows applications to configure a process to terminate if an allocation fails to commit memory.</summary>
   </member>
   <member name="PROCESS_INFORMATION_CLASS.ProcessAppMemoryInfo">
-    <summary>
-      <para>The process information is represented by a <see cref="APP_MEMORY_INFORMATION" /> structure. Allows applications to query the commit usage and the additional commit available to this process. Does not allow the caller to actually get a commit limit.</para>
-    </summary>
+    <summary>The process information is represented by a <see cref="APP_MEMORY_INFORMATION" /> structure. Allows applications to query the commit usage and the additional commit available to this process. Does not allow the caller to actually get a commit limit.</summary>
   </member>
   <member name="PROCESS_INFORMATION_CLASS.ProcessInPrivateInfo">
-    <summary>
-      <para>If a process is set to <b>ProcessInPrivate</b> mode, and a trace session has set the <see cref="EVENT_ENABLE_PROPERTY_EXCLUDE_INPRIVATE" /> flag, then the trace session will drop all events from that process.</para>
-    </summary>
+    <summary>If a process is set to <b>ProcessInPrivate</b> mode, and a trace session has set the <see cref="EVENT_ENABLE_PROPERTY_EXCLUDE_INPRIVATE" /> flag, then the trace session will drop all events from that process.</summary>
   </member>
   <member name="PROCESS_INFORMATION_CLASS.ProcessPowerThrottling">
-    <summary>
-      <para>The process information is represented by a <see cref="PROCESS_POWER_THROTTLING_STATE" /> structure. Allows applications to configure how the system should throttle the target process’s activity when managing power.</para>
-    </summary>
+    <summary>The process information is represented by a <see cref="PROCESS_POWER_THROTTLING_STATE" /> structure. Allows applications to configure how the system should throttle the target process’s activity when managing power.</summary>
   </member>
   <member name="PROCESS_INFORMATION_CLASS.ProcessReservedValue1">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="PROCESS_INFORMATION_CLASS.ProcessTelemetryCoverageInfo">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="PROCESS_INFORMATION_CLASS.ProcessProtectionLevelInfo">
-    <summary>
-      <para>The process information is represented by a <see cref="PROCESS_PROTECTION_LEVEL_INFORMATION" /> structure.</para>
-    </summary>
+    <summary>The process information is represented by a <see cref="PROCESS_PROTECTION_LEVEL_INFORMATION" /> structure.</summary>
   </member>
   <member name="PROCESS_INFORMATION_CLASS.ProcessLeapSecondInfo">
-    <summary>
-      <para>The process information is represented by a <see cref="PROCESS_LEAP_SECOND_INFO" /> structure.</para>
-    </summary>
+    <summary>The process information is represented by a <see cref="PROCESS_LEAP_SECOND_INFO" /> structure.</summary>
   </member>
   <member name="PROCESS_INFORMATION_CLASS.ProcessMachineTypeInfo">
-    <summary>
-      <para>The process is represented by a <see cref="PROCESS_MACHINE_INFORMATION" /> structure.</para>
-    </summary>
+    <summary>The process is represented by a <see cref="PROCESS_MACHINE_INFORMATION" /> structure.</summary>
   </member>
   <member name="PROCESS_INFORMATION_CLASS.ProcessInformationClassMax">
-    <summary>
-      <para>The maximum value for this enumeration. This value may change in a future version.</para>
-    </summary>
+    <summary>The maximum value for this enumeration. This value may change in a future version.</summary>
   </member>
 </doc>

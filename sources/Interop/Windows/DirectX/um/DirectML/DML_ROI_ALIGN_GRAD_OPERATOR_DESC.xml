@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_ROI_ALIGN_GRAD_OPERATOR_DESC">
+    <summary>
+      <para>Computes backpropagation gradients for <see cref="ROI_ALIGN" /> and <see cref="ROI_ALIGN1" />.</para>
+      <para>Recall that <see cref="DML_ROI_ALIGN1_OPERATOR_DESC" /> crops and rescales subregions of an input tensor using either neareast-neighbor sampling or bilinear interpolation. Given an <code>InputGradientTensor</code> with the same sizes as the <i>output</i> of an equivalent <b>DML_OPERATOR_ROI_ALIGN1</b>, this operator produces an <code>OutputGradientTensor</code> with the same sizes as the <i>input</i> of <b>DML_OPERATOR_ROI_ALIGN1</b>.</para>
+      <para>As an example, consider a <b>DML_OPERATOR_ROI_ALIGN1</b> that performs a <i>nearest-neighbor</i> scaling of 1.5x in the width, and 0.5x in the height, for 4 non-overlapping crops of an input with dimensions <code>[1, 1, 4, 4]</code>:</para>
+      <code>ROITensor [[0, 0, 2, 2], [2, 0, 4, 2], [0, 2, 2, 4], [2, 2, 4, 4]] BatchIndicesTensor [0, 0, 0, 0] InputTensor [[[[1, 2, | 3, 4], RoiAlign1 [[[[ 1, 1, 2]]], [5, 6, | 7, 8], --&gt; [[[ 3, 3, 4]]], ------------------ [[[ 9, 9, 10]]], [9, 10, | 11, 12], [[[11, 11, 12]]]] [13, 14, | 15, 16]]]]</code>
+      <para>Notice how the 0th element of each region contributes to two elements in the output—the 1st element contributes to one element in the output, and the 2nd and 3rd elements contribute to no elements of the output.</para>
+      <para>The corresponding <b>DML_OPERATOR_ROI_ALIGN_GRAD</b> would perform the following:</para>
+      <code>InputGradientTensor OutputGradientTensor [[[[ 1, 2, 3]]], ROIAlignGrad [[[[ 3, 3, | 9, 6], [[[ 4, 5, 6]]], --&gt; [ 0, 0, | 0, 0], [[[ 7, 8, 9]]], ------------------ [[[10, 11, 12]]]] [15, 9, | 21, 12], [ 0, 0, | 0, 0]]]]</code>
+      <para>In summary, <b>DML_OPERATOR_ROI_ALIGN_GRAD</b> behaves similarly to a <see cref="DML_OPERATOR_RESAMPLE_GRAD" /> performed on each batch of the <code>InputGradientTensor</code> when regions don't overlap.</para>
+      <para>For <code>OutputROIGradientTensor</code>, the math is a little different, and can be summarized by the following pseudo code (assuming that <code>MinimumSamplesPerOutput == 1</code> and <code>MaximumSamplesPerOutput == 1</code>):</para>
+      <code>for each region of interest (ROI): for each inputGradientCoordinate: for each inputCoordinate that contributed to this inputGradient element: topYIndex = floor(inputCoordinate.y) bottomYIndex = ceil(inputCoordinate.y) leftXIndex = floor(inputCoordinate.x) rightXIndex = ceil(inputCoordinate.x) yLerp = inputCoordinate.y - topYIndex xLerp = inputCoordinate.x - leftXIndex topLeft = InputTensor[topYIndex][leftXIndex] topRight = InputTensor[topYIndex][rightXIndex] bottomLeft = InputTensor[bottomYIndex][leftXIndex] bottomRight = InputTensor[bottomYIndex][rightXIndex] inputGradientWeight = InputGradientTensor[inputGradientCoordinate.y][inputGradientCoordinate.x] imageGradY = (1 - xLerp) * (bottomLeft - topLeft) + xLerp * (bottomRight - topRight) imageGradX = (1 - yLerp) * (topRight - topLeft) + yLerp * (bottomRight - bottomLeft) imageGradY *= inputGradientWeight imageGradX *= inputGradientWeight OutputROIGradientTensor[roiIndex][0] += imageGradX * (inputWidth - inputGradientCoordinate.x) OutputROIGradientTensor[roiIndex][1] += imageGradY * (inputHeight - inputGradientCoordinate.y) OutputROIGradientTensor[roiIndex][2] += imageGradX * inputGradientCoordinate.x OutputROIGradientTensor[roiIndex][3] += imageGradY * inputGradientCoordinate.y</code>
+      <para>
+        <code>OutputGradientTensor</code> or <code>OutputROIGradientTensor</code> can be omitted if only one is needed; but at least one must be supplied.</para>
+    </summary>
+  </member>
+  <member name="DML_ROI_ALIGN_GRAD_OPERATOR_DESC.InputTensor">
+    <summary>A tensor containing the input data from the forward pass with dimensions <code>{ BatchCount, ChannelCount, InputHeight, InputWidth }</code>. This tensor <i>must</i> be supplied when <code>OutputROIGradientTensor</code> is supplied, or when <code>ReductionFunction == DML_REDUCE_FUNCTION_MAX</code>. This is the same tensor that would be supplied to <code>InputTensor</code> for <b>DML_OPERATOR_ROI_ALIGN</b> or <b>DML_OPERATOR_ROI_ALIGN1</b>.</summary>
+  </member>
+  <member name="DML_ROI_ALIGN_GRAD_OPERATOR_DESC.InputGradientTensor"></member>
+  <member name="DML_ROI_ALIGN_GRAD_OPERATOR_DESC.ROITensor">
+    <summary>A tensor containing the regions of interest (ROI) data—a series of bounding boxes in floating point coordinates that point into the X and Y dimensions of the input tensor. The allowed dimensions of <code>ROITensor</code> are <code>{ NumROIs, 4 }</code>, <code>{ 1, NumROIs, 4 }</code>, or <code>{ 1, 1, NumROIs, 4 }</code>. For each ROI, the values will be the coordinates of its top-left and bottom-right corners in the order <code>[x1, y1, x2, y2]</code>. Regions can be empty, meaning that all output pixels come from the single input coordinate, and regions can be inverted (for example, x2 less than x1), meaning that the output receives a mirrored/flipped version of the input. These coordinates are first scaled by <code>SpatialScaleX</code> and <code>SpatialScaleY</code>, but if they are both 1.0 then the region rectangles simply correspond directly to the input tensor coordinates. This is the same tensor that would be supplied to <code>ROITensor</code> for <b>DML_OPERATOR_ROI_ALIGN</b> or <b>DML_OPERATOR_ROI_ALIGN1</b>.</summary>
+  </member>
+  <member name="DML_ROI_ALIGN_GRAD_OPERATOR_DESC.BatchIndicesTensor">
+    <summary>A tensor containing the batch indices to extract the ROIs from. The allowed dimensions of <code>BatchIndicesTensor</code> are <code>{ NumROIs }</code>, <code>{ 1, NumROIs }</code>, <code>{ 1, 1, NumROIs }</code>, or <code>{ 1, 1, 1, NumROIs }</code>. Each value is the index of a batch from <code>InputTensor</code>. The behavior is undefined if the values are not in the range <code>[0, BatchCount)</code>. This is the same tensor that would be supplied to <code>BatchIndicesTensor</code> for <b>DML_OPERATOR_ROI_ALIGN</b> or <b>DML_OPERATOR_ROI_ALIGN1</b>.</summary>
+  </member>
+  <member name="DML_ROI_ALIGN_GRAD_OPERATOR_DESC.OutputGradientTensor">
+    <summary>An output tensor containing the backpropagated gradients with respect to <code>InputTensor</code>. Typically this tensor would have the same sizes as the <i>input</i> of the corresponding <b>DML_OPERATOR_ROI_ALIGN1</b> in the forward pass. If <code>OutputROIGradientTensor</code> is not supplied, then <code>OutputGradientTensor</code><i>must</i> be supplied.</summary>
+  </member>
+  <member name="DML_ROI_ALIGN_GRAD_OPERATOR_DESC.OutputROIGradientTensor">
+    <summary>An output tensor containing the backpropagated gradients with respect to <code>ROITensor</code>. This tensor needs to have the same sizes as <code>ROITensor</code>. If <code>OutputGradientTensor</code> is not supplied, then <code>OutputROIGradientTensor</code><i>must</i> be supplied.</summary>
+  </member>
+  <member name="DML_ROI_ALIGN_GRAD_OPERATOR_DESC.ReductionFunction">
+    <summary>See <see cref="DML_ROI_ALIGN1_OPERATOR_DESC.ReductionFunction" />.</summary>
+  </member>
+  <member name="DML_ROI_ALIGN_GRAD_OPERATOR_DESC.InterpolationMode">
+    <summary>See <see cref="DML_ROI_ALIGN1_OPERATOR_DESC.InterpolationMode" />.</summary>
+  </member>
+  <member name="DML_ROI_ALIGN_GRAD_OPERATOR_DESC.SpatialScaleX">
+    <summary>See <see cref="DML_ROI_ALIGN1_OPERATOR_DESC.SpatialScaleX" />.</summary>
+  </member>
+  <member name="DML_ROI_ALIGN_GRAD_OPERATOR_DESC.SpatialScaleY">
+    <summary>See <see cref="DML_ROI_ALIGN1_OPERATOR_DESC.SpatialScaleY" />.</summary>
+  </member>
+  <member name="DML_ROI_ALIGN_GRAD_OPERATOR_DESC.InputPixelOffset">
+    <summary>See <see cref="DML_ROI_ALIGN1_OPERATOR_DESC.InputPixelOffset" />.</summary>
+  </member>
+  <member name="DML_ROI_ALIGN_GRAD_OPERATOR_DESC.OutputPixelOffset">
+    <summary>See <see cref="DML_ROI_ALIGN1_OPERATOR_DESC.OutputPixelOffset" />.</summary>
+  </member>
+  <member name="DML_ROI_ALIGN_GRAD_OPERATOR_DESC.MinimumSamplesPerOutput">
+    <summary>See <see cref="DML_ROI_ALIGN1_OPERATOR_DESC.MinimumSamplesPerOutput" />.</summary>
+  </member>
+  <member name="DML_ROI_ALIGN_GRAD_OPERATOR_DESC.MaximumSamplesPerOutput">
+    <summary>See <see cref="DML_ROI_ALIGN1_OPERATOR_DESC.MaximumSamplesPerOutput" />.</summary>
+  </member>
+  <member name="DML_ROI_ALIGN_GRAD_OPERATOR_DESC.AlignRegionsToCorners">
+    <summary>See <see cref="DML_ROI_ALIGN1_OPERATOR_DESC.AlignRegionsToCorners" />.</summary>
+  </member>
+</doc>

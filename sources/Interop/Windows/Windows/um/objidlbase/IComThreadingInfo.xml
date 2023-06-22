@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IComThreadingInfo.GetCurrentApartmentType">
-    <summary>
-      <para>Retrieves the type of apartment in which the caller is executing.</para>
-    </summary>
-    <param name="pAptType">
-      <para>A points to an <see cref="APTTYPE" /> enumeration value that characterizes the caller's apartment.</para>
-    </param>
+    <summary>Retrieves the type of apartment in which the caller is executing.</summary>
+    <param name="pAptType">A points to an <see cref="APTTYPE" /> enumeration value that characterizes the caller's apartment.</param>
     <returns>
       <para>This method can return the following values.</para>
       <list type="table">
@@ -16,37 +12,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>The caller is not executing in an apartment.</para>
-          </description>
-        </item>
+          <description>The caller is not executing in an apartment.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IComThreadingInfo" />
   </member>
   <member name="IComThreadingInfo.GetCurrentLogicalThreadId">
-    <summary>
-      <para>Retrieves the GUID of the thread in which the caller is executing.</para>
-    </summary>
-    <param name="pguidLogicalThreadId">
-      <para>A pointer to the GUID of the caller's thread.</para>
-    </param>
+    <summary>Retrieves the GUID of the thread in which the caller is executing.</summary>
+    <param name="pguidLogicalThreadId">A pointer to the GUID of the caller's thread.</param>
     <returns>
       <para>This method can return the following values.</para>
       <list type="table">
@@ -54,37 +49,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>The caller is not executing in an apartment.</para>
-          </description>
-        </item>
+          <description>The caller is not executing in an apartment.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IComThreadingInfo" />
   </member>
   <member name="IComThreadingInfo.GetCurrentThreadType">
-    <summary>
-      <para>Retrieves the type of thread in which the caller is executing.</para>
-    </summary>
-    <param name="pThreadType">
-      <para>A pointer to a <see cref="THDTYPE" /> enumeration value that characterizes the caller's thread.</para>
-    </param>
+    <summary>Retrieves the type of thread in which the caller is executing.</summary>
+    <param name="pThreadType">A pointer to a <see cref="THDTYPE" /> enumeration value that characterizes the caller's thread.</param>
     <returns>
       <para>This method can return the following values.</para>
       <list type="table">
@@ -92,37 +86,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>The caller is not executing in an apartment.</para>
-          </description>
-        </item>
+          <description>The caller is not executing in an apartment.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IComThreadingInfo" />
   </member>
   <member name="IComThreadingInfo.SetCurrentLogicalThreadId">
-    <summary>
-      <para>Sets the GUID of the thread in which the caller is executing.</para>
-    </summary>
-    <param name="rguid">
-      <para>A reference to a GUID for the caller's thread.</para>
-    </param>
+    <summary>Sets the GUID of the thread in which the caller is executing.</summary>
+    <param name="rguid">A reference to a GUID for the caller's thread.</param>
     <returns>
       <para>This method can return the following values.</para>
       <list type="table">
@@ -130,36 +123,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>The caller is not executing in an apartment.</para>
-          </description>
-        </item>
+          <description>The caller is not executing in an apartment.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IComThreadingInfo" />
   </member>
   <member name="IComThreadingInfo">
-    <summary>
-      <para>Enables you to obtain the following information about the apartment and thread that the caller is executing in: apartment type, thread type, and thread GUID. It also allows you to specify a thread GUID.</para>
-    </summary>
-    <remarks>
-      <para>An instance of this interface for the current context can be obtained using <see cref="CoGetObjectContext" />.</para>
-    </remarks>
+    <summary>Enables you to obtain the following information about the apartment and thread that the caller is executing in: apartment type, thread type, and thread GUID. It also allows you to specify a thread GUID.</summary>
   </member>
 </doc>

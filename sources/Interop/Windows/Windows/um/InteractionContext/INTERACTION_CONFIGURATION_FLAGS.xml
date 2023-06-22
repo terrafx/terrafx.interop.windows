@@ -3,93 +3,62 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="INTERACTION_CONFIGURATION_FLAGS">
-    <summary>
-      <para>Specifies the interactions to enable when configuring an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ns-interactioncontext-interaction_context_configuration">INTERACTION_CONTEXT_CONFIGURATION</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/enumerations">Interaction Context Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-setinteractionconfigurationinteractioncontext">SetInteractionConfigurationInteractionContext</seealso>
+    <summary>Specifies the interactions to enable when configuring an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_NONE">
-    <summary>
-      <para>No interactions enabled.</para>
-    </summary>
+    <summary>No interactions enabled.</summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_MANIPULATION">
-    <summary>
-      <para>All manipulations enabled (move, rotate, and scale).</para>
-    </summary>
+    <summary>All manipulations enabled (move, rotate, and scale).</summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_MANIPULATION_TRANSLATION_X">
-    <summary>
-      <para>Translate (move) along the x-axis.</para>
-    </summary>
+    <summary>Translate (move) along the x-axis.</summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_MANIPULATION_TRANSLATION_Y">
-    <summary>
-      <para>Translate (move) along the y-axis.</para>
-    </summary>
+    <summary>Translate (move) along the y-axis.</summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_MANIPULATION_ROTATION">
-    <summary>
-      <para>Rotation.</para>
-    </summary>
+    <summary>Rotation.</summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_MANIPULATION_SCALING">
-    <summary>
-      <para>Scaling.</para>
-    </summary>
+    <summary>Scaling.</summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_MANIPULATION_TRANSLATION_INERTIA">
-    <summary>
-      <para>Translation inertia (in direction of move) after contact lifted.</para>
-    </summary>
+    <summary>Translation inertia (in direction of move) after contact lifted.</summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_MANIPULATION_ROTATION_INERTIA">
-    <summary>
-      <para>Rotation inertia after contact lifted.</para>
-    </summary>
+    <summary>Rotation inertia after contact lifted.</summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_MANIPULATION_SCALING_INERTIA">
-    <summary>
-      <para>Scaling inertia after contact lifted.</para>
-    </summary>
+    <summary>Scaling inertia after contact lifted.</summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_MANIPULATION_RAILS_X">
     <summary>
       <para>Interactions are constrained along the x-axis.</para>
-      <para>Rails indicate that slight motions off the primary axis of motion are ignored. This makes for a tighter experience for users; when they attempt to pan along a single axis, they are constrained  to the axis.</para>
+      <para>Rails indicate that slight motions off the primary axis of motion are ignored. This makes for a tighter experience for users; when they attempt to pan along a single axis, they are constrained to the axis.</para>
     </summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_MANIPULATION_RAILS_Y">
     <summary>
       <para>Interactions are constrained along the y-axis.</para>
-      <para>Rails indicate that slight motions off the primary axis of motion are ignored. This makes for a tighter experience for users; when they attempt to pan along a single axis, they are constrained  to the axis.</para>
+      <para>Rails indicate that slight motions off the primary axis of motion are ignored. This makes for a tighter experience for users; when they attempt to pan along a single axis, they are constrained to the axis.</para>
     </summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_MANIPULATION_EXACT">
     <summary>
       <para>Report exact distance from initial contact to end of the interaction.</para>
-      <para>By default, a small distance threshold is subtracted from the first manipulation delta reported by the system. This distance threshold is  intended to account for slight movements of the contact when processing a tap gesture. If this flag is set, the distance threshold is not subtracted from the first delta.</para>
+      <para>By default, a small distance threshold is subtracted from the first manipulation delta reported by the system. This distance threshold is intended to account for slight movements of the contact when processing a tap gesture. If this flag is set, the distance threshold is not subtracted from the first delta.</para>
     </summary>
   </member>
-  <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_MANIPULATION_MULTIPLE_FINGER_PANNING">
-    <summary></summary>
-  </member>
+  <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_MANIPULATION_MULTIPLE_FINGER_PANNING"></member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_CROSS_SLIDE">
-    <summary>
-      <para>All cross-slide interactions enabled.</para>
-    </summary>
+    <summary>All cross-slide interactions enabled.</summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_CROSS_SLIDE_HORIZONTAL">
-    <summary>
-      <para>Cross-slide along the x-axis.</para>
-    </summary>
+    <summary>Cross-slide along the x-axis.</summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_CROSS_SLIDE_SELECT">
-    <summary>
-      <para>Selection using cross-slide.</para>
-    </summary>
+    <summary>Selection using cross-slide.</summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_CROSS_SLIDE_SPEED_BUMP">
     <summary>
@@ -98,49 +67,33 @@
     </summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_CROSS_SLIDE_REARRANGE">
-    <summary>
-      <para>Rearrange using cross-slide.</para>
-    </summary>
+    <summary>Rearrange using cross-slide.</summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_CROSS_SLIDE_EXACT">
     <summary>
       <para>Report exact distance from initial contact to end of the interaction.</para>
-      <para>By default, a small distance threshold is subtracted from the first cross-slide delta reported by the system. This distance threshold is  intended to account for slight movements of the contact when processing a tap gesture. If this flag is set, the distance threshold is not subtracted from the first delta.</para>
+      <para>By default, a small distance threshold is subtracted from the first cross-slide delta reported by the system. This distance threshold is intended to account for slight movements of the contact when processing a tap gesture. If this flag is set, the distance threshold is not subtracted from the first delta.</para>
     </summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_TAP">
-    <summary>
-      <para>Tap.</para>
-    </summary>
+    <summary>Tap.</summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_TAP_DOUBLE">
-    <summary>
-      <para>Double tap.</para>
-    </summary>
+    <summary>Double tap.</summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_SECONDARY_TAP">
-    <summary>
-      <para>Secondary tap.</para>
-    </summary>
+    <summary>Secondary tap.</summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_HOLD">
-    <summary>
-      <para>Hold.</para>
-    </summary>
+    <summary>Hold.</summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_HOLD_MOUSE">
-    <summary>
-      <para>Hold with mouse.</para>
-    </summary>
+    <summary>Hold with mouse.</summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_DRAG">
-    <summary>
-      <para>Drag with mouse.</para>
-    </summary>
+    <summary>Drag with mouse.</summary>
   </member>
   <member name="INTERACTION_CONFIGURATION_FLAGS.INTERACTION_CONFIGURATION_FLAG_MAX">
-    <summary>
-      <para>Maximum number of interactions exceeded.</para>
-    </summary>
+    <summary>Maximum number of interactions exceeded.</summary>
   </member>
 </doc>

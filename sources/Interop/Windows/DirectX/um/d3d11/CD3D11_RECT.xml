@@ -3,40 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CD3D11_RECT.CD3D11_RECT">
-    <summary>
-      <para>Instantiates a new instance of a <see cref="CD3D11_RECT" /> structure that is initialized with a <b>D3D11_RECT</b> structure.</para>
-    </summary>
-    <param name="o">
-      <para>Address of the <b>D3D11_RECT</b> structure that initializes the <b>CD3D11_RECT</b> structure.</para>
-    </param>
-    <seealso cref="CD3D11_RECT" />
+    <summary>Instantiates a new instance of a <see cref="CD3D11_RECT" /> structure that is initialized with a <b>D3D11_RECT</b> structure.</summary>
+    <param name="o">Address of the <b>D3D11_RECT</b> structure that initializes the <b>CD3D11_RECT</b> structure.</param>
   </member>
   <member name="CD3D11_RECT.CD3D11_RECT">
-    <summary>
-      <para>Instantiates a new instance of a <see cref="CD3D11_RECT" /> structure that is initialized with the dimensions of a rectangle.</para>
-    </summary>
-    <param name="Left">
-      <para>Type: <b>LONG</b></para>
-      <para>The x-coordinate of the upper-left corner of the rectangle.</para>
-    </param>
-    <param name="Top">
-      <para>Type: <b>LONG</b></para>
-      <para>The y-coordinate of the upper-left corner of the rectangle.</para>
-    </param>
-    <param name="Right">
-      <para>Type: <b>LONG</b></para>
-      <para>The x-coordinate of the lower-right corner of the rectangle.</para>
-    </param>
-    <param name="Bottom">
-      <para>Type: <b>LONG</b></para>
-      <para>The y-coordinate of the lower-right corner of the rectangle.</para>
-    </param>
-    <seealso cref="CD3D11_RECT" />
+    <summary>Instantiates a new instance of a <see cref="CD3D11_RECT" /> structure that is initialized with the dimensions of a rectangle.</summary>
+    <param name="Left">The x-coordinate of the upper-left corner of the rectangle.</param>
+    <param name="Top">The y-coordinate of the upper-left corner of the rectangle.</param>
+    <param name="Right">The x-coordinate of the lower-right corner of the rectangle.</param>
+    <param name="Bottom">The y-coordinate of the lower-right corner of the rectangle.</param>
   </member>
   <member name="CD3D11_RECT.CD3D11_RECT">
-    <summary>
-      <para>Instantiates a new instance of an uninitialized <see cref="CD3D11_RECT" /> structure.</para>
-    </summary>
-    <seealso cref="CD3D11_RECT" />
+    <summary>Instantiates a new instance of an uninitialized <see cref="CD3D11_RECT" /> structure.</summary>
+  </member>
+  <member name="CD3D11_RECT">
+    <summary>Represents a rectangle and provides convenience methods for creating rectangles.</summary>
   </member>
 </doc>

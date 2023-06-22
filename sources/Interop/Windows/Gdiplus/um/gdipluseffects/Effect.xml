@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Effect.Effect">
+    <summary>Creates an <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-effect">Effect</a> object.</summary>
+  </member>
+  <member name="Effect.GetAuxData">
+    <summary>The <b>Effect.GetAuxData</b> gets a pointer to a set of lookup tables created by a previous call to the <see cref="Bitmap.ApplyEffect" /> method.</summary>
+    <returns>This method returns a pointer to a set of lookup tables created by a previous call to <see cref="Bitmap.ApplyEffect" />. If no lookup tables are available, the return value is <b>NULL</b>.</returns>
+  </member>
+  <member name="Effect.GetAuxDataSize">
+    <summary>The <b>Effect.GetAuxDataSize</b> method gets the size, in bytes, of the auxiliary data created by a previous call to the <see cref="Bitmap.ApplyEffect" /> method.</summary>
+    <returns>This method returns the size, in bytes, of the auxiliary data.</returns>
+  </member>
+  <member name="Effect.GetParameterSize">
+    <summary>The <b>Effect.GetParameterSize</b> method gets the total size, in bytes, of the parameters currently set for this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-effect">Effect</a>. The <b>Effect.GetParameterSize</b> method is usually called on an object that is an instance of a descendant of the <b>Effect</b> class.</summary>
+    <param name="size">Pointer to a UINT that receives the total size of the parameters.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Effect.UseAuxData">
+    <summary>The <b>Effect.UseAuxData</b> method sets or clears a flag that specifies whether the <see cref="Bitmap.ApplyEffect" /> method should return a pointer to the auxiliary data that it creates.</summary>
+    <param name="useAuxDataFlag">Set to <b>TRUE</b> to specify that <see cref="ApplyEffect" /> should return a pointer to its auxiliary data; <b>FALSE</b> otherwise.</param>
+  </member>
+</doc>

@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_KEYGEN_REQUEST_INFO">
-    <summary>
-      <para>The <b>CERT_KEYGEN_REQUEST_INFO</b> structure contains information stored in the Netscape key generation request. The subject and subject <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">public key BLOBs</a> are encoded.</para>
-    </summary>
-    <seealso cref="CERT_REQUEST_INFO" />
+    <summary>The <b>CERT_KEYGEN_REQUEST_INFO</b> structure contains information stored in the Netscape key generation request. The subject and subject <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">public key BLOBs</a> are encoded.</summary>
   </member>
   <member name="CERT_KEYGEN_REQUEST_INFO.dwVersion">
-    <summary>
-      <para>The version number of the certificate. <b>CERT_KEYGEN_REQUEST_V1</b> (0) is the only defined version number.</para>
-    </summary>
+    <summary>The version number of the certificate. <b>CERT_KEYGEN_REQUEST_V1</b> (0) is the only defined version number.</summary>
   </member>
   <member name="CERT_KEYGEN_REQUEST_INFO.SubjectPublicKeyInfo">
-    <summary>
-      <para>A <see cref="CERT_PUBLIC_KEY_INFO" /> structure that contains the encoded <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">public key</a> and <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">public key algorithm</a>.</para>
-    </summary>
+    <summary>A <see cref="CERT_PUBLIC_KEY_INFO" /> structure that contains the encoded <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">public key</a> and <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">public key algorithm</a>.</summary>
   </member>
   <member name="CERT_KEYGEN_REQUEST_INFO.pwszChallengeString">
-    <summary>
-      <para>A random printable string. This string is used by the server to ensure that the key that it is certifying matches the client on the page.</para>
-    </summary>
+    <summary>A random printable string. This string is used by the server to ensure that the key that it is certifying matches the client on the page.</summary>
   </member>
 </doc>

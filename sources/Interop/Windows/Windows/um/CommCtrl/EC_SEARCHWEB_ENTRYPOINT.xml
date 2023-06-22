@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EC_SEARCHWEB_ENTRYPOINT">
+    <summary>Defines constants that indicate the entry point of a web search.</summary>
+  </member>
+  <member name="EC_SEARCHWEB_ENTRYPOINT.EC_SEARCHWEB_ENTRYPOINT_EXTERNAL">
+    <summary>Entry point is external.</summary>
+  </member>
+  <member name="EC_SEARCHWEB_ENTRYPOINT.EC_SEARCHWEB_ENTRYPOINT_CONTEXTMENU">
+    <summary>Entry point is a context menu.</summary>
+  </member>
+</doc>

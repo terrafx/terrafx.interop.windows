@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MANIPULATION_VELOCITY">
-    <summary>
-      <para>Defines the velocity data of a manipulation.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/structures">Interaction Context Structures</seealso>
+    <summary>Defines the velocity data of a manipulation.</summary>
   </member>
   <member name="MANIPULATION_VELOCITY.velocityX">
-    <summary>
-      <para>The velocity along the x-axis.</para>
-    </summary>
+    <summary>The velocity along the x-axis.</summary>
   </member>
   <member name="MANIPULATION_VELOCITY.velocityY">
-    <summary>
-      <para>The velocity along the y-axis.</para>
-    </summary>
+    <summary>The velocity along the y-axis.</summary>
   </member>
   <member name="MANIPULATION_VELOCITY.velocityExpansion">
-    <summary>
-      <para>The velocity expansion.</para>
-    </summary>
+    <summary>The velocity expansion.</summary>
   </member>
   <member name="MANIPULATION_VELOCITY.velocityAngular">
-    <summary>
-      <para>The angular velocity.</para>
-    </summary>
+    <summary>The angular velocity.</summary>
   </member>
 </doc>

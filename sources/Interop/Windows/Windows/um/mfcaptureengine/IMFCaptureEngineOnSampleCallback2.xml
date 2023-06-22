@@ -3,24 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFCaptureEngineOnSampleCallback2.OnSynchronizedEvent">
-    <summary>
-      <para>Called by the capture sink when the format of the sample is changed.</para>
-    </summary>
-    <param name="pEvent">
-      <para>The new media type.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The return value is ignored.</para>
-    </remarks>
-    <seealso cref="IMFCaptureEngineOnSampleCallback2" />
+    <summary>Called by the capture sink when the format of the sample is changed.</summary>
+    <param name="pEvent">The new media type.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFCaptureEngineOnSampleCallback2">
-    <summary>
-      <para>Extensions for the <see cref="IMFCaptureEngineOnSampleCallback" /> callback interface that is used to receive data from the capture engine.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Extensions for the <see cref="IMFCaptureEngineOnSampleCallback" /> callback interface that is used to receive data from the capture engine.</summary>
   </member>
 </doc>

@@ -3,139 +3,52 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CItemIDFactory.CreateItemID">
-    <summary>
-      <para>Creates an ItemID from the supplied data.</para>
-    </summary>
-    <param name="pinner">
-      <para>A pointer to the client structure that should be copied.</para>
-    </param>
-    <param name="pps">
-      <para>A pointer to an <see cref="IPropertyStore" /> that will be seriallized into the ItemID.</para>
-    </param>
-    <param name="ppidl">
-      <para>When this method returns, contains a pointer to the ItemID containing the client data and <see cref="IPropertyStore" /> data.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The size of the user supplied data must equal sizeof(T). Do not use structs with variably allocated array/string members. The struct must also follow standard <see cref="SHITEMID" /> for persistence and portability.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/shidfact/nl-shidfact-citemidfactory">CItemIDFactory</seealso>
-    <seealso cref="IPropertyStore" />
-    <seealso cref="SHITEMID" />
+    <summary>Creates an ItemID from the supplied data.</summary>
+    <param name="pinner">A pointer to the client structure that should be copied.</param>
+    <param name="pps">A pointer to an <see cref="IPropertyStore" /> that will be seriallized into the ItemID.</param>
+    <param name="ppidl">When this method returns, contains a pointer to the ItemID containing the client data and <see cref="IPropertyStore" /> data.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="CItemIDFactory.GetDataFromIDList">
-    <summary>
-      <para>Gets a read only pointer to the client provided structure in the first ItemID in the IDList.</para>
-    </summary>
+    <summary>Gets a read only pointer to the client provided structure in the first ItemID in the IDList.</summary>
     <param name="pidl">
       <para>A PIDL containing the data.</para>
       <h4>- ppData [out]</h4>
       <para>When this method returns, contains the address of a read only pointer to a client provided structure.</para>
     </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns <b>E_INVALIDARG</b>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/shidfact/nl-shidfact-citemidfactory">CItemIDFactory</seealso>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns <b>E_INVALIDARG</b>.</returns>
   </member>
   <member name="CItemIDFactory.GetDataFromIDList">
-    <summary>
-      <para>Gets a read only pointer to the client provided structure in the first ItemID in the IDList.</para>
-    </summary>
-    <param name="pidl">
-      <para>A PIDL containing the data.</para>
-    </param>
-    <param name="ppData">
-      <para>When this method returns, contains the address of a read only pointer to a client provided structure.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns <b>E_INVALIDARG</b>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/shidfact/nl-shidfact-citemidfactory">CItemIDFactory</seealso>
+    <summary>Gets a read only pointer to the client provided structure in the first ItemID in the IDList.</summary>
+    <param name="pidl">A PIDL containing the data.</param>
+    <param name="ppData">When this method returns, contains the address of a read only pointer to a client provided structure.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns <b>E_INVALIDARG</b>.</returns>
   </member>
   <member name="CItemIDFactory.GetPropertyFromIDList">
-    <summary>
-      <para>Gets a property from the <see cref="IPropertyStore" /> within the IDList as a variant, using the key.</para>
-    </summary>
-    <param name="pidl">
-      <para>A PIDL identifying the <see cref="IPropertyStore" />.</para>
-    </param>
-    <param name="pszName">
-      <para>The key for the selected property.</para>
-    </param>
-    <param name="pv">
-      <para>When this method returns, contains a pointer to the property. If <i>rkey</i> is not found, <i>pvar</i> will be <b>VT_EMPTY</b>.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is useful when using <see cref="IShellFolder2.GetDetailsEx" />, as is returns a variant rather than a <b>PROPVARIANT</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/shidfact/nl-shidfact-citemidfactory">CItemIDFactory</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh289343(v=vs.85)">GetPropertyFromIDList</seealso>
-    <seealso cref="IPropertyStore" />
-    <seealso cref="IShellFolder2.GetDetailsEx" />
+    <summary>Gets a property from the <see cref="IPropertyStore" /> within the IDList as a variant, using the key.</summary>
+    <param name="pidl">A PIDL identifying the <see cref="IPropertyStore" />.</param>
+    <param name="pszName">The key for the selected property.</param>
+    <param name="pv">When this method returns, contains a pointer to the property. If <i>rkey</i> is not found, <i>pvar</i> will be <b>VT_EMPTY</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="CItemIDFactory.GetPropertyFromIDList">
-    <summary>
-      <para>Gets a property from the <see cref="IPropertyStore" /> within the IDList as a variant, using the key.</para>
-    </summary>
-    <param name="pidl">
-      <para>A PIDL identifying the <see cref="IPropertyStore" />.</para>
-    </param>
-    <param name="pszName">
-      <para>The key for the selected property.</para>
-    </param>
-    <param name="pvar">
-      <para>When this method returns, contains a pointer to the property. If <i>rkey</i> is not found, <i>pvar</i> will be <b>VT_EMPTY</b>.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is useful when using <see cref="IShellFolder2.GetDetailsEx" />, as is returns a variant rather than a <b>PROPVARIANT</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/shidfact/nl-shidfact-citemidfactory">CItemIDFactory</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh289343(v=vs.85)">GetPropertyFromIDList</seealso>
-    <seealso cref="IPropertyStore" />
-    <seealso cref="IShellFolder2.GetDetailsEx" />
+    <summary>Gets a property from the <see cref="IPropertyStore" /> within the IDList as a variant, using the key.</summary>
+    <param name="pidl">A PIDL identifying the <see cref="IPropertyStore" />.</param>
+    <param name="pszName">The key for the selected property.</param>
+    <param name="pvar">When this method returns, contains a pointer to the property. If <i>rkey</i> is not found, <i>pvar</i> will be <b>VT_EMPTY</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="CItemIDFactory.GetPropertyFromIDList">
-    <summary>
-      <para>Gets a property from the <see cref="IPropertyStore" /> within the IDList as a variant, using the key.</para>
-    </summary>
-    <param name="pidl">
-      <para>A PIDL identifying the <see cref="IPropertyStore" />.</para>
-    </param>
-    <param name="rkey">
-      <para>The key for the selected property.</para>
-    </param>
-    <param name="pv">
-      <para>When this method returns, contains a pointer to the property. If <i>rkey</i> is not found, <i>pvar</i> will be <b>VT_EMPTY</b>.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is useful when using <see cref="IShellFolder2.GetDetailsEx" />, as is returns a variant rather than a <b>PROPVARIANT</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/shidfact/nl-shidfact-citemidfactory">CItemIDFactory</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh289343(v=vs.85)">GetPropertyFromIDList</seealso>
-    <seealso cref="IPropertyStore" />
-    <seealso cref="IShellFolder2.GetDetailsEx" />
+    <summary>Gets a property from the <see cref="IPropertyStore" /> within the IDList as a variant, using the key.</summary>
+    <param name="pidl">A PIDL identifying the <see cref="IPropertyStore" />.</param>
+    <param name="rkey">The key for the selected property.</param>
+    <param name="pv">When this method returns, contains a pointer to the property. If <i>rkey</i> is not found, <i>pvar</i> will be <b>VT_EMPTY</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="CItemIDFactory.GetPropertyFromIDList">
-    <summary>
-      <para>Gets a property from the <see cref="IPropertyStore" /> within the IDList as a variant, using the key.</para>
-    </summary>
-    <param name="pidl">
-      <para>A PIDL identifying the <see cref="IPropertyStore" />.</para>
-    </param>
-    <param name="rkey">
-      <para>TBD</para>
-    </param>
+    <summary>Gets a property from the <see cref="IPropertyStore" /> within the IDList as a variant, using the key.</summary>
+    <param name="pidl">A PIDL identifying the <see cref="IPropertyStore" />.</param>
+    <param name="rkey">TBD</param>
     <param name="pvar">
       <para>TBD</para>
       <h4>- pszName [in]</h4>
@@ -143,71 +56,28 @@
       <h4>- pv [out]</h4>
       <para>When this method returns, contains a pointer to the property. If <i>rkey</i> is not found, <i>pvar</i> will be <b>VT_EMPTY</b>.</para>
     </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is useful when using <see cref="IShellFolder2.GetDetailsEx" />, as is returns a variant rather than a <b>PROPVARIANT</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/shidfact/nl-shidfact-citemidfactory">CItemIDFactory</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh289343(v=vs.85)">GetPropertyFromIDList</seealso>
-    <seealso cref="IPropertyStore" />
-    <seealso cref="IShellFolder2.GetDetailsEx" />
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="CItemIDFactory.GetPropertyStorage">
-    <summary>
-      <para>Gets  a read only pointer to the serialized property storage that is used for storing metadata.</para>
-    </summary>
-    <param name="pidl">
-      <para>A PIDL that contains the location of the property storage.</para>
-    </param>
-    <param name="pcb">
-      <para>When this method returns, contains the size, in bytes, of the storage.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns a read only pointer to the serialized property storage.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/shidfact/nl-shidfact-citemidfactory">CItemIDFactory</seealso>
+    <summary>Gets a read only pointer to the serialized property storage that is used for storing metadata.</summary>
+    <param name="pidl">A PIDL that contains the location of the property storage.</param>
+    <param name="pcb">When this method returns, contains the size, in bytes, of the storage.</param>
+    <returns>If this method succeeds, it returns a read only pointer to the serialized property storage.</returns>
   </member>
   <member name="CItemIDFactory.GetPropertyStorageFromIDList">
-    <summary>
-      <para>create an instance of the <see cref="IPropertyStore" /> based on the serialized property storage associated with the first ItemID.</para>
-    </summary>
-    <param name="pidl">
-      <para>A PIDL containing the serialized property storage.</para>
-    </param>
-    <param name="riid">
-      <para>A reference to the IID of the <see cref="IPropertyStore" /> that is obtained by using __uuidof(IPropertyStore).</para>
-    </param>
-    <param name="ppv">
-      <para>When this method returns, contains the address of a pointer to a new <see cref="IPropertyStore" />.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/shidfact/nl-shidfact-citemidfactory">CItemIDFactory</seealso>
-    <seealso cref="IPropertyStore" />
+    <summary>create an instance of the <see cref="IPropertyStore" /> based on the serialized property storage associated with the first ItemID.</summary>
+    <param name="pidl">A PIDL containing the serialized property storage.</param>
+    <param name="riid">A reference to the IID of the <see cref="IPropertyStore" /> that is obtained by using __uuidof(IPropertyStore).</param>
+    <param name="ppv">When this method returns, contains the address of a pointer to a new <see cref="IPropertyStore" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="CItemIDFactory.IsDelegateFolder">
-    <summary>
-      <para>Gets a Boolean value specifying whether the factory is a delegate folder.</para>
-    </summary>
-    <returns>
-      <para>Returns <b>TRUE</b> if this factory is a delegate folder, otherwise <b>FALSE</b>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/shidfact/nl-shidfact-citemidfactory">CItemIDFactory</seealso>
+    <summary>Gets a Boolean value specifying whether the factory is a delegate folder.</summary>
+    <returns>Returns <b>TRUE</b> if this factory is a delegate folder, otherwise <b>FALSE</b>.</returns>
   </member>
   <member name="CItemIDFactory.SetItemAlloc">
-    <summary>
-      <para>Provides the <a href="https://docs.microsoft.com//windows/desktop/api/shidfact/nl-shidfact-citemidfactory">CItemIDFactory</a> an <see cref="IMalloc" /> interface used to allocate and free item IDs.</para>
-    </summary>
-    <param name="pmalloc">
-      <para>A pointer to an <see cref="IMalloc" /> interface.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/shidfact/nl-shidfact-citemidfactory">CItemIDFactory</seealso>
-    <seealso cref="IDelegateFolder" />
+    <summary>Provides the <a href="https://docs.microsoft.com//windows/desktop/api/shidfact/nl-shidfact-citemidfactory">CItemIDFactory</a> an <see cref="IMalloc" /> interface used to allocate and free item IDs.</summary>
+    <param name="pmalloc">A pointer to an <see cref="IMalloc" /> interface.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
 </doc>

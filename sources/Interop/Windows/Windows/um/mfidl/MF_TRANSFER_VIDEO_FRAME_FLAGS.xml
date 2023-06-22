@@ -3,19 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_TRANSFER_VIDEO_FRAME_FLAGS">
-    <summary>
-      <para>Flags to use when transferring a video frame from sink.</para>
-    </summary>
+    <summary>Flags to use when transferring a video frame from sink.</summary>
   </member>
   <member name="MF_TRANSFER_VIDEO_FRAME_FLAGS.MF_TRANSFER_VIDEO_FRAME_DEFAULT">
-    <summary>
-      <para>Use the default transfer behavior.</para>
-    </summary>
+    <summary>Use the default transfer behavior.</summary>
   </member>
   <member name="MF_TRANSFER_VIDEO_FRAME_FLAGS.MF_TRANSFER_VIDEO_FRAME_STRETCH">
-    <summary>
-      <para>Stretch the video frame.</para>
-    </summary>
+    <summary>Stretch the video frame.</summary>
   </member>
   <member name="MF_TRANSFER_VIDEO_FRAME_FLAGS.MF_TRANSFER_VIDEO_FRAME_IGNORE_PAR">
     <summary>
@@ -25,9 +19,7 @@
             <blockquote>
               <blockquote>
                 <blockquote>
-                  <blockquote>
-                    <para>master</para>
-                  </blockquote>
+                  <blockquote>master</blockquote>
                 </blockquote>
               </blockquote>
             </blockquote>

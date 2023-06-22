@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_CAMERA_CONTROL_RANGE_INFO">
+    <summary>Represents the accepted range, step value, and default value for a camera control.</summary>
+  </member>
+  <member name="MF_CAMERA_CONTROL_RANGE_INFO.minValue">
+    <summary>The minimum value supported by the control.</summary>
+  </member>
+  <member name="MF_CAMERA_CONTROL_RANGE_INFO.maxValue">
+    <summary>The maximum value supported by the control.</summary>
+  </member>
+  <member name="MF_CAMERA_CONTROL_RANGE_INFO.stepValue">
+    <summary>The incremental step value supported by the control.</summary>
+  </member>
+  <member name="MF_CAMERA_CONTROL_RANGE_INFO.defaultValue">
+    <summary>The default value for the control.</summary>
+  </member>
+</doc>

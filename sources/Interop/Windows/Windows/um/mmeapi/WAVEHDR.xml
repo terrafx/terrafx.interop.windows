@@ -3,102 +3,98 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WAVEHDR">
-    <summary>
-      <para>The <b>WAVEHDR</b> structure defines the header used to identify a waveform-audio buffer.</para>
-    </summary>
-    <remarks>
-      <para>Use the WHDR_BEGINLOOP and WHDR_ENDLOOP flags in the <b>dwFlags</b> member to specify the beginning and ending data blocks for looping. To loop on a single block, specify both flags for the same block. Use the <b>dwLoops</b> member in the <b>WAVEHDR</b> structure for the first block in the loop to specify the number of times to play the loop.</para>
-      <para>The <b>lpData</b>, <b>dwBufferLength</b>, and <b>dwFlags</b> members must be set before calling the <a href="https://docs.microsoft.com//previous-versions/dd743848(v=vs.85)">waveInPrepareHeader</a> or <a href="https://docs.microsoft.com//previous-versions/dd743868(v=vs.85)">waveOutPrepareHeader</a> function. (For either function, the <b>dwFlags</b> member must be set to zero.)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/waveform-audio">Waveform Audio</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/waveform-structures">Waveform Structures</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/dd743848(v=vs.85)">waveInPrepareHeader</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/dd743868(v=vs.85)">waveOutPrepareHeader</seealso>
+    <summary>The <b>WAVEHDR</b> structure defines the header used to identify a waveform-audio buffer.</summary>
   </member>
   <member name="WAVEHDR.lpData">
-    <summary>
-      <para>Pointer to the waveform buffer.</para>
-    </summary>
+    <summary>Pointer to the waveform buffer.</summary>
   </member>
   <member name="WAVEHDR.dwBufferLength">
-    <summary>
-      <para>Length, in bytes, of the buffer.</para>
-    </summary>
+    <summary>Length, in bytes, of the buffer.</summary>
   </member>
   <member name="WAVEHDR.dwBytesRecorded">
-    <summary>
-      <para>When the header is used in input, specifies how much data is in the buffer.</para>
-    </summary>
+    <summary>When the header is used in input, specifies how much data is in the buffer.</summary>
   </member>
   <member name="WAVEHDR.dwUser">
-    <summary>
-      <para>User data.</para>
-    </summary>
+    <summary>User data.</summary>
   </member>
   <member name="WAVEHDR.dwFlags">
     <summary>
-      <para>A bitwise <b>OR</b> of zero of more flags. The following flags are defined:</para>
+      <para>A bitwise <b>OR</b> of zero or more flags. The following flags are defined:</para>
       <list type="table">
         <listheader>
           <description>Name</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>WHDR_BEGINLOOP</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WHDR_BEGINLOOP</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>This buffer is the first buffer in a loop. This flag is used only with output buffers.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>This buffer is the first buffer in a loop. This flag is used only with output buffers.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WHDR_DONE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Set by the device driver to indicate that it is finished with the buffer and is returning it to the application.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WHDR_DONE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WHDR_ENDLOOP</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>This buffer is the last buffer in a loop. This flag is used only with output buffers.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Set by the device driver to indicate that it is finished with the buffer and is returning it to the application.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WHDR_INQUEUE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Set by Windows to indicate that the buffer is queued for playback.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WHDR_ENDLOOP</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WHDR_PREPARED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>This buffer is the last buffer in a loop. This flag is used only with output buffers.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WHDR_INQUEUE</b>
-          </description>
-          <description>
-            <para>Set by Windows to indicate that the buffer is queued for playback.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WHDR_PREPARED</b>
-          </description>
-          <description>
-            <para>Set by Windows to indicate that the buffer has been prepared with the <a href="https://docs.microsoft.com//previous-versions/dd743848(v=vs.85)">waveInPrepareHeader</a> or <a href="https://docs.microsoft.com//previous-versions/dd743868(v=vs.85)">waveOutPrepareHeader</a> function.</para>
-          </description>
-        </item>
+          <description>Set by Windows to indicate that the buffer has been prepared with the <a href="https://docs.microsoft.com//previous-versions/dd743848(v=vs.85)">waveInPrepareHeader</a> or <a href="https://docs.microsoft.com//previous-versions/dd743868(v=vs.85)">waveOutPrepareHeader</a> function.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="WAVEHDR.dwLoops">
-    <summary>
-      <para>Number of times to play the loop. This member is used only with output buffers.</para>
-    </summary>
+    <summary>Number of times to play the loop. This member is used only with output buffers.</summary>
   </member>
   <member name="WAVEHDR.lpNext">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="WAVEHDR.reserved">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
 </doc>

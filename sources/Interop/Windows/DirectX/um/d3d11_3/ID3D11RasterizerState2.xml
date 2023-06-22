@@ -3,25 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11RasterizerState2.GetDesc2">
-    <summary>
-      <para>Gets the description for rasterizer state that you used to create the rasterizer-state object.</para>
-    </summary>
-    <param name="pDesc">
-      <para>A pointer to a <see cref="D3D11_RASTERIZER_DESC2" /> structure that receives a description of the rasterizer state. This rasterizer state can specify forced sample count and conservative rasterization mode.</para>
-    </param>
-    <remarks>
-      <para>You use the description for rasterizer state in a call to the <see cref="ID3D11Device3.CreateRasterizerState2" /> method to create the rasterizer-state object.</para>
-    </remarks>
-    <seealso cref="ID3D11RasterizerState2" />
+    <summary>Gets the description for rasterizer state that you used to create the rasterizer-state object.</summary>
+    <param name="pDesc">A pointer to a <see cref="D3D11_RASTERIZER_DESC2" /> structure that receives a description of the rasterizer state. This rasterizer state can specify forced sample count and conservative rasterization mode.</param>
   </member>
   <member name="ID3D11RasterizerState2">
-    <summary>
-      <para>The rasterizer-state interface holds a description for rasterizer state that you can bind to the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage">rasterizer stage</a>. This rasterizer-state interface supports forced sample count and conservative rasterization mode.</para>
-    </summary>
-    <remarks>
-      <para>To create a rasterizer-state object, call <see cref="ID3D11Device3.CreateRasterizerState2" />. To bind the rasterizer-state object to the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage">rasterizer stage</a>, call <see cref="ID3D11DeviceContext.RSSetState" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-interfaces">Core Interfaces</seealso>
-    <seealso cref="ID3D11RasterizerState1" />
+    <summary>The rasterizer-state interface holds a description for rasterizer state that you can bind to the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage">rasterizer stage</a>. This rasterizer-state interface supports forced sample count and conservative rasterization mode.</summary>
   </member>
 </doc>

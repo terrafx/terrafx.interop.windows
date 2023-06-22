@@ -3,14 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WCM_CONNECTION_COST_DATA">
-    <summary>
-      <para>The <b>WCM_CONNECTION_COST_DATA</b> structure specifies information about a connection cost.</para>
-    </summary>
-    <seealso cref="WCM_CONNECTION_COST_SOURCE" />
+    <summary>The <b>WCM_CONNECTION_COST_DATA</b> structure specifies information about a connection cost.</summary>
   </member>
   <member name="WCM_CONNECTION_COST_DATA.ConnectionCost">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>Specifies the connection cost type.</para>
       <para>This must include one (and only one) of the following flags:</para>
       <list type="table">
@@ -18,139 +14,69 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>WCM_CONNECTION_COST_UNKNOWN</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>Connection cost information is not available.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>WCM_CONNECTION_COST_UNRESTRICTED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x1</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The connection is unlimited and has unrestricted usage constraints.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>WCM_CONNECTION_COST_FIXED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x2</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>Usage counts toward a fixed allotment of data which the user has already paid for (or agreed to pay for).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>WCM_CONNECTION_COST_VARIABLE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x4</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The connection cost is on a per-byte basis.</para>
-          </description>
-        </item>
-      </list>
-      <para>And may include any combination of the following flags:</para>
-      <list type="table">
         <listheader>
-          <description>Value</description>
-          <description>Meaning</description>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WCM_CONNECTION_COST_UNKNOWN</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Connection cost information is not available.</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>WCM_CONNECTION_COST_OVERDATALIMIT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x10000</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>WCM_CONNECTION_COST_UNRESTRICTED</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The connection has exceeded its data limit.</para>
-          </description>
-        </item>
-        <item>
+          <description>The connection is unlimited and has unrestricted usage constraints.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>WCM_CONNECTION_COST_CONGESTED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x20000</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>WCM_CONNECTION_COST_FIXED</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The connection is throttled due to high traffic.</para>
-          </description>
-        </item>
-        <item>
+          <description>Usage counts toward a fixed allotment of data which the user has already paid for (or agreed to pay for).</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>WCM_CONNECTION_COST_ROAMING</b>
-                </description>
-              </item>
-              <item>
-                <description>0x40000</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>WCM_CONNECTION_COST_VARIABLE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The connection is outside of the home network.</para>
-          </description>
-        </item>
-      </list>
-    </summary>
+          <description>The connection cost is on a per-byte basis.</description>
+        </listheader>
+      </list> <para>And may include any combination of the following flags:</para><list type="table"><listheader><description>Value</description><description>Meaning</description></listheader><listheader><description><list type="bullet"><listheader><term><b>WCM_CONNECTION_COST_OVERDATALIMIT</b></term></listheader><listheader><term>0x10000</term></listheader></list></description><description>The connection has exceeded its data limit.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>WCM_CONNECTION_COST_CONGESTED</b></term></listheader><listheader><term>0x20000</term></listheader></list></description><description>The connection is throttled due to high traffic.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>WCM_CONNECTION_COST_ROAMING</b></term></listheader><listheader><term>0x40000</term></listheader></list></description><description>The connection is outside of the home network.</description></listheader></list></summary>
   </member>
   <member name="WCM_CONNECTION_COST_DATA.CostSource">
-    <summary>
-      <para>Type: <b><see cref="WCM_CONNECTION_COST_SOURCE" /></b></para>
-      <para>Specifies the cost source.</para>
-    </summary>
+    <summary>Specifies the cost source.</summary>
   </member>
 </doc>

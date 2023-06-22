@@ -3,40 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_FONT_AXIS_TAG">
-    <summary>
-      <para>Defines constants that specify a four-character identifier for a font axis.</para>
-    </summary>
-    <remarks>
-      <para>You can use the <b>DWRITE_MAKE_FONT_AXIS_TAG(a,b,c,d)</b> macro to create your own custom identifiers. Here's an example.</para>
-      <code>DWRITE_MAKE_FONT_AXIS_TAG('c', 's', 't', 'm');
-</code>
-    </remarks>
-    <seealso cref="DWRITE_FONT_AXIS_RANGE structure" />
-    <seealso cref="DWRITE_FONT_AXIS_VALUE structure" />
+    <summary>Defines constants that specify a four-character identifier for a font axis.</summary>
   </member>
   <member name="DWRITE_FONT_AXIS_TAG.DWRITE_FONT_AXIS_TAG_WEIGHT">
-    <summary>
-      <para>Specifies the weight axis, using the identifier 'w','g','h','t'.</para>
-    </summary>
+    <summary>Specifies the weight axis, using the identifier 'w','g','h','t'.</summary>
   </member>
   <member name="DWRITE_FONT_AXIS_TAG.DWRITE_FONT_AXIS_TAG_WIDTH">
-    <summary>
-      <para>Specifies the width axis, using the identifier 'w','d','t','h'.</para>
-    </summary>
+    <summary>Specifies the width axis, using the identifier 'w','d','t','h'.</summary>
   </member>
   <member name="DWRITE_FONT_AXIS_TAG.DWRITE_FONT_AXIS_TAG_SLANT">
-    <summary>
-      <para>Specifies the slant axis, using the identifier 's','l','n','t'.</para>
-    </summary>
+    <summary>Specifies the slant axis, using the identifier 's','l','n','t'.</summary>
   </member>
   <member name="DWRITE_FONT_AXIS_TAG.DWRITE_FONT_AXIS_TAG_OPTICAL_SIZE">
-    <summary>
-      <para>Specifies the optical size axis, using the identifier 'o','p','s','z'.</para>
-    </summary>
+    <summary>Specifies the optical size axis, using the identifier 'o','p','s','z'.</summary>
   </member>
   <member name="DWRITE_FONT_AXIS_TAG.DWRITE_FONT_AXIS_TAG_ITALIC">
-    <summary>
-      <para>Specifies the italic axis, using the identifier 'i','t','a','l'.</para>
-    </summary>
+    <summary>Specifies the italic axis, using the identifier 'i','t','a','l'.</summary>
   </member>
 </doc>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="POLICY_PRIMARY_DOMAIN_INFO">
+    <summary>The <b>PolicyPrimaryDomainInformation</b> value and <b>POLICY_PRIMARY_DOMAIN_INFO</b> structure are obsolete. Use the <b>PolicyDnsDomainInformation</b> and<see cref="POLICY_DNS_DOMAIN_INFO" /> structure instead.</summary>
+  </member>
+  <member name="POLICY_PRIMARY_DOMAIN_INFO.Name">
+    <summary>An<see cref="LSA_UNICODE_STRING" /> structure that specifies the name of the primary domain.</summary>
+  </member>
+  <member name="POLICY_PRIMARY_DOMAIN_INFO.Sid">
+    <summary>Pointer to the SID of the primary domain.</summary>
+  </member>
+</doc>

@@ -3,28 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TsActiveSelEnd">
-    <summary>
-      <para>Elements of the <b>TsActiveSelEnd</b> enumeration specify which end of a text store selection is active.</para>
-    </summary>
-    <remarks>
-      <para>The active end of a selection is the end likely to respond to user actions. For example, in many applications, holding down the SHIFT key while using the arrow keys will change the selection. The end of the selection that moves is the active end of the selection.</para>
-      <para>This enumeration is used in the <see cref="TS_SELECTIONSTYLE" /> structure.</para>
-    </remarks>
-    <seealso cref="TS_SELECTIONSTYLE " />
+    <summary>Elements of the <b>TsActiveSelEnd</b> enumeration specify which end of a text store selection is active.</summary>
   </member>
   <member name="TsActiveSelEnd.TS_AE_NONE">
-    <summary>
-      <para>The selection has no active end. This is typical for all selections other than the default selection.</para>
-    </summary>
+    <summary>The selection has no active end. This is typical for all selections other than the default selection.</summary>
   </member>
   <member name="TsActiveSelEnd.TS_AE_START">
-    <summary>
-      <para>The active end of the selection is at the start of the range of text.</para>
-    </summary>
+    <summary>The active end of the selection is at the start of the range of text.</summary>
   </member>
   <member name="TsActiveSelEnd.TS_AE_END">
-    <summary>
-      <para>The active end of the selection is at the end of the range of text.</para>
-    </summary>
+    <summary>The active end of the selection is at the end of the range of text.</summary>
   </member>
 </doc>

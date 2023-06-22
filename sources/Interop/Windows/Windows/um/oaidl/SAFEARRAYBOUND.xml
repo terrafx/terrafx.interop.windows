@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SAFEARRAYBOUND">
-    <summary>
-      <para>Represents the bounds of one dimension of the array.</para>
-    </summary>
+    <summary>Represents the bounds of one dimension of the array.</summary>
   </member>
   <member name="SAFEARRAYBOUND.cElements">
-    <summary>
-      <para>The number of elements in the dimension.</para>
-    </summary>
+    <summary>The number of elements in the dimension.</summary>
   </member>
   <member name="SAFEARRAYBOUND.lLbound">
-    <summary>
-      <para>The lower bound of the dimension.</para>
-    </summary>
+    <summary>The lower bound of the dimension.</summary>
   </member>
 </doc>

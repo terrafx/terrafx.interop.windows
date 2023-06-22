@@ -3,8 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IObjContext">
-    <summary>
-      <para>Performs various operations on contexts.</para>
-    </summary>
+    <summary>Performs various operations on contexts.</summary>
   </member>
 </doc>

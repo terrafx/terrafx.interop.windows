@@ -3,25 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_WINDOW_STATE">
-    <summary>
-      <para>Describes whether a window is occluded.</para>
-    </summary>
-    <remarks>
-      <para>If the window was occluded the last time  <see cref="EndDraw" /> was called, the next time the render target calls <see cref="CheckWindowState" />, it  returns <b>D2D1_WINDOW_STATE_OCCLUDED</b> regardless of the current window state. If you want to use <b>CheckWindowState</b> to check the current window state, call <b>CheckWindowState</b> after every <b>EndDraw</b> call and ignore its return value. This will ensure that your next call to <b>CheckWindowState</b> state  returns the actual window state.</para>
-    </remarks>
-    <seealso cref="CheckWindowState" />
+    <summary>Describes whether a window is occluded.</summary>
   </member>
   <member name="D2D1_WINDOW_STATE.D2D1_WINDOW_STATE_NONE">
-    <summary>
-      <para>The window is not occluded.</para>
-    </summary>
+    <summary>The window is not occluded.</summary>
   </member>
   <member name="D2D1_WINDOW_STATE.D2D1_WINDOW_STATE_OCCLUDED">
-    <summary>
-      <para>The window is occluded.</para>
-    </summary>
+    <summary>The window is occluded.</summary>
   </member>
-  <member name="D2D1_WINDOW_STATE.D2D1_WINDOW_STATE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_WINDOW_STATE.D2D1_WINDOW_STATE_FORCE_DWORD"></member>
 </doc>

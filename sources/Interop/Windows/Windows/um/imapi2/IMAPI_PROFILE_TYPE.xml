@@ -3,175 +3,111 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAPI_PROFILE_TYPE">
-    <summary>
-      <para>Defines values for the possible profiles of a CD and DVD device.  A profile defines the type of media and features that the device supports.</para>
-    </summary>
-    <remarks>
-      <para>Note that the range of feature type values is 0x0000 to 0xFFFF. This enumeration contains those features defined in the Multimedia Commands - 5 (MMC) specification. For a complete definition of each profile, see Profile Definitions in the latest release of the MMC specification at ftp://ftp.t10.org/t10/drafts/mmc5.</para>
-      <para>Other values not defined here may exist. Consumers of this enumeration should not presume this list to be the only set of valid values.</para>
-    </remarks>
-    <seealso cref="IDiscRecorder2.get_SupportedProfiles" />
-    <seealso cref="IDiscRecorder2Ex.GetSupportedProfiles" />
+    <summary>Defines values for the possible profiles of a CD and DVD device. A profile defines the type of media and features that the device supports.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_INVALID">
-    <summary>
-      <para>The profile is not valid.</para>
-    </summary>
+    <summary>The profile is not valid.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_NON_REMOVABLE_DISK">
-    <summary>
-      <para>The hard disk it not removable.</para>
-    </summary>
+    <summary>The hard disk it not removable.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_REMOVABLE_DISK">
-    <summary>
-      <para>The hard disk is removable.</para>
-    </summary>
+    <summary>The hard disk is removable.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_MO_ERASABLE">
-    <summary>
-      <para>An Magneto-Optical Erasable drive.</para>
-    </summary>
+    <summary>An Magneto-Optical Erasable drive.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_MO_WRITE_ONCE">
-    <summary>
-      <para>A write once optical drive.</para>
-    </summary>
+    <summary>A write once optical drive.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_AS_MO">
-    <summary>
-      <para>An advance storage Magneto-Optical drive.</para>
-    </summary>
+    <summary>An advance storage Magneto-Optical drive.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_CDROM">
-    <summary>
-      <para>A CD-ROM drive.</para>
-    </summary>
+    <summary>A CD-ROM drive.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_CD_RECORDABLE">
-    <summary>
-      <para>A CD-R drive.</para>
-    </summary>
+    <summary>A CD-R drive.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_CD_REWRITABLE">
-    <summary>
-      <para>A CD-RW or CD+RW drive.</para>
-    </summary>
+    <summary>A CD-RW or CD+RW drive.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_DVDROM">
-    <summary>
-      <para>A DVD-ROM drive.</para>
-    </summary>
+    <summary>A DVD-ROM drive.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_DVD_DASH_RECORDABLE">
-    <summary>
-      <para>A DVD-R sequential recording drive.</para>
-    </summary>
+    <summary>A DVD-R sequential recording drive.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_DVD_RAM">
-    <summary>
-      <para>A DVD-RAM drive.</para>
-    </summary>
+    <summary>A DVD-RAM drive.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_DVD_DASH_REWRITABLE">
-    <summary>
-      <para>A DVD-RW restricted overwrite drive.</para>
-    </summary>
+    <summary>A DVD-RW restricted overwrite drive.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_DVD_DASH_RW_SEQUENTIAL">
-    <summary>
-      <para>A DVD-RW sequential recording drive.</para>
-    </summary>
+    <summary>A DVD-RW sequential recording drive.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_DVD_DASH_R_DUAL_SEQUENTIAL">
-    <summary>
-      <para>A DVD-R dual layer sequential recording drive.</para>
-    </summary>
+    <summary>A DVD-R dual layer sequential recording drive.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_DVD_DASH_R_DUAL_LAYER_JUMP">
-    <summary>
-      <para>A DVD-R dual layer jump recording drive.</para>
-    </summary>
+    <summary>A DVD-R dual layer jump recording drive.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_DVD_PLUS_RW">
-    <summary>
-      <para>A DVD+RW drive.</para>
-    </summary>
+    <summary>A DVD+RW drive.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_DVD_PLUS_R">
-    <summary>
-      <para>A DVD+R drive.</para>
-    </summary>
+    <summary>A DVD+R drive.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_DDCDROM">
     <summary>
       <para>A double density CD drive.</para>
-      <para>
-        <b>Note</b>  This profile has been deprecated.</para>
+      <div>
+        <b>Note</b>  This profile has been deprecated.</div>
     </summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_DDCD_RECORDABLE">
     <summary>
       <para>A double density CD-R drive.</para>
-      <para>
-        <b>Note</b>  This profile has been deprecated.</para>
+      <div>
+        <b>Note</b>  This profile has been deprecated.</div>
     </summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_DDCD_REWRITABLE">
     <summary>
       <para>A double density CD-RW drive.</para>
-      <para>
-        <b>Note</b>  This profile has been deprecated.</para>
+      <div>
+        <b>Note</b>  This profile has been deprecated.</div>
     </summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_DVD_PLUS_RW_DUAL">
-    <summary>
-      <para>A DVD+RW dual layer drive.</para>
-    </summary>
+    <summary>A DVD+RW dual layer drive.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_DVD_PLUS_R_DUAL">
-    <summary>
-      <para>A DVD+R dual layer drive.</para>
-    </summary>
+    <summary>A DVD+R dual layer drive.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_BD_ROM">
-    <summary>
-      <para>A Blu-ray read only drive.</para>
-    </summary>
+    <summary>A Blu-ray read only drive.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_BD_R_SEQUENTIAL">
-    <summary>
-      <para>A write once Blu-ray drive with sequential recording.</para>
-    </summary>
+    <summary>A write once Blu-ray drive with sequential recording.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_BD_R_RANDOM_RECORDING">
-    <summary>
-      <para>A write once Blu-ray drive with random-access recording capability.</para>
-    </summary>
+    <summary>A write once Blu-ray drive with random-access recording capability.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_BD_REWRITABLE">
-    <summary>
-      <para>A rewritable Blu-ray drive.</para>
-    </summary>
+    <summary>A rewritable Blu-ray drive.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_HD_DVD_ROM">
-    <summary>
-      <para>A read only high density DVD drive.</para>
-    </summary>
+    <summary>A read only high density DVD drive.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_HD_DVD_RECORDABLE">
-    <summary>
-      <para>A write once high density DVD drive.</para>
-    </summary>
+    <summary>A write once high density DVD drive.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_HD_DVD_RAM">
-    <summary>
-      <para>A high density DVD drive with random access positioning.</para>
-    </summary>
+    <summary>A high density DVD drive with random access positioning.</summary>
   </member>
   <member name="IMAPI_PROFILE_TYPE.IMAPI_PROFILE_TYPE_NON_STANDARD">
-    <summary>
-      <para>Nonstandard drive.</para>
-    </summary>
+    <summary>Nonstandard drive.</summary>
   </member>
 </doc>

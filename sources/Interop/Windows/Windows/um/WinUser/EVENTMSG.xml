@@ -3,43 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EVENTMSG">
-    <summary>
-      <para>Contains information about a hardware message sent to the system message queue. This structure is used to store message information for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644982(v=vs.85)">JournalPlaybackProc</a> callback function.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/winmsg/hooks">Hooks</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644982(v=vs.85)">JournalPlaybackProc</seealso>
-    <seealso cref="SetWindowsHookEx" />
+    <summary>Contains information about a hardware message sent to the system message queue. This structure is used to store message information for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644982(v=vs.85)">JournalPlaybackProc</a> callback function.</summary>
   </member>
   <member name="EVENTMSG.message">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The message.</para>
-    </summary>
+    <summary>The message.</summary>
   </member>
   <member name="EVENTMSG.paramL">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>Additional information about the message. The exact meaning depends on the
-<b>message</b> value.</para>
-    </summary>
+    <summary>Additional information about the message. The exact meaning depends on the<b>message</b> value.</summary>
   </member>
   <member name="EVENTMSG.paramH">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>Additional information about the message. The exact meaning depends on the
-<b>message</b> value.</para>
-    </summary>
+    <summary>Additional information about the message. The exact meaning depends on the<b>message</b> value.</summary>
   </member>
   <member name="EVENTMSG.time">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The time at which the message was posted.</para>
-    </summary>
+    <summary>The time at which the message was posted.</summary>
   </member>
   <member name="EVENTMSG.hwnd">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the window to which the message was posted.</para>
-    </summary>
+    <summary>A handle to the window to which the message was posted.</summary>
   </member>
 </doc>

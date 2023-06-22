@@ -3,50 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS">
-    <summary>
-      <para>Specifies the automatic image processing capabilities of the video processor.</para>
-    </summary>
-    <seealso cref="D3D11_VIDEO_PROCESSOR_CAPS" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-enumerations">Direct3D 11 Video Enumerations</seealso>
+    <summary>Specifies the automatic image processing capabilities of the video processor.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS.D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS_DENOISE">
-    <summary>
-      <para>Denoise.</para>
-    </summary>
+    <summary>Denoise.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS.D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS_DERINGING">
-    <summary>
-      <para>Deringing.</para>
-    </summary>
+    <summary>Deringing.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS.D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS_EDGE_ENHANCEMENT">
-    <summary>
-      <para>Edge enhancement.</para>
-    </summary>
+    <summary>Edge enhancement.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS.D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS_COLOR_CORRECTION">
-    <summary>
-      <para>Color correction.</para>
-    </summary>
+    <summary>Color correction.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS.D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS_FLESH_TONE_MAPPING">
-    <summary>
-      <para>Flesh-tone mapping.</para>
-    </summary>
+    <summary>Flesh-tone mapping.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS.D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS_IMAGE_STABILIZATION">
-    <summary>
-      <para>Image stabilization.</para>
-    </summary>
+    <summary>Image stabilization.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS.D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS_SUPER_RESOLUTION">
-    <summary>
-      <para>Enhanced image resolution.</para>
-    </summary>
+    <summary>Enhanced image resolution.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS.D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS_ANAMORPHIC_SCALING">
-    <summary>
-      <para>Anamorphic scaling.</para>
-    </summary>
+    <summary>Anamorphic scaling.</summary>
   </member>
 </doc>

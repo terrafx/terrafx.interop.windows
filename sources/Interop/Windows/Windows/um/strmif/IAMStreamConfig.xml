@@ -2,16 +2,12 @@
 <!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
-  <member name="IAMStreamConfig.GetNumberOfCapabilities">
+  <member name="IAMStreamConfig.GetFormat">
     <summary>
-      <para>The <code>GetNumberOfCapabilities</code> method retrieves the number of format capabilities that this pin supports.</para>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>The <code>GetFormat</code> method retrieves the current or preferred output format.</para>
     </summary>
-    <param name="piCount">
-      <para>Pointer to a variable that receives the number of format capabilities.</para>
-    </param>
-    <param name="piSize">
-      <para>Pointer to a variable that receives the size of the configuration structure in bytes. See Remarks for more information.</para>
-    </param>
+    <param name="ppmt">Address of a pointer to an <see cref="AM_MEDIA_TYPE" /> structure.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -19,53 +15,118 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer value.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_NOT_CONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <b>NULL</b> pointer value.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_NOT_CONNECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The input pin is not connected.</para>
-          </description>
-        </item>
+          <description>The input pin is not connected.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>An output pin can support more than one set of format capabilities. This method returns the total number of capabilities that the pin supports; the number is returned in the <i>piCount</i> parameter. To retrieve a particular set of capabilities, call the <see cref="IAMStreamConfig.GetStreamCaps" /> method. Format capabilities are indexed from zero, so the value returned in <i>piCount</i> is one more than the upper bound.</para>
-      <para>Depending on the pin's format type, the <see cref="VIDEO_STREAM_CONFIG_CAPS" /> structure (for video) or an <see cref="AUDIO_STREAM_CONFIG_CAPS" /> structure (for audio). The <i>piSize</i> parameter receives the size of the structure, in bytes.</para>
-      <para>On some compression filters, this method fails if the filter's input pin is not connected.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMStreamConfig Interface" />
+  </member>
+  <member name="IAMStreamConfig.GetNumberOfCapabilities">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>The <code>GetNumberOfCapabilities</code> method retrieves the number of format capabilities that this pin supports.</para>
+    </summary>
+    <param name="piCount">Pointer to a variable that receives the number of format capabilities.</param>
+    <param name="piSize">Pointer to a variable that receives the size of the configuration structure in bytes. See Remarks for more information.</param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <b>NULL</b> pointer value.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_NOT_CONNECTED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The input pin is not connected.</description>
+        </listheader>
+      </list>
+    </returns>
   </member>
   <member name="IAMStreamConfig.SetFormat">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetFormat</code> method sets the output format on the pin.</para>
     </summary>
-    <param name="pmt">
-      <para>Pointer to an <see cref="AM_MEDIA_TYPE" /> structure that specifies the new format.</para>
-    </param>
+    <param name="pmt">Pointer to an <see cref="AM_MEDIA_TYPE" /> structure that specifies the new format.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -73,100 +134,98 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer value.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_INVALIDMEDIATYPE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>This media type is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Insufficient memory.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_NOT_CONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The input pin is not connected.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_NOT_STOPPED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Cannot set the type; the filter is not stopped.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>NULL</b> pointer value.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_INVALIDMEDIATYPE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_WRONG_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>This media type is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_NOT_CONNECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The input pin is not connected.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_NOT_STOPPED</b>
-            </para>
-          </description>
-          <description>
-            <para>Cannot set the type; the filter is not stopped.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_WRONG_STATE</b>
-            </para>
-          </description>
-          <description>
-            <para>Cannot set the type; the filter is not stopped.</para>
-          </description>
-        </item>
+          <description>Cannot set the type; the filter is not stopped.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method specifies the format for the output pin. If the pin is not connected, it will use this format for its next connection. If the pin is already connected, it will attempt to reconnect with this format. The method might fail if the other pin rejects the new type.</para>
-      <para>If this method succeeds, subsequent calls to the <see cref="IPin.EnumMediaTypes" /> method will return the new type, and no others.</para>
-      <para>On most filters, this method fails if the filter is paused or running. On some compression filters, the method fails if the filter's input pin is not connected.</para>
-      <para>With some filters, you can call this method with the value <b>NULL</b> to reset the pin to its default format.</para>
-      <para>
-        <b>Filter Developers</b>: The following remarks describe how to implement this method:</para>
-      <para>If the output pin is not connected, and the pin supports the specified media type, return S_OK. Store the media type and offer it as format number zero in the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cbasepin-getmediatype">CBasePin.GetMediaType</a> method. Do not offer other formats, and reject other formats in the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cbasepin-checkmediatype">CBasePin.CheckMediaType</a> method.</para>
-      <para>If the pin is already connected, and the pin supports the media type, reconnect the pin with that type. If the other pin rejects the new type, return VFW_E_INVALIDMEDIATYPE and restore the original connection.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMStreamConfig Interface" />
   </member>
   <member name="IAMStreamConfig">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>IAMStreamConfig</b> interface sets the output format on certain capture and compression filters, for both audio and video. Applications can use this interface to set format properties, such as the output dimensions and frame rate (for video) or the sample rate and number of channels (for audio).</para>
     </summary>
-    <remarks>
-      <para>Filters expose this interface on their output pins. To use the interface, enumerate the filter's pins and query for <b>IAMStreamConfig</b>. Or, if you are using the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/capture-graph-builder">Capture Graph Builder</a> object to build the filter graph, you can call the <see cref="ICaptureGraphBuilder2.FindInterface" /> method. Note that a capture filter might have separate pins for capture and preview.</para>
-      <h3>Filter Developers</h3>
-      <para>If you are writing a capture filter or compression filter, implement this interface on the video or audio output pin. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/exposing-capture-and-compression-formats">Exposing Capture and Compression Formats</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/interfaces">Interfaces</seealso>
   </member>
 </doc>

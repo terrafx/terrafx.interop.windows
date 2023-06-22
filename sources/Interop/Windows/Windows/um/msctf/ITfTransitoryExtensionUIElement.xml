@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfTransitoryExtensionUIElement.GetDocumentMgr">
-    <summary>
-      <para>The <b>ITfTransitoryExtensionUIElement.GetDocumentMgr</b> method returns the pointer of the transitory document manager.</para>
-    </summary>
-    <param name="ppdim">
-      <para>[out] A pointer to receive the <see cref="ITfDocumentMgr" /> interface pointer. This document manager object contains a context object that has the <see cref="ITfContext" /> interface and contains the text of the transitory extension.</para>
-    </param>
+    <summary>The <b>ITfTransitoryExtensionUIElement.GetDocumentMgr</b> method returns the pointer of the transitory document manager.</summary>
+    <param name="ppdim">[out] A pointer to receive the <see cref="ITfDocumentMgr" /> interface pointer. This document manager object contains a context object that has the <see cref="ITfContext" /> interface and contains the text of the transitory extension.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,42 +12,46 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfTransitoryExtensionUIElement">
-    <summary>
-      <para>The <b>ITfTransitoryExtensionUIElement</b> interface is implemented by TSF manager which provides the UI of transitory extension. The application that is in UILess mode will use this interface to determine if the original UI should be shown or the content of this UI should be drown by the application.</para>
-    </summary>
+    <summary>The <b>ITfTransitoryExtensionUIElement</b> interface is implemented by TSF manager which provides the UI of transitory extension. The application that is in UILess mode will use this interface to determine if the original UI should be shown or the content of this UI should be drown by the application.</summary>
   </member>
 </doc>

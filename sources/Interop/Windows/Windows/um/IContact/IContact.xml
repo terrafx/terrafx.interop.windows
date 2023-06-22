@@ -3,163 +3,145 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IContact.CommitChanges">
-    <summary>
-      <para>Saves changes made to this contact to the contact file.</para>
-    </summary>
-    <param name="dwCommitFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>Reserved parameter. Must be 0.</para>
-    </param>
+    <summary>Saves changes made to this contact to the contact file.</summary>
+    <param name="dwCommitFlags">Reserved parameter. Must be 0.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Changes written to disk successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Changes written to disk successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Contact not loaded from a file path.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_SHARING_VIOLATION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Contact not loaded from a file path.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_SHARING_VIOLATION</b>
-            </para>
-          </description>
-          <description>
-            <para>Another process modified the file in a way incompatible with
-changes to this contact.</para>
-          </description>
-        </item>
+          <description>Another process modified the file in a way incompatible with 					changes to this contact.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the contact changes between creation and <b>IContact.CommitChanges</b></para>
-      <para>and an incompatible change was made on disk, may return ERROR_SHARING_VIOLATION.</para>
-    </remarks>
   </member>
   <member name="IContact.GetContactID">
-    <summary>
-      <para>Retrieves the local computer unique contact ID.</para>
-    </summary>
-    <param name="pszContactID">
-      <para>Type: <b>LPWSTR</b></para>
-      <para>User allocated buffer to store the contact ID.</para>
-    </param>
-    <param name="cchContactID">
-      <para>Type: <b>DWORD</b></para>
-      <para>Specifies allocated buffer size.</para>
-    </param>
-    <param name="pdwcchContactIDRequired">
-      <para>Type: <b>DWORD*</b></para>
-      <para>Upon failure due to insufficient buffer, contains the required size for <i>pszContactID</i>. May be <b>NULL</b>.</para>
-    </param>
+    <summary>Retrieves the local computer unique contact ID.</summary>
+    <param name="pszContactID">User allocated buffer to store the contact ID.</param>
+    <param name="cchContactID">Specifies allocated buffer size.</param>
+    <param name="pdwcchContactIDRequired">Upon failure due to insufficient buffer, contains the required size for <i>pszContactID</i>. May be <b>NULL</b>.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success. <i>pszContactID</i> contains a null-terminated ContactID.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success. <i>pszContactID</i> contains a null-terminated ContactID.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <para>Macro HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER) returned when <i>pszContactID</i> was not large enough to store the value. The required buffer size is stored in <i>pdwcchContactIDRequired</i>.</para>
-          </description>
-        </item>
+          <description>Macro HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER) returned when <i>pszContactID</i> was not large enough to store the value. The required buffer size is stored in <i>pdwcchContactIDRequired</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontact">IContact</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nf-icontact-icontactmanager-load">Load</seealso>
   </member>
   <member name="IContact.GetPath">
-    <summary>
-      <para>Retrieves the file system path used to load this contact.</para>
-    </summary>
-    <param name="pszPath">
-      <para>Type: <b>LPWSTR</b></para>
-      <para>User-allocated buffer to store the contact ID.</para>
-    </param>
-    <param name="cchPath">
-      <para>Type: <b>DWORD</b></para>
-      <para>Specifies the allocated buffer size in characters.</para>
-    </param>
-    <param name="pdwcchPathRequired">
-      <para>Type: <b>DWORD*</b></para>
-      <para>Upon failure due to insufficient buffer, contains the required size for <i>pszPath</i>.</para>
-    </param>
+    <summary>Retrieves the file system path used to load this contact.</summary>
+    <param name="pszPath">User-allocated buffer to store the contact ID.</param>
+    <param name="cchPath">Specifies the allocated buffer size in characters.</param>
+    <param name="pdwcchPathRequired">Upon failure due to insufficient buffer, contains the required size for <i>pszPath</i>.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success. <i>pszPath</i> contains the path.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success. <i>pszPath</i> contains the path.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Contact ID was not loaded from a file path.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Contact ID was not loaded from a file path.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <para>Macro HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER) returned when <i>pszPath</i> was not large enough to store the value. The required buffer size is stored in <i>pdwcchPathRequired</i>.</para>
-          </description>
-        </item>
+          <description>Macro HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER) returned when <i>pszPath</i> was not large enough to store the value. The required buffer size is stored in <i>pdwcchPathRequired</i>.</description>
+        </listheader>
       </list>
     </returns>
+  </member>
+  <member name="IContact">
+    <summary>Do not use. Defines methods for reading and writing properties for a single contact.</summary>
   </member>
 </doc>

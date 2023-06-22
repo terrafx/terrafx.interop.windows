@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="UI_ANIMATION_IDLE_BEHAVIOR">
-    <summary>
-      <para>Defines the behavior of a timer when the animation manager is idle.</para>
-    </summary>
-    <seealso cref="IUIAnimationTimer" />
+    <summary>Defines the behavior of a timer when the animation manager is idle.</summary>
   </member>
   <member name="UI_ANIMATION_IDLE_BEHAVIOR.UI_ANIMATION_IDLE_BEHAVIOR_CONTINUE">
-    <summary>
-      <para>The timer continues to generate timer events (is enabled) when the animation manager is idle.</para>
-    </summary>
+    <summary>The timer continues to generate timer events (is enabled) when the animation manager is idle.</summary>
   </member>
   <member name="UI_ANIMATION_IDLE_BEHAVIOR.UI_ANIMATION_IDLE_BEHAVIOR_DISABLE">
-    <summary>
-      <para>The timer is suspended (disabled) when the animation manager is idle.</para>
-    </summary>
+    <summary>The timer is suspended (disabled) when the animation manager is idle.</summary>
   </member>
 </doc>

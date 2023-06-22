@@ -3,193 +3,58 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWbemConfigureRefresher.AddEnum">
-    <summary>
-      <para>The
-<b>IWbemConfigureRefresher.AddEnum</b> method adds an enumerator to the requested refresher.</para>
-    </summary>
-    <param name="pNamespace">
-      <para>An
-<see cref="IWbemServices" /> pointer back into Windows Management, which can service any request made by the provider. If the method must call back into Windows Management during its execution, the provider should call <see cref="AddRef" /> with the <i>pNamespace</i> pointer.</para>
-    </param>
-    <param name="wszClassName">
-      <para>Constant, null-terminated string of 16-bit Unicode characters containing the name of the class that is enumerated.</para>
-    </param>
-    <param name="lFlags">
-      <para>Bitmask of flags that modify the behavior of this method. If this parameter is set to WBEM_FLAG_USE_AMENDED_QUALIFIERS, the returned instances contain localized qualifiers if they are available.</para>
-    </param>
-    <param name="pContext">
-      <para>Typically <b>NULL</b>; otherwise, this is a pointer to an
-<see cref="IWbemContext" /> object that is required by one or more dynamic class providers. The values in the context object must be specified in the specific provider documentation. For more information about this parameter, see
-<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</para>
-    </param>
-    <param name="ppEnum">
-      <para>Pointer that holds the reference to a
-<see cref="IWbemHiPerfEnum" /> object, which will contain the enumeration. The client must call <see cref="Release" /> on this pointer when it is no longer required.</para>
-    </param>
-    <param name="plId">
-      <para>Pointer to an integer returned by the provider that uniquely identifies the refreshable enumeration.</para>
-    </param>
+    <summary>The<b>IWbemConfigureRefresher.AddEnum</b> method adds an enumerator to the requested refresher.</summary>
+    <param name="pNamespace">An<see cref="IWbemServices" /> pointer back into Windows Management, which can service any request made by the provider. If the method must call back into Windows Management during its execution, the provider should call <see cref="AddRef" /> with the <i>pNamespace</i> pointer.</param>
+    <param name="wszClassName">Constant, null-terminated string of 16-bit Unicode characters containing the name of the class that is enumerated.</param>
+    <param name="lFlags">Bitmask of flags that modify the behavior of this method. If this parameter is set to WBEM_FLAG_USE_AMENDED_QUALIFIERS, the returned instances contain localized qualifiers if they are available.</param>
+    <param name="pContext">Typically <b>NULL</b>; otherwise, this is a pointer to an<see cref="IWbemContext" /> object that is required by one or more dynamic class providers. The values in the context object must be specified in the specific provider documentation. For more information about this parameter, see<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</param>
+    <param name="ppEnum">Pointer that holds the reference to a<see cref="IWbemHiPerfEnum" /> object, which will contain the enumeration. The client must call <see cref="Release" /> on this pointer when it is no longer required.</param>
+    <param name="plId">Pointer to an integer returned by the provider that uniquely identifies the refreshable enumeration.</param>
     <returns>
-      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>Note</b>  <b>HRESULT</b></para>
-      <para>.</para>
-    </returns>
-    <remarks>
-      <para>The supplied class must specify a valid class, which is provided by the High-Performance Provider. All instances of the returned enumerator can be queried after calls. On each call to refresh, the number of instances in the enumerator can vary. Only instances of the specified class name are returned; subclasses of the specified class will not be enumerated because detailed enumeration is not supported. The returned enumerator must not be touched by the client while a
-<see cref="Refresh" /> operation is in process. The returned identifier can be used by the
-<see cref="Remove" /> function to remove the object. Note that it is not necessary for the user to explicitly remove added enumerators. However, the client must call <see cref="Release" /> on the returned enumerator when it is no longer required.</para>
-    </remarks>
-    <seealso cref="IWbemConfigureRefresher" />
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <div><b>Note</b>  <b>HRESULT</b></div></para>.</returns>
   </member>
   <member name="IWbemConfigureRefresher.AddObjectByPath">
-    <summary>
-      <para>The
-<b>IWbemConfigureRefresher.AddObjectByPath</b> method adds an object to a refresher by specifying an object path.</para>
-    </summary>
-    <param name="pNamespace">
-      <para>An
-<see cref="IWbemServices" /> pointer back into Windows Management, which can service any request made by the provider. The provider should call <see cref="AddRef" /> on this pointer if it is going to call back into Windows Management during its execution.</para>
-    </param>
-    <param name="wszPath">
-      <para>Constant, null-terminated string of 16-bit Unicode characters that contains the object path of the object you add to the refresher.</para>
-    </param>
-    <param name="lFlags">
-      <para>Bitmask of flags that modify the behavior of this method. If this parameter is set to <b>WBEM_FLAG_USE_AMENDED_QUALIFIERS</b>, the returned instance contain localized qualifiers if available.</para>
-    </param>
-    <param name="pContext">
-      <para>Typically <b>NULL</b>; otherwise, a pointer to an
-<see cref="IWbemContext" /> object that is required by one or more dynamic class providers. The values in the context object must be specified in the specific provider documentation. For more information about this parameter, see
-<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</para>
-    </param>
-    <param name="ppRefreshable">
-      <para>Pointer to hold the reference to a
-<see cref="IWbemClassObject" /> object, which contains the refreshable instance object. The client must call <see cref="Release" /> on the returned object when it is no longer required.</para>
-    </param>
-    <param name="plId">
-      <para>Pointer to an integer returned by the provider that uniquely identifies the refreshable object.</para>
-    </param>
-    <returns>
-      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
-    </returns>
-    <remarks>
-      <para>The supplied path must specify a valid object, which is provided by the High-Performance Provider. The returned object must not be touched by the client while a refresh operation is in process. The returned identifier can be used by the
-<see cref="Remove" /> function to remove the object.</para>
-      <para>
-        <b>Note</b>  It is not necessary for the user to explicitly remove added objects. The client must call <see cref="Release" /> on the returned object when it is no longer required.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/accessing-performance-data-in-c--">Accessing Performance Data in C++</seealso>
-    <seealso cref="IWbemConfigureRefresher" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-an-instance-provider-into-a-high-performance-provider">Making an Instance Provider into a High-Performance Provider</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/performance-counter-provider">Performance Counter Provider</seealso>
+    <summary>The<b>IWbemConfigureRefresher.AddObjectByPath</b> method adds an object to a refresher by specifying an object path.</summary>
+    <param name="pNamespace">An<see cref="IWbemServices" /> pointer back into Windows Management, which can service any request made by the provider. The provider should call <see cref="AddRef" /> on this pointer if it is going to call back into Windows Management during its execution.</param>
+    <param name="wszPath">Constant, null-terminated string of 16-bit Unicode characters that contains the object path of the object you add to the refresher.</param>
+    <param name="lFlags">Bitmask of flags that modify the behavior of this method. If this parameter is set to <b>WBEM_FLAG_USE_AMENDED_QUALIFIERS</b>, the returned instance contain localized qualifiers if available.</param>
+    <param name="pContext">Typically <b>NULL</b>; otherwise, a pointer to an<see cref="IWbemContext" /> object that is required by one or more dynamic class providers. The values in the context object must be specified in the specific provider documentation. For more information about this parameter, see<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</param>
+    <param name="ppRefreshable">Pointer to hold the reference to a<see cref="IWbemClassObject" /> object, which contains the refreshable instance object. The client must call <see cref="Release" /> on the returned object when it is no longer required.</param>
+    <param name="plId">Pointer to an integer returned by the provider that uniquely identifies the refreshable object.</param>
+    <returns>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</returns>
   </member>
   <member name="IWbemConfigureRefresher.AddObjectByTemplate">
     <summary>
-      <para>With the
-<b>IWbemConfigureRefresher.AddObjectByTemplate</b> method, you can add an object you want refreshed to a refresher by specifying an
-<see cref="IWbemClassObject" /> instance template. Use this method when it is difficult to construct an object path for an object to add to a refresher.
-<b>Note</b>  The key properties of the instance object must be filled out before you can call the
-<b>AddObjectByTemplate</b> method.</para>
+      <para>With the<b>IWbemConfigureRefresher.AddObjectByTemplate</b> method, you can add an object you want refreshed to a refresher by specifying an<see cref="IWbemClassObject" /> instance template. Use this method when it is difficult to construct an object path for an object to add to a refresher.</para>
+      <div>
+        <b>Note</b>  The key properties of the instance object must be filled out before you can call the <b>AddObjectByTemplate</b> method.</div>
     </summary>
-    <param name="pNamespace">
-      <para>An
-<see cref="IWbemServices" /> pointer back into Windows Management, which can service any request made by the provider. The provider should call <see cref="AddRef" /> on this pointer if it is going to call back into Windows Management during its execution.</para>
-    </param>
-    <param name="pTemplate">
-      <para>Pointer to a
-<see cref="IWbemClassObject" /> object that contains the instance template.</para>
-    </param>
-    <param name="lFlags">
-      <para>Bitmask of flags that modify the behavior of this method. If this parameter is set to <b>WBEM_FLAG_USE_AMENDED_QUALIFIERS</b>, the returned instance will contain localized qualifiers if available.</para>
-    </param>
-    <param name="pContext">
-      <para>Typically <b>NULL</b>; otherwise, a pointer to an
-<see cref="IWbemContext" /> object that is required by one or more dynamic class providers. The values in the context object must be specified in the specific provider documentation. For more information about this parameter, see
-<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</para>
-    </param>
-    <param name="ppRefreshable">
-      <para>Pointer to hold the reference to a
-<see cref="IWbemClassObject" /> object, which will contain the refreshable instance object. The client must call <see cref="Release" /> on the returned object when it is no longer required.</para>
-    </param>
-    <param name="plId">
-      <para>Pointer to an integer returned by the provider that uniquely identifies this refreshable object.</para>
-    </param>
-    <returns>
-      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
-    </returns>
-    <remarks>
-      <para>The supplied instance must specify a valid object, which is provided by the High-Performance Provider. The returned object must not be modified by the client while a refresh operation is in process. The returned identifier can be used by the
-<see cref="Remove" /> function to remove the object.</para>
-      <para>It is not necessary for the user to explicitly remove added objects. The client must call <see cref="Release" /> on the returned object when it is no longer required.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/accessing-performance-data-in-c--">Accessing Performance Data in C++</seealso>
-    <seealso cref="IWbemConfigureRefresher" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-an-instance-provider-into-a-high-performance-provider">Making an Instance Provider into a High-Performance Provider</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/performance-counter-provider">Performance Counter Provider</seealso>
+    <param name="pNamespace">An<see cref="IWbemServices" /> pointer back into Windows Management, which can service any request made by the provider. The provider should call <see cref="AddRef" /> on this pointer if it is going to call back into Windows Management during its execution.</param>
+    <param name="pTemplate">Pointer to a<see cref="IWbemClassObject" /> object that contains the instance template.</param>
+    <param name="lFlags">Bitmask of flags that modify the behavior of this method. If this parameter is set to <b>WBEM_FLAG_USE_AMENDED_QUALIFIERS</b>, the returned instance will contain localized qualifiers if available.</param>
+    <param name="pContext">Typically <b>NULL</b>; otherwise, a pointer to an<see cref="IWbemContext" /> object that is required by one or more dynamic class providers. The values in the context object must be specified in the specific provider documentation. For more information about this parameter, see<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</param>
+    <param name="ppRefreshable">Pointer to hold the reference to a<see cref="IWbemClassObject" /> object, which will contain the refreshable instance object. The client must call <see cref="Release" /> on the returned object when it is no longer required.</param>
+    <param name="plId">Pointer to an integer returned by the provider that uniquely identifies this refreshable object.</param>
+    <returns>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</returns>
   </member>
   <member name="IWbemConfigureRefresher.AddRefresher">
-    <summary>
-      <para>The
-<b>IWbemConfigureRefresher.AddRefresher</b> method adds a refresher to a refresher. The newly added refresher is called a "child refresher" or "nested refresher". You can use this method to create a single refresher containing more than one refresher that can be updated using a single call to the
-<see cref="Refresh" /> method.</para>
-    </summary>
-    <param name="pRefresher">
-      <para>Pointer to a
-<see cref="IWbemRefresher" /> object to nest in this refresher.</para>
-    </param>
-    <param name="lFlags">
-      <para>Reserved. This parameter must be 0 (zero).</para>
-    </param>
-    <param name="plId">
-      <para>Pointer to an integer returned by the provider that uniquely identifies the refreshable object.</para>
-    </param>
-    <returns>
-      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
-    </returns>
-    <remarks>
-      <para>Users should not add recursively nested refreshers. The returned identifier can be used by the
-<see cref="Remove" /> function to remove the refresher. Although it is not necessary for the client to explicitly remove added refreshers, the client must call <see cref="Release" /> on the refreshers when they are no longer required.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/accessing-performance-data-in-c--">Accessing Performance Data in C++</seealso>
-    <seealso cref="IWbemConfigureRefresher" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-an-instance-provider-into-a-high-performance-provider">Making an Instance Provider into a High-Performance Provider</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/performance-counter-provider">Performance Counter Provider</seealso>
+    <summary>The<b>IWbemConfigureRefresher.AddRefresher</b> method adds a refresher to a refresher. The newly added refresher is called a "child refresher" or "nested refresher". You can use this method to create a single refresher containing more than one refresher that can be updated using a single call to the<see cref="Refresh" /> method.</summary>
+    <param name="pRefresher">Pointer to a<see cref="IWbemRefresher" /> object to nest in this refresher.</param>
+    <param name="lFlags">Reserved. This parameter must be 0 (zero).</param>
+    <param name="plId">Pointer to an integer returned by the provider that uniquely identifies the refreshable object.</param>
+    <returns>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</returns>
   </member>
   <member name="IWbemConfigureRefresher.Remove">
-    <summary>
-      <para>The
-<b>IWbemConfigureRefresher.Remove</b> method is used to remove an object, enumerator, or nested refresher from a refresher.</para>
-    </summary>
-    <param name="lId">
-      <para>Integer that uniquely identifies the object to remove. You obtain this identifier when you first add an object to the refresher by calling
-<see cref="IWbemConfigureRefresher.AddObjectByPath" />,
-<see cref="IWbemConfigureRefresher.AddObjectByTemplate" />,
-<see cref="IWbemConfigureRefresher.AddEnum" />, or
-<see cref="IWbemConfigureRefresher.AddRefresher" />.</para>
-    </param>
-    <param name="lFlags">
-      <para>Bitmask of flags that modify the behavior of the
-<b>Remove</b> method. If this parameter is set to. <b>WBEM_FLAG_REFRESH_AUTO_RECONNECT</b>, the refresher attempts to automatically reconnect to a remote provider if the connection is broken. This is default behavior for this method. Specify <b>WBEM_FLAG_REFRESH_NO_AUTO_RECONNECT</b> if you do not want the refresher to attempt to reconnect to a remote provider.</para>
-    </param>
-    <returns>
-      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/accessing-performance-data-in-c--">Accessing Performance Data in C++</seealso>
-    <seealso cref="IWbemConfigureRefresher" />
-    <seealso cref="IWbemHiPerfProvider" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-an-instance-provider-into-a-high-performance-provider">Making an Instance Provider into a High-Performance Provider</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/performance-counter-provider">Performance Counter Provider</seealso>
+    <summary>The<b>IWbemConfigureRefresher.Remove</b> method is used to remove an object, enumerator, or nested refresher from a refresher.</summary>
+    <param name="lId">Integer that uniquely identifies the object to remove. You obtain this identifier when you first add an object to the refresher by calling<see cref="IWbemConfigureRefresher.AddObjectByPath" />,<see cref="IWbemConfigureRefresher.AddObjectByTemplate" />,<see cref="IWbemConfigureRefresher.AddEnum" />, or<see cref="IWbemConfigureRefresher.AddRefresher" />.</param>
+    <param name="lFlags">Bitmask of flags that modify the behavior of the<b>Remove</b> method. If this parameter is set to. <b>WBEM_FLAG_REFRESH_AUTO_RECONNECT</b>, the refresher attempts to automatically reconnect to a remote provider if the connection is broken. This is default behavior for this method. Specify <b>WBEM_FLAG_REFRESH_NO_AUTO_RECONNECT</b> if you do not want the refresher to attempt to reconnect to a remote provider.</param>
+    <returns>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</returns>
   </member>
   <member name="IWbemConfigureRefresher">
     <summary>
-      <para>The
-<b>IWbemConfigureRefresher</b> interface is used by client code to add enumerators, objects, and nested refreshers into a refresher.</para>
+      <para>The<b>IWbemConfigureRefresher</b> interface is used by client code to add enumerators, objects, and nested refreshers into a refresher.</para>
       <para>Users and providers should never implement this interface. The implementation provided by WMI is the only one that is supported.</para>
-      <para>By providing a native implementation of this interface, WMI allows client code to easily configure refreshers. You can access the
-<b>IWbemConfigureRefresher</b> interface by calling <see cref="QueryInterface" /> on <b>IID_IWbemConfigureRefresher</b> on the object returned by calling <see cref="CoCreateInstance" /> on <b>CLSID_WbemRefresher</b>.</para>
+      <para>By providing a native implementation of this interface, WMI allows client code to easily configure refreshers. You can access the<b>IWbemConfigureRefresher</b> interface by calling <see cref="QueryInterface" /> on <b>IID_IWbemConfigureRefresher</b> on the object returned by calling <see cref="CoCreateInstance" /> on <b>CLSID_WbemRefresher</b>.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/accessing-performance-data-in-c--">Accessing Performance Data in C++</seealso>
-    <seealso cref="IWbemConfigureRefresher" />
-    <seealso cref="IWbemHiPerfProvider" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-an-instance-provider-into-a-high-performance-provider">Making an Instance Provider into a High-Performance Provider</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/performance-counter-provider">Performance Counter Provider</seealso>
   </member>
 </doc>

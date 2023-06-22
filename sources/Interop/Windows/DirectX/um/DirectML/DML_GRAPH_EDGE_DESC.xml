@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_GRAPH_EDGE_DESC">
-    <summary>
-      <para>A generic container for a connection within a graph of DirectML operators defined by <see cref="DML_GRAPH_DESC" /> and passed to <see cref="IDMLDevice1.CompileGraph" />.</para>
-    </summary>
-    <seealso cref="IDMLDevice1.CompileGraph method" />
-    <seealso cref="DML_GRAPH_DESC structure" />
+    <summary>A generic container for a connection within a graph of DirectML operators defined by <see cref="DML_GRAPH_DESC" /> and passed to <see cref="IDMLDevice1.CompileGraph" />.</summary>
   </member>
   <member name="DML_GRAPH_EDGE_DESC.Type">
-    <summary>
-      <para>Type: <b><see cref="DML_GRAPH_EDGE_TYPE" /></b></para>
-      <para>The type of graph edge. See <see cref="DML_GRAPH_EDGE_TYPE" /> for available types, and <see cref="DML_GRAPH_DESC" /> for where to use each type.</para>
-    </summary>
+    <summary>The type of graph edge. See <see cref="DML_GRAPH_EDGE_TYPE" /> for available types, and <see cref="DML_GRAPH_DESC" /> for where to use each type.</summary>
   </member>
   <member name="DML_GRAPH_EDGE_DESC.Desc">
-    <summary>
-      <para>Type: _Field_size_(_Inexpressible_("Dependent on edge type")) <b>const void*</b></para>
-      <para>A pointer to the graph edge description. The type of the pointed-to struct must match the value specified in <i>Type</i>.</para>
-    </summary>
+    <summary>A pointer to the graph edge description. The type of the pointed-to struct must match the value specified in <i>Type</i>.</summary>
   </member>
 </doc>

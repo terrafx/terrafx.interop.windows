@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfFnReconversion.GetReconversion">
-    <summary>
-      <para>Obtains an ITfCandidateList object for a range of text.</para>
-    </summary>
-    <param name="pRange">
-      <para>Pointer to an <see cref="ITfRange" /> object that covers the text to be reconverted. This range object is obtained by calling <see cref="ITfFnReconversion.QueryRange" />.</para>
-    </param>
-    <param name="ppCandList">
-      <para>Pointer to an <b>ITfCandidateList</b> pointer that receives the candidate list object.</para>
-    </param>
+    <summary>Obtains an ITfCandidateList object for a range of text.</summary>
+    <param name="pRange">Pointer to an <see cref="ITfRange" /> object that covers the text to be reconverted. This range object is obtained by calling <see cref="ITfFnReconversion.QueryRange" />.</param>
+    <param name="ppCandList">Pointer to an <b>ITfCandidateList</b> pointer that receives the candidate list object.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -19,68 +13,66 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>An unspecified error occurred.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfCandidateList " />
-    <seealso cref="ITfFnReconversion" />
-    <seealso cref="ITfFnReconversion.QueryRange " />
-    <seealso cref="ITfRange " />
   </member>
   <member name="ITfFnReconversion.QueryRange">
-    <summary>
-      <para>The <b>ITfFnReconversion.QueryRange</b> method obtains the range of text that the reconversion applies to.</para>
-    </summary>
-    <param name="pRange">
-      <para>Pointer to an <see cref="ITfRange" /> object that covers all or part of the text to be reconverted.</para>
-    </param>
+    <summary>The <b>ITfFnReconversion.QueryRange</b> method obtains the range of text that the reconversion applies to.</summary>
+    <param name="pRange">Pointer to an <see cref="ITfRange" /> object that covers all or part of the text to be reconverted.</param>
     <param name="ppNewRange">
       <para>[in, out] Pointer to an <see cref="ITfRange" /> pointer that receives a range object that covers all of text that can be reconverted. If none of the text covered by <i>pRange</i> can be reconverted, this parameters receives NULL. In this case, the method will return S_OK, so the caller must verify that this parameter is not NULL before using the pointer.</para>
       <para>When this method is implemented by a text service, this parameter is optional and can be NULL. In this case, the range is not required.</para>
       <para>When the TSF manager implementation of this method is called, this parameter is not optional and cannot be NULL.</para>
     </param>
-    <param name="pfConvertable">
-      <para>Pointer to a <b>BOOL</b> value that receives zero if none of the text covered by <i>pRange</i> can be reconverted or nonzero otherwise.</para>
-    </param>
+    <param name="pfConvertable">Pointer to a <b>BOOL</b> value that receives zero if none of the text covered by <i>pRange</i> can be reconverted or nonzero otherwise.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -88,48 +80,48 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfFnReconversion" />
-    <seealso cref="ITfRange " />
   </member>
   <member name="ITfFnReconversion.Reconvert">
-    <summary>
-      <para>Invokes the reconversion process for a range of text.</para>
-    </summary>
-    <param name="pRange">
-      <para>Pointer to an <see cref="ITfRange" /> object that covers the text to be reconverted. To obtain this range object call <see cref="ITfFnReconversion.QueryRange" />.</para>
-    </param>
+    <summary>Invokes the reconversion process for a range of text.</summary>
+    <param name="pRange">Pointer to an <see cref="ITfRange" /> object that covers the text to be reconverted. To obtain this range object call <see cref="ITfFnReconversion.QueryRange" />.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -137,54 +129,56 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>An unspecified error occurred.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If this method causes some type of user interface to be displayed, such as a dialog box, this method must not wait for the UI to be dismissed before returning.</para>
-    </remarks>
-    <seealso cref="ITfFnReconversion" />
-    <seealso cref="ITfFnReconversion.QueryRange " />
-    <seealso cref="ITfRange " />
   </member>
   <member name="ITfFnReconversion">
     <summary>
@@ -193,8 +187,5 @@
       <para>The TSF manager obtains this interface by calling the text service <see cref="ITfFunctionProvider.GetFunction" /> method with IID_ITfFnReconversion.</para>
       <para>An application obtains this interface by calling the TSF manager <b>ITfFunctionProvider.GetFunction</b> method with IID_ITfFnReconversion.</para>
     </summary>
-    <remarks>
-      <para>When a text service must interpret text before it is inserted into a context, there might be more than one possible interpretation of the text. Speech input is an example of this. If the spoken word is "there", other possible interpretations might be "their" or "they're". The text service will insert the most appropriate text, but there is still some chance of error involved. Text reconversion is the process of allowing the user to select alternate text for the inserted text.</para>
-    </remarks>
   </member>
 </doc>

@@ -3,241 +3,79 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CHANGEFILTERSTRUCT">
-    <summary>
-      <para>Contains extended result information obtained by calling
-the <see cref="ChangeWindowMessageFilterEx" /> function.</para>
-    </summary>
-    <remarks>
-      <para>Certain messages whose value is smaller than <b>WM_USER</b> are required to pass through the filter,
-regardless of the filter setting. There will be no effect when you attempt to use this function to allow or
-block such messages.</para>
-      <para>An application may use the <see cref="ChangeWindowMessageFilter" /> function to
-allow or block a message in a process-wide manner.
-If the message is allowed by either the process message filter
-or the window message filter, it will be delivered to the window.</para>
-      <para>The following table lists the possible values returned in <b>ExtStatus</b>.</para>
-      <list type="table">
-        <listheader>
-          <description>Message already allowed at higher scope</description>
-          <description>Message already allowed by window's message filter</description>
-          <description>Operation requested</description>
-          <description>Indicator returned in ExtStatus on success</description>
-        </listheader>
-        <item>
-          <description>No</description>
-          <description>No</description>
-          <description>
-            <b>MSGFLT_ALLOW</b>
-          </description>
-          <description>
-            <b>MSGFLTINFO_NONE</b>
-          </description>
-        </item>
-        <item>
-          <description>No</description>
-          <description>No</description>
-          <description>
-            <b>MSGFLT_DISALLOW</b>
-          </description>
-          <description>
-            <b>MSGFLTINFO_ALREADYDISALLOWED_FORWND</b>
-          </description>
-        </item>
-        <item>
-          <description>No</description>
-          <description>No</description>
-          <description>
-            <b>MSGFLT_RESET</b>
-          </description>
-          <description>
-            <b>MSGFLTINFO_NONE</b>
-          </description>
-        </item>
-        <item>
-          <description>No</description>
-          <description>Yes</description>
-          <description>
-            <b>MSGFLT_ALLOW</b>
-          </description>
-          <description>
-            <b>MSGFLTINFO_ALREADYALLOWED_FORWND</b>
-          </description>
-        </item>
-        <item>
-          <description>No</description>
-          <description>Yes</description>
-          <description>
-            <b>MSGFLT_DISALLOW</b>
-          </description>
-          <description>
-            <b>MSGFLTINFO_NONE</b>
-          </description>
-        </item>
-        <item>
-          <description>No</description>
-          <description>Yes</description>
-          <description>
-            <b>MSGFLT_RESET</b>
-          </description>
-          <description>
-            <b>MSGFLTINFO_NONE</b>
-          </description>
-        </item>
-        <item>
-          <description>Yes</description>
-          <description>No</description>
-          <description>
-            <b>MSGFLT_ALLOW</b>
-          </description>
-          <description>
-            <b>MSGFLTINFO_NONE</b>
-          </description>
-        </item>
-        <item>
-          <description>Yes</description>
-          <description>No</description>
-          <description>
-            <b>MSGFLT_DISALLOW</b>
-          </description>
-          <description>
-            <b>MSGFLTINFO_ALLOWED_HIGHER</b>
-          </description>
-        </item>
-        <item>
-          <description>Yes</description>
-          <description>No</description>
-          <description>
-            <b>MSGFLT_RESET</b>
-          </description>
-          <description>
-            <b>MSGFLTINFO_NONE</b>
-          </description>
-        </item>
-        <item>
-          <description>Yes</description>
-          <description>Yes</description>
-          <description>
-            <b>MSGFLT_ALLOW</b>
-          </description>
-          <description>
-            <b>MSGFLTINFO_ALREADYALLOWED_FORWND</b>
-          </description>
-        </item>
-        <item>
-          <description>Yes</description>
-          <description>Yes</description>
-          <description>
-            <b>MSGFLT_DISALLOW</b>
-          </description>
-          <description>
-            <b>MSGFLTINFO_ALLOWED_HIGHER</b>
-          </description>
-        </item>
-        <item>
-          <description>Yes</description>
-          <description>Yes</description>
-          <description>
-            <b>MSGFLT_RESET</b>
-          </description>
-          <description>
-            <b>MSGFLTINFO_NONE</b>
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="ChangeWindowMessageFilterEx" />
+    <summary>Contains extended result information obtained by calling the <see cref="ChangeWindowMessageFilterEx" /> function.</summary>
   </member>
   <member name="CHANGEFILTERSTRUCT.cbSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of the structure, in bytes.
-Must be set to <code>sizeof(CHANGEFILTERSTRUCT)</code>, otherwise the function fails with <b>ERROR_INVALID_PARAMETER</b>.</para>
-    </summary>
+    <summary>The size of the structure, in bytes. Must be set to <code>sizeof(CHANGEFILTERSTRUCT)</code>, otherwise the function fails with <b>ERROR_INVALID_PARAMETER</b>.</summary>
   </member>
   <member name="CHANGEFILTERSTRUCT.ExtStatus">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>If the function succeeds, this field contains one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MSGFLTINFO_NONE</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>See the Remarks section.
-Applies to <b>MSGFLT_ALLOW</b> and <b>MSGFLT_DISALLOW</b>.</para>
-          </description>
-        </item>
-        <item>
+          <description>See the Remarks section. 						Applies to <b>MSGFLT_ALLOW</b> and <b>MSGFLT_DISALLOW</b>. 					</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MSGFLTINFO_ALLOWED_HIGHER</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The message is allowed at a scope
-higher than the window. Applies to <b>MSGFLT_DISALLOW</b>.</para>
-          </description>
-        </item>
-        <item>
+          <description>The message is allowed at a scope 					 higher than the window. Applies to <b>MSGFLT_DISALLOW</b>.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MSGFLTINFO_ALREADYALLOWED_FORWND</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The message has already
-been allowed by this window's message filter, and
-the function thus succeeded with no change to the window's message filter.
-Applies to <b>MSGFLT_ALLOW</b>.</para>
-          </description>
-        </item>
-        <item>
+          <description>The message has already 					been allowed by this window's message filter, and 					the function thus succeeded with no change to the window's message filter. 					Applies to <b>MSGFLT_ALLOW</b>.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MSGFLTINFO_ALREADYDISALLOWED_FORWND</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The message
-has already been blocked by this window's message filter, and the function thus succeeded with no change to the window's message filter.
-Applies to <b>MSGFLT_DISALLOW</b>.</para>
-          </description>
-        </item>
+          <description>The message 					has already been blocked by this window's message filter, and the function thus succeeded with no change to the window's message filter. 					Applies to <b>MSGFLT_DISALLOW</b>.</description>
+        </listheader>
       </list>
     </summary>
   </member>

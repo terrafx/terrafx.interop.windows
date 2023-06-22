@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SolidBrush.GetColor">
+    <summary>The <b>SolidBrush.GetColor</b> method gets the color of this solid brush.</summary>
+    <param name="color">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that receives the color of this solid brush.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="SolidBrush.SetColor">
+    <summary>The <b>SolidBrush.SetColor</b> method sets the color of this solid brush.</summary>
+    <param name="color">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the color to be set in this solid brush.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="SolidBrush.SolidBrush">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-solidbrush">SolidBrush</a> object based on a color.</summary>
+    <param name="color">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the initial color of this solid brush.</param>
+  </member>
+  <member name="SolidBrush.SolidBrush">
+    <summary>Copy constructor for <b>SolidBrush</b>.</summary>
+    <param name="unnamedParam1">The <b>SolidBrush</b> object to copy into this object.</param>
+  </member>
+  <member name="SolidBrush.SolidBrush">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-solidbrush">SolidBrush</a> object based on a color.</summary>
+    <param name="color">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the initial color of this solid brush.</param>
+  </member>
+</doc>

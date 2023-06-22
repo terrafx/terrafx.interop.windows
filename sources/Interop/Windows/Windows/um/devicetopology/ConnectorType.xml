@@ -3,45 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ConnectorType">
-    <summary>
-      <para>The <b>ConnectorType</b> enumeration indicates the type of connection that a connector is part of.</para>
-    </summary>
-    <remarks>
-      <para>The <see cref="IConnector.GetType" /> method uses the constants defined in the <b>ConnectorType</b> enumeration.</para>
-      <para>For more information about connector types, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-topologies">Device Topologies</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-constants">Core Audio Constants</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-enumerations">Core Audio Enumerations</seealso>
-    <seealso cref="IConnector.GetType" />
+    <summary>The <b>ConnectorType</b> enumeration indicates the type of connection that a connector is part of.</summary>
   </member>
   <member name="ConnectorType.Unknown_Connector">
-    <summary>
-      <para>The connector is part of a connection of unknown type.</para>
-    </summary>
+    <summary>The connector is part of a connection of unknown type.</summary>
   </member>
   <member name="ConnectorType.Physical_Internal">
-    <summary>
-      <para>The connector is part of a physical connection to an auxiliary device that is installed inside the system chassis (for example, a connection to the analog output of an internal CD player, or to a built-in microphone or built-in speakers in a laptop computer).</para>
-    </summary>
+    <summary>The connector is part of a physical connection to an auxiliary device that is installed inside the system chassis (for example, a connection to the analog output of an internal CD player, or to a built-in microphone or built-in speakers in a laptop computer).</summary>
   </member>
   <member name="ConnectorType.Physical_External">
-    <summary>
-      <para>The connector is part of a physical connection to an external device. That is, the connector is a user-accessible jack that connects to a microphone, speakers, headphones, S/PDIF input or output device, or line input or output device.</para>
-    </summary>
+    <summary>The connector is part of a physical connection to an external device. That is, the connector is a user-accessible jack that connects to a microphone, speakers, headphones, S/PDIF input or output device, or line input or output device.</summary>
   </member>
   <member name="ConnectorType.Software_IO">
-    <summary>
-      <para>The connector is part of a software-configured I/O connection (typically a DMA channel) between system memory and an audio hardware device on an audio adapter.</para>
-    </summary>
+    <summary>The connector is part of a software-configured I/O connection (typically a DMA channel) between system memory and an audio hardware device on an audio adapter.</summary>
   </member>
   <member name="ConnectorType.Software_Fixed">
-    <summary>
-      <para>The connector is part of a permanent connection that is fixed and cannot be configured under software control. This type of connection is typically used to connect two audio hardware devices that reside on the same adapter.</para>
-    </summary>
+    <summary>The connector is part of a permanent connection that is fixed and cannot be configured under software control. This type of connection is typically used to connect two audio hardware devices that reside on the same adapter.</summary>
   </member>
   <member name="ConnectorType.Network">
-    <summary>
-      <para>The connector is part of a connection to a network.</para>
-    </summary>
+    <summary>The connector is part of a connection to a network.</summary>
   </member>
 </doc>

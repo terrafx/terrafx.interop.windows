@@ -3,14 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="INTERFACE_INFO">
-    <summary>
-      <para>The
-<b>INTERFACE_INFO</b> structure is used in conjunction with the <b>SIO_GET_INTERFACE_LIST</b> ioctl command to obtain information about an interface IP address.</para>
-    </summary>
-    <remarks>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>INTERFACE_INFO</b> structure is defined in the <i>Ws2ipdef.h</i> header file which is automatically included in the <i>Ws2tcpip.h</i> header file. The <i>Ws2ipdef.h</i>  header files should never be used directly.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/winsock-ioctls">Winsock IOCTLs</seealso>
+    <summary>The<b>INTERFACE_INFO</b> structure is used in conjunction with the <b>SIO_GET_INTERFACE_LIST</b> ioctl command to obtain information about an interface IP address.</summary>
   </member>
   <member name="INTERFACE_INFO.iiFlags">
     <summary>
@@ -20,62 +13,76 @@
           <description>Flag</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>IFF_UP</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IFF_UP</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The interface is running.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The interface is running.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IFF_BROADCAST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The broadcast feature is supported.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>IFF_BROADCAST</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IFF_LOOPBACK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The loopback interface is running.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The broadcast feature is supported.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IFF_POINTTOPOINT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The interface is using point-to-point link.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>IFF_LOOPBACK</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IFF_MULTICAST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The loopback interface is running.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>IFF_POINTTOPOINT</b>
-          </description>
-          <description>
-            <para>The interface is using point-to-point link.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>IFF_MULTICAST</b>
-          </description>
-          <description>
-            <para>The multicast feature is supported.</para>
-          </description>
-        </item>
+          <description>The multicast feature is supported.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="INTERFACE_INFO.iiAddress">
-    <summary>
-      <para>Address of an interface.</para>
-    </summary>
+    <summary>Address of an interface.</summary>
   </member>
   <member name="INTERFACE_INFO.iiBroadcastAddress">
-    <summary>
-      <para>Broadcast address of the interface or the address of the other side for point-to-point links.</para>
-    </summary>
+    <summary>Broadcast address of the interface or the address of the other side for point-to-point links.</summary>
   </member>
   <member name="INTERFACE_INFO.iiNetmask">
-    <summary>
-      <para>Netmask used by the interface.</para>
-    </summary>
+    <summary>Netmask used by the interface.</summary>
   </member>
 </doc>

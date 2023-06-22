@@ -3,27 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_CULL_MODE">
-    <summary>
-      <para>Indicates triangles facing a particular direction are not drawn.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is part of a rasterizer-state object description (see <see cref="D3D11_RASTERIZER_DESC" />).</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-enums">Core Enumerations</seealso>
+    <summary>Indicates triangles facing a particular direction are not drawn.</summary>
   </member>
   <member name="D3D11_CULL_MODE.D3D11_CULL_NONE">
-    <summary>
-      <para>Always draw all triangles.</para>
-    </summary>
+    <summary>Always draw all triangles.</summary>
   </member>
   <member name="D3D11_CULL_MODE.D3D11_CULL_FRONT">
-    <summary>
-      <para>Do not draw triangles that are front-facing.</para>
-    </summary>
+    <summary>Do not draw triangles that are front-facing.</summary>
   </member>
   <member name="D3D11_CULL_MODE.D3D11_CULL_BACK">
-    <summary>
-      <para>Do not draw triangles that are back-facing.</para>
-    </summary>
+    <summary>Do not draw triangles that are back-facing.</summary>
   </member>
 </doc>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HANDLE_ACCESS_OPTIONS">
+    <summary>Defines the level of access that a handle has on files.</summary>
+  </member>
+  <member name="HANDLE_ACCESS_OPTIONS.HAO_NONE">
+    <summary>None.</summary>
+  </member>
+  <member name="HANDLE_ACCESS_OPTIONS.HAO_READ_ATTRIBUTES">
+    <summary>The handle can be used to read file attributes.</summary>
+  </member>
+  <member name="HANDLE_ACCESS_OPTIONS.HAO_READ">
+    <summary>The handle can be used to read the file.</summary>
+  </member>
+  <member name="HANDLE_ACCESS_OPTIONS.HAO_WRITE">
+    <summary>The handle can be used to write to the file.</summary>
+  </member>
+  <member name="HANDLE_ACCESS_OPTIONS.HAO_DELETE">
+    <summary>The handle can be used to delete the file.</summary>
+  </member>
+</doc>

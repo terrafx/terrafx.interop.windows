@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_SECURITY_BINDING_PROPERTIES">
-    <summary>
-      <para>Specifies an array of security binding settings.</para>
-    </summary>
+    <summary>Specifies an array of security binding settings.</summary>
   </member>
   <member name="WS_SECURITY_BINDING_PROPERTIES.properties">
-    <summary>
-      <para>An array of properties.  The number of elements in the array is specified
-using the propertyCount parameter.  This field may be <b>NULL</b> if the propertyCount
-is 0.</para>
-    </summary>
+    <summary>An array of properties. The number of elements in the array is specified using the propertyCount parameter. This field may be <b>NULL</b> if the propertyCount is 0.</summary>
   </member>
   <member name="WS_SECURITY_BINDING_PROPERTIES.propertyCount">
-    <summary>
-      <para>The number of elements in the properties array.</para>
-    </summary>
+    <summary>The number of elements in the properties array.</summary>
   </member>
 </doc>

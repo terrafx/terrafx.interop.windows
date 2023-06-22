@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IOleContainer.EnumObjects">
-    <summary>
-      <para>Enumerates the objects in the current container.</para>
-    </summary>
-    <param name="grfFlags">
-      <para>Specifies which objects in a container are to be enumerated, as defined in the enumeration <see cref="OLECONTF" />.</para>
-    </param>
-    <param name="ppenum">
-      <para>A pointer to an <see cref="IEnumUnknown" /> pointer variable that receives the interface pointer to the enumerator object. Each time a container receives a successful call to <b>EnumObjects</b>, it must increase the reference count on the <i>ppenum</i> pointer the method returns. It is the caller's responsibility to call <see cref="IUnknown.Release" /> when it is done with the pointer. If an error is returned, the implementation must set <i>ppenum</i> to <b>NULL</b>.</para>
-    </param>
+    <summary>Enumerates the objects in the current container.</summary>
+    <param name="grfFlags">Specifies which objects in a container are to be enumerated, as defined in the enumeration <see cref="OLECONTF" />.</param>
+    <param name="ppenum">A pointer to an <see cref="IEnumUnknown" /> pointer variable that receives the interface pointer to the enumerator object. Each time a container receives a successful call to <b>EnumObjects</b>, it must increase the reference count on the <i>ppenum</i> pointer the method returns. It is the caller's responsibility to call <see cref="IUnknown.Release" /> when it is done with the pointer. If an error is returned, the implementation must set <i>ppenum</i> to <b>NULL</b>.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -19,43 +13,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The operation failed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The operation failed.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>Object enumeration not supported.</para>
-          </description>
-        </item>
+          <description>Object enumeration not supported.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A container should implement <b>EnumObjects</b> to enable programmatic clients to find out what objects it holds. This method, however, is not called in standard linking scenarios.</para>
-    </remarks>
-    <seealso cref="IEnumUnknown" />
-    <seealso cref="IOleContainer" />
-    <seealso cref="IOleItemContainer" />
-    <seealso cref="OLECONTF" />
   </member>
   <member name="IOleContainer.LockContainer">
-    <summary>
-      <para>Keeps the container for embedded objects running until explicitly released.</para>
-    </summary>
-    <param name="fLock">
-      <para>Indicates whether to lock (<b>TRUE</b>) or unlock (<b>FALSE</b>) a container.</para>
-    </param>
+    <summary>Keeps the container for embedded objects running until explicitly released.</summary>
+    <param name="fLock">Indicates whether to lock (<b>TRUE</b>) or unlock (<b>FALSE</b>) a container.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -63,40 +50,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The operation failed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The operation failed.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory available for the operation.</para>
-          </description>
-        </item>
+          <description>Insufficient memory available for the operation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>An embedded object calls <b>LockContainer</b> to keep its container running when the object has link clients that require an update. If an end user selects <b>File Close</b> from the container's menu, however, the container ignores all outstanding <b>LockContainer</b> locks and closes the document anyway.</para>
-    </remarks>
-    <seealso cref="CoLockObjectExternal" />
-    <seealso cref="IOleContainer" />
-    <seealso cref="IRunnableObject.Run" />
   </member>
   <member name="IOleContainer">
-    <summary>
-      <para>Enumerates objects in a compound document or lock a container in the running state. Container and object applications both implement this interface.</para>
-    </summary>
-    <seealso cref="IOleItemContainer" />
-    <seealso cref="IParseDisplayName" />
+    <summary>Enumerates objects in a compound document or lock a container in the running state. Container and object applications both implement this interface.</summary>
   </member>
 </doc>

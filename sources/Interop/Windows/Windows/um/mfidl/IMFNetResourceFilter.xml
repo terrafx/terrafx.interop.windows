@@ -3,47 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFNetResourceFilter.OnRedirect">
-    <summary>
-      <para>Called when the byte stream redirects to a URL.</para>
-    </summary>
-    <param name="pszUrl">
-      <para>The URL to which the connection has been redirected.</para>
-    </param>
-    <param name="pvbCancel">
-      <para>To cancel the redirection, set this parameter to <b>VARIANT_TRUE</b>. To allow the redirection, set this parameter to <b>VARIANT_FALSE</b>.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFNetResourceFilter" />
+    <summary>Called when the byte stream redirects to a URL.</summary>
+    <param name="pszUrl">The URL to which the connection has been redirected.</param>
+    <param name="pvbCancel">To cancel the redirection, set this parameter to <b>VARIANT_TRUE</b>. To allow the redirection, set this parameter to <b>VARIANT_FALSE</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFNetResourceFilter.OnSendingRequest">
-    <summary>
-      <para>Called when the byte stream requests a URL.</para>
-    </summary>
-    <param name="pszUrl">
-      <para>The URL that the byte stream is requesting.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFNetResourceFilter" />
+    <summary>Called when the byte stream requests a URL.</summary>
+    <param name="pszUrl">The URL that the byte stream is requesting.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFNetResourceFilter">
-    <summary>
-      <para>Notifies the application when a byte stream requests a URL, and enables the application to block URL redirection.</para>
-    </summary>
-    <remarks>
-      <para>To set the callback interface:</para>
-      <list type="number">
-        <item>
-          <description>Query the byte stream object for the <see cref="IMFAttributes" /> interface.</description>
-        </item>
-        <item>
-          <description>Call <see cref="IMFAttributes.SetUnknown" /> to set the <a href="https://docs.microsoft.com//windows/desktop/medfound/mfnetsource-resource-filter">MFNETSOURCE_RESOURCE_FILTER</a> attribute.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Notifies the application when a byte stream requests a URL, and enables the application to block URL redirection.</summary>
   </member>
 </doc>

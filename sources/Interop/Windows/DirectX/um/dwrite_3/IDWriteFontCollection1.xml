@@ -3,23 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteFontCollection1.GetFontSet">
-    <summary>
-      <para>Gets the underlying font set used by this collection.</para>
-    </summary>
-    <param name="fontSet">
-      <para>Type: <b><see cref="IDWriteFontSet" />**</b></para>
-      <para>Returns the font set used by the collection.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteFontCollection1" />
+    <summary>Gets the underlying font set used by this collection.</summary>
+    <param name="fontSet">Returns the font set used by the collection.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteFontCollection1">
-    <summary>
-      <para>An object that encapsulates a set of fonts, such as the set of fonts installed on the system, or the set of fonts in a particular directory. The font collection API can be used to discover what font families and fonts are available, and to obtain some metadata about the fonts.</para>
-    </summary>
-    <seealso cref="IDWriteFontCollection" />
+    <summary>An object that encapsulates a set of fonts, such as the set of fonts installed on the system, or the set of fonts in a particular directory. The font collection API can be used to discover what font families and fonts are available, and to obtain some metadata about the fonts.</summary>
   </member>
 </doc>

@@ -3,202 +3,62 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICStream.InitializeFromFilename">
-    <summary>
-      <para>Initializes a stream from a particular file.</para>
-    </summary>
-    <param name="wzFileName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>The file used to initialize the stream.</para>
-    </param>
+    <summary>Initializes a stream from a particular file.</summary>
+    <param name="wzFileName">The file used to initialize the stream.</param>
     <param name="dwDesiredAccess">
-      <para>Type: <b>DWORD</b></para>
       <para>The desired file access mode.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>GENERIC_READ</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>GENERIC_READ</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Read access.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Read access.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>GENERIC_WRITE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>GENERIC_WRITE</b>
-          </description>
-          <description>
-            <para>Write access.</para>
-          </description>
-        </item>
+          <description>Write access.</description>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <see cref="IWICStream" /> interface methods do not enable you to provide a file sharing option.
-To create a shared file stream for an image, use the <see cref="SHCreateStreamOnFileEx" /> function.
-This stream can then be used to create an <see cref="IWICBitmapDecoder" /> using the <see cref="CreateDecoderFromStream" /> method.</para>
-      <h4>Examples</h4>
-      <para>This example demonstrates the use of the <b>InitializeFromFilename</b> to create an image decoder.</para>
-      <code>    IWICImagingFactory *pFactory = NULL;
-    IWICStream *pStream = NULL;
-    IWICBitmapDecoder *pDecoder = NULL;
-
-    HRESULT hr = CoCreateInstance(
-                    CLSID_WICImagingFactory,
-                    NULL,
-                    CLSCTX_INPROC_SERVER,
-                    IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pFactory));
-
-    // Create the stream.
-    if (SUCCEEDED(hr))
-    {
-        hr = pFactory-&gt;CreateStream(&amp;amp;amp;amp;amp;amp;pStream);
-    }
-
-    // Initialize the stream from a specific file.
-    if (SUCCEEDED(hr))
-    {
-        hr = pStream-&gt;InitializeFromFilename(L"test.jpg", GENERIC_READ);
-    }
-
-    // Create a JPEG decoder.
-    // Since the stream is created from the JPEG file, an explicit JPEG decoder
-    // can be created using the generic IWICImagingFactory.CreateDecoder method.
-    // However, use IWICImagingFactory.CreateDecoderFromStream method to auto
-    // detect the stream and instantiate the appropriate codec.
-    if (SUCCEEDED(hr))
-    {
-        hr = pFactory-&gt;CreateDecoder(
-                GUID_ContainerFormatJpeg,   // Explicitly create a JPEG decoder.
-                NULL,                       // No preferred vendor.
-                &amp;amp;amp;amp;amp;amp;pDecoder);                 // Pointer to the decoder.
-    }
-
-    // Initialize the decoder
-    if (SUCCEEDED(hr))
-    {
-        hr = pDecoder-&gt;Initialize(
-                pStream,                            // The stream to use.
-                WICDecodeMetadataCacheOnDemand);    // Decode metadata when needed.
-    }
-
-    // Process image frame.
-    if (SUCCEEDED(hr))
-    {
-        UINT cFrames = 0;
-
-        hr = pDecoder-&gt;GetFrameCount(&amp;amp;amp;amp;amp;amp;cFrames);
-
-        if (SUCCEEDED(hr) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; (cFrames &gt; 0))
-        {
-            UINT width = 0, height = 0;
-            IWICBitmapFrameDecode *pBitmapFrame = NULL;
-
-            hr = pDecoder-&gt;GetFrame(0, &amp;amp;amp;amp;amp;amp;pBitmapFrame);
-
-            if (SUCCEEDED(hr))
-            {
-                // Do something with the frame here.
-            }
-
-            if (pBitmapFrame)
-            {
-                pBitmapFrame-&gt;Release();
-            }
-        }
-    }
-
-    if (pStream)
-    {
-        pStream-&gt;Release();
-    }
-
-    if (pFactory)
-    {
-        pFactory-&gt;Release();
-    }
-
-    if (pDecoder)
-    {
-        pDecoder-&gt;Release();
-    }
-</code>
-    </remarks>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICStream.InitializeFromIStream">
-    <summary>
-      <para>Initializes a stream from another stream. Access rights are inherited from the underlying stream.</para>
-    </summary>
-    <param name="pIStream">
-      <para>Type: <b><see cref="IStream" />*</b></para>
-      <para>The initialize stream.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Initializes a stream from another stream. Access rights are inherited from the underlying stream.</summary>
+    <param name="pIStream">The initialize stream.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICStream.InitializeFromIStreamRegion">
-    <summary>
-      <para>Initializes the stream as a substream of another stream.</para>
-    </summary>
-    <param name="pIStream">
-      <para>Type: <b><see cref="IStream" />*</b></para>
-      <para>Pointer to the input stream.</para>
-    </param>
-    <param name="ulOffset">
-      <para>Type: <b>ULARGE_INTEGER</b></para>
-      <para>The stream offset used to create the new stream.</para>
-    </param>
-    <param name="ulMaxSize">
-      <para>Type: <b>ULARGE_INTEGER</b></para>
-      <para>The maximum size of the stream.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The stream functions with its own stream position, independent of the underlying stream but restricted to a region.  All seek positions are relative to the sub region.  It is allowed, though not recommended, to have multiple writable sub streams overlapping the same range.</para>
-    </remarks>
+    <summary>Initializes the stream as a substream of another stream.</summary>
+    <param name="pIStream">Pointer to the input stream.</param>
+    <param name="ulOffset">The stream offset used to create the new stream.</param>
+    <param name="ulMaxSize">The maximum size of the stream.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICStream.InitializeFromMemory">
-    <summary>
-      <para>Initializes a stream to treat a block of memory as a stream. The stream cannot grow beyond the buffer size.</para>
-    </summary>
-    <param name="pbBuffer">
-      <para>Type: <b>BYTE*</b></para>
-      <para>Pointer to the buffer used to initialize the stream.</para>
-    </param>
-    <param name="cbBufferSize">
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of buffer.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method should be avoided whenever possible. The caller is responsible for ensuring the memory block is valid for the lifetime of the stream when using <b>InitializeFromMemory</b>.  A workaround for this behavior is to create an <see cref="IStream" /> and use <see cref="InitializeFromIStream" /> to create the <see cref="IWICStream" />.</para>
-      <para>If you require a growable memory stream, use <see cref="CreateStreamOnHGlobal" />.</para>
-    </remarks>
+    <summary>Initializes a stream to treat a block of memory as a stream. The stream cannot grow beyond the buffer size.</summary>
+    <param name="pbBuffer">Pointer to the buffer used to initialize the stream.</param>
+    <param name="cbBufferSize">The size of buffer.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICStream">
-    <summary>
-      <para>Represents a Windows Imaging Component (WIC) stream for referencing imaging and metadata content.</para>
-    </summary>
-    <remarks>
-      <para>Decoders and metadata handlers are expected to create sub streams of whatever stream they hold when handing off control for embedded metadata to another metadata handler.  If the stream is not restricted then use MAXLONGLONG as the max size and offset 0.</para>
-      <para>The <b>IWICStream</b> interface methods do not enable you to provide a file sharing option.
-To create a file stream for an image, use the <see cref="SHCreateStreamOnFileEx" /> function.
-This stream can then be used to create an <see cref="IWICBitmapDecoder" /> using the <see cref="CreateDecoderFromStream" /> method.</para>
-    </remarks>
+    <summary>Represents a Windows Imaging Component (WIC) stream for referencing imaging and metadata content.</summary>
   </member>
 </doc>

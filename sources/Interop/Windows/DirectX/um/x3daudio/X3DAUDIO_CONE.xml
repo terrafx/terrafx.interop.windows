@@ -3,54 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="X3DAUDIO_CONE">
-    <summary>
-      <para>Specifies directionality for a single-channel non-LFE emitter by scaling DSP behavior with respect to the emitter's orientation.</para>
-    </summary>
-    <remarks>
-      <para>For a detailed explanation of sound cones see <a href="https://docs.microsoft.com//windows/desktop/xaudio2/sound-cones">Sound Cones</a>.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/structures">Structures</seealso>
+    <summary>Specifies directionality for a single-channel non-LFE emitter by scaling DSP behavior with respect to the emitter's orientation.</summary>
   </member>
   <member name="X3DAUDIO_CONE.InnerAngle">
-    <summary>
-      <para>Inner cone angle in radians. This value must be within 0.0f to X3DAUDIO_2PI.</para>
-    </summary>
+    <summary>Inner cone angle in radians. This value must be within 0.0f to X3DAUDIO_2PI.</summary>
   </member>
   <member name="X3DAUDIO_CONE.OuterAngle">
-    <summary>
-      <para>Outer cone angle in radians. This value must be within <i>InnerAngle</i> to X3DAUDIO_2PI.</para>
-    </summary>
+    <summary>Outer cone angle in radians. This value must be within <i>InnerAngle</i> to X3DAUDIO_2PI.</summary>
   </member>
   <member name="X3DAUDIO_CONE.InnerVolume">
-    <summary>
-      <para>Volume scaler on/within inner cone. This value must be within 0.0f to 2.0f.</para>
-    </summary>
+    <summary>Volume scaler on/within inner cone. This value must be within 0.0f to 2.0f.</summary>
   </member>
   <member name="X3DAUDIO_CONE.OuterVolume">
-    <summary>
-      <para>Volume scaler on/beyond outer cone. This value must be within 0.0f to 2.0f.</para>
-    </summary>
+    <summary>Volume scaler on/beyond outer cone. This value must be within 0.0f to 2.0f.</summary>
   </member>
   <member name="X3DAUDIO_CONE.InnerLPF">
-    <summary>
-      <para>LPF direct-path or reverb-path coefficient scaler on/within inner cone. This value is only used for LPF calculations and must be within 0.0f to 1.0f.</para>
-    </summary>
+    <summary>LPF direct-path or reverb-path coefficient scaler on/within inner cone. This value is only used for LPF calculations and must be within 0.0f to 1.0f.</summary>
   </member>
   <member name="X3DAUDIO_CONE.OuterLPF">
-    <summary>
-      <para>LPF direct-path or reverb-path coefficient scaler on or beyond outer cone. This value is only used for LPF calculations and must be within 0.0f to 1.0f.</para>
-    </summary>
+    <summary>LPF direct-path or reverb-path coefficient scaler on or beyond outer cone. This value is only used for LPF calculations and must be within 0.0f to 1.0f.</summary>
   </member>
   <member name="X3DAUDIO_CONE.InnerReverb">
-    <summary>
-      <para>Reverb send level scaler on or within inner cone. This must be within 0.0f to 2.0f.</para>
-    </summary>
+    <summary>Reverb send level scaler on or within inner cone. This must be within 0.0f to 2.0f.</summary>
   </member>
   <member name="X3DAUDIO_CONE.OuterReverb">
-    <summary>
-      <para>Reverb send level scaler on/beyond outer cone. This must be within 0.0f to 2.0f.</para>
-    </summary>
+    <summary>Reverb send level scaler on/beyond outer cone. This must be within 0.0f to 2.0f.</summary>
   </member>
 </doc>

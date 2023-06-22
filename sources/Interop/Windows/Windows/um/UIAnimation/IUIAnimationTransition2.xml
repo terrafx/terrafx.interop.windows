@@ -3,111 +3,42 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IUIAnimationTransition2.GetDimension">
-    <summary>
-      <para>Gets the number of dimensions in which the animation variable has a transition specified.</para>
-    </summary>
-    <param name="dimension">
-      <para>The number of dimensions.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <seealso cref="IUIAnimationTransition2" />
+    <summary>Gets the number of dimensions in which the animation variable has a transition specified.</summary>
+    <param name="dimension">The number of dimensions.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationTransition2.GetDuration">
-    <summary>
-      <para>Gets the duration of the transition.</para>
-    </summary>
-    <param name="duration">
-      <para>The duration of the transition, in seconds.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>An application should typically call the <see cref="IsDurationKnown" /> method before calling this method.</para>
-      <para>This method should not be called when the storyboard to which the transition has been added is scheduled or playing.</para>
-    </remarks>
-    <seealso cref="IUIAnimationTransition2" />
+    <summary>Gets the duration of the transition.</summary>
+    <param name="duration">The duration of the transition, in seconds.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationTransition2.IsDurationKnown">
-    <summary>
-      <para>Determines whether the duration of a transition is known.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method should not be called when the storyboard to which the transition has been added is scheduled or playing.</para>
-    </remarks>
-    <seealso cref="IUIAnimationTransition2" />
-    <seealso cref="IUIAnimationTransition2.GetDuration" />
+    <summary>Determines whether the duration of a transition is known.</summary>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationTransition2.SetInitialValue">
-    <summary>
-      <para>Sets the initial value of the transition.</para>
-    </summary>
-    <param name="value">
-      <para>The initial value for the transition.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>Do not call this method after the transition has been added to a storyboard.</para>
-    </remarks>
-    <seealso cref="IUIAnimationTransition2" />
+    <summary>Sets the initial value of the transition.</summary>
+    <param name="value">The initial value for the transition.</param>
+    <returns>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationTransition2.SetInitialVectorValue">
-    <summary>
-      <para>Sets the initial value of the transition for each specified dimension in the animation variable.</para>
-    </summary>
-    <param name="value">
-      <para>A vector (of size <i>cDimension</i>) that contains  the initial values for the transition.</para>
-    </param>
-    <param name="cDimension">
-      <para>The number of dimensions that require transition values. This parameter specifies the number of values listed in <i>value</i>.</para>
-    </param>
-    <returns>
-      <para>Returns <b>S_OK</b> if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>The animation manager should not call this method after the transition has been added to a storyboard.</para>
-    </remarks>
-    <seealso cref="IUIAnimationTransition2" />
+    <summary>Sets the initial value of the transition for each specified dimension in the animation variable.</summary>
+    <param name="value">A vector (of size <i>cDimension</i>) that contains the initial values for the transition.</param>
+    <param name="cDimension">The number of dimensions that require transition values. This parameter specifies the number of values listed in <i>value</i>.</param>
+    <returns>Returns <b>S_OK</b> if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationTransition2.SetInitialVectorVelocity">
-    <summary>
-      <para>Sets the initial velocity of the transition for each specified dimension in the animation variable.</para>
-    </summary>
-    <param name="velocity">
-      <para>A vector (of size <i>cDimension</i>) that contains  the initial velocities for the transition.</para>
-    </param>
-    <param name="cDimension">
-      <para>The number of dimensions that require transition velocities. This parameter specifies the number of values listed in <i>velocity</i>.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <seealso cref="IUIAnimationTransition2" />
+    <summary>Sets the initial velocity of the transition for each specified dimension in the animation variable.</summary>
+    <param name="velocity">A vector (of size <i>cDimension</i>) that contains the initial velocities for the transition.</param>
+    <param name="cDimension">The number of dimensions that require transition velocities. This parameter specifies the number of values listed in <i>velocity</i>.</param>
+    <returns>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationTransition2.SetInitialVelocity">
-    <summary>
-      <para>Sets the initial velocity of the transition.</para>
-    </summary>
-    <param name="velocity">
-      <para>The initial velocity for the transition.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <seealso cref="IUIAnimationTransition2" />
+    <summary>Sets the initial velocity of the transition.</summary>
+    <param name="velocity">The initial velocity for the transition.</param>
+    <returns>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationTransition2">
-    <summary>
-      <para>Extends the <see cref="IUIAnimationTransition" /> interface that defines a transition. An  <b>IUIAnimationTransition2</b> transition determines how an animation variable  changes over time in a given dimension.</para>
-    </summary>
-    <seealso cref="IUnknown" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/UIAnimation/-interfaces-main">Interfaces</seealso>
+    <summary>Extends the <see cref="IUIAnimationTransition" /> interface that defines a transition. An <b>IUIAnimationTransition2</b> transition determines how an animation variable changes over time in a given dimension.</summary>
   </member>
 </doc>

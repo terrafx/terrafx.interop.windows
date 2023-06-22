@@ -3,25 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxBundleWriter2.AddExternalPackageReference">
-    <summary>
-      <para>Adds a reference to an external package to the package bundle.</para>
-    </summary>
-    <param name="fileName">
-      <para>The name of the payload file. The file name path must be relative to the root of the package.</para>
-    </param>
-    <param name="inputStream">
-      <para>An <see cref="IStream" /> that provides the contents of <i>fileName</i>.
-The stream must support <see cref="Read" />, <see cref="Seek" />, and <see cref="Stat" />.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxBundleWriter2" />
+    <summary>Adds a reference to an external package to the package bundle.</summary>
+    <param name="fileName">The name of the payload file. The file name path must be relative to the root of the package.</param>
+    <param name="inputStream">An <see cref="IStream" /> that provides the contents of <i>fileName</i>. The stream must support <see cref="Read" />, <see cref="Seek" />, and <see cref="Stat" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxBundleWriter2">
-    <summary>
-      <para>Provides a write-only object model for bundle packages.</para>
-    </summary>
-    <seealso cref="IAppxBundleWriter" />
+    <summary>Provides a write-only object model for bundle packages.</summary>
   </member>
 </doc>

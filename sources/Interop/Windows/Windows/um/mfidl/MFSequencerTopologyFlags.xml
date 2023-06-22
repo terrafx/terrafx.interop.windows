@@ -3,16 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFSequencerTopologyFlags">
-    <summary>
-      <para>Contains flags for adding a topology to the sequencer source, or updating a topology already in the queue.</para>
-    </summary>
-    <seealso cref="IMFSequencerSource.AppendTopology" />
-    <seealso cref="IMFSequencerSource.UpdateTopologyFlags" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Contains flags for adding a topology to the sequencer source, or updating a topology already in the queue.</summary>
   </member>
   <member name="MFSequencerTopologyFlags.SequencerTopologyFlags_Last">
-    <summary>
-      <para>This topology is the last topology in the sequence.</para>
-    </summary>
+    <summary>This topology is the last topology in the sequence.</summary>
   </member>
 </doc>

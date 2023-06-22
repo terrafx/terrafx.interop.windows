@@ -3,27 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IQueryContinueWithStatus.SetStatusMessage">
-    <summary>
-      <para>Enables the credential provider to set status messages as it attempts to complete <see cref="IConnectableCredentialProviderCredential.Connect" />.</para>
-    </summary>
-    <param name="psz">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to the status message.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The Logon UI will display the status message during <see cref="Connect" />. This is especially useful during lengthy attempt to connect to inform the user of the status and continued attempts.</para>
-    </remarks>
+    <summary>Enables the credential provider to set status messages as it attempts to complete <see cref="IConnectableCredentialProviderCredential.Connect" />.</summary>
+    <param name="psz">A pointer to the status message.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IQueryContinueWithStatus">
-    <summary>
-      <para>Exposes methods that provide a standard mechanism for credential providers to call <see cref="QueryContinue" /> while attempting to connect to the network to determine if they should continue these attempts. Credential providers can also use this interface to display messages to the user while attempting to establish a network connection.</para>
-    </summary>
-    <remarks>
-      <para>This interface also provides the methods of the <see cref="IQueryContinue" /> interface, from which it inherits.</para>
-    </remarks>
+    <summary>Exposes methods that provide a standard mechanism for credential providers to call <see cref="QueryContinue" /> while attempting to connect to the network to determine if they should continue these attempts. Credential providers can also use this interface to display messages to the user while attempting to establish a network connection.</summary>
   </member>
 </doc>

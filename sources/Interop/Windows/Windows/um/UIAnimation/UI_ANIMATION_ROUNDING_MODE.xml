@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="UI_ANIMATION_ROUNDING_MODE">
-    <summary>
-      <para>Defines the rounding modes to be used when the value of an animation variable is converted from a floating-point type to an integer type.</para>
-    </summary>
-    <seealso cref="IUIAnimationVariable" />
+    <summary>Defines the rounding modes to be used when the value of an animation variable is converted from a floating-point type to an integer type.</summary>
   </member>
   <member name="UI_ANIMATION_ROUNDING_MODE.UI_ANIMATION_ROUNDING_NEAREST">
-    <summary>
-      <para>Round to the nearest integer.</para>
-    </summary>
+    <summary>Round to the nearest integer.</summary>
   </member>
   <member name="UI_ANIMATION_ROUNDING_MODE.UI_ANIMATION_ROUNDING_FLOOR">
-    <summary>
-      <para>Round down.</para>
-    </summary>
+    <summary>Round down.</summary>
   </member>
   <member name="UI_ANIMATION_ROUNDING_MODE.UI_ANIMATION_ROUNDING_CEILING">
-    <summary>
-      <para>Round up.</para>
-    </summary>
+    <summary>Round up.</summary>
   </member>
 </doc>

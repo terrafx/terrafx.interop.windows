@@ -3,34 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IQueryCodePage.GetCodePage">
-    <summary>
-      <para>Retrieves the numeric value (Code Page identifier) of the ANSI code page.</para>
-    </summary>
-    <param name="puiCodePage">
-      <para>Type: <b>UINT*</b></para>
-      <para>The numeric value (Code Page identifier) of the ANSI code page.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Retrieves the numeric value (Code Page identifier) of the ANSI code page.</summary>
+    <param name="puiCodePage">The numeric value (Code Page identifier) of the ANSI code page.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IQueryCodePage.SetCodePage">
-    <summary>
-      <para>Sets the numeric value of the ANSI code page to a specified code page identifier.</para>
-    </summary>
-    <param name="uiCodePage">
-      <para>Type: <b>UINT</b></para>
-      <para>The numeric value of the ANSI code page you want to set.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the numeric value of the ANSI code page to a specified code page identifier.</summary>
+    <param name="uiCodePage">The numeric value of the ANSI code page you want to set.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IQueryCodePage">
-    <summary>
-      <para>Gets and sets the numeric value (Code Page identifier) of the ANSI code page.</para>
-    </summary>
+    <summary>Gets and sets the numeric value (Code Page identifier) of the ANSI code page.</summary>
   </member>
 </doc>

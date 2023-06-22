@@ -3,88 +3,54 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SECURELOCK">
-    <summary>
-      <para>Deprecated. This enumeration is used by the <see cref="BASEBROWSERDATA" /> structure to indicate the base browser's lock icon status.</para>
-    </summary>
+    <summary>Deprecated. This enumeration is used by the <see cref="BASEBROWSERDATA" /> structure to indicate the base browser's lock icon status.</summary>
   </member>
   <member name="SECURELOCK.SECURELOCK_NOCHANGE">
-    <summary>
-      <para>No change in security encryption status.</para>
-    </summary>
+    <summary>No change in security encryption status.</summary>
   </member>
   <member name="SECURELOCK.SECURELOCK_SET_UNSECURE">
-    <summary>
-      <para>There is no security encryption present.</para>
-    </summary>
+    <summary>There is no security encryption present.</summary>
   </member>
   <member name="SECURELOCK.SECURELOCK_SET_MIXED">
-    <summary>
-      <para>There are multiple security encryption methods present.</para>
-    </summary>
+    <summary>There are multiple security encryption methods present.</summary>
   </member>
   <member name="SECURELOCK.SECURELOCK_SET_SECUREUNKNOWNBIT">
-    <summary>
-      <para>The security encryption level is not known.</para>
-    </summary>
+    <summary>The security encryption level is not known.</summary>
   </member>
   <member name="SECURELOCK.SECURELOCK_SET_SECURE40BIT">
-    <summary>
-      <para>There is 40-bit security encryption present.</para>
-    </summary>
+    <summary>There is 40-bit security encryption present.</summary>
   </member>
   <member name="SECURELOCK.SECURELOCK_SET_SECURE56BIT">
-    <summary>
-      <para>There is 56-bit security encryption present.</para>
-    </summary>
+    <summary>There is 56-bit security encryption present.</summary>
   </member>
   <member name="SECURELOCK.SECURELOCK_SET_FORTEZZA">
-    <summary>
-      <para>There is Fortezza security encryption present.</para>
-    </summary>
+    <summary>There is Fortezza security encryption present.</summary>
   </member>
   <member name="SECURELOCK.SECURELOCK_SET_SECURE128BIT">
-    <summary>
-      <para>There is 128-bit security encryption present.</para>
-    </summary>
+    <summary>There is 128-bit security encryption present.</summary>
   </member>
   <member name="SECURELOCK.SECURELOCK_FIRSTSUGGEST">
-    <summary>
-      <para>Suggest a security encryption setting.</para>
-    </summary>
+    <summary>Suggest a security encryption setting.</summary>
   </member>
   <member name="SECURELOCK.SECURELOCK_SUGGEST_UNSECURE">
-    <summary>
-      <para>No security encryption has been suggested.</para>
-    </summary>
+    <summary>No security encryption has been suggested.</summary>
   </member>
   <member name="SECURELOCK.SECURELOCK_SUGGEST_MIXED">
-    <summary>
-      <para>Mixed security encryption methods have been suggested.</para>
-    </summary>
+    <summary>Mixed security encryption methods have been suggested.</summary>
   </member>
   <member name="SECURELOCK.SECURELOCK_SUGGEST_SECUREUNKNOWNBIT">
-    <summary>
-      <para>An unknown security encryption method has been suggested.</para>
-    </summary>
+    <summary>An unknown security encryption method has been suggested.</summary>
   </member>
   <member name="SECURELOCK.SECURELOCK_SUGGEST_SECURE40BIT">
-    <summary>
-      <para>A 40-bit security encryption has been suggested.</para>
-    </summary>
+    <summary>A 40-bit security encryption has been suggested.</summary>
   </member>
   <member name="SECURELOCK.SECURELOCK_SUGGEST_SECURE56BIT">
-    <summary>
-      <para>A 56-bit security encryption has been suggested.</para>
-    </summary>
+    <summary>A 56-bit security encryption has been suggested.</summary>
   </member>
   <member name="SECURELOCK.SECURELOCK_SUGGEST_FORTEZZA">
-    <summary>
-      <para>A Fortezza security encryption has been suggested.</para>
-    </summary>
+    <summary>A Fortezza security encryption has been suggested.</summary>
   </member>
   <member name="SECURELOCK.SECURELOCK_SUGGEST_SECURE128BIT">
-    <summary>
-      <para>A 128-bit security encryption has been suggested.</para>
-    </summary>
+    <summary>A 128-bit security encryption has been suggested.</summary>
   </member>
 </doc>

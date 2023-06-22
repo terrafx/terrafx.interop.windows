@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_COUNTER_TYPE">
-    <summary>
-      <para>Data type of a performance counter.</para>
-    </summary>
-    <remarks>
-      <para>These flags are an output parameter in <see cref="ID3D10Device.CheckCounter" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-enums">Core Enumerations</seealso>
+    <summary>Data type of a performance counter.</summary>
   </member>
   <member name="D3D10_COUNTER_TYPE.D3D10_COUNTER_TYPE_FLOAT32">
-    <summary>
-      <para>32-bit floating point.</para>
-    </summary>
+    <summary>32-bit floating point.</summary>
   </member>
   <member name="D3D10_COUNTER_TYPE.D3D10_COUNTER_TYPE_UINT16">
-    <summary>
-      <para>16-bit unsigned integer.</para>
-    </summary>
+    <summary>16-bit unsigned integer.</summary>
   </member>
   <member name="D3D10_COUNTER_TYPE.D3D10_COUNTER_TYPE_UINT32">
-    <summary>
-      <para>32-bit unsigned integer.</para>
-    </summary>
+    <summary>32-bit unsigned integer.</summary>
   </member>
   <member name="D3D10_COUNTER_TYPE.D3D10_COUNTER_TYPE_UINT64">
-    <summary>
-      <para>64-bit unsigned integer.</para>
-    </summary>
+    <summary>64-bit unsigned integer.</summary>
   </member>
 </doc>

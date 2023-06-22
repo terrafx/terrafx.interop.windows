@@ -3,30 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WAVEFILTER">
-    <summary>
-      <para>The <b>WAVEFILTER</b> structure defines a filter for waveform-audio data. Only filter information common to all waveform-audio data filters is included in this structure. For filters that require additional information, this structure is included as the first member in another structure along with the additional information.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/waveform-audio">Waveform Audio</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/waveform-structures">Waveform Structures</seealso>
+    <summary>The <b>WAVEFILTER</b> structure defines a filter for waveform-audio data. Only filter information common to all waveform-audio data filters is included in this structure. For filters that require additional information, this structure is included as the first member in another structure along with the additional information.</summary>
   </member>
   <member name="WAVEFILTER.cbStruct">
-    <summary>
-      <para>Size, in bytes, of the <b>WAVEFILTER</b> structure. The size specified in this member must be large enough to contain the base <b>WAVEFILTER</b> structure.</para>
-    </summary>
+    <summary>Size, in bytes, of the <b>WAVEFILTER</b> structure. The size specified in this member must be large enough to contain the base <b>WAVEFILTER</b> structure.</summary>
   </member>
   <member name="WAVEFILTER.dwFilterTag">
-    <summary>
-      <para>Waveform-audio filter type. Filter tags are registered with Microsoft Corporation for various filter algorithms.</para>
-    </summary>
+    <summary>Waveform-audio filter type. Filter tags are registered with Microsoft Corporation for various filter algorithms.</summary>
   </member>
   <member name="WAVEFILTER.fdwFilter">
-    <summary>
-      <para>Flags for the <b>dwFilterTag</b> member. The flags defined for this member are universal to all filters. Currently, no flags are defined.</para>
-    </summary>
+    <summary>Flags for the <b>dwFilterTag</b> member. The flags defined for this member are universal to all filters. Currently, no flags are defined.</summary>
   </member>
   <member name="WAVEFILTER.dwReserved">
-    <summary>
-      <para>Reserved for system use; should not be examined or modified by an application.</para>
-    </summary>
+    <summary>Reserved for system use; should not be examined or modified by an application.</summary>
   </member>
 </doc>

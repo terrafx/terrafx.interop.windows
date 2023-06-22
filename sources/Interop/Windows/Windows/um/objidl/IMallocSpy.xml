@@ -3,240 +3,71 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMallocSpy.PostAlloc">
-    <summary>
-      <para>Performs operations required after calling <see cref="IMalloc.Alloc" />.</para>
-    </summary>
-    <param name="pActual">
-      <para>The pointer returned from <see cref="Alloc" />.</para>
-    </param>
-    <returns>
-      <para>This method returns a pointer to the beginning of the block of memory actually allocated. This pointer is also returned to the caller of <see cref="Alloc" />. If debug information is written at the front of the caller's allocation, this should be a forward offset from <i>pActual</i>. The value is the same as <i>pActual</i> if debug information is appended or if no debug information is attached.</para>
-    </returns>
-    <remarks>
-      <para>When a spy object implementing <see cref="IMallocSpy" /> is registered using the <see cref="CoRegisterMallocSpy" /> function, COM calls <b>PostAlloc</b> after any call to <see cref="Alloc" />. It takes as input a pointer to the allocation done by the call to <b>Alloc</b>, and returns a pointer to the beginning of the total allocation, which could include a forward offset from the other value if <see cref="IMallocSpy.PreAlloc" /> was implemented to attach debug information to the allocation in this way. If not, the same pointer is returned and also becomes the return value to the caller of <b>Alloc</b>.</para>
-    </remarks>
-    <seealso cref="IMalloc.Alloc" />
-    <seealso cref="IMallocSpy" />
-    <seealso cref="IMallocSpy.PreAlloc" />
+    <summary>Performs operations required after calling <see cref="IMalloc.Alloc" />.</summary>
+    <param name="pActual">The pointer returned from <see cref="Alloc" />.</param>
+    <returns>This method returns a pointer to the beginning of the block of memory actually allocated. This pointer is also returned to the caller of <see cref="Alloc" />. If debug information is written at the front of the caller's allocation, this should be a forward offset from <i>pActual</i>. The value is the same as <i>pActual</i> if debug information is appended or if no debug information is attached.</returns>
   </member>
   <member name="IMallocSpy.PostDidAlloc">
-    <summary>
-      <para>Performs operations required after calling <see cref="IMalloc.DidAlloc" />.</para>
-    </summary>
-    <param name="pRequest">
-      <para>The pointer specified in the call to <see cref="DidAlloc" />.</para>
-    </param>
-    <param name="fSpyed">
-      <para>Indicates whether the allocation was done while this spy was active.</para>
-    </param>
-    <param name="fActual">
-      <para>The value returned by <see cref="DidAlloc" />.</para>
-    </param>
-    <returns>
-      <para>The value returned to the caller of <see cref="DidAlloc" />.</para>
-    </returns>
-    <remarks>
-      <para>When a spy object implementing <see cref="IMallocSpy" /> is registered using the <see cref="CoRegisterMallocSpy" /> function, COM calls this method immediately after any call to <see cref="DidAlloc" />. This method is included for completeness and consistency; it is not anticipated that developers will implement significant functionality in this method.</para>
-      <para>For convenience, <i>pRequest</i>, the original pointer passed in the call to <see cref="DidAlloc" />, is passed to <b>PostDidAlloc</b>. In addition, the parameter <i>fActual</i> is a Boolean value that indicates whether this value was actually passed to <b>DidAlloc</b>. If not, it would indicate that <see cref="IMallocSpy.PreDidAlloc" /> was implemented to alter this pointer for some debugging purpose.</para>
-    </remarks>
-    <seealso cref="IMalloc.DidAlloc" />
-    <seealso cref="IMallocSpy" />
-    <seealso cref="IMallocSpy.PreDidAlloc" />
+    <summary>Performs operations required after calling <see cref="IMalloc.DidAlloc" />.</summary>
+    <param name="pRequest">The pointer specified in the call to <see cref="DidAlloc" />.</param>
+    <param name="fSpyed">Indicates whether the allocation was done while this spy was active.</param>
+    <param name="fActual">The value returned by <see cref="DidAlloc" />.</param>
+    <returns>The value returned to the caller of <see cref="DidAlloc" />.</returns>
   </member>
   <member name="IMallocSpy.PostFree">
-    <summary>
-      <para>Performs operations required after calling <see cref="IMalloc.Free" />.</para>
-    </summary>
-    <param name="fSpyed">
-      <para>Indicates whether the block of memory to be freed was allocated while the current spy was active.</para>
-    </param>
-    <remarks>
-      <para>When a spy object implementing <see cref="IMallocSpy" /> is registered using <see cref="CoRegisterMallocSpy" /> function, COM calls this method immediately after any call to <see cref="IMalloc.Free" />. This method is included for completeness and consistency; it is not anticipated that developers will implement significant functionality in this method.</para>
-    </remarks>
-    <seealso cref="IMalloc.Free" />
-    <seealso cref="IMallocSpy" />
-    <seealso cref="IMallocSpy.PreFree" />
+    <summary>Performs operations required after calling <see cref="IMalloc.Free" />.</summary>
+    <param name="fSpyed">Indicates whether the block of memory to be freed was allocated while the current spy was active.</param>
   </member>
   <member name="IMallocSpy.PostGetSize">
-    <summary>
-      <para>Performs operations required after calling <see cref="IMalloc.GetSize" />.</para>
-    </summary>
-    <param name="cbActual">
-      <para>The number of bytes in the allocation, as returned by <see cref="GetSize" />.</para>
-    </param>
-    <param name="fSpyed">
-      <para>Indicates whether the block of memory was allocated while the current spy was active.</para>
-    </param>
-    <returns>
-      <para>The value returned by <see cref="IMalloc.GetSize" />, which is the size of the allocated block of memory, in bytes.</para>
-    </returns>
-    <remarks>
-      <para>The size determined by <see cref="GetSize" /> is the value returned by the <see cref="HeapSize" /> function. This is the size originally requested. For example, a memory allocation request of 27 bytes returns an allocation of 32 bytes and <b>GetSize</b> returns 27.</para>
-    </remarks>
-    <seealso cref="IMalloc.GetSize" />
-    <seealso cref="IMallocSpy" />
-    <seealso cref="IMallocSpy.PreGetSize" />
+    <summary>Performs operations required after calling <see cref="IMalloc.GetSize" />.</summary>
+    <param name="cbActual">The number of bytes in the allocation, as returned by <see cref="GetSize" />.</param>
+    <param name="fSpyed">Indicates whether the block of memory was allocated while the current spy was active.</param>
+    <returns>The value returned by <see cref="IMalloc.GetSize" />, which is the size of the allocated block of memory, in bytes.</returns>
   </member>
   <member name="IMallocSpy.PostHeapMinimize">
-    <summary>
-      <para>Performs operations required after calling <see cref="IMalloc.HeapMinimize" />.</para>
-    </summary>
-    <remarks>
-      <para>When a spy object implementing <see cref="IMallocSpy" /> is registered using the <see cref="CoRegisterMallocSpy" /> function, COM calls this method immediately after any call to <see cref="IMalloc.Free" />. This method is included for completeness and consistency; it is not anticipated that developers will implement significant functionality in this method.</para>
-    </remarks>
-    <seealso cref="IMalloc.HeapMinimize" />
-    <seealso cref="IMallocSpy" />
-    <seealso cref="IMallocSpy.PreHeapMinimize" />
+    <summary>Performs operations required after calling <see cref="IMalloc.HeapMinimize" />.</summary>
   </member>
   <member name="IMallocSpy.PostRealloc">
-    <summary>
-      <para>Performs operations required after calling <see cref="IMalloc.Realloc" />.</para>
-    </summary>
-    <param name="pActual">
-      <para>The pointer specified in the call to <see cref="Realloc" />.</para>
-    </param>
-    <param name="fSpyed">
-      <para>Indicates whether the block of memory was allocated while the current spy was active.</para>
-    </param>
-    <returns>
-      <para>The method returns a pointer to the beginning of the block actually allocated. This pointer is also returned to the caller of <see cref="IMalloc.Realloc" />. If debug information is written at the front of the caller's allocation, it should be a forward offset from <i>pActual</i>. The value should be the same as <i>pActual</i> if debug information is appended or if no debug information is attached.</para>
-    </returns>
-    <remarks>
-      <para>If memory is successfully reallocated while the spy is active, <i>fSpyed</i> will be <b>TRUE</b> in subsequent calls to <see cref="IMallocSpy" /> methods that track the reallocated memory, even if <i>fSpyed</i> was previously <b>FALSE</b>.</para>
-    </remarks>
-    <seealso cref="IMalloc.Realloc" />
-    <seealso cref="IMallocSpy" />
-    <seealso cref="IMallocSpy.PreRealloc" />
+    <summary>Performs operations required after calling <see cref="IMalloc.Realloc" />.</summary>
+    <param name="pActual">The pointer specified in the call to <see cref="Realloc" />.</param>
+    <param name="fSpyed">Indicates whether the block of memory was allocated while the current spy was active.</param>
+    <returns>The method returns a pointer to the beginning of the block actually allocated. This pointer is also returned to the caller of <see cref="IMalloc.Realloc" />. If debug information is written at the front of the caller's allocation, it should be a forward offset from <i>pActual</i>. The value should be the same as <i>pActual</i> if debug information is appended or if no debug information is attached.</returns>
   </member>
   <member name="IMallocSpy.PreAlloc">
-    <summary>
-      <para>Performs operations required before calling <see cref="IMalloc.Alloc" />.</para>
-    </summary>
-    <param name="cbRequest">
-      <para>The number of bytes specified in the allocation request the caller is passing to <see cref="Alloc" />.</para>
-    </param>
-    <returns>
-      <para>The number of bytes specified in the call to <see cref="Alloc" />, which can be greater than or equal to the value of <i>cbRequest</i>.</para>
-    </returns>
-    <remarks>
-      <para>The <b>PreAlloc</b> implementation may extend and/or modify the allocation to store debug-specific information with the allocation.</para>
-      <para>
-        <b>PreAlloc</b> can force memory allocation failure by returning 0, allowing testing to ensure that the application handles allocation failure gracefully in all cases. In this case, <see cref="IMallocSpy.PostAlloc" /> is not called and <see cref="Alloc" /> returns <b>NULL</b>. Forcing allocation failure is effective only if <i>cbRequest</i> is not equal to 0. If <b>PreAlloc</b> is forcing failure by returning <b>NULL</b>, <b>PostAlloc</b> is not called. However, <b>Alloc</b> encounters a real memory failure and returns <b>NULL</b>, <b>PostAlloc</b> is called.</para>
-      <para>The call to <b>PreAlloc</b> through the return from <see cref="PostAlloc" /> is guaranteed to be thread-safe.</para>
-    </remarks>
-    <seealso cref="IMalloc.Alloc" />
-    <seealso cref="IMallocSpy" />
-    <seealso cref="IMallocSpy.PostAlloc" />
+    <summary>Performs operations required before calling <see cref="IMalloc.Alloc" />.</summary>
+    <param name="cbRequest">The number of bytes specified in the allocation request the caller is passing to <see cref="Alloc" />.</param>
+    <returns>The number of bytes specified in the call to <see cref="Alloc" />, which can be greater than or equal to the value of <i>cbRequest</i>.</returns>
   </member>
   <member name="IMallocSpy.PreDidAlloc">
-    <summary>
-      <para>Performs operations required before calling <see cref="IMalloc.DidAlloc" />.</para>
-    </summary>
-    <param name="pRequest">
-      <para>The pointer specified in the call to <see cref="DidAlloc" />.</para>
-    </param>
-    <param name="fSpyed">
-      <para>Indicates whether the allocation was done while this spy was active.</para>
-    </param>
-    <returns>
-      <para>The value passed  to <see cref="DidAlloc" /> as the <i>fActual</i> parameter.</para>
-    </returns>
-    <remarks>
-      <para>When a spy object implementing <see cref="IMallocSpy" /> is registered with the <see cref="CoRegisterMallocSpy" /> function, COM calls this method immediately before any call to <see cref="IMalloc.DidAlloc" />. This method is included for completeness and consistency; it is not anticipated that developers will implement significant functionality in this method.</para>
-    </remarks>
-    <seealso cref="IMalloc.DidAlloc" />
-    <seealso cref="IMallocSpy" />
-    <seealso cref="IMallocSpy.PostDidAlloc" />
+    <summary>Performs operations required before calling <see cref="IMalloc.DidAlloc" />.</summary>
+    <param name="pRequest">The pointer specified in the call to <see cref="DidAlloc" />.</param>
+    <param name="fSpyed">Indicates whether the allocation was done while this spy was active.</param>
+    <returns>The value passed to <see cref="DidAlloc" /> as the <i>fActual</i> parameter.</returns>
   </member>
   <member name="IMallocSpy.PreFree">
-    <summary>
-      <para>Performs operations required before calling <see cref="IMalloc.Free" />. This method ensures that the pointer passed to <b>Free</b> points to the beginning of the actual allocation.</para>
-    </summary>
-    <param name="pRequest">
-      <para>A pointer to the block of memory that the caller is passing to <see cref="Free" />.</para>
-    </param>
-    <param name="fSpyed">
-      <para>Indicates whether the block of memory to be freed was allocated while the current spy was active.</para>
-    </param>
-    <returns>
-      <para>The value to be passed  to <see cref="IMalloc.Free" />.</para>
-    </returns>
-    <remarks>
-      <para>If <see cref="IMallocSpy.PreAlloc" /> modified the original allocation request passed to <see cref="IMalloc.Alloc" /> (or <see cref="IMalloc.Realloc" />), <b>PreFree</b> must supply a pointer to the actual allocation, which COM will pass to <see cref="IMalloc.Free" />. For example, if the <b>PreAlloc</b>/<see cref="PostAlloc" /> pair attached a header used to store debug information to the beginning of the caller's allocation, <b>PreFree</b> must return a pointer to the beginning of this header so that all of the block that was allocated can be freed.</para>
-    </remarks>
-    <seealso cref="IMalloc.Free" />
-    <seealso cref="IMallocSpy" />
-    <seealso cref="IMallocSpy.PostFree" />
+    <summary>Performs operations required before calling <see cref="IMalloc.Free" />. This method ensures that the pointer passed to <b>Free</b> points to the beginning of the actual allocation.</summary>
+    <param name="pRequest">A pointer to the block of memory that the caller is passing to <see cref="Free" />.</param>
+    <param name="fSpyed">Indicates whether the block of memory to be freed was allocated while the current spy was active.</param>
+    <returns>The value to be passed to <see cref="IMalloc.Free" />.</returns>
   </member>
   <member name="IMallocSpy.PreGetSize">
-    <summary>
-      <para>Performs operations required before calling <see cref="IMalloc.GetSize" />.</para>
-    </summary>
-    <param name="pRequest">
-      <para>The pointer that the caller is passing to <see cref="GetSize" />.</para>
-    </param>
-    <param name="fSpyed">
-      <para>Indicates whether the block of memory was allocated while the current spy was active.</para>
-    </param>
-    <returns>
-      <para>A pointer to the actual allocation for which the size is to be determined.</para>
-    </returns>
-    <remarks>
-      <para>The <b>PreGetSize</b> method receives as its <i>pRequest</i> parameter the pointer the caller is passing to <see cref="IMalloc.GetSize" />. It must then return a pointer to the actual allocation, which may have altered <i>pRequest</i> in the implementation of either the <see cref="PreAlloc" /> or the <see cref="PreRealloc" /> method of <see cref="IMallocSpy" />. The pointer to the true allocation is then passed to <b>GetSize</b> as its <i>pv</i> parameter.</para>
-      <para>
-        <see cref="IMalloc.GetSize" /> then returns the size determined, and COM passes this value to <see cref="IMallocSpy.PostGetSize" /> in <i>cbActual</i>.</para>
-      <para>The size determined by <see cref="GetSize" /> is the value returned by the <see cref="HeapSize" /> function. This is the size originally requested. For example, a memory allocation request of 27 bytes returns an allocation of 32 bytes and <b>GetSize</b> returns 27.</para>
-    </remarks>
-    <seealso cref="IMalloc.GetSize" />
-    <seealso cref="IMallocSpy" />
-    <seealso cref="IMallocSpy.PostGetSize" />
+    <summary>Performs operations required before calling <see cref="IMalloc.GetSize" />.</summary>
+    <param name="pRequest">The pointer that the caller is passing to <see cref="GetSize" />.</param>
+    <param name="fSpyed">Indicates whether the block of memory was allocated while the current spy was active.</param>
+    <returns>A pointer to the actual allocation for which the size is to be determined.</returns>
   </member>
   <member name="IMallocSpy.PreHeapMinimize">
-    <summary>
-      <para>Performs operations required before calling <see cref="IMalloc.HeapMinimize" />.</para>
-    </summary>
-    <remarks>
-      <para>This method is included for completeness; it is not anticipated that developers will implement significant functionality in this method.</para>
-    </remarks>
-    <seealso cref="IMalloc.HeapMinimize" />
-    <seealso cref="IMallocSpy" />
-    <seealso cref="IMallocSpy.PostHeapMinimize" />
+    <summary>Performs operations required before calling <see cref="IMalloc.HeapMinimize" />.</summary>
   </member>
   <member name="IMallocSpy.PreRealloc">
-    <summary>
-      <para>Performs operations required before calling <see cref="IMalloc.Realloc" />.</para>
-    </summary>
-    <param name="pRequest">
-      <para>The pointer to the block of memory specified in the call to <see cref="IMalloc.Realloc" />.</para>
-    </param>
-    <param name="cbRequest">
-      <para>The byte count of the block of memory as specified in the original call to <see cref="IMalloc.Realloc" />.</para>
-    </param>
-    <param name="ppNewRequest">
-      <para>Address of pointer variable that receives a pointer to the memory block to be reallocated. This may be different from the pointer in <i>pRequest</i> if the implementation of <b>PreRealloc</b> extends or modifies the reallocation. This is pointer should always be stored by <b>PreRealloc</b>.</para>
-    </param>
-    <param name="fSpyed">
-      <para>Indicates whether the block of memory was allocated while this spy was active.</para>
-    </param>
-    <returns>
-      <para>The byte count to be passed to <see cref="IMalloc.Realloc" />.</para>
-    </returns>
-    <remarks>
-      <para>The <b>PreRealloc</b> implementation may extend and/or modify the allocation to store debug-specific information with the allocation. Thus, the <i>ppNewRequest</i> parameter may differ from <i>pRequest</i>, a pointer to the request specified in the original call to <see cref="Realloc" />.</para>
-      <para>
-        <b>PreRealloc</b> can force memory allocation failure by returning 0, allowing testing to ensure that the application handles allocation failure gracefully in all cases. In this case, <see cref="PostRealloc" /> is not called and <see cref="Realloc" /> returns <b>NULL</b>. However, if <b>Realloc</b> encounters a real memory failure and returns <b>NULL</b>, <b>PostRealloc</b> is called. Forcing allocation failure is effective only if <i>cbRequest</i> is not equal to 0.</para>
-    </remarks>
-    <seealso cref="IMalloc.Realloc" />
-    <seealso cref="IMallocSpy" />
-    <seealso cref="IMallocSpy.PostRealloc" />
+    <summary>Performs operations required before calling <see cref="IMalloc.Realloc" />.</summary>
+    <param name="pRequest">The pointer to the block of memory specified in the call to <see cref="IMalloc.Realloc" />.</param>
+    <param name="cbRequest">The byte count of the block of memory as specified in the original call to <see cref="IMalloc.Realloc" />.</param>
+    <param name="ppNewRequest">Address of pointer variable that receives a pointer to the memory block to be reallocated. This may be different from the pointer in <i>pRequest</i> if the implementation of <b>PreRealloc</b> extends or modifies the reallocation. This is pointer should always be stored by <b>PreRealloc</b>.</param>
+    <param name="fSpyed">Indicates whether the block of memory was allocated while this spy was active.</param>
+    <returns>The byte count to be passed to <see cref="IMalloc.Realloc" />.</returns>
   </member>
   <member name="IMallocSpy">
-    <summary>
-      <para>Enables application developers to monitor (spy on) memory allocation, detect memory leaks, and simulate memory failure in calls to <see cref="IMalloc" /> methods.</para>
-    </summary>
-    <seealso cref="CoGetMalloc" />
-    <seealso cref="CoRegisterMallocSpy" />
-    <seealso cref="CoRevokeMallocSpy" />
-    <seealso cref="IMalloc" />
+    <summary>Enables application developers to monitor (spy on) memory allocation, detect memory leaks, and simulate memory failure in calls to <see cref="IMalloc" /> methods.</summary>
   </member>
 </doc>

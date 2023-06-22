@@ -3,70 +3,34 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EndpointFormFactor">
-    <summary>
-      <para>The <b>EndpointFormFactor</b> enumeration defines constants that indicate the general physical attributes of an audio endpoint device.</para>
-    </summary>
-    <remarks>
-      <para>The constants in this enumeration are the values that can be assigned to the <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/pkey-audioendpoint-formfactor">PKEY_AudioEndpoint_FormFactor</a> property.</para>
-      <para>In digital pass-through mode, a digital interface transports blocks of non-PCM data through a connection without modifying them and without attempting to interpret their contents. For more information about digital pass-through mode, see the following documentation:</para>
-      <list type="bullet">
-        <item>
-          <description>The descriptions of the WAVE_FORMAT_WMA_SPDIF and WAVE_FORMAT_DOLBY_AC3_SPDIF wave-format tags in the Windows DDK documentation.</description>
-        </item>
-        <item>
-          <description>The white paper titled "Audio Driver Support for the WMA Pro-over-S/PDIF Format" at the <a href="https://www.microsoft.com/whdc/device/audio/default.mspx">Audio Device Technologies for Windows</a> website.</description>
-        </item>
-      </list>
-      <para>For information about obtaining a description of the audio jack or connector through which an audio endpoint device connects to an audio adapter, see <see cref="IKsJackDescription.GetJackDescription" /> and <see cref="IKsJackDescription2.GetJackDescription2" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-enumerations">Core Audio Enumerations</seealso>
-    <seealso cref="IKsJackDescription.GetJackDescription" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/pkey-audioendpoint-formfactor">PKEY_AudioEndpoint_FormFactor Property</seealso>
+    <summary>The <b>EndpointFormFactor</b> enumeration defines constants that indicate the general physical attributes of an audio endpoint device.</summary>
   </member>
   <member name="EndpointFormFactor.RemoteNetworkDevice">
-    <summary>
-      <para>An audio endpoint device that the user accesses remotely through a network.</para>
-    </summary>
+    <summary>An audio endpoint device that the user accesses remotely through a network.</summary>
   </member>
   <member name="EndpointFormFactor.Speakers">
-    <summary>
-      <para>A set of speakers.</para>
-    </summary>
+    <summary>A set of speakers.</summary>
   </member>
   <member name="EndpointFormFactor.LineLevel">
-    <summary>
-      <para>An audio endpoint device that sends a line-level analog signal to a line-input jack on an audio adapter or that receives a line-level analog signal from a line-output jack on the adapter.</para>
-    </summary>
+    <summary>An audio endpoint device that sends a line-level analog signal to a line-input jack on an audio adapter or that receives a line-level analog signal from a line-output jack on the adapter.</summary>
   </member>
   <member name="EndpointFormFactor.Headphones">
-    <summary>
-      <para>A set of headphones.</para>
-    </summary>
+    <summary>A set of headphones.</summary>
   </member>
   <member name="EndpointFormFactor.Microphone">
-    <summary>
-      <para>A microphone.</para>
-    </summary>
+    <summary>A microphone.</summary>
   </member>
   <member name="EndpointFormFactor.Headset">
-    <summary>
-      <para>An earphone or a pair of earphones with an attached mouthpiece for two-way communication.</para>
-    </summary>
+    <summary>An earphone or a pair of earphones with an attached mouthpiece for two-way communication.</summary>
   </member>
   <member name="EndpointFormFactor.Handset">
-    <summary>
-      <para>The part of a telephone that is held in the hand and that contains a speaker and a microphone for two-way communication.</para>
-    </summary>
+    <summary>The part of a telephone that is held in the hand and that contains a speaker and a microphone for two-way communication.</summary>
   </member>
   <member name="EndpointFormFactor.UnknownDigitalPassthrough">
-    <summary>
-      <para>An audio endpoint device that connects to an audio adapter through a connector for a digital interface of unknown type that transmits non-PCM data in digital pass-through mode. For more information, see Remarks.</para>
-    </summary>
+    <summary>An audio endpoint device that connects to an audio adapter through a connector for a digital interface of unknown type that transmits non-PCM data in digital pass-through mode. For more information, see Remarks.</summary>
   </member>
   <member name="EndpointFormFactor.SPDIF">
-    <summary>
-      <para>An audio endpoint device that connects to an audio adapter through a Sony/Philips Digital Interface (S/PDIF) connector.</para>
-    </summary>
+    <summary>An audio endpoint device that connects to an audio adapter through a Sony/Philips Digital Interface (S/PDIF) connector.</summary>
   </member>
   <member name="EndpointFormFactor.DigitalAudioDisplayDevice">
     <summary>
@@ -75,13 +39,9 @@
     </summary>
   </member>
   <member name="EndpointFormFactor.UnknownFormFactor">
-    <summary>
-      <para>An audio endpoint device with unknown physical attributes.</para>
-    </summary>
+    <summary>An audio endpoint device with unknown physical attributes.</summary>
   </member>
   <member name="EndpointFormFactor.EndpointFormFactor_enum_count">
-    <summary>
-      <para>Windows 7: Maximum number of endpoint form factors.</para>
-    </summary>
+    <summary>Windows 7: Maximum number of endpoint form factors.</summary>
   </member>
 </doc>

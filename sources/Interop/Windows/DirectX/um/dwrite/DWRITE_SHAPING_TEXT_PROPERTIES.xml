@@ -3,25 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_SHAPING_TEXT_PROPERTIES">
-    <summary>
-      <para>Shaping output properties for an output glyph.</para>
-    </summary>
+    <summary>Shaping output properties per input character.</summary>
   </member>
   <member name="DWRITE_SHAPING_TEXT_PROPERTIES.isShapedAlone">
-    <summary>
-      <para>Type: <b>UINT16</b></para>
-      <para>Indicates that the glyph is shaped alone.</para>
-    </summary>
+    <summary>Indicates that the character is shaped independently from the others (usually set for the space character).</summary>
   </member>
   <member name="DWRITE_SHAPING_TEXT_PROPERTIES.reserved1">
-    <summary></summary>
+    <summary>Reserved for use by shaping engine.</summary>
   </member>
   <member name="DWRITE_SHAPING_TEXT_PROPERTIES.canBreakShapingAfter">
-    <summary></summary>
+    <summary>Glyph shaping can be safely cut after this point without affecting shaping before or after it. Otherwise, splitting a call to <see cref="GetGlyphs" /> would cause a reflow of glyph advances and shapes.</summary>
   </member>
   <member name="DWRITE_SHAPING_TEXT_PROPERTIES.reserved">
     <summary>
-      <para>Type: <b>UINT16</b></para>
+      <para>Reserved for use by the shaping engine.</para>
       <para>Reserved for future use.</para>
     </summary>
   </member>

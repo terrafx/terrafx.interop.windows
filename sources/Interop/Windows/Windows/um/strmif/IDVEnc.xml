@@ -4,56 +4,31 @@
 <doc>
   <member name="IDVEnc.get_IFormatResolution">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>get_IFormatResolution</b> method retrieves the encoding resolution.</para>
     </summary>
-    <param name="VideoFormat">
-      <para>Pointer to a variable that receives a member of the <see cref="DVENCODERVIDEOFORMAT" /> enumeration, specifying the video standard in use (NTSC or PAL).</para>
-    </param>
-    <param name="DVFormat">
-      <para>Pointer to a variable that receives a member of the <see cref="DVENCODERFORMAT" /> enumeration, specifying the digital video (DV) format.</para>
-    </param>
-    <param name="Resolution">
-      <para>Pointer to a variable that receives a member of the <see cref="DVENCODERRESOLUTION" /> enumeration, specifying the video resolution.</para>
-    </param>
-    <param name="fDVInfo">
-      <para>Boolean value specifying whether to retrieve the <see cref="DVINFO" /> structure that specifies the stream format. If <b>TRUE</b>, the stream format is returned in the <i>sDVInfo</i> parameter.</para>
-    </param>
-    <param name="sDVInfo">
-      <para>Pointer to a variable that receives a <b>DVINFO</b> structure containing the stream format. If <i>fDVInfo</i> is <b>FALSE</b>, this parameter is ignored.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful. Otherwise, returns E_FAIL or another error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDVEnc Interface" />
+    <param name="VideoFormat">Pointer to a variable that receives a member of the <see cref="DVENCODERVIDEOFORMAT" /> enumeration, specifying the video standard in use (NTSC or PAL).</param>
+    <param name="DVFormat">Pointer to a variable that receives a member of the <see cref="DVENCODERFORMAT" /> enumeration, specifying the digital video (DV) format.</param>
+    <param name="Resolution">Pointer to a variable that receives a member of the <see cref="DVENCODERRESOLUTION" /> enumeration, specifying the video resolution.</param>
+    <param name="fDVInfo">Boolean value specifying whether to retrieve the <see cref="DVINFO" /> structure that specifies the stream format. If <b>TRUE</b>, the stream format is returned in the <i>sDVInfo</i> parameter.</param>
+    <param name="sDVInfo">Pointer to a variable that receives a <b>DVINFO</b> structure containing the stream format. If <i>fDVInfo</i> is <b>FALSE</b>, this parameter is ignored.</param>
+    <returns>Returns S_OK if successful. Otherwise, returns E_FAIL or another error code.</returns>
   </member>
   <member name="IDVEnc.put_IFormatResolution">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>put_IFormatResolution</code> method sets the encoding resolution.</para>
     </summary>
-    <param name="VideoFormat">
-      <para>Member of the <see cref="DVENCODERVIDEOFORMAT" /> enumeration, specifying the video standard to use (NTSC or PAL).</para>
-    </param>
-    <param name="DVFormat">
-      <para>Member of the <see cref="DVENCODERFORMAT" /> enumeration, specifying the DV format.</para>
-    </param>
-    <param name="Resolution">
-      <para>Member of the <see cref="DVENCODERRESOLUTION" /> enumeration, specifying the video resolution.</para>
-    </param>
-    <param name="fDVInfo">
-      <para>Boolean value specifying whether the <i>sDVInfo</i> parameter contains a valid <see cref="DVINFO" /> structure. To set the stream format, set this parameter to <b>TRUE</b> and specify the format chunk with the <i>sDVInfo</i> parameter.</para>
-    </param>
-    <param name="sDVInfo">
-      <para>If <i>fDVInfo</i> is <b>TRUE</b>, must point to a <b>DVINFO</b> structure that describes the stream format.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful. Otherwise, returns E_FAIL or another error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDVEnc Interface" />
+    <param name="VideoFormat">Member of the <see cref="DVENCODERVIDEOFORMAT" /> enumeration, specifying the video standard to use (NTSC or PAL).</param>
+    <param name="DVFormat">Member of the <see cref="DVENCODERFORMAT" /> enumeration, specifying the DV format.</param>
+    <param name="Resolution">Member of the <see cref="DVENCODERRESOLUTION" /> enumeration, specifying the video resolution.</param>
+    <param name="fDVInfo">Boolean value specifying whether the <i>sDVInfo</i> parameter contains a valid <see cref="DVINFO" /> structure. To set the stream format, set this parameter to <b>TRUE</b> and specify the format chunk with the <i>sDVInfo</i> parameter.</param>
+    <param name="sDVInfo">If <i>fDVInfo</i> is <b>TRUE</b>, must point to a <b>DVINFO</b> structure that describes the stream format.</param>
+    <returns>Returns S_OK if successful. Otherwise, returns E_FAIL or another error code.</returns>
   </member>
   <member name="IDVEnc">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IDVEnc</code> interface sets and retrieves properties on the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dv-video-encoder-filter">DV Video Encoder</a> filter.</para>
     </summary>
   </member>

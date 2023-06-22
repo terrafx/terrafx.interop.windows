@@ -3,40 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="BITMAPFILEHEADER">
-    <summary>
-      <para>The <b>BITMAPFILEHEADER</b> structure contains information about the type, size, and layout of a file that contains a DIB.</para>
-    </summary>
-    <remarks>
-      <para>A <see cref="BITMAPINFO" /> or <see cref="BITMAPCOREINFO" /> structure immediately follows the <b>BITMAPFILEHEADER</b> structure in the DIB file. For more information, see <a href="https://docs.microsoft.com//windows/desktop/gdi/bitmap-storage">Bitmap Storage</a>.</para>
-    </remarks>
-    <seealso cref="BITMAPCOREINFO" />
-    <seealso cref="BITMAPINFO" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/bitmap-structures">Bitmap Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/bitmaps">Bitmaps Overview</seealso>
+    <summary>The <b>BITMAPFILEHEADER</b> structure contains information about the type, size, and layout of a file that contains a DIB.</summary>
   </member>
   <member name="BITMAPFILEHEADER.bfType">
-    <summary>
-      <para>The file type; must be BM.</para>
-    </summary>
+    <summary>The file type; must be BM.</summary>
   </member>
   <member name="BITMAPFILEHEADER.bfSize">
-    <summary>
-      <para>The size, in bytes, of the bitmap file.</para>
-    </summary>
+    <summary>The size, in bytes, of the bitmap file.</summary>
   </member>
   <member name="BITMAPFILEHEADER.bfReserved1">
-    <summary>
-      <para>Reserved; must be zero.</para>
-    </summary>
+    <summary>Reserved; must be zero.</summary>
   </member>
   <member name="BITMAPFILEHEADER.bfReserved2">
-    <summary>
-      <para>Reserved; must be zero.</para>
-    </summary>
+    <summary>Reserved; must be zero.</summary>
   </member>
   <member name="BITMAPFILEHEADER.bfOffBits">
-    <summary>
-      <para>The offset, in bytes, from the beginning of the <b>BITMAPFILEHEADER</b> structure to the bitmap bits.</para>
-    </summary>
+    <summary>The offset, in bytes, from the beginning of the <b>BITMAPFILEHEADER</b> structure to the bitmap bits.</summary>
   </member>
 </doc>

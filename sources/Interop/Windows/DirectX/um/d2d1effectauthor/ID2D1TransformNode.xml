@@ -3,27 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1TransformNode.GetInputCount">
-    <summary>
-      <para>Gets the number of inputs to the transform node.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>UINT32</b></para>
-      <para>This method returns the number of inputs to this transform node.</para>
-    </returns>
-    <seealso cref="D2D1_EFFECT_INPUT" />
-    <seealso cref="ID2D1Effect" />
-    <seealso cref="ID2D1TransformNode" />
+    <summary>Gets the number of inputs to the transform node.</summary>
+    <returns>This method returns the number of inputs to this transform node.</returns>
   </member>
   <member name="ID2D1TransformNode">
-    <summary>
-      <para>Describes a node in a transform topology.</para>
-    </summary>
-    <remarks>
-      <para>Transform nodes are type-less and only define the notion of an object that accepts a number of inputs and is an output. This interface limits a topology to single output nodes.</para>
-    </remarks>
-    <seealso cref="ID2D1BlendTransform" />
-    <seealso cref="ID2D1Transform" />
-    <seealso cref="ID2D1TransformGraph" />
-    <seealso cref="IUnknown" />
+    <summary>Describes a node in a transform topology.</summary>
   </member>
 </doc>

@@ -3,30 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="INPUT_MESSAGE_ORIGIN_ID">
-    <summary>
-      <para>The ID of the input message source.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_sourceid/enumerations">Enumerations</seealso>
+    <summary>The ID of the input message source.</summary>
   </member>
   <member name="INPUT_MESSAGE_ORIGIN_ID.IMO_UNAVAILABLE">
-    <summary>
-      <para>The source isn't identified.</para>
-    </summary>
+    <summary>The source isn't identified.</summary>
   </member>
   <member name="INPUT_MESSAGE_ORIGIN_ID.IMO_HARDWARE">
     <summary>
-      <para>The input message is from a hardware device or has been  injected into the message queue by an application that has the <b>UIAccess</b> attribute set to TRUE in its manifest file.</para>
+      <para>The input message is from a hardware device or has been injected into the message queue by an application that has the <b>UIAccess</b> attribute set to TRUE in its manifest file.</para>
       <para>For more information about the <b>UIAccess</b> attribute and application manifests, see <a href="https://docs.microsoft.com//previous-versions/bb756883(v=msdn.10)">UAC References</a>.</para>
     </summary>
   </member>
   <member name="INPUT_MESSAGE_ORIGIN_ID.IMO_INJECTED">
-    <summary>
-      <para>The input message has been injected (through the <see cref="SendInput" /> function) by an application that doesn't have the <b>UIAccess</b> attribute set to TRUE in its manifest file.</para>
-    </summary>
+    <summary>The input message has been injected (through the <see cref="SendInput" /> function) by an application that doesn't have the <b>UIAccess</b> attribute set to TRUE in its manifest file.</summary>
   </member>
   <member name="INPUT_MESSAGE_ORIGIN_ID.IMO_SYSTEM">
-    <summary>
-      <para>The system has injected the input message.</para>
-    </summary>
+    <summary>The system has injected the input message.</summary>
   </member>
 </doc>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PropertyChainSource">
+    <summary>Represents the source object (a <a href="https://docs.microsoft.com//uwp/api/windows.ui.xaml.style">Style</a>) of a target type.</summary>
+  </member>
+  <member name="PropertyChainSource.Handle">
+    <summary>A handle to the style.</summary>
+  </member>
+  <member name="PropertyChainSource.TargetType">
+    <summary>The target type of the style, defined in markup.</summary>
+  </member>
+  <member name="PropertyChainSource.Name">
+    <summary>The name of the style, if it has an <a href="https://docs.microsoft.com//windows/uwp/xaml-platform/x-name-attribute">x:Name</a> defined in markup.</summary>
+  </member>
+  <member name="PropertyChainSource.Source">
+    <summary>Where the style is defined in the application .</summary>
+  </member>
+  <member name="PropertyChainSource.SrcInfo"></member>
+  <member name="PropertyChainSource.srcInfo">
+    <summary>Source information about where the style is defined.</summary>
+  </member>
+</doc>

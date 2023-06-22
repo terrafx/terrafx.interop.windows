@@ -3,34 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DIRECTMANIPULATION_VERTICALALIGNMENT">
-    <summary>
-      <para>Defines  the vertical alignment settings for content within the viewport.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-enumerations">Direct Manipulation Enumerations</seealso>
+    <summary>Defines the vertical alignment settings for content within the viewport.</summary>
   </member>
   <member name="DIRECTMANIPULATION_VERTICALALIGNMENT.DIRECTMANIPULATION_VERTICALALIGNMENT_NONE">
-    <summary>
-      <para>No alignment. The object can be positioned anywhere within the viewport.</para>
-    </summary>
+    <summary>No alignment. The object can be positioned anywhere within the viewport.</summary>
   </member>
   <member name="DIRECTMANIPULATION_VERTICALALIGNMENT.DIRECTMANIPULATION_VERTICALALIGNMENT_TOP">
-    <summary>
-      <para>Align object along the top of the viewport.</para>
-    </summary>
+    <summary>Align object along the top of the viewport.</summary>
   </member>
   <member name="DIRECTMANIPULATION_VERTICALALIGNMENT.DIRECTMANIPULATION_VERTICALALIGNMENT_CENTER">
-    <summary>
-      <para>Align object to the center of the viewport.</para>
-    </summary>
+    <summary>Align object to the center of the viewport.</summary>
   </member>
   <member name="DIRECTMANIPULATION_VERTICALALIGNMENT.DIRECTMANIPULATION_VERTICALALIGNMENT_BOTTOM">
-    <summary>
-      <para>Align object along the bottom of the viewport.</para>
-    </summary>
+    <summary>Align object along the bottom of the viewport.</summary>
   </member>
   <member name="DIRECTMANIPULATION_VERTICALALIGNMENT.DIRECTMANIPULATION_VERTICALALIGNMENT_UNLOCKCENTER">
-    <summary>
-      <para>Content zooms around the center point of the contacts, instead of being locked with the vertical alignment.</para>
-    </summary>
+    <summary>Content zooms around the center point of the contacts, instead of being locked with the vertical alignment.</summary>
   </member>
 </doc>

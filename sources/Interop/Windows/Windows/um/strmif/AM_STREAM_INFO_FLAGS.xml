@@ -4,29 +4,20 @@
 <doc>
   <member name="AM_STREAM_INFO_FLAGS">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>AM_STREAM_INFO_FLAGS</b> enumeration defines flags that indicate a pin's stream-control status.</para>
     </summary>
-    <seealso cref="AM_STREAM_INFO" />
-    <seealso cref="IAMStreamControl.GetInfo" />
   </member>
   <member name="AM_STREAM_INFO_FLAGS.AM_STREAM_INFO_START_DEFINED">
-    <summary>
-      <para>Indicates that the pin's start time is set.</para>
-    </summary>
+    <summary>Indicates that the pin's start time is set.</summary>
   </member>
   <member name="AM_STREAM_INFO_FLAGS.AM_STREAM_INFO_STOP_DEFINED">
-    <summary>
-      <para>Indicates that the pin's stop time is been set.</para>
-    </summary>
+    <summary>Indicates that the pin's stop time is been set.</summary>
   </member>
   <member name="AM_STREAM_INFO_FLAGS.AM_STREAM_INFO_DISCARDING">
-    <summary>
-      <para>Indicates that the pin is currently discarding data.</para>
-    </summary>
+    <summary>Indicates that the pin is currently discarding data.</summary>
   </member>
   <member name="AM_STREAM_INFO_FLAGS.AM_STREAM_INFO_STOP_SEND_EXTRA">
-    <summary>
-      <para>Indicates that the pin will send one extra sample after it reaches the stop time.</para>
-    </summary>
+    <summary>Indicates that the pin will send one extra sample after it reaches the stop time.</summary>
   </member>
 </doc>

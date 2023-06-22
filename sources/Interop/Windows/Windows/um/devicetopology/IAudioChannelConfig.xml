@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAudioChannelConfig.GetChannelConfig">
-    <summary>
-      <para>The <b>GetChannelConfig</b> method gets the current channel-configuration mask from a channel-configuration control.</para>
-    </summary>
-    <param name="pdwConfig">
-      <para>Pointer to a <b>DWORD</b> variable into which the method writes the current channel-configuration mask value.</para>
-    </param>
+    <summary>The <b>GetChannelConfig</b> method gets the current channel-configuration mask from a channel-configuration control.</summary>
+    <param name="pdwConfig">Pointer to a <b>DWORD</b> variable into which the method writes the current channel-configuration mask value.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -16,34 +12,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer <i>pdwConfig</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>Pointer <i>pdwConfig</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For information about channel-configuration masks, see the discussion of the <a href="https://docs.microsoft.com//windows-hardware/drivers/audio/ksproperty-audio-channel-config">KSPROPERTY_AUDIO_CHANNEL_CONFIG</a> property in the Windows DDK documentation.</para>
-    </remarks>
-    <seealso cref="IAudioChannelConfig Interface" />
-    <seealso cref="IAudioChannelConfig.SetChannelConfig" />
   </member>
   <member name="IAudioChannelConfig.SetChannelConfig">
-    <summary>
-      <para>The <b>SetChannelConfig</b> method sets the channel-configuration mask in a channel-configuration control.</para>
-    </summary>
-    <param name="dwConfig">
-      <para>The channel-configuration mask.</para>
-    </param>
-    <param name="pguidEventContext">
-      <para>Context value for the <see cref="IControlChangeNotify.OnNotify" /> method. This parameter points to an event-context GUID. If the <b>SetChannelConfig</b> call changes the state of the channel-configuration control, all clients that have registered <see cref="IControlChangeNotify" /> interfaces with that control receive notifications. In its implementation of the <b>OnNotify</b> method, a client can inspect the event-context GUID to discover whether it or another client is the source of the control-change event. If the caller supplies a <b>NULL</b> pointer for this parameter, the client's notification method receives a <b>NULL</b> context pointer.</para>
-    </param>
+    <summary>The <b>SetChannelConfig</b> method sets the channel-configuration mask in a channel-configuration control.</summary>
+    <param name="dwConfig">The channel-configuration mask.</param>
+    <param name="pguidEventContext">Context value for the <see cref="IControlChangeNotify.OnNotify" /> method. This parameter points to an event-context GUID. If the <b>SetChannelConfig</b> call changes the state of the channel-configuration control, all clients that have registered <see cref="IControlChangeNotify" /> interfaces with that control receive notifications. In its implementation of the <b>OnNotify</b> method, a client can inspect the event-context GUID to discover whether it or another client is the source of the control-change event. If the caller supplies a <b>NULL</b> pointer for this parameter, the client's notification method receives a <b>NULL</b> context pointer.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -51,23 +38,20 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Out of memory.</para>
-          </description>
-        </item>
+          <description>Out of memory.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For information about channel-configuration masks, see the discussion of the <a href="https://docs.microsoft.com//windows-hardware/drivers/audio/ksproperty-audio-channel-config">KSPROPERTY_AUDIO_CHANNEL_CONFIG</a> property in the Windows DDK documentation.</para>
-    </remarks>
-    <seealso cref="IAudioChannelConfig Interface" />
-    <seealso cref="IAudioChannelConfig.GetChannelConfig" />
   </member>
   <member name="IAudioChannelConfig">
     <summary>
@@ -80,11 +64,6 @@
         <item>
           <description>The white paper titled "Audio Driver Support for Home Theater Speaker Configurations" at the <a href="https://www.microsoft.com/whdc/device/audio/default.mspx">Audio Device Technologies for Windows</a> website.</description>
         </item>
-      </list>
-      <para>Most Windows audio adapter drivers support the Windows Driver Model (WDM) and use kernel-streaming (KS) properties to represent the hardware control parameters in subunits (referred to as KS nodes). The <b>IAudioChannelConfig</b> interface provides convenient access to the KSPROPERTY_AUDIO_CHANNEL_CONFIG property of a subunit that has a subtype GUID value of KSNODETYPE_3D_EFFECTS, KSNODETYPE_DAC, KSNODETYPE_VOLUME, or KSNODETYPE_PROLOGIC_DECODER. To obtain the subtype GUID of a subunit, call the <see cref="IPart.GetSubType" /> method. For more information about KS properties and KS node types, see the Windows DDK documentation.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/devicetopology-api">DeviceTopology API</seealso>
-    <seealso cref="IPart.Activate" />
+      </list>Most Windows audio adapter drivers support the Windows Driver Model (WDM) and use kernel-streaming (KS) properties to represent the hardware control parameters in subunits (referred to as KS nodes). The <b>IAudioChannelConfig</b> interface provides convenient access to the KSPROPERTY_AUDIO_CHANNEL_CONFIG property of a subunit that has a subtype GUID value of KSNODETYPE_3D_EFFECTS, KSNODETYPE_DAC, KSNODETYPE_VOLUME, or KSNODETYPE_PROLOGIC_DECODER. To obtain the subtype GUID of a subunit, call the <see cref="IPart.GetSubType" /> method. For more information about KS properties and KS node types, see the Windows DDK documentation.</summary>
   </member>
 </doc>

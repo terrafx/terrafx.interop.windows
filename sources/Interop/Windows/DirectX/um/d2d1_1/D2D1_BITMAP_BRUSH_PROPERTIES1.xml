@@ -3,28 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_BITMAP_BRUSH_PROPERTIES1">
-    <summary>
-      <para>Describes the extend modes and the interpolation mode of an <see cref="ID2D1BitmapBrush" />.</para>
-    </summary>
-    <seealso cref="D2D1_BITMAP_INTERPOLATION_MODE" />
-    <seealso cref="D2D1_EXTEND_MODE" />
+    <summary>Describes the extend modes and the interpolation mode of an <see cref="ID2D1BitmapBrush" />.</summary>
   </member>
   <member name="D2D1_BITMAP_BRUSH_PROPERTIES1.extendModeX">
-    <summary>
-      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
-      <para>A value that describes how the brush horizontally tiles those areas that extend past its bitmap.</para>
-    </summary>
+    <summary>A value that describes how the brush horizontally tiles those areas that extend past its bitmap.</summary>
   </member>
   <member name="D2D1_BITMAP_BRUSH_PROPERTIES1.extendModeY">
-    <summary>
-      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
-      <para>A value that describes how the brush vertically tiles those areas that extend past its bitmap.</para>
-    </summary>
+    <summary>A value that describes how the brush vertically tiles those areas that extend past its bitmap.</summary>
   </member>
   <member name="D2D1_BITMAP_BRUSH_PROPERTIES1.interpolationMode">
-    <summary>
-      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
-      <para>A value that specifies how the bitmap is interpolated when it is scaled or rotated.</para>
-    </summary>
+    <summary>A value that specifies how the bitmap is interpolated when it is scaled or rotated.</summary>
   </member>
 </doc>

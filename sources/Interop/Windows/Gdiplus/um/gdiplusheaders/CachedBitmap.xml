@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CachedBitmap.CachedBitmap">
+    <summary>Creates a <b>CachedBitmap.CachedBitmap</b> object based on a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object and a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The cached bitmap takes the pixel data from the <b>Bitmap</b> object and stores it in a format that is optimized for the display device associated with the <b>Graphics</b> object.</summary>
+    <param name="bitmap">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object that contains the pixel data to be optimized.</param>
+    <param name="graphics">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that is associated with a display device for which the image will be optimized.</param>
+  </member>
+  <member name="CachedBitmap.CachedBitmap">
+    <summary>Copy constructor for <b>CachedBitmap</b>.</summary>
+    <param name="unnamedParam1">The object to copy into this object.</param>
+  </member>
+  <member name="CachedBitmap.GetLastStatus">
+    <summary>The <b>CachedBitmap.GetLastStatus</b> method returns a value that indicates whether this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-cachedbitmap">CachedBitmap</a> object was constructed successfully.</summary>
+    <returns>
+      <para>If this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-cachedbitmap">CachedBitmap</a> object was constructed successfully, the<b>CachedBitmap.GetLastStatus</b> method returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-cachedbitmap">CachedBitmap</a> object was not constructed successfully, the <b>CachedBitmap.GetLastStatus</b> method returns an element of the<see cref="Status" /> enumeration that indicates the nature of the failure.</para>
+    </returns>
+  </member>
+</doc>

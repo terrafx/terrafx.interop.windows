@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PropertyChainValue">
+    <summary>Represents a property defined on an element.</summary>
+  </member>
+  <member name="PropertyChainValue.Index">
+    <summary>The index of property in the XAML runtime.</summary>
+  </member>
+  <member name="PropertyChainValue.Type">
+    <summary>The type of the object.</summary>
+  </member>
+  <member name="PropertyChainValue.DeclaringType">
+    <summary>The base type of the object.</summary>
+  </member>
+  <member name="PropertyChainValue.ValueType">
+    <summary>The type of the current value of the property.</summary>
+  </member>
+  <member name="PropertyChainValue.ItemType">
+    <summary>Collection item type, or <b>null</b> if not a collection.</summary>
+  </member>
+  <member name="PropertyChainValue.Value">
+    <summary>The value of the property. (Represents an <b>InstanceHandle</b> if <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xamlom/ne-xamlom-metadatabit">MetadataBit</a> is set.)</summary>
+  </member>
+  <member name="PropertyChainValue.Overridden">
+    <summary>Indicates whether the property is overridden by some property in the value chain.</summary>
+  </member>
+  <member name="PropertyChainValue.MetadataBits">
+    <summary>A bit field that represents <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xamlom/ne-xamlom-metadatabit">MetadataBit</a>s.</summary>
+  </member>
+  <member name="PropertyChainValue.PropertyName">
+    <summary>The name of the property.</summary>
+  </member>
+  <member name="PropertyChainValue.PropertyChainIndex">
+    <summary>The index in the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xamlom/ns-xamlom-propertychainsource">PropertyChainSource</a> returned by GetPropertyValuesChain that represents the source of this property.</summary>
+  </member>
+</doc>

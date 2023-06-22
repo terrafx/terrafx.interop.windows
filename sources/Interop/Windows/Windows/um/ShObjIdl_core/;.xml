@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name=";">
+    <summary>Defines the set of options available to an Open or Save dialog.</summary>
+  </member>
+  <member name=";.FOS_OVERWRITEPROMPT">
+    <summary>When saving a file, prompt before overwriting an existing file of the same name. This is a default value for the Save dialog.</summary>
+  </member>
+  <member name=";.FOS_STRICTFILETYPES">
+    <summary>In the Save dialog, only allow the user to choose a file that has one of the file name extensions specified through <see cref="IFileDialog.SetFileTypes" />.</summary>
+  </member>
+  <member name=";.FOS_NOCHANGEDIR">
+    <summary>Don't change the current working directory.</summary>
+  </member>
+  <member name=";.FOS_PICKFOLDERS">
+    <summary>Present an Open dialog that offers a choice of folders rather than files.</summary>
+  </member>
+  <member name=";.FOS_FORCEFILESYSTEM">
+    <summary>Ensures that returned items are file system items (<see cref="SFGAO_FILESYSTEM" />). Note that this does not apply to items returned by <see cref="IFileDialog.GetCurrentSelection" />.</summary>
+  </member>
+  <member name=";.FOS_ALLNONSTORAGEITEMS">
+    <summary>Enables the user to choose any item in the Shell namespace, not just those with <a href="https://docs.microsoft.com//windows/desktop/shell/sfgao">SFGAO_STREAM</a> or <a href="https://docs.microsoft.com//windows/desktop/shell/sfgao">SFAGO_FILESYSTEM</a> attributes. This flag cannot be combined with FOS_FORCEFILESYSTEM.</summary>
+  </member>
+  <member name=";.FOS_NOVALIDATE">
+    <summary>Do not check for situations that would prevent an application from opening the selected file, such as sharing violations or access denied errors.</summary>
+  </member>
+  <member name=";.FOS_ALLOWMULTISELECT">
+    <summary>Enables the user to select multiple items in the open dialog. Note that when this flag is set, the <see cref="IFileOpenDialog" /> interface must be used to retrieve those items.</summary>
+  </member>
+  <member name=";.FOS_PATHMUSTEXIST">
+    <summary>The item returned must be in an existing folder. This is a default value.</summary>
+  </member>
+  <member name=";.FOS_FILEMUSTEXIST">
+    <summary>The item returned must exist. This is a default value for the Open dialog.</summary>
+  </member>
+  <member name=";.FOS_CREATEPROMPT">
+    <summary>Prompt for creation if the item returned in the open dialog does not exist. Note that this does not actually create the item.</summary>
+  </member>
+  <member name=";.FOS_SHAREAWARE">
+    <summary>In the case of a sharing violation when an application is opening a file, call the application back through <see cref="OnShareViolation" /> for guidance. This flag is overridden by FOS_NOVALIDATE.</summary>
+  </member>
+  <member name=";.FOS_NOREADONLYRETURN">
+    <summary>Do not return read-only items. This is a default value for the Save dialog.</summary>
+  </member>
+  <member name=";.FOS_NOTESTFILECREATE">
+    <summary>Do not test whether creation of the item as specified in the Save dialog will be successful. If this flag is not set, the calling application must handle errors, such as denial of access, discovered when the item is created.</summary>
+  </member>
+  <member name=";.FOS_HIDEMRUPLACES">
+    <summary>Hide the list of places from which the user has recently opened or saved items. This value is not supported as of Windows 7.</summary>
+  </member>
+  <member name=";.FOS_HIDEPINNEDPLACES">
+    <summary>
+      <para>Hide items shown by default in the view's navigation pane. This flag is often used in conjunction with the <see cref="IFileDialog.AddPlace" /> method, to hide standard locations and replace them with custom locations.</para>
+      <para>
+        <b>Windows 7 and later</b>. Hide all of the standard namespace locations (such as Favorites, Libraries, Computer, and Network) shown in the navigation pane.</para>
+      <para>
+        <b>Windows Vista</b>. Hide the contents of the <b>Favorite Links</b> tree in the navigation pane. Note that the category itself is still displayed, but shown as empty.</para>
+    </summary>
+  </member>
+  <member name=";.FOS_NODEREFERENCELINKS">
+    <summary>Shortcuts should not be treated as their target items. This allows an application to open a .lnk file rather than what that file is a shortcut to.</summary>
+  </member>
+  <member name=";.FOS_OKBUTTONNEEDSINTERACTION">
+    <summary>The OK button will be disabled until the user navigates the view or edits the filename (if applicable). Note: Disabling of the OK button does not prevent the dialog from being submitted by the Enter key.</summary>
+  </member>
+  <member name=";.FOS_DONTADDTORECENT">
+    <summary>Do not add the item being opened or saved to the recent documents list (<see cref="SHAddToRecentDocs" />).</summary>
+  </member>
+  <member name=";.FOS_FORCESHOWHIDDEN">
+    <summary>Include hidden and system items.</summary>
+  </member>
+  <member name=";.FOS_DEFAULTNOMINIMODE">
+    <summary>Indicates to the <b>Save As</b> dialog box that it should open in expanded mode. Expanded mode is the mode that is set and unset by clicking the button in the lower-left corner of the <b>Save As</b> dialog box that switches between <b>Browse Folders</b> and <b>Hide Folders</b> when clicked. This value is not supported as of Windows 7.</summary>
+  </member>
+  <member name=";.FOS_FORCEPREVIEWPANEON">
+    <summary>Indicates to the <b>Open</b> dialog box that the preview pane should always be displayed.</summary>
+  </member>
+  <member name=";.FOS_SUPPORTSTREAMABLEITEMS">
+    <summary>Indicates that the caller is opening a file as a stream (<see cref="BHID_Stream" />), so there is no need to download that file.</summary>
+  </member>
+</doc>

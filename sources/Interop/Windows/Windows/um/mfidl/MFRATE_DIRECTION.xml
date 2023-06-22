@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFRATE_DIRECTION">
-    <summary>
-      <para>Specifies the direction of playback (forward or reverse).</para>
-    </summary>
-    <seealso cref="IMFRateSupport.GetFastestRate" />
-    <seealso cref="IMFRateSupport.GetSlowestRate" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies the direction of playback (forward or reverse).</summary>
   </member>
   <member name="MFRATE_DIRECTION.MFRATE_FORWARD">
-    <summary>
-      <para>Forward playback.</para>
-    </summary>
+    <summary>Forward playback.</summary>
   </member>
   <member name="MFRATE_DIRECTION.MFRATE_REVERSE">
-    <summary>
-      <para>Reverse playback.</para>
-    </summary>
+    <summary>Reverse playback.</summary>
   </member>
 </doc>

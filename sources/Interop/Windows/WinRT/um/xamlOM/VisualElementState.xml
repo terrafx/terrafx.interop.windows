@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VisualElementState">
+    <summary>Defines constants that specify the state of an element in the visual tree.</summary>
+  </member>
+  <member name="VisualElementState.ErrorResolved">
+    <summary>The error has been fixed.</summary>
+  </member>
+  <member name="VisualElementState.ErrorResourceNotFound">
+    <summary>The resource could not be resolved.</summary>
+  </member>
+  <member name="VisualElementState.ErrorInvalidResource">
+    <summary>The resource was found, but does not match the property.</summary>
+  </member>
+</doc>

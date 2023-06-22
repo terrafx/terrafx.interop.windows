@@ -3,34 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_MEDIAKEYSESSION_MESSAGETYPE">
-    <summary>
-      <para>Specifies the type of a Content Decryption Module (CDM) message.</para>
-    </summary>
-    <remarks>
-      <para>This value is used by the <see cref="IMFContentDecryptionModuleSessionCallbacks.KeyMessage" /> callback.</para>
-      <para>
-        <b>MF_MEDIAKEYSESSION_MESSAGETYPE</b> is based on the Encrypted Media Extension specification's <a href="https://www.w3.org/tr/2017/rec-encrypted-media-20170918/#dom-mediakeymessagetype">MediaKeyStatus</a> enumeration.</para>
-    </remarks>
-    <seealso cref="IMFContentDecryptionModuleSessionCallbacks.KeyMessage" />
+    <summary>Specifies the type of a Content Decryption Module (CDM) message.</summary>
   </member>
   <member name="MF_MEDIAKEYSESSION_MESSAGETYPE.MF_MEDIAKEYSESSION_MESSAGETYPE_LICENSE_REQUEST">
-    <summary>
-      <para>The message contains a request for a new license.</para>
-    </summary>
+    <summary>The message contains a request for a new license.</summary>
   </member>
   <member name="MF_MEDIAKEYSESSION_MESSAGETYPE.MF_MEDIAKEYSESSION_MESSAGETYPE_LICENSE_RENEWAL">
-    <summary>
-      <para>The message contains a request to renew an existing license.</para>
-    </summary>
+    <summary>The message contains a request to renew an existing license.</summary>
   </member>
   <member name="MF_MEDIAKEYSESSION_MESSAGETYPE.MF_MEDIAKEYSESSION_MESSAGETYPE_LICENSE_RELEASE">
-    <summary>
-      <para>The message contains a record of license destruction.</para>
-    </summary>
+    <summary>The message contains a record of license destruction.</summary>
   </member>
   <member name="MF_MEDIAKEYSESSION_MESSAGETYPE.MF_MEDIAKEYSESSION_MESSAGETYPE_INDIVIDUALIZATION_REQUEST">
-    <summary>
-      <para>The message contains a request for App-Assisted Individualization (or re-individualization).</para>
-    </summary>
+    <summary>The message contains a request for App-Assisted Individualization (or re-individualization).</summary>
   </member>
 </doc>

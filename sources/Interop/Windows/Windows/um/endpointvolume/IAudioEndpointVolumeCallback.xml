@@ -3,23 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAudioEndpointVolumeCallback.OnNotify">
-    <summary>
-      <para>The <b>OnNotify</b> method notifies the client that the volume level or muting state of the audio endpoint device has changed.</para>
-    </summary>
-    <param name="pNotify">
-      <para>Pointer to the volume-notification data. This parameter points to a structure of type <see cref="AUDIO_VOLUME_NOTIFICATION_DATA" />.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
-    </returns>
-    <remarks>
-      <para>The <i>pNotify</i> parameter points to a structure that describes the volume change event that initiated the call to <b>OnNotify</b>. This structure contains an event-context GUID. This GUID enables a client to distinguish between a volume (or muting) change that it initiated and one that some other client initiated. When calling an <see cref="IAudioEndpointVolume" /> method that changes the volume level of the stream, a client passes in a pointer to an event-context GUID that its implementation of the <b>OnNotify</b> method can recognize. The structure pointed to by <i>pNotify</i> contains this context GUID. If the client that changes the volume level supplies a <b>NULL</b> pointer value for the pointer to the event-context GUID, the value of the event-context GUID in the structure pointed to by <i>pNotify</i> is GUID_NULL.</para>
-      <para>The Windows 7, the system's volume user interface does not specify GUID_NULL when it changes the volume in the system.   A third-party OSD application can differentiate between master volume control changes that result from the system's volume user interface, and other volume changes such as changes from the built-in volume control handler.</para>
-      <para>For a code example that implements the <b>OnNotify</b> method, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-volume-controls">Endpoint Volume Controls</a>.</para>
-    </remarks>
-    <seealso cref="AUDIO_VOLUME_NOTIFICATION_DATA" />
-    <seealso cref="IAudioEndpointVolume Interface" />
-    <seealso cref="IAudioEndpointVolumeCallback Interface" />
+    <summary>The <b>OnNotify</b> method notifies the client that the volume level or muting state of the audio endpoint device has changed.</summary>
+    <param name="pNotify">Pointer to the volume-notification data. This parameter points to a structure of type <see cref="AUDIO_VOLUME_NOTIFICATION_DATA" />.</param>
+    <returns>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</returns>
   </member>
   <member name="IAudioEndpointVolumeCallback">
     <summary>
@@ -61,27 +47,6 @@
             <see cref="IAudioEndpointVolume.VolumeStepUp" />
           </description>
         </item>
-      </list>
-      <para>If an audio endpoint device implements hardware volume and mute controls, the <b>IAudioEndpointVolume</b> interface uses the hardware controls to manage the device's volume. Otherwise, the <b>IAudioEndpointVolume</b> interface implements volume and mute controls in software, transparently to the client.</para>
-      <para>If a device has hardware volume and mute controls, changes made to the volume and mute settings through the methods in the preceding list affect the device's volume in both shared mode and exclusive mode. If a device lacks hardware volume and mute controls, changes made to the software volume and mute controls through these methods affect the device's volume in shared mode, but not in exclusive mode. In exclusive mode, the client and the device exchange audio data directly, bypassing the software controls. However, changes made to the software controls through these methods generate event notifications regardless of whether the device is operating in shared mode or in exclusive mode. Changes made to the software volume and mute controls while the device operates in exclusive mode take effect when the device switches to shared mode.</para>
-      <para>To determine whether a device has hardware volume and mute controls, call the <see cref="IAudioEndpointVolume.QueryHardwareSupport" /> method.</para>
-      <para>In implementing the <b>IAudioEndpointVolumeCallback</b> interface, the client should observe these rules to avoid deadlocks:</para>
-      <list type="bullet">
-        <item>
-          <description>The methods in the interface must be nonblocking. The client should never wait on a synchronization object during an event callback.</description>
-        </item>
-        <item>
-          <description>The client should never call the <see cref="IAudioEndpointVolume.UnregisterControlChangeNotify" /> method during an event callback.</description>
-        </item>
-        <item>
-          <description>The client should never release the final reference on an EndpointVolume API object during an event callback.</description>
-        </item>
-      </list>
-      <para>For a code example that implements the <b>IAudioEndpointVolumeCallback</b> interface, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-volume-controls">Endpoint Volume Controls</a>.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpointvolume-api">EndpointVolume API</seealso>
-    <seealso cref="IAudioEndpointVolume.RegisterControlChangeNotify" />
-    <seealso cref="IAudioEndpointVolume.UnregisterControlChangeNotify" />
+      </list>If an audio endpoint device implements hardware volume and mute controls, the <b>IAudioEndpointVolume</b> interface uses the hardware controls to manage the device's volume. Otherwise, the <b>IAudioEndpointVolume</b> interface implements volume and mute controls in software, transparently to the client.<para>If a device has hardware volume and mute controls, changes made to the volume and mute settings through the methods in the preceding list affect the device's volume in both shared mode and exclusive mode. If a device lacks hardware volume and mute controls, changes made to the software volume and mute controls through these methods affect the device's volume in shared mode, but not in exclusive mode. In exclusive mode, the client and the device exchange audio data directly, bypassing the software controls. However, changes made to the software controls through these methods generate event notifications regardless of whether the device is operating in shared mode or in exclusive mode. Changes made to the software volume and mute controls while the device operates in exclusive mode take effect when the device switches to shared mode.</para><para>To determine whether a device has hardware volume and mute controls, call the <see cref="IAudioEndpointVolume.QueryHardwareSupport" /> method.</para><para>In implementing the <b>IAudioEndpointVolumeCallback</b> interface, the client should observe these rules to avoid deadlocks:</para><list type="bullet"><item><description>The methods in the interface must be nonblocking. The client should never wait on a synchronization object during an event callback.</description></item><item><description>The client should never call the <see cref="IAudioEndpointVolume.UnregisterControlChangeNotify" /> method during an event callback.</description></item><item><description>The client should never release the final reference on an EndpointVolume API object during an event callback.</description></item></list>For a code example that implements the <b>IAudioEndpointVolumeCallback</b> interface, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-volume-controls">Endpoint Volume Controls</a>.</summary>
   </member>
 </doc>

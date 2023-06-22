@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_INPUT_DESCRIPTION">
-    <summary>
-      <para>Describes the options that transforms may set on input textures.</para>
-    </summary>
-    <seealso cref="D2D1_FILTER" />
+    <summary>Describes the options that transforms may set on input textures.</summary>
   </member>
   <member name="D2D1_INPUT_DESCRIPTION.filter">
-    <summary>
-      <para>The type of filter to apply to the input texture.</para>
-    </summary>
+    <summary>The type of filter to apply to the input texture.</summary>
   </member>
   <member name="D2D1_INPUT_DESCRIPTION.levelOfDetailCount">
-    <summary>
-      <para>The mip level to retrieve from the upstream transform, if specified.</para>
-    </summary>
+    <summary>The mip level to retrieve from the upstream transform, if specified.</summary>
   </member>
 </doc>

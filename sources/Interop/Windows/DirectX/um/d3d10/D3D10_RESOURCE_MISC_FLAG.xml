@@ -3,42 +3,23 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_RESOURCE_MISC_FLAG">
-    <summary>
-      <para>Identifies other, less common options for resources.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is used in <see cref="D3D10_BUFFER_DESC" />, <see cref="D3D10_TEXTURE1D_DESC" />, <see cref="D3D10_TEXTURE2D_DESC" />,
-<see cref="D3D10_TEXTURE3D_DESC" />, <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3dx10-image-info">D3DX10_IMAGE_INFO</a>, and <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3dx10-image-load-info">D3DX10_IMAGE_LOAD_INFO</a>.</para>
-      <para>These flags can be combined by bitwise OR.</para>
-      <para>D3D10_RESOURCE_MISC_SHARED and D3D10_RESOURCE_MISC_SHARED_KEYEDMUTEX are mutually exclusive flags:
-either one may be set in the resource creation calls but not both simultaneously.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-resource-enums">Resource Enumerations</seealso>
+    <summary>Identifies other, less common options for resources.</summary>
   </member>
   <member name="D3D10_RESOURCE_MISC_FLAG.D3D10_RESOURCE_MISC_GENERATE_MIPS">
-    <summary>
-      <para>Enables an application to call <see cref="ID3D10Device.GenerateMips" /> on
-a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">texture resource</a>. The resource must be created
-with the <see cref="bind flags" /> that specify that the resource is a render target and a shader resource.</para>
-    </summary>
+    <summary>Enables an application to call <see cref="ID3D10Device.GenerateMips" /> on a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">texture resource</a>. The resource must be created with the <see cref="bind flags" /> that specify that the resource is a render target and a shader resource.</summary>
   </member>
   <member name="D3D10_RESOURCE_MISC_FLAG.D3D10_RESOURCE_MISC_SHARED">
     <summary>
       <para>Enables the sharing of resource data between two or more Direct3D devices. The only resources that can be shared are 2D non-mipmapped textures.</para>
-      <para>WARP and REF devices do not support shared resources. Attempting to create a resource with this flag on either a WARP or REF device will cause the
-create method to return an E_OUTOFMEMORY error code.</para>
+      <para>WARP and REF devices do not support shared resources. Attempting to create a resource with this flag on either a WARP or REF device will cause the create method to return an E_OUTOFMEMORY error code.</para>
     </summary>
   </member>
   <member name="D3D10_RESOURCE_MISC_FLAG.D3D10_RESOURCE_MISC_TEXTURECUBE">
-    <summary>
-      <para>Enables an application to create a cube texture from a
-<a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">Texture2DArray</a> that contains 6 textures.</para>
-    </summary>
+    <summary>Enables an application to create a cube texture from a<a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">Texture2DArray</a> that contains 6 textures.</summary>
   </member>
   <member name="D3D10_RESOURCE_MISC_FLAG.D3D10_RESOURCE_MISC_SHARED_KEYEDMUTEX">
     <summary>
-      <para>Enables the resource created to be synchronized using the IDXGIKeyedMutex.AcquireSync and ReleaseSync APIs.
-The following resource creation D3D10 APIs, that all take a D3D10_RESOURCE_MISC_FLAG parameter, have been extended to support the new flag.</para>
+      <para>Enables the resource created to be synchronized using the IDXGIKeyedMutex.AcquireSync and ReleaseSync APIs. The following resource creation D3D10 APIs, that all take a D3D10_RESOURCE_MISC_FLAG parameter, have been extended to support the new flag.</para>
       <list type="bullet">
         <item>
           <description>ID3D10Device1.CreateTexture1D</description>
@@ -52,19 +33,9 @@ The following resource creation D3D10 APIs, that all take a D3D10_RESOURCE_MISC_
         <item>
           <description>ID3D10Device1.CreateBuffer</description>
         </item>
-      </list>
-      <para>If any of the listed functions are called with the D3D10_RESOURCE_MISC_SHARED_KEYEDMUTEX flag set, the interface returned can be
-queried for an IDXGIKeyedMutex interface, which implements AcquireSync and ReleaseSync APIs to synchronize access to the surface.
-The device creating the surface, and any other device opening the surface (using OpenSharedResource) is required to
-call IDXGIKeyedMutex.AcquireSync before any rendering commands to the surface, and IDXGIKeyedMutex.ReleaseSync when it is done rendering.</para>
-      <para>WARP and REF devices do not support shared resources. Attempting to create a resource with this flag on either a WARP or REF device will cause the
-create method to return an E_OUTOFMEMORY error code.</para>
-    </summary>
+      </list>If any of the listed functions are called with the D3D10_RESOURCE_MISC_SHARED_KEYEDMUTEX flag set, the interface returned can be queried for an IDXGIKeyedMutex interface, which implements AcquireSync and ReleaseSync APIs to synchronize access to the surface. The device creating the surface, and any other device opening the surface (using OpenSharedResource) is required to call IDXGIKeyedMutex.AcquireSync before any rendering commands to the surface, and IDXGIKeyedMutex.ReleaseSync when it is done rendering.<para>WARP and REF devices do not support shared resources. Attempting to create a resource with this flag on either a WARP or REF device will cause the create method to return an E_OUTOFMEMORY error code.</para></summary>
   </member>
   <member name="D3D10_RESOURCE_MISC_FLAG.D3D10_RESOURCE_MISC_GDI_COMPATIBLE">
-    <summary>
-      <para>Enables a surface to be used for GDI interoperability.  Setting this flag enables rendering on the surface
-via IDXGISurface1.GetDC.</para>
-    </summary>
+    <summary>Enables a surface to be used for GDI interoperability. Setting this flag enables rendering on the surface via IDXGISurface1.GetDC.</summary>
   </member>
 </doc>

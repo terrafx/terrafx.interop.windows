@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINHTTP_PROXY_SETTINGS_TYPE">
+    <summary>Defines constants that specify proxy settings types for extended proxy settings APIs.</summary>
+  </member>
+  <member name="WINHTTP_PROXY_SETTINGS_TYPE.WinHttpProxySettingsTypeUnknown">
+    <summary>Specifies an unknown type.</summary>
+  </member>
+  <member name="WINHTTP_PROXY_SETTINGS_TYPE.WinHttpProxySettingsTypeWsl">
+    <summary>Specifies settings for Windows Subsystem for Linux (WSL).</summary>
+  </member>
+  <member name="WINHTTP_PROXY_SETTINGS_TYPE.WinHttpProxySettingsTypeWsa">
+    <summary>Specifies settings for Windows Subsystem for Android (WSA).</summary>
+  </member>
+</doc>

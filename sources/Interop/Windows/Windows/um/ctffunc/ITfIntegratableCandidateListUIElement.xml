@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfIntegratableCandidateListUIElement.FinalizeExactCompositionString">
-    <summary>
-      <para>Finalizes the current composition with the value currently shown to the user.</para>
-    </summary>
+    <summary>Finalizes the current composition with the value currently shown to the user.</summary>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -13,32 +11,24 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <b>FinalizeExactCompositionString</b> method enables an app to tell the text service that it should finalize the current composition with the exact
-value currently shown to the user, with no automatic conversion of the first candidate.  This enables the apps to move focus
-to suggestions below the candidate list, without changing the string.</para>
-    </remarks>
-    <seealso cref="ITfIntegratableCandidateListUIElement" />
   </member>
   <member name="ITfIntegratableCandidateListUIElement.GetSelectionStyle">
-    <summary>
-      <para>Retrieves the selection style.</para>
-    </summary>
-    <param name="ptfSelectionStyle">
-      <para>A value that specifies the selection style.</para>
-    </param>
+    <summary>Retrieves the selection style.</summary>
+    <param name="ptfSelectionStyle">A value that specifies the selection style.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -46,38 +36,27 @@ to suggestions below the candidate list, without changing the string.</para>
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The active selection style usually indicates that the selection can be changed with the arrow keys. The implied selection style indicates the default selection key chooses it.
-If the app supports changing selection styles, this method should be called when the <see cref="UpdateUIElement" /> method is called.</para>
-    </remarks>
-    <seealso cref="ITfIntegratableCandidateListUIElement" />
   </member>
   <member name="ITfIntegratableCandidateListUIElement.OnKeyDown">
-    <summary>
-      <para>Processes a key press.</para>
-    </summary>
-    <param name="wParam">
-      <para>Specifies the virtual-key code of the key. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</para>
-    </param>
-    <param name="lParam">
-      <para>Specifies the repeat count, scan code, extended-key flag, context code, previous key-state flag, and transition-state flag of the key. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</para>
-    </param>
+    <summary>Processes a key press.</summary>
+    <param name="wParam">Specifies the virtual-key code of the key. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</param>
+    <param name="lParam">Specifies the repeat count, scan code, extended-key flag, context code, previous key-state flag, and transition-state flag of the key. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</param>
     <param name="pfEaten">
-      <para>
-        <b>TRUE</b> if the key event was handled; otherwise, <b>FALSE</b>.</para>
-    </param>
+      <b>TRUE</b> if the key event was handled; otherwise, <b>FALSE</b>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -85,34 +64,24 @@ If the app supports changing selection styles, this method should be called when
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <see cref="OnKeyDown" /> method enables an app to ask query the text service if it wants to process a given key in an integration style.  The behavior of the <b>OnKeyDown</b> method can depend on the integration style. If the text service returns <i>*pfEaten</i>=<b>TRUE</b>, then the app should do
-no processing of the key. If <b>FALSE</b> is returned, the app can perform its own action in response to the key.</para>
-      <para>
-        <b>GUID_INTEGRATIONSTYLE_SEARCHBOX</b> ({E6D1BD11-82F7-4903-AE21-1A6397CDE2EB}) enables an implementation of a keyboarding experience in which the user can move perceived keyboard focus
-from the search box to the candidate list to search suggestions. The text service can process keys     like <b>VK_UP</b> and <b>VK_DOWN</b> before Search handles them to change its internal state.</para>
-    </remarks>
-    <seealso cref="ITfIntegratableCandidateListUIElement" />
   </member>
   <member name="ITfIntegratableCandidateListUIElement.SetIntegrationStyle">
-    <summary>
-      <para>Sets the integration style.</para>
-    </summary>
-    <param name="guidIntegrationStyle">
-      <para>The desired type of keyboard integration experience.</para>
-    </param>
+    <summary>Sets the integration style.</summary>
+    <param name="guidIntegrationStyle">The desired type of keyboard integration experience.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -120,45 +89,37 @@ from the search box to the candidate list to search suggestions. The text servic
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The text service supports the integration style.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The text service supports the integration style.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The text service does not support the integration style.</para>
-          </description>
-        </item>
+          <description>The text service does not support the integration style.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If an app needs a keyboard-integrated experience, it can set a <b>GUID</b> for the desired type of
-integration experience.  If the text service supports the integration style, it should return <b>S_OK</b>.
-If it's not supported, it should return <b>E_NOTIMPL</b>.  When called, the text service may adjust its respond to
-keyboard interaction for the lifetime of the <see cref="ITfCandidateListUIElement" /> object, for example, until <see cref="ITfUIElementSink.EndUIElement" /> is called.</para>
-    </remarks>
-    <seealso cref="ITfIntegratableCandidateListUIElement" />
-    <seealso cref="ITfUIElementSink.EndUIElement" />
   </member>
   <member name="ITfIntegratableCandidateListUIElement.ShowCandidateNumbers">
-    <summary>
-      <para>Specifies whether candidate numbers should be shown.</para>
-    </summary>
+    <summary>Specifies whether candidate numbers should be shown.</summary>
     <param name="pfShow">
-      <para>
-        <b>TRUE</b> if candidate numbers should be shown; otherwise <b>FALSE</b>.</para>
-    </param>
+      <b>TRUE</b> if candidate numbers should be shown; otherwise <b>FALSE</b>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -166,35 +127,22 @@ keyboard interaction for the lifetime of the <see cref="ITfCandidateListUIElemen
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfIntegratableCandidateListUIElement" />
   </member>
   <member name="ITfIntegratableCandidateListUIElement">
-    <summary>
-      <para>Enables text services and Input Method Editors (IMEs) to adjust UI-less mode behavior.</para>
-    </summary>
-    <remarks>
-      <para>The <b>ITfIntegratableCandidateListUIElement</b> interface is implemented by text services and Input Method Editors (IMEs) to adjust UI-less mode behavior for a better UI and keyboarding experience in IME-integrated controls, like the Windows 8 Search box.  The interface is used by apps that need a more streamlined UI and keyboarding experience with IME languages.</para>
-      <para>You can get an <b>ITfIntegratableCandidateListUIElement</b> interface pointer by calling <see cref="QueryInterface" /> on the <see cref="ITfUIElement" /> interface pointer that's provided by using the <i>dwUIElementId</i> parameters of the <see cref="ITfUIElementSink" /> callback functions to obtain the interface from  <see cref="ITfUIElementMgr" />.</para>
-      <para>The <b>ITfIntegratableCandidateListUIElement</b> interface is an optional interface that's implemented by a text service or IME that needs greater control over how its UI is presented in UI-less mode.  Apps can use it to implement more streamlined, special-purpose input controls, as in auto-complete or search suggestions.</para>
-      <para>Implement the <b>ITfIntegratableCandidateListUIElement</b> interface in the same class that implements the <see cref="ITfUIElement" />, <see cref="ITfCandidateListUIElement" />, and <see cref="ITfCandidateListUIElementBehavior" /> interfaces.  These interfaces work together to create a fully integrated experience in which the app renders candidate list UI for the text service or IME and can also have some IME-specific UI customization and keyboard interaction behavior.</para>
-    </remarks>
-    <seealso cref="ITfCandidateListUIElement" />
-    <seealso cref="ITfCandidateListUIElementBehavior" />
-    <seealso cref="ITfUIElement" />
-    <seealso cref="ITfUIElementMgr" />
-    <seealso cref="ITfUIElementSink" />
-    <seealso cref="IUnknown" />
+    <summary>Enables text services and Input Method Editors (IMEs) to adjust UI-less mode behavior.</summary>
   </member>
 </doc>

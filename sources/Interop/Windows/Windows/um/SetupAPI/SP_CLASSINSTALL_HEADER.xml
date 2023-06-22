@@ -3,35 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SP_CLASSINSTALL_HEADER">
-    <summary>
-      <para>An SP_CLASSINSTALL_HEADER is the first member of any class install parameters structure. It contains the device installation request code that defines the format of the rest of the install parameters structure.</para>
-    </summary>
-    <remarks>
-      <para>When a component allocates a class install parameters structure, it typically initializes the header fields of the structure. Such a component sets the <b>InstallFunction</b> member to the DIF code for the installation request and sets <b>cbSize</b> to the size of the SP_CLASSINSTALL_HEADER structure. For example:</para>
-      <code>SP_REMOVEDEVICE_PARAMS RemoveDeviceParams;
-RemoveDeviceParams.ClassInstallHeader.cbSize = sizeof(SP_CLASSINSTALL_HEADER);
-RemoveDeviceParams.ClassInstallHeader.InstallFunction = DIF_REMOVE;
-</code>
-      <para>A component must set the <b>InstallFunction</b> member before passing a class install parameters structure to <see cref="SetupDiSetClassInstallParams" />.</para>
-      <para>However, a component does not have to set this field when passing class install parameters to <see cref="SetupDiGetClassInstallParams" />. This function sets the <b>InstallFunction</b> member in the structure it passes back to the caller. It sets <b>InstallFunction</b> to the DIF_<i>XXX</i> code for the currently active device installation request.</para>
-    </remarks>
-    <seealso cref="SP_DETECTDEVICE_PARAMS" />
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/sp-movedev-params">SP_MOVEDEV_PARAMS</seealso>
-    <seealso cref="SP_NEWDEVICEWIZARD_DATA" />
-    <seealso cref="SP_POWERMESSAGEWAKE_PARAMS" />
-    <seealso cref="SP_PROPCHANGE_PARAMS" />
-    <seealso cref="SP_REMOVEDEVICE_PARAMS" />
-    <seealso cref="SP_SELECTDEVICE_PARAMS" />
-    <seealso cref="SP_TROUBLESHOOTER_PARAMS" />
-    <seealso cref="SP_UNREMOVEDEVICE_PARAMS" />
-    <seealso cref="SetupDiCallClassInstaller" />
-    <seealso cref="SetupDiGetClassInstallParams" />
-    <seealso cref="SetupDiSetClassInstallParams" />
+    <summary>An SP_CLASSINSTALL_HEADER is the first member of any class install parameters structure. It contains the device installation request code that defines the format of the rest of the install parameters structure.</summary>
   </member>
   <member name="SP_CLASSINSTALL_HEADER.cbSize">
-    <summary>
-      <para>The size, in bytes, of the SP_CLASSINSTALL_HEADER structure.</para>
-    </summary>
+    <summary>The size, in bytes, of the SP_CLASSINSTALL_HEADER structure.</summary>
   </member>
   <member name="SP_CLASSINSTALL_HEADER.InstallFunction">
     <summary>

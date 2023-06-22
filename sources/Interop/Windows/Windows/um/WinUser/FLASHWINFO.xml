@@ -3,20 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FLASHWINFO">
-    <summary>
-      <para>Contains the flash status for a window and the number of times the system should flash the window.</para>
-    </summary>
-    <seealso cref="FlashWindowEx" />
+    <summary>Contains the flash status for a window and the number of times the system should flash the window.</summary>
   </member>
   <member name="FLASHWINFO.cbSize">
-    <summary>
-      <para>The size of the structure, in bytes.</para>
-    </summary>
+    <summary>The size of the structure, in bytes.</summary>
   </member>
   <member name="FLASHWINFO.hwnd">
-    <summary>
-      <para>A handle to the window to be flashed. The window can be either opened or minimized.</para>
-    </summary>
+    <summary>A handle to the window to be flashed. The window can be either opened or minimized.</summary>
   </member>
   <member name="FLASHWINFO.dwFlags">
     <summary>
@@ -26,119 +19,103 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FLASHW_ALL</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000003</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000003</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Flash both the window caption and taskbar button. This is equivalent to setting the FLASHW_CAPTION | FLASHW_TRAY flags.</para>
-          </description>
-        </item>
-        <item>
+          <description>Flash both the window caption and taskbar button. This is equivalent to setting the FLASHW_CAPTION | FLASHW_TRAY flags.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FLASHW_CAPTION</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Flash the window caption.</para>
-          </description>
-        </item>
-        <item>
+          <description>Flash the window caption.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FLASHW_STOP</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Stop flashing. The system restores the window to its original state.</para>
-          </description>
-        </item>
-        <item>
+          <description>Stop flashing. The system restores the window to its original state.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FLASHW_TIMER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Flash continuously, until the FLASHW_STOP flag is set.</para>
-          </description>
-        </item>
-        <item>
+          <description>Flash continuously, until the FLASHW_STOP flag is set.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FLASHW_TIMERNOFG</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0000000C</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0000000C</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Flash continuously until the window comes to the foreground.</para>
-          </description>
-        </item>
-        <item>
+          <description>Flash continuously until the window comes to the foreground.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FLASHW_TRAY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Flash the taskbar button.</para>
-          </description>
-        </item>
+          <description>Flash the taskbar button.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="FLASHWINFO.uCount">
-    <summary>
-      <para>The number of times to flash the window.</para>
-    </summary>
+    <summary>The number of times to flash the window.</summary>
   </member>
   <member name="FLASHWINFO.dwTimeout">
-    <summary>
-      <para>The rate at which the window is to be flashed, in milliseconds. If <b>dwTimeout</b> is zero, the function uses the default cursor blink rate.</para>
-    </summary>
+    <summary>The rate at which the window is to be flashed, in milliseconds. If <b>dwTimeout</b> is zero, the function uses the default cursor blink rate.</summary>
   </member>
 </doc>

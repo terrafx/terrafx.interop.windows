@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WinRT.CheckGamingPrivilegeSilently">
+    <summary>
+      <para>Do not use. This API is only supported for Xbox developers.</para>
+      <para>To learn more about becoming a Xbox developer, see <a href="https://www.xbox.com/developers">Developing Games for Xbox One and Windows 10</a>.</para>
+    </summary>
+    <param name="privilegeId">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="scope">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="policy">Specifies a HSTRING that ... TBD</param>
+    <param name="hasPrivilege">Do not use. This API is only supported for Xbox developers.</param>
+    <returns>Do not use. This API is only supported for Xbox developers.</returns>
+  </member>
+  <member name="WinRT.CheckGamingPrivilegeWithUI">
+    <summary>
+      <para>Do not use. This API is only supported for Xbox developers.</para>
+      <para>To learn more about becoming a Xbox developer, see <a href="https://www.xbox.com/developers">Developing Games for Xbox One and Windows 10</a>.</para>
+    </summary>
+    <param name="privilegeId">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="scope">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="policy">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="friendlyMessage">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="completionRoutine">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="context">Do not use. This API is only supported for Xbox developers.</param>
+    <returns>Do not use. This API is only supported for Xbox developers.</returns>
+  </member>
+  <member name="WinRT.ProcessPendingGameUI">
+    <summary>
+      <para>Do not use. This API is only supported for Xbox developers.</para>
+      <para>To learn more about becoming a Xbox developer, see <a href="https://www.xbox.com/developers">Developing Games for Xbox One and Windows 10</a>.</para>
+    </summary>
+    <param name="waitForCompletion">Do not use. This API is only supported for Xbox developers.</param>
+    <returns>Do not use. This API is only supported for Xbox developers.</returns>
+  </member>
+  <member name="WinRT.ShowChangeFriendRelationshipUI">
+    <summary>
+      <para>Do not use. This API is only supported for Xbox developers.</para>
+      <para>To learn more about becoming a Xbox developer, see <a href="https://www.xbox.com/developers">Developing Games for Xbox One and Windows 10</a>.</para>
+    </summary>
+    <param name="targetUserXuid">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="completionRoutine">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="context">Do not use. This API is only supported for Xbox developers.</param>
+    <returns>Do not use. This API is only supported for Xbox developers.</returns>
+  </member>
+  <member name="WinRT.ShowChangeFriendRelationshipUIForUser">
+    <summary>
+      <para>Do not use. This API is only supported for Xbox developers.</para>
+      <para>To learn more about becoming a Xbox developer, see <a href="https://www.xbox.com/developers">Developing Games for Xbox One and Windows 10</a></para>
+    </summary>
+    <param name="user">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="targetUserXuid">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="completionRoutine">Do not use. This API is only supported for Xbox develo</param>
+    <param name="context">Do not use. This API is only supported for Xbox developers.</param>
+    <returns>Do not use. This API is only supported for Xbox developers.</returns>
+  </member>
+  <member name="WinRT.ShowGameInviteUI">
+    <summary>
+      <para>Do not use. This API is only supported for Xbox developers.</para>
+      <para>To learn more about becoming a Xbox developer, see <a href="https://www.xbox.com/developers">Developing Games for Xbox One and Windows 10</a>.</para>
+    </summary>
+    <param name="serviceConfigurationId">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="sessionTemplateName">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="sessionId">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="invitationDisplayText">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="completionRoutine">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="context">Do not use. This API is only supported for Xbox developers.</param>
+    <returns>Do not use. This API is only supported for Xbox developers.</returns>
+  </member>
+  <member name="WinRT.ShowPlayerPickerUI">
+    <summary>
+      <para>Do not use. This API is only supported for Xbox developers.</para>
+      <para>To learn more about becoming a Xbox developer, see <a href="https://www.xbox.com/developers">Developing Games for Xbox One and Windows 10</a>.</para>
+    </summary>
+    <param name="promptDisplayText">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="xuids">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="xuidsCount">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="preSelectedXuids">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="preSelectedXuidsCount">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="minSelectionCount">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="maxSelectionCount">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="completionRoutine">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="context">Do not use. This API is only supported for Xbox developers.</param>
+    <returns>Do not use. This API is only supported for Xbox developers.</returns>
+  </member>
+  <member name="WinRT.ShowProfileCardUI">
+    <summary>
+      <para>Do not use. This API is only supported for Xbox developers.</para>
+      <para>To learn more about becoming a Xbox developer, see <a href="https://www.xbox.com/developers">Developing Games for Xbox One and Windows 10</a>.</para>
+    </summary>
+    <param name="targetUserXuid">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="completionRoutine">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="context">Do not use. This API is only supported for Xbox developers.</param>
+    <returns>Do not use. This API is only supported for Xbox developers.</returns>
+  </member>
+  <member name="WinRT.ShowProfileCardUIForUser">
+    <summary>
+      <para>Do not use. This API is only supported for Xbox developers.</para>
+      <para>To learn more about becoming a Xbox developer, see <a href="https://www.xbox.com/developers">Developing Games for Xbox One and Windows 10</a>.</para>
+    </summary>
+    <param name="user">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="targetUserXuid">Do not use. This API is only supported for Xbox developers</param>
+    <param name="completionRoutine">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="context">Do not use. This API is only supported for Xbox developers.</param>
+    <returns>Do not use. This API is only supported for Xbox developers.</returns>
+  </member>
+  <member name="WinRT.ShowTitleAchievementsUI">
+    <summary>
+      <para>Do not use. This API is only supported for Xbox developers.</para>
+      <para>To learn more about becoming a Xbox developer, see <a href="https://www.xbox.com/developers">Developing Games for Xbox One and Windows 10</a>.</para>
+    </summary>
+    <param name="titleId">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="completionRoutine">Do not use. This API is only supported for Xbox developers.</param>
+    <param name="context">Do not use. This API is only supported for Xbox developers.</param>
+    <returns>Do not use. This API is only supported for Xbox developers.</returns>
+  </member>
+  <member name="WinRT.TryCancelPendingGameUI">
+    <summary>
+      <para>Do not use. This API is only supported for Xbox developers.</para>
+      <para>To learn more about becoming a Xbox developer, see <a href="https://www.xbox.com/developers">Developing Games for Xbox One and Windows 10</a>.</para>
+    </summary>
+    <returns>Do not use. This API is only supported for Xbox developers.</returns>
+  </member>
+</doc>

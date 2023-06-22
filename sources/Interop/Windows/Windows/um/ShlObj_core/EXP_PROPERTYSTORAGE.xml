@@ -3,29 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EXP_PROPERTYSTORAGE">
-    <summary>
-      <para>Stores information about the Shell link state. This structure is used for extra data sections that are tagged with EXP_PROPERTYSTORAGE_SIG.</para>
-    </summary>
-    <remarks>
-      <para>EXP_PROPERTYSTORAGE is used to store information serialized by the <see cref="IShellLink" /> object.  It is named with the tag value EXP_PROPERTYSTORAGE_SIG and can be accessed via <see cref="IShellLinkDataList" />, including operations for add, remove, and copy. This block can be used to inspect the Shell link state.</para>
-    </remarks>
+    <summary>Stores information about the Shell link state. This structure is used for extra data sections that are tagged with EXP_PROPERTYSTORAGE_SIG.</summary>
   </member>
   <member name="EXP_PROPERTYSTORAGE.cbSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of this structure, in bytes.</para>
-    </summary>
+    <summary>The size of this structure, in bytes.</summary>
   </member>
   <member name="EXP_PROPERTYSTORAGE.dwSignature">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>Identifies the type of block and is the value EXP_PROPERTYSTORAGE_SIG.</para>
-    </summary>
+    <summary>Identifies the type of block and is the value EXP_PROPERTYSTORAGE_SIG.</summary>
   </member>
   <member name="EXP_PROPERTYSTORAGE.abPropertyStorage">
-    <summary>
-      <para>Type: <b>BYTE[1]</b></para>
-      <para>A serialized property store in the format defined by SERIALIZEDPROPSTORAGE.</para>
-    </summary>
+    <summary>A serialized property store in the format defined by SERIALIZEDPROPSTORAGE.</summary>
   </member>
 </doc>

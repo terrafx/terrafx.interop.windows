@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFCLOCK_CHARACTERISTICS_FLAGS">
-    <summary>
-      <para>Contains flags that describe the characteristics of a clock. These flags are returned by the <see cref="IMFClock.GetClockCharacteristics" /> method.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Contains flags that describe the characteristics of a clock. These flags are returned by the <see cref="IMFClock.GetClockCharacteristics" /> method.</summary>
   </member>
   <member name="MFCLOCK_CHARACTERISTICS_FLAGS.MFCLOCK_CHARACTERISTICS_FLAG_FREQUENCY_10MHZ">
-    <summary>
-      <para>The clock times returned by the <see cref="IMFClock.GetCorrelatedTime" /> method are in units of 100 nanoseconds. If this flag is absent, call <see cref="IMFClock.GetProperties" /> to get the clock frequency. The clock frequency is given in the <b>qwClockFrequency</b> member of the <see cref="MFCLOCK_PROPERTIES" /> structure returned by that method.</para>
-    </summary>
+    <summary>The clock times returned by the <see cref="IMFClock.GetCorrelatedTime" /> method are in units of 100 nanoseconds. If this flag is absent, call <see cref="IMFClock.GetProperties" /> to get the clock frequency. The clock frequency is given in the <b>qwClockFrequency</b> member of the <see cref="MFCLOCK_PROPERTIES" /> structure returned by that method.</summary>
   </member>
   <member name="MFCLOCK_CHARACTERISTICS_FLAGS.MFCLOCK_CHARACTERISTICS_FLAG_ALWAYS_RUNNING">
-    <summary>
-      <para>The clock is always running. If this flag is present, the clock cannot be paused or stopped. If this flag is absent, call the <see cref="IMFClock.GetState" /> method to get the current state.</para>
-    </summary>
+    <summary>The clock is always running. If this flag is present, the clock cannot be paused or stopped. If this flag is absent, call the <see cref="IMFClock.GetState" /> method to get the current state.</summary>
   </member>
   <member name="MFCLOCK_CHARACTERISTICS_FLAGS.MFCLOCK_CHARACTERISTICS_FLAG_IS_SYSTEM_CLOCK">
-    <summary>
-      <para>The clock times are generated from the system clock.</para>
-    </summary>
+    <summary>The clock times are generated from the system clock.</summary>
   </member>
 </doc>

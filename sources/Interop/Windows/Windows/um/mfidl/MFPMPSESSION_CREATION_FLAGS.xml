@@ -3,17 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFPMPSESSION_CREATION_FLAGS">
-    <summary>
-      <para>Contains flags that define the behavior of the <see cref="MFCreatePMPMediaSession" /> function.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Contains flags that define the behavior of the <see cref="MFCreatePMPMediaSession" /> function.</summary>
   </member>
   <member name="MFPMPSESSION_CREATION_FLAGS.MFPMPSESSION_UNPROTECTED_PROCESS">
-    <summary>
-      <para>If this flag is set, the Protected Media Path (PMP) Media Session is created in an unprotected process. You can use the unprotected process to play clear content but not protected content. If this flag is not set, the PMP Media Session is created in a protected process. In that case, the protected process is used for both protected content and clear content.</para>
-    </summary>
+    <summary>If this flag is set, the Protected Media Path (PMP) Media Session is created in an unprotected process. You can use the unprotected process to play clear content but not protected content. If this flag is not set, the PMP Media Session is created in a protected process. In that case, the protected process is used for both protected content and clear content.</summary>
   </member>
-  <member name="MFPMPSESSION_CREATION_FLAGS.MFPMPSESSION_IN_PROCESS">
-    <summary></summary>
-  </member>
+  <member name="MFPMPSESSION_CREATION_FLAGS.MFPMPSESSION_IN_PROCESS"></member>
 </doc>

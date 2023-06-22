@@ -3,31 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11RefDefaultTrackingOptions.SetTrackingOptions">
-    <summary>
-      <para>Sets graphics processing unit (GPU) debug reference default tracking options for specific resource types.</para>
-    </summary>
-    <param name="ResourceTypeFlags">
-      <para>A <see cref="D3D11_SHADER_TRACKING_RESOURCE_TYPE" />-typed value that specifies the type of resource to track.</para>
-    </param>
-    <param name="Options">
-      <para>A combination of <see cref="D3D11_SHADER_TRACKING_OPTIONS" />-typed flags that are combined by using a bitwise <b>OR</b> operation. The resulting value identifies tracking options. If a flag is present, the tracking option that the flag represents is set to "on"; otherwise the tracking option is set to "off."</para>
-    </param>
-    <returns>
-      <para>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>This API requires the Windows Software Development Kit (SDK) for Windows 8.</para>
-    </remarks>
-    <seealso cref="ID3D11RefDefaultTrackingOptions" />
+    <summary>Sets graphics processing unit (GPU) debug reference default tracking options for specific resource types.</summary>
+    <param name="ResourceTypeFlags">A <see cref="D3D11_SHADER_TRACKING_RESOURCE_TYPE" />-typed value that specifies the type of resource to track.</param>
+    <param name="Options">A combination of <see cref="D3D11_SHADER_TRACKING_OPTIONS" />-typed flags that are combined by using a bitwise <b>OR</b> operation. The resulting value identifies tracking options. If a flag is present, the tracking option that the flag represents is set to "on"; otherwise the tracking option is set to "off."</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</returns>
   </member>
   <member name="ID3D11RefDefaultTrackingOptions">
-    <summary>
-      <para>The default tracking interface sets reference default tracking options.</para>
-    </summary>
-    <remarks>
-      <para>These APIs require the Windows Software Development Kit (SDK) for Windows 8.</para>
-    </remarks>
-    <seealso cref="IUnknown" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-layer-interfaces">Layer Interfaces</seealso>
+    <summary>The default tracking interface sets reference default tracking options.</summary>
   </member>
 </doc>

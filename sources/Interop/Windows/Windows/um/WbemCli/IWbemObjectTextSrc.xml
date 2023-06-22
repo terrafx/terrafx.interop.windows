@@ -3,16 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWbemObjectTextSrc.GetText">
-    <summary>
-      <para>The <b>IWbemObjectTextSrc.GetText</b> method creates a textual representation of an
-<see cref="IWbemClassObject" /> object; for example, an XML representation.</para>
-    </summary>
-    <param name="lFlags">
-      <para>Reserved. Must be 0L.</para>
-    </param>
-    <param name="pObj">
-      <para>Reference to the object to be represented in text format. This parameter cannot be <b>NULL</b>.</para>
-    </param>
+    <summary>The <b>IWbemObjectTextSrc.GetText</b> method creates a textual representation of an<see cref="IWbemClassObject" /> object; for example, an XML representation.</summary>
+    <param name="lFlags">Reserved. Must be 0L.</param>
+    <param name="pObj">Reference to the object to be represented in text format. This parameter cannot be <b>NULL</b>.</param>
     <param name="uObjTextFormat">
       <para>Definition of the text format used to represent the object. For more information about valid values for this parameter, see Remarks.</para>
       <h4>WMI_OBJ_TEXT_CIM_DTD_2_0 (1 (0x1))</h4>
@@ -43,7 +36,7 @@
       <para>Reserved for future use.</para>
     </param>
     <param name="pCtx">
-      <para>Optional. Context object for the operation. The context object can be used to specify whether  certain parts of the object are represented in text; for example, whether to include qualifiers in the textual representation. The context object takes the following optional values.</para>
+      <para>Optional. Context object for the operation. The context object can be used to specify whether certain parts of the object are represented in text; for example, whether to include qualifiers in the textual representation. The context object takes the following optional values.</para>
       <h4>LocalOnly (VT_BOOL)</h4>
       <para>If <b>TRUE</b>, only locally defined properties and methods are present in the resulting XML. The default is <b>FALSE</b>.</para>
       <h4>IncludeQualifiers (VT_BOOL)</h4>
@@ -53,28 +46,16 @@
       <para>Possible values are:</para>
       <list type="bullet">
         <item>
-          <description>
-            <para>0</para>
-            <para>A <b>CLASS</b> or <b>INSTANCE</b> element is created depending on whether the object is a class or instance.</para>
-          </description>
+          <description>0<para>A <b>CLASS</b> or <b>INSTANCE</b> element is created depending on whether the object is a class or instance.</para></description>
         </item>
         <item>
-          <description>
-            <para>1</para>
-            <para>A <b>VALUE.NAMEDOBJECT</b> element is generated.</para>
-          </description>
+          <description>1<para>A <b>VALUE.NAMEDOBJECT</b> element is generated.</para></description>
         </item>
         <item>
-          <description>
-            <para>2</para>
-            <para>A VALUE.<b>OBJECTWITHLOCALPATH</b> element is generated.</para>
-          </description>
+          <description>2<para>A VALUE.<b>OBJECTWITHLOCALPATH</b> element is generated.</para></description>
         </item>
         <item>
-          <description>
-            <para>3</para>
-            <para>A <b>VALUE.OBJECTWITHPATH</b> element is generated.</para>
-          </description>
+          <description>3<para>A <b>VALUE.OBJECTWITHPATH</b> element is generated.</para></description>
         </item>
       </list>
       <h4>ExcludeSystemProperties (VT_BOOL)</h4>
@@ -82,23 +63,10 @@
       <h4>IncludeClassOrigin (VT_BOOL)</h4>
       <para>If <b>TRUE</b>, the class origin attribute is set on <b>PROPERTY</b> and <b>METHOD</b> elements. The default is <b>FALSE</b>.</para>
     </param>
-    <param name="strText">
-      <para>Textual representation of the object. User must free the string using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a> when finished with <i>strText</i>.</para>
-    </param>
-    <returns>
-      <para>This method returns an <b>HRESULT</b> that indicates the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
-    </returns>
-    <remarks>
-      <para>For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/representing-objects-in-xml">Representing Objects in XML</a>.</para>
-    </remarks>
+    <param name="strText">Textual representation of the object. User must free the string using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a> when finished with <i>strText</i>.</param>
+    <returns>This method returns an <b>HRESULT</b> that indicates the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</returns>
   </member>
   <member name="IWbemObjectTextSrc">
-    <summary>
-      <para>The
-<b>IWbemObjectTextSrc</b> interface is used to translate
-<see cref="IWbemClassObject" /> instances to and from differing text formats.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/representing-objects-in-xml">Representing Objects in XML</seealso>
+    <summary>The<b>IWbemObjectTextSrc</b> interface is used to translate<see cref="IWbemClassObject" /> instances to and from differing text formats.</summary>
   </member>
 </doc>

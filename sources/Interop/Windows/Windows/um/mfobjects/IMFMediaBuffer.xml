@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFMediaBuffer.GetCurrentLength">
-    <summary>
-      <para>Retrieves the length of the valid data in the buffer.</para>
-    </summary>
-    <param name="pcbCurrentLength">
-      <para>Receives the length of the valid data, in bytes. If the buffer does not contain any valid data, the value is zero.</para>
-    </param>
+    <summary>Retrieves the length of the valid data in the buffer.</summary>
+    <param name="pcbCurrentLength">Receives the length of the valid data, in bytes. If the buffer does not contain any valid data, the value is zero.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,39 +12,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFMediaBuffer" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-buffers">Media Buffers</seealso>
   </member>
   <member name="IMFMediaBuffer.GetMaxLength">
-    <summary>
-      <para>Retrieves the allocated size of the buffer.</para>
-    </summary>
-    <param name="pcbMaxLength">
-      <para>Receives the allocated size of the buffer, in bytes.</para>
-    </param>
+    <summary>Retrieves the allocated size of the buffer.</summary>
+    <param name="pcbMaxLength">Receives the allocated size of the buffer, in bytes.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -56,46 +37,26 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The buffer might or might not contain any valid data, and if there is valid data in the buffer, it might be smaller than the buffer's allocated size. To get the length of the valid data, call <see cref="IMFMediaBuffer.GetCurrentLength" />.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFMediaBuffer" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-buffers">Media Buffers</seealso>
   </member>
   <member name="IMFMediaBuffer.Lock">
-    <summary>
-      <para>Gives the caller access to the memory in the buffer, for reading or writing</para>
-    </summary>
-    <param name="ppbBuffer">
-      <para>Receives a pointer to the start of the buffer.</para>
-    </param>
-    <param name="pcbMaxLength">
-      <para>Receives the maximum amount of data that can be written to the buffer. This parameter can be <b>NULL</b>. The same value is returned by the <see cref="IMFMediaBuffer.GetMaxLength" /> method.</para>
-    </param>
-    <param name="pcbCurrentLength">
-      <para>Receives the length of the valid data in the buffer, in bytes. This parameter can be <b>NULL</b>. The same value is returned by the <see cref="IMFMediaBuffer.GetCurrentLength" /> method.</para>
-    </param>
+    <summary>Gives the caller access to the memory in the buffer, for reading or writing</summary>
+    <param name="ppbBuffer">Receives a pointer to the start of the buffer.</param>
+    <param name="pcbMaxLength">Receives the maximum amount of data that can be written to the buffer. This parameter can be <b>NULL</b>. The same value is returned by the <see cref="IMFMediaBuffer.GetMaxLength" /> method.</param>
+    <param name="pcbCurrentLength">Receives the length of the valid data in the buffer, in bytes. This parameter can be <b>NULL</b>. The same value is returned by the <see cref="IMFMediaBuffer.GetCurrentLength" /> method.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -103,65 +64,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DERR_INVALIDCALL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>For Direct3D surface buffers, an error occurred when locking the surface.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>D3DERR_INVALIDCALL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>For Direct3D surface buffers, an error occurred when locking the surface.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
-          </description>
-          <description>
-            <para>The buffer cannot be locked at this time.</para>
-          </description>
-        </item>
+          <description>The buffer cannot be locked at this time.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method gives the caller access to the entire buffer, up to the maximum size returned in the <i>pcbMaxLength</i> parameter. The value returned in <i>pcbCurrentLength</i> is the size of any valid data already in the buffer, which might be less than the total buffer size.</para>
-      <para>The pointer returned in <i>ppbBuffer</i> is guaranteed to be valid, and can safely be accessed across the entire buffer for as long as the lock is held. When you are done accessing the buffer, call <see cref="IMFMediaBuffer.Unlock" /> to unlock the buffer. You must call <b>Unlock</b> once for each call to <b>Lock</b>. After you unlock the buffer, the pointer returned in <i>ppbBuffer</i> is no longer valid, and should not be used. Generally, it is best to call <b>Lock</b> only when you need to access the buffer memory, and not earlier.</para>
-      <para>Locking the buffer does not prevent other threads from calling <b>Lock</b>, so you should not rely on this method to synchronize threads.</para>
-      <para>This method may allocate memory, but does transfer ownership of the memory to the caller. Do not release or free the memory; the media buffer will free the memory when the media buffer is destroyed.</para>
-      <para>If you modify the contents of the buffer, update the current length by calling <see cref="IMFMediaBuffer.SetCurrentLength" />.</para>
-      <para>This method may internally allocate some memory, so if the buffer supports the <see cref="IMF2DBuffer" /> interface, you should use the <see cref="IMF2DBuffer.Lock2D" /> method to lock the buffer instead. For 2-D buffers, the <b>Lock2DSize</b> method can be more efficient than the <b>Lock</b> method, depending on the <b>MF2DBuffer_LockFlags</b> value you specify.  Calling <b>Lock2DSize</b> with <b>MF2DBuffer_LockFlags_Read</b> won’t incur a copy back when the buffer is unlocked and calling it with <b>MF2DBuffer_LockFlags_Write</b> won’t incur a copy from the internal buffer. Calling <b>Lock2DSize</b> with <b>LockFlags_ReadWrite</b>  behaves the same as <b>Lock</b> and <b>Lock2D</b> and will incur a both copy from and copy back when unlocked. The general guidance for best performance is to avoid using <b>IMFMediaBuffer</b> and <b>IMF2DBuffer</b> whenever possible and instead use <b>IMF2DBuffer2</b> with the minimum required lock flags. Note that if the buffer is locked using <b>Lock2D</b>, the <b>Lock</b> method might return MF_E_INVALIDREQUEST.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFMediaBuffer" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-buffers">Media Buffers</seealso>
   </member>
   <member name="IMFMediaBuffer.SetCurrentLength">
-    <summary>
-      <para>Sets the length of the valid data in the buffer.</para>
-    </summary>
-    <param name="cbCurrentLength">
-      <para>Length of the valid data, in bytes. This value cannot be greater than the allocated size of the buffer, which is returned by the <see cref="IMFMediaBuffer.GetMaxLength" /> method.</para>
-    </param>
+    <summary>Sets the length of the valid data in the buffer.</summary>
+    <param name="cbCurrentLength">Length of the valid data, in bytes. This value cannot be greater than the allocated size of the buffer, which is returned by the <see cref="IMFMediaBuffer.GetMaxLength" /> method.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -169,47 +113,35 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified length is greater than the maximum size of the buffer.</para>
-          </description>
-        </item>
+          <description>The specified length is greater than the maximum size of the buffer.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Call this method if you write data into the buffer.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFMediaBuffer" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-buffers">Media Buffers</seealso>
   </member>
   <member name="IMFMediaBuffer.Unlock">
-    <summary>
-      <para>Unlocks a buffer that was previously locked. Call this method once for every call to <see cref="IMFMediaBuffer.Lock" />.</para>
-    </summary>
+    <summary>Unlocks a buffer that was previously locked. Call this method once for every call to <see cref="IMFMediaBuffer.Lock" />.</summary>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -217,109 +149,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DERR_INVALIDCALL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>D3DERR_INVALIDCALL</b>
-            </para>
-          </description>
-          <description>
-            <para>For Direct3D surface buffers, an error occurred when unlocking the surface.</para>
-          </description>
-        </item>
+          <description>For Direct3D surface buffers, an error occurred when unlocking the surface.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>It is an error to call <b>Unlock</b> if you did not call <see cref="Lock" /> previously.</para>
-      <para>After calling this method, do not use the pointer returned by the <see cref="Lock" /> method. It is no longer guaranteed to be valid.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFMediaBuffer" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-buffers">Media Buffers</seealso>
   </member>
   <member name="IMFMediaBuffer">
-    <summary>
-      <para>Represents a block of memory that contains media data. Use this interface to access the data in the buffer.</para>
-    </summary>
-    <remarks>
-      <para>If the buffer contains 2-D image data (such as an uncompressed video frame), you should query the buffer for the <see cref="IMF2DBuffer" /> interface. The methods on <b>IMF2DBuffer</b> are optimized for 2-D data.</para>
-      <para>To get a buffer from a media sample, call one of the following <see cref="IMFSample" /> methods:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <para>
-              <see cref="IMFSample.ConvertToContiguousBuffer" />
-            </para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <see cref="IMFSample.GetBufferByIndex" />
-            </para>
-          </description>
-        </item>
-      </list>
-      <para>To create a new buffer object, use one of the following functions.</para>
-      <list type="table">
-        <listheader>
-          <description>Function</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>
-            <see cref="MFCreateMemoryBuffer" />
-          </description>
-          <description>Creates a buffer and allocates system memory.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="MFCreateMediaBufferWrapper" />
-          </description>
-          <description>Creates a media buffer that wraps an existing media buffer.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="MFCreateDXSurfaceBuffer" />
-          </description>
-          <description>Creates a buffer that manages a DirectX surface.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="MFCreateAlignedMemoryBuffer" />
-          </description>
-          <description>Creates a buffer and allocates system memory with a specified alignment.</description>
-        </item>
-      </list>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-buffers">Media Buffers</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Represents a block of memory that contains media data. Use this interface to access the data in the buffer.</summary>
   </member>
 </doc>

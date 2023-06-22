@@ -3,26 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_XML_QNAME_TEXT">
-    <summary>
-      <para>Represents a qname formatted as the text "prefix:localName"</para>
-    </summary>
+    <summary>Represents a qname formatted as the text "prefix:localName"</summary>
   </member>
   <member name="WS_XML_QNAME_TEXT.text">
-    <summary>
-      <para>The base type for all types that derive from <see cref="WS_XML_TEXT" />.</para>
-    </summary>
+    <summary>The base type for all types that derive from <see cref="WS_XML_TEXT" />.</summary>
   </member>
   <member name="WS_XML_QNAME_TEXT.prefix">
-    <summary>
-      <para>The prefix.</para>
-    </summary>
+    <summary>The prefix.</summary>
   </member>
   <member name="WS_XML_QNAME_TEXT.localName">
-    <summary>
-      <para>The local name.</para>
-    </summary>
+    <summary>The local name.</summary>
   </member>
-  <member name="WS_XML_QNAME_TEXT.ns">
-    <summary></summary>
-  </member>
+  <member name="WS_XML_QNAME_TEXT.ns"></member>
 </doc>

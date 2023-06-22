@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWriteEngine2.CancelWrite">
-    <summary>
-      <para>Cancels a write operation that is in progress.</para>
-    </summary>
+    <summary>Cancels a write operation that is in progress.</summary>
     <returns>
       <para>The following values are returned on success, but other success codes may be returned as a result of implementation: The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -13,63 +11,38 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_IMAPI_WRITE_NOT_IN_PROGRESS</b>
-            </para>
-          </description>
-          <description>
-            <para>The 'write' operation initiated by the last call to <see cref="IWriteEngine2.WriteSection" /> has not yet begun, and cannot be canceled.   It is recommended to call  <see cref="IWriteEngine2.CancelWrite" />  until a different success code is returned.</para>
-            <para>Value: 0x00AA0302L</para>
-          </description>
-        </item>
-      </list>
-      <para>The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
-      <list type="table">
         <listheader>
-          <description>Return code</description>
-          <description>Description</description>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method succeeded.</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_IMAPI_WRITE_NOT_IN_PROGRESS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Unspecified failure.</para>
-            <para>Value: 0x80004005</para>
-          </description>
-        </item>
-      </list>
-    </returns>
-    <remarks>
-      <para>To cancel the write operation, you must call this method from the <see cref="DWriteEngine2Events.Update" /> event handler that you implemented.</para>
-    </remarks>
-    <seealso cref="DWriteEngine2Events" />
-    <seealso cref="IWriteEngine2" />
-    <seealso cref="IWriteEngine2.WriteSection" />
-    <seealso cref="IWriteEngine2.get_WriteInProgress" />
+          <description>The 'write' operation initiated by the last call to <see cref="IWriteEngine2.WriteSection" /> has not yet begun, and cannot be canceled. It is recommended to call <see cref="IWriteEngine2.CancelWrite" /> until a different success code is returned.<para>Value: 0x00AA0302L</para></description>
+        </listheader>
+      </list> <para>The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para><list type="table"><listheader><description>Return code</description><description>Description</description></listheader><listheader><description><list type="bullet"><listheader><term><b>E_FAIL</b></term></listheader></list></description><description>Unspecified failure.<para>Value: 0x80004005</para></description></listheader></list></returns>
   </member>
   <member name="IWriteEngine2.get_BytesPerSector">
-    <summary>
-      <para>Retrieves the number of bytes to use for each sector during writing. The returned value indicates what the value previously set with <see cref="IWriteEngine2.put_BytesPerSector" />, and does not return a current bytes per sector value for media.</para>
-    </summary>
+    <summary>Retrieves the number of bytes to use for each sector during writing. The returned value indicates what the value previously set with <see cref="IWriteEngine2.put_BytesPerSector" />, and does not return a current bytes per sector value for media.</summary>
     <param name="value">
       <para>Number of bytes to use for each sector during writing.</para>
-      <para>
-        <b>Note</b>  If <see cref="IWriteEngine2.put_BytesPerSector" /> has not been called, this parameter will indicate a value of  '-1'.</para>
+      <div>
+        <b>Note</b>  If <see cref="IWriteEngine2.put_BytesPerSector" /> has not been called, this parameter will indicate a value of '-1'.</div>
     </param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
@@ -78,30 +51,23 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IWriteEngine2" />
-    <seealso cref="IWriteEngine2.get_EndingSectorsPerSecond" />
-    <seealso cref="IWriteEngine2.get_StartingSectorsPerSecond" />
-    <seealso cref="IWriteEngine2.put_BytesPerSector" />
-    <seealso cref="IWriteEngine2.put_EndingSectorsPerSecond" />
-    <seealso cref="IWriteEngine2.put_StartingSectorsPerSecond" />
   </member>
   <member name="IWriteEngine2.get_EndingSectorsPerSecond">
-    <summary>
-      <para>Retrieves the estimated number of sectors per second that the recording device can write to the media at the end of the writing process.</para>
-    </summary>
+    <summary>Retrieves the estimated number of sectors per second that the recording device can write to the media at the end of the writing process.</summary>
     <param name="value">
       <para>Approximate number of sectors per second that the recording device can write to the media at the end of the writing process.</para>
       <para>A value of -1 indicates maximum speed.</para>
@@ -113,33 +79,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IWriteEngine2" />
-    <seealso cref="IWriteEngine2.get_BytesPerSector" />
-    <seealso cref="IWriteEngine2.get_StartingSectorsPerSecond" />
-    <seealso cref="IWriteEngine2.put_BytesPerSector" />
-    <seealso cref="IWriteEngine2.put_EndingSectorsPerSecond" />
-    <seealso cref="IWriteEngine2.put_StartingSectorsPerSecond" />
   </member>
   <member name="IWriteEngine2.get_Recorder">
-    <summary>
-      <para>Retrieves the recording device to use in the write operation.</para>
-    </summary>
-    <param name="value">
-      <para>An <see cref="IDiscRecorder2Ex" /> interface that identifies the recording device to use in the write operation.</para>
-    </param>
+    <summary>Retrieves the recording device to use in the write operation.</summary>
+    <param name="value">An <see cref="IDiscRecorder2Ex" /> interface that identifies the recording device to use in the write operation.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -147,26 +104,23 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IWriteEngine2" />
-    <seealso cref="IWriteEngine2.put_Recorder" />
   </member>
   <member name="IWriteEngine2.get_StartingSectorsPerSecond">
-    <summary>
-      <para>Retrieves the estimated number of sectors per second that the recording device can write to the media at the start of the writing process.</para>
-    </summary>
+    <summary>Retrieves the estimated number of sectors per second that the recording device can write to the media at the start of the writing process.</summary>
     <param name="value">
       <para>Approximate number of sectors per second that the recording device can write to the media at the start of the writing process.</para>
       <para>A value of -1 indicates maximum speed.</para>
@@ -178,33 +132,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IWriteEngine2" />
-    <seealso cref="IWriteEngine2.get_BytesPerSector" />
-    <seealso cref="IWriteEngine2.get_EndingSectorsPerSecond" />
-    <seealso cref="IWriteEngine2.put_BytesPerSector" />
-    <seealso cref="IWriteEngine2.put_EndingSectorsPerSecond" />
-    <seealso cref="IWriteEngine2.put_StartingSectorsPerSecond" />
   </member>
   <member name="IWriteEngine2.get_UseStreamingWrite12">
-    <summary>
-      <para>Retrieves a value that indicates if the write operations use the WRITE12 or WRITE10 command.</para>
-    </summary>
-    <param name="value">
-      <para>If VARIANT_TRUE, the write operations use the WRITE12 command with the streaming bit set to one. Otherwise, if VARIANT_FALSE, the write operations use the WRITE10 command.</para>
-    </param>
+    <summary>Retrieves a value that indicates if the write operations use the WRITE12 or WRITE10 command.</summary>
+    <param name="value">If VARIANT_TRUE, the write operations use the WRITE12 command with the streaming bit set to one. Otherwise, if VARIANT_FALSE, the write operations use the WRITE10 command.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -212,30 +157,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IWriteEngine2" />
-    <seealso cref="IWriteEngine2.WriteSection" />
-    <seealso cref="IWriteEngine2.put_UseStreamingWrite12" />
   </member>
   <member name="IWriteEngine2.get_WriteInProgress">
-    <summary>
-      <para>Retrieves a value that indicates whether the recorder is currently writing data to the disc.</para>
-    </summary>
-    <param name="value">
-      <para>If VARIANT_TRUE, the recorder is currently writing data to the disc. Otherwise, if VARIANT_FALSE, the recorder is not currently writing to disc.</para>
-    </param>
+    <summary>Retrieves a value that indicates whether the recorder is currently writing data to the disc.</summary>
+    <param name="value">If VARIANT_TRUE, the recorder is currently writing data to the disc. Otherwise, if VARIANT_FALSE, the recorder is not currently writing to disc.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -243,30 +182,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IWriteEngine2" />
-    <seealso cref="IWriteEngine2.CancelWrite" />
-    <seealso cref="IWriteEngine2.WriteSection" />
   </member>
   <member name="IWriteEngine2.put_BytesPerSector">
-    <summary>
-      <para>Sets the number of bytes to use for each sector during writing.</para>
-    </summary>
-    <param name="value">
-      <para>Number of bytes to use for each sector during writing. The minimum size is 1 byte and the maximum is MAXLONG bytes. Typically, this value is 2,048 bytes for CD media, although any arbitrary size is supported (such as 2352 or 2448). This value is limited to the <see cref="IDiscRecorder2Ex.GetMaximumPageAlignedTransferSize" />, which is typically 65,536 (64K) bytes.</para>
-    </param>
+    <summary>Sets the number of bytes to use for each sector during writing.</summary>
+    <param name="value">Number of bytes to use for each sector during writing. The minimum size is 1 byte and the maximum is MAXLONG bytes. Typically, this value is 2,048 bytes for CD media, although any arbitrary size is supported (such as 2352 or 2448). This value is limited to the <see cref="IDiscRecorder2Ex.GetMaximumPageAlignedTransferSize" />, which is typically 65,536 (64K) bytes.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -274,47 +207,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Unspecified failure.<para>Value: 0x80004005</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Unspecified failure.</para>
-            <para>Value: 0x80004005</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more arguments are not valid.</para>
-            <para>Value: 0x80070057</para>
-          </description>
-        </item>
+          <description>One or more arguments are not valid.<para>Value: 0x80070057</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>You must specify a logical block size.</para>
-    </remarks>
-    <seealso cref="IWriteEngine2" />
-    <seealso cref="IWriteEngine2.get_BytesPerSector" />
-    <seealso cref="IWriteEngine2.get_EndingSectorsPerSecond" />
-    <seealso cref="IWriteEngine2.get_StartingSectorsPerSecond" />
-    <seealso cref="IWriteEngine2.put_EndingSectorsPerSecond" />
-    <seealso cref="IWriteEngine2.put_StartingSectorsPerSecond" />
   </member>
   <member name="IWriteEngine2.put_EndingSectorsPerSecond">
-    <summary>
-      <para>Sets the estimated number of sectors per second that the recording device can write to the media at the end of the writing process.</para>
-    </summary>
-    <param name="value">
-      <para>Approximate number of sectors per second that the recording device can write to the media at the end of the writing process. The default is -1 for maximum speed.</para>
-    </param>
+    <summary>Sets the estimated number of sectors per second that the recording device can write to the media at the end of the writing process.</summary>
+    <param name="value">Approximate number of sectors per second that the recording device can write to the media at the end of the writing process. The default is -1 for maximum speed.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -322,47 +244,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Unspecified failure.<para>Value: 0x80004005</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Unspecified failure.</para>
-            <para>Value: 0x80004005</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more arguments are not valid.</para>
-            <para>Value: 0x80070057</para>
-          </description>
-        </item>
+          <description>One or more arguments are not valid.<para>Value: 0x80070057</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This is used to optimize sleep time in the write engine.</para>
-    </remarks>
-    <seealso cref="IWriteEngine2" />
-    <seealso cref="IWriteEngine2.get_BytesPerSector" />
-    <seealso cref="IWriteEngine2.get_EndingSectorsPerSecond" />
-    <seealso cref="IWriteEngine2.get_StartingSectorsPerSecond" />
-    <seealso cref="IWriteEngine2.put_BytesPerSector" />
-    <seealso cref="IWriteEngine2.put_StartingSectorsPerSecond" />
   </member>
   <member name="IWriteEngine2.put_Recorder">
-    <summary>
-      <para>Sets a recording device for the write operation.</para>
-    </summary>
-    <param name="value">
-      <para>An <see cref="IDiscRecorder2Ex" /> interface that identifies the recording device to use in the write operation.</para>
-    </param>
+    <summary>Sets a recording device for the write operation.</summary>
+    <param name="value">An <see cref="IDiscRecorder2Ex" /> interface that identifies the recording device to use in the write operation.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -370,249 +281,264 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Unspecified failure.<para>Value: 0x80004005</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Failed to allocate the required memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Unspecified failure.</para>
-            <para>Value: 0x80004005</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more arguments are not valid.<para>Value: 0x80070057</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_IMAPI_RECORDER_COMMAND_TIMEOUT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The device failed to accept the command within the timeout period. This may be caused by the device having entered an inconsistent state, or the timeout value for the command may need to be increased.<para>Value: 0xC0AA020D</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Failed to allocate the required memory.</para>
-            <para>Value: 0x8007000E</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_IMAPI_RECORDER_INVALID_RESPONSE_FROM_DEVICE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The device reported unexpected or invalid data for a command.<para>Value: 0xC0AA02FF</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_IMAPI_RECORDER_MEDIA_UPSIDE_DOWN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The media is inserted upside down.<para>Value: 0xC0AA0204</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One or more arguments are not valid.</para>
-            <para>Value: 0x80070057</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_IMAPI_RECORDER_MEDIA_BECOMING_READY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The drive reported that it is in the process of becoming ready. Please try the request again later.<para>Value: 0xC0AA0205</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_IMAPI_RECORDER_COMMAND_TIMEOUT</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_IMAPI_RECORDER_MEDIA_NO_MEDIA</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>There is no media in the device.<para>Value: 0xC0AA0202</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The device failed to accept the command within the timeout period. This may be caused by the device having entered an inconsistent state, or the timeout value for the command may need to be increased.</para>
-            <para>Value: 0xC0AA020D</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_IMAPI_RECORDER_MEDIA_FORMAT_IN_PROGRESS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The media is currently being formatted. Please wait for the format to complete before attempting to use the media.<para>Value: 0xC0AA0206</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_IMAPI_RECORDER_INVALID_RESPONSE_FROM_DEVICE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_IMAPI_RECORDER_MEDIA_BUSY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The drive reported that it is performing a long-running operation, such as finishing a write. The drive may be unusable for a long period of time.<para>Value: 0xC0AA0207</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The device reported unexpected or invalid data for a command.</para>
-            <para>Value: 0xC0AA02FF</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_IMAPI_LOSS_OF_STREAMING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The write failed because the drive did not receive data quickly enough to continue writing. Moving the source data to the local computer, reducing the write speed, or enabling a "buffer underrun free" setting may resolve this issue.<para>Value: 0xC0AA0300</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_IMAPI_RECORDER_MEDIA_UPSIDE_DOWN</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_IMAPI_RECORDER_MEDIA_INCOMPATIBLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The media is not compatible or of unknown physical format.<para>Value: 0xC0AA0203</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The media is inserted upside down.</para>
-            <para>Value: 0xC0AA0204</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_IMAPI_RECORDER_DVD_STRUCTURE_NOT_PRESENT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The DVD structure is not present. This may be caused by incompatible drive/medium used.<para>Value: 0xC0AA020E</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_IMAPI_RECORDER_MEDIA_BECOMING_READY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_IMAPI_RECORDER_NO_SUCH_MODE_PAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The device reported that the requested mode page (and type) is not present.<para>Value: 0xC0AA0201</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The drive reported that it is in the process of becoming ready. Please try the request again later.</para>
-            <para>Value: 0xC0AA0205</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_IMAPI_RECORDER_INVALID_MODE_PARAMETERS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The drive reported that the combination of parameters provided in the mode page for a MODE SELECT command were not supported.<para>Value: 0xC0AA0208</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_IMAPI_RECORDER_MEDIA_NO_MEDIA</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_IMAPI_RECORDER_MEDIA_WRITE_PROTECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The drive reported that the media is write protected.<para>Value: 0xC0AA0209</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>There is no media in the device.</para>
-            <para>Value: 0xC0AA0202</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_IMAPI_RECORDER_MEDIA_SPEED_MISMATCH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The media's speed is incompatible with the device. This may be caused by using higher or lower speed media than the range of speeds supported by the device.<para>Value: 0xC0AA020F</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_IMAPI_RECORDER_MEDIA_FORMAT_IN_PROGRESS</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HRESULT_FROM_WIN32(ERROR_INVALID_HANDLE)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The specified handle is invalid.<para>Value: 6</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The media is currently being formatted. Please wait for the format to complete before attempting to use the media.</para>
-            <para>Value: 0xC0AA0206</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HRESULT_FROM_WIN32(ERROR_DEV_NOT_EXIST)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The specified network resource or device is no longer available.<para>Value: 55</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_IMAPI_RECORDER_MEDIA_BUSY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_IMAPI_RECORDER_LOCKED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The drive reported that it is performing a long-running operation, such as finishing a write. The drive may be unusable for a long period of time.</para>
-            <para>Value: 0xC0AA0207</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_IMAPI_LOSS_OF_STREAMING</b>
-            </para>
-          </description>
-          <description>
-            <para>The write failed because the drive did not receive data quickly enough to continue writing. Moving the source data to the local computer, reducing the write speed, or enabling a "buffer underrun free" setting may resolve this issue.</para>
-            <para>Value: 0xC0AA0300</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_IMAPI_RECORDER_MEDIA_INCOMPATIBLE</b>
-            </para>
-          </description>
-          <description>
-            <para>The media is not compatible or of unknown physical format.</para>
-            <para>Value: 0xC0AA0203</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_IMAPI_RECORDER_DVD_STRUCTURE_NOT_PRESENT</b>
-            </para>
-          </description>
-          <description>
-            <para>The DVD structure is not present. This may be caused by incompatible drive/medium used.</para>
-            <para>Value: 0xC0AA020E</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_IMAPI_RECORDER_NO_SUCH_MODE_PAGE</b>
-            </para>
-          </description>
-          <description>
-            <para>The device reported that the requested mode page (and type) is not present.</para>
-            <para>Value: 0xC0AA0201</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_IMAPI_RECORDER_INVALID_MODE_PARAMETERS</b>
-            </para>
-          </description>
-          <description>
-            <para>The drive reported that the combination of parameters provided in the mode page for a MODE SELECT command were not supported.</para>
-            <para>Value: 0xC0AA0208</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_IMAPI_RECORDER_MEDIA_WRITE_PROTECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The drive reported that the media is write protected.</para>
-            <para>Value: 0xC0AA0209</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_IMAPI_RECORDER_MEDIA_SPEED_MISMATCH</b>
-            </para>
-          </description>
-          <description>
-            <para>The media's speed is incompatible with the device. This may be caused by using higher or lower speed media than the range of speeds supported by the device.</para>
-            <para>Value: 0xC0AA020F</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>HRESULT_FROM_WIN32(ERROR_INVALID_HANDLE)</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified handle is invalid.</para>
-            <para>Value: 6</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>HRESULT_FROM_WIN32(ERROR_DEV_NOT_EXIST)</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified network resource or device is no longer available.</para>
-            <para>Value: 55</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_IMAPI_RECORDER_LOCKED</b>
-            </para>
-          </description>
-          <description>
-            <para>The device associated with this recorder during the last operation has been exclusively locked, causing this operation to failed.</para>
-            <para>Value: 0xC0AA0210</para>
-          </description>
-        </item>
+          <description>The device associated with this recorder during the last operation has been exclusively locked, causing this operation to failed.<para>Value: 0xC0AA0210</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IWriteEngine2" />
-    <seealso cref="IWriteEngine2.get_Recorder" />
   </member>
   <member name="IWriteEngine2.put_StartingSectorsPerSecond">
-    <summary>
-      <para>Sets the estimated number of sectors per second that the recording device can write to the media at the start of the writing process.</para>
-    </summary>
-    <param name="value">
-      <para>Approximate number of sectors per second that the recording device can write to the media at the start of the writing process. The default is -1 for maximum speed.</para>
-    </param>
+    <summary>Sets the estimated number of sectors per second that the recording device can write to the media at the start of the writing process.</summary>
+    <param name="value">Approximate number of sectors per second that the recording device can write to the media at the start of the writing process. The default is -1 for maximum speed.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -620,47 +546,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Unspecified failure.<para>Value: 0x80004005</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Unspecified failure.</para>
-            <para>Value: 0x80004005</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more arguments are not valid.</para>
-            <para>Value: 0x80070057</para>
-          </description>
-        </item>
+          <description>One or more arguments are not valid.<para>Value: 0x80070057</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This is used to optimize sleep time in the write engine.</para>
-    </remarks>
-    <seealso cref="IWriteEngine2" />
-    <seealso cref="IWriteEngine2.get_BytesPerSector" />
-    <seealso cref="IWriteEngine2.get_EndingSectorsPerSecond" />
-    <seealso cref="IWriteEngine2.get_StartingSectorsPerSecond" />
-    <seealso cref="IWriteEngine2.put_BytesPerSector" />
-    <seealso cref="IWriteEngine2.put_EndingSectorsPerSecond" />
   </member>
   <member name="IWriteEngine2.put_UseStreamingWrite12">
-    <summary>
-      <para>Sets a value that indicates if the write operations use the WRITE12 or WRITE10 command.</para>
-    </summary>
-    <param name="value">
-      <para>Set to  VARIANT_TRUE to use the WRITE12 command with the streaming bit set to one when writing to disc. Otherwise, set VARIANT_FALSE to use the WRITE10 command. The default is VARIANT_FALSE.</para>
-    </param>
+    <summary>Sets a value that indicates if the write operations use the WRITE12 or WRITE10 command.</summary>
+    <param name="value">Set to VARIANT_TRUE to use the WRITE12 command with the streaming bit set to one when writing to disc. Otherwise, set VARIANT_FALSE to use the WRITE10 command. The default is VARIANT_FALSE.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -668,47 +583,38 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Setting this property to VARIANT_TRUE is currently not supported.<para>Value: 0x80004001</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Setting this property to VARIANT_TRUE is currently not supported.</para>
-            <para>Value: 0x80004001</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>Unspecified failure.</para>
-            <para>Value: 0x80004005</para>
-          </description>
-        </item>
+          <description>Unspecified failure.<para>Value: 0x80004005</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IWriteEngine2" />
-    <seealso cref="IWriteEngine2.WriteSection" />
-    <seealso cref="IWriteEngine2.get_UseStreamingWrite12" />
   </member>
   <member name="IWriteEngine2.WriteSection">
-    <summary>
-      <para>Writes a data stream to the current recorder.</para>
-    </summary>
-    <param name="data">
-      <para>An <b>IStream</b> interface of the data stream to write to the recorder.</para>
-    </param>
-    <param name="startingBlockAddress">
-      <para>Starting logical block address (LBA) of the write operation. Negative values are supported.</para>
-    </param>
-    <param name="numberOfBlocks">
-      <para>Number of blocks from the data stream to write.</para>
-    </param>
+    <summary>Writes a data stream to the current recorder.</summary>
+    <param name="data">An <b>IStream</b> interface of the data stream to write to the recorder.</param>
+    <param name="startingBlockAddress">Starting logical block address (LBA) of the write operation. Negative values are supported.</param>
+    <param name="numberOfBlocks">Number of blocks from the data stream to write.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -716,79 +622,55 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Failed to allocate the required memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One or more arguments are not valid.<para>Value: 0x80070057</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Failed to allocate the required memory.</para>
-            <para>Value: 0x8007000E</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_IMAPI_REQUEST_CANCELLED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more arguments are not valid.</para>
-            <para>Value: 0x80070057</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_IMAPI_REQUEST_CANCELLED</b>
-            </para>
-          </description>
-          <description>
-            <para>The request was canceled.</para>
-            <para>Value: 0xC0AA0002</para>
-          </description>
-        </item>
+          <description>The request was canceled.<para>Value: 0xC0AA0002</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Before calling this method, you must call the <see cref="IWriteEngine2.put_Recorder" /> method to specify the recording device and the <see cref="IWriteEngine2.put_BytesPerSector" /> method to specify the number of bytes to use for each sector during writing.</para>
-      <para>You should also consider calling the following methods if their default values are not appropriate for your application:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="IWriteEngine2.put_EndingSectorsPerSecond" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IWriteEngine2.put_StartingSectorsPerSecond" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IWriteEngine2.put_UseStreamingWrite12" />
-          </description>
-        </item>
-      </list>
-      <para>This method is synchronous. To determine the progress of the write operation, you must implement the <see cref="DWriteEngine2Events" /> interface. For examples that show how to implement an event handler in a script, see <a href="https://docs.microsoft.com//windows/desktop/imapi/monitoring-progress-with-events">Monitoring Progress With Events</a>.</para>
-    </remarks>
-    <seealso cref="DWriteEngine2Events" />
-    <seealso cref="IWriteEngine2" />
-    <seealso cref="IWriteEngine2.CancelWrite" />
-    <seealso cref="IWriteEngine2.get_WriteInProgress" />
-    <seealso cref="IWriteEngine2EventArgs.get_SectorCount" />
-    <seealso cref="IWriteEngine2EventArgs.get_StartLba" />
   </member>
 </doc>

@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISupportErrorInfo.InterfaceSupportsErrorInfo">
-    <summary>
-      <para>Indicates whether an interface supports the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-ierrorinfo">IErrorInfo</a> interface.</para>
-    </summary>
-    <param name="riid">
-      <para>An interface identifier (IID).</para>
-    </param>
+    <summary>Indicates whether an interface supports the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-ierrorinfo">IErrorInfo</a> interface.</summary>
+    <param name="riid">An interface identifier (IID).</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,34 +12,31 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The interface supports <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-ierrorinfo">IErrorInfo</a>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The interface supports <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-ierrorinfo">IErrorInfo</a>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>The interface does not support <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-ierrorinfo">IErrorInfo</a>.</para>
-          </description>
-        </item>
+          <description>The interface does not support <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-ierrorinfo">IErrorInfo</a>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Objects that support the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-ierrorinfo">IErrorInfo</a> interface must also implement this interface.</para>
-      <para>Programs that receive an error return value should call <b>QueryInterface</b> to get a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-isupporterrorinfo">ISupportErrorInfo</a> interface, and then call <b>InterfaceSupportsErrorInfo</b> with the <i>riid</i> of the interface that returned the return value. If <b>InterfaceSupportsErrorInfo</b> returns S_FALSE, then the error object does not represent an error returned from the caller, but from somewhere else. In this case, the error object can be considered incorrect and should be discarded.</para>
-      <para>If <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-isupporterrorinfo">ISupportErrorInfo</a> returns S_OK, use the <see cref="GetErrorInfo" /> function to get a pointer to the error object.</para>
-      <para>For an example that demonstrates implementing <b>InterfaceSupportsErrorInfo</b>, see the ErrorInfo.cpp file in the COM Fundamentals Lines sample.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-isupporterrorinfo">ISupportErrorInfo</seealso>
   </member>
 </doc>

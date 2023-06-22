@@ -3,56 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_STRIKETHROUGH">
-    <summary>
-      <para>Contains information regarding the size and placement of strikethroughs.All coordinates are in device independent pixels (DIPs).</para>
-    </summary>
+    <summary>Contains information regarding the size and placement of strikethroughs.All coordinates are in device independent pixels (DIPs).</summary>
   </member>
   <member name="DWRITE_STRIKETHROUGH.width">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>A value that indicates the width of the strikethrough, measured parallel to the baseline.</para>
-    </summary>
+    <summary>A value that indicates the width of the strikethrough, measured parallel to the baseline.</summary>
   </member>
   <member name="DWRITE_STRIKETHROUGH.thickness">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>A value that indicates the thickness of the strikethrough, measured perpendicular to the baseline.</para>
-    </summary>
+    <summary>A value that indicates the thickness of the strikethrough, measured perpendicular to the baseline.</summary>
   </member>
   <member name="DWRITE_STRIKETHROUGH.offset">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>A value that indicates the offset of the strikethrough from the baseline.
-A positive offset represents a position below the baseline and
-a negative offset is above.  Typically, the offset will be negative.</para>
-    </summary>
+    <summary>A value that indicates the offset of the strikethrough from the baseline. A positive offset represents a position below the baseline and a negative offset is above. Typically, the offset will be negative.</summary>
   </member>
   <member name="DWRITE_STRIKETHROUGH.readingDirection">
-    <summary>
-      <para>Type: <b><see cref="DWRITE_READING_DIRECTION" /></b></para>
-      <para>Reading direction of the text associated with the strikethrough.
-This value is used to interpret whether the width value runs horizontally
-or vertically.</para>
-    </summary>
+    <summary>Reading direction of the text associated with the strikethrough. This value is used to interpret whether the width value runs horizontally or vertically.</summary>
   </member>
   <member name="DWRITE_STRIKETHROUGH.flowDirection">
-    <summary>
-      <para>Type: <b><see cref="DWRITE_FLOW_DIRECTION" /></b></para>
-      <para>Flow direction of the text associated with the strikethrough.
-This value is used to interpret whether the thickness value advances top to
-bottom, left to right, or right to left.</para>
-    </summary>
+    <summary>Flow direction of the text associated with the strikethrough. This value is used to interpret whether the thickness value advances top to bottom, left to right, or right to left.</summary>
   </member>
   <member name="DWRITE_STRIKETHROUGH.localeName">
-    <summary>
-      <para>Type: <b>const WCHAR*</b></para>
-      <para>An array of characters containing the locale of the  text that is the strikethrough is being drawn over.</para>
-    </summary>
+    <summary>An array of characters containing the locale of the text that is the strikethrough is being drawn over.</summary>
   </member>
   <member name="DWRITE_STRIKETHROUGH.measuringMode">
-    <summary>
-      <para>Type: <b><see cref="DWRITE_MEASURING_MODE" /></b></para>
-      <para>The measuring mode can be useful to the renderer to determine how underlines are rendered, such as rounding the thickness to a whole pixel in GDI-compatible modes.</para>
-    </summary>
+    <summary>The measuring mode can be useful to the renderer to determine how underlines are rendered, such as rounding the thickness to a whole pixel in GDI-compatible modes.</summary>
   </member>
 </doc>

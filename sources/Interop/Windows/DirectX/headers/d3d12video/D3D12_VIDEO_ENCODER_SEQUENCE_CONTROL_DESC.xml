@@ -3,14 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_ENCODER_SEQUENCE_CONTROL_DESC">
-    <summary>
-      <para>Represents parameters for the input of the video encoding operation at a sequence level.</para>
-    </summary>
+    <summary>Represents parameters for the input of the video encoding operation at a sequence level.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_SEQUENCE_CONTROL_DESC.Flags">
-    <summary>
-      <para>A bitwise OR combination of values from the <see cref="D3D12_VIDEO_ENCODER_SEQUENCE_CONTROL_FLAGS" /> enumeration specifying the sequence control descriptor flags for the current operation.</para>
-    </summary>
+    <summary>A bitwise OR combination of values from the <see cref="D3D12_VIDEO_ENCODER_SEQUENCE_CONTROL_FLAGS" /> enumeration specifying the sequence control descriptor flags for the current operation.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_SEQUENCE_CONTROL_DESC.IntraRefreshConfig">
     <summary>
@@ -21,24 +17,16 @@
       <para>Expected behaviour when explicitly requesting an intra refresh wave with duration N frames:</para>
       <list type="bullet">
         <item>
-          <description>
-            <para>If the request for intra-refresh happens at the beginning of a GOP, the intra refresh ocurrs for N frames and then a new GOP is started with an I frame.</para>
-          </description>
+          <description>If the request for intra-refresh happens at the beginning of a GOP, the intra refresh ocurrs for N frames and then a new GOP is started with an I frame.</description>
         </item>
         <item>
-          <description>
-            <para>If the request for intra-refresh happens in the middle of a GOP, the group of pictures will be ended until the last <b>EncodeFrame</b> command submitted and restarted after the intra-refresh session with a new GOP starting with an I frame. For example, when the GOP is IPPPP...IPPPP..., if the intra-refresh start is requested at the "IPP" partial submission of the GOP, the last two P frames of that GOP will be ignored, the intra-refresh session will be issued for the N next frames and then a new key-frame that restarts the GOP structure is expected.</para>
-          </description>
+          <description>If the request for intra-refresh happens in the middle of a GOP, the group of pictures will be ended until the last <b>EncodeFrame</b> command submitted and restarted after the intra-refresh session with a new GOP starting with an I frame. For example, when the GOP is IPPPP...IPPPP..., if the intra-refresh start is requested at the "IPP" partial submission of the GOP, the last two P frames of that GOP will be ignored, the intra-refresh session will be issued for the N next frames and then a new key-frame that restarts the GOP structure is expected.</description>
         </item>
         <item>
-          <description>
-            <para>For row-based intra-refresh, the configured GOP structure will have to be reconfigured to Infinite IPPP...P... GOP (GOPLength = 0u and PPicturePeriod = 1u) for the duration of the intra refresh session. It can then be reconfigured again after the IR wave finished.</para>
-          </description>
+          <description>For row-based intra-refresh, the configured GOP structure will have to be reconfigured to Infinite IPPP...P... GOP (GOPLength = 0u and PPicturePeriod = 1u) for the duration of the intra refresh session. It can then be reconfigured again after the IR wave finished.</description>
         </item>
         <item>
-          <description>
-            <para>For row based intra-refresh, the configured subregion partitioning mode will be reconfigured to correspond with N uniform slices partitioning per frame for a duration of N <b>EncodeFrame</b> commands. This is particularly important for when the subregion partitioning is set to an incompatible mode with IR requirements, for example when the row of intra coded units in a slice will disrupt the limitation set to bytes per slice. The expectation for row-based intra refresh is that the resulting frame contains N slices, all P slices, except the current intra refresh row slice, which has to be an I slice.</para>
-          </description>
+          <description>For row based intra-refresh, the configured subregion partitioning mode will be reconfigured to correspond with N uniform slices partitioning per frame for a duration of N <b>EncodeFrame</b> commands. This is particularly important for when the subregion partitioning is set to an incompatible mode with IR requirements, for example when the row of intra coded units in a slice will disrupt the limitation set to bytes per slice. The expectation for row-based intra refresh is that the resulting frame contains N slices, all P slices, except the current intra refresh row slice, which has to be an I slice.</description>
         </item>
       </list>
     </summary>
@@ -64,9 +52,7 @@
     </summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_SEQUENCE_CONTROL_DESC.FrameSubregionsLayoutData">
-    <summary>
-      <para>A <see cref="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_SUBREGIONS_LAYOUT_DATA" /> structure specifying picture subregions layout optional codec-specific data. If the specified <i>SelectedLayoutMode</i> value indicates that such that there are no subregions, null is expected.</para>
-    </summary>
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_SUBREGIONS_LAYOUT_DATA" /> structure specifying picture subregions layout optional codec-specific data. If the specified <i>SelectedLayoutMode</i> value indicates that such that there are no subregions, null is expected.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_SEQUENCE_CONTROL_DESC.CodecGopSequence">
     <summary>

@@ -7,51 +7,23 @@
       <para>Performs a MaxPool function across the input tensor (according to regions of interest, or ROIs). For each output element, the coordinates of its corresponding ROI in the input are computed by the following equations.</para>
       <para>Let <code>Y</code> be an index into the third dimension of <i>InputTensor</i> (<code>{ BatchSize, ChannelCount, **height**, width }</code>).</para>
       <para>Let <code>X</code> be an index into the fourth dimension of <i>InputTensor</i> (<code>{ BatchSize, ChannelCount, height, **width** }</code>).</para>
-      <code>x1 = round(RoiX1 * SpatialScale)
-x2 = round(RoiX2 * SpatialScale)
-y1 = round(RoiY1 * SpatialScale)
-y2 = round(RoiY2 * SpatialScale)
-
-RegionHeight = y2 - y1 + 1
-RegionWidth = x2 - x1 + 1
-
-StartY = (OutputIndices.Y * RegionHeight) / PooledSize.Height + y1
-StartX = (OutputIndices.X * RegionWidth) / PooledSize.Width + x1
-
-EndY = ((OutputIndices.Y + 1) * RegionHeight + PooledSize.Height - 1) / PooledSize.Height + y1
-EndX = ((OutputIndices.X + 1) * RegionWidth + PooledSize.Width - 1) / PooledSize.Width + x1
-</code>
+      <code>x1 = round(RoiX1 * SpatialScale) x2 = round(RoiX2 * SpatialScale) y1 = round(RoiY1 * SpatialScale) y2 = round(RoiY2 * SpatialScale) RegionHeight = y2 - y1 + 1 RegionWidth = x2 - x1 + 1 StartY = (OutputIndices.Y * RegionHeight) / PooledSize.Height + y1 StartX = (OutputIndices.X * RegionWidth) / PooledSize.Width + x1 EndY = ((OutputIndices.Y + 1) * RegionHeight + PooledSize.Height - 1) / PooledSize.Height + y1 EndX = ((OutputIndices.X + 1) * RegionWidth + PooledSize.Width - 1) / PooledSize.Width + x1</code>
       <para>If the computed coordinates are out of bounds, then they are clamped to the input boundaries.</para>
     </summary>
   </member>
   <member name="DML_ROI_POOLING_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the input data with dimensions <code>{ BatchCount, ChannelCount, InputHeight, InputWidth }</code>.</para>
-    </summary>
+    <summary>A tensor containing the input data with dimensions <code>{ BatchCount, ChannelCount, InputHeight, InputWidth }</code>.</summary>
   </member>
   <member name="DML_ROI_POOLING_OPERATOR_DESC.ROITensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the regions of interest (ROI) data. The expected dimensions of <code>ROITensor</code> are <code>{ 1, 1, NumROIs, 5 }</code> and the data for each ROI is <code>[BatchID, x1, y1, x2, y2]</code>. x1, y1, x2, y2 are the inclusive coordinates of the corners of each ROI and x2 &gt;= x1, y2 &gt;= y1.</para>
-    </summary>
+    <summary>A tensor containing the regions of interest (ROI) data. The expected dimensions of <code>ROITensor</code> are <code>{ 1, 1, NumROIs, 5 }</code> and the data for each ROI is <code>[BatchID, x1, y1, x2, y2]</code>. x1, y1, x2, y2 are the inclusive coordinates of the corners of each ROI and x2 &gt;= x1, y2 &gt;= y1.</summary>
   </member>
   <member name="DML_ROI_POOLING_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the output data. The expected dimensions of <i>OutputTensor</i> are <code>{ NumROIs, InputChannelCount, PooledSize.Height, PooledSize.Width }</code>.</para>
-    </summary>
+    <summary>A tensor containing the output data. The expected dimensions of <i>OutputTensor</i> are <code>{ NumROIs, InputChannelCount, PooledSize.Height, PooledSize.Width }</code>.</summary>
   </member>
   <member name="DML_ROI_POOLING_OPERATOR_DESC.SpatialScale">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
-      <para>Multiplicative spatial scale factor used to translate the ROI coordinates from their input scale to the scale used when pooling.</para>
-    </summary>
+    <summary>Multiplicative spatial scale factor used to translate the ROI coordinates from their input scale to the scale used when pooling.</summary>
   </member>
   <member name="DML_ROI_POOLING_OPERATOR_DESC.PooledSize">
-    <summary>
-      <para>Type: <see cref="DML_SIZE_2D" /></para>
-      <para>The ROI pool output size (height, width), which must match the last 2 dimensions of <i>OutputTensor</i>.</para>
-    </summary>
+    <summary>The ROI pool output size (height, width), which must match the last 2 dimensions of <i>OutputTensor</i>.</summary>
   </member>
 </doc>

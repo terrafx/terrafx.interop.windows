@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WCRANGE">
-    <summary>
-      <para>The <b>WCRANGE</b> structure specifies a range of Unicode characters.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/font-and-text-structures">Font and Text Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/fonts-and-text">Fonts and Text Overview</seealso>
-    <seealso cref="GLYPHSET" />
+    <summary>The <b>WCRANGE</b> structure specifies a range of Unicode characters.</summary>
   </member>
   <member name="WCRANGE.wcLow">
-    <summary>
-      <para>Low Unicode code point in the range of supported Unicode code points.</para>
-    </summary>
+    <summary>Low Unicode code point in the range of supported Unicode code points.</summary>
   </member>
   <member name="WCRANGE.cGlyphs">
-    <summary>
-      <para>Number of supported Unicode code points in this range.</para>
-    </summary>
+    <summary>Number of supported Unicode code points in this range.</summary>
   </member>
 </doc>

@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRSETMAPPERFLAGS">
-    <summary>
-      <para>The <b>EMRSETMAPPERFLAGS</b> structure contains members for the <b>SetMapperFlags</b> enhanced metafile record.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
-    <seealso cref="SetMapperFlags" />
+    <summary>The <b>EMRSETMAPPERFLAGS</b> structure contains members for the <b>SetMapperFlags</b> enhanced metafile record.</summary>
   </member>
   <member name="EMRSETMAPPERFLAGS.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMRSETMAPPERFLAGS.dwFlags">
-    <summary>
-      <para>Font mapper flag.</para>
-    </summary>
+    <summary>Font mapper flag.</summary>
   </member>
 </doc>

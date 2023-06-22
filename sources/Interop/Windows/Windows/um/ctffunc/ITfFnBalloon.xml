@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfFnBalloon.UpdateBalloon">
-    <summary>
-      <para>Changes the style and text of a language bar balloon item.</para>
-    </summary>
-    <param name="style">
-      <para>Contains one of the <see cref="TfLBBalloonStyle" /> values that specifies the new balloon style.</para>
-    </param>
-    <param name="pch">
-      <para>Pointer to a <b>WCHAR</b> buffer that contains the new text for the balloon.</para>
-    </param>
-    <param name="cch">
-      <para>Contains the number of characters of the new text in <i>pch</i>.</para>
-    </param>
+    <summary>Changes the style and text of a language bar balloon item.</summary>
+    <param name="style">Contains one of the <see cref="TfLBBalloonStyle" /> values that specifies the new balloon style.</param>
+    <param name="pch">Pointer to a <b>WCHAR</b> buffer that contains the new text for the balloon.</param>
+    <param name="cch">Contains the number of characters of the new text in <i>pch</i>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -22,43 +14,37 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The language bar balloon implementation should update its style and text by modifying the values returned from <see cref="ITfLangBarItemBalloon.GetBalloonInfo" /> and then call <see cref="ITfLangBarItemSink.OnUpdate" /> with TF_LBI_BALLOON to cause the language bar to obtain the updated information.</para>
-    </remarks>
-    <seealso cref="ITfFnBalloon" />
-    <seealso cref="ITfLangBarItemBalloon.GetBalloonInfo " />
-    <seealso cref="ITfLangBarItemSink.OnUpdate " />
-    <seealso cref="TfLBBalloonStyle " />
   </member>
   <member name="ITfFnBalloon">
     <summary>
       <para>The <b>ITfFnBalloon</b> interface is implemented by a text service and is used by an application or other text service to update the balloon item that the text service adds to the language bar.</para>
       <para>An application or text service obtains an instance of this interface by calling <see cref="ITfThreadMgr.GetFunctionProvider" /> with the class identifier of the text service and then calling <see cref="ITfFunctionProvider.GetFunction" /> with GUID_NULL and IID_ITfFnBalloon.</para>
     </summary>
-    <seealso cref="ITfFunctionProvider.GetFunction" />
-    <seealso cref="ITfThreadMgr.GetFunctionProvider" />
-    <seealso cref="IUnknown" />
   </member>
 </doc>

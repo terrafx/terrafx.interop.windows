@@ -3,98 +3,32 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICMetadataWriter.RemoveValue">
-    <summary>
-      <para>Removes the metadata item that matches the given parameters.</para>
-    </summary>
-    <param name="pvarSchema">
-      <para>Type: <b>const <see cref="PROPVARIANT" />*</b></para>
-      <para>Pointer to the metadata schema property.</para>
-    </param>
-    <param name="pvarId">
-      <para>Type: <b>const <see cref="PROPVARIANT" />*</b></para>
-      <para>Pointer to the metadata id property.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Removes the metadata item that matches the given parameters.</summary>
+    <param name="pvarSchema">Pointer to the metadata schema property.</param>
+    <param name="pvarId">Pointer to the metadata id property.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICMetadataWriter.RemoveValueByIndex">
-    <summary>
-      <para>Removes the metadata item at the specified index.</para>
-    </summary>
-    <param name="nIndex">
-      <para>Type: <b>UINT</b></para>
-      <para>The index of the metadata item to remove.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>After removing an item, expect the remaining metadata items to move up to occupy the vacated metadata item location.  Therefore indices for remaining metadata items as well as the count will change.</para>
-    </remarks>
+    <summary>Removes the metadata item at the specified index.</summary>
+    <param name="nIndex">The index of the metadata item to remove.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICMetadataWriter.SetValue">
-    <summary>
-      <para>Sets the given metadata item.</para>
-    </summary>
-    <param name="pvarSchema">
-      <para>Type: <b>const <see cref="PROPVARIANT" />*</b></para>
-      <para>Pointer to the schema property of the metadata item.</para>
-    </param>
-    <param name="pvarId">
-      <para>Type: <b>const <see cref="PROPVARIANT" />*</b></para>
-      <para>Pointer to the id property of the metadata item.</para>
-    </param>
-    <param name="pvarValue">
-      <para>Type: <b>const <see cref="PROPVARIANT" />*</b></para>
-      <para>Pointer to the metadata value to set</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the given metadata item.</summary>
+    <param name="pvarSchema">Pointer to the schema property of the metadata item.</param>
+    <param name="pvarId">Pointer to the id property of the metadata item.</param>
+    <param name="pvarValue">Pointer to the metadata value to set</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICMetadataWriter.SetValueByIndex">
-    <summary>
-      <para>Sets the metadata item to the specified index.</para>
-    </summary>
-    <param name="nIndex">
-      <para>Type: <b>UINT</b></para>
-      <para>The index to place the metadata item.</para>
-    </param>
-    <param name="pvarSchema">
-      <para>Type: <b>const <see cref="PROPVARIANT" />*</b></para>
-      <para>Pointer to the schema property of the metadata item.</para>
-    </param>
-    <param name="pvarId">
-      <para>Type: <b>const <see cref="PROPVARIANT" />*</b></para>
-      <para>Pointer to the id property of the metadata item.</para>
-    </param>
-    <param name="pvarValue">
-      <para>Type: <b>const <see cref="PROPVARIANT" />*</b></para>
-      <para>Pointer to the metadata value to set at the given index.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>After removing an item, expect the remaining metadata items to move up to occupy the vacated metadata item location.  Therefore indices for remaining metadata items as well as the count will change.</para>
-    </remarks>
+    <summary>Sets the metadata item to the specified index.</summary>
+    <param name="nIndex">The index to place the metadata item.</param>
+    <param name="pvarSchema">Pointer to the schema property of the metadata item.</param>
+    <param name="pvarId">Pointer to the id property of the metadata item.</param>
+    <param name="pvarValue">Pointer to the metadata value to set at the given index.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICMetadataWriter">
-    <summary>
-      <para>Exposes methods that provide access to writing metadata content. This is implemented by independent software vendors (ISVs) to create new metadata writers.</para>
-    </summary>
-    <remarks>
-      <para>A metadata writer can be used to write metadata blocks and items within a metadata block instead of using a query writer. To directly access the metadata writer, query an encoder or its frames for the <see cref="IWICMetadataBlockWriter" /> interface to enumerate each metadata writer.</para>
-    </remarks>
-    <seealso cref="IWICMetadataReader" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadatahandlers">Metadata Extensibility Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadataquerylanguage">Metadata Query Language Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+    <summary>Exposes methods that provide access to writing metadata content. This is implemented by independent software vendors (ISVs) to create new metadata writers.</summary>
   </member>
 </doc>

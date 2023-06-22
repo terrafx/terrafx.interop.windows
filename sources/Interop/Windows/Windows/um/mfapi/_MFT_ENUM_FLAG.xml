@@ -17,14 +17,6 @@
         </item>
       </list>
     </summary>
-    <remarks>
-      <para>For registration, these flags describe the MFT that is being registered. Some flags do not apply in that context. For enumeration, these flags control which MFTs are selected in the enumeration. For more details about the precise meaning of these flags, see the reference topics for <see cref="MFTRegister" /> and <see cref="MFTEnumEx" /></para>
-      <para>For registration, the <b>MFT_ENUM_FLAG_SYNCMFT</b>,  <b>MFT_ENUM_FLAG_ASYNCMFT</b>, and <b>MFT_ENUM_FLAG_HARDWARE</b> flags are mutually exclusive. For enumeration, these three flags can be combined.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/field-of-use-restrictions">Field of Use Restrictions</seealso>
-    <seealso cref="MFTEnumEx" />
-    <seealso cref="MFTRegister" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
   </member>
   <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_SYNCMFT">
     <summary>
@@ -41,8 +33,8 @@
   <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_HARDWARE">
     <summary>
       <para>The MFT performs hardware-based data processing, using either the AVStream driver or a GPU-based proxy MFT. MFTs in this category always process data asynchronously. See <a href="https://docs.microsoft.com//windows/desktop/medfound/hardware-mfts">Hardware MFTs</a>.</para>
-      <para>
-        <b>Note</b>  This flag applies to video codecs and video processors that perform their work entirely in hardware. It does not apply to software decoders that use DirectX Video Acceleration to assist decoding.</para>
+      <div>
+        <b>Note</b>  This flag applies to video codecs and video processors that perform their work entirely in hardware. It does not apply to software decoders that use DirectX Video Acceleration to assist decoding.</div>
     </summary>
   </member>
   <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_FIELDOFUSE">
@@ -59,9 +51,7 @@
     </summary>
   </member>
   <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_TRANSCODE_ONLY">
-    <summary>
-      <para>The MFT is optimized for transcoding rather than playback.</para>
-    </summary>
+    <summary>The MFT is optimized for transcoding rather than playback.</summary>
   </member>
   <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_SORTANDFILTER">
     <summary>
@@ -69,18 +59,10 @@
       <para>Do not set this flag in the <see cref="MFTRegister" /> function.</para>
     </summary>
   </member>
-  <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_SORTANDFILTER_APPROVED_ONLY">
-    <summary></summary>
-  </member>
-  <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_SORTANDFILTER_WEB_ONLY">
-    <summary></summary>
-  </member>
-  <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_SORTANDFILTER_WEB_ONLY_EDGEMODE">
-    <summary></summary>
-  </member>
-  <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_UNTRUSTED_STOREMFT">
-    <summary></summary>
-  </member>
+  <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_SORTANDFILTER_APPROVED_ONLY"></member>
+  <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_SORTANDFILTER_WEB_ONLY"></member>
+  <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_SORTANDFILTER_WEB_ONLY_EDGEMODE"></member>
+  <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_UNTRUSTED_STOREMFT"></member>
   <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_ALL">
     <summary>
       <para>Bitwise <b>OR</b> of all the flags, excluding <b>MFT_ENUM_FLAG_SORTANDFILTER</b>.</para>

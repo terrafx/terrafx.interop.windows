@@ -3,13 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_RAYTRACING_ACCELERATION_STRUCTURE_SRV">
-    <summary>
-      <para>A shader resource view (SRV) structure for storing a raytracing acceleration structure.</para>
-    </summary>
+    <summary>A shader resource view (SRV) structure for storing a raytracing acceleration structure.</summary>
   </member>
   <member name="D3D12_RAYTRACING_ACCELERATION_STRUCTURE_SRV.Location">
-    <summary>
-      <para>The GPU virtual address of the SRV.</para>
-    </summary>
+    <summary>The GPU virtual address of the SRV.</summary>
   </member>
 </doc>

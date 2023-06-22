@@ -3,27 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFVideoDRMFlags">
-    <summary>
-      <para>Specifies the type of copy protection required for a video stream.</para>
-    </summary>
-    <remarks>
-      <para>Use these flags with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-drm-flags-attribute">MF_MT_DRM_FLAGS</a> attribute.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies the type of copy protection required for a video stream.</summary>
   </member>
   <member name="MFVideoDRMFlags.MFVideoDRMFlag_None">
-    <summary>
-      <para>No copy protection is required.</para>
-    </summary>
+    <summary>No copy protection is required.</summary>
   </member>
   <member name="MFVideoDRMFlags.MFVideoDRMFlag_AnalogProtected">
-    <summary>
-      <para>Analog copy protection should be applied.</para>
-    </summary>
+    <summary>Analog copy protection should be applied.</summary>
   </member>
   <member name="MFVideoDRMFlags.MFVideoDRMFlag_DigitallyProtected">
-    <summary>
-      <para>Digital copy protection should be applied.</para>
-    </summary>
+    <summary>Digital copy protection should be applied.</summary>
   </member>
 </doc>

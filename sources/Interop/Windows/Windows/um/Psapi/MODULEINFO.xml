@@ -3,28 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MODULEINFO">
-    <summary>
-      <para>Contains the module load address, size, and entry point.</para>
-    </summary>
-    <remarks>
-      <para>The load address of a module is the same as the <b>HMODULE</b> value. The information returned in the <b>SizeOfImage</b> and <b>EntryPoint</b> members comes from the module's Portable Executable (PE) header. The module entry point is the location called during process startup, thread startup, process shutdown, and thread shutdown. While this is not the address of the
-<a href="https://docs.microsoft.com//windows/desktop/Dlls/dllmain">DllMain</a> function, it should be close enough for most purposes.</para>
-    </remarks>
-    <seealso cref="GetModuleInformation" />
+    <summary>Contains the module load address, size, and entry point.</summary>
   </member>
   <member name="MODULEINFO.lpBaseOfDll">
-    <summary>
-      <para>The load address of the module.</para>
-    </summary>
+    <summary>The load address of the module.</summary>
   </member>
   <member name="MODULEINFO.SizeOfImage">
-    <summary>
-      <para>The size of the linear space that the module occupies, in bytes.</para>
-    </summary>
+    <summary>The size of the linear space that the module occupies, in bytes.</summary>
   </member>
   <member name="MODULEINFO.EntryPoint">
-    <summary>
-      <para>The entry point of the module.</para>
-    </summary>
+    <summary>The entry point of the module.</summary>
   </member>
 </doc>

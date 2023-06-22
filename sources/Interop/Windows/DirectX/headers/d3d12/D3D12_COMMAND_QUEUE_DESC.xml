@@ -3,37 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_COMMAND_QUEUE_DESC">
-    <summary>
-      <para>Describes a command queue.</para>
-    </summary>
-    <remarks>
-      <para>This structure is passed into <see cref="CreateCommandQueue" />.</para>
-      <para>This structure is returned by <see cref="ID3D12CommandQueue.GetDesc" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/direct3d12/direct3d-12-structures">Core Structures</seealso>
+    <summary>Describes a command queue.</summary>
   </member>
   <member name="D3D12_COMMAND_QUEUE_DESC.Type">
-    <summary>
-      <para>Specifies one member of <see cref="D3D12_COMMAND_LIST_TYPE" />.</para>
-    </summary>
+    <summary>Specifies one member of <see cref="D3D12_COMMAND_LIST_TYPE" />.</summary>
   </member>
   <member name="D3D12_COMMAND_QUEUE_DESC.Priority">
-    <summary>
-      <para>The priority for the command queue, as a
-<see cref="D3D12_COMMAND_QUEUE_PRIORITY" /> enumeration constant to select normal or high priority.</para>
-    </summary>
+    <summary>The priority for the command queue, as a<see cref="D3D12_COMMAND_QUEUE_PRIORITY" /> enumeration constant to select normal or high priority.</summary>
   </member>
   <member name="D3D12_COMMAND_QUEUE_DESC.Flags">
-    <summary>
-      <para>Specifies any flags from the <see cref="D3D12_COMMAND_QUEUE_FLAGS" /> enumeration.</para>
-    </summary>
+    <summary>Specifies any flags from the <see cref="D3D12_COMMAND_QUEUE_FLAGS" /> enumeration.</summary>
   </member>
   <member name="D3D12_COMMAND_QUEUE_DESC.NodeMask">
-    <summary>
-      <para>For single GPU operation, set this to zero. If there are multiple GPU nodes, set a bit to identify the node (the  device's physical adapter) to which the command queue applies.
-Each bit in the mask corresponds to a single node.
-Only 1 bit must be set.
-Refer to <a href="https://docs.microsoft.com//windows/win32/direct3d12/multi-engine">Multi-adapter systems</a>.</para>
-    </summary>
+    <summary>For single GPU operation, set this to zero. If there are multiple GPU nodes, set a bit to identify the node (the device's physical adapter) to which the command queue applies. Each bit in the mask corresponds to a single node. Only 1 bit must be set. Refer to <a href="https://docs.microsoft.com//windows/win32/direct3d12/multi-engine">Multi-adapter systems</a>.</summary>
   </member>
 </doc>

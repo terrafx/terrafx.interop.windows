@@ -3,32 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFByteStreamCacheControl.StopBackgroundTransfer">
-    <summary>
-      <para>Stops the background transfer of data to the local cache.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The byte stream resumes transferring data to the cache if the application does one of the following:</para>
-      <list type="bullet">
-        <item>
-          <description>Reads data from the byte stream.</description>
-        </item>
-        <item>
-          <description>Calls the byte stream's <see cref="IMFByteStreamBuffering.EnableBuffering" /> method.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFByteStreamCacheControl" />
+    <summary>Stops the background transfer of data to the local cache.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFByteStreamCacheControl">
     <summary>
       <para>Controls how a network byte stream transfers data to a local cache. Optionally, this interface is exposed by byte streams that read data from a network, for example, through HTTP.</para>
       <para>To get a pointer to this interface, call <b>QueryInterface</b> on the byte stream object.</para>
     </summary>
-    <seealso cref="IMFByteStream" />
-    <seealso cref="IMFByteStreamBuffering" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
   </member>
 </doc>

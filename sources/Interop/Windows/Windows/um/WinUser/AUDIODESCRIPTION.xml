@@ -3,30 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="AUDIODESCRIPTION">
-    <summary>
-      <para>Contains information associated with audio descriptions. This structure is used with the
-<see cref="SystemParametersInfo" /> function when the SPI_GETAUDIODESCRIPTION or SPI_SETAUDIODESCRIPTION action value is specified.</para>
-    </summary>
-    <remarks>
-      <para>To compile an application that uses this structure, define _WIN32_WINNT as 0x0600 or later. For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/WinProg/using-the-windows-headers">Using the Windows Headers</a>.</para>
-    </remarks>
-    <seealso cref="SystemParametersInfo" />
+    <summary>Contains information associated with audio descriptions. This structure is used with the<see cref="SystemParametersInfo" /> function when the SPI_GETAUDIODESCRIPTION or SPI_SETAUDIODESCRIPTION action value is specified.</summary>
   </member>
   <member name="AUDIODESCRIPTION.cbSize">
-    <summary>
-      <para>The size of the structure, in bytes. The caller must set this member to <code>sizeof(AUDIODESCRIPTION)</code>.</para>
-    </summary>
+    <summary>The size of the structure, in bytes. The caller must set this member to <code>sizeof(AUDIODESCRIPTION)</code>.</summary>
   </member>
   <member name="AUDIODESCRIPTION.Enabled">
-    <summary>
-      <para>If this member is <b>TRUE</b>, audio descriptions are enabled; Otherwise, this member is <b>FALSE</b>.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, audio descriptions are enabled; Otherwise, this member is <b>FALSE</b>.</summary>
   </member>
   <member name="AUDIODESCRIPTION.Locale">
-    <summary>
-      <para>The locale identifier (LCID) of the language for the audio description. For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/Intl/locales-and-languages">Locales and Languages</a>.</para>
-    </summary>
+    <summary>The locale identifier (LCID) of the language for the audio description. For more information, see<a href="https://docs.microsoft.com//windows/desktop/Intl/locales-and-languages">Locales and Languages</a>.</summary>
   </member>
 </doc>

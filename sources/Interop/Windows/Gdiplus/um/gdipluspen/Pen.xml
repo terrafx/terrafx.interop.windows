@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Pen.Clone">
+    <summary>The <b>Pen.Clone</b> method copies a<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <returns>This method returns a pointer to the new <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</returns>
+  </member>
+  <member name="Pen.GetAlignment">
+    <summary>The <b>Pen.GetAlignment</b> method gets the alignment currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <returns>This method returns an element of the <see cref="PenAlignment" /> enumeration that indicates the current alignment setting for this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</returns>
+  </member>
+  <member name="Pen.GetBrush">
+    <summary>The <b>Pen.GetBrush</b> method gets the <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that is currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <returns>This method returns a pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that is currently used to fill a line.</returns>
+  </member>
+  <member name="Pen.GetColor">
+    <summary>The <b>Pen.GetColor</b> method gets the color currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <param name="color">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that receives the color of this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.GetCompoundArray">
+    <summary>The <b>Pen.GetCompoundArray</b> method gets the compound array currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <param name="compoundArray">Pointer to an array that receives the compound array.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>compoundArray</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.GetCompoundArrayCount">
+    <summary>The <b>Pen.GetCompoundArrayCount</b> method gets the number of elements in a compound array.</summary>
+    <returns>This method returns an integer that indicates the number of elements in the compound array.</returns>
+  </member>
+  <member name="Pen.GetCustomEndCap">
+    <summary>The <b>Pen.GetCustomEndCap</b> method gets the custom end cap currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <param name="customCap">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-customlinecap">CustomLineCap</a> object that receives the custom end cap of this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.GetCustomStartCap">
+    <summary>The <b>Pen.GetCustomStartCap</b> method gets the custom start cap currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <param name="customCap">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-customlinecap">CustomLineCap</a> object that receives the start cap of this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.GetDashCap">
+    <summary>The <b>Pen.GetDashCap</b> method gets the dash cap style currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <returns>This method returns an element of the <see cref="DashCap" /> enumeration that indicates the dash cap style currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</returns>
+  </member>
+  <member name="Pen.GetDashOffset">
+    <summary>The <b>Pen.GetDashOffset</b> method gets the distance from the start of the line to the start of the first space in a dashed line.</summary>
+    <returns>This method returns a real number that indicates the distance from the start of the line to the start of the dashes.</returns>
+  </member>
+  <member name="Pen.GetDashPattern">
+    <summary>The <b>Pen.GetDashPattern</b> method gets an array of custom dashes and spaces currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <param name="dashArray">Pointer to an array that receives the length of the dashes and spaces in a custom dashed line.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>dashArray</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.GetDashPatternCount">
+    <summary>The <b>Pen.GetDashPatternCount</b> method gets the number of elements in a dash pattern array.</summary>
+    <returns>This method returns an integer that indicates the number of elements in the dash pattern array.</returns>
+  </member>
+  <member name="Pen.GetDashStyle">
+    <summary>The <b>Pen.GetDashStyle</b> method gets the dash style currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <returns>This method returns an element of the <see cref="DashStyle" /> enumeration that indicates the dash style for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</returns>
+  </member>
+  <member name="Pen.GetEndCap">
+    <summary>The <b>Pen.GetEndCap</b> method gets the end cap currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <returns>This method returns an element of the <see cref="LineCap" /> enumeration that indicates the end cap for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</returns>
+  </member>
+  <member name="Pen.GetLastStatus">
+    <summary>The <b>Pen.GetLastStatus</b> method returns a value that indicates the nature of this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object's most recent method failure.</summary>
+    <returns>
+      <para>The <b>Pen.GetLastStatus</b> method returns an element of the <see cref="Status" /> enumeration.</para>
+      <para>If no methods invoked on this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object have failed since the previous call to <b>Pen.GetLastStatus</b>, then <b>Pen.GetLastStatus</b> returns <b>Ok</b>.</para>
+      <para>If at least one method invoked on this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object has failed since the previous call to <b>Pen.GetLastStatus</b>, then <b>Pen.GetLastStatus</b> returns a value that indicates the nature of the most recent failure.</para>
+    </returns>
+  </member>
+  <member name="Pen.GetLineJoin">
+    <summary>The <b>Pen.GetLineJoin</b> method gets the line join style currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <returns>This method returns an element of the<see cref="LineJoin" /> enumeration that indicates the style used at the point where line segments join.</returns>
+  </member>
+  <member name="Pen.GetMiterLimit">
+    <summary>The <b>Pen.GetMiterLimit</b> method gets the miter length currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <returns>This method returns a real number that indicates the miter limit of this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</returns>
+  </member>
+  <member name="Pen.GetPenType">
+    <summary>The <b>Pen.GetPenType</b> method gets the type currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <returns>This method returns an element of the<see cref="PenType" /> enumeration that indicates the style of pen currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</returns>
+  </member>
+  <member name="Pen.GetStartCap">
+    <summary>The <b>Pen.GetStartCap</b> method gets the start cap currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <returns>This method returns an element of the <see cref="LineCap" /> enumeration that specifies the start cap for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</returns>
+  </member>
+  <member name="Pen.GetTransform">
+    <summary>The <b>Pen.GetTransform</b> method gets the world transformation matrix currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <param name="matrix">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that receives the transformation matrix.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.GetWidth">
+    <summary>The <b>Pen.GetWidth</b> method gets the width currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <returns>This method returns a real number that indicates the width of this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</returns>
+  </member>
+  <member name="Pen.MultiplyTransform">
+    <summary>The <b>Pen.MultiplyTransform</b> method updates the world transformation matrix of this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object with the product of itself and another matrix.</summary>
+    <param name="matrix">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that is multiplied with the world transformation matrix of this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of the multiplication. <b>MatrixOrderPrepend</b> specifies that the passed matrix is on the left, and <b>MatrixOrderAppend</b> specifies that the passed matrix is on the right. The default value is <b>MatrixOrderPrepend</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.Pen">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object that uses the attributes of a brush and a real number to set the width of this <b>Pen</b> object.</summary>
+    <param name="brush">Pointer to a brush to base this pen on.</param>
+    <param name="width">Optional. Real number that specifies the width of this pen's stroke. The default value is 1.0. If this value is 0, the width in device units is always 1 pixel, except that the <code>width</code> will not be affected by scale-transform operations that are in effect for the Graphics object that the is used for; the width will always be 1 pixel.</param>
+  </member>
+  <member name="Pen.Pen">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object that uses a specified color and width.</summary>
+    <param name="color">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the color for this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</param>
+    <param name="width">Optional. Real number that specifies the width of this pen's stroke. The default value is 1.0. If this value is 0, the width in device units is always 1 pixel, except that the <code>width</code> will not be affected by scale-transform operations that are in effect for the Graphics object that the is used for; the width will always be 1 pixel.</param>
+  </member>
+  <member name="Pen.ResetTransform">
+    <summary>The <b>Pen.ResetTransform</b> method sets the world transformation matrix of this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object to the identity matrix.</summary>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<b>Ok</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.RotateTransform">
+    <summary>The <b>Pen.RotateTransform</b> method updates the world transformation matrix of this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object with the product of itself and a rotation matrix.</summary>
+    <param name="angle">Real number that specifies the angle of rotation in degrees.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of the multiplication. <b>MatrixOrderPrepend</b> specifies that the rotation matrix is on the left, and <b>MatrixOrderAppend</b> specifies that the rotation matrix is on the right. The default value is <b>MatrixOrderPrepend</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.ScaleTransform">
+    <summary>The <b>Pen.ScaleTransform</b> method sets the<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object's world transformation matrix equal to the product of itself and a scaling matrix.</summary>
+    <param name="sx">Real number that specifies the horizontal scaling factor in the scaling matrix.</param>
+    <param name="sy">Real number that specifies the vertical scaling factor in the scaling matrix.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of the multiplication. <b>MatrixOrderPrepend</b> specifies that the scaling matrix is on the left, and <b>MatrixOrderAppend</b> specifies that the scaling matrix is on the right. The default value is <b>MatrixOrderPrepend</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.SetAlignment">
+    <summary>The <b>Pen.SetAlignment</b> method sets the alignment for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object relative to the line.</summary>
+    <param name="penAlignment">Element of the <see cref="PenAlignment" /> enumeration that specifies the alignment setting of the pen relative to the line that is drawn. The default value is <b>PenAlignmentCenter</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.SetBrush">
+    <summary>The <b>Pen.SetBrush</b> method sets the <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object that a pen uses to fill a line.</summary>
+    <param name="brush">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object for the pen to use to fill a line.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.SetColor">
+    <summary>The <b>Pen.SetColor</b> method sets the color for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <param name="color">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the color for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.SetCompoundArray">
+    <summary>The <b>Pen.SetCompoundArray</b> method sets the compound array for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <param name="compoundArray">Pointer to an array of real numbers that specifies the compound array. The elements in the array must be in increasing order, not less than 0, and not greater than 1.</param>
+    <param name="count">Positive even integer that specifies the number of elements in the<i>compoundArray</i> array. The integer must not be greater than the number of elements in the compound array.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.SetCustomEndCap">
+    <summary>The <b>Pen.SetCustomEndCap</b> method sets the custom end cap for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <param name="customCap">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-customlinecap">CustomLineCap</a> object that specifies the custom end cap for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.SetCustomStartCap">
+    <summary>The <b>Pen.SetCustomStartCap</b> method sets the custom start cap for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <param name="customCap">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-customlinecap">CustomLineCap</a> object that specifies the custom start cap for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.SetDashCap">
+    <summary>The <b>Pen.SetDashCap</b> method sets the dash cap style for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <param name="dashCap">Element of the<see cref="DashCap" /> enumeration that specifies the dash cap for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.SetDashOffset">
+    <summary>The <b>Pen.SetDashOffset</b> method sets the distance from the start of the line to the start of the first dash in a dashed line.</summary>
+    <param name="dashOffset">Real number that specifies the number of times to shift the spaces in a dashed line. Each shift is equal to the length of a space in the dashed line.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.SetDashPattern">
+    <summary>The <b>Pen.SetDashPattern</b> method sets an array of custom dashes and spaces for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <param name="dashArray">Pointer to an array of real numbers that specifies the length of the custom dashes and spaces. All elements in the array must be positive real numbers.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>dashArray</i> array. The integer must be greater than 0 and not greater than the total number of elements in the array.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.SetDashStyle">
+    <summary>The <b>Pen.SetDashStyle</b> method sets the dash style for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <param name="dashStyle">Element of the<see cref="DashStyle" /> enumeration that specifies the dash style for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.SetEndCap">
+    <summary>The <b>Pen.SetEndCap</b> method sets the end cap for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <param name="endCap">Element of the <see cref="LineCap" /> enumeration that specifies the end cap of a line.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.SetLineCap">
+    <summary>The <b>Pen.SetLineCap</b> method sets the cap styles for the start, end, and dashes in a line drawn with this pen.</summary>
+    <param name="startCap">Element of the <see cref="LineCap" /> enumeration that specifies the start cap of a line.</param>
+    <param name="endCap">Element of the <see cref="LineCap" /> enumeration that specifies the end cap of a line.</param>
+    <param name="dashCap">Element of the<see cref="DashCap" /> enumeration that specifies the start and end caps of the dashes in a dashed line.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.SetLineJoin">
+    <summary>The <b>Pen.SetLineJoin</b> method sets the line join for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <param name="lineJoin">Element of the<see cref="LineJoin" /> enumeration that specifies the join style used at the end of a line segment that meets another line segment.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.SetMiterLimit">
+    <summary>The <b>Pen.SetMiterLimit</b> method sets the miter limit of this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <param name="miterLimit">Real number that specifies the miter limit of this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object. A real number value that is less than 1.0f will be replaced with 1.0f.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.SetStartCap">
+    <summary>The <b>Pen.SetStartCap</b> method sets the start cap for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <param name="startCap">Element of the <see cref="LineCap" /> enumeration that specifies the start cap of a line.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.SetTransform">
+    <summary>The <b>Pen.SetTransform</b> method sets the world transformation of this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <param name="matrix">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that specifies the world transformation.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.SetWidth">
+    <summary>The <b>Pen.SetWidth</b> method sets the width for this<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object.</summary>
+    <param name="width">Real number that specifies the width of the pen.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Pen.TranslateTransform">
+    <summary>The <b>Pen.TranslateTransform</b> method sets the<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> object's world transformation matrix equal to the product of itself and a scaling matrix.</summary>
+    <param name="dx">Real number that specifies the horizontal scaling factor in the scaling matrix.</param>
+    <param name="dy">Real number that specifies the vertical scaling factor in the scaling matrix.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of the multiplication. <b>MatrixOrderPrepend</b> specifies that the scaling matrix is on the left, and <b>MatrixOrderAppend</b> specifies that the scaling matrix is on the right. The default value is <b>MatrixOrderPrepend</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+</doc>

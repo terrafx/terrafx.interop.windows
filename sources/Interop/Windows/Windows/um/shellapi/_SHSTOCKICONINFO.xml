@@ -3,39 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="_SHSTOCKICONINFO">
-    <summary>
-      <para>Receives information used to retrieve a stock Shell icon. This structure is used in a call <see cref="SHGetStockIconInfo" />.</para>
-    </summary>
-    <seealso cref="SHGetStockIconInfo" />
+    <summary>Receives information used to retrieve a stock Shell icon. This structure is used in a call <see cref="SHGetStockIconInfo" />.</summary>
   </member>
   <member name="_SHSTOCKICONINFO.cbSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of this structure, in bytes.</para>
-    </summary>
+    <summary>The size of this structure, in bytes.</summary>
   </member>
   <member name="_SHSTOCKICONINFO.hIcon">
-    <summary>
-      <para>Type: <b>HICON</b></para>
-      <para>When <see cref="SHGetStockIconInfo" /> is called with the SHGSI_ICON flag, this member receives a handle to the icon.</para>
-    </summary>
+    <summary>When <see cref="SHGetStockIconInfo" /> is called with the SHGSI_ICON flag, this member receives a handle to the icon.</summary>
   </member>
   <member name="_SHSTOCKICONINFO.iSysImageIndex">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>When <see cref="SHGetStockIconInfo" /> is called with the SHGSI_SYSICONINDEX flag, this member receives the index of the image in the system icon cache.</para>
-    </summary>
+    <summary>When <see cref="SHGetStockIconInfo" /> is called with the SHGSI_SYSICONINDEX flag, this member receives the index of the image in the system icon cache.</summary>
   </member>
   <member name="_SHSTOCKICONINFO.iIcon">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>When <see cref="SHGetStockIconInfo" /> is called with the SHGSI_ICONLOCATION flag, this member receives the index of the icon in the resource whose path is received in <b>szPath</b>.</para>
-    </summary>
+    <summary>When <see cref="SHGetStockIconInfo" /> is called with the SHGSI_ICONLOCATION flag, this member receives the index of the icon in the resource whose path is received in <b>szPath</b>.</summary>
   </member>
   <member name="_SHSTOCKICONINFO.szPath">
-    <summary>
-      <para>Type: <b>WCHAR[MAX_PATH]</b></para>
-      <para>When <see cref="SHGetStockIconInfo" /> is called with the SHGSI_ICONLOCATION flag, this member receives the path of the resource that contains the icon. The index of the icon within the resource is received in <b>iIcon</b>.</para>
-    </summary>
+    <summary>When <see cref="SHGetStockIconInfo" /> is called with the SHGSI_ICONLOCATION flag, this member receives the path of the resource that contains the icon. The index of the icon within the resource is received in <b>iIcon</b>.</summary>
   </member>
 </doc>

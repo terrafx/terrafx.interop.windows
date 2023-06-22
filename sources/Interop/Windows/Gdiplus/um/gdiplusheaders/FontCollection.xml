@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FontCollection.FontCollection">
+    <summary>Creates an empty <b>FontCollection.FontCollection</b> object.</summary>
+  </member>
+  <member name="FontCollection.FontCollection">
+    <summary>Creates an empty <b>FontCollection.FontCollection</b> object.</summary>
+  </member>
+  <member name="FontCollection.GetFamilies">
+    <summary>The <b>FontCollection.GetFamilies</b> method gets the font families contained in this font collection.</summary>
+    <param name="numSought">Integer that specifies the number of font families in this font collection.</param>
+    <param name="gpfamilies">Pointer to an array that receives the <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontfamily">FontFamily</a> objects.</param>
+    <param name="numFound">Pointer to an <b>INT</b> that receives the number of font families found in this collection. This number should be the same as the <i>numSought</i> value.</param>
+    <returns>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration. If the method fails, it returns one of the other elements of the <b>Status</b> enumeration.</returns>
+  </member>
+  <member name="FontCollection.GetFamilyCount">
+    <summary>The <b>FontCollection.GetFamilyCount</b> method gets the number of font families contained in this font collection.</summary>
+    <returns>This method returns the number of font families contained in this font collection.</returns>
+  </member>
+  <member name="FontCollection.GetLastStatus">
+    <summary>The <b>FontCollection.GetLastStatus</b> method returns a value that indicates the result of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontcollection">FontCollection</a> object's previous method call.</summary>
+    <returns>
+      <para>The <b>FontCollection.GetLastStatus</b> method returns an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the previous method invoked on this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontcollection">FontCollection</a> object succeeded, <b>FontCollection.GetLastStatus</b> returns Ok.</para>
+      <para>If the previous method failed, then <b>FontCollection.GetLastStatus</b> returns one of the other elements of the <see cref="Status" /> enumeration that indicates the nature of the failure.</para>
+    </returns>
+  </member>
+</doc>

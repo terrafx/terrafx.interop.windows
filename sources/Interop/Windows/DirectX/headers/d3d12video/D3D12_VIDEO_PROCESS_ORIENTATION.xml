@@ -3,48 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_PROCESS_ORIENTATION">
-    <summary>
-      <para>Specifies an orientation operation to be performed by a video processor.</para>
-    </summary>
+    <summary>Specifies an orientation operation to be performed by a video processor.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_ORIENTATION.D3D12_VIDEO_PROCESS_ORIENTATION_DEFAULT">
-    <summary>
-      <para>No change in orientation. 0 degrees.</para>
-    </summary>
+    <summary>No change in orientation. 0 degrees.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_ORIENTATION.D3D12_VIDEO_PROCESS_ORIENTATION_FLIP_HORIZONTAL">
-    <summary>
-      <para>The image is flipped horizontally.</para>
-    </summary>
+    <summary>The image is flipped horizontally.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_ORIENTATION.D3D12_VIDEO_PROCESS_ORIENTATION_CLOCKWISE_90">
-    <summary>
-      <para>The image is rotated 90 degrees clockwise.</para>
-    </summary>
+    <summary>The image is rotated 90 degrees clockwise.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_ORIENTATION.D3D12_VIDEO_PROCESS_ORIENTATION_CLOCKWISE_90_FLIP_HORIZONTAL">
-    <summary>
-      <para>The image is rotated 90 degrees clockwise and then flipped horizontally.</para>
-    </summary>
+    <summary>The image is rotated 90 degrees clockwise and then flipped horizontally.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_ORIENTATION.D3D12_VIDEO_PROCESS_ORIENTATION_CLOCKWISE_180">
-    <summary>
-      <para>The image is rotated 180 degrees clockwise.</para>
-    </summary>
+    <summary>The image is rotated 180 degrees clockwise.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_ORIENTATION.D3D12_VIDEO_PROCESS_ORIENTATION_FLIP_VERTICAL">
-    <summary>
-      <para>The image is flipped vertically.</para>
-    </summary>
+    <summary>The image is flipped vertically.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_ORIENTATION.D3D12_VIDEO_PROCESS_ORIENTATION_CLOCKWISE_270">
-    <summary>
-      <para>The image is rotated 270 degrees clockwise.</para>
-    </summary>
+    <summary>The image is rotated 270 degrees clockwise.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_ORIENTATION.D3D12_VIDEO_PROCESS_ORIENTATION_CLOCKWISE_270_FLIP_HORIZONTAL">
-    <summary>
-      <para>The image is rotated 270 degrees clockwise and then flipped horizontally.</para>
-    </summary>
+    <summary>The image is rotated 270 degrees clockwise and then flipped horizontally.</summary>
   </member>
 </doc>

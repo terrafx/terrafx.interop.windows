@@ -3,30 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_BUFFER_BINDING">
-    <summary>
-      <para>Specifies a resource binding described by a range of bytes in a Direct3D 12 buffer, represented by an offset and size into an <see cref="ID3D12Resource" />.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-binding">Binding in DirectML</seealso>
+    <summary>Specifies a resource binding described by a range of bytes in a Direct3D 12 buffer, represented by an offset and size into an <see cref="ID3D12Resource" />.</summary>
   </member>
   <member name="DML_BUFFER_BINDING.Buffer">
-    <summary>
-      <para>Type: <b><see cref="ID3D12Resource" />*</b></para>
-      <para>An optional pointer to an <see cref="ID3D12Resource" /> interface representing a buffer. The resource must have dimension <see cref="D3D12_RESOURCE_DIMENSION_BUFFER" />, and the
-range described by this struct must lie within the bounds of the buffer. You may supply <b>nullptr</b> for this member to indicate 'no binding'.</para>
-    </summary>
+    <summary>An optional pointer to an <see cref="ID3D12Resource" /> interface representing a buffer. The resource must have dimension <see cref="D3D12_RESOURCE_DIMENSION_BUFFER" />, and the range described by this struct must lie within the bounds of the buffer. You may supply <b>nullptr</b> for this member to indicate 'no binding'.</summary>
   </member>
   <member name="DML_BUFFER_BINDING.Offset">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT64</a></b></para>
-      <para>The offset, in bytes, from the start of the buffer where the range begins. This offset must be aligned to a
-multiple of <a href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-directml-constants">DML_MINIMUM_BUFFER_TENSOR_ALIGNMENT</a> or the <b>GuaranteedBaseOffsetAlignment</b> supplied as part of the
-<see cref="DML_BUFFER_TENSOR_DESC" />.</para>
-    </summary>
+    <summary>The offset, in bytes, from the start of the buffer where the range begins. This offset must be aligned to a multiple of <a href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-directml-constants">DML_MINIMUM_BUFFER_TENSOR_ALIGNMENT</a> or the <b>GuaranteedBaseOffsetAlignment</b> supplied as part of the<see cref="DML_BUFFER_TENSOR_DESC" />.</summary>
   </member>
   <member name="DML_BUFFER_BINDING.SizeInBytes">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT64</a></b></para>
-      <para>The size of the range, in bytes.</para>
-    </summary>
+    <summary>The size of the range, in bytes.</summary>
   </member>
 </doc>

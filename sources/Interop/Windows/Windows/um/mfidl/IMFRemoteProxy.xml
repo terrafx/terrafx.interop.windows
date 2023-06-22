@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFRemoteProxy.GetRemoteHost">
-    <summary>
-      <para>Retrieves a pointer to the object that is hosting this proxy.</para>
-    </summary>
-    <param name="riid">
-      <para>Interface identifier (IID) of the requested interface.</para>
-    </param>
-    <param name="ppv">
-      <para>Receives a pointer to the requested interface. The caller must release the interface.</para>
-    </param>
+    <summary>Retrieves a pointer to the object that is hosting this proxy.</summary>
+    <param name="riid">Interface identifier (IID) of the requested interface.</param>
+    <param name="ppv">Receives a pointer to the requested interface. The caller must release the interface.</param>
     <returns>
       <para>The method returns an HRESULT. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -19,30 +13,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFRemoteProxy" />
   </member>
   <member name="IMFRemoteProxy.GetRemoteObject">
-    <summary>
-      <para>Retrieves a pointer to the remote object for which this object is a proxy.</para>
-    </summary>
-    <param name="riid">
-      <para>Interface identifier (IID) of the requested interface.</para>
-    </param>
-    <param name="ppv">
-      <para>Receives a pointer to the requested interface. The caller must release the interface.</para>
-    </param>
+    <summary>Retrieves a pointer to the remote object for which this object is a proxy.</summary>
+    <param name="riid">Interface identifier (IID) of the requested interface.</param>
+    <param name="ppv">Receives a pointer to the requested interface. The caller must release the interface.</param>
     <returns>
       <para>The method returns an HRESULT. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -50,25 +39,22 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFRemoteProxy" />
   </member>
   <member name="IMFRemoteProxy">
-    <summary>
-      <para>Exposed by objects that act as a proxy for a remote object. To obtain a pointer to this interface, call <see cref="IMFGetService.GetService" /> with the service identifier MF_REMOTE_PROXY.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/service-interfaces">Service Interfaces</seealso>
+    <summary>Exposed by objects that act as a proxy for a remote object. To obtain a pointer to this interface, call <see cref="IMFGetService.GetService" /> with the service identifier MF_REMOTE_PROXY.</summary>
   </member>
 </doc>

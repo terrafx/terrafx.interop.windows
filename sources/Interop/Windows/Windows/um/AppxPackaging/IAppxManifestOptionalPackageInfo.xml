@@ -3,32 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxManifestOptionalPackageInfo.GetIsOptionalPackage">
-    <summary>
-      <para>Determines whether the package is optional.</para>
-    </summary>
-    <param name="isOptionalPackage">
-      <para>True if the package is optional, false otherwise.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxManifestOptionalPackageInfo" />
+    <summary>Determines whether the package is optional.</summary>
+    <param name="isOptionalPackage">True if the package is optional, false otherwise.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxManifestOptionalPackageInfo.GetMainPackageName">
-    <summary>
-      <para>Gets the main package name from the optional package.</para>
-    </summary>
-    <param name="mainPackageName">
-      <para>The main package name.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxManifestOptionalPackageInfo" />
+    <summary>Gets the main package name from the optional package.</summary>
+    <param name="mainPackageName">The main package name.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxManifestOptionalPackageInfo">
-    <summary>
-      <para>Provides access to attribute values of the optional package information.</para>
-    </summary>
+    <summary>Provides access to attribute values of the optional package information.</summary>
   </member>
 </doc>

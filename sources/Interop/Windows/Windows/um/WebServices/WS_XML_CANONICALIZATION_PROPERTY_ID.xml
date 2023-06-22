@@ -3,42 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_XML_CANONICALIZATION_PROPERTY_ID">
-    <summary>
-      <para>Identifies each XML canonicalization property and its associated
-value.  This enumeration is used within the <see cref="WS_XML_CANONICALIZATION_PROPERTY" /> structure, which is used as a parameter to <see cref="WsStartReaderCanonicalization" /> and <see cref="WsStartWriterCanonicalization" />.</para>
-    </summary>
+    <summary>Identifies each XML canonicalization property and its associated value. This enumeration is used within the <see cref="WS_XML_CANONICALIZATION_PROPERTY" /> structure, which is used as a parameter to <see cref="WsStartReaderCanonicalization" /> and <see cref="WsStartWriterCanonicalization" />.</summary>
   </member>
   <member name="WS_XML_CANONICALIZATION_PROPERTY_ID.WS_XML_CANONICALIZATION_PROPERTY_ALGORITHM">
-    <summary>
-      <para>A <see cref="WS_XML_CANONICALIZATION_ALGORITHM" /> value that specifies the algorithm to be used for canonicalization.  If this is not specified,
-the <b>WS_EXCLUSIVE_XML_CANONICALIZATION_ALGORITHM</b> is used.</para>
-    </summary>
+    <summary>A <see cref="WS_XML_CANONICALIZATION_ALGORITHM" /> value that specifies the algorithm to be used for canonicalization. If this is not specified, the <b>WS_EXCLUSIVE_XML_CANONICALIZATION_ALGORITHM</b> is used.</summary>
   </member>
   <member name="WS_XML_CANONICALIZATION_PROPERTY_ID.WS_XML_CANONICALIZATION_PROPERTY_INCLUSIVE_PREFIXES">
-    <summary>
-      <para>A <see cref="WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES" /> structure that contains the set of prefixes to be treated as inclusive prefixes when using
-the exclusive canonicalization algorithm.  If this is not specified,
-no prefix is treated as an inclusive prefix.</para>
-    </summary>
+    <summary>A <see cref="WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES" /> structure that contains the set of prefixes to be treated as inclusive prefixes when using the exclusive canonicalization algorithm. If this is not specified, no prefix is treated as an inclusive prefix.</summary>
   </member>
   <member name="WS_XML_CANONICALIZATION_PROPERTY_ID.WS_XML_CANONICALIZATION_PROPERTY_OMITTED_ELEMENT">
-    <summary>
-      <para>A <see cref="WS_XML_QNAME" /> structure that contains the elements to be omitted during canonicalization.  If one or more
-elements in the XML input match the specified name and namespace, then
-all such elements and the subtrees rooted at them are omitted from the
-canonical output.  This property can be used to implement enveloped
-signatures where canonicalization needs to skip a signature element
-that is embedded within the XML content being canonicalized and
-signed.  If this is not specified, no element is omitted from the
-output.</para>
-    </summary>
+    <summary>A <see cref="WS_XML_QNAME" /> structure that contains the elements to be omitted during canonicalization. If one or more elements in the XML input match the specified name and namespace, then all such elements and the subtrees rooted at them are omitted from the canonical output. This property can be used to implement enveloped signatures where canonicalization needs to skip a signature element that is embedded within the XML content being canonicalized and signed. If this is not specified, no element is omitted from the output.</summary>
   </member>
   <member name="WS_XML_CANONICALIZATION_PROPERTY_ID.WS_XML_CANONICALIZATION_PROPERTY_OUTPUT_BUFFER_SIZE">
-    <summary>
-      <para>A <b>ULONG</b> that specifies the size of the buffer in which canonical bytes are accumulated.  Once at least this
-many bytes are generated, or canonicalization is ended by a call to <see cref="WsEndReaderCanonicalization" /> or <see cref="WsEndWriterCanonicalization" />, the canonical bytes are
-written to the output specified at the start of canonicalization.  If this is
-not specified, a default buffer size of 1024 is used.</para>
-    </summary>
+    <summary>A <b>ULONG</b> that specifies the size of the buffer in which canonical bytes are accumulated. Once at least this many bytes are generated, or canonicalization is ended by a call to <see cref="WsEndReaderCanonicalization" /> or <see cref="WsEndWriterCanonicalization" />, the canonical bytes are written to the output specified at the start of canonicalization. If this is not specified, a default buffer size of 1024 is used.</summary>
   </member>
 </doc>

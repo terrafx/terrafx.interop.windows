@@ -4,64 +4,40 @@
 <doc>
   <member name="IEnumStreamIdMap.Clone">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Clone</code> method copies the collection.</para>
     </summary>
-    <param name="ppIEnumStreamIdMap">
-      <para>Receives a pointer to the <see cref="IEnumStreamIdMap" /> interface of the new collection object. The caller must release the interface.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful. If the method fails,an <b>HRESULT</b> error code is returned.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IEnumStreamIdMap Interface" />
+    <param name="ppIEnumStreamIdMap">Receives a pointer to the <see cref="IEnumStreamIdMap" /> interface of the new collection object. The caller must release the interface.</param>
+    <returns>Returns S_OK if successful. If the method fails,an <b>HRESULT</b> error code is returned.</returns>
   </member>
   <member name="IEnumStreamIdMap.Next">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Next</code> method retrieves the next <i>n</i> elements in the collection.</para>
     </summary>
-    <param name="cRequest">
-      <para>The number of elements to retrieve.</para>
-    </param>
-    <param name="pStreamIdMap">
-      <para>Address of a user-allocated array containing <i>cRequest</i> elements that will receive the retrieved <see cref="STREAM_ID_MAP" /> structures.</para>
-    </param>
-    <param name="pcReceived">
-      <para>Receives the number of elements actually retrieved.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful. If the method fails,an <b>HRESULT</b> error code is returned.</para>
-    </returns>
-    <remarks>
-      <para>If <i>cRequest</i> &gt;= 0 and <i>pcReceived</i> is not <b>NULL</b>, upon return <i>pcReceived</i> contains the number of stream ID maps remaining in the collection.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IEnumStreamIdMap Interface" />
+    <param name="cRequest">The number of elements to retrieve.</param>
+    <param name="pStreamIdMap">Address of a user-allocated array containing <i>cRequest</i> elements that will receive the retrieved <see cref="STREAM_ID_MAP" /> structures.</param>
+    <param name="pcReceived">Receives the number of elements actually retrieved.</param>
+    <returns>Returns S_OK if successful. If the method fails,an <b>HRESULT</b> error code is returned.</returns>
   </member>
   <member name="IEnumStreamIdMap.Reset">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Reset</code> method moves the iterator to the beginning of the collection.</para>
     </summary>
-    <returns>
-      <para>Returns S_OK if successful. If the method fails,an <b>HRESULT</b> error code is returned.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IEnumStreamIdMap Interface" />
+    <returns>Returns S_OK if successful. If the method fails,an <b>HRESULT</b> error code is returned.</returns>
   </member>
   <member name="IEnumStreamIdMap.Skip">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Skip</code> method skip the element at the specified index.</para>
     </summary>
-    <param name="cRecords">
-      <para>Index of the element to skip.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful. If the method fails, an <b>HRESULT</b> error code is returned.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IEnumStreamIdMap Interface" />
+    <param name="cRecords">Index of the element to skip.</param>
+    <returns>Returns S_OK if successful. If the method fails, an <b>HRESULT</b> error code is returned.</returns>
   </member>
   <member name="IEnumStreamIdMap">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IEnumStreamIdMap</code> interface is implemented on a standard COM collection of Stream ID maps that have been created by the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/mpeg-2-demultiplexer">MPEG-2 Demultiplexer</a>'s <see cref="IMPEG2StreamIdMap.MapStreamId" /> method. To obtain a pointer to this interface, use the <see cref="IMPEG2StreamIdMap.EnumStreamIdMap" /> method. Typically, an output pin will never have more than one stream ID mapped to it at any given time. This collection represents a snapshot of the Stream IDs mapped at the time the collection is created. The collection is not updated automatically.</para>
     </summary>
   </member>

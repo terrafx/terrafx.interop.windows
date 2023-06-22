@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="UI_ANIMATION_MANAGER_STATUS">
-    <summary>
-      <para>Defines the activity status of an animation manager.</para>
-    </summary>
-    <seealso cref="IUIAnimationManager.GetStatus" />
-    <seealso cref="IUIAnimationManagerEventHandler.OnManagerStatusChanged" />
+    <summary>Defines the activity status of an animation manager.</summary>
   </member>
   <member name="UI_ANIMATION_MANAGER_STATUS.UI_ANIMATION_MANAGER_IDLE">
-    <summary>
-      <para>The animation manager is idle; no animations are currently playing.</para>
-    </summary>
+    <summary>The animation manager is idle; no animations are currently playing.</summary>
   </member>
   <member name="UI_ANIMATION_MANAGER_STATUS.UI_ANIMATION_MANAGER_BUSY">
-    <summary>
-      <para>The animation manager is busy; at least one animation is currently playing or scheduled.</para>
-    </summary>
+    <summary>The animation manager is busy; at least one animation is currently playing or scheduled.</summary>
   </member>
 </doc>

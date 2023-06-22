@@ -3,98 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TIME_ZONE_INFORMATION">
-    <summary>
-      <para>Specifies settings for a time zone.</para>
-    </summary>
-    <remarks>
-      <para>Settings for each time zone are stored in the following registry key:</para>
-      <code>
-        <b>HKEY_LOCAL_MACHINE</b>
-        <b>SOFTWARE</b>
-        <b>Microsoft</b>
-        <b>Windows NT</b>
-        <b>CurrentVersion</b>
-        <b>Time Zones</b>
-        <i>time_zone_name</i>
-      </code>
-      <para>Each time zone entry includes the following registry values.</para>
-      <list type="table">
-        <listheader>
-          <description>Registry value</description>
-          <description>Type</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>
-            <b>Display</b>
-          </description>
-          <description>REG_SZ</description>
-          <description>The display name.</description>
-        </item>
-        <item>
-          <description>
-            <b>Dlt</b>
-          </description>
-          <description>REG_SZ</description>
-          <description>The description for daylight time.</description>
-        </item>
-        <item>
-          <description>
-            <b>MUI_Display</b>
-          </description>
-          <description>REG_SZ</description>
-          <description>The display name as a string of the form @<i>path</i>,<i>-stringID</i>[;<i>comment</i>]. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Intl/multilingual-user-interface">MUI</a>.</description>
-        </item>
-        <item>
-          <description>
-            <b>MUI_Dlt</b>
-          </description>
-          <description>REG_SZ</description>
-          <description>The description for daylight time as a string of the form @<i>path</i>,<i>-stringID</i>[;<i>comment</i>].</description>
-        </item>
-        <item>
-          <description>
-            <b>MUI_Std</b>
-          </description>
-          <description>REG_SZ</description>
-          <description>The description for standard time as a string of the form @<i>path</i>,<i>-stringID</i>[;<i>comment</i>].</description>
-        </item>
-        <item>
-          <description>
-            <b>Std</b>
-          </description>
-          <description>REG_SZ</description>
-          <description>The description for standard time.</description>
-        </item>
-        <item>
-          <description>
-            <b>TZI</b>
-          </description>
-          <description>REG_BINARY</description>
-          <description>
-            <para>The following time zone information.</para>
-            <code>typedef struct _REG_TZI_FORMAT
-{
-    LONG Bias;
-    LONG StandardBias;
-    LONG DaylightBias;
-    SYSTEMTIME StandardDate;
-    SYSTEMTIME DaylightDate;
-} REG_TZI_FORMAT;
-
-</code>
-          </description>
-        </item>
-      </list>
-      <para>For more information about the <b>Dynamic DST</b> key, see <see cref="DYNAMIC_TIME_ZONE_INFORMATION" />.</para>
-      <para>Both <b>StandardName</b> and <b>DaylightName</b> are localized according to the current user default UI language.</para>
-      <h4>Examples</h4>
-      <para>For an example, see <see cref="SetTimeZoneInformation" />.</para>
-    </remarks>
-    <seealso cref="DYNAMIC_TIME_ZONE_INFORMATION" />
-    <seealso cref="GetTimeZoneInformation" />
-    <seealso cref="SYSTEMTIME" />
-    <seealso cref="SetTimeZoneInformation" />
+    <summary>Specifies settings for a time zone.</summary>
   </member>
   <member name="TIME_ZONE_INFORMATION.Bias">
     <summary>
@@ -104,16 +13,11 @@
     </summary>
   </member>
   <member name="TIME_ZONE_INFORMATION.StandardName">
-    <summary>
-      <para>A description for standard time. For example, "EST" could indicate Eastern Standard Time. The string will be  returned unchanged by the
-<see cref="GetTimeZoneInformation" /> function. This string can be empty.</para>
-    </summary>
+    <summary>A description for standard time. For example, "EST" could indicate Eastern Standard Time. The string will be returned unchanged by the<see cref="GetTimeZoneInformation" /> function. This string can be empty.</summary>
   </member>
   <member name="TIME_ZONE_INFORMATION.StandardDate">
     <summary>
-      <para>A
-<see cref="SYSTEMTIME" /> structure that contains a date and local time when the transition from daylight saving time to standard time occurs on this operating system. If the time zone does not support daylight saving time or if the caller needs to disable daylight saving time, the <b>wMonth</b> member in the
-<b>SYSTEMTIME</b> structure must be zero. If this date is specified, the <b>DaylightDate</b> member of this structure must also be specified.</para>
+      <para>A<see cref="SYSTEMTIME" /> structure that contains a date and local time when the transition from daylight saving time to standard time occurs on this operating system. If the time zone does not support daylight saving time or if the caller needs to disable daylight saving time, the <b>wMonth</b> member in the<b>SYSTEMTIME</b> structure must be zero. If this date is specified, the <b>DaylightDate</b> member of this structure must also be specified.</para>
       <para>Otherwise, the system assumes the time zone data is invalid and no changes will be applied.</para>
       <para>To select the correct day in the month, set the <b>wYear</b> member to zero, the <b>wHour</b> and <b>wMinute</b> members to the transition time, the <b>wDayOfWeek</b> member to the appropriate weekday, and the <b>wDay</b> member to indicate the occurrence of the day of the week within the month (1 to 5, where 5 indicates the final occurrence during the month if that day of the week does not occur 5 times).</para>
       <para>Using this notation, specify 02:00 on the first Sunday in April as follows: <b>wHour</b> = 2, <b>wMonth</b> = 4, <b>wDayOfWeek</b> = 0, <b>wDay</b> = 1. Specify 02:00 on the last Thursday in October as follows: <b>wHour</b> = 2, <b>wMonth</b> = 10, <b>wDayOfWeek</b> = 4, <b>wDay</b> = 5.</para>
@@ -127,16 +31,11 @@
     </summary>
   </member>
   <member name="TIME_ZONE_INFORMATION.DaylightName">
-    <summary>
-      <para>A description for daylight saving time. For example, "PDT" could indicate Pacific Daylight Time. The string will be  returned unchanged by the
-<see cref="GetTimeZoneInformation" /> function. This string can be empty.</para>
-    </summary>
+    <summary>A description for daylight saving time. For example, "PDT" could indicate Pacific Daylight Time. The string will be returned unchanged by the<see cref="GetTimeZoneInformation" /> function. This string can be empty.</summary>
   </member>
   <member name="TIME_ZONE_INFORMATION.DaylightDate">
     <summary>
-      <para>A
-<see cref="SYSTEMTIME" /> structure that contains a date and local time when the transition from standard time to daylight saving time occurs on this operating system. If the time zone does not support daylight saving time or if the caller needs to disable daylight saving time, the <b>wMonth</b> member in the
-<b>SYSTEMTIME</b> structure must be zero. If this date is specified, the <b>StandardDate</b> member in this structure must also be specified.</para>
+      <para>A<see cref="SYSTEMTIME" /> structure that contains a date and local time when the transition from standard time to daylight saving time occurs on this operating system. If the time zone does not support daylight saving time or if the caller needs to disable daylight saving time, the <b>wMonth</b> member in the<b>SYSTEMTIME</b> structure must be zero. If this date is specified, the <b>StandardDate</b> member in this structure must also be specified.</para>
       <para>Otherwise, the system assumes the time zone data is invalid and no changes will be applied.</para>
       <para>To select the correct day in the month, set the <b>wYear</b> member to zero, the <b>wHour</b> and <b>wMinute</b> members to the transition time, the <b>wDayOfWeek</b> member to the appropriate weekday, and the <b>wDay</b> member to indicate the occurrence of the day of the week within the month (1 to 5, where 5 indicates the final occurrence during the month if that day of the week does not occur 5 times).</para>
       <para>If the <b>wYear</b> member is not zero, the transition date is absolute; it will only occur one time. Otherwise, it is a relative date that occurs yearly.</para>

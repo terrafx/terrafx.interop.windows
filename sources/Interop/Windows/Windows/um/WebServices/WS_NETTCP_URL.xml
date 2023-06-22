@@ -3,49 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_NETTCP_URL">
-    <summary>
-      <para>The URL subtype for specifying a net.tcp URL.</para>
-    </summary>
-    <remarks>
-      <para>If used with the <see cref="WsDecodeUrl" /> field, portAsString is a zero-length string if no port is specified in url.</para>
-    </remarks>
-    <seealso cref="WS_HTTPS_URL" />
-    <seealso cref="WS_HTTP_URL" />
-    <seealso cref="WS_SOAPUDP_URL" />
+    <summary>The URL subtype for specifying a net.tcp URL.</summary>
   </member>
   <member name="WS_NETTCP_URL.url">
-    <summary>
-      <para>The base type from which this URL subtype and all other URL subtypes derive. The <see cref="WS_URL_SCHEME_TYPE" /> is <b>WS_URL_NETTCP_SCHEME_TYPE</b>.</para>
-    </summary>
+    <summary>The base type from which this URL subtype and all other URL subtypes derive. The <see cref="WS_URL_SCHEME_TYPE" /> is <b>WS_URL_NETTCP_SCHEME_TYPE</b>.</summary>
   </member>
   <member name="WS_NETTCP_URL.host">
-    <summary>
-      <para>The host name.</para>
-    </summary>
+    <summary>The host name.</summary>
   </member>
   <member name="WS_NETTCP_URL.port">
-    <summary>
-      <para>The port number.</para>
-    </summary>
+    <summary>The port number.</summary>
   </member>
   <member name="WS_NETTCP_URL.portAsString">
-    <summary>
-      <para>The port number as string.</para>
-    </summary>
+    <summary>The port number as string.</summary>
   </member>
   <member name="WS_NETTCP_URL.path">
-    <summary>
-      <para>The path.</para>
-    </summary>
+    <summary>The path.</summary>
   </member>
   <member name="WS_NETTCP_URL.query">
-    <summary>
-      <para>The query.</para>
-    </summary>
+    <summary>The query.</summary>
   </member>
   <member name="WS_NETTCP_URL.fragment">
-    <summary>
-      <para>The fragment.</para>
-    </summary>
+    <summary>The fragment.</summary>
   </member>
 </doc>

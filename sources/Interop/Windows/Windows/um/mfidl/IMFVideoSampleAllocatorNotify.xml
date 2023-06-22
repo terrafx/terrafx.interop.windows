@@ -3,22 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFVideoSampleAllocatorNotify.NotifyRelease">
-    <summary>
-      <para>Called when a video sample is returned to the allocator.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>To get a video sample from the allocator, call the <see cref="IMFVideoSampleAllocator.AllocateSample" /> method. When the sample is released and then returned to the pool of available samples, the allocator invokes the <b>NotifyRelease</b> method.</para>
-    </remarks>
-    <seealso cref="IMFVideoSampleAllocatorNotify" />
-    <seealso cref="IMFVideoSampleAllocatorNotifyEx" />
+    <summary>Called when a video sample is returned to the allocator.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFVideoSampleAllocatorNotify">
-    <summary>
-      <para>The callback for the <see cref="IMFVideoSampleAllocatorCallback" /> interface.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>The callback for the <see cref="IMFVideoSampleAllocatorCallback" /> interface.</summary>
   </member>
 </doc>

@@ -3,50 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CMSG_SIGNER_ENCODE_INFO">
-    <summary>
-      <para>The <b>CMSG_SIGNER_ENCODE_INFO</b> structure contains signer information. It is passed to
-<see cref="CryptMsgCountersign" />,
-<see cref="CryptMsgCountersignEncoded" />, and optionally to
-<see cref="CryptMsgOpenToEncode" /> as a member of
-the <see cref="CMSG_SIGNED_ENCODE_INFO" /> structure, if the <i>dwMsgType</i> parameter is CMSG_SIGNED.</para>
-    </summary>
-    <seealso cref="CERT_INFO" />
-    <seealso cref="CRYPT_ALGORITHM_IDENTIFIER" />
-    <seealso cref="CRYPT_ATTRIBUTE" />
-    <seealso cref="CryptMsgControl" />
-    <seealso cref="CryptMsgCountersign" />
+    <summary>The <b>CMSG_SIGNER_ENCODE_INFO</b> structure contains signer information. It is passed to<see cref="CryptMsgCountersign" />,<see cref="CryptMsgCountersignEncoded" />, and optionally to<see cref="CryptMsgOpenToEncode" /> as a member of the <see cref="CMSG_SIGNED_ENCODE_INFO" /> structure, if the <i>dwMsgType</i> parameter is CMSG_SIGNED.</summary>
   </member>
   <member name="CMSG_SIGNER_ENCODE_INFO.cbSize">
-    <summary>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="CMSG_SIGNER_ENCODE_INFO.pCertInfo">
     <summary>
-      <para>A pointer to a
-<see cref="CERT_INFO" /> structure that contains the</para>
+      <para>A pointer to a<see cref="CERT_INFO" /> structure that contains the</para>
       <para>
         <b>Issuer</b>, <b>SerialNumber</b>, and <b>SubjectPublicKeyInfo</b> members.</para>
       <para>The <b>pbData</b> members of the <b>Issuer</b> and <b>SerialNumber</b> structures combined uniquely identify a certificate. The <b>Algorithm</b> member of the <b>SubjectPublicKeyInfo</b> structure specifies the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hash</a> encryption algorithm used.</para>
     </summary>
   </member>
-  <member name="CMSG_SIGNER_ENCODE_INFO.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="CMSG_SIGNER_ENCODE_INFO.DUMMYUNIONNAME"></member>
   <member name="CMSG_SIGNER_ENCODE_INFO.DUMMYUNIONNAME.hCryptProv">
-    <summary>
-      <para>A handle to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">cryptographic service provider</a> (CSP).
-If <b>HashEncryptionAlgorithm</b> is set to szOID_PKIX_NO_SIGNATURE, this handle can be the handle of a CSP acquired by using the <i>dwFlags</i> parameter set to <b>CRYPT_VERIFYCONTEXT</b>. The CNG function <see cref="NCryptIsKeyHandle" /> is called to determine the union choice.</para>
-    </summary>
+    <summary>A handle to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">cryptographic service provider</a> (CSP). If <b>HashEncryptionAlgorithm</b> is set to szOID_PKIX_NO_SIGNATURE, this handle can be the handle of a CSP acquired by using the <i>dwFlags</i> parameter set to <b>CRYPT_VERIFYCONTEXT</b>. The CNG function <see cref="NCryptIsKeyHandle" /> is called to determine the union choice.</summary>
   </member>
   <member name="CMSG_SIGNER_ENCODE_INFO.DUMMYUNIONNAME.hNCryptKey">
-    <summary>
-      <para>A handle to the CNG CSP. The CNG function <see cref="NCryptIsKeyHandle" /> is called to determine the union choice. New encrypt algorithms are only supported in CNG functions. The CNG function <see cref="NCryptTranslateHandle" /> will be called to convert the CryptoAPI <i>hCryptProv</i> choice where necessary. We recommend that applications pass, to the <i>hNCryptKey</i> member, the CNG CSP handle that is returned from the <see cref="NCryptOpenKey" /> function.</para>
-    </summary>
+    <summary>A handle to the CNG CSP. The CNG function <see cref="NCryptIsKeyHandle" /> is called to determine the union choice. New encrypt algorithms are only supported in CNG functions. The CNG function <see cref="NCryptTranslateHandle" /> will be called to convert the CryptoAPI <i>hCryptProv</i> choice where necessary. We recommend that applications pass, to the <i>hNCryptKey</i> member, the CNG CSP handle that is returned from the <see cref="NCryptOpenKey" /> function.</summary>
   </member>
-  <member name="CMSG_SIGNER_ENCODE_INFO.DUMMYUNIONNAME.hBCryptKey">
-    <summary></summary>
-  </member>
+  <member name="CMSG_SIGNER_ENCODE_INFO.DUMMYUNIONNAME.hBCryptKey"></member>
   <member name="CMSG_SIGNER_ENCODE_INFO.dwKeySpec">
     <summary>
       <para>Specifies the private key to be used. This member is not used when the <i>hNCryptKey</i> member is used.</para>
@@ -57,77 +34,65 @@ If <b>HashEncryptionAlgorithm</b> is set to szOID_PKIX_NO_SIGNATURE, this handle
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>AT_KEYEXCHANGE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AT_KEYEXCHANGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Keys used to encrypt/decrypt session keys.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Keys used to encrypt/decrypt session keys.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AT_SIGNATURE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>AT_SIGNATURE</b>
-          </description>
-          <description>
-            <para>Keys used to create and verify digital signatures.</para>
-          </description>
-        </item>
+          <description>Keys used to create and verify digital signatures.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="CMSG_SIGNER_ENCODE_INFO.HashAlgorithm">
-    <summary>
-      <para>A
-<see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that specifies the hash algorithm.</para>
-    </summary>
+    <summary>A<see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that specifies the hash algorithm.</summary>
   </member>
   <member name="CMSG_SIGNER_ENCODE_INFO.pvHashAuxInfo">
-    <summary>
-      <para>Not used. This member must be set to <b>NULL</b>.</para>
-    </summary>
+    <summary>Not used. This member must be set to <b>NULL</b>.</summary>
   </member>
   <member name="CMSG_SIGNER_ENCODE_INFO.cAuthAttr">
-    <summary>
-      <para>The number of elements in the <b>rgAuthAttr</b> array. If no authenticated attributes are present in <b>rgAuthAttr</b>, then <b>cAuthAttr</b> is zero.</para>
-    </summary>
+    <summary>The number of elements in the <b>rgAuthAttr</b> array. If no authenticated attributes are present in <b>rgAuthAttr</b>, then <b>cAuthAttr</b> is zero.</summary>
   </member>
   <member name="CMSG_SIGNER_ENCODE_INFO.rgAuthAttr">
     <summary>
-      <para>An array of pointers to
-<see cref="CRYPT_ATTRIBUTE" /> structures, each of which contains authenticated attribute information.</para>
+      <para>An array of pointers to<see cref="CRYPT_ATTRIBUTE" /> structures, each of which contains authenticated attribute information.</para>
       <para>The PKCS #9 standard dictates that if there are any attributes, there must be at least two: the content type <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifier</a> (OID) and the hash of the message. These attributes are automatically added by the system.</para>
     </summary>
   </member>
   <member name="CMSG_SIGNER_ENCODE_INFO.cUnauthAttr">
-    <summary>
-      <para>The number of elements in the <b>rgUnauthAttr</b> array. If there are no unauthenticated attributes, <b>cUnauthAttr</b> is zero.</para>
-    </summary>
+    <summary>The number of elements in the <b>rgUnauthAttr</b> array. If there are no unauthenticated attributes, <b>cUnauthAttr</b> is zero.</summary>
   </member>
   <member name="CMSG_SIGNER_ENCODE_INFO.rgUnauthAttr">
-    <summary>
-      <para>An array of pointers to <see cref="CRYPT_ATTRIBUTE" /> structures, each of which contains unauthenticated attribute information. Unauthenticated attributes can contain <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">countersignatures</a>, among other uses.</para>
-    </summary>
+    <summary>An array of pointers to <see cref="CRYPT_ATTRIBUTE" /> structures, each of which contains unauthenticated attribute information. Unauthenticated attributes can contain <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">countersignatures</a>, among other uses.</summary>
   </member>
   <member name="CMSG_SIGNER_ENCODE_INFO.SignerId">
-    <summary>
-      <para>A <see cref="CERT_ID" /> structure that contains a unique identifier of the signer's certificate. This member can optionally be used with PKCS #7 with Cryptographic Message Syntax (CMS). If this member is not <b>NULL</b> and its <b>dwIdChoice</b> member is not zero, it is used to identify  the certificate instead of the <b>Issuer</b> and <b>SerialNumber</b> members of the <see cref="CERT_INFO" /> structure pointed to by <b>pCertInfo</b>.
-CMS supports the KEY_IDENTIFIER and ISSUER_SERIAL_NUMBER CERT_ID structures. PKCS version 1.5 supports only the ISSUER_SERIAL_NUMBER CERT_ID choice. This member is  used with CMS for PKCS #7 processing and can be used only if CMSG_SIGNER_ENCODE_INFO_HAS_CMS_FIELDS is defined.</para>
-    </summary>
+    <summary>A <see cref="CERT_ID" /> structure that contains a unique identifier of the signer's certificate. This member can optionally be used with PKCS #7 with Cryptographic Message Syntax (CMS). If this member is not <b>NULL</b> and its <b>dwIdChoice</b> member is not zero, it is used to identify the certificate instead of the <b>Issuer</b> and <b>SerialNumber</b> members of the <see cref="CERT_INFO" /> structure pointed to by <b>pCertInfo</b>. CMS supports the KEY_IDENTIFIER and ISSUER_SERIAL_NUMBER CERT_ID structures. PKCS version 1.5 supports only the ISSUER_SERIAL_NUMBER CERT_ID choice. This member is used with CMS for PKCS #7 processing and can be used only if CMSG_SIGNER_ENCODE_INFO_HAS_CMS_FIELDS is defined.</summary>
   </member>
   <member name="CMSG_SIGNER_ENCODE_INFO.HashEncryptionAlgorithm">
     <summary>
-      <para>A
-<see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure optionally used with PKCS #7 with CMS. If this member is not <b>NULL</b>, the algorithm identified is used instead of the SubjectPublicKeyInfo.Algorithm algorithm.
-If this member is set to szOID_PKIX_NO_SIGNATURE, the signature value contains only the hash octets.</para>
+      <para>A<see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure optionally used with PKCS #7 with CMS. If this member is not <b>NULL</b>, the algorithm identified is used instead of the SubjectPublicKeyInfo.Algorithm algorithm. If this member is set to szOID_PKIX_NO_SIGNATURE, the signature value contains only the hash octets.</para>
       <para>For RSA, the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hash</a> encryption algorithm is normally the same as the public key algorithm. For DSA, the hash encryption algorithm is normally a DSS signature algorithm.</para>
-      <para>This member is  used with CMS for PKCS #7 processing and can be used only if CMSG_SIGNER_ENCODE_INFO_HAS_CMS_FIELDS is defined.</para>
+      <para>This member is used with CMS for PKCS #7 processing and can be used only if CMSG_SIGNER_ENCODE_INFO_HAS_CMS_FIELDS is defined.</para>
     </summary>
   </member>
   <member name="CMSG_SIGNER_ENCODE_INFO.pvHashEncryptionAuxInfo">
-    <summary>
-      <para>This member is not used. This member must be set to <b>NULL</b> if it is present in the data structure.
-This member is present only if CMSG_SIGNER_ENCODE_INFO_HAS_CMS_FIELDS is defined.</para>
-    </summary>
+    <summary>This member is not used. This member must be set to <b>NULL</b> if it is present in the data structure. This member is present only if CMSG_SIGNER_ENCODE_INFO_HAS_CMS_FIELDS is defined.</summary>
   </member>
 </doc>

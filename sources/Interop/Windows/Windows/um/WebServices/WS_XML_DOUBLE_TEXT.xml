@@ -3,26 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_XML_DOUBLE_TEXT">
-    <summary>
-      <para>Represents an 8 byte floating point value.  (e.g. The value 0.0 represents the text "0")</para>
-    </summary>
-    <remarks>
-      <para>The textual representation of the value has enough digits to preserve the floating point value.</para>
-      <para>Negative zero is represented by the text "-0".</para>
-      <para>Positive infinity is represented by the text "INF";</para>
-      <para>Negative infinity is represented by the text "-INF";</para>
-      <para>Unrepresentable values are represented by the text "NaN".</para>
-      <para>For more information on this representation, refer to IEEE Standard for Binary Floating-Point Arithmetic, available on the Web site http://www.ieee.org/.</para>
-    </remarks>
+    <summary>Represents an 8 byte floating point value. (e.g. The value 0.0 represents the text "0")</summary>
   </member>
   <member name="WS_XML_DOUBLE_TEXT.text">
-    <summary>
-      <para>The base type for all types that derive from <see cref="WS_XML_TEXT" />.</para>
-    </summary>
+    <summary>The base type for all types that derive from <see cref="WS_XML_TEXT" />.</summary>
   </member>
   <member name="WS_XML_DOUBLE_TEXT.value">
-    <summary>
-      <para>The value.</para>
-    </summary>
+    <summary>The value.</summary>
   </member>
 </doc>

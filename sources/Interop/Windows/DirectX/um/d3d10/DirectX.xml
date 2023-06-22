@@ -3,29 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DirectX.D3D10CalcSubresource">
-    <summary>
-      <para>Calculate a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">subresource</a> index for a texture.</para>
-    </summary>
-    <param name="MipSlice">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>A zero-based index into an array of subtextures; 0 indicates the first, most detailed subtexture (or mipmap level).</para>
-    </param>
-    <param name="ArraySlice">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The zero-based index of the first texture to use (in an array of textures).</para>
-    </param>
-    <param name="MipLevels">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of mipmap levels (or subtextures) to use.</para>
-    </param>
-    <returns>
-      <para>Type: <b>inline UINT</b></para>
-      <para>The index which equals <i>MipSlice</i> + (<i>ArraySlice</i> * <i>MipLevels</i>).</para>
-    </returns>
-    <remarks>
-      <para>A buffer is an unstructured resource and is therefore defined as containing a single subresource. APIs that take buffers do not need a subresource index. A texture on the other hand is highly structured. Each texture object may contain one or more subresources depending on the size of the array and the number of mipmap levels.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-functions">Core Functions</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-resource-functions">Resource Functions</seealso>
+    <summary>Calculate a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">subresource</a> index for a texture.</summary>
+    <param name="MipSlice">A zero-based index into an array of subtextures; 0 indicates the first, most detailed subtexture (or mipmap level).</param>
+    <param name="ArraySlice">The zero-based index of the first texture to use (in an array of textures).</param>
+    <param name="MipLevels">Number of mipmap levels (or subtextures) to use.</param>
+    <returns>The index which equals <i>MipSlice</i> + (<i>ArraySlice</i> * <i>MipLevels</i>).</returns>
   </member>
 </doc>

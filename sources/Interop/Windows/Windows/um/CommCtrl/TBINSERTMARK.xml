@@ -3,50 +3,55 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TBINSERTMARK">
-    <summary>
-      <para>Contains information on the insertion mark in a toolbar control.</para>
-    </summary>
+    <summary>Contains information on the insertion mark in a toolbar control.</summary>
   </member>
   <member name="TBINSERTMARK.iButton">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Zero-based index of the insertion mark. If this member is -1, there is no insertion mark.</para>
-    </summary>
+    <summary>Zero-based index of the insertion mark. If this member is -1, there is no insertion mark.</summary>
   </member>
   <member name="TBINSERTMARK.dwFlags">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
-      <para>Defines where the insertion mark is in relation to
-<b>iButton</b>. This can be one of the following values:</para>
+      <para>Defines where the insertion mark is in relation to<b>iButton</b>. This can be one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>0</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>0</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The insertion mark is to the left of the specified button.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The insertion mark is to the left of the specified button.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TBIMHT_AFTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The insertion mark is to the right of the specified button.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>TBIMHT_AFTER</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TBIMHT_BACKGROUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The insertion mark is to the right of the specified button.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>TBIMHT_BACKGROUND</b>
-          </description>
-          <description>
-            <para>The insertion mark is on the background of the toolbar. This flag is only used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/tb-insertmarkhittest">TB_INSERTMARKHITTEST</a> message.</para>
-          </description>
-        </item>
+          <description>The insertion mark is on the background of the toolbar. This flag is only used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/tb-insertmarkhittest">TB_INSERTMARKHITTEST</a> message.</description>
+        </listheader>
       </list>
     </summary>
   </member>

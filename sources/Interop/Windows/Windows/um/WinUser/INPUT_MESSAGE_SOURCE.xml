@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="INPUT_MESSAGE_SOURCE">
-    <summary>
-      <para>Contains information about the source of the input message.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_sourceid/input-source-identification-reference">Input Source Identification Reference</seealso>
+    <summary>Contains information about the source of the input message.</summary>
   </member>
   <member name="INPUT_MESSAGE_SOURCE.deviceType">
-    <summary>
-      <para>The device type (<see cref="INPUT_MESSAGE_DEVICE_TYPE" />) of the source of the input message.</para>
-    </summary>
+    <summary>The device type (<see cref="INPUT_MESSAGE_DEVICE_TYPE" />) of the source of the input message.</summary>
   </member>
   <member name="INPUT_MESSAGE_SOURCE.originId">
-    <summary>
-      <para>The ID (<see cref="INPUT_MESSAGE_ORIGIN_ID" />) of the source of the input message.</para>
-    </summary>
+    <summary>The ID (<see cref="INPUT_MESSAGE_ORIGIN_ID" />) of the source of the input message.</summary>
   </member>
 </doc>

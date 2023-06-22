@@ -3,31 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MESSAGE_RESOURCE_BLOCK">
-    <summary>
-      <para>Contains information about message strings with identifiers in the range indicated by the
-<b>LowId</b> and
-<b>HighId</b> members.</para>
-    </summary>
-    <seealso cref="MESSAGE_RESOURCE_DATA" />
-    <seealso cref="MESSAGE_RESOURCE_ENTRY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/menurc/resources">Resources</seealso>
+    <summary>Contains information about message strings with identifiers in the range indicated by the<b>LowId</b> and<b>HighId</b> members.</summary>
   </member>
   <member name="MESSAGE_RESOURCE_BLOCK.LowId">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The lowest message identifier contained within this structure.</para>
-    </summary>
+    <summary>The lowest message identifier contained within this structure.</summary>
   </member>
   <member name="MESSAGE_RESOURCE_BLOCK.HighId">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The highest message identifier contained within this structure.</para>
-    </summary>
+    <summary>The highest message identifier contained within this structure.</summary>
   </member>
   <member name="MESSAGE_RESOURCE_BLOCK.OffsetToEntries">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The offset, in bytes, from the beginning of the <see cref="MESSAGE_RESOURCE_DATA" /> structure to the <see cref="MESSAGE_RESOURCE_ENTRY" /> structures in this <b>MESSAGE_RESOURCE_BLOCK</b>. The <b>MESSAGE_RESOURCE_ENTRY</b> structures contain the message strings.</para>
-    </summary>
+    <summary>The offset, in bytes, from the beginning of the <see cref="MESSAGE_RESOURCE_DATA" /> structure to the <see cref="MESSAGE_RESOURCE_ENTRY" /> structures in this <b>MESSAGE_RESOURCE_BLOCK</b>. The <b>MESSAGE_RESOURCE_ENTRY</b> structures contain the message strings.</summary>
   </member>
 </doc>

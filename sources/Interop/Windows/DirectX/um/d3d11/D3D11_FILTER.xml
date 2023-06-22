@@ -3,207 +3,114 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_FILTER">
-    <summary>
-      <para>Filtering options during texture sampling.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>Note</b>  If you use different filter types for min versus mag filter, undefined behavior occurs in certain cases where the choice between whether magnification or minification happens is ambiguous.  To prevent this undefined behavior, use filter modes that use similar filter operations for both min and mag (or use anisotropic filtering, which avoids the issue as well).</para>
-      <para>During texture sampling, one or more texels are read and combined (this is calling filtering) to produce a single value. Point sampling reads a single texel while linear sampling reads two texels (endpoints) and linearly interpolates a third value between the endpoints.</para>
-      <para>HLSL texture-sampling functions also support comparison filtering during texture sampling. Comparison filtering compares each sampled texel against a comparison value. The boolean result is blended the same way that normal texture filtering is blended.</para>
-      <para>You can use HLSL intrinsic texture-sampling functions that implement texture filtering only or companion functions that use texture filtering with comparison filtering.</para>
-      <list type="table">
-        <listheader>
-          <description>Texture Sampling Function</description>
-          <description>Texture Sampling Function with Comparison Filtering</description>
-        </listheader>
-        <item>
-          <description>sample</description>
-          <description>samplecmp or samplecmplevelzero</description>
-        </item>
-      </list>
-      <para>Comparison filters only work with textures that have the following DXGI formats: R32_FLOAT_X8X24_TYPELESS, R32_FLOAT, R24_UNORM_X8_TYPELESS, R16_UNORM.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-enums">Core Enumerations</seealso>
+    <summary>Filtering options during texture sampling.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MIN_MAG_MIP_POINT">
-    <summary>
-      <para>Use point sampling for minification, magnification, and mip-level sampling.</para>
-    </summary>
+    <summary>Use point sampling for minification, magnification, and mip-level sampling.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MIN_MAG_POINT_MIP_LINEAR">
-    <summary>
-      <para>Use point sampling for minification and magnification; use linear interpolation for mip-level sampling.</para>
-    </summary>
+    <summary>Use point sampling for minification and magnification; use linear interpolation for mip-level sampling.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MIN_POINT_MAG_LINEAR_MIP_POINT">
-    <summary>
-      <para>Use point sampling for minification; use linear interpolation for magnification; use point sampling for mip-level sampling.</para>
-    </summary>
+    <summary>Use point sampling for minification; use linear interpolation for magnification; use point sampling for mip-level sampling.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MIN_POINT_MAG_MIP_LINEAR">
-    <summary>
-      <para>Use point sampling for minification; use linear interpolation for magnification and mip-level sampling.</para>
-    </summary>
+    <summary>Use point sampling for minification; use linear interpolation for magnification and mip-level sampling.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MIN_LINEAR_MAG_MIP_POINT">
-    <summary>
-      <para>Use linear interpolation for minification; use point sampling for magnification and mip-level sampling.</para>
-    </summary>
+    <summary>Use linear interpolation for minification; use point sampling for magnification and mip-level sampling.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MIN_LINEAR_MAG_POINT_MIP_LINEAR">
-    <summary>
-      <para>Use linear interpolation for minification; use point sampling for magnification; use linear interpolation for mip-level sampling.</para>
-    </summary>
+    <summary>Use linear interpolation for minification; use point sampling for magnification; use linear interpolation for mip-level sampling.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MIN_MAG_LINEAR_MIP_POINT">
-    <summary>
-      <para>Use linear interpolation for minification and magnification; use point sampling for mip-level sampling.</para>
-    </summary>
+    <summary>Use linear interpolation for minification and magnification; use point sampling for mip-level sampling.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MIN_MAG_MIP_LINEAR">
-    <summary>
-      <para>Use linear interpolation for minification, magnification, and mip-level sampling.</para>
-    </summary>
+    <summary>Use linear interpolation for minification, magnification, and mip-level sampling.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_ANISOTROPIC">
-    <summary>
-      <para>Use anisotropic interpolation for minification, magnification, and mip-level sampling.</para>
-    </summary>
+    <summary>Use anisotropic interpolation for minification, magnification, and mip-level sampling.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_COMPARISON_MIN_MAG_MIP_POINT">
-    <summary>
-      <para>Use point sampling for minification, magnification, and mip-level sampling. Compare the result to the comparison value.</para>
-    </summary>
+    <summary>Use point sampling for minification, magnification, and mip-level sampling. Compare the result to the comparison value.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_COMPARISON_MIN_MAG_POINT_MIP_LINEAR">
-    <summary>
-      <para>Use point sampling for minification and magnification; use linear interpolation for mip-level sampling. Compare the result to the comparison value.</para>
-    </summary>
+    <summary>Use point sampling for minification and magnification; use linear interpolation for mip-level sampling. Compare the result to the comparison value.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_COMPARISON_MIN_POINT_MAG_LINEAR_MIP_POINT">
-    <summary>
-      <para>Use point sampling for minification; use linear interpolation for magnification; use point sampling for mip-level sampling. Compare the result to the comparison value.</para>
-    </summary>
+    <summary>Use point sampling for minification; use linear interpolation for magnification; use point sampling for mip-level sampling. Compare the result to the comparison value.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_COMPARISON_MIN_POINT_MAG_MIP_LINEAR">
-    <summary>
-      <para>Use point sampling for minification; use linear interpolation for magnification and mip-level sampling. Compare the result to the comparison value.</para>
-    </summary>
+    <summary>Use point sampling for minification; use linear interpolation for magnification and mip-level sampling. Compare the result to the comparison value.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_COMPARISON_MIN_LINEAR_MAG_MIP_POINT">
-    <summary>
-      <para>Use linear interpolation for minification; use point sampling for magnification and mip-level sampling. Compare the result to the comparison value.</para>
-    </summary>
+    <summary>Use linear interpolation for minification; use point sampling for magnification and mip-level sampling. Compare the result to the comparison value.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_COMPARISON_MIN_LINEAR_MAG_POINT_MIP_LINEAR">
-    <summary>
-      <para>Use linear interpolation for minification; use point sampling for magnification; use linear interpolation for mip-level sampling. Compare the result to the comparison value.</para>
-    </summary>
+    <summary>Use linear interpolation for minification; use point sampling for magnification; use linear interpolation for mip-level sampling. Compare the result to the comparison value.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_COMPARISON_MIN_MAG_LINEAR_MIP_POINT">
-    <summary>
-      <para>Use linear interpolation for minification and magnification; use point sampling for mip-level sampling. Compare the result to the comparison value.</para>
-    </summary>
+    <summary>Use linear interpolation for minification and magnification; use point sampling for mip-level sampling. Compare the result to the comparison value.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_COMPARISON_MIN_MAG_MIP_LINEAR">
-    <summary>
-      <para>Use linear interpolation for minification, magnification, and mip-level sampling. Compare the result to the comparison value.</para>
-    </summary>
+    <summary>Use linear interpolation for minification, magnification, and mip-level sampling. Compare the result to the comparison value.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_COMPARISON_ANISOTROPIC">
-    <summary>
-      <para>Use anisotropic interpolation for minification, magnification, and mip-level sampling. Compare the result to the comparison value.</para>
-    </summary>
+    <summary>Use anisotropic interpolation for minification, magnification, and mip-level sampling. Compare the result to the comparison value.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MINIMUM_MIN_MAG_MIP_POINT">
-    <summary>
-      <para>Fetch the same set of texels as D3D11_FILTER_MIN_MAG_MIP_POINT and instead of filtering them return the minimum of the texels.  Texels that are weighted 0 during filtering aren't counted towards the minimum.  You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</para>
-    </summary>
+    <summary>Fetch the same set of texels as D3D11_FILTER_MIN_MAG_MIP_POINT and instead of filtering them return the minimum of the texels. Texels that are weighted 0 during filtering aren't counted towards the minimum. You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MINIMUM_MIN_MAG_POINT_MIP_LINEAR">
-    <summary>
-      <para>Fetch the same set of texels as D3D11_FILTER_MIN_MAG_POINT_MIP_LINEAR and instead of filtering them return the minimum of the texels.  Texels that are weighted 0 during filtering aren't counted towards the minimum.  You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</para>
-    </summary>
+    <summary>Fetch the same set of texels as D3D11_FILTER_MIN_MAG_POINT_MIP_LINEAR and instead of filtering them return the minimum of the texels. Texels that are weighted 0 during filtering aren't counted towards the minimum. You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MINIMUM_MIN_POINT_MAG_LINEAR_MIP_POINT">
-    <summary>
-      <para>Fetch the same set of texels as D3D11_FILTER_MIN_POINT_MAG_LINEAR_MIP_POINT and instead of filtering them return the minimum of the texels.  Texels that are weighted 0 during filtering aren't counted towards the minimum.  You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</para>
-    </summary>
+    <summary>Fetch the same set of texels as D3D11_FILTER_MIN_POINT_MAG_LINEAR_MIP_POINT and instead of filtering them return the minimum of the texels. Texels that are weighted 0 during filtering aren't counted towards the minimum. You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MINIMUM_MIN_POINT_MAG_MIP_LINEAR">
-    <summary>
-      <para>Fetch the same set of texels as D3D11_FILTER_MIN_POINT_MAG_MIP_LINEAR and instead of filtering them return the minimum of the texels.  Texels that are weighted 0 during filtering aren't counted towards the minimum.  You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</para>
-    </summary>
+    <summary>Fetch the same set of texels as D3D11_FILTER_MIN_POINT_MAG_MIP_LINEAR and instead of filtering them return the minimum of the texels. Texels that are weighted 0 during filtering aren't counted towards the minimum. You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MINIMUM_MIN_LINEAR_MAG_MIP_POINT">
-    <summary>
-      <para>Fetch the same set of texels as D3D11_FILTER_MIN_LINEAR_MAG_MIP_POINT and instead of filtering them return the minimum of the texels.  Texels that are weighted 0 during filtering aren't counted towards the minimum.  You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</para>
-    </summary>
+    <summary>Fetch the same set of texels as D3D11_FILTER_MIN_LINEAR_MAG_MIP_POINT and instead of filtering them return the minimum of the texels. Texels that are weighted 0 during filtering aren't counted towards the minimum. You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MINIMUM_MIN_LINEAR_MAG_POINT_MIP_LINEAR">
-    <summary>
-      <para>Fetch the same set of texels as D3D11_FILTER_MIN_LINEAR_MAG_POINT_MIP_LINEAR and instead of filtering them return the minimum of the texels.  Texels that are weighted 0 during filtering aren't counted towards the minimum.  You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</para>
-    </summary>
+    <summary>Fetch the same set of texels as D3D11_FILTER_MIN_LINEAR_MAG_POINT_MIP_LINEAR and instead of filtering them return the minimum of the texels. Texels that are weighted 0 during filtering aren't counted towards the minimum. You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MINIMUM_MIN_MAG_LINEAR_MIP_POINT">
-    <summary>
-      <para>Fetch the same set of texels as D3D11_FILTER_MIN_MAG_LINEAR_MIP_POINT and instead of filtering them return the minimum of the texels.  Texels that are weighted 0 during filtering aren't counted towards the minimum.  You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</para>
-    </summary>
+    <summary>Fetch the same set of texels as D3D11_FILTER_MIN_MAG_LINEAR_MIP_POINT and instead of filtering them return the minimum of the texels. Texels that are weighted 0 during filtering aren't counted towards the minimum. You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MINIMUM_MIN_MAG_MIP_LINEAR">
-    <summary>
-      <para>Fetch the same set of texels as D3D11_FILTER_MIN_MAG_MIP_LINEAR and instead of filtering them return the minimum of the texels.  Texels that are weighted 0 during filtering aren't counted towards the minimum.  You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</para>
-    </summary>
+    <summary>Fetch the same set of texels as D3D11_FILTER_MIN_MAG_MIP_LINEAR and instead of filtering them return the minimum of the texels. Texels that are weighted 0 during filtering aren't counted towards the minimum. You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MINIMUM_ANISOTROPIC">
-    <summary>
-      <para>Fetch the same set of texels as D3D11_FILTER_ANISOTROPIC and instead of filtering them return the minimum of the texels.  Texels that are weighted 0 during filtering aren't counted towards the minimum.  You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</para>
-    </summary>
+    <summary>Fetch the same set of texels as D3D11_FILTER_ANISOTROPIC and instead of filtering them return the minimum of the texels. Texels that are weighted 0 during filtering aren't counted towards the minimum. You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MAXIMUM_MIN_MAG_MIP_POINT">
-    <summary>
-      <para>Fetch the same set of texels as D3D11_FILTER_MIN_MAG_MIP_POINT and instead of filtering them return the maximum of the texels.  Texels that are weighted 0 during filtering aren't counted towards the maximum.  You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</para>
-    </summary>
+    <summary>Fetch the same set of texels as D3D11_FILTER_MIN_MAG_MIP_POINT and instead of filtering them return the maximum of the texels. Texels that are weighted 0 during filtering aren't counted towards the maximum. You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MAXIMUM_MIN_MAG_POINT_MIP_LINEAR">
-    <summary>
-      <para>Fetch the same set of texels as D3D11_FILTER_MIN_MAG_POINT_MIP_LINEAR and instead of filtering them return the maximum of the texels.  Texels that are weighted 0 during filtering aren't counted towards the maximum.  You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</para>
-    </summary>
+    <summary>Fetch the same set of texels as D3D11_FILTER_MIN_MAG_POINT_MIP_LINEAR and instead of filtering them return the maximum of the texels. Texels that are weighted 0 during filtering aren't counted towards the maximum. You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MAXIMUM_MIN_POINT_MAG_LINEAR_MIP_POINT">
-    <summary>
-      <para>Fetch the same set of texels as D3D11_FILTER_MIN_POINT_MAG_LINEAR_MIP_POINT and instead of filtering them return the maximum of the texels.  Texels that are weighted 0 during filtering aren't counted towards the maximum.  You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</para>
-    </summary>
+    <summary>Fetch the same set of texels as D3D11_FILTER_MIN_POINT_MAG_LINEAR_MIP_POINT and instead of filtering them return the maximum of the texels. Texels that are weighted 0 during filtering aren't counted towards the maximum. You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MAXIMUM_MIN_POINT_MAG_MIP_LINEAR">
-    <summary>
-      <para>Fetch the same set of texels as D3D11_FILTER_MIN_POINT_MAG_MIP_LINEAR and instead of filtering them return the maximum of the texels.  Texels that are weighted 0 during filtering aren't counted towards the maximum.  You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</para>
-    </summary>
+    <summary>Fetch the same set of texels as D3D11_FILTER_MIN_POINT_MAG_MIP_LINEAR and instead of filtering them return the maximum of the texels. Texels that are weighted 0 during filtering aren't counted towards the maximum. You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MAXIMUM_MIN_LINEAR_MAG_MIP_POINT">
-    <summary>
-      <para>Fetch the same set of texels as D3D11_FILTER_MIN_LINEAR_MAG_MIP_POINT and instead of filtering them return the maximum of the texels.  Texels that are weighted 0 during filtering aren't counted towards the maximum.  You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</para>
-    </summary>
+    <summary>Fetch the same set of texels as D3D11_FILTER_MIN_LINEAR_MAG_MIP_POINT and instead of filtering them return the maximum of the texels. Texels that are weighted 0 during filtering aren't counted towards the maximum. You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MAXIMUM_MIN_LINEAR_MAG_POINT_MIP_LINEAR">
-    <summary>
-      <para>Fetch the same set of texels as D3D11_FILTER_MIN_LINEAR_MAG_POINT_MIP_LINEAR and instead of filtering them return the maximum of the texels.  Texels that are weighted 0 during filtering aren't counted towards the maximum.  You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</para>
-    </summary>
+    <summary>Fetch the same set of texels as D3D11_FILTER_MIN_LINEAR_MAG_POINT_MIP_LINEAR and instead of filtering them return the maximum of the texels. Texels that are weighted 0 during filtering aren't counted towards the maximum. You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MAXIMUM_MIN_MAG_LINEAR_MIP_POINT">
-    <summary>
-      <para>Fetch the same set of texels as D3D11_FILTER_MIN_MAG_LINEAR_MIP_POINT and instead of filtering them return the maximum of the texels.  Texels that are weighted 0 during filtering aren't counted towards the maximum.  You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</para>
-    </summary>
+    <summary>Fetch the same set of texels as D3D11_FILTER_MIN_MAG_LINEAR_MIP_POINT and instead of filtering them return the maximum of the texels. Texels that are weighted 0 during filtering aren't counted towards the maximum. You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MAXIMUM_MIN_MAG_MIP_LINEAR">
-    <summary>
-      <para>Fetch the same set of texels as D3D11_FILTER_MIN_MAG_MIP_LINEAR and instead of filtering them return the maximum of the texels.  Texels that are weighted 0 during filtering aren't counted towards the maximum.  You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</para>
-    </summary>
+    <summary>Fetch the same set of texels as D3D11_FILTER_MIN_MAG_MIP_LINEAR and instead of filtering them return the maximum of the texels. Texels that are weighted 0 during filtering aren't counted towards the maximum. You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</summary>
   </member>
   <member name="D3D11_FILTER.D3D11_FILTER_MAXIMUM_ANISOTROPIC">
-    <summary>
-      <para>Fetch the same set of texels as D3D11_FILTER_ANISOTROPIC and instead of filtering them return the maximum of the texels.  Texels that are weighted 0 during filtering aren't counted towards the maximum.  You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</para>
-    </summary>
+    <summary>Fetch the same set of texels as D3D11_FILTER_ANISOTROPIC and instead of filtering them return the maximum of the texels. Texels that are weighted 0 during filtering aren't counted towards the maximum. You can query support for this filter type from the <b>MinMaxFiltering</b> member in the <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS1" /> structure.</summary>
   </member>
 </doc>

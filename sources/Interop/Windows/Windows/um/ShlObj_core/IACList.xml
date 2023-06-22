@@ -3,60 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IACList.Expand">
-    <summary>
-      <para>Requests that the autocompletion client generate candidate strings associated with a specified item in its namespace.</para>
-    </summary>
-    <param name="pszExpand">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>A pointer to a null-terminated, Unicode string to be expanded by the autocomplete object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The autocomplete object calls this method when a delimiter is entered in the edit control. If the string pointed to by <i>pszExpand</i> matches an item in the autocompletion client's namespace, the client generates strings for those items that fall immediately under <i>pszExpand</i> in its namespace hierarchy. The client returns those strings next time the autocompletion object calls the client's <see cref="IEnumString" /> interface.</para>
-      <para>For example, assuming that the client's namespace consists of all the files and folders on the C: drive, and <i>pszExpand</i> is set to "C:\Program Files", the client should generate a list of strings corresponding to the fully qualified paths of the files and subfolders of "C:\Program Files".</para>
-    </remarks>
-    <seealso cref="IACList" />
+    <summary>Requests that the autocompletion client generate candidate strings associated with a specified item in its namespace.</summary>
+    <param name="pszExpand">A pointer to a null-terminated, Unicode string to be expanded by the autocomplete object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IACList">
-    <summary>
-      <para>Exposes a method that improves the efficiency of <see cref="autocompletion" /> when the candidate strings are organized in a hierarchy.</para>
-    </summary>
-    <remarks>
-      <para>Autocompletion typically requires the following three components:</para>
-      <list type="bullet">
-        <item>
-          <description>The autocompletion client. This client is a window, such as a dialog box, that hosts the edit control.</description>
-        </item>
-        <item>
-          <description>The autocompletion object (CLSID_AutoComplete). This object is provided by the system, and handles the user interface, parsing, and background thread management.</description>
-        </item>
-        <item>
-          <description>The autocompletion list object. This object is responsible for providing lists of candidate strings to the autocompletion object.</description>
-        </item>
-      </list>
-      <para>A simple autocompletion list object needs only to export <see cref="IEnumString" /> in addition to <see cref="IUnknown" />. When the user enters characters in the edit box, the autocompletion object calls the list object's <b>IEnumString</b> interface to enumerate the list of strings that can be used to complete the partial string. The list object maintains a namespace and decides which of those strings are relevant.</para>
-      <para>The simplest approach a list object takes is to return every string in its namespace every time the autocompletion object makes a request. For a discussion of how to implement this type of list object, see <see cref="IAutoComplete" />. However, this approach is practical only if the namespace is relatively small. When large numbers of strings are involved, the list object must restrict itself to a small subset of the namespace.</para>
-      <para>The <b>IACList</b> interface is exported by autocompletion list objects to help them choose a sensible subset of strings from a hierarchically organized namespace. With a large namespace, this procedure substantially increases the efficiency of autocompletion. The basic procedure is as follows:</para>
-      <list type="number">
-        <item>
-          <description>The autocomplete object calls the list object's <see cref="IEnumString" /> interface. The list object returns the names of the top-level items in the hierarchy. For example, if the namespace consists of every file and folder on the C: drive, the list object returns the fully qualified paths of the folders and files contained in the C:\ directory.</description>
-        </item>
-        <item>
-          <description>The user continues to type until he or she enters a delimiter. The '\' and '/' characters are recognized as delimiters by the autocompletion object.</description>
-        </item>
-        <item>
-          <description>The autocompletion object calls the list object's <see cref="IACList.Expand" /> method and passes it the current partial string.</description>
-        </item>
-        <item>
-          <description>The autocomplete object calls the list object's <see cref="IEnumString" /> interface again to request a new list of strings. If the partial string matches one of the top-level items in the namespace, the list object returns the names of the items that fall immediately under the selected item. For instance, if the user has entered "C:\Program Files\", the list object returns the names of the files and folders contained in that directory. If the name passed to <see cref="IACList.Expand" /> does not match any top-level item, the list object can simply stop returning strings until the autocomplete object calls <b>IACList.Expand</b> with a string that is in the list object's namespace.</description>
-        </item>
-        <item>
-          <description>The process continues until the user selects a string, typically by pressing the <b>ENTER</b> key.</description>
-        </item>
-      </list>
-    </remarks>
+    <summary>Exposes a method that improves the efficiency of <see cref="autocompletion" /> when the candidate strings are organized in a hierarchy.</summary>
   </member>
 </doc>

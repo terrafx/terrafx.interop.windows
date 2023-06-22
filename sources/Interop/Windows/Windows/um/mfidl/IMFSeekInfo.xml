@@ -3,21 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFSeekInfo.GetNearestKeyFrames">
-    <summary>
-      <para>For a particular seek position, gets the two nearest key frames.</para>
-    </summary>
-    <param name="pguidTimeFormat">
-      <para>A pointer to a GUID that specifies the time format. The time format defines the units for the other parameters of this method. If the value is <b>GUID_NULL</b>, the time format is 100-nanosecond units. Some media sources might support additional time format GUIDs.</para>
-    </param>
-    <param name="pvarStartPosition">
-      <para>The seek position. The units for this parameter are specified by <i>pguidTimeFormat</i>.</para>
-    </param>
-    <param name="pvarPreviousKeyFrame">
-      <para>Receives the position of the nearest key frame that appears earlier than <i>pvarStartPosition</i>. The units for this parameter are specified by <i>pguidTimeFormat</i>.</para>
-    </param>
-    <param name="pvarNextKeyFrame">
-      <para>Receives the position of the nearest key frame that appears later than <i>pvarStartPosition</i>. The units for this parameter are specified by <i>pguidTimeFormat</i>.</para>
-    </param>
+    <summary>For a particular seek position, gets the two nearest key frames.</summary>
+    <param name="pguidTimeFormat">A pointer to a GUID that specifies the time format. The time format defines the units for the other parameters of this method. If the value is <b>GUID_NULL</b>, the time format is 100-nanosecond units. Some media sources might support additional time format GUIDs.</param>
+    <param name="pvarStartPosition">The seek position. The units for this parameter are specified by <i>pguidTimeFormat</i>.</param>
+    <param name="pvarPreviousKeyFrame">Receives the position of the nearest key frame that appears earlier than <i>pvarStartPosition</i>. The units for this parameter are specified by <i>pguidTimeFormat</i>.</param>
+    <param name="pvarNextKeyFrame">Receives the position of the nearest key frame that appears later than <i>pvarStartPosition</i>. The units for this parameter are specified by <i>pguidTimeFormat</i>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -25,40 +15,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_UNSUPPORTED_TIME_FORMAT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_UNSUPPORTED_TIME_FORMAT</b>
-            </para>
-          </description>
-          <description>
-            <para>The time format specified in <i>pguidTimeFormat</i> is not supported.</para>
-          </description>
-        </item>
+          <description>The time format specified in <i>pguidTimeFormat</i> is not supported.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If an application seeks to a non–key frame, the decoder must start decoding from the previous key frame. This can increase latency, because several frames might get decoded before the requested frame is reached. To reduce latency, an application can call this method to find the two key frames that are closest to the desired time, and then seek to one of those key frames.</para>
-    </remarks>
-    <seealso cref="IMFSeekInfo" />
   </member>
   <member name="IMFSeekInfo">
-    <summary>
-      <para>For a particular seek position, gets the two nearest key frames.</para>
-    </summary>
-    <remarks>
-      <para>A media source can implement this interface as an optional service. To get a pointer to the interface, call <see cref="IMFGetService.GetService" /> with the service identifier <b>MF_SCRUBBING_SERVICE</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>For a particular seek position, gets the two nearest key frames.</summary>
   </member>
 </doc>

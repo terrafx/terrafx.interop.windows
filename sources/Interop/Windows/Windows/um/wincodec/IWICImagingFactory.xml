@@ -3,1049 +3,542 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICImagingFactory.CreateBitmap">
-    <summary>
-      <para>Creates an <see cref="IWICBitmap" /> object.</para>
-    </summary>
-    <param name="uiWidth">
-      <para>Type: <b>UINT</b></para>
-      <para>The width of the new bitmap .</para>
-    </param>
-    <param name="uiHeight">
-      <para>Type: <b>UINT</b></para>
-      <para>The height of the new bitmap.</para>
-    </param>
-    <param name="pixelFormat">
-      <para>Type: <b>REFWICPixelFormatGUID</b></para>
-      <para>The pixel format of the new bitmap.</para>
-    </param>
+    <summary>Creates an <see cref="IWICBitmap" /> object.</summary>
+    <param name="uiWidth">The width of the new bitmap .</param>
+    <param name="uiHeight">The height of the new bitmap.</param>
+    <param name="pixelFormat">The pixel format of the new bitmap.</param>
     <param name="option">
-      <para>Type: <b><see cref="WICBitmapCreateCacheOption" /></b></para>
       <para>The cache creation options of the new bitmap. This can be one of the values in the <see cref="WICBitmapCreateCacheOption" /> enumeration.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>WICBitmapCacheOnDemand</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WICBitmapCacheOnDemand</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Allocates system memory for the bitmap at initialization.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Allocates system memory for the bitmap at initialization.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WICBitmapCacheOnLoad</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Allocates system memory for the bitmap when the bitmap is first used.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WICBitmapCacheOnLoad</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WICBitmapNoCache</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Allocates system memory for the bitmap when the bitmap is first used.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WICBitmapNoCache</b>
-          </description>
-          <description>
-            <para>This option is not valid for this method and should not be used.</para>
-          </description>
-        </item>
+          <description>This option is not valid for this method and should not be used.</description>
+        </listheader>
       </list>
     </param>
-    <param name="ppIBitmap">
-      <para>Type: <b><see cref="IWICBitmap" />**</b></para>
-      <para>A pointer that receives a pointer to the new bitmap.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IWICImagingFactory" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-native-pixel-formats">Native Pixel Formats</seealso>
+    <param name="ppIBitmap">A pointer that receives a pointer to the new bitmap.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateBitmapClipper">
-    <summary>
-      <para>Creates a new instance of an <see cref="IWICBitmapClipper" /> object.</para>
-    </summary>
-    <param name="ppIBitmapClipper">
-      <para>Type: <b><see cref="IWICBitmapClipper" />**</b></para>
-      <para>A pointer that receives a pointer to a new <see cref="IWICBitmapClipper" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Creates a new instance of an <see cref="IWICBitmapClipper" /> object.</summary>
+    <param name="ppIBitmapClipper">A pointer that receives a pointer to a new <see cref="IWICBitmapClipper" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateBitmapFlipRotator">
-    <summary>
-      <para>Creates a new instance of an <see cref="IWICBitmapFlipRotator" /> object.</para>
-    </summary>
-    <param name="ppIBitmapFlipRotator">
-      <para>Type: <b><see cref="IWICBitmapFlipRotator" />**</b></para>
-      <para>A pointer that receives a pointer to a new <see cref="IWICBitmapFlipRotator" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Creates a new instance of an <see cref="IWICBitmapFlipRotator" /> object.</summary>
+    <param name="ppIBitmapFlipRotator">A pointer that receives a pointer to a new <see cref="IWICBitmapFlipRotator" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateBitmapFromHBITMAP">
-    <summary>
-      <para>Creates an <see cref="IWICBitmap" /> from a bitmap handle.</para>
-    </summary>
-    <param name="hBitmap">
-      <para>Type: <b>HBITMAP</b></para>
-      <para>A bitmap handle to create the bitmap from.</para>
-    </param>
-    <param name="hPalette">
-      <para>Type: <b>HPALETTE</b></para>
-      <para>A palette handle used to create the bitmap.</para>
-    </param>
-    <param name="options">
-      <para>Type: <b><see cref="WICBitmapAlphaChannelOption" /></b></para>
-      <para>The alpha channel options to create the bitmap.</para>
-    </param>
-    <param name="ppIBitmap">
-      <para>Type: <b><see cref="IWICBitmap" />**</b></para>
-      <para>A pointer that receives a pointer to the new bitmap.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>For a non-palletized bitmap, set NULL for the <i>hPalette</i> parameter.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">GDI+ Bitmap class</seealso>
-    <seealso cref="GDI+ Bitmap.GetHBITMAP method" />
-    <seealso cref="IWICImagingFactory" />
-    <seealso cref="WICBitmapAlphaChannelOption" />
+    <summary>Creates an <see cref="IWICBitmap" /> from a bitmap handle.</summary>
+    <param name="hBitmap">A bitmap handle to create the bitmap from.</param>
+    <param name="hPalette">A palette handle used to create the bitmap.</param>
+    <param name="options">The alpha channel options to create the bitmap.</param>
+    <param name="ppIBitmap">A pointer that receives a pointer to the new bitmap.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateBitmapFromHICON">
-    <summary>
-      <para>Creates an <see cref="IWICBitmap" /> from an icon handle.</para>
-    </summary>
-    <param name="hIcon">
-      <para>Type: <b>HICON</b></para>
-      <para>The icon handle to create the new bitmap from.</para>
-    </param>
-    <param name="ppIBitmap">
-      <para>Type: <b><see cref="IWICBitmap" />**</b></para>
-      <para>A pointer that receives a pointer to the new bitmap.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Creates an <see cref="IWICBitmap" /> from an icon handle.</summary>
+    <param name="hIcon">The icon handle to create the new bitmap from.</param>
+    <param name="ppIBitmap">A pointer that receives a pointer to the new bitmap.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateBitmapFromMemory">
-    <summary>
-      <para>Creates an <see cref="IWICBitmap" /> from a memory block.</para>
-    </summary>
-    <param name="uiWidth">
-      <para>Type: <b>UINT</b></para>
-      <para>The width of the new bitmap.</para>
-    </param>
-    <param name="uiHeight">
-      <para>Type: <b>UINT</b></para>
-      <para>The height of the new bitmap.</para>
-    </param>
-    <param name="pixelFormat">
-      <para>Type: <b>REFWICPixelFormatGUID</b></para>
-      <para>The pixel format of the new bitmap.  For valid pixel formats, see <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-native-pixel-formats">Native Pixel Formats</a>.</para>
-    </param>
-    <param name="cbStride">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of bytes between successive scanlines in <i>pbBuffer</i>.</para>
-    </param>
-    <param name="cbBufferSize">
-      <para>Type: <b>UINT</b></para>
-      <para>The size of <i>pbBuffer</i>.</para>
-    </param>
-    <param name="pbBuffer">
-      <para>Type: <b>BYTE*</b></para>
-      <para>The buffer used to create the bitmap.</para>
-    </param>
-    <param name="ppIBitmap">
-      <para>Type: <b><see cref="IWICBitmap" />**</b></para>
-      <para>A pointer that receives a pointer to the new bitmap.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The size of the <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-imp-iwicbitmapdecoder">IWICBitmap</a> to be created must be smaller than or equal to the size of the image in <i>pbBuffer</i>.</para>
-      <para>The stride of the destination bitmap will equal the <i>stride</i> of the source data, regardless of the width and height specified.</para>
-      <para>The <i>pixelFormat</i> parameter defines the pixel format for both the input data and the output bitmap.</para>
-    </remarks>
+    <summary>Creates an <see cref="IWICBitmap" /> from a memory block.</summary>
+    <param name="uiWidth">The width of the new bitmap.</param>
+    <param name="uiHeight">The height of the new bitmap.</param>
+    <param name="pixelFormat">The pixel format of the new bitmap. For valid pixel formats, see <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-native-pixel-formats">Native Pixel Formats</a>.</param>
+    <param name="cbStride">The number of bytes between successive scanlines in <i>pbBuffer</i>.</param>
+    <param name="cbBufferSize">The size of <i>pbBuffer</i>.</param>
+    <param name="pbBuffer">The buffer used to create the bitmap.</param>
+    <param name="ppIBitmap">A pointer that receives a pointer to the new bitmap.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateBitmapFromSource">
-    <summary>
-      <para>Creates a <see cref="IWICBitmap" /> from a <see cref="IWICBitmapSource" />.</para>
-    </summary>
-    <param name="pIBitmapSource">
-      <para>Type: <b><see cref="IWICBitmapSource" />*</b></para>
-      <para>The <see cref="IWICBitmapSource" /> to create the bitmap from.</para>
-    </param>
+    <summary>Creates a <see cref="IWICBitmap" /> from a <see cref="IWICBitmapSource" />.</summary>
+    <param name="pIBitmapSource">The <see cref="IWICBitmapSource" /> to create the bitmap from.</param>
     <param name="option">
-      <para>Type: <b><see cref="WICBitmapCreateCacheOption" /></b></para>
-      <para>The cache options of the new bitmap.  This can be one of the values in the <see cref="WICBitmapCreateCacheOption" /> enumeration.</para>
+      <para>The cache options of the new bitmap. This can be one of the values in the <see cref="WICBitmapCreateCacheOption" /> enumeration.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>WICBitmapNoCache</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WICBitmapNoCache</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Do not create a system memory copy. Share the bitmap with the source.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Do not create a system memory copy. Share the bitmap with the source.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WICBitmapCacheOnDemand</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Create a system memory copy when the bitmap is first used.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WICBitmapCacheOnDemand</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WICBitmapCacheOnLoad</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Create a system memory copy when the bitmap is first used.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WICBitmapCacheOnLoad</b>
-          </description>
-          <description>
-            <para>Create a system memory copy when this method is called.</para>
-          </description>
-        </item>
+          <description>Create a system memory copy when this method is called.</description>
+        </listheader>
       </list>
     </param>
-    <param name="ppIBitmap">
-      <para>Type: <b><see cref="IWICBitmap" />**</b></para>
-      <para>A pointer that receives a pointer to the new bitmap.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <param name="ppIBitmap">A pointer that receives a pointer to the new bitmap.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateBitmapFromSourceRect">
-    <summary>
-      <para>Creates an <see cref="IWICBitmap" /> from a specified rectangle of an <see cref="IWICBitmapSource" />.</para>
-    </summary>
-    <param name="pIBitmapSource">
-      <para>Type: <b><see cref="IWICBitmapSource" />*</b></para>
-      <para>The <see cref="IWICBitmapSource" /> to create the bitmap from.</para>
-    </param>
-    <param name="x">
-      <para>Type: <b>UINT</b></para>
-      <para>The horizontal coordinate of the upper-left corner of the rectangle.</para>
-    </param>
-    <param name="y">
-      <para>Type: <b>UINT</b></para>
-      <para>The vertical coordinate of the upper-left corner of the rectangle.</para>
-    </param>
-    <param name="width">
-      <para>Type: <b>UINT</b></para>
-      <para>The width of the rectangle and the new bitmap.</para>
-    </param>
-    <param name="height">
-      <para>Type: <b>UINT</b></para>
-      <para>The height of the rectangle and the new bitmap.</para>
-    </param>
-    <param name="ppIBitmap">
-      <para>Type: <b><see cref="IWICBitmap" />**</b></para>
-      <para>A pointer that receives a pointer to the new bitmap.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Providing a rectangle that is larger than the source will produce undefined results.</para>
-      <para>This method always creates a separate copy of the source image, similar to the cache option <see cref="WICBitmapCacheOnLoad" />.</para>
-    </remarks>
+    <summary>Creates an <see cref="IWICBitmap" /> from a specified rectangle of an <see cref="IWICBitmapSource" />.</summary>
+    <param name="pIBitmapSource">The <see cref="IWICBitmapSource" /> to create the bitmap from.</param>
+    <param name="x">The horizontal coordinate of the upper-left corner of the rectangle.</param>
+    <param name="y">The vertical coordinate of the upper-left corner of the rectangle.</param>
+    <param name="width">The width of the rectangle and the new bitmap.</param>
+    <param name="height">The height of the rectangle and the new bitmap.</param>
+    <param name="ppIBitmap">A pointer that receives a pointer to the new bitmap.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateBitmapScaler">
-    <summary>
-      <para>Creates a new instance of an <see cref="IWICBitmapScaler" />.</para>
-    </summary>
-    <param name="ppIBitmapScaler">
-      <para>Type: <b><see cref="IWICBitmapScaler" />**</b></para>
-      <para>A pointer that receives a pointer to a new <see cref="IWICBitmapScaler" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Creates a new instance of an <see cref="IWICBitmapScaler" />.</summary>
+    <param name="ppIBitmapScaler">A pointer that receives a pointer to a new <see cref="IWICBitmapScaler" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateColorContext">
-    <summary>
-      <para>Creates a new instance of the <see cref="IWICColorContext" /> class.</para>
-    </summary>
-    <param name="ppIWICColorContext">
-      <para>Type: <b><see cref="IWICColorContext" />**</b></para>
-      <para>A pointer that receives a pointer to a new <see cref="IWICColorContext" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Creates a new instance of the <see cref="IWICColorContext" /> class.</summary>
+    <param name="ppIWICColorContext">A pointer that receives a pointer to a new <see cref="IWICColorContext" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateColorTransformer">
-    <summary>
-      <para>Creates a new instance of the <see cref="IWICColorTransform" /> class.</para>
-    </summary>
-    <param name="ppIWICColorTransform">
-      <para>Type: <b><see cref="IWICColorTransform" />**</b></para>
-      <para>A pointer that receives a pointer to a new <see cref="IWICColorTransform" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Creates a new instance of the <see cref="IWICColorTransform" /> class.</summary>
+    <param name="ppIWICColorTransform">A pointer that receives a pointer to a new <see cref="IWICColorTransform" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateComponentEnumerator">
-    <summary>
-      <para>Creates an <see cref="IEnumUnknown" /> object of the specified component types.</para>
-    </summary>
-    <param name="componentTypes">
-      <para>Type: <b>DWORD</b></para>
-      <para>The types of <see cref="WICComponentType" /> to enumerate.</para>
-    </param>
-    <param name="options">
-      <para>Type: <b>DWORD</b></para>
-      <para>The <see cref="WICComponentEnumerateOptions" /> used to enumerate the given component types.</para>
-    </param>
-    <param name="ppIEnumUnknown">
-      <para>Type: <b><see cref="IEnumUnknown" />**</b></para>
-      <para>A pointer that receives a pointer to a new component enumerator.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Component types must be enumerated separately. Combinations of component types and <b>WICAllComponents</b> are unsupported.</para>
-    </remarks>
+    <summary>Creates an <see cref="IEnumUnknown" /> object of the specified component types.</summary>
+    <param name="componentTypes">The types of <see cref="WICComponentType" /> to enumerate.</param>
+    <param name="options">The <see cref="WICComponentEnumerateOptions" /> used to enumerate the given component types.</param>
+    <param name="ppIEnumUnknown">A pointer that receives a pointer to a new component enumerator.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateComponentInfo">
-    <summary>
-      <para>Creates a new instance of the <see cref="IWICComponentInfo" /> class for the given component class identifier (CLSID).</para>
-    </summary>
-    <param name="clsidComponent">
-      <para>Type: <b>REFCLSID</b></para>
-      <para>The CLSID for the desired component.</para>
-    </param>
-    <param name="ppIInfo">
-      <para>Type: <b><see cref="IWICComponentInfo" />**</b></para>
-      <para>A pointer that receives a pointer to a new <see cref="IWICComponentInfo" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Creates a new instance of the <see cref="IWICComponentInfo" /> class for the given component class identifier (CLSID).</summary>
+    <param name="clsidComponent">The CLSID for the desired component.</param>
+    <param name="ppIInfo">A pointer that receives a pointer to a new <see cref="IWICComponentInfo" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateDecoder">
-    <summary>
-      <para>Creates a new instance of <see cref="IWICBitmapDecoder" />.</para>
-    </summary>
+    <summary>Creates a new instance of <see cref="IWICBitmapDecoder" />.</summary>
     <param name="guidContainerFormat">
-      <para>Type: <b>REFGUID</b></para>
       <para>The GUID for the desired container format.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>GUID_ContainerFormatBmp</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>GUID_ContainerFormatBmp</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The BMP container format GUID.</para>
-          </description>
-        </item>
-        <item>
+          <description>The BMP container format GUID.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>GUID_ContainerFormatPng</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>GUID_ContainerFormatPng</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The PNG container format GUID.</para>
-          </description>
-        </item>
-        <item>
+          <description>The PNG container format GUID.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>GUID_ContainerFormatIco</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>GUID_ContainerFormatIco</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The ICO container format GUID.</para>
-          </description>
-        </item>
-        <item>
+          <description>The ICO container format GUID.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>GUID_ContainerFormatJpeg</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>GUID_ContainerFormatJpeg</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The JPEG container format GUID.</para>
-          </description>
-        </item>
-        <item>
+          <description>The JPEG container format GUID.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>GUID_ContainerFormatTiff</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>GUID_ContainerFormatTiff</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The TIFF container format GUID.</para>
-          </description>
-        </item>
-        <item>
+          <description>The TIFF container format GUID.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>GUID_ContainerFormatGif</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>GUID_ContainerFormatGif</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The GIF container format GUID.</para>
-          </description>
-        </item>
-        <item>
+          <description>The GIF container format GUID.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>GUID_ContainerFormatWmp</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>GUID_ContainerFormatWmp</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The HD Photo container format GUID.</para>
-          </description>
-        </item>
+          <description>The HD Photo container format GUID.</description>
+        </listheader>
       </list>
     </param>
     <param name="pguidVendor">
-      <para>Type: <b>const GUID*</b></para>
       <para>The GUID for the preferred encoder vendor.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>NULL</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>NULL</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No preferred codec vendor.</para>
-          </description>
-        </item>
-        <item>
+          <description>No preferred codec vendor.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>GUID_VendorMicrosoft</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>GUID_VendorMicrosoft</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Prefer to use Microsoft encoder.</para>
-          </description>
-        </item>
-        <item>
+          <description>Prefer to use Microsoft encoder.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>GUID_VendorMicrosoftBuiltIn</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>GUID_VendorMicrosoftBuiltIn</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Prefer to use the native Microsoft encoder.</para>
-          </description>
-        </item>
+          <description>Prefer to use the native Microsoft encoder.</description>
+        </listheader>
       </list>
     </param>
-    <param name="ppIDecoder">
-      <para>Type: <b><see cref="IWICBitmapDecoder" />**</b></para>
-      <para>A pointer that receives a pointer to a new <see cref="IWICBitmapDecoder" />. You must initialize this <b>IWICBitmapDecoder</b> on a stream using the <see cref="Initialize" /> method later.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Other values may be available for both <i>guidContainerFormat</i> and <i>pguidVendor</i> depending on the installed WIC-enabled encoders.
-The values listed are those that are natively supported by the operating system.</para>
-    </remarks>
-    <seealso cref="IWICImagingFactory" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-guids-clsids">WIC GUIDs and CLSIDs</seealso>
+    <param name="ppIDecoder">A pointer that receives a pointer to a new <see cref="IWICBitmapDecoder" />. You must initialize this <b>IWICBitmapDecoder</b> on a stream using the <see cref="Initialize" /> method later.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateDecoderFromFileHandle">
-    <summary>
-      <para>Creates a new instance of the <see cref="IWICBitmapDecoder" /> based on the given file handle.</para>
-    </summary>
-    <param name="hFile">
-      <para>Type: <b>ULONG_PTR</b></para>
-      <para>The file handle to create the decoder from.</para>
-    </param>
-    <param name="pguidVendor">
-      <para>Type: <b>const GUID*</b></para>
-      <para>The GUID for the preferred decoder vendor. Use <b>NULL</b> if no preferred vendor.</para>
-    </param>
-    <param name="metadataOptions">
-      <para>Type: <b><see cref="WICDecodeOptions" /></b></para>
-      <para>The <see cref="WICDecodeOptions" /> to use when creating the decoder.</para>
-    </param>
-    <param name="ppIDecoder">
-      <para>Type: <b><see cref="IWICBitmapDecoder" />**</b></para>
-      <para>A pointer that receives a pointer to a new <see cref="IWICBitmapDecoder" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>When a decoder is created using this method, the file handle must remain alive during the lifetime of the decoder.</para>
-    </remarks>
-    <seealso cref="CreateFile" />
-    <seealso cref="IWICImagingFactory" />
+    <summary>Creates a new instance of the <see cref="IWICBitmapDecoder" /> based on the given file handle.</summary>
+    <param name="hFile">The file handle to create the decoder from.</param>
+    <param name="pguidVendor">The GUID for the preferred decoder vendor. Use <b>NULL</b> if no preferred vendor.</param>
+    <param name="metadataOptions">The <see cref="WICDecodeOptions" /> to use when creating the decoder.</param>
+    <param name="ppIDecoder">A pointer that receives a pointer to a new <see cref="IWICBitmapDecoder" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateDecoderFromFilename">
-    <summary>
-      <para>Creates a new instance of the <see cref="IWICBitmapDecoder" /> class based on the given file.</para>
-    </summary>
-    <param name="wzFilename">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a null-terminated string that specifies the name of an object to create or open.</para>
-    </param>
-    <param name="pguidVendor">
-      <para>Type: <b>const GUID*</b></para>
-      <para>The GUID for the preferred decoder vendor. Use <b>NULL</b> if no preferred vendor.</para>
-    </param>
+    <summary>Creates a new instance of the <see cref="IWICBitmapDecoder" /> class based on the given file.</summary>
+    <param name="wzFilename">A pointer to a null-terminated string that specifies the name of an object to create or open.</param>
+    <param name="pguidVendor">The GUID for the preferred decoder vendor. Use <b>NULL</b> if no preferred vendor.</param>
     <param name="dwDesiredAccess">
-      <para>Type: <b>DWORD</b></para>
       <para>The access to the object, which can be read, write, or both.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>GENERIC_READ</para>
+            <list type="bullet">
+              <listheader>
+                <term>GENERIC_READ</term>
+              </listheader>
+            </list>
           </description>
+          <description>Read access.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Read access.</para>
+            <list type="bullet">
+              <listheader>
+                <term>GENERIC_WRITE</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>GENERIC_WRITE</para>
-          </description>
-          <description>
-            <para>Write access.</para>
-          </description>
-        </item>
-      </list>
-      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/generic-access-rights">Generic Access Rights</a>.</para>
-    </param>
-    <param name="metadataOptions">
-      <para>Type: <b><see cref="WICDecodeOptions" /></b></para>
-      <para>The <see cref="WICDecodeOptions" /> to use when creating the decoder.</para>
-    </param>
-    <param name="ppIDecoder">
-      <para>Type: <b><see cref="IWICBitmapDecoder" />**</b></para>
-      <para>A pointer that receives a pointer to the new <see cref="IWICBitmapDecoder" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+          <description>Write access.</description>
+        </listheader>
+      </list> <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/generic-access-rights">Generic Access Rights</a>.</para></param>
+    <param name="metadataOptions">The <see cref="WICDecodeOptions" /> to use when creating the decoder.</param>
+    <param name="ppIDecoder">A pointer that receives a pointer to the new <see cref="IWICBitmapDecoder" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateDecoderFromStream">
-    <summary>
-      <para>Creates a new instance of the <see cref="IWICBitmapDecoder" /> class based on the given <see cref="IStream" />.</para>
-    </summary>
-    <param name="pIStream">
-      <para>Type: <b><see cref="IStream" />*</b></para>
-      <para>The stream to create the decoder from.</para>
-    </param>
-    <param name="pguidVendor">
-      <para>Type: <b>const GUID*</b></para>
-      <para>The GUID for the preferred decoder vendor. Use <b>NULL</b> if no preferred vendor.</para>
-    </param>
-    <param name="metadataOptions">
-      <para>Type: <b><see cref="WICDecodeOptions" /></b></para>
-      <para>The <see cref="WICDecodeOptions" /> to use when creating the decoder.</para>
-    </param>
-    <param name="ppIDecoder">
-      <para>Type: <b><see cref="IWICBitmapDecoder" />**</b></para>
-      <para>A pointer that receives a pointer to a new <see cref="IWICBitmapDecoder" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Creates a new instance of the <see cref="IWICBitmapDecoder" /> class based on the given <see cref="IStream" />.</summary>
+    <param name="pIStream">The stream to create the decoder from.</param>
+    <param name="pguidVendor">The GUID for the preferred decoder vendor. Use <b>NULL</b> if no preferred vendor.</param>
+    <param name="metadataOptions">The <see cref="WICDecodeOptions" /> to use when creating the decoder.</param>
+    <param name="ppIDecoder">A pointer that receives a pointer to a new <see cref="IWICBitmapDecoder" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateEncoder">
-    <summary>
-      <para>Creates a new instance of the <see cref="IWICBitmapEncoder" /> class.</para>
-    </summary>
+    <summary>Creates a new instance of the <see cref="IWICBitmapEncoder" /> class.</summary>
     <param name="guidContainerFormat">
-      <para>Type: <b>REFGUID</b></para>
       <para>The GUID for the desired container format.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>GUID_ContainerFormatBmp</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>GUID_ContainerFormatBmp</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The BMP container format GUID.</para>
-          </description>
-        </item>
-        <item>
+          <description>The BMP container format GUID.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>GUID_ContainerFormatPng</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>GUID_ContainerFormatPng</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The PNG container format GUID.</para>
-          </description>
-        </item>
-        <item>
+          <description>The PNG container format GUID.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>GUID_ContainerFormatIco</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>GUID_ContainerFormatIco</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The ICO container format GUID.</para>
-          </description>
-        </item>
-        <item>
+          <description>The ICO container format GUID.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>GUID_ContainerFormatJpeg</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>GUID_ContainerFormatJpeg</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The JPEG container format GUID.</para>
-          </description>
-        </item>
-        <item>
+          <description>The JPEG container format GUID.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>GUID_ContainerFormatTiff</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>GUID_ContainerFormatTiff</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The TIFF container format GUID.</para>
-          </description>
-        </item>
-        <item>
+          <description>The TIFF container format GUID.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>GUID_ContainerFormatGif</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>GUID_ContainerFormatGif</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The GIF container format GUID.</para>
-          </description>
-        </item>
-        <item>
+          <description>The GIF container format GUID.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>GUID_ContainerFormatWmp</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>GUID_ContainerFormatWmp</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The HD Photo container format GUID.</para>
-          </description>
-        </item>
+          <description>The HD Photo container format GUID.</description>
+        </listheader>
       </list>
     </param>
     <param name="pguidVendor">
-      <para>Type: <b>const GUID*</b></para>
       <para>The GUID for the preferred encoder vendor.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>NULL</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>NULL</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No preferred codec vendor.</para>
-          </description>
-        </item>
-        <item>
+          <description>No preferred codec vendor.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>GUID_VendorMicrosoft</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>GUID_VendorMicrosoft</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Prefer to use Microsoft encoder.</para>
-          </description>
-        </item>
-        <item>
+          <description>Prefer to use Microsoft encoder.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>GUID_VendorMicrosoftBuiltIn</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>GUID_VendorMicrosoftBuiltIn</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Prefer to use the native Microsoft encoder.</para>
-          </description>
-        </item>
+          <description>Prefer to use the native Microsoft encoder.</description>
+        </listheader>
       </list>
     </param>
-    <param name="ppIEncoder">
-      <para>Type: <b><see cref="IWICBitmapEncoder" />**</b></para>
-      <para>A pointer that receives a pointer to a new <see cref="IWICBitmapEncoder" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Other values may be available for both <i>guidContainerFormat</i> and <i>pguidVendor</i> depending on the installed WIC-enabled encoders.
-The values listed are those that are natively supported by the operating system.</para>
-    </remarks>
-    <seealso cref="IWICImagingFactory" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-guids-clsids">WIC GUIDs and CLSIDs</seealso>
+    <param name="ppIEncoder">A pointer that receives a pointer to a new <see cref="IWICBitmapEncoder" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateFastMetadataEncoderFromDecoder">
-    <summary>
-      <para>Creates a new instance of the fast metadata encoder based on the given <see cref="IWICBitmapDecoder" />.</para>
-    </summary>
-    <param name="pIDecoder">
-      <para>Type: <b><see cref="IWICBitmapDecoder" />*</b></para>
-      <para>The decoder to create the fast metadata encoder from.</para>
-    </param>
-    <param name="ppIFastEncoder">
-      <para>Type: <b><see cref="IWICFastMetadataEncoder" />**</b></para>
-      <para>When this method returns, contains a pointer to the new <see cref="IWICFastMetadataEncoder" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The Windows provided codecs do not support fast metadata encoding at the decoder level, and only support fast metadata encoding at the frame level. To create a fast metadata encoder from a frame, see <see cref="CreateFastMetadataEncoderFromFrameDecode" />.</para>
-    </remarks>
-    <seealso cref="IWICImagingFactory" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadataquerylanguage">Metadata Query Language Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+    <summary>Creates a new instance of the fast metadata encoder based on the given <see cref="IWICBitmapDecoder" />.</summary>
+    <param name="pIDecoder">The decoder to create the fast metadata encoder from.</param>
+    <param name="ppIFastEncoder">When this method returns, contains a pointer to the new <see cref="IWICFastMetadataEncoder" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateFastMetadataEncoderFromFrameDecode">
-    <summary>
-      <para>Creates a new instance of the fast metadata encoder based on the given image frame.</para>
-    </summary>
-    <param name="pIFrameDecoder">
-      <para>Type: <b><see cref="IWICBitmapFrameDecode" />*</b></para>
-      <para>The <see cref="IWICBitmapFrameDecode" /> to create the <see cref="IWICFastMetadataEncoder" /> from.</para>
-    </param>
-    <param name="ppIFastEncoder">
-      <para>Type: <b><see cref="IWICFastMetadataEncoder" />**</b></para>
-      <para>When this method returns, contains a pointer to a new fast metadata encoder.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>For a list of support metadata formats for fast metadata encoding, see <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</a>.</para>
-      <h4>Examples</h4>
-      <para>The following code demonstrates how to use the <b>CreateFastMetadataEncoderFromFrameDecode</b> method for fast metadata encoding.</para>
-      <code>IWICFastMetadataEncoder *pFME = NULL;
-IWICMetadataQueryWriter *pFMEQW = NULL;
-
-hr = pFactory-&gt;CreateFastMetadataEncoderFromFrameDecode(pFrameDecode, &amp;amp;amp;amp;amp;amp;pFME);
-
-if (SUCCEEDED(hr))
-{
-  hr = pFME-&gt;GetMetadataQueryWriter(&amp;amp;amp;amp;amp;amp;pFMEQW);
-}
-
-if (SUCCEEDED(hr))
-{
-  // Add additional metadata
-  PROPVARIANT value;
-
-  PropVariantInit(&amp;amp;amp;amp;amp;amp;value);
-
-  value.vt = VT_UI2;
-  value.uiVal = 99;
-  hr = pFMEQW-&gt;SetMetadataByName(L"/app1/ifd/{ushort=18249}", &amp;amp;amp;amp;amp;amp;value);
-
-  PropVariantClear(&amp;amp;amp;amp;amp;amp;value);
-}
-
-if (SUCCEEDED(hr))
-{
-  hr = pFME-&gt;Commit();
-}
-</code>
-    </remarks>
-    <seealso cref="IWICImagingFactory" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadataquerylanguage">Metadata Query Language Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">Writing Metadata</seealso>
+    <summary>Creates a new instance of the fast metadata encoder based on the given image frame.</summary>
+    <param name="pIFrameDecoder">The <see cref="IWICBitmapFrameDecode" /> to create the <see cref="IWICFastMetadataEncoder" /> from.</param>
+    <param name="ppIFastEncoder">When this method returns, contains a pointer to a new fast metadata encoder.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateFormatConverter">
-    <summary>
-      <para>Creates a new instance of the <see cref="IWICFormatConverter" /> class.</para>
-    </summary>
-    <param name="ppIFormatConverter">
-      <para>Type: <b><see cref="IWICFormatConverter" />**</b></para>
-      <para>A pointer that receives a pointer to a new <see cref="IWICFormatConverter" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Creates a new instance of the <see cref="IWICFormatConverter" /> class.</summary>
+    <param name="ppIFormatConverter">A pointer that receives a pointer to a new <see cref="IWICFormatConverter" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreatePalette">
-    <summary>
-      <para>Creates a new instance of the <see cref="IWICPalette" /> class.</para>
-    </summary>
-    <param name="ppIPalette">
-      <para>Type: <b><see cref="IWICPalette" />**</b></para>
-      <para>A pointer that receives a pointer to a new <see cref="IWICPalette" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Creates a new instance of the <see cref="IWICPalette" /> class.</summary>
+    <param name="ppIPalette">A pointer that receives a pointer to a new <see cref="IWICPalette" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateQueryWriter">
-    <summary>
-      <para>Creates a new instance of a query writer.</para>
-    </summary>
-    <param name="guidMetadataFormat">
-      <para>Type: <b>REFGUID</b></para>
-      <para>The GUID for the desired metadata format.</para>
-    </param>
-    <param name="pguidVendor">
-      <para>Type: <b>const GUID*</b></para>
-      <para>The GUID for the preferred metadata writer vendor. Use <b>NULL</b> if no preferred vendor.</para>
-    </param>
-    <param name="ppIQueryWriter">
-      <para>Type: <b><see cref="IWICMetadataQueryWriter" />**</b></para>
-      <para>When this method returns, contains a pointer to a new <see cref="IWICMetadataQueryWriter" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IWICImagingFactory" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadataquerylanguage">Metadata Query Language Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-guids-clsids">WIC GUIDs and CLSIDs</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+    <summary>Creates a new instance of a query writer.</summary>
+    <param name="guidMetadataFormat">The GUID for the desired metadata format.</param>
+    <param name="pguidVendor">The GUID for the preferred metadata writer vendor. Use <b>NULL</b> if no preferred vendor.</param>
+    <param name="ppIQueryWriter">When this method returns, contains a pointer to a new <see cref="IWICMetadataQueryWriter" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateQueryWriterFromReader">
-    <summary>
-      <para>Creates a new instance of a query writer based on the given query reader. The query writer will be pre-populated with metadata from the query reader.</para>
-    </summary>
-    <param name="pIQueryReader">
-      <para>Type: <b><see cref="IWICMetadataQueryReader" />*</b></para>
-      <para>The <see cref="IWICMetadataQueryReader" /> to create the <see cref="IWICMetadataQueryWriter" /> from.</para>
-    </param>
-    <param name="pguidVendor">
-      <para>Type: <b>const GUID*</b></para>
-      <para>The GUID for the preferred metadata writer vendor. Use <b>NULL</b> if no preferred vendor.</para>
-    </param>
-    <param name="ppIQueryWriter">
-      <para>Type: <b><see cref="IWICMetadataQueryWriter" />**</b></para>
-      <para>When this method returns, contains a pointer to a new metadata writer.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IWICImagingFactory" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadataquerylanguage">Metadata Query Language Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+    <summary>Creates a new instance of a query writer based on the given query reader. The query writer will be pre-populated with metadata from the query reader.</summary>
+    <param name="pIQueryReader">The <see cref="IWICMetadataQueryReader" /> to create the <see cref="IWICMetadataQueryWriter" /> from.</param>
+    <param name="pguidVendor">The GUID for the preferred metadata writer vendor. Use <b>NULL</b> if no preferred vendor.</param>
+    <param name="ppIQueryWriter">When this method returns, contains a pointer to a new metadata writer.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory.CreateStream">
-    <summary>
-      <para>Creates a new instance of the <see cref="IWICStream" /> class.</para>
-    </summary>
-    <param name="ppIWICStream">
-      <para>Type: <b><see cref="IWICStream" />**</b></para>
-      <para>A pointer that receives a pointer to a new <see cref="IWICStream" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Creates a new instance of the <see cref="IWICStream" /> class.</summary>
+    <param name="ppIWICStream">A pointer that receives a pointer to a new <see cref="IWICStream" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICImagingFactory">
-    <summary>
-      <para>Exposes methods used to create components for the Windows Imaging Component (WIC) such as decoders, encoders and pixel format converters.</para>
-    </summary>
+    <summary>Exposes methods used to create components for the Windows Imaging Component (WIC) such as decoders, encoders and pixel format converters.</summary>
   </member>
 </doc>

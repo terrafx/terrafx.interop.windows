@@ -3,13 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDCompositionTransform3D">
-    <summary>
-      <para>Represents a 3D transformation effect that can be used to modify the rasterization of a visual subtree.</para>
-    </summary>
-    <remarks>
-      <para>The <b>IDCompositionTransform3D</b> interface is an abstract interface that represents a 3D perspective transformation effect. A 3D transform object can be associated with multiple visuals and multiple effect groups. When a 3D transform object is modified, all affected visuals are recomposed to reflect the change.</para>
-    </remarks>
-    <seealso cref="IDCompositionEffect" />
-    <seealso cref="IDCompositionVisual.SetEffect" />
+    <summary>Represents a 3D transformation effect that can be used to modify the rasterization of a visual subtree.</summary>
   </member>
 </doc>

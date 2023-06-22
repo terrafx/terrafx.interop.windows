@@ -4,26 +4,16 @@
 <doc>
   <member name="MFP_FRAME_STEP_EVENT">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Event structure for the <b>MFP_EVENT_TYPE_FRAME_STEP</b> event. This event is sent when the <see cref="IMFPMediaPlayer.FrameStep" /> method completes.</para>
     </summary>
-    <remarks>
-      <para>To get a pointer to this structure, cast the <i>pEventHeader</i> parameter of the <see cref="IMFPMediaPlayerCallback.OnMediaPlayerEvent" />  method.  You can use the <see cref="MFP_GET_FRAME_STEP_EVENT" /> macro for this purpose.</para>
-    </remarks>
-    <seealso cref="IMFPMediaPlayerCallback" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
   </member>
   <member name="MFP_FRAME_STEP_EVENT.header">
     <summary>
-      <para>
-        <see cref="MFP_EVENT_HEADER" /> structure that contains data common to all <see cref="IMFPMediaPlayer" /> events.</para>
-    </summary>
+      <see cref="MFP_EVENT_HEADER" /> structure that contains data common to all <see cref="IMFPMediaPlayer" /> events.</summary>
   </member>
   <member name="MFP_FRAME_STEP_EVENT.pMediaItem">
-    <summary>
-      <para>Pointer to the <see cref="IMFPMediaItem" /> interface of the current media item.</para>
-    </summary>
+    <summary>Pointer to the <see cref="IMFPMediaItem" /> interface of the current media item.</summary>
   </member>
 </doc>

@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_MEDIA_ENGINE_STREAMTYPE_FAILED">
-    <summary>
-      <para>Identifies the kind of media stream that failed.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Identifies the kind of media stream that failed.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_STREAMTYPE_FAILED.MF_MEDIA_ENGINE_STREAMTYPE_FAILED_UNKNOWN">
-    <summary>
-      <para>The stream type is unknown.</para>
-    </summary>
+    <summary>The stream type is unknown.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_STREAMTYPE_FAILED.MF_MEDIA_ENGINE_STREAMTYPE_FAILED_AUDIO">
-    <summary>
-      <para>The stream is an audio stream.</para>
-    </summary>
+    <summary>The stream is an audio stream.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_STREAMTYPE_FAILED.MF_MEDIA_ENGINE_STREAMTYPE_FAILED_VIDEO">
-    <summary>
-      <para>The stream is a video stream.</para>
-    </summary>
+    <summary>The stream is a video stream.</summary>
   </member>
 </doc>

@@ -3,29 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="XAUDIO2_EFFECT_CHAIN">
-    <summary>
-      <para>Defines an effect chain.</para>
-    </summary>
-    <remarks>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--create-an-effect-chain">How to: Create an Effect Chain</seealso>
-    <seealso cref="IXAudio2.CreateMasteringVoice" />
-    <seealso cref="IXAudio2.CreateSourceVoice" />
-    <seealso cref="IXAudio2.CreateSubmixVoice" />
-    <seealso cref="IXAudio2Voice.SetEffectChain" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xapo-overview">XAPO Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/structures">XAudio2 Structures</seealso>
+    <summary>Defines an effect chain.</summary>
   </member>
   <member name="XAUDIO2_EFFECT_CHAIN.EffectCount">
-    <summary>
-      <para>Number of effects in the effect chain for the voice.</para>
-    </summary>
+    <summary>Number of effects in the effect chain for the voice.</summary>
   </member>
   <member name="XAUDIO2_EFFECT_CHAIN.pEffectDescriptors">
-    <summary>
-      <para>Array of <see cref="XAUDIO2_EFFECT_DESCRIPTOR" /> structures containing pointers to XAPO instances.</para>
-    </summary>
+    <summary>Array of <see cref="XAUDIO2_EFFECT_DESCRIPTOR" /> structures containing pointers to XAPO instances.</summary>
   </member>
 </doc>

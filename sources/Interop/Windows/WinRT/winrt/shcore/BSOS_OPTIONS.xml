@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="BSOS_OPTIONS">
+    <summary>Specifies the behavior of a <a href="https://docs.microsoft.com//uwp/api/windows.storage.streams.randomaccessstream">RandomAccessStream</a> that encapsulates a Component Object Model (COM) <see cref="IStream" />.</summary>
+  </member>
+  <member name="BSOS_OPTIONS.BSOS_DEFAULT">
+    <summary>When creating a <a href="https://docs.microsoft.com//uwp/api/windows.storage.streams.randomaccessstream">RandomAccessStream</a> over a stream, use the base <a href="https://docs.microsoft.com//previous-versions/hh438400(v=vs.85)">IRandomAccessStream</a> behavior on the <see cref="STGM" /> mode from the <see cref="Stat" /> method.</summary>
+  </member>
+  <member name="BSOS_OPTIONS.BSOS_PREFERDESTINATIONSTREAM">
+    <summary>Use the <see cref="GetDestinationStream" /> method.</summary>
+  </member>
+</doc>

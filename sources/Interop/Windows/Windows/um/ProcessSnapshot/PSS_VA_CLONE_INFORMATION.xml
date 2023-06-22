@@ -3,18 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PSS_VA_CLONE_INFORMATION">
-    <summary>
-      <para>Holds virtual address (VA) clone information returned by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-pssquerysnapshot">PssQuerySnapshot</a>.</para>
-    </summary>
-    <remarks>
-      <para>
-        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-pssquerysnapshot">PssQuerySnapshot</a> returns a <b>PSS_VA_CLONE_INFORMATION</b> structure when the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ne-processsnapshot-pss_query_information_class">PSS_QUERY_INFORMATION_CLASS</a> member that the caller provides it is  <b>PSS_QUERY_VA_CLONE_INFORMATION</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+    <summary>Holds virtual address (VA) clone information returned by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-pssquerysnapshot">PssQuerySnapshot</a>.</summary>
   </member>
   <member name="PSS_VA_CLONE_INFORMATION.VaCloneHandle">
-    <summary>
-      <para>A handle to the VA clone process.</para>
-    </summary>
+    <summary>A handle to the VA clone process.</summary>
   </member>
 </doc>

@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFSTREAMSINK_MARKER_TYPE">
-    <summary>
-      <para>Defines stream marker information for the <see cref="IMFStreamSink.PlaceMarker" /> method. The <see cref="PlaceMarker" /> method places a marker on the stream between samples. The <b>MFSTREAMSINK_MARKER_TYPE</b> enumeration defines the marker type and the type of information associated with the marker.</para>
-    </summary>
-    <remarks>
-      <para>If the <a href="https://docs.microsoft.com//windows/desktop/medfound/streaming-audio-renderer">Streaming Audio Renderer</a> receives an <b>MFSTREAMSINK_MARKER_TICK</b> marker, it inserts silence to cover the gap in the data.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Defines stream marker information for the <see cref="IMFStreamSink.PlaceMarker" /> method. The <see cref="PlaceMarker" /> method places a marker on the stream between samples. The <b>MFSTREAMSINK_MARKER_TYPE</b> enumeration defines the marker type and the type of information associated with the marker.</summary>
   </member>
   <member name="MFSTREAMSINK_MARKER_TYPE.MFSTREAMSINK_MARKER_DEFAULT">
-    <summary>
-      <para>This marker is for the application's use and does not convey any information to the stream sink.</para>
-    </summary>
+    <summary>This marker is for the application's use and does not convey any information to the stream sink.</summary>
   </member>
   <member name="MFSTREAMSINK_MARKER_TYPE.MFSTREAMSINK_MARKER_ENDOFSEGMENT">
-    <summary>
-      <para>This marker indicates the end of a segment within a presentation. There might be a gap in the stream until the next segment starts. There is no data associated with this marker.</para>
-    </summary>
+    <summary>This marker indicates the end of a segment within a presentation. There might be a gap in the stream until the next segment starts. There is no data associated with this marker.</summary>
   </member>
   <member name="MFSTREAMSINK_MARKER_TYPE.MFSTREAMSINK_MARKER_TICK">
-    <summary>
-      <para>This marker indicates that there is a gap in the stream. The marker data is a <b>LONGLONG</b> value (VT_I8) that specifies the time for the missing sample. The next sample received after this marker might but will not necessarily have the discontinuity flag: the data might remain continuous after the time gap. This marker corresponds to an <a href="https://docs.microsoft.com//windows/desktop/medfound/mestreamtick">MEStreamTick</a> event from the stream.</para>
-    </summary>
+    <summary>This marker indicates that there is a gap in the stream. The marker data is a <b>LONGLONG</b> value (VT_I8) that specifies the time for the missing sample. The next sample received after this marker might but will not necessarily have the discontinuity flag: the data might remain continuous after the time gap. This marker corresponds to an <a href="https://docs.microsoft.com//windows/desktop/medfound/mestreamtick">MEStreamTick</a> event from the stream.</summary>
   </member>
   <member name="MFSTREAMSINK_MARKER_TYPE.MFSTREAMSINK_MARKER_EVENT">
-    <summary>
-      <para>This marker contains a media event. The marker data is a pointer to the event's <see cref="IMFMediaEvent" /> interface (VT_UNKNOWN).</para>
-    </summary>
+    <summary>This marker contains a media event. The marker data is a pointer to the event's <see cref="IMFMediaEvent" /> interface (VT_UNKNOWN).</summary>
   </member>
 </doc>

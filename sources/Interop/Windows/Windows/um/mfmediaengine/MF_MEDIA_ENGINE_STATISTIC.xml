@@ -7,33 +7,21 @@
       <para>Identifies statistics that the Media Engine tracks during playback. To get a playback statistic from the Media Engine, call <see cref="IMFMediaEngineEx.GetStatistics" />.</para>
       <para>In the descriptions that follow, the data type and value-type tag for the <see cref="PROPVARIANT" /> are listed in parentheses.</para>
     </summary>
-    <seealso cref="IMFMediaEngineEx.GetStatistics" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
   </member>
   <member name="MF_MEDIA_ENGINE_STATISTIC.MF_MEDIA_ENGINE_STATISTIC_FRAMES_RENDERED">
-    <summary>
-      <para>The number of rendered video frames. (<b>ULONG</b>, <b>VT_UI4</b>)</para>
-    </summary>
+    <summary>The number of rendered video frames. (<b>ULONG</b>, <b>VT_UI4</b>)</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_STATISTIC.MF_MEDIA_ENGINE_STATISTIC_FRAMES_DROPPED">
-    <summary>
-      <para>The number of dropped video frames. (<b>ULONG</b>, <b>VT_UI4</b>)</para>
-    </summary>
+    <summary>The number of dropped video frames. (<b>ULONG</b>, <b>VT_UI4</b>)</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_STATISTIC.MF_MEDIA_ENGINE_STATISTIC_BYTES_DOWNLOADED">
-    <summary>
-      <para>The number of bytes that have been downloaded since the last HTTP range request. (<b>ULARGE_INTEGER</b>, <b>VT_UI8</b>).</para>
-    </summary>
+    <summary>The number of bytes that have been downloaded since the last HTTP range request. (<b>ULARGE_INTEGER</b>, <b>VT_UI8</b>).</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_STATISTIC.MF_MEDIA_ENGINE_STATISTIC_BUFFER_PROGRESS">
-    <summary>
-      <para>The percentage of the playout buffer filled during buffering. The value is an integer in the range 0–100. (<b>LONG</b>, <b>VT_I4</b>)</para>
-    </summary>
+    <summary>The percentage of the playout buffer filled during buffering. The value is an integer in the range 0–100. (<b>LONG</b>, <b>VT_I4</b>)</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_STATISTIC.MF_MEDIA_ENGINE_STATISTIC_FRAMES_PER_SECOND">
-    <summary>
-      <para>The frames per second. (<b>FLOAT</b>, <b>VT_R4</b>)</para>
-    </summary>
+    <summary>The frames per second. (<b>FLOAT</b>, <b>VT_R4</b>)</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_STATISTIC.MF_MEDIA_ENGINE_STATISTIC_PLAYBACK_JITTER">
     <summary>
@@ -49,7 +37,7 @@
   </member>
   <member name="MF_MEDIA_ENGINE_STATISTIC.MF_MEDIA_ENGINE_STATISTIC_TOTAL_FRAME_DELAY">
     <summary>
-      <para>The total amount of frame delay.  (<b>DOUBLE</b>, <b>VT_R8</b>)</para>
+      <para>The total amount of frame delay. (<b>DOUBLE</b>, <b>VT_R8</b>)</para>
       <para>Supported in Windows 8.1 and later.</para>
     </summary>
   </member>

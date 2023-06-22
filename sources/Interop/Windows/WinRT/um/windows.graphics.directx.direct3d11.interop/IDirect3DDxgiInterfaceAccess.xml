@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirect3DDxgiInterfaceAccess">
+    <summary>IDirect3DDxgiInterfaceAccess is a COM interface, which must be implemented by anything that implements <a href="https://docs.microsoft.com//uwp/api/windows.graphics.directx.direct3d11.idirect3ddevice">IDirect3DDevice</a> or <a href="https://docs.microsoft.com//uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface">IDirect3DSurface</a>. <b>ID3D12GraphicsCommandList5</b> inherits from the <see cref="IUnknown interface" />.</summary>
+  </member>
+</doc>

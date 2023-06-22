@@ -3,8 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IIsolatedAppLauncher">
-    <summary>
-      <para>Enables apps to determine whether they are running in a Windows Defender Application Guard container (VM container environment).</para>
-    </summary>
+    <summary>Enables apps to determine whether they are running in a Windows Defender Application Guard container (VM container environment).</summary>
   </member>
 </doc>

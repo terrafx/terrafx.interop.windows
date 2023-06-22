@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_BUFFER_SRV_FLAGS">
-    <summary>
-      <para>Identifies how to view a buffer resource.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is used by <see cref="D3D12_BUFFER_SRV" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-12-enumerations">Core Enumerations</seealso>
+    <summary>Identifies how to view a buffer resource.</summary>
   </member>
   <member name="D3D12_BUFFER_SRV_FLAGS.D3D12_BUFFER_SRV_FLAG_NONE">
-    <summary>
-      <para>Indicates a default view.</para>
-    </summary>
+    <summary>Indicates a default view.</summary>
   </member>
   <member name="D3D12_BUFFER_SRV_FLAGS.D3D12_BUFFER_SRV_FLAG_RAW">
-    <summary>
-      <para>View the buffer as raw. For more info about raw viewing of buffers, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-intro">Raw Views of Buffers</a>.</para>
-    </summary>
+    <summary>View the buffer as raw. For more info about raw viewing of buffers, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-intro">Raw Views of Buffers</a>.</summary>
   </member>
 </doc>

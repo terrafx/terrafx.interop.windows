@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfPersistentPropertyLoaderACP.LoadProperty">
-    <summary>
-      <para>Called to load a property.</para>
-    </summary>
-    <param name="pHdr">
-      <para>Pointer to a <see cref="TF_PERSISTENT_PROPERTY_HEADER_ACP" /> structure that identifies the property to load. This structure contains the same data as the structure passed to <see cref="ITextStoreACPServices.Unserialize" />.</para>
-    </param>
-    <param name="ppStream">
-      <para>Pointer to an <b>IStream</b> interface pointer that receives the stream object.</para>
-    </param>
+    <summary>Called to load a property.</summary>
+    <param name="pHdr">Pointer to a <see cref="TF_PERSISTENT_PROPERTY_HEADER_ACP" /> structure that identifies the property to load. This structure contains the same data as the structure passed to <see cref="ITextStoreACPServices.Unserialize" />.</param>
+    <param name="ppStream">Pointer to an <b>IStream</b> interface pointer that receives the stream object.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -19,51 +13,46 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Only property data is written to the stream. The header data is not written to the stream.</para>
-      <para>Obtain the original position of the stream before writing to the stream. The original position should be restored in the stream before returning from this method.</para>
-    </remarks>
-    <seealso cref="ITextStoreACPServices.Unserialize " />
-    <seealso cref="ITfPersistentPropertyLoaderACP" />
-    <seealso cref="TF_PERSISTENT_PROPERTY_HEADER_ACP " />
   </member>
   <member name="ITfPersistentPropertyLoaderACP">
-    <summary>
-      <para>The <b>ITfPersistentPropertyLoaderACP</b> interface is implemented by an application and used by the TSF manager to load properties asynchronously. An application passes an instance of this interface when calling <see cref="ITextStoreACPServices.Unserialize" />. When properties are loaded by a call to <b>ITextStoreACPServices.Unserialize</b> , this interface is used to load properties when required rather than all at once.</para>
-    </summary>
-    <seealso cref="ITextStoreACPServices.Unserialize " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfPersistentPropertyLoaderACP</b> interface is implemented by an application and used by the TSF manager to load properties asynchronously. An application passes an instance of this interface when calling <see cref="ITextStoreACPServices.Unserialize" />. When properties are loaded by a call to <b>ITextStoreACPServices.Unserialize</b> , this interface is used to load properties when required rather than all at once.</summary>
   </member>
 </doc>

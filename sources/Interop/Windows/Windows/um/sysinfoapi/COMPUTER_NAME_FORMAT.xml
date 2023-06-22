@@ -3,26 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="COMPUTER_NAME_FORMAT">
-    <summary>
-      <para>Specifies a type of computer name.</para>
-    </summary>
-    <seealso cref="GetComputerNameEx" />
-    <seealso cref="SetComputerNameEx" />
+    <summary>Specifies a type of computer name.</summary>
   </member>
   <member name="COMPUTER_NAME_FORMAT.ComputerNameNetBIOS">
-    <summary>
-      <para>The NetBIOS name of the local computer or the cluster associated with the local computer. This name is limited to MAX_COMPUTERNAME_LENGTH + 1 characters and may be a truncated version of the DNS host name. For example, if the DNS host name is "corporate-mail-server", the NetBIOS name would be "corporate-mail-".</para>
-    </summary>
+    <summary>The NetBIOS name of the local computer or the cluster associated with the local computer. This name is limited to MAX_COMPUTERNAME_LENGTH + 1 characters and may be a truncated version of the DNS host name. For example, if the DNS host name is "corporate-mail-server", the NetBIOS name would be "corporate-mail-".</summary>
   </member>
   <member name="COMPUTER_NAME_FORMAT.ComputerNameDnsHostname">
-    <summary>
-      <para>The DNS name of the local computer or the cluster associated with the local computer.</para>
-    </summary>
+    <summary>The DNS name of the local computer or the cluster associated with the local computer.</summary>
   </member>
   <member name="COMPUTER_NAME_FORMAT.ComputerNameDnsDomain">
-    <summary>
-      <para>The name of the DNS domain assigned to the local computer or the cluster associated with the local computer.</para>
-    </summary>
+    <summary>The name of the DNS domain assigned to the local computer or the cluster associated with the local computer.</summary>
   </member>
   <member name="COMPUTER_NAME_FORMAT.ComputerNameDnsFullyQualified">
     <summary>
@@ -31,28 +21,18 @@
     </summary>
   </member>
   <member name="COMPUTER_NAME_FORMAT.ComputerNamePhysicalNetBIOS">
-    <summary>
-      <para>The NetBIOS name of the local computer. On a cluster, this is the NetBIOS name of the local node on the cluster.</para>
-    </summary>
+    <summary>The NetBIOS name of the local computer. On a cluster, this is the NetBIOS name of the local node on the cluster.</summary>
   </member>
   <member name="COMPUTER_NAME_FORMAT.ComputerNamePhysicalDnsHostname">
-    <summary>
-      <para>The DNS host name of the local computer. On a cluster, this is the DNS host name of the local node on the cluster.</para>
-    </summary>
+    <summary>The DNS host name of the local computer. On a cluster, this is the DNS host name of the local node on the cluster.</summary>
   </member>
   <member name="COMPUTER_NAME_FORMAT.ComputerNamePhysicalDnsDomain">
-    <summary>
-      <para>The name of the DNS domain assigned to the local computer. On a cluster, this is the DNS domain of the local node on the cluster.</para>
-    </summary>
+    <summary>The name of the DNS domain assigned to the local computer. On a cluster, this is the DNS domain of the local node on the cluster.</summary>
   </member>
   <member name="COMPUTER_NAME_FORMAT.ComputerNamePhysicalDnsFullyQualified">
-    <summary>
-      <para>The fully qualified DNS name that uniquely identifies the computer. On a cluster, this is the fully qualified DNS name of the local node on the cluster. The fully qualified DNS name is a combination of the DNS host name and the DNS domain name, using the form <i>HostName</i>.<i>DomainName</i>.</para>
-    </summary>
+    <summary>The fully qualified DNS name that uniquely identifies the computer. On a cluster, this is the fully qualified DNS name of the local node on the cluster. The fully qualified DNS name is a combination of the DNS host name and the DNS domain name, using the form <i>HostName</i>.<i>DomainName</i>.</summary>
   </member>
   <member name="COMPUTER_NAME_FORMAT.ComputerNameMax">
-    <summary>
-      <para>Not used.</para>
-    </summary>
+    <summary>Not used.</summary>
   </member>
 </doc>

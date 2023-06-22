@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TIMECAPS">
-    <summary>
-      <para>The <b>TIMECAPS</b> structure contains information about the resolution of the timer.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/multimedia-timer-structures">Multimedia Timer Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/multimedia-timers">Multimedia Timers</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/timer-resolution">Timer Resolution</seealso>
-    <seealso cref="timeGetDevCaps" />
+    <summary>The <b>TIMECAPS</b> structure contains information about the resolution of the timer.</summary>
   </member>
   <member name="TIMECAPS.wPeriodMin">
-    <summary>
-      <para>The minimum supported resolution, in milliseconds.</para>
-    </summary>
+    <summary>The minimum supported resolution, in milliseconds.</summary>
   </member>
   <member name="TIMECAPS.wPeriodMax">
-    <summary>
-      <para>The maximum supported resolution, in milliseconds.</para>
-    </summary>
+    <summary>The maximum supported resolution, in milliseconds.</summary>
   </member>
 </doc>

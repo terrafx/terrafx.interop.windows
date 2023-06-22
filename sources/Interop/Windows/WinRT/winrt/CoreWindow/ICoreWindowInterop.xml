@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ICoreWindowInterop.get_WindowHandle">
+    <summary>
+      <para>Obtains the handle (HWND) to the <a href="https://msdn.microsoft.com/60b1c8c6-c136-4c4c-8e46-69a792d58ed0">CoreWindow</a> for an app.</para>
+      <para>This property is read-only.</para>
+    </summary>
+  </member>
+  <member name="ICoreWindowInterop.WindowHandle">
+    <summary>
+      <para>Obtains the handle (HWND) to the <a href="https://msdn.microsoft.com/60b1c8c6-c136-4c4c-8e46-69a792d58ed0">CoreWindow</a> for an app.</para>
+      <para>This property is read-only.</para>
+    </summary>
+  </member>
+  <member name="ICoreWindowInterop.MessageHandled">
+    <summary>
+      <para>Sets whether or not the message to the <a href="https://msdn.microsoft.com/60b1c8c6-c136-4c4c-8e46-69a792d58ed0">CoreWindow</a> has been handled.</para>
+      <para>This property is write-only.</para>
+    </summary>
+  </member>
+  <member name="ICoreWindowInterop.put_MessageHandled">
+    <summary>
+      <para>Sets whether or not the message to the <a href="https://msdn.microsoft.com/60b1c8c6-c136-4c4c-8e46-69a792d58ed0">CoreWindow</a> has been handled.</para>
+      <para>This property is write-only.</para>
+    </summary>
+  </member>
+  <member name="ICoreWindowInterop">
+    <summary>Enables apps to obtain the window handle of the window (<a href="https://docs.microsoft.com//uwp/api/windows.ui.core.corewindow">CoreWindow</a>) associated with this interface.</summary>
+  </member>
+</doc>

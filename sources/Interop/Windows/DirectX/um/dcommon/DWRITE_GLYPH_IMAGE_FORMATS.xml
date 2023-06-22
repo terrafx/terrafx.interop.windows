@@ -3,53 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_GLYPH_IMAGE_FORMATS">
-    <summary>
-      <para>Specifies which formats are supported in the font, either at a font-wide level or per glyph.</para>
-    </summary>
+    <summary>Specifies which formats are supported in the font, either at a font-wide level or per glyph.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_FORMATS.DWRITE_GLYPH_IMAGE_FORMATS_NONE">
-    <summary>
-      <para>Indicates no data is available for this glyph.</para>
-    </summary>
+    <summary>Indicates no data is available for this glyph.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_FORMATS.DWRITE_GLYPH_IMAGE_FORMATS_TRUETYPE">
-    <summary>
-      <para>The glyph has TrueType outlines.</para>
-    </summary>
+    <summary>The glyph has TrueType outlines.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_FORMATS.DWRITE_GLYPH_IMAGE_FORMATS_CFF">
-    <summary>
-      <para>The glyph has CFF outlines.</para>
-    </summary>
+    <summary>The glyph has CFF outlines.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_FORMATS.DWRITE_GLYPH_IMAGE_FORMATS_COLR">
-    <summary>
-      <para>The glyph has multilayered COLR data.</para>
-    </summary>
+    <summary>The glyph has multilayered COLR data.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_FORMATS.DWRITE_GLYPH_IMAGE_FORMATS_SVG">
-    <summary>
-      <para>The glyph has SVG outlines as standard XML.  Fonts may store the content gzip'd rather than plain text, indicated by the first two bytes as gzip header {0x1F 0x8B}.</para>
-    </summary>
+    <summary>The glyph has SVG outlines as standard XML. Fonts may store the content gzip'd rather than plain text, indicated by the first two bytes as gzip header {0x1F 0x8B}.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_FORMATS.DWRITE_GLYPH_IMAGE_FORMATS_PNG">
-    <summary>
-      <para>The glyph has PNG image data, with standard PNG IHDR.</para>
-    </summary>
+    <summary>The glyph has PNG image data, with standard PNG IHDR.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_FORMATS.DWRITE_GLYPH_IMAGE_FORMATS_JPEG">
-    <summary>
-      <para>The glyph has JPEG image data, with standard JIFF SOI header.</para>
-    </summary>
+    <summary>The glyph has JPEG image data, with standard JIFF SOI header.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_FORMATS.DWRITE_GLYPH_IMAGE_FORMATS_TIFF">
-    <summary>
-      <para>The glyph has TIFF image data.</para>
-    </summary>
+    <summary>The glyph has TIFF image data.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_FORMATS.DWRITE_GLYPH_IMAGE_FORMATS_PREMULTIPLIED_B8G8R8A8">
-    <summary>
-      <para>The glyph has raw 32-bit premultiplied BGRA data.</para>
-    </summary>
+    <summary>The glyph has raw 32-bit premultiplied BGRA data.</summary>
   </member>
 </doc>

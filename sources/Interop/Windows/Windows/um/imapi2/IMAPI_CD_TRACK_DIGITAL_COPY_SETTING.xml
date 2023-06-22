@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAPI_CD_TRACK_DIGITAL_COPY_SETTING">
-    <summary>
-      <para>Defines the digital copy setting values available for a given track.</para>
-    </summary>
+    <summary>Defines the digital copy setting values available for a given track.</summary>
   </member>
   <member name="IMAPI_CD_TRACK_DIGITAL_COPY_SETTING.IMAPI_CD_TRACK_DIGITAL_COPY_PERMITTED">
-    <summary>
-      <para>Digital copies of the given track are allowed.</para>
-    </summary>
+    <summary>Digital copies of the given track are allowed.</summary>
   </member>
   <member name="IMAPI_CD_TRACK_DIGITAL_COPY_SETTING.IMAPI_CD_TRACK_DIGITAL_COPY_PROHIBITED">
-    <summary>
-      <para>Digital copies of the given track are not allowed using consumer electronics CD recorders.  This condition typically has no effect on PC-based CD players.</para>
-    </summary>
+    <summary>Digital copies of the given track are not allowed using consumer electronics CD recorders. This condition typically has no effect on PC-based CD players.</summary>
   </member>
   <member name="IMAPI_CD_TRACK_DIGITAL_COPY_SETTING.IMAPI_CD_TRACK_DIGITAL_COPY_SCMS">
-    <summary>
-      <para>The given track is a digital copy of a copy protected track.  No further copies using consumer electronics CD recorders will be allowed.  This condition typically has no effect on PC-based CD players.</para>
-    </summary>
+    <summary>The given track is a digital copy of a copy protected track. No further copies using consumer electronics CD recorders will be allowed. This condition typically has no effect on PC-based CD players.</summary>
   </member>
 </doc>

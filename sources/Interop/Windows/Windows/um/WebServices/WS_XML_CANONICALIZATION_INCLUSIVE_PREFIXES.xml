@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES">
-    <summary>
-      <para>An array of XML prefixes that should be treated as
-inclusive prefixes during exclusive XML canonicalization.  The
-treatment of inclusive prefixes is defined in
-RFC 3741.</para>
-    </summary>
+    <summary>An array of XML prefixes that should be treated as inclusive prefixes during exclusive XML canonicalization. The treatment of inclusive prefixes is defined in RFC 3741.</summary>
   </member>
   <member name="WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES.prefixCount">
-    <summary>
-      <para>The number of prefixes.</para>
-    </summary>
+    <summary>The number of prefixes.</summary>
   </member>
   <member name="WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES.prefixes">
-    <summary>
-      <para>The array of prefixes.</para>
-    </summary>
+    <summary>The array of prefixes.</summary>
   </member>
 </doc>

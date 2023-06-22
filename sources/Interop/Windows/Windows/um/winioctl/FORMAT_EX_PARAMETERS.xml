@@ -3,52 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FORMAT_EX_PARAMETERS">
-    <summary>
-      <para>Contains information used in formatting a contiguous set of disk tracks. It is used by the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_format_tracks_ex">IOCTL_DISK_FORMAT_TRACKS_EX</a> control code.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_format_tracks_ex">IOCTL_DISK_FORMAT_TRACKS_EX</seealso>
-    <seealso cref="MEDIA_TYPE" />
+    <summary>Contains information used in formatting a contiguous set of disk tracks. It is used by the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_format_tracks_ex">IOCTL_DISK_FORMAT_TRACKS_EX</a> control code.</summary>
   </member>
   <member name="FORMAT_EX_PARAMETERS.MediaType">
-    <summary>
-      <para>The media type. For a list of values, see
-<see cref="MEDIA_TYPE" />.</para>
-    </summary>
+    <summary>The media type. For a list of values, see<see cref="MEDIA_TYPE" />.</summary>
   </member>
   <member name="FORMAT_EX_PARAMETERS.StartCylinderNumber">
-    <summary>
-      <para>The cylinder number at which to begin the format.</para>
-    </summary>
+    <summary>The cylinder number at which to begin the format.</summary>
   </member>
   <member name="FORMAT_EX_PARAMETERS.EndCylinderNumber">
-    <summary>
-      <para>The cylinder number at which to end the format.</para>
-    </summary>
+    <summary>The cylinder number at which to end the format.</summary>
   </member>
   <member name="FORMAT_EX_PARAMETERS.StartHeadNumber">
-    <summary>
-      <para>The beginning head location.</para>
-    </summary>
+    <summary>The beginning head location.</summary>
   </member>
   <member name="FORMAT_EX_PARAMETERS.EndHeadNumber">
-    <summary>
-      <para>The ending head location.</para>
-    </summary>
+    <summary>The ending head location.</summary>
   </member>
   <member name="FORMAT_EX_PARAMETERS.FormatGapLength">
-    <summary>
-      <para>The length of the gap between two successive sectors on a track.</para>
-    </summary>
+    <summary>The length of the gap between two successive sectors on a track.</summary>
   </member>
   <member name="FORMAT_EX_PARAMETERS.SectorsPerTrack">
-    <summary>
-      <para>The number of sectors in each track.</para>
-    </summary>
+    <summary>The number of sectors in each track.</summary>
   </member>
   <member name="FORMAT_EX_PARAMETERS.SectorNumber">
-    <summary>
-      <para>An array of values specifying the sector numbers of the sectors to be included in the track to be formatted.</para>
-    </summary>
+    <summary>An array of values specifying the sector numbers of the sectors to be included in the track to be formatted.</summary>
   </member>
 </doc>

@@ -3,31 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDropSourceNotify.DragEnterTarget">
-    <summary>
-      <para>OLE calls this method when the user drags the mouse cursor into a potential drop target window.</para>
-    </summary>
-    <param name="hwndTarget">
-      <para>The window handle of the potential drop target window.</para>
-    </param>
-    <returns>
-      <para>This method returns S_OK on success.</para>
-    </returns>
-    <seealso cref="IDropSourceNotify" />
+    <summary>OLE calls this method when the user drags the mouse cursor into a potential drop target window.</summary>
+    <param name="hwndTarget">The window handle of the potential drop target window.</param>
+    <returns>This method returns S_OK on success.</returns>
   </member>
   <member name="IDropSourceNotify.DragLeaveTarget">
-    <summary>
-      <para>OLE calls this method when the user drags the mouse cursor out of a potential drop target window.</para>
-    </summary>
-    <returns>
-      <para>This method returns S_OK on success.</para>
-    </returns>
-    <seealso cref="IDropSourceNotify" />
+    <summary>OLE calls this method when the user drags the mouse cursor out of a potential drop target window.</summary>
+    <returns>This method returns S_OK on success.</returns>
   </member>
   <member name="IDropSourceNotify">
-    <summary>
-      <para>The <b>IDropSourceNotify</b> interface is implemented on an <see cref="IDropSource" /> object to receive notifications from OLE when a user drags the mouse into or out of a potential drop target window.</para>
-    </summary>
-    <seealso cref="IDropSource" />
-    <seealso cref="IDropTarget" />
+    <summary>The <b>IDropSourceNotify</b> interface is implemented on an <see cref="IDropSource" /> object to receive notifications from OLE when a user drags the mouse into or out of a potential drop target window.</summary>
   </member>
 </doc>

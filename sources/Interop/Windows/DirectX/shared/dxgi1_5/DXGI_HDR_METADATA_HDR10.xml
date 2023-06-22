@@ -3,68 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DXGI_HDR_METADATA_HDR10">
-    <summary>
-      <para>Describes the metadata for HDR10, used when video is compressed using High Efficiency Video Coding (HEVC). This is used to describe the capabilities of the display used to master the content and the luminance values of the content.</para>
-    </summary>
-    <remarks>
-      <para>This structure represents the definition of HDR10 metadata used with HEVC, not HDR10 metadata for ST.2086. These are closely related but defined differently.</para>
-      <para>Example: Mastering display with DCI-P3 color primaries and D65 white point, maximum luminance of 1000 nits and minimum luminance of 0.001 nits; content has maximum luminance of 2000 nits and maximum frame average light level (MaxFALL) of 500 nits.</para>
-      <code>RedPrimary[0] = 0.680 * 50000;
-RedPrimary[1] = 0.320 * 50000;
-GreenPrimary[0] = 0.265 * 50000;
-GreenPrimary[1] = 0.690 * 50000;
-BluePrimary[0] = 0.150 * 50000;
-BluePrimary[1] = 0.060 * 50000;
-WhitePoint[0] = 0.3127 * 50000;
-WhitePoint[1] = 0.3290 * 50000;
-MaxMasteringLuminance = 1000;
-MinMasteringLuminance = 0.001 * 10000;
-MaxContentLightLevel = 2000;
-MaxFrameAverageLightLevel = 500;
-</code>
-      <para>This structure is used in conjunction with the <see cref="SetHDRMetaData" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-1-5-improvements">DXGI 1.5 Improvements</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
+    <summary>Describes the metadata for HDR10, used when video is compressed using High Efficiency Video Coding (HEVC). This is used to describe the capabilities of the display used to master the content and the luminance values of the content.</summary>
   </member>
   <member name="DXGI_HDR_METADATA_HDR10.RedPrimary">
-    <summary>
-      <para>The chromaticity coordinates of the red value in the CIE1931 color space. Index 0 contains the X coordinate and index 1 contains the Y coordinate. The values are normalized to 50,000.</para>
-    </summary>
+    <summary>The chromaticity coordinates of the red value in the CIE1931 color space. Index 0 contains the X coordinate and index 1 contains the Y coordinate. The values are normalized to 50,000.</summary>
   </member>
   <member name="DXGI_HDR_METADATA_HDR10.GreenPrimary">
-    <summary>
-      <para>The chromaticity coordinates of the green value in the CIE1931 color space. Index 0 contains the X coordinate and index 1 contains the Y coordinate. The values are normalized to 50,000.</para>
-    </summary>
+    <summary>The chromaticity coordinates of the green value in the CIE1931 color space. Index 0 contains the X coordinate and index 1 contains the Y coordinate. The values are normalized to 50,000.</summary>
   </member>
   <member name="DXGI_HDR_METADATA_HDR10.BluePrimary">
-    <summary>
-      <para>The chromaticity coordinates of the blue value in the CIE1931 color space. Index 0 contains the X coordinate and index 1 contains the Y coordinate. The values are normalized to 50,000.</para>
-    </summary>
+    <summary>The chromaticity coordinates of the blue value in the CIE1931 color space. Index 0 contains the X coordinate and index 1 contains the Y coordinate. The values are normalized to 50,000.</summary>
   </member>
   <member name="DXGI_HDR_METADATA_HDR10.WhitePoint">
-    <summary>
-      <para>The chromaticity coordinates of the white point in the CIE1931 color space. Index 0 contains the X coordinate and index 1 contains the Y coordinate. The values are normalized to 50,000.</para>
-    </summary>
+    <summary>The chromaticity coordinates of the white point in the CIE1931 color space. Index 0 contains the X coordinate and index 1 contains the Y coordinate. The values are normalized to 50,000.</summary>
   </member>
   <member name="DXGI_HDR_METADATA_HDR10.MaxMasteringLuminance">
-    <summary>
-      <para>The maximum number of nits of the display used to master the content. Values are in whole nits.</para>
-    </summary>
+    <summary>The maximum number of nits of the display used to master the content. Values are in whole nits.</summary>
   </member>
   <member name="DXGI_HDR_METADATA_HDR10.MinMasteringLuminance">
-    <summary>
-      <para>The minimum number of nits of the display used to master the content. Values are 1/10000th of a nit (0.0001 nit).</para>
-    </summary>
+    <summary>The minimum number of nits of the display used to master the content. Values are 1/10000th of a nit (0.0001 nit).</summary>
   </member>
   <member name="DXGI_HDR_METADATA_HDR10.MaxContentLightLevel">
-    <summary>
-      <para>The maximum content light level (MaxCLL). This is the nit value corresponding to the brightest pixel used anywhere in the content.</para>
-    </summary>
+    <summary>The maximum content light level (MaxCLL). This is the nit value corresponding to the brightest pixel used anywhere in the content.</summary>
   </member>
   <member name="DXGI_HDR_METADATA_HDR10.MaxFrameAverageLightLevel">
-    <summary>
-      <para>The maximum frame average light level (MaxFALL). This is the nit value corresponding to the average luminance of the frame which has the brightest average luminance anywhere in the content.</para>
-    </summary>
+    <summary>The maximum frame average light level (MaxFALL). This is the nit value corresponding to the average luminance of the frame which has the brightest average luminance anywhere in the content.</summary>
   </member>
 </doc>

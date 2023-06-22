@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Brush.Clone">
+    <summary>The <b>Brush.Clone</b> method creates a new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object based on this brush.</summary>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object.</returns>
+  </member>
+  <member name="Brush.GetLastStatus">
+    <summary>The <b>Brush.GetLastStatus</b> method returns a value that indicates the nature of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object's most recent method failure.</summary>
+    <returns>
+      <para>The <b>Brush.GetLastStatus</b> method returns an element of the 	<see cref="Status" /> enumeration.</para>
+      <para>If no methods invoked on this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object have failed since the previous call to <b>Brush.GetLastStatus</b>, then <b>Brush.GetLastStatus</b> returns Ok.</para>
+      <para>If at least one method invoked on this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-brush">Brush</a> object has failed since the previous call to <b>Brush.GetLastStatus</b>, then <b>Brush.GetLastStatus</b> returns a value that indicates the nature of the most recent failure.</para>
+    </returns>
+  </member>
+  <member name="Brush.GetType">
+    <summary>The <b>Brush.GetType</b> method gets the type of this brush.</summary>
+    <returns>This method returns the type of this brush. The value returned is one of the elements of the<see cref="BrushType" /> enumeration.</returns>
+  </member>
+</doc>

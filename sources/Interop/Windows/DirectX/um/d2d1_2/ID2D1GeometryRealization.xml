@@ -3,9 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1GeometryRealization">
-    <summary>
-      <para>Encapsulates a device- and transform-dependent representation of a filled or stroked geometry.  Callers should consider creating a geometry realization when they wish to accelerate repeated rendering of a given geometry. This interface exposes no methods.</para>
-    </summary>
-    <seealso cref="ID2D1Resource" />
+    <summary>Encapsulates a device- and transform-dependent representation of a filled or stroked geometry. Callers should consider creating a geometry realization when they wish to accelerate repeated rendering of a given geometry. This interface exposes no methods.</summary>
   </member>
 </doc>

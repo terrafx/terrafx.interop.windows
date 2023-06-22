@@ -3,17 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TF_LANGBARITEMINFO">
-    <summary>
-      <para>The <b>TF_LANGBARITEMINFO</b> structure is used to hold information about a language bar item.</para>
-    </summary>
-    <seealso cref="ITfInputProcessorProfiles.Register " />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tf-lbi-style--constants">TF_LBI_STYLE_*
-</seealso>
+    <summary>The <b>TF_LANGBARITEMINFO</b> structure is used to hold information about a language bar item.</summary>
   </member>
   <member name="TF_LANGBARITEMINFO.clsidService">
-    <summary>
-      <para>Contains the <b>CLSID</b> of the text service that owns the language bar item. This can be CLSID_NULL if the item is not provided by a text service.</para>
-    </summary>
+    <summary>Contains the <b>CLSID</b> of the text service that owns the language bar item. This can be CLSID_NULL if the item is not provided by a text service.</summary>
   </member>
   <member name="TF_LANGBARITEMINFO.guidItem">
     <summary>
@@ -22,9 +15,7 @@
     </summary>
   </member>
   <member name="TF_LANGBARITEMINFO.dwStyle">
-    <summary>
-      <para>Contains a combination of one or more of the <a href="https://docs.microsoft.com//windows/desktop/TSF/tf-lbi-style--constants">TF_LBI_STYLE_*</a> values.</para>
-    </summary>
+    <summary>Contains a combination of one or more of the <a href="https://docs.microsoft.com//windows/desktop/TSF/tf-lbi-style--constants">TF_LBI_STYLE_*</a> values.</summary>
   </member>
   <member name="TF_LANGBARITEMINFO.ulSort">
     <summary>
@@ -33,8 +24,6 @@
     </summary>
   </member>
   <member name="TF_LANGBARITEMINFO.szDescription">
-    <summary>
-      <para>Contains the description string for the item in Unicode format. The description string is displayed in the language bar options menu for menu items. This buffer can hold up to TF_LBI_DESC_MAXLEN characters.</para>
-    </summary>
+    <summary>Contains the description string for the item in Unicode format. The description string is displayed in the language bar options menu for menu items. This buffer can hold up to TF_LBI_DESC_MAXLEN characters.</summary>
   </member>
 </doc>

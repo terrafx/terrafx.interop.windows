@@ -3,405 +3,255 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="COPYFILE2_MESSAGE">
-    <summary>
-      <para>Passed to the
-<a href="https://docs.microsoft.com//windows/desktop/api/winbase/nc-winbase-pcopyfile2_progress_routine">CopyFile2ProgressRoutine</a> callback function with
-information about a pending copy operation.</para>
-    </summary>
-    <remarks>
-      <para>To compile an application that uses the
-<b>COPYFILE2_MESSAGE</b> structure, define the
-<b>_WIN32_WINNT</b> macro as 0x0601 or later. For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/WinProg/using-the-windows-headers">Using the Windows Headers</a>.</para>
-    </remarks>
+    <summary>Passed to the<a href="https://docs.microsoft.com//windows/desktop/api/winbase/nc-winbase-pcopyfile2_progress_routine">CopyFile2ProgressRoutine</a> callback function with information about a pending copy operation.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Type">
     <summary>
-      <para>Value from the <see cref="COPYFILE2_MESSAGE_TYPE" /></para>
-      <para>enumeration used as a discriminant for the <b>Info</b> union within this structure.</para>
+      <para>Value from the <see cref="COPYFILE2_MESSAGE_TYPE" />enumeration used as a discriminant for the <b>Info</b> union within this structure.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COPYFILE2_CALLBACK_CHUNK_STARTED</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Indicates a single chunk of a stream has started to be copied. Information is in the
-<b>ChunkStarted</b> structure within the <b>Info</b></para>
-            <para>union.</para>
-          </description>
-        </item>
-        <item>
+          <description>Indicates a single chunk of a stream has started to be copied. Information is in the <b>ChunkStarted</b> structure within the <b>Info</b> union.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COPYFILE2_CALLBACK_CHUNK_FINISHED</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Indicates the copy of a single chunk of a stream has completed. Information is in the
-<b>ChunkFinished</b> structure within the <b>Info</b></para>
-            <para>union.</para>
-          </description>
-        </item>
-        <item>
+          <description>Indicates the copy of a single chunk of a stream has completed. Information is in the <b>ChunkFinished</b> structure within the <b>Info</b> union.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COPYFILE2_CALLBACK_STREAM_STARTED</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Indicates both source and destination handles for a stream have been opened and the  copy of the stream
-is about to be started. Information is in the <b>StreamStarted</b> structure within
-the <b>Info</b> union. This does not indicate that the copy has started for that stream.</para>
-          </description>
-        </item>
-        <item>
+          <description>Indicates both source and destination handles for a stream have been opened and the copy of the stream is about to be started. Information is in the <b>StreamStarted</b> structure within the <b>Info</b> union. This does not indicate that the copy has started for that stream.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COPYFILE2_CALLBACK_STREAM_FINISHED</b>
-                </description>
-              </item>
-              <item>
-                <description>4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Indicates the copy operation for a stream have started to be completed, either successfully or due to a
-<b>COPYFILE2_PROGRESS_STOP</b> return from
-<a href="https://docs.microsoft.com//windows/desktop/api/winbase/nc-winbase-pcopyfile2_progress_routine">CopyFile2ProgressRoutine</a>.  Information is
-in the <b>StreamFinished</b> structure within the <b>Info</b></para>
-            <para>union.</para>
-          </description>
-        </item>
-        <item>
+          <description>Indicates the copy operation for a stream have started to be completed, either successfully or due to a <b>COPYFILE2_PROGRESS_STOP</b> return from <a href="https://docs.microsoft.com//windows/desktop/api/winbase/nc-winbase-pcopyfile2_progress_routine">CopyFile2ProgressRoutine</a>. Information is in the <b>StreamFinished</b> structure within the <b>Info</b> union.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COPYFILE2_CALLBACK_POLL_CONTINUE</b>
-                </description>
-              </item>
-              <item>
-                <description>5</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>5</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>May be sent periodically.  Information is in the
-<b>PollContinue</b> structure within the <b>Info</b></para>
-            <para>union.</para>
-          </description>
-        </item>
-        <item>
+          <description>May be sent periodically. Information is in the <b>PollContinue</b> structure within the <b>Info</b> union.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COPYFILE2_CALLBACK_ERROR</b>
-                </description>
-              </item>
-              <item>
-                <description>6</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>6</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An error was encountered during the copy operation.  Information is in the
-<b>Error</b> structure within the <b>Info</b></para>
-            <para>union.</para>
-          </description>
-        </item>
+          <description>An error was encountered during the copy operation. Information is in the <b>Error</b> structure within the <b>Info</b> union.</description>
+        </listheader>
       </list>
     </summary>
   </member>
-  <member name="COPYFILE2_MESSAGE.dwPadding">
-    <summary></summary>
-  </member>
-  <member name="COPYFILE2_MESSAGE.Info">
-    <summary></summary>
-  </member>
+  <member name="COPYFILE2_MESSAGE.dwPadding"></member>
+  <member name="COPYFILE2_MESSAGE.Info"></member>
   <member name="COPYFILE2_MESSAGE.Info.ChunkStarted">
-    <summary>
-      <para>This structure is selected if the <b>Type</b> member is set to
-<b>COPYFILE2_CALLBACK_CHUNK_STARTED</b> (1).</para>
-    </summary>
+    <summary>This structure is selected if the <b>Type</b> member is set to<b>COPYFILE2_CALLBACK_CHUNK_STARTED</b> (1).</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.ChunkStarted.dwStreamNumber">
-    <summary>
-      <para>Indicates which stream within the file is about to be copied. The value used for identifying a stream
-within a file will start at one (1) and will always be higher than any previous stream for that file.</para>
-    </summary>
+    <summary>Indicates which stream within the file is about to be copied. The value used for identifying a stream within a file will start at one (1) and will always be higher than any previous stream for that file.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.ChunkStarted.dwReserved">
-    <summary>
-      <para>This member is reserved for internal use.</para>
-    </summary>
+    <summary>This member is reserved for internal use.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.ChunkStarted.hSourceFile">
-    <summary>
-      <para>Handle to the source stream.</para>
-    </summary>
+    <summary>Handle to the source stream.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.ChunkStarted.hDestinationFile">
-    <summary>
-      <para>Handle to the destination stream.</para>
-    </summary>
+    <summary>Handle to the destination stream.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.ChunkStarted.uliChunkNumber">
-    <summary>
-      <para>Indicates which chunk within the current stream is about to be copied. The value used for a chunk will
-start at zero (0) and will always be higher than that of any previous chunk for the current stream.</para>
-    </summary>
+    <summary>Indicates which chunk within the current stream is about to be copied. The value used for a chunk will start at zero (0) and will always be higher than that of any previous chunk for the current stream.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.ChunkStarted.uliChunkSize">
-    <summary>
-      <para>Size of the copied chunk, in bytes.</para>
-    </summary>
+    <summary>Size of the copied chunk, in bytes.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.ChunkStarted.uliStreamSize">
-    <summary>
-      <para>Size of the current stream, in bytes.</para>
-    </summary>
+    <summary>Size of the current stream, in bytes.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.ChunkStarted.uliTotalFileSize">
-    <summary>
-      <para>Size of all streams for this file, in bytes.</para>
-    </summary>
+    <summary>Size of all streams for this file, in bytes.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.ChunkFinished">
     <summary>
-      <para>This structure is selected if the <b>Type</b> member is set to
-<b>COPYFILE2_CALLBACK_CHUNK_FINISHED</b> (2).</para>
+      <para>This structure is selected if the <b>Type</b> member is set to<b>COPYFILE2_CALLBACK_CHUNK_FINISHED</b> (2).</para>
       <h5>ChunkFinished.dwReserved</h5>
       <para>This member is reserved for internal use.</para>
     </summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.ChunkFinished.dwStreamNumber">
-    <summary>
-      <para>Indicates which stream within the file is about to be copied. The value used for identifying a stream
-within a file will start at one (1) and will always be higher than any previous stream for that file.</para>
-    </summary>
+    <summary>Indicates which stream within the file is about to be copied. The value used for identifying a stream within a file will start at one (1) and will always be higher than any previous stream for that file.</summary>
   </member>
-  <member name="COPYFILE2_MESSAGE.Info.ChunkFinished.dwFlags">
-    <summary></summary>
-  </member>
+  <member name="COPYFILE2_MESSAGE.Info.ChunkFinished.dwFlags"></member>
   <member name="COPYFILE2_MESSAGE.Info.ChunkFinished.hSourceFile">
-    <summary>
-      <para>Handle to the source stream.</para>
-    </summary>
+    <summary>Handle to the source stream.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.ChunkFinished.hDestinationFile">
-    <summary>
-      <para>Handle to the destination stream.</para>
-    </summary>
+    <summary>Handle to the destination stream.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.ChunkFinished.uliChunkNumber">
-    <summary>
-      <para>Indicates which chunk within the current stream is in process. The value used for a chunk will start at
-zero (0) and will always be higher than that of any previous chunk for the current stream.</para>
-    </summary>
+    <summary>Indicates which chunk within the current stream is in process. The value used for a chunk will start at zero (0) and will always be higher than that of any previous chunk for the current stream.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.ChunkFinished.uliChunkSize">
-    <summary>
-      <para>Size of the copied chunk, in bytes.</para>
-    </summary>
+    <summary>Size of the copied chunk, in bytes.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.ChunkFinished.uliStreamSize">
-    <summary>
-      <para>Size of the current stream, in bytes.</para>
-    </summary>
+    <summary>Size of the current stream, in bytes.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.ChunkFinished.uliStreamBytesTransferred">
-    <summary>
-      <para>Total bytes copied for this stream so far.</para>
-    </summary>
+    <summary>Total bytes copied for this stream so far.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.ChunkFinished.uliTotalFileSize">
-    <summary>
-      <para>Size of all streams for this file, in bytes.</para>
-    </summary>
+    <summary>Size of all streams for this file, in bytes.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.ChunkFinished.uliTotalBytesTransferred">
-    <summary>
-      <para>Total bytes copied for this file so far.</para>
-    </summary>
+    <summary>Total bytes copied for this file so far.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.StreamStarted">
-    <summary>
-      <para>This structure is selected if the <b>Type</b> member is set to
-<b>COPYFILE2_CALLBACK_STREAM_STARTED</b> (3).</para>
-    </summary>
+    <summary>This structure is selected if the <b>Type</b> member is set to<b>COPYFILE2_CALLBACK_STREAM_STARTED</b> (3).</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.StreamStarted.dwStreamNumber">
-    <summary>
-      <para>Indicates which stream within the file is about to be copied. The value used for identifying a stream
-within a file will start at one (1) and will always be higher than any previous stream for that file.</para>
-    </summary>
+    <summary>Indicates which stream within the file is about to be copied. The value used for identifying a stream within a file will start at one (1) and will always be higher than any previous stream for that file.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.StreamStarted.dwReserved">
-    <summary>
-      <para>This member is reserved for internal use.</para>
-    </summary>
+    <summary>This member is reserved for internal use.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.StreamStarted.hSourceFile">
-    <summary>
-      <para>Handle to the source stream.</para>
-    </summary>
+    <summary>Handle to the source stream.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.StreamStarted.hDestinationFile">
-    <summary>
-      <para>Handle to the destination stream.</para>
-    </summary>
+    <summary>Handle to the destination stream.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.StreamStarted.uliStreamSize">
-    <summary>
-      <para>Size of the current stream, in bytes.</para>
-    </summary>
+    <summary>Size of the current stream, in bytes.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.StreamStarted.uliTotalFileSize">
-    <summary>
-      <para>Size of all streams for this file, in bytes.</para>
-    </summary>
+    <summary>Size of all streams for this file, in bytes.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.StreamFinished">
-    <summary>
-      <para>This structure is selected if the <b>Type</b> member is set to
-<b>COPYFILE2_CALLBACK_STREAM_FINISHED</b> (4).</para>
-    </summary>
+    <summary>This structure is selected if the <b>Type</b> member is set to<b>COPYFILE2_CALLBACK_STREAM_FINISHED</b> (4).</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.StreamFinished.dwStreamNumber">
-    <summary>
-      <para>Indicates which stream within the file is about to be copied. The value used for identifying a stream
-within a file will start at one (1) and will always be higher than any previous stream for that file.</para>
-    </summary>
+    <summary>Indicates which stream within the file is about to be copied. The value used for identifying a stream within a file will start at one (1) and will always be higher than any previous stream for that file.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.StreamFinished.dwReserved">
-    <summary>
-      <para>This member is reserved for internal use.</para>
-    </summary>
+    <summary>This member is reserved for internal use.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.StreamFinished.hSourceFile">
-    <summary>
-      <para>Handle to the source stream.</para>
-    </summary>
+    <summary>Handle to the source stream.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.StreamFinished.hDestinationFile">
-    <summary>
-      <para>Handle to the destination stream.</para>
-    </summary>
+    <summary>Handle to the destination stream.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.StreamFinished.uliStreamSize">
-    <summary>
-      <para>Size of the current stream, in bytes.</para>
-    </summary>
+    <summary>Size of the current stream, in bytes.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.StreamFinished.uliStreamBytesTransferred">
-    <summary>
-      <para>Total bytes copied for this stream so far.</para>
-    </summary>
+    <summary>Total bytes copied for this stream so far.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.StreamFinished.uliTotalFileSize">
-    <summary>
-      <para>Size of all streams for this file, in bytes.</para>
-    </summary>
+    <summary>Size of all streams for this file, in bytes.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.StreamFinished.uliTotalBytesTransferred">
-    <summary>
-      <para>Total bytes copied for this file so far.</para>
-    </summary>
+    <summary>Total bytes copied for this file so far.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.PollContinue">
-    <summary>
-      <para>This structure is selected if the <b>Type</b> member is set to
-<b>COPYFILE2_CALLBACK_POLL_CONTNUE</b> (5).</para>
-    </summary>
+    <summary>This structure is selected if the <b>Type</b> member is set to<b>COPYFILE2_CALLBACK_POLL_CONTNUE</b> (5).</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.PollContinue.dwReserved">
-    <summary>
-      <para>This member is reserved for internal use.</para>
-    </summary>
+    <summary>This member is reserved for internal use.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.Error">
-    <summary>
-      <para>This structure is selected if the <b>Type</b> member is set to
-<b>COPYFILE2_CALLBACK_ERROR</b> (6).</para>
-    </summary>
+    <summary>This structure is selected if the <b>Type</b> member is set to<b>COPYFILE2_CALLBACK_ERROR</b> (6).</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.Error.CopyPhase">
-    <summary>
-      <para>Value from the <see cref="COPYFILE2_COPY_PHASE" /></para>
-      <para>enumeration indicating the current phase of the copy at the time of the error.</para>
-    </summary>
+    <summary>Value from the <see cref="COPYFILE2_COPY_PHASE" />enumeration indicating the current phase of the copy at the time of the error.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.Error.dwStreamNumber">
-    <summary>
-      <para>The number of the stream that was being processed at the time of the error.</para>
-    </summary>
+    <summary>The number of the stream that was being processed at the time of the error.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.Error.hrFailure">
-    <summary>
-      <para>Value indicating the problem.</para>
-    </summary>
+    <summary>Value indicating the problem.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.Error.dwReserved">
-    <summary>
-      <para>This member is reserved for internal use.</para>
-    </summary>
+    <summary>This member is reserved for internal use.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.Error.uliChunkNumber">
-    <summary>
-      <para>Indicates which chunk within the current stream was being processed at the time of the error. The value
-used for a chunk will start at zero (0) and will always be higher than that of any previous chunk for the
-current stream.</para>
-    </summary>
+    <summary>Indicates which chunk within the current stream was being processed at the time of the error. The value used for a chunk will start at zero (0) and will always be higher than that of any previous chunk for the current stream.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.Error.uliStreamSize">
-    <summary>
-      <para>Size, in bytes, of the stream being processed.</para>
-    </summary>
+    <summary>Size, in bytes, of the stream being processed.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.Error.uliStreamBytesTransferred">
-    <summary>
-      <para>Number of bytes that had been successfully transferred for the stream being processed.</para>
-    </summary>
+    <summary>Number of bytes that had been successfully transferred for the stream being processed.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.Error.uliTotalFileSize">
-    <summary>
-      <para>Size, in bytes, of the total file being processed.</para>
-    </summary>
+    <summary>Size, in bytes, of the total file being processed.</summary>
   </member>
   <member name="COPYFILE2_MESSAGE.Info.Error.uliTotalBytesTransferred">
-    <summary>
-      <para>Number of bytes that had been successfully transferred for the entire copy operation.</para>
-    </summary>
+    <summary>Number of bytes that had been successfully transferred for the entire copy operation.</summary>
   </member>
 </doc>

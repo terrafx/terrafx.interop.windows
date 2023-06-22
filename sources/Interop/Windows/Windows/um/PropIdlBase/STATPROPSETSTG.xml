@@ -3,53 +3,26 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STATPROPSETSTG">
-    <summary>
-      <para>The
-<b>STATPROPSETSTG</b> structure contains information about a property set. To get this information, call
-<see cref="IPropertyStorage.Stat" />, which fills in a buffer containing the information describing the current property set. To enumerate the
-<b>STATPROPSETSTG</b> structures for the property sets in the current property-set storage, call
-<see cref="IPropertySetStorage.Enum" /> to get a pointer to an enumerator. You can then call the enumeration methods of the
-<see cref="IEnumSTATPROPSETSTG" /> interface on the enumerator. The structure is defined as follows:</para>
-    </summary>
-    <seealso cref="FILETIME" />
-    <seealso cref="IEnumSTATPROPSETSTG" />
-    <seealso cref="IPropertySetStorage.Create" />
-    <seealso cref="IPropertyStorage.Stat" />
+    <summary>The<b>STATPROPSETSTG</b> structure contains information about a property set. To get this information, call<see cref="IPropertyStorage.Stat" />, which fills in a buffer containing the information describing the current property set. To enumerate the<b>STATPROPSETSTG</b> structures for the property sets in the current property-set storage, call<see cref="IPropertySetStorage.Enum" /> to get a pointer to an enumerator. You can then call the enumeration methods of the<see cref="IEnumSTATPROPSETSTG" /> interface on the enumerator. The structure is defined as follows:</summary>
   </member>
   <member name="STATPROPSETSTG.fmtid">
-    <summary>
-      <para>FMTID of the current property set, specified when the property set was initially created.</para>
-    </summary>
+    <summary>FMTID of the current property set, specified when the property set was initially created.</summary>
   </member>
   <member name="STATPROPSETSTG.clsid">
     <summary>
-      <para>
-        <b>CLSID</b> associated with this property set, specified when the property set was initially created and possibly modified thereafter with
-<see cref="IPropertyStorage.SetClass" />. If not set, the value will be <b>CLSID_NULL</b>.</para>
-    </summary>
+      <b>CLSID</b> associated with this property set, specified when the property set was initially created and possibly modified thereafter with<see cref="IPropertyStorage.SetClass" />. If not set, the value will be <b>CLSID_NULL</b>.</summary>
   </member>
   <member name="STATPROPSETSTG.grfFlags">
-    <summary>
-      <para>Flag values of the property set, as specified in
-<see cref="IPropertySetStorage.Create" />.</para>
-    </summary>
+    <summary>Flag values of the property set, as specified in<see cref="IPropertySetStorage.Create" />.</summary>
   </member>
   <member name="STATPROPSETSTG.mtime">
-    <summary>
-      <para>Time in Universal Coordinated Time (UTC) when the property set was last modified.</para>
-    </summary>
+    <summary>Time in Universal Coordinated Time (UTC) when the property set was last modified.</summary>
   </member>
   <member name="STATPROPSETSTG.ctime">
-    <summary>
-      <para>Time in UTC when this property set was created.</para>
-    </summary>
+    <summary>Time in UTC when this property set was created.</summary>
   </member>
   <member name="STATPROPSETSTG.atime">
-    <summary>
-      <para>Time in UTC when this property set was last accessed.</para>
-    </summary>
+    <summary>Time in UTC when this property set was last accessed.</summary>
   </member>
-  <member name="STATPROPSETSTG.dwOSVersion">
-    <summary></summary>
-  </member>
+  <member name="STATPROPSETSTG.dwOSVersion"></member>
 </doc>

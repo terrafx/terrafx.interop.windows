@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_TIMED_TEXT_UNIT_TYPE">
-    <summary>
-      <para>Specifies the units in which the timed text is measured.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies the units in which the timed text is measured.</summary>
   </member>
   <member name="MF_TIMED_TEXT_UNIT_TYPE.MF_TIMED_TEXT_UNIT_TYPE_PIXELS">
-    <summary>
-      <para>The timed text is measured in pixels.</para>
-    </summary>
+    <summary>The timed text is measured in pixels.</summary>
   </member>
   <member name="MF_TIMED_TEXT_UNIT_TYPE.MF_TIMED_TEXT_UNIT_TYPE_PERCENTAGE">
-    <summary>
-      <para>The timed text is measured as a percentage.</para>
-    </summary>
+    <summary>The timed text is measured as a percentage.</summary>
   </member>
 </doc>

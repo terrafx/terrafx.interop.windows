@@ -3,14 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DHPUBKEY">
-    <summary>
-      <para>The <b>DHPUBKEY</b> structure contains information specific to the particular Diffie-Hellman <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">public key</a> contained in the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">key BLOB</a>.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>DSSPUBKEY</b> is an alias for this structure.</para>
-    </remarks>
-    <seealso cref="PUBLICKEYSTRUC" />
+    <summary>The <b>DHPUBKEY</b> structure contains information specific to the particular Diffie-Hellman <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">public key</a> contained in the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">key BLOB</a>.</summary>
   </member>
   <member name="DHPUBKEY.magic">
     <summary>
@@ -19,8 +12,6 @@
     </summary>
   </member>
   <member name="DHPUBKEY.bitlen">
-    <summary>
-      <para>Number of bits in the prime modulus, P.</para>
-    </summary>
+    <summary>Number of bits in the prime modulus, P.</summary>
   </member>
 </doc>

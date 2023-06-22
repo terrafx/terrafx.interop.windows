@@ -3,54 +3,31 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PSAPI_WORKING_SET_EX_BLOCK">
-    <summary>
-      <para>Contains extended working set information for a page.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/psapi/psapi-structures">PSAPI Structures</seealso>
-    <seealso cref="PSAPI_WORKING_SET_EX_INFORMATION" />
-    <seealso cref="QueryWorkingSetEx" />
+    <summary>Contains extended working set information for a page.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_EX_BLOCK.Flags">
-    <summary>
-      <para>The working set information. See the description of the structure  members for information about the layout
-of this variable.</para>
-    </summary>
+    <summary>The working set information. See the description of the structure members for information about the layout of this variable.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_EX_BLOCK.Valid">
-    <summary>
-      <para>If this bit is 1, the subsequent members are valid; otherwise they should be ignored.</para>
-    </summary>
+    <summary>If this bit is 1, the subsequent members are valid; otherwise they should be ignored.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_EX_BLOCK.ShareCount">
-    <summary>
-      <para>The number of processes that share this page. The maximum value of this member is 7.</para>
-    </summary>
+    <summary>The number of processes that share this page. The maximum value of this member is 7.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_EX_BLOCK.Win32Protection">
-    <summary>
-      <para>The memory protection attributes of the page. For a list of values, see
-<a href="https://docs.microsoft.com//windows/desktop/Memory/memory-protection-constants">Memory Protection Constants</a>.</para>
-    </summary>
+    <summary>The memory protection attributes of the page. For a list of values, see<a href="https://docs.microsoft.com//windows/desktop/Memory/memory-protection-constants">Memory Protection Constants</a>.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_EX_BLOCK.Shared">
-    <summary>
-      <para>If this bit is 1, the page can be shared.</para>
-    </summary>
+    <summary>If this bit is 1, the page can be shared.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_EX_BLOCK.Node">
-    <summary>
-      <para>The NUMA node. The maximum value of this member is 63.</para>
-    </summary>
+    <summary>The NUMA node. The maximum value of this member is 63.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_EX_BLOCK.Locked">
-    <summary>
-      <para>If this bit is 1, the virtual page is locked in physical memory.</para>
-    </summary>
+    <summary>If this bit is 1, the virtual page is locked in physical memory.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_EX_BLOCK.LargePage">
-    <summary>
-      <para>If this bit is 1, the page is a large page.</para>
-    </summary>
+    <summary>If this bit is 1, the page is a large page.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_EX_BLOCK.Reserved">
     <summary>
@@ -75,38 +52,24 @@ of this variable.</para>
   </member>
   <member name="PSAPI_WORKING_SET_EX_BLOCK.Invalid">
     <summary>
-      <para>
-        <b>Windows Server 2008 R2, Windows 7, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This structure is not available before Windows Server 2012 and Windows 8.</para>
-    </summary>
+      <b>Windows Server 2008 R2, Windows 7, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This structure is not available before Windows Server 2012 and Windows 8.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_EX_BLOCK.Invalid.Valid">
-    <summary>
-      <para>If this bit is 0, the subsequent members are valid; otherwise they should be ignored.</para>
-    </summary>
+    <summary>If this bit is 0, the subsequent members are valid; otherwise they should be ignored.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_EX_BLOCK.Invalid.Reserved0">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_EX_BLOCK.Invalid.Shared">
-    <summary>
-      <para>If this bit is 1, the page can be shared.</para>
-    </summary>
+    <summary>If this bit is 1, the page can be shared.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_EX_BLOCK.Invalid.Reserved1">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_EX_BLOCK.Invalid.Bad">
-    <summary>
-      <para>If this bit is 1, the page is has been reported as bad.</para>
-    </summary>
+    <summary>If this bit is 1, the page is has been reported as bad.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_EX_BLOCK.Invalid.ReservedUlong">
-    <summary>
-      <para>Reserved. This member is only available on 64-bit code running on 64-bit editions of Windows.</para>
-    </summary>
+    <summary>Reserved. This member is only available on 64-bit code running on 64-bit editions of Windows.</summary>
   </member>
 </doc>

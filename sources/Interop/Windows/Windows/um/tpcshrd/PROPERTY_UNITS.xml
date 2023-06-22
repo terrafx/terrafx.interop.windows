@@ -3,76 +3,39 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROPERTY_UNITS">
-    <summary>
-      <para>Defines constant values for the unit of measurement of a property.</para>
-    </summary>
-    <seealso cref="PROPERTY_METRICS Structure" />
+    <summary>Defines constant values for the unit of measurement of a property.</summary>
   </member>
   <member name="PROPERTY_UNITS.PROPERTY_UNITS_DEFAULT">
-    <summary>
-      <para>Units are unknown.</para>
-    </summary>
+    <summary>Units are unknown.</summary>
   </member>
   <member name="PROPERTY_UNITS.PROPERTY_UNITS_INCHES">
-    <summary>
-      <para>The property value is in inches.</para>
-    </summary>
+    <summary>The property value is in inches.</summary>
   </member>
   <member name="PROPERTY_UNITS.PROPERTY_UNITS_CENTIMETERS">
-    <summary>
-      <para>The property value is in centimeters.</para>
-    </summary>
+    <summary>The property value is in centimeters.</summary>
   </member>
   <member name="PROPERTY_UNITS.PROPERTY_UNITS_DEGREES">
-    <summary>
-      <para>The property value is in degrees.</para>
-    </summary>
+    <summary>The property value is in degrees.</summary>
   </member>
   <member name="PROPERTY_UNITS.PROPERTY_UNITS_RADIANS">
-    <summary>
-      <para>The property value is in radians.</para>
-    </summary>
+    <summary>The property value is in radians.</summary>
   </member>
   <member name="PROPERTY_UNITS.PROPERTY_UNITS_SECONDS">
-    <summary>
-      <para>The property value is in seconds.</para>
-    </summary>
+    <summary>The property value is in seconds.</summary>
   </member>
   <member name="PROPERTY_UNITS.PROPERTY_UNITS_POUNDS">
-    <summary>
-      <para>The property value is in pounds.</para>
-    </summary>
+    <summary>The property value is in pounds.</summary>
   </member>
   <member name="PROPERTY_UNITS.PROPERTY_UNITS_GRAMS">
-    <summary>
-      <para>The property value is in grams.</para>
-    </summary>
+    <summary>The property value is in grams.</summary>
   </member>
-  <member name="PROPERTY_UNITS.PROPERTY_UNITS_SILINEAR">
-    <summary></summary>
-  </member>
-  <member name="PROPERTY_UNITS.PROPERTY_UNITS_SIROTATION">
-    <summary></summary>
-  </member>
-  <member name="PROPERTY_UNITS.PROPERTY_UNITS_ENGLINEAR">
-    <summary></summary>
-  </member>
-  <member name="PROPERTY_UNITS.PROPERTY_UNITS_ENGROTATION">
-    <summary></summary>
-  </member>
-  <member name="PROPERTY_UNITS.PROPERTY_UNITS_SLUGS">
-    <summary></summary>
-  </member>
-  <member name="PROPERTY_UNITS.PROPERTY_UNITS_KELVIN">
-    <summary></summary>
-  </member>
-  <member name="PROPERTY_UNITS.PROPERTY_UNITS_FAHRENHEIT">
-    <summary></summary>
-  </member>
-  <member name="PROPERTY_UNITS.PROPERTY_UNITS_AMPERE">
-    <summary></summary>
-  </member>
-  <member name="PROPERTY_UNITS.PROPERTY_UNITS_CANDELA">
-    <summary></summary>
-  </member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_SILINEAR"></member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_SIROTATION"></member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_ENGLINEAR"></member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_ENGROTATION"></member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_SLUGS"></member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_KELVIN"></member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_FAHRENHEIT"></member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_AMPERE"></member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_CANDELA"></member>
 </doc>

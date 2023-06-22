@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WIC8BIMIptcDigestProperties">
-    <summary>
-      <para>Specifies the identifiers of the metadata items in an 8BIM IPTC digest metadata block.</para>
-    </summary>
+    <summary>Specifies the identifiers of the metadata items in an 8BIM IPTC digest metadata block.</summary>
   </member>
   <member name="WIC8BIMIptcDigestProperties.WIC8BIMIptcDigestPString">
-    <summary>
-      <para>[VT_LPSTR] A name that identifies the 8BIM block.</para>
-    </summary>
+    <summary>[VT_LPSTR] A name that identifies the 8BIM block.</summary>
   </member>
   <member name="WIC8BIMIptcDigestProperties.WIC8BIMIptcDigestIptcDigest">
-    <summary>
-      <para>[VT_BLOB] The embedded IPTC digest value.</para>
-    </summary>
+    <summary>[VT_BLOB] The embedded IPTC digest value.</summary>
   </member>
-  <member name="WIC8BIMIptcDigestProperties.WIC8BIMIptcDigestProperties_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WIC8BIMIptcDigestProperties.WIC8BIMIptcDigestProperties_FORCE_DWORD"></member>
 </doc>

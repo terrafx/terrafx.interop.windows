@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFHttpDownloadSession.Close">
-    <summary>
-      <para>Invoked by Microsoft Media Foundation to specify that no more HTTP requests will be created, and allows <see cref="IMFHttpDownloadSession" /> to free any internal resources.</para>
-    </summary>
+    <summary>Invoked by Microsoft Media Foundation to specify that no more HTTP requests will be created, and allows <see cref="IMFHttpDownloadSession" /> to free any internal resources.</summary>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -13,44 +11,33 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Successfully closed the session.</para>
-          </description>
-        </item>
+          <description>Successfully closed the session.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFHttpDownloadSession" />
   </member>
   <member name="IMFHttpDownloadSession.CreateRequest">
-    <summary>
-      <para>Invoked by Microsoft Media Foundation to create an object that implements the <see cref="IMFHttpDownloadRequest" /> interface, which is used to send a single HTTP, or HTTPS request. Since multiple requests may be needed to fully download a resource, Media Foundation may invoke <b>CreateRequest</b> multiple times on the same <see cref="IMFHttpDownloadSession" /> instance. Media Foundation will use each <b>IMFHttpDownloadRequest</b> instance for only a single request.</para>
-    </summary>
-    <param name="szObjectName">
-      <para>Pointer to a string that contains the name of the target resource of the specified HTTP verb. This is generally a file name, an executable module, or a search specifier. The target resource always begins with a forward slash character and includes any query string that was included on the URL.</para>
-    </param>
-    <param name="fBypassProxyCache">
-      <para>If set to TRUE, indicates that the request should be forwarded to the originating server rather than sending a cached version of a resource from a proxy server. When this flag is set to TRUE, a "Pragma: no-cache" header should be added to the request. When creating an HTTP/1.1 request, a "Cache-Control: no-cache" should also be added.</para>
-    </param>
-    <param name="fSecure">
-      <para>If set to TRUE, causes the secure variant of the protocol to be used, if applicable. For example, if the <see cref="IMFHttpDownloadSession" /> is for HTTP/HTTPS, setting <i>fSecure</i> to TRUE will cause the request to use HTTPS. Otherwise, the unsecure variant of the protocol (in this example, HTTP) is used.</para>
-    </param>
+    <summary>Invoked by Microsoft Media Foundation to create an object that implements the <see cref="IMFHttpDownloadRequest" /> interface, which is used to send a single HTTP, or HTTPS request. Since multiple requests may be needed to fully download a resource, Media Foundation may invoke <b>CreateRequest</b> multiple times on the same <see cref="IMFHttpDownloadSession" /> instance. Media Foundation will use each <b>IMFHttpDownloadRequest</b> instance for only a single request.</summary>
+    <param name="szObjectName">Pointer to a string that contains the name of the target resource of the specified HTTP verb. This is generally a file name, an executable module, or a search specifier. The target resource always begins with a forward slash character and includes any query string that was included on the URL.</param>
+    <param name="fBypassProxyCache">If set to TRUE, indicates that the request should be forwarded to the originating server rather than sending a cached version of a resource from a proxy server. When this flag is set to TRUE, a "Pragma: no-cache" header should be added to the request. When creating an HTTP/1.1 request, a "Cache-Control: no-cache" should also be added.</param>
+    <param name="fSecure">If set to TRUE, causes the secure variant of the protocol to be used, if applicable. For example, if the <see cref="IMFHttpDownloadSession" /> is for HTTP/HTTPS, setting <i>fSecure</i> to TRUE will cause the request to use HTTPS. Otherwise, the unsecure variant of the protocol (in this example, HTTP) is used.</param>
     <param name="szVerb">
       <para>Pointer to a string that contains the HTTP verb to use in the request. If this parameter is NULL, the function uses GET as the HTTP verb.</para>
-      <para>
-        <b>Note</b>  This string should be all uppercase. Many servers treat HTTP verbs as case-sensitive, and the Internet Engineering Task Force (IETF) Requests for Comments (RFCs) spell these verbs using uppercase characters only.</para>
+      <div>
+        <b>Note</b>  This string should be all uppercase. Many servers treat HTTP verbs as case-sensitive, and the Internet Engineering Task Force (IETF) Requests for Comments (RFCs) spell these verbs using uppercase characters only.</div>
     </param>
-    <param name="szReferrer">
-      <para>Pointer to a string that specifies the URL of the document from which the URL in the request <i>szObjectName</i> was obtained. If this parameter is set to NULL, no referring document is specified.</para>
-    </param>
-    <param name="ppRequest">
-      <para>Upon successful return of the method, this parameter is set to an <see cref="IMFHttpDownloadRequest" /> interface.</para>
-    </param>
+    <param name="szReferrer">Pointer to a string that specifies the URL of the document from which the URL in the request <i>szObjectName</i> was obtained. If this parameter is set to NULL, no referring document is specified.</param>
+    <param name="ppRequest">Upon successful return of the method, this parameter is set to an <see cref="IMFHttpDownloadRequest" /> interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -58,50 +45,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Successfully stored the supplied information.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Successfully stored the supplied information.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>There is insufficient memory to complete the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>There is insufficient memory to complete the operation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
-          </description>
-          <description>
-            <para>The method was invoked after <see cref="Close" /> or before <see cref="SetServer" /> was invoked.</para>
-          </description>
-        </item>
+          <description>The method was invoked after <see cref="Close" /> or before <see cref="SetServer" /> was invoked.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFHttpDownloadSession" />
   </member>
   <member name="IMFHttpDownloadSession.SetServer">
-    <summary>
-      <para>Called  by Microsoft Media Foundation to specify parameters common to all requests created by this instance of <see cref="IMFHttpDownloadSession" />.</para>
-    </summary>
-    <param name="szServerName">
-      <para>The host name, fully qualified DNS name, or IP address of the HTTP server that the requests shall be sent to.</para>
-    </param>
-    <param name="nPort">
-      <para>The TCP port number of the server.</para>
-    </param>
+    <summary>Called by Microsoft Media Foundation to specify parameters common to all requests created by this instance of <see cref="IMFHttpDownloadSession" />.</summary>
+    <param name="szServerName">The host name, fully qualified DNS name, or IP address of the HTTP server that the requests shall be sent to.</param>
+    <param name="nPort">The TCP port number of the server.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -109,33 +95,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Successfully stored the supplied data.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Successfully stored the supplied data.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>There is insufficient memory to complete the operation.</para>
-          </description>
-        </item>
+          <description>There is insufficient memory to complete the operation.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFHttpDownloadSession" />
   </member>
   <member name="IMFHttpDownloadSession">
-    <summary>
-      <para>Applications implement this interface to override the default implementation of the HTTP and HTTPS protocols used by Microsoft Media Foundation. Applications provide the <b>IMFHttpDownloadSession</b> interface to Media Foundation through the <see cref="CreateHttpDownloadSession" /> method on the <see cref="IMFHttpDownloadSessionProvider" /> interface. Microsoft Media Foundation uses this interface to perform a “streaming”, or “progressive”, download of a resource identified by a HTTP or HTTPS URL. Multiple HTTP requests may be sent to download the resource. The <b>IMFHttpDownloadSession</b> interface is used to create these individual HTTP requests.</para>
-    </summary>
+    <summary>Applications implement this interface to override the default implementation of the HTTP and HTTPS protocols used by Microsoft Media Foundation. Applications provide the <b>IMFHttpDownloadSession</b> interface to Media Foundation through the <see cref="CreateHttpDownloadSession" /> method on the <see cref="IMFHttpDownloadSessionProvider" /> interface. Microsoft Media Foundation uses this interface to perform a “streaming”, or “progressive”, download of a resource identified by a HTTP or HTTPS URL. Multiple HTTP requests may be sent to download the resource. The <b>IMFHttpDownloadSession</b> interface is used to create these individual HTTP requests.</summary>
   </member>
 </doc>

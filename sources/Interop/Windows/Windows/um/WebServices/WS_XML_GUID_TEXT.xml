@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_XML_GUID_TEXT">
-    <summary>
-      <para>Represents a GUID formatted as the text "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx".</para>
-    </summary>
+    <summary>Represents a GUID formatted as the text "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx".</summary>
   </member>
   <member name="WS_XML_GUID_TEXT.text">
-    <summary>
-      <para>The base type for all types that derive from <see cref="WS_XML_TEXT" />.</para>
-    </summary>
+    <summary>The base type for all types that derive from <see cref="WS_XML_TEXT" />.</summary>
   </member>
   <member name="WS_XML_GUID_TEXT.value">
-    <summary>
-      <para>The GUID value</para>
-    </summary>
+    <summary>The GUID value</summary>
   </member>
 </doc>

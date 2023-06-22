@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HotkeyPrefix">
+    <summary>The <b>HotkeyPrefix</b> enumeration specifies how to display hot keys. There are three options: do nothing, display hot keys underlined, and hide the hot key underlines.</summary>
+  </member>
+  <member name="HotkeyPrefix.HotkeyPrefixNone">
+    <summary>Specifies that no hot key processing occurs.</summary>
+  </member>
+  <member name="HotkeyPrefix.HotkeyPrefixShow">
+    <summary>Specifies that Unicode text is scanned for ampersands (&amp;), which are interpreted as hot key markers in the same way as menu and dialog resources are processed in the Windows user interface. All pairs of ampersands are replaced by a single ampersand. All single ampersands are removed and the first character that follows the first single ampersand is displayed underlined.</summary>
+  </member>
+  <member name="HotkeyPrefix.HotkeyPrefixHide">
+    <summary>Specifies that Unicode text is scanned for ampersands (&amp;), which are substituted and removed as in HotkeyPrefixShow but no underline is shown. This option can be used when accessibility hot key underlines are not required.</summary>
+  </member>
+</doc>

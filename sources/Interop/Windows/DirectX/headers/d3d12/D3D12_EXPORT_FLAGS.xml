@@ -3,16 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_EXPORT_FLAGS">
-    <summary>
-      <para>The flags to apply when exporting symbols from a state subobject.</para>
-    </summary>
-    <remarks>
-      <para>No export flags are defined in the current release.</para>
-    </remarks>
+    <summary>The flags to apply when exporting symbols from a state subobject.</summary>
   </member>
   <member name="D3D12_EXPORT_FLAGS.D3D12_EXPORT_FLAG_NONE">
-    <summary>
-      <para>No export flags.</para>
-    </summary>
+    <summary>No export flags.</summary>
   </member>
 </doc>

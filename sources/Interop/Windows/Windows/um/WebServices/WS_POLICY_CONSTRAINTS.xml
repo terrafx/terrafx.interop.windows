@@ -3,14 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_POLICY_CONSTRAINTS">
-    <summary>
-      <para>Specifies policy constraints for a channel.</para>
-    </summary>
+    <summary>Specifies policy constraints for a channel.</summary>
   </member>
   <member name="WS_POLICY_CONSTRAINTS.channelBinding">
     <summary>
-      <para>Which channel binding is required.  The
-following values are supported:</para>
+      <para>Which channel binding is required. The following values are supported:</para>
       <list type="bullet">
         <item>
           <description>
@@ -27,14 +24,8 @@ following values are supported:</para>
   </member>
   <member name="WS_POLICY_CONSTRAINTS.channelPropertyConstraints">
     <summary>
-      <para>An array of channel property constraints which override the default
-set of constraints.  The constraints specified here, combined
-with the default set of constraints limits the set of policies
-that will be matched.</para>
-      <para>If a channel property constraint is not specified for a given property,
-then a default constraint value will be used.
-See <see cref="WS_CHANNEL_PROPERTY_CONSTRAINT" /> for the
-supported set of properties and their default values.</para>
+      <para>An array of channel property constraints which override the default set of constraints. The constraints specified here, combined with the default set of constraints limits the set of policies that will be matched.</para>
+      <para>If a channel property constraint is not specified for a given property, then a default constraint value will be used. See <see cref="WS_CHANNEL_PROPERTY_CONSTRAINT" /> for the supported set of properties and their default values.</para>
     </summary>
   </member>
   <member name="WS_POLICY_CONSTRAINTS.channelPropertyConstraintCount">
@@ -49,10 +40,6 @@ supported set of properties and their default values.</para>
       <para>Setting this field to <b>NULL</b> indicates a constraint of no security.</para>
     </summary>
   </member>
-  <member name="WS_POLICY_CONSTRAINTS.policyExtensions">
-    <summary></summary>
-  </member>
-  <member name="WS_POLICY_CONSTRAINTS.policyExtensionCount">
-    <summary></summary>
-  </member>
+  <member name="WS_POLICY_CONSTRAINTS.policyExtensions"></member>
+  <member name="WS_POLICY_CONSTRAINTS.policyExtensionCount"></member>
 </doc>

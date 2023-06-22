@@ -4,21 +4,14 @@
 <doc>
   <member name="DVD_MultichannelAudioAttributes">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>DVD_MultichannelAudioAttributes</code> structure describes the multichannel attributes of one audio stream within a specified title.</para>
     </summary>
-    <remarks>
-      <para>The <see cref="DVD_TitleAttributes" /> structure contains an array of up to eight <b>DVD_MultichannelAudioAttributes</b> structures. When <code>DVD_TitleAttributes</code> is filled by a call to the <see cref="IDvdInfo2.GetTitleAttributes" /> method, the array will be populated with one <b>DVD_MultichannelAudioAttributes</b> structure for each available audio stream in the title.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="DVD_MultichannelAudioAttributes.Info">
-    <summary>
-      <para>Array of eight <see cref="DVD_MUA_MixingInfo" /> structures, which contain the mixing information for each channel in the audio stream.</para>
-    </summary>
+    <summary>Array of eight <see cref="DVD_MUA_MixingInfo" /> structures, which contain the mixing information for each channel in the audio stream.</summary>
   </member>
   <member name="DVD_MultichannelAudioAttributes.Coeff">
-    <summary>
-      <para>Array of eight <see cref="DVD_MUA_Coeff" /> structures, which contain the mixing coefficients for each channel in the audio stream.</para>
-    </summary>
+    <summary>Array of eight <see cref="DVD_MUA_Coeff" /> structures, which contain the mixing coefficients for each channel in the audio stream.</summary>
   </member>
 </doc>

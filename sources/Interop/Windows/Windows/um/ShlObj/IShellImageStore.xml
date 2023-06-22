@@ -3,129 +3,98 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IShellImageStore.Close">
-    <summary>
-      <para>Closes the image cache.</para>
-    </summary>
-    <param name="pdwLock">
-      <para>Type: <b>const DWORD*</b></para>
-      <para>A pointer to a variable of type <b>DWORD</b> that specifies the address that receives the lock during the call to the <see cref="IShellImageStore.Open" /> method.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_FALSE if the store is not open or if the store cannot be saved. Returns the result of <see cref="IShellImageStore.Commit" /> otherwise.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  <see cref="IShellImageStore" /> is supported through Windows XP. It is not supported in later operating systems.</para>
-    </remarks>
+    <summary>Closes the image cache.</summary>
+    <param name="pdwLock">A pointer to a variable of type <b>DWORD</b> that specifies the address that receives the lock during the call to the <see cref="IShellImageStore.Open" /> method.</param>
+    <returns>Returns S_FALSE if the store is not open or if the store cannot be saved. Returns the result of <see cref="IShellImageStore.Commit" /> otherwise.</returns>
   </member>
   <member name="IShellImageStore.Commit">
-    <summary>
-      <para>Writes the contents specified by <i>pdwLoc</i> to storage.</para>
-    </summary>
-    <param name="pdwLock">
-      <para>Type: <b>const DWORD*</b></para>
-      <para>A pointer to a variable of type <b>DWORD</b> that specifies the address that receives the lock.</para>
-    </param>
+    <summary>Writes the contents specified by <i>pdwLoc</i> to storage.</summary>
+    <param name="pdwLock">A pointer to a variable of type <b>DWORD</b> that specifies the address that receives the lock.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if successful, or an error value, including the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Content was saved successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Content was saved successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>Saving was unsuccessful. The storage is not open or is open without write access.</para>
-          </description>
-        </item>
+          <description>Saving was unsuccessful. The storage is not open or is open without write access.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  <see cref="IShellImageStore" /> is supported through Windows XP. It is not supported in later operating systems.</para>
-    </remarks>
   </member>
   <member name="IShellImageStore.IsEntryInStore">
-    <summary>
-      <para>Checks to see if the image is in the store.</para>
-    </summary>
-    <param name="pszName">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>A pointer to a null-terminated string that specifies the path to the file that contains the image.</para>
-    </param>
-    <param name="pftTimeStamp">
-      <para>Type: <b><see cref="FILETIME" />*</b></para>
-      <para>A pointer to a <see cref="FILETIME" /> structure that specifies the time stamp for the image.</para>
-    </param>
+    <summary>Checks to see if the image is in the store.</summary>
+    <param name="pszName">A pointer to a null-terminated string that specifies the path to the file that contains the image.</param>
+    <param name="pftTimeStamp">A pointer to a <see cref="FILETIME" /> structure that specifies the time stamp for the image.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The entry is in the store.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The entry is in the store.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The entry is not in the store.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The entry is not in the store.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The store is not open.</para>
-          </description>
-        </item>
+          <description>The store is not open.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  <see cref="IShellImageStore" /> is supported through Windows XP. It is not supported in later operating systems.</para>
-    </remarks>
   </member>
   <member name="IShellImageStore">
-    <summary>
-      <para>Deprecated. Exposes methods that manipulate the image cache.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>Note</b>  <b>IShellImageStore</b> is supported through Windows XP. It is not supported in later operating systems.</para>
-    </remarks>
+    <summary>Deprecated. Exposes methods that manipulate the image cache.</summary>
   </member>
 </doc>

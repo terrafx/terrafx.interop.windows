@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINHTTP_PROXY_SETTINGS_EX">
+    <summary>Represents extended proxy settings.</summary>
+  </member>
+  <member name="WINHTTP_PROXY_SETTINGS_EX.ullGenerationId">
+    <summary>The current network generation (incremented each time the configuration is changed).</summary>
+  </member>
+  <member name="WINHTTP_PROXY_SETTINGS_EX.ullFlags">
+    <summary>Flags for the proxy settings (for example, <b>WINHTTP_PROXY_TYPE_DIRECT</b>).</summary>
+  </member>
+  <member name="WINHTTP_PROXY_SETTINGS_EX.pcwszAutoconfigUrl">
+    <summary>The PAC URL for the network (for example, L"http://proxy.contoso.com/wpad.dat").</summary>
+  </member>
+  <member name="WINHTTP_PROXY_SETTINGS_EX.pcwszProxy">
+    <summary>The proxy address and port for HTTP traffic (for example, L"http://192.168.1.1:8888").</summary>
+  </member>
+  <member name="WINHTTP_PROXY_SETTINGS_EX.pcwszSecureProxy">
+    <summary>The proxy address and port for HTTPS traffic (for example, L"http://192.168.1.1:8888").</summary>
+  </member>
+  <member name="WINHTTP_PROXY_SETTINGS_EX.cProxyBypasses">
+    <summary>The number of entries in the proxy bypass list (<i>rgpcwszProxyBypasses</i>).</summary>
+  </member>
+  <member name="WINHTTP_PROXY_SETTINGS_EX.rgpcwszProxyBypasses">
+    <summary>An array of strings containing each site in the proxy bypass list. (for example, L"contoso.com").</summary>
+  </member>
+  <member name="WINHTTP_PROXY_SETTINGS_EX.dwInterfaceIndex">
+    <summary>The interface index for which settings were retrieved.</summary>
+  </member>
+  <member name="WINHTTP_PROXY_SETTINGS_EX.pcwszConnectionName">
+    <summary>The WCM connection name for which settings were retrieved.</summary>
+  </member>
+</doc>

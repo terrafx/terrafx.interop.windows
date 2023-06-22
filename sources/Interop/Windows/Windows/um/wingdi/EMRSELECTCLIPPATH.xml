@@ -3,28 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRSELECTCLIPPATH">
-    <summary>
-      <para>Contains parameters for the <see cref="SelectClipPath" />, <see cref="SetBkMode" />, <see cref="SetMapMode" />, <see cref="SetPolyFillMode" />, <see cref="SetROP2" />, <see cref="SetStretchBltMode" />, <see cref="SetTextAlign" />, <see cref="SetICMMode" /> , and <see cref="SetLayout" /> enhanced metafile records.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
-    <seealso cref="SelectClipPath" />
-    <seealso cref="SetBkMode" />
-    <seealso cref="SetICMMode" />
-    <seealso cref="SetMapMode" />
-    <seealso cref="SetPolyFillMode" />
-    <seealso cref="SetROP2" />
-    <seealso cref="SetStretchBltMode" />
-    <seealso cref="SetTextAlign" />
+    <summary>Contains parameters for the <see cref="SelectClipPath" />, <see cref="SetBkMode" />, <see cref="SetMapMode" />, <see cref="SetPolyFillMode" />, <see cref="SetROP2" />, <see cref="SetStretchBltMode" />, <see cref="SetTextAlign" />, <see cref="SetICMMode" /> , and <see cref="SetLayout" /> enhanced metafile records.</summary>
   </member>
   <member name="EMRSELECTCLIPPATH.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMRSELECTCLIPPATH.iMode">
-    <summary>
-      <para>A value and meaning that varies depending on the function contained in the enhanced metafile record. For a description of this member, see the documentation of the functions contained in this record.</para>
-    </summary>
+    <summary>A value and meaning that varies depending on the function contained in the enhanced metafile record. For a description of this member, see the documentation of the functions contained in this record.</summary>
   </member>
 </doc>

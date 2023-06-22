@@ -3,102 +3,78 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAGE_FILE_HEADER">
-    <summary>
-      <para>Represents the COFF header format.</para>
-    </summary>
-    <seealso cref="IMAGE_NT_HEADERS" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/imagehlp-structures">ImageHlp Structures</seealso>
+    <summary>Represents the COFF header format.</summary>
   </member>
   <member name="IMAGE_FILE_HEADER.Machine">
     <summary>
-      <para>The architecture type of the computer. An image file can only be run on the specified computer or a system
-that emulates the specified computer. This member can be one of the following values.</para>
+      <para>The architecture type of the computer. An image file can only be run on the specified computer or a system that emulates the specified computer. This member can be one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_FILE_MACHINE_I386</b>
-                </description>
-              </item>
-              <item>
-                <description>0x014c</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x014c</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>x86</para>
-          </description>
-        </item>
-        <item>
+          <description>x86</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_FILE_MACHINE_IA64</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0200</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0200</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Intel Itanium</para>
-          </description>
-        </item>
-        <item>
+          <description>Intel Itanium</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_FILE_MACHINE_AMD64</b>
-                </description>
-              </item>
-              <item>
-                <description>0x8664</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x8664</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>x64</para>
-          </description>
-        </item>
+          <description>x64</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="IMAGE_FILE_HEADER.NumberOfSections">
-    <summary>
-      <para>The number of sections. This indicates the size of the section table, which immediately follows the
-headers. Note that the Windows loader limits the number of sections to 96.</para>
-    </summary>
+    <summary>The number of sections. This indicates the size of the section table, which immediately follows the headers. Note that the Windows loader limits the number of sections to 96.</summary>
   </member>
   <member name="IMAGE_FILE_HEADER.TimeDateStamp">
-    <summary>
-      <para>The low 32 bits of the time stamp of the image. This represents the date and time the image was created by
-the linker. The value is represented in the number of seconds elapsed since midnight (00:00:00), January 1,
-1970, Universal Coordinated Time, according to the system clock.</para>
-    </summary>
+    <summary>The low 32 bits of the time stamp of the image. This represents the date and time the image was created by the linker. The value is represented in the number of seconds elapsed since midnight (00:00:00), January 1, 1970, Universal Coordinated Time, according to the system clock.</summary>
   </member>
   <member name="IMAGE_FILE_HEADER.PointerToSymbolTable">
-    <summary>
-      <para>The offset of the symbol table, in bytes, or zero if no COFF symbol table exists.</para>
-    </summary>
+    <summary>The offset of the symbol table, in bytes, or zero if no COFF symbol table exists.</summary>
   </member>
   <member name="IMAGE_FILE_HEADER.NumberOfSymbols">
-    <summary>
-      <para>The number of symbols in the symbol table.</para>
-    </summary>
+    <summary>The number of symbols in the symbol table.</summary>
   </member>
   <member name="IMAGE_FILE_HEADER.SizeOfOptionalHeader">
-    <summary>
-      <para>The size of the optional header, in bytes. This value should be 0 for object files.</para>
-    </summary>
+    <summary>The size of the optional header, in bytes. This value should be 0 for object files.</summary>
   </member>
   <member name="IMAGE_FILE_HEADER.Characteristics">
     <summary>
@@ -108,262 +84,231 @@ the linker. The value is represented in the number of seconds elapsed since midn
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_FILE_RELOCS_STRIPPED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Relocation information was stripped from the file. The file must be loaded at its preferred base address.
-If the base address is not available, the loader reports an error.</para>
-          </description>
-        </item>
-        <item>
+          <description>Relocation information was stripped from the file. The file must be loaded at its preferred base address. If the base address is not available, the loader reports an error.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_FILE_EXECUTABLE_IMAGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file is executable (there are no unresolved external references).</para>
-          </description>
-        </item>
-        <item>
+          <description>The file is executable (there are no unresolved external references).</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_FILE_LINE_NUMS_STRIPPED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>COFF line numbers were stripped from the file.</para>
-          </description>
-        </item>
-        <item>
+          <description>COFF line numbers were stripped from the file.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_FILE_LOCAL_SYMS_STRIPPED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>COFF symbol table entries were stripped from file.</para>
-          </description>
-        </item>
-        <item>
+          <description>COFF symbol table entries were stripped from file.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_FILE_AGGRESIVE_WS_TRIM</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Aggressively trim the working set. This value is obsolete.</para>
-          </description>
-        </item>
-        <item>
+          <description>Aggressively trim the working set. This value is obsolete.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_FILE_LARGE_ADDRESS_AWARE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0020</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0020</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The application can handle addresses larger than 2 GB.</para>
-          </description>
-        </item>
-        <item>
+          <description>The application can handle addresses larger than 2 GB.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_FILE_BYTES_REVERSED_LO</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0080</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0080</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The bytes of the word are reversed. This flag is obsolete.</para>
-          </description>
-        </item>
-        <item>
+          <description>The bytes of the word are reversed. This flag is obsolete.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_FILE_32BIT_MACHINE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0100</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0100</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The computer supports 32-bit words.</para>
-          </description>
-        </item>
-        <item>
+          <description>The computer supports 32-bit words.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_FILE_DEBUG_STRIPPED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0200</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0200</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Debugging information was removed and stored separately in another file.</para>
-          </description>
-        </item>
-        <item>
+          <description>Debugging information was removed and stored separately in another file.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_FILE_REMOVABLE_RUN_FROM_SWAP</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0400</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0400</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If the image is on removable media, copy it to and run it from the swap file.</para>
-          </description>
-        </item>
-        <item>
+          <description>If the image is on removable media, copy it to and run it from the swap file.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_FILE_NET_RUN_FROM_SWAP</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0800</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0800</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If the image is on the network, copy it to and run it from the swap file.</para>
-          </description>
-        </item>
-        <item>
+          <description>If the image is on the network, copy it to and run it from the swap file.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_FILE_SYSTEM</b>
-                </description>
-              </item>
-              <item>
-                <description>0x1000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The image is a system file.</para>
-          </description>
-        </item>
-        <item>
+          <description>The image is a system file.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_FILE_DLL</b>
-                </description>
-              </item>
-              <item>
-                <description>0x2000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The image is a DLL file. While it is an executable file, it cannot be run directly.</para>
-          </description>
-        </item>
-        <item>
+          <description>The image is a DLL file. While it is an executable file, it cannot be run directly.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_FILE_UP_SYSTEM_ONLY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x4000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x4000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file should be run only on a uniprocessor computer.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file should be run only on a uniprocessor computer.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_FILE_BYTES_REVERSED_HI</b>
-                </description>
-              </item>
-              <item>
-                <description>0x8000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x8000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The bytes of the word are reversed. This flag is obsolete.</para>
-          </description>
-        </item>
+          <description>The bytes of the word are reversed. This flag is obsolete.</description>
+        </listheader>
       </list>
     </summary>
   </member>

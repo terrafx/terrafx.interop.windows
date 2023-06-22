@@ -4,111 +4,34 @@
 <doc>
   <member name="IDedupReadFileCallback.OrderContainersRestore">
     <summary>
-      <para>This method provides the application with the ability to influence the order of the pending reads that
-are required to retrieve the target file.</para>
-      <para>Given a list of container files that hold data for the
-restore target file, generates a list of container file extents in a sorted order that results in an efficient
-cross-container read plan from the backup store.</para>
-      <para>Implementation of this method by the application is
-optional.</para>
+      <para>This method provides the application with the ability to influence the order of the pending reads that are required to retrieve the target file.</para>
+      <para>Given a list of container files that hold data for the restore target file, generates a list of container file extents in a sorted order that results in an efficient cross-container read plan from the backup store.</para>
+      <para>Implementation of this method by the application is optional.</para>
     </summary>
-    <param name="NumberOfContainers">
-      <para>Number of container paths in the <i>ContainerPaths</i> array.</para>
-    </param>
-    <param name="ContainerPaths">
-      <para>Array of paths to container files that must be read in order to restore the file specified in the
-<a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nf-ddpbackup-idedupbackupsupport-restorefiles">IDedupBackupSupport.RestoreFiles</a></para>
-      <para>call. Each element is a full path from the root directory of the volume to a container file.</para>
-    </param>
-    <param name="ReadPlanEntries">
-      <para>Pointer to a ULONG variable that receives the number of
-<see cref="DEDUP_CONTAINER_EXTENT" /> structures in the array
-that the <i>ReadPlan</i> parameter points to.</para>
-    </param>
-    <param name="ReadPlan">
-      <para>Pointer to a buffer that receives an array of
-<see cref="DEDUP_CONTAINER_EXTENT" /> structures.</para>
-    </param>
-    <returns>
-      <para>This method can return standard <b>HRESULT</b> values, such as
-<b>S_OK</b>. It can also return converted
-<a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error codes</a> using the
-<see cref="HRESULT_FROM_WIN32" /> macro. Possible return values
-include the following.</para>
-    </returns>
-    <remarks>
-      <para>Given a list of container files that hold data for the restore target file, the application optionally
-generates a list of container store file extents in a sorted order that results in an efficient cross-container
-read plan. For a backup store located on tape, this would normally be in tape order.</para>
-      <para>In the case where a container is stored in multiple extents in the backup store—for
-example, as a result of an incremental backup sequence—the application may also return
-multiple container extents for each logical container file.</para>
-      <para>The application may return
-<b>S_OK</b> and <b>NULL</b> output parameters to skip the read plan
-optimizations. In this case, container read order will be chosen by Data Deduplication.</para>
-    </remarks>
-    <seealso cref="DEDUP_CONTAINER_EXTENT" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nn-ddpbackup-idedupreadfilecallback">IDedupReadFileCallback</seealso>
+    <param name="NumberOfContainers">Number of container paths in the <i>ContainerPaths</i> array.</param>
+    <param name="ContainerPaths">Array of paths to container files that must be read in order to restore the file specified in the<a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nf-ddpbackup-idedupbackupsupport-restorefiles">IDedupBackupSupport.RestoreFiles</a>call. Each element is a full path from the root directory of the volume to a container file.</param>
+    <param name="ReadPlanEntries">Pointer to a ULONG variable that receives the number of<see cref="DEDUP_CONTAINER_EXTENT" /> structures in the array that the <i>ReadPlan</i> parameter points to.</param>
+    <param name="ReadPlan">Pointer to a buffer that receives an array of<see cref="DEDUP_CONTAINER_EXTENT" /> structures.</param>
+    <returns>This method can return standard <b>HRESULT</b> values, such as<b>S_OK</b>. It can also return converted<a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error codes</a> using the<see cref="HRESULT_FROM_WIN32" /> macro. Possible return values include the following.</returns>
   </member>
   <member name="IDedupReadFileCallback.PreviewContainerRead">
-    <summary>
-      <para>Provides the application with a preview of the sequence of reads that are pending for a given container file extent.</para>
-    </summary>
-    <param name="FileFullPath">
-      <para>The full path from the root directory of the volume to the container file.</para>
-    </param>
-    <param name="NumberOfReads">
-      <para>Number of <see cref="DDP_FILE_EXTENT" /> structures in the array that the <i>ReadOffsets</i> parameter points to.</para>
-    </param>
-    <param name="ReadOffsets">
-      <para>Pointer to an array of <see cref="DDP_FILE_EXTENT" /> structures.</para>
-    </param>
-    <returns>
-      <para>This method can return standard <b>HRESULT</b> values, such as <b>S_OK</b>. It can also return converted <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error codes</a>  using the <see cref="HRESULT_FROM_WIN32" /> macro. Possible return values include the following.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>PreviewContainerRead</b> is called for each container file extent reported by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nf-ddpbackup-idedupreadfilecallback-ordercontainersrestore">IDedupReadFileCallback.OrderContainersRestore</a>. The application may use this preview as a per-container extent read plan to increase the efficiency of the pending reads. For example, the application may choose to perform read-ahead to improve throughput or to cache read buffers to improve overall performance across parallel file restore operations.</para>
-    </remarks>
-    <seealso cref="DDP_FILE_EXTENT" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nn-ddpbackup-idedupreadfilecallback">IDedupReadFileCallback</seealso>
+    <summary>Provides the application with a preview of the sequence of reads that are pending for a given container file extent.</summary>
+    <param name="FileFullPath">The full path from the root directory of the volume to the container file.</param>
+    <param name="NumberOfReads">Number of <see cref="DDP_FILE_EXTENT" /> structures in the array that the <i>ReadOffsets</i> parameter points to.</param>
+    <param name="ReadOffsets">Pointer to an array of <see cref="DDP_FILE_EXTENT" /> structures.</param>
+    <returns>This method can return standard <b>HRESULT</b> values, such as <b>S_OK</b>. It can also return converted <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error codes</a> using the <see cref="HRESULT_FROM_WIN32" /> macro. Possible return values include the following.</returns>
   </member>
   <member name="IDedupReadFileCallback.ReadBackupFile">
-    <summary>
-      <para>Reads data from a Data Deduplication store metadata or  container file located  in the backup store.</para>
-    </summary>
-    <param name="FileFullPath">
-      <para>The full path from the root directory of the volume to the container file.</para>
-    </param>
-    <param name="FileOffset">
-      <para>The offset, in bytes, from the beginning of the file to the beginning of the data to be read.</para>
-    </param>
-    <param name="SizeToRead">
-      <para>The number of bytes to read from the file.</para>
-    </param>
-    <param name="FileBuffer">
-      <para>A pointer to a buffer that receives the data that is read from the file. The size of the buffer must be greater than or equal to the number specified in the <i>SizeToRead</i> parameter.</para>
-    </param>
-    <param name="ReturnedSize">
-      <para>Pointer to a ULONG variable that receives the number of bytes that were read from the backup store. If the call to <b>ReadBackupFile</b> is successful, this number is equal to the value that was specified in the <i>SizeToRead</i> parameter.</para>
-    </param>
-    <param name="Flags">
-      <para>This parameter is reserved for future use.</para>
-    </param>
-    <returns>
-      <para>This method can return standard <b>HRESULT</b> values, such as <b>S_OK</b>. It can also return converted <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error codes</a>  using the <see cref="HRESULT_FROM_WIN32" /> macro. Possible return values include the following.</para>
-    </returns>
-    <seealso cref="CreateFile" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nn-ddpbackup-idedupreadfilecallback">IDedupReadFileCallback</seealso>
-    <seealso cref="ReadFile" />
+    <summary>Reads data from a Data Deduplication store metadata or container file located in the backup store.</summary>
+    <param name="FileFullPath">The full path from the root directory of the volume to the container file.</param>
+    <param name="FileOffset">The offset, in bytes, from the beginning of the file to the beginning of the data to be read.</param>
+    <param name="SizeToRead">The number of bytes to read from the file.</param>
+    <param name="FileBuffer">A pointer to a buffer that receives the data that is read from the file. The size of the buffer must be greater than or equal to the number specified in the <i>SizeToRead</i> parameter.</param>
+    <param name="ReturnedSize">Pointer to a ULONG variable that receives the number of bytes that were read from the backup store. If the call to <b>ReadBackupFile</b> is successful, this number is equal to the value that was specified in the <i>SizeToRead</i> parameter.</param>
+    <param name="Flags">This parameter is reserved for future use.</param>
+    <returns>This method can return standard <b>HRESULT</b> values, such as <b>S_OK</b>. It can also return converted <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error codes</a> using the <see cref="HRESULT_FROM_WIN32" /> macro. Possible return values include the following.</returns>
   </member>
   <member name="IDedupReadFileCallback">
-    <summary>
-      <para>A callback interface, implemented by backup applications, that enables Data Deduplication to read content from metadata and container files residing in a backup store and optionally improve restore efficiency.</para>
-    </summary>
-    <remarks>
-      <para>The <b>IDedupReadFileCallback</b> interface is implemented by a backup application and passed as a parameter to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nf-ddpbackup-idedupbackupsupport-restorefiles">IDedupBackupSupport.RestoreFiles</a> method. The callback is used by Data Deduplication to read data from Data Duplication store containers in the backup store.  <b>IDedupReadFileCallback</b> also includes methods that applications can optionally implement to increase the efficiency of the Data Deduplication file restore process.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nf-ddpbackup-idedupbackupsupport-restorefiles">IDedupBackupSupport.RestoreFiles</seealso>
+    <summary>A callback interface, implemented by backup applications, that enables Data Deduplication to read content from metadata and container files residing in a backup store and optionally improve restore efficiency.</summary>
   </member>
 </doc>

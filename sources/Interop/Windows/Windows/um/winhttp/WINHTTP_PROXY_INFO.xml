@@ -3,26 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WINHTTP_PROXY_INFO">
-    <summary>
-      <para>The <b>WINHTTP_PROXY_INFO</b> structure contains the session or default proxy configuration.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used with
-<see cref="WinHttpSetOption" /> and
-<see cref="WinHttpQueryOption" /> to get or set the proxy configuration for the current session by specifying the WINHTTP_OPTION_PROXY flag.</para>
-      <para>This structure is used with
-<see cref="WinHttpSetDefaultProxyConfiguration" /> and
-<see cref="WinHttpGetDefaultProxyConfiguration" /> to get or set the default proxy configuration in the registry.</para>
-      <para>The proxy server list contains one or more of the following strings separated by semicolons or whitespace.</para>
-      <code>([&lt;scheme&gt;=][&lt;scheme&gt;"://"]&lt;server&gt;[":"&lt;port&gt;])
-
-</code>
-      <para>The proxy bypass list contains one or more server names separated by semicolons or whitespace.  The proxy bypass list can also contain the string "&lt;local&gt;" to indicate that all local intranet sites are bypassed.  Local intranet sites are considered to be all servers that do not contain a period in their name.</para>
-      <para>
-        <b>Note</b>  For Windows XP and Windows 2000, see the <a href="https://docs.microsoft.com//windows/desktop/WinHttp/winhttp-start-page">Run-Time Requirements</a> section of the WinHttp start page.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinHttp/winhttp-versions">WinHTTP
-Versions</seealso>
+    <summary>The <b>WINHTTP_PROXY_INFO</b> structure contains the session or default proxy configuration.</summary>
   </member>
   <member name="WINHTTP_PROXY_INFO.dwAccessType">
     <summary>
@@ -32,41 +13,49 @@ Versions</seealso>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>WINHTTP_ACCESS_TYPE_NO_PROXY</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WINHTTP_ACCESS_TYPE_NO_PROXY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Internet accessed through a direct connection.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Internet accessed through a direct connection.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WINHTTP_ACCESS_TYPE_DEFAULT_PROXY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Applies only when setting proxy information.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WINHTTP_ACCESS_TYPE_DEFAULT_PROXY</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WINHTTP_ACCESS_TYPE_NAMED_PROXY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Applies only when setting proxy information.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WINHTTP_ACCESS_TYPE_NAMED_PROXY</b>
-          </description>
-          <description>
-            <para>Internet accessed using a proxy.</para>
-          </description>
-        </item>
+          <description>Internet accessed using a proxy.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="WINHTTP_PROXY_INFO.lpszProxy">
-    <summary>
-      <para>Pointer to a string value that contains the proxy server list.</para>
-    </summary>
+    <summary>Pointer to a string value that contains the proxy server list.</summary>
   </member>
   <member name="WINHTTP_PROXY_INFO.lpszProxyBypass">
-    <summary>
-      <para>Pointer to a string value that contains the proxy bypass list.</para>
-    </summary>
+    <summary>Pointer to a string value that contains the proxy bypass list.</summary>
   </member>
 </doc>

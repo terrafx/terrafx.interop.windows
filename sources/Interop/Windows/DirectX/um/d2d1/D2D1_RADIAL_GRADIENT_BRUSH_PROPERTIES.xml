@@ -3,43 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES">
-    <summary>
-      <para>Contains the gradient origin offset and the size and position of the gradient ellipse for an <see cref="ID2D1RadialGradientBrush" />.</para>
-    </summary>
-    <remarks>
-      <para>Different values for <i>center</i>,  <i>gradientOriginOffset</i>,  <i>radiusX</i> and/or <i>radiusY</i> produce different gradients.   The following illustration shows several radial gradients that have different gradient origin offsets, creating the appearance of the light illuminating the circles from different angles.</para>
-      <para>
-        <img alt="Illustration of four circles with radial gradients that have different origin offsets" src="https://docs.microsoft.com/windows/win32/api/d2d1mages/RadialGradient.png" />
-      </para>
-      <para>For convenience, Direct2D provides the <see cref="D2D1.RadialGradientBrushProperties" /> function for creating new <b>D2D1_RADIAL_GRADIENT_BRUSH</b> structures.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-brushes-overview">Brushes Overview</seealso>
-    <seealso cref="D2D1.RadialGradientBrushProperties" />
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/how-to-create-a-radial-gradient-brush">How to Create a Radial Gradient Brush</seealso>
-    <seealso cref="ID2D1RadialGradientBrush" />
+    <summary>Contains the gradient origin offset and the size and position of the gradient ellipse for an <see cref="ID2D1RadialGradientBrush" />.</summary>
   </member>
   <member name="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.center">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>In the brush's coordinate space, the center of the gradient ellipse.</para>
-    </summary>
+    <summary>In the brush's coordinate space, the center of the gradient ellipse.</summary>
   </member>
   <member name="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.gradientOriginOffset">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>In the brush's coordinate space, the offset of the gradient origin relative to the gradient ellipse's center.</para>
-    </summary>
+    <summary>In the brush's coordinate space, the offset of the gradient origin relative to the gradient ellipse's center.</summary>
   </member>
   <member name="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.radiusX">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>In the brush's coordinate space, the x-radius  of the gradient ellipse.</para>
-    </summary>
+    <summary>In the brush's coordinate space, the x-radius of the gradient ellipse.</summary>
   </member>
   <member name="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.radiusY">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>In the brush's coordinate space, the y-radius  of the gradient ellipse.</para>
-    </summary>
+    <summary>In the brush's coordinate space, the y-radius of the gradient ellipse.</summary>
   </member>
 </doc>

@@ -3,167 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="XINPUT_KEYSTROKE">
-    <summary>
-      <para>Specifies keystroke data returned by <see cref="XInputGetKeystroke" />.</para>
-    </summary>
-    <remarks>
-      <para>Future devices may return HID codes and virtual key values that are not supported on current devices, and are currently undefined. Applications should ignore these unexpected values.</para>
-      <para>A <i>virtual-key</i> code is a byte value that represents a particular physical key on the keyboard, not the character or characters (possibly none) that the key can be mapped to based on keyboard state. The keyboard state at the time a virtual key is pressed modifies the character reported. For example, VK_4 might represent a "4" or a "$", depending on the state of the SHIFT key.</para>
-      <para>A reported keyboard event includes the virtual key that caused the event, whether the key was pressed or released (or is repeating), and the state of the keyboard at the time of the event. The keyboard state includes information about whether any CTRL, ALT, or SHIFT keys are down.</para>
-      <para>If the keyboard event represents an Unicode character (for example, pressing the "A" key), the <i>Unicode</i> member will contain that character. Otherwise, <i>Unicode</i> will contain the value zero.</para>
-      <para>The valid virtual-key (VK_xxx) codes are defined in XInput.h. In addition to codes that indicate key presses, the following codes indicate controller input.</para>
-      <list type="table">
-        <listheader>
-          <description>Value</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>VK_PAD_A</description>
-          <description>
-            <b>A</b>  button </description>
-        </item>
-        <item>
-          <description>VK_PAD_B</description>
-          <description>
-            <b>B</b> button </description>
-        </item>
-        <item>
-          <description>VK_PAD_X</description>
-          <description>
-            <b>X</b> button </description>
-        </item>
-        <item>
-          <description>VK_PAD_Y</description>
-          <description>
-            <b>Y</b> button </description>
-        </item>
-        <item>
-          <description>VK_PAD_RSHOULDER</description>
-          <description>Right shoulder button </description>
-        </item>
-        <item>
-          <description>VK_PAD_LSHOULDER</description>
-          <description>Left shoulder button </description>
-        </item>
-        <item>
-          <description>VK_PAD_LTRIGGER</description>
-          <description>Left trigger </description>
-        </item>
-        <item>
-          <description>VK_PAD_RTRIGGER</description>
-          <description>Right trigger </description>
-        </item>
-        <item>
-          <description>VK_PAD_DPAD_UP</description>
-          <description>Directional pad up </description>
-        </item>
-        <item>
-          <description>VK_PAD_DPAD_DOWN</description>
-          <description>Directional pad down </description>
-        </item>
-        <item>
-          <description>VK_PAD_DPAD_LEFT</description>
-          <description>Directional pad left </description>
-        </item>
-        <item>
-          <description>VK_PAD_DPAD_RIGHT</description>
-          <description>Directional pad right </description>
-        </item>
-        <item>
-          <description>VK_PAD_START</description>
-          <description>
-            <b>START</b> button </description>
-        </item>
-        <item>
-          <description>VK_PAD_BACK</description>
-          <description>
-            <b>BACK</b> button </description>
-        </item>
-        <item>
-          <description>VK_PAD_LTHUMB_PRESS</description>
-          <description>Left thumbstick click </description>
-        </item>
-        <item>
-          <description>VK_PAD_RTHUMB_PRESS</description>
-          <description>Right thumbstick click </description>
-        </item>
-        <item>
-          <description>VK_PAD_LTHUMB_UP</description>
-          <description>Left thumbstick up </description>
-        </item>
-        <item>
-          <description>VK_PAD_LTHUMB_DOWN</description>
-          <description>Left thumbstick down </description>
-        </item>
-        <item>
-          <description>VK_PAD_LTHUMB_RIGHT</description>
-          <description>Left thumbstick right </description>
-        </item>
-        <item>
-          <description>VK_PAD_LTHUMB_LEFT</description>
-          <description>Left thumbstick left </description>
-        </item>
-        <item>
-          <description>VK_PAD_LTHUMB_UPLEFT</description>
-          <description>Left thumbstick up and left </description>
-        </item>
-        <item>
-          <description>VK_PAD_LTHUMB_UPRIGHT</description>
-          <description>Left thumbstick up and right </description>
-        </item>
-        <item>
-          <description>VK_PAD_LTHUMB_DOWNRIGHT</description>
-          <description>Left thumbstick down and right </description>
-        </item>
-        <item>
-          <description>VK_PAD_LTHUMB_DOWNLEFT</description>
-          <description>Left thumbstick down and left </description>
-        </item>
-        <item>
-          <description>VK_PAD_RTHUMB_UP</description>
-          <description>Right thumbstick up </description>
-        </item>
-        <item>
-          <description>VK_PAD_RTHUMB_DOWN</description>
-          <description>Right thumbstick down </description>
-        </item>
-        <item>
-          <description>VK_PAD_RTHUMB_RIGHT</description>
-          <description>Right thumbstick right </description>
-        </item>
-        <item>
-          <description>VK_PAD_RTHUMB_LEFT</description>
-          <description>Right thumbstick left </description>
-        </item>
-        <item>
-          <description>VK_PAD_RTHUMB_UPLEFT</description>
-          <description>Right thumbstick up and left </description>
-        </item>
-        <item>
-          <description>VK_PAD_RTHUMB_UPRIGHT</description>
-          <description>Right thumbstick up and right </description>
-        </item>
-        <item>
-          <description>VK_PAD_RTHUMB_DOWNRIGHT</description>
-          <description>Right thumbstick down and right </description>
-        </item>
-        <item>
-          <description>VK_PAD_RTHUMB_DOWNLEFT</description>
-          <description>Right thumbstick down and left </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="XInputGetKeystroke" />
+    <summary>Specifies keystroke data returned by <see cref="XInputGetKeystroke" />.</summary>
   </member>
   <member name="XINPUT_KEYSTROKE.VirtualKey">
-    <summary>
-      <para>Virtual-key code of the key, button, or stick movement. See XInput.h for a list of valid virtual-key (VK_xxx) codes. Also, see Remarks.</para>
-    </summary>
+    <summary>Virtual-key code of the key, button, or stick movement. See XInput.h for a list of valid virtual-key (VK_xxx) codes. Also, see Remarks.</summary>
   </member>
   <member name="XINPUT_KEYSTROKE.Unicode">
-    <summary>
-      <para>This member is unused and the value is zero.</para>
-    </summary>
+    <summary>This member is unused and the value is zero.</summary>
   </member>
   <member name="XINPUT_KEYSTROKE.Flags">
     <summary>
@@ -173,29 +19,25 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>XINPUT_KEYSTROKE_KEYDOWN</description>
           <description>The key was pressed. </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>XINPUT_KEYSTROKE_KEYUP</description>
           <description>The key was released. </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>XINPUT_KEYSTROKE_REPEAT</description>
           <description>A repeat of a held key. </description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="XINPUT_KEYSTROKE.UserIndex">
-    <summary>
-      <para>Index of the signed-in gamer associated with the device. Can be a value in the range 0–3.</para>
-    </summary>
+    <summary>Index of the signed-in gamer associated with the device. Can be a value in the range 0–3.</summary>
   </member>
   <member name="XINPUT_KEYSTROKE.HidCode">
-    <summary>
-      <para>HID code corresponding to the input. If there is no corresponding HID code, this value is zero.</para>
-    </summary>
+    <summary>HID code corresponding to the input. If there is no corresponding HID code, this value is zero.</summary>
   </member>
 </doc>

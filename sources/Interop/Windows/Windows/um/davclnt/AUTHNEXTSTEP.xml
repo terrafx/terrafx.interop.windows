@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="AUTHNEXTSTEP">
-    <summary>
-      <para>Specifies the next action that the WebDAV client should take after  a successful call to the <a href="https://docs.microsoft.com//windows/desktop/api/davclnt/nc-davclnt-pfndavauthcallback">DavAuthCallback</a> callback function.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration provides the values for the <i>NextStep</i> parameter of the <a href="https://docs.microsoft.com//windows/desktop/api/davclnt/nc-davclnt-pfndavauthcallback">DavAuthCallback</a> callback function.</para>
-    </remarks>
+    <summary>Specifies the next action that the WebDAV client should take after a successful call to the <a href="https://docs.microsoft.com//windows/desktop/api/davclnt/nc-davclnt-pfndavauthcallback">DavAuthCallback</a> callback function.</summary>
   </member>
   <member name="AUTHNEXTSTEP.DefaultBehavior">
-    <summary>
-      <para>Retry the connection request without using the <a href="https://docs.microsoft.com//windows/desktop/api/davclnt/nc-davclnt-pfndavauthcallback">DavAuthCallback</a> callback function. This is the same as the default behavior if no callback function is registered.</para>
-    </summary>
+    <summary>Retry the connection request without using the <a href="https://docs.microsoft.com//windows/desktop/api/davclnt/nc-davclnt-pfndavauthcallback">DavAuthCallback</a> callback function. This is the same as the default behavior if no callback function is registered.</summary>
   </member>
   <member name="AUTHNEXTSTEP.RetryRequest">
-    <summary>
-      <para>Retry the connection request using the credentials that were retrieved by the <a href="https://docs.microsoft.com//windows/desktop/api/davclnt/nc-davclnt-pfndavauthcallback">DavAuthCallback</a> function.</para>
-    </summary>
+    <summary>Retry the connection request using the credentials that were retrieved by the <a href="https://docs.microsoft.com//windows/desktop/api/davclnt/nc-davclnt-pfndavauthcallback">DavAuthCallback</a> function.</summary>
   </member>
   <member name="AUTHNEXTSTEP.CancelRequest">
-    <summary>
-      <para>Cancel the connection request.</para>
-    </summary>
+    <summary>Cancel the connection request.</summary>
   </member>
 </doc>

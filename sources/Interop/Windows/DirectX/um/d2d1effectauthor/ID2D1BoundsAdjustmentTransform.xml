@@ -3,44 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1BoundsAdjustmentTransform.GetOutputBounds">
-    <summary>
-      <para>Returns the output rectangle of the support transform.</para>
-    </summary>
-    <param name="outputBounds">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh847950(v=vs.85)">D2D1_RECT_L</a>*</b></para>
-      <para>The output bounds.</para>
-    </param>
-    <seealso cref="ID2D1BoundsAdjustmentTransform" />
+    <summary>Returns the output rectangle of the support transform.</summary>
+    <param name="outputBounds">The output bounds.</param>
   </member>
   <member name="ID2D1BoundsAdjustmentTransform.SetOutputBounds">
-    <summary>
-      <para>This sets the output bounds for the support transform.</para>
-    </summary>
-    <param name="outputBounds">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh847950(v=vs.85)">D2D1_RECT_L</a>*</b></para>
-      <para>The output bounds.</para>
-    </param>
-    <seealso cref="ID2D1BoundsAdjustmentTransform" />
+    <summary>This sets the output bounds for the support transform.</summary>
+    <param name="outputBounds">The output bounds.</param>
   </member>
   <member name="ID2D1BoundsAdjustmentTransform">
-    <summary>
-      <para>A support transform for effects to modify the output rectangle of the previous effect or bitmap.</para>
-    </summary>
-    <remarks>
-      <para>The support transform can be used for two different reasons.</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <para>To indicate that a region of its input image is already transparent black.  The expanded area will be treated as transparent black.</para>
-            <para>This can increase efficiency for rendering bitmaps.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>To increase the size of the input image.</para>
-          </description>
-        </item>
-      </list>
-    </remarks>
+    <summary>A support transform for effects to modify the output rectangle of the previous effect or bitmap.</summary>
   </member>
 </doc>

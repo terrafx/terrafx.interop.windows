@@ -3,29 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMTCKEYDOWN">
-    <summary>
-      <para>Contains information about a key press in a tab control. It is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/tcn-keydown">TCN_KEYDOWN</a> notification code. This structure supersedes the
-<b>TC_KEYDOWN</b> structure.</para>
-    </summary>
+    <summary>Contains information about a key press in a tab control. It is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/tcn-keydown">TCN_KEYDOWN</a> notification code. This structure supersedes the<b>TC_KEYDOWN</b> structure.</summary>
   </member>
   <member name="NMTCKEYDOWN.hdr">
     <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>
-        <see cref="NMHDR" /> structure that contains information about the notification.</para>
-    </summary>
+      <see cref="NMHDR" /> structure that contains information about the notification.</summary>
   </member>
   <member name="NMTCKEYDOWN.wVKey">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">WORD</a></b></para>
-      <para>Virtual key code.</para>
-    </summary>
+    <summary>Virtual key code.</summary>
   </member>
   <member name="NMTCKEYDOWN.flags">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Value that is identical to the
-<i>lParam</i> parameter of the <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a> message.</para>
-    </summary>
+    <summary>Value that is identical to the<i>lParam</i> parameter of the <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a> message.</summary>
   </member>
 </doc>

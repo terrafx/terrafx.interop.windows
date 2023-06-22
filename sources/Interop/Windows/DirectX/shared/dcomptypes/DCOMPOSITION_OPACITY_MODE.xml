@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DCOMPOSITION_OPACITY_MODE">
-    <summary>
-      <para>Specifies how the effective opacity value of a visual is applied to that visual’s content and children.</para>
-    </summary>
-    <seealso cref="IDCompositionEffectGroup.SetOpacity" />
-    <seealso cref="IDCompositionVisual2.SetOpacityMode" />
+    <summary>Specifies how the effective opacity value of a visual is applied to that visual’s content and children.</summary>
   </member>
   <member name="DCOMPOSITION_OPACITY_MODE.DCOMPOSITION_OPACITY_MODE_LAYER">
-    <summary>
-      <para>The target visual defines a logical layer into which its entire sub-tree is composed with a starting effective opacity of 1.0. The original opacity value is then used to blend the layer onto the visual’s background.</para>
-    </summary>
+    <summary>The target visual defines a logical layer into which its entire sub-tree is composed with a starting effective opacity of 1.0. The original opacity value is then used to blend the layer onto the visual’s background.</summary>
   </member>
   <member name="DCOMPOSITION_OPACITY_MODE.DCOMPOSITION_OPACITY_MODE_MULTIPLY">
-    <summary>
-      <para>The opacity value is multiplied with the effective opacity of the parent visual and the result is then individually applied to each piece of content in this visual’s sub-tree.</para>
-    </summary>
+    <summary>The opacity value is multiplied with the effective opacity of the parent visual and the result is then individually applied to each piece of content in this visual’s sub-tree.</summary>
   </member>
   <member name="DCOMPOSITION_OPACITY_MODE.DCOMPOSITION_OPACITY_MODE_INHERIT">
-    <summary>
-      <para>The opacity mode is the same as that of the target visual’s parent visual.</para>
-    </summary>
+    <summary>The opacity mode is the same as that of the target visual’s parent visual.</summary>
   </member>
 </doc>

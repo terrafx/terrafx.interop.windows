@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_INTERACTIVE_UNLOCK_LOGON">
+    <summary>The <b>KERB_INTERACTIVE_UNLOCK_LOGON</b> structure contains information used to unlock a workstation that has been locked during an interactive <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">logon session</a>.</summary>
+  </member>
+  <member name="KERB_INTERACTIVE_UNLOCK_LOGON.Logon">
+    <summary>A <see cref="KERB_INTERACTIVE_LOGON" /> structure that specifies the interactive logon session. The <b>MessageType</b> member of the <b>KERB_INTERACTIVE_LOGON</b> structure must be set to <b>KerbWorkstationUnlockLogon</b>.</summary>
+  </member>
+  <member name="KERB_INTERACTIVE_UNLOCK_LOGON.LogonId">
+    <summary>A <see cref="LUID" /> structure that contains the identity of the user attempting to unlock the workstation.</summary>
+  </member>
+</doc>

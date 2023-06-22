@@ -5,29 +5,18 @@
   <member name="DML_ACTIVATION_SOFTPLUS_OPERATOR_DESC">
     <summary>
       <para>Performs a parametric softplus activation function on every element in <i>InputTensor</i>, placing the result into the corresponding element of <i>OutputTensor</i>.</para>
-      <code>f(x) = ln(1 + exp(Steepness * x)) / Steepness
-</code>
+      <code>f(x) = ln(1 + exp(Steepness * x)) / Steepness</code>
       <para>Where exp(x) is the natural exponentiation function and ln(x) is the natural logarithm.</para>
       <para>This operator supports in-place execution, meaning that the output tensor is permitted to alias <i>InputTensor</i> during binding.</para>
     </summary>
-    <seealso cref="DML_ACTIVATION_PARAMETRIC_SOFTPLUS_OPERATOR_DESC structure" />
   </member>
   <member name="DML_ACTIVATION_SOFTPLUS_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The input tensor to read from.</para>
-    </summary>
+    <summary>The input tensor to read from.</summary>
   </member>
   <member name="DML_ACTIVATION_SOFTPLUS_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The <b>Steepness</b> coefficient. A typical default for this value is 1.0. This value cannot be less than 1.</para>
-    </summary>
+    <summary>The <b>Steepness</b> coefficient. A typical default for this value is 1.0. This value cannot be less than 1.</summary>
   </member>
   <member name="DML_ACTIVATION_SOFTPLUS_OPERATOR_DESC.Steepness">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
-      <para>The steepness value.</para>
-    </summary>
+    <summary>The steepness value.</summary>
   </member>
 </doc>

@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="UI_ANIMATION_SLOPE">
-    <summary>
-      <para>Defines animation slope characteristics.</para>
-    </summary>
-    <seealso cref="IUIAnimationTransitionLibrary.CreateSinusoidalTransitionFromRange" />
+    <summary>Defines animation slope characteristics.</summary>
   </member>
   <member name="UI_ANIMATION_SLOPE.UI_ANIMATION_SLOPE_INCREASING">
-    <summary>
-      <para>An increasing slope.</para>
-    </summary>
+    <summary>An increasing slope.</summary>
   </member>
   <member name="UI_ANIMATION_SLOPE.UI_ANIMATION_SLOPE_DECREASING">
-    <summary>
-      <para>A decreasing slope.</para>
-    </summary>
+    <summary>A decreasing slope.</summary>
   </member>
 </doc>

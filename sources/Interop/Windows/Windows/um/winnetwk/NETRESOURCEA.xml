@@ -3,17 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NETRESOURCEA">
-    <summary>
-      <para>The following structure contains information about a network resource. It is used by several of the network provider functions, including
-<see cref="NPOpenEnum" /></para>
-      <para>and <see cref="NPAddConnection" />.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The winnetwk.h header defines NETRESOURCE as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
+    <summary>The following structure contains information about a network resource. It is used by several of the network provider functions, including<see cref="NPOpenEnum" />and <see cref="NPAddConnection" />.</summary>
   </member>
   <member name="NETRESOURCEA.dwScope">
     <summary>
@@ -23,30 +13,42 @@ The winnetwk.h header defines NETRESOURCE as an alias which automatically select
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>RESOURCE_CONNECTED</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCE_CONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Current connections to network resources.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Current connections to network resources.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCE_GLOBALNET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>All network resources. These may or may not be connected.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>RESOURCE_GLOBALNET</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCE_CONTEXT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>All network resources. These may or may not be connected.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>RESOURCE_CONTEXT</b>
-          </description>
-          <description>
-            <para>The network resources associated with the user's current and default network context. The meaning of this is provider-specific.</para>
-          </description>
-        </item>
+          <description>The network resources associated with the user's current and default network context. The meaning of this is provider-specific.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -58,30 +60,42 @@ The winnetwk.h header defines NETRESOURCE as an alias which automatically select
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>RESOURCETYPE_DISK</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCETYPE_DISK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The resource is a shared disk volume.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The resource is a shared disk volume.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCETYPE_PRINT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The resource is a shared printer.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>RESOURCETYPE_PRINT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCETYPE_ANY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The resource is a shared printer.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>RESOURCETYPE_ANY</b>
-          </description>
-          <description>
-            <para>The resource matches more than one type, for example, a container of both print and disk resources, or a resource which is neither print or disk.</para>
-          </description>
-        </item>
+          <description>The resource matches more than one type, for example, a container of both print and disk resources, or a resource which is neither print or disk.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -93,54 +107,78 @@ The winnetwk.h header defines NETRESOURCE as an alias which automatically select
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>RESOURCEDISPLAYTYPE_NETWORK</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCEDISPLAYTYPE_NETWORK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The resource is a network provider.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The resource is a network provider.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCEDISPLAYTYPE_DOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The resource is a collection of servers.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>RESOURCEDISPLAYTYPE_DOMAIN</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCEDISPLAYTYPE_SERVER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The resource is a server.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The resource is a collection of servers.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCEDISPLAYTYPE_SHARE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The resource is a share point.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>RESOURCEDISPLAYTYPE_SERVER</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCEDISPLAYTYPE_DIRECTORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The resource is a directory.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The resource is a server.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCEDISPLAYTYPE_GENERIC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>RESOURCEDISPLAYTYPE_SHARE</b>
-          </description>
-          <description>
-            <para>The resource is a share point.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>RESOURCEDISPLAYTYPE_DIRECTORY</b>
-          </description>
-          <description>
-            <para>The resource is a directory.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>RESOURCEDISPLAYTYPE_GENERIC</b>
-          </description>
-          <description>
-            <para>The resource type is unspecified. This value is used by network providers that do not specify resource types.</para>
-          </description>
-        </item>
+          <description>The resource type is unspecified. This value is used by network providers that do not specify resource types.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -152,29 +190,30 @@ The winnetwk.h header defines NETRESOURCE as an alias which automatically select
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>RESOURCEUSAGE_CONNECTABLE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCEUSAGE_CONNECTABLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>You can connect to the resource by calling <see cref="NPAddConnection" />. If <b>dwType</b> is RESOURCETYPE_DISK, then, after you have connected to the resource, you can use the file system APIs, such as <see cref="FindFirstFile" />, and <see cref="FindNextFile" />, to enumerate any files and directories the resource contains.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>You can connect to the resource by calling
-<see cref="NPAddConnection" />. If <b>dwType</b> is RESOURCETYPE_DISK, then, after you have connected to the resource, you can use the file system APIs, such as
-<see cref="FindFirstFile" />, and
-<see cref="FindNextFile" />, to enumerate any files and directories the resource contains.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCEUSAGE_CONTAINER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>RESOURCEUSAGE_CONTAINER</b>
-          </description>
-          <description>
-            <para>The resource is a container for other resources that can be enumerated by means of the
-<see cref="NPOpenEnum" />,
-<see cref="NPEnumResource" />, and
-<see cref="NPCloseEnum" /> functions.</para>
-            <para>The container may, however, be empty at the time  the enumeration is made. In other words, the first call to <see cref="NPEnumResource" /> may return WN_NO_MORE_ENTRIES.</para>
-          </description>
-        </item>
+          <description>The resource is a container for other resources that can be enumerated by means of the <see cref="NPOpenEnum" />, <see cref="NPEnumResource" />, and <see cref="NPCloseEnum" /> functions. <para>The container may, however, be empty at the time the enumeration is made. In other words, the first call to <see cref="NPEnumResource" /> may return WN_NO_MORE_ENTRIES.</para></description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -185,33 +224,16 @@ The winnetwk.h header defines NETRESOURCE as an alias which automatically select
     </summary>
   </member>
   <member name="NETRESOURCEA.lpRemoteName">
-    <summary>
-      <para>If the enumerated item is a network resource, this field contains a remote network name. This name may be then passed to
-<see cref="NPAddConnection" /> to make a network connection if <b>dwUsage</b> is set to RESOURCEUSAGE_CONNECTABLE. If the enumerated item is a current connection, this field will refer to the remote network name that <b>lpLocalName</b> is connected to.</para>
-    </summary>
+    <summary>If the enumerated item is a network resource, this field contains a remote network name. This name may be then passed to<see cref="NPAddConnection" /> to make a network connection if <b>dwUsage</b> is set to RESOURCEUSAGE_CONNECTABLE. If the enumerated item is a current connection, this field will refer to the remote network name that <b>lpLocalName</b> is connected to.</summary>
   </member>
   <member name="NETRESOURCEA.lpComment">
-    <summary>
-      <para>May be any provider-supplied comment associated with the enumerated item.</para>
-    </summary>
+    <summary>May be any provider-supplied comment associated with the enumerated item.</summary>
   </member>
   <member name="NETRESOURCEA.lpProvider">
-    <summary>
-      <para>Specifies the name of the provider that owns this enumerated item.</para>
-    </summary>
+    <summary>Specifies the name of the provider that owns this enumerated item.</summary>
   </member>
   <member name="NETRESOURCEA">
-    <summary>
-      <para>The following structure contains information about a network resource. It is used by several of the network provider functions, including
-<see cref="NPOpenEnum" /></para>
-      <para>and <see cref="NPAddConnection" />.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The winnetwk.h header defines NETRESOURCE as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
+    <summary>The following structure contains information about a network resource. It is used by several of the network provider functions, including<see cref="NPOpenEnum" />and <see cref="NPAddConnection" />.</summary>
   </member>
   <member name="NETRESOURCEA.dwScope">
     <summary>
@@ -221,30 +243,42 @@ The winnetwk.h header defines NETRESOURCE as an alias which automatically select
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>RESOURCE_CONNECTED</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCE_CONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Current connections to network resources.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Current connections to network resources.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCE_GLOBALNET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>All network resources. These may or may not be connected.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>RESOURCE_GLOBALNET</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCE_CONTEXT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>All network resources. These may or may not be connected.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>RESOURCE_CONTEXT</b>
-          </description>
-          <description>
-            <para>The network resources associated with the user's current and default network context. The meaning of this is provider-specific.</para>
-          </description>
-        </item>
+          <description>The network resources associated with the user's current and default network context. The meaning of this is provider-specific.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -256,30 +290,42 @@ The winnetwk.h header defines NETRESOURCE as an alias which automatically select
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>RESOURCETYPE_DISK</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCETYPE_DISK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The resource is a shared disk volume.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The resource is a shared disk volume.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCETYPE_PRINT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The resource is a shared printer.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>RESOURCETYPE_PRINT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCETYPE_ANY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The resource is a shared printer.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>RESOURCETYPE_ANY</b>
-          </description>
-          <description>
-            <para>The resource matches more than one type, for example, a container of both print and disk resources, or a resource which is neither print or disk.</para>
-          </description>
-        </item>
+          <description>The resource matches more than one type, for example, a container of both print and disk resources, or a resource which is neither print or disk.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -291,54 +337,78 @@ The winnetwk.h header defines NETRESOURCE as an alias which automatically select
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>RESOURCEDISPLAYTYPE_NETWORK</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCEDISPLAYTYPE_NETWORK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The resource is a network provider.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The resource is a network provider.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCEDISPLAYTYPE_DOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The resource is a collection of servers.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>RESOURCEDISPLAYTYPE_DOMAIN</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCEDISPLAYTYPE_SERVER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The resource is a server.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The resource is a collection of servers.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCEDISPLAYTYPE_SHARE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The resource is a share point.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>RESOURCEDISPLAYTYPE_SERVER</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCEDISPLAYTYPE_DIRECTORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The resource is a directory.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The resource is a server.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCEDISPLAYTYPE_GENERIC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>RESOURCEDISPLAYTYPE_SHARE</b>
-          </description>
-          <description>
-            <para>The resource is a share point.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>RESOURCEDISPLAYTYPE_DIRECTORY</b>
-          </description>
-          <description>
-            <para>The resource is a directory.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>RESOURCEDISPLAYTYPE_GENERIC</b>
-          </description>
-          <description>
-            <para>The resource type is unspecified. This value is used by network providers that do not specify resource types.</para>
-          </description>
-        </item>
+          <description>The resource type is unspecified. This value is used by network providers that do not specify resource types.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -350,29 +420,30 @@ The winnetwk.h header defines NETRESOURCE as an alias which automatically select
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>RESOURCEUSAGE_CONNECTABLE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCEUSAGE_CONNECTABLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>You can connect to the resource by calling <see cref="NPAddConnection" />. If <b>dwType</b> is RESOURCETYPE_DISK, then, after you have connected to the resource, you can use the file system APIs, such as <see cref="FindFirstFile" />, and <see cref="FindNextFile" />, to enumerate any files and directories the resource contains.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>You can connect to the resource by calling
-<see cref="NPAddConnection" />. If <b>dwType</b> is RESOURCETYPE_DISK, then, after you have connected to the resource, you can use the file system APIs, such as
-<see cref="FindFirstFile" />, and
-<see cref="FindNextFile" />, to enumerate any files and directories the resource contains.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCEUSAGE_CONTAINER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>RESOURCEUSAGE_CONTAINER</b>
-          </description>
-          <description>
-            <para>The resource is a container for other resources that can be enumerated by means of the
-<see cref="NPOpenEnum" />,
-<see cref="NPEnumResource" />, and
-<see cref="NPCloseEnum" /> functions.</para>
-            <para>The container may, however, be empty at the time  the enumeration is made. In other words, the first call to <see cref="NPEnumResource" /> may return WN_NO_MORE_ENTRIES.</para>
-          </description>
-        </item>
+          <description>The resource is a container for other resources that can be enumerated by means of the <see cref="NPOpenEnum" />, <see cref="NPEnumResource" />, and <see cref="NPCloseEnum" /> functions. <para>The container may, however, be empty at the time the enumeration is made. In other words, the first call to <see cref="NPEnumResource" /> may return WN_NO_MORE_ENTRIES.</para></description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -383,19 +454,12 @@ The winnetwk.h header defines NETRESOURCE as an alias which automatically select
     </summary>
   </member>
   <member name="NETRESOURCEA.lpRemoteName">
-    <summary>
-      <para>If the enumerated item is a network resource, this field contains a remote network name. This name may be then passed to
-<see cref="NPAddConnection" /> to make a network connection if <b>dwUsage</b> is set to RESOURCEUSAGE_CONNECTABLE. If the enumerated item is a current connection, this field will refer to the remote network name that <b>lpLocalName</b> is connected to.</para>
-    </summary>
+    <summary>If the enumerated item is a network resource, this field contains a remote network name. This name may be then passed to<see cref="NPAddConnection" /> to make a network connection if <b>dwUsage</b> is set to RESOURCEUSAGE_CONNECTABLE. If the enumerated item is a current connection, this field will refer to the remote network name that <b>lpLocalName</b> is connected to.</summary>
   </member>
   <member name="NETRESOURCEA.lpComment">
-    <summary>
-      <para>May be any provider-supplied comment associated with the enumerated item.</para>
-    </summary>
+    <summary>May be any provider-supplied comment associated with the enumerated item.</summary>
   </member>
   <member name="NETRESOURCEA.lpProvider">
-    <summary>
-      <para>Specifies the name of the provider that owns this enumerated item.</para>
-    </summary>
+    <summary>Specifies the name of the provider that owns this enumerated item.</summary>
   </member>
 </doc>

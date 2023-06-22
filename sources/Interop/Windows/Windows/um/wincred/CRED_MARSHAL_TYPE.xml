@@ -3,27 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRED_MARSHAL_TYPE">
-    <summary>
-      <para>The <b>CRED_MARSHAL_TYPE</b> enumeration specifies the types of credential to be marshaled by <see cref="CredMarshalCredential" /> or unmarshaled by <see cref="CredUnmarshalCredential" />.</para>
-    </summary>
+    <summary>The <b>CRED_MARSHAL_TYPE</b> enumeration specifies the types of credential to be marshaled by <see cref="CredMarshalCredential" /> or unmarshaled by <see cref="CredUnmarshalCredential" />.</summary>
   </member>
   <member name="CRED_MARSHAL_TYPE.CertCredential">
-    <summary>
-      <para>Specifies that the credential is a certificate reference described by a <see cref="CERT_CREDENTIAL_INFO" /> structure.</para>
-    </summary>
+    <summary>Specifies that the credential is a certificate reference described by a <see cref="CERT_CREDENTIAL_INFO" /> structure.</summary>
   </member>
   <member name="CRED_MARSHAL_TYPE.UsernameTargetCredential">
-    <summary>
-      <para>Specifies that the credential is a reference to a CRED_FLAGS_USERNAME_TARGET credential described by a <see cref="USERNAME_TARGET_CREDENTIAL_INFO" /> structure.</para>
-    </summary>
+    <summary>Specifies that the credential is a reference to a CRED_FLAGS_USERNAME_TARGET credential described by a <see cref="USERNAME_TARGET_CREDENTIAL_INFO" /> structure.</summary>
   </member>
-  <member name="CRED_MARSHAL_TYPE.BinaryBlobCredential">
-    <summary></summary>
-  </member>
-  <member name="CRED_MARSHAL_TYPE.UsernameForPackedCredentials">
-    <summary></summary>
-  </member>
-  <member name="CRED_MARSHAL_TYPE.BinaryBlobForSystem">
-    <summary></summary>
-  </member>
+  <member name="CRED_MARSHAL_TYPE.BinaryBlobCredential"></member>
+  <member name="CRED_MARSHAL_TYPE.UsernameForPackedCredentials"></member>
+  <member name="CRED_MARSHAL_TYPE.BinaryBlobForSystem"></member>
 </doc>

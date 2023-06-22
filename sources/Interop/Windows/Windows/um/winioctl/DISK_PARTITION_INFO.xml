@@ -3,16 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DISK_PARTITION_INFO">
-    <summary>
-      <para>Contains the disk partition information.</para>
-    </summary>
-    <seealso cref="DISK_GEOMETRY_EX" />
-    <seealso cref="PARTITION_STYLE" />
+    <summary>Contains the disk partition information.</summary>
   </member>
   <member name="DISK_PARTITION_INFO.SizeOfPartitionInfo">
-    <summary>
-      <para>The size of this structure, in bytes.</para>
-    </summary>
+    <summary>The size of this structure, in bytes.</summary>
   </member>
   <member name="DISK_PARTITION_INFO.PartitionStyle">
     <summary>
@@ -20,31 +14,19 @@
       <para>For more information, see <see cref="PARTITION_STYLE" />.</para>
     </summary>
   </member>
-  <member name="DISK_PARTITION_INFO.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="DISK_PARTITION_INFO.DUMMYUNIONNAME"></member>
   <member name="DISK_PARTITION_INFO.DUMMYUNIONNAME.Mbr">
-    <summary>
-      <para>If <b>PartitionStyle</b> is <b>PARTITION_STYLE_MBR</b> (0), the union is a structure that contains information for a master boot record partition, which includes a disk signature and a checksum.</para>
-    </summary>
+    <summary>If <b>PartitionStyle</b> is <b>PARTITION_STYLE_MBR</b> (0), the union is a structure that contains information for a master boot record partition, which includes a disk signature and a checksum.</summary>
   </member>
   <member name="DISK_PARTITION_INFO.DUMMYUNIONNAME.Mbr.Signature">
-    <summary>
-      <para>MBR signature of the partition.</para>
-    </summary>
+    <summary>MBR signature of the partition.</summary>
   </member>
-  <member name="DISK_PARTITION_INFO.DUMMYUNIONNAME.Mbr.CheckSum">
-    <summary></summary>
-  </member>
+  <member name="DISK_PARTITION_INFO.DUMMYUNIONNAME.Mbr.CheckSum"></member>
   <member name="DISK_PARTITION_INFO.DUMMYUNIONNAME.Gpt">
-    <summary>
-      <para>If <b>PartitionStyle</b> is <b>PARTITION_STYLE_GPT</b> (1), the union is a structure that contains information for a <b>GUID</b> partition table partition, which includes a disk identifier (<b>GUID</b>).</para>
-    </summary>
+    <summary>If <b>PartitionStyle</b> is <b>PARTITION_STYLE_GPT</b> (1), the union is a structure that contains information for a <b>GUID</b> partition table partition, which includes a disk identifier (<b>GUID</b>).</summary>
   </member>
   <member name="DISK_PARTITION_INFO.DUMMYUNIONNAME.Gpt.DiskId">
     <summary>
-      <para>
-        <b>GUID</b> of the GPT partition.</para>
-    </summary>
+      <b>GUID</b> of the GPT partition.</summary>
   </member>
 </doc>

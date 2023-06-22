@@ -3,68 +3,44 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_CONTENT_PROTECTION_CAPS">
-    <summary>
-      <para>Contains flags that describe content-protection capabilities.</para>
-    </summary>
-    <seealso cref="D3D11_VIDEO_CONTENT_PROTECTION_CAPS" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-enumerations">Direct3D 11 Video Enumerations</seealso>
+    <summary>Contains flags that describe content-protection capabilities.</summary>
   </member>
   <member name="D3D11_CONTENT_PROTECTION_CAPS.D3D11_CONTENT_PROTECTION_CAPS_SOFTWARE">
-    <summary>
-      <para>The content protection is implemented in software by the driver.</para>
-    </summary>
+    <summary>The content protection is implemented in software by the driver.</summary>
   </member>
   <member name="D3D11_CONTENT_PROTECTION_CAPS.D3D11_CONTENT_PROTECTION_CAPS_HARDWARE">
-    <summary>
-      <para>The content protection is implemented in hardware by the GPU.</para>
-    </summary>
+    <summary>The content protection is implemented in hardware by the GPU.</summary>
   </member>
   <member name="D3D11_CONTENT_PROTECTION_CAPS.D3D11_CONTENT_PROTECTION_CAPS_PROTECTION_ALWAYS_ON">
-    <summary>
-      <para>Content protection is always applied to a protected surface, regardless of whether the application explicitly enables protection.</para>
-    </summary>
+    <summary>Content protection is always applied to a protected surface, regardless of whether the application explicitly enables protection.</summary>
   </member>
   <member name="D3D11_CONTENT_PROTECTION_CAPS.D3D11_CONTENT_PROTECTION_CAPS_PARTIAL_DECRYPTION">
-    <summary>
-      <para>The driver can use partially encrypted buffers. If this capability is not present, the entire buffer must be either encrypted or clear.</para>
-    </summary>
+    <summary>The driver can use partially encrypted buffers. If this capability is not present, the entire buffer must be either encrypted or clear.</summary>
   </member>
   <member name="D3D11_CONTENT_PROTECTION_CAPS.D3D11_CONTENT_PROTECTION_CAPS_CONTENT_KEY">
-    <summary>
-      <para>The driver can encrypt data using a separate content key that is encrypted using the session key.</para>
-    </summary>
+    <summary>The driver can encrypt data using a separate content key that is encrypted using the session key.</summary>
   </member>
   <member name="D3D11_CONTENT_PROTECTION_CAPS.D3D11_CONTENT_PROTECTION_CAPS_FRESHEN_SESSION_KEY">
-    <summary>
-      <para>The driver can refresh the session key without renegotiating the key.</para>
-    </summary>
+    <summary>The driver can refresh the session key without renegotiating the key.</summary>
   </member>
   <member name="D3D11_CONTENT_PROTECTION_CAPS.D3D11_CONTENT_PROTECTION_CAPS_ENCRYPTED_READ_BACK">
-    <summary>
-      <para>The driver can read back encrypted data from a protected surface. For more information, see <see cref="ID3D11VideoContext.EncryptionBlt" />.</para>
-    </summary>
+    <summary>The driver can read back encrypted data from a protected surface. For more information, see <see cref="ID3D11VideoContext.EncryptionBlt" />.</summary>
   </member>
   <member name="D3D11_CONTENT_PROTECTION_CAPS.D3D11_CONTENT_PROTECTION_CAPS_ENCRYPTED_READ_BACK_KEY">
-    <summary>
-      <para>The driver requires a separate key to read encrypted data from a protected surface.</para>
-    </summary>
+    <summary>The driver requires a separate key to read encrypted data from a protected surface.</summary>
   </member>
   <member name="D3D11_CONTENT_PROTECTION_CAPS.D3D11_CONTENT_PROTECTION_CAPS_SEQUENTIAL_CTR_IV">
-    <summary>
-      <para>If the encryption type is <b>D3DCRYPTOTYPE_AES128_CTR</b>, the application must use a sequential count in the <see cref="D3D11_AES_CTR_IV" />  structure.</para>
-    </summary>
+    <summary>If the encryption type is <b>D3DCRYPTOTYPE_AES128_CTR</b>, the application must use a sequential count in the <see cref="D3D11_AES_CTR_IV" /> structure.</summary>
   </member>
   <member name="D3D11_CONTENT_PROTECTION_CAPS.D3D11_CONTENT_PROTECTION_CAPS_ENCRYPT_SLICEDATA_ONLY">
     <summary>
-      <para>The driver supports encrypted slice data, but does not support any other encrypted data in the compressed buffer.  The caller should not encrypt any data within the buffer other than the slice data.</para>
-      <para>
-        <b>Note</b>  The driver should only report this flag for the specific profiles that have this limitation.</para>
+      <para>The driver supports encrypted slice data, but does not support any other encrypted data in the compressed buffer. The caller should not encrypt any data within the buffer other than the slice data.</para>
+      <div>
+        <b>Note</b>  The driver should only report this flag for the specific profiles that have this limitation.</div>
     </summary>
   </member>
   <member name="D3D11_CONTENT_PROTECTION_CAPS.D3D11_CONTENT_PROTECTION_CAPS_DECRYPTION_BLT">
-    <summary>
-      <para>The driver can copy encrypted data from one resource to another, decrypting the data as part of the process.</para>
-    </summary>
+    <summary>The driver can copy encrypted data from one resource to another, decrypting the data as part of the process.</summary>
   </member>
   <member name="D3D11_CONTENT_PROTECTION_CAPS.D3D11_CONTENT_PROTECTION_CAPS_HARDWARE_PROTECT_UNCOMPRESSED">
     <summary>
@@ -77,8 +53,7 @@
           <description>The hardware can ensure a protected resource cannot be copied to an unprotected resource.</description>
         </item>
       </list>
-      <b>Note</b>  This enumeration value is supported starting with Windows 10.
-</summary>
+      <b>Note</b>  This enumeration value is supported starting with Windows 10.</summary>
   </member>
   <member name="D3D11_CONTENT_PROTECTION_CAPS.D3D11_CONTENT_PROTECTION_CAPS_HARDWARE_PROTECTED_MEMORY_PAGEABLE">
     <summary>
@@ -89,7 +64,7 @@
   </member>
   <member name="D3D11_CONTENT_PROTECTION_CAPS.D3D11_CONTENT_PROTECTION_CAPS_HARDWARE_TEARDOWN">
     <summary>
-      <para>The hardware supports an automatic teardown mechanism that could trigger hardware keys or protected content to become lost in some conditions.  The application can register to be notified when these events occur.</para>
+      <para>The hardware supports an automatic teardown mechanism that could trigger hardware keys or protected content to become lost in some conditions. The application can register to be notified when these events occur.</para>
       <para>
         <b>Note</b>  This enumeration value is supported starting with Windows 10.</para>
     </summary>
@@ -101,7 +76,5 @@
         <b>Note</b>  This enumeration value is supported starting with Windows 10.</para>
     </summary>
   </member>
-  <member name="D3D11_CONTENT_PROTECTION_CAPS.D3D11_CONTENT_PROTECTION_CAPS_HARDWARE_DRM_COMMUNICATION_MULTI_THREADED">
-    <summary></summary>
-  </member>
+  <member name="D3D11_CONTENT_PROTECTION_CAPS.D3D11_CONTENT_PROTECTION_CAPS_HARDWARE_DRM_COMMUNICATION_MULTI_THREADED"></member>
 </doc>

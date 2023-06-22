@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDragDropManagerInterop.GetForWindow">
+    <summary>Gets a <a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager">CoreDragDropManager</a> object for the window of the active application.</summary>
+    <param name="hwnd">Handle to the window of the active application.</param>
+    <param name="riid">
+      <para>The GUID for the resource interface.</para>
+      <para>The REFIID, or GUID, of the interface to the resource can be obtained by using the __uuidof() macro. For example:</para>
+      <para>
+        <code>__uuidof(CoreDragDropManager)</code>
+      </para>
+    </param>
+    <param name="ppv">Address of a pointer to a <a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager">CoreDragDropManager</a> object.</param>
+    <returns>If this function succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</returns>
+  </member>
+  <member name="IDragDropManagerInterop">
+    <summary>Enables interoperability with a WinRT <a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager">CoreDragDropManager</a> object.</summary>
+  </member>
+</doc>

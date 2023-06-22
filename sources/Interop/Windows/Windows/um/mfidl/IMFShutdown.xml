@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFShutdown.GetShutdownStatus">
-    <summary>
-      <para>Queries the status of an earlier call to the <see cref="IMFShutdown.Shutdown" /> method.</para>
-    </summary>
-    <param name="pStatus">
-      <para>Receives a member of the <see cref="MFSHUTDOWN_STATUS" /> enumeration.</para>
-    </param>
+    <summary>Queries the status of an earlier call to the <see cref="IMFShutdown.Shutdown" /> method.</summary>
+    <param name="pStatus">Receives a member of the <see cref="MFSHUTDOWN_STATUS" /> enumeration.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,91 +12,50 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
-          </description>
-          <description>
-            <para>The <see cref="Shutdown" /> method has not been called on this object.</para>
-          </description>
-        </item>
+          <description>The <see cref="Shutdown" /> method has not been called on this object.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Until <see cref="Shutdown" /> is called, the <b>GetShutdownStatus</b> method returns <b>MF_E_INVALIDREQUEST</b>.</para>
-      <para>If an object's <see cref="Shutdown" /> method is asynchronous, <i>pStatus</i> might receive the value <b>MFSHUTDOWN_INITIATED</b>. When the object is completely shut down, <i>pStatus</i> receives the value <b>MFSHUTDOWN_COMPLETED</b>.</para>
-    </remarks>
-    <seealso cref="IMFShutdown" />
   </member>
   <member name="IMFShutdown.Shutdown">
-    <summary>
-      <para>Shuts down a Media Foundation object and releases all resources associated with the object.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <see cref="MFShutdownObject" />  helper function is equivalent to calling this method.</para>
-    </remarks>
-    <seealso cref="IMFShutdown" />
-    <seealso cref="MFShutdownObject" />
+    <summary>Shuts down a Media Foundation object and releases all resources associated with the object.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFShutdown">
-    <summary>
-      <para>Exposed by some Media Foundation objects that must be explicitly shut down.</para>
-    </summary>
-    <remarks>
-      <para>The following types of object expose <b>IMFShutdown</b>:</para>
-      <list type="bullet">
-        <item>
-          <description>Content enablers (<see cref="IMFContentEnabler" /> interface)
-</description>
-        </item>
-        <item>
-          <description>Input trust authorities (<see cref="IMFInputTrustAuthority" /> interface)
-</description>
-        </item>
-        <item>
-          <description>Presentation clocks (<see cref="IMFPresentationClock" /> interface)
-</description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/asynchronous-mfts">Asynchronous MFTs</a>
-          </description>
-        </item>
-      </list>
-      <para>Any component that creates one of these objects is responsible for calling <see cref="Shutdown" /> on the object before releasing the object. Typically, applications do not create any of these objects directly, so it is not usually necessary to use this interface in an application.</para>
-      <para>To obtain a pointer to this interface, call <b>QueryInterface</b> on the object.</para>
-      <para>If you are implementing a custom object, your object can expose this interface, but only if you can guarantee that your application will call <see cref="Shutdown" />.</para>
-      <para>Media sources, media sinks, and <i>synchronous</i> MFTs should not implement this interface, because the Media Foundation pipeline will not call <see cref="Shutdown" /> on these objects.
-Asynchronous MFTs must implement this interface.</para>
-      <para>This interface is not related to the <see cref="MFShutdown" /> function, which shuts down the Media Foundation platform, as described in <a href="https://docs.microsoft.com//windows/desktop/medfound/initializing-media-foundation">Initializing Media Foundation</a>.</para>
-      <para>Some Media Foundation interfaces define a <b>Shutdown</b> method, which serves the same purpose as <see cref="IMFShutdown.Shutdown" /> but is not directly related to it.</para>
-    </remarks>
-    <seealso cref="MFShutdownObject" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Exposed by some Media Foundation objects that must be explicitly shut down.</summary>
   </member>
 </doc>

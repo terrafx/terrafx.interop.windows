@@ -3,69 +3,26 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D10EffectConstantBuffer.GetConstantBuffer">
-    <summary>
-      <para>Get a constant-buffer.</para>
-    </summary>
-    <param name="ppConstantBuffer">
-      <para>Type: <b><see cref="ID3D10Buffer" />**</b></para>
-      <para>The address of a pointer to a constant-buffer interface. See <see cref="ID3D10Buffer Interface" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D10EffectConstantBuffer Interface" />
+    <summary>Get a constant-buffer.</summary>
+    <param name="ppConstantBuffer">The address of a pointer to a constant-buffer interface. See <see cref="ID3D10Buffer Interface" />.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10EffectConstantBuffer.GetTextureBuffer">
-    <summary>
-      <para>Get a texture-buffer.</para>
-    </summary>
-    <param name="ppTextureBuffer">
-      <para>Type: <b><see cref="ID3D10ShaderResourceView" />**</b></para>
-      <para>The address of a pointer to a shader-resource-view interface for accessing a texture buffer. See <see cref="ID3D10ShaderResourceView Interface" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D10EffectConstantBuffer Interface" />
+    <summary>Get a texture-buffer.</summary>
+    <param name="ppTextureBuffer">The address of a pointer to a shader-resource-view interface for accessing a texture buffer. See <see cref="ID3D10ShaderResourceView Interface" />.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10EffectConstantBuffer.SetConstantBuffer">
-    <summary>
-      <para>Set a constant-buffer.</para>
-    </summary>
-    <param name="pConstantBuffer">
-      <para>Type: <b><see cref="ID3D10Buffer" />*</b></para>
-      <para>A pointer to a constant-buffer interface. See <see cref="ID3D10Buffer Interface" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D10EffectConstantBuffer Interface" />
+    <summary>Set a constant-buffer.</summary>
+    <param name="pConstantBuffer">A pointer to a constant-buffer interface. See <see cref="ID3D10Buffer Interface" />.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10EffectConstantBuffer.SetTextureBuffer">
-    <summary>
-      <para>Set a texture-buffer.</para>
-    </summary>
-    <param name="pTextureBuffer">
-      <para>Type: <b><see cref="ID3D10ShaderResourceView" />*</b></para>
-      <para>A pointer to a shader-resource-view interface for accessing a texture buffer.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D10EffectConstantBuffer Interface" />
+    <summary>Set a texture-buffer.</summary>
+    <param name="pTextureBuffer">A pointer to a shader-resource-view interface for accessing a texture buffer.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10EffectConstantBuffer">
-    <summary>
-      <para>A constant-buffer interface accesses constant buffers or texture buffers.</para>
-    </summary>
-    <remarks>
-      <para>Use constant buffers to store many effect constants; grouping constants into buffers based on their frequency of update. This allows you to minimize the number of state changes as well as make the fewest API calls to change state. Both of these factors lead to better performance.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-interfaces">Effect Interfaces (Direct3D 10)</seealso>
-    <seealso cref="ID3D10EffectVariable" />
+    <summary>A constant-buffer interface accesses constant buffers or texture buffers.</summary>
   </member>
 </doc>

@@ -3,45 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FILE_BASIC_INFO">
-    <summary>
-      <para>Contains the basic information for a file. Used for file handles.</para>
-    </summary>
-    <seealso cref="FILE_INFO_BY_HANDLE_CLASS" />
-    <seealso cref="GetFileAttributes" />
-    <seealso cref="GetFileInformationByHandleEx" />
-    <seealso cref="SetFileInformationByHandle" />
+    <summary>Contains the basic information for a file. Used for file handles.</summary>
   </member>
   <member name="FILE_BASIC_INFO.CreationTime">
-    <summary>
-      <para>The time the file was created in <see cref="FILETIME" /> format,
-which is a 64-bit value representing the number of 100-nanosecond intervals since January 1, 1601 (UTC).</para>
-    </summary>
+    <summary>The time the file was created in <see cref="FILETIME" /> format, which is a 64-bit value representing the number of 100-nanosecond intervals since January 1, 1601 (UTC).</summary>
   </member>
   <member name="FILE_BASIC_INFO.LastAccessTime">
-    <summary>
-      <para>The time the file was last accessed in <see cref="FILETIME" /></para>
-      <para>format.</para>
-    </summary>
+    <summary>The time the file was last accessed in <see cref="FILETIME" />format.</summary>
   </member>
   <member name="FILE_BASIC_INFO.LastWriteTime">
-    <summary>
-      <para>The time the file was last written to in <see cref="FILETIME" /></para>
-      <para>format.</para>
-    </summary>
+    <summary>The time the file was last written to in <see cref="FILETIME" />format.</summary>
   </member>
   <member name="FILE_BASIC_INFO.ChangeTime">
-    <summary>
-      <para>The time the file was changed in <see cref="FILETIME" /></para>
-      <para>format.</para>
-    </summary>
+    <summary>The time the file was changed in <see cref="FILETIME" />format.</summary>
   </member>
   <member name="FILE_BASIC_INFO.FileAttributes">
-    <summary>
-      <para>The file attributes. For a list of attributes, see
-<a href="https://docs.microsoft.com//windows/desktop/FileIO/file-attribute-constants">File Attribute Constants</a>. If this is set
-to 0 in a <b>FILE_BASIC_INFO</b> structure passed to
-<see cref="SetFileInformationByHandle" /> then none of the
-attributes are changed.</para>
-    </summary>
+    <summary>The file attributes. For a list of attributes, see<a href="https://docs.microsoft.com//windows/desktop/FileIO/file-attribute-constants">File Attribute Constants</a>. If this is set to 0 in a <b>FILE_BASIC_INFO</b> structure passed to<see cref="SetFileInformationByHandle" /> then none of the attributes are changed.</summary>
   </member>
 </doc>

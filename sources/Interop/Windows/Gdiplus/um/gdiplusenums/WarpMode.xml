@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WarpMode">
+    <summary>The <b>WarpMode</b> enumeration specifies warp modes that can be used to transform images.</summary>
+  </member>
+  <member name="WarpMode.WarpModePerspective">
+    <summary>Specifies the perspective warp mode.</summary>
+  </member>
+  <member name="WarpMode.WarpModeBilinear">
+    <summary>Specifies the bilinear warp mode.</summary>
+  </member>
+</doc>

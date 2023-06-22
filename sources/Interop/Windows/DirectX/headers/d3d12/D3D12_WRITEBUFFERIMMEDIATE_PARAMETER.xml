@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_WRITEBUFFERIMMEDIATE_PARAMETER">
-    <summary>
-      <para>Specifies the immediate value and destination address written using <see cref="ID3D12GraphicsCommandList2.WriteBufferImmediate" />.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-12-structures">Core Structures</seealso>
+    <summary>Specifies the immediate value and destination address written using <see cref="ID3D12GraphicsCommandList2.WriteBufferImmediate" />.</summary>
   </member>
   <member name="D3D12_WRITEBUFFERIMMEDIATE_PARAMETER.Dest">
-    <summary>
-      <para>The GPU virtual address at which to write the value. The address must be aligned to a 32-bit (4-byte) boundary.</para>
-    </summary>
+    <summary>The GPU virtual address at which to write the value. The address must be aligned to a 32-bit (4-byte) boundary.</summary>
   </member>
   <member name="D3D12_WRITEBUFFERIMMEDIATE_PARAMETER.Value">
-    <summary>
-      <para>The 32-bit value to write.</para>
-    </summary>
+    <summary>The 32-bit value to write.</summary>
   </member>
 </doc>

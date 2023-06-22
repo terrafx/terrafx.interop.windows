@@ -3,117 +3,44 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11Device1.CreateBlendState1">
-    <summary>
-      <para>Creates a blend-state object that encapsulates blend state for the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">output-merger stage</a> and allows the configuration of logic operations.</para>
-    </summary>
-    <param name="pBlendStateDesc">
-      <para>A pointer to a  <see cref="D3D11_BLEND_DESC1" /> structure that describes blend state.</para>
-    </param>
-    <param name="ppBlendState">
-      <para>Address of a pointer to the <see cref="ID3D11BlendState1" /> interface for the blend-state object created.</para>
-    </param>
-    <returns>
-      <para>This method returns E_OUTOFMEMORY if there is insufficient memory to create the blend-state object.
-See <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a> for other possible return values.</para>
-    </returns>
-    <remarks>
-      <para>The logical operations (those that enable bitwise logical operations between pixel shader output and render target contents, refer to <see cref="D3D11_RENDER_TARGET_BLEND_DESC1" /> ) are only available on certain feature levels; call <see cref="CheckFeatureSupport" /> with D3D11_FEATURE_D3D11_OPTIONS set, to ensure support by checking the boolean field  <i>OutputMergerLogicOp</i> of <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS" />.</para>
-      <para>An app can create up to 4096 unique blend-state objects. For each object created, the runtime checks to see if a previous object
-has the same state. If such a previous object exists, the runtime will return a pointer to previous instance instead of creating a duplicate object.</para>
-    </remarks>
-    <seealso cref="ID3D11Device1" />
+    <summary>Creates a blend-state object that encapsulates blend state for the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">output-merger stage</a> and allows the configuration of logic operations.</summary>
+    <param name="pBlendStateDesc">A pointer to a <see cref="D3D11_BLEND_DESC1" /> structure that describes blend state.</param>
+    <param name="ppBlendState">Address of a pointer to the <see cref="ID3D11BlendState1" /> interface for the blend-state object created.</param>
+    <returns>This method returns E_OUTOFMEMORY if there is insufficient memory to create the blend-state object.<br />See <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a> for other possible return values.</returns>
   </member>
   <member name="ID3D11Device1.CreateDeferredContext1">
-    <summary>
-      <para>Creates a deferred context, which can record command lists.</para>
-    </summary>
-    <param name="ContextFlags">
-      <para>Reserved for future use.
-Pass 0.</para>
-    </param>
-    <param name="ppDeferredContext">
-      <para>Upon completion of the method, the passed pointer to an <see cref="ID3D11DeviceContext1" /> interface pointer is initialized.</para>
-    </param>
+    <summary>Creates a deferred context, which can record command lists.</summary>
+    <param name="ContextFlags">Reserved for future use. Pass 0.</param>
+    <param name="ppDeferredContext">Upon completion of the method, the passed pointer to an <see cref="ID3D11DeviceContext1" /> interface pointer is initialized.</param>
     <returns>
       <para>Returns S_OK if successful; otherwise, returns one of the following:</para>
       <list type="bullet">
         <item>
-          <description>Returns <b>DXGI_ERROR_DEVICE_REMOVED</b> if the graphics adapter has been physically removed from the computer or a driver upgrade for the graphics adapter has occurred.
-If this error occurs, you should destroy and re-create the device.
-</description>
+          <description>Returns <b>DXGI_ERROR_DEVICE_REMOVED</b> if the graphics adapter has been physically removed from the computer or a driver upgrade for the graphics adapter has occurred. If this error occurs, you should destroy and re-create the device.</description>
         </item>
         <item>
-          <description>Returns <b>DXGI_ERROR_INVALID_CALL</b> if the <b>CreateDeferredContext1</b> method cannot be called from the current context.
-For example, if the device was created with the <see cref="D3D11_CREATE_DEVICE_SINGLETHREADED" /> value,  <b>CreateDeferredContext1</b> returns <b>DXGI_ERROR_INVALID_CALL</b>.
-</description>
+          <description>Returns <b>DXGI_ERROR_INVALID_CALL</b> if the <b>CreateDeferredContext1</b> method cannot be called from the current context. For example, if the device was created with the <see cref="D3D11_CREATE_DEVICE_SINGLETHREADED" /> value, <b>CreateDeferredContext1</b> returns <b>DXGI_ERROR_INVALID_CALL</b>.</description>
         </item>
         <item>
-          <description>Returns <b>E_INVALIDARG</b> if the <i>ContextFlags</i> parameter is invalid.
-</description>
+          <description>Returns <b>E_INVALIDARG</b> if the <i>ContextFlags</i> parameter is invalid.</description>
         </item>
         <item>
-          <description>Returns <b>E_OUTOFMEMORY</b> if the application has exhausted available memory.
-</description>
+          <description>Returns <b>E_OUTOFMEMORY</b> if the application has exhausted available memory.</description>
         </item>
       </list>
     </returns>
-    <remarks>
-      <para>A deferred context is a thread-safe context that you can use to record graphics commands on a thread other than the main rendering thread.
-By using a deferred context, you can record graphics commands into a command list that is encapsulated by the <see cref="ID3D11CommandList" /> interface.
-After you record all scene items, you can then submit them to the main render thread for final rendering.
-In this manner, you can perform rendering tasks concurrently across multiple threads and potentially improve performance in multi-core CPU scenarios.</para>
-      <para>You can create multiple deferred contexts.</para>
-      <para>
-        <b>Note</b>  If you use the <see cref="D3D11_CREATE_DEVICE_SINGLETHREADED" /> value to create the device that is represented by <see cref="ID3D11Device1" />, the <b>CreateDeferredContext1</b> method will fail, and you will not be able to create a deferred context.</para>
-      <para>For more information about deferred contexts, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-render">Immediate and Deferred Rendering</a>.</para>
-      <para>
-        <b>Windows Phone 8:
-</b> This API is supported.</para>
-    </remarks>
-    <seealso cref="ID3D11Device1" />
-    <seealso cref="ID3D11Device2.CreateDeferredContext2" />
-    <seealso cref="ID3D11Device3.CreateDeferredContext3" />
-    <seealso cref="ID3D11Device.CreateDeferredContext" />
   </member>
   <member name="ID3D11Device1.CreateRasterizerState1">
-    <summary>
-      <para>Creates a rasterizer state object that informs the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage">rasterizer stage</a> how to behave and forces the sample count while UAV rendering or rasterizing.</para>
-    </summary>
-    <param name="pRasterizerDesc">
-      <para>A pointer to a <see cref="D3D11_RASTERIZER_DESC1" /> structure that describes the  rasterizer state.</para>
-    </param>
-    <param name="ppRasterizerState">
-      <para>Address of a pointer to the <see cref="ID3D11RasterizerState1" /> interface for the rasterizer state object created.</para>
-    </param>
-    <returns>
-      <para>This method returns E_OUTOFMEMORY if there is insufficient memory to create the rasterizer state object.  See <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a> for other possible return values.</para>
-    </returns>
-    <remarks>
-      <para>An app can create up to 4096 unique rasterizer state objects. For each object created, the runtime checks to see if a previous object
-has the same state. If such a previous object exists, the runtime will return a pointer to previous instance instead of creating a duplicate object.</para>
-    </remarks>
-    <seealso cref="ID3D11Device1" />
+    <summary>Creates a rasterizer state object that informs the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage">rasterizer stage</a> how to behave and forces the sample count while UAV rendering or rasterizing.</summary>
+    <param name="pRasterizerDesc">A pointer to a <see cref="D3D11_RASTERIZER_DESC1" /> structure that describes the rasterizer state.</param>
+    <param name="ppRasterizerState">Address of a pointer to the <see cref="ID3D11RasterizerState1" /> interface for the rasterizer state object created.</param>
+    <returns>This method returns E_OUTOFMEMORY if there is insufficient memory to create the rasterizer state object. See <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a> for other possible return values.</returns>
   </member>
   <member name="ID3D11Device1.GetImmediateContext1">
-    <summary>
-      <para>Gets an immediate context, which can play back command lists.</para>
-    </summary>
-    <param name="ppImmediateContext">
-      <para>Upon completion of the method, the passed pointer to an <see cref="ID3D11DeviceContext1" /> interface pointer is initialized.</para>
-    </param>
-    <remarks>
-      <para>
-        <b>GetImmediateContext1</b> returns an <see cref="ID3D11DeviceContext1" /> object that represents an immediate context. You can use this immediate context to perform rendering that you want immediately submitted to a device. For most applications, an immediate context is the primary object that is used to draw your scene.</para>
-      <para>
-        <b>GetImmediateContext1</b> increments the reference count of the immediate context by one. So, call <see cref="Release" /> on the returned interface pointer when you are done with it to avoid a memory leak.</para>
-    </remarks>
-    <seealso cref="ID3D11Device1" />
+    <summary>Gets an immediate context, which can play back command lists.</summary>
+    <param name="ppImmediateContext">Upon completion of the method, the passed pointer to an <see cref="ID3D11DeviceContext1" /> interface pointer is initialized.</param>
   </member>
   <member name="ID3D11Device1">
-    <summary>
-      <para>The device interface represents a virtual adapter; it is used to create resources. <b>ID3D11Device1</b> adds new methods to those in <see cref="ID3D11Device" />.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-interfaces">Core Interfaces</seealso>
-    <seealso cref="ID3D11Device" />
+    <summary>The device interface represents a virtual adapter; it is used to create resources. <b>ID3D11Device1</b> adds new methods to those in <see cref="ID3D11Device" />.</summary>
   </member>
 </doc>

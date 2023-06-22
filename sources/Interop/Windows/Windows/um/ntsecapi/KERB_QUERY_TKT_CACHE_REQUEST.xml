@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_QUERY_TKT_CACHE_REQUEST">
+    <summary>
+      <para>The <b>KERB_QUERY_TKT_CACHE_REQUEST</b> structure contains information used to query the ticket cache.</para>
+      <para>It is used by<see cref="LsaCallAuthenticationPackage" />.</para>
+    </summary>
+  </member>
+  <member name="KERB_QUERY_TKT_CACHE_REQUEST.MessageType">
+    <summary>
+      <para>
+        <see cref="KERB_PROTOCOL_MESSAGE_TYPE" /> value identifying the type of request being made. This member must be set to <b>KerbQueryTicketCacheMessage</b> or <b>KerbRetrieveTicketMessage</b>.</para>
+      <para>If this member is set to <b>KerbQueryTicketCacheMessage</b>, the request is for information about all of the cached tickets for the specified user logon session. If it is set to <b>KerbRetrieveTicketMessage</b>, the request is for the ticket granting ticket from the ticket cache of the specified user logon session.</para>
+    </summary>
+  </member>
+  <member name="KERB_QUERY_TKT_CACHE_REQUEST.LogonId">
+    <summary>
+      <see cref="LUID" /> structure containing the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">logon session</a> identifier. This can be zero for the current user's logon session. If not zero, the caller must have the SeTcbPrivilege privilege set. If this fails, the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">Kerberos</a> authentication package sets the <i>ProtocolStatus</i> parameter of <see cref="LsaCallAuthenticationPackage" /> to STATUS_ACCESS_DENIED.</summary>
+  </member>
+</doc>

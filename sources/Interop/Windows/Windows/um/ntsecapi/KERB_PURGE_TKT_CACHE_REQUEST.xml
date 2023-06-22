@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_PURGE_TKT_CACHE_REQUEST">
+    <summary>
+      <para>The <b>KERB_PURGE_TKT_CACHE_REQUEST</b> structure contains information used to delete entries from the ticket cache.</para>
+      <para>It is used by<see cref="LsaCallAuthenticationPackage" />.</para>
+    </summary>
+  </member>
+  <member name="KERB_PURGE_TKT_CACHE_REQUEST.MessageType">
+    <summary>
+      <see cref="KERB_PROTOCOL_MESSAGE_TYPE" /> value identifying the type of request being made. This member must be set to <b>KerbPurgeTicketCacheMessage</b>.</summary>
+  </member>
+  <member name="KERB_PURGE_TKT_CACHE_REQUEST.LogonId">
+    <summary>
+      <see cref="LUID" /> structure containing the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">logon session</a> identifier. This can be zero for the current user's logon session. If not zero, the caller must have the SeTcbPrivilege privilege set. If this fails, the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">Kerberos</a> authentication package sets the <i>ProtocolStatus</i> parameter of <see cref="LsaCallAuthenticationPackage" /> to <b>STATUS_ACCESS_DENIED</b>.</summary>
+  </member>
+  <member name="KERB_PURGE_TKT_CACHE_REQUEST.ServerName">
+    <summary>
+      <see cref="UNICODE_STRING" /> containing the name of the service whose tickets should be deleted from the cache.</summary>
+  </member>
+  <member name="KERB_PURGE_TKT_CACHE_REQUEST.RealmName">
+    <summary>
+      <see cref="UNICODE_STRING" /> containing the name of the realm whose tickets should be deleted from the cache.</summary>
+  </member>
+</doc>

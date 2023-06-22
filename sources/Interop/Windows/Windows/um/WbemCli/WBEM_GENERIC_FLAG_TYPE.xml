@@ -3,56 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WBEM_GENERIC_FLAG_TYPE">
-    <summary>
-      <para>Contains general-purpose method parameter flags.</para>
-    </summary>
+    <summary>Contains general-purpose method parameter flags.</summary>
   </member>
-  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_RETURN_IMMEDIATELY">
-    <summary></summary>
-  </member>
-  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_RETURN_WBEM_COMPLETE">
-    <summary></summary>
-  </member>
-  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_BIDIRECTIONAL">
-    <summary></summary>
-  </member>
-  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_FORWARD_ONLY">
-    <summary></summary>
-  </member>
-  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_NO_ERROR_OBJECT">
-    <summary></summary>
-  </member>
-  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_RETURN_ERROR_OBJECT">
-    <summary></summary>
-  </member>
-  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_SEND_STATUS">
-    <summary></summary>
-  </member>
-  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_DONT_SEND_STATUS">
-    <summary></summary>
-  </member>
-  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_ENSURE_LOCATABLE">
-    <summary></summary>
-  </member>
-  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_DIRECT_READ">
-    <summary></summary>
-  </member>
-  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_SEND_ONLY_SELECTED">
-    <summary></summary>
-  </member>
-  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_RETURN_WHEN_COMPLETE">
-    <summary></summary>
-  </member>
-  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_RETURN_IMMEDIATELY">
-    <summary></summary>
-  </member>
-  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_MASK_RESERVED_FLAGS">
-    <summary></summary>
-  </member>
-  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_USE_AMENDED_QUALIFIERS">
-    <summary></summary>
-  </member>
-  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_STRONG_VALIDATION">
-    <summary></summary>
-  </member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_RETURN_IMMEDIATELY"></member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_RETURN_WBEM_COMPLETE"></member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_BIDIRECTIONAL"></member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_FORWARD_ONLY"></member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_NO_ERROR_OBJECT"></member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_RETURN_ERROR_OBJECT"></member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_SEND_STATUS"></member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_DONT_SEND_STATUS"></member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_ENSURE_LOCATABLE"></member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_DIRECT_READ"></member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_SEND_ONLY_SELECTED"></member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_RETURN_WHEN_COMPLETE"></member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_RETURN_IMMEDIATELY"></member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_MASK_RESERVED_FLAGS"></member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_USE_AMENDED_QUALIFIERS"></member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_STRONG_VALIDATION"></member>
 </doc>

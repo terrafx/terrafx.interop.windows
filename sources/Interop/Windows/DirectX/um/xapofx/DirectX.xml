@@ -3,33 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DirectX.CreateFX">
-    <summary>
-      <para>Creates an instance of the requested <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xapofx-overview">XAPOFX</a> effect.</para>
-    </summary>
-    <param name="clsid">
-      <para>ID of the effect to create. Use the <b>__uuidof</b> on the effect class name to get the CLSID for an effect. For example, <b>__uuidof</b>(FXReverb) would provide the CLSID for the FXReverb effect. For a list of effects provided by XAPOFX, see <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xapofx-overview">XAPOFX Overview</a>. For an example of retrieving the CLSID for an effect, see <a href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--use-xapofx-in-xaudio2">How to: Use XAPOFX in XAudio2</a>.</para>
-    </param>
-    <param name="pEffect">
-      <para>Receives a pointer to the created XAPO instance. If <b>CreateFX</b> fails, <i>pEffect </i> is untouched.</para>
-    </param>
-    <param name="pInitData">
-      <para>Effect-specific initialization parameters. This is <b>NULL</b> if <i>InitDataByteSize</i> is zero.</para>
-    </param>
-    <param name="InitDataByteSize">
-      <para>Size of <i>pInitData</i> in bytes. This is zero if <i>pInitData</i> is <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The created XAPO will have a reference count of 1. Client code must call <see cref="IUnknown.Release" /> after passing the XAPO to XAudio2 to allow XAudio2 to dispose of the XAPO when it is no longer needed. Use <see cref=" IXAudio2.CreateSourceVoice" /> or <see cref="IXAudio2Voice.SetEffectChain" /> to pass an XAPO to XAudio2.</para>
-      <para>
-        <b>Note</b>  The DirectX SDK version of this function doesn't have the <i>pInitData</i> or <i>InitDataByteSize</i> parameters as it only takes the first 2 parameters. To set initial parameters for the <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xapofx-overview">XAPOFX</a> effect that is  created with the DirectX SDK version of this function, you must bind that effect to a voice and use <see cref="IXAudio2Voice.SetEffectParameters" />.
-For info about how to do this, see <a href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--use-xapofx-in-xaudio2">How to: Use XAPOFX in XAudio2</a>.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9);
-Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/functions">Functions</seealso>
+    <summary>Creates an instance of the requested <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xapofx-overview">XAPOFX</a> effect.</summary>
+    <param name="clsid">ID of the effect to create. Use the <b>__uuidof</b> on the effect class name to get the CLSID for an effect. For example, <b>__uuidof</b>(FXReverb) would provide the CLSID for the FXReverb effect. For a list of effects provided by XAPOFX, see <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xapofx-overview">XAPOFX Overview</a>. For an example of retrieving the CLSID for an effect, see <a href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--use-xapofx-in-xaudio2">How to: Use XAPOFX in XAudio2</a>.</param>
+    <param name="pEffect">Receives a pointer to the created XAPO instance. If <b>CreateFX</b> fails, <i>pEffect</i> is untouched.</param>
+    <param name="pInitData">Effect-specific initialization parameters. This is <b>NULL</b> if <i>InitDataByteSize</i> is zero.</param>
+    <param name="InitDataByteSize">Size of <i>pInitData</i> in bytes. This is zero if <i>pInitData</i> is <b>NULL</b>.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
 </doc>

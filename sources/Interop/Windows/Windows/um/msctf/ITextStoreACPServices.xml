@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITextStoreACPServices.CreateRange">
-    <summary>
-      <para>Creates a range object from two ACP values.</para>
-    </summary>
-    <param name="acpStart">
-      <para>Contains the starting position of the range.</para>
-    </param>
-    <param name="acpEnd">
-      <para>Contains the ending position of the range.</para>
-    </param>
-    <param name="ppRange">
-      <para>Pointer to an <see cref="ITfRangeACP" /> interface pointer that receives the range object.</para>
-    </param>
+    <summary>Creates a range object from two ACP values.</summary>
+    <param name="acpStart">Contains the starting position of the range.</param>
+    <param name="acpEnd">Contains the ending position of the range.</param>
+    <param name="ppRange">Pointer to an <see cref="ITfRangeACP" /> interface pointer that receives the range object.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -22,48 +14,49 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>ppRange</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <i>ppRange</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITextStoreACPServices interface" />
-    <seealso cref="ITfRangeACP interface" />
   </member>
   <member name="ITextStoreACPServices.ForceLoadProperty">
-    <summary>
-      <para>Forces all values of an asynchronously loaded property to be loaded.</para>
-    </summary>
-    <param name="pProp">
-      <para>Pointer to an <see cref="ITfProperty" /> object that specifies the property to load.</para>
-    </param>
+    <summary>Forces all values of an asynchronously loaded property to be loaded.</summary>
+    <param name="pProp">Pointer to an <see cref="ITfProperty" /> object that specifies the property to load.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -71,62 +64,51 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>A memory allocation error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>A memory allocation error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>When calling this method, the application must be able to grant a synchronous read-only lock.</para>
-    </remarks>
-    <seealso cref="ITextStoreACPServices interface" />
-    <seealso cref="ITextStoreACPServices.Unserialize" />
-    <seealso cref="ITfPersistentPropertyLoaderACP interface" />
-    <seealso cref="ITfProperty interface" />
   </member>
   <member name="ITextStoreACPServices.Serialize">
-    <summary>
-      <para>Obtains a property from a range of text and writes the property data into a stream object.</para>
-    </summary>
-    <param name="pProp">
-      <para>Pointer to an <see cref="ITfProperty" /> interface that identifies the property to serialize.</para>
-    </param>
-    <param name="pRange">
-      <para>Pointer to an <see cref="ITfRange" /> interface that identifies the range that the property is obtained from.</para>
-    </param>
-    <param name="pHdr">
-      <para>Pointer to a <see cref="TF_PERSISTENT_PROPERTY_HEADER_ACP" /> structure that receives the header data for the property.</para>
-    </param>
-    <param name="pStream">
-      <para>Pointer to an <b>IStream</b> object that the TSF manager will write the property data to.</para>
-    </param>
+    <summary>Obtains a property from a range of text and writes the property data into a stream object.</summary>
+    <param name="pProp">Pointer to an <see cref="ITfProperty" /> interface that identifies the property to serialize.</param>
+    <param name="pRange">Pointer to an <see cref="ITfRange" /> interface that identifies the range that the property is obtained from.</param>
+    <param name="pHdr">Pointer to a <see cref="TF_PERSISTENT_PROPERTY_HEADER_ACP" /> structure that receives the header data for the property.</param>
+    <param name="pStream">Pointer to an <b>IStream</b> object that the TSF manager will write the property data to.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -134,84 +116,51 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The property cannot be serialized.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The property cannot be serialized.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The property header data placed in <i>pHdr</i> is generic to all properties and must be preserved with the data written into <i>pStream</i>. This same data pair must be passed to <see cref="ITextStoreACPServices.Unserialize" /> to restore the property data.</para>
-      <para>An application can save all of the properties for the entire document by performing the following steps.</para>
-      <list type="bullet">
-        <item>
-          <description>Enumerate all properties using <see cref="ITfContext.EnumProperties" />.</description>
-        </item>
-        <item>
-          <description>Within each property, enumerate the ranges using <see cref="ITfReadOnlyProperty.EnumRanges" />.</description>
-        </item>
-        <item>
-          <description>Pass the current property and range to <b>ITextStoreACPServices.Serialize</b>.</description>
-        </item>
-        <item>
-          <description>Write the data placed in <i>pHdr</i> to the file.</description>
-        </item>
-        <item>
-          <description>Write the data added to <i>pStream</i> to the file.</description>
-        </item>
-      </list>
-      <para>When calling this method, the application must be able to grant a synchronous read-only lock.</para>
-    </remarks>
-    <seealso cref="ITextStoreACPServices interface" />
-    <seealso cref="ITextStoreACPServices.Unserialize" />
-    <seealso cref="ITfContext.EnumProperties" />
-    <seealso cref="ITfProperty interface" />
-    <seealso cref="ITfRange interface" />
-    <seealso cref="ITfReadOnlyProperty.EnumRanges" />
-    <seealso cref="TF_PERSISTENT_PROPERTY_HEADER_ACP structure" />
   </member>
   <member name="ITextStoreACPServices.Unserialize">
-    <summary>
-      <para>Takes previously serialized property data and applies it to a property object.</para>
-    </summary>
-    <param name="pProp">
-      <para>Pointer to an <see cref="ITfProperty" /> object that receives the property data.</para>
-    </param>
-    <param name="pHdr">
-      <para>Pointer to a <see cref="TF_PERSISTENT_PROPERTY_HEADER_ACP" /> structure that contains the header data for the property.</para>
-    </param>
-    <param name="pStream">
-      <para>Pointer to an <b>IStream</b> object that contains the property data. This parameter can be <b>NULL</b> if <i>pLoader</i> is not <b>NULL</b>. This parameter is ignored if <i>pLoader</i> is not <b>NULL</b>.</para>
-    </param>
-    <param name="pLoader">
-      <para>Pointer to an <see cref="ITfPersistentPropertyLoaderACP" /> object that the TSF manager will use to obtain the property data. This parameter can be <b>NULL</b> if <i>pStream</i> is not <b>NULL</b>.</para>
-    </param>
+    <summary>Takes previously serialized property data and applies it to a property object.</summary>
+    <param name="pProp">Pointer to an <see cref="ITfProperty" /> object that receives the property data.</param>
+    <param name="pHdr">Pointer to a <see cref="TF_PERSISTENT_PROPERTY_HEADER_ACP" /> structure that contains the header data for the property.</param>
+    <param name="pStream">Pointer to an <b>IStream</b> object that contains the property data. This parameter can be <b>NULL</b> if <i>pLoader</i> is not <b>NULL</b>. This parameter is ignored if <i>pLoader</i> is not <b>NULL</b>.</param>
+    <param name="pLoader">Pointer to an <see cref="ITfPersistentPropertyLoaderACP" /> object that the TSF manager will use to obtain the property data. This parameter can be <b>NULL</b> if <i>pStream</i> is not <b>NULL</b>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -219,65 +168,58 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_S_ASYNC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The property data will be obtained asynchronously.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_S_ASYNC</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_SYNCHRONOUS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>A synchronous read-only lock cannot be obtained.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The property data will be obtained asynchronously.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TF_E_SYNCHRONOUS</b>
-            </para>
-          </description>
-          <description>
-            <para>A synchronous read-only lock cannot be obtained.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If <i>pStream</i> is specified rather than <i>pLoader</i>, the property data will be read from <i>pStream</i> during the call to <b>Unserialize</b> . If <i>pLoader</i> is specified rather than <i>pStream</i>, the property data will be read from <i>pLoader</i> asynchronously. Using <i>pStream</i> can cause long delays if the property data is large.</para>
-      <para>While calling this method, the application must be able to grant a synchronous read-only lock.</para>
-    </remarks>
-    <seealso cref="ITextStoreACPServices interface" />
-    <seealso cref="ITextStoreACPServices.Serialize" />
-    <seealso cref="ITfContext.EnumProperties" />
-    <seealso cref="ITfProperty interface" />
-    <seealso cref="ITfRange interface" />
-    <seealso cref="ITfReadOnlyProperty.EnumRanges" />
-    <seealso cref="TF_PERSISTENT_PROPERTY_HEADER_ACP structure" />
   </member>
   <member name="ITextStoreACPServices">
-    <summary>
-      <para>The <b>ITextStoreACPServices</b> interface is implemented by the TSF manager to provide various services to an ACP-based application. To obtain an instance of this interface, an application calls <b>QueryInterface</b> on the <i>punk</i> parameter passed to <see cref="ITextStoreACP.AdviseSink" /> with IID_ITextStoreACPServices.</para>
-    </summary>
-    <seealso cref="ITextStoreACP.AdviseSink " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITextStoreACPServices</b> interface is implemented by the TSF manager to provide various services to an ACP-based application. To obtain an instance of this interface, an application calls <b>QueryInterface</b> on the <i>punk</i> parameter passed to <see cref="ITextStoreACP.AdviseSink" /> with IID_ITextStoreACPServices.</summary>
   </member>
 </doc>

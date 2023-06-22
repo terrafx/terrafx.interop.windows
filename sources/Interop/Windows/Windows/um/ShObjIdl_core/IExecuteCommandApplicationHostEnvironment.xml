@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IExecuteCommandApplicationHostEnvironment.GetValue">
-    <summary>
-      <para>Determines whether the current application host environment is in the desktop or immersive mode.</para>
-    </summary>
+    <summary>Determines whether the current application host environment is in the desktop or immersive mode.</summary>
     <param name="pahe">
       <para>A pointer to a <b>AHE_TYPE</b> value that, when this method returns successfully, receives one of the following values to indicate the current host environment.</para>
       <h4>AHE_DESKTOP (0)</h4>
@@ -13,18 +11,9 @@
       <h4>AHE_IMMERSIVE (1)</h4>
       <para>Immersive mode.</para>
     </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IExecuteCommandApplicationHostEnvironment" />
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExecuteCommandApplicationHostEnvironment">
-    <summary>
-      <para>Provides a single method that enables an application to determine whether its host is in desktop or immersive mode.</para>
-    </summary>
-    <remarks>
-      <h3>When to implement</h3>
-      <para>An application must implement this interface together with the DelegateExecute handler (<see cref="IExecuteCommand" />).</para>
-    </remarks>
+    <summary>Provides a single method that enables an application to determine whether its host is in desktop or immersive mode.</summary>
   </member>
 </doc>

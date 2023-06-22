@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAGELISTSTATS">
-    <summary>
-      <para>Contains image list statistics. Used by <see cref="GetStatistics" />.</para>
-    </summary>
+    <summary>Contains image list statistics. Used by <see cref="GetStatistics" />.</summary>
   </member>
   <member name="IMAGELISTSTATS.cbSize">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
-      <para>The image list size.</para>
-    </summary>
+    <summary>The image list size.</summary>
   </member>
   <member name="IMAGELISTSTATS.cAlloc">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The number of images allocated.</para>
-    </summary>
+    <summary>The number of images allocated.</summary>
   </member>
   <member name="IMAGELISTSTATS.cUsed">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The number of images in use.</para>
-    </summary>
+    <summary>The number of images in use.</summary>
   </member>
   <member name="IMAGELISTSTATS.cStandby">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The number of standby images.</para>
-    </summary>
+    <summary>The number of standby images.</summary>
   </member>
 </doc>

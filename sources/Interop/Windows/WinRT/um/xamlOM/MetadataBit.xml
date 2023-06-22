@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MetadataBit">
+    <summary>Defines constants that are used to define the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xamlom/ns-xamlom-propertychainvalue">PropertyChainValue</a> returned from XAML Diagnostics.</summary>
+  </member>
+  <member name="MetadataBit.None">
+    <summary>No special bits are set.</summary>
+  </member>
+  <member name="MetadataBit.IsValueHandle">
+    <summary>The value represents a string representation of an <b>InstanceHandle</b>.</summary>
+  </member>
+  <member name="MetadataBit.IsPropertyReadOnly">
+    <summary>The property is read only and cannot be set locally.</summary>
+  </member>
+  <member name="MetadataBit.IsValueCollection">
+    <summary>The value represents a collection object. (When set, <b>IsValueHandle</b> is also set.)</summary>
+  </member>
+  <member name="MetadataBit.IsValueCollectionReadOnly">
+    <summary>The value represents a read only collection.</summary>
+  </member>
+  <member name="MetadataBit.IsValueBindingExpression">
+    <summary>The value represents the evaluated value of a binding expression.</summary>
+  </member>
+  <member name="MetadataBit.IsValueNull">
+    <summary>The value is <b>null</b>. (Introduced in Windows 10, version 1607.)</summary>
+  </member>
+  <member name="MetadataBit.IsValueHandleAndEvaluatedValue">
+    <summary>The value represents a string representation of an <b>InstanceHandle</b> and an evaluated value. (Introduced in Windows 10, version 1607.)</summary>
+  </member>
+</doc>

@@ -4,122 +4,44 @@
 <doc>
   <member name="IQueueCommand.InvokeAtPresentationTime">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>InvokeAtPresentationTime</code> method queues a method to be invoked at the specified presentation time.</para>
     </summary>
-    <param name="pCmd">
-      <para>Address of a variable that receives an <see cref="IDeferredCommand" /> interface pointer.</para>
-    </param>
-    <param name="time">
-      <para>Time at which to invoke the command.</para>
-    </param>
-    <param name="iid">
-      <para>Pointer to the interface identifier (IID) of interface.</para>
-    </param>
-    <param name="dispidMethod">
-      <para>Dispatch identifier (DISPID) of a method or property on the interface. Equivalent to the <i>dispIdMember</i> parameter of the <b>IDispatch.Invoke</b> method.</para>
-    </param>
-    <param name="wFlags">
-      <para>Flags describing the context of the call. Equivalent to the <i>wFlags</i> parameter of the <b>IDispatch.Invoke</b> method.</para>
-    </param>
-    <param name="cArgs">
-      <para>Number of arguments in <i>pDispParams</i>. Equivalent to the <b>cArgs</b> member of the <b>DISPPARAMS</b> structure.</para>
-    </param>
-    <param name="pDispParams">
-      <para>Pointer to an array that contains the arguments. Equivalent to the <b>rgvarg</b> member of the <b>DISPPARAMS</b> structure.</para>
-    </param>
-    <param name="pvarResult">
-      <para>Pointer a VARIANT that receives the result. Equivalent to the <i>pVarResult</i> parameter of the <b>IDispatch.Invoke</b> method.</para>
-    </param>
-    <param name="puArgErr">
-      <para>Pointer to a variable that receives the index of the first argument that has an error. Equivalent to the <i>puArgErr</i> parameter of the <b>IDispatch.Invoke</b> method.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>Use the <b>IDispatch.GetIDsOfNames</b> method to retrieve the DISPID for the <i>dispidMember</i> parameter.</para>
-      <para>For a code example, see <see cref="IQueueCommand.InvokeAtStreamTime" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IQueueCommand Interface" />
+    <param name="pCmd">Address of a variable that receives an <see cref="IDeferredCommand" /> interface pointer.</param>
+    <param name="time">Time at which to invoke the command.</param>
+    <param name="iid">Pointer to the interface identifier (IID) of interface.</param>
+    <param name="dispidMethod">Dispatch identifier (DISPID) of a method or property on the interface. Equivalent to the <i>dispIdMember</i> parameter of the <b>IDispatch.Invoke</b> method.</param>
+    <param name="wFlags">Flags describing the context of the call. Equivalent to the <i>wFlags</i> parameter of the <b>IDispatch.Invoke</b> method.</param>
+    <param name="cArgs">Number of arguments in <i>pDispParams</i>. Equivalent to the <b>cArgs</b> member of the <b>DISPPARAMS</b> structure.</param>
+    <param name="pDispParams">Pointer to an array that contains the arguments. Equivalent to the <b>rgvarg</b> member of the <b>DISPPARAMS</b> structure.</param>
+    <param name="pvarResult">Pointer a VARIANT that receives the result. Equivalent to the <i>pVarResult</i> parameter of the <b>IDispatch.Invoke</b> method.</param>
+    <param name="puArgErr">Pointer to a variable that receives the index of the first argument that has an error. Equivalent to the <i>puArgErr</i> parameter of the <b>IDispatch.Invoke</b> method.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IQueueCommand.InvokeAtStreamTime">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>InvokeAtStreamTime</code> method queues a method or property change for execution at a specified stream time (that is, presentation time relative to the current stream time offset).</para>
     </summary>
-    <param name="pCmd">
-      <para>Address of a variable that receives an <see cref="IDeferredCommand" /> interface pointer.</para>
-    </param>
-    <param name="time">
-      <para>Time at which to invoke the command.</para>
-    </param>
-    <param name="iid">
-      <para>Pointer to the interface identifier (IID) of interface.</para>
-    </param>
-    <param name="dispidMethod">
-      <para>Dispatch identifier (DISPID) of a method or property on the interface. Equivalent to the <i>dispIdMember</i> parameter of the <b>IDispatch.Invoke</b> method.</para>
-    </param>
-    <param name="wFlags">
-      <para>Flags describing the context of the call. Equivalent to the <i>wFlags</i> parameter of the <b>IDispatch.Invoke</b> method.</para>
-    </param>
-    <param name="cArgs">
-      <para>Number of arguments in <i>pDispParams</i>. Equivalent to the <b>cArgs</b> member of the <b>DISPPARAMS</b> structure.</para>
-    </param>
-    <param name="pDispParams">
-      <para>Pointer to an array that contains the arguments. Equivalent to the <b>rgvarg</b> member of the <b>DISPPARAMS</b> structure.</para>
-    </param>
-    <param name="pvarResult">
-      <para>Pointer to a VARIANT that receives the result. Equivalent to the <i>pVarResult</i> parameter of the <b>IDispatch.Invoke</b> method.</para>
-    </param>
-    <param name="puArgErr">
-      <para>Pointer to a variable that receives the index of the first argument that has an error. Equivalent to the <i>puArgErr</i> parameter of the <b>IDispatch.Invoke</b> method.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>Use the <b>IDispatch.GetIDsOfNames</b> method to retrieve the DISPID for the <i>dispidMember</i> parameter.</para>
-      <h4>Examples</h4>
-      <para>The following example queues an <see cref="IMediaControl.Stop" /> command for 3.0 seconds.</para>
-      <code>
-IQueueCommand *pQ = 0;
-IMediaControl *pControl = 0;
-
-// Query for IQueueCommand.
-pGraph-&gt;QueryInterface(IID_IQueueCommand, reinterpret_cast&lt;void**&gt;(&amp;amp;amp;amp;amp;amp;pQ));
-
-// Query for IMediaControl.
-pGraph-&gt;QueryInterface(IID_IMediaControl, reinterpret_cast&lt;void**&gt;(&amp;amp;amp;amp;amp;amp;pControl));
-
-// Find the DISPID of the IMediaControl.Stop method.
-OLECHAR *szMethod = OLESTR("Stop");
-
-long dispid;
-hr = pControl-&gt;GetIDsOfNames(IID_NULL, &amp;amp;amp;amp;amp;amp;szMethod, 1, 0, &amp;amp;amp;amp;amp;amp;dispid);
-
-// Invoke the command.
-IDeferredCommand *pCmd = 0;
-hr = pQ-&gt;InvokeAtPresentationTime(&amp;amp;amp;amp;amp;amp;pCmd, 3.0,
-    const_cast&lt;GUID*&gt;(&amp;amp;amp;amp;amp;amp;IID_IMediaControl), dispid, DISPATCH_METHOD,
-    0, 0, 0, 0);
-if (SUCCEEDED(hr))
-{
-    pControl-&gt;Run();
-    pCmd-&gt;Release();
-}
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IQueueCommand Interface" />
+    <param name="pCmd">Address of a variable that receives an <see cref="IDeferredCommand" /> interface pointer.</param>
+    <param name="time">Time at which to invoke the command.</param>
+    <param name="iid">Pointer to the interface identifier (IID) of interface.</param>
+    <param name="dispidMethod">Dispatch identifier (DISPID) of a method or property on the interface. Equivalent to the <i>dispIdMember</i> parameter of the <b>IDispatch.Invoke</b> method.</param>
+    <param name="wFlags">Flags describing the context of the call. Equivalent to the <i>wFlags</i> parameter of the <b>IDispatch.Invoke</b> method.</param>
+    <param name="cArgs">Number of arguments in <i>pDispParams</i>. Equivalent to the <b>cArgs</b> member of the <b>DISPPARAMS</b> structure.</param>
+    <param name="pDispParams">Pointer to an array that contains the arguments. Equivalent to the <b>rgvarg</b> member of the <b>DISPPARAMS</b> structure.</param>
+    <param name="pvarResult">Pointer to a VARIANT that receives the result. Equivalent to the <i>pVarResult</i> parameter of the <b>IDispatch.Invoke</b> method.</param>
+    <param name="puArgErr">Pointer to a variable that receives the index of the first argument that has an error. Equivalent to the <i>puArgErr</i> parameter of the <b>IDispatch.Invoke</b> method.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IQueueCommand">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IQueueCommand</code> interface queues a command for processing at a designated time. The Filter Graph Manager exposes this interface. Applications can use it to queue graph-control commands in advance.</para>
       <para>The methods in <code>IQueueCommand</code> are modeled after the <b>IDispatch.InvokeAt</b> method. The application specifies an interface, a method on the interface, parameters to the method, and a reference time. The Filter Graph Manager queues this information and then invokes the method at the specified time. The requested interface must inherit <b>IDispatch</b> and must be exposed by the Filter Graph Manager. Examples include <see cref="IMediaControl" />, <see cref="IMediaEventEx" />, and <see cref="IMediaPosition" />.</para>
       <para>When the command is queued, the filter graph manager returns a pointer to the <see cref="IDeferredCommand" /> interface. The application can use this interface to cancel or modify the command.</para>
-      <para>
-        <b>Note</b>  The two methods in <code>IQueueCommand</code> refer to stream time and presentation time, respectively. In the context of the Filter Graph Manager, stream time and presentation time are identical, so there is no functional difference between the two methods. Other objects could implement <code>IQueueCommand</code> differently. For more information about stream time and presentation time, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/time-and-clocks-in-directshow">Time and Clocks in DirectShow</a>.</para>
+      <div>
+        <b>Note</b>  The two methods in <code>IQueueCommand</code> refer to stream time and presentation time, respectively. In the context of the Filter Graph Manager, stream time and presentation time are identical, so there is no functional difference between the two methods. Other objects could implement <code>IQueueCommand</code> differently. For more information about stream time and presentation time, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/time-and-clocks-in-directshow">Time and Clocks in DirectShow</a>.</div>
     </summary>
   </member>
 </doc>

@@ -3,184 +3,55 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IBandSite.AddBand">
-    <summary>
-      <para>Adds a band to a band site object.</para>
-    </summary>
-    <param name="punk">
-      <para>Type: <b>IUnknown*</b></para>
-      <para>The interface of a band site object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns the band ID in ShortFromResult(hresult).</para>
-    </returns>
-    <seealso cref="IBandSite" />
-    <seealso cref="IDeskBand" />
+    <summary>Adds a band to a band site object.</summary>
+    <param name="punk">The interface of a band site object.</param>
+    <returns>Returns the band ID in ShortFromResult(hresult).</returns>
   </member>
   <member name="IBandSite.EnumBands">
-    <summary>
-      <para>Enumerates the bands in a band site.</para>
-    </summary>
-    <param name="uBand">
-      <para>Type: <b>UINT</b></para>
-      <para>Call the method with this parameter starting at 0 to
-begin enumerating.  If this parameter is -1, the
-<i>pdwBandID</i> parameter is ignored and this method returns the count of the
-bands in the band site.</para>
-    </param>
-    <param name="pdwBandID">
-      <para>Type: <b>DWORD*</b></para>
-      <para>The address of a band ID variable that receives the band ID.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or a COM-defined error code for errors.
-If the first parameter is -1, the count of the bands in the band site
-is returned.</para>
-    </returns>
-    <seealso cref="IBandSite" />
-    <seealso cref="IDeskBand" />
+    <summary>Enumerates the bands in a band site.</summary>
+    <param name="uBand">Call the method with this parameter starting at 0 to begin enumerating. If this parameter is -1, the<i>pdwBandID</i> parameter is ignored and this method returns the count of the bands in the band site.</param>
+    <param name="pdwBandID">The address of a band ID variable that receives the band ID.</param>
+    <returns>Returns S_OK if successful, or a COM-defined error code for errors. If the first parameter is -1, the count of the bands in the band site is returned.</returns>
   </member>
   <member name="IBandSite.GetBandObject">
-    <summary>
-      <para>Gets a specified band object from a band site.</para>
-    </summary>
-    <param name="dwBandID">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the band object to get.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>The IID of the object to obtain.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>VOID**</b></para>
-      <para>The address of a pointer variable that receives a pointer
-to the object requested.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or a COM-defined error code otherwise.</para>
-    </returns>
-    <seealso cref="IBandSite" />
-    <seealso cref="IDeskBand" />
+    <summary>Gets a specified band object from a band site.</summary>
+    <param name="dwBandID">The ID of the band object to get.</param>
+    <param name="riid">The IID of the object to obtain.</param>
+    <param name="ppv">The address of a pointer variable that receives a pointer to the object requested.</param>
+    <returns>Returns S_OK if successful, or a COM-defined error code otherwise.</returns>
   </member>
   <member name="IBandSite.GetBandSiteInfo">
-    <summary>
-      <para>Gets information about a band in the band site.</para>
-    </summary>
-    <param name="pbsinfo">
-      <para>Type: <b><see cref="BANDSITEINFO" />*</b></para>
-      <para>The address of a <see cref="BANDSITEINFO" /> structure that contains
-the band site information for the object. The
-<b>dwMask</b> member of this structure
-specifies what information is being requested.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or a COM-defined error code otherwise.</para>
-    </returns>
-    <seealso cref="BANDSITEINFO" />
-    <seealso cref="IBandSite" />
-    <seealso cref="IDeskBand" />
+    <summary>Gets information about a band in the band site.</summary>
+    <param name="pbsinfo">The address of a <see cref="BANDSITEINFO" /> structure that contains the band site information for the object. The<b>dwMask</b> member of this structure specifies what information is being requested.</param>
+    <returns>Returns S_OK if successful, or a COM-defined error code otherwise.</returns>
   </member>
   <member name="IBandSite.QueryBand">
-    <summary>
-      <para>Gets information about a band in a band site.</para>
-    </summary>
-    <param name="dwBandID">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the band object to query.</para>
-    </param>
-    <param name="ppstb">
-      <para>Type: <b><see cref="IDeskBand" />**</b></para>
-      <para>Address of an <see cref="IDeskBand" /> interface pointer that, when this method returns successfully, points to the <b>IDeskBand</b> object that represents the band. This value can be <b>NULL</b>.</para>
-    </param>
-    <param name="pdwState">
-      <para>Type: <b>DWORD*</b></para>
-      <para>Pointer to a <b>DWORD</b> value that, when this method returns successfully, receives the state of the band object. This state is a combination of BSSF_VISIBLE, BSSF_NOTITLE, and BSSF_UNDELETEABLE. See <see cref="BANDSITEINFO" /> for more information on those flags. This value can be <b>NULL</b> if the state information is not needed.</para>
-    </param>
-    <param name="pszName">
-      <para>Type: <b>LPWSTR</b></para>
-      <para>Pointer to a buffer of <i>cchName</i> Unicode characters that, when this method returns successfully, receives the name of the band object.</para>
-    </param>
-    <param name="cchName">
-      <para>Type: <b>int</b></para>
-      <para>The size of the <i>pszName</i> buffer, in characters.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets information about a band in a band site.</summary>
+    <param name="dwBandID">The ID of the band object to query.</param>
+    <param name="ppstb">Address of an <see cref="IDeskBand" /> interface pointer that, when this method returns successfully, points to the <b>IDeskBand</b> object that represents the band. This value can be <b>NULL</b>.</param>
+    <param name="pdwState">Pointer to a <b>DWORD</b> value that, when this method returns successfully, receives the state of the band object. This state is a combination of BSSF_VISIBLE, BSSF_NOTITLE, and BSSF_UNDELETEABLE. See <see cref="BANDSITEINFO" /> for more information on those flags. This value can be <b>NULL</b> if the state information is not needed.</param>
+    <param name="pszName">Pointer to a buffer of <i>cchName</i> Unicode characters that, when this method returns successfully, receives the name of the band object.</param>
+    <param name="cchName">The size of the <i>pszName</i> buffer, in characters.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBandSite.RemoveBand">
-    <summary>
-      <para>Removes a band from the band site.</para>
-    </summary>
-    <param name="dwBandID">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the band to remove.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or a COM-defined error code otherwise.</para>
-    </returns>
-    <seealso cref="IBandSite" />
-    <seealso cref="IDeskBand" />
+    <summary>Removes a band from the band site.</summary>
+    <param name="dwBandID">The ID of the band to remove.</param>
+    <returns>Returns S_OK if successful, or a COM-defined error code otherwise.</returns>
   </member>
   <member name="IBandSite.SetBandSiteInfo">
-    <summary>
-      <para>Sets information about the band site.</para>
-    </summary>
-    <param name="pbsinfo">
-      <para>Type: <b><see cref="BANDSITEINFO" />*</b></para>
-      <para>The address of a <see cref="BANDSITEINFO" /> structure that receives
-the band site information for the object. The
-<b>dwMask</b> member of this structure
-specifies what information is being set.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or a COM-defined error code otherwise.</para>
-    </returns>
-    <seealso cref="IBandSite" />
-    <seealso cref="IDeskBand" />
+    <summary>Sets information about the band site.</summary>
+    <param name="pbsinfo">The address of a <see cref="BANDSITEINFO" /> structure that receives the band site information for the object. The<b>dwMask</b> member of this structure specifies what information is being set.</param>
+    <returns>Returns S_OK if successful, or a COM-defined error code otherwise.</returns>
   </member>
   <member name="IBandSite.SetBandState">
-    <summary>
-      <para>Set the state of a band in the band site.</para>
-    </summary>
-    <param name="dwBandID">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the band to set.  If this parameter is -1, then
-set the state of all bands in the band site.</para>
-    </param>
-    <param name="dwMask">
-      <para>Type: <b>DWORD</b></para>
-      <para>The mask of the states to set.</para>
-    </param>
-    <param name="dwState">
-      <para>Type: <b>DWORD</b></para>
-      <para>The state values to be set. These are combinations of
-BSSF_* flags. For more information, see <see cref="BANDSITEINFO" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or a COM-defined error code otherwise.</para>
-    </returns>
-    <seealso cref="BANDSITEINFO" />
-    <seealso cref="IBandSite" />
-    <seealso cref="IDeskBand" />
+    <summary>Set the state of a band in the band site.</summary>
+    <param name="dwBandID">The ID of the band to set. If this parameter is -1, then set the state of all bands in the band site.</param>
+    <param name="dwMask">The mask of the states to set.</param>
+    <param name="dwState">The state values to be set. These are combinations of BSSF_* flags. For more information, see <see cref="BANDSITEINFO" />.</param>
+    <returns>Returns S_OK if successful, or a COM-defined error code otherwise.</returns>
   </member>
   <member name="IBandSite">
-    <summary>
-      <para>Exposes methods that control band objects.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>IBandSite</b> is used to host band objects, such as <see cref="IDeskBand" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/cc144099(v=vs.85)">Creating Custom Explorer Bars, Tool Bands, and Desk Bands</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/shell/mandatory-user-profiles">MenuBandSite</seealso>
+    <summary>Exposes methods that control band objects.</summary>
   </member>
 </doc>

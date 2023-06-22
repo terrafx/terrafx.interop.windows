@@ -3,26 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_COLOR_SPACE">
-    <summary>
-      <para>Defines options that should be applied to the color space.</para>
-    </summary>
+    <summary>Defines options that should be applied to the color space.</summary>
   </member>
   <member name="D2D1_COLOR_SPACE.D2D1_COLOR_SPACE_CUSTOM">
-    <summary>
-      <para>The color space is otherwise described, such as with a color profile.</para>
-    </summary>
+    <summary>The color space is otherwise described, such as with a color profile.</summary>
   </member>
   <member name="D2D1_COLOR_SPACE.D2D1_COLOR_SPACE_SRGB">
-    <summary>
-      <para>The color space is sRGB.</para>
-    </summary>
+    <summary>The color space is sRGB.</summary>
   </member>
   <member name="D2D1_COLOR_SPACE.D2D1_COLOR_SPACE_SCRGB">
-    <summary>
-      <para>The color space is scRGB.</para>
-    </summary>
+    <summary>The color space is scRGB.</summary>
   </member>
-  <member name="D2D1_COLOR_SPACE.D2D1_COLOR_SPACE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_COLOR_SPACE.D2D1_COLOR_SPACE_FORCE_DWORD"></member>
 </doc>

@@ -3,50 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CM_COLUMNINFO">
-    <summary>
-      <para>Defines column information. Used by members of the <see cref="IColumnManager" /> interface.</para>
-    </summary>
+    <summary>Defines column information. Used by members of the <see cref="IColumnManager" /> interface.</summary>
   </member>
   <member name="CM_COLUMNINFO.cbSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of the structure, in bytes.</para>
-    </summary>
+    <summary>The size of the structure, in bytes.</summary>
   </member>
   <member name="CM_COLUMNINFO.dwMask">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>One or more values from the <see cref="CM_MASK" /> enumeration that specify which members of this structure are valid.</para>
-    </summary>
+    <summary>One or more values from the <see cref="CM_MASK" /> enumeration that specify which members of this structure are valid.</summary>
   </member>
   <member name="CM_COLUMNINFO.dwState">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>One or more values from the <see cref="CM_STATE" /> enumeration that specify the state of the column.</para>
-    </summary>
+    <summary>One or more values from the <see cref="CM_STATE" /> enumeration that specify the state of the column.</summary>
   </member>
   <member name="CM_COLUMNINFO.uWidth">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>One of the members of the <see cref="CM_SET_WIDTH_VALUE" /> enumeration that specifies the column width.</para>
-    </summary>
+    <summary>One of the members of the <see cref="CM_SET_WIDTH_VALUE" /> enumeration that specifies the column width.</summary>
   </member>
   <member name="CM_COLUMNINFO.uDefaultWidth">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The default width of the column.</para>
-    </summary>
+    <summary>The default width of the column.</summary>
   </member>
   <member name="CM_COLUMNINFO.uIdealWidth">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The ideal width of the column.</para>
-    </summary>
+    <summary>The ideal width of the column.</summary>
   </member>
   <member name="CM_COLUMNINFO.wszName">
-    <summary>
-      <para>Type: <b>WCHAR[MAX_COLUMN_NAME_LEN]</b></para>
-      <para>A buffer of size MAX_COLUMN_NAME_LEN that contains the name of the column as a null-terminated Unicode string.</para>
-    </summary>
+    <summary>A buffer of size MAX_COLUMN_NAME_LEN that contains the name of the column as a null-terminated Unicode string.</summary>
   </member>
 </doc>

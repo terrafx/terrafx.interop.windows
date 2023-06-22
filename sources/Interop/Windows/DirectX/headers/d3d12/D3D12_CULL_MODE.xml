@@ -3,28 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_CULL_MODE">
-    <summary>
-      <para>Specifies triangles facing a particular direction are not drawn.</para>
-    </summary>
-    <remarks>
-      <para>Cull mode is specified in a <see cref="D3D12_RASTERIZER_DESC" /> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/cd3dx12-rasterizer-desc">CD3DX12_RASTERIZER_DESC</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-12-enumerations">Core Enumerations</seealso>
+    <summary>Specifies triangles facing a particular direction are not drawn.</summary>
   </member>
   <member name="D3D12_CULL_MODE.D3D12_CULL_MODE_NONE">
-    <summary>
-      <para>Always draw all triangles.</para>
-    </summary>
+    <summary>Always draw all triangles.</summary>
   </member>
   <member name="D3D12_CULL_MODE.D3D12_CULL_MODE_FRONT">
-    <summary>
-      <para>Do not draw triangles that are front-facing.</para>
-    </summary>
+    <summary>Do not draw triangles that are front-facing.</summary>
   </member>
   <member name="D3D12_CULL_MODE.D3D12_CULL_MODE_BACK">
-    <summary>
-      <para>Do not draw triangles that are back-facing.</para>
-    </summary>
+    <summary>Do not draw triangles that are back-facing.</summary>
   </member>
 </doc>

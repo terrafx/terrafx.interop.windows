@@ -4,6 +4,7 @@
 <doc>
   <member name="IVMRWindowlessControl.DisplayModeChanged">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>DisplayModeChanged</code> method informs the VMR that a WM_DISPLAYCHANGE message has been received by the application.</para>
     </summary>
     <returns>
@@ -13,32 +14,27 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>VFW_E_WRONG_STATE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_WRONG_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The VMR is not in windowless mode.</para>
-          </description>
-        </item>
+          <description>The VMR is not in windowless mode.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>An application must call this method whenever it receives a WM_DISPLAYCHANGE window message, but only if the VMR is currently in windowless mode.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRWindowlessControl Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
   <member name="IVMRWindowlessControl.GetAspectRatioMode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetAspectRatioMode</code> method queries whether the VMR will preserve the aspect ratio of the source video.</para>
     </summary>
-    <param name="lpAspectRatioMode">
-      <para>Pointer to a variable that receives a <see cref="VMR_ASPECT_RATIO_MODE" /> value indicating the aspect ratio mode.</para>
-    </param>
+    <param name="lpAspectRatioMode">Pointer to a variable that receives a <see cref="VMR_ASPECT_RATIO_MODE" /> value indicating the aspect ratio mode.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
       <list type="table">
@@ -46,40 +42,40 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <b>NULL</b> pointer argument
-</description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Success</para>
-          </description>
-        </item>
+          <description>Success</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRWindowlessControl Interface" />
-    <seealso cref="IVMRWindowlessControl.SetAspectRatioMode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
   <member name="IVMRWindowlessControl.GetBorderColor">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetBorderColor</code> method retrieves the current border color used by the VMR.</para>
     </summary>
-    <param name="lpClr">
-      <para>Pointer to a <b>COLORREF</b> variable that receives the current border color.</para>
-    </param>
+    <param name="lpClr">Pointer to a <b>COLORREF</b> variable that receives the current border color.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
       <list type="table">
@@ -87,30 +83,27 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>VFW_E_WRONG_STATE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_WRONG_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The VMR is not in windowless mode.</para>
-          </description>
-        </item>
+          <description>The VMR is not in windowless mode.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRWindowlessControl Interface" />
-    <seealso cref="IVMRWindowlessControl.SetBorderColor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
   <member name="IVMRWindowlessControl.GetColorKey">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetColorKey</code> method retrieves the current source color key value used by the VMR.</para>
     </summary>
-    <param name="lpClr">
-      <para>Pointer to a <b>COLORREF</b> variable that receives the current color key value.</para>
-    </param>
+    <param name="lpClr">Pointer to a <b>COLORREF</b> variable that receives the current color key value.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
       <list type="table">
@@ -118,33 +111,56 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>VFW_E_WRONG_STATE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_WRONG_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The VMR is not in windowless mode.</para>
-          </description>
-        </item>
+          <description>The VMR is not in windowless mode.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRWindowlessControl Interface" />
-    <seealso cref="IVMRWindowlessControl.SetColorKey" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRWindowlessControl.GetCurrentImage">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>The <code>GetCurrentImage</code> method retrieves a copy of the current image being displayed by the VMR.</para>
+    </summary>
+    <param name="lpDib">Address of a pointer to a BYTE array.</param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_WRONG_STATE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The VMR is not in windowless mode.</description>
+        </listheader>
+      </list>
+    </returns>
   </member>
   <member name="IVMRWindowlessControl.GetMaxIdealVideoSize">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetMaxIdealVideoSize</code> method retrieves the maximum video size that the VMR can display without incurring significant performance or image quality degradation.</para>
     </summary>
-    <param name="lpWidth">
-      <para>Pointer that receives the maximum ideal width.</para>
-    </param>
-    <param name="lpHeight">
-      <para>Pointer that receives the maximum ideal height.</para>
-    </param>
+    <param name="lpWidth">Pointer that receives the maximum ideal width.</param>
+    <param name="lpHeight">Pointer that receives the maximum ideal height.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
       <list type="table">
@@ -152,33 +168,28 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>VFW_E_WRONG_STATE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_WRONG_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The VMR is not in windowless mode.</para>
-          </description>
-        </item>
+          <description>The VMR is not in windowless mode.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRWindowlessControl Interface" />
-    <seealso cref="IVMRWindowlessControl.GetMinIdealVideoSize" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
   <member name="IVMRWindowlessControl.GetMinIdealVideoSize">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetMinIdealVideoSize</code> method retrieves the minimum video size that the VMR can display without incurring significant performance or image quality degradation.</para>
     </summary>
-    <param name="lpWidth">
-      <para>Pointer to a LONG value that receives the minimum ideal width.</para>
-    </param>
-    <param name="lpHeight">
-      <para>Pointer to a LONG value that receives the minimum ideal height.</para>
-    </param>
+    <param name="lpWidth">Pointer to a LONG value that receives the minimum ideal width.</param>
+    <param name="lpHeight">Pointer to a LONG value that receives the minimum ideal height.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
       <list type="table">
@@ -186,39 +197,30 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>VFW_E_WRONG_STATE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_WRONG_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The VMR is not in windowless mode.</para>
-          </description>
-        </item>
+          <description>The VMR is not in windowless mode.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRWindowlessControl Interface" />
-    <seealso cref="IVMRWindowlessControl.GetMaxIdealVideoSize" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
   <member name="IVMRWindowlessControl.GetNativeVideoSize">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetNativeVideoSize</code> method retrieves the un-stretched video size and aspect ratio of the video.</para>
     </summary>
-    <param name="lpWidth">
-      <para>Pointer that receives the width of the native video rectangle.</para>
-    </param>
-    <param name="lpHeight">
-      <para>Pointer that receives the height of the native video rectangle.</para>
-    </param>
-    <param name="lpARWidth">
-      <para>Pointer that receives the aspect ratio width of the native video rectangle.</para>
-    </param>
-    <param name="lpARHeight">
-      <para>Pointer that receives the aspect ratio height of the native video rectangle.</para>
-    </param>
+    <param name="lpWidth">Pointer that receives the width of the native video rectangle.</param>
+    <param name="lpHeight">Pointer that receives the height of the native video rectangle.</param>
+    <param name="lpARWidth">Pointer that receives the aspect ratio width of the native video rectangle.</param>
+    <param name="lpARHeight">Pointer that receives the aspect ratio height of the native video rectangle.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. Returns E_POINTER if all four input parameters are <b>NULL</b>.</para>
       <list type="table">
@@ -226,36 +228,28 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>VFW_E_WRONG_STATE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_WRONG_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The VMR is not in windowless mode.</para>
-          </description>
-        </item>
+          <description>The VMR is not in windowless mode.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the VMR is not connected to an upstream filter, this method will succeed but all parameters will be set to zero.</para>
-      <para>If <i>lpWidth</i> is 640 and <i>lpHeight</i> is 480, then <i>lpARWidth</i> will be 4 and <i>lpARHeight</i> will be 3.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRWindowlessControl Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
   <member name="IVMRWindowlessControl.GetVideoPosition">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetVideoPosition</code> method retrieves the current source and destination rectangles used to display the video.</para>
     </summary>
-    <param name="lpSRCRect">
-      <para>Pointer that receives the current source rectangle.</para>
-    </param>
-    <param name="lpDSTRect">
-      <para>Pointer that receives the current destination rectangle.</para>
-    </param>
+    <param name="lpSRCRect">Pointer that receives the current source rectangle.</param>
+    <param name="lpDSTRect">Pointer that receives the current destination rectangle.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
       <list type="table">
@@ -263,33 +257,28 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>VFW_E_WRONG_STATE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_WRONG_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The VMR is not in windowless mode.</para>
-          </description>
-        </item>
+          <description>The VMR is not in windowless mode.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRWindowlessControl Interface" />
-    <seealso cref="IVMRWindowlessControl.SetVideoPosition" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
   <member name="IVMRWindowlessControl.RepaintVideo">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>RepaintVideo</code> method repaints the current video frame.</para>
     </summary>
-    <param name="hwnd">
-      <para>Specifies the handle of the window in which the repainting should occur.</para>
-    </param>
-    <param name="hdc">
-      <para>Specifies the handle to the device context for the window.</para>
-    </param>
+    <param name="hwnd">Specifies the handle of the window in which the repainting should occur.</param>
+    <param name="hdc">Specifies the handle to the device context for the window.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
       <list type="table">
@@ -297,29 +286,27 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>VFW_E_WRONG_STATE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_WRONG_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The VMR is not in windowless mode.</para>
-          </description>
-        </item>
+          <description>The VMR is not in windowless mode.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRWindowlessControl Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
   <member name="IVMRWindowlessControl.SetAspectRatioMode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetAspectRatioMode</code> method specifies whether the VMR will preserve the aspect ratio of the source video.</para>
     </summary>
-    <param name="AspectRatioMode">
-      <para>Specifies a member of the <see cref="VMR_ASPECT_RATIO_MODE" /> enumeration type.</para>
-    </param>
+    <param name="AspectRatioMode">Specifies a member of the <see cref="VMR_ASPECT_RATIO_MODE" /> enumeration type.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following:</para>
       <list type="table">
@@ -327,50 +314,51 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid argument</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_WRONG_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Success</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_WRONG_STATE</b>
-            </para>
-          </description>
-          <description>
-            <para>The VMR is not in windowless mode.</para>
-          </description>
-        </item>
+          <description>The VMR is not in windowless mode.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRWindowlessControl Interface" />
-    <seealso cref="IVMRWindowlessControl.GetAspectRatioMode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
   <member name="IVMRWindowlessControl.SetBorderColor">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetBorderColor</code> method sets the border color to be used by the VMR.</para>
     </summary>
-    <param name="Clr">
-      <para>Specifies the border color.</para>
-    </param>
+    <param name="Clr">Specifies the border color.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
       <list type="table">
@@ -378,33 +366,27 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>VFW_E_WRONG_STATE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_WRONG_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The VMR is not in windowless mode.</para>
-          </description>
-        </item>
+          <description>The VMR is not in windowless mode.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The border color is color used to fill any area of the destination rectangle that does not contain video. It is typically used in two instances: (1) when the video straddles two monitors and (2) when the VMR is trying to maintain the aspect ratio of the movie by letter boxing the video to fit within the specified destination rectangle. See the <see cref="IVMRWindowlessControl.SetAspectRatioMode" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRWindowlessControl Interface" />
-    <seealso cref="IVMRWindowlessControl.GetBorderColor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
   <member name="IVMRWindowlessControl.SetColorKey">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetColorKey</code> method sets the source color key value that the VMR should use.</para>
     </summary>
-    <param name="Clr">
-      <para>Specifies the source color key.</para>
-    </param>
+    <param name="Clr">Specifies the source color key.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
       <list type="table">
@@ -412,33 +394,27 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>VFW_E_WRONG_STATE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_WRONG_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The VMR is not in windowless mode.</para>
-          </description>
-        </item>
+          <description>The VMR is not in windowless mode.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Color key control is only meaningful when the VMR is using an overlay surface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRWindowlessControl Interface" />
-    <seealso cref="IVMRWindowlessControl.GetColorKey" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
   <member name="IVMRWindowlessControl.SetVideoClippingWindow">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetVideoClippingWindow</code> method specifies the container window that video should be clipped to.</para>
     </summary>
-    <param name="hwnd">
-      <para>Specifies the window to which the video should be clipped.</para>
-    </param>
+    <param name="hwnd">Specifies the window to which the video should be clipped.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
       <list type="table">
@@ -446,32 +422,28 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>VFW_E_WRONG_STATE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_WRONG_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The VMR is not in windowless mode.</para>
-          </description>
-        </item>
+          <description>The VMR is not in windowless mode.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRWindowlessControl Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
   <member name="IVMRWindowlessControl.SetVideoPosition">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetVideoPosition</code> method sets the source and destination rectangles for the video.</para>
     </summary>
-    <param name="lpSRCRect">
-      <para>Pointer to a <b>RECT</b> structure that specifies the source rectangle. If <b>NULL</b>, the source rectangle does not change. The default source rectangle is the entire video image.</para>
-    </param>
-    <param name="lpDSTRect">
-      <para>Pointer to a <b>RECT</b> structure that specifies the destination rectangle. If <b>NULL</b>, the destination rectangle does not change. The default destination rectangle is {0, 0, 0, 0}.</para>
-    </param>
+    <param name="lpSRCRect">Pointer to a <b>RECT</b> structure that specifies the source rectangle. If <b>NULL</b>, the source rectangle does not change. The default source rectangle is the entire video image.</param>
+    <param name="lpDSTRect">Pointer to a <b>RECT</b> structure that specifies the destination rectangle. If <b>NULL</b>, the destination rectangle does not change. The default destination rectangle is {0, 0, 0, 0}.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
       <list type="table">
@@ -479,28 +451,26 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>VFW_E_WRONG_STATE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_WRONG_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The VMR is not in windowless mode.</para>
-          </description>
-        </item>
+          <description>The VMR is not in windowless mode.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRWindowlessControl Interface" />
-    <seealso cref="IVMRWindowlessControl.GetVideoPosition" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
   <member name="IVMRWindowlessControl">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IVMRWindowlessControl</code> interface controls how the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-mixing-renderer-filter-7">Video Mixing Renderer Filter 7</a> (VMR-7) renders a video stream within a container window. Applications must first put the VMR-7 into windowless mode before using this interface.</para>
       <para>For the VMR-9, use the IVMRWindowlessControl9 interface.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
 </doc>

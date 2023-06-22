@@ -3,34 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF2DBuffer_LockFlags">
-    <summary>
-      <para>Contains flags for the <see cref="IMF2DBuffer2.Lock2DSize" /> method.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Contains flags for the <see cref="IMF2DBuffer2.Lock2DSize" /> method.</summary>
   </member>
   <member name="MF2DBuffer_LockFlags.MF2DBuffer_LockFlags_LockTypeMask">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="MF2DBuffer_LockFlags.MF2DBuffer_LockFlags_Read">
-    <summary>
-      <para>Lock the buffer for reading.</para>
-    </summary>
+    <summary>Lock the buffer for reading.</summary>
   </member>
   <member name="MF2DBuffer_LockFlags.MF2DBuffer_LockFlags_Write">
-    <summary>
-      <para>Lock the buffer for writing.</para>
-    </summary>
+    <summary>Lock the buffer for writing.</summary>
   </member>
   <member name="MF2DBuffer_LockFlags.MF2DBuffer_LockFlags_ReadWrite">
-    <summary>
-      <para>Lock the buffer for both reading and writing.</para>
-    </summary>
+    <summary>Lock the buffer for both reading and writing.</summary>
   </member>
   <member name="MF2DBuffer_LockFlags.MF2DBuffer_LockFlags_ForceDWORD">
-    <summary>
-      <para>Reserved. This member forces the enumeration type to compile as a <b>DWORD</b> value.</para>
-    </summary>
+    <summary>Reserved. This member forces the enumeration type to compile as a <b>DWORD</b> value.</summary>
   </member>
 </doc>

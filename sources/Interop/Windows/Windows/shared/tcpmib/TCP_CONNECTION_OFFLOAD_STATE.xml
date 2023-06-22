@@ -3,43 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TCP_CONNECTION_OFFLOAD_STATE">
-    <summary>
-      <para>The <b>TCP_CONNECTION_OFFLOAD_STATE</b> enumeration defines the possible TCP offload states for a TCP connection.</para>
-    </summary>
-    <remarks>
-      <para>The <b>TCP_CONNECTION_OFFLOAD_STATE</b> enumeration is defined on Windows Server 2003 and later.</para>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>TCP_CONNECTION_OFFLOAD_STATE</b> enumeration  is defined in the <i>Tcpmib.h</i> header file not in the <i>Iprtrmib.h</i> header file. Note that the <i>Tcpmib.h</i> header file is automatically included in <i>Iprtrmib.h</i> which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Tcpmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
-    </remarks>
-    <seealso cref="GetTcp6Table" />
-    <seealso cref="GetTcp6Table2" />
-    <seealso cref="MIB_TCP6ROW2" />
-    <seealso cref="MIB_TCP6TABLE2" />
-    <seealso cref="MIB_TCPROW2" />
-    <seealso cref="MIB_TCPTABLE2" />
+    <summary>The <b>TCP_CONNECTION_OFFLOAD_STATE</b> enumeration defines the possible TCP offload states for a TCP connection.</summary>
   </member>
   <member name="TCP_CONNECTION_OFFLOAD_STATE.TcpConnectionOffloadStateInHost">
-    <summary>
-      <para>The TCP connection is currently owned by the network stack on the local computer, and is not offloaded</para>
-    </summary>
+    <summary>The TCP connection is currently owned by the network stack on the local computer, and is not offloaded</summary>
   </member>
   <member name="TCP_CONNECTION_OFFLOAD_STATE.TcpConnectionOffloadStateOffloading">
-    <summary>
-      <para>The TCP connection is in the process of being offloaded, but the offload has not been completed.</para>
-    </summary>
+    <summary>The TCP connection is in the process of being offloaded, but the offload has not been completed.</summary>
   </member>
   <member name="TCP_CONNECTION_OFFLOAD_STATE.TcpConnectionOffloadStateOffloaded">
-    <summary>
-      <para>The TCP connection is offloaded to the network interface controller.</para>
-    </summary>
+    <summary>The TCP connection is offloaded to the network interface controller.</summary>
   </member>
   <member name="TCP_CONNECTION_OFFLOAD_STATE.TcpConnectionOffloadStateUploading">
-    <summary>
-      <para>The TCP connection is in the process of being uploaded back to the network stack on the local computer, but the reinstate-to-host process has not completed.</para>
-    </summary>
+    <summary>The TCP connection is in the process of being uploaded back to the network stack on the local computer, but the reinstate-to-host process has not completed.</summary>
   </member>
   <member name="TCP_CONNECTION_OFFLOAD_STATE.TcpConnectionOffloadStateMax">
-    <summary>
-      <para>The maximum possible value for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/tcpmib/ne-tcpmib-tcp_connection_offload_state">TCP_CONNECTION_OFFLOAD_STATE</a> enumeration type. This is not a legal value for the possible TCP connection offload state.</para>
-    </summary>
+    <summary>The maximum possible value for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/tcpmib/ne-tcpmib-tcp_connection_offload_state">TCP_CONNECTION_OFFLOAD_STATE</a> enumeration type. This is not a legal value for the possible TCP connection offload state.</summary>
   </member>
 </doc>

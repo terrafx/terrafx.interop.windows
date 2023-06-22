@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PSAPI_WS_WATCH_INFORMATION">
-    <summary>
-      <para>Contains information about a page added to a process working set.</para>
-    </summary>
-    <seealso cref="GetWsChanges" />
+    <summary>Contains information about a page added to a process working set.</summary>
   </member>
   <member name="PSAPI_WS_WATCH_INFORMATION.FaultingPc">
-    <summary>
-      <para>A pointer to the instruction that caused the page fault.</para>
-    </summary>
+    <summary>A pointer to the instruction that caused the page fault.</summary>
   </member>
   <member name="PSAPI_WS_WATCH_INFORMATION.FaultingVa">
-    <summary>
-      <para>A pointer to the page that was added to the working set.</para>
-    </summary>
+    <summary>A pointer to the page that was added to the working set.</summary>
   </member>
 </doc>

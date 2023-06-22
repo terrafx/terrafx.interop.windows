@@ -4,45 +4,34 @@
 <doc>
   <member name="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING">
     <summary>
-      <para>The security binding subtype for specifying the use of the Kerberos
-AP_REQ ticket as a direct (i.e., without establishing a session)
-security token with WS-Security.</para>
+      <para>The security binding subtype for specifying the use of the Kerberos AP_REQ ticket as a direct (i.e., without establishing a session) security token with WS-Security.</para>
       <para>Only one instance of this binding may be present in a <see cref="security description" />.</para>
       <para>This security binding is not supported with the <see cref="WS_NAMEDPIPE_CHANNEL_BINDING" />.</para>
       <para>With this security binding, the following security binding properties may be specified:</para>
       <list type="bullet">
         <item>
           <description>
-            <see cref="WS_SECURITY_BINDING_PROPERTY_ALLOWED_IMPERSONATION_LEVEL" /> (client side only)
-</description>
+            <see cref="WS_SECURITY_BINDING_PROPERTY_ALLOWED_IMPERSONATION_LEVEL" /> (client side only)</description>
         </item>
         <item>
           <description>
-            <see cref="WS_SECURITY_BINDING_PROPERTY_ALLOW_ANONYMOUS_CLIENTS" /> (server side only)
-</description>
+            <see cref="WS_SECURITY_BINDING_PROPERTY_ALLOW_ANONYMOUS_CLIENTS" /> (server side only)</description>
         </item>
       </list>
       <para>In Windows Vista and above on the client side, using this binding with HTTP will result in the message being sent using chunked transfer.</para>
     </summary>
   </member>
   <member name="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING.binding">
-    <summary>
-      <para>The base type from which this security binding subtype and all other security binding subtypes derive.</para>
-    </summary>
+    <summary>The base type from which this security binding subtype and all other security binding subtypes derive.</summary>
   </member>
   <member name="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING.bindingUsage">
     <summary>
-      <para>How the security token corresponding to this security binding should
-be attached to a message.</para>
+      <para>How the security token corresponding to this security binding should be attached to a message.</para>
       <para>Only <see cref="WS_SUPPORTING_MESSAGE_SECURITY_USAGE" /> is supported. With this usage, this security binding provides client authentication, but not message protection (such as signing, encryption, replay detection). Consequently, this binding is generally used together with another security binding such as the <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /> that provides a protected channel.</para>
       <para>To use this binding on HTTP without SSL, the security description property <b>WS_SECURITY_PROPERTY_TRANSPORT_PROTECTION_LEVEL</b> must be explicitly set to <b>WS_PROTECTION_LEVEL_NONE</b>. This is not supported on the client or on TCP.</para>
     </summary>
   </member>
   <member name="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING.clientCredential">
-    <summary>
-      <para>The Windows Integrated Authentication credential to be used to obtain
-the Kerberos ticket.  This field is required on the client side, but
-must be <b>NULL</b> on the server side.</para>
-    </summary>
+    <summary>The Windows Integrated Authentication credential to be used to obtain the Kerberos ticket. This field is required on the client side, but must be <b>NULL</b> on the server side.</summary>
   </member>
 </doc>

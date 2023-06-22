@@ -3,27 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PARTITION_STYLE">
-    <summary>
-      <para>Represents the format of a partition.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-system-recognition">File System Recognition</seealso>
-    <seealso href="https://docs.microsoft.com/ni-winioctl-ioctl_disk_get_partition_info_ex.md">IOCTL_DISK_GET_PARTITION_INFO_EX</seealso>
-    <seealso href="https://docs.microsoft.com/ni-winioctl-ioctl_disk_set_partition_info_ex.md">IOCTL_DISK_SET_PARTITION_INFO_EX</seealso>
-    <seealso cref="PARTITION_INFORMATION_EX" />
+    <summary>Represents the format of a partition.</summary>
   </member>
   <member name="PARTITION_STYLE.PARTITION_STYLE_MBR">
-    <summary>
-      <para>Master boot record (MBR) format. This corresponds to standard <i>AT-style</i> MBR partitions.</para>
-    </summary>
+    <summary>Master boot record (MBR) format. This corresponds to standard <i>AT-style</i> MBR partitions.</summary>
   </member>
   <member name="PARTITION_STYLE.PARTITION_STYLE_GPT">
-    <summary>
-      <para>GUID Partition Table (GPT) format.</para>
-    </summary>
+    <summary>GUID Partition Table (GPT) format.</summary>
   </member>
   <member name="PARTITION_STYLE.PARTITION_STYLE_RAW">
-    <summary>
-      <para>Partition not formatted in either of the recognized formats—MBR or GPT.</para>
-    </summary>
+    <summary>Partition not formatted in either of the recognized formats—MBR or GPT.</summary>
   </member>
 </doc>

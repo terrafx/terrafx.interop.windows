@@ -3,36 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IInitializeNetworkFolder.Initialize">
-    <summary>
-      <para>Initializes a network folder, as specified.</para>
-    </summary>
-    <param name="pidl">
-      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
-      <para>The Shell namespace location for this data source, as an IDList.</para>
-    </param>
-    <param name="pidlTarget">
-      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
-      <para>The target namespace location, as an IDList. This is used when the data source is aliased into the namespace. This parameter specifies the location of the network item that the data source will represent. See <see cref="InitializeEx" /> and in <see cref="PERSIST_FOLDER_TARGET_INFO" /> see the <i>pidlTargetFolder</i>   definition for more information.</para>
-    </param>
-    <param name="uDisplayType">
-      <para>Type: <b>UINT</b></para>
-      <para>The display type of the network resource this data source will represent. This is one of the RESOURCEDISPLAYTYPE_XXX values found in winnetwk.h.</para>
-    </param>
-    <param name="pszResName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>The network resource name. for example, \server or \server\share. this is passed to the WNet in the <see cref="NETRESOURCE" />.<i>lpRemoteName</i> field.</para>
-    </param>
-    <param name="pszProvider">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>Optional network provider, as in the <see cref="NETRESOURCE" />.<i>lpProvider</i> field.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IInitializeNetworkFolder" />
-    <seealso cref="InitializeEx" />
-    <seealso cref="NETRESOURCE" />
-    <seealso cref="PERSIST_FOLDER_TARGET_INFO" />
+    <summary>Initializes a network folder, as specified.</summary>
+    <param name="pidl">The Shell namespace location for this data source, as an IDList.</param>
+    <param name="pidlTarget">The target namespace location, as an IDList. This is used when the data source is aliased into the namespace. This parameter specifies the location of the network item that the data source will represent. See <see cref="InitializeEx" /> and in <see cref="PERSIST_FOLDER_TARGET_INFO" /> see the <i>pidlTargetFolder</i> definition for more information.</param>
+    <param name="uDisplayType">The display type of the network resource this data source will represent. This is one of the RESOURCEDISPLAYTYPE_XXX values found in winnetwk.h.</param>
+    <param name="pszResName">The network resource name. for example, \server or \server\share. this is passed to the WNet in the <see cref="NETRESOURCE" />.<i>lpRemoteName</i> field.</param>
+    <param name="pszProvider">Optional network provider, as in the <see cref="NETRESOURCE" />.<i>lpProvider</i> field.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
 </doc>

@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_XML_WRITER_TEXT_ENCODING">
-    <summary>
-      <para>Indicates that the reader should emit bytes as textual xml.</para>
-    </summary>
+    <summary>Indicates that the reader should emit bytes as textual xml.</summary>
   </member>
   <member name="WS_XML_WRITER_TEXT_ENCODING.encoding">
-    <summary>
-      <para>The base type for all types that derive from <see cref="WS_XML_WRITER_ENCODING" />.</para>
-    </summary>
+    <summary>The base type for all types that derive from <see cref="WS_XML_WRITER_ENCODING" />.</summary>
   </member>
   <member name="WS_XML_WRITER_TEXT_ENCODING.charSet">
-    <summary>
-      <para>Indicates the text encoding of the bytes.  This may not be <see cref="WS_CHARSET_AUTO" />.</para>
-    </summary>
+    <summary>Indicates the text encoding of the bytes. This may not be <see cref="WS_CHARSET_AUTO" />.</summary>
   </member>
 </doc>

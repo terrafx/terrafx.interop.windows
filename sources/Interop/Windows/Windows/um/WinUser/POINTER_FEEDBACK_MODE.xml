@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="POINTER_FEEDBACK_MODE">
-    <summary>
-      <para>Identifies the visual feedback behaviors available to <see cref="CreateSyntheticPointerDevice" />.</para>
-    </summary>
+    <summary>Identifies the visual feedback behaviors available to <see cref="CreateSyntheticPointerDevice" />.</summary>
   </member>
   <member name="POINTER_FEEDBACK_MODE.POINTER_FEEDBACK_DEFAULT">
-    <summary>
-      <para>Visual feedback might be suppressed by the user's pen (Settings -&gt; Devices -&gt; Pen &amp; Windows Ink) and touch (Settings -&gt; Ease of Access -&gt; Cursor &amp; pointer size) settings.</para>
-    </summary>
+    <summary>Visual feedback might be suppressed by the user's pen (Settings -&gt; Devices -&gt; Pen &amp; Windows Ink) and touch (Settings -&gt; Ease of Access -&gt; Cursor &amp; pointer size) settings.</summary>
   </member>
   <member name="POINTER_FEEDBACK_MODE.POINTER_FEEDBACK_INDIRECT">
-    <summary>
-      <para>Visual feedback overrides the user's pen and touch settings.</para>
-    </summary>
+    <summary>Visual feedback overrides the user's pen and touch settings.</summary>
   </member>
   <member name="POINTER_FEEDBACK_MODE.POINTER_FEEDBACK_NONE">
-    <summary>
-      <para>Visual feedback is disabled.</para>
-    </summary>
+    <summary>Visual feedback is disabled.</summary>
   </member>
 </doc>

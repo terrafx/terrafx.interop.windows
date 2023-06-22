@@ -3,105 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAPI_BURN_VERIFICATION_LEVEL">
-    <summary>
-      <para>Defines values for the burn verification implemented by the <see cref="IBurnVerification" /> interface.</para>
-    </summary>
-    <remarks>
-      <para>Depending on the format used for the burned media, the values defined by this enumeration will elicit the following behavior during verification:</para>
-      <list type="table">
-        <listheader>
-          <description>MsftDiscFormat2Data</description>
-          <description></description>
-        </listheader>
-        <item>
-          <description>None</description>
-          <description>
-            <para>No burn verification.</para>
-          </description>
-        </item>
-        <item>
-          <description>Quick Verification</description>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>READ_DISC_INFO command works and data appears correct</description>
-              </item>
-              <item>
-                <description>READ_TRACK_INFO command works on all tracks</description>
-              </item>
-              <item>
-                <description>Checksum comparison of a small set of disc sectors to stream bits</description>
-              </item>
-            </list>
-          </description>
-        </item>
-        <item>
-          <description>Full Verification</description>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>Performs the  same heuristic checks as the 'Quick' method, but will also read the entire last session and compare a checksum to the burned stream.</description>
-              </item>
-            </list>
-          </description>
-        </item>
-      </list>
-      <list type="table">
-        <listheader>
-          <description>MsftDiscFormat2TrackAtOnce</description>
-          <description></description>
-        </listheader>
-        <item>
-          <description>None</description>
-          <description>
-            <para>No burn verification.</para>
-          </description>
-        </item>
-        <item>
-          <description>Quick Verification</description>
-          <description>
-            <para>After adding each track:</para>
-            <list type="bullet">
-              <item>
-                <description>READ_TRACK_INFO command for last track appears correct</description>
-              </item>
-            </list>
-            <para>When finishing the disc:</para>
-            <list type="bullet">
-              <item>
-                <description>READ_DISC_INFO command appears correct</description>
-              </item>
-              <item>
-                <description>TOC appears correct</description>
-              </item>
-            </list>
-          </description>
-        </item>
-        <item>
-          <description>Full Verification</description>
-          <description>
-            <para>Full verification is not supported with this format.</para>
-          </description>
-        </item>
-      </list>
-      <para>The time required for a full verification is relative to the read speed of the device and  storage medium.</para>
-      <para>This enumeration is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
-    </remarks>
-    <seealso cref="IBurnVerfication" />
+    <summary>Defines values for the burn verification implemented by the <see cref="IBurnVerification" /> interface.</summary>
   </member>
   <member name="IMAPI_BURN_VERIFICATION_LEVEL.IMAPI_BURN_VERIFICATION_NONE">
-    <summary>
-      <para>No burn verification.</para>
-    </summary>
+    <summary>No burn verification.</summary>
   </member>
   <member name="IMAPI_BURN_VERIFICATION_LEVEL.IMAPI_BURN_VERIFICATION_QUICK">
-    <summary>
-      <para>A quick, heuristic burn verification.</para>
-    </summary>
+    <summary>A quick, heuristic burn verification.</summary>
   </member>
   <member name="IMAPI_BURN_VERIFICATION_LEVEL.IMAPI_BURN_VERIFICATION_FULL">
-    <summary>
-      <para>This verification compares the checksum to the referenced stream for either the last session or each track.  A full verification includes the heuristic checks of a quick verification for both burn formats.</para>
-    </summary>
+    <summary>This verification compares the checksum to the referenced stream for either the last session or each track. A full verification includes the heuristic checks of a quick verification for both burn formats.</summary>
   </member>
 </doc>

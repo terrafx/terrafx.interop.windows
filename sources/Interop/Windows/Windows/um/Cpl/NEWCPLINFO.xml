@@ -3,125 +3,57 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NEWCPLINFO">
-    <summary>
-      <para>Contains resource information and an application-defined value for a dialog box supported by a Control Panel application.</para>
-    </summary>
-    <remarks>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/api/cpl/nc-cpl-applet_proc">CPlApplet</a> function of the Control Panel application returns this information to the Control Panel in response to a <a href="https://docs.microsoft.com//windows/desktop/shell/glossary">CPL_NEWINQUIRE</a> message.</para>
-      <blockquote>
-        <para>[!NOTE]
-The cpl.h header defines NEWCPLINFO as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso cref="CPLINFO" />
+    <summary>Contains resource information and an application-defined value for a dialog box supported by a Control Panel application.</summary>
   </member>
   <member name="NEWCPLINFO.dwSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The length of the structure, in bytes.</para>
-    </summary>
+    <summary>The length of the structure, in bytes.</summary>
   </member>
   <member name="NEWCPLINFO.dwFlags">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>This member is ignored.</para>
-    </summary>
+    <summary>This member is ignored.</summary>
   </member>
   <member name="NEWCPLINFO.dwHelpContext">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>This member is ignored.</para>
-    </summary>
+    <summary>This member is ignored.</summary>
   </member>
   <member name="NEWCPLINFO.lData">
-    <summary>
-      <para>Type: <b>LONG_PTR</b></para>
-      <para>A pointer to data defined by the application. When the Control Panel sends the <a href="https://docs.microsoft.com//windows/desktop/shell/fa-associationarray">CPL_DBLCLK</a> and <a href="https://docs.microsoft.com//windows/desktop/shell/library-functions-bumper">CPL_STOP</a> messages, it passes this value back to your application.</para>
-    </summary>
+    <summary>A pointer to data defined by the application. When the Control Panel sends the <a href="https://docs.microsoft.com//windows/desktop/shell/fa-associationarray">CPL_DBLCLK</a> and <a href="https://docs.microsoft.com//windows/desktop/shell/library-functions-bumper">CPL_STOP</a> messages, it passes this value back to your application.</summary>
   </member>
   <member name="NEWCPLINFO.hIcon">
-    <summary>
-      <para>Type: <b>HICON</b></para>
-      <para>The identifier of the icon that represents the dialog box. This icon is intended to be displayed by the application that controls the Control Panel application.</para>
-    </summary>
+    <summary>The identifier of the icon that represents the dialog box. This icon is intended to be displayed by the application that controls the Control Panel application.</summary>
   </member>
   <member name="NEWCPLINFO.szName">
-    <summary>
-      <para>Type: <b>TCHAR[32]</b></para>
-      <para>A null-terminated string that contains the dialog box name. The name is intended to be displayed below the icon.</para>
-    </summary>
+    <summary>A null-terminated string that contains the dialog box name. The name is intended to be displayed below the icon.</summary>
   </member>
   <member name="NEWCPLINFO.szInfo">
-    <summary>
-      <para>Type: <b>TCHAR[64]</b></para>
-      <para>A null-terminated string containing the dialog box description. The description is intended to be displayed when the icon for the dialog box is selected.</para>
-    </summary>
+    <summary>A null-terminated string containing the dialog box description. The description is intended to be displayed when the icon for the dialog box is selected.</summary>
   </member>
   <member name="NEWCPLINFO.szHelpFile">
-    <summary>
-      <para>Type: <b>TCHAR[128]</b></para>
-      <para>This member is ignored.</para>
-    </summary>
+    <summary>This member is ignored.</summary>
   </member>
   <member name="NEWCPLINFO">
-    <summary>
-      <para>Contains resource information and an application-defined value for a dialog box supported by a Control Panel application.</para>
-    </summary>
-    <remarks>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/api/cpl/nc-cpl-applet_proc">CPlApplet</a> function of the Control Panel application returns this information to the Control Panel in response to a <a href="https://docs.microsoft.com//windows/desktop/shell/glossary">CPL_NEWINQUIRE</a> message.</para>
-      <blockquote>
-        <para>[!NOTE]
-The cpl.h header defines NEWCPLINFO as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso cref="CPLINFO" />
+    <summary>Contains resource information and an application-defined value for a dialog box supported by a Control Panel application.</summary>
   </member>
   <member name="NEWCPLINFO.dwSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The length of the structure, in bytes.</para>
-    </summary>
+    <summary>The length of the structure, in bytes.</summary>
   </member>
   <member name="NEWCPLINFO.dwFlags">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>This member is ignored.</para>
-    </summary>
+    <summary>This member is ignored.</summary>
   </member>
   <member name="NEWCPLINFO.dwHelpContext">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>This member is ignored.</para>
-    </summary>
+    <summary>This member is ignored.</summary>
   </member>
   <member name="NEWCPLINFO.lData">
-    <summary>
-      <para>Type: <b>LONG_PTR</b></para>
-      <para>A pointer to data defined by the application. When the Control Panel sends the <a href="https://docs.microsoft.com//windows/desktop/shell/fa-associationarray">CPL_DBLCLK</a> and <a href="https://docs.microsoft.com//windows/desktop/shell/library-functions-bumper">CPL_STOP</a> messages, it passes this value back to your application.</para>
-    </summary>
+    <summary>A pointer to data defined by the application. When the Control Panel sends the <a href="https://docs.microsoft.com//windows/desktop/shell/fa-associationarray">CPL_DBLCLK</a> and <a href="https://docs.microsoft.com//windows/desktop/shell/library-functions-bumper">CPL_STOP</a> messages, it passes this value back to your application.</summary>
   </member>
   <member name="NEWCPLINFO.hIcon">
-    <summary>
-      <para>Type: <b>HICON</b></para>
-      <para>The identifier of the icon that represents the dialog box. This icon is intended to be displayed by the application that controls the Control Panel application.</para>
-    </summary>
+    <summary>The identifier of the icon that represents the dialog box. This icon is intended to be displayed by the application that controls the Control Panel application.</summary>
   </member>
   <member name="NEWCPLINFO.szName">
-    <summary>
-      <para>Type: <b>TCHAR[32]</b></para>
-      <para>A null-terminated string that contains the dialog box name. The name is intended to be displayed below the icon.</para>
-    </summary>
+    <summary>A null-terminated string that contains the dialog box name. The name is intended to be displayed below the icon.</summary>
   </member>
   <member name="NEWCPLINFO.szInfo">
-    <summary>
-      <para>Type: <b>TCHAR[64]</b></para>
-      <para>A null-terminated string containing the dialog box description. The description is intended to be displayed when the icon for the dialog box is selected.</para>
-    </summary>
+    <summary>A null-terminated string containing the dialog box description. The description is intended to be displayed when the icon for the dialog box is selected.</summary>
   </member>
   <member name="NEWCPLINFO.szHelpFile">
-    <summary>
-      <para>Type: <b>TCHAR[128]</b></para>
-      <para>This member is ignored.</para>
-    </summary>
+    <summary>This member is ignored.</summary>
   </member>
 </doc>

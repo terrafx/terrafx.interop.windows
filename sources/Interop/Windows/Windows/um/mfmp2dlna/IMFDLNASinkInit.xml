@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFDLNASinkInit.Initialize">
-    <summary>
-      <para>Initializes the Digital Living Network Alliance (DLNA) media sink.</para>
-    </summary>
-    <param name="pByteStream">
-      <para>Pointer to a byte stream. The DLNA media sink writes data to this byte stream. The byte stream must be writable.</para>
-    </param>
-    <param name="fPal">
-      <para>If <b>TRUE</b>, the DLNA media sink accepts PAL video formats. Otherwise, it accepts NTSC video  formats.</para>
-    </param>
+    <summary>Initializes the Digital Living Network Alliance (DLNA) media sink.</summary>
+    <param name="pByteStream">Pointer to a byte stream. The DLNA media sink writes data to this byte stream. The byte stream must be writable.</param>
+    <param name="fPal">If <b>TRUE</b>, the DLNA media sink accepts PAL video formats. Otherwise, it accepts NTSC video formats.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -19,51 +13,55 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>
-                <b>S_OK</b>
-              </b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>S_OK</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>MF_E_ALREADY_INITIALIZED</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The method was already called.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>
-                <b>MF_E_ALREADY_INITIALIZED</b>
-              </b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>MF_E_SHUTDOWN</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was already called.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>
-                <b>MF_E_SHUTDOWN</b>
-              </b>
-            </para>
-          </description>
-          <description>
-            <para>The media sink's <see cref="IMFMediaSink.Shutdown" /> method was called.</para>
-          </description>
-        </item>
+          <description>The media sink's <see cref="IMFMediaSink.Shutdown" /> method was called.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFDLNASinkInit" />
   </member>
   <member name="IMFDLNASinkInit">
     <summary>
       <para>Initializes the Digital Living Network Alliance (DLNA) media sink.</para>
       <para>The DLNA media sink exposes this interface. To get a pointer to this interface, call <b>CoCreateInstance</b>. The CLSID is <b>CLSID_MPEG2DLNASink</b>.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
   </member>
 </doc>

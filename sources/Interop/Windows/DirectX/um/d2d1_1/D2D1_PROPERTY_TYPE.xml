@@ -3,108 +3,64 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_PROPERTY_TYPE">
-    <summary>
-      <para>Specifies the types of properties supported by the Direct2D property interface.</para>
-    </summary>
-    <seealso cref="ID2D1Properties" />
-    <seealso cref="ID2D1Properties.GetType" />
+    <summary>Specifies the types of properties supported by the Direct2D property interface.</summary>
   </member>
   <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_UNKNOWN">
-    <summary>
-      <para>An unknown property.</para>
-    </summary>
+    <summary>An unknown property.</summary>
   </member>
   <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_STRING">
-    <summary>
-      <para>An arbitrary-length string.</para>
-    </summary>
+    <summary>An arbitrary-length string.</summary>
   </member>
   <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_BOOL">
-    <summary>
-      <para>A 32-bit integer value constrained to be either 0 or 1.</para>
-    </summary>
+    <summary>A 32-bit integer value constrained to be either 0 or 1.</summary>
   </member>
   <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_UINT32">
-    <summary>
-      <para>An unsigned 32-bit integer.</para>
-    </summary>
+    <summary>An unsigned 32-bit integer.</summary>
   </member>
   <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_INT32">
-    <summary>
-      <para>A signed 32-bit integer.</para>
-    </summary>
+    <summary>A signed 32-bit integer.</summary>
   </member>
   <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_FLOAT">
-    <summary>
-      <para>A 32-bit float.</para>
-    </summary>
+    <summary>A 32-bit float.</summary>
   </member>
   <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_VECTOR2">
-    <summary>
-      <para>Two 32-bit float values.</para>
-    </summary>
+    <summary>Two 32-bit float values.</summary>
   </member>
   <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_VECTOR3">
-    <summary>
-      <para>Three 32-bit float values.</para>
-    </summary>
+    <summary>Three 32-bit float values.</summary>
   </member>
   <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_VECTOR4">
-    <summary>
-      <para>Four 32-bit float values.</para>
-    </summary>
+    <summary>Four 32-bit float values.</summary>
   </member>
   <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_BLOB">
-    <summary>
-      <para>An arbitrary number of bytes.</para>
-    </summary>
+    <summary>An arbitrary number of bytes.</summary>
   </member>
   <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_IUNKNOWN">
-    <summary>
-      <para>A returned COM or nano-COM interface.</para>
-    </summary>
+    <summary>A returned COM or nano-COM interface.</summary>
   </member>
   <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_ENUM">
-    <summary>
-      <para>An enumeration. The value should be treated as a <b>UINT32</b> with a defined array of fields to specify the bindings to human-readable strings.</para>
-    </summary>
+    <summary>An enumeration. The value should be treated as a <b>UINT32</b> with a defined array of fields to specify the bindings to human-readable strings.</summary>
   </member>
   <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_ARRAY">
-    <summary>
-      <para>An enumeration. The value is the count of sub-properties in the array. The set of array elements will be contained in the sub-property.</para>
-    </summary>
+    <summary>An enumeration. The value is the count of sub-properties in the array. The set of array elements will be contained in the sub-property.</summary>
   </member>
   <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_CLSID">
-    <summary>
-      <para>A CLSID.</para>
-    </summary>
+    <summary>A CLSID.</summary>
   </member>
   <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_MATRIX_3X2">
-    <summary>
-      <para>A 3x2 matrix of  float values.</para>
-    </summary>
+    <summary>A 3x2 matrix of float values.</summary>
   </member>
   <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_MATRIX_4X3">
-    <summary>
-      <para>A 4x2 matrix of  float values.</para>
-    </summary>
+    <summary>A 4x2 matrix of float values.</summary>
   </member>
   <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_MATRIX_4X4">
-    <summary>
-      <para>A 4x4 matrix of  float values.</para>
-    </summary>
+    <summary>A 4x4 matrix of float values.</summary>
   </member>
   <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_MATRIX_5X4">
-    <summary>
-      <para>A 5x4 matrix of  float values.</para>
-    </summary>
+    <summary>A 5x4 matrix of float values.</summary>
   </member>
   <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_COLOR_CONTEXT">
-    <summary>
-      <para>A nano-COM color context interface pointer.</para>
-    </summary>
+    <summary>A nano-COM color context interface pointer.</summary>
   </member>
-  <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_FORCE_DWORD"></member>
 </doc>

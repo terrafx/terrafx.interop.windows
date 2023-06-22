@@ -3,116 +3,31 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.SHAddDefaultPropertiesByExt">
-    <summary>
-      <para>Adds default properties to the property store as registered for the specified file extension.</para>
-    </summary>
-    <param name="pszExt">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>A pointer to a null-terminated, Unicode string that specifies the extension.</para>
-    </param>
-    <param name="pPropStore">
-      <para>Type: <b><see cref="IPropertyStore" />*</b></para>
-      <para>A pointer to the <see cref="IPropertyStore" /> interface that defines the default properties to add.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The list of properties used to set a default value comes from the <code>SetDefaultsFor</code> registry value of the ProgID for the file association of the specified file extension. The list is prefixed by "<code>prop:</code>" and contains the canonical names of the properties to set the default value, such as: "<code>prop:System.Author;System.Document.DateCreated</code>". The possible properties for this list are <b>System.Author</b>, <b>System.Document.DateCreated</b>, and <b>System.Photo.DateTaken</b>. If the <code>SetDefaultsFor</code> value does not exist on the ProgID, this function uses the default found on the <code>SetDefaultsFor</code> value of <b>HKEY_CLASSES_ROOT*</b>.</para>
-      <para>
-        <b>System.Author</b> has the value of the user that performed the action. <b>System.Document.DateCreated</b> and <b>System.Photo.DateTaken</b> use the current date. These three properties are the only ones for which the system provides special defaults.</para>
-      <para>Note that there are several types of properties:</para>
-      <list type="number">
-        <item>
-          <description>Properties that derive from the file system (such as, size and date created)</description>
-        </item>
-        <item>
-          <description>Properties that derive from the file (such as, dimensions and number of pages)</description>
-        </item>
-        <item>
-          <description>Properties that are placed in the file (such as, author and tags)</description>
-        </item>
-      </list>
-      <para>When creating a new file, types one and two are provided just by creating the file. But properties of type three must be set explicitly by a program. The system provides <b>SHAddDefaultPropertiesByExt</b> to provide values for up to three specific properties of type three. Sometimes Windows Explorer uses this API when saving a file for the first time, or when creating a new file after the menu choice <b>New</b> is selected from a shortcut menu.</para>
-    </remarks>
+    <summary>Adds default properties to the property store as registered for the specified file extension.</summary>
+    <param name="pszExt">A pointer to a null-terminated, Unicode string that specifies the extension.</param>
+    <param name="pPropStore">A pointer to the <see cref="IPropertyStore" /> interface that defines the default properties to add.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="Windows.SHCreateDefaultPropertiesOp">
-    <summary>
-      <para>Creates a file operation that sets the default properties on the Shell item that have not already been set.</para>
-    </summary>
-    <param name="psi">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the source shell item. See <see cref="IShellItem" />.</para>
-    </param>
-    <param name="ppFileOp">
-      <para>Type: <b><see cref="IFileOperation" />**</b></para>
-      <para>The address of the <see cref="IFileOperation" /> interface pointer.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The list of properties to set a default value comes from the <b>SetDefaultsFor</b> registry entry under the ProgID for the file association of the item. The list is prefixed by <code>prop:</code> and contains the canonical names of the properties to set the default value, for example, <code>prop:System.Author;System.Document.DateCreated</code>. The possible properties for this list are <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-author">System.Author</a>, <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-document-datecreated">System.Document.DateCreated</a>, and <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-photo-datetaken">System.Photo.DateTaken</a>. If the <b>SetDefaultsFor</b> entry does not exist on the ProgID, this function uses the default found on the <b>SetDefaultsFor</b> entry of <b>HKEY_CLASSES_ROOT</b>\<b>*</b>.</para>
-    </remarks>
+    <summary>Creates a file operation that sets the default properties on the Shell item that have not already been set.</summary>
+    <param name="psi">A pointer to the source shell item. See <see cref="IShellItem" />.</param>
+    <param name="ppFileOp">The address of the <see cref="IFileOperation" /> interface pointer.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="Windows.SHResolveFolderPathInLibrary">
-    <summary>
-      <para>Attempts to resolve the target location of a library folder that has been moved or renamed.</para>
-    </summary>
-    <param name="plib">
-      <para>Type: <b><see cref="IShellLibrary" />*</b></para>
-      <para>The <see cref="IShellLibrary" /> object for which to resolve the target location.</para>
-    </param>
-    <param name="pszFolderPath">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The path of the library folder to locate.</para>
-    </param>
-    <param name="dwTimeout">
-      <para>Type: <b>DWORD</b></para>
-      <para>The maximum time, in milliseconds, that the method attempts to locate the folder before returning. If the folder could not be located before the specified time elapses, an error is returned.</para>
-    </param>
-    <param name="ppszResolvedPath">
-      <para>Type: <b>PWSTR*</b></para>
-      <para>A pointer to a string that, when this function successfully returns, contains the current path of the library folder specified in <i>plib</i>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This is an inline helper function that wraps the <see cref="IShellLibrary.ResolveFolder" /> method.</para>
-    </remarks>
-    <seealso cref="IShellLibrary" />
-    <seealso cref="IShellLibrary.ResolveFolder" />
+    <summary>Attempts to resolve the target location of a library folder that has been moved or renamed.</summary>
+    <param name="plib">The <see cref="IShellLibrary" /> object for which to resolve the target location.</param>
+    <param name="pszFolderPath">The path of the library folder to locate.</param>
+    <param name="dwTimeout">The maximum time, in milliseconds, that the method attempts to locate the folder before returning. If the folder could not be located before the specified time elapses, an error is returned.</param>
+    <param name="ppszResolvedPath">A pointer to a string that, when this function successfully returns, contains the current path of the library folder specified in <i>plib</i>.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="Windows.SHSetDefaultProperties">
-    <summary>
-      <para>Applies the default set of properties on a Shell item.</para>
-    </summary>
-    <param name="hwnd">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the item's parent window, which receives error notifications. This value can be <b>NULL</b>.</para>
-    </param>
-    <param name="psi">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the <see cref="IShellItem" /> object that represents the item.</para>
-    </param>
-    <param name="dwFileOpFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>Flags that customize the operation. See <see cref="IFileOperation.SetOperationFlags" /> for flag values.</para>
-    </param>
-    <param name="pfops">
-      <para>Type: <b><see cref="IFileOperationProgressSink" />*</b></para>
-      <para>A pointer to an <see cref="IFileOperationProgressSink" /> object used to follow the progress of the operation. See <see cref="IFileOperation.Advise" /> for details. This value can be <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The list of properties to set a default value comes from the <b>SetDefaultsFor</b> registry entry under the ProgID for the file association of the item. The list is prefixed by "<code>prop:</code>" and contains the canonical names of the properties to set the default value, for example, "<code>prop:System.Author;System.Document.DateCreated</code>". The possible properties for this list are <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-author">System.Author</a>, <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-document-datecreated">System.Document.DateCreated</a>, and <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-photo-datetaken">System.Photo.DateTaken</a>. If the <b>SetDefaultsFor</b> entry does not exist on the ProgID, this function uses the default found on the <b>SetDefaultsFor</b> entry of <b>HKEY_CLASSES_ROOT</b>\<b>*</b>.</para>
-    </remarks>
+    <summary>Applies the default set of properties on a Shell item.</summary>
+    <param name="hwnd">A handle to the item's parent window, which receives error notifications. This value can be <b>NULL</b>.</param>
+    <param name="psi">A pointer to the <see cref="IShellItem" /> object that represents the item.</param>
+    <param name="dwFileOpFlags">Flags that customize the operation. See <see cref="IFileOperation.SetOperationFlags" /> for flag values.</param>
+    <param name="pfops">A pointer to an <see cref="IFileOperationProgressSink" /> object used to follow the progress of the operation. See <see cref="IFileOperation.Advise" /> for details. This value can be <b>NULL</b>.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
 </doc>

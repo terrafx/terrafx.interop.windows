@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT">
-    <summary>
-      <para>Specifies how a video format can be used for video processing.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-enumerations">Direct3D 11 Video Enumerations</seealso>
-    <seealso cref="ID3D11VideoProcessorEnumerator.CheckVideoProcessorFormat" />
+    <summary>Specifies how a video format can be used for video processing.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT.D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT_INPUT">
-    <summary>
-      <para>The format can be used as the input to the video processor.</para>
-    </summary>
+    <summary>The format can be used as the input to the video processor.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT.D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT_OUTPUT">
-    <summary>
-      <para>The format can be used as the output from the video processor.</para>
-    </summary>
+    <summary>The format can be used as the output from the video processor.</summary>
   </member>
 </doc>

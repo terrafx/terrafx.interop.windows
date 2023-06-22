@@ -4,29 +4,20 @@
 <doc>
   <member name="eAVDecVideoInputScanType">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies how the decoded video stream is interlaced. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avdecvideoinputscantype-property">AVDecVideoInputScanType</a> property.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVDecVideoInputScanType.eAVDecVideoInputScan_Unknown">
-    <summary>
-      <para>The interlacing is not known.</para>
-    </summary>
+    <summary>The interlacing is not known.</summary>
   </member>
   <member name="eAVDecVideoInputScanType.eAVDecVideoInputScan_Progressive">
-    <summary>
-      <para>Decoded frames are progressive.</para>
-    </summary>
+    <summary>Decoded frames are progressive.</summary>
   </member>
   <member name="eAVDecVideoInputScanType.eAVDecVideoInputScan_Interlaced_UpperFieldFirst">
-    <summary>
-      <para>Decoded frames are interlaced, with the upper field appearing first.</para>
-    </summary>
+    <summary>Decoded frames are interlaced, with the upper field appearing first.</summary>
   </member>
   <member name="eAVDecVideoInputScanType.eAVDecVideoInputScan_Interlaced_LowerFieldFirst">
-    <summary>
-      <para>Decoded frames are interlaced, with the lower field appearing first.</para>
-    </summary>
+    <summary>Decoded frames are interlaced, with the lower field appearing first.</summary>
   </member>
 </doc>

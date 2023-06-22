@@ -3,35 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="COMPOSITION_TARGET_STATS">
-    <summary>
-      <para>Contains per-target information for a composition frame and render target.</para>
-    </summary>
-    <seealso cref="DCompositionGetStatistics" />
-    <seealso cref="DCompositionGetTargetStatistics" />
+    <summary>Contains per-target information for a composition frame and render target.</summary>
   </member>
-  <member name="COMPOSITION_TARGET_STATS.outstandingPresents">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">UINT</a></b></para>
-    </summary>
-  </member>
-  <member name="COMPOSITION_TARGET_STATS.presentTime">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">UINT64</a></b></para>
-    </summary>
-  </member>
-  <member name="COMPOSITION_TARGET_STATS.vblankDuration">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">UINT64</a></b></para>
-    </summary>
-  </member>
-  <member name="COMPOSITION_TARGET_STATS.presentedStats">
-    <summary>
-      <para>Type: <b><see cref="COMPOSITION_STATS" /></b></para>
-    </summary>
-  </member>
-  <member name="COMPOSITION_TARGET_STATS.completedStats">
-    <summary>
-      <para>Type: <b><see cref="COMPOSITION_STATS" /></b></para>
-    </summary>
-  </member>
+  <member name="COMPOSITION_TARGET_STATS.outstandingPresents"></member>
+  <member name="COMPOSITION_TARGET_STATS.presentTime"></member>
+  <member name="COMPOSITION_TARGET_STATS.vblankDuration"></member>
+  <member name="COMPOSITION_TARGET_STATS.presentedStats"></member>
+  <member name="COMPOSITION_TARGET_STATS.completedStats"></member>
 </doc>

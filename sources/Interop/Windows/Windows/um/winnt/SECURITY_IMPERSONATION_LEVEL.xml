@@ -3,39 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SECURITY_IMPERSONATION_LEVEL">
-    <summary>
-      <para>The <b>SECURITY_IMPERSONATION_LEVEL</b> enumeration contains values that specify security impersonation levels. Security impersonation levels govern the degree to which a server process can act on behalf of a client <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">process</a>.</para>
-    </summary>
-    <remarks>
-      <para>Impersonation is the ability of a process to take on the security attributes of another process.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SecAuthZ/authorization-enumerations">Authorization Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SecAuthZ/client-server-access-control">Client/Server Access Control Overview</seealso>
-    <seealso cref="CreatePrivateObjectSecurity" />
-    <seealso cref="DuplicateToken" />
-    <seealso cref="DuplicateTokenEx" />
-    <seealso cref="GetTokenInformation" />
-    <seealso cref="ImpersonateSelf" />
-    <seealso cref="OpenThreadToken" />
+    <summary>The <b>SECURITY_IMPERSONATION_LEVEL</b> enumeration contains values that specify security impersonation levels. Security impersonation levels govern the degree to which a server process can act on behalf of a client <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">process</a>.</summary>
   </member>
   <member name="SECURITY_IMPERSONATION_LEVEL.SecurityAnonymous">
-    <summary>
-      <para>The server process cannot obtain identification information about the client, and it cannot impersonate the client. It is defined with no value given, and thus, by ANSI C rules, defaults to a value of zero.</para>
-    </summary>
+    <summary>The server process cannot obtain identification information about the client, and it cannot impersonate the client. It is defined with no value given, and thus, by ANSI C rules, defaults to a value of zero.</summary>
   </member>
   <member name="SECURITY_IMPERSONATION_LEVEL.SecurityIdentification">
-    <summary>
-      <para>The server process can obtain information about the client, such as security identifiers and <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">privileges</a>, but it cannot impersonate the client. This is useful for servers that export their own objects, for example, database products that export tables and views. Using the retrieved client-security information, the server can make access-validation decisions without being able to use other services that are using the client's <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security context</a>.</para>
-    </summary>
+    <summary>The server process can obtain information about the client, such as security identifiers and <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">privileges</a>, but it cannot impersonate the client. This is useful for servers that export their own objects, for example, database products that export tables and views. Using the retrieved client-security information, the server can make access-validation decisions without being able to use other services that are using the client's <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security context</a>.</summary>
   </member>
   <member name="SECURITY_IMPERSONATION_LEVEL.SecurityImpersonation">
-    <summary>
-      <para>The server process can impersonate the client's security context on its local system. The server cannot impersonate the client on remote systems.</para>
-    </summary>
+    <summary>The server process can impersonate the client's security context on its local system. The server cannot impersonate the client on remote systems.</summary>
   </member>
   <member name="SECURITY_IMPERSONATION_LEVEL.SecurityDelegation">
-    <summary>
-      <para>The server process can impersonate the client's security context on remote systems.</para>
-    </summary>
+    <summary>The server process can impersonate the client's security context on remote systems.</summary>
   </member>
 </doc>

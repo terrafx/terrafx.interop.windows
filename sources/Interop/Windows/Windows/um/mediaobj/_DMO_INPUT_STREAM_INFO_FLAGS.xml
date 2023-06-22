@@ -4,29 +4,20 @@
 <doc>
   <member name="_DMO_INPUT_STREAM_INFO_FLAGS">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>DMO_INPUT_STREAM_INFO_FLAGS</code> enumeration defines flags that describe an input stream.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dmo-enumerated-types">DMO Enumerated Types</seealso>
-    <seealso cref="IMediaObject.GetInputStreamInfo" />
   </member>
   <member name="_DMO_INPUT_STREAM_INFO_FLAGS.DMO_INPUT_STREAMF_WHOLE_SAMPLES">
-    <summary>
-      <para>The stream requires whole samples. Samples must not span multiple buffers, and buffers must not contain partial samples.</para>
-    </summary>
+    <summary>The stream requires whole samples. Samples must not span multiple buffers, and buffers must not contain partial samples.</summary>
   </member>
   <member name="_DMO_INPUT_STREAM_INFO_FLAGS.DMO_INPUT_STREAMF_SINGLE_SAMPLE_PER_BUFFER">
-    <summary>
-      <para>Each buffer must contain exactly one sample.</para>
-    </summary>
+    <summary>Each buffer must contain exactly one sample.</summary>
   </member>
   <member name="_DMO_INPUT_STREAM_INFO_FLAGS.DMO_INPUT_STREAMF_FIXED_SAMPLE_SIZE">
-    <summary>
-      <para>All the samples in this stream must be the same size.</para>
-    </summary>
+    <summary>All the samples in this stream must be the same size.</summary>
   </member>
   <member name="_DMO_INPUT_STREAM_INFO_FLAGS.DMO_INPUT_STREAMF_HOLDS_BUFFERS">
-    <summary>
-      <para>The DMO performs lookahead on the incoming data, and may hold multiple input buffers for this stream.</para>
-    </summary>
+    <summary>The DMO performs lookahead on the incoming data, and may hold multiple input buffers for this stream.</summary>
   </member>
 </doc>

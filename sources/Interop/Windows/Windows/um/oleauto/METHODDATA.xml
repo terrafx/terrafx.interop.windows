@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="METHODDATA">
+    <summary>Describes a method or property.</summary>
+  </member>
+  <member name="METHODDATA.szName">
+    <summary>The method name.</summary>
+  </member>
+  <member name="METHODDATA.ppdata">
+    <summary>An array of method parameters.</summary>
+  </member>
+  <member name="METHODDATA.dispid">
+    <summary>The ID of the method, as used in <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a>.</summary>
+  </member>
+  <member name="METHODDATA.iMeth">
+    <summary>The index of the method in the VTBL of the interface, starting with 0.</summary>
+  </member>
+  <member name="METHODDATA.cc">
+    <summary>The calling convention. The CDECL and Pascal calling conventions are supported by the dispatch interface creation functions, such as <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-createstddispatch">CreateStdDispatch</a>.</summary>
+  </member>
+  <member name="METHODDATA.cArgs">
+    <summary>The number of arguments.</summary>
+  </member>
+  <member name="METHODDATA.wFlags">
+    <summary>
+      <para>Invoke flags.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DISPATCH_METHOD</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The member is invoked as a method. If a property has the same name, both this and the DISPATCH_PROPERTYGET flag can be set.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DISPATCH_PROPERTYGET</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The member is retrieved as a property or data member.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DISPATCH_PROPERTYPUT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The member is set as a property or data member.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DISPATCH_PROPERTYPUTREF</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The member is changed by a reference assignment, rather than a value assignment. This flag is valid only when the property accepts a reference to an object.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="METHODDATA.vtReturn">
+    <summary>The return type for the method.</summary>
+  </member>
+</doc>

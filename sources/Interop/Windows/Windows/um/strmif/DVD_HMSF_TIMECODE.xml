@@ -4,31 +4,20 @@
 <doc>
   <member name="DVD_HMSF_TIMECODE">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>DVD_HMSF_TIMECODE</code> structure gives the hours, minutes, seconds, and frames in a DVD timecode.</para>
     </summary>
-    <remarks>
-      <para>A <code>DVD_HMSF_TIMECODE</code> structure is used in various <see cref="IDvdControl2" /> and <see cref="IDvdInfo2" /> methods. A <code>DVD_HMSF_TIMECODE</code> structure can be cast to or from a <b>ULONG</b> value. This means that if you need to use the old BCD time format for backward compatibility, you can do so in place of a <code>DVD_HMSF_TIMECODE</code> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="DVD_HMSF_TIMECODE.bHours">
-    <summary>
-      <para>Hours.</para>
-    </summary>
+    <summary>Hours.</summary>
   </member>
   <member name="DVD_HMSF_TIMECODE.bMinutes">
-    <summary>
-      <para>Minutes.</para>
-    </summary>
+    <summary>Minutes.</summary>
   </member>
   <member name="DVD_HMSF_TIMECODE.bSeconds">
-    <summary>
-      <para>Seconds.</para>
-    </summary>
+    <summary>Seconds.</summary>
   </member>
   <member name="DVD_HMSF_TIMECODE.bFrames">
-    <summary>
-      <para>Frames.</para>
-    </summary>
+    <summary>Frames.</summary>
   </member>
 </doc>

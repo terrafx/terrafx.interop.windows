@@ -3,1530 +3,513 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_MESSAGE_ID">
-    <summary>
-      <para>Debug messages for setting up an info-queue filter (see <see cref="D3D10_INFO_QUEUE_FILTER" />); use these messages to allow or deny message categories to pass through the storage and retrieval filters. These IDs are used by methods such as <see cref="ID3D10InfoQueue.GetMessage" /> or <see cref="ID3D10InfoQueue.AddMessage" />.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-enums">Core Enumerations</seealso>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_UNKNOWN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETVERTEXBUFFERS_HAZARD">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETINDEXBUFFER_HAZARD">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_VSSETSHADERRESOURCES_HAZARD">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_VSSETCONSTANTBUFFERS_HAZARD">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_GSSETSHADERRESOURCES_HAZARD">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_GSSETCONSTANTBUFFERS_HAZARD">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_PSSETSHADERRESOURCES_HAZARD">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_PSSETCONSTANTBUFFERS_HAZARD">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_OMSETRENDERTARGETS_HAZARD">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_SOSETTARGETS_HAZARD">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_STRING_FROM_APPLICATION">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_THIS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER1">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER2">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER3">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER4">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER5">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER6">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER7">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER8">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER9">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER10">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER11">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER12">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER13">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER14">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER15">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_MULTITHREADING">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_MESSAGE_REPORTING_OUTOFMEMORY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_IASETINPUTLAYOUT_UNBINDDELETINGOBJECT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_IASETVERTEXBUFFERS_UNBINDDELETINGOBJECT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_IASETINDEXBUFFER_UNBINDDELETINGOBJECT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_VSSETSHADER_UNBINDDELETINGOBJECT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_VSSETSHADERRESOURCES_UNBINDDELETINGOBJECT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_VSSETCONSTANTBUFFERS_UNBINDDELETINGOBJECT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_VSSETSAMPLERS_UNBINDDELETINGOBJECT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_GSSETSHADER_UNBINDDELETINGOBJECT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_GSSETSHADERRESOURCES_UNBINDDELETINGOBJECT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_GSSETCONSTANTBUFFERS_UNBINDDELETINGOBJECT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_GSSETSAMPLERS_UNBINDDELETINGOBJECT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SOSETTARGETS_UNBINDDELETINGOBJECT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_PSSETSHADER_UNBINDDELETINGOBJECT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_PSSETSHADERRESOURCES_UNBINDDELETINGOBJECT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_PSSETCONSTANTBUFFERS_UNBINDDELETINGOBJECT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_PSSETSAMPLERS_UNBINDDELETINGOBJECT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_RSSETSTATE_UNBINDDELETINGOBJECT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_OMSETBLENDSTATE_UNBINDDELETINGOBJECT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_OMSETDEPTHSTENCILSTATE_UNBINDDELETINGOBJECT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_OMSETRENDERTARGETS_UNBINDDELETINGOBJECT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SETPREDICATION_UNBINDDELETINGOBJECT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_GETPRIVATEDATA_MOREDATA">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SETPRIVATEDATA_INVALIDFREEDATA">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SETPRIVATEDATA_INVALIDIUNKNOWN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SETPRIVATEDATA_INVALIDFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SETPRIVATEDATA_CHANGINGPARAMS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SETPRIVATEDATA_OUTOFMEMORY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_UNRECOGNIZEDFORMAT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_INVALIDSAMPLES">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_UNRECOGNIZEDUSAGE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_UNRECOGNIZEDBINDFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_UNRECOGNIZEDCPUACCESSFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_UNRECOGNIZEDMISCFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_INVALIDCPUACCESSFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_INVALIDBINDFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_INVALIDINITIALDATA">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_INVALIDDIMENSIONS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_INVALIDMIPLEVELS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_INVALIDMISCFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_INVALIDARG_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_OUTOFMEMORY_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_NULLDESC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_INVALIDCONSTANTBUFFERBINDINGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_LARGEALLOCATION">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_UNRECOGNIZEDFORMAT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_UNSUPPORTEDFORMAT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_INVALIDSAMPLES">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_UNRECOGNIZEDUSAGE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_UNRECOGNIZEDBINDFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_UNRECOGNIZEDCPUACCESSFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_UNRECOGNIZEDMISCFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_INVALIDCPUACCESSFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_INVALIDBINDFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_INVALIDINITIALDATA">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_INVALIDDIMENSIONS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_INVALIDMIPLEVELS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_INVALIDMISCFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_INVALIDARG_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_OUTOFMEMORY_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_NULLDESC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_LARGEALLOCATION">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_UNRECOGNIZEDFORMAT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_UNSUPPORTEDFORMAT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_INVALIDSAMPLES">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_UNRECOGNIZEDUSAGE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_UNRECOGNIZEDBINDFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_UNRECOGNIZEDCPUACCESSFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_UNRECOGNIZEDMISCFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_INVALIDCPUACCESSFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_INVALIDBINDFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_INVALIDINITIALDATA">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_INVALIDDIMENSIONS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_INVALIDMIPLEVELS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_INVALIDMISCFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_INVALIDARG_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_OUTOFMEMORY_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_NULLDESC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_LARGEALLOCATION">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_UNRECOGNIZEDFORMAT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_UNSUPPORTEDFORMAT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_INVALIDSAMPLES">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_UNRECOGNIZEDUSAGE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_UNRECOGNIZEDBINDFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_UNRECOGNIZEDCPUACCESSFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_UNRECOGNIZEDMISCFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_INVALIDCPUACCESSFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_INVALIDBINDFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_INVALIDINITIALDATA">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_INVALIDDIMENSIONS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_INVALIDMIPLEVELS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_INVALIDMISCFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_INVALIDARG_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_OUTOFMEMORY_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_NULLDESC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_LARGEALLOCATION">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESHADERRESOURCEVIEW_UNRECOGNIZEDFORMAT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESHADERRESOURCEVIEW_INVALIDDESC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESHADERRESOURCEVIEW_INVALIDFORMAT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESHADERRESOURCEVIEW_INVALIDDIMENSIONS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESHADERRESOURCEVIEW_INVALIDRESOURCE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESHADERRESOURCEVIEW_TOOMANYOBJECTS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESHADERRESOURCEVIEW_INVALIDARG_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESHADERRESOURCEVIEW_OUTOFMEMORY_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERENDERTARGETVIEW_UNRECOGNIZEDFORMAT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERENDERTARGETVIEW_UNSUPPORTEDFORMAT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERENDERTARGETVIEW_INVALIDDESC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERENDERTARGETVIEW_INVALIDFORMAT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERENDERTARGETVIEW_INVALIDDIMENSIONS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERENDERTARGETVIEW_INVALIDRESOURCE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERENDERTARGETVIEW_TOOMANYOBJECTS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERENDERTARGETVIEW_INVALIDARG_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERENDERTARGETVIEW_OUTOFMEMORY_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILVIEW_UNRECOGNIZEDFORMAT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILVIEW_INVALIDDESC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILVIEW_INVALIDFORMAT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILVIEW_INVALIDDIMENSIONS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILVIEW_INVALIDRESOURCE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILVIEW_TOOMANYOBJECTS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILVIEW_INVALIDARG_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILVIEW_OUTOFMEMORY_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_OUTOFMEMORY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_TOOMANYELEMENTS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_INVALIDFORMAT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_INCOMPATIBLEFORMAT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_INVALIDSLOT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_INVALIDINPUTSLOTCLASS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_STEPRATESLOTCLASSMISMATCH">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_INVALIDSLOTCLASSCHANGE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_INVALIDSTEPRATECHANGE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_INVALIDALIGNMENT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_DUPLICATESEMANTIC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_UNPARSEABLEINPUTSIGNATURE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_NULLSEMANTIC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_MISSINGELEMENT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_NULLDESC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEVERTEXSHADER_OUTOFMEMORY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEVERTEXSHADER_INVALIDSHADERBYTECODE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEVERTEXSHADER_INVALIDSHADERTYPE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADER_OUTOFMEMORY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADER_INVALIDSHADERBYTECODE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADER_INVALIDSHADERTYPE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_OUTOFMEMORY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_INVALIDSHADERBYTECODE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_INVALIDSHADERTYPE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_INVALIDNUMENTRIES">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_OUTPUTSTREAMSTRIDEUNUSED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_UNEXPECTEDDECL">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_EXPECTEDDECL">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_OUTPUTSLOT0EXPECTED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_INVALIDOUTPUTSLOT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_ONLYONEELEMENTPERSLOT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_INVALIDCOMPONENTCOUNT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_INVALIDSTARTCOMPONENTANDCOMPONENTCOUNT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_INVALIDGAPDEFINITION">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_REPEATEDOUTPUT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_INVALIDOUTPUTSTREAMSTRIDE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_MISSINGSEMANTIC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_MASKMISMATCH">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_CANTHAVEONLYGAPS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_DECLTOOCOMPLEX">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_MISSINGOUTPUTSIGNATURE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEPIXELSHADER_OUTOFMEMORY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEPIXELSHADER_INVALIDSHADERBYTECODE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEPIXELSHADER_INVALIDSHADERTYPE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERASTERIZERSTATE_INVALIDFILLMODE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERASTERIZERSTATE_INVALIDCULLMODE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERASTERIZERSTATE_INVALIDDEPTHBIASCLAMP">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERASTERIZERSTATE_INVALIDSLOPESCALEDDEPTHBIAS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERASTERIZERSTATE_TOOMANYOBJECTS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERASTERIZERSTATE_NULLDESC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_INVALIDDEPTHWRITEMASK">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_INVALIDDEPTHFUNC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_INVALIDFRONTFACESTENCILFAILOP">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_INVALIDFRONTFACESTENCILZFAILOP">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_INVALIDFRONTFACESTENCILPASSOP">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_INVALIDFRONTFACESTENCILFUNC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_INVALIDBACKFACESTENCILFAILOP">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_INVALIDBACKFACESTENCILZFAILOP">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_INVALIDBACKFACESTENCILPASSOP">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_INVALIDBACKFACESTENCILFUNC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_TOOMANYOBJECTS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_NULLDESC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_INVALIDSRCBLEND">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_INVALIDDESTBLEND">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_INVALIDBLENDOP">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_INVALIDSRCBLENDALPHA">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_INVALIDDESTBLENDALPHA">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_INVALIDBLENDOPALPHA">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_INVALIDRENDERTARGETWRITEMASK">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_TOOMANYOBJECTS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_NULLDESC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_INVALIDFILTER">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_INVALIDADDRESSU">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_INVALIDADDRESSV">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_INVALIDADDRESSW">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_INVALIDMIPLODBIAS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_INVALIDMAXANISOTROPY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_INVALIDCOMPARISONFUNC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_INVALIDMINLOD">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_INVALIDMAXLOD">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_TOOMANYOBJECTS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_NULLDESC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEQUERYORPREDICATE_INVALIDQUERY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEQUERYORPREDICATE_INVALIDMISCFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEQUERYORPREDICATE_UNEXPECTEDMISCFLAG">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEQUERYORPREDICATE_NULLDESC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETPRIMITIVETOPOLOGY_TOPOLOGY_UNRECOGNIZED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETPRIMITIVETOPOLOGY_TOPOLOGY_UNDEFINED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_IASETVERTEXBUFFERS_INVALIDBUFFER">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETVERTEXBUFFERS_OFFSET_TOO_LARGE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETVERTEXBUFFERS_BUFFERS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_IASETINDEXBUFFER_INVALIDBUFFER">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETINDEXBUFFER_FORMAT_INVALID">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETINDEXBUFFER_OFFSET_TOO_LARGE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETINDEXBUFFER_OFFSET_UNALIGNED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_VSSETSHADERRESOURCES_VIEWS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_VSSETCONSTANTBUFFERS_INVALIDBUFFER">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_VSSETCONSTANTBUFFERS_BUFFERS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_VSSETSAMPLERS_SAMPLERS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_GSSETSHADERRESOURCES_VIEWS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_GSSETCONSTANTBUFFERS_INVALIDBUFFER">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_GSSETCONSTANTBUFFERS_BUFFERS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_GSSETSAMPLERS_SAMPLERS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SOSETTARGETS_INVALIDBUFFER">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_SOSETTARGETS_OFFSET_UNALIGNED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_PSSETSHADERRESOURCES_VIEWS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_PSSETCONSTANTBUFFERS_INVALIDBUFFER">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_PSSETCONSTANTBUFFERS_BUFFERS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_PSSETSAMPLERS_SAMPLERS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RSSETVIEWPORTS_INVALIDVIEWPORT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RSSETSCISSORRECTS_INVALIDSCISSOR">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CLEARRENDERTARGETVIEW_DENORMFLUSH">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CLEARDEPTHSTENCILVIEW_DENORMFLUSH">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CLEARDEPTHSTENCILVIEW_INVALID">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IAGETVERTEXBUFFERS_BUFFERS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_VSGETSHADERRESOURCES_VIEWS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_VSGETCONSTANTBUFFERS_BUFFERS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_VSGETSAMPLERS_SAMPLERS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_GSGETSHADERRESOURCES_VIEWS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_GSGETCONSTANTBUFFERS_BUFFERS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_GSGETSAMPLERS_SAMPLERS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_SOGETTARGETS_BUFFERS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_PSGETSHADERRESOURCES_VIEWS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_PSGETCONSTANTBUFFERS_BUFFERS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_PSGETSAMPLERS_SAMPLERS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RSGETVIEWPORTS_VIEWPORTS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RSGETSCISSORRECTS_RECTS_EMPTY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_GENERATEMIPS_RESOURCE_INVALID">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYSUBRESOURCEREGION_INVALIDDESTINATIONSUBRESOURCE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYSUBRESOURCEREGION_INVALIDSOURCESUBRESOURCE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYSUBRESOURCEREGION_INVALIDSOURCEBOX">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYSUBRESOURCEREGION_INVALIDSOURCE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYSUBRESOURCEREGION_INVALIDDESTINATIONSTATE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYSUBRESOURCEREGION_INVALIDSOURCESTATE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYRESOURCE_INVALIDSOURCE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYRESOURCE_INVALIDDESTINATIONSTATE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYRESOURCE_INVALIDSOURCESTATE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_UPDATESUBRESOURCE_INVALIDDESTINATIONSUBRESOURCE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_UPDATESUBRESOURCE_INVALIDDESTINATIONBOX">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_UPDATESUBRESOURCE_INVALIDDESTINATIONSTATE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RESOLVESUBRESOURCE_DESTINATION_INVALID">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RESOLVESUBRESOURCE_DESTINATION_SUBRESOURCE_INVALID">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RESOLVESUBRESOURCE_SOURCE_INVALID">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RESOLVESUBRESOURCE_SOURCE_SUBRESOURCE_INVALID">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RESOLVESUBRESOURCE_FORMAT_INVALID">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_BUFFER_MAP_INVALIDMAPTYPE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_BUFFER_MAP_INVALIDFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_BUFFER_MAP_ALREADYMAPPED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_BUFFER_MAP_DEVICEREMOVED_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_BUFFER_UNMAP_NOTMAPPED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE1D_MAP_INVALIDMAPTYPE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE1D_MAP_INVALIDSUBRESOURCE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE1D_MAP_INVALIDFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE1D_MAP_ALREADYMAPPED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE1D_MAP_DEVICEREMOVED_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE1D_UNMAP_INVALIDSUBRESOURCE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE1D_UNMAP_NOTMAPPED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE2D_MAP_INVALIDMAPTYPE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE2D_MAP_INVALIDSUBRESOURCE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE2D_MAP_INVALIDFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE2D_MAP_ALREADYMAPPED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE2D_MAP_DEVICEREMOVED_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE2D_UNMAP_INVALIDSUBRESOURCE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE2D_UNMAP_NOTMAPPED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE3D_MAP_INVALIDMAPTYPE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE3D_MAP_INVALIDSUBRESOURCE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE3D_MAP_INVALIDFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE3D_MAP_ALREADYMAPPED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE3D_MAP_DEVICEREMOVED_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE3D_UNMAP_INVALIDSUBRESOURCE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE3D_UNMAP_NOTMAPPED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CHECKFORMATSUPPORT_FORMAT_DEPRECATED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CHECKMULTISAMPLEQUALITYLEVELS_FORMAT_DEPRECATED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SETEXCEPTIONMODE_UNRECOGNIZEDFLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SETEXCEPTIONMODE_INVALIDARG_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SETEXCEPTIONMODE_DEVICEREMOVED_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_REF_SIMULATING_INFINITELY_FAST_HARDWARE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_REF_THREADING_MODE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_REF_UMDRIVER_EXCEPTION">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_REF_KMDRIVER_EXCEPTION">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_REF_HARDWARE_EXCEPTION">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_REF_ACCESSING_INDEXABLE_TEMP_OUT_OF_RANGE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_REF_PROBLEM_PARSING_SHADER">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_REF_OUT_OF_MEMORY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_REF_INFO">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_VERTEXPOS_OVERFLOW">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAWINDEXED_INDEXPOS_OVERFLOW">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAWINSTANCED_VERTEXPOS_OVERFLOW">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAWINSTANCED_INSTANCEPOS_OVERFLOW">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAWINDEXEDINSTANCED_INSTANCEPOS_OVERFLOW">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAWINDEXEDINSTANCED_INDEXPOS_OVERFLOW">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_VERTEX_SHADER_NOT_SET">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_SHADER_LINKAGE_SEMANTICNAME_NOT_FOUND">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_SHADER_LINKAGE_REGISTERINDEX">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_SHADER_LINKAGE_COMPONENTTYPE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_SHADER_LINKAGE_REGISTERMASK">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_SHADER_LINKAGE_SYSTEMVALUE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_SHADER_LINKAGE_NEVERWRITTEN_ALWAYSREADS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_VERTEX_BUFFER_NOT_SET">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_INPUTLAYOUT_NOT_SET">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_CONSTANT_BUFFER_NOT_SET">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_CONSTANT_BUFFER_TOO_SMALL">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_SAMPLER_NOT_SET">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_SHADERRESOURCEVIEW_NOT_SET">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_VIEW_DIMENSION_MISMATCH">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_VERTEX_BUFFER_STRIDE_TOO_SMALL">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_VERTEX_BUFFER_TOO_SMALL">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_INDEX_BUFFER_NOT_SET">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_INDEX_BUFFER_FORMAT_INVALID">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_INDEX_BUFFER_TOO_SMALL">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_GS_INPUT_PRIMITIVE_MISMATCH">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_RESOURCE_RETURN_TYPE_MISMATCH">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_POSITION_NOT_PRESENT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_OUTPUT_STREAM_NOT_SET">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_BOUND_RESOURCE_MAPPED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_INVALID_PRIMITIVETOPOLOGY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_VERTEX_OFFSET_UNALIGNED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_VERTEX_STRIDE_UNALIGNED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_INDEX_OFFSET_UNALIGNED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_OUTPUT_STREAM_OFFSET_UNALIGNED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_RESOURCE_FORMAT_LD_UNSUPPORTED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_RESOURCE_FORMAT_SAMPLE_UNSUPPORTED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_RESOURCE_FORMAT_SAMPLE_C_UNSUPPORTED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_RESOURCE_MULTISAMPLE_UNSUPPORTED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_SO_TARGETS_BOUND_WITHOUT_SOURCE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_SO_STRIDE_LARGER_THAN_BUFFER">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_OM_RENDER_TARGET_DOES_NOT_SUPPORT_BLENDING">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_OM_DUAL_SOURCE_BLENDING_CAN_ONLY_HAVE_RENDER_TARGET_0">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_REMOVAL_PROCESS_AT_FAULT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_REMOVAL_PROCESS_POSSIBLY_AT_FAULT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_REMOVAL_PROCESS_NOT_AT_FAULT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_OPEN_SHARED_RESOURCE_INVALIDARG_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_OPEN_SHARED_RESOURCE_OUTOFMEMORY_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_OPEN_SHARED_RESOURCE_BADINTERFACE_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_VIEWPORT_NOT_SET">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_TRAILING_DIGIT_IN_SEMANTIC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_TRAILING_DIGIT_IN_SEMANTIC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RSSETVIEWPORTS_DENORMFLUSH">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_OMSETRENDERTARGETS_INVALIDVIEW">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_SETTEXTFILTERSIZE_INVALIDDIMENSIONS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_SAMPLER_MISMATCH">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_TYPE_MISMATCH">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_BLENDSTATE_GETDESC_LEGACY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SHADERRESOURCEVIEW_GETDESC_LEGACY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEQUERY_OUTOFMEMORY_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEPREDICATE_OUTOFMEMORY_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATECOUNTER_OUTOFRANGE_COUNTER">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATECOUNTER_SIMULTANEOUS_ACTIVE_COUNTERS_EXHAUSTED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATECOUNTER_UNSUPPORTED_WELLKNOWN_COUNTER">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATECOUNTER_OUTOFMEMORY_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATECOUNTER_NONEXCLUSIVE_RETURN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATECOUNTER_NULLDESC">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CHECKCOUNTER_OUTOFRANGE_COUNTER">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CHECKCOUNTER_UNSUPPORTED_WELLKNOWN_COUNTER">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SETPREDICATION_INVALID_PREDICATE_STATE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_QUERY_BEGIN_UNSUPPORTED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_PREDICATE_BEGIN_DURING_PREDICATION">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_QUERY_BEGIN_DUPLICATE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_QUERY_BEGIN_ABANDONING_PREVIOUS_RESULTS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_PREDICATE_END_DURING_PREDICATION">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_QUERY_END_ABANDONING_PREVIOUS_RESULTS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_QUERY_END_WITHOUT_BEGIN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_QUERY_GETDATA_INVALID_DATASIZE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_QUERY_GETDATA_INVALID_FLAGS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_QUERY_GETDATA_INVALID_CALL">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_PS_OUTPUT_TYPE_MISMATCH">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_RESOURCE_FORMAT_GATHER_UNSUPPORTED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_INVALID_USE_OF_CENTER_MULTISAMPLE_PATTERN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETVERTEXBUFFERS_STRIDE_TOO_LARGE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETVERTEXBUFFERS_INVALIDRANGE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_EMPTY_LAYOUT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_RESOURCE_SAMPLE_COUNT_MISMATCH">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_OBJECT_SUMMARY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_BUFFER">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_TEXTURE1D">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_TEXTURE2D">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_TEXTURE3D">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_SHADERRESOURCEVIEW">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_RENDERTARGETVIEW">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_DEPTHSTENCILVIEW">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_VERTEXSHADER">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_GEOMETRYSHADER">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_PIXELSHADER">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_INPUTLAYOUT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_SAMPLER">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_BLENDSTATE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_DEPTHSTENCILSTATE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_RASTERIZERSTATE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_QUERY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_PREDICATE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_COUNTER">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_DEVICE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_SWAPCHAIN">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_D3D10_MESSAGES_END">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_D3D10L9_MESSAGES_START">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_STENCIL_NO_TWO_SIDED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERASTERIZERSTATE_DepthBiasClamp_NOT_SUPPORTED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_NO_COMPARISON_SUPPORT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_EXCESSIVE_ANISOTROPY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_BORDER_OUT_OF_RANGE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_VSSETSAMPLERS_NOT_SUPPORTED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_VSSETSAMPLERS_TOO_MANY_SAMPLERS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_PSSETSAMPLERS_TOO_MANY_SAMPLERS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_NO_ARRAYS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_NO_VB_AND_IB_BIND">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_NO_TEXTURE_1D">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_DIMENSION_OUT_OF_RANGE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_NOT_BINDABLE_AS_SHADER_RESOURCE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_OMSETRENDERTARGETS_TOO_MANY_RENDER_TARGETS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_OMSETRENDERTARGETS_NO_DIFFERING_BIT_DEPTHS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_IASETVERTEXBUFFERS_BAD_BUFFER_INDEX">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RSSETVIEWPORTS_TOO_MANY_VIEWPORTS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETPRIMITIVETOPOLOGY_ADJACENCY_UNSUPPORTED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RSSETSCISSORRECTS_TOO_MANY_SCISSORS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYRESOURCE_ONLY_TEXTURE_2D_WITHIN_GPU_MEMORY">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYRESOURCE_NO_TEXTURE_3D_READBACK">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYRESOURCE_NO_TEXTURE_ONLY_READBACK">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_UNSUPPORTED_FORMAT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_NO_ALPHA_TO_COVERAGE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERASTERIZERSTATE_DepthClipEnable_MUST_BE_TRUE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DRAWINDEXED_STARTINDEXLOCATION_MUST_BE_POSITIVE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESHADERRESOURCEVIEW_MUST_USE_LOWEST_LOD">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_MINLOD_MUST_NOT_BE_FRACTIONAL">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_MAXLOD_MUST_BE_FLT_MAX">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESHADERRESOURCEVIEW_FIRSTARRAYSLICE_MUST_BE_ZERO">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESHADERRESOURCEVIEW_CUBES_MUST_HAVE_6_SIDES">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_NOT_BINDABLE_AS_RENDER_TARGET">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_NO_DWORD_INDEX_BUFFER">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_MSAA_PRECLUDES_SHADER_RESOURCE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_PRESENTATION_PRECLUDES_SHADER_RESOURCE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_NO_INDEPENDENT_BLEND_ENABLE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_NO_INDEPENDENT_WRITE_MASKS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_NO_STREAM_OUT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_ONLY_VB_IB_FOR_BUFFERS">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_NO_AUTOGEN_FOR_VOLUMES">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_DXGI_FORMAT_R8G8B8A8_CANNOT_BE_SHARED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_VSSHADERRESOURCES_NOT_SUPPORTED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_GEOMETRY_SHADER_NOT_SUPPORTED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_STREAM_OUT_NOT_SUPPORTED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXT_FILTER_NOT_SUPPORTED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_NO_SEPARATE_ALPHA_BLEND">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_NO_MRT_BLEND">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_OPERATION_NOT_SUPPORTED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_NO_MIRRORONCE">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DRAWINSTANCED_NOT_SUPPORTED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DRAWINDEXEDINSTANCED_NOT_SUPPORTED_BELOW_9_3">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DRAWINDEXED_POINTLIST_UNSUPPORTED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SETBLENDSTATE_SAMPLE_MASK_CANNOT_BE_ZERO">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_DIMENSION_EXCEEDS_FEATURE_LEVEL_DEFINITION">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_ONLY_SINGLE_MIP_LEVEL_DEPTH_STENCIL_SUPPORTED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RSSETSCISSORRECTS_NEGATIVESCISSOR">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SLOT_ZERO_MUST_BE_D3D10_INPUT_PER_VERTEX_DATA">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_NON_POW_2_MIPMAP">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_BORDER_NOT_SUPPORTED">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_OMSETRENDERTARGETS_NO_SRGB_MRT">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYRESOURCE_NO_3D_MISMATCHED_UPDATES">
-    <summary></summary>
-  </member>
-  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_D3D10L9_MESSAGES_END">
-    <summary></summary>
-  </member>
+    <summary>Debug messages for setting up an info-queue filter (see <see cref="D3D10_INFO_QUEUE_FILTER" />); use these messages to allow or deny message categories to pass through the storage and retrieval filters. These IDs are used by methods such as <see cref="ID3D10InfoQueue.GetMessage" /> or <see cref="ID3D10InfoQueue.AddMessage" />.</summary>
+  </member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_UNKNOWN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETVERTEXBUFFERS_HAZARD"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETINDEXBUFFER_HAZARD"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_VSSETSHADERRESOURCES_HAZARD"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_VSSETCONSTANTBUFFERS_HAZARD"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_GSSETSHADERRESOURCES_HAZARD"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_GSSETCONSTANTBUFFERS_HAZARD"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_PSSETSHADERRESOURCES_HAZARD"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_PSSETCONSTANTBUFFERS_HAZARD"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_OMSETRENDERTARGETS_HAZARD"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_SOSETTARGETS_HAZARD"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_STRING_FROM_APPLICATION"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_THIS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER1"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER2"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER3"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER4"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER5"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER6"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER7"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER8"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER9"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER10"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER11"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER12"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER13"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER14"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_PARAMETER15"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CORRUPTED_MULTITHREADING"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_MESSAGE_REPORTING_OUTOFMEMORY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_IASETINPUTLAYOUT_UNBINDDELETINGOBJECT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_IASETVERTEXBUFFERS_UNBINDDELETINGOBJECT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_IASETINDEXBUFFER_UNBINDDELETINGOBJECT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_VSSETSHADER_UNBINDDELETINGOBJECT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_VSSETSHADERRESOURCES_UNBINDDELETINGOBJECT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_VSSETCONSTANTBUFFERS_UNBINDDELETINGOBJECT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_VSSETSAMPLERS_UNBINDDELETINGOBJECT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_GSSETSHADER_UNBINDDELETINGOBJECT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_GSSETSHADERRESOURCES_UNBINDDELETINGOBJECT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_GSSETCONSTANTBUFFERS_UNBINDDELETINGOBJECT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_GSSETSAMPLERS_UNBINDDELETINGOBJECT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SOSETTARGETS_UNBINDDELETINGOBJECT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_PSSETSHADER_UNBINDDELETINGOBJECT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_PSSETSHADERRESOURCES_UNBINDDELETINGOBJECT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_PSSETCONSTANTBUFFERS_UNBINDDELETINGOBJECT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_PSSETSAMPLERS_UNBINDDELETINGOBJECT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_RSSETSTATE_UNBINDDELETINGOBJECT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_OMSETBLENDSTATE_UNBINDDELETINGOBJECT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_OMSETDEPTHSTENCILSTATE_UNBINDDELETINGOBJECT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_OMSETRENDERTARGETS_UNBINDDELETINGOBJECT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SETPREDICATION_UNBINDDELETINGOBJECT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_GETPRIVATEDATA_MOREDATA"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SETPRIVATEDATA_INVALIDFREEDATA"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SETPRIVATEDATA_INVALIDIUNKNOWN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SETPRIVATEDATA_INVALIDFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SETPRIVATEDATA_CHANGINGPARAMS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SETPRIVATEDATA_OUTOFMEMORY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_UNRECOGNIZEDFORMAT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_INVALIDSAMPLES"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_UNRECOGNIZEDUSAGE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_UNRECOGNIZEDBINDFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_UNRECOGNIZEDCPUACCESSFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_UNRECOGNIZEDMISCFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_INVALIDCPUACCESSFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_INVALIDBINDFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_INVALIDINITIALDATA"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_INVALIDDIMENSIONS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_INVALIDMIPLEVELS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_INVALIDMISCFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_INVALIDARG_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_OUTOFMEMORY_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_NULLDESC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_INVALIDCONSTANTBUFFERBINDINGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBUFFER_LARGEALLOCATION"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_UNRECOGNIZEDFORMAT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_UNSUPPORTEDFORMAT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_INVALIDSAMPLES"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_UNRECOGNIZEDUSAGE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_UNRECOGNIZEDBINDFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_UNRECOGNIZEDCPUACCESSFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_UNRECOGNIZEDMISCFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_INVALIDCPUACCESSFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_INVALIDBINDFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_INVALIDINITIALDATA"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_INVALIDDIMENSIONS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_INVALIDMIPLEVELS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_INVALIDMISCFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_INVALIDARG_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_OUTOFMEMORY_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_NULLDESC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE1D_LARGEALLOCATION"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_UNRECOGNIZEDFORMAT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_UNSUPPORTEDFORMAT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_INVALIDSAMPLES"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_UNRECOGNIZEDUSAGE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_UNRECOGNIZEDBINDFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_UNRECOGNIZEDCPUACCESSFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_UNRECOGNIZEDMISCFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_INVALIDCPUACCESSFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_INVALIDBINDFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_INVALIDINITIALDATA"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_INVALIDDIMENSIONS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_INVALIDMIPLEVELS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_INVALIDMISCFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_INVALIDARG_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_OUTOFMEMORY_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_NULLDESC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE2D_LARGEALLOCATION"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_UNRECOGNIZEDFORMAT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_UNSUPPORTEDFORMAT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_INVALIDSAMPLES"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_UNRECOGNIZEDUSAGE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_UNRECOGNIZEDBINDFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_UNRECOGNIZEDCPUACCESSFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_UNRECOGNIZEDMISCFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_INVALIDCPUACCESSFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_INVALIDBINDFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_INVALIDINITIALDATA"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_INVALIDDIMENSIONS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_INVALIDMIPLEVELS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_INVALIDMISCFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_INVALIDARG_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_OUTOFMEMORY_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_NULLDESC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATETEXTURE3D_LARGEALLOCATION"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESHADERRESOURCEVIEW_UNRECOGNIZEDFORMAT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESHADERRESOURCEVIEW_INVALIDDESC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESHADERRESOURCEVIEW_INVALIDFORMAT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESHADERRESOURCEVIEW_INVALIDDIMENSIONS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESHADERRESOURCEVIEW_INVALIDRESOURCE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESHADERRESOURCEVIEW_TOOMANYOBJECTS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESHADERRESOURCEVIEW_INVALIDARG_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESHADERRESOURCEVIEW_OUTOFMEMORY_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERENDERTARGETVIEW_UNRECOGNIZEDFORMAT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERENDERTARGETVIEW_UNSUPPORTEDFORMAT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERENDERTARGETVIEW_INVALIDDESC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERENDERTARGETVIEW_INVALIDFORMAT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERENDERTARGETVIEW_INVALIDDIMENSIONS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERENDERTARGETVIEW_INVALIDRESOURCE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERENDERTARGETVIEW_TOOMANYOBJECTS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERENDERTARGETVIEW_INVALIDARG_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERENDERTARGETVIEW_OUTOFMEMORY_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILVIEW_UNRECOGNIZEDFORMAT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILVIEW_INVALIDDESC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILVIEW_INVALIDFORMAT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILVIEW_INVALIDDIMENSIONS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILVIEW_INVALIDRESOURCE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILVIEW_TOOMANYOBJECTS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILVIEW_INVALIDARG_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILVIEW_OUTOFMEMORY_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_OUTOFMEMORY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_TOOMANYELEMENTS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_INVALIDFORMAT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_INCOMPATIBLEFORMAT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_INVALIDSLOT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_INVALIDINPUTSLOTCLASS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_STEPRATESLOTCLASSMISMATCH"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_INVALIDSLOTCLASSCHANGE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_INVALIDSTEPRATECHANGE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_INVALIDALIGNMENT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_DUPLICATESEMANTIC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_UNPARSEABLEINPUTSIGNATURE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_NULLSEMANTIC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_MISSINGELEMENT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_NULLDESC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEVERTEXSHADER_OUTOFMEMORY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEVERTEXSHADER_INVALIDSHADERBYTECODE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEVERTEXSHADER_INVALIDSHADERTYPE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADER_OUTOFMEMORY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADER_INVALIDSHADERBYTECODE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADER_INVALIDSHADERTYPE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_OUTOFMEMORY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_INVALIDSHADERBYTECODE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_INVALIDSHADERTYPE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_INVALIDNUMENTRIES"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_OUTPUTSTREAMSTRIDEUNUSED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_UNEXPECTEDDECL"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_EXPECTEDDECL"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_OUTPUTSLOT0EXPECTED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_INVALIDOUTPUTSLOT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_ONLYONEELEMENTPERSLOT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_INVALIDCOMPONENTCOUNT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_INVALIDSTARTCOMPONENTANDCOMPONENTCOUNT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_INVALIDGAPDEFINITION"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_REPEATEDOUTPUT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_INVALIDOUTPUTSTREAMSTRIDE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_MISSINGSEMANTIC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_MASKMISMATCH"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_CANTHAVEONLYGAPS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_DECLTOOCOMPLEX"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_MISSINGOUTPUTSIGNATURE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEPIXELSHADER_OUTOFMEMORY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEPIXELSHADER_INVALIDSHADERBYTECODE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEPIXELSHADER_INVALIDSHADERTYPE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERASTERIZERSTATE_INVALIDFILLMODE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERASTERIZERSTATE_INVALIDCULLMODE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERASTERIZERSTATE_INVALIDDEPTHBIASCLAMP"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERASTERIZERSTATE_INVALIDSLOPESCALEDDEPTHBIAS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERASTERIZERSTATE_TOOMANYOBJECTS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERASTERIZERSTATE_NULLDESC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_INVALIDDEPTHWRITEMASK"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_INVALIDDEPTHFUNC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_INVALIDFRONTFACESTENCILFAILOP"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_INVALIDFRONTFACESTENCILZFAILOP"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_INVALIDFRONTFACESTENCILPASSOP"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_INVALIDFRONTFACESTENCILFUNC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_INVALIDBACKFACESTENCILFAILOP"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_INVALIDBACKFACESTENCILZFAILOP"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_INVALIDBACKFACESTENCILPASSOP"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_INVALIDBACKFACESTENCILFUNC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_TOOMANYOBJECTS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_NULLDESC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_INVALIDSRCBLEND"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_INVALIDDESTBLEND"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_INVALIDBLENDOP"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_INVALIDSRCBLENDALPHA"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_INVALIDDESTBLENDALPHA"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_INVALIDBLENDOPALPHA"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_INVALIDRENDERTARGETWRITEMASK"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_TOOMANYOBJECTS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_NULLDESC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_INVALIDFILTER"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_INVALIDADDRESSU"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_INVALIDADDRESSV"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_INVALIDADDRESSW"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_INVALIDMIPLODBIAS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_INVALIDMAXANISOTROPY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_INVALIDCOMPARISONFUNC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_INVALIDMINLOD"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_INVALIDMAXLOD"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_TOOMANYOBJECTS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_NULLDESC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEQUERYORPREDICATE_INVALIDQUERY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEQUERYORPREDICATE_INVALIDMISCFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEQUERYORPREDICATE_UNEXPECTEDMISCFLAG"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEQUERYORPREDICATE_NULLDESC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETPRIMITIVETOPOLOGY_TOPOLOGY_UNRECOGNIZED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETPRIMITIVETOPOLOGY_TOPOLOGY_UNDEFINED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_IASETVERTEXBUFFERS_INVALIDBUFFER"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETVERTEXBUFFERS_OFFSET_TOO_LARGE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETVERTEXBUFFERS_BUFFERS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_IASETINDEXBUFFER_INVALIDBUFFER"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETINDEXBUFFER_FORMAT_INVALID"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETINDEXBUFFER_OFFSET_TOO_LARGE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETINDEXBUFFER_OFFSET_UNALIGNED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_VSSETSHADERRESOURCES_VIEWS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_VSSETCONSTANTBUFFERS_INVALIDBUFFER"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_VSSETCONSTANTBUFFERS_BUFFERS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_VSSETSAMPLERS_SAMPLERS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_GSSETSHADERRESOURCES_VIEWS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_GSSETCONSTANTBUFFERS_INVALIDBUFFER"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_GSSETCONSTANTBUFFERS_BUFFERS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_GSSETSAMPLERS_SAMPLERS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SOSETTARGETS_INVALIDBUFFER"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_SOSETTARGETS_OFFSET_UNALIGNED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_PSSETSHADERRESOURCES_VIEWS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_PSSETCONSTANTBUFFERS_INVALIDBUFFER"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_PSSETCONSTANTBUFFERS_BUFFERS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_PSSETSAMPLERS_SAMPLERS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RSSETVIEWPORTS_INVALIDVIEWPORT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RSSETSCISSORRECTS_INVALIDSCISSOR"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CLEARRENDERTARGETVIEW_DENORMFLUSH"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CLEARDEPTHSTENCILVIEW_DENORMFLUSH"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CLEARDEPTHSTENCILVIEW_INVALID"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IAGETVERTEXBUFFERS_BUFFERS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_VSGETSHADERRESOURCES_VIEWS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_VSGETCONSTANTBUFFERS_BUFFERS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_VSGETSAMPLERS_SAMPLERS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_GSGETSHADERRESOURCES_VIEWS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_GSGETCONSTANTBUFFERS_BUFFERS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_GSGETSAMPLERS_SAMPLERS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_SOGETTARGETS_BUFFERS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_PSGETSHADERRESOURCES_VIEWS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_PSGETCONSTANTBUFFERS_BUFFERS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_PSGETSAMPLERS_SAMPLERS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RSGETVIEWPORTS_VIEWPORTS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RSGETSCISSORRECTS_RECTS_EMPTY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_GENERATEMIPS_RESOURCE_INVALID"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYSUBRESOURCEREGION_INVALIDDESTINATIONSUBRESOURCE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYSUBRESOURCEREGION_INVALIDSOURCESUBRESOURCE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYSUBRESOURCEREGION_INVALIDSOURCEBOX"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYSUBRESOURCEREGION_INVALIDSOURCE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYSUBRESOURCEREGION_INVALIDDESTINATIONSTATE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYSUBRESOURCEREGION_INVALIDSOURCESTATE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYRESOURCE_INVALIDSOURCE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYRESOURCE_INVALIDDESTINATIONSTATE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYRESOURCE_INVALIDSOURCESTATE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_UPDATESUBRESOURCE_INVALIDDESTINATIONSUBRESOURCE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_UPDATESUBRESOURCE_INVALIDDESTINATIONBOX"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_UPDATESUBRESOURCE_INVALIDDESTINATIONSTATE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RESOLVESUBRESOURCE_DESTINATION_INVALID"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RESOLVESUBRESOURCE_DESTINATION_SUBRESOURCE_INVALID"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RESOLVESUBRESOURCE_SOURCE_INVALID"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RESOLVESUBRESOURCE_SOURCE_SUBRESOURCE_INVALID"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RESOLVESUBRESOURCE_FORMAT_INVALID"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_BUFFER_MAP_INVALIDMAPTYPE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_BUFFER_MAP_INVALIDFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_BUFFER_MAP_ALREADYMAPPED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_BUFFER_MAP_DEVICEREMOVED_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_BUFFER_UNMAP_NOTMAPPED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE1D_MAP_INVALIDMAPTYPE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE1D_MAP_INVALIDSUBRESOURCE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE1D_MAP_INVALIDFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE1D_MAP_ALREADYMAPPED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE1D_MAP_DEVICEREMOVED_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE1D_UNMAP_INVALIDSUBRESOURCE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE1D_UNMAP_NOTMAPPED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE2D_MAP_INVALIDMAPTYPE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE2D_MAP_INVALIDSUBRESOURCE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE2D_MAP_INVALIDFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE2D_MAP_ALREADYMAPPED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE2D_MAP_DEVICEREMOVED_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE2D_UNMAP_INVALIDSUBRESOURCE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE2D_UNMAP_NOTMAPPED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE3D_MAP_INVALIDMAPTYPE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE3D_MAP_INVALIDSUBRESOURCE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE3D_MAP_INVALIDFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE3D_MAP_ALREADYMAPPED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE3D_MAP_DEVICEREMOVED_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE3D_UNMAP_INVALIDSUBRESOURCE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXTURE3D_UNMAP_NOTMAPPED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CHECKFORMATSUPPORT_FORMAT_DEPRECATED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CHECKMULTISAMPLEQUALITYLEVELS_FORMAT_DEPRECATED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SETEXCEPTIONMODE_UNRECOGNIZEDFLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SETEXCEPTIONMODE_INVALIDARG_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SETEXCEPTIONMODE_DEVICEREMOVED_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_REF_SIMULATING_INFINITELY_FAST_HARDWARE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_REF_THREADING_MODE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_REF_UMDRIVER_EXCEPTION"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_REF_KMDRIVER_EXCEPTION"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_REF_HARDWARE_EXCEPTION"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_REF_ACCESSING_INDEXABLE_TEMP_OUT_OF_RANGE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_REF_PROBLEM_PARSING_SHADER"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_REF_OUT_OF_MEMORY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_REF_INFO"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_VERTEXPOS_OVERFLOW"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAWINDEXED_INDEXPOS_OVERFLOW"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAWINSTANCED_VERTEXPOS_OVERFLOW"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAWINSTANCED_INSTANCEPOS_OVERFLOW"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAWINDEXEDINSTANCED_INSTANCEPOS_OVERFLOW"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAWINDEXEDINSTANCED_INDEXPOS_OVERFLOW"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_VERTEX_SHADER_NOT_SET"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_SHADER_LINKAGE_SEMANTICNAME_NOT_FOUND"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_SHADER_LINKAGE_REGISTERINDEX"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_SHADER_LINKAGE_COMPONENTTYPE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_SHADER_LINKAGE_REGISTERMASK"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_SHADER_LINKAGE_SYSTEMVALUE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_SHADER_LINKAGE_NEVERWRITTEN_ALWAYSREADS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_VERTEX_BUFFER_NOT_SET"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_INPUTLAYOUT_NOT_SET"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_CONSTANT_BUFFER_NOT_SET"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_CONSTANT_BUFFER_TOO_SMALL"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_SAMPLER_NOT_SET"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_SHADERRESOURCEVIEW_NOT_SET"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_VIEW_DIMENSION_MISMATCH"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_VERTEX_BUFFER_STRIDE_TOO_SMALL"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_VERTEX_BUFFER_TOO_SMALL"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_INDEX_BUFFER_NOT_SET"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_INDEX_BUFFER_FORMAT_INVALID"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_INDEX_BUFFER_TOO_SMALL"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_GS_INPUT_PRIMITIVE_MISMATCH"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_RESOURCE_RETURN_TYPE_MISMATCH"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_POSITION_NOT_PRESENT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_OUTPUT_STREAM_NOT_SET"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_BOUND_RESOURCE_MAPPED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_INVALID_PRIMITIVETOPOLOGY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_VERTEX_OFFSET_UNALIGNED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_VERTEX_STRIDE_UNALIGNED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_INDEX_OFFSET_UNALIGNED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_OUTPUT_STREAM_OFFSET_UNALIGNED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_RESOURCE_FORMAT_LD_UNSUPPORTED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_RESOURCE_FORMAT_SAMPLE_UNSUPPORTED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_RESOURCE_FORMAT_SAMPLE_C_UNSUPPORTED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_RESOURCE_MULTISAMPLE_UNSUPPORTED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_SO_TARGETS_BOUND_WITHOUT_SOURCE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_SO_STRIDE_LARGER_THAN_BUFFER"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_OM_RENDER_TARGET_DOES_NOT_SUPPORT_BLENDING"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_OM_DUAL_SOURCE_BLENDING_CAN_ONLY_HAVE_RENDER_TARGET_0"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_REMOVAL_PROCESS_AT_FAULT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_REMOVAL_PROCESS_POSSIBLY_AT_FAULT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_REMOVAL_PROCESS_NOT_AT_FAULT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_OPEN_SHARED_RESOURCE_INVALIDARG_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_OPEN_SHARED_RESOURCE_OUTOFMEMORY_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_OPEN_SHARED_RESOURCE_BADINTERFACE_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_VIEWPORT_NOT_SET"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_TRAILING_DIGIT_IN_SEMANTIC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEGEOMETRYSHADERWITHSTREAMOUTPUT_TRAILING_DIGIT_IN_SEMANTIC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RSSETVIEWPORTS_DENORMFLUSH"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_OMSETRENDERTARGETS_INVALIDVIEW"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_SETTEXTFILTERSIZE_INVALIDDIMENSIONS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_SAMPLER_MISMATCH"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_TYPE_MISMATCH"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_BLENDSTATE_GETDESC_LEGACY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SHADERRESOURCEVIEW_GETDESC_LEGACY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEQUERY_OUTOFMEMORY_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEPREDICATE_OUTOFMEMORY_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATECOUNTER_OUTOFRANGE_COUNTER"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATECOUNTER_SIMULTANEOUS_ACTIVE_COUNTERS_EXHAUSTED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATECOUNTER_UNSUPPORTED_WELLKNOWN_COUNTER"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATECOUNTER_OUTOFMEMORY_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATECOUNTER_NONEXCLUSIVE_RETURN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATECOUNTER_NULLDESC"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CHECKCOUNTER_OUTOFRANGE_COUNTER"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CHECKCOUNTER_UNSUPPORTED_WELLKNOWN_COUNTER"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SETPREDICATION_INVALID_PREDICATE_STATE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_QUERY_BEGIN_UNSUPPORTED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_PREDICATE_BEGIN_DURING_PREDICATION"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_QUERY_BEGIN_DUPLICATE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_QUERY_BEGIN_ABANDONING_PREVIOUS_RESULTS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_PREDICATE_END_DURING_PREDICATION"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_QUERY_END_ABANDONING_PREVIOUS_RESULTS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_QUERY_END_WITHOUT_BEGIN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_QUERY_GETDATA_INVALID_DATASIZE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_QUERY_GETDATA_INVALID_FLAGS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_QUERY_GETDATA_INVALID_CALL"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_PS_OUTPUT_TYPE_MISMATCH"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_RESOURCE_FORMAT_GATHER_UNSUPPORTED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_INVALID_USE_OF_CENTER_MULTISAMPLE_PATTERN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETVERTEXBUFFERS_STRIDE_TOO_LARGE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETVERTEXBUFFERS_INVALIDRANGE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_EMPTY_LAYOUT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_DRAW_RESOURCE_SAMPLE_COUNT_MISMATCH"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_OBJECT_SUMMARY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_BUFFER"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_TEXTURE1D"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_TEXTURE2D"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_TEXTURE3D"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_SHADERRESOURCEVIEW"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_RENDERTARGETVIEW"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_DEPTHSTENCILVIEW"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_VERTEXSHADER"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_GEOMETRYSHADER"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_PIXELSHADER"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_INPUTLAYOUT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_SAMPLER"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_BLENDSTATE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_DEPTHSTENCILSTATE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_RASTERIZERSTATE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_QUERY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_PREDICATE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_COUNTER"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_DEVICE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_LIVE_SWAPCHAIN"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_D3D10_MESSAGES_END"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_D3D10L9_MESSAGES_START"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEDEPTHSTENCILSTATE_STENCIL_NO_TWO_SIDED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERASTERIZERSTATE_DepthBiasClamp_NOT_SUPPORTED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_NO_COMPARISON_SUPPORT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_EXCESSIVE_ANISOTROPY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_BORDER_OUT_OF_RANGE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_VSSETSAMPLERS_NOT_SUPPORTED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_VSSETSAMPLERS_TOO_MANY_SAMPLERS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_PSSETSAMPLERS_TOO_MANY_SAMPLERS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_NO_ARRAYS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_NO_VB_AND_IB_BIND"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_NO_TEXTURE_1D"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_DIMENSION_OUT_OF_RANGE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_NOT_BINDABLE_AS_SHADER_RESOURCE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_OMSETRENDERTARGETS_TOO_MANY_RENDER_TARGETS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_OMSETRENDERTARGETS_NO_DIFFERING_BIT_DEPTHS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_IASETVERTEXBUFFERS_BAD_BUFFER_INDEX"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RSSETVIEWPORTS_TOO_MANY_VIEWPORTS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_IASETPRIMITIVETOPOLOGY_ADJACENCY_UNSUPPORTED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RSSETSCISSORRECTS_TOO_MANY_SCISSORS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYRESOURCE_ONLY_TEXTURE_2D_WITHIN_GPU_MEMORY"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYRESOURCE_NO_TEXTURE_3D_READBACK"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYRESOURCE_NO_TEXTURE_ONLY_READBACK"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEINPUTLAYOUT_UNSUPPORTED_FORMAT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_NO_ALPHA_TO_COVERAGE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERASTERIZERSTATE_DepthClipEnable_MUST_BE_TRUE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DRAWINDEXED_STARTINDEXLOCATION_MUST_BE_POSITIVE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESHADERRESOURCEVIEW_MUST_USE_LOWEST_LOD"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_MINLOD_MUST_NOT_BE_FRACTIONAL"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_MAXLOD_MUST_BE_FLT_MAX"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESHADERRESOURCEVIEW_FIRSTARRAYSLICE_MUST_BE_ZERO"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESHADERRESOURCEVIEW_CUBES_MUST_HAVE_6_SIDES"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_NOT_BINDABLE_AS_RENDER_TARGET"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_NO_DWORD_INDEX_BUFFER"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_MSAA_PRECLUDES_SHADER_RESOURCE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_PRESENTATION_PRECLUDES_SHADER_RESOURCE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_NO_INDEPENDENT_BLEND_ENABLE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_NO_INDEPENDENT_WRITE_MASKS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_NO_STREAM_OUT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_ONLY_VB_IB_FOR_BUFFERS"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_NO_AUTOGEN_FOR_VOLUMES"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_DXGI_FORMAT_R8G8B8A8_CANNOT_BE_SHARED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_VSSHADERRESOURCES_NOT_SUPPORTED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_GEOMETRY_SHADER_NOT_SUPPORTED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_STREAM_OUT_NOT_SUPPORTED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_TEXT_FILTER_NOT_SUPPORTED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_NO_SEPARATE_ALPHA_BLEND"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_NO_MRT_BLEND"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATEBLENDSTATE_OPERATION_NOT_SUPPORTED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_NO_MIRRORONCE"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DRAWINSTANCED_NOT_SUPPORTED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DRAWINDEXEDINSTANCED_NOT_SUPPORTED_BELOW_9_3"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DRAWINDEXED_POINTLIST_UNSUPPORTED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SETBLENDSTATE_SAMPLE_MASK_CANNOT_BE_ZERO"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_DIMENSION_EXCEEDS_FEATURE_LEVEL_DEFINITION"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_ONLY_SINGLE_MIP_LEVEL_DEPTH_STENCIL_SUPPORTED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_DEVICE_RSSETSCISSORRECTS_NEGATIVESCISSOR"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_SLOT_ZERO_MUST_BE_D3D10_INPUT_PER_VERTEX_DATA"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATERESOURCE_NON_POW_2_MIPMAP"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_CREATESAMPLERSTATE_BORDER_NOT_SUPPORTED"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_OMSETRENDERTARGETS_NO_SRGB_MRT"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_COPYRESOURCE_NO_3D_MISMATCHED_UPDATES"></member>
+  <member name="D3D10_MESSAGE_ID.D3D10_MESSAGE_ID_D3D10L9_MESSAGES_END"></member>
 </doc>

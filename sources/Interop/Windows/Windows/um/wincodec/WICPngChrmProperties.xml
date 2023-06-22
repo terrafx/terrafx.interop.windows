@@ -3,51 +3,31 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICPngChrmProperties">
-    <summary>
-      <para>Specifies the Portable Network Graphics (PNG) cHRM chunk metadata properties for CIE XYZ chromaticity.</para>
-    </summary>
+    <summary>Specifies the Portable Network Graphics (PNG) cHRM chunk metadata properties for CIE XYZ chromaticity.</summary>
   </member>
   <member name="WICPngChrmProperties.WICPngChrmWhitePointX">
-    <summary>
-      <para>[VT_UI4] Indicates the whitepoint x value ratio.</para>
-    </summary>
+    <summary>[VT_UI4] Indicates the whitepoint x value ratio.</summary>
   </member>
   <member name="WICPngChrmProperties.WICPngChrmWhitePointY">
-    <summary>
-      <para>[VT_UI4] Indicates the whitepoint y value ratio.</para>
-    </summary>
+    <summary>[VT_UI4] Indicates the whitepoint y value ratio.</summary>
   </member>
   <member name="WICPngChrmProperties.WICPngChrmRedX">
-    <summary>
-      <para>[VT_UI4] Indicates the red x value ratio.</para>
-    </summary>
+    <summary>[VT_UI4] Indicates the red x value ratio.</summary>
   </member>
   <member name="WICPngChrmProperties.WICPngChrmRedY">
-    <summary>
-      <para>[VT_UI4] Indicates the red y value ratio.</para>
-    </summary>
+    <summary>[VT_UI4] Indicates the red y value ratio.</summary>
   </member>
   <member name="WICPngChrmProperties.WICPngChrmGreenX">
-    <summary>
-      <para>[VT_UI4] Indicates the green x value ratio.</para>
-    </summary>
+    <summary>[VT_UI4] Indicates the green x value ratio.</summary>
   </member>
   <member name="WICPngChrmProperties.WICPngChrmGreenY">
-    <summary>
-      <para>[VT_UI4] Indicates the green y value ratio.</para>
-    </summary>
+    <summary>[VT_UI4] Indicates the green y value ratio.</summary>
   </member>
   <member name="WICPngChrmProperties.WICPngChrmBlueX">
-    <summary>
-      <para>[VT_UI4] Indicates the blue x value ratio.</para>
-    </summary>
+    <summary>[VT_UI4] Indicates the blue x value ratio.</summary>
   </member>
   <member name="WICPngChrmProperties.WICPngChrmBlueY">
-    <summary>
-      <para>[VT_UI4] Indicates the blue y value ratio.</para>
-    </summary>
+    <summary>[VT_UI4] Indicates the blue y value ratio.</summary>
   </member>
-  <member name="WICPngChrmProperties.WICPngChrmProperties_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICPngChrmProperties.WICPngChrmProperties_FORCE_DWORD"></member>
 </doc>

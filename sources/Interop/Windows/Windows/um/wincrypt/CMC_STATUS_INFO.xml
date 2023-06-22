@@ -3,12 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CMC_STATUS_INFO">
-    <summary>
-      <para>The <b>CMC_STATUS_INFO</b> structure contains status information about Certificate Management Messages over CMS.</para>
-    </summary>
-    <remarks>
-      <para>Additional members of the union may be defined in future versions.</para>
-    </remarks>
+    <summary>The <b>CMC_STATUS_INFO</b> structure contains status information about Certificate Management Messages over CMS.</summary>
   </member>
   <member name="CMC_STATUS_INFO.dwStatus">
     <summary>
@@ -18,108 +13,92 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CMC_STATUS_SUCCESS</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Request was granted.</para>
-          </description>
-        </item>
-        <item>
+          <description>Request was granted.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CMC_STATUS_FAILED</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Request failed. There is addition information in other parts of the message.</para>
-          </description>
-        </item>
-        <item>
+          <description>Request failed. There is addition information in other parts of the message.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CMC_STATUS_PENDING</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Request body part has not been processed. Requester must poll again. This value is returned only on <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate requests</a>.</para>
-          </description>
-        </item>
-        <item>
+          <description>Request body part has not been processed. Requester must poll again. This value is returned only on <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate requests</a>.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CMC_STATUS_NO_SUPPORT</b>
-                </description>
-              </item>
-              <item>
-                <description>4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Requested operation is not supported.</para>
-          </description>
-        </item>
-        <item>
+          <description>Requested operation is not supported.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CMC_STATUS_CONFIRM_REQUIRED</b>
-                </description>
-              </item>
-              <item>
-                <description>5</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>5</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Confirmation by using the idConfirmCertAcceptance control is required before the certificate can be used.</para>
-          </description>
-        </item>
+          <description>Confirmation by using the idConfirmCertAcceptance control is required before the certificate can be used.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="CMC_STATUS_INFO.cBodyList">
-    <summary>
-      <para>A <b>DWORD</b> count of the elements in the <b>rgdwBodyList</b> array.</para>
-    </summary>
+    <summary>A <b>DWORD</b> count of the elements in the <b>rgdwBodyList</b> array.</summary>
   </member>
   <member name="CMC_STATUS_INFO.rgdwBodyList">
-    <summary>
-      <para>A <b>DWORD</b> array.</para>
-    </summary>
+    <summary>A <b>DWORD</b> array.</summary>
   </member>
   <member name="CMC_STATUS_INFO.pwszStatusString">
-    <summary>
-      <para>Optional string text indicating message status.</para>
-    </summary>
+    <summary>Optional string text indicating message status.</summary>
   </member>
   <member name="CMC_STATUS_INFO.dwOtherInfoChoice">
     <summary>
@@ -138,9 +117,7 @@
       </list>
     </summary>
   </member>
-  <member name="CMC_STATUS_INFO.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="CMC_STATUS_INFO.DUMMYUNIONNAME"></member>
   <member name="CMC_STATUS_INFO.DUMMYUNIONNAME.dwFailInfo">
     <summary>
       <para>A <b>DWORD</b> member of the union. This member is used if <b>dwOtherInfoChoice</b> is CMC_OTHER_INFO_FAIL_CHOICE. The following values are returned for various failures.</para>
@@ -149,233 +126,206 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CMC_FAIL_BAD_ALG</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Unrecognized or unsupported algorithm.</para>
-          </description>
-        </item>
-        <item>
+          <description>Unrecognized or unsupported algorithm.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CMC_FAIL_BAD_MESSAGE_CHECK</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Integrity check failed.</para>
-          </description>
-        </item>
-        <item>
+          <description>Integrity check failed.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CMC_FAIL_BAD_REQUEST</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Transaction not permitted or supported.</para>
-          </description>
-        </item>
-        <item>
+          <description>Transaction not permitted or supported.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CMC_FAIL_BAD_TIME</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Message time field was not sufficiently close to the system time.</para>
-          </description>
-        </item>
-        <item>
+          <description>Message time field was not sufficiently close to the system time.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CMC_FAIL_BAD_CERT_ID</b>
-                </description>
-              </item>
-              <item>
-                <description>4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No certificate could be identified matching the provided criteria.</para>
-          </description>
-        </item>
-        <item>
+          <description>No certificate could be identified matching the provided criteria.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CMC_FAIL_UNSUPORTED_EXT</b>
-                </description>
-              </item>
-              <item>
-                <description>5</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>5</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Requested X.509 extension is not supported by the recipient CA.</para>
-          </description>
-        </item>
-        <item>
+          <description>Requested X.509 extension is not supported by the recipient CA.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CMC_FAIL_MUST_ARCHIVE_KEYS</b>
-                </description>
-              </item>
-              <item>
-                <description>6</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>6</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Private key material must be supplied.</para>
-          </description>
-        </item>
-        <item>
+          <description>Private key material must be supplied.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CMC_FAIL_BAD_IDENTITY</b>
-                </description>
-              </item>
-              <item>
-                <description>7</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>7</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Identification attribute failed to verify.</para>
-          </description>
-        </item>
-        <item>
+          <description>Identification attribute failed to verify.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CMC_FAIL_POP_REQUIRED</b>
-                </description>
-              </item>
-              <item>
-                <description>8</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>8</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Server requires a POP proof before issuing certificate.</para>
-          </description>
-        </item>
-        <item>
+          <description>Server requires a POP proof before issuing certificate.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CMC_FAIL_POP_FAILED</b>
-                </description>
-              </item>
-              <item>
-                <description>9</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>9</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>POP processing failed.</para>
-          </description>
-        </item>
-        <item>
+          <description>POP processing failed.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CMC_FAIL_NO_KEY_REUSE</b>
-                </description>
-              </item>
-              <item>
-                <description>10</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>10</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Server policy does not allow key re-use.</para>
-          </description>
-        </item>
-        <item>
+          <description>Server policy does not allow key re-use.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CMC_FAIL_INTERNAL_CA_ERROR</b>
-                </description>
-              </item>
-              <item>
-                <description>11</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">Certification authority</a> (CA) had an internal failure.
-</description>
-        </item>
-        <item>
+            <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">Certification authority</a> (CA) had an internal failure.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CMC_FAIL_TRY_LATER</b>
-                </description>
-              </item>
-              <item>
-                <description>12</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>12</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Request failed for an unknown reason. The request should be reissued later.</para>
-          </description>
-        </item>
+          <description>Request failed for an unknown reason. The request should be reissued later.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="CMC_STATUS_INFO.DUMMYUNIONNAME.pPendInfo">
-    <summary>
-      <para>A pointer to the <see cref="CMC_PEND_INFO" /> structure member of the union. This member is used if <b>dwOtherInfoChoice</b> is CMC_OTHER_INFO_PEND_CHOICE.</para>
-    </summary>
+    <summary>A pointer to the <see cref="CMC_PEND_INFO" /> structure member of the union. This member is used if <b>dwOtherInfoChoice</b> is CMC_OTHER_INFO_PEND_CHOICE.</summary>
   </member>
 </doc>

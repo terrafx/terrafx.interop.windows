@@ -3,135 +3,40 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CXAPOBase.CXAPOBase">
-    <summary>
-      <para>Creates an instance of the <a href="https://docs.microsoft.com//windows/desktop/api/xapobase/nl-xapobase-cxapobase">CXAPOBase</a> class.</para>
-    </summary>
-    <param name="pRegistrationProperties">
-      <para>Pointer to an <see cref="XAPO_REGISTRATION_PROPERTIES" /> structure containing the registration properties for the XAPO.</para>
-    </param>
-    <remarks>
-      <para>The object created by this <a href="https://docs.microsoft.com//windows/desktop/api/xapobase/nl-xapobase-cxapobase">CXAPOBase</a> will have a reference count of 1.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/xapobase/nl-xapobase-cxapobase">CXAPOBase</seealso>
+    <summary>Creates an instance of the <a href="https://docs.microsoft.com//windows/desktop/api/xapobase/nl-xapobase-cxapobase">CXAPOBase</a> class.</summary>
+    <param name="pRegistrationProperties">Pointer to an <see cref="XAPO_REGISTRATION_PROPERTIES" /> structure containing the registration properties for the XAPO.</param>
   </member>
   <member name="CXAPOBase.GetRegistrationPropertiesInternal">
-    <summary>
-      <para>Returns a pointer to the <see cref="XAPO_REGISTRATION_PROPERTIES" /> structure containing the registration properties the XAPO was created with.</para>
-    </summary>
+    <summary>Returns a pointer to the <see cref="XAPO_REGISTRATION_PROPERTIES" /> structure containing the registration properties the XAPO was created with.</summary>
     <returns>
       <para>Pointer to the <see cref="XAPO_REGISTRATION_PROPERTIES" /> structure containing the registration properties the XAPO was created with.</para>
       <para>CXAPOBase</para>
     </returns>
-    <remarks>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/xapobase/nl-xapobase-cxapobase">CXAPOBase</seealso>
   </member>
   <member name="CXAPOBase.IsLocked">
-    <summary>
-      <para>Queries whether the XAPO is locked.</para>
-    </summary>
-    <returns>
-      <para>Returns TRUE if the XAPO is locked for processing; otherwise returns FALSE.</para>
-    </returns>
-    <remarks>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/xapobase/nl-xapobase-cxapobase">CXAPOBase</seealso>
-    <seealso cref="IXAPO" />
-    <seealso cref="IXAPO.LockForProcess" />
-    <seealso cref="IXAPO.UnlockForProcess" />
+    <summary>Queries whether the XAPO is locked.</summary>
+    <returns>Returns TRUE if the XAPO is locked for processing; otherwise returns FALSE.</returns>
   </member>
   <member name="CXAPOBase.ProcessThru">
-    <summary>
-      <para>Called by an <see cref="IXAPO.Process" /> implementation when an XAPO is disabled for thru processing.</para>
-    </summary>
-    <param name="pInputBuffer">
-      <para>Pointer to a buffer containing the input audio data.</para>
-    </param>
-    <param name="pOutputBuffer">
-      <para>Pointer to a buffer that will contain the processed audio data.</para>
-    </param>
-    <param name="FrameCount">
-      <para>Number of frames of audio data to process, where a frame is a block of samples, one per channel of audio data.</para>
-    </param>
-    <param name="InputChannelCount">
-      <para>Number of channels in the input data buffer.</para>
-    </param>
-    <param name="OutputChannelCount">
-      <para>Number of channels in the output data buffer.</para>
-    </param>
-    <param name="MixWithOutput">
-      <para>TRUE to mix with the destination buffer, FALSE to overwrite the destination buffer.</para>
-    </param>
-    <remarks>
-      <para>
-        <b>ProcessThru</b> copies/mixes data from source to destination, making as few changes as possible to the audio data. However, <b>ProcessThru</b> is capable of channel upmix/downmix and uses the same matrix coefficient table used by windows Vista to do so.</para>
-      <para>This function may be called if:</para>
-      <list type="number">
-        <item>
-          <description>The XAPO is locked and disabled.
-</description>
-        </item>
-        <item>
-          <description>The number of source frames equals the number of destination frames.
-</description>
-        </item>
-        <item>
-          <description>The output format is FLOAT32.
-</description>
-        </item>
-        <item>
-          <description>input format is INT8, INT16, INT20 (contained in 24 or 32 bits), INT24 (contained in 24 or 32 bits), INT32, or FLOAT32.</description>
-        </item>
-      </list>For in-place processing (where the input buffer equals the output buffer) this function does nothing.
-<para>When writing a <b>ProcessThru</b> method it is important to note XAudio2 audio data is interleaved, data from each channel is adjacent for a particular sample number. For example if there was a 4 channel wave playing into an XAudio2 source voice, the audio data would be a sample of channel 0, a sample of channel 1, a sample of channel 2, a sample of channel 3, and then the next sample of channels 0, 1, 2, 3, etc.</para><h3>Platform Requirements</h3><para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para></remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/xapobase/nl-xapobase-cxapobase">CXAPOBase</seealso>
-    <seealso cref="IXAPO" />
+    <summary>Called by an <see cref="IXAPO.Process" /> implementation when an XAPO is disabled for thru processing.</summary>
+    <param name="pInputBuffer">Pointer to a buffer containing the input audio data.</param>
+    <param name="pOutputBuffer">Pointer to a buffer that will contain the processed audio data.</param>
+    <param name="FrameCount">Number of frames of audio data to process, where a frame is a block of samples, one per channel of audio data.</param>
+    <param name="InputChannelCount">Number of channels in the input data buffer.</param>
+    <param name="OutputChannelCount">Number of channels in the output data buffer.</param>
+    <param name="MixWithOutput">TRUE to mix with the destination buffer, FALSE to overwrite the destination buffer.</param>
   </member>
   <member name="CXAPOBase.ValidateFormatDefault">
-    <summary>
-      <para>Verifies that an audio format falls within the default ranges supported.</para>
-    </summary>
-    <param name="pFormat">
-      <para>Audio format to validate.</para>
-    </param>
-    <param name="fOverwrite">
-      <para>If TRUE indicates that <i>pFormat</i> should be overwritten with the nearest audio format supported if the format it specified is not supported. The nearest audio format is determined by bit depth, framerate and channel count in that order of importance.</para>
-    </param>
-    <returns>
-      <para>Return S_OK if the audio format is supported. Returns XAPO_E_FORMAT_UNSUPPORTED if the audio format is unsupported, <i>pFormat</i> will be overwritten with the nearest audio format if <i>fOverwrite</i> is TRUE. Returns E_INVALIDARG if the audio format is invalid, in which case <i>pFormat</i> will be left untouched.</para>
-    </returns>
-    <remarks>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/xapobase/nl-xapobase-cxapobase">CXAPOBase</seealso>
+    <summary>Verifies that an audio format falls within the default ranges supported.</summary>
+    <param name="pFormat">Audio format to validate.</param>
+    <param name="fOverwrite">If TRUE indicates that <i>pFormat</i> should be overwritten with the nearest audio format supported if the format it specified is not supported. The nearest audio format is determined by bit depth, framerate and channel count in that order of importance.</param>
+    <returns>Return S_OK if the audio format is supported. Returns XAPO_E_FORMAT_UNSUPPORTED if the audio format is unsupported, <i>pFormat</i> will be overwritten with the nearest audio format if <i>fOverwrite</i> is TRUE. Returns E_INVALIDARG if the audio format is invalid, in which case <i>pFormat</i> will be left untouched.</returns>
   </member>
   <member name="CXAPOBase.ValidateFormatPair">
-    <summary>
-      <para>Verifies that an input and output format pair configuration is supported by the XAPO.</para>
-    </summary>
-    <param name="pSupportedFormat">
-      <para>An audio format known to be supported by the XAPO.</para>
-    </param>
-    <param name="pRequestedFormat">
-      <para>An audio format to examine, must be a pointer to a WAVEFORMATEXTENSIBLE structure if <i>fOverWrite</i> is TRUE.</para>
-    </param>
-    <param name="fOverwrite">
-      <para>If TRUE indicates that <i>pRequestedFormat</i> should be overwritten with the nearest audio format supported if the requested format is not supported. The nearest audio format is determined by bit depth, framerate and channel count in that order of importance.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if the format pair is supported. Returns XAPO_E_FORMAT_UNSUPPORTED if the format pair is unsupported; <i>pRequestedFormat</i> will be overwritten if <i>fOverWrite</i> is TRUE. Returns E_INVALIDARG if either audio format was invalid; <i>pRequestedFormat</i> will be left untouched.</para>
-    </returns>
-    <remarks>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/xapobase/nl-xapobase-cxapobase">CXAPOBase</seealso>
+    <summary>Verifies that an input and output format pair configuration is supported by the XAPO.</summary>
+    <param name="pSupportedFormat">An audio format known to be supported by the XAPO.</param>
+    <param name="pRequestedFormat">An audio format to examine, must be a pointer to a WAVEFORMATEXTENSIBLE structure if <i>fOverWrite</i> is TRUE.</param>
+    <param name="fOverwrite">If TRUE indicates that <i>pRequestedFormat</i> should be overwritten with the nearest audio format supported if the requested format is not supported. The nearest audio format is determined by bit depth, framerate and channel count in that order of importance.</param>
+    <returns>Returns S_OK if the format pair is supported. Returns XAPO_E_FORMAT_UNSUPPORTED if the format pair is unsupported; <i>pRequestedFormat</i> will be overwritten if <i>fOverWrite</i> is TRUE. Returns E_INVALIDARG if either audio format was invalid; <i>pRequestedFormat</i> will be left untouched.</returns>
   </member>
 </doc>

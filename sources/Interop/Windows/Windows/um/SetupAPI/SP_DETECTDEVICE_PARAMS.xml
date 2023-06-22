@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SP_DETECTDEVICE_PARAMS">
-    <summary>
-      <para>An SP_DETECTDEVICE_PARAMS structure corresponds to a DIF_DETECT installation request.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-detect">DIF_DETECT</seealso>
-    <seealso cref="SP_CLASSINSTALL_HEADER" />
-    <seealso cref="SetupDiCallClassInstaller" />
+    <summary>An SP_DETECTDEVICE_PARAMS structure corresponds to a DIF_DETECT installation request.</summary>
   </member>
   <member name="SP_DETECTDEVICE_PARAMS.ClassInstallHeader">
-    <summary>
-      <para>An install request header that contains the size of the header and the DIF code for the request. See <see cref="SP_CLASSINSTALL_HEADER" />.</para>
-    </summary>
+    <summary>An install request header that contains the size of the header and the DIF code for the request. See <see cref="SP_CLASSINSTALL_HEADER" />.</summary>
   </member>
   <member name="SP_DETECTDEVICE_PARAMS.DetectProgressNotify">
     <summary>
       <para>A callback routine that displays a progress bar for the device detection operation. The callback routine is supplied by the <a href="https://docs.microsoft.com//windows-hardware/drivers/install/system-provided-device-installation-components">device installation component</a> that sends the <a href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-detect">DIF_DETECT</a> request. The callback has the following prototype:</para>
-      <code>typedef BOOL (CALLBACK* PDETECT_PROGRESS_NOTIFY)(
-    IN PVOID ProgressNotifyParam,
-    IN DWORD DetectComplete
-    );
-</code>
+      <code>typedef BOOL (CALLBACK* PDETECT_PROGRESS_NOTIFY)( IN PVOID ProgressNotifyParam, IN DWORD DetectComplete );</code>
       <para>
         <i>ProgressNotifyParam</i> is an opaque "handle" that identifies the detection operation. This value is supplied by the <a href="https://docs.microsoft.com//windows-hardware/drivers/install/system-provided-device-installation-components">device installation component</a> that sent the DIF_DETECT request.</para>
       <para>
@@ -30,8 +19,6 @@
     </summary>
   </member>
   <member name="SP_DETECTDEVICE_PARAMS.ProgressNotifyParam">
-    <summary>
-      <para>The opaque <b>ProgressNotifyParam</b> "handle" that the class installer passes to the progress callback routine.</para>
-    </summary>
+    <summary>The opaque <b>ProgressNotifyParam</b> "handle" that the class installer passes to the progress callback routine.</summary>
   </member>
 </doc>

@@ -3,1200 +3,367 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1Geometry.CombineWithGeometry">
-    <summary>
-      <para>Combines this geometry with the specified geometry and stores the result in an <see cref="ID2D1SimplifiedGeometrySink" />.</para>
-    </summary>
-    <param name="inputGeometry">
-      <para>Type: [in] <b><see cref="ID2D1Geometry" />*</b></para>
-      <para>The geometry to combine with this instance.</para>
-    </param>
-    <param name="combineMode">
-      <para>Type: [in] <b><see cref="D2D1_COMBINE_MODE" /></b></para>
-      <para>The type of combine operation to perform.</para>
-    </param>
-    <param name="inputGeometryTransform">
-      <para>Type: [in, optional] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to <i>inputGeometry</i> before combining, or <b>NULL</b>.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="geometrySink">
-      <para>Type: [in] <b><see cref="ID2D1SimplifiedGeometrySink" />*</b></para>
-      <para>The result of the combine operation.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Combines this geometry with the specified geometry and stores the result in an <see cref="ID2D1SimplifiedGeometrySink" />.</summary>
+    <param name="inputGeometry">The geometry to combine with this instance.</param>
+    <param name="combineMode">The type of combine operation to perform.</param>
+    <param name="inputGeometryTransform">The transform to apply to <i>inputGeometry</i> before combining, or <b>NULL</b>.</param>
+    <param name="flatteningTolerance">The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="geometrySink">The result of the combine operation.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.CombineWithGeometry">
-    <summary>
-      <para>Combines this geometry with the specified geometry and stores the result in an <see cref="ID2D1SimplifiedGeometrySink" />.</para>
-    </summary>
-    <param name="inputGeometry">
-      <para>Type: [in] <b><see cref="ID2D1Geometry" />*</b></para>
-      <para>The geometry to combine with this instance.</para>
-    </param>
-    <param name="combineMode">
-      <para>Type: [in] <b><see cref="D2D1_COMBINE_MODE" /></b></para>
-      <para>The type of combine operation to perform.</para>
-    </param>
-    <param name="inputGeometryTransform">
-      <para>Type: [in, optional] <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to <i>inputGeometry</i> before combining.</para>
-    </param>
-    <param name="geometrySink">
-      <para>Type: [in] <b><see cref="ID2D1SimplifiedGeometrySink" />*</b></para>
-      <para>The result of the combine operation.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Combines this geometry with the specified geometry and stores the result in an <see cref="ID2D1SimplifiedGeometrySink" />.</summary>
+    <param name="inputGeometry">The geometry to combine with this instance.</param>
+    <param name="combineMode">The type of combine operation to perform.</param>
+    <param name="inputGeometryTransform">The transform to apply to <i>inputGeometry</i> before combining.</param>
+    <param name="geometrySink">The result of the combine operation.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.CombineWithGeometry">
-    <summary>
-      <para>Combines this geometry with the specified geometry and stores the result in an <see cref="ID2D1SimplifiedGeometrySink" />.</para>
-    </summary>
-    <param name="inputGeometry">
-      <para>Type: [in] <b><see cref="ID2D1Geometry" />*</b></para>
-      <para>The geometry to combine with this instance.</para>
-    </param>
-    <param name="combineMode">
-      <para>Type: [in] <b><see cref="D2D1_COMBINE_MODE" /></b></para>
-      <para>The type of combine operation to perform.</para>
-    </param>
-    <param name="inputGeometryTransform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> &amp;</b></para>
-      <para>The transform to apply to <i>inputGeometry</i> before combining.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="geometrySink">
-      <para>Type: [in] <b><see cref="ID2D1SimplifiedGeometrySink" />*</b></para>
-      <para>The result of the combine operation.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Combines this geometry with the specified geometry and stores the result in an <see cref="ID2D1SimplifiedGeometrySink" />.</summary>
+    <param name="inputGeometry">The geometry to combine with this instance.</param>
+    <param name="combineMode">The type of combine operation to perform.</param>
+    <param name="inputGeometryTransform">The transform to apply to <i>inputGeometry</i> before combining.</param>
+    <param name="flatteningTolerance">The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="geometrySink">The result of the combine operation.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.CombineWithGeometry">
-    <summary>
-      <para>Combines this geometry with the specified geometry and stores the result in an <see cref="ID2D1SimplifiedGeometrySink" />.</para>
-    </summary>
-    <param name="inputGeometry">
-      <para>Type: [in] <b><see cref="ID2D1Geometry" />*</b></para>
-      <para>The geometry to combine with this instance.</para>
-    </param>
-    <param name="combineMode">
-      <para>Type: [in] <b><see cref="D2D1_COMBINE_MODE" /></b></para>
-      <para>The type of combine operation to perform.</para>
-    </param>
-    <param name="inputGeometryTransform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> &amp;</b></para>
-      <para>The transform to apply to <i>inputGeometry</i> before combining.</para>
-    </param>
-    <param name="geometrySink">
-      <para>Type: [in] <b><see cref="ID2D1SimplifiedGeometrySink" />*</b></para>
-      <para>The result of the combine operation.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Combines this geometry with the specified geometry and stores the result in an <see cref="ID2D1SimplifiedGeometrySink" />.</summary>
+    <param name="inputGeometry">The geometry to combine with this instance.</param>
+    <param name="combineMode">The type of combine operation to perform.</param>
+    <param name="inputGeometryTransform">The transform to apply to <i>inputGeometry</i> before combining.</param>
+    <param name="geometrySink">The result of the combine operation.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.CompareWithGeometry">
-    <summary>
-      <para>Describes the intersection between this geometry and the specified geometry. The comparison is performed using the default flattening tolerance.</para>
-    </summary>
-    <param name="inputGeometry">
-      <para>Type: [in] <b><see cref="ID2D1Geometry" />*</b></para>
-      <para>The geometry to test.</para>
-    </param>
-    <param name="inputGeometryTransform">
-      <para>Type: [in, optional] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to <i>inputGeometry</i>, or <b>NULL</b>.</para>
-    </param>
-    <param name="relation">
-      <para>Type: [out] <b><see cref="D2D1_GEOMETRY_RELATION" />*</b></para>
-      <para>When this method returns, contains a pointer to a value that describes how this geometry is related to <i>inputGeometry</i>. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <remarks>
-      <para>When interpreting the returned <i>relation</i> value, it is important to remember that the member <see cref="D2D1_GEOMETRY_RELATION_IS_CONTAINED" /> of the  <b>D2D1_GEOMETRY_RELATION</b> enumeration type means that this geometry is contained  inside <i>inputGeometry</i>, not that this geometry contains <i>inputGeometry</i>.</para>
-      <para>For  more information about how to interpret other possible return values, see <see cref="D2D1_GEOMETRY_RELATION" />.</para>
-    </remarks>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Describes the intersection between this geometry and the specified geometry. The comparison is performed using the default flattening tolerance.</summary>
+    <param name="inputGeometry">The geometry to test.</param>
+    <param name="inputGeometryTransform">The transform to apply to <i>inputGeometry</i>, or <b>NULL</b>.</param>
+    <param name="relation">When this method returns, contains a pointer to a value that describes how this geometry is related to <i>inputGeometry</i>. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.CompareWithGeometry">
-    <summary>
-      <para>Describes the intersection between this geometry and the specified geometry. The comparison is performed by using the specified flattening tolerance.</para>
-    </summary>
-    <param name="inputGeometry">
-      <para>Type: [in] <b><see cref="ID2D1Geometry" />*</b></para>
-      <para>The geometry to test.</para>
-    </param>
-    <param name="inputGeometryTransform">
-      <para>Type: [in, optional] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to <i>inputGeometry</i>, or <b>NULL</b>.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="relation">
-      <para>Type: [out] <b><see cref="D2D1_GEOMETRY_RELATION" />*</b></para>
-      <para>When this method returns, contains a pointer to a value that describes how this geometry is related to <i>inputGeometry</i>. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <remarks>
-      <para>When interpreting the returned <i>relation</i> value, it is important to remember that the member <see cref="D2D1_GEOMETRY_RELATION_IS_CONTAINED" /> of the  <b>D2D1_GEOMETRY_RELATION</b> enumeration type means that this geometry is contained  inside <i>inputGeometry</i>, not that this geometry contains <i>inputGeometry</i>.</para>
-      <para>For  more information about how to interpret other possible return values, see <see cref="D2D1_GEOMETRY_RELATION" />.</para>
-    </remarks>
-    <seealso cref="D2D1_GEOMETRY_RELATION" />
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</seealso>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Describes the intersection between this geometry and the specified geometry. The comparison is performed by using the specified flattening tolerance.</summary>
+    <param name="inputGeometry">The geometry to test.</param>
+    <param name="inputGeometryTransform">The transform to apply to <i>inputGeometry</i>, or <b>NULL</b>.</param>
+    <param name="flatteningTolerance">The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="relation">When this method returns, contains a pointer to a value that describes how this geometry is related to <i>inputGeometry</i>. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.CompareWithGeometry">
-    <summary>
-      <para>Describes the intersection between this geometry and the specified geometry. The comparison is performed using the default flattening tolerance.</para>
-    </summary>
-    <param name="inputGeometry">
-      <para>Type: [in] <b><see cref="ID2D1Geometry" />*</b></para>
-      <para>The geometry to test.</para>
-    </param>
-    <param name="inputGeometryTransform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> &amp;</b></para>
-      <para>The transform to apply to <i>inputGeometry</i>.</para>
-    </param>
-    <param name="relation">
-      <para>Type: [out] <b><see cref="D2D1_GEOMETRY_RELATION" />*</b></para>
-      <para>When this method returns, <i>relation</i> contains a pointer to a value that describes how this geometry is related to <i>inputGeometry</i>. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <remarks>
-      <para>When interpreting the returned <i>relation</i> value, it is important to remember that the member <see cref="D2D1_GEOMETRY_RELATION_IS_CONTAINED" /> of the  <b>D2D1_GEOMETRY_RELATION</b> enumeration type means that this geometry is contained  inside <i>inputGeometry</i>, not that this geometry contains <i>inputGeometry</i>.</para>
-      <para>For  more information about how to interpret other possible return values, see <see cref="D2D1_GEOMETRY_RELATION" />.</para>
-    </remarks>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Describes the intersection between this geometry and the specified geometry. The comparison is performed using the default flattening tolerance.</summary>
+    <param name="inputGeometry">The geometry to test.</param>
+    <param name="inputGeometryTransform">The transform to apply to <i>inputGeometry</i>.</param>
+    <param name="relation">When this method returns, <i>relation</i> contains a pointer to a value that describes how this geometry is related to <i>inputGeometry</i>. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.CompareWithGeometry">
-    <summary>
-      <para>Describes the intersection between this geometry and the specified geometry. The comparison is performed using the specified flattening tolerance.</para>
-    </summary>
-    <param name="inputGeometry">
-      <para>Type: [in] <b><see cref="ID2D1Geometry" />*</b></para>
-      <para>The geometry to test.</para>
-    </param>
-    <param name="inputGeometryTransform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> &amp;</b></para>
-      <para>The transform to apply to <i>inputGeometry</i>.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="relation">
-      <para>Type: [out] <b><see cref="D2D1_GEOMETRY_RELATION" />*</b></para>
-      <para>When this method returns, contains a pointer to a value that describes how this geometry is related to <i>inputGeometry</i>. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <remarks>
-      <para>When interpreting the returned <i>relation</i> value, it is important to remember that the member <see cref="D2D1_GEOMETRY_RELATION_IS_CONTAINED" /> of the  <b>D2D1_GEOMETRY_RELATION</b> enumeration type means that this geometry is contained  inside <i>inputGeometry</i>, not that this geometry contains <i>inputGeometry</i>.</para>
-      <para>For  more information about how to interpret other possible return values, see <see cref="D2D1_GEOMETRY_RELATION" />.</para>
-    </remarks>
-    <seealso cref="D2D1_GEOMETRY_RELATION" />
-    <seealso cref="ID2D1Geometry" />
+    <summary>Describes the intersection between this geometry and the specified geometry. The comparison is performed using the specified flattening tolerance.</summary>
+    <param name="inputGeometry">The geometry to test.</param>
+    <param name="inputGeometryTransform">The transform to apply to <i>inputGeometry</i>.</param>
+    <param name="flatteningTolerance">The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="relation">When this method returns, contains a pointer to a value that describes how this geometry is related to <i>inputGeometry</i>. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.ComputeArea">
-    <summary>
-      <para>Computes the area of the geometry after it has been transformed by the specified matrix and flattened using the specified tolerance.</para>
-    </summary>
-    <param name="worldTransform">
-      <para>Type: [in, optional] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to this geometry before computing its area, or <b>NULL</b>.</para>
-    </param>
-    <param name="area">
-      <para>Type: [out] <b>FLOAT*</b></para>
-      <para>When this this method returns, contains a pointer to the area of the transformed, flattened version of this geometry. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Computes the area of the geometry after it has been transformed by the specified matrix and flattened using the specified tolerance.</summary>
+    <param name="worldTransform">The transform to apply to this geometry before computing its area, or <b>NULL</b>.</param>
+    <param name="area">When this this method returns, contains a pointer to the area of the transformed, flattened version of this geometry. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.ComputeArea">
-    <summary>
-      <para>Computes the area of the geometry after it has been transformed by the specified matrix and flattened using the specified tolerance.</para>
-    </summary>
-    <param name="worldTransform">
-      <para>Type: [in, optional] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to this geometry before computing its area, or <b>NULL</b>.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="area">
-      <para>Type: [out] <b>FLOAT*</b></para>
-      <para>When this this method returns, contains a pointer to the area of the transformed, flattened version of this geometry. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Computes the area of the geometry after it has been transformed by the specified matrix and flattened using the specified tolerance.</summary>
+    <param name="worldTransform">The transform to apply to this geometry before computing its area, or <b>NULL</b>.</param>
+    <param name="flatteningTolerance">The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="area">When this this method returns, contains a pointer to the area of the transformed, flattened version of this geometry. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.ComputeArea">
-    <summary>
-      <para>Computes the area of the geometry after it has been transformed by the specified matrix and flattened using the default tolerance.</para>
-    </summary>
-    <param name="worldTransform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> &amp;</b></para>
-      <para>The transform to be applied to this geometry before computing its area.</para>
-    </param>
-    <param name="area">
-      <para>Type: [out] <b>FLOAT*</b></para>
-      <para>When this method returns, <i>area</i> contains a pointer to the area of the transformed, flattened version of this geometry. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Computes the area of the geometry after it has been transformed by the specified matrix and flattened using the default tolerance.</summary>
+    <param name="worldTransform">The transform to be applied to this geometry before computing its area.</param>
+    <param name="area">When this method returns, <i>area</i> contains a pointer to the area of the transformed, flattened version of this geometry. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.ComputeArea">
-    <summary>
-      <para>Computes the area of the geometry after it has been transformed by the specified matrix and flattened using the specified tolerance.</para>
-    </summary>
-    <param name="worldTransform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> &amp;</b></para>
-      <para>The transform to apply to this geometry before computing its area.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="area">
-      <para>Type: [out] <b>FLOAT*</b></para>
-      <para>When this method returns, contains a pointer to the area of the transformed, flattened version of this geometry. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Computes the area of the geometry after it has been transformed by the specified matrix and flattened using the specified tolerance.</summary>
+    <param name="worldTransform">The transform to apply to this geometry before computing its area.</param>
+    <param name="flatteningTolerance">The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="area">When this method returns, contains a pointer to the area of the transformed, flattened version of this geometry. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.ComputeLength">
-    <summary>
-      <para>Calculates the length of the geometry as though each segment were unrolled into a line.</para>
-    </summary>
-    <param name="worldTransform">
-      <para>Type: [in, optional] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to the geometry before calculating its length, or <b>NULL</b>.</para>
-    </param>
-    <param name="length">
-      <para>Type: [out] <b>FLOAT*</b></para>
-      <para>When this method returns, contains a pointer to the length of the geometry. For closed geometries, the length includes an implicit closing segment. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Calculates the length of the geometry as though each segment were unrolled into a line.</summary>
+    <param name="worldTransform">The transform to apply to the geometry before calculating its length, or <b>NULL</b>.</param>
+    <param name="length">When this method returns, contains a pointer to the length of the geometry. For closed geometries, the length includes an implicit closing segment. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.ComputeLength">
-    <summary>
-      <para>Calculates the length of the geometry as though each segment were unrolled into a line.</para>
-    </summary>
-    <param name="worldTransform">
-      <para>Type: [in, optional] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to the geometry before calculating its length, or <b>NULL</b>.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="length">
-      <para>Type: [out] <b>FLOAT*</b></para>
-      <para>When this method returns, contains a pointer to the length of the geometry. For closed geometries, the length includes an implicit closing segment. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Calculates the length of the geometry as though each segment were unrolled into a line.</summary>
+    <param name="worldTransform">The transform to apply to the geometry before calculating its length, or <b>NULL</b>.</param>
+    <param name="flatteningTolerance">The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="length">When this method returns, contains a pointer to the length of the geometry. For closed geometries, the length includes an implicit closing segment. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.ComputeLength">
-    <summary>
-      <para>Calculates the length of the geometry as though each segment were unrolled into a line.</para>
-    </summary>
-    <param name="worldTransform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> &amp;</b></para>
-      <para>The transform to apply to the geometry before calculating its length.</para>
-    </param>
-    <param name="length">
-      <para>Type: [out] <b>FLOAT*</b></para>
-      <para>When this method returns, contains a pointer to the length of the geometry. For closed geometries, the length includes an implicit closing segment. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Calculates the length of the geometry as though each segment were unrolled into a line.</summary>
+    <param name="worldTransform">The transform to apply to the geometry before calculating its length.</param>
+    <param name="length">When this method returns, contains a pointer to the length of the geometry. For closed geometries, the length includes an implicit closing segment. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.ComputeLength">
-    <summary>
-      <para>Calculates the length of the geometry as though each segment were unrolled into a line.</para>
-    </summary>
-    <param name="worldTransform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> &amp;</b></para>
-      <para>The transform to apply to the geometry before calculating its length.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="length">
-      <para>Type: [out] <b>FLOAT*</b></para>
-      <para>When this method returns, contains a pointer to the length of the geometry. For closed geometries, the length includes an implicit closing segment. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Calculates the length of the geometry as though each segment were unrolled into a line.</summary>
+    <param name="worldTransform">The transform to apply to the geometry before calculating its length.</param>
+    <param name="flatteningTolerance">The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="length">When this method returns, contains a pointer to the length of the geometry. For closed geometries, the length includes an implicit closing segment. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.ComputePointAtLength">
-    <summary>
-      <para>Calculates the point and tangent vector at the specified distance along the geometry after it has been transformed by the specified matrix and flattened using the default tolerance.</para>
-    </summary>
-    <param name="length">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The distance along the geometry of the point and tangent to find. If this distance is less than 0, this method calculates the first point in the geometry. If this distance is greater than the length of the geometry, this method calculates the last point in the geometry.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: [in, optional] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to the geometry before calculating the specified point and tangent, or <b>NULL</b>.</para>
-    </param>
-    <param name="point">
-      <para>Type: [out, optional] <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a>*</b></para>
-      <para>The location at the specified distance along the geometry. If the geometry is empty, this point contains NaN as its x and y values.</para>
-    </param>
-    <param name="unitTangentVector">
-      <para>Type: [out, optional] <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a>*</b></para>
-      <para>The tangent vector at the specified distance along the geometry. If the geometry is empty,  this vector contains NaN as its x and y values.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Calculates the point and tangent vector at the specified distance along the geometry after it has been transformed by the specified matrix and flattened using the default tolerance.</summary>
+    <param name="length">The distance along the geometry of the point and tangent to find. If this distance is less than 0, this method calculates the first point in the geometry. If this distance is greater than the length of the geometry, this method calculates the last point in the geometry.</param>
+    <param name="worldTransform">The transform to apply to the geometry before calculating the specified point and tangent, or <b>NULL</b>.</param>
+    <param name="point">The location at the specified distance along the geometry. If the geometry is empty, this point contains NaN as its x and y values.</param>
+    <param name="unitTangentVector">The tangent vector at the specified distance along the geometry. If the geometry is empty, this vector contains NaN as its x and y values.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.ComputePointAtLength">
-    <summary>
-      <para>Calculates the point and tangent vector at the specified distance along the geometry after it has been transformed by the specified matrix and flattened using the specified tolerance.</para>
-    </summary>
-    <param name="length">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The distance along the geometry of the point and tangent to find. If this distance is less than 0, this method calculates the first point in the geometry. If this distance is greater than the length of the geometry, this method calculates the last point in the geometry.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: [in, optional] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to the geometry before calculating the specified point and tangent, or <b>NULL</b>.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="point">
-      <para>Type: [out, optional] <b><see cref="D2D1_POINT_2F" />*</b></para>
-      <para>The location at the specified distance along the geometry. If the geometry is empty,  this point contains NaN as its x and y values.</para>
-    </param>
-    <param name="unitTangentVector">
-      <para>Type: [out, optional] <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a>*</b></para>
-      <para>When this method returns, contains a pointer to the tangent vector at the specified distance along the geometry. If the geometry is empty, this vector contains NaN as its x and y values. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Calculates the point and tangent vector at the specified distance along the geometry after it has been transformed by the specified matrix and flattened using the specified tolerance.</summary>
+    <param name="length">The distance along the geometry of the point and tangent to find. If this distance is less than 0, this method calculates the first point in the geometry. If this distance is greater than the length of the geometry, this method calculates the last point in the geometry.</param>
+    <param name="worldTransform">The transform to apply to the geometry before calculating the specified point and tangent, or <b>NULL</b>.</param>
+    <param name="flatteningTolerance">The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="point">The location at the specified distance along the geometry. If the geometry is empty, this point contains NaN as its x and y values.</param>
+    <param name="unitTangentVector">When this method returns, contains a pointer to the tangent vector at the specified distance along the geometry. If the geometry is empty, this vector contains NaN as its x and y values. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.ComputePointAtLength">
-    <summary>
-      <para>Calculates the point and tangent vector at the specified distance along the geometry after it has been transformed by the specified matrix and flattened using the default tolerance.</para>
-    </summary>
-    <param name="length">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The distance along the geometry of the point and tangent to find. If this distance is less than 0, this method calculates the first point in the geometry. If this distance is greater than the length of the geometry, this method calculates the last point in the geometry.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> &amp;</b></para>
-      <para>The transform to apply to the geometry before calculating the specified point and tangent.</para>
-    </param>
-    <param name="point">
-      <para>Type: [out, optional] <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a>*</b></para>
-      <para>The location at the specified distance along the geometry. If the geometry is empty,  this point contains NaN as its x and y values.</para>
-    </param>
-    <param name="unitTangentVector">
-      <para>Type: [out, optional] <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a>*</b></para>
-      <para>When this method returns, contains a pointer to the tangent vector at the specified distance along the geometry. If the geometry is empty, this vector contains NaN as its x and y values. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Calculates the point and tangent vector at the specified distance along the geometry after it has been transformed by the specified matrix and flattened using the default tolerance.</summary>
+    <param name="length">The distance along the geometry of the point and tangent to find. If this distance is less than 0, this method calculates the first point in the geometry. If this distance is greater than the length of the geometry, this method calculates the last point in the geometry.</param>
+    <param name="worldTransform">The transform to apply to the geometry before calculating the specified point and tangent.</param>
+    <param name="point">The location at the specified distance along the geometry. If the geometry is empty, this point contains NaN as its x and y values.</param>
+    <param name="unitTangentVector">When this method returns, contains a pointer to the tangent vector at the specified distance along the geometry. If the geometry is empty, this vector contains NaN as its x and y values. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.ComputePointAtLength">
-    <summary>
-      <para>Calculates the point and tangent vector at the specified distance along the geometry after it has been transformed by the specified matrix and flattened using the specified tolerance.</para>
-    </summary>
-    <param name="length">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The distance along the geometry of the point and tangent to find. If this distance is less than 0, this method calculates the first point in the geometry. If this distance is greater than the length of the geometry, this method calculates the last point in the geometry.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> &amp;</b></para>
-      <para>The transform to apply to the geometry before calculating the specified point and tangent.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="point">
-      <para>Type: [out, optional] <b><see cref="D2D1_POINT_2F" />*</b></para>
-      <para>The location at the specified distance along the geometry. If the geometry is empty,  this point contains NaN as its x and y values.</para>
-    </param>
-    <param name="unitTangentVector">
-      <para>Type: [out, optional] <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a>*</b></para>
-      <para>When this method returns, contains a pointer to the tangent vector at the specified distance along the geometry. If the geometry is empty, this vector contains NaN as its x and y values. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Calculates the point and tangent vector at the specified distance along the geometry after it has been transformed by the specified matrix and flattened using the specified tolerance.</summary>
+    <param name="length">The distance along the geometry of the point and tangent to find. If this distance is less than 0, this method calculates the first point in the geometry. If this distance is greater than the length of the geometry, this method calculates the last point in the geometry.</param>
+    <param name="worldTransform">The transform to apply to the geometry before calculating the specified point and tangent.</param>
+    <param name="flatteningTolerance">The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="point">The location at the specified distance along the geometry. If the geometry is empty, this point contains NaN as its x and y values.</param>
+    <param name="unitTangentVector">When this method returns, contains a pointer to the tangent vector at the specified distance along the geometry. If the geometry is empty, this vector contains NaN as its x and y values. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.FillContainsPoint">
-    <summary>
-      <para>Indicates whether the area filled by this geometry would contain the specified point.</para>
-    </summary>
-    <param name="point">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The point to test.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to this geometry prior to testing for containment, or NULL.</para>
-    </param>
-    <param name="contains">
-      <para>Type: <b>BOOL*</b></para>
-      <para>When this method returns, contains a <b>BOOL</b> value that is <b>TRUE</b> if the area filled by the geometry contains <i>point</i>; otherwise, <b>FALSE</b>.
-You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Indicates whether the area filled by this geometry would contain the specified point.</summary>
+    <param name="point">The point to test.</param>
+    <param name="worldTransform">The transform to apply to this geometry prior to testing for containment, or NULL.</param>
+    <param name="contains">When this method returns, contains a <b>BOOL</b> value that is <b>TRUE</b> if the area filled by the geometry contains <i>point</i>; otherwise, <b>FALSE</b>. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.FillContainsPoint">
-    <summary>
-      <para>Indicates whether the area filled by the geometry would contain the specified point given the specified flattening tolerance.</para>
-    </summary>
-    <param name="point">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The point to test.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to the geometry prior to testing for containment, or <b>NULL</b>.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The numeric accuracy with which the precise geometric path and path intersection is calculated. Points missing the fill by less than the tolerance are still considered inside.  Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="contains">
-      <para>Type: <b>BOOL*</b></para>
-      <para>When this method returns, contains a <b>BOOL</b> value that is <b>TRUE</b> if the area filled by the geometry contains <i>point</i>; otherwise, <b>FALSE</b>.
-You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Indicates whether the area filled by the geometry would contain the specified point given the specified flattening tolerance.</summary>
+    <param name="point">The point to test.</param>
+    <param name="worldTransform">The transform to apply to the geometry prior to testing for containment, or <b>NULL</b>.</param>
+    <param name="flatteningTolerance">The numeric accuracy with which the precise geometric path and path intersection is calculated. Points missing the fill by less than the tolerance are still considered inside. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="contains">When this method returns, contains a <b>BOOL</b> value that is <b>TRUE</b> if the area filled by the geometry contains <i>point</i>; otherwise, <b>FALSE</b>. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.FillContainsPoint">
-    <summary>
-      <para>Indicates whether the area filled by the geometry would contain the specified point.</para>
-    </summary>
-    <param name="point">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The point to test.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a></b></para>
-      <para>The transform to apply to the geometry prior to testing for containment.</para>
-    </param>
-    <param name="contains">
-      <para>Type: <b>BOOL*</b></para>
-      <para>When this method returns, contains a bool value that is true if the area filled by the geometry contains <i>point</i>; otherwise, false.
-You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Indicates whether the area filled by the geometry would contain the specified point.</summary>
+    <param name="point">The point to test.</param>
+    <param name="worldTransform">The transform to apply to the geometry prior to testing for containment.</param>
+    <param name="contains">When this method returns, contains a bool value that is true if the area filled by the geometry contains <i>point</i>; otherwise, false. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.FillContainsPoint">
-    <summary>
-      <para>Indicates whether the area filled by the geometry would contain the specified point given the specified flattening tolerance.</para>
-    </summary>
-    <param name="point">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The point to test.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a></b></para>
-      <para>The transform to apply to the geometry prior to testing for containment.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The numeric accuracy with which the precise geometric path and path intersection is calculated. Points missing the fill by less than the tolerance are still considered inside.  Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="contains">
-      <para>Type: <b>BOOL*</b></para>
-      <para>When this method returns, contains a bool value that is true if the area filled by the geometry contains <i>point</i>; otherwise, false.
-You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Indicates whether the area filled by the geometry would contain the specified point given the specified flattening tolerance.</summary>
+    <param name="point">The point to test.</param>
+    <param name="worldTransform">The transform to apply to the geometry prior to testing for containment.</param>
+    <param name="flatteningTolerance">The numeric accuracy with which the precise geometric path and path intersection is calculated. Points missing the fill by less than the tolerance are still considered inside. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="contains">When this method returns, contains a bool value that is true if the area filled by the geometry contains <i>point</i>; otherwise, false. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.GetBounds">
-    <summary>
-      <para>Retrieves the bounds of the geometry.</para>
-    </summary>
-    <param name="worldTransform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to this geometry before calculating its bounds, or <b>NULL</b>.</para>
-    </param>
-    <param name="bounds">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>When this method returns, contains the bounds of this geometry. If the bounds are empty, this parameter will be a rect where <i>bounds.left</i> &gt; <i>bounds.right</i>. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Retrieves the bounds of the geometry.</summary>
+    <param name="worldTransform">The transform to apply to this geometry before calculating its bounds, or <b>NULL</b>.</param>
+    <param name="bounds">When this method returns, contains the bounds of this geometry. If the bounds are empty, this parameter will be a rect where <i>bounds.left</i> &gt; <i>bounds.right</i>. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.GetBounds">
-    <summary>
-      <para>Retrieves the bounds of the geometry.</para>
-    </summary>
-    <param name="worldTransform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a></b></para>
-      <para>The transform to apply to this geometry before calculating its bounds.</para>
-    </param>
-    <param name="bounds">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>When this method returns, contains the bounds of this geometry. If the bounds are empty, this parameter will be a rect where <i>bounds.left</i> &gt; <i>bounds.right</i>. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Retrieves the bounds of the geometry.</summary>
+    <param name="worldTransform">The transform to apply to this geometry before calculating its bounds.</param>
+    <param name="bounds">When this method returns, contains the bounds of this geometry. If the bounds are empty, this parameter will be a rect where <i>bounds.left</i> &gt; <i>bounds.right</i>. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.GetWidenedBounds">
-    <summary>
-      <para>Gets the bounds of the geometry after it has been widened by the specified stroke width and style and transformed by the specified matrix.</para>
-    </summary>
-    <param name="strokeWidth">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The amount by which to widen the geometry by stroking its outline.</para>
-    </param>
-    <param name="strokeStyle">
-      <para>Type: <b><see cref="ID2D1StrokeStyle" />*</b></para>
-      <para>The style of the stroke that widens the geometry.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>A transform to apply to the geometry after the geometry is transformed and after the geometry has been stroked, or <b>NULL</b>.</para>
-    </param>
-    <param name="bounds">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>When this method returns, contains the bounds of the widened geometry. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Gets the bounds of the geometry after it has been widened by the specified stroke width and style and transformed by the specified matrix.</summary>
+    <param name="strokeWidth">The amount by which to widen the geometry by stroking its outline.</param>
+    <param name="strokeStyle">The style of the stroke that widens the geometry.</param>
+    <param name="worldTransform">A transform to apply to the geometry after the geometry is transformed and after the geometry has been stroked, or <b>NULL</b>.</param>
+    <param name="bounds">When this method returns, contains the bounds of the widened geometry. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.GetWidenedBounds">
-    <summary>
-      <para>Gets the bounds of the geometry after it has been widened by the specified stroke width and style and transformed by the specified matrix.</para>
-    </summary>
-    <param name="strokeWidth">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The amount by which to widen the geometry by stroking its outline.</para>
-    </param>
-    <param name="strokeStyle">
-      <para>Type: <b><see cref="ID2D1StrokeStyle" />*</b></para>
-      <para>The style of the stroke that widens the geometry.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>A transform to apply to the geometry after the geometry is transformed and after the geometry has been stroked, or <b>NULL</b>.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="bounds">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>When this method returns, contains the bounds of the widened geometry. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Gets the bounds of the geometry after it has been widened by the specified stroke width and style and transformed by the specified matrix.</summary>
+    <param name="strokeWidth">The amount by which to widen the geometry by stroking its outline.</param>
+    <param name="strokeStyle">The style of the stroke that widens the geometry.</param>
+    <param name="worldTransform">A transform to apply to the geometry after the geometry is transformed and after the geometry has been stroked, or <b>NULL</b>.</param>
+    <param name="flatteningTolerance">The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="bounds">When this method returns, contains the bounds of the widened geometry. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.GetWidenedBounds">
-    <summary>
-      <para>Gets the bounds of the geometry after it has been widened by the specified stroke width and style and transformed by the specified matrix.</para>
-    </summary>
-    <param name="strokeWidth">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The amount by which to widen the geometry by stroking its outline.</para>
-    </param>
-    <param name="strokeStyle">
-      <para>Type: <b><see cref="ID2D1StrokeStyle" />*</b></para>
-      <para>The style of the stroke that widens the geometry.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a></b></para>
-      <para>A transform to apply to the geometry after the geometry is transformed and after the geometry has been stroked.</para>
-    </param>
-    <param name="bounds">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>When this method returns, contains the bounds of the widened geometry. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Gets the bounds of the geometry after it has been widened by the specified stroke width and style and transformed by the specified matrix.</summary>
+    <param name="strokeWidth">The amount by which to widen the geometry by stroking its outline.</param>
+    <param name="strokeStyle">The style of the stroke that widens the geometry.</param>
+    <param name="worldTransform">A transform to apply to the geometry after the geometry is transformed and after the geometry has been stroked.</param>
+    <param name="bounds">When this method returns, contains the bounds of the widened geometry. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.GetWidenedBounds">
-    <summary>
-      <para>Gets the bounds of the geometry after it has been widened by the specified stroke width and style and transformed by the specified matrix.</para>
-    </summary>
-    <param name="strokeWidth">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The amount by which to widen the geometry by stroking its outline.</para>
-    </param>
-    <param name="strokeStyle">
-      <para>Type: <b><see cref="ID2D1StrokeStyle" />*</b></para>
-      <para>The style of the stroke that widens the geometry.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a></b></para>
-      <para>A transform to apply to the geometry after the geometry is transformed and after the geometry has been stroked.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="bounds">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>When this method returns, contains the bounds of the widened geometry. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Gets the bounds of the geometry after it has been widened by the specified stroke width and style and transformed by the specified matrix.</summary>
+    <param name="strokeWidth">The amount by which to widen the geometry by stroking its outline.</param>
+    <param name="strokeStyle">The style of the stroke that widens the geometry.</param>
+    <param name="worldTransform">A transform to apply to the geometry after the geometry is transformed and after the geometry has been stroked.</param>
+    <param name="flatteningTolerance">The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="bounds">When this method returns, contains the bounds of the widened geometry. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.Outline">
-    <summary>
-      <para>Computes the outline of the geometry and writes the result to an <see cref="ID2D1SimplifiedGeometrySink" />.</para>
-    </summary>
-    <param name="worldTransform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a></b></para>
-      <para>The transform to apply to the geometry outline.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="geometrySink">
-      <para>Type: <b><see cref="ID2D1SimplifiedGeometrySink" />*</b></para>
-      <para>The <see cref="ID2D1SimplifiedGeometrySink" /> to which the geometry transformed outline is appended.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Computes the outline of the geometry and writes the result to an <see cref="ID2D1SimplifiedGeometrySink" />.</summary>
+    <param name="worldTransform">The transform to apply to the geometry outline.</param>
+    <param name="flatteningTolerance">The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="geometrySink">The <see cref="ID2D1SimplifiedGeometrySink" /> to which the geometry transformed outline is appended.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.Simplify">
-    <summary>
-      <para>Creates a simplified version of the geometry that contains only lines and (optionally) cubic Bezier curves and writes the result to an <see cref="ID2D1SimplifiedGeometrySink" />.</para>
-    </summary>
-    <param name="simplificationOption">
-      <para>Type: [in] <b><see cref="D2D1_GEOMETRY_SIMPLIFICATION_OPTION" /></b></para>
-      <para>A value that specifies whether the simplified geometry should contain curves.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: [in, optional] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to the simplified geometry, or <b>NULL</b>.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="geometrySink">
-      <para>Type: [in] <b><see cref="ID2D1SimplifiedGeometrySink" />*</b></para>
-      <para>The <see cref="ID2D1SimplifiedGeometrySink" /> to which the simplified geometry is appended.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Creates a simplified version of the geometry that contains only lines and (optionally) cubic Bezier curves and writes the result to an <see cref="ID2D1SimplifiedGeometrySink" />.</summary>
+    <param name="simplificationOption">A value that specifies whether the simplified geometry should contain curves.</param>
+    <param name="worldTransform">The transform to apply to the simplified geometry, or <b>NULL</b>.</param>
+    <param name="flatteningTolerance">The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="geometrySink">The <see cref="ID2D1SimplifiedGeometrySink" /> to which the simplified geometry is appended.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.Simplify">
-    <summary>
-      <para>Creates a simplified version of the geometry that contains only lines and (optionally) cubic Bezier curves and writes the result to an <see cref="ID2D1SimplifiedGeometrySink" />.</para>
-    </summary>
-    <param name="simplificationOption">
-      <para>Type: [in] <b><see cref="D2D1_GEOMETRY_SIMPLIFICATION_OPTION" /></b></para>
-      <para>A value that specifies whether the simplified geometry should contain curves.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to the simplified geometry.</para>
-    </param>
-    <param name="geometrySink">
-      <para>Type: [in] <b><see cref="ID2D1SimplifiedGeometrySink" />*</b></para>
-      <para>The <see cref="ID2D1SimplifiedGeometrySink" /> to which the simplified geometry is appended.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Creates a simplified version of the geometry that contains only lines and (optionally) cubic Bezier curves and writes the result to an <see cref="ID2D1SimplifiedGeometrySink" />.</summary>
+    <param name="simplificationOption">A value that specifies whether the simplified geometry should contain curves.</param>
+    <param name="worldTransform">The transform to apply to the simplified geometry.</param>
+    <param name="geometrySink">The <see cref="ID2D1SimplifiedGeometrySink" /> to which the simplified geometry is appended.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.Simplify">
-    <summary>
-      <para>Creates a simplified version of the geometry that contains only lines and (optionally) cubic Bezier curves and writes the result to an <see cref="ID2D1SimplifiedGeometrySink" />.</para>
-    </summary>
-    <param name="simplificationOption">
-      <para>Type: [in] <b><see cref="D2D1_GEOMETRY_SIMPLIFICATION_OPTION" /></b></para>
-      <para>A value that specifies whether the simplified geometry should contain curves.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> &amp;</b></para>
-      <para>The transform to apply to the simplified geometry.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="geometrySink">
-      <para>Type: [in] <b><see cref="ID2D1SimplifiedGeometrySink" />*</b></para>
-      <para>The <see cref="ID2D1SimplifiedGeometrySink" /> to which the simplified geometry is appended.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Creates a simplified version of the geometry that contains only lines and (optionally) cubic Bezier curves and writes the result to an <see cref="ID2D1SimplifiedGeometrySink" />.</summary>
+    <param name="simplificationOption">A value that specifies whether the simplified geometry should contain curves.</param>
+    <param name="worldTransform">The transform to apply to the simplified geometry.</param>
+    <param name="flatteningTolerance">The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="geometrySink">The <see cref="ID2D1SimplifiedGeometrySink" /> to which the simplified geometry is appended.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.Simplify">
-    <summary>
-      <para>Creates a simplified version of the geometry that contains only lines and (optionally) cubic Bezier curves and writes the result to an <see cref="ID2D1SimplifiedGeometrySink" />.</para>
-    </summary>
-    <param name="simplificationOption">
-      <para>Type: [in] <b><see cref="D2D1_GEOMETRY_SIMPLIFICATION_OPTION" /></b></para>
-      <para>A value that specifies whether the simplified geometry should contain curves.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> &amp;</b></para>
-      <para>The transform to apply to the simplified geometry.</para>
-    </param>
-    <param name="geometrySink">
-      <para>Type: [in] <b><see cref="ID2D1SimplifiedGeometrySink" />*</b></para>
-      <para>The <see cref="ID2D1SimplifiedGeometrySink" /> to which the simplified geometry is appended.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Creates a simplified version of the geometry that contains only lines and (optionally) cubic Bezier curves and writes the result to an <see cref="ID2D1SimplifiedGeometrySink" />.</summary>
+    <param name="simplificationOption">A value that specifies whether the simplified geometry should contain curves.</param>
+    <param name="worldTransform">The transform to apply to the simplified geometry.</param>
+    <param name="geometrySink">The <see cref="ID2D1SimplifiedGeometrySink" /> to which the simplified geometry is appended.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.StrokeContainsPoint">
-    <summary>
-      <para>Determines whether the geometry's stroke contains the specified point given the specified stroke thickness, style, and transform.</para>
-    </summary>
-    <param name="point">
-      <para>Type: [in] <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The point to test for containment.</para>
-    </param>
-    <param name="strokeWidth">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The thickness of the stroke to apply.</para>
-    </param>
-    <param name="strokeStyle">
-      <para>Type: [in, optional] <b><see cref="ID2D1StrokeStyle" />*</b></para>
-      <para>The style of stroke to apply.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to the stroked geometry.</para>
-    </param>
-    <param name="contains">
-      <para>Type: [out] <b>BOOL*</b></para>
-      <para>When this method returns, contains a boolean value set to true if the geometry's stroke contains the specified point; otherwise, false. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Determines whether the geometry's stroke contains the specified point given the specified stroke thickness, style, and transform.</summary>
+    <param name="point">The point to test for containment.</param>
+    <param name="strokeWidth">The thickness of the stroke to apply.</param>
+    <param name="strokeStyle">The style of stroke to apply.</param>
+    <param name="worldTransform">The transform to apply to the stroked geometry.</param>
+    <param name="contains">When this method returns, contains a boolean value set to true if the geometry's stroke contains the specified point; otherwise, false. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.StrokeContainsPoint">
-    <summary>
-      <para>Determines whether the geometry's stroke contains the specified point given the specified stroke thickness, style, and transform.</para>
-    </summary>
-    <param name="point">
-      <para>Type: [in] <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The point to test for containment.</para>
-    </param>
-    <param name="strokeWidth">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The thickness of the stroke to apply.</para>
-    </param>
-    <param name="strokeStyle">
-      <para>Type: [in, optional] <b><see cref="ID2D1StrokeStyle" />*</b></para>
-      <para>The style of stroke to apply.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: [in, optional] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to the stroked geometry.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The numeric accuracy with which the precise geometric path and path intersection is calculated. Points missing the stroke by less than the tolerance are still considered inside. Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="contains">
-      <para>Type: [out] <b>BOOL*</b></para>
-      <para>When this method returns, contains a boolean value set to true if the geometry's stroke contains the specified point; otherwise, false. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Determines whether the geometry's stroke contains the specified point given the specified stroke thickness, style, and transform.</summary>
+    <param name="point">The point to test for containment.</param>
+    <param name="strokeWidth">The thickness of the stroke to apply.</param>
+    <param name="strokeStyle">The style of stroke to apply.</param>
+    <param name="worldTransform">The transform to apply to the stroked geometry.</param>
+    <param name="flatteningTolerance">The numeric accuracy with which the precise geometric path and path intersection is calculated. Points missing the stroke by less than the tolerance are still considered inside. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="contains">When this method returns, contains a boolean value set to true if the geometry's stroke contains the specified point; otherwise, false. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.StrokeContainsPoint">
-    <summary>
-      <para>Determines whether the geometry's stroke contains the specified point given the specified stroke thickness, style, and transform.</para>
-    </summary>
-    <param name="point">
-      <para>Type: [in] <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The point to test for containment.</para>
-    </param>
-    <param name="strokeWidth">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The thickness of the stroke to apply.</para>
-    </param>
-    <param name="strokeStyle">
-      <para>Type: [in, optional] <b><see cref="ID2D1StrokeStyle" />*</b></para>
-      <para>The style of stroke to apply.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: [in, optional] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> &amp;</b></para>
-      <para>The transform to apply to the stroked geometry.</para>
-    </param>
-    <param name="contains">
-      <para>Type: [out] <b>BOOL*</b></para>
-      <para>When this method returns, contains a boolean value set to true if the geometry's stroke contains the specified point; otherwise, false. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Determines whether the geometry's stroke contains the specified point given the specified stroke thickness, style, and transform.</summary>
+    <param name="point">The point to test for containment.</param>
+    <param name="strokeWidth">The thickness of the stroke to apply.</param>
+    <param name="strokeStyle">The style of stroke to apply.</param>
+    <param name="worldTransform">The transform to apply to the stroked geometry.</param>
+    <param name="contains">When this method returns, contains a boolean value set to true if the geometry's stroke contains the specified point; otherwise, false. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.StrokeContainsPoint">
-    <summary>
-      <para>Determines whether the geometry's stroke contains the specified point given the specified stroke thickness, style, and transform.</para>
-    </summary>
-    <param name="point">
-      <para>Type: [in] <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The point to test for containment.</para>
-    </param>
-    <param name="strokeWidth">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The thickness of the stroke to apply.</para>
-    </param>
-    <param name="strokeStyle">
-      <para>Type: [in, optional] <b><see cref="ID2D1StrokeStyle" />*</b></para>
-      <para>The style of stroke to apply.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> &amp;</b></para>
-      <para>The transform to apply to the stroked geometry.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The numeric accuracy with which the precise geometric path and path intersection is calculated. Points missing the stroke by less than the tolerance are still considered inside.  Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="contains">
-      <para>Type: [out] <b>BOOL*</b></para>
-      <para>When this method returns, contains a boolean value set to true if the geometry's stroke contains the specified point; otherwise, false. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Determines whether the geometry's stroke contains the specified point given the specified stroke thickness, style, and transform.</summary>
+    <param name="point">The point to test for containment.</param>
+    <param name="strokeWidth">The thickness of the stroke to apply.</param>
+    <param name="strokeStyle">The style of stroke to apply.</param>
+    <param name="worldTransform">The transform to apply to the stroked geometry.</param>
+    <param name="flatteningTolerance">The numeric accuracy with which the precise geometric path and path intersection is calculated. Points missing the stroke by less than the tolerance are still considered inside. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="contains">When this method returns, contains a boolean value set to true if the geometry's stroke contains the specified point; otherwise, false. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.Tessellate">
-    <summary>
-      <para>Creates a set of clockwise-wound triangles that cover the geometry after it has been transformed using the specified matrix and flattened using the specified tolerance.</para>
-    </summary>
-    <param name="worldTransform">
-      <para>Type: [in, optional] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to this geometry, or <b>NULL</b>.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="tessellationSink">
-      <para>Type: [in] <b><see cref="ID2D1TessellationSink" />*</b></para>
-      <para>The <see cref="ID2D1TessellationSink" /> to which the tessellated is appended.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Creates a set of clockwise-wound triangles that cover the geometry after it has been transformed using the specified matrix and flattened using the specified tolerance.</summary>
+    <param name="worldTransform">The transform to apply to this geometry, or <b>NULL</b>.</param>
+    <param name="flatteningTolerance">The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="tessellationSink">The <see cref="ID2D1TessellationSink" /> to which the tessellated is appended.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.Tessellate">
-    <summary>
-      <para>Creates a set of clockwise-wound triangles that cover the geometry after it has been transformed using the specified matrix and flattened using the default tolerance.</para>
-    </summary>
-    <param name="worldTransform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to this geometry.</para>
-    </param>
-    <param name="tessellationSink">
-      <para>Type: [in] <b><see cref="ID2D1TessellationSink" />*</b></para>
-      <para>The <see cref="ID2D1TessellationSink" /> to which the tessellated is appended.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Creates a set of clockwise-wound triangles that cover the geometry after it has been transformed using the specified matrix and flattened using the default tolerance.</summary>
+    <param name="worldTransform">The transform to apply to this geometry.</param>
+    <param name="tessellationSink">The <see cref="ID2D1TessellationSink" /> to which the tessellated is appended.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.Tessellate">
-    <summary>
-      <para>Creates a set of clockwise-wound triangles that cover the geometry after it has been transformed using the specified matrix and flattened using the specified tolerance.</para>
-    </summary>
-    <param name="worldTransform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> &amp;</b></para>
-      <para>The transform to apply to this geometry.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="tessellationSink">
-      <para>Type: [in] <b><see cref="ID2D1TessellationSink" />*</b></para>
-      <para>The <see cref="ID2D1TessellationSink" /> to which the tessellated is appended.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Creates a set of clockwise-wound triangles that cover the geometry after it has been transformed using the specified matrix and flattened using the specified tolerance.</summary>
+    <param name="worldTransform">The transform to apply to this geometry.</param>
+    <param name="flatteningTolerance">The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="tessellationSink">The <see cref="ID2D1TessellationSink" /> to which the tessellated is appended.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.Tessellate">
-    <summary>
-      <para>Creates a set of clockwise-wound triangles that cover the geometry after it has been transformed using the specified matrix and flattened using the default tolerance.</para>
-    </summary>
-    <param name="worldTransform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> &amp;</b></para>
-      <para>The transform to apply to this geometry.</para>
-    </param>
-    <param name="tessellationSink">
-      <para>Type: [in] <b><see cref="ID2D1TessellationSink" />*</b></para>
-      <para>The <see cref="ID2D1TessellationSink" /> to which the tessellated is appended.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Creates a set of clockwise-wound triangles that cover the geometry after it has been transformed using the specified matrix and flattened using the default tolerance.</summary>
+    <param name="worldTransform">The transform to apply to this geometry.</param>
+    <param name="tessellationSink">The <see cref="ID2D1TessellationSink" /> to which the tessellated is appended.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.Widen">
-    <summary>
-      <para>Widens the geometry by the specified stroke and writes the result to an <see cref="ID2D1SimplifiedGeometrySink" /> after it has been transformed by the specified matrix and flattened using the specified tolerance.</para>
-    </summary>
-    <param name="strokeWidth">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The amount by which to widen the geometry.</para>
-    </param>
-    <param name="strokeStyle">
-      <para>Type: [in, optional] <b><see cref="ID2D1StrokeStyle" />*</b></para>
-      <para>The style of stroke to apply to the geometry, or <b>NULL</b>.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: [in, optional] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to the geometry after widening it, or <b>NULL</b>.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="geometrySink">
-      <para>Type: [in] <b><see cref="ID2D1SimplifiedGeometrySink" />*</b></para>
-      <para>The <see cref="ID2D1SimplifiedGeometrySink" /> to which the widened geometry is appended.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Widens the geometry by the specified stroke and writes the result to an <see cref="ID2D1SimplifiedGeometrySink" /> after it has been transformed by the specified matrix and flattened using the specified tolerance.</summary>
+    <param name="strokeWidth">The amount by which to widen the geometry.</param>
+    <param name="strokeStyle">The style of stroke to apply to the geometry, or <b>NULL</b>.</param>
+    <param name="worldTransform">The transform to apply to the geometry after widening it, or <b>NULL</b>.</param>
+    <param name="flatteningTolerance">The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="geometrySink">The <see cref="ID2D1SimplifiedGeometrySink" /> to which the widened geometry is appended.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.Widen">
-    <summary>
-      <para>Widens the geometry by the specified stroke and writes the result to an <see cref="ID2D1SimplifiedGeometrySink" /> after it has been transformed by the specified matrix and flattened using the default tolerance.</para>
-    </summary>
-    <param name="strokeWidth">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The amount by which to widen the geometry.</para>
-    </param>
-    <param name="strokeStyle">
-      <para>Type: [in, optional] <b>const <see cref="ID2D1StrokeStyle" />*</b></para>
-      <para>The style of stroke to apply to the geometry, or <b>NULL</b>.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to the geometry after widening it.</para>
-    </param>
-    <param name="geometrySink">
-      <para>Type: [in] <b><see cref="ID2D1SimplifiedGeometrySink" />*</b></para>
-      <para>The <see cref="ID2D1SimplifiedGeometrySink" /> to which the widened geometry is appended.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Widens the geometry by the specified stroke and writes the result to an <see cref="ID2D1SimplifiedGeometrySink" /> after it has been transformed by the specified matrix and flattened using the default tolerance.</summary>
+    <param name="strokeWidth">The amount by which to widen the geometry.</param>
+    <param name="strokeStyle">The style of stroke to apply to the geometry, or <b>NULL</b>.</param>
+    <param name="worldTransform">The transform to apply to the geometry after widening it.</param>
+    <param name="geometrySink">The <see cref="ID2D1SimplifiedGeometrySink" /> to which the widened geometry is appended.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.Widen">
-    <summary>
-      <para>Widens the geometry by the specified stroke and writes the result to an <see cref="ID2D1SimplifiedGeometrySink" /> after it has been transformed by the specified matrix and flattened using the specified tolerance.</para>
-    </summary>
-    <param name="strokeWidth">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The amount by which to widen the geometry.</para>
-    </param>
-    <param name="strokeStyle">
-      <para>Type: [in, optional] <b><see cref="ID2D1StrokeStyle" />*</b></para>
-      <para>The style of stroke to apply to the geometry, or <b>NULL</b>.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> &amp;</b></para>
-      <para>The transform to apply to the geometry after widening it.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="geometrySink">
-      <para>Type: [in] <b><see cref="ID2D1SimplifiedGeometrySink" />*</b></para>
-      <para>The <see cref="ID2D1SimplifiedGeometrySink" /> to which the widened geometry is appended.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Widens the geometry by the specified stroke and writes the result to an <see cref="ID2D1SimplifiedGeometrySink" /> after it has been transformed by the specified matrix and flattened using the specified tolerance.</summary>
+    <param name="strokeWidth">The amount by which to widen the geometry.</param>
+    <param name="strokeStyle">The style of stroke to apply to the geometry, or <b>NULL</b>.</param>
+    <param name="worldTransform">The transform to apply to the geometry after widening it.</param>
+    <param name="flatteningTolerance">The maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="geometrySink">The <see cref="ID2D1SimplifiedGeometrySink" /> to which the widened geometry is appended.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry.Widen">
-    <summary>
-      <para>Widens the geometry by the specified stroke and writes the result to an <see cref="ID2D1SimplifiedGeometrySink" /> after it has been transformed by the specified matrix and flattened using the default tolerance.</para>
-    </summary>
-    <param name="strokeWidth">
-      <para>Type: [in] <b>FLOAT</b></para>
-      <para>The amount by which to widen the geometry.</para>
-    </param>
-    <param name="strokeStyle">
-      <para>Type: [in, optional] <b><see cref="ID2D1StrokeStyle" />*</b></para>
-      <para>The style of stroke to apply to the geometry, or <b>NULL</b>.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> &amp;</b></para>
-      <para>The transform to apply to the geometry after widening it.</para>
-    </param>
-    <param name="geometrySink">
-      <para>Type:  [in]<b><see cref="ID2D1SimplifiedGeometrySink" />*</b></para>
-      <para>The <see cref="ID2D1SimplifiedGeometrySink" /> to which the widened geometry is appended.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Widens the geometry by the specified stroke and writes the result to an <see cref="ID2D1SimplifiedGeometrySink" /> after it has been transformed by the specified matrix and flattened using the default tolerance.</summary>
+    <param name="strokeWidth">The amount by which to widen the geometry.</param>
+    <param name="strokeStyle">The style of stroke to apply to the geometry, or <b>NULL</b>.</param>
+    <param name="worldTransform">The transform to apply to the geometry after widening it.</param>
+    <param name="geometrySink">The <see cref="ID2D1SimplifiedGeometrySink" /> to which the widened geometry is appended.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Geometry">
-    <summary>
-      <para>Represents a geometry resource and defines a set of helper methods for manipulating and measuring geometric shapes.  Interfaces that inherit from <b>ID2D1Geometry</b> define specific shapes.</para>
-    </summary>
-    <remarks>
-      <para>There are several types of Direct2D geometry objects:  a  simple geometry (<see cref="ID2D1RectangleGeometry" />, <see cref="ID2D1RoundedRectangleGeometry" />, or <see cref="ID2D1EllipseGeometry" />), a path geometry (<see cref="ID2D1PathGeometry" />), or a composite geometry (<see cref="ID2D1GeometryGroup" /> and <see cref="ID2D1TransformedGeometry" />).</para>
-      <para>Direct2D geometries enable you to  describe two-dimensional figures and also offer  many uses, such as defining  hit-test regions,  clip regions, and even   animation paths.</para>
-      <para>Direct2D geometries are immutable and device-independent resources created by <see cref="ID2D1Factory" />.  In general, you should create geometries once and retain them for the life of the application, or until they need to be modified. For more information about device-independent and device-dependent resources, see  the <a href="https://docs.microsoft.com//windows/win32/Direct2D/resources-and-resource-domains">Resources Overview</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/geometries">Geometry Overview</seealso>
-    <seealso cref="ID2D1Resource" />
+    <summary>Represents a geometry resource and defines a set of helper methods for manipulating and measuring geometric shapes. Interfaces that inherit from <b>ID2D1Geometry</b> define specific shapes.</summary>
   </member>
 </doc>

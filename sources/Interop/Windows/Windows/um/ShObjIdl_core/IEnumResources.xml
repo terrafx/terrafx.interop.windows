@@ -3,64 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IEnumResources.Clone">
-    <summary>
-      <para>Clones a resource enumerator.</para>
-    </summary>
-    <param name="ppenumr">
-      <para>Type: <b><see cref="IEnumResources" />**</b></para>
-      <para>Contains the address of an <see cref="IEnumResources" /> interface pointer.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Clones a resource enumerator.</summary>
+    <param name="ppenumr">Contains the address of an <see cref="IEnumResources" /> interface pointer.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IEnumResources.Next">
-    <summary>
-      <para>Gets the next <see cref="SHELL_ITEM_RESOURCE" /> structure.</para>
-    </summary>
-    <param name="celt">
-      <para>Type: <b>ULONG</b></para>
-      <para>The number of resources requested. Currently, must be 1.</para>
-    </param>
-    <param name="psir">
-      <para>Type: <b><see cref="SHELL_ITEM_RESOURCE" />*</b></para>
-      <para>Receives a pointer to a <see cref="SHELL_ITEM_RESOURCE" /> structure.</para>
-    </param>
-    <param name="pceltFetched">
-      <para>Type: <b>ULONG*</b></para>
-      <para>A pointer to the number of resources retrieved. Currently, not used.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the next <see cref="SHELL_ITEM_RESOURCE" /> structure.</summary>
+    <param name="celt">The number of resources requested. Currently, must be 1.</param>
+    <param name="psir">Receives a pointer to a <see cref="SHELL_ITEM_RESOURCE" /> structure.</param>
+    <param name="pceltFetched">A pointer to the number of resources retrieved. Currently, not used.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IEnumResources.Reset">
-    <summary>
-      <para>Resets the enumeration index to 0.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Resets the enumeration index to 0.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IEnumResources.Skip">
-    <summary>
-      <para>Skips a specified number of resources.</para>
-    </summary>
-    <param name="celt">
-      <para>Type: <b>ULONG</b></para>
-      <para>The number of resources to skip.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Skips a specified number of resources.</summary>
+    <param name="celt">The number of resources to skip.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IEnumResources">
-    <summary>
-      <para>Exposes resource enumeration methods.</para>
-    </summary>
+    <summary>Exposes resource enumeration methods.</summary>
   </member>
 </doc>

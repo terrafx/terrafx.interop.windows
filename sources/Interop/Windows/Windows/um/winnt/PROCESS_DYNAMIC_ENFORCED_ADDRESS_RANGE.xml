@@ -4,22 +4,15 @@
 <doc>
   <member name="PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE">
     <summary>
-      <blockquote>
-        <para>[!NOTE]
-This API was added to the 19041 SDK in an update released in November 2020.</para>
-      </blockquote>
+      <blockquote>[!NOTE] This API was added to the 19041 SDK in an update released in November 2020.</blockquote>
       <para>Contains dynamic enforced address ranges used by various features related to user-mode Hardware-enforced Stack Protection (HSP). The <see cref="SetProcessDynamicEnforcedCetCompatibleRanges" /> function uses this structure.</para>
     </summary>
   </member>
   <member name="PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE.BaseAddress">
-    <summary>
-      <para>The base address of a dynamic enforced address range.</para>
-    </summary>
+    <summary>The base address of a dynamic enforced address range.</summary>
   </member>
   <member name="PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE.Size">
-    <summary>
-      <para>The size in bytes of a dynamic enforced address range.</para>
-    </summary>
+    <summary>The size in bytes of a dynamic enforced address range.</summary>
   </member>
   <member name="PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE.Flags">
     <summary>
@@ -29,41 +22,36 @@ This API was added to the 19041 SDK in an update released in November 2020.</par
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DYNAMIC_ENFORCED_ADDRESS_RANGE_ADD</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001UL</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001UL</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Dynamic enforced address range should be added. If this flag is not set, the range is removed. This is an input flag.</para>
-          </description>
-        </item>
-        <item>
+          <description>Dynamic enforced address range should be added. If this flag is not set, the range is removed. This is an input flag.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DYNAMIC_ENFORCED_ADDRESS_RANGE_PROCESSED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002UL</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002UL</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Dynamic enforced address range has been successfully processed (either added or removed).
-This is an output flag used to report which ranges were successfully processed when processing an array of multiple ranges.</para>
-          </description>
-        </item>
+          <description>Dynamic enforced address range has been successfully processed (either added or removed). This is an output flag used to report which ranges were successfully processed when processing an array of multiple ranges.</description>
+        </listheader>
       </list>
     </summary>
   </member>

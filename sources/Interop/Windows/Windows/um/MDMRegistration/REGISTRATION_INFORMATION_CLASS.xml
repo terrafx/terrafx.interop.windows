@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="REGISTRATION_INFORMATION_CLASS">
-    <summary>
-      <para>Contains information about the device registration.</para>
-    </summary>
-    <seealso cref="DiscoverManagementService" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-structures">MDM Registration Structures</seealso>
+    <summary>Contains information about the device registration.</summary>
   </member>
   <member name="REGISTRATION_INFORMATION_CLASS.DeviceRegistrationBasicInfo">
-    <summary>
-      <para>Information about the device registration.</para>
-    </summary>
+    <summary>Information about the device registration.</summary>
   </member>
-  <member name="REGISTRATION_INFORMATION_CLASS.MaxDeviceInfoClass">
-    <summary></summary>
-  </member>
+  <member name="REGISTRATION_INFORMATION_CLASS.MaxDeviceInfoClass"></member>
 </doc>

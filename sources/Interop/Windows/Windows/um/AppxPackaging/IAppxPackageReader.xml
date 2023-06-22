@@ -3,156 +3,85 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxPackageReader.GetBlockMap">
-    <summary>
-      <para>Retrieves the block map object model of the package.</para>
-    </summary>
-    <param name="blockMapReader">
-      <para>Type: <b><see cref="IAppxBlockMapReader" />**</b></para>
-      <para>The object model of the block map of the package.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The package block map is validated when the package reader is created using <see cref="IAppxFactory" />.</para>
-    </remarks>
-    <seealso cref="IAppxPackageReader" />
+    <summary>Retrieves the block map object model of the package.</summary>
+    <param name="blockMapReader">The object model of the block map of the package.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxPackageReader.GetFootprintFile">
-    <summary>
-      <para>Retrieves a footprint file from the package.</para>
-    </summary>
-    <param name="type">
-      <para>Type: <b><see cref="APPX_FOOTPRINT_FILE_TYPE" /></b></para>
-      <para>The type of footprint file to be retrieved.</para>
-    </param>
-    <param name="file">
-      <para>Type: <b><see cref="IAppxFile" />**</b></para>
-      <para>The file object that corresponds to the footprint file of <i>type</i>.</para>
-    </param>
+    <summary>Retrieves a footprint file from the package.</summary>
+    <param name="type">The type of footprint file to be retrieved.</param>
+    <param name="file">The file object that corresponds to the footprint file of <i>type</i>.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code that includes, but is not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <i>type</i> parameter is not a member of the <see cref="APPX_FOOTPRINT_FILE_TYPE" /> enumeration.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <i>type</i> parameter is not a member of the <see cref="APPX_FOOTPRINT_FILE_TYPE" /> enumeration.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND)</b>
-            </para>
-          </description>
-          <description>
-            <para>The package does not contain a footprint file of the specified type.</para>
-            <para>
-              <see cref="GetFootprintFile" /> can return this error for <see cref="APPX_FOOTPRINT_FILE_TYPE_SIGNATURE" /> and <see cref="APPX_FOOTPRINT_FILE_TYPE_CODEINTEGRITY" /> types.</para>
-          </description>
-        </item>
+          <description>The package does not contain a footprint file of the specified type.<para><see cref="GetFootprintFile" /> can return this error for <see cref="APPX_FOOTPRINT_FILE_TYPE_SIGNATURE" /> and <see cref="APPX_FOOTPRINT_FILE_TYPE_CODEINTEGRITY" /> types.</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IAppxFile" />
-    <seealso cref="IAppxPackageReader" />
-    <seealso cref="IAppxPackageReader.GetPayloadFile" />
-    <seealso cref="IAppxPackageReader.GetPayloadFiles" />
   </member>
   <member name="IAppxPackageReader.GetManifest">
-    <summary>
-      <para>Retrieves the object model of the app manifest of the package.</para>
-    </summary>
-    <param name="manifestReader">
-      <para>Type: <b><see cref="IAppxManifestReader" />**</b></para>
-      <para>The object model of the app manifest.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The package app manifest is validated when the package reader is created using <see cref="IAppxFactory" />.</para>
-      <h4>Examples</h4>
-      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-query-package-identity-information">Quickstart: Read app package manifest info</a>.</para>
-    </remarks>
-    <seealso cref="IAppxPackageReader" />
+    <summary>Retrieves the object model of the app manifest of the package.</summary>
+    <param name="manifestReader">The object model of the app manifest.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxPackageReader.GetPayloadFile">
-    <summary>
-      <para>Retrieves a payload file from the package.</para>
-    </summary>
-    <param name="fileName">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCWSTR</a></b></para>
-      <para>The name of the payload file to be retrieved.</para>
-    </param>
-    <param name="file">
-      <para>Type: <b><see cref="IAppxFile" />**</b></para>
-      <para>The file object that corresponds to <i>fileName</i>.</para>
-    </param>
+    <summary>Retrieves a payload file from the package.</summary>
+    <param name="fileName">The name of the payload file to be retrieved.</param>
+    <param name="file">The file object that corresponds to <i>fileName</i>.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code that includes, but is not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND)</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>There is no payload file with the specified file name.</para>
-          </description>
-        </item>
+          <description>There is no payload file with the specified file name.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The specified <i>fileName</i> must include the path relative to the package root directory.</para>
-    </remarks>
-    <seealso cref="IAppxFile" />
-    <seealso cref="IAppxPackageReader" />
-    <seealso cref="IAppxPackageReader.GetFootprintFile" />
-    <seealso cref="IAppxPackageReader.GetPayloadFiles" />
   </member>
   <member name="IAppxPackageReader.GetPayloadFiles">
-    <summary>
-      <para>Retrieves an enumerator that iterates through the payload files in the package.</para>
-    </summary>
-    <param name="filesEnumerator">
-      <para>Type: <b><see cref="IAppxFilesEnumerator" />**</b></para>
-      <para>An enumerator over all payload files in the package.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxPackageReader" />
-    <seealso cref="IAppxPackageReader.GetFootprintFile" />
-    <seealso cref="IAppxPackageReader.GetPayloadFile" />
+    <summary>Retrieves an enumerator that iterates through the payload files in the package.</summary>
+    <param name="filesEnumerator">An enumerator over all payload files in the package.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxPackageReader">
-    <summary>
-      <para>Provides a read-only object model for app packages.</para>
-    </summary>
-    <remarks>
-      <para>The <b>IAppxPackageReader</b> interface provides the ability to access payload files from a package and to query metadata from footprint files.</para>
-      <para>This object can be retrieved using the <see cref="CreatePackageReader" /> method of the <see cref="IAppxFactory" /> interface.</para>
-      <h4>Examples</h4>
-      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-extract-content-from-a-package">Quickstart: Extract app package contents</a> and <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-query-package-identity-information">Quickstart: Read app package manifest info</a>.</para>
-    </remarks>
-    <seealso cref="IAppxPackageWriter" />
+    <summary>Provides a read-only object model for app packages.</summary>
   </member>
 </doc>

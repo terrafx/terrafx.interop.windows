@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_RESIDENCY_FLAGS">
-    <summary>
-      <para>Used with the EnqueuMakeResident function to choose how residency operations proceed when the memory budget is exceeded.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-12-enumerations">Core Enumerations</seealso>
+    <summary>Used with the EnqueuMakeResident function to choose how residency operations proceed when the memory budget is exceeded.</summary>
   </member>
   <member name="D3D12_RESIDENCY_FLAGS.D3D12_RESIDENCY_FLAG_NONE">
-    <summary>
-      <para>Specifies the default residency policy, which allows residency operations to succeed regardless of the application's current memory budget. EnqueueMakeResident returns E_OUTOFMEMORY only when there is no memory available.</para>
-    </summary>
+    <summary>Specifies the default residency policy, which allows residency operations to succeed regardless of the application's current memory budget. EnqueueMakeResident returns E_OUTOFMEMORY only when there is no memory available.</summary>
   </member>
   <member name="D3D12_RESIDENCY_FLAGS.D3D12_RESIDENCY_FLAG_DENY_OVERBUDGET">
-    <summary>
-      <para>Specifies that the EnqueueMakeResident function should return E_OUTOFMEMORY when the residency operation would exceed the application's current memory budget.</para>
-    </summary>
+    <summary>Specifies that the EnqueueMakeResident function should return E_OUTOFMEMORY when the residency operation would exceed the application's current memory budget.</summary>
   </member>
 </doc>

@@ -3,15 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFMediaEngineOPMInfo.GetOPMInfo">
-    <summary>
-      <para>Gets status information about the   <a href="https://docs.microsoft.com//windows/desktop/medfound/output-protection-manager">Output Protection Manager</a>  (OPM).</para>
-    </summary>
+    <summary>Gets status information about the <a href="https://docs.microsoft.com//windows/desktop/medfound/output-protection-manager">Output Protection Manager</a> (OPM).</summary>
     <param name="pStatus">
-      <para>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-media-engine-opm-status">MF_MEDIA_ENGINE_OPM_STATUS</a> enum type that indicates the OPM status.</para>
+      <code> A pointer to a &lt;a href="/windows/desktop/medfound/mf-media-engine-opm-status"&gt;MF_MEDIA_ENGINE_OPM_STATUS&lt;/a&gt; enum type that indicates the OPM status.</code>
     </param>
-    <param name="pConstricted">
-      <para>A pointer to a <b>BOOL</b> type that indicates the constriction status.</para>
-    </param>
+    <param name="pConstricted">A pointer to a <b>BOOL</b> type that indicates the constriction status.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -19,38 +15,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>If any of the parameters are <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>If any of the parameters are <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFMediaEngineOPMInfo" />
   </member>
   <member name="IMFMediaEngineOPMInfo">
-    <summary>
-      <para>Provides methods for getting information about the   <a href="https://docs.microsoft.com//windows/desktop/medfound/output-protection-manager">Output Protection Manager</a>  (OPM).</para>
-    </summary>
-    <remarks>
-      <para>To get a pointer to this interface, call <see cref="QueryInterface" /> on the Media Engine.</para>
-      <para>The <b>MF_MEDIA_ENGINE_EVENT_OPMINFO</b><see cref="IMFMediaEvent" /> event is raised when there is a change in the OPM status.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Provides methods for getting information about the <a href="https://docs.microsoft.com//windows/desktop/medfound/output-protection-manager">Output Protection Manager</a> (OPM).</summary>
   </member>
 </doc>

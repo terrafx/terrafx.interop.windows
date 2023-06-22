@@ -3,32 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_SHARING_ENGINE_EVENT">
-    <summary>
-      <para>Defines events that are sent by the sharing engine.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Defines events that are sent by the sharing engine.</summary>
   </member>
   <member name="MF_SHARING_ENGINE_EVENT.MF_SHARING_ENGINE_EVENT_DISCONNECT">
-    <summary>
-      <para>Reserved for internal use.</para>
-    </summary>
+    <summary>Reserved for internal use.</summary>
   </member>
   <member name="MF_SHARING_ENGINE_EVENT.MF_SHARING_ENGINE_EVENT_LOCALRENDERINGSTARTED">
-    <summary>
-      <para>Reserved for internal use.</para>
-    </summary>
+    <summary>Reserved for internal use.</summary>
   </member>
   <member name="MF_SHARING_ENGINE_EVENT.MF_SHARING_ENGINE_EVENT_LOCALRENDERINGENDED">
-    <summary>
-      <para>Reserved for internal use.</para>
-    </summary>
+    <summary>Reserved for internal use.</summary>
   </member>
   <member name="MF_SHARING_ENGINE_EVENT.MF_SHARING_ENGINE_EVENT_STOPPED">
-    <summary>
-      <para>The device has stopped.</para>
-    </summary>
+    <summary>The device has stopped.</summary>
   </member>
-  <member name="MF_SHARING_ENGINE_EVENT.MF_SHARING_ENGINE_EVENT_ERROR">
-    <summary></summary>
-  </member>
+  <member name="MF_SHARING_ENGINE_EVENT.MF_SHARING_ENGINE_EVENT_ERROR"></member>
 </doc>

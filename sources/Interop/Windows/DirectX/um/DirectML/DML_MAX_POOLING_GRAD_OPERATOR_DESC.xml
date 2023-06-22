@@ -6,73 +6,38 @@
     <summary>
       <para>Computes backpropagation gradients for max pooling (see <see cref="DML_MAX_POOLING2_OPERATOR_DESC" />).</para>
       <para>Consider a 2x2 <b>DML_MAX_POOLING2_OPERATOR_DESC</b> without padding nor dilations and a stride of 1, which performs the following.</para>
-      <code>InputTensor             OutputTensor    IndicesTensor
-[[1, 2, 3],   MaxPool    [[4, 4],        [[4, 4],
- [2, 4, 2],     --&gt;       [6, 7]]         [7, 8]]
- [5, 6, 7]]
-</code>
+      <code>InputTensor OutputTensor IndicesTensor [[1, 2, 3], MaxPool [[4, 4], [[4, 4], [2, 4, 2], --&gt; [6, 7]] [7, 8]] [5, 6, 7]]</code>
       <para>The largest element of each 2x2 window in the input tensor produces one element of the output. Below is an example of the output of <b>DML_MAX_POOLING_GRAD_OPERATOR_DESC</b>, given similar parameters.</para>
-      <code>InputTensor   InputGradientTensor            OutputGradientTensor
-[[1, 2, 3],       [[1, 2],     MaxPoolGrad   [[0, 0, 0],
- [2, 4, 2],        [4, 5]]         --&gt;        [0, 3, 0],
- [5, 6, 7]]                                   [0, 4, 5]]
-</code>
+      <code>InputTensor InputGradientTensor OutputGradientTensor [[1, 2, 3], [[1, 2], MaxPoolGrad [[0, 0, 0], [2, 4, 2], [4, 5]] --&gt; [0, 3, 0], [5, 6, 7]] [0, 4, 5]]</code>
       <para>In effect, this operator uses the <i>InputTensor</i> to determine the index of the largest element from each window, and distributes the values of <i>InputGradientTensor</i> into the <i>OutputGradientTensor</i> based on these indices. Where indices overlap, the values are summed. Any unreferenced output elements are zeroed.</para>
       <para>In the case of a tie (where more than one element in a window has the same maximum value), the element with the lowest logical element index is chosen.</para>
     </summary>
   </member>
   <member name="DML_MAX_POOLING_GRAD_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The input feature tensor. This is typically the same tensor that was provided as the <i>InputTensor</i> to <see cref="DML_MAX_POOLING2_OPERATOR_DESC" /> in the forward pass.</para>
-    </summary>
+    <summary>The input feature tensor. This is typically the same tensor that was provided as the <i>InputTensor</i> to <see cref="DML_MAX_POOLING2_OPERATOR_DESC" /> in the forward pass.</summary>
   </member>
   <member name="DML_MAX_POOLING_GRAD_OPERATOR_DESC.InputGradientTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The incoming gradient tensor. This is typically obtained from the output of backpropagation of a preceding layer. Typically this tensor would have the same sizes as the <i>output</i> of the corresponding <see cref="DML_MAX_POOLING2_OPERATOR_DESC" /> in the forward pass.</para>
-    </summary>
+    <summary>The incoming gradient tensor. This is typically obtained from the output of backpropagation of a preceding layer. Typically this tensor would have the same sizes as the <i>output</i> of the corresponding <see cref="DML_MAX_POOLING2_OPERATOR_DESC" /> in the forward pass.</summary>
   </member>
   <member name="DML_MAX_POOLING_GRAD_OPERATOR_DESC.OutputGradientTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An output tensor containing the backpropagated gradients. Typically this tensor would have the same sizes as the <i>input</i> of the corresponding <see cref="DML_MAX_POOLING2_OPERATOR_DESC" /> in the forward pass.</para>
-    </summary>
+    <summary>An output tensor containing the backpropagated gradients. Typically this tensor would have the same sizes as the <i>input</i> of the corresponding <see cref="DML_MAX_POOLING2_OPERATOR_DESC" /> in the forward pass.</summary>
   </member>
   <member name="DML_MAX_POOLING_GRAD_OPERATOR_DESC.DimensionCount">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The number of elements in the <i>Strides</i>, <i>WindowSize</i>, <i>StartPadding</i>, <i>EndPadding</i>, and <i>Dilations</i> arrays. This value must equal the spatial dimension count (InputTensor's DimensionCount - 2). As this operator only supports 4D tensors, the only valid value for this parameter is 2.</para>
-    </summary>
+    <summary>The number of elements in the <i>Strides</i>, <i>WindowSize</i>, <i>StartPadding</i>, <i>EndPadding</i>, and <i>Dilations</i> arrays. This value must equal the spatial dimension count (InputTensor's DimensionCount - 2). As this operator only supports 4D tensors, the only valid value for this parameter is 2.</summary>
   </member>
   <member name="DML_MAX_POOLING_GRAD_OPERATOR_DESC.Strides">
-    <summary>
-      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
-      <para>See <i>Strides</i> in <see cref="DML_MAX_POOLING2_OPERATOR_DESC" />.</para>
-    </summary>
+    <summary>See <i>Strides</i> in <see cref="DML_MAX_POOLING2_OPERATOR_DESC" />.</summary>
   </member>
   <member name="DML_MAX_POOLING_GRAD_OPERATOR_DESC.WindowSize">
-    <summary>
-      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
-      <para>See <i>WindowSize</i> in <see cref="DML_MAX_POOLING2_OPERATOR_DESC" />.</para>
-    </summary>
+    <summary>See <i>WindowSize</i> in <see cref="DML_MAX_POOLING2_OPERATOR_DESC" />.</summary>
   </member>
   <member name="DML_MAX_POOLING_GRAD_OPERATOR_DESC.StartPadding">
-    <summary>
-      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
-      <para>See <i>StartPadding</i> in <see cref="DML_MAX_POOLING2_OPERATOR_DESC" />.</para>
-    </summary>
+    <summary>See <i>StartPadding</i> in <see cref="DML_MAX_POOLING2_OPERATOR_DESC" />.</summary>
   </member>
   <member name="DML_MAX_POOLING_GRAD_OPERATOR_DESC.EndPadding">
-    <summary>
-      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
-      <para>See <i>EndPadding</i> in <see cref="DML_MAX_POOLING2_OPERATOR_DESC" />.</para>
-    </summary>
+    <summary>See <i>EndPadding</i> in <see cref="DML_MAX_POOLING2_OPERATOR_DESC" />.</summary>
   </member>
   <member name="DML_MAX_POOLING_GRAD_OPERATOR_DESC.Dilations">
-    <summary>
-      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
-      <para>See <i>Dilations</i> in <see cref="DML_MAX_POOLING2_OPERATOR_DESC" />.</para>
-    </summary>
+    <summary>See <i>Dilations</i> in <see cref="DML_MAX_POOLING2_OPERATOR_DESC" />.</summary>
   </member>
 </doc>

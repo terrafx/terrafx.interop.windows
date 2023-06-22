@@ -3,28 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PrintDocumentPackageCompletion">
-    <summary>
-      <para>The PrintDocumentPackageCompletion enumeration specifies the status of the print operation.</para>
-    </summary>
+    <summary>The PrintDocumentPackageCompletion enumeration specifies the status of the print operation.</summary>
   </member>
   <member name="PrintDocumentPackageCompletion.PrintDocumentPackageCompletion_InProgress">
-    <summary>
-      <para>The print job is running.</para>
-    </summary>
+    <summary>The print job is running.</summary>
   </member>
   <member name="PrintDocumentPackageCompletion.PrintDocumentPackageCompletion_Completed">
-    <summary>
-      <para>The print operation completed without error.</para>
-    </summary>
+    <summary>The print operation completed without error.</summary>
   </member>
   <member name="PrintDocumentPackageCompletion.PrintDocumentPackageCompletion_Canceled">
-    <summary>
-      <para>The print operation was canceled.</para>
-    </summary>
+    <summary>The print operation was canceled.</summary>
   </member>
   <member name="PrintDocumentPackageCompletion.PrintDocumentPackageCompletion_Failed">
-    <summary>
-      <para>The print operation failed.</para>
-    </summary>
+    <summary>The print operation failed.</summary>
   </member>
 </doc>

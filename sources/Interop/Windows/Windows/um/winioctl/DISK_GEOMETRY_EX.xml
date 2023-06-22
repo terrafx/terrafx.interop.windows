@@ -3,41 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DISK_GEOMETRY_EX">
-    <summary>
-      <para>Describes the extended geometry of disk devices and media.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>DISK_GEOMETRY_EX</b> is a variable-length structure composed of a <see cref="DISK_GEOMETRY" /> structure followed by a <see cref="DISK_PARTITION_INFO" /> structure and a <see cref="DISK_DETECTION_INFO" /> structure. Because the detection information is not at a fixed location within the <b>DISK_GEOMETRY_EX</b> structure, use the following macro to access the <b>DISK_DETECTION_INFO</b> structure.</para>
-      <code>PDISK_DETECTION_INFO DiskGeometryGetDetect(
-  PDISK_GEOMETRY_EX Geometry
-);
-</code>
-      <para>Similarly, use the following macro to access the <see cref="DISK_PARTITION_INFO" /> structure.</para>
-      <code>PDISK_PARTITION_INFO DiskGeometryGetPartition(
-  PDISK_GEOMETRY_EX Geometry
-);
-</code>
-      <para>The information returned does not include the number of partitions nor the partition information contained in the <see cref="DISK_PARTITION_INFO" /> structure. To obtain this information, use the <a href="https://docs.microsoft.com/ni-winioctl-ioctl_disk_get_drive_layout_ex.md">IOCTL_DISK_GET_DRIVE_LAYOUT_EX</a> control code.</para>
-    </remarks>
-    <seealso cref="DISK_GEOMETRY" />
-    <seealso cref="DISK_DETECTION_INFO" />
-    <seealso cref="DISK_PARTITION_INFO" />
-    <seealso href="https://docs.microsoft.com/ni-winioctl-ioctl_disk_get_drive_geometry_ex.md">IOCTL_DISK_GET_DRIVE_GEOMETRY_EX</seealso>
+    <summary>Describes the extended geometry of disk devices and media.</summary>
   </member>
   <member name="DISK_GEOMETRY_EX.Geometry">
-    <summary>
-      <para>A <see cref="DISK_GEOMETRY" /> structure.</para>
-    </summary>
+    <summary>A <see cref="DISK_GEOMETRY" /> structure.</summary>
   </member>
   <member name="DISK_GEOMETRY_EX.DiskSize">
-    <summary>
-      <para>The disk size, in bytes. See <see cref="LARGE_INTEGER" />.</para>
-    </summary>
+    <summary>The disk size, in bytes. See <see cref="LARGE_INTEGER" />.</summary>
   </member>
   <member name="DISK_GEOMETRY_EX.Data">
-    <summary>
-      <para>Any additional data. For more information, see Remarks.</para>
-    </summary>
+    <summary>Any additional data. For more information, see Remarks.</summary>
   </member>
 </doc>

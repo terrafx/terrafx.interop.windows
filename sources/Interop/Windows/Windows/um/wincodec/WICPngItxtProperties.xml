@@ -3,36 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICPngItxtProperties">
-    <summary>
-      <para>Specifies the Portable Network Graphics (PNG) iTXT chunk metadata properties.</para>
-    </summary>
+    <summary>Specifies the Portable Network Graphics (PNG) iTXT chunk metadata properties.</summary>
   </member>
   <member name="WICPngItxtProperties.WICPngItxtKeyword">
-    <summary>
-      <para>[VT_LPSTR] Indicates the keywords in the iTXT metadata chunk.</para>
-    </summary>
+    <summary>[VT_LPSTR] Indicates the keywords in the iTXT metadata chunk.</summary>
   </member>
   <member name="WICPngItxtProperties.WICPngItxtCompressionFlag">
-    <summary>
-      <para>[VT_UI1] Indicates whether the text in the iTXT chunk is compressed. 1 if the text is compressed; otherwise, 0.</para>
-    </summary>
+    <summary>[VT_UI1] Indicates whether the text in the iTXT chunk is compressed. 1 if the text is compressed; otherwise, 0.</summary>
   </member>
   <member name="WICPngItxtProperties.WICPngItxtLanguageTag">
-    <summary>
-      <para>[VT_LPSTR] Indicates the human language used by the translated keyword and the text.</para>
-    </summary>
+    <summary>[VT_LPSTR] Indicates the human language used by the translated keyword and the text.</summary>
   </member>
   <member name="WICPngItxtProperties.WICPngItxtTranslatedKeyword">
-    <summary>
-      <para>[VT_LPWSTR] Indicates a translation of the keyword into the language indicated by the language tag.</para>
-    </summary>
+    <summary>[VT_LPWSTR] Indicates a translation of the keyword into the language indicated by the language tag.</summary>
   </member>
   <member name="WICPngItxtProperties.WICPngItxtText">
-    <summary>
-      <para>[VT_LPWSTR] Indicates additional text in the iTXT metadata chunk.</para>
-    </summary>
+    <summary>[VT_LPWSTR] Indicates additional text in the iTXT metadata chunk.</summary>
   </member>
-  <member name="WICPngItxtProperties.WICPngItxtProperties_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICPngItxtProperties.WICPngItxtProperties_FORCE_DWORD"></member>
 </doc>

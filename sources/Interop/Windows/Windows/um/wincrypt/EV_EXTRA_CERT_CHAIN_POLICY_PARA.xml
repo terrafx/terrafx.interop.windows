@@ -3,14 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EV_EXTRA_CERT_CHAIN_POLICY_PARA">
-    <summary>
-      <para>The <b>EV_EXTRA_CERT_CHAIN_POLICY_PARA</b> structure specifies the parameters that are  passed in for EV policy validation. Applications use this structure to pass hints to the API that indicate which of the  policy qualifier flags of the extended validation certificates are important to the application.</para>
-    </summary>
+    <summary>The <b>EV_EXTRA_CERT_CHAIN_POLICY_PARA</b> structure specifies the parameters that are passed in for EV policy validation. Applications use this structure to pass hints to the API that indicate which of the policy qualifier flags of the extended validation certificates are important to the application.</summary>
   </member>
   <member name="EV_EXTRA_CERT_CHAIN_POLICY_PARA.cbSize">
-    <summary>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="EV_EXTRA_CERT_CHAIN_POLICY_PARA.dwRootProgramQualifierFlags">
     <summary>
@@ -20,58 +16,51 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_ROOT_PROGRAM_FLAG_LSC</b>
-                </description>
-              </item>
-              <item>
-                <description>0x40</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x40</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Validation of the Locale (L), State (S), and Country (C) fields in
-the subject name meets Root Program Requirements for display.</para>
-          </description>
-        </item>
-        <item>
+          <description>Validation of the Locale (L), State (S), and Country (C) fields in the subject name meets Root Program Requirements for display.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_ROOT_PROGRAM_FLAG_ORG</b>
-                </description>
-              </item>
-              <item>
-                <description>0x80</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x80</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Validation of the Organization (O) field in the subject name meets Root Program Requirements for display.</para>
-          </description>
-        </item>
-        <item>
+          <description>Validation of the Organization (O) field in the subject name meets Root Program Requirements for display.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_ROOT_PROGRAM_FLAG_SUBJECT_LOGO</b>
-                </description>
-              </item>
-              <item>
-                <description>0x20</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x20</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Validation of the  Subject logotype meets Root Program Requirements for display.</para>
-          </description>
-        </item>
+          <description>Validation of the Subject logotype meets Root Program Requirements for display.</description>
+        </listheader>
       </list>
     </summary>
   </member>

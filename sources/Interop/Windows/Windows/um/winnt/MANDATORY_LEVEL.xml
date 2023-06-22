@@ -3,43 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MANDATORY_LEVEL">
-    <summary>
-      <para>The <b>MANDATORY_LEVEL</b> enumeration lists the possible security levels.</para>
-    </summary>
+    <summary>The <b>MANDATORY_LEVEL</b> enumeration lists the possible security levels.</summary>
   </member>
   <member name="MANDATORY_LEVEL.MandatoryLevelUntrusted">
-    <summary>
-      <para>The required security level is untrusted.</para>
-    </summary>
+    <summary>The required security level is untrusted.</summary>
   </member>
   <member name="MANDATORY_LEVEL.MandatoryLevelLow">
-    <summary>
-      <para>The required security level is low.</para>
-    </summary>
+    <summary>The required security level is low.</summary>
   </member>
   <member name="MANDATORY_LEVEL.MandatoryLevelMedium">
-    <summary>
-      <para>The required security level is medium.</para>
-    </summary>
+    <summary>The required security level is medium.</summary>
   </member>
   <member name="MANDATORY_LEVEL.MandatoryLevelHigh">
-    <summary>
-      <para>The required security level is high.</para>
-    </summary>
+    <summary>The required security level is high.</summary>
   </member>
   <member name="MANDATORY_LEVEL.MandatoryLevelSystem">
-    <summary>
-      <para>The required security level is system.</para>
-    </summary>
+    <summary>The required security level is system.</summary>
   </member>
   <member name="MANDATORY_LEVEL.MandatoryLevelSecureProcess">
-    <summary>
-      <para>The required security level is a secure process.</para>
-    </summary>
+    <summary>The required security level is a secure process.</summary>
   </member>
   <member name="MANDATORY_LEVEL.MandatoryLevelCount">
-    <summary>
-      <para>The count of the mandatory level.</para>
-    </summary>
+    <summary>The count of the mandatory level.</summary>
   </member>
 </doc>

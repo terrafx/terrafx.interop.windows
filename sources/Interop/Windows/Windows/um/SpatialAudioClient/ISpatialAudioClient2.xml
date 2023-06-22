@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISpatialAudioClient2.GetMaxFrameCountForCategory">
+    <summary>Gets the maximum supported frame count per processing pass.</summary>
+    <param name="category">The of the audio stream for which support is queried.</param>
+    <param name="offloadEnabled">A boolean value specifying whether the returned frame count should be calculated with audio offload support considered. If this flag is set to true, the returned frame count is what it would be if the stream is activated for offload mode. However, if this flag is set to true but the audio endpoint does not support offload mode, then the flag has no effect. Use <see cref="ISpatialAudioClient2.IsOffloadCapable" /> to check if offload mode is supported.</param>
+    <param name="objectFormat">A pointer to a structure specifying the format of the audio stream for which support is queried.</param>
+    <param name="frameCountPerBuffer">Receives a pointer to an <b>INT32</b> indicating the maximum supported frame count for the audio device and the specified input parameters.</param>
+    <returns>
+      <para>An HRESULT including the following values.</para>
+      <para>| Value | Description | |-------|-------------| | S_OK | Success | | AUDCLNT_E_DEVICE_INVALIDATED | The audio device associated with the audio client has been invalidated. |</para>
+    </returns>
+  </member>
+  <member name="ISpatialAudioClient2.IsOffloadCapable">
+    <summary>Queries whether the audio rendering endpoint that the was created on supports hardware offloaded audio processing. The method also considers the capabilities of the value that will be used, as use of offload is restricted to only certain <b>AUDIO_STREAM_CATEGORY</b> values.</summary>
+    <param name="category">A value from the enumeration specifying the category of audio for which offload support is queried.</param>
+    <param name="isOffloadCapable">Receives a boolean value indicating if offloaded audio processing is supported by the audio rendering endpoint.</param>
+    <returns>
+      <para>An HRESULT including the following values.</para>
+      <para>| Value | Description | |-------|-------------| | S_OK | Success | | AUDCLNT_E_DEVICE_INVALIDATED | The audio device associated with the audio client has been invalidated. | | E_INVALIDARG | The value supplied in the <i>category</i> parameter is not valid. |</para>
+    </returns>
+  </member>
+  <member name="ISpatialAudioClient2">
+    <summary>The <b>ISpatialAudioClient2</b> interface inherits from and adds methods to query for support for offloading large audio buffers.</summary>
+  </member>
+</doc>

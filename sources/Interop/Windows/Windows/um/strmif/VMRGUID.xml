@@ -4,21 +4,14 @@
 <doc>
   <member name="VMRGUID">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <see cref="VMRMONITORINFO" /> structure and is used to identify a monitor on the system (VMR-7 only).</para>
     </summary>
-    <remarks>
-      <para>In DirectX 9.0 and later, the monitor is identified by an integer index, not by a GUID.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="VMRGUID.pGUID">
-    <summary>
-      <para>Pointer to the GUID member of the structure. <b>pGUID</b> is <b>NULL</b> if the monitor is the default DirectDraw device.</para>
-    </summary>
+    <summary>Pointer to the GUID member of the structure. <b>pGUID</b> is <b>NULL</b> if the monitor is the default DirectDraw device.</summary>
   </member>
   <member name="VMRGUID.GUID">
-    <summary>
-      <para>Specifies the GUID for the monitor.</para>
-    </summary>
+    <summary>Specifies the GUID for the monitor.</summary>
   </member>
 </doc>

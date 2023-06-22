@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ARRAYDESC">
-    <summary>
-      <para>Describes an array, its element type, and its dimension.</para>
-    </summary>
-    <seealso cref="TYPEDESC" />
+    <summary>Describes an array, its element type, and its dimension.</summary>
   </member>
   <member name="ARRAYDESC.tdescElem">
-    <summary>
-      <para>The element type.</para>
-    </summary>
+    <summary>The element type.</summary>
   </member>
   <member name="ARRAYDESC.cDims">
-    <summary>
-      <para>The dimension count.</para>
-    </summary>
+    <summary>The dimension count.</summary>
   </member>
   <member name="ARRAYDESC.rgbounds">
-    <summary>
-      <para>A variable-length array containing one element for each dimension.</para>
-    </summary>
+    <summary>A variable-length array containing one element for each dimension.</summary>
   </member>
 </doc>

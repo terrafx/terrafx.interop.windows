@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMMEndpoint.GetDataFlow">
-    <summary>
-      <para>The <b>GetDataFlow</b> method indicates whether the audio endpoint device is a rendering device or a capture device.</para>
-    </summary>
+    <summary>The <b>GetDataFlow</b> method indicates whether the audio endpoint device is a rendering device or a capture device.</summary>
     <param name="pDataFlow">
       <para>Pointer to a variable into which the method writes the data-flow direction of the endpoint device. The direction is indicated by one of the following <see cref="EDataFlow" /> enumeration constants:</para>
       <list type="bullet">
@@ -25,19 +23,20 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Parameter <i>ppDataFlow</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>Parameter <i>ppDataFlow</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMMEndpoint Interface" />
   </member>
   <member name="IMMEndpoint">
     <summary>
@@ -51,8 +50,5 @@
         </item>
       </list>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
-    <seealso cref="IMMDevice Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/mmdevice-api">MMDevice API</seealso>
   </member>
 </doc>

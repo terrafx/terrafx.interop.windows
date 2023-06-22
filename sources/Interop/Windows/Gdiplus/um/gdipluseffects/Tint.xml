@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Tint.GetParameters">
+    <summary>The <b>Tint.GetParameters</b> method gets the current values of the parameters of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-tint">Tint</a> object.</summary>
+    <param name="size">Pointer to a <b>UINT</b> that specifies the size, in bytes, of a <see cref="TintParams" /> structure.</param>
+    <param name="parameters">Pointer to a <see cref="TintParams" /> structure that receives the parameter values.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Tint.SetParameters">
+    <summary>The <b>Tint.SetParameters</b> method sets the parameters of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-tint">Tint</a> object.</summary>
+    <param name="parameters">Pointer to a <see cref="TintParams" /> object that specifies the parameters.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Tint.Tint">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-tint">Tint</a> object.</summary>
+  </member>
+</doc>

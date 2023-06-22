@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CIEXYZ">
-    <summary>
-      <para>The <b>CIEXYZ</b> structure contains the <i>x</i>,<i>y</i>, and <i>z</i> coordinates of a specific color in a specified color space.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/win32/wcs/basic-color-management-concepts">Basic color management concepts</seealso>
-    <seealso href="https://docs.microsoft.com//windows/win32/wcs/structures">Structures</seealso>
+    <summary>The <b>CIEXYZ</b> structure contains the <i>x</i>,<i>y</i>, and <i>z</i> coordinates of a specific color in a specified color space.</summary>
   </member>
   <member name="CIEXYZ.ciexyzX">
-    <summary>
-      <para>The x coordinate in fix point (2.30).</para>
-    </summary>
+    <summary>The x coordinate in fix point (2.30).</summary>
   </member>
   <member name="CIEXYZ.ciexyzY">
-    <summary>
-      <para>The y coordinate in fix point (2.30).</para>
-    </summary>
+    <summary>The y coordinate in fix point (2.30).</summary>
   </member>
   <member name="CIEXYZ.ciexyzZ">
-    <summary>
-      <para>The z coordinate in fix point (2.30).</para>
-    </summary>
+    <summary>The z coordinate in fix point (2.30).</summary>
   </member>
 </doc>

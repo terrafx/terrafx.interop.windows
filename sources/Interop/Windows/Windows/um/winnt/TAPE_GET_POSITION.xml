@@ -3,10 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TAPE_GET_POSITION">
-    <summary>
-      <para>The
-<b>TAPE_GET_POSITION</b> structure describes the position of the tape.</para>
-    </summary>
+    <summary>The<b>TAPE_GET_POSITION</b> structure describes the position of the tape.</summary>
   </member>
   <member name="TAPE_GET_POSITION.Type">
     <summary>
@@ -16,51 +13,43 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TAPE_ABSOLUTE_POSITION</b>
-                </description>
-              </item>
-              <item>
-                <description>0L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The position specified by the <b>Offset</b> member is an absolute number of blocks from the beginning of the partition specified by the <b>Partition</b> member.</para>
-          </description>
-        </item>
-        <item>
+          <description>The position specified by the <b>Offset</b> member is an absolute number of blocks from the beginning of the partition specified by the <b>Partition</b> member.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TAPE_LOGICAL_POSITION</b>
-                </description>
-              </item>
-              <item>
-                <description>1L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The position specified by the <b>Offset</b> member is relative to the current position in the partition specified by <b>Partition</b>.</para>
-          </description>
-        </item>
+          <description>The position specified by the <b>Offset</b> member is relative to the current position in the partition specified by <b>Partition</b>.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="TAPE_GET_POSITION.Partition">
-    <summary>
-      <para>Partition to position within. If this member is zero, the current partition is assumed.</para>
-    </summary>
+    <summary>Partition to position within. If this member is zero, the current partition is assumed.</summary>
   </member>
   <member name="TAPE_GET_POSITION.Offset">
-    <summary>
-      <para>Block address.</para>
-    </summary>
+    <summary>Block address.</summary>
   </member>
 </doc>

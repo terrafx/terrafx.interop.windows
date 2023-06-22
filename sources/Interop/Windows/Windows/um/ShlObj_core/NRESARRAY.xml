@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NRESARRAY">
-    <summary>
-      <para>Defines the CF_NETRESOURCE clipboard format.</para>
-    </summary>
+    <summary>Defines the CF_NETRESOURCE clipboard format.</summary>
   </member>
   <member name="NRESARRAY.cItems">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The number of elements in the <b>nr</b> array.</para>
-    </summary>
+    <summary>The number of elements in the <b>nr</b> array.</summary>
   </member>
   <member name="NRESARRAY.nr">
-    <summary>
-      <para>Type: <b><see cref="NETRESOURCE" />[1]</b></para>
-      <para>The array of <see cref="NETRESOURCE" /> structures that contain information about network resources. The string members (<b>LPSTR</b> types) in the structure contain offsets instead of addresses.</para>
-    </summary>
+    <summary>The array of <see cref="NETRESOURCE" /> structures that contain information about network resources. The string members (<b>LPSTR</b> types) in the structure contain offsets instead of addresses.</summary>
   </member>
 </doc>

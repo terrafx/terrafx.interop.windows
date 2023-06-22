@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRYPT_TIMESTAMP_ACCURACY">
-    <summary>
-      <para>The <b>CRYPT_TIMESTAMP_ACCURACY</b> structure is used by the <see cref="CRYPT_TIMESTAMP_INFO" /> structure to represent the accuracy of the time deviation around the UTC time at which the time stamp token was created by the Time Stamp Authority (TSA).</para>
-    </summary>
+    <summary>The <b>CRYPT_TIMESTAMP_ACCURACY</b> structure is used by the <see cref="CRYPT_TIMESTAMP_INFO" /> structure to represent the accuracy of the time deviation around the UTC time at which the time stamp token was created by the Time Stamp Authority (TSA).</summary>
   </member>
   <member name="CRYPT_TIMESTAMP_ACCURACY.dwSeconds">
-    <summary>
-      <para>Optional. Specifies, in seconds, the accuracy of the upper limit of the time at which the time stamp token was created by the TSA.</para>
-    </summary>
+    <summary>Optional. Specifies, in seconds, the accuracy of the upper limit of the time at which the time stamp token was created by the TSA.</summary>
   </member>
   <member name="CRYPT_TIMESTAMP_ACCURACY.dwMillis">
-    <summary>
-      <para>Optional. Specifies, in milliseconds, the accuracy of the upper limit of the time at which the time stamp token was  created by the TSA.</para>
-    </summary>
+    <summary>Optional. Specifies, in milliseconds, the accuracy of the upper limit of the time at which the time stamp token was created by the TSA.</summary>
   </member>
   <member name="CRYPT_TIMESTAMP_ACCURACY.dwMicros">
-    <summary>
-      <para>Optional. Specifies, in microseconds, the accuracy of the upper limit of the time at which the time-stamp token was created by the TSA.</para>
-    </summary>
+    <summary>Optional. Specifies, in microseconds, the accuracy of the upper limit of the time at which the time-stamp token was created by the TSA.</summary>
   </member>
 </doc>

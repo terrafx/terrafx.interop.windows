@@ -3,176 +3,53 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteFactory2.CreateCustomRenderingParams">
-    <summary>
-      <para>Creates a rendering parameters object with the specified properties.</para>
-    </summary>
-    <param name="gamma">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The gamma value used for gamma correction, which must be greater than zero and cannot exceed 256.</para>
-    </param>
-    <param name="enhancedContrast">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The amount of contrast enhancement, zero or greater.</para>
-    </param>
-    <param name="grayscaleEnhancedContrast">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The amount of contrast enhancement, zero or greater.</para>
-    </param>
-    <param name="clearTypeLevel">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The degree of ClearType level, from 0.0f (no ClearType) to 1.0f (full ClearType).</para>
-    </param>
-    <param name="pixelGeometry">
-      <para>Type: <b><see cref="DWRITE_PIXEL_GEOMETRY" /></b></para>
-      <para>The geometry of a device pixel.</para>
-    </param>
-    <param name="renderingMode">
-      <para>Type: <b><see cref="DWRITE_RENDERING_MODE" /></b></para>
-      <para>Method of rendering glyphs. In most cases, this should be DWRITE_RENDERING_MODE_DEFAULT to automatically use an appropriate mode.</para>
-    </param>
-    <param name="gridFitMode">
-      <para>Type: <b><see cref="DWRITE_GRID_FIT_MODE" /></b></para>
-      <para>How to grid fit glyph outlines. In most cases, this should be DWRITE_GRID_FIT_DEFAULT to automatically choose an appropriate mode.</para>
-    </param>
-    <param name="renderingParams">
-      <para>Type: <b><see cref="IDWriteRenderingParams2" />**</b></para>
-      <para>Holds the newly created rendering parameters object, or NULL in case of failure.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritefactory2">IDWriteFactory2</seealso>
+    <summary>Creates a rendering parameters object with the specified properties.</summary>
+    <param name="gamma">The gamma value used for gamma correction, which must be greater than zero and cannot exceed 256.</param>
+    <param name="enhancedContrast">The amount of contrast enhancement, zero or greater.</param>
+    <param name="grayscaleEnhancedContrast">The amount of contrast enhancement, zero or greater.</param>
+    <param name="clearTypeLevel">The degree of ClearType level, from 0.0f (no ClearType) to 1.0f (full ClearType).</param>
+    <param name="pixelGeometry">The geometry of a device pixel.</param>
+    <param name="renderingMode">Method of rendering glyphs. In most cases, this should be DWRITE_RENDERING_MODE_DEFAULT to automatically use an appropriate mode.</param>
+    <param name="gridFitMode">How to grid fit glyph outlines. In most cases, this should be DWRITE_GRID_FIT_DEFAULT to automatically choose an appropriate mode.</param>
+    <param name="renderingParams">Holds the newly created rendering parameters object, or NULL in case of failure.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteFactory2.CreateFontFallbackBuilder">
     <summary>
       <para>Creates a font fallback builder object.</para>
       <para>A font fall back builder allows you to create Unicode font fallback mappings and create a font fall back object from those mappings.</para>
     </summary>
-    <param name="fontFallbackBuilder">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritefontfallbackbuilder">IDWriteFontFallbackBuilder</a>**</b></para>
-      <para>Contains an address of a pointer to the newly created font fallback builder object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritefactory2">IDWriteFactory2</seealso>
+    <param name="fontFallbackBuilder">Contains an address of a pointer to the newly created font fallback builder object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteFactory2.CreateGlyphRunAnalysis">
-    <summary>
-      <para>Creates a glyph run analysis object, which encapsulates information used to render a glyph run.</para>
-    </summary>
-    <param name="glyphRun">
-      <para>Type: <b>const <see cref="DWRITE_GLYPH_RUN" />*</b></para>
-      <para>Structure specifying the properties of the glyph run.</para>
-    </param>
-    <param name="transform">
-      <para>Type: <b>const <see cref="DWRITE_MATRIX" />*</b></para>
-      <para>Optional transform applied to the glyphs and their positions. This transform is applied after the
-scaling specified by the emSize and pixelsPerDip.</para>
-    </param>
-    <param name="renderingMode">
-      <para>Type: <b>DWRITE_RENDERING_MODE</b></para>
-      <para>Specifies the rendering mode, which must be one of the raster rendering modes (i.e., not default
-and not outline).</para>
-    </param>
-    <param name="measuringMode">
-      <para>Type: <b><see cref="DWRITE_MEASURING_MODE" /></b></para>
-      <para>Specifies the method to measure glyphs.</para>
-    </param>
-    <param name="gridFitMode">
-      <para>Type: <b><see cref="DWRITE_GRID_FIT_MODE" /></b></para>
-      <para>How to grid-fit glyph outlines. This must be non-default.</para>
-    </param>
-    <param name="antialiasMode">
-      <para>Type: <b><see cref="DWRITE_TEXT_ANTIALIAS_MODE" /></b></para>
-      <para>Specifies the antialias mode.</para>
-    </param>
-    <param name="baselineOriginX">
-      <para>Type: <b>FLOAT</b></para>
-      <para>Horizontal position of the baseline origin, in DIPs.</para>
-    </param>
-    <param name="baselineOriginY">
-      <para>Type: <b>FLOAT</b></para>
-      <para>Vertical position of the baseline origin, in DIPs.</para>
-    </param>
-    <param name="glyphRunAnalysis">
-      <para>Type: <b><see cref="IDWriteGlyphRunAnalysis" />**</b></para>
-      <para>Receives a pointer to the newly created object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritefactory2">IDWriteFactory2</seealso>
+    <summary>Creates a glyph run analysis object, which encapsulates information used to render a glyph run.</summary>
+    <param name="glyphRun">Structure specifying the properties of the glyph run.</param>
+    <param name="transform">Optional transform applied to the glyphs and their positions. This transform is applied after the scaling specified by the emSize and pixelsPerDip.</param>
+    <param name="renderingMode">Specifies the rendering mode, which must be one of the raster rendering modes (i.e., not default and not outline).</param>
+    <param name="measuringMode">Specifies the method to measure glyphs.</param>
+    <param name="gridFitMode">How to grid-fit glyph outlines. This must be non-default.</param>
+    <param name="antialiasMode">Specifies the antialias mode.</param>
+    <param name="baselineOriginX">Horizontal position of the baseline origin, in DIPs.</param>
+    <param name="baselineOriginY">Vertical position of the baseline origin, in DIPs.</param>
+    <param name="glyphRunAnalysis">Receives a pointer to the newly created object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteFactory2.GetSystemFontFallback">
-    <summary>
-      <para>Creates a font fallback object from the system font fallback list.</para>
-    </summary>
-    <param name="fontFallback">
-      <para>Type: <b><see cref="IDWriteFontFallback" />**</b></para>
-      <para>Contains an address of a pointer to the newly created font fallback object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritefactory2">IDWriteFactory2</seealso>
+    <summary>Creates a font fallback object from the system font fallback list.</summary>
+    <param name="fontFallback">Contains an address of a pointer to the newly created font fallback object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteFactory2.TranslateColorGlyphRun">
-    <summary>
-      <para>This method is called on a glyph run to translate it in to multiple color glyph runs.</para>
-    </summary>
-    <param name="baselineOriginX">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The horizontal baseline origin of the original glyph run.</para>
-    </param>
-    <param name="baselineOriginY">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The vertical baseline origin of the original glyph run.</para>
-    </param>
-    <param name="glyphRun">
-      <para>Type: <b>const <see cref="DWRITE_GLYPH_RUN" />*</b></para>
-      <para>Original glyph run containing monochrome glyph IDs.</para>
-    </param>
-    <param name="glyphRunDescription">
-      <para>Type: <b>const <see cref="DWRITE_GLYPH_RUN_DESCRIPTION" />*</b></para>
-      <para>Optional glyph run description.</para>
-    </param>
-    <param name="measuringMode">
-      <para>Type: <b><see cref="DWRITE_MEASURING_MODE" /></b></para>
-      <para>Measuring mode used to compute glyph positions if the run contains color glyphs.</para>
-    </param>
-    <param name="worldToDeviceTransform">
-      <para>Type: <b>const <see cref="DWRITE_MATRIX" />*</b></para>
-      <para>World transform multiplied by any DPI scaling. This is needed to compute glyph positions if the run contains color glyphs and the
-measuring mode is not <see cref="DWRITE_MEASURING_MODE_NATURAL" />.
-If this parameter is <b>NULL</b>, and identity transform is assumed.</para>
-    </param>
-    <param name="colorPaletteIndex">
-      <para>Type: <b>UINT32</b></para>
-      <para>Zero-based index of the color palette to use. Valid indices are less than the number of palettes in the font, as
-returned by <see cref="IDWriteFontFace2.GetColorPaletteCount" />.</para>
-    </param>
-    <param name="colorLayers">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritecolorglyphrunenumerator">IDWriteColorGlyphRunEnumerator</a>**</b></para>
-      <para>If the original glyph run contains color glyphs, this parameter receives a pointer to
-an <a href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritecolorglyphrunenumerator">IDWriteColorGlyphRunEnumerator</a> interface.
-The client uses the returned interface to get information about glyph runs and associated colors to render instead of the original glyph run.
-If the original glyph run does not contain color glyphs, this method returns <b>DWRITE_E_NOCOLOR</b> and the output pointer is <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If the code calls this method with a glyph run that contains no color information, the method returns <b>DWRITE_E_NOCOLOR</b> to
-let the application know that it can just draw the original glyph run. If the glyph run contains color information, the function returns an object
-that can be enumerated through to expose runs and associated colors. The application then
-calls <see cref="DrawGlyphRun" /> with each of the returned glyph runs and foreground colors.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritefactory2">IDWriteFactory2</seealso>
+    <summary>This method is called on a glyph run to translate it in to multiple color glyph runs.</summary>
+    <param name="baselineOriginX">The horizontal baseline origin of the original glyph run.</param>
+    <param name="baselineOriginY">The vertical baseline origin of the original glyph run.</param>
+    <param name="glyphRun">Original glyph run containing monochrome glyph IDs.</param>
+    <param name="glyphRunDescription">Optional glyph run description.</param>
+    <param name="measuringMode">Measuring mode used to compute glyph positions if the run contains color glyphs.</param>
+    <param name="worldToDeviceTransform">World transform multiplied by any DPI scaling. This is needed to compute glyph positions if the run contains color glyphs and the measuring mode is not <see cref="DWRITE_MEASURING_MODE_NATURAL" />. If this parameter is <b>NULL</b>, and identity transform is assumed.</param>
+    <param name="colorPaletteIndex">Zero-based index of the color palette to use. Valid indices are less than the number of palettes in the font, as returned by <see cref="IDWriteFontFace2.GetColorPaletteCount" />.</param>
+    <param name="colorLayers">If the original glyph run contains color glyphs, this parameter receives a pointer to an <a href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritecolorglyphrunenumerator">IDWriteColorGlyphRunEnumerator</a> interface. The client uses the returned interface to get information about glyph runs and associated colors to render instead of the original glyph run. If the original glyph run does not contain color glyphs, this method returns <b>DWRITE_E_NOCOLOR</b> and the output pointer is <b>NULL</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
 </doc>

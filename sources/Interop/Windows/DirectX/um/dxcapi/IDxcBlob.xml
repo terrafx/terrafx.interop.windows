@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDxcBlob.GetBufferPointer">
+    <summary>Retrieves a pointer to the blob's data.</summary>
+  </member>
+  <member name="IDxcBlob.GetBufferSize">
+    <summary>Retrieves the size (in bytes, and including the null-terminator) of the blob's data (the buffer).</summary>
+  </member>
+  <member name="IDxcBlob">
+    <summary>A sized buffer that can be passed into and out of DXC APIs. <b>IDxcBlob</b> is an alias of <b>ID3D10Blob</b> and <b>ID3DBlob</b>.</summary>
+  </member>
+</doc>

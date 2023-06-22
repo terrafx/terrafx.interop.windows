@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDataObject.DAdvise">
-    <summary>
-      <para>Called by an object supporting an advise sink to create a connection between a data object and the advise sink. This enables the advise sink to be notified of changes in the data of the object.</para>
-    </summary>
-    <param name="pformatetc">
-      <para>A pointer to a <see cref="FORMATETC" /> structure that defines the format, target device, aspect, and medium that will be used for future notifications. For example, one sink may want to know only when the bitmap representation of the data in the data object changes. Another sink may be interested in only the metafile format of the same object. Each advise sink is notified when the data of interest changes. This data is passed back to the advise sink when notification occurs.</para>
-    </param>
+    <summary>Called by an object supporting an advise sink to create a connection between a data object and the advise sink. This enables the advise sink to be notified of changes in the data of the object.</summary>
+    <param name="pformatetc">A pointer to a <see cref="FORMATETC" /> structure that defines the format, target device, aspect, and medium that will be used for future notifications. For example, one sink may want to know only when the bitmap representation of the data in the data object changes. Another sink may be interested in only the metafile format of the same object. Each advise sink is notified when the data of interest changes. This data is passed back to the advise sink when notification occurs.</param>
     <param name="advf">
       <para>A group of flags for controlling the advisory connection. Possible values are from the <see cref="ADVF" /> enumeration. However, only some of the possible <b>ADVF</b> values are relevant for this method. The following table briefly describes the relevant values.</para>
       <list type="table">
@@ -16,52 +12,26 @@
           <description>ADVF Value</description>
           <description>Description</description>
         </listheader>
-        <item>
-          <description>ADVF_NODATA
-</description>
-          <description>
-            <para>Asks the data object to avoid sending data with the notifications. Typically data is sent. This flag is a way to override the default behavior. When ADVF_NODATA is used, the <b>tymed</b> member of the <see cref="STGMEDIUM" /> structure that is passed to <see cref="OnDataChange" /> will usually contain TYMED_NULL. The caller can then retrieve the data with a subsequent <see cref="IDataObject.GetData" /> call.</para>
-          </description>
-        </item>
-        <item>
-          <description>ADVF_ONLYONCE
-</description>
-          <description>
-            <para>Causes the advisory connection to be destroyed after the first change notification is sent. An implicit call to <see cref="IDataObject.DUnadvise" /> is made on behalf of the caller to remove the connection.</para>
-          </description>
-        </item>
-        <item>
-          <description>ADVF_PRIMEFIRST
-</description>
-          <description>
-            <para>Asks for an additional initial notification. The combination of ADVF_ONLYONCE and ADVF_PRIMEFIRST provides, in effect, an asynchronous <see cref="IDataObject.GetData" /> call.</para>
-          </description>
-        </item>
-        <item>
-          <description>ADVF_DATAONSTOP
-</description>
-          <description>
-            <para>When specified with ADVF_NODATA, this flag causes a last notification with the data included to to be sent before the data object is destroyed.</para>
-            <para>If used without ADVF_NODATA, <b>DAdvise</b> can be implemented in one of the following ways:</para>
-            <list type="bullet">
-              <item>
-                <description>The ADVF_DATAONSTOP can be ignored.</description>
-              </item>
-              <item>
-                <description>The object can behave as if ADVF_NODATA was specified.</description>
-              </item>
-            </list>
-            <para>A change notification is sent only in the shutdown case. Data changes prior to shutdown do not cause a notification to be sent.</para>
-          </description>
-        </item>
+        <listheader>
+          <description>ADVF_NODATA</description>
+          <description>Asks the data object to avoid sending data with the notifications. Typically data is sent. This flag is a way to override the default behavior. When ADVF_NODATA is used, the <b>tymed</b> member of the <see cref="STGMEDIUM" /> structure that is passed to <see cref="OnDataChange" /> will usually contain TYMED_NULL. The caller can then retrieve the data with a subsequent <see cref="IDataObject.GetData" /> call.</description>
+        </listheader>
+        <listheader>
+          <description>ADVF_ONLYONCE</description>
+          <description>Causes the advisory connection to be destroyed after the first change notification is sent. An implicit call to <see cref="IDataObject.DUnadvise" /> is made on behalf of the caller to remove the connection.</description>
+        </listheader>
+        <listheader>
+          <description>ADVF_PRIMEFIRST</description>
+          <description>Asks for an additional initial notification. The combination of ADVF_ONLYONCE and ADVF_PRIMEFIRST provides, in effect, an asynchronous <see cref="IDataObject.GetData" /> call.</description>
+        </listheader>
+        <listheader>
+          <description>ADVF_DATAONSTOP</description>
+          <description>When specified with ADVF_NODATA, this flag causes a last notification with the data included to to be sent before the data object is destroyed.<para>If used without ADVF_NODATA, <b>DAdvise</b> can be implemented in one of the following ways:</para><list type="bullet"><item><description>The ADVF_DATAONSTOP can be ignored.</description></item><item><description>The object can behave as if ADVF_NODATA was specified.</description></item></list>A change notification is sent only in the shutdown case. Data changes prior to shutdown do not cause a notification to be sent.</description>
+        </listheader>
       </list>
     </param>
-    <param name="pAdvSink">
-      <para>A pointer to the <see cref="IAdviseSink" /> interface on the advisory sink that will receive the change notification.</para>
-    </param>
-    <param name="pdwConnection">
-      <para>A token that identifies this connection. You can use this token later to delete the advisory connection (by passing it to <see cref="IDataObject.DUnadvise" />). If this value is 0, the connection was not established.</para>
-    </param>
+    <param name="pAdvSink">A pointer to the <see cref="IAdviseSink" /> interface on the advisory sink that will receive the change notification.</param>
+    <param name="pdwConnection">A token that identifies this connection. You can use this token later to delete the advisory connection (by passing it to <see cref="IDataObject.DUnadvise" />). If this value is 0, the connection was not established.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible values include the following.</para>
       <list type="table">
@@ -69,77 +39,60 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>This method is not implemented on the data object.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>This method is not implemented on the data object.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_LINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The value for <b>lindex</b> is not valid; currently, only -1 is supported.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_LINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_FORMATETC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The value for <i>pformatetc</i> is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The value for <b>lindex</b> is not valid; currently, only -1 is supported.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OLE_E_ADVISENOTSUPPORTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>DV_E_FORMATETC</b>
-            </para>
-          </description>
-          <description>
-            <para>The value for <i>pformatetc</i> is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>OLE_E_ADVISENOTSUPPORTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The data object does not support change notification.</para>
-          </description>
-        </item>
+          <description>The data object does not support change notification.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>DAdvise</b> creates a change notification connection between a data object and the caller. The caller provides an advisory sink to which the notifications can be sent when the object's data changes.</para>
-      <para>Objects used simply for data transfer typically do not support advisory notifications and return OLE_E_ADVISENOTSUPPORTED from <b>DAdvise</b>.</para>
-      <h3>Notes to Callers</h3>
-      <para>The object supporting the advise sink calls <b>DAdvise</b> to set up the connection, specifying the format, aspect, medium, and/or target device of interest in the <see cref="FORMATETC" /> structure passed in. If the data object does not support one or more of the requested attributes or the sending of notifications at all, it can refuse the connection by returning OLE_E_ADVISENOTSUPPORTED.</para>
-      <para>Containers of linked objects can set up advisory connections directly with the bound link source or indirectly through the standard OLE link object that manages the connection. Connections set up with the bound link source are not automatically deleted. The container must explicitly call <see cref="IDataObject.DUnadvise" /> on the bound link source to delete an advisory connection. The OLE link object, manipulated through the <see cref="IOleLink" /> interface, is implemented in the default handler. Connections set up through the OLE link object are destroyed when the link object is deleted.</para>
-      <para>The OLE default link object creates a "wildcard advise" with the link source so OLE can maintain the time of last change. This advise is specifically used to note the time that anything changed. OLE ignores all data formats that may have changed, noting only the time of last change. To allow wildcard advises, set the <see cref="FORMATETC" /> members as follows before calling <b>DAdvise</b>:</para>
-      <code>cf == 0;
-ptd == NULL;
-dwAspect == -1;
-lindex == -1
-tymed == -1;
-</code>
-      <para>The advise flags should also include ADVF_NODATA. Wildcard advises from OLE should always be accepted by applications.</para>
-      <h3>Notes to Implementers</h3>
-      <para>To simplify the implementation of <b>DAdvise</b> and the other notification methods in <see cref="IDataObject" /> (<see cref="DUnadvise" /> and <see cref="EnumDAdvise" />) that supports notification, OLE provides an advise holder object that manages the registration and sending of notifications. To get a pointer to this object, call the helper function <see cref="CreateDataAdviseHolder" /> on the first invocation of <b>DAdvise</b>. This supplies a pointer to the object's <see cref="IDataAdviseHolder" /> interface. Then, delegate the call to the <see cref="IDataAdviseHolder.Advise" /> method in the data advise holder, which creates, and subsequently manages, the requested connection.</para>
-    </remarks>
-    <seealso cref="CreateDataAdviseHolder" />
-    <seealso cref="IAdviseSink.OnDataChange" />
-    <seealso cref="IDataObject" />
   </member>
   <member name="IDataObject.DUnadvise">
-    <summary>
-      <para>Destroys a notification connection that had been previously set up.</para>
-    </summary>
-    <param name="dwConnection">
-      <para>A token that specifies the connection to be removed. Use the value returned by <see cref="IDataObject.DAdvise" /> when the connection was originally established.</para>
-    </param>
+    <summary>Destroys a notification connection that had been previously set up.</summary>
+    <param name="dwConnection">A token that specifies the connection to be removed. Use the value returned by <see cref="IDataObject.DAdvise" /> when the connection was originally established.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible values include the following.</para>
       <list type="table">
@@ -147,41 +100,36 @@ tymed == -1;
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>OLE_E_NOCONNECTION</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OLE_E_NOCONNECTION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The specified value for <i>dwConnection</i> is not a valid connection.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The specified value for <i>dwConnection</i> is not a valid connection.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OLE_E_ADVISENOTSUPPORTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>OLE_E_ADVISENOTSUPPORTED</b>
-            </para>
-          </description>
-          <description>
-            <para>This <see cref="IDataObject" /> implementation does not support notification.</para>
-          </description>
-        </item>
+          <description>This <see cref="IDataObject" /> implementation does not support notification.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This methods destroys a notification created with a call to the <see cref="IDataObject.DAdvise" /> method.</para>
-      <para>If the advisory connection being deleted was initially set up by delegating the <see cref="IDataObject.DAdvise" /> call to <see cref="IDataAdviseHolder.Advise" />, you must delegate this call to <see cref="IDataAdviseHolder.Unadvise" /> to delete it.</para>
-    </remarks>
-    <seealso cref="IDataObject" />
   </member>
   <member name="IDataObject.EnumDAdvise">
-    <summary>
-      <para>Creates an object that can be used to enumerate the current advisory connections.</para>
-    </summary>
-    <param name="ppenumAdvise">
-      <para>A pointer to an <see cref="IEnumSTATDATA" /> pointer variable that receives the interface pointer to the new enumerator object. If the implementation sets *<i>ppenumAdvise</i> to <b>NULL</b>, there are no connections to advise sinks at this time.</para>
-    </param>
+    <summary>Creates an object that can be used to enumerate the current advisory connections.</summary>
+    <param name="ppenumAdvise">A pointer to an <see cref="IEnumSTATDATA" /> pointer variable that receives the interface pointer to the new enumerator object. If the implementation sets *<i>ppenumAdvise</i> to <b>NULL</b>, there are no connections to advise sinks at this time.</param>
     <returns>
       <para>This method returns S_OK if the enumerator object is successfully instantiated or there are no connections. Other possible values include the following.</para>
       <list type="table">
@@ -189,48 +137,40 @@ tymed == -1;
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Insufficient memory is available for the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Insufficient memory is available for the operation.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OLE_E_ADVISENOTSUPPORTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>OLE_E_ADVISENOTSUPPORTED</b>
-            </para>
-          </description>
-          <description>
-            <para>Advisory notifications are not supported by this object.</para>
-          </description>
-        </item>
+          <description>Advisory notifications are not supported by this object.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The enumerator object created by this method implements the <see cref="IEnumSTATDATA" /> interface. <b>IEnumSTATDATA</b> permits the enumeration of the data stored in an array of <see cref="STATDATA" /> structures. Each of these structures provides information on a single advisory connection, and includes <see cref="FORMATETC" /> and <see cref="ADVF" /> information, as well as the pointer to the advise sink and the token representing the connection.</para>
-      <h3>Notes to Callers</h3>
-      <para>It is recommended that you use the OLE data advise holder object to handle advisory connections. With the pointer obtained through a call to <see cref="CreateDataAdviseHolder" />, implementing <b>IDataObject.EnumDAdvise</b> becomes a simple matter of delegating the call to <see cref="IDataAdviseHolder.EnumAdvise" />. This creates the enumerator and supplies the pointer to the OLE implementation of <see cref="IEnumSTATDATA" />. At that point, you can call its methods to enumerate the current advisory connections.</para>
-    </remarks>
-    <seealso cref="IDataAdviseHolder.EnumAdvise" />
-    <seealso cref="IDataObject" />
-    <seealso cref="IEnumSTATDATA" />
   </member>
   <member name="IDataObject.EnumFormatEtc">
-    <summary>
-      <para>Creates an object to enumerate the formats supported by a data object.</para>
-    </summary>
+    <summary>Creates an object to enumerate the formats supported by a data object.</summary>
     <param name="dwDirection">
-      <para>The direction of the data.  Possible values come from the <see cref="DATADIR" /> enumeration.</para>
+      <para>The direction of the data. Possible values come from the <see cref="DATADIR" /> enumeration.</para>
       <para>The value DATADIR_GET enumerates the formats that can be passed in to a call to <see cref="IDataObject.GetData" />. The value DATADIR_SET enumerates those formats that can be passed in to a call to <see cref="IDataObject.SetData" />.</para>
     </param>
-    <param name="ppenumFormatEtc">
-      <para>A pointer to an <see cref="IEnumFORMATETC" /> pointer variable that receives the interface pointer to the new enumerator object.</para>
-    </param>
+    <param name="ppenumFormatEtc">A pointer to an <see cref="IEnumFORMATETC" /> pointer variable that receives the interface pointer to the new enumerator object.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible values include the following.</para>
       <list type="table">
@@ -238,91 +178,61 @@ tymed == -1;
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The supplied <i>dwDirection</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The supplied <i>dwDirection</i> is invalid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Insufficient memory available for this operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The direction specified by <i>dwDirection</i> is not supported.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Insufficient memory available for this operation.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OLE_S_USEREG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The direction specified by <i>dwDirection</i> is not supported.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>OLE_S_USEREG</b>
-            </para>
-          </description>
-          <description>
-            <para>Requests that OLE enumerate the formats from the registry.</para>
-          </description>
-        </item>
+          <description>Requests that OLE enumerate the formats from the registry.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>EnumFormatEtc</b> creates an enumerator object that can be used to determine all of the ways the data object can describe data in a <see cref="FORMATETC" /> structure, and provides a pointer to its <see cref="IEnumFORMATETC" /> interface. This is one of the standard enumerator interfaces.</para>
-      <h3>Notes to Callers</h3>
-      <para>Having obtained the pointer, the caller can enumerate the <see cref="FORMATETC" /> structures by calling the enumeration methods of <see cref="IEnumFORMATETC" />. Because the formats can change over time, there is no guarantee that an enumerated format is currently supported because the formats can change over time. Accordingly, applications should treat the enumeration as a hint of the format types that can be passed. The caller is responsible for calling <see cref="Release" /> when it is finished with the enumerator.</para>
-      <para>
-        <b>EnumFormatEtc</b> is called when one of the following actions occurs:</para>
-      <list type="bullet">
-        <item>
-          <description>An application calls <see cref="OleSetClipboard" />. OLE must determine what data to place on the clipboard and whether it is necessary to put OLE 1 compatibility formats on the clipboard.</description>
-        </item>
-        <item>
-          <description>Data is being pasted from the clipboard or dropped. An application uses the first acceptable format.
-</description>
-        </item>
-        <item>
-          <description>The <b>Paste Special</b> dialog box is displayed. The target application builds the list of formats from the <see cref="FORMATETC" /> entries.</description>
-        </item>
-      </list>
-      <h3>Notes to Implementers</h3>
-      <para>Formats can be registered statically in the registry or dynamically during object initialization. If an object has an unchanging list of formats and these formats are registered in the registry, OLE provides an implementation of a <see cref="FORMATETC" /> enumeration object that can enumerate formats registered under a specific CLSID in the registry. A pointer to its <see cref="IEnumFORMATETC" /> interface is available through a call to the helper function <see cref="OleRegEnumFormatEtc" />. In this situation, therefore, you can implement the <b>EnumFormatEtc</b> method simply with a call to this function.</para>
-      <para>EXE applications can effectively do the same thing by implementing the method to return the value OLE_S_USEREG. This return value instructs the default object handler to call <see cref="OleRegEnumFormatEtc" />. Object applications that are implemented as DLL object applications cannot return OLE_S_USEREG, so must call <b>OleRegEnumFormatEtc</b> directly.</para>
-      <para>Private formats can be enumerated for OLE 1 objects, if they are registered with the RequestDataFormats or SetDataFormats keys in the registry. Also, private formats can be enumerated for OLE objects (all versions after OLE 1), if they are registered with the GetDataFormats or SetDataFormats keys.</para>
-      <para>For OLE 1 objects whose servers do not have RequestDataFormats or SetDataFormats information registered in the registry, a call to <b>EnumFormatEtc</b> passing DATADIR_GET only enumerates the native and metafile formats, regardless of whether they support these formats or others. Calling <b>EnumFormatEtc</b> passing DATADIR_SET on such objects only enumerates native, regardless of whether the object supports being set with other formats.</para>
-      <para>The <see cref="FORMATETC" /> structure returned by the enumeration usually indicates a <b>NULL</b> target device (ptd). This is appropriate because, unlike the other members of <b>FORMATETC</b>, the target device does not participate in the object's decision as to whether it can accept or provide the data in either a SetData or GetData call.</para>
-      <para>The <b>tymed</b> member of <see cref="FORMATETC" /> often indicates that more than one kind of storage medium is acceptable. You should always mask and test for this by using a Boolean OR operator.</para>
-    </remarks>
-    <seealso cref="FORMATETC" />
-    <seealso cref="IDataObject.GetData" />
-    <seealso cref="IDataObject.SetData" />
-    <seealso cref="IEnumFORMATETC" />
-    <seealso cref="OleRegEnumFormatEtc" />
   </member>
   <member name="IDataObject.GetCanonicalFormatEtc">
-    <summary>
-      <para>Provides a potentially different but logically equivalent <see cref="FORMATETC" /> structure. You use this method to determine whether two different <b>FORMATETC</b> structures would return the same data, removing the need for duplicate rendering.</para>
-    </summary>
-    <param name="pformatectIn">
-      <para>A pointer to the <see cref="FORMATETC" /> structure that defines the format, medium, and target device that the caller would like to use to retrieve data in a subsequent call such as <see cref="IDataObject.GetData" />. The <b>tymed</b> member is not significant in this case and should be ignored.</para>
-    </param>
-    <param name="pformatetcOut">
-      <para>A pointer to a <see cref="FORMATETC" /> structure that contains the most general information possible for a specific rendering, making it canonically equivalent to <i>pformatetcIn</i>. The caller must allocate this structure and the <b>GetCanonicalFormatEtc</b> method must fill in the data. To retrieve data in a subsequent call like <see cref="IDataObject.GetData" />, the caller uses the specified value of <i>pformatetcOut</i>, unless the value specified is <b>NULL</b>. This value is <b>NULL</b> if the method returns DATA_S_SAMEFORMATETC. The <b>tymed</b> member is not significant in this case and should be ignored.</para>
-    </param>
+    <summary>Provides a potentially different but logically equivalent <see cref="FORMATETC" /> structure. You use this method to determine whether two different <b>FORMATETC</b> structures would return the same data, removing the need for duplicate rendering.</summary>
+    <param name="pformatectIn">A pointer to the <see cref="FORMATETC" /> structure that defines the format, medium, and target device that the caller would like to use to retrieve data in a subsequent call such as <see cref="IDataObject.GetData" />. The <b>tymed</b> member is not significant in this case and should be ignored.</param>
+    <param name="pformatetcOut">A pointer to a <see cref="FORMATETC" /> structure that contains the most general information possible for a specific rendering, making it canonically equivalent to <i>pformatetcIn</i>. The caller must allocate this structure and the <b>GetCanonicalFormatEtc</b> method must fill in the data. To retrieve data in a subsequent call like <see cref="IDataObject.GetData" />, the caller uses the specified value of <i>pformatetcOut</i>, unless the value specified is <b>NULL</b>. This value is <b>NULL</b> if the method returns DATA_S_SAMEFORMATETC. The <b>tymed</b> member is not significant in this case and should be ignored.</param>
     <returns>
       <para>This method can return the following values.</para>
       <list type="table">
@@ -330,108 +240,109 @@ tymed == -1;
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The returned <see cref="FORMATETC" /> structure is different from the one that was passed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The returned <see cref="FORMATETC" /> structure is different from the one that was passed.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DATA_S_SAMEFORMATETC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <see cref="FORMATETC" /> structures are the same and <b>NULL</b> is returned in <i>pformatetcOut</i>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DATA_S_SAMEFORMATETC</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_LINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The value for <b>lindex</b> is not valid; currently, only -1 is supported.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <see cref="FORMATETC" /> structures are the same and <b>NULL</b> is returned in <i>pformatetcOut</i>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_FORMATETC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The value for <i>pformatetc</i> is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_LINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OLE_E_NOTRUNNING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The object application is not running.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The value for <b>lindex</b> is not valid; currently, only -1 is supported.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_FORMATETC</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <i>dwDirection</i> parameter is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The value for <i>pformatetc</i> is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>OLE_E_NOTRUNNING</b>
-            </para>
-          </description>
-          <description>
-            <para>The object application is not running.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>An unexpected error has occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>dwDirection</i> parameter is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>There was insufficient memory available for this operation.</para>
-          </description>
-        </item>
+          <description>There was insufficient memory available for this operation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If a data object can supply exactly the same data for more than one requested <see cref="FORMATETC" /> structure, <b>GetCanonicalFormatEtc</b> can supply a "canonical", or standard <b>FORMATETC</b> that gives the same rendering as a set of more complicated <b>FORMATETC</b> structures. For example, it is common for the data returned to be insensitive to the target device specified in any one of a set of otherwise similar <b>FORMATETC</b> structures.</para>
-      <h3>Notes to Callers</h3>
-      <para>A call to this method can determine whether two calls to <see cref="IDataObject.GetData" /> on a data object, specifying two different <see cref="FORMATETC" /> structures, would actually produce the same renderings, thus eliminating the need for the second call and improving performance. If the call to <b>GetCanonicalFormatEtc</b> results in a canonical format being written to the <i>pformatetcOut</i> parameter, the caller then uses that structure in a subsequent call to <b>IDataObject.GetData</b>.</para>
-      <h3>Notes to Implementers</h3>
-      <para>Conceptually, it is possible to think of <see cref="FORMATETC" /> structures in groups defined by a canonical <b>FORMATETC</b> that provides the same results as each of the group members. In constructing the canonical <b>FORMATETC</b>, you should make sure it contains the most general information possible that still produces a specific rendering.</para>
-      <para>For data objects that never provide device-specific renderings, the simplest implementation of this method is to copy the input <see cref="FORMATETC" /> to the output <b>FORMATETC</b>, store a <b>NULL</b> in the <b>ptd</b> member of the output <b>FORMATETC</b>, and return DATA_S_SAMEFORMATETC.</para>
-    </remarks>
-    <seealso cref="IDataObject" />
   </member>
   <member name="IDataObject.GetData">
-    <summary>
-      <para>Called by a data consumer to obtain data from a source data object. The <b>GetData</b> method renders the data described in the specified <see cref="FORMATETC" /> structure and transfers it through the specified <see cref="STGMEDIUM" /> structure. The caller then assumes responsibility for releasing the <b>STGMEDIUM</b> structure.</para>
-    </summary>
-    <param name="pformatetcIn">
-      <para>A pointer to the <see cref="FORMATETC" /> structure that defines the format, medium, and target device to use when passing the data. It is possible to specify more than one medium by using the Boolean OR operator, allowing the method to choose the best medium among those specified.</para>
-    </param>
-    <param name="pmedium">
-      <para>A pointer to the <see cref="STGMEDIUM" /> structure that indicates the storage medium containing the returned data through its tymed member, and the responsibility for releasing the medium through the value of its <b>pUnkForRelease</b> member. If <b>pUnkForRelease</b> is <b>NULL</b>, the receiver of the medium is responsible for releasing it; otherwise, <b>pUnkForRelease</b> points to the <see cref="IUnknown" /> on the appropriate object so its <see cref="Release" /> method can be called. The medium must be allocated and filled in by <b>GetData</b>.</para>
-    </param>
+    <summary>Called by a data consumer to obtain data from a source data object. The <b>GetData</b> method renders the data described in the specified <see cref="FORMATETC" /> structure and transfers it through the specified <see cref="STGMEDIUM" /> structure. The caller then assumes responsibility for releasing the <b>STGMEDIUM</b> structure.</summary>
+    <param name="pformatetcIn">A pointer to the <see cref="FORMATETC" /> structure that defines the format, medium, and target device to use when passing the data. It is possible to specify more than one medium by using the Boolean OR operator, allowing the method to choose the best medium among those specified.</param>
+    <param name="pmedium">A pointer to the <see cref="STGMEDIUM" /> structure that indicates the storage medium containing the returned data through its tymed member, and the responsibility for releasing the medium through the value of its <b>pUnkForRelease</b> member. If <b>pUnkForRelease</b> is <b>NULL</b>, the receiver of the medium is responsible for releasing it; otherwise, <b>pUnkForRelease</b> points to the <see cref="IUnknown" /> on the appropriate object so its <see cref="Release" /> method can be called. The medium must be allocated and filled in by <b>GetData</b>.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible values include the following.</para>
       <list type="table">
@@ -439,118 +350,121 @@ tymed == -1;
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_LINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_LINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The value for <b>lindex</b> is not valid; currently, only -1 is supported.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The value for <b>lindex</b> is not valid; currently, only -1 is supported.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_FORMATETC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The value for <i>pformatetcIn</i> is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_FORMATETC</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_TYMED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <b>tymed</b> value is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The value for <i>pformatetcIn</i> is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_DVASPECT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <b>dwAspect</b> value is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_TYMED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OLE_E_NOTRUNNING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The object application is not running.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <b>tymed</b> value is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STG_E_MEDIUMFULL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An error occurred when allocating the medium.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_DVASPECT</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <b>dwAspect</b> value is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>dwDirection</i> value is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>OLE_E_NOTRUNNING</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The object application is not running.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>STG_E_MEDIUMFULL</b>
-            </para>
-          </description>
-          <description>
-            <para>An error occurred when allocating the medium.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>An unexpected error has occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>dwDirection</i> value is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>There was insufficient memory available for this operation.</para>
-          </description>
-        </item>
+          <description>There was insufficient memory available for this operation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A data consumer calls <b>GetData</b> to retrieve data from a data object, conveyed through a storage medium (defined through the <see cref="STGMEDIUM" /> structure).</para>
-      <h3>Notes to Callers</h3>
-      <para>You can specify more than one acceptable <b>tymed</b> medium with the Boolean OR operator. <b>GetData</b> must choose from the OR'd values the medium that best represents the data, do the allocation, and indicate responsibility for releasing the medium.</para>
-      <para>Data transferred across a stream extends from position zero of the stream pointer through to the position immediately before the current stream pointer (that is, the stream pointer position upon exit).</para>
-      <h3>Notes to Implementers</h3>
-      <b>GetData</b> must check all fields in the <see cref="FORMATETC" /> structure. It is important that <b>GetData</b> render the requested aspect and, if possible, use the requested medium. If the data object cannot comply with the information specified in the <b>FORMATETC</b>, the method should return DV_E_FORMATETC. If an attempt to allocate the medium fails, the method should return STG_E_MEDIUMFULL. It is important to fill in all of the fields in the <see cref="STGMEDIUM" /> structure.
-<para>Although the caller can specify more than one medium for returning the data, <b>GetData</b> can provide only one medium. If the initial transfer fails with the selected medium, this method can be implemented to try one of the other media specified before returning an error.</para></remarks>
-    <seealso cref="IDataObject" />
   </member>
   <member name="IDataObject.GetDataHere">
-    <summary>
-      <para>Called by a data consumer to obtain data from a source data object. This method differs from the <see cref="GetData" /> method in that the caller must allocate and free the specified storage medium.</para>
-    </summary>
-    <param name="pformatetc">
-      <para>A pointer to the <see cref="FORMATETC" /> structure that defines the format, medium, and target device to use when passing the data. Only one medium can be specified in <b>tymed</b>, and only the following values are valid: TYMED_ISTORAGE, TYMED_ISTREAM, TYMED_HGLOBAL, or TYMED_FILE.</para>
-    </param>
-    <param name="pmedium">
-      <para>A pointer to the <see cref="STGMEDIUM" /> structure that defines the storage medium containing the data being transferred. The medium must be allocated by the caller and filled in by <b>GetDataHere</b>. The caller must also free the medium. The implementation of this method must always supply a value of <b>NULL</b> for the <b>punkForRelease</b> member of the <b>STGMEDIUM</b> structure to which this parameter points.</para>
-    </param>
+    <summary>Called by a data consumer to obtain data from a source data object. This method differs from the <see cref="GetData" /> method in that the caller must allocate and free the specified storage medium.</summary>
+    <param name="pformatetc">A pointer to the <see cref="FORMATETC" /> structure that defines the format, medium, and target device to use when passing the data. Only one medium can be specified in <b>tymed</b>, and only the following values are valid: TYMED_ISTORAGE, TYMED_ISTREAM, TYMED_HGLOBAL, or TYMED_FILE.</param>
+    <param name="pmedium">A pointer to the <see cref="STGMEDIUM" /> structure that defines the storage medium containing the data being transferred. The medium must be allocated by the caller and filled in by <b>GetDataHere</b>. The caller must also free the medium. The implementation of this method must always supply a value of <b>NULL</b> for the <b>punkForRelease</b> member of the <b>STGMEDIUM</b> structure to which this parameter points.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible values include the following.</para>
       <list type="table">
@@ -558,112 +472,120 @@ tymed == -1;
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_LINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_LINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The value for <b>lindex</b> is not valid; currently, only -1 is supported.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The value for <b>lindex</b> is not valid; currently, only -1 is supported.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_FORMATETC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The value for <i>pformatetc</i> is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_FORMATETC</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_TYMED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <b>tymed</b> value is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The value for <i>pformatetc</i> is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_DVASPECT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <b>dwAspect</b> value is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_TYMED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OLE_E_NOTRUNNING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The object application is not running.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <b>tymed</b> value is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STG_E_MEDIUMFULL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An error occurred when allocating the medium.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_DVASPECT</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <b>dwAspect</b> value is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>dwDirection</i> parameter is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>OLE_E_NOTRUNNING</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The object application is not running.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>STG_E_MEDIUMFULL</b>
-            </para>
-          </description>
-          <description>
-            <para>An error occurred when allocating the medium.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>An unexpected error has occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>dwDirection</i> parameter is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>There was insufficient memory available for this operation.</para>
-          </description>
-        </item>
+          <description>There was insufficient memory available for this operation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <b>GetDataHere</b> method is similar to <see cref="IDataObject.GetData" />, except that the caller must both allocate and free the medium specified in <i>pmedium</i>. <b>GetDataHere</b> renders the data described in a <see cref="FORMATETC" /> structure and copies the data into that caller-provided <see cref="STGMEDIUM" /> structure. For example, if the medium is TYMED_HGLOBAL, this method cannot resize the medium or allocate a new hGlobal.</para>
-      <para>Some media are not appropriate in a call to <b>GetDataHere</b>, including GDI types such as metafiles. The <b>GetDataHere</b> method cannot put data into a caller-provided metafile. In general, the only storage media it is necessary to support in this method are TYMED_ISTORAGE, TYMED_ISTREAM, and TYMED_FILE.</para>
-      <para>When the transfer medium is a stream, OLE makes assumptions about where the data is being returned and the position of the stream's seek pointer. In a <see cref="GetData" /> call, the data returned is from stream position zero through just before the current seek pointer of the stream (that is, the position on exit). For <b>GetDataHere</b>, the data returned is from the stream position on entry through just before the position on exit.</para>
-    </remarks>
-    <seealso cref="IDataObject" />
   </member>
   <member name="IDataObject.QueryGetData">
-    <summary>
-      <para>Determines whether the data object is capable of rendering the data as specified. Objects attempting a paste or drop operation can call this method before calling <see cref="IDataObject.GetData" /> to get an indication of whether the operation may be successful.</para>
-    </summary>
-    <param name="pformatetc">
-      <para>A pointer to the <see cref="FORMATETC" /> structure defining the format, medium, and target device to use for the query.</para>
-    </param>
+    <summary>Determines whether the data object is capable of rendering the data as specified. Objects attempting a paste or drop operation can call this method before calling <see cref="IDataObject.GetData" /> to get an indication of whether the operation may be successful.</summary>
+    <param name="pformatetc">A pointer to the <see cref="FORMATETC" /> structure defining the format, medium, and target device to use for the query.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible values include the following</para>
       <list type="table">
@@ -671,106 +593,110 @@ tymed == -1;
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_LINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_LINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid value for <b>lindex</b>; currently, only -1 is supported.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid value for <b>lindex</b>; currently, only -1 is supported.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_FORMATETC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid value for <i>pformatetc</i>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_FORMATETC</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_TYMED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <b>tymed</b> value is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid value for <i>pformatetc</i>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_DVASPECT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <b>dwAspect</b> value is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_TYMED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OLE_E_NOTRUNNING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The object application is not running.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <b>tymed</b> value is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_DVASPECT</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <i>dwDirection</i> value is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <b>dwAspect</b> value is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>OLE_E_NOTRUNNING</b>
-            </para>
-          </description>
-          <description>
-            <para>The object application is not running.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>An unexpected error has occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>dwDirection</i> value is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>There is insufficient memory available for this operation.</para>
-          </description>
-        </item>
+          <description>There is insufficient memory available for this operation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The client of a data object calls <b>QueryGetData</b> to determine whether passing the specified <see cref="FORMATETC" /> structure to a subsequent call to <see cref="IDataObject.GetData" /> is likely to be successful. A successful return from this method does not necessarily ensure the success of the subsequent paste or drop operation.</para>
-    </remarks>
-    <seealso cref="IDataObject" />
   </member>
   <member name="IDataObject.SetData">
-    <summary>
-      <para>Called by an object containing a data source to transfer data to the object that implements this method.</para>
-    </summary>
-    <param name="pformatetc">
-      <para>A pointer to the <see cref="FORMATETC" /> structure defining the format used by the data object when interpreting the data contained in the storage medium.</para>
-    </param>
-    <param name="pmedium">
-      <para>A pointer to the <see cref="STGMEDIUM" /> structure defining the storage medium in which the data is being passed.</para>
-    </param>
-    <param name="fRelease">
-      <para>If <b>TRUE</b>, the data object called, which implements <b>SetData</b>, owns the storage medium after the call returns. This means it must free the medium after it has been used by calling the <see cref="ReleaseStgMedium" /> function. If <b>FALSE</b>, the caller retains ownership of the storage medium and the data object called uses the storage medium for the duration of the call only.</para>
-    </param>
+    <summary>Called by an object containing a data source to transfer data to the object that implements this method.</summary>
+    <param name="pformatetc">A pointer to the <see cref="FORMATETC" /> structure defining the format used by the data object when interpreting the data contained in the storage medium.</param>
+    <param name="pmedium">A pointer to the <see cref="STGMEDIUM" /> structure defining the storage medium in which the data is being passed.</param>
+    <param name="fRelease">If <b>TRUE</b>, the data object called, which implements <b>SetData</b>, owns the storage medium after the call returns. This means it must free the medium after it has been used by calling the <see cref="ReleaseStgMedium" /> function. If <b>FALSE</b>, the caller retains ownership of the storage medium and the data object called uses the storage medium for the duration of the call only.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible values include the following.</para>
       <list type="table">
@@ -778,105 +704,116 @@ tymed == -1;
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_LINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_LINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid value for <b>lindex</b>; currently, only -1 is supported.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid value for <b>lindex</b>; currently, only -1 is supported.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_FORMATETC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The value for <i>pformatetc</i> is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_FORMATETC</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_TYMED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <b>tymed</b> value is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The value for <i>pformatetc</i> is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DV_E_DVASPECT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <b>dwAspect</b> value is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_TYMED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OLE_E_NOTRUNNING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The object application is not running.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <b>tymed</b> value is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The operation failed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DV_E_DVASPECT</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <b>dwAspect</b> value is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>dwDirection</i> value is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>OLE_E_NOTRUNNING</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The object application is not running.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>The operation failed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>An unexpected error has occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>dwDirection</i> value is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>There was insufficient memory available for this operation.</para>
-          </description>
-        </item>
+          <description>There was insufficient memory available for this operation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>SetData</b> allows another object to attempt to send data to the implementing data object. A data object implements this method if it supports receiving data from another object. If it does not support this, it should be implemented to return E_NOTIMPL.</para>
-      <para>The caller allocates the storage medium indicated by the <i>pmedium</i> parameter, in which the data is passed. The data object called does not take ownership of the data until it has successfully received it and no error code is returned. The value of the <i>fRelease</i> parameter indicates the ownership of the medium after the call returns. <b>FALSE</b> indicates the caller still owns the medium, and the data object only has the use of it during the call; <b>TRUE</b> indicates that the data object now owns it and must release it when it is no longer needed.</para>
-      <para>The type of medium specified in the <i>pformatetc</i> and <i>pmedium</i> parameters must be the same. For example, one cannot be a global handle and the other a stream.</para>
-    </remarks>
-    <seealso cref="IDataObject" />
   </member>
   <member name="IDataObject">
     <summary>

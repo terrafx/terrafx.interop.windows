@@ -3,67 +3,26 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="INamedPropertyBag.ReadPropertyNPB">
-    <summary>
-      <para>Causes a property to be read from the named property bag.</para>
-    </summary>
-    <param name="pszBagname">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>A pointer to a string that contains the name of the property bag.</para>
-    </param>
-    <param name="pszPropName">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>A pointer to a string that contains the name of the property to be read.</para>
-    </param>
-    <param name="pVar">
-      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
-      <para>The address of a <b>VARIANT</b> that, when this method returns successfully, receives the property value.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Causes a property to be read from the named property bag.</summary>
+    <param name="pszBagname">A pointer to a string that contains the name of the property bag.</param>
+    <param name="pszPropName">A pointer to a string that contains the name of the property to be read.</param>
+    <param name="pVar">The address of a <b>VARIANT</b> that, when this method returns successfully, receives the property value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INamedPropertyBag.RemovePropertyNPB">
-    <summary>
-      <para>Removes a property from a named property bag.</para>
-    </summary>
-    <param name="pszBagname">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>A pointer to a string that contains the name of the property bag from which a property is to be removed.</para>
-    </param>
-    <param name="pszPropName">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>A pointer to a string that contains the name of the property to remove.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Removes a property from a named property bag.</summary>
+    <param name="pszBagname">A pointer to a string that contains the name of the property bag from which a property is to be removed.</param>
+    <param name="pszPropName">A pointer to a string that contains the name of the property to remove.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INamedPropertyBag.WritePropertyNPB">
-    <summary>
-      <para>Saves a property to the named property bag.</para>
-    </summary>
-    <param name="pszBagname">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>A pointer to a string that contains the name of the property bag.</para>
-    </param>
-    <param name="pszPropName">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>A pointer to a string that contains the name of the property to write.</para>
-    </param>
-    <param name="pVar">
-      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
-      <para>A pointer to a <b>VARIANT</b> that holds the new property value.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Saves a property to the named property bag.</summary>
+    <param name="pszBagname">A pointer to a string that contains the name of the property bag.</param>
+    <param name="pszPropName">A pointer to a string that contains the name of the property to write.</param>
+    <param name="pVar">A pointer to a <b>VARIANT</b> that holds the new property value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INamedPropertyBag">
-    <summary>
-      <para>Exposes methods that provide an object with a specified property bag in which the object can save its properties.</para>
-    </summary>
+    <summary>Exposes methods that provide an object with a specified property bag in which the object can save its properties.</summary>
   </member>
 </doc>

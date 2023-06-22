@@ -4,14 +4,12 @@
 <doc>
   <member name="AM_SAMPLE2_PROPERTIES">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>AM_SAMPLE2_PROPERTIES</b> structure describes the properties of a media sample. The <see cref="IMediaSample2" /> interface uses this structure.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="AM_SAMPLE2_PROPERTIES.cbData">
-    <summary>
-      <para>Length of property data, in bytes. This structure member is for extensibility.</para>
-    </summary>
+    <summary>Length of property data, in bytes. This structure member is for extensibility.</summary>
   </member>
   <member name="AM_SAMPLE2_PROPERTIES.dwTypeSpecificFlags">
     <summary>
@@ -21,220 +19,180 @@
           <description>Flag</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AM_VIDEO_FLAG_FIELD_MASK</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0003</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0003</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Use this mask to check whether the sample is a field or a frame.</para>
-          </description>
-        </item>
-        <item>
+          <description>Use this mask to check whether the sample is a field or a frame.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AM_VIDEO_FLAG_INTERLEAVED_FRAME</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The sample is a frame. (Use the AM_VIDEO_FLAG_FIELD_MASK bitmask to test for this value.)</para>
-          </description>
-        </item>
-        <item>
+          <description>The sample is a frame. (Use the AM_VIDEO_FLAG_FIELD_MASK bitmask to test for this value.)</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AM_VIDEO_FLAG_FIELD1</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The sample is field 1. (Use the AM_VIDEO_FLAG_FIELD_MASK bitmask to test for this value.)</para>
-          </description>
-        </item>
-        <item>
+          <description>The sample is field 1. (Use the AM_VIDEO_FLAG_FIELD_MASK bitmask to test for this value.)</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AM_VIDEO_FLAG_FIELD2</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The sample is the field 2. (Use the AM_VIDEO_FLAG_FIELD_MASK bitmask to test for this value.)</para>
-          </description>
-        </item>
-        <item>
+          <description>The sample is the field 2. (Use the AM_VIDEO_FLAG_FIELD_MASK bitmask to test for this value.)</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AM_VIDEO_FLAG_FIELD1FIRST</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If this flag is set, display field 1 first. Otherwise, display field 2 first. (Applies only when there are two fields per sample.)</para>
-          </description>
-        </item>
-        <item>
+          <description>If this flag is set, display field 1 first. Otherwise, display field 2 first. (Applies only when there are two fields per sample.)</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AM_VIDEO_FLAG_WEAVE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If this flag is set, use weave mode (that is, do not deinterlace the sample). Otherwise, use bob mode. This flag applies only when there are two fields per sample.</para>
-          </description>
-        </item>
-        <item>
+          <description>If this flag is set, use weave mode (that is, do not deinterlace the sample). Otherwise, use bob mode. This flag applies only when there are two fields per sample.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AM_VIDEO_FLAG_REPEAT_FIELD</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0040</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0040</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If this flag is set, display the first field again after displaying the second field. (Applies only when there are two fields per sample.)</para>
-          </description>
-        </item>
-        <item>
+          <description>If this flag is set, display the first field again after displaying the second field. (Applies only when there are two fields per sample.)</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AM_ReverseBlockStart</b>
-                </description>
-              </item>
-              <item>
-                <description>0x2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Signals the start of a VOBU during reverse playback of DVD video.  For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-playback-enhancements-in-windows-vista">DVD Playback Enhancements in Windows Vista</a>.</para>
-          </description>
-        </item>
-        <item>
+          <description>Signals the start of a VOBU during reverse playback of DVD video. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-playback-enhancements-in-windows-vista">DVD Playback Enhancements in Windows Vista</a>.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AM_ReverseBlockEnd</b>
-                </description>
-              </item>
-              <item>
-                <description>0x4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Signals the end of a VOBU during reverse playback of DVD video. The DVD Navigator sets this flag on an empty sample to signal the end of a VOBU. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-playback-enhancements-in-windows-vista">DVD Playback Enhancements in Windows Vista</a>.</para>
-          </description>
-        </item>
-        <item>
+          <description>Signals the end of a VOBU during reverse playback of DVD video. The DVD Navigator sets this flag on an empty sample to signal the end of a VOBU. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-playback-enhancements-in-windows-vista">DVD Playback Enhancements in Windows Vista</a>.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AM_UseNewCSSKey</b>
-                </description>
-              </item>
-              <item>
-                <description>0x1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>For DVD playback, indicates the point in the stream when the decoder should apply a new Content Scramble System (CSS) key.</para>
-            <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> sets this flag on an empty media sample just before it renegotiate a CSS title key.</para>
-            <para>Previously, the DVD Navigator incorrectly sent this key before negotiating the disc key. Starting in Windows 7, if the decoder's <b>AM_PROPERTY_DVDCOPY_SUPPORTS_NEW_KEYCOUNT</b> property returns <b>TRUE</b>, the DVD Navigator does not send this flag before negotiating the disc key. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-copy-protection-property-set">DVD Copy Protection Property Set</a>.</para>
-          </description>
-        </item>
-      </list>
-      <para>Other flags are defined but not currently used. See dvdmedia.h.</para>
-    </summary>
+          <description>For DVD playback, indicates the point in the stream when the decoder should apply a new Content Scramble System (CSS) key.<para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> sets this flag on an empty media sample just before it renegotiate a CSS title key.</para><para>Previously, the DVD Navigator incorrectly sent this key before negotiating the disc key. Starting in Windows 7, if the decoder's <b>AM_PROPERTY_DVDCOPY_SUPPORTS_NEW_KEYCOUNT</b> property returns <b>TRUE</b>, the DVD Navigator does not send this flag before negotiating the disc key. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-copy-protection-property-set">DVD Copy Protection Property Set</a>.</para></description>
+        </listheader>
+      </list> <para>Other flags are defined but not currently used. See dvdmedia.h.</para></summary>
   </member>
   <member name="AM_SAMPLE2_PROPERTIES.dwSampleFlags">
-    <summary>
-      <para>Bitwise combination of flags the <see cref="AM_SAMPLE_PROPERTY_FLAGS" /> enumerated data type. Undefined bits are reserved and must be zero.</para>
-    </summary>
+    <summary>Bitwise combination of flags the <see cref="AM_SAMPLE_PROPERTY_FLAGS" /> enumerated data type. Undefined bits are reserved and must be zero.</summary>
   </member>
   <member name="AM_SAMPLE2_PROPERTIES.lActual">
-    <summary>
-      <para>Length of the valid data in the buffer.</para>
-    </summary>
+    <summary>Length of the valid data in the buffer.</summary>
   </member>
   <member name="AM_SAMPLE2_PROPERTIES.tStart">
-    <summary>
-      <para>Start time, if valid. The <b>dwSampleFlags</b> member specifies whether this member is valid.</para>
-    </summary>
+    <summary>Start time, if valid. The <b>dwSampleFlags</b> member specifies whether this member is valid.</summary>
   </member>
   <member name="AM_SAMPLE2_PROPERTIES.tStop">
-    <summary>
-      <para>Stop time, if valid. The <b>dwSampleFlags</b> member specifies whether this member is valid.</para>
-    </summary>
+    <summary>Stop time, if valid. The <b>dwSampleFlags</b> member specifies whether this member is valid.</summary>
   </member>
   <member name="AM_SAMPLE2_PROPERTIES.dwStreamId">
-    <summary>
-      <para>Stream identifier. If the value is AM_STREAM_MEDIA, the stream contains media data. If the value is AM_STREAM_CONTROL, the stream contains control information. Applications can define values of 0x80000000 or greater for their own use. (See <see cref="AM_SAMPLE_PROPERTY_FLAGS" />.)</para>
-    </summary>
+    <summary>Stream identifier. If the value is AM_STREAM_MEDIA, the stream contains media data. If the value is AM_STREAM_CONTROL, the stream contains control information. Applications can define values of 0x80000000 or greater for their own use. (See <see cref="AM_SAMPLE_PROPERTY_FLAGS" />.)</summary>
   </member>
   <member name="AM_SAMPLE2_PROPERTIES.pMediaType">
-    <summary>
-      <para>Pointer to an <see cref="AM_MEDIA_TYPE" /> structure that specifies the media type if the format has changed. If this format has not changed, this member is <b>NULL</b>.</para>
-    </summary>
+    <summary>Pointer to an <see cref="AM_MEDIA_TYPE" /> structure that specifies the media type if the format has changed. If this format has not changed, this member is <b>NULL</b>.</summary>
   </member>
   <member name="AM_SAMPLE2_PROPERTIES.pbBuffer">
-    <summary>
-      <para>Pointer to the sample buffer.</para>
-    </summary>
+    <summary>Pointer to the sample buffer.</summary>
   </member>
   <member name="AM_SAMPLE2_PROPERTIES.cbBuffer">
-    <summary>
-      <para>Size of the sample buffer, in bytes.</para>
-    </summary>
+    <summary>Size of the sample buffer, in bytes.</summary>
   </member>
 </doc>

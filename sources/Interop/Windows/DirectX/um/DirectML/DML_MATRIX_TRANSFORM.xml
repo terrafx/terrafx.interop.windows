@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_MATRIX_TRANSFORM">
-    <summary>
-      <para>Defines constants that specify a matrix transform to be applied to a DirectML tensor.</para>
-    </summary>
+    <summary>Defines constants that specify a matrix transform to be applied to a DirectML tensor.</summary>
   </member>
   <member name="DML_MATRIX_TRANSFORM.DML_MATRIX_TRANSFORM_NONE">
-    <summary>
-      <para>Specifies that no transform is to be applied.</para>
-    </summary>
+    <summary>Specifies that no transform is to be applied.</summary>
   </member>
   <member name="DML_MATRIX_TRANSFORM.DML_MATRIX_TRANSFORM_TRANSPOSE">
-    <summary>
-      <para>Specifies that a transpose transform is to be applied.</para>
-    </summary>
+    <summary>Specifies that a transpose transform is to be applied.</summary>
   </member>
 </doc>

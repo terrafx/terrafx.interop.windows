@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDisplayDeviceInterop.CreateSharedHandle">
+    <summary>For a <a href="https://docs.microsoft.com//uwp/api/windows.devices.display.core.displaysurface">DisplaySurface</a> or a <a href="https://docs.microsoft.com//uwp/api/windows.devices.display.core.displayfence">DisplayFence</a> object, creates a shared handle that can be used for interop with Direct3D or other graphics APIs.</summary>
+    <param name="pObject">A pointer to the <b>IUnknown</b> interface of a <a href="https://docs.microsoft.com//uwp/api/windows.devices.display.core.displaysurface">DisplaySurface</a> or a <a href="https://docs.microsoft.com//uwp/api/windows.devices.display.core.displayfence">DisplayFence</a> object.</param>
+    <param name="pSecurityAttributes">
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa379560(v=vs.85)">SECURITY_ATTRIBUTES</a> structure that contains two separate but related data members: an optional security descriptor, and a Boolean value that determines whether child processes can inherit the returned handle.</para>
+      <para>Set this parameter to <code>nullptr</code> if you want child processes that the application might create to not inherit the handle returned by <b>CreateSharedHandle</b>, and if you want the resource that is associated with the returned handle to get a default security descriptor.</para>
+      <para>The <i>lpSecurityDescriptor</i> member of the structure specifies a <see cref="SECURITY_DESCRIPTOR" /> for the resource. Set this member to <code>nullptr</code> if you want the runtime to assign a default security descriptor to the resource that is associated with the returned handle. The access control lists (ACLs) in the default security descriptor for the resource come from the primary or impersonation token of the creator. For more info, see <a href="https://docs.microsoft.com//windows/win32/sync/synchronization-object-security-and-access-rights">Synchronization object security and access rights</a>.</para>
+    </param>
+    <param name="Access">
+      <para>The requested access rights to the resource. In addition to the <a href="https://docs.microsoft.com//windows/win32/secauthz/generic-access-rights">Generic access rights</a>, a surface can use these values.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>DXGI_SHARED_RESOURCE_READ</b> (0x80000000L). Specifies read access to the resource.</description>
+        </item>
+        <item>
+          <description>
+            <b>DXGI_SHARED_RESOURCE_WRITE</b> (1). Specifies write access to the resource.</description>
+        </item>
+      </list>
+      <para>You can combine these values by using a bitwise OR operation.</para>
+      <para>If <i>pObject</i> is a fence, then you must use <b>GENERIC_ALL</b>.</para>
+    </param>
+    <param name="Name">
+      <para>A null-terminated Unicode string that contains the name to associate with the shared heap. The name is limited to <b>MAX_PATH</b> characters. Name comparison is case-sensitive.</para>
+      <para>If <i>Name</i> matches the name of an existing resource, then <b>CreateSharedHandle</b> fails with <a href="https://docs.microsoft.com//windows/win32/direct3ddxgi/dxgi-error">DXGI_ERROR_NAME_ALREADY_EXISTS</a>. This occurs because these objects share the same namespace.</para>
+      <para>The name can have a "Global" or "Local" prefix to explicitly create the object in the global or session namespace. The remainder of the name can contain any character except the backslash character (<code>\</code>). For more information, see <a href="https://docs.microsoft.com//windows/win32/termserv/kernel-object-namespaces">Kernel object namespaces</a>. Fast user-switching is implemented using Terminal Services sessions. Kernel object names must follow the guidelines outlined for Terminal Services so that applications can support multiple users.</para>
+      <para>The object can be created in a private namespace. For more information, see <a href="https://docs.microsoft.com//windows/win32/sync/object-namespaces">Object namespaces</a>.</para>
+    </param>
+    <param name="pHandle">A pointer to a <b>HANDLE</b> that receives that new shared handle.</param>
+    <returns>This method returns <b>S_OK</b> if it succeeded, otherwise a failure code indicating why it failed. If it succeeded, then <i>pHandle</i> will always point to the newly created handle.</returns>
+  </member>
+  <member name="IDisplayDeviceInterop.OpenSharedHandle">
+    <summary>Opens a handle for shared primary surfaces, shared fences, and source presentation handles.</summary>
+    <param name="NTHandle">An NT handle for a shared primary surface, shared fence, or source presentation handle.</param>
+    <param name="riid">
+      <para>A reference to the interface identifier (IID) for the default interface of one of the following Windows Runtime classes. An IID is a <b><see cref="GUID" /></b>.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//uwp/api/windows.devices.display.core.displaysurface">IDisplaySurface</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//uwp/api/windows.devices.display.core.displayfence">IDisplayFence</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//uwp/api/windows.devices.display.core.displaysource">IDisplaySource</a>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="ppvObj">A pointer to a memory block that receives a pointer to the interface specified by the <i>riid</i> argument.</param>
+    <returns>Returns <b>S_OK</b> on success, or a failure code describing the problem on failure.</returns>
+  </member>
+  <member name="IDisplayDeviceInterop">
+    <summary>Provides methods for interoperating between Direct3D (and other graphics APIs) and APIs in the Windows Runtime <a href="https://docs.microsoft.com//uwp/api/windows.devices.display.core">Windows.Devices.Display.Core</a> namespace.</summary>
+  </member>
+</doc>

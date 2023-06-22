@@ -5,26 +5,16 @@
   <member name="DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OPERATOR_DESC">
     <summary>
       <para>Performs a logical <i>less than</i> on each pair of corresponding elements of the input tensors, placing the result (1 for true, 0 for false) into the corresponding element of <i>OutputTensor</i>.</para>
-      <code>f(a, b) = (a &lt; b)
-</code>
+      <code>f(a, b) = (a &lt; b)</code>
     </summary>
   </member>
   <member name="DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OPERATOR_DESC.ATensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the left-hand side inputs.</para>
-    </summary>
+    <summary>A tensor containing the left-hand side inputs.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OPERATOR_DESC.BTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the right-hand side inputs.</para>
-    </summary>
+    <summary>A tensor containing the right-hand side inputs.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The output tensor to write the results to.</para>
-    </summary>
+    <summary>The output tensor to write the results to.</summary>
   </member>
 </doc>

@@ -3,151 +3,46 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TITLEBARINFO">
-    <summary>
-      <para>Contains title bar information.</para>
-    </summary>
-    <seealso cref="GetTitleBarInfo" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/winmsg/windows">Windows</seealso>
+    <summary>Contains title bar information.</summary>
   </member>
   <member name="TITLEBARINFO.cbSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size, in bytes, of the structure. The caller must set this member to <code>sizeof(TITLEBARINFO)</code>.</para>
-    </summary>
+    <summary>The size, in bytes, of the structure. The caller must set this member to <code>sizeof(TITLEBARINFO)</code>.</summary>
   </member>
   <member name="TITLEBARINFO.rcTitleBar">
-    <summary>
-      <para>Type: <b><see cref="RECT" /></b></para>
-      <para>The coordinates of the title bar. These coordinates include all title-bar elements except the window menu.</para>
-    </summary>
+    <summary>The coordinates of the title bar. These coordinates include all title-bar elements except the window menu.</summary>
   </member>
   <member name="TITLEBARINFO.rgstate">
     <summary>
-      <para>Type: <b>DWORD[CCHILDREN_TITLEBAR+1]</b></para>
-      <para>An array that receives a
-value for each element of the title bar. The following are the title bar elements represented by the array.</para>
+      <para>An array that receives a value for each element of the title bar. The following are the title bar elements represented by the array.</para>
       <list type="table">
         <listheader>
           <description>Index</description>
           <description>Title Bar Element</description>
         </listheader>
-        <item>
+        <listheader>
           <description>0</description>
           <description>The title bar itself.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>1</description>
           <description>Reserved.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>2</description>
           <description>Minimize button.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>3</description>
           <description>Maximize button.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>4</description>
           <description>Help button.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>5</description>
           <description>Close button.</description>
-        </item>
-      </list>
-      <para>Each array element is a combination of one or more of the following values.</para>
-      <list type="table">
-        <listheader>
-          <description>Value</description>
-          <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>STATE_SYSTEM_FOCUSABLE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00100000</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The element can accept the focus.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>STATE_SYSTEM_INVISIBLE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00008000</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The element is invisible.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>STATE_SYSTEM_OFFSCREEN</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00010000</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The element has no visible representation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>STATE_SYSTEM_UNAVAILABLE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The element is unavailable.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>STATE_SYSTEM_PRESSED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The element is in the pressed state.</para>
-          </description>
-        </item>
-      </list>
-    </summary>
+      </list> <para>Each array element is a combination of one or more of the following values.</para><list type="table"><listheader><description>Value</description><description>Meaning</description></listheader><listheader><description><list type="bullet"><listheader><term><b>STATE_SYSTEM_FOCUSABLE</b></term></listheader><listheader><term>0x00100000</term></listheader></list></description><description>The element can accept the focus.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>STATE_SYSTEM_INVISIBLE</b></term></listheader><listheader><term>0x00008000</term></listheader></list></description><description>The element is invisible.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>STATE_SYSTEM_OFFSCREEN</b></term></listheader><listheader><term>0x00010000</term></listheader></list></description><description>The element has no visible representation.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>STATE_SYSTEM_UNAVAILABLE</b></term></listheader><listheader><term>0x00000001</term></listheader></list></description><description>The element is unavailable.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>STATE_SYSTEM_PRESSED</b></term></listheader><listheader><term>0x00000008</term></listheader></list></description><description>The element is in the pressed state.</description></listheader></list></summary>
   </member>
 </doc>

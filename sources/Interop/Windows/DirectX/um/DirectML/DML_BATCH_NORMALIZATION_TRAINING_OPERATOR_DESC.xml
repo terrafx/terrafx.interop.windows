@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_BATCH_NORMALIZATION_TRAINING_OPERATOR_DESC">
+    <summary>
+      <para>Performs a batch normalization on the input. This operator performs the following computation: <code>Output = FusedActivation(Scale * ((Input - Mean) / sqrt(Variance + Epsilon)) + Bias + FusedAdd)</code>.</para>
+      <para>Any dimension in <i>ScaleTensor</i> and <i>BiasTensor</i> can be set to 1, and be automatically broadcast to match <i>InputTensor</i>, but otherwise must equal the corresponding dimension's size from <i>InputTensor</i>. <i>MeanTensor</i> and <i>VarianceTensor</i> are computed on the input across the set of dimensions for which <i>ScaleTensor</i> and <i>BiasTensor</i> sizes equal one.</para>
+    </summary>
+  </member>
+  <member name="DML_BATCH_NORMALIZATION_TRAINING_OPERATOR_DESC.InputTensor">
+    <summary>A tensor containing the Input data.</summary>
+  </member>
+  <member name="DML_BATCH_NORMALIZATION_TRAINING_OPERATOR_DESC.ScaleTensor">
+    <summary>A tensor containing the Scale data.</summary>
+  </member>
+  <member name="DML_BATCH_NORMALIZATION_TRAINING_OPERATOR_DESC.BiasTensor">
+    <summary>A tensor containing the Bias data.</summary>
+  </member>
+  <member name="DML_BATCH_NORMALIZATION_TRAINING_OPERATOR_DESC.FusedAddTensor">
+    <summary>An optional tensor containing data that is added to the result prior to FusedActivation, if any.</summary>
+  </member>
+  <member name="DML_BATCH_NORMALIZATION_TRAINING_OPERATOR_DESC.OutputTensor">
+    <summary>A tensor to write the results to.</summary>
+  </member>
+  <member name="DML_BATCH_NORMALIZATION_TRAINING_OPERATOR_DESC.OutputMeanTensor">
+    <summary>A tensor to write the mean of the input to.</summary>
+  </member>
+  <member name="DML_BATCH_NORMALIZATION_TRAINING_OPERATOR_DESC.OutputVarianceTensor">
+    <summary>A tensor to write the variance of the input to.</summary>
+  </member>
+  <member name="DML_BATCH_NORMALIZATION_TRAINING_OPERATOR_DESC.Epsilon">
+    <summary>The epsilon value to use to avoid division by zero.</summary>
+  </member>
+  <member name="DML_BATCH_NORMALIZATION_TRAINING_OPERATOR_DESC.FusedActivation">
+    <summary>An optional fused activation layer to apply after the normalization. For more info, see <a href="https://docs.microsoft.com//windows/ai/directml/dml-fused-activations">Using fused operators for improved performance</a>.</summary>
+  </member>
+</doc>

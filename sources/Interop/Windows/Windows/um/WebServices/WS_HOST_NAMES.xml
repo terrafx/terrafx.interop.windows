@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_HOST_NAMES">
-    <summary>
-      <para>A structure containing a list of host names.</para>
-    </summary>
+    <summary>A structure containing a list of host names.</summary>
   </member>
   <member name="WS_HOST_NAMES.hostNames">
-    <summary>
-      <para>A list of host names.  Each host name can be a DNS name or
-an IPv4 or IPv6 address.  IPv6 addresses are enclosed
-in brackets ('[' address ']').</para>
-    </summary>
+    <summary>A list of host names. Each host name can be a DNS name or an IPv4 or IPv6 address. IPv6 addresses are enclosed in brackets ('[' address ']').</summary>
   </member>
   <member name="WS_HOST_NAMES.hostNameCount">
-    <summary>
-      <para>The number of elements in the hostNames array.</para>
-    </summary>
+    <summary>The number of elements in the hostNames array.</summary>
   </member>
 </doc>

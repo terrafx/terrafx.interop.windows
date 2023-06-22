@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Unit">
+    <summary>The <b>Unit</b> enumeration specifies the unit of measure for a given data type.</summary>
+  </member>
+  <member name="Unit.UnitWorld">
+    <summary>Specifies world coordinates, a nonphysical unit.</summary>
+  </member>
+  <member name="Unit.UnitDisplay">
+    <summary>Specifies display units. For example, if the display device is a monitor, then the unit is 1 pixel.</summary>
+  </member>
+  <member name="Unit.UnitPixel">
+    <summary>Specifies that a unit is 1 pixel.</summary>
+  </member>
+  <member name="Unit.UnitPoint">
+    <summary>Specifies that a unit is 1 point or 1/72 inch.</summary>
+  </member>
+  <member name="Unit.UnitInch">
+    <summary>Specifies that a unit is 1 inch.</summary>
+  </member>
+  <member name="Unit.UnitDocument">
+    <summary>Specifies that a unit is 1/300 inch.</summary>
+  </member>
+  <member name="Unit.UnitMillimeter">
+    <summary>Specifies that a unit is 1 millimeter.</summary>
+  </member>
+</doc>

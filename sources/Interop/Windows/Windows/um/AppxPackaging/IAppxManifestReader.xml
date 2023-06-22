@@ -3,213 +3,72 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxManifestReader.GetApplications">
-    <summary>
-      <para>Gets an enumerator that iterates through the applications defined in the manifest.</para>
-    </summary>
-    <param name="applications">
-      <para>Type: <b><see cref="IAppxManifestApplicationsEnumerator" />**</b></para>
-      <para>The enumerator that iterates through the applications.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If no applications are defined in the manifest, this method returns <b>S_OK</b> with an empty <see cref="IAppxManifestApplicationsEnumerator" /> object.</para>
-      <para>Call the <see cref="IUnknown.Release" /> method when you have finished using the <see cref="IAppxManifestReader" /> object.</para>
-      <h4>Examples</h4>
-      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-query-package-identity-information">Quickstart: Read app package manifest info</a>.</para>
-    </remarks>
-    <seealso cref="IAppxManifestReader" />
+    <summary>Gets an enumerator that iterates through the applications defined in the manifest.</summary>
+    <param name="applications">The enumerator that iterates through the applications.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxManifestReader.GetCapabilities">
-    <summary>
-      <para>Gets the list of capabilities requested by the package.</para>
-    </summary>
-    <param name="capabilities">
-      <para>Type: <b><see cref="APPX_CAPABILITIES" />*</b></para>
-      <para>The list of capabilities requested by the package. This is a bitwise combination of  the values of the enumeration.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Capabilities are specified using the <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/appxmanifestschema/element-capability">Capability</a> element in the package manifest.</para>
-      <para>If no package capabilities are defined in the manifest, this method returns <b>S_OK</b> with a zero value.</para>
-    </remarks>
-    <seealso cref="IAppxManifestReader" />
+    <summary>Gets the list of capabilities requested by the package.</summary>
+    <param name="capabilities">The list of capabilities requested by the package. This is a bitwise combination of the values of the enumeration.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxManifestReader.GetDeviceCapabilities">
-    <summary>
-      <para>Gets an enumerator that iterates through the device capabilities defined in the manifest.</para>
-    </summary>
-    <param name="deviceCapabilities">
-      <para>Type: <b><see cref="IAppxManifestDeviceCapabilitiesEnumerator" />**</b></para>
-      <para>The enumerator that iterates through the device capabilities.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Device capabilities are specified using the <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability">DeviceCapability</a> element in the package manifest.</para>
-      <para>If no package device capabilities are defined in the manifest, this method returns <b>S_OK</b> with an empty enumerator.</para>
-      <para>Call the <see cref="IUnknown.Release" /> method when you have finished using the <i>deviceCapabilities</i> object.</para>
-    </remarks>
-    <seealso cref="IAppxManifestReader" />
+    <summary>Gets an enumerator that iterates through the device capabilities defined in the manifest.</summary>
+    <param name="deviceCapabilities">The enumerator that iterates through the device capabilities.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxManifestReader.GetPackageDependencies">
-    <summary>
-      <para>Gets an enumerator that iterates through dependencies defined in the manifest.</para>
-    </summary>
-    <param name="dependencies">
-      <para>Type: <b><see cref="IAppxManifestPackageDependenciesEnumerator" />**</b></para>
-      <para>The enumerator that iterates through the dependencies.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If no package dependencies are found in the manifest, this method returns <b>S_OK</b> with an empty enumerator.</para>
-      <para>Call the <see cref="IUnknown.Release" /> method when you have finished using the <i>dependencies</i> object.</para>
-    </remarks>
-    <seealso cref="IAppxManifestReader" />
+    <summary>Gets an enumerator that iterates through dependencies defined in the manifest.</summary>
+    <param name="dependencies">The enumerator that iterates through the dependencies.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxManifestReader.GetPackageId">
-    <summary>
-      <para>Gets the package identifier defined in the manifest.</para>
-    </summary>
-    <param name="packageId">
-      <para>Type: <b><see cref="IAppxManifestPackageId" />**</b></para>
-      <para>The package identifier.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Call the <see cref="IUnknown.Release" /> method when you have finished using the <i>packageId</i> object.</para>
-      <h4>Examples</h4>
-      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-query-package-identity-information">Quickstart: Read app package manifest info</a>.</para>
-    </remarks>
-    <seealso cref="IAppxManifestReader" />
+    <summary>Gets the package identifier defined in the manifest.</summary>
+    <param name="packageId">The package identifier.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxManifestReader.GetPrerequisite">
-    <summary>
-      <para>Gets the specified prerequisite as defined in the package manifest.</para>
-    </summary>
-    <param name="name">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCWSTR</a></b></para>
-      <para>The name of the prerequisite, either "OSMinVersion" or "OSMaxVersionTested".</para>
-    </param>
-    <param name="value">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT64</a>*</b></para>
-      <para>The specified prerequisite. In the manifest the dot-trio representation is Major.Minor.AppPlatform. This is converted to the 64-bit value as the follows:
-The highest order word contains the Major version. The next word contains the Minor version.    The next word contains the optional AppPlatform version, if specified.</para>
-    </param>
+    <summary>Gets the specified prerequisite as defined in the package manifest.</summary>
+    <param name="name">The name of the prerequisite, either "OSMinVersion" or "OSMaxVersionTested".</param>
+    <param name="value">The specified prerequisite. In the manifest the dot-trio representation is Major.Minor.AppPlatform. This is converted to the 64-bit value as the follows: The highest order word contains the Major version. The next word contains the Minor version.	The next word contains the optional AppPlatform version, if specified.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method can return one of these values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The prerequisite defined in <i>name</i> is not defined in the manifest.</para>
-          </description>
-        </item>
+          <description>The prerequisite defined in <i>name</i> is not defined in the manifest.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Prerequisites are specified using the <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/appxmanifestschema/element-osminversion">OSMinVersion</a> and <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/appxmanifestschema/element-osmaxversiontested">OSMaxVersionTested</a> elements in the package manifest.</para>
-    </remarks>
-    <seealso cref="IAppxManifestReader" />
   </member>
   <member name="IAppxManifestReader.GetProperties">
-    <summary>
-      <para>Gets the properties of the package as defined in the manifest.</para>
-    </summary>
-    <param name="packageProperties">
-      <para>Type: <b><see cref="IAppxManifestProperties" />**</b></para>
-      <para>Properties of the package as described by the manifest.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If the method succeeds, it returns <b>S_OK</b>.</para>
-    </returns>
-    <remarks>
-      <para>Properties are specified using the <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/appxmanifestschema/element-properties">Properties</a> element in the manifest.</para>
-      <h4>Examples</h4>
-      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-query-package-identity-information">Quickstart: Read app package manifest info</a>.</para>
-    </remarks>
-    <seealso cref="IAppxManifestReader" />
+    <summary>Gets the properties of the package as defined in the manifest.</summary>
+    <param name="packageProperties">Properties of the package as described by the manifest.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>.</returns>
   </member>
   <member name="IAppxManifestReader.GetResources">
-    <summary>
-      <para>Gets an enumerator that iterates through the resources defined in the manifest.</para>
-    </summary>
-    <param name="resources">
-      <para>Type: <b><see cref="IAppxManifestResourcesEnumerator" />**</b></para>
-      <para>The enumerator that iterates through the resources.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If the method succeeds, it returns <b>S_OK</b>.</para>
-    </returns>
-    <remarks>
-      <para>Resources are specified using the <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/appxmanifestschema/element-resources">Resources</a> element in the manifest.</para>
-      <para>Call the <see cref="IUnknown.Release" /> method when you have finished using the <i>resources</i> object.</para>
-    </remarks>
-    <seealso cref="IAppxManifestReader" />
+    <summary>Gets an enumerator that iterates through the resources defined in the manifest.</summary>
+    <param name="resources">The enumerator that iterates through the resources.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>.</returns>
   </member>
   <member name="IAppxManifestReader.GetStream">
-    <summary>
-      <para>Gets the raw XML parsed and read by the manifest reader.</para>
-    </summary>
-    <param name="manifestStream">
-      <para>Type: <b><see cref="IStream" />**</b></para>
-      <para>The read-only stream that represents the XML content of the manifest.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The raw XML stream is the entire source stream, and may contain elements and attributes in other namespaces that are ignored by the manifest reader.  For example, the XML stream may have elements in other namespaces that were marked in the <b>IgnorableNamespaces</b> attribute in the <b>Package</b> element, which were not validated. Therefore, you should consider this XML as untrusted.</para>
-      <para>It is recommended that you use the packaging API to get information from the manifest, rather than parsing the raw XML.</para>
-      <para>If you parse the XML, you must include XML data validation and XML security testing.</para>
-      <para>Call the <see cref="IUnknown.Release" /> method when you have finished using the <i>manifestStream</i> object.</para>
-    </remarks>
-    <seealso cref="IAppxManifestReader" />
+    <summary>Gets the raw XML parsed and read by the manifest reader.</summary>
+    <param name="manifestStream">The read-only stream that represents the XML content of the manifest.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxManifestReader">
-    <summary>
-      <para>Represents an object model of the package manifest that provides methods to access manifest elements and attributes.</para>
-    </summary>
-    <remarks>
-      <para>Do  not implement this object. Use the provided implementation instead.</para>
-      <para>This <b>IAppxManifestReader</b> object parses and validates the app package manifest and exposes elements and attributes in the manifest in a type-safe manner. This object can also be used to get an underlying <see cref="IStream" /> for the raw XML if needed.</para>
-      <para>
-        <b>Note</b>  Starting with Windows 8.1, we recommend not to use <see cref="IAppxManifestReader.GetResources" /> anymore to only iterate over the <b>Language</b> values in the manifest. Instead, use <b>IAppxManifestReader2.GetResources</b> because it iterates over other resource qualifiers as well, such as, <b>Scale</b> and <b>DXFeatureLevel</b>.</para>
-      <para>This object can be retrieved using the <see cref="CreateManifestReader" /> method of the <see cref="IAppxFactory" /> interface or the <see cref="GetManifest" /> method of the <see cref="IAppxPackageReader" /> interface. In either case, the manifest is validated before returning the <b>IAppxManifestReader</b> object. If the XML is not syntactically valid, then the above mentioned methods fail, and the <b>IAppxManifestReader</b> object is not returned.</para>
-      <h4>Examples</h4>
-      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-query-package-identity-information">Quickstart: Read app package manifest info</a>.</para>
-    </remarks>
-    <seealso cref="APPX_CAPABILITIES" />
-    <seealso cref="IAppxManifestApplicationsEnumerator" />
-    <seealso cref="IAppxManifestDeviceCapabilitiesEnumerator" />
-    <seealso cref="IAppxManifestPackageDependenciesEnumerator" />
-    <seealso cref="IAppxManifestPackageId" />
-    <seealso cref="IAppxManifestProperties" />
-    <seealso cref="IAppxManifestResourcesEnumerator" />
+    <summary>Represents an object model of the package manifest that provides methods to access manifest elements and attributes.</summary>
   </member>
 </doc>

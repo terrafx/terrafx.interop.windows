@@ -3,28 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfContextOwnerCompositionSink.OnEndComposition">
-    <summary>
-      <para>Called when a composition is terminated.</para>
-    </summary>
-    <param name="pComposition">
-      <para>Pointer to an <see cref="ITfCompositionView" /> object that represents the composition terminated.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ITfCompositionView interface" />
-    <seealso cref="ITfContextOwnerCompositionSink interface" />
+    <summary>Called when a composition is terminated.</summary>
+    <param name="pComposition">Pointer to an <see cref="ITfCompositionView" /> object that represents the composition terminated.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITfContextOwnerCompositionSink.OnStartComposition">
-    <summary>
-      <para>Called when a composition is started.</para>
-    </summary>
-    <param name="pComposition">
-      <para>Pointer to an <see cref="ITfCompositionView" /> object that represents the new composition.</para>
-    </param>
-    <param name="pfOk">
-      <para>Pointer to a <b>BOOL</b> value that receives a value that allows or denies the new composition. Receives a nonzero value to allow the composition or zero to deny the composition.</para>
-    </param>
+    <summary>Called when a composition is started.</summary>
+    <param name="pComposition">Pointer to an <see cref="ITfCompositionView" /> object that represents the new composition.</param>
+    <param name="pfOk">Pointer to a <b>BOOL</b> value that receives a value that allows or denies the new composition. Receives a nonzero value to allow the composition or zero to deny the composition.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -32,47 +18,28 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfCompositionView interface" />
-    <seealso cref="ITfContextOwnerCompositionSink interface" />
   </member>
   <member name="ITfContextOwnerCompositionSink.OnUpdateComposition">
-    <summary>
-      <para>Called when an existing composition is changed.</para>
-    </summary>
-    <param name="pComposition">
-      <para>Pointer to an <see cref="ITfCompositionView" /> object that represents the composition updated.</para>
-    </param>
-    <param name="pRangeNew">
-      <para>Pointer to an <see cref="ITfRange" /> object that contains the range of text the composition will cover after the composition is updated.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>To determine what has changed within the composition, compare <i>pRangeNew</i> with the range returned from <see cref="ITfCompositionView.GetRange" />. The range returned by <b>ITfCompositionView.GetRange</b> is not updated until after <b>ITfContextOwnerCompositionSink.OnUpdateComposition</b> returns.</para>
-    </remarks>
-    <seealso cref="ITfCompositionView interface" />
-    <seealso cref="ITfContextOwnerCompositionSink interface" />
-    <seealso cref="ITfCompositionView.GetRange" />
-    <seealso cref="ITfRange interface" />
+    <summary>Called when an existing composition is changed.</summary>
+    <param name="pComposition">Pointer to an <see cref="ITfCompositionView" /> object that represents the composition updated.</param>
+    <param name="pRangeNew">Pointer to an <see cref="ITfRange" /> object that contains the range of text the composition will cover after the composition is updated.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITfContextOwnerCompositionSink">
-    <summary>
-      <para>The <b>ITfContextOwnerCompositionSink</b> interface is implemented by an application to receive composition-related notifications. When the application calls <see cref="ITfDocumentMgr.CreateContext" />, the TSF manager queries the object for this interface. If the object supports this interface, the advise sink is installed.</para>
-    </summary>
-    <seealso cref="ITfDocumentMgr.CreateContext " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfContextOwnerCompositionSink</b> interface is implemented by an application to receive composition-related notifications. When the application calls <see cref="ITfDocumentMgr.CreateContext" />, the TSF manager queries the object for this interface. If the object supports this interface, the advise sink is installed.</summary>
   </member>
 </doc>

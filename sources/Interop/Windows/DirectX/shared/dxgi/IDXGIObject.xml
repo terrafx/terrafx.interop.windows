@@ -3,116 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDXGIObject.GetParent">
-    <summary>
-      <para>Gets the parent of the object.</para>
-    </summary>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>The ID of the requested interface.</para>
-    </param>
-    <param name="ppParent">
-      <para>Type: <b>void**</b></para>
-      <para>The address of a pointer to the parent object.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> values.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IDXGIObject" />
+    <summary>Gets the parent of the object.</summary>
+    <param name="riid">The ID of the requested interface.</param>
+    <param name="ppParent">The address of a pointer to the parent object.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> values.</returns>
   </member>
   <member name="IDXGIObject.SetPrivateData">
-    <summary>
-      <para>Sets application-defined data to the object and associates that data with a GUID.</para>
-    </summary>
-    <param name="Name">
-      <para>Type: <b><a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-oaut/6e7d7108-c213-40bc-8294-ac13fe68fd50">REFGUID</a></b></para>
-      <para>A GUID that identifies the data. Use this GUID in a call to <see cref="GetPrivateData" /> to get the data.</para>
-    </param>
-    <param name="DataSize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The size of the object's data.</para>
-    </param>
-    <param name="pData">
-      <para>Type: <b>const void*</b></para>
-      <para>A pointer to the object's data.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> values.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>SetPrivateData</b> makes a copy of the specified data and stores it with the object.</para>
-      <para>Private data that <b>SetPrivateData</b> stores in the object occupies the same storage space as private data that is stored by associated Direct3D objects (for example, by a Microsoft Direct3D 11 device through <see cref="ID3D11Device.SetPrivateData" /> or by a Direct3D 11 child device through <see cref="ID3D11DeviceChild.SetPrivateData" />).</para>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-layers">debug layer</a> reports memory leaks by outputting a list of object interface pointers along with their friendly names. The default friendly name is "&lt;unnamed&gt;". You can set the friendly name so that you can determine if the corresponding object interface pointer caused the leak. To set the friendly name, use the <b>SetPrivateData</b> method and the well-known private data GUID (<b>WKPDID_D3DDebugObjectName</b>) that is in D3Dcommon.h. For example, to give pContext a friendly name of <i>My name</i>, use the following code:</para>
-      <code>
-static const char c_szName[] = "My name";
-hr = pContext-&gt;SetPrivateData( WKPDID_D3DDebugObjectName, sizeof( c_szName ) - 1, c_szName );
-
-</code>
-      <para>You can use <b>WKPDID_D3DDebugObjectName</b> to track down memory leaks and understand performance characteristics of your applications. This information is reflected in the output of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-layers">debug layer</a> that is related to memory leaks (<see cref="ID3D11Debug.ReportLiveDeviceObjects" />) and with the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/direct3d-11-1-features">event tracing</a> for Windows events that we've added to Windows 8.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IDXGIObject" />
+    <summary>Sets application-defined data to the object and associates that data with a GUID.</summary>
+    <param name="Name">A GUID that identifies the data. Use this GUID in a call to <see cref="GetPrivateData" /> to get the data.</param>
+    <param name="DataSize">The size of the object's data.</param>
+    <param name="pData">A pointer to the object's data.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> values.</returns>
   </member>
   <member name="IDXGIObject.SetPrivateDataInterface">
-    <summary>
-      <para>Set an interface in the object's private data.</para>
-    </summary>
-    <param name="Name">
-      <para>Type: <b><a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-oaut/6e7d7108-c213-40bc-8294-ac13fe68fd50">REFGUID</a></b></para>
-      <para>A GUID identifying the interface.</para>
-    </param>
-    <param name="pUnknown">
-      <para>Type: <b>const <see cref="IUnknown" />*</b></para>
-      <para>The interface to set.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</para>
-    </returns>
-    <remarks>
-      <para>This API associates an interface pointer with the object.</para>
-      <para>When the interface is set its reference count is incremented. When the data are overwritten (by calling SPD or SPDI with the same GUID) or the object is destroyed, .Release() is called and the interface's reference count is decremented.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IDXGIObject" />
+    <summary>Set an interface in the object's private data.</summary>
+    <param name="Name">A GUID identifying the interface.</param>
+    <param name="pUnknown">The interface to set.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</returns>
   </member>
   <member name="IDXGIObject">
-    <summary>
-      <para>An <b>IDXGIObject</b> interface is a base interface for all DXGI objects;
-<b>IDXGIObject</b> supports associating caller-defined (private data) with an object and retrieval of an interface to the parent object.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>IDXGIObject</b> implements base-class functionality for the following interfaces:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="IDXGIAdapter" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IDXGIDevice" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IDXGIFactory" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IDXGIOutput" />
-          </description>
-        </item>
-      </list>
-      <b>Windows Phone 8:
-</b> This API is supported.
-</remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IUnknown" />
+    <summary>An <b>IDXGIObject</b> interface is a base interface for all DXGI objects;<b>IDXGIObject</b> supports associating caller-defined (private data) with an object and retrieval of an interface to the parent object.</summary>
   </member>
 </doc>

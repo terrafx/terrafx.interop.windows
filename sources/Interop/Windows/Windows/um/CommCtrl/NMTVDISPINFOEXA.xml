@@ -3,51 +3,23 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMTVDISPINFOEXA">
-    <summary>
-      <para>Contains information pertaining to extended TreeView notification information.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The commctrl.h header defines NMTVDISPINFOEX as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
+    <summary>Contains information pertaining to extended TreeView notification information.</summary>
   </member>
   <member name="NMTVDISPINFOEXA.hdr">
     <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>
-        <see cref="NMHDR" /> structure that contains information about this notification.</para>
-    </summary>
+      <see cref="NMHDR" /> structure that contains information about this notification.</summary>
   </member>
   <member name="NMTVDISPINFOEXA.item">
-    <summary>
-      <para>Type: <b><see cref="TVITEMEX" /></b></para>
-      <para>Specifies or receives attributes of a TreeView item.</para>
-    </summary>
+    <summary>Specifies or receives attributes of a TreeView item.</summary>
   </member>
   <member name="NMTVDISPINFOEXA">
-    <summary>
-      <para>Contains information pertaining to extended TreeView notification information.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The commctrl.h header defines NMTVDISPINFOEX as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
+    <summary>Contains information pertaining to extended TreeView notification information.</summary>
   </member>
   <member name="NMTVDISPINFOEXA.hdr">
     <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>
-        <see cref="NMHDR" /> structure that contains information about this notification.</para>
-    </summary>
+      <see cref="NMHDR" /> structure that contains information about this notification.</summary>
   </member>
   <member name="NMTVDISPINFOEXA.item">
-    <summary>
-      <para>Type: <b><see cref="TVITEMEX" /></b></para>
-      <para>Specifies or receives attributes of a TreeView item.</para>
-    </summary>
+    <summary>Specifies or receives attributes of a TreeView item.</summary>
   </member>
 </doc>

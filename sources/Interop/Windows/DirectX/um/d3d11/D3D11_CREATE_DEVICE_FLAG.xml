@@ -3,20 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_CREATE_DEVICE_FLAG">
-    <summary>
-      <para>Describes parameters that are used to create a device.</para>
-    </summary>
-    <remarks>
-      <para>Device creation flags are used by <see cref="D3D11CreateDevice" /> and <see cref="D3D11CreateDeviceAndSwapChain" />.</para>
-      <para>An application might dynamically create (and destroy) threads to improve performance especially on a machine with multiple CPU cores. There may be cases, however, when an application needs to prevent extra threads from being created. This can happen when you want to simplify debugging, profile code or develop a tool for instance. For these cases, use <b>D3D11_CREATE_DEVICE_PREVENT_INTERNAL_THREADING_OPTIMIZATIONS</b> to request that the runtime and video driver not create any additional threads that might interfere with the application.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-enums">Core Enumerations</seealso>
+    <summary>Describes parameters that are used to create a device.</summary>
   </member>
   <member name="D3D11_CREATE_DEVICE_FLAG.D3D11_CREATE_DEVICE_SINGLETHREADED">
-    <summary>
-      <para>Use this flag if your application will only call methods of Direct3D 11 interfaces from a single thread. By default, the <see cref="ID3D11Device" /> object is  <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-differences">thread-safe</a>.
-By using this flag, you can increase performance. However, if you use this flag and your application calls methods of Direct3D 11 interfaces from multiple threads, undefined behavior might result.</para>
-    </summary>
+    <summary>Use this flag if your application will only call methods of Direct3D 11 interfaces from a single thread. By default, the <see cref="ID3D11Device" /> object is <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-differences">thread-safe</a>. By using this flag, you can increase performance. However, if you use this flag and your application calls methods of Direct3D 11 interfaces from multiple threads, undefined behavior might result.</summary>
   </member>
   <member name="D3D11_CREATE_DEVICE_FLAG.D3D11_CREATE_DEVICE_DEBUG">
     <summary>
@@ -26,26 +16,23 @@ By using this flag, you can increase performance. However, if you use this flag 
   </member>
   <member name="D3D11_CREATE_DEVICE_FLAG.D3D11_CREATE_DEVICE_SWITCH_TO_REF">
     <summary>
-      <para>
-        <b>Note</b>  This flag is not supported in Direct3D 11.</para>
+      <div>
+        <b>Note</b>  This flag is not supported in Direct3D 11.</div>
     </summary>
   </member>
   <member name="D3D11_CREATE_DEVICE_FLAG.D3D11_CREATE_DEVICE_PREVENT_INTERNAL_THREADING_OPTIMIZATIONS">
-    <summary>
-      <para>Prevents multiple threads from being created. When this flag is used with a <a href="https://docs.microsoft.com//windows/desktop/direct3darticles/directx-warp">Windows Advanced Rasterization Platform (WARP)</a> device, no additional threads will be created by WARP
-and all rasterization will occur on the calling thread. This flag is not recommended for general use. See remarks.</para>
-    </summary>
+    <summary>Prevents multiple threads from being created. When this flag is used with a <a href="https://docs.microsoft.com//windows/desktop/direct3darticles/directx-warp">Windows Advanced Rasterization Platform (WARP)</a> device, no additional threads will be created by WARP and all rasterization will occur on the calling thread. This flag is not recommended for general use. See remarks.</summary>
   </member>
   <member name="D3D11_CREATE_DEVICE_FLAG.D3D11_CREATE_DEVICE_BGRA_SUPPORT">
     <summary>
       <para>Creates a device that supports BGRA formats (<see cref="DXGI_FORMAT_B8G8R8A8_UNORM" /> and <see cref="DXGI_FORMAT_B8G8R8A8_UNORM_SRGB" />). All 10level9 and higher hardware with WDDM 1.1+ drivers support BGRA formats.</para>
-      <para>
-        <b>Note</b>  Required for Direct2D interoperability with Direct3D resources.</para>
+      <div>
+        <b>Note</b>  Required for Direct2D interoperability with Direct3D resources.</div>
     </summary>
   </member>
   <member name="D3D11_CREATE_DEVICE_FLAG.D3D11_CREATE_DEVICE_DEBUGGABLE">
     <summary>
-      <para>Causes the device and driver to keep information that you can use for shader debugging.  The exact impact from this flag will vary from driver to driver.</para>
+      <para>Causes the device and driver to keep information that you can use for shader debugging. The exact impact from this flag will vary from driver to driver.</para>
       <para>To use this flag, you must have D3D11_1SDKLayers.dll installed; otherwise, device creation fails. The created device supports the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-layers">debug layer</a>. To get D3D11_1SDKLayers.dll, install the SDK for Windows 8.</para>
       <para>If you use this flag and the current driver does not support shader debugging, device creation fails. Shader debugging requires a driver that is implemented to the WDDM for Windows 8 (WDDM 1.2).</para>
       <para>
@@ -55,13 +42,9 @@ and all rasterization will occur on the calling thread. This flag is not recomme
   <member name="D3D11_CREATE_DEVICE_FLAG.D3D11_CREATE_DEVICE_PREVENT_ALTERING_LAYER_SETTINGS_FROM_REGISTRY">
     <summary>
       <para>Causes the Direct3D runtime to ignore registry settings that turn on the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-layers">debug layer</a>. You can turn on the debug layer by using the <a href="https://docs.microsoft.com//previous-versions/bb219725(v=vs.85)">DirectX Control Panel</a> that was included as part of the DirectX SDK. We shipped the last version of the DirectX SDK in June 2010; you can download it from the <a href="https://www.microsoft.com/download/en/details.aspx?id=6812">Microsoft Download Center</a>. You can set this flag in your app, typically in release builds only, to prevent end users from using the <a href="https://docs.microsoft.com//previous-versions/bb219725(v=vs.85)">DirectX Control Panel</a> to monitor how the app uses Direct3D.</para>
-      <para>
-        <b>Note</b>  You can also set this flag in your app to prevent Direct3D debugging tools, such as Visual Studio Ultimate 2012, from hooking your app.</para>
-      <para>
-        <b>Windows 8.1:  </b>This flag doesn't prevent Visual Studio 2013 and later running on Windows 8.1 and later from hooking your app; instead use <see cref="ID3D11DeviceContext2.IsAnnotationEnabled" />. This flag still prevents Visual Studio 2013 and later running on Windows 8 and earlier from hooking your app.</para>
-      <para>
-        <b>Direct3D 11:  </b>This value is not supported until Direct3D 11.1.</para>
-    </summary>
+      <div>
+        <b>Note</b>  You can also set this flag in your app to prevent Direct3D debugging tools, such as Visual Studio Ultimate 2012, from hooking your app.</div>
+      <b>Windows 8.1:  </b>This flag doesn't prevent Visual Studio 2013 and later running on Windows 8.1 and later from hooking your app; instead use <see cref="ID3D11DeviceContext2.IsAnnotationEnabled" />. This flag still prevents Visual Studio 2013 and later running on Windows 8 and earlier from hooking your app. <para><b>Direct3D 11:  </b>This value is not supported until Direct3D 11.1.</para></summary>
   </member>
   <member name="D3D11_CREATE_DEVICE_FLAG.D3D11_CREATE_DEVICE_DISABLE_GPU_TIMEOUT">
     <summary>

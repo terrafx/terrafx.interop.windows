@@ -3,34 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IN6_PKTINFO">
-    <summary>
-      <para>The
-<b>in6_pktinfo</b> structure is used to store received IPv6 packet address information, and is used by Windows to return information about received packets  and also allows specifying the local IPv6 address to use for sending packets.</para>
-    </summary>
-    <remarks>
-      <para>If the <a href="https://docs.microsoft.com//windows/desktop/WinSock/ipv6-pktinfo">IPV6_PKTINFO</a> socket option is set on a socket of type <b>SOCK_DGRAM</b>  or <b>SOCK_RAW</b>, one of the control data objects returned by the <a href="https://docs.microsoft.com//windows/win32/api/mswsock/nc-mswsock-lpfn_wsarecvmsg">LPFN_WSARECVMSG (WSARecvMsg)</a> function will contain an
-<b>in6_pktinfo</b> structure used to store received packet address information.</para>
-      <para>On an IPv6  socket of type  <b>SOCK_DGRAM</b> or <b>SOCK_RAW</b>, an application can specific  the local IP source address to use for sending with the <see cref="WSASendMsg" /> function. One of the control data objects passed in the <see cref="WSAMSG" /> structure to the <b>WSASendMsg</b> function may contain an
-<b>in6_pktinfo</b> structure used to specify the local IPv6 address to use for sending.</para>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>in6_pktinfo</b> structure is defined in the <i>Ws2ipdef.h</i> header file which is automatically included in the <i>Ws2tcpip.h</i> header file. The <i>Ws2ipdef.h</i>  header files should never be used directly.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/dual-stack-sockets">Dual-Stack Sockets for IPv6 Winsock Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/ipproto-ipv6-socket-options">IPPROTO_IPV6 Socket Options</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/ipv6-pktinfo">IPV6_PKTINFO</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/ip-pktinfo">IP_PKTINFO</seealso>
-    <seealso cref="WSAMSG" />
-    <seealso href="https://docs.microsoft.com//windows/win32/api/mswsock/nc-mswsock-lpfn_wsarecvmsg">LPFN_WSARECVMSG (WSARecvMsg)</seealso>
-    <seealso cref="WSASendMsg" />
-    <seealso cref="in_pktinfo" />
+    <summary>The<b>in6_pktinfo</b> structure is used to store received IPv6 packet address information, and is used by Windows to return information about received packets and also allows specifying the local IPv6 address to use for sending packets.</summary>
   </member>
   <member name="IN6_PKTINFO.ipi6_addr">
-    <summary>
-      <para>The destination IPv6 address from the IP header of the received packet when used with the <a href="https://docs.microsoft.com//windows/win32/api/mswsock/nc-mswsock-lpfn_wsarecvmsg">LPFN_WSARECVMSG (WSARecvMsg)</a> function. The local source IPv6 address to set in the IP header when used with the <see cref="WSASendMsg" /> function.</para>
-    </summary>
+    <summary>The destination IPv6 address from the IP header of the received packet when used with the <a href="https://docs.microsoft.com//windows/win32/api/mswsock/nc-mswsock-lpfn_wsarecvmsg">LPFN_WSARECVMSG (WSARecvMsg)</a> function. The local source IPv6 address to set in the IP header when used with the <see cref="WSASendMsg" /> function.</summary>
   </member>
   <member name="IN6_PKTINFO.ipi6_ifindex">
-    <summary>
-      <para>The interface on which the packet was received when used with the <a href="https://docs.microsoft.com//windows/win32/api/mswsock/nc-mswsock-lpfn_wsarecvmsg">LPFN_WSARECVMSG (WSARecvMsg)</a> function. The interface on which the packet should be sent  when used with the <see cref="WSASendMsg" /> function.</para>
-    </summary>
+    <summary>The interface on which the packet was received when used with the <a href="https://docs.microsoft.com//windows/win32/api/mswsock/nc-mswsock-lpfn_wsarecvmsg">LPFN_WSARECVMSG (WSARecvMsg)</a> function. The interface on which the packet should be sent when used with the <see cref="WSASendMsg" /> function.</summary>
   </member>
 </doc>

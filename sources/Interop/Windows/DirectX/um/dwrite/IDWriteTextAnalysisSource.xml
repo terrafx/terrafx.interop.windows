@@ -3,135 +3,38 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteTextAnalysisSource.GetLocaleName">
-    <summary>
-      <para>Gets the locale name on the range affected by the text analysis.</para>
-    </summary>
-    <param name="textPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The text position to examine.</para>
-    </param>
-    <param name="textLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>Contains the length of the text being affected by the text analysis up to the next differing locale.</para>
-    </param>
-    <param name="localeName">
-      <para>Type: <b>const WCHAR**</b></para>
-      <para>Contains an address of a  pointer to an array of characters which receives the locale name from the text affected by the text analysis. The array of characters is null-terminated.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <i>localeName</i> pointer must remain valid until the next call or until the analysis returns.</para>
-    </remarks>
-    <seealso cref="IDWriteTextAnalysisSource" />
+    <summary>Gets the locale name on the range affected by the text analysis.</summary>
+    <param name="textPosition">The text position to examine.</param>
+    <param name="textLength">Contains the length of the text being affected by the text analysis up to the next differing locale.</param>
+    <param name="localeName">Contains an address of a pointer to an array of characters which receives the locale name from the text affected by the text analysis. The array of characters is null-terminated.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextAnalysisSource.GetNumberSubstitution">
-    <summary>
-      <para>Gets the number substitution from the text range affected by the text analysis.</para>
-    </summary>
-    <param name="textPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The starting position from which to report.</para>
-    </param>
-    <param name="textLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>Contains  the length of the text, in characters, remaining in the text range up to the next differing number substitution.</para>
-    </param>
-    <param name="numberSubstitution">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritenumbersubstitution">IDWriteNumberSubstitution</a>**</b></para>
-      <para>Contains an address of a pointer to an object, which was created with <see cref="IDWriteFactory.CreateNumberSubstitution" />, that holds the appropriate digits and numeric punctuation for a given locale.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Any implementation should return the number substitution with an incremented reference count, and the analysis will release when finished
-with it (either before the next call or before it returns). However,
-the sink callback may hold onto it after that.</para>
-    </remarks>
-    <seealso cref="IDWriteTextAnalysisSource" />
+    <summary>Gets the number substitution from the text range affected by the text analysis.</summary>
+    <param name="textPosition">The starting position from which to report.</param>
+    <param name="textLength">Contains the length of the text, in characters, remaining in the text range up to the next differing number substitution.</param>
+    <param name="numberSubstitution">Contains an address of a pointer to an object, which was created with <see cref="IDWriteFactory.CreateNumberSubstitution" />, that holds the appropriate digits and numeric punctuation for a given locale.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextAnalysisSource.GetParagraphReadingDirection">
-    <summary>
-      <para>Gets the paragraph reading direction.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="DWRITE_READING_DIRECTION" /></b></para>
-      <para>The reading direction of the current paragraph.</para>
-    </returns>
-    <seealso cref="IDWriteTextAnalysisSource" />
+    <summary>Gets the paragraph reading direction.</summary>
+    <returns>The reading direction of the current paragraph.</returns>
   </member>
   <member name="IDWriteTextAnalysisSource.GetTextAtPosition">
-    <summary>
-      <para>Gets a block of text starting at the specified text position.</para>
-    </summary>
-    <param name="textPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The first position of the piece to obtain. All
-positions are in <b>UTF16</b> code units, not whole characters, which
-matters when supplementary characters are used.</para>
-    </param>
-    <param name="textString">
-      <para>Type: <b>const WCHAR**</b></para>
-      <para>When this method returns, contains an address of  the block of text as an array of characters to be retrieved from the text analysis.</para>
-    </param>
-    <param name="textLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>When this method returns, contains the number of <b>UTF16</b> units of the retrieved chunk.
-The returned length is not the length of the block, but the length     remaining in the block, from the specified position until its end.
-For example, querying for a position that is 75 positions into a 100-position block would return 25.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Returning <b>NULL</b> indicates the end of text, which is the position after the last character. This function is called iteratively for each consecutive block, tying together several fragmented blocks in the backing store into a virtual contiguous string.</para>
-      <para>Although applications can implement sparse textual content that  maps only part of the backing store, the application must map any text that is in the range passed to any analysis functions.</para>
-    </remarks>
-    <seealso cref="IDWriteTextAnalysisSource" />
+    <summary>Gets a block of text starting at the specified text position.</summary>
+    <param name="textPosition">The first position of the piece to obtain. All positions are in <b>UTF16</b> code units, not whole characters, which matters when supplementary characters are used.</param>
+    <param name="textString">When this method returns, contains an address of the block of text as an array of characters to be retrieved from the text analysis.</param>
+    <param name="textLength">When this method returns, contains the number of <b>UTF16</b> units of the retrieved chunk. The returned length is not the length of the block, but the length remaining in the block, from the specified position until its end. For example, querying for a position that is 75 positions into a 100-position block would return 25.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextAnalysisSource.GetTextBeforePosition">
-    <summary>
-      <para>Gets a block of text immediately preceding the specified position.</para>
-    </summary>
-    <param name="textPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The position immediately after the last position of the block of text to obtain.</para>
-    </param>
-    <param name="textString">
-      <para>Type: <b>const WCHAR**</b></para>
-      <para>When this method returns, contains an address of a pointer to the block of text, as an array of characters from the specified range.  The text range will be from <i>textPosition</i> to the front of the block.</para>
-    </param>
-    <param name="textLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>Number of UTF16 units of the retrieved block.
-The length returned is from the specified position to the front of
-the block.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>NULL indicates no chunk available at the specified position, either because <i>textPosition</i> equals 0,  <i>textPosition</i> is greater than the entire text content length, or the queried position is not mapped into the application's backing
-store.</para>
-      <para>Although applications can implement sparse textual content that  maps only part of
-the backing store, the application must map any text that is in the range passed
-to any analysis functions.</para>
-    </remarks>
-    <seealso cref="IDWriteTextAnalysisSource" />
+    <summary>Gets a block of text immediately preceding the specified position.</summary>
+    <param name="textPosition">The position immediately after the last position of the block of text to obtain.</param>
+    <param name="textString">When this method returns, contains an address of a pointer to the block of text, as an array of characters from the specified range. The text range will be from <i>textPosition</i> to the front of the block.</param>
+    <param name="textLength">Number of UTF16 units of the retrieved block. The length returned is from the specified position to the front of the block.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextAnalysisSource">
-    <summary>
-      <para>Implemented by the text analyzer's client to provide text to the analyzer. It allows the separation between the logical view of text as a continuous stream of characters identifiable by unique text positions, and the actual memory layout of potentially discrete blocks of text in the client's backing store.</para>
-    </summary>
-    <remarks>
-      <para>If any of these callbacks returns an error, then the analysis functions will stop prematurely and return a callback error. Note that rather than return E_NOTIMPL,
-an application should stub the method and return a constant/null and S_OK.</para>
-    </remarks>
+    <summary>Implemented by the text analyzer's client to provide text to the analyzer. It allows the separation between the logical view of text as a continuous stream of characters identifiable by unique text positions, and the actual memory layout of potentially discrete blocks of text in the client's backing store.</summary>
   </member>
 </doc>

@@ -3,111 +3,43 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1SvgPaint.GetColor">
-    <summary>
-      <para>Gets the paint color that is used if the paint type is D2D1_SVG_PAINT_TYPE_COLOR.</para>
-    </summary>
-    <param name="color">
-      <para>Type: <b>D2D1_COLOR_F*</b></para>
-      <para>The paint color that is used if the paint type is D2D1_SVG_PAINT_TYPE_COLOR.</para>
-    </param>
-    <seealso cref="ID2D1SvgPaint" />
+    <summary>Gets the paint color that is used if the paint type is D2D1_SVG_PAINT_TYPE_COLOR.</summary>
+    <param name="color">The paint color that is used if the paint type is D2D1_SVG_PAINT_TYPE_COLOR.</param>
   </member>
   <member name="ID2D1SvgPaint.GetId">
-    <summary>
-      <para>Gets the element id which acts as the paint server. This id is used if the paint type is D2D1_SVG_PAINT_TYPE_URI.</para>
-    </summary>
-    <param name="id">
-      <para>Type: <b>PWSTR</b></para>
-      <para>The element id which acts as the paint server.</para>
-    </param>
-    <param name="idCount">
-      <para>Type: <b>UINT32</b></para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1SvgPaint" />
+    <summary>Gets the element id which acts as the paint server. This id is used if the paint type is D2D1_SVG_PAINT_TYPE_URI.</summary>
+    <param name="id">The element id which acts as the paint server.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1SvgPaint.GetIdLength">
-    <summary>
-      <para>Gets the string length of the element id which acts as the paint server. This id is used if the paint type is D2D1_SVG_PAINT_TYPE_URI.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>UINT32</b></para>
-      <para>the string length of the element id which acts as the paint server. The returned string length does not include room for the null terminator.</para>
-    </returns>
-    <seealso cref="ID2D1SvgPaint" />
+    <summary>Gets the string length of the element id which acts as the paint server. This id is used if the paint type is D2D1_SVG_PAINT_TYPE_URI.</summary>
+    <returns>the string length of the element id which acts as the paint server. The returned string length does not include room for the null terminator.</returns>
   </member>
   <member name="ID2D1SvgPaint.GetPaintType">
-    <summary>
-      <para>Gets the paint type.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="D2D1_SVG_PAINT_TYPE" /></b></para>
-      <para>Returns the paint type.</para>
-    </returns>
-    <seealso cref="ID2D1SvgPaint" />
+    <summary>Gets the paint type.</summary>
+    <returns>Returns the paint type.</returns>
   </member>
   <member name="ID2D1SvgPaint.SetColor">
-    <summary>
-      <para>Sets the paint color that is used if the paint type is D2D1_SVG_PAINT_TYPE_COLOR.</para>
-    </summary>
-    <param name="color">
-      <para>Type: <b>const D2D1_COLOR_F*</b></para>
-      <para>The new paint color.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1SvgPaint" />
+    <summary>Sets the paint color that is used if the paint type is D2D1_SVG_PAINT_TYPE_COLOR.</summary>
+    <param name="color">The new paint color.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1SvgPaint.SetColor">
-    <summary>
-      <para>Sets the paint color that is used if the paint type is D2D1_SVG_PAINT_TYPE_COLOR.</para>
-    </summary>
-    <param name="color">
-      <para>Type: <b>const D2D1_COLOR_F</b></para>
-      <para>The new paint color.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1SvgPaint" />
+    <summary>Sets the paint color that is used if the paint type is D2D1_SVG_PAINT_TYPE_COLOR.</summary>
+    <param name="color">The new paint color.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1SvgPaint.SetId">
-    <summary>
-      <para>Sets the element id which acts as the paint server. This id is used if the paint type is D2D1_SVG_PAINT_TYPE_URI.</para>
-    </summary>
-    <param name="id">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The element id which acts as the paint server. This id is used if the paint type is D2D1_SVG_PAINT_TYPE_URI.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1SvgPaint" />
+    <summary>Sets the element id which acts as the paint server. This id is used if the paint type is D2D1_SVG_PAINT_TYPE_URI.</summary>
+    <param name="id">The element id which acts as the paint server. This id is used if the paint type is D2D1_SVG_PAINT_TYPE_URI.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1SvgPaint.SetPaintType">
-    <summary>
-      <para>Sets the paint type.</para>
-    </summary>
-    <param name="paintType">
-      <para>Type: <b><see cref="D2D1_SVG_PAINT_TYPE" /></b></para>
-      <para>The new paint type.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1SvgPaint" />
+    <summary>Sets the paint type.</summary>
+    <param name="paintType">The new paint type.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1SvgPaint">
-    <summary>
-      <para>Interface describing an SVG fill or stroke value.</para>
-    </summary>
+    <summary>Interface describing an SVG fill or stroke value.</summary>
   </member>
 </doc>

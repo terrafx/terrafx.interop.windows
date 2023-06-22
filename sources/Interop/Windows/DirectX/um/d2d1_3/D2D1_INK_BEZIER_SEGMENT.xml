@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_INK_BEZIER_SEGMENT">
-    <summary>
-      <para>Represents a Bezier segment to be used in the creation of an <see cref="ID2D1Ink" /> object.
-This structure differs from <see cref="D2D1_BEZIER_SEGMENT" /> in that it is composed
-of <see cref="D2D1_INK_POINT" />s, which contain a radius in addition to x- and y-coordinates.</para>
-    </summary>
+    <summary>Represents a Bezier segment to be used in the creation of an <see cref="ID2D1Ink" /> object. This structure differs from <see cref="D2D1_BEZIER_SEGMENT" /> in that it is composed of <see cref="D2D1_INK_POINT" />s, which contain a radius in addition to x- and y-coordinates.</summary>
   </member>
   <member name="D2D1_INK_BEZIER_SEGMENT.point1">
-    <summary>
-      <para>The first control point for the Bezier segment.</para>
-    </summary>
+    <summary>The first control point for the Bezier segment.</summary>
   </member>
   <member name="D2D1_INK_BEZIER_SEGMENT.point2">
-    <summary>
-      <para>The second control point for the Bezier segment.</para>
-    </summary>
+    <summary>The second control point for the Bezier segment.</summary>
   </member>
   <member name="D2D1_INK_BEZIER_SEGMENT.point3">
-    <summary>
-      <para>The end point for the Bezier segment.</para>
-    </summary>
+    <summary>The end point for the Bezier segment.</summary>
   </member>
 </doc>

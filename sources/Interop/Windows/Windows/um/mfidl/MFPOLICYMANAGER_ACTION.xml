@@ -3,54 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFPOLICYMANAGER_ACTION">
-    <summary>
-      <para>Defines actions that can be performed on a stream.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Defines actions that can be performed on a stream.</summary>
   </member>
   <member name="MFPOLICYMANAGER_ACTION.PEACTION_NO">
-    <summary>
-      <para>No action.</para>
-    </summary>
+    <summary>No action.</summary>
   </member>
   <member name="MFPOLICYMANAGER_ACTION.PEACTION_PLAY">
-    <summary>
-      <para>Play the stream.</para>
-    </summary>
+    <summary>Play the stream.</summary>
   </member>
   <member name="MFPOLICYMANAGER_ACTION.PEACTION_COPY">
-    <summary>
-      <para>Copy the stream.</para>
-    </summary>
+    <summary>Copy the stream.</summary>
   </member>
   <member name="MFPOLICYMANAGER_ACTION.PEACTION_EXPORT">
-    <summary>
-      <para>Export the stream to another format.</para>
-    </summary>
+    <summary>Export the stream to another format.</summary>
   </member>
   <member name="MFPOLICYMANAGER_ACTION.PEACTION_EXTRACT">
-    <summary>
-      <para>Extract the data from the stream and pass it to the application. For example, acoustic echo cancellation requires this action.</para>
-    </summary>
+    <summary>Extract the data from the stream and pass it to the application. For example, acoustic echo cancellation requires this action.</summary>
   </member>
   <member name="MFPOLICYMANAGER_ACTION.PEACTION_RESERVED1">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="MFPOLICYMANAGER_ACTION.PEACTION_RESERVED2">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="MFPOLICYMANAGER_ACTION.PEACTION_RESERVED3">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="MFPOLICYMANAGER_ACTION.PEACTION_LAST">
-    <summary>
-      <para>Last member of the enumeration.</para>
-    </summary>
+    <summary>Last member of the enumeration.</summary>
   </member>
 </doc>

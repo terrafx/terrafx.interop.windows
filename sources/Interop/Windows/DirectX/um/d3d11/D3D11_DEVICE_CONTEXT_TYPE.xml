@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_DEVICE_CONTEXT_TYPE">
-    <summary>
-      <para>Device context options.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is used by <see cref="ID3D11DeviceContext.GetType" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-enums">Core Enumerations</seealso>
+    <summary>Device context options.</summary>
   </member>
   <member name="D3D11_DEVICE_CONTEXT_TYPE.D3D11_DEVICE_CONTEXT_IMMEDIATE">
-    <summary>
-      <para>The device context is an immediate context.</para>
-    </summary>
+    <summary>The device context is an immediate context.</summary>
   </member>
   <member name="D3D11_DEVICE_CONTEXT_TYPE.D3D11_DEVICE_CONTEXT_DEFERRED">
-    <summary>
-      <para>The device context is a deferred context.</para>
-    </summary>
+    <summary>The device context is a deferred context.</summary>
   </member>
 </doc>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_SMART_CARD_LOGON">
+    <summary>
+      <para>The <b>KERB_SMART_CARD_LOGON</b> structure contains information about a smart card <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">logon session</a>.</para>
+      <para>It is used by<see cref="LsaLogonUser" /> with the Kerberos security package using LOGON32_PROVIDER_WINNT50 or LOGON32_PROVIDER_DEFAULT.</para>
+    </summary>
+  </member>
+  <member name="KERB_SMART_CARD_LOGON.MessageType">
+    <summary>
+      <see cref="KERB_LOGON_SUBMIT_TYPE" /> value identifying the type of logon request being made. This member must be set to <b>KerbInteractiveLogon</b>.</summary>
+  </member>
+  <member name="KERB_SMART_CARD_LOGON.Pin">
+    <summary>
+      <see cref="UNICODE_STRING" /> that specifies the PIN associated with the smart card.</summary>
+  </member>
+  <member name="KERB_SMART_CARD_LOGON.CspDataLength">
+    <summary>The length, in characters, of the <b>CspData</b> member.</summary>
+  </member>
+  <member name="KERB_SMART_CARD_LOGON.CspData">
+    <summary>A pointer to a <b>KERB_SMARTCARD_CSP_INFO</b> structure that contains information about the smart card cryptographic service provider (CSP) or a pointer to a marshaled <b>KERB_CERTIFICATE_INFO</b> structure when updating certificate credentials.</summary>
+  </member>
+</doc>

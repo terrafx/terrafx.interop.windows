@@ -4,210 +4,27 @@
 <doc>
   <member name="IAMExtTransport.GetBump">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetBump</code> method retrieves the status of bump mode.</para>
       <para>This method is not implemented.</para>
     </summary>
-    <param name="pSpeed">
-      <para>Pointer to a <b>long</b> integer that receives the temporary bump speed, as a multiple of normal speed.</para>
-    </param>
-    <param name="pDuration">
-      <para>Pointer to a <b>long</b> integer that receives the duration of a bump. The duration is given in the current time format; see <see cref="IAMExtTransport.SetTransportBasicParameters" /> for more information.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method returns the temporary speed and remaining duration for an active "bump."</para>
-      <h3>DV Implementation</h3>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/DirectShow/msdv-driver">MSDV</a> does not support this method. It returns E_NOTIMPL.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
-    <seealso cref="IAMExtTransport.SetBump" />
+    <param name="pSpeed">Pointer to a <b>long</b> integer that receives the temporary bump speed, as a multiple of normal speed.</param>
+    <param name="pDuration">Pointer to a <b>long</b> integer that receives the duration of a bump. The duration is given in the current time format; see <see cref="IAMExtTransport.SetTransportBasicParameters" /> for more information.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.GetCapability">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetCapability</code> method retrieves the general capabilities of the transport.</para>
     </summary>
-    <param name="Capability">
-      <para>Specifies the capability to check. See Remarks for more information.</para>
-    </param>
-    <param name="pValue">
-      <para>Pointer to a variable that receives a <b>long</b> integer. See Remarks for more information.</para>
-    </param>
-    <param name="pdblValue">
-      <para>Pointer to a variable that receives a <b>double</b>. See Remarks for more information.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <i>Capability</i> parameter is a flag that specifies which capability to check. The method returns the result either in the <i>pValue</i> parameter or in the <i>pdblValue</i> parameter, depending on the capability flag.</para>
-      <para>For the following flags, the method returns the value OATRUE or OAFALSE in the <i>pValue</i> parameter. The value OATRUE indicates that the capability is present, while the value OAFALSE indicates it is absent.</para>
-      <list type="table">
-        <listheader>
-          <description>Capability Flag
-</description>
-          <description>Description
-</description>
-        </listheader>
-        <item>
-          <description>ED_TRANSCAP_CAN_ASSEMBLE</description>
-          <description>Transport can use assemble record mode (record new tracks that link seamlessly to the control track from the previously recorded segment).</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_CAN_BUMP_PLAY</description>
-          <description>Transport can synchronize by varying speed.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_CAN_DELAY_AUDIO_IN</description>
-          <description>Transport can perform delayed-in audio edits.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_CAN_DELAY_AUDIO_OUT</description>
-          <description>Transport can perform delayed-out audio edits.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_CAN_DELAY_VIDEO_IN</description>
-          <description>Transport can perform delayed-in video edits.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_CAN_DELAY_VIDEO_OUT</description>
-          <description>Transport can perform delayed-out video edits.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_CAN_DETECT_LENGTH</description>
-          <description>Transport can detect the length of the media.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_CAN_EJECT</description>
-          <description>Transport can eject the media.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_CAN_FREEZE</description>
-          <description>Transport can freeze/pause.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_CAN_INSERT</description>
-          <description>Transport can use insert record mode (record individual tracks while locked to a prerecorded control track).</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_CAN_PLAY_BACKWARDS</description>
-          <description>Transport can play backward.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_CAN_SET_EE</description>
-          <description>Transport can show the device's input on its output.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_CAN_SET_PB</description>
-          <description>Transport can show media playback on its output.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_FIELD_STEP</description>
-          <description>Transport responds to a frame advance command by advancing one field.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_HAS_CLOCK</description>
-          <description>Device has a clock.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_HAS_DT</description>
-          <description>Device has dynamic tracking.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_HAS_TIMER</description>
-          <description>Device has a timer.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_HAS_TUNER</description>
-          <description>Device has a tuner.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_IS_MASTER</description>
-          <description>Device is the master clock for synchronizing.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_MULTIPLE_EDITS</description>
-          <description>Device supports multiple edit events.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_NEEDS_CUEING</description>
-          <description>Device must be cued before it performs an edit.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_NEEDS_TBC</description>
-          <description>Device needs to be calibrated.</description>
-        </item>
-      </list>
-      <para>For the following flags, the method returns a numeric value in the <i>pValue</i> parameter.</para>
-      <list type="table">
-        <listheader>
-          <description>Capability Flag
-</description>
-          <description>Returned Value
-</description>
-        </listheader>
-        <item>
-          <description>ED_TRANSCAP_LTC_TRACK</description>
-          <description>Returns the track number of the LTC timecode track, or ED_ALL if there is no dedicated timecode track.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_NUM_AUDIO_TRACKS</description>
-          <description>Returns the number of audio tracks.</description>
-        </item>
-      </list>
-      <para>For the following flags, the method returns a value in the <i>pdblValue</i> parameter.</para>
-      <list type="table">
-        <listheader>
-          <description>Capability Flag
-</description>
-          <description>Returned Value
-</description>
-        </listheader>
-        <item>
-          <description>ED_TRANSCAP_FWD_SHUTTLE_MAX</description>
-          <description>Maximum forward speed in shuttle mode, as a multiple of play speed.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_FWD_SHUTTLE_MIN</description>
-          <description>Minimum forward speed in shuttle mode, as a multiple of play speed.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_FWD_VARIABLE_MAX</description>
-          <description>Maximum forward speed, as a multiple of play speed.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_FWD_VARIABLE_MIN</description>
-          <description>Minimum forward speed, as a multiple of play speed.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_REV_SHUTTLE_MAX</description>
-          <description>Maximum reverse speed in shuttle mode, as a multiple of play speed.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_REV_SHUTTLE_MIN</description>
-          <description>Minimum reverse speed in shuttle mode, as a multiple of play speed.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_REV_VARIABLE_MAX</description>
-          <description>Maximum reverse speed, as a multiple of play speed.</description>
-        </item>
-        <item>
-          <description>ED_TRANSCAP_REV_VARIABLE_MIN</description>
-          <description>Minimum reverse speed, as a multiple of play speed.</description>
-        </item>
-      </list>
-      <h3>DV Implementation</h3>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/DirectShow/msdv-driver">MSDV</a> does not support this method. It returns E_NOTIMPL.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
+    <param name="Capability">Specifies the capability to check. See Remarks for more information.</param>
+    <param name="pValue">Pointer to a variable that receives a <b>long</b> integer. See Remarks for more information.</param>
+    <param name="pdblValue">Pointer to a variable that receives a <b>double</b>. See Remarks for more information.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.GetChase">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetChase</code> method retrieves the status of chase mode.</para>
       <para>This method is not implemented.</para>
     </summary>
@@ -215,223 +32,76 @@
       <para>Pointer to a <b>long</b> integer that receives one of the following values:</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>OATRUE</description>
           <description>Chase enabled.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>OAFALSE</description>
           <description>Chase disabled.</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <param name="pOffset">
-      <para>Pointer to a <b>long</b> integer that receives an offset from the present time, indicating the offset that the transport will maintain while playing. The offset is given in the current time format; see <see cref="IAMExtTransport.SetTransportBasicParameters" /> for more information.</para>
-    </param>
-    <param name="phEvent">
-      <para>Pointer to a variable that receives an event handle. The event is signaled when the chase offset is established.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
-    <seealso cref="IAMExtTransport.SetChase" />
+    <param name="pOffset">Pointer to a <b>long</b> integer that receives an offset from the present time, indicating the offset that the transport will maintain while playing. The offset is given in the current time format; see <see cref="IAMExtTransport.SetTransportBasicParameters" /> for more information.</param>
+    <param name="phEvent">Pointer to a variable that receives an event handle. The event is signaled when the chase offset is established.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.GetEditProperty">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetEditProperty</code> method retrieves parameters and values associated with an edit event.</para>
       <para>This method is not implemented.</para>
     </summary>
-    <param name="EditID">
-      <para>Specifies the edit property set. Use the identifier returned by the <see cref="IAMExtTransport.SetEditPropertySet" /> method.</para>
-    </param>
-    <param name="Param">
-      <para>Specifies the edit event parameter to retrieve.</para>
-    </param>
-    <param name="pValue">
-      <para>pointer to a variable that receives the parameter value.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>For a list of edit event parameters and their possible values, see <see cref="IAMExtTransport.SetEditProperty" />. In addition, this method supports ED_EDIT_TEST, which determines whether the device can perform the edit. If the device filter estimates that the device can perform the edit, it returns the value OATRUE in the <i>pValue</i> parameter. If not, it returns the value OAFALSE.</para>
-      <h3>DV Implementation</h3>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/DirectShow/msdv-driver">MSDV</a> does not support this method. It returns E_NOTIMPL.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
-    <seealso cref="IAMExtTransport.SetEditProperty" />
+    <param name="EditID">Specifies the edit property set. Use the identifier returned by the <see cref="IAMExtTransport.SetEditPropertySet" /> method.</param>
+    <param name="Param">Specifies the edit event parameter to retrieve.</param>
+    <param name="pValue">pointer to a variable that receives the parameter value.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.GetEditPropertySet">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetEditPropertySet</code> method retrieves the state of an edit event.</para>
       <para>This method is not implemented.</para>
     </summary>
-    <param name="EditID">
-      <para>Specifies the edit property set. Use the identifier returned by the <see cref="IAMExtTransport.SetEditPropertySet" /> method.</para>
-    </param>
+    <param name="EditID">Specifies the edit property set. Use the identifier returned by the <see cref="IAMExtTransport.SetEditPropertySet" /> method.</param>
     <param name="pState">
       <para>Pointer to a <b>long</b> integer that receives the state of the edit property set:</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>ED_ACTIVE</description>
           <description>The edit property set is active.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_DELETE</description>
           <description>The edit property set was deleted.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_INACTIVE</description>
           <description>The edit property set is inactive.</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
-    <seealso cref="IAMExtTransport.SetEditPropertySet" />
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.GetStatus">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetStatus</code> method returns information about the transport's status.</para>
     </summary>
-    <param name="StatusItem">
-      <para>Specifies the status information to retrieve. See Remarks for more information.</para>
-    </param>
-    <param name="pValue">
-      <para>Pointer to variable that either specifies or receives a <b>long</b> integer, whose meaning depends on the value of <i>StatusItem</i>. See Remarks for more information.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <i>StatusItem</i> parameter is a flag that specifies which status information to retrieve. The method returns in the information in the <i>pValue</i> parameter. Not every device supports every status flag. The following flags are defined:</para>
-      <list type="bullet">
-        <item>
-          <description>ED_MODE: Returns the current transport mode, such as pause or play. See <see cref="IAMExtTransport.put_Mode" /> for a list of constants that define the transport modes. As an alternative, you can set <i>StatusItem</i> equal to one of these constants, and <i>pValue</i> will receive the value OATRUE if the transport is currently in that mode, or OAFALSE otherwise.</description>
-        </item>
-        <item>
-          <description>ED_MEDIA_TYPE: Indicates the format of the media for this transport. Returns one of the following constants.<list type="table"><listheader><description>Constant</description><description>Description</description></listheader><item><description>ED_MEDIA_VHS</description><description>VHS</description></item><item><description>ED_MEDIA_SVHS</description><description>S-VHS</description></item><item><description>ED_MEDIA_HI8</description><description>Hi-8</description></item><item><description>ED_MEDIA_UMATIC</description><description>Umatic</description></item><item><description>ED_MEDIA_DVC</description><description>DV tape (DVC)</description></item><item><description>ED_MEDIA_1_INCH</description><description>1-inch tape</description></item><item><description>ED_MEDIA_D1</description><description>D1 format</description></item><item><description>ED_MEDIA_D2</description><description>D2 format</description></item><item><description>ED_MEDIA_D3</description><description>D3 format</description></item><item><description>ED_MEDIA_D5</description><description>D5 format</description></item><item><description>ED_MEDIA_DBETA</description><description>Digital Betacam</description></item><item><description>ED_MEDIA_BETA</description><description>Betacam</description></item><item><description>ED_MEDIA_8MM</description><description>8-millimeter</description></item><item><description>ED_MEDIA_DDR</description><description>Digital disk recorder</description></item><item><description>ED_MEDIA_SX</description><description>Betacam SX</description></item><item><description>ED_MEDIA_OTHER</description><description>Other</description></item><item><description>ED_MEDIA_CLV</description><description>CLV (Constant Linear Velocity, or "standard play") laserdisc</description></item><item><description>ED_MEDIA_CAV</description><description>CAV (Constant Angular Velocity, or "extended play") laserdisc</description></item></list></description>
-        </item>
-        <item>
-          <description>ED_LINK_MODE: Returns OATRUE if the transport's controls are linked to the filter graph's <b>Run</b>, <b>Stop</b>, and <b>Pause</b> methods, and OAFALSE otherwise. See <see cref="IAMExtTransport.put_Mode" /> for more information.</description>
-        </item>
-        <item>
-          <description>ED_MEDIA_PRESENT: Returns OATRUE if the transport's media is present, or OAFALSE otherwise.</description>
-        </item>
-        <item>
-          <description>ED_MEDIA_LENGTH: Returns the length of the media, in units of the current time format (see <see cref="IAMExtTransport.SetTransportBasicParameters" />).</description>
-        </item>
-        <item>
-          <description>ED_MEDIA_TRACK_COUNT: Returns the track count.</description>
-        </item>
-        <item>
-          <description>ED_MEDIA_TRACK_LENGTH: Returns the track length, in units of the current time format.</description>
-        </item>
-        <item>
-          <description>ED_MEDIA_SIDE: Indicates which side of the media is active.</description>
-        </item>
-      </list>
-      <para>In Windows XP Service Pack 2 and later, the following additional play modes are defined for ED_MODE.</para>
-      <list type="table">
-        <listheader>
-          <description>Constant</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>ED_MODE_PLAY_SLOW_FWD_X</description>
-          <description>Play unspecified slow forward. (Slow-forward play at vendor-specific speed.)</description>
-        </item>
-        <item>
-          <description>ED_MODE_PLAY_FAST_FWD_X</description>
-          <description>Play unspecified fast forward. (Fast-forward play at vendor-specific speed.)</description>
-        </item>
-        <item>
-          <description>ED_MODE_PLAY_SLOW_REV_X</description>
-          <description>Play unspecified slow reverse. (Slow-reverse play at vendor-specific speed.)</description>
-        </item>
-        <item>
-          <description>ED_MODE_PLAY_FAST_REV_X</description>
-          <description>Play unspecified fast reverse. (Fast-reverse play at vendor-specific speed.)</description>
-        </item>
-        <item>
-          <description>ED_MODE_STOP_START</description>
-          <description>Transport is stopped at the beginning of the tape (or other transport medium).</description>
-        </item>
-        <item>
-          <description>ED_MODE_STOP_END</description>
-          <description>Transport is stopped at the end of the tape (or other transport medium).</description>
-        </item>
-        <item>
-          <description>ED_MODE_STOP_EMERGENCY</description>
-          <description>Transport has stopped due to unexpected conditions or to avoid possible damage to the transport.</description>
-        </item>
-      </list>
-      <para>To use these constants, include the header file Xprtdefs.h from the Windows SDK.</para>
-      <h3>DV Implementation</h3>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/DirectShow/msdv-driver">MSDV</a> supports the following status flags:</para>
-      <list type="bullet">
-        <item>
-          <description>ED_MODE: See previous remarks. </description>
-        </item>
-        <item>
-          <description>ED_MEDIA_TYPE: Returns one of the following values.
-<list type="table"><listheader><description>Constant</description><description>Description</description></listheader><item><description>ED_MEDIA_VHS</description><description>VHS tape.</description></item><item><description>ED_MEDIA_DVC</description><description>DV tape.</description></item><item><description>ED_MEDIA_UNKNOWN</description><description>Unknown type.</description></item><item><description>ED_MEDIA_NOT_PRESENT</description><description>The transport is empty. </description></item></list></description>
-        </item>
-        <item>
-          <description>ED_DEV_REMOVED_HEVENT_GET. Returns a handle to an event. The driver signals the event if the device is physically removed from the system.</description>
-        </item>
-        <item>
-          <description>ED_DEV_REMOVED_HEVENT_RELEASE. Releases the event handle obtained through the ED_DEV_REMOVED_HEVENT_GET flag. Specify the address of the handle in the pValue parameter. </description>
-        </item>
-        <item>
-          <description>ED_MODE_CHANGE_NOTIFY. Returns the device state in pValue. If the method returns E_PENDING, a state change is pending. You can use the ED_NOTIFY_HEVENT_GET flag to get notification when the state change is complete. </description>
-        </item>
-        <item>
-          <description>ED_NOTIFY_HEVENT_GET. Returns a handle to an event. The driver signals the event when the device completes a mode change. </description>
-        </item>
-        <item>
-          <description>ED_NOTIFY_HEVENT_RELEASE. Releases the event handle obtained through the ED_NOTIFY_HEVENT_GET flag. Specify the address of the handle in the pValue parameter. </description>
-        </item>
-      </list>
-      <h3>MPEG Camcorder Implementation</h3>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/DirectShow/mstape-driver">MSTape</a> supports an additional media format for the ED_MEDIA_TYPE flag.</para>
-      <list type="table">
-        <listheader>
-          <description>Constant</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>ED_MEDIA_NEO</description>
-          <description>Mini digital tape for MPEG-2 transport stream (D-VHS).</description>
-        </item>
-      </list>
-      <para>Some of these flags are defined in the header file Xptrdefs.h.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
+    <param name="StatusItem">Specifies the status information to retrieve. See Remarks for more information.</param>
+    <param name="pValue">Pointer to variable that either specifies or receives a <b>long</b> integer, whose meaning depends on the value of <i>StatusItem</i>. See Remarks for more information.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.GetTransportAudioParameters">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetTransportAudioParameters</code> method retrieves audio parameter setting for external transport.</para>
       <para>This method is not implemented.</para>
     </summary>
@@ -439,183 +109,47 @@
       <para>Specifies the audio parameter, whose value you want receive, as a <b>long</b> integer containing one of the following values.</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>ED_TRANSAUDIO_ENABLE_OUTPUT</description>
           <description>Audio output channel(s)</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_TRANSAUDIO_ENABLE_RECORD</description>
           <description>Audio recording channel(s)</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_TRANSAUDIO_ENABLE_SELSYNC</description>
           <description>Audio selsync recording channel(s)</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_TRANSAUDIO_SET_MONITOR</description>
           <description>Monitor output audio channel(s)</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_TRANSAUDIO_SET_SOURCE</description>
           <description>Audio source channel(s)</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <param name="pValue">
-      <para>Specifies a pointer to a <b>long</b> integer to receive the channel or channels set in the <see cref="IAMExtTransport.SetTransportAudioParameters" /> method.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
+    <param name="pValue">Specifies a pointer to a <b>long</b> integer to receive the channel or channels set in the <see cref="IAMExtTransport.SetTransportAudioParameters" /> method.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.GetTransportBasicParameters">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetTransportBasicParameters</code> method retrieves general properties of the external transport.</para>
     </summary>
-    <param name="Param">
-      <para>Specifies which property to receive.</para>
-    </param>
-    <param name="pValue">
-      <para>Pointer to a variable that receives a <b>long</b> integer value. See Remarks for more information.</para>
-    </param>
-    <param name="ppszData">
-      <para>Pointer to a variable of type <b>LPOLESTR</b> that receives a string. See Remarks for more information.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <i>Param</i> parameter is a flag that specifies which property to retrieve. Some properties are numeric; these are returned in the <i>pValue</i> parameter. Other properties are string values; these are returned in the <i>ppszData</i> parameter. For a list of flags and expected values, see <see cref="IAMExtTransport.SetTransportBasicParameters" />.</para>
-      <para>If the method returns a string, the caller must free the string, using the <see cref="CoTaskMemFree" /> function.</para>
-      <h3>DV and MPEG Camcorder Implementation</h3>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/DirectShow/msdv-driver">MSDV</a> supports the following additional flags:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <para>ED_RAW_EXT_DEV_CMD: Invokes a raw AV/C command. Specify the AV/C command as an array of bytes in the <i>ppszData</i> parameter. Specify the size of the command, in bytes, in the <i>pValue</i> parameter. When the method returns, <i>ppszData</i> contains the response from the device, and <i>pValue</i> contains the size of the response, in bytes. The AV/C command is passed directly to the device with no validation or error checking.</para>
-            <para>The response payload might be larger than the command. It is the caller's responsibility to allocate enough space in the buffer for the response. The maximum payload size is 512 bytes.</para>
-            <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/issuing-raw-av-c-commands">Issuing Raw AV/C Commands</a>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>ED_TRANSBASIC_INPUT_SIGNAL: Retrieves the signal format that the DV camcorder is designed to accept. Returns one of the following constants in <i>pValue</i>.</para>
-            <list type="table">
-              <listheader>
-                <description>Constant</description>
-                <description>Description </description>
-              </listheader>
-              <item>
-                <description>ED_TRANSBASIC_SIGNAL_525_60_SD</description>
-                <description>NTSC SD signal. </description>
-              </item>
-              <item>
-                <description>ED_TRANSBASIC_SIGNAL_525_60_SDL</description>
-                <description>NTSC SDL (long-play) signal. </description>
-              </item>
-              <item>
-                <description>ED_TRANSBASIC_SIGNAL_625_50_SD</description>
-                <description>PAL SD signal.</description>
-              </item>
-              <item>
-                <description>ED_TRANSBASIC_SIGNAL_625_50_SDL</description>
-                <description>PAL SDL (long-play) signal.</description>
-              </item>
-              <item>
-                <description>ED_TRANSBASIC_SIGNAL_MPEG2TS</description>
-                <description>D-VHS signal.</description>
-              </item>
-            </list>
-          </description>
-        </item>
-        <item>
-          <description>ED_TRANSBASIC_OUTPUT_SIGNAL: Retrieves the signal format that the DV camcorder is designed to transmit. Returns one of the constants listed for the ED_TRANSBASIC_INPUT_SIGNAL flag.
-</description>
-        </item>
-      </list>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/DirectShow/mstape-driver">MSTape</a> supports additional values for ED_TRANSBASIC_INPUT_SIGNAL and ED_TRANSBASIC_OUTPUT_SIGNAL.</para>
-      <list type="table">
-        <listheader>
-          <description>Constant</description>
-          <description>Description </description>
-        </listheader>
-        <item>
-          <description>ED_TRANSBASIC_SIGNAL_2500_60_MPEG</description>
-          <description>25-Mbps/60 MPEG stream.</description>
-        </item>
-        <item>
-          <description>ED_TRANSBASIC_SIGNAL_1250_60_MPEG</description>
-          <description>12.5-Mbps/60 MPEG stream.</description>
-        </item>
-        <item>
-          <description>ED_TRANSBASIC_SIGNAL_0625_60_MPEG</description>
-          <description>6.25-Mbps/60 MPEG stream.</description>
-        </item>
-        <item>
-          <description>ED_TRANSBASIC_SIGNAL_2500_50_MPEG</description>
-          <description>25-Mbps/50 MPEG stream.</description>
-        </item>
-        <item>
-          <description>ED_TRANSBASIC_SIGNAL_1250_50_MPEG</description>
-          <description>12.5-Mbps/50 MPEG stream.</description>
-        </item>
-        <item>
-          <description>ED_TRANSBASIC_SIGNAL_0625_50_MPEG</description>
-          <description>6.25-Mbps/50 MPEG stream.</description>
-        </item>
-        <item>
-          <description>ED_TRANSBASIC_SIGNAL_UNKNOWN</description>
-          <description>Unknown signal format.</description>
-        </item>
-      </list>
-      <para>These flags are defined in the header file Xprtdefs.h.</para>
-      <para>In Windows XP Service Pack 2 and later, the following additional signal types are defined for the ED_TRANSBASIC_INPUT_SIGNAL and ED_TRANSBASIC_OUTPUT_SIGNAL flags.</para>
-      <list type="table">
-        <listheader>
-          <description>Constant</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>ED_TRANSBASIC_SIGNAL_525_60_DV25</description>
-          <description>DVCPRO 25, 525-60.</description>
-        </item>
-        <item>
-          <description>ED_TRANSBASIC_SIGNAL_625_50_DV25</description>
-          <description>DVCPRO 25, 625-50. </description>
-        </item>
-        <item>
-          <description>ED_TRANSBASIC_SIGNAL_525_60_DV50</description>
-          <description>DVCPRO 50, 525-60.</description>
-        </item>
-        <item>
-          <description>ED_TRANSBASIC_SIGNAL_625_50_DV50</description>
-          <description>DVCPRO 50, 625-50.</description>
-        </item>
-        <item>
-          <description>ED_TRANSBASIC_SIGNAL_HD_60_DVH1</description>
-          <description>DVCPRO 100, 1080i or 720p</description>
-        </item>
-        <item>
-          <description>ED_TRANSBASIC_SIGNAL_HD_50_DVH1</description>
-          <description>DVCPRO 100, 1080i only</description>
-        </item>
-      </list>
-      <para>To use these constants, include the header file Xprtdefs.h from the Windows SDK.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
+    <param name="Param">Specifies which property to receive.</param>
+    <param name="pValue">Pointer to a variable that receives a <b>long</b> integer value. See Remarks for more information.</param>
+    <param name="ppszData">Pointer to a variable of type <b>LPOLESTR</b> that receives a string. See Remarks for more information.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.GetTransportVideoParameters">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetTransportVideoParameters</code> retrieves video parameter settings for external transport.</para>
       <para>This method is not implemented.</para>
     </summary>
@@ -623,60 +157,25 @@
       <para>Specifies the video parameter to retrieve. Must be one of the following values.</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>ED_TRANSVIDEO_SET_OUTPUT</description>
           <description>Retrieves the output mode.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_TRANSVIDEO_SET_SOURCE</description>
           <description>Retrieves the input pin.</description>
-        </item>
-      </list>
-    </param>
-    <param name="pValue">
-      <para>Specifies a pointer to a <b>long</b> integer to receive the video parameter. See Remarks for more information.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If <i>Param</i> equals ED_TRANSVIDEO_SET_OUTPUT, <i>pValue</i> receives one of the following constants.</para>
-      <list type="table">
-        <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
         </listheader>
-        <item>
-          <description>ED_E2E</description>
-          <description>Input video is displayed on the device's output regardless of the transport mode.</description>
-        </item>
-        <item>
-          <description>ED_OFF</description>
-          <description>Video output is disabled.</description>
-        </item>
-        <item>
-          <description>ED_PLAYBACK</description>
-          <description>Video playing from media is displayed on the device's output.</description>
-        </item>
       </list>
-      <para>If <i>Param</i> equals ED_TRANSVIDEO_SET_SOURCE, <i>pValue</i> receives the index of the input pin used for the video input. The pin index is zero-based.</para>
-      <h3>DV Implementation</h3>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/DirectShow/msdv-driver">MSDV</a> does not support this method. It returns E_NOTIMPL.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
-    <seealso cref="IAMExtTransport.SetTransportVideoParameters" />
+    </param>
+    <param name="pValue">Specifies a pointer to a <b>long</b> integer to receive the video parameter. See Remarks for more information.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.get_AntiClogControl">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_AntiClogControl</code> method determines whether the anti-headclog control is enabled or disabled.</para>
       <para>This method is not implemented.</para>
     </summary>
@@ -684,30 +183,24 @@
       <para>Pointer to a <b>long</b> integer that receives one of the following values:</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>OATRUE</description>
           <description>Anti-headclog is enabled.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>OAFALSE</description>
           <description>Anti-headclog is disabled.</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
-    <seealso cref="IAMExtTransport.put_AntiClogControl" />
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.get_EditStart">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_EditStart</code> method determines whether the external transport's edit control is active.</para>
       <para>This method is not implemented.</para>
     </summary>
@@ -715,30 +208,24 @@
       <para>Specifies a pointer to a <b>long</b> integer to receive a value indicating whether the external transport's edit control is active.</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>OATRUE</description>
           <description>Edit control is active.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>OAFALSE</description>
           <description>Edit control is inactive.</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
-    <seealso cref="IAMExtTransport.put_EditStart" />
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.get_LocalControl">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_LocalControl</code> method determines whether the transport is under local control or remote control.</para>
       <para>This method is not implemented.</para>
     </summary>
@@ -746,36 +233,24 @@
       <para>Pointer to a <b>long</b> integer that receives one of the following values:</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>OATRUE</description>
           <description>Local control.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>OAFALSE</description>
           <description>Remote control.</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>To control an external device from an application, the device must be in remote mode.</para>
-      <h3>DV Implementation</h3>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/DirectShow/msdv-driver">MSDV</a> does not support this method. It returns E_NOTIMPL.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
-    <seealso cref="IAMExtTransport.put_LocalControl" />
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.get_MediaState">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_MediaState</code> method retrieves the current state of the media.</para>
       <para>This method is not implemented.</para>
     </summary>
@@ -783,60 +258,45 @@
       <para>Pointer to a <b>long</b> integer that receives one of the following values.</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>ED_MEDIA_SPIN_DOWN</description>
           <description>For disk media: Stopped spinning. For tape media: Tape is unthreaded.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_MEDIA_SPIN_UP</description>
           <description>For disk media: Started spinning, but not at full speed. For tape media: Threading the tape.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_MEDIA_UNLOAD</description>
           <description>Media is ejected from the drive.</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.get_Mode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_Mode</code> method retrieves the current transport mode, such as play, stop, or record.</para>
     </summary>
-    <param name="pMode">
-      <para>Pointer to a <b>long</b> integer that receives the current transport mode. For possible values, see <see cref="IAMExtTransport.put_Mode" />.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
+    <param name="pMode">Pointer to a <b>long</b> integer that receives the current transport mode. For possible values, see <see cref="IAMExtTransport.put_Mode" />.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.get_Rate">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_Rate</code> method retrieves the playback rate for variable-speed external devices.</para>
       <para>This method is not implemented.</para>
     </summary>
-    <param name="pdblRate">
-      <para>Pointer to a <b>double</b> to receive the playback rate that was set using <see cref="IAMExtTransport.put_Rate" />.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
+    <param name="pdblRate">Pointer to a <b>double</b> to receive the playback rate that was set using <see cref="IAMExtTransport.put_Rate" />.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.put_AntiClogControl">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>put_AntiClogControl</code> method enables or disables anti-headclog control on the transport.</para>
       <para>This method is not implemented.</para>
     </summary>
@@ -844,36 +304,24 @@
       <para>Specifies whether to enable anti-headclog control.</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>OATRUE</description>
           <description>Enable transport anti-headclog control.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>OAFALSE</description>
           <description>Disable transport anti-headclog control.</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Use this method to unclog video heads on VCRs that have an automatic head-cleaning feature.</para>
-      <h3>DV Implementation</h3>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/DirectShow/msdv-driver">MSDV</a> does not support this method. It returns E_NOTIMPL.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
-    <seealso cref="IAMExtTransport.get_AntiClogControl" />
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.put_EditStart">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>put_EditStart</code> method activates the edit control on a capable transport.</para>
       <para>This method is not implemented.</para>
     </summary>
@@ -881,36 +329,24 @@
       <para>Specifies whether to active the edit control.</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>OATRUE</description>
           <description>Activates the edit control.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>OAFALSE</description>
           <description>Deactivates the edit control.</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Use this method to manually enable edit control. Edit control is defined as the precise enabling of individual, or a set of, record tracks on a VCR; for example, a video-only insert edit, where only the video record head is enabled and a new video signal is recorded—the audio signal is left as is. Use this method to control "on the fly" editing on machines that have this feature.</para>
-      <h3>DV Implementation</h3>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/DirectShow/msdv-driver">MSDV</a> does not support this method. It returns E_NOTIMPL.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
-    <seealso cref="IAMExtTransport.get_EditStart" />
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.put_LocalControl">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>put_LocalControl</code> method switches the device between local and remote control.</para>
       <para>This method is not implemented.</para>
     </summary>
@@ -918,136 +354,120 @@
       <para>Specifies the state of the device.</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>OATRUE</description>
           <description>Local control</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>OAFALSE</description>
           <description>Remote control</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
-    <seealso cref="IAMExtTransport.get_LocalControl" />
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.put_MediaState">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>put_MediaState</code> method sets the current state of the media.</para>
     </summary>
     <param name="State">
       <para>Specifies the media state as a <b>long</b> integer. Use one of the following:</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>ED_MEDIA_SPIN_DOWN</description>
           <description>For disk media: Stop spinning. For tape media: Unthread the tape.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_MEDIA_SPIN_UP</description>
           <description>For disk media: Start spinning. For tape media: Thread the tape.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_MEDIA_UNLOAD</description>
           <description>Eject the media from the drive.</description>
-        </item>
-      </list>
-      <para>These constants are for disk and tape media. Other devices might need to define new constants.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
-    <seealso cref="IAMExtTransport.get_MediaState" />
+        </listheader>
+      </list> <para>These constants are for disk and tape media. Other devices might need to define new constants.</para></param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.put_Mode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>put_Mode</b> method sets the transport mode; for example, play, stop, or record.</para>
     </summary>
     <param name="Mode">
       <para>Specifies the transport mode. Use one of the following values.</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>ED_MODE_PLAY</description>
           <description>Play.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_MODE_STOP</description>
           <description>Stop.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_MODE_FREEZE</description>
           <description>Pause.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_MODE_THAW</description>
           <description>Resume.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_MODE_FF</description>
           <description>Fast forward.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_MODE_REW</description>
           <description>Rewind.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_MODE_RECORD</description>
           <description>Record.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_MODE_RECORD_FREEZE</description>
           <description>Pause recording.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_MODE_RECORD_STROBE</description>
           <description>Record single frame.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_MODE_STEP_FWD</description>
           <description>Single step forward.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_MODE_STEP_REV</description>
           <description>Single step backward.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_MODE_SHUTTLE</description>
           <description>Shuttle (high-speed movement with visible picture). Use with <see cref="IAMExtTransport.put_Rate" /> to set the transport speed.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_MODE_EDIT_CUE</description>
           <description>Position transport to the cue point for an active edit event.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_MODE_LINK_ON</description>
           <description>Link this method to the graph's <see cref="IMediaControl.Run" />, <see cref="IMediaControl.Stop" />, and <see cref="IMediaControl.Pause" /> methods.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_MODE_LINK_OFF</description>
           <description>Disengage this method from the graph's <b>IMediaControl</b> methods.</description>
-        </item>
+        </listheader>
       </list>
     </param>
     <returns>
@@ -1057,73 +477,55 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>HRESULT_FROM_WIN32(ERROR_REQ_NOT_ACCEP)</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HRESULT_FROM_WIN32(ERROR_REQ_NOT_ACCEP)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The device did not accept the command.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The device did not accept the command.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
+          <description>Success.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
-    <seealso cref="IAMExtTransport.get_Mode" />
   </member>
   <member name="IAMExtTransport.put_Rate">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>put_Rate</code> method sets the playback rate for variable-speed external devices.</para>
       <para>This method is not implemented.</para>
     </summary>
-    <param name="dblRate">
-      <para>Specifies the rate as a multiple of normal playback rate. For example, 0.5 specifies half speed, and 2.0 specifies double speed.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
-    <seealso cref="IAMExtTransport.get_Rate" />
+    <param name="dblRate">Specifies the rate as a multiple of normal playback rate. For example, 0.5 specifies half speed, and 2.0 specifies double speed.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.SetBump">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetBump</code> method temporarily changes the playback, for synchronization of multiple external devices.</para>
       <para>This method is not implemented.</para>
     </summary>
-    <param name="Speed">
-      <para>Specifies the temporary speed (a multiple of normal speed) as a <b>long</b> integer.</para>
-    </param>
-    <param name="Duration">
-      <para>Specifies the duration of a bump as a <b>long</b> integer. The duration is given in the current time format; see <see cref="IAMExtTransport.SetTransportBasicParameters" /> for more information.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
-    </returns>
-    <remarks>
-      <para>This method causes a temporary speed variation of the transport. The transport operates at the new speed until the specified duration elapses. Then it returns to its previous speed.</para>
-      <h3>DV Implementation</h3>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/DirectShow/msdv-driver">MSDV</a> does not support this method. It returns E_NOTIMPL.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
-    <seealso cref="IAMExtTransport.GetBump" />
+    <param name="Speed">Specifies the temporary speed (a multiple of normal speed) as a <b>long</b> integer.</param>
+    <param name="Duration">Specifies the duration of a bump as a <b>long</b> integer. The duration is given in the current time format; see <see cref="IAMExtTransport.SetTransportBasicParameters" /> for more information.</param>
+    <returns>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</returns>
   </member>
   <member name="IAMExtTransport.SetChase">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetChase</code> method enables or disables chase mode.</para>
       <para>This method is not implemented.</para>
     </summary>
@@ -1131,112 +533,37 @@
       <para>Specifies whether chase is enabled as a <b>long</b> integer.</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>OATRUE</description>
           <description>Enable chase.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>OAFALSE</description>
           <description>Disable chase.</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <param name="Offset">
-      <para>Specifies the offset that the transport will maintain from a reference time. The offset is given in the current time format; see <see cref="IAMExtTransport.SetTransportBasicParameters" /> for more information.</para>
-    </param>
-    <param name="hEvent">
-      <para>Specifies a handle to an event. The device signals the event after it has established the signal offset.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Use this method when you want an external transport to follow a timecode signal by a fixed offset. For example, if a VCR supports chasing, it can switch to play mode and keep the tape at a fixed offset from a reference timecode.</para>
-      <para>Chase mode remains in effect until it completes or is canceled. The filter must verify that the transport is maintaining the fixed offset, by periodically reading the transport's timecode.</para>
-      <h3>DV Implementation</h3>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/DirectShow/msdv-driver">MSDV</a> does not support this method. It returns E_NOTIMPL.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
-    <seealso cref="IAMExtTransport.GetChase" />
+    <param name="Offset">Specifies the offset that the transport will maintain from a reference time. The offset is given in the current time format; see <see cref="IAMExtTransport.SetTransportBasicParameters" /> for more information.</param>
+    <param name="hEvent">Specifies a handle to an event. The device signals the event after it has established the signal offset.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.SetEditProperty">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetEditProperty</code> method defines parameters and values associated with an edit event.</para>
       <para>This method is not implemented.</para>
     </summary>
-    <param name="EditID">
-      <para>Specifies the edit property set. Use the identifier returned by the <see cref="IAMExtTransport.SetEditPropertySet" /> method.</para>
-    </param>
-    <param name="Param">
-      <para>Specifies the edit event parameter. See Remarks for more information.</para>
-    </param>
-    <param name="Value">
-      <para>Specifies the value of the parameter. See Remarks for more information.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>An edit event consists of one or more edit event parameters. Use the <b>SetEditPropertySet</b> method to create an edit event, and then use this method to specify the edit event parameters for that edit event.</para>
-      <para>The <i>Param</i> parameter is a flag that specifies the edit event parameter. The <i>Value</i> parameter specifies the value of that parameter. The meaning of <i>Value</i> depends on the flag used in <i>Param</i>:</para>
-      <list type="bullet">
-        <item>
-          <description>ED_EDIT_HEVENT: Handle to an event. The device will signal the event when the edit event has completed.</description>
-        </item>
-        <item>
-          <description>ED_EDIT_IMMEDIATE: If the value is OATRUE, the application can switch the device into edit mode by calling <see cref="IAMExtTransport.put_Mode" /> with the value ED_MODE_EDIT_CUE.</description>
-        </item>
-        <item>
-          <description>ED_EDIT_MODE: Specifies the editing mode. Use one of the following constants.<list type="table"><listheader><description>Constant</description><description>Description</description></listheader><item><description>ED_EDIT_MODE_ASSEMBLE</description><description>Assemble edit mode.</description></item><item><description>ED_EDIT_MODE_INSERT</description><description>Insert edit mode.</description></item><item><description>ED_EDIT_MODE_CRASH_RECORD</description><description>Crash record mode.</description></item></list></description>
-        </item>
-        <item>
-          <description>ED_EDIT_TRACK: Specifies which track to edit. Use one or more of the following constants. You can combine constants with a bitwise OR.<list type="table"><listheader><description>Constant</description><description>Description</description></listheader><item><description>ED_VIDEO</description><description>Video track</description></item><item><description>ED_AUDIO_1 through ED_AUDIO_24</description><description>Audio tracks 1 through 24</description></item><item><description>ED_AUDIO_ALL</description><description>All audio track</description></item></list></description>
-        </item>
-        <item>
-          <description>ED_EDIT_SRC_INPOINT: Specifies the inpoint on the source, in units of the current time format.</description>
-        </item>
-        <item>
-          <description>ED_EDIT_SRC_OUTPOINT: Specifies the outpoint on the source, in units of the current time format.</description>
-        </item>
-        <item>
-          <description>ED_EDIT_REC_INPOINT: Specifies the inpoint on the record device, in units of the current time format.</description>
-        </item>
-        <item>
-          <description>ED_EDIT_REC_OUTPOINT: Specifies the outpoint on the record device, in units of the current time format.</description>
-        </item>
-        <item>
-          <description>ED_EDIT_REHEARSE_MODE: Specifies the preview mode. Use one of the following constants.<list type="table"><listheader><description>Constant</description><description>Description</description></listheader><item><description>ED_EDIT_BVB</description><description>Black-video-black (BVB). Display black, then inserted video, then black.</description></item><item><description>ED_EDIT_VBV</description><description>Video-black-video (VBV). Display recorded video, then black, then recorded video.</description></item><item><description>ED_EDIT_VVV</description><description>Video-video-video (VVV). Display recorded video, then inserted video, then recorded video.</description></item><item><description>ED_EDIT_PERFORM</description><description>Do not preview.</description></item></list></description>
-        </item>
-        <item>
-          <description>ED_EDIT_ABORT: With the value OATRUE, the method halts the edit if it is currently in progress.</description>
-        </item>
-        <item>
-          <description>ED_EDIT_TIMEOUT: Specifies how long the device will wait for the edit to complete, before timing out.</description>
-        </item>
-        <item>
-          <description>ED_EDIT_SEEK: With the value OATRUE, the method seeks to a specified point. First call this method with the ED_EDIT_SEEK_MODE flag, to specify the seek point.</description>
-        </item>
-        <item>
-          <description>ED_EDIT_SEEK_MODE: Specifies a seek point. Use one of the following constants.<list type="table"><listheader><description>Constant</description><description>Description</description></listheader><item><description>ED_EDIT_SEEK_EDIT_IN</description><description>Seek to the inpoint.</description></item><item><description>ED_EDIT_SEEK_EDIT_OUT</description><description>Seek to the outpoint.</description></item><item><description>ED_EDIT_SEEK_PREROLL</description><description>Seek to the inpoint preroll.</description></item><item><description>ED_EDIT_SEEK_PREROLL_CT</description><description>Seek to the inpoint using timecode, then seek back to the preroll point using the control track.</description></item><item><description>ED_EDIT_SEEK_BOOKMARK</description><description>Seek to the next bookmark.</description></item></list></description>
-        </item>
-      </list>
-      <h3>DV Implementation</h3>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/DirectShow/msdv-driver">MSDV</a> does not support this method. It returns E_NOTIMPL.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
-    <seealso cref="IAMExtTransport.GetEditProperty" />
+    <param name="EditID">Specifies the edit property set. Use the identifier returned by the <see cref="IAMExtTransport.SetEditPropertySet" /> method.</param>
+    <param name="Param">Specifies the edit event parameter. See Remarks for more information.</param>
+    <param name="Value">Specifies the value of the parameter. See Remarks for more information.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.SetTransportAudioParameters">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetTransportAudioParameters</code> assigns audio parameter settings for external transport.</para>
       <para>This method is not implemented.</para>
     </summary>
@@ -1244,62 +571,42 @@
       <para>Specifies the audio parameter you want to set as a <b>long</b> integer.</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>ED_TRANSAUDIO_ENABLE_OUTPUT</description>
           <description>Enable audio channel(s) for output.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_TRANSAUDIO_ENABLE_RECORD</description>
           <description>Enable audio channel(s) for recording.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_TRANSAUDIO_ENABLE_SELSYNC</description>
           <description>Enable audio channel(s) for selsync recording.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_TRANSAUDIO_SET_MONITOR</description>
           <description>Set the monitor output source.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_TRANSAUDIO_SET_SOURCE</description>
           <description>Set the active audio input.</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <param name="Value">
-      <para>Specifies which audio channel or channels is assigned the parameter as a <b>long</b> integer.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Specify an exact channel or channels in <i>Value</i> by selecting ED_AUDIO_1 through ED_AUDIO_24 (use a bitwise OR to combine), or all channels by selecting ED_AUDIO_ALL.</para>
-      <h3>DV Implementation</h3>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/DirectShow/msdv-driver">MSDV</a> does not support this method. It returns E_NOTIMPL.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
-    <seealso cref="IAMExtTransport.GetTransportAudioParameters" />
+    <param name="Value">Specifies which audio channel or channels is assigned the parameter as a <b>long</b> integer.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport.SetTransportBasicParameters">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetTransportBasicParameters</code> method sets general properties of the transport.</para>
     </summary>
-    <param name="Param">
-      <para>Specifies which property to set. See Remarks for more information.</para>
-    </param>
-    <param name="Value">
-      <para>Specifies the value of the property as a <b>long</b> integer. See Remarks for more information.</para>
-    </param>
-    <param name="pszData">
-      <para>Specifies the value of the property as an <b>LPOLESTR</b>. See Remarks for more information.</para>
-    </param>
+    <param name="Param">Specifies which property to set. See Remarks for more information.</param>
+    <param name="Value">Specifies the value of the property as a <b>long</b> integer. See Remarks for more information.</param>
+    <param name="pszData">Specifies the value of the property as an <b>LPOLESTR</b>. See Remarks for more information.</param>
     <returns>
       <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code. Possible error codes include the following.</para>
       <list type="table">
@@ -1307,102 +614,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Device does not support setting this property.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Device does not support setting this property.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_DEVICE_REMOVED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_DEVICE_REMOVED</b>
-            </para>
-          </description>
-          <description>
-            <para>Device was removed.</para>
-          </description>
-        </item>
+          <description>Device was removed.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <i>Param</i> parameter is a flag that specifies which property to set. For some flags, the property is numeric; use the <i>Value</i> parameter to specify the value. For other flags, the property is a string; use the <i>pszData</i> parameter to specify the value. In either case, the method ignores the other parameter.</para>
-      <para>For the following flags, the <i>Value</i> parameter takes a defined constant.</para>
-      <list type="bullet">
-        <item>
-          <description>ED_TRANSBASIC_TIME_FORMAT: Specifies the time format.<list type="table"><listheader><description>Constant</description><description>Description</description></listheader><item><description>ED_FORMAT_MILLISECONDS</description><description>Milliseconds.</description></item><item><description>ED_FORMAT_FRAMES</description><description>Frames.</description></item><item><description>ED_FORMAT_REFERENCE_TIME</description><description>Reference time.</description></item><item><description>ED_FORMAT_HMSF</description><description>Binary coded decimal, representing hours, minutes, seconds, and frames.</description></item><item><description>ED_FORMAT_TMSF</description><description>Binary coded decimal, representing tracks, minutes, seconds, and frames.</description></item></list></description>
-        </item>
-        <item>
-          <description>ED_TRANSBASIC_TIME_REFERENCE: Specifies the reference time in use by the device.<list type="table"><listheader><description>Constant</description><description>Description</description></listheader><item><description>ED_TIMEREF_TIMECODE</description><description>Time code.</description></item><item><description>ED_TIMEREF_CONTROL_TRACK</description><description>Control track.</description></item><item><description>ED_TIMEREF_INDEX</description><description>Index.</description></item><item><description>ED_TIMEREF_ATN</description><description>Absolute track number. This constant is defined in the header file Xprtdefs.h.</description></item></list></description>
-        </item>
-        <item>
-          <description>ED_TRANSBASIC_END_STOP_ACTION: Specifies the action the device takes when it reaches the end of the transport medium.<list type="table"><listheader><description>Constant</description><description>Description</description></listheader><item><description>ED_MODE_STOP</description><description>Stop.</description></item><item><description>ED_MODE_REWIND</description><description>Rewind.</description></item><item><description>ED_MODE_FREEZE</description><description>Freeze/pause.</description></item></list></description>
-        </item>
-        <item>
-          <description>ED_TRANSBASIC_RECORD_FORMAT: Specifies the recording speed.<list type="table"><listheader><description>Constant</description><description>Description</description></listheader><item><description>ED_RECORD_FORMAT_SP</description><description>Standard play.</description></item><item><description>ED_RECORD_FORMAT_LP</description><description>Long play.</description></item><item><description>ED_RECORD_FORMAT_EP</description><description>Extended play.</description></item></list></description>
-        </item>
-        <item>
-          <description>ED_TRANSBASIC_SUPERIMPOSE: Specifies whether the on-screen display is enabled or disabled.<list type="table"><listheader><description>Constant</description><description>Description</description></listheader><item><description>OATRUE</description><description>On-screen display is enabled.</description></item><item><description>OAFALSE</description><description>On-screen display is disabled.</description></item></list></description>
-        </item>
-        <item>
-          <description>ED_TRANSBASIC_STEP_UNIT: Specifies the step unit.<list type="table"><listheader><description>Constant</description><description>Description</description></listheader><item><description>ED_STEP_FIELD</description><description>Fields.</description></item><item><description>ED_STEP_FRAME</description><description>Frames.</description></item><item><description>ED_STEP_3_2</description><description>3/2 Pulldown.</description></item></list></description>
-        </item>
-        <item>
-          <description>ED_TRANSBASIC_SET_COUNTER_FORMAT: Sets the time format for the counter. See the ED_TRANSBASIC_TIME_FORMAT flag for possible values.</description>
-        </item>
-      </list>
-      <para>For the following flags, use a numeric value in the <i>Value</i> parameter.</para>
-      <list type="table">
-        <listheader>
-          <description>Flag
-</description>
-          <description>Description
-</description>
-        </listheader>
-        <item>
-          <description>ED_TRANSBASIC_STEP_COUNT</description>
-          <description>Specifies the step count, in units defined by the ED_TRANSBASIC_STEP_UNIT flag.</description>
-        </item>
-        <item>
-          <description>ED_TRANSBASIC_SET_FREEZE_TIMEOUT</description>
-          <description>Specifies the timeout for freeze mode, in units of the current time format.</description>
-        </item>
-        <item>
-          <description>ED_TRANSBASIC_SETCLOCK</description>
-          <description>Sets the clock time.</description>
-        </item>
-        <item>
-          <description>ED_TRANSBASIC_SET_COUNTER_VALUE</description>
-          <description>Sets the value of the counter.</description>
-        </item>
-      </list>
-      <para>For the following flags, use a string in the <i>pszData</i> parameter.</para>
-      <list type="table">
-        <listheader>
-          <description>Flag
-</description>
-          <description>Description
-</description>
-        </listheader>
-        <item>
-          <description>ED_TRANSBASIC_VOLUME_NAME</description>
-          <description>Specifies the volume name.</description>
-        </item>
-      </list>
-      <h3>DV Implementation</h3>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/DirectShow/msdv-driver">MSDV</a> does not support this method. It returns E_NOTIMPL.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
-    <seealso cref="IAMExtTransport.GetTransportBasicParameters" />
   </member>
   <member name="IAMExtTransport.SetTransportVideoParameters">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetTransportVideoParameters</code> method assigns video parameters for external transport.</para>
       <para>This method is not implemented.</para>
     </summary>
@@ -1410,71 +651,27 @@
       <para>Specifies the video parameter to set. Must be one of the following values.</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>ED_TRANSVIDEO_SET_OUTPUT</description>
           <description>Sets the output mode.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_TRANSVIDEO_SET_SOURCE</description>
           <description>Sets the input pin.</description>
-        </item>
-      </list>
-    </param>
-    <param name="Value">
-      <para>Specifies the value of the video parameter. See Remarks for more information.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If <i>Param</i> equals ED_TRANSVIDEO_SET_OUTPUT, <i>Value</i> must be one of the following constants.</para>
-      <list type="table">
-        <listheader>
-          <description>Constant
-</description>
-          <description>Description
-</description>
         </listheader>
-        <item>
-          <description>ED_E2E</description>
-          <description>Input video is displayed on the device's output regardless of the transport mode.</description>
-        </item>
-        <item>
-          <description>ED_OFF</description>
-          <description>Video output is disabled.</description>
-        </item>
-        <item>
-          <description>ED_PLAYBACK</description>
-          <description>Video playing from media is displayed on the device's output.</description>
-        </item>
       </list>
-      <para>If <i>Param</i> equals ED_TRANSVIDEO_SET_SOURCE, <i>Value</i> specifies the index of the input pin to use for the video input. The pin index is zero-based.</para>
-      <h3>DV Implementation</h3>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/DirectShow/msdv-driver">MSDV</a> does not support this method. It returns E_NOTIMPL.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtTransport Interface" />
-    <seealso cref="IAMExtTransport.GetTransportVideoParameters" />
+    </param>
+    <param name="Value">Specifies the value of the video parameter. See Remarks for more information.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtTransport">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>IAMExtTransport</b> interface controls the transport on a video tape recporder (VTR) or camcorder. Applications can use this interface to play, record, or stop the transport; determine whether the transport contains media; and other transport-related functions. The implementation of this interface can vary, depending on the device. Some methods might return E_NOTIMPL if the device does not support them.</para>
       <para>This interface also contains methods for non-linear editing through <i>edit events</i> and <i>edit property sets</i>. Currently, DirectShow does not provide any filters or drivers that implement this part of the interface.</para>
     </summary>
-    <remarks>
-      <para>The DV device drivers require some additional constants that are defined in the header file Xprtdefs.h.</para>
-      <para>For Windows Driver Model (WDM) devices, the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/wdm-video-capture-filter">WDM Video Capture Filter</a> automatically exposes this interface if the WDM driver supports the <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/propsetid-ext-transport">PROPSETID_EXT_TRANSPORT</a> property set. For more information, see the <a href="https://docs.microsoft.com//windows-hardware/drivers/gettingstarted/">Windows Driver Kit (WDK)</a> documentation.</para>
-      <h3>Hardware Requirements</h3>
-      <para>To control an external VCR, certain hardware requirements are recommended. VCRs with an RS-422 serial interface require a special serial port card or an external RS-232-to-RS-422 adapter. In addition, for best performance, your computer should have a serial port card built with a 16550 high-performance UART to sustain higher baud rates, such as 38.4 baud.</para>
-      <h3>Filter Developers</h3>
-      <para>Implement this interface if you are writing a filter that controls an external device with a transport, such as a VTR. If you implement this interface, you should implement the <see cref="IAMExtDevice" /> interface as well.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/interfaces">Interfaces</seealso>
   </member>
 </doc>

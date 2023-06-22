@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFSampleEncryptionProtectionScheme">
-    <summary>
-      <para>Specifies the supported protection schemes for encrypted samples.</para>
-    </summary>
-    <remarks>
-      <para>The encryption scheme for a sample is specified using the <a href="https://docs.microsoft.com//windows/desktop/medfound/mfsampleextension-encryption-protectionscheme">MFSampleExtension_Encryption_ProtectionScheme</a> attribute.</para>
-    </remarks>
+    <summary>Specifies the supported protection schemes for encrypted samples.</summary>
   </member>
   <member name="MFSampleEncryptionProtectionScheme.MF_SAMPLE_ENCRYPTION_PROTECTION_SCHEME_NONE">
-    <summary>
-      <para>No encryption scheme.</para>
-    </summary>
+    <summary>No encryption scheme.</summary>
   </member>
   <member name="MFSampleEncryptionProtectionScheme.MF_SAMPLE_ENCRYPTION_PROTECTION_SCHEME_AES_CTR">
-    <summary>
-      <para>The encryption scheme is AES counter mode (CTR).</para>
-    </summary>
+    <summary>The encryption scheme is AES counter mode (CTR).</summary>
   </member>
   <member name="MFSampleEncryptionProtectionScheme.MF_SAMPLE_ENCRYPTION_PROTECTION_SCHEME_AES_CBC">
-    <summary>
-      <para>The encryption scheme is Cipher Block Chaining (CBC).</para>
-    </summary>
+    <summary>The encryption scheme is Cipher Block Chaining (CBC).</summary>
   </member>
 </doc>

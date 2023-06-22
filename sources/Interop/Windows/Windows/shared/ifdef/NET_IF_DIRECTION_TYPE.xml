@@ -3,33 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NET_IF_DIRECTION_TYPE">
-    <summary>
-      <para>The NET_IF_ACCESS_TYPE enumeration type specifies the
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/ndis-network-interfaces2">NDIS network interface</a> direction
-type.</para>
-    </summary>
+    <summary>The NET_IF_ACCESS_TYPE enumeration type specifies the<a href="https://docs.microsoft.com//windows-hardware/drivers/network/ndis-network-interfaces2">NDIS network interface</a> direction type.</summary>
   </member>
   <member name="NET_IF_DIRECTION_TYPE.NET_IF_DIRECTION_SENDRECEIVE">
-    <summary>
-      <para>Indicates the send and receive direction type. This direction type indicates that the NDIS network
-interface can send and receive data.</para>
-    </summary>
+    <summary>Indicates the send and receive direction type. This direction type indicates that the NDIS network interface can send and receive data.</summary>
   </member>
   <member name="NET_IF_DIRECTION_TYPE.NET_IF_DIRECTION_SENDONLY">
-    <summary>
-      <para>Indicates the send only direction type. This direction type indicates that the NDIS network
-interface can only send data.</para>
-    </summary>
+    <summary>Indicates the send only direction type. This direction type indicates that the NDIS network interface can only send data.</summary>
   </member>
   <member name="NET_IF_DIRECTION_TYPE.NET_IF_DIRECTION_RECEIVEONLY">
-    <summary>
-      <para>Indicates the receive only direction type. This direction type indicates that the NDIS network
-interface can only receive data.</para>
-    </summary>
+    <summary>Indicates the receive only direction type. This direction type indicates that the NDIS network interface can only receive data.</summary>
   </member>
   <member name="NET_IF_DIRECTION_TYPE.NET_IF_DIRECTION_MAXIMUM">
-    <summary>
-      <para>A maximum value for testing purposes.</para>
-    </summary>
+    <summary>A maximum value for testing purposes.</summary>
   </member>
 </doc>

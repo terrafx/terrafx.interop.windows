@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFSHUTDOWN_STATUS">
-    <summary>
-      <para>Describes the current status of a call to the <see cref="IMFShutdown.Shutdown" /> method.</para>
-    </summary>
-    <seealso cref="IMFShutdown" />
-    <seealso cref="IMFShutdown.GetShutdownStatus" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Describes the current status of a call to the <see cref="IMFShutdown.Shutdown" /> method.</summary>
   </member>
   <member name="MFSHUTDOWN_STATUS.MFSHUTDOWN_INITIATED">
-    <summary>
-      <para>The shutdown operation has started but is not yet complete.</para>
-    </summary>
+    <summary>The shutdown operation has started but is not yet complete.</summary>
   </member>
   <member name="MFSHUTDOWN_STATUS.MFSHUTDOWN_COMPLETED">
-    <summary>
-      <para>Shutdown is complete.</para>
-    </summary>
+    <summary>Shutdown is complete.</summary>
   </member>
 </doc>

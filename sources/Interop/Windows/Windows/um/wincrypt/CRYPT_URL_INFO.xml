@@ -3,28 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRYPT_URL_INFO">
-    <summary>
-      <para>The <b>CRYPT_URL_INFO</b> structure contains information about groupings of URLs.</para>
-    </summary>
+    <summary>The <b>CRYPT_URL_INFO</b> structure contains information about groupings of URLs.</summary>
   </member>
   <member name="CRYPT_URL_INFO.cbSize">
-    <summary>
-      <para>The size, in bytes, of the structure.</para>
-    </summary>
+    <summary>The size, in bytes, of the structure.</summary>
   </member>
   <member name="CRYPT_URL_INFO.dwSyncDeltaTime">
-    <summary>
-      <para>Number of seconds between synchronizations.</para>
-    </summary>
+    <summary>Number of seconds between synchronizations.</summary>
   </member>
   <member name="CRYPT_URL_INFO.cGroup">
-    <summary>
-      <para>Number of elements in the rgcGroupEntry array of URL groups.</para>
-    </summary>
+    <summary>Number of elements in the rgcGroupEntry array of URL groups.</summary>
   </member>
   <member name="CRYPT_URL_INFO.rgcGroupEntry">
-    <summary>
-      <para>Array of URL groups returned.</para>
-    </summary>
+    <summary>Array of URL groups returned.</summary>
   </member>
 </doc>

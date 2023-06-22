@@ -3,20 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ACTCTX_COMPATIBILITY_ELEMENT_TYPE">
-    <summary>
-      <para>The <b>ACTCTX_COMPATIBILITY_ELEMENT_TYPE</b> enumeration describes the compatibility element in the application manifest.</para>
-    </summary>
+    <summary>The <b>ACTCTX_COMPATIBILITY_ELEMENT_TYPE</b> enumeration describes the compatibility element in the application manifest.</summary>
   </member>
-  <member name="ACTCTX_COMPATIBILITY_ELEMENT_TYPE.ACTCTX_COMPATIBILITY_ELEMENT_TYPE_UNKNOWN">
-    <summary></summary>
-  </member>
-  <member name="ACTCTX_COMPATIBILITY_ELEMENT_TYPE.ACTCTX_COMPATIBILITY_ELEMENT_TYPE_OS">
-    <summary></summary>
-  </member>
+  <member name="ACTCTX_COMPATIBILITY_ELEMENT_TYPE.ACTCTX_COMPATIBILITY_ELEMENT_TYPE_UNKNOWN"></member>
+  <member name="ACTCTX_COMPATIBILITY_ELEMENT_TYPE.ACTCTX_COMPATIBILITY_ELEMENT_TYPE_OS"></member>
   <member name="ACTCTX_COMPATIBILITY_ELEMENT_TYPE.ACTCTX_COMPATIBILITY_ELEMENT_TYPE_MITIGATION">
     <summary>
       <h4>- ACTCX_COMPATIBILITY_ELEMENT_TYPE_OS</h4>
-      <para>The compatibility element in the application manifest specifies a supported version of  Windows.</para>
+      <para>The compatibility element in the application manifest specifies a supported version of Windows.</para>
       <h4>- ACTCX_COMPATIBILITY_ELEMENT_TYPE_UNKNOWN</h4>
       <para>The compatibility element is an unknown type.</para>
     </summary>

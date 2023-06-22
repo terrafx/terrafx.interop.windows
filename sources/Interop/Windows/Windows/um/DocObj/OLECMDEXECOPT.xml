@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="OLECMDEXECOPT">
-    <summary>
-      <para>Specifies command execution options.</para>
-    </summary>
-    <seealso cref="IOleCommandTarget.Exec" />
+    <summary>Specifies command execution options.</summary>
   </member>
   <member name="OLECMDEXECOPT.OLECMDEXECOPT_DODEFAULT">
-    <summary>
-      <para>Prompt the user for input or not, whichever is the default behavior.</para>
-    </summary>
+    <summary>Prompt the user for input or not, whichever is the default behavior.</summary>
   </member>
   <member name="OLECMDEXECOPT.OLECMDEXECOPT_PROMPTUSER">
-    <summary>
-      <para>Execute the command after obtaining user input.</para>
-    </summary>
+    <summary>Execute the command after obtaining user input.</summary>
   </member>
   <member name="OLECMDEXECOPT.OLECMDEXECOPT_DONTPROMPTUSER">
-    <summary>
-      <para>Execute the command without prompting the user. For example, clicking the Print toolbar button causes a document to be immediately printed without user input.</para>
-    </summary>
+    <summary>Execute the command without prompting the user. For example, clicking the Print toolbar button causes a document to be immediately printed without user input.</summary>
   </member>
   <member name="OLECMDEXECOPT.OLECMDEXECOPT_SHOWHELP">
-    <summary>
-      <para>Show help for the corresponding command, but do not execute.</para>
-    </summary>
+    <summary>Show help for the corresponding command, but do not execute.</summary>
   </member>
 </doc>

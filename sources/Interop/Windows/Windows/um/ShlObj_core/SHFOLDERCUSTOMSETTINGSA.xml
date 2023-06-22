@@ -3,22 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SHFOLDERCUSTOMSETTINGSA">
-    <summary>
-      <para>Holds custom folder settings. This structure is used with the <see cref="SHGetSetFolderCustomSettings" /> function.</para>
-    </summary>
-    <remarks>
-      <para>In Windows XP Service Pack 2 (SP2) and earlier versions, this structure supported both ANSI and Unicode strings. In Windows Vista and later versions, only Unicode strings are supported.</para>
-    </remarks>
+    <summary>Holds custom folder settings. This structure is used with the <see cref="SHGetSetFolderCustomSettings" /> function.</summary>
   </member>
   <member name="SHFOLDERCUSTOMSETTINGSA.dwSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of the structure, in bytes.</para>
-    </summary>
+    <summary>The size of the structure, in bytes.</summary>
   </member>
   <member name="SHFOLDERCUSTOMSETTINGSA.dwMask">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>A <b>DWORD</b> value specifying which folder attributes to read or write from this structure. Use one or more of the following values to indicate which structure members are valid:</para>
       <h4>FCSM_VIEWID</h4>
       <para>
@@ -43,81 +34,42 @@
     </summary>
   </member>
   <member name="SHFOLDERCUSTOMSETTINGSA.pvid">
-    <summary>
-      <para>Type: <b>SHELLVIEWID*</b></para>
-      <para>The folder's GUID.</para>
-    </summary>
+    <summary>The folder's GUID.</summary>
   </member>
   <member name="SHFOLDERCUSTOMSETTINGSA.pszWebViewTemplate">
-    <summary>
-      <para>Type: <b>LPTSTR</b></para>
-      <para>A pointer to a null-terminated string containing the path to the folder's <a href="https://docs.microsoft.com//windows/desktop/lwef/web-view">WebView template</a>.</para>
-    </summary>
+    <summary>A pointer to a null-terminated string containing the path to the folder's <a href="https://docs.microsoft.com//windows/desktop/lwef/web-view">WebView template</a>.</summary>
   </member>
   <member name="SHFOLDERCUSTOMSETTINGSA.cchWebViewTemplate">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>If the <see cref="SHGetSetFolderCustomSettings" /> parameter <i>dwReadWrite</i> is <b>FCS_READ</b>, this is the size of the <b>pszWebViewTemplate</b> buffer, in characters. If not, this is the number of characters to write from that buffer. Set this parameter to 0 to write the entire string.</para>
-    </summary>
+    <summary>If the <see cref="SHGetSetFolderCustomSettings" /> parameter <i>dwReadWrite</i> is <b>FCS_READ</b>, this is the size of the <b>pszWebViewTemplate</b> buffer, in characters. If not, this is the number of characters to write from that buffer. Set this parameter to 0 to write the entire string.</summary>
   </member>
   <member name="SHFOLDERCUSTOMSETTINGSA.pszWebViewTemplateVersion">
-    <summary>
-      <para>Type: <b>LPTSTR</b></para>
-      <para>A pointer to a null-terminated buffer containing the WebView template version.</para>
-    </summary>
+    <summary>A pointer to a null-terminated buffer containing the WebView template version.</summary>
   </member>
   <member name="SHFOLDERCUSTOMSETTINGSA.pszInfoTip">
-    <summary>
-      <para>Type: <b>LPTSTR</b></para>
-      <para>A pointer to a null-terminated buffer containing the text of the folder's infotip.</para>
-    </summary>
+    <summary>A pointer to a null-terminated buffer containing the text of the folder's infotip.</summary>
   </member>
   <member name="SHFOLDERCUSTOMSETTINGSA.cchInfoTip">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>If the <see cref="SHGetSetFolderCustomSettings" /> parameter <i>dwReadWrite</i> is <b>FCS_READ</b>, this is the size of the <b>pszInfoTip</b> buffer, in characters. If not, this is the number of characters to write from that buffer. Set this parameter to 0 to write the entire string.</para>
-    </summary>
+    <summary>If the <see cref="SHGetSetFolderCustomSettings" /> parameter <i>dwReadWrite</i> is <b>FCS_READ</b>, this is the size of the <b>pszInfoTip</b> buffer, in characters. If not, this is the number of characters to write from that buffer. Set this parameter to 0 to write the entire string.</summary>
   </member>
   <member name="SHFOLDERCUSTOMSETTINGSA.pclsid">
-    <summary>
-      <para>Type: <b>CLSID*</b></para>
-      <para>A pointer to a CLSID used to identify the folder in the Windows registry. Further folder information is stored in the registry under that CLSID entry.</para>
-    </summary>
+    <summary>A pointer to a CLSID used to identify the folder in the Windows registry. Further folder information is stored in the registry under that CLSID entry.</summary>
   </member>
   <member name="SHFOLDERCUSTOMSETTINGSA.dwFlags">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>Not used.</para>
-    </summary>
+    <summary>Not used.</summary>
   </member>
   <member name="SHFOLDERCUSTOMSETTINGSA.pszIconFile">
-    <summary>
-      <para>Type: <b>LPTSTR</b></para>
-      <para>A pointer to a null-terminated buffer containing the path to file containing the folder's icon.</para>
-    </summary>
+    <summary>A pointer to a null-terminated buffer containing the path to file containing the folder's icon.</summary>
   </member>
   <member name="SHFOLDERCUSTOMSETTINGSA.cchIconFile">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>If the <see cref="SHGetSetFolderCustomSettings" /> parameter <i>dwReadWrite</i> is <b>FCS_READ</b>, this is the size of the <b>pszIconFile</b> buffer, in characters. If not, this is the number of characters to write from that buffer. Set this parameter to 0 to write the entire string.</para>
-    </summary>
+    <summary>If the <see cref="SHGetSetFolderCustomSettings" /> parameter <i>dwReadWrite</i> is <b>FCS_READ</b>, this is the size of the <b>pszIconFile</b> buffer, in characters. If not, this is the number of characters to write from that buffer. Set this parameter to 0 to write the entire string.</summary>
   </member>
   <member name="SHFOLDERCUSTOMSETTINGSA.iIconIndex">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The index of the icon within the file named in <b>pszIconFile</b>.</para>
-    </summary>
+    <summary>The index of the icon within the file named in <b>pszIconFile</b>.</summary>
   </member>
   <member name="SHFOLDERCUSTOMSETTINGSA.pszLogo">
-    <summary>
-      <para>Type: <b>LPTSTR</b></para>
-      <para>A pointer to a null-terminated buffer containing the path to the file containing the folder's logo image. This is the image used in thumbnail views.</para>
-    </summary>
+    <summary>A pointer to a null-terminated buffer containing the path to the file containing the folder's logo image. This is the image used in thumbnail views.</summary>
   </member>
   <member name="SHFOLDERCUSTOMSETTINGSA.cchLogo">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>If the <see cref="SHGetSetFolderCustomSettings" /> parameter <i>dwReadWrite</i> is <b>FCS_READ</b>, this is the size of the <b>pszLogo</b> buffer, in characters. If not, this is the number of characters to write from that buffer. Set this parameter to 0 to write the entire string.</para>
-    </summary>
+    <summary>If the <see cref="SHGetSetFolderCustomSettings" /> parameter <i>dwReadWrite</i> is <b>FCS_READ</b>, this is the size of the <b>pszLogo</b> buffer, in characters. If not, this is the number of characters to write from that buffer. Set this parameter to 0 to write the entire string.</summary>
   </member>
 </doc>

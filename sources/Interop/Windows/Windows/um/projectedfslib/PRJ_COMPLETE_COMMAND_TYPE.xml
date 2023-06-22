@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PRJ_COMPLETE_COMMAND_TYPE">
-    <summary>
-      <para>Specifies command types.</para>
-    </summary>
+    <summary>Specifies command types.</summary>
   </member>
   <member name="PRJ_COMPLETE_COMMAND_TYPE.PRJ_COMPLETE_COMMAND_TYPE_NOTIFICATION">
-    <summary>
-      <para>The provider is completing a call to its <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_notification_cb">PRJ_NOTIFICATION_CB</a> callback.</para>
-    </summary>
+    <summary>The provider is completing a call to its <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_notification_cb">PRJ_NOTIFICATION_CB</a> callback.</summary>
   </member>
   <member name="PRJ_COMPLETE_COMMAND_TYPE.PRJ_COMPLETE_COMMAND_TYPE_ENUMERATION">
-    <summary>
-      <para>The provider is completing a call to its <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_directory_enumeration_cb">PRJ_GET_DIRECTORY_ENUMERATION_CB</a> callback.</para>
-    </summary>
+    <summary>The provider is completing a call to its <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_directory_enumeration_cb">PRJ_GET_DIRECTORY_ENUMERATION_CB</a> callback.</summary>
   </member>
 </doc>

@@ -3,23 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDXGIFactory3.GetCreationFlags">
-    <summary>
-      <para>Gets the flags that were used when a Microsoft DirectX Graphics Infrastructure (DXGI) object was created.</para>
-    </summary>
-    <returns>
-      <para>The creation flags.</para>
-    </returns>
-    <remarks>
-      <para>The <b>GetCreationFlags</b> method returns flags that were passed to the  <see cref="CreateDXGIFactory2" /> function, or were implicitly constructed by <see cref="CreateDXGIFactory" />, <see cref="CreateDXGIFactory1" />,  <see cref="D3D11CreateDevice" />, or <see cref="D3D11CreateDeviceAndSwapChain" />.</para>
-    </remarks>
-    <seealso cref="IDXGIFactory3" />
+    <summary>Gets the flags that were used when a Microsoft DirectX Graphics Infrastructure (DXGI) object was created.</summary>
+    <returns>The creation flags.</returns>
   </member>
   <member name="IDXGIFactory3">
-    <summary>
-      <para>Enables creating Microsoft DirectX Graphics Infrastructure (DXGI) objects.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IDXGIFactory1" />
-    <seealso cref="IDXGIFactory2" />
+    <summary>Enables creating Microsoft DirectX Graphics Infrastructure (DXGI) objects.</summary>
   </member>
 </doc>

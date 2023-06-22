@@ -3,13 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IRendezvousApplication.SetRendezvousSession">
-    <summary>
-      <para>Passes <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/rendezvoussession/nn-rendezvoussession-irendezvoussession">IRendezvousSession</a> to the Windows Remote Assistance application. This method is used by the instant messaging application.</para>
-    </summary>
+    <summary>Passes <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/rendezvoussession/nn-rendezvoussession-irendezvoussession">IRendezvousSession</a> to the Windows Remote Assistance application. This method is used by the instant messaging application.</summary>
     <param name="pRendezvousSession">
-      <para>
-        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/rendezvoussession/nn-rendezvoussession-irendezvoussession">IRendezvousSession</a>
-      </para>
+      <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/rendezvoussession/nn-rendezvoussession-irendezvoussession">IRendezvousSession</a>
     </param>
     <returns>
       <para>This method can return one of these values.</para>
@@ -18,46 +14,46 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/rendezvoussession/nn-rendezvoussession-irendezvoussession">IRendezvousSession</a> was passed to the Windows Remote Assistance application successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/rendezvoussession/nn-rendezvoussession-irendezvoussession">IRendezvousSession</a> was passed to the Windows Remote Assistance application successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The session object passed to the method is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The session object passed to the method is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>A catastrophic error occurred while trying to pass the session to the Windows Remote Assistance application.</para>
-          </description>
-        </item>
+          <description>A catastrophic error occurred while trying to pass the session to the Windows Remote Assistance application.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IRendezvousApplication">
-    <summary>
-      <para>Exposes a method used by an instant messaging (IM) application to create a remote assistance session.</para>
-    </summary>
-    <remarks>
-      <para>After an IM contact has accepted the remote assistance invitation, the IM application must instantiate the Windows Remote Assistance application on both sides of the connection by calling <see cref="CoCreateInstance" /> on the Windows Remote Assistance application's <b>IRendezvousApplication</b> interface.</para>
-      <para>The IM application calls the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/rendezvoussession/nf-rendezvoussession-irendezvousapplication-setrendezvoussession">SetRendezvousSession</a> method to pass its implementation of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/rendezvoussession/nn-rendezvoussession-irendezvoussession">IRendezvousSession</a> interface to the Windows Remote Assistance application.</para>
-    </remarks>
+    <summary>Exposes a method used by an instant messaging (IM) application to create a remote assistance session.</summary>
   </member>
 </doc>

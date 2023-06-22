@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_PROXY_PROPERTY">
-    <summary>
-      <para>Specifies a proxy property.</para>
-    </summary>
+    <summary>Specifies a proxy property.</summary>
   </member>
   <member name="WS_PROXY_PROPERTY.id">
-    <summary>
-      <para>Identifies the <see cref="WS_PROXY_PROPERTY_ID" />.</para>
-    </summary>
+    <summary>Identifies the <see cref="WS_PROXY_PROPERTY_ID" />.</summary>
   </member>
   <member name="WS_PROXY_PROPERTY.value">
-    <summary>
-      <para>The buffer for the property value.</para>
-    </summary>
+    <summary>The buffer for the property value.</summary>
   </member>
   <member name="WS_PROXY_PROPERTY.valueSize">
-    <summary>
-      <para>The size of buffer, in bytes.</para>
-    </summary>
+    <summary>The size of buffer, in bytes.</summary>
   </member>
 </doc>

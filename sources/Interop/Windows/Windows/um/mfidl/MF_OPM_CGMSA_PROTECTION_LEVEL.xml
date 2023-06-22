@@ -3,42 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_OPM_CGMSA_PROTECTION_LEVEL">
-    <summary>
-      <para>Defines protection levels for <b>MFPROTECTION_CGMSA</b>.</para>
-    </summary>
-    <remarks>
-      <para>These flags are equivalent to the OPM_CGMSA_Protection_Level enumeration constants used in the Output Protection Protocol (OPM).</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Defines protection levels for <b>MFPROTECTION_CGMSA</b>.</summary>
   </member>
   <member name="MF_OPM_CGMSA_PROTECTION_LEVEL.MF_OPM_CGMSA_OFF">
-    <summary>
-      <para>CGMS-A is disabled.</para>
-    </summary>
+    <summary>CGMS-A is disabled.</summary>
   </member>
   <member name="MF_OPM_CGMSA_PROTECTION_LEVEL.MF_OPM_CGMSA_COPY_FREELY">
-    <summary>
-      <para>The protection level is Copy Freely.</para>
-    </summary>
+    <summary>The protection level is Copy Freely.</summary>
   </member>
   <member name="MF_OPM_CGMSA_PROTECTION_LEVEL.MF_OPM_CGMSA_COPY_NO_MORE">
-    <summary>
-      <para>The protection level is Copy No More.</para>
-    </summary>
+    <summary>The protection level is Copy No More.</summary>
   </member>
   <member name="MF_OPM_CGMSA_PROTECTION_LEVEL.MF_OPM_CGMSA_COPY_ONE_GENERATION">
-    <summary>
-      <para>The protection level is Copy One Generation.</para>
-    </summary>
+    <summary>The protection level is Copy One Generation.</summary>
   </member>
   <member name="MF_OPM_CGMSA_PROTECTION_LEVEL.MF_OPM_CGMSA_COPY_NEVER">
-    <summary>
-      <para>The protection level is Copy Never.</para>
-    </summary>
+    <summary>The protection level is Copy Never.</summary>
   </member>
   <member name="MF_OPM_CGMSA_PROTECTION_LEVEL.MF_OPM_CGMSA_REDISTRIBUTION_CONTROL_REQUIRED">
-    <summary>
-      <para>Redistribution control (also called the broadcast flag) is required. This flag can be combined with the other flags.</para>
-    </summary>
+    <summary>Redistribution control (also called the broadcast flag) is required. This flag can be combined with the other flags.</summary>
   </member>
 </doc>

@@ -3,33 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D_RECT_F">
-    <summary>
-      <para>Represents a rectangle defined by the coordinates of the upper-left corner (left, top) and the coordinates of the lower-right corner (right, bottom).</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</seealso>
+    <summary>Represents a rectangle defined by the coordinates of the upper-left corner (left, top) and the coordinates of the lower-right corner (right, bottom).</summary>
   </member>
   <member name="D2D_RECT_F.left">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The x-coordinate of the upper-left corner of the rectangle.</para>
-    </summary>
+    <summary>The x-coordinate of the upper-left corner of the rectangle.</summary>
   </member>
   <member name="D2D_RECT_F.top">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The y-coordinate of the upper-left corner of the rectangle.</para>
-    </summary>
+    <summary>The y-coordinate of the upper-left corner of the rectangle.</summary>
   </member>
   <member name="D2D_RECT_F.right">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The x-coordinate of the lower-right corner of the rectangle.</para>
-    </summary>
+    <summary>The x-coordinate of the lower-right corner of the rectangle.</summary>
   </member>
   <member name="D2D_RECT_F.bottom">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The y-coordinate of the lower-right corner of the rectangle.</para>
-    </summary>
+    <summary>The y-coordinate of the lower-right corner of the rectangle.</summary>
   </member>
 </doc>

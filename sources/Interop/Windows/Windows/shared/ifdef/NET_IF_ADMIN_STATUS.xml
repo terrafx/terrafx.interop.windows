@@ -3,35 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NET_IF_ADMIN_STATUS">
-    <summary>
-      <para>The NET_IF_ADMIN_STATUS enumeration type specifies the
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/ndis-network-interfaces2">NDIS network interface</a> administrative
-status, as described in RFC 2863.</para>
-    </summary>
-    <remarks>
-      <para>For more information on RFC 2863, see
-<a href="https://www.ietf.org/rfc/rfc2863.txt">"The Interfaces Group MIB"</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-admin-status">OID_GEN_ADMIN_STATUS</seealso>
+    <summary>The NET_IF_ADMIN_STATUS enumeration type specifies the<a href="https://docs.microsoft.com//windows-hardware/drivers/network/ndis-network-interfaces2">NDIS network interface</a> administrative status, as described in RFC 2863.</summary>
   </member>
   <member name="NET_IF_ADMIN_STATUS.NET_IF_ADMIN_STATUS_UP">
-    <summary>
-      <para>Specifies that the interface is initialized and enabled, but the interface is not necessarily
-ready to transmit and receive network data because that depends on the operational status of the
-interface. For more information about the operational status of an interface, see
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-operational-status">OID_GEN_OPERATIONAL_STATUS</a>.</para>
-    </summary>
+    <summary>Specifies that the interface is initialized and enabled, but the interface is not necessarily ready to transmit and receive network data because that depends on the operational status of the interface. For more information about the operational status of an interface, see<a href="https://docs.microsoft.com//windows-hardware/drivers/network/oid-gen-operational-status">OID_GEN_OPERATIONAL_STATUS</a>.</summary>
   </member>
   <member name="NET_IF_ADMIN_STATUS.NET_IF_ADMIN_STATUS_DOWN">
-    <summary>
-      <para>Specifies that the interface is down, and this interface cannot be used to transmit or receive
-network data.</para>
-    </summary>
+    <summary>Specifies that the interface is down, and this interface cannot be used to transmit or receive network data.</summary>
   </member>
   <member name="NET_IF_ADMIN_STATUS.NET_IF_ADMIN_STATUS_TESTING">
-    <summary>
-      <para>Specifies that the interface is in a test mode, and no network data can be transmitted or
-received.</para>
-    </summary>
+    <summary>Specifies that the interface is in a test mode, and no network data can be transmitted or received.</summary>
   </member>
 </doc>

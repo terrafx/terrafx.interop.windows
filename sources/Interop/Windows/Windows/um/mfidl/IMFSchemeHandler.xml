@@ -7,24 +7,12 @@
       <para>Begins an asynchronous request to create an object from a URL.</para>
       <para>When the <a href="https://docs.microsoft.com//windows/desktop/medfound/source-resolver">Source Resolver</a> creates a media source from a URL, it passes the request to a scheme handler. The scheme handler might create a media source directly from the URL, or it might return a byte stream. If it returns a byte stream, the source resolver use a byte-stream handler to create the media source from the byte stream.</para>
     </summary>
-    <param name="pwszURL">
-      <para>A null-terminated string that contains the URL to resolve.</para>
-    </param>
-    <param name="dwFlags">
-      <para>A bitwise <b>OR</b> of one or more flags. See <a href="https://docs.microsoft.com//windows/desktop/medfound/source-resolver-flags">Source Resolver Flags</a>.</para>
-    </param>
-    <param name="pProps">
-      <para>A pointer to the <b>IPropertyStore</b> interface of a property store. The scheme handler can use this property store to configure the object. This parameter can be <b>NULL</b>. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/configuring-a-media-source">Configuring a Media Source</a>.</para>
-    </param>
-    <param name="ppIUnknownCancelCookie">
-      <para>Receives an <b>IUnknown</b> pointer or the value <b>NULL</b>. If the value is not <b>NULL</b>, you can cancel the asynchronous operation by passing this pointer to the <see cref="IMFSchemeHandler.CancelObjectCreation" /> method. The caller must release the interface. This parameter can be <b>NULL</b>, in which case the <b>IUnknown</b> pointer is not returned to the caller.</para>
-    </param>
-    <param name="pCallback">
-      <para>A pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The caller must implement this interface.</para>
-    </param>
-    <param name="punkState">
-      <para>A pointer to the <b>IUnknown</b> interface of a state object, defined by the caller. This parameter can be <b>NULL</b>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</para>
-    </param>
+    <param name="pwszURL">A null-terminated string that contains the URL to resolve.</param>
+    <param name="dwFlags">A bitwise <b>OR</b> of one or more flags. See <a href="https://docs.microsoft.com//windows/desktop/medfound/source-resolver-flags">Source Resolver Flags</a>.</param>
+    <param name="pProps">A pointer to the <b>IPropertyStore</b> interface of a property store. The scheme handler can use this property store to configure the object. This parameter can be <b>NULL</b>. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/configuring-a-media-source">Configuring a Media Source</a>.</param>
+    <param name="ppIUnknownCancelCookie">Receives an <b>IUnknown</b> pointer or the value <b>NULL</b>. If the value is not <b>NULL</b>, you can cancel the asynchronous operation by passing this pointer to the <see cref="IMFSchemeHandler.CancelObjectCreation" /> method. The caller must release the interface. This parameter can be <b>NULL</b>, in which case the <b>IUnknown</b> pointer is not returned to the caller.</param>
+    <param name="pCallback">A pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The caller must implement this interface.</param>
+    <param name="punkState">A pointer to the <b>IUnknown</b> interface of a state object, defined by the caller. This parameter can be <b>NULL</b>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -32,73 +20,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_ACCESSDENIED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Cannot open the URL with the requested access (read or write).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_ACCESSDENIED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_UNSUPPORTED_BYTESTREAM_TYPE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Cannot open the URL with the requested access (read or write).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_UNSUPPORTED_BYTESTREAM_TYPE</b>
-            </para>
-          </description>
-          <description>
-            <para>Unsupported byte stream type.</para>
-          </description>
-        </item>
+          <description>Unsupported byte stream type.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <i>dwFlags</i> parameter must contain the <b>MF_RESOLUTION_MEDIASOURCE</b> flag or the <b>MF_RESOLUTION_BYTESTREAM</b> flag. If the <b>MF_RESOLUTION_MEDIASOURCE</b> flag is set, the scheme handler might create the media source directly from the URL, or it might create a byte stream. The type of object is returned in the <i>pObjectType</i> parameter of the <see cref="IMFSchemeHandler.EndCreateObject" /> method. If the scheme handler returns a byte stream, the source resolver will pass the byte stream to a byte-stream handler, which will create the media source from the byte stream.</para>
-      <para>If the <b>MF_RESOLUTION_BYTESTREAM</b> flag is set, the scheme handler will attempt to create a byte stream from the URL. However, if the scheme handler is designed to create a media source directly, rather than a byte stream, the method will fail.</para>
-      <para>The following table summarizes the behavior of these two flags when passed to this method:</para>
-      <list type="table">
-        <listheader>
-          <description>Flag</description>
-          <description>Object created</description>
-        </listheader>
-        <item>
-          <description>
-            <b>MF_RESOLUTION_MEDIASOURCE</b>
-          </description>
-          <description>Media source or byte stream</description>
-        </item>
-        <item>
-          <description>
-            <b>MF_RESOLUTION_BYTESTREAM</b>
-          </description>
-          <description>Byte stream</description>
-        </item>
-      </list>
-      <para>The <b>MF_RESOLUTION_MEDIASOURCE</b> and <b>MF_RESOLUTION_BYTESTREAM</b> flags can be combined, although in this case it is redundant.</para>
-      <para>When the operation completes, the scheme handler calls the <see cref="IMFAsyncCallback.Invoke" /> method. The Invoke method should call <see cref="IMFSchemeHandler.EndCreateObject" /> to get a pointer to the created object.</para>
-    </remarks>
-    <seealso cref="IMFSchemeHandler" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/scheme-handlers-and-byte-stream-handlers">Scheme Handlers and Byte-Stream Handlers</seealso>
   </member>
   <member name="IMFSchemeHandler.CancelObjectCreation">
-    <summary>
-      <para>Cancels the current request to create an object from a URL.</para>
-    </summary>
-    <param name="pIUnknownCancelCookie">
-      <para>Pointer to the <b>IUnknown</b> interface that was returned in the <i>ppIUnknownCancelCookie</i> parameter of the <see cref="IMFSchemeHandler.BeginCreateObject" /> method.</para>
-    </param>
+    <summary>Cancels the current request to create an object from a URL.</summary>
+    <param name="pIUnknownCancelCookie">Pointer to the <b>IUnknown</b> interface that was returned in the <i>ppIUnknownCancelCookie</i> parameter of the <see cref="IMFSchemeHandler.BeginCreateObject" /> method.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -106,38 +69,26 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>You can use this method to cancel a previous call to <see cref="BeginCreateObject" />. Because that method is asynchronous, however, it might be completed before the operation can be canceled. Therefore, your callback might still be invoked after you call this method.</para>
-      <para>The operation cannot be canceled if <see cref="BeginCreateObject" /> returns <b>NULL</b> in the <i>ppIUnknownCancelCookie</i> parameter.</para>
-    </remarks>
-    <seealso cref="IMFSchemeHandler" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/scheme-handlers-and-byte-stream-handlers">Scheme Handlers and Byte-Stream Handlers</seealso>
   </member>
   <member name="IMFSchemeHandler.EndCreateObject">
-    <summary>
-      <para>Completes an asynchronous request to create an object from a URL.</para>
-    </summary>
-    <param name="pResult">
-      <para>Pointer to the <see cref="IMFAsyncResult" /> interface. Pass in the same pointer that your callback object received in the Invoke method.</para>
-    </param>
-    <param name="pObjectType">
-      <para>Receives a member of the <see cref="MF_OBJECT_TYPE" /> enumeration, specifying the type of object that was created.</para>
-    </param>
-    <param name="ppObject">
-      <para>Receives a pointer to the <b>IUnknown</b> interface of the object. The caller must release the interface.</para>
-    </param>
+    <summary>Completes an asynchronous request to create an object from a URL.</summary>
+    <param name="pResult">Pointer to the <see cref="IMFAsyncResult" /> interface. Pass in the same pointer that your callback object received in the Invoke method.</param>
+    <param name="pObjectType">Receives a member of the <see cref="MF_OBJECT_TYPE" /> enumeration, specifying the type of object that was created.</param>
+    <param name="ppObject">Receives a pointer to the <b>IUnknown</b> interface of the object. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -145,42 +96,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_ABORT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_ABORT</b>
-            </para>
-          </description>
-          <description>
-            <para>The operation was canceled.</para>
-          </description>
-        </item>
+          <description>The operation was canceled.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Call this method from inside the <see cref="IMFAsyncCallback.Invoke" /> method.</para>
-    </remarks>
-    <seealso cref="IMFSchemeHandler" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/scheme-handlers-and-byte-stream-handlers">Scheme Handlers and Byte-Stream Handlers</seealso>
   </member>
   <member name="IMFSchemeHandler">
-    <summary>
-      <para>Creates a media source or a byte stream from a URL.</para>
-    </summary>
-    <remarks>
-      <para>Applications do not use this interface. This interface is exposed by scheme handlers, which are used by the source resolver. A scheme handler is designed to parse one type of URL scheme. When the scheme handler is given a URL, it parses the resource that is located at that URL and creates either a media source or a byte stream.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/scheme-handlers-and-byte-stream-handlers">Scheme Handlers and Byte-Stream Handlers</seealso>
+    <summary>Creates a media source or a byte stream from a URL.</summary>
   </member>
 </doc>

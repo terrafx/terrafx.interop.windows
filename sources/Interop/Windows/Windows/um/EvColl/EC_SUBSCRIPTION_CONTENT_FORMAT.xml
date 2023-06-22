@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EC_SUBSCRIPTION_CONTENT_FORMAT">
-    <summary>
-      <para>The <b>EC_SUBSCRIPTION_CONTENT_FORMAT</b> enumeration specifies how events will be rendered on the computer that sends the events before the events are sent to the event collector computer.</para>
-    </summary>
+    <summary>The <b>EC_SUBSCRIPTION_CONTENT_FORMAT</b> enumeration specifies how events will be rendered on the computer that sends the events before the events are sent to the event collector computer.</summary>
   </member>
   <member name="EC_SUBSCRIPTION_CONTENT_FORMAT.EcContentFormatEvents">
-    <summary>
-      <para>When an event is received, the Event Collector service sends an event as the received event to an event log. The service sends the raw event data only, and not any localized event data.</para>
-    </summary>
+    <summary>When an event is received, the Event Collector service sends an event as the received event to an event log. The service sends the raw event data only, and not any localized event data.</summary>
   </member>
   <member name="EC_SUBSCRIPTION_CONTENT_FORMAT.EcContentFormatRenderedText">
-    <summary>
-      <para>When an event is received, the Event Collector service sends an event as rendered text to an event log. The service sends raw event data and localized event information.</para>
-    </summary>
+    <summary>When an event is received, the Event Collector service sends an event as rendered text to an event log. The service sends raw event data and localized event information.</summary>
   </member>
 </doc>

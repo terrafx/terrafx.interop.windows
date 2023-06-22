@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_DISPATCH_RAYS_DESC">
-    <summary>
-      <para>Describes the properties of a ray dispatch operation initiated with a call to <see cref="ID3D12GraphicsCommandList4.DispatchRays" />.</para>
-    </summary>
+    <summary>Describes the properties of a ray dispatch operation initiated with a call to <see cref="ID3D12GraphicsCommandList4.DispatchRays" />.</summary>
   </member>
   <member name="D3D12_DISPATCH_RAYS_DESC.RayGenerationShaderRecord">
     <summary>
@@ -39,18 +37,12 @@
     </summary>
   </member>
   <member name="D3D12_DISPATCH_RAYS_DESC.Width">
-    <summary>
-      <para>The width of the generation shader thread grid.</para>
-    </summary>
+    <summary>The width of the generation shader thread grid.</summary>
   </member>
   <member name="D3D12_DISPATCH_RAYS_DESC.Height">
-    <summary>
-      <para>The height of the generation shader thread grid.</para>
-    </summary>
+    <summary>The height of the generation shader thread grid.</summary>
   </member>
   <member name="D3D12_DISPATCH_RAYS_DESC.Depth">
-    <summary>
-      <para>The depth of the generation shader thread grid.</para>
-    </summary>
+    <summary>The depth of the generation shader thread grid.</summary>
   </member>
 </doc>

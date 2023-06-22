@@ -3,41 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SOURCEFILE">
-    <summary>
-      <para>Contains source file information.</para>
-    </summary>
-    <seealso cref="SymEnumSourceFiles" />
+    <summary>Contains source file information.</summary>
   </member>
   <member name="SOURCEFILE.ModBase">
-    <summary>
-      <para>The base address of the module.</para>
-    </summary>
+    <summary>The base address of the module.</summary>
   </member>
   <member name="SOURCEFILE.FileName">
-    <summary>
-      <para>The fully qualified source file name.</para>
-    </summary>
+    <summary>The fully qualified source file name.</summary>
   </member>
   <member name="SOURCEFILE">
-    <summary>
-      <para>Contains source file information.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The dbghelp.h header defines SOURCEFILE as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso cref="SymEnumSourceFiles" />
+    <summary>Contains source file information.</summary>
   </member>
   <member name="SOURCEFILE.ModBase">
-    <summary>
-      <para>The base address of the module.</para>
-    </summary>
+    <summary>The base address of the module.</summary>
   </member>
   <member name="SOURCEFILE.FileName">
-    <summary>
-      <para>The fully qualified source file name.</para>
-    </summary>
+    <summary>The fully qualified source file name.</summary>
   </member>
 </doc>

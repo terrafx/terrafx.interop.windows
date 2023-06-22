@@ -3,152 +3,29 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3DUserDefinedAnnotation.BeginEvent">
-    <summary>
-      <para>Marks the beginning of a section of event code.</para>
-    </summary>
-    <param name="Name">
-      <para>A <b>NULL</b>-terminated <b>UNICODE</b> string that contains the name of the event. The name is not relevant to the operating system. You can choose a name that is meaningful when the calling application is running under the Direct3D profiling tool.
-A <b>NULL</b> pointer produces undefined results.</para>
-    </param>
+    <summary>Marks the beginning of a section of event code.</summary>
+    <param name="Name">A <b>NULL</b>-terminated <b>UNICODE</b> string that contains the name of the event. The name is not relevant to the operating system. You can choose a name that is meaningful when the calling application is running under the Direct3D profiling tool. A <b>NULL</b> pointer produces undefined results.</param>
     <returns>
       <para>Returns the number of previous calls to <b>BeginEvent</b> that have not yet been finalized by calls to the <see cref="ID3DUserDefinedAnnotation.EndEvent" /> method.</para>
       <para>The return value is –1 if the calling application is not running under a Direct3D profiling tool.</para>
     </returns>
-    <remarks>
-      <para>You call the <see cref="EndEvent" /> method to mark the end of the section of event code.</para>
-      <para>A user can visualize the event when the calling application is running under an enabled Direct3D profiling tool such as Microsoft Visual Studio Ultimate 2012.</para>
-      <para>
-        <b>BeginEvent</b> has no effect if the calling application is not running under an enabled Direct3D profiling tool.</para>
-      <h4>Examples</h4>
-      <para>The following code shows how to use a pair of calls to the <b>BeginEvent</b> and <see cref="EndEvent" /> methods.
-It also uses the <a href="https://docs.microsoft.com//previous-versions/visualstudio/visual-studio-2010/ezzw7k98(v=vs.100)">CComPtr</a> smart pointer type.</para>
-      <code>
-CComPtr&lt; ID3D11DeviceContext &gt; pContext;
-
-HRESULT hrCreateDevice = (*pfnD3D11CreateDevice)(
-        0,
-        D3D_DRIVER_TYPE_NULL,
-        0,
-        0,
-        NULL,
-        0,
-        D3D11_SDK_VERSION,
-        NULL,
-        0,
-        &amp;amp;amp;amp;amp;amp; pContext );
-VERIFY_SUCCEEDED(hrCreateDevice);
-CComPtr&lt;ID3DUserDefinedAnnotation&gt; pPerf;
-HRESULT hr = pContext-&gt;QueryInterface( __uuidof(pPerf), reinterpret_cast&lt;void**&gt;(&amp;amp;amp;amp;amp;amp;pPerf) );
-if ( FAILED( hr ) )
-    return;
-pPerf-&gt;BeginEvent( L”Now entering ocean rendering code” );
-MyDrawOceanRoutine( );
-pPerf-&gt;EndEvent( );
-
-</code>
-    </remarks>
-    <seealso cref="ID3DUserDefinedAnnotation" />
   </member>
   <member name="ID3DUserDefinedAnnotation.EndEvent">
-    <summary>
-      <para>Marks the end of a section of event code.</para>
-    </summary>
+    <summary>Marks the end of a section of event code.</summary>
     <returns>
       <para>Returns the number of previous calls to the <see cref="ID3DUserDefinedAnnotation.BeginEvent" /> method that have not yet been finalized by calls to <b>EndEvent</b>.</para>
       <para>The return value is –1 if the calling application is not running under a Direct3D profiling tool.</para>
     </returns>
-    <remarks>
-      <para>You call the <see cref="BeginEvent" /> method to mark the beginning of the section of event code.</para>
-      <para>A user can visualize the event when the calling application is running under an enabled Direct3D profiling tool such as Microsoft Visual Studio Ultimate 2012.</para>
-      <para>
-        <b>EndEvent</b> has no effect if the calling application is not running under an enabled Direct3D profiling tool.</para>
-    </remarks>
-    <seealso cref="ID3DUserDefinedAnnotation" />
   </member>
   <member name="ID3DUserDefinedAnnotation.GetStatus">
-    <summary>
-      <para>Determines whether the calling application is running under a Microsoft Direct3D profiling tool.</para>
-    </summary>
-    <returns>
-      <para>The return value is nonzero if the calling application is running under a Direct3D profiling tool such as Visual Studio Ultimate 2012, and zero otherwise.</para>
-    </returns>
-    <remarks>
-      <para>You can call <b>GetStatus</b> to determine whether your application is running under a Direct3D profiling tool before you make further calls to other methods of the <see cref="ID3DUserDefinedAnnotation" /> interface. For example, the <see cref="ID3DUserDefinedAnnotation.BeginEvent" /> and <see cref="ID3DUserDefinedAnnotation.EndEvent" /> methods have no effect if the calling application is not running under an enabled Direct3D profiling tool. Therefore, you do not need to call these methods unless your application is running under a Direct3D profiling tool.</para>
-      <h4>Examples</h4>
-      <para>The following code shows how to use <b>GetStatus</b>.</para>
-      <code>
-#ifdef DEVELOPMENT_BUILD
-    if ( pPerf-&gt;GetStatus() )
-        m_MakeD3DAnnotationCalls = true;
-#endif
-
-…
-
-   if ( m_ MakeD3DAnnotationCalls )
-        pPerf-&gt;BeginEvent(L“Drawing Ocean”);
-   MyDrawOceanRoutine();
-
-
-</code>
-    </remarks>
-    <seealso cref="ID3DUserDefinedAnnotation" />
+    <summary>Determines whether the calling application is running under a Microsoft Direct3D profiling tool.</summary>
+    <returns>The return value is nonzero if the calling application is running under a Direct3D profiling tool such as Visual Studio Ultimate 2012, and zero otherwise.</returns>
   </member>
   <member name="ID3DUserDefinedAnnotation.SetMarker">
-    <summary>
-      <para>Marks a single point of execution in code.</para>
-    </summary>
-    <param name="Name">
-      <para>A <b>NULL</b>-terminated <b>UNICODE</b> string that contains the name of the marker. The name is not relevant to the operating system. You can choose a name that is meaningful when the calling application is running under the Direct3D profiling tool.
-A <b>NULL</b> pointer produces undefined results.</para>
-    </param>
-    <remarks>
-      <para>A user can visualize the marker when the calling application is running under an enabled Direct3D profiling tool such as Microsoft Visual Studio Ultimate 2012.</para>
-      <para>
-        <b>SetMarker</b> has no effect if the calling application is not running under an enabled Direct3D profiling tool.</para>
-      <h4>Examples</h4>
-      <para>The following code shows how to use <b>SetMarker</b>.
-It also uses the <a href="https://docs.microsoft.com//previous-versions/visualstudio/visual-studio-2010/ezzw7k98(v=vs.100)">CComPtr</a> smart pointer type.</para>
-      <code>
-CComPtr&lt; ID3D11DeviceContext &gt; pID3D11DeviceContext;
-
-HRESULT hrCreateDevice = (*pfnD3D11CreateDevice)(
-        0,
-        D3D_DRIVER_TYPE_NULL,
-        0,
-        0,
-        NULL,
-        0,
-        D3D11_SDK_VERSION,
-        NULL,
-        0,
-        &amp;amp;amp;amp;amp;amp; pID3D11DeviceContext );
-VERIFY_SUCCEEDED(hrCreateDevice);
-
-CComPtr&lt;ID3DUserDefinedAnnotation&gt; pPerf;
-HRESULT hr = pID3D11DeviceContext-&gt;QueryInterface( __uuidof(pPerf), reinterpret_cast&lt;void**&gt;(&amp;amp;amp;amp;amp;amp;pPerf) );
-if ( FAILED( hr ) )
-    return;
-pPerf-&gt;SetMarker( L”Occlusion test failed- not drawing sun flare” );
-
-
-</code>
-    </remarks>
-    <seealso cref="ID3DUserDefinedAnnotation" />
+    <summary>Marks a single point of execution in code.</summary>
+    <param name="Name">A <b>NULL</b>-terminated <b>UNICODE</b> string that contains the name of the marker. The name is not relevant to the operating system. You can choose a name that is meaningful when the calling application is running under the Direct3D profiling tool. A <b>NULL</b> pointer produces undefined results.</param>
   </member>
   <member name="ID3DUserDefinedAnnotation">
-    <summary>
-      <para>The <b>ID3DUserDefinedAnnotation</b> interface enables an application to describe conceptual sections and markers within the application's code flow. An appropriately enabled tool, such as Microsoft Visual Studio Ultimate 2012, can display these sections and markers visually along the tool's Microsoft Direct3D time line, while the tool debugs the application. These visual notes allow users of such a tool to navigate to parts of the time line that are of interest, or to understand what set of Direct3D calls are produced by certain sections of the application's code.</para>
-    </summary>
-    <remarks>
-      <para>The methods of <b>ID3DUserDefinedAnnotation</b> have no effect when the calling application is not running under a Direct3D-specific profiling tool like Visual Studio Ultimate 2012.</para>
-      <para>The <b>ID3DUserDefinedAnnotation</b> interface is published by Microsoft Direct3D 11 device contexts. Therefore, <b>ID3DUserDefinedAnnotation</b> has the same threading rules as the <see cref="ID3D11DeviceContext" /> interface, or any other context interface. For more information about Direct3D threading, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread">MultiThreading</a>.
-To retrieve the <b>ID3DUserDefinedAnnotation</b> interface for the context, call the <b>QueryInterface</b> method for the context (for example, <see cref="ID3D11DeviceContext.QueryInterface" />). In this call, you must pass the identifier of <b>ID3DUserDefinedAnnotation</b>.</para>
-      <para>The <b>ID3DUserDefinedAnnotation</b> interface is the Microsoft Direct3D 10 and later equivalent of the Direct3D 9 <a href="https://msdn.microsoft.com/library/ee417071(v=vs.85).aspx">PIX functions</a> (D3DPERF_* functions).</para>
-      <para>
-        <b>Note</b>  Setting the <see cref="D3D11_CREATE_DEVICE_PREVENT_ALTERING_LAYER_SETTINGS_FROM_REGISTRY" /> flag in your app replaces calling D3DPerf_SetOptions(1). But, to prevent Direct3D debugging tools from hooking your app, your app can also call <see cref="ID3DUserDefinedAnnotation.GetStatus" /> to determine whether it is running under a Direct3D debugging tool and then exit accordingly.</para>
-      <para>You must call the <see cref="BeginEvent" /> and <see cref="EndEvent" /> methods in pairs; pairs of calls to these methods can nest within pairs of calls to these methods at a higher level in the application's call stack.  In other words, a "Draw World" section can entirely contain another section named "Draw Trees," which can in turn entirely contain a section called "Draw Oaks." You can only associate an <b>EndEvent</b> method with the most recent <b>BeginEvent</b> method, that is, pairs cannot overlap. You cannot call an <b>EndEvent</b> for any <b>BeginEvent</b> that preceded the most recent <b>BeginEvent</b>. In fact, the runtime interprets the first <b>EndEvent</b> as ending the second <b>BeginEvent</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-common-interfaces">Common Version Interfaces</seealso>
-    <seealso cref="IUnknown" />
+    <summary>The <b>ID3DUserDefinedAnnotation</b> interface enables an application to describe conceptual sections and markers within the application's code flow. An appropriately enabled tool, such as Microsoft Visual Studio Ultimate 2012, can display these sections and markers visually along the tool's Microsoft Direct3D time line, while the tool debugs the application. These visual notes allow users of such a tool to navigate to parts of the time line that are of interest, or to understand what set of Direct3D calls are produced by certain sections of the application's code.</summary>
   </member>
 </doc>

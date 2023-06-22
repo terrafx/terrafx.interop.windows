@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IVisualTreeService.AddChild">
+    <summary>Adds a child element to the collection at the specified index.</summary>
+    <param name="parent">A handle to the collection object.</param>
+    <param name="child">A handle to the element to place into the collection. This can be newly created through <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xamlom/nf-xamlom-ivisualtreeservice-createinstance">CreateInstance</a> or shared, such as <b>SolidColorBrush</b>.</param>
+    <param name="index">Location in <i>parent</i> collection at which to insert <i>child</i> element.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IVisualTreeService.AdviseVisualTreeChange">
+    <summary>Starts listening for changes to the visual tree.</summary>
+    <param name="pCallback">The callback to register for mutation events.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IVisualTreeService.ClearChildren">
+    <summary>Clears all child elements from the parent collection.</summary>
+    <param name="parent">A handle to the collection object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IVisualTreeService.ClearProperty">
+    <summary>Clears the specified property on a XAML element.</summary>
+    <param name="instanceHandle">A handle to the element to set the property on.</param>
+    <param name="propertyIndex">The index (in the XAML runtime cache) of the property to clear.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IVisualTreeService.CreateInstance">
+    <summary>Creates an instance of any XAML runtime, enum, or primitive type.</summary>
+    <param name="typeName">The type name. (Should be from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xamlom/ns-xamlom-propertychainvalue">PropertyChainValue.Type</a>.)</param>
+    <param name="value">The value to set on a primitive or enum type. <b>null</b> if creating a XAML runtime type.</param>
+    <param name="pInstanceHandle">An instance handle to newly created instance.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IVisualTreeService.GetCollectionCount">
+    <summary>Gets the count of a collection.</summary>
+    <param name="instanceHandle">A handle to the collection object.</param>
+    <param name="pCollectionSize">The number of elements in the collection.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IVisualTreeService.GetCollectionElements">
+    <summary>Gets the elements in a collection.</summary>
+    <param name="instanceHandle">A handle to the collection object.</param>
+    <param name="startIndex">The index in the collection to start getting elements from.</param>
+    <param name="pElementCount">The count of elements in the returned array.</param>
+    <param name="ppElementValues">An array of elements returned from the collection.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IVisualTreeService.GetEnums">
+    <summary>Gets an array of all the enums defined in the XAML runtime and the total count.</summary>
+    <param name="pCount">The count of enums in the array.</param>
+    <param name="ppEnums">An array of enums defined in the XAML runtime.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code. This method should not fail in normal conditions.</returns>
+  </member>
+  <member name="IVisualTreeService.GetPropertyValuesChain">
+    <summary>Gets an array of all the properties set on the element passed in, and an array of all the styles involved in setting the effective values of the properties.</summary>
+    <param name="instanceHandle">A handle to the element to query properties on.</param>
+    <param name="pSourceCount">The count of the property sources array.</param>
+    <param name="ppPropertySources">An array of property sources.</param>
+    <param name="pPropertyCount">The count of the property values array.</param>
+    <param name="ppPropertyValues">An array of property values.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code. This method should not fail in normal conditions.</returns>
+  </member>
+  <member name="IVisualTreeService.RemoveChild">
+    <summary>Removes the child element from the specified index.</summary>
+    <param name="parent">A handle to the collection object.</param>
+    <param name="index">Location in <i>parent</i> collection at which to remove the child element.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code. The method will fail if index is outside of the collection range.</returns>
+  </member>
+  <member name="IVisualTreeService.SetProperty">
+    <summary>Sets a property value on a XAML element.</summary>
+    <param name="instanceHandle">A handle to the element to set the property on.</param>
+    <param name="value">A handle to the value to set on the element property.</param>
+    <param name="propertyIndex">The index (in the XAML runtime cache) of the property to set.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IVisualTreeService.UnadviseVisualTreeChange">
+    <summary>Stops listening for changes to the visual tree.</summary>
+    <param name="pCallback">The callback to unregister for mutation events.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IVisualTreeService">
+    <summary>Provides methods to manage a XAML visual tree.</summary>
+  </member>
+</doc>

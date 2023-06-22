@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VARIABLE_SHADING_RATE_TIER">
-    <summary>
-      <para>Defines constants that specify a shading rate tier (for variable-rate shading, or VRS). For more info, see <a href="https://docs.microsoft.com//windows/desktop/direct3d12/vrs">Variable-rate shading (VRS)</a>.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/vrs">Variable-rate shading (VRS)</seealso>
+    <summary>Defines constants that specify a shading rate tier (for variable-rate shading, or VRS). For more info, see <a href="https://docs.microsoft.com//windows/desktop/direct3d12/vrs">Variable-rate shading (VRS)</a>.</summary>
   </member>
   <member name="D3D12_VARIABLE_SHADING_RATE_TIER.D3D12_VARIABLE_SHADING_RATE_TIER_NOT_SUPPORTED">
-    <summary>
-      <para>Specifies that variable-rate shading is not supported.</para>
-    </summary>
+    <summary>Specifies that variable-rate shading is not supported.</summary>
   </member>
   <member name="D3D12_VARIABLE_SHADING_RATE_TIER.D3D12_VARIABLE_SHADING_RATE_TIER_1">
-    <summary>
-      <para>Specifies that variable-rate shading tier 1 is supported.</para>
-    </summary>
+    <summary>Specifies that variable-rate shading tier 1 is supported.</summary>
   </member>
   <member name="D3D12_VARIABLE_SHADING_RATE_TIER.D3D12_VARIABLE_SHADING_RATE_TIER_2">
-    <summary>
-      <para>Specifies that variable-rate shading tier 2 is supported.</para>
-    </summary>
+    <summary>Specifies that variable-rate shading tier 2 is supported.</summary>
   </member>
 </doc>

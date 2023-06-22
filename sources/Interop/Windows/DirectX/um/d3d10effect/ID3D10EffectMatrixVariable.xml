@@ -3,166 +3,54 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D10EffectMatrixVariable.GetMatrix">
-    <summary>
-      <para>Get a matrix.</para>
-    </summary>
-    <param name="pData">
-      <para>Type: <b>float*</b></para>
-      <para>A pointer to the first element in a matrix.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D10EffectMatrixVariable Interface" />
+    <summary>Get a matrix.</summary>
+    <param name="pData">A pointer to the first element in a matrix.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10EffectMatrixVariable.GetMatrixArray">
-    <summary>
-      <para>Get an array of matrices.</para>
-    </summary>
-    <param name="pData">
-      <para>Type: <b>float*</b></para>
-      <para>A pointer to the first element of the first matrix in an array of matrices.</para>
-    </param>
-    <param name="Offset">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The offset (in number of matrices) between the start of the array and the first matrix returned.</para>
-    </param>
-    <param name="Count">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of matrices in the returned array.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D10EffectMatrixVariable Interface" />
+    <summary>Get an array of matrices.</summary>
+    <param name="pData">A pointer to the first element of the first matrix in an array of matrices.</param>
+    <param name="Offset">The offset (in number of matrices) between the start of the array and the first matrix returned.</param>
+    <param name="Count">The number of matrices in the returned array.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10EffectMatrixVariable.GetMatrixTranspose">
-    <summary>
-      <para>Transpose and get a floating-point matrix.</para>
-    </summary>
-    <param name="pData">
-      <para>Type: <b>float*</b></para>
-      <para>A pointer to the first element of a transposed matrix.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>Transposing a matrix will rearrange the data order from row-column order to column-row order (or vice versa).</para>
-    </remarks>
-    <seealso cref="ID3D10EffectMatrixVariable Interface" />
+    <summary>Transpose and get a floating-point matrix.</summary>
+    <param name="pData">A pointer to the first element of a transposed matrix.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10EffectMatrixVariable.GetMatrixTransposeArray">
-    <summary>
-      <para>Transpose and get an array of floating-point matrices.</para>
-    </summary>
-    <param name="pData">
-      <para>Type: <b>float*</b></para>
-      <para>A pointer to the first element of an array of transposed matrices.</para>
-    </param>
-    <param name="Offset">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The offset (in number of matrices) between the start of the array and the first matrix to get.</para>
-    </param>
-    <param name="Count">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of matrices in the array to get.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>Transposing a matrix will rearrange the data order from row-column order to column-row order (or vice versa).</para>
-    </remarks>
-    <seealso cref="ID3D10EffectMatrixVariable Interface" />
+    <summary>Transpose and get an array of floating-point matrices.</summary>
+    <param name="pData">A pointer to the first element of an array of transposed matrices.</param>
+    <param name="Offset">The offset (in number of matrices) between the start of the array and the first matrix to get.</param>
+    <param name="Count">The number of matrices in the array to get.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10EffectMatrixVariable.SetMatrix">
-    <summary>
-      <para>Set a floating-point matrix.</para>
-    </summary>
-    <param name="pData">
-      <para>Type: <b>float*</b></para>
-      <para>A pointer to the first element in the matrix.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D10EffectMatrixVariable Interface" />
+    <summary>Set a floating-point matrix.</summary>
+    <param name="pData">A pointer to the first element in the matrix.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10EffectMatrixVariable.SetMatrixArray">
-    <summary>
-      <para>Set an array of floating-point matrices.</para>
-    </summary>
-    <param name="pData">
-      <para>Type: <b>float*</b></para>
-      <para>A pointer to the first matrix.</para>
-    </param>
-    <param name="Offset">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of matrix elements to skip from the start of the array.</para>
-    </param>
-    <param name="Count">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of elements to set.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D10EffectMatrixVariable Interface" />
+    <summary>Set an array of floating-point matrices.</summary>
+    <param name="pData">A pointer to the first matrix.</param>
+    <param name="Offset">The number of matrix elements to skip from the start of the array.</param>
+    <param name="Count">The number of elements to set.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10EffectMatrixVariable.SetMatrixTranspose">
-    <summary>
-      <para>Transpose and set a floating-point matrix.</para>
-    </summary>
-    <param name="pData">
-      <para>Type: <b>float*</b></para>
-      <para>A pointer to the first element of a matrix.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>Transposing a matrix will rearrange the data order from row-column order to column-row order (or vice versa).</para>
-    </remarks>
-    <seealso cref="ID3D10EffectMatrixVariable Interface" />
+    <summary>Transpose and set a floating-point matrix.</summary>
+    <param name="pData">A pointer to the first element of a matrix.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10EffectMatrixVariable.SetMatrixTransposeArray">
-    <summary>
-      <para>Transpose and set an array of floating-point matrices.</para>
-    </summary>
-    <param name="pData">
-      <para>Type: <b>float*</b></para>
-      <para>A pointer to an array of matrices.</para>
-    </param>
-    <param name="Offset">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The offset (in number of matrices) between the start of the array and the first matrix to set.</para>
-    </param>
-    <param name="Count">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of matrices in the array to set.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>Transposing a matrix will rearrange the data order from row-column order to column-row order (or vice versa).</para>
-    </remarks>
-    <seealso cref="ID3D10EffectMatrixVariable Interface" />
+    <summary>Transpose and set an array of floating-point matrices.</summary>
+    <param name="pData">A pointer to an array of matrices.</param>
+    <param name="Offset">The offset (in number of matrices) between the start of the array and the first matrix to set.</param>
+    <param name="Count">The number of matrices in the array to set.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10EffectMatrixVariable">
-    <summary>
-      <para>A matrix-variable interface accesses a matrix.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-interfaces">Effect Interfaces (Direct3D 10)</seealso>
-    <seealso cref="ID3D10EffectVariable" />
+    <summary>A matrix-variable interface accesses a matrix.</summary>
   </member>
 </doc>

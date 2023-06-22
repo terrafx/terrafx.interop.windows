@@ -3,32 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1DrawingStateBlock1.GetDescription">
-    <summary>
-      <para>Gets the antialiasing mode, transform, tags, primitive blend, and unit mode portion of the drawing state.</para>
-    </summary>
-    <param name="stateDescription">
-      <para>Type: <b><see cref="D2D1_DRAWING_STATE_DESCRIPTION1" />*</b></para>
-      <para>When this method returns, contains the antialiasing mode, transform, tags, primitive blend, and unit mode portion of the drawing state. You must allocate storage for this parameter.</para>
-    </param>
-    <seealso cref="ID2D1DrawingStateBlock1" />
+    <summary>Gets the antialiasing mode, transform, tags, primitive blend, and unit mode portion of the drawing state.</summary>
+    <param name="stateDescription">When this method returns, contains the antialiasing mode, transform, tags, primitive blend, and unit mode portion of the drawing state. You must allocate storage for this parameter.</param>
   </member>
   <member name="ID2D1DrawingStateBlock1.SetDescription">
-    <summary>
-      <para>Sets the <see cref="D2D1_DRAWING_STATE_DESCRIPTION1" /> associated with this drawing state block.</para>
-    </summary>
-    <param name="stateDescription">
-      <para>Type: <b>const <see cref="D2D1_DRAWING_STATE_DESCRIPTION1" /></b></para>
-      <para>The <see cref="D2D1_DRAWING_STATE_DESCRIPTION1" /> to be set associated with  this drawing state block.</para>
-    </param>
-    <seealso cref="ID2D1DrawingStateBlock1" />
+    <summary>Sets the <see cref="D2D1_DRAWING_STATE_DESCRIPTION1" /> associated with this drawing state block.</summary>
+    <param name="stateDescription">The <see cref="D2D1_DRAWING_STATE_DESCRIPTION1" /> to be set associated with this drawing state block.</param>
   </member>
   <member name="ID2D1DrawingStateBlock1">
     <summary>
-      <para>Implementation of a drawing state block that adds the functionality of primitive blend in addition to already existing antialias mode, transform, tags and text rendering mode.<b>Note</b>  You can get an <b>ID2D1DrawingStateBlock1</b> using the  <see cref="ID2D1Factory.CreateDrawingStateBlock" /> method or you can use the QueryInterface method on an <see cref="ID2D1DrawingStateBlock" /> object.</para>
+      <para>Implementation of a drawing state block that adds the functionality of primitive blend in addition to already existing antialias mode, transform, tags and text rendering mode.<div><b>Note</b>  You can get an <b>ID2D1DrawingStateBlock1</b> using the <see cref="ID2D1Factory.CreateDrawingStateBlock" /> method or you can use the QueryInterface method on an <see cref="ID2D1DrawingStateBlock" /> object.</div></para>
     </summary>
-    <seealso cref="ID2D1DrawingStateBlock" />
-    <seealso cref="ID2D1DrawingStateBlock1.GetDescription1" />
-    <seealso cref="ID2D1DrawingStateBlock1.SetDescription1" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/id2d1factory-createdrawingstateblock">ID2D1Factory.CreateDrawingStateBlock</seealso>
   </member>
 </doc>

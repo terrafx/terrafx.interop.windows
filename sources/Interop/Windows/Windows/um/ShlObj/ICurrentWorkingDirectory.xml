@@ -3,43 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ICurrentWorkingDirectory.GetDirectory">
-    <summary>
-      <para>Gets the current working directory.</para>
-    </summary>
-    <param name="pwzPath">
-      <para>Type: <b>PWSTR</b></para>
-      <para>Pointer to a buffer that, when this method returns successfully, receives the current working directory's fully qualified path as a null-terminated Unicode string.</para>
-    </param>
-    <param name="cchSize">
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of the buffer in Unicode characters, including the terminating <b>NULL</b> character.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the current working directory.</summary>
+    <param name="pwzPath">Pointer to a buffer that, when this method returns successfully, receives the current working directory's fully qualified path as a null-terminated Unicode string.</param>
+    <param name="cchSize">The size of the buffer in Unicode characters, including the terminating <b>NULL</b> character.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICurrentWorkingDirectory.SetDirectory">
-    <summary>
-      <para>Sets the current working directory.</para>
-    </summary>
-    <param name="pwzPath">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>A pointer to the fully qualified path of the new working directory, as a null-terminated Unicode string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ICurrentWorkingDirectory" />
+    <summary>Sets the current working directory.</summary>
+    <param name="pwzPath">A pointer to the fully qualified path of the new working directory, as a null-terminated Unicode string.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICurrentWorkingDirectory">
-    <summary>
-      <para>Exposes methods that enable a client to retrieve or set an object's current working directory.</para>
-    </summary>
-    <remarks>
-      <para>Implement this interface if your object allows clients to retrieve or set the current working directory.</para>
-      <para>Use this interface to retrieve or set the working directory of the object that exports it.</para>
-    </remarks>
+    <summary>Exposes methods that enable a client to retrieve or set an object's current working directory.</summary>
   </member>
 </doc>

@@ -3,50 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D_INTERPOLATION_MODE">
-    <summary>
-      <para>Specifies interpolation mode, which affects how values are calculated during rasterization.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-common-enumerations">Common Version Enumerations</seealso>
-    <seealso cref="D3D11_PARAMETER_DESC" />
+    <summary>Specifies interpolation mode, which affects how values are calculated during rasterization.</summary>
   </member>
   <member name="D3D_INTERPOLATION_MODE.D3D_INTERPOLATION_UNDEFINED">
-    <summary>
-      <para>The interpolation mode is undefined.</para>
-    </summary>
+    <summary>The interpolation mode is undefined.</summary>
   </member>
   <member name="D3D_INTERPOLATION_MODE.D3D_INTERPOLATION_CONSTANT">
-    <summary>
-      <para>Don't interpolate between register values.</para>
-    </summary>
+    <summary>Don't interpolate between register values.</summary>
   </member>
   <member name="D3D_INTERPOLATION_MODE.D3D_INTERPOLATION_LINEAR">
-    <summary>
-      <para>Interpolate linearly between register values.</para>
-    </summary>
+    <summary>Interpolate linearly between register values.</summary>
   </member>
   <member name="D3D_INTERPOLATION_MODE.D3D_INTERPOLATION_LINEAR_CENTROID">
-    <summary>
-      <para>Interpolate linearly between register values but centroid clamped when multisampling.</para>
-    </summary>
+    <summary>Interpolate linearly between register values but centroid clamped when multisampling.</summary>
   </member>
   <member name="D3D_INTERPOLATION_MODE.D3D_INTERPOLATION_LINEAR_NOPERSPECTIVE">
-    <summary>
-      <para>Interpolate linearly between register values but with no perspective correction.</para>
-    </summary>
+    <summary>Interpolate linearly between register values but with no perspective correction.</summary>
   </member>
   <member name="D3D_INTERPOLATION_MODE.D3D_INTERPOLATION_LINEAR_NOPERSPECTIVE_CENTROID">
-    <summary>
-      <para>Interpolate linearly between register values but with no perspective correction and centroid clamped when multisampling.</para>
-    </summary>
+    <summary>Interpolate linearly between register values but with no perspective correction and centroid clamped when multisampling.</summary>
   </member>
   <member name="D3D_INTERPOLATION_MODE.D3D_INTERPOLATION_LINEAR_SAMPLE">
-    <summary>
-      <para>Interpolate linearly between register values but sample clamped when multisampling.</para>
-    </summary>
+    <summary>Interpolate linearly between register values but sample clamped when multisampling.</summary>
   </member>
   <member name="D3D_INTERPOLATION_MODE.D3D_INTERPOLATION_LINEAR_NOPERSPECTIVE_SAMPLE">
-    <summary>
-      <para>Interpolate linearly between register values but with no perspective correction and sample clamped when multisampling.</para>
-    </summary>
+    <summary>Interpolate linearly between register values but with no perspective correction and sample clamped when multisampling.</summary>
   </member>
 </doc>

@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AM_MEDIA_TYPE">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>The <b>AM_MEDIA_TYPE</b> structure describes the format of a media sample.</para>
+    </summary>
+  </member>
+  <member name="AM_MEDIA_TYPE.majortype">
+    <summary>Globally unique identifier (GUID) that specifies the major type of the media sample. For a list of possible major types, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/media-types">Media Types</a>.</summary>
+  </member>
+  <member name="AM_MEDIA_TYPE.subtype">
+    <summary>GUID that specifies the subtype of the media sample. For a list of possible subtypes, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/media-types">Media Types</a>. For some formats, the value might be MEDIASUBTYPE_None, which means the format does not require a subtype.</summary>
+  </member>
+  <member name="AM_MEDIA_TYPE.bFixedSizeSamples">
+    <summary>If <b>TRUE</b>, samples are of a fixed size. This field is informational only. For audio, it is generally set to <b>TRUE</b>. For video, it is usually <b>TRUE</b> for uncompressed video and <b>FALSE</b> for compressed video.</summary>
+  </member>
+  <member name="AM_MEDIA_TYPE.bTemporalCompression">
+    <summary>If <b>TRUE</b>, samples are compressed using temporal (interframe) compression. A value of <b>TRUE</b> indicates that not all frames are key frames. This field is informational only.</summary>
+  </member>
+  <member name="AM_MEDIA_TYPE.lSampleSize">
+    <summary>Size of the sample in bytes. For compressed data, the value can be zero.</summary>
+  </member>
+  <member name="AM_MEDIA_TYPE.formattype">
+    <summary>
+      <para>GUID that specifies the structure used for the format block. The <b>pbFormat</b> member points to the corresponding format structure. Format types include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Format type</description>
+          <description>Format structure</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FORMAT_DvInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <see cref="DVINFO" />
+          </description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FORMAT_MPEG2Video</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/dvdmedia/ns-dvdmedia-mpeg2videoinfo">MPEG2VIDEOINFO</a>
+          </description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FORMAT_MPEGStreams</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/mpegtype/ns-mpegtype-am_mpegsystemtype">AM_MPEGSYSTEMTYPE</a>
+          </description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FORMAT_MPEGVideo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-mpeg1videoinfo">MPEG1VIDEOINFO</a>
+          </description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FORMAT_None</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>None.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FORMAT_VideoInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfoheader">VIDEOINFOHEADER</a>
+          </description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FORMAT_VideoInfo2</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/dvdmedia/ns-dvdmedia-videoinfoheader2">VIDEOINFOHEADER2</a>
+          </description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FORMAT_WaveFormatEx</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/dd757713(v=vs.85)">WAVEFORMATEX</a>
+          </description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>GUID_NULL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>None</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="AM_MEDIA_TYPE.pUnk">
+    <summary>Not used. Set to <b>NULL</b>.</summary>
+  </member>
+  <member name="AM_MEDIA_TYPE.cbFormat">
+    <summary>Size of the format block, in bytes.</summary>
+  </member>
+  <member name="AM_MEDIA_TYPE.pbFormat">
+    <summary>
+      <para>Pointer to the format block. The structure type is specified by the <b>formattype</b> member. The format structure must be present, unless <b>formattype</b> is GUID_NULL or FORMAT_None.</para>
+      <para>The <b>pbFormat</b> buffer must be allocated by calling <see cref="CoTaskMemAlloc" />. To release the format block, call <a href="https://docs.microsoft.com//windows/desktop/DirectShow/freemediatype">FreeMediaType</a>.</para>
+    </summary>
+  </member>
+</doc>

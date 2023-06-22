@@ -4,36 +4,23 @@
 <doc>
   <member name="AM_DVDCOPYSTATE">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies the copy protection state.</para>
     </summary>
-    <remarks>
-      <para>The <see cref="AM_DVDCOPY_SET_COPY_STATE" /> structure uses this data type.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-copy-protection-property-set">DVD Copy Protection Property Set</seealso>
   </member>
   <member name="AM_DVDCOPYSTATE.AM_DVDCOPYSTATE_INITIALIZE">
-    <summary>
-      <para>Starting a full key-exchange algorithm.</para>
-    </summary>
+    <summary>Starting a full key-exchange algorithm.</summary>
   </member>
   <member name="AM_DVDCOPYSTATE.AM_DVDCOPYSTATE_INITIALIZE_TITLE">
-    <summary>
-      <para>Starting a title key-exchange algorithm.</para>
-    </summary>
+    <summary>Starting a title key-exchange algorithm.</summary>
   </member>
   <member name="AM_DVDCOPYSTATE.AM_DVDCOPYSTATE_AUTHENTICATION_NOT_REQUIRED">
-    <summary>
-      <para>Authentication is not required.</para>
-    </summary>
+    <summary>Authentication is not required.</summary>
   </member>
   <member name="AM_DVDCOPYSTATE.AM_DVDCOPYSTATE_AUTHENTICATION_REQUIRED">
-    <summary>
-      <para>Authentication required.</para>
-    </summary>
+    <summary>Authentication required.</summary>
   </member>
   <member name="AM_DVDCOPYSTATE.AM_DVDCOPYSTATE_DONE">
-    <summary>
-      <para>Key exchange negotiation is complete.</para>
-    </summary>
+    <summary>Key exchange negotiation is complete.</summary>
   </member>
 </doc>

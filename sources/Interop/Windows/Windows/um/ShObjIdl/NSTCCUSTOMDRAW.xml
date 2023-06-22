@@ -3,56 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NSTCCUSTOMDRAW">
-    <summary>
-      <para>Custom draw structure used by <see cref="INameSpaceTreeControlCustomDraw" /> methods.</para>
-    </summary>
+    <summary>Custom draw structure used by <see cref="INameSpaceTreeControlCustomDraw" /> methods.</summary>
   </member>
   <member name="NSTCCUSTOMDRAW.psi">
-    <summary>
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to a Shell item.</para>
-    </summary>
+    <summary>A pointer to a Shell item.</summary>
   </member>
   <member name="NSTCCUSTOMDRAW.uItemState">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The current item state. See <see cref="NMCUSTOMDRAW" /> for more detail.</para>
-    </summary>
+    <summary>The current item state. See <see cref="NMCUSTOMDRAW" /> for more detail.</summary>
   </member>
   <member name="NSTCCUSTOMDRAW.nstcis">
-    <summary>
-      <para>Type: <b><see cref="NSTCITEMSTATE" /></b></para>
-      <para>The state of a tree item. See <see cref="NSTCITEMSTATE" />.</para>
-    </summary>
+    <summary>The state of a tree item. See <see cref="NSTCITEMSTATE" />.</summary>
   </member>
   <member name="NSTCCUSTOMDRAW.pszText">
-    <summary>
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a null-terminated Unicode string that contains the item text, if the structure specifies item attributes.</para>
-    </summary>
+    <summary>A pointer to a null-terminated Unicode string that contains the item text, if the structure specifies item attributes.</summary>
   </member>
   <member name="NSTCCUSTOMDRAW.iImage">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The index in the tree-view control's image list.</para>
-    </summary>
+    <summary>The index in the tree-view control's image list.</summary>
   </member>
   <member name="NSTCCUSTOMDRAW.himl">
-    <summary>
-      <para>Type: <b>HIMAGELIST</b></para>
-      <para>A handle to an image list.</para>
-    </summary>
+    <summary>A handle to an image list.</summary>
   </member>
   <member name="NSTCCUSTOMDRAW.iLevel">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The zero-based level of the item being drawn.</para>
-    </summary>
+    <summary>The zero-based level of the item being drawn.</summary>
   </member>
   <member name="NSTCCUSTOMDRAW.iIndent">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>A tree-level indent.</para>
-    </summary>
+    <summary>A tree-level indent.</summary>
   </member>
 </doc>

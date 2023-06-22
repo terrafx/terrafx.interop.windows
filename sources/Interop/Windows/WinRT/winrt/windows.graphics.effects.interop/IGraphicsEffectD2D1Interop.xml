@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IGraphicsEffectD2D1Interop.GetEffectId">
+    <summary>Retrieves the ID of the effect.</summary>
+    <param name="id">When this method returns, this parameter will contain the ID of the effect.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
+  </member>
+  <member name="IGraphicsEffectD2D1Interop.GetNamedPropertyMapping">
+    <summary>Retrieves the mapping for an effect property.</summary>
+    <param name="name">Name of the property.</param>
+    <param name="index">When this method returns, this parameter will contain the index of the property.</param>
+    <param name="mapping">Indicates how a strongly-typed effect property maps to an underlying Direct2D effect property.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
+  </member>
+  <member name="IGraphicsEffectD2D1Interop.GetProperty">
+    <summary>Retrieves the effect property at the specified index.</summary>
+    <param name="index">The index of the property to retrieve.</param>
+    <param name="value">When this method returns, this parameter will contain the retrieved property.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
+  </member>
+  <member name="IGraphicsEffectD2D1Interop.GetPropertyCount">
+    <summary>Retrieve the property count for the effect.</summary>
+    <param name="count">When the method returns, this parameter will contain the property count.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
+  </member>
+  <member name="IGraphicsEffectD2D1Interop.GetSource">
+    <summary>Retrieves the effect source at the specified index.</summary>
+    <param name="index">Index of the source the retrieve.</param>
+    <param name="source">When the method returns, this parameter will contain the source at the specified index.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
+  </member>
+  <member name="IGraphicsEffectD2D1Interop.GetSourceCount">
+    <summary>Retrieves the source count for the effect.</summary>
+    <param name="count">When the method returns, this parameter will contain the source count for the effect.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
+  </member>
+  <member name="IGraphicsEffectD2D1Interop">
+    <summary>
+      <para>Native interoperation interface that provides a counterpart to <a href="https://msdn.microsoft.com/c88277a4-6697-4341-9b8b-dffa470fd37e">IGraphicsEffect</a> and allows for metadata queries.</para>
+      <para>This interface is available in C++ only.</para>
+    </summary>
+  </member>
+</doc>

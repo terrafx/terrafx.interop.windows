@@ -4,31 +4,18 @@
 <doc>
   <member name="STATPROPSTG">
     <summary>
-      <para>The
-<b>STATPROPSTG</b> structure contains data about a single property in a property set. This data is the property ID and type tag, and the optional string name that may be associated with the property.</para>
+      <para>The<b>STATPROPSTG</b> structure contains data about a single property in a property set. This data is the property ID and type tag, and the optional string name that may be associated with the property.</para>
       <para>
-        <see cref="IPropertyStorage.Enum" /> supplies a pointer to the
-<see cref="IEnumSTATPROPSTG" /> interface on an enumerator object that can be used to enumerate the
-<b>STATPROPSTG</b> structures for the properties in the current property set.
-<b>STATPROPSTG</b> is defined as:</para>
+        <see cref="IPropertyStorage.Enum" /> supplies a pointer to the<see cref="IEnumSTATPROPSTG" /> interface on an enumerator object that can be used to enumerate the<b>STATPROPSTG</b> structures for the properties in the current property set.<b>STATPROPSTG</b> is defined as:</para>
     </summary>
-    <seealso cref="IEnumSTATPROPSTG" />
-    <seealso cref="IPropertyStorage.Enum" />
   </member>
   <member name="STATPROPSTG.lpwstrName">
-    <summary>
-      <para>A wide-character null-terminated Unicode string that contains the optional string name associated with the property. May be <b>NULL</b>. This member must be freed using
-<see cref="CoTaskMemFree" />.</para>
-    </summary>
+    <summary>A wide-character null-terminated Unicode string that contains the optional string name associated with the property. May be <b>NULL</b>. This member must be freed using<see cref="CoTaskMemFree" />.</summary>
   </member>
   <member name="STATPROPSTG.propid">
-    <summary>
-      <para>A 32-bit identifier that uniquely identifies the property within the property set. All properties within property sets must have unique property identifiers.</para>
-    </summary>
+    <summary>A 32-bit identifier that uniquely identifies the property within the property set. All properties within property sets must have unique property identifiers.</summary>
   </member>
   <member name="STATPROPSTG.vt">
-    <summary>
-      <para>The property type.</para>
-    </summary>
+    <summary>The property type.</summary>
   </member>
 </doc>

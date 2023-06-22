@@ -10,21 +10,12 @@
     </summary>
   </member>
   <member name="DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC.ATensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the left-hand side inputs.</para>
-    </summary>
+    <summary>A tensor containing the left-hand side inputs.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC.BTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the right-hand side inputs.</para>
-    </summary>
+    <summary>A tensor containing the right-hand side inputs.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The output tensor to write the results to.</para>
-    </summary>
+    <summary>The output tensor to write the results to.</summary>
   </member>
 </doc>

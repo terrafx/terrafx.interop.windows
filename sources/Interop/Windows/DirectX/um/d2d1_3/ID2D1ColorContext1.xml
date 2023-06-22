@@ -3,42 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1ColorContext1.GetColorContextType">
-    <summary>
-      <para>Retrieves the color context type.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="D2D1_COLOR_CONTEXT_TYPE" /></b></para>
-      <para>This method returns color context type.</para>
-    </returns>
-    <seealso cref="ID2D1ColorContext1" />
+    <summary>Retrieves the color context type.</summary>
+    <returns>This method returns color context type.</returns>
   </member>
   <member name="ID2D1ColorContext1.GetDXGIColorSpace">
-    <summary>
-      <para>Retrieves the DXGI color space of this context. Returns DXGI_COLOR_SPACE_CUSTOM when color context type is ICC.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>DXGI_COLOR_SPACE_TYPE</b></para>
-      <para>This method returns the DXGI color space of this context.</para>
-    </returns>
-    <seealso cref="ID2D1ColorContext1" />
+    <summary>Retrieves the DXGI color space of this context. Returns DXGI_COLOR_SPACE_CUSTOM when color context type is ICC.</summary>
+    <returns>This method returns the DXGI color space of this context.</returns>
   </member>
   <member name="ID2D1ColorContext1.GetSimpleColorProfile">
-    <summary>
-      <para>Retrieves a set simple color profile.</para>
-    </summary>
-    <param name="simpleProfile">
-      <para>Type: <b><see cref="D2D1_SIMPLE_COLOR_PROFILE" />*</b></para>
-      <para>Pointer to a D2D1_SIMPLE_COLOR_PROFILE that will contain the simple color profile when the method returns.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1ColorContext1" />
+    <summary>Retrieves a set simple color profile.</summary>
+    <param name="simpleProfile">Pointer to a D2D1_SIMPLE_COLOR_PROFILE that will contain the simple color profile when the method returns.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1ColorContext1">
-    <summary>
-      <para>Represents a color context to be used with the Color Management Effect.</para>
-    </summary>
+    <summary>Represents a color context to be used with the Color Management Effect.</summary>
   </member>
 </doc>

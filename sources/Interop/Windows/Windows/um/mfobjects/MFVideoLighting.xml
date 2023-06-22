@@ -3,48 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFVideoLighting">
-    <summary>
-      <para>Describes the optimal lighting for viewing a particular set of video content.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-video-lighting-attribute">MF_MT_VIDEO_LIGHTING</a> attribute.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/video-media-types">Video Media Types</seealso>
+    <summary>Describes the optimal lighting for viewing a particular set of video content.</summary>
   </member>
   <member name="MFVideoLighting.MFVideoLighting_Unknown">
-    <summary>
-      <para>The optimal lighting is unknown.</para>
-    </summary>
+    <summary>The optimal lighting is unknown.</summary>
   </member>
   <member name="MFVideoLighting.MFVideoLighting_bright">
-    <summary>
-      <para>Bright lighting; for example, outdoors.</para>
-    </summary>
+    <summary>Bright lighting; for example, outdoors.</summary>
   </member>
   <member name="MFVideoLighting.MFVideoLighting_office">
-    <summary>
-      <para>Medium brightness; for example, normal office lighting.</para>
-    </summary>
+    <summary>Medium brightness; for example, normal office lighting.</summary>
   </member>
   <member name="MFVideoLighting.MFVideoLighting_dim">
-    <summary>
-      <para>Dim; for example, a living room with a television and additional low lighting.</para>
-    </summary>
+    <summary>Dim; for example, a living room with a television and additional low lighting.</summary>
   </member>
   <member name="MFVideoLighting.MFVideoLighting_dark">
-    <summary>
-      <para>Dark; for example, a movie theater.</para>
-    </summary>
+    <summary>Dark; for example, a movie theater.</summary>
   </member>
   <member name="MFVideoLighting.MFVideoLighting_Last">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="MFVideoLighting.MFVideoLighting_ForceDWORD">
-    <summary>
-      <para>Reserved. This member forces the enumeration type to compile as a <b>DWORD</b> value.</para>
-    </summary>
+    <summary>Reserved. This member forces the enumeration type to compile as a <b>DWORD</b> value.</summary>
   </member>
 </doc>

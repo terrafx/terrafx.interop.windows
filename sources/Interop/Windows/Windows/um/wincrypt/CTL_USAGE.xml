@@ -3,25 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CTL_USAGE">
-    <summary>
-      <para>The <b>CTL_USAGE</b> structure contains an array of <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifiers</a> (OIDs) for <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">Certificate Trust List</a> (CTL) extensions. <b>CTL_USAGE</b> structures are used in functions that search for CTLs for specific uses.</para>
-    </summary>
-    <seealso cref="CTL_FIND_USAGE_PARA" />
-    <seealso cref="CTL_INFO" />
-    <seealso cref="CertFindCertificateInStore" />
-    <seealso cref="CertGetCertificateContextProperty" />
-    <seealso cref="CertVerifyCTLUsage" />
-    <seealso cref="CryptDecodeObject" />
-    <seealso cref="CryptEncodeObject" />
+    <summary>The <b>CTL_USAGE</b> structure contains an array of <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifiers</a> (OIDs) for <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">Certificate Trust List</a> (CTL) extensions. <b>CTL_USAGE</b> structures are used in functions that search for CTLs for specific uses.</summary>
   </member>
   <member name="CTL_USAGE.cUsageIdentifier">
-    <summary>
-      <para>Number of elements in the <b>rgpszUsageIdentifier</b> member array.</para>
-    </summary>
+    <summary>Number of elements in the <b>rgpszUsageIdentifier</b> member array.</summary>
   </member>
   <member name="CTL_USAGE.rgpszUsageIdentifier">
-    <summary>
-      <para>Array of object identifiers (OIDs) of CTL extensions.</para>
-    </summary>
+    <summary>Array of object identifiers (OIDs) of CTL extensions.</summary>
   </member>
 </doc>

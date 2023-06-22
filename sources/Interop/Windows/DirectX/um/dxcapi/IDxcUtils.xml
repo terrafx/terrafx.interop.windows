@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDxcUtils.BuildArguments">
+    <summary>Build arguments that can be passed to the <see cref="Compile" /> method.</summary>
+    <param name="pSourceName">An optional file name. Used in errors and include handlers.</param>
+    <param name="pEntryPoint">Entry point name (<code>-E</code>).</param>
+    <param name="pTargetProfile">Shader profile to compile (<code>-T</code>).</param>
+    <param name="pArguments">An array of pointers to arguments.</param>
+    <param name="argCount">The number of arguments.</param>
+    <param name="pDefines">An array of defines.</param>
+    <param name="defineCount">The number of defines.</param>
+    <param name="ppArgs">Arguments that you can use with the <see cref="IDxcCompiler3.Compile" /> method.</param>
+  </member>
+  <member name="IDxcUtils.CreateBlob">
+    <summary>
+      <para>Create a blob containing a copy of the existing data. The new blob and its contents are allocated with the current allocator.</para>
+      <para>Use this method in preference to <see cref="IDxcLibrary.CreateBlobWithEncodingOnHeapCopy" />.</para>
+    </summary>
+    <param name="pData">A pointer to a buffer containing the contents of the new blob.</param>
+    <param name="size">The size of the <i>pData</i> buffer, in bytes.</param>
+    <param name="codePage">The code page to use if the blob contains text. For binary or ANSI code page, use <b>DXC_CP_ACP</b>.</param>
+    <param name="pBlobEncoding">The address of the pointer that receives a pointer to the newly-created blob.</param>
+  </member>
+  <member name="IDxcUtils.CreateBlobFromBlob">
+    <summary>Create a sub-blob that holds a reference to the outer blob, and points to its memory.</summary>
+    <param name="pBlob">The outer blob.</param>
+    <param name="offset">The offset inside the outer blob.</param>
+    <param name="length">The size, in bytes, of the buffer to reference from the output blob.</param>
+    <param name="ppResult">Address of the pointer that receives a pointer to the newly-created blob.</param>
+  </member>
+  <member name="IDxcUtils.CreateBlobFromPinned">
+    <summary>
+      <para>Creates a blob referencing existing memory, with no copy. You must manage the memory lifetime separately.</para>
+      <para>Use this method in preference to <see cref="IDxcLibrary.CreateBlobWithEncodingFromPinned" />.</para>
+    </summary>
+    <param name="pData">Pointer to a buffer containing the contents of the new blob.</param>
+    <param name="size">The size of the pData buffer, in bytes.</param>
+    <param name="codePage">The code page to use if the blob contains text. For binary or ANSI code page, use <b>DXC_CP_ACP</b>.</param>
+    <param name="pBlobEncoding">Address of the pointer that receives a pointer to the newly-created blob.</param>
+  </member>
+  <member name="IDxcUtils.CreateDefaultIncludeHandler">
+    <summary>Create a default file-based <code>include</code> handler.</summary>
+    <param name="ppResult">The address of the pointer that receives a pointer to the newly-created include handler.</param>
+  </member>
+  <member name="IDxcUtils.CreateReadOnlyStreamFromBlob">
+    <summary>Create a stream that reads data from a blob.</summary>
+    <param name="pBlob">The blob to read from.</param>
+    <param name="ppStream">The address of the pointer that receives a pointer to the newly-created stream.</param>
+  </member>
+  <member name="IDxcUtils.CreateReflection">
+    <summary>Create a reflection interface from a serialized DXIL container, or the <b>DXC_PART_REFLECTION_DATA</b> blob contents. Use the returned interface with interfaces such as <see cref="ID3D12ShaderReflection" />.</summary>
+    <param name="pData">The source data.</param>
+    <param name="iid">The interface ID of the reflection interface to create.</param>
+    <param name="ppvReflection">The address of the pointer that receives a pointer to the newly-created reflection interface.</param>
+  </member>
+  <member name="IDxcUtils.GetBlobAsUtf16">
+    <summary>
+      <para>Convert or return matching encoded text blob as UTF-16.</para>
+      <para>
+        <b>GetBlobAsUtf16</b> is an alias to <b>GetBlobAsWide</b> on Win32.</para>
+    </summary>
+    <param name="pBlob">The blob to convert.</param>
+    <param name="pBlobEncoding">The address of the pointer that receives a pointer to the newly-created blob.</param>
+  </member>
+  <member name="IDxcUtils.GetBlobAsUtf8">
+    <summary>Convert or return matching encoded text blob as UTF-8.</summary>
+    <param name="pBlob">The blob to convert.</param>
+    <param name="pBlobEncoding">The address of the pointer that receives a pointer to the newly-created blob.</param>
+  </member>
+  <member name="IDxcUtils.GetDxilContainerPart">
+    <summary>Retrieve a single part from a DXIL container.</summary>
+    <param name="pShader">The shader to retrieve the part from.</param>
+    <param name="DxcPart">The part to retrieve; for example, <b>DXC_PART_ROOT_SIGNATURE</b>.</param>
+    <param name="ppPartData">The address of the pointer that receives a pointer to the part. The returned pointer points inside the buffer passed in <i>pShader</i>.</param>
+    <param name="pPartSizeInBytes">The address of the pointer that receives the size of the part.</param>
+  </member>
+  <member name="IDxcUtils.GetPDBContents">
+    <summary>Retrieves the hash and contents of a shader PDB.</summary>
+    <param name="pPDBBlob">The blob containing the PDB.</param>
+    <param name="ppHash">The address of the pointer that receives a pointer to the hash blob.</param>
+    <param name="ppContainer">The address of the pointer that receives a pointer to the block containing the contents of the PDB.</param>
+  </member>
+  <member name="IDxcUtils.LoadFile">
+    <summary>
+      <para>Create a blob with data loaded from a file. The new blob and its contents are allocated with the current allocator.</para>
+      <para>Use this method in preference to <see cref="IDxcLibrary.CreateBlobFromFile" />.</para>
+    </summary>
+    <param name="pFileName">The name of the file to load from.</param>
+    <param name="pCodePage">An optional code page to use if the blob contains text. For binary data, pass <b>NULL</b>.</param>
+    <param name="pBlobEncoding">The address of the pointer that receives a pointer to the newly-created blob.</param>
+  </member>
+  <member name="IDxcUtils.MoveToBlob">
+    <summary>
+      <para>Create a blob, taking ownership of the memory that's allocated by the supplied allocator.</para>
+      <para>Use this method in preference to <see cref="IDxcLibrary.CreateBlobWithEncodingOnMalloc" />.</para>
+    </summary>
+    <param name="pData">A pointer to a buffer containing the contents of the new blob.</param>
+    <param name="pIMalloc">The memory allocator to use.</param>
+    <param name="size">The size of the <i>pData</i> buffer, in bytes.</param>
+    <param name="codePage">The code page to use if the blob contains text. For binary or ANSI code page, use <b>DXC_CP_ACP</b>.</param>
+    <param name="pBlobEncoding">The address of the pointer that receives a pointer to the newly-created blob.</param>
+  </member>
+  <member name="IDxcUtils">
+    <summary>
+      <para>Various utility functions for DXC.</para>
+      <para>To obtain an instance of this interface, call <see cref="DxcCreateInstance" /> with <b>CLSID_DxcUtils</b>.</para>
+    </summary>
+  </member>
+</doc>

@@ -3,28 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_INDEX_BUFFER_VIEW">
-    <summary>
-      <para>Describes the index buffer to view.</para>
-    </summary>
-    <remarks>
-      <para>This structure is passed into <see cref="ID3D12GraphicsCommandList.IASetIndexBuffer" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-12-structures">Core Structures</seealso>
+    <summary>Describes the index buffer to view.</summary>
   </member>
   <member name="D3D12_INDEX_BUFFER_VIEW.BufferLocation">
-    <summary>
-      <para>The GPU virtual address of the index buffer.
-D3D12_GPU_VIRTUAL_ADDRESS is a typedef'd synonym of UINT64.</para>
-    </summary>
+    <summary>The GPU virtual address of the index buffer.<br />D3D12_GPU_VIRTUAL_ADDRESS is a typedef'd synonym of UINT64.</summary>
   </member>
   <member name="D3D12_INDEX_BUFFER_VIEW.SizeInBytes">
-    <summary>
-      <para>The size in bytes of the index buffer.</para>
-    </summary>
+    <summary>The size in bytes of the index buffer.</summary>
   </member>
   <member name="D3D12_INDEX_BUFFER_VIEW.Format">
-    <summary>
-      <para>A <see cref="DXGI_FORMAT" />-typed value for the index-buffer format.</para>
-    </summary>
+    <summary>A <see cref="DXGI_FORMAT" />-typed value for the index-buffer format.</summary>
   </member>
 </doc>

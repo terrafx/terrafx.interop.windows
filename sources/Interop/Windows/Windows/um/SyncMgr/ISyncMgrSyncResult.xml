@@ -3,29 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISyncMgrSyncResult.Result">
-    <summary>
-      <para>Gets the result of a <see cref="StartHandlerSync" /> or <see cref="StartItemSync" /> call.</para>
-    </summary>
-    <param name="nStatus">
-      <para>Type: <b><see cref="SYNCMGR_PROGRESS_STATUS" /></b></para>
-      <para>The current status of the progress report. See <see cref="SYNCMGR_PROGRESS_STATUS" />.</para>
-    </param>
-    <param name="cError">
-      <para>Type: <b>UINT</b></para>
-      <para>An error.</para>
-    </param>
-    <param name="cConflicts">
-      <para>Type: <b>UINT</b></para>
-      <para>Specifies conflicts.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the result of a <see cref="StartHandlerSync" /> or <see cref="StartItemSync" /> call.</summary>
+    <param name="nStatus">The current status of the progress report. See <see cref="SYNCMGR_PROGRESS_STATUS" />.</param>
+    <param name="cError">An error.</param>
+    <param name="cConflicts">Specifies conflicts.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrSyncResult">
-    <summary>
-      <para>Exposes a method that applications calling <see cref="ISyncMgrControl" /> can use to get the result of a <see cref="ISyncMgrControl.StartHandlerSync" /> or <see cref="ISyncMgrControl.StartItemSync" /> call.</para>
-    </summary>
+    <summary>Exposes a method that applications calling <see cref="ISyncMgrControl" /> can use to get the result of a <see cref="ISyncMgrControl.StartHandlerSync" /> or <see cref="ISyncMgrControl.StartItemSync" /> call.</summary>
   </member>
 </doc>

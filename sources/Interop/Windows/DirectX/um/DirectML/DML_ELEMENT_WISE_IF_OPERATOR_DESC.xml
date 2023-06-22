@@ -5,43 +5,19 @@
   <member name="DML_ELEMENT_WISE_IF_OPERATOR_DESC">
     <summary>
       <para>Selects elements either from <i>ATensor</i> or <i>BTensor</i>, depending on the value of the corresponding element in <i>ConditionTensor</i>. Non-zero elements of <i>ConditionTensor</i> select from <i>ATensor</i>, while zero-valued elements select from <i>BTensor</i>.</para>
-      <code>f(cond, a, b) = a, if cond != 0
-                b, otherwise
-
-Example:
-    [[1, 0], [1, 1]] // ConditionTensor
-    [[1, 2], [3, 4]] // ATensor
-    [[9, 8], [7, 6]] // BTensor
-
-    [[1, 8], [3, 4]] // Output
-</code>
+      <code>f(cond, a, b) = a, if cond != 0 b, otherwise Example: [[1, 0], [1, 1]] // ConditionTensor [[1, 2], [3, 4]] // ATensor [[9, 8], [7, 6]] // BTensor [[1, 8], [3, 4]] // Output</code>
     </summary>
-    <remarks>
-      <para>Can be used to functionally build up other aggregate operators, such as LeakyRelu. Here's an illustration in pseudo-code (not the most efficient way, but possible): <code>LeakyRelu(x) = If(Less(x, 0), Mul(x, alpha), x)</code>.</para>
-    </remarks>
   </member>
   <member name="DML_ELEMENT_WISE_IF_OPERATOR_DESC.ConditionTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The condition tensor to read from.</para>
-    </summary>
+    <summary>The condition tensor to read from.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_IF_OPERATOR_DESC.ATensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the left-hand side inputs.</para>
-    </summary>
+    <summary>A tensor containing the left-hand side inputs.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_IF_OPERATOR_DESC.BTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the right-hand side inputs.</para>
-    </summary>
+    <summary>A tensor containing the right-hand side inputs.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_IF_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The output tensor to write the results to.</para>
-    </summary>
+    <summary>The output tensor to write the results to.</summary>
   </member>
 </doc>

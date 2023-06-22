@@ -3,22 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_CONTAINER_TYPE">
-    <summary>
-      <para>Specifies the container format of a font resource. A container format is distinct from
-a font file format (DWRITE_FONT_FILE_TYPE) because the container describes the container
-in which the underlying font file is packaged.</para>
-    </summary>
-    <remarks>
-      <para>DWRITE_CONTAINER_TYPE is returned by <see cref="IDWriteFactory5.AnalyzeContainerType" /></para>
-    </remarks>
+    <summary>Specifies the container format of a font resource. A container format is distinct from a font file format (DWRITE_FONT_FILE_TYPE) because the container describes the container in which the underlying font file is packaged.</summary>
   </member>
-  <member name="DWRITE_CONTAINER_TYPE.DWRITE_CONTAINER_TYPE_UNKNOWN">
-    <summary></summary>
-  </member>
-  <member name="DWRITE_CONTAINER_TYPE.DWRITE_CONTAINER_TYPE_WOFF">
-    <summary></summary>
-  </member>
-  <member name="DWRITE_CONTAINER_TYPE.DWRITE_CONTAINER_TYPE_WOFF2">
-    <summary></summary>
-  </member>
+  <member name="DWRITE_CONTAINER_TYPE.DWRITE_CONTAINER_TYPE_UNKNOWN"></member>
+  <member name="DWRITE_CONTAINER_TYPE.DWRITE_CONTAINER_TYPE_WOFF"></member>
+  <member name="DWRITE_CONTAINER_TYPE.DWRITE_CONTAINER_TYPE_WOFF2"></member>
 </doc>

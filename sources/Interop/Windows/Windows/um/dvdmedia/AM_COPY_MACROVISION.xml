@@ -3,17 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="AM_COPY_MACROVISION">
-    <summary>
-      <para>The <b>AM_COPY_MACROVISION</b> structure specifies the analog copy protection level for an NTSC encoder.</para>
-    </summary>
-    <remarks>
-      <para>The AM_PROPERTY_COPY_MACROVISION property of the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-copy-protection-property-set">DVD Copy Protection</a> property set uses this structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-copy-protection-property-set">DVD Copy Protection Property Set</seealso>
+    <summary>The <b>AM_COPY_MACROVISION</b> structure specifies the analog copy protection level for an NTSC encoder.</summary>
   </member>
   <member name="AM_COPY_MACROVISION.MACROVISIONLevel">
-    <summary>
-      <para>Analog copy protection level for the NTSC encoder. Member of the <see cref="AM_COPY_MACROVISION_LEVEL" /> enumerated data type.</para>
-    </summary>
+    <summary>Analog copy protection level for the NTSC encoder. Member of the <see cref="AM_COPY_MACROVISION_LEVEL" /> enumerated data type.</summary>
   </member>
 </doc>

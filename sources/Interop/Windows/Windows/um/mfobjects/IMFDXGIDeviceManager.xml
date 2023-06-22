@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFDXGIDeviceManager.CloseDeviceHandle">
-    <summary>
-      <para>Closes a Microsoft Direct3D device handle.</para>
-    </summary>
-    <param name="hDevice">
-      <para>A handle to the Direct3D device.</para>
-    </param>
+    <summary>Closes a Microsoft Direct3D device handle.</summary>
+    <param name="hDevice">A handle to the Direct3D device.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,40 +12,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_HANDLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_HANDLE</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified handle is not a Direct3D device handle.</para>
-          </description>
-        </item>
+          <description>The specified handle is not a Direct3D device handle.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Call this method to release a device handle that was retrieved by the <see cref="IMFDXGIDeviceManager.OpenDeviceHandle" /> method.</para>
-    </remarks>
-    <seealso cref="IMFDXGIDeviceManager" />
   </member>
   <member name="IMFDXGIDeviceManager.GetVideoService">
-    <summary>
-      <para>Queries the Microsoft Direct3D device for an interface.</para>
-    </summary>
-    <param name="hDevice">
-      <para>A handle to the Direct3D device. To get the device handle, call <see cref="IMFDXGIDeviceManager.OpenDeviceHandle" />.</para>
-    </param>
+    <summary>Queries the Microsoft Direct3D device for an interface.</summary>
+    <param name="hDevice">A handle to the Direct3D device. To get the device handle, call <see cref="IMFDXGIDeviceManager.OpenDeviceHandle" />.</param>
     <param name="riid">
       <para>The interface identifier (IID) of the requested interface. The Direct3D device supports the following interfaces:</para>
       <list type="bullet">
@@ -63,9 +55,7 @@
         </item>
       </list>
     </param>
-    <param name="ppService">
-      <para>Receives a pointer to the requested interface. The caller must release the interface.</para>
-    </param>
+    <param name="ppService">Receives a pointer to the requested interface. The caller must release the interface.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -73,71 +63,72 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_HANDLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The specified handle is not a Direct3D device handle.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_HANDLE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_DXGI_DEVICE_NOT_INITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The DXGI Device Manager was not initialized. The owner of the device must call <see cref="IMFDXGIDeviceManager.ResetDevice" />.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The specified handle is not a Direct3D device handle.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_DXGI_NEW_VIDEO_DEVICE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The device handle is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_DXGI_DEVICE_NOT_INITIALIZED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The DXGI Device Manager was not initialized. The owner of the device must call <see cref="IMFDXGIDeviceManager.ResetDevice" />.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_DXGI_NEW_VIDEO_DEVICE</b>
-            </para>
-          </description>
-          <description>
-            <para>The device handle is invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOINTERFACE</b>
-            </para>
-          </description>
-          <description>
-            <para>If a  <see cref="ID3D11VideoDevice" />  is specified and the D3D device created is using the reference rasterizer or WARP.  Or it is a hardware device and you are using the Microsoft Basic Display Adapter.</para>
-          </description>
-        </item>
+          <description>If a <see cref="ID3D11VideoDevice" /> is specified and the D3D device created is using the reference rasterizer or WARP. Or it is a hardware device and you are using the Microsoft Basic Display Adapter.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the method returns <b>MF_E_DXGI_NEW_VIDEO_DEVICE</b>, call <see cref="IMFDXGIDeviceManager.CloseDeviceHandle" /> to close the handle and then call <see cref="OpenDeviceHandle" /> again to get a new handle. The  <see cref="IMFDXGIDeviceManager.ResetDevice" /> method invalidates all open device handles.</para>
-      <para>For more info see, <a href="https://docs.microsoft.com//windows/desktop/medfound/supporting-direct3d-11-video-decoding-in-media-foundation">Supporting Direct3D 11 Video Decoding in Media Foundation</a>.</para>
-    </remarks>
-    <seealso cref="IMFDXGIDeviceManager" />
   </member>
   <member name="IMFDXGIDeviceManager.LockDevice">
-    <summary>
-      <para>Gives the caller exclusive access to the Microsoft Direct3D device.</para>
-    </summary>
-    <param name="hDevice">
-      <para>A handle to the Direct3D device. To get the device handle, call <see cref="IMFDXGIDeviceManager.OpenDeviceHandle" />.</para>
-    </param>
+    <summary>Gives the caller exclusive access to the Microsoft Direct3D device.</summary>
+    <param name="hDevice">A handle to the Direct3D device. To get the device handle, call <see cref="IMFDXGIDeviceManager.OpenDeviceHandle" />.</param>
     <param name="riid">
       <para>The interface identifier (IID) of the requested interface. The Direct3D device will support the following interfaces:</para>
       <list type="bullet">
@@ -158,12 +149,8 @@
         </item>
       </list>
     </param>
-    <param name="ppUnkDevice">
-      <para>Receives a pointer to the requested interface. The caller must release the interface.</para>
-    </param>
-    <param name="fBlock">
-      <para>Specifies whether to wait for the device lock. If the device is already locked and this parameter is <b>TRUE</b>, the method blocks until the device is unlocked. Otherwise, if the device is locked and this parameter is <b>FALSE</b>, the method returns immediately with the error code <b>DXVA2_E_VIDEO_DEVICE_LOCKED</b>.</para>
-    </param>
+    <param name="ppUnkDevice">Receives a pointer to the requested interface. The caller must release the interface.</param>
+    <param name="fBlock">Specifies whether to wait for the device lock. If the device is already locked and this parameter is <b>TRUE</b>, the method blocks until the device is unlocked. Otherwise, if the device is locked and this parameter is <b>FALSE</b>, the method returns immediately with the error code <b>DXVA2_E_VIDEO_DEVICE_LOCKED</b>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -171,72 +158,72 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_HANDLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The specified handle is not a Direct3D device handle.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_HANDLE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_DXGI_DEVICE_NOT_INITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The DXGI Device Manager was not initialized. The owner of the device must call <see cref="IMFDXGIDeviceManager.ResetDevice" />.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The specified handle is not a Direct3D device handle.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_DXGI_NEW_VIDEO_DEVICE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The device handle is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_DXGI_DEVICE_NOT_INITIALIZED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_DXGI_VIDEO_DEVICE_LOCKED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The DXGI Device Manager was not initialized. The owner of the device must call <see cref="IMFDXGIDeviceManager.ResetDevice" />.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_DXGI_NEW_VIDEO_DEVICE</b>
-            </para>
-          </description>
-          <description>
-            <para>The device handle is invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_DXGI_VIDEO_DEVICE_LOCKED</b>
-            </para>
-          </description>
-          <description>
-            <para>The device is locked and <i>fBlock</i> is <b>FALSE</b>.</para>
-          </description>
-        </item>
+          <description>The device is locked and <i>fBlock</i> is <b>FALSE</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>When you are done using the Direct3D device, call <see cref="IMFDXGIDeviceManager.UnlockDevice" /> to unlock the device.</para>
-      <para>If the method returns <b>MF_E_DXGI_NEW_VIDEO_DEVICE</b>, call <see cref="IMFDXGIDeviceManager.CloseDeviceHandle" /> to close the handle and then call <see cref="OpenDeviceHandle" /> again to get a new handle. The  <see cref="IMFDXGIDeviceManager.ResetDevice" /> method invalidates all open device handles.</para>
-      <para>If <i>fBlock</i> is <b>TRUE</b>, this method can potentially deadlock. For example, it will deadlock if a thread calls <b>LockDevice</b> and then waits on another thread that calls <b>LockDevice</b>. It will also deadlock if a thread calls <b>LockDevice</b> twice without calling <see cref="UnlockDevice" /> in between.</para>
-    </remarks>
-    <seealso cref="IMFDXGIDeviceManager" />
   </member>
   <member name="IMFDXGIDeviceManager.OpenDeviceHandle">
-    <summary>
-      <para>Gets a handle to the Microsoft Direct3D device.</para>
-    </summary>
-    <param name="phDevice">
-      <para>Receives the device handle.</para>
-    </param>
+    <summary>Gets a handle to the Microsoft Direct3D device.</summary>
+    <param name="phDevice">Receives the device handle.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -244,60 +231,42 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_DXGI_DEVICE_NOT_INITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_DXGI_DEVICE_NOT_INITIALIZED</b>
-            </para>
-          </description>
-          <description>
-            <para>The DXGI Device Manager was not initialized. The owner of the device must call <see cref="IMFDXGIDeviceManager.ResetDevice" />.</para>
-          </description>
-        </item>
+          <description>The DXGI Device Manager was not initialized. The owner of the device must call <see cref="IMFDXGIDeviceManager.ResetDevice" />.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFDXGIDeviceManager" />
   </member>
   <member name="IMFDXGIDeviceManager.ResetDevice">
-    <summary>
-      <para>Sets the Microsoft Direct3D device or notifies the device manager that the Direct3D device was reset.</para>
-    </summary>
-    <param name="pUnkDevice">
-      <para>A pointer to the <see cref="IUnknown" /> interface of the DXGI device.</para>
-    </param>
-    <param name="resetToken">
-      <para>The token that was received in the <i>pResetToken</i> parameter of the <see cref="MFCreateDXGIDeviceManager" /> function.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>When you first create the DXGI Device Manager, call this method with a pointer to the Direct3D device. (The device manager does not create the device; the caller must provide the device pointer initially.) Also call this method if the Direct3D device becomes lost and you need to reset the device or create a new device.</para>
-      <para>The <i>resetToken</i> parameter ensures that only the component that originally created the device manager can invalidate the current device.</para>
-      <para>If this method succeeds, all open device handles become invalid.</para>
-      <para>To create a Microsoft Direct3D 11 device, call <see cref="D3D11CreateDevice" />.</para>
-      <para>The device should be created with the <b>D3D11_CREATE_DEVICE_VIDEO_SUPPORT</b> device creation flag which is defined in the <see cref="D3D11_CREATE_DEVICE_FLAG" /> enumeration.</para>
-      <para>It is recommended that you use multi-thread protection on the device context to prevent deadlock issues that can sometimes happen when you call<see cref=" ID3D11VideoContext.GetDecoderBuffer" /> or <see cref="ID3D11VideoContext.ReleaseDecoderBuffer" />. To set multi-thread protection, first call <see cref="QueryInterface" /> on <see cref="ID3D11Device" /> to get an <see cref="ID3D10Multithread" /> pointer. Then call <see cref="ID3D10Multithread.SetMultithreadProtected" />, passing in <b>true</b> for <i>bMTProtect</i>.</para>
-    </remarks>
-    <seealso cref="IMFDXGIDeviceManager" />
+    <summary>Sets the Microsoft Direct3D device or notifies the device manager that the Direct3D device was reset.</summary>
+    <param name="pUnkDevice">A pointer to the <see cref="IUnknown" /> interface of the DXGI device.</param>
+    <param name="resetToken">The token that was received in the <i>pResetToken</i> parameter of the <see cref="MFCreateDXGIDeviceManager" /> function.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFDXGIDeviceManager.TestDevice">
-    <summary>
-      <para>Tests whether a Microsoft Direct3D device handle is valid.</para>
-    </summary>
-    <param name="hDevice">
-      <para>A handle to the Direct3D device. To get the device handle, call <see cref="IMFDXGIDeviceManager.OpenDeviceHandle" />.</para>
-    </param>
+    <summary>Tests whether a Microsoft Direct3D device handle is valid.</summary>
+    <param name="hDevice">A handle to the Direct3D device. To get the device handle, call <see cref="IMFDXGIDeviceManager.OpenDeviceHandle" />.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -305,71 +274,52 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_HANDLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The specified handle is not a Direct3D device handle.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_HANDLE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_DXGI_NEW_VIDEO_DEVICE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The specified handle is not a Direct3D device handle.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_DXGI_NEW_VIDEO_DEVICE</b>
-            </para>
-          </description>
-          <description>
-            <para>The device handle is invalid.</para>
-          </description>
-        </item>
+          <description>The device handle is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the method returns <b>MF_E_DXGI_NEW_VIDEO_DEVICE</b>, call <see cref="IMFDXGIDeviceManager.CloseDeviceHandle" /> to close the handle and then call <see cref="OpenDeviceHandle" /> again to get a new handle. The  <see cref="IMFDXGIDeviceManager.ResetDevice" /> method invalidates all open device handles.</para>
-    </remarks>
-    <seealso cref="IMFDXGIDeviceManager" />
   </member>
   <member name="IMFDXGIDeviceManager.UnlockDevice">
-    <summary>
-      <para>Unlocks the Microsoft Direct3D device.</para>
-    </summary>
-    <param name="hDevice">
-      <para>A handle to the Direct3D device. To get the device handle, call <see cref="IMFDXGIDeviceManager.OpenDeviceHandle" />.</para>
-    </param>
-    <param name="fSaveState">
-      <para>Reserved.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Call this method to release the device after calling <see cref="IMFDXGIDeviceManager.LockDevice" />.</para>
-    </remarks>
-    <seealso cref="IMFDXGIDeviceManager" />
+    <summary>Unlocks the Microsoft Direct3D device.</summary>
+    <param name="hDevice">A handle to the Direct3D device. To get the device handle, call <see cref="IMFDXGIDeviceManager.OpenDeviceHandle" />.</param>
+    <param name="fSaveState">Reserved.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFDXGIDeviceManager">
-    <summary>
-      <para>Enables two threads to share the same Microsoft Direct3D 11 device.</para>
-    </summary>
-    <remarks>
-      <para>This interface is exposed by the Microsoft DirectX Graphics Infrastructure (DXGI) Device Manager. To create the DXGI Device Manager, call the <see cref="MFCreateDXGIDeviceManager" /> function.</para>
-      <para>When you create an <b>IMFDXGIDeviceManager</b> with <see cref="MFCreateDXGIDeviceManager" />, a Direct3D 11 device is not associated with the device manager. To associate a Direct3D 11 device with the device manager, call <see cref="IMFDXGIDeviceManager.ResetDevice" />, passing in the pointer to the Direct3D 11 device. To create a Direct3D 11 device, call <see cref="D3D11CreateDevice" />. The device should be created with the <b>D3D11_CREATE_DEVICE_VIDEO_SUPPORT</b> device creation flag which is defined in the <see cref="D3D11_CREATE_DEVICE_FLAG" /> enumeration.</para>
-      <para>For Microsoft Direct3D 9 devices, use the <see cref="IDirect3DDeviceManager9" /> interface.</para>
-      <para>Windows Store apps must use <b>IMFDXGIDeviceManager</b> and <a href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-apis">Direct3D 11 Video APIs</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Enables two threads to share the same Microsoft Direct3D 11 device.</summary>
   </member>
 </doc>

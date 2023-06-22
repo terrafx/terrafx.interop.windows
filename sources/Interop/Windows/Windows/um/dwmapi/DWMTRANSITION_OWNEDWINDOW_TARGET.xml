@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWMTRANSITION_OWNEDWINDOW_TARGET">
-    <summary>
-      <para>Identifies the target.</para>
-    </summary>
+    <summary>Identifies the target.</summary>
   </member>
   <member name="DWMTRANSITION_OWNEDWINDOW_TARGET.DWMTRANSITION_OWNEDWINDOW_NULL">
-    <summary>
-      <para>Indicates no animation.</para>
-    </summary>
+    <summary>Indicates no animation.</summary>
   </member>
   <member name="DWMTRANSITION_OWNEDWINDOW_TARGET.DWMTRANSITION_OWNEDWINDOW_REPOSITION">
-    <summary>
-      <para>Indicates that the window is repositioned.</para>
-    </summary>
+    <summary>Indicates that the window is repositioned.</summary>
   </member>
 </doc>

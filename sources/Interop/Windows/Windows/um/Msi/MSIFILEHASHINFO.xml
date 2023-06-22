@@ -3,30 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MSIFILEHASHINFO">
-    <summary>
-      <para>The
-<b>MSIFILEHASHINFO</b> structure contains the file hash information returned by
-<see cref="MsiGetFileHash" /> and used in the
-<a href="https://docs.microsoft.com//windows/desktop/Msi/msifilehash-table">MsiFileHash table</a>.</para>
-    </summary>
-    <remarks>
-      <para>The file hash entered into the fields of the MsiFileHash table must be obtained by calling
-<see cref="MsiGetFileHash" /> or the
-<a href="https://docs.microsoft.com//windows/desktop/Msi/installer-filehash">FileHash method</a>. Do not use other methods to generate a file hash.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Msi/default-file-versioning">Default File Versioning</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Msi/msifilehash-table">MsiFileHash table</seealso>
-    <seealso cref="MsiGetFileHash" />
+    <summary>The<b>MSIFILEHASHINFO</b> structure contains the file hash information returned by<see cref="MsiGetFileHash" /> and used in the<a href="https://docs.microsoft.com//windows/desktop/Msi/msifilehash-table">MsiFileHash table</a>.</summary>
   </member>
   <member name="MSIFILEHASHINFO.dwFileHashInfoSize">
-    <summary>
-      <para>Specifies the size, in bytes, of this data structure. Set this member to <code>sizeof(MSIFILEHASHINFO)</code> before calling the
-<see cref="MsiGetFileHash" /> function.</para>
-    </summary>
+    <summary>Specifies the size, in bytes, of this data structure. Set this member to <code>sizeof(MSIFILEHASHINFO)</code> before calling the<see cref="MsiGetFileHash" /> function.</summary>
   </member>
   <member name="MSIFILEHASHINFO.dwData">
-    <summary>
-      <para>The entire 128-bit file hash is contained in four 32-bit fields. The first field corresponds to the HashPart1 column of the MsiHashFile table, the second field corresponds to the HashPart2 column, the third field corresponds to the HashPart3 column, and the fourth field corresponds to the HashPart4 column.</para>
-    </summary>
+    <summary>The entire 128-bit file hash is contained in four 32-bit fields. The first field corresponds to the HashPart1 column of the MsiHashFile table, the second field corresponds to the HashPart2 column, the third field corresponds to the HashPart3 column, and the fourth field corresponds to the HashPart4 column.</summary>
   </member>
 </doc>

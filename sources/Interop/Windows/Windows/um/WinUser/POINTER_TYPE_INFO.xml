@@ -3,26 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="POINTER_TYPE_INFO">
-    <summary>
-      <para>Contains information about the  pointer input type.</para>
-    </summary>
+    <summary>Contains information about the pointer input type.</summary>
   </member>
   <member name="POINTER_TYPE_INFO.type">
-    <summary>
-      <para>The pointer input device.</para>
-    </summary>
+    <summary>The pointer input device.</summary>
   </member>
-  <member name="POINTER_TYPE_INFO.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="POINTER_TYPE_INFO.DUMMYUNIONNAME"></member>
   <member name="POINTER_TYPE_INFO.DUMMYUNIONNAME.touchInfo">
-    <summary>
-      <para>Basic touch information common to all pointer types.</para>
-    </summary>
+    <summary>A <see cref="POINTER_TOUCH_INFO" /> structure representing basic touch information common to all pointer types.</summary>
   </member>
   <member name="POINTER_TYPE_INFO.DUMMYUNIONNAME.penInfo">
-    <summary>
-      <para>Basic pen information common to all pointer types.</para>
-    </summary>
+    <summary>A <see cref="POINTER_PEN_INFO" /> structure representing basic pen information common to all pointer types.</summary>
   </member>
 </doc>

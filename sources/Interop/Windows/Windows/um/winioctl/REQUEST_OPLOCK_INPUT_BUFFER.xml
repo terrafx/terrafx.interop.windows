@@ -3,26 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="REQUEST_OPLOCK_INPUT_BUFFER">
-    <summary>
-      <para>Contains the information to request an opportunistic lock (oplock) or to acknowledge an oplock break
-with the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_request_oplock">FSCTL_REQUEST_OPLOCK</a> control
-code.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_request_oplock">FSCTL_REQUEST_OPLOCK</seealso>
-    <seealso cref="REQUEST_OPLOCK_OUTPUT_BUFFER" />
+    <summary>Contains the information to request an opportunistic lock (oplock) or to acknowledge an oplock break with the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_request_oplock">FSCTL_REQUEST_OPLOCK</a> control code.</summary>
   </member>
   <member name="REQUEST_OPLOCK_INPUT_BUFFER.StructureVersion">
-    <summary>
-      <para>The version of the
-<b>REQUEST_OPLOCK_INPUT_BUFFER</b> structure that
-is being used. Set this member to <b>REQUEST_OPLOCK_CURRENT_VERSION</b>.</para>
-    </summary>
+    <summary>The version of the<b>REQUEST_OPLOCK_INPUT_BUFFER</b> structure that is being used. Set this member to <b>REQUEST_OPLOCK_CURRENT_VERSION</b>.</summary>
   </member>
   <member name="REQUEST_OPLOCK_INPUT_BUFFER.StructureLength">
-    <summary>
-      <para>The length of this structure, in bytes. Must be set to
-<code>sizeof(REQUEST_OPLOCK_INPUT_BUFFER)</code>.</para>
-    </summary>
+    <summary>The length of this structure, in bytes. Must be set to<code>sizeof(REQUEST_OPLOCK_INPUT_BUFFER)</code>.</summary>
   </member>
   <member name="REQUEST_OPLOCK_INPUT_BUFFER.RequestedOplockLevel">
     <summary>
@@ -32,57 +19,43 @@ is being used. Set this member to <b>REQUEST_OPLOCK_CURRENT_VERSION</b>.</para>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>OPLOCK_LEVEL_CACHE_READ</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OPLOCK_LEVEL_CACHE_READ</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Allows clients to cache reads. May be granted to multiple clients.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Allows clients to cache reads. May be granted to multiple clients.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OPLOCK_LEVEL_CACHE_HANDLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Allows clients to cache open handles. May be granted to multiple clients.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>OPLOCK_LEVEL_CACHE_HANDLE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OPLOCK_LEVEL_CACHE_WRITE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Allows clients to cache open handles. May be granted to multiple clients.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>OPLOCK_LEVEL_CACHE_WRITE</b>
-          </description>
-          <description>
-            <para>Allows clients to cache writes and byte range locks. May be granted only to a single client.</para>
-          </description>
-        </item>
-      </list>
-      <para>Valid combinations of these values are as follows:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <code>OPLOCK_LEVEL_CACHE_READ</code>
-          </description>
-        </item>
-        <item>
-          <description>
-            <code>OPLOCK_LEVEL_CACHE_READ | OPLOCK_LEVEL_CACHE_HANDLE</code>
-          </description>
-        </item>
-        <item>
-          <description>
-            <code>OPLOCK_LEVEL_CACHE_READ | OPLOCK_LEVEL_CACHE_WRITE</code>
-          </description>
-        </item>
-        <item>
-          <description>
-            <code>OPLOCK_LEVEL_CACHE_READ | OPLOCK_LEVEL_CACHE_WRITE | OPLOCK_LEVEL_CACHE_HANDLE</code>
-          </description>
-        </item>
-      </list>
-      <para>For more information about these value combinations, see
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_request_oplock">FSCTL_REQUEST_OPLOCK</a>.</para>
-    </summary>
+          <description>Allows clients to cache writes and byte range locks. May be granted only to a single client.</description>
+        </listheader>
+      </list> <para>Valid combinations of these values are as follows:</para><list type="bullet"><item><description><code>OPLOCK_LEVEL_CACHE_READ</code></description></item><item><description><code>OPLOCK_LEVEL_CACHE_READ | OPLOCK_LEVEL_CACHE_HANDLE</code></description></item><item><description><code>OPLOCK_LEVEL_CACHE_READ | OPLOCK_LEVEL_CACHE_WRITE</code></description></item><item><description><code>OPLOCK_LEVEL_CACHE_READ | OPLOCK_LEVEL_CACHE_WRITE | OPLOCK_LEVEL_CACHE_HANDLE</code></description></item></list>For more information about these value combinations, see <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_request_oplock">FSCTL_REQUEST_OPLOCK</a>.</summary>
   </member>
   <member name="REQUEST_OPLOCK_INPUT_BUFFER.Flags">
     <summary>
@@ -92,26 +65,30 @@ is being used. Set this member to <b>REQUEST_OPLOCK_CURRENT_VERSION</b>.</para>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>REQUEST_OPLOCK_INPUT_FLAG_REQUEST</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>REQUEST_OPLOCK_INPUT_FLAG_REQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Request for a new oplock. Setting this flag together with <b>REQUEST_OPLOCK_INPUT_FLAG_ACK</b> is not valid and will cause the request to fail with <b>ERROR_INVALID_PARAMETER</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Request for a new oplock.  Setting this flag together with
-<b>REQUEST_OPLOCK_INPUT_FLAG_ACK</b> is not valid and will cause the request to fail with
-<b>ERROR_INVALID_PARAMETER</b>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>REQUEST_OPLOCK_INPUT_FLAG_ACK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>REQUEST_OPLOCK_INPUT_FLAG_ACK</b>
-          </description>
-          <description>
-            <para>Acknowledgment of an oplock break.  Setting this flag together with
-<b>REQUEST_OPLOCK_ INPUT_FLAG_REQUEST</b> is not valid and will cause the request to fail
-with <b>ERROR_INVALID_PARAMETER</b>.</para>
-          </description>
-        </item>
+          <description>Acknowledgment of an oplock break. Setting this flag together with <b>REQUEST_OPLOCK_ INPUT_FLAG_REQUEST</b> is not valid and will cause the request to fail with <b>ERROR_INVALID_PARAMETER</b>.</description>
+        </listheader>
       </list>
     </summary>
   </member>

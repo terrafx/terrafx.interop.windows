@@ -5,422 +5,105 @@
   <member name="DirectX.D3D10CompileEffectFromMemory">
     <summary>
       <para>Compile an effect.</para>
-      <para>
-        <b>Note</b>  Use <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3dx10compilefrommemory">D3DX10CompileFromMemory</a> instead of this function.</para>
+      <div>
+        <b>Note</b>  Use <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3dx10compilefrommemory">D3DX10CompileFromMemory</a> instead of this function.</div>
     </summary>
-    <param name="pData">
-      <para>Type: <b>void*</b></para>
-      <para>A pointer to effect data; either ASCII <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-reference">HLSL</a> code or a compiled effect.</para>
-    </param>
-    <param name="DataLength">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>Length of <i>pData</i>.</para>
-    </param>
-    <param name="pSrcFileName">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>The name of the effect file.</para>
-    </param>
-    <param name="pDefines">
-      <para>Type: <b>const <see cref="D3D10_SHADER_MACRO" />*</b></para>
-      <para>Optional. An array of NULL-terminated macro definitions (see <see cref="D3D10_SHADER_MACRO" />).</para>
-    </param>
-    <param name="pInclude">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173775(v=vs.85)">ID3D10Include</a>*</b></para>
-      <para>Optional. A pointer to an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173775(v=vs.85)">ID3D10Include Interface</a> for handling include files. Setting this to <b>NULL</b> will cause a compile error if a shader contains a #include.</para>
-    </param>
-    <param name="HLSLFlags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Shader <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-shader">compile options</a>.</para>
-    </param>
-    <param name="FXFlags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Effect <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-constants">compile options</a>.</para>
-    </param>
-    <param name="ppCompiledEffect">
-      <para>Type: <b><see cref="ID3D10Blob" />**</b></para>
-      <para>The address of a <see cref="ID3D10Blob Interface" /> that contains the compiled effect.</para>
-    </param>
-    <param name="ppErrors">
-      <para>Type: <b><see cref="ID3D10Blob" />**</b></para>
-      <para>Optional. A pointer to an <see cref="ID3D10Blob Interface" /> that contains compiler error messages, or <b>NULL</b> if there were no errors.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>This function uses the version of the HLSL compiler released in the November 2006 DirectX SDK.</para>
-      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-effects-compile">Compile an Effect (Direct3D 10)</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-functions">Effect Functions (Direct3D 10)</seealso>
+    <param name="pData">A pointer to effect data; either ASCII <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-reference">HLSL</a> code or a compiled effect.</param>
+    <param name="DataLength">Length of <i>pData</i>.</param>
+    <param name="pSrcFileName">The name of the effect file.</param>
+    <param name="pDefines">Optional. An array of NULL-terminated macro definitions (see <see cref="D3D10_SHADER_MACRO" />).</param>
+    <param name="pInclude">Optional. A pointer to an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173775(v=vs.85)">ID3D10Include Interface</a> for handling include files. Setting this to <b>NULL</b> will cause a compile error if a shader contains a #include.</param>
+    <param name="HLSLFlags">Shader <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-shader">compile options</a>.</param>
+    <param name="FXFlags">Effect <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-constants">compile options</a>.</param>
+    <param name="ppCompiledEffect">The address of a <see cref="ID3D10Blob Interface" /> that contains the compiled effect.</param>
+    <param name="ppErrors">Optional. A pointer to an <see cref="ID3D10Blob Interface" /> that contains compiler error messages, or <b>NULL</b> if there were no errors.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="DirectX.D3D10CreateEffectFromMemory">
-    <summary>
-      <para>Creates an ID3D10Effect from a buffer containing a compiled effect.</para>
-    </summary>
-    <param name="pData">
-      <para>Type: <b>void*</b></para>
-      <para>A pointer to a compiled effect.</para>
-    </param>
-    <param name="DataLength">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>Length of <i>pData</i>.</para>
-    </param>
-    <param name="FXFlags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Effect <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-constants">compile options</a>.</para>
-    </param>
-    <param name="pDevice">
-      <para>Type: <b><see cref="ID3D10Device" />*</b></para>
-      <para>A pointer to the device (see <see cref="ID3D10Device Interface" />).</para>
-    </param>
-    <param name="pEffectPool">
-      <para>Type: <b><see cref="ID3D10EffectPool" />*</b></para>
-      <para>Optional. A pointer to a memory space for effect variables that are shared across effects (see <see cref="ID3D10EffectPool Interface" />).</para>
-    </param>
-    <param name="ppEffect">
-      <para>Type: <b><see cref="ID3D10Effect" />**</b></para>
-      <para>A pointer to an <see cref="ID3D10Effect Interface" /> which contains the created effect.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>This method is used to create an <see cref="ID3D10Effect Interface" /> object from an effect that has been compiled before runtime and loaded into memory.
-For help precompiling an effect, see <a href="https://docs.microsoft.com//windows/desktop/direct3dtools/dx-graphics-tools-fxc-using">Offline Compiling</a>.
-To load and compile an ASCII .fx file see <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-effects-compile">Compile an Effect (Direct3D 10)</a>.</para>
-      <h4>Examples</h4>
-      <para>Compiling and loading an effect</para>
-      <para>Compile the effect.</para>
-      <code>
-fxc.exe /T fx_4_0 /Fo Tutorial03.fxo Tutorial03.fx
-
-</code>
-      <para>Load the compiled effect at runtime.</para>
-      <code>
-ifstream is("tutorial03.fxo", ios.binary);
-is.seekg(0,ios_base.end);
-streampos pos = is.tellg();
-is.seekg(0,ios_base.beg);
-char * effectBuffer = new char[pos];
-is.read(effectBuffer,pos);
-
-hr = D3D10CreateEffectFromMemory((void *)effectBuffer,pos,0,g_pd3dDevice,NULL,&amp;amp;amp;amp;amp;amp;g_pEffect);
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-functions">Effect Functions (Direct3D 10)</seealso>
+    <summary>Creates an ID3D10Effect from a buffer containing a compiled effect.</summary>
+    <param name="pData">A pointer to a compiled effect.</param>
+    <param name="DataLength">Length of <i>pData</i>.</param>
+    <param name="FXFlags">Effect <a href="https://docs.microsoft.com//windows/win32/direct3d10/d3d10-graphics-reference-effect-constants">compile options</a>.</param>
+    <param name="pDevice">A pointer to the device (see <see cref="ID3D10Device Interface" />).</param>
+    <param name="pEffectPool">Optional. A pointer to a memory space for effect variables that are shared across effects (see <see cref="ID3D10EffectPool Interface" />).</param>
+    <param name="ppEffect">A pointer to an <see cref="ID3D10Effect Interface" /> which contains the created effect.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/win32/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="DirectX.D3D10CreateEffectPoolFromMemory">
-    <summary>
-      <para>Create an effect pool (or shared memory location), to enable sharing variables between effects.</para>
-    </summary>
-    <param name="pData">
-      <para>Type: <b>void*</b></para>
-      <para>A pointer to a compiled effect.</para>
-    </param>
-    <param name="DataLength">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>Length of <i>pData</i>.</para>
-    </param>
-    <param name="FXFlags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Effect <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-constants">compile options</a>.</para>
-    </param>
-    <param name="pDevice">
-      <para>Type: <b><see cref="ID3D10Device" />*</b></para>
-      <para>A pointer to the device (see <see cref="ID3D10Device Interface" />).</para>
-    </param>
-    <param name="ppEffectPool">
-      <para>Type: <b><see cref="ID3D10EffectPool" />**</b></para>
-      <para>A pointer to the <see cref="ID3D10EffectPool Interface" /> that contains the effect pool.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>A pool is a shared location in memory. Effect variables that are located in a pool can be updated once, and the effect system will take care of updating each effect that uses that variable. To pool an effect variable, tell the effect to locate the variable in a pool when the effect is created, using a helper function such as <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3dx10createeffectfromfile">D3DX10CreateEffectFromFile</a>.</para>
-      <para>For help compiling an effect, see <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-effects-compile">Compile an Effect (Direct3D 10)</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-functions">Effect Functions (Direct3D 10)</seealso>
+    <summary>Create an effect pool (or shared memory location), to enable sharing variables between effects.</summary>
+    <param name="pData">A pointer to a compiled effect.</param>
+    <param name="DataLength">Length of <i>pData</i>.</param>
+    <param name="FXFlags">Effect <a href="https://docs.microsoft.com//windows/win32/direct3d10/d3d10-graphics-reference-effect-constants">compile options</a>.</param>
+    <param name="pDevice">A pointer to the device (see <see cref="ID3D10Device Interface" />).</param>
+    <param name="ppEffectPool">A pointer to the <see cref="ID3D10EffectPool Interface" /> that contains the effect pool.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/win32/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="DirectX.D3D10CreateStateBlock">
-    <summary>
-      <para>Create a state block.</para>
-    </summary>
-    <param name="pDevice">
-      <para>Type: <b><see cref="ID3D10Device" />*</b></para>
-      <para>The device for which the state block will be created.</para>
-    </param>
-    <param name="pStateBlockMask">
-      <para>Type: <b><see cref="D3D10_STATE_BLOCK_MASK" />*</b></para>
-      <para>Indicates which parts of the device state will be captured when calling <see cref="ID3D10StateBlock.Capture" /> and reapplied when calling <see cref="ID3D10StateBlock.Apply" />. See remarks.</para>
-    </param>
-    <param name="ppStateBlock">
-      <para>Type: <b><see cref="ID3D10StateBlock" />**</b></para>
-      <para>Address of a pointer to the buffer created (see <see cref="ID3D10StateBlock Interface" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>A state block is a collection of device state, and is used for saving and restoring device state. Use a state-block mask to enable subsets of state for saving and restoring.</para>
-      <para>The <see cref="D3D10_STATE_BLOCK_MASK" /> structure can be filled manually or by using any of the D3D10StateBlockMaskXXX APIs. A state block mask can also be obtained by calling <see cref="ID3D10EffectTechnique.ComputeStateBlockMask" /> or <see cref="ID3D10EffectPass.ComputeStateBlockMask" />.</para>
-      <list type="table">
-        <listheader>
-          <description>
-            <para>Differences between Direct3D 9 and Direct3D 10:</para>
-            <para>In Direct3D 10, a state block object does not contain any valid information about the state of the device until <see cref="ID3D10StateBlock.Capture" /> is called. In Direct3D 9, state is saved in a state block object, when it is created.</para>
-          </description>
-        </listheader>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-functions">Core Functions</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-functions">Effect Functions</seealso>
+    <summary>Create a state block.</summary>
+    <param name="pDevice">The device for which the state block will be created.</param>
+    <param name="pStateBlockMask">Indicates which parts of the device state will be captured when calling <see cref="ID3D10StateBlock.Capture" /> and reapplied when calling <see cref="ID3D10StateBlock.Apply" />. See remarks.</param>
+    <param name="ppStateBlock">Address of a pointer to the buffer created (see <see cref="ID3D10StateBlock Interface" />).</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="DirectX.D3D10DisassembleEffect">
-    <summary>
-      <para>This function -- which disassembles a compiled effect into a text string that contains assembly instructions and register assignments -- has been deprecated. Instead, use <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3ddisassemble10effect">D3DDisassemble10Effect</a>.</para>
-    </summary>
-    <param name="pEffect">
-      <para>Type: <b><see cref="ID3D10Effect" />*</b></para>
-      <para>A pointer to an <see cref="ID3D10Effect Interface" />, which contains the compiled effect.</para>
-    </param>
-    <param name="EnableColorCode">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>Include HTML tags in the output to color code the result.</para>
-    </param>
-    <param name="ppDisassembly">
-      <para>Type: <b><see cref="ID3D10Blob" />**</b></para>
-      <para>A pointer to an <see cref="ID3D10Blob Interface" /> which contains the disassembled shader.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>This returned text includes a header with the version of the HLSL compiler used to generate this object, comments describing the memory layout of the constant buffers used by the shader, input and output signatures, and resource binding points.</para>
-      <para>Here is an example of disassembling a compiled effect. The example assumes you start with a compiled effect (shown as <i>l_pBlob_Effect</i> which you can see in <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-effects-compile">Compile an Effect (Direct3D 10)</a>).</para>
-      <code>
-LPCSTR commentString = NULL;
-ID3D10Blob* pIDisassembly = NULL;
-char* pDisassembly = NULL;
-if( pVSBuf )
-{
-    D3D10DisassembleEffect( (UINT*) l_pBlob_Effect-&gt;GetBufferPointer(),
-        l_pBlob_Effect-&gt;GetBufferSize(), TRUE, commentString, &amp;amp;amp;amp;amp;amp;pIDisassembly );
-    if( pIDisassembly )
-    {
-        FILE* pFile = fopen( "effect.htm", "w" );
-        if( pFile)
-        {
-            fputs( (char*)pIDisassembly-&gt;GetBufferPointer(), pFile );
-            fclose( pFile );
-        }
-    }
-}
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-functions">Effect Functions (Direct3D 10)</seealso>
+    <summary>This function -- which disassembles a compiled effect into a text string that contains assembly instructions and register assignments -- has been deprecated. Instead, use <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3ddisassemble10effect">D3DDisassemble10Effect</a>.</summary>
+    <param name="pEffect">A pointer to an <see cref="ID3D10Effect Interface" />, which contains the compiled effect.</param>
+    <param name="EnableColorCode">Include HTML tags in the output to color code the result.</param>
+    <param name="ppDisassembly">A pointer to an <see cref="ID3D10Blob Interface" /> which contains the disassembled shader.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="DirectX.D3D10StateBlockMaskDifference">
-    <summary>
-      <para>Combine two state-block masks with a bitwise XOR.</para>
-    </summary>
-    <param name="pA">
-      <para>Type: <b><see cref="D3D10_STATE_BLOCK_MASK" />*</b></para>
-      <para>State block mask on the left side of the bitwise XOR operation. See <see cref="D3D10_STATE_BLOCK_MASK" />.</para>
-    </param>
-    <param name="pB">
-      <para>Type: <b><see cref="D3D10_STATE_BLOCK_MASK" />*</b></para>
-      <para>State block mask on the right side of the bitwise XOR operation.</para>
-    </param>
-    <param name="pResult">
-      <para>Type: <b><see cref="D3D10_STATE_BLOCK_MASK" />*</b></para>
-      <para>The result of the bitwise XOR operation.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-functions">Core Functions</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-functions">Effect Functions</seealso>
+    <summary>Combine two state-block masks with a bitwise XOR.</summary>
+    <param name="pA">State block mask on the left side of the bitwise XOR operation. See <see cref="D3D10_STATE_BLOCK_MASK" />.</param>
+    <param name="pB">State block mask on the right side of the bitwise XOR operation.</param>
+    <param name="pResult">The result of the bitwise XOR operation.</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="DirectX.D3D10StateBlockMaskDisableAll">
-    <summary>
-      <para>Disable all state capturing with a state-block mask.</para>
-    </summary>
-    <param name="pMask">
-      <para>Type: <b><see cref="D3D10_STATE_BLOCK_MASK" />*</b></para>
-      <para>A mask filled with all zeroes (see <see cref="D3D10_STATE_BLOCK_MASK" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-functions">Core Functions</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-functions">Effect Functions</seealso>
+    <summary>Disable all state capturing with a state-block mask.</summary>
+    <param name="pMask">A mask filled with all zeroes (see <see cref="D3D10_STATE_BLOCK_MASK" />).</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="DirectX.D3D10StateBlockMaskDisableCapture">
-    <summary>
-      <para>Disable state capturing with a state-block mask.</para>
-    </summary>
-    <param name="pMask">
-      <para>Type: <b><see cref="D3D10_STATE_BLOCK_MASK" />*</b></para>
-      <para>A state block mask (see <see cref="D3D10_STATE_BLOCK_MASK" />).</para>
-    </param>
-    <param name="StateType">
-      <para>Type: <b><see cref="D3D10_DEVICE_STATE_TYPES" /></b></para>
-      <para>The type of device state to disable (see <see cref="D3D10_DEVICE_STATE_TYPES" />).</para>
-    </param>
-    <param name="RangeStart">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The lower end of the range of values to set to false.</para>
-    </param>
-    <param name="RangeLength">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The upper end of the range of values to set to false.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>This is an example of how to call this function. It creates a mask that cannot capture and apply to geometry-shader samplers in slots 2 ~ 23.</para>
-      <code>
-D3D10_STATE_BLOCK_MASK stateBlockMask;
-D3D10StateBlockMaskDisableCapture(&amp;amp;amp;amp;amp;amp;stateBlockMask,
-                                 D3D10_DST_GS_SAMPLERS,
-                                 2, 23);
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-functions">Core Functions</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-functions">Effect Functions</seealso>
+    <summary>Disable state capturing with a state-block mask.</summary>
+    <param name="pMask">A state block mask (see <see cref="D3D10_STATE_BLOCK_MASK" />).</param>
+    <param name="StateType">The type of device state to disable (see <see cref="D3D10_DEVICE_STATE_TYPES" />).</param>
+    <param name="RangeStart">The lower end of the range of values to set to false.</param>
+    <param name="RangeLength">The upper end of the range of values to set to false.</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="DirectX.D3D10StateBlockMaskEnableAll">
-    <summary>
-      <para>Enable a state-block mask to capture and apply all state variables.</para>
-    </summary>
-    <param name="pMask">
-      <para>Type: <b><see cref="D3D10_STATE_BLOCK_MASK" />*</b></para>
-      <para>A mask with everything turned on.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-functions">Core Functions</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-functions">Effect Functions</seealso>
+    <summary>Enable a state-block mask to capture and apply all state variables.</summary>
+    <param name="pMask">A mask with everything turned on.</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="DirectX.D3D10StateBlockMaskEnableCapture">
-    <summary>
-      <para>Enable a range of state values in a state block mask.</para>
-    </summary>
-    <param name="pMask">
-      <para>Type: <b><see cref="D3D10_STATE_BLOCK_MASK" />*</b></para>
-      <para>A state block mask (see <see cref="D3D10_STATE_BLOCK_MASK" />).</para>
-    </param>
-    <param name="StateType">
-      <para>Type: <b><see cref="D3D10_DEVICE_STATE_TYPES" /></b></para>
-      <para>The type of device state to enable (see <see cref="D3D10_DEVICE_STATE_TYPES" />.</para>
-    </param>
-    <param name="RangeStart">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The lower end of the range of values to set to true.</para>
-    </param>
-    <param name="RangeLength">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The upper end of the range of values to set to true.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>This is an example of how to call this function. It create a mask that can capture and apply to geometry-shader samplers in slots 2 ~ 13.</para>
-      <code>
-D3D10_STATE_BLOCK_MASK stateBlockMask;
-D3D10StateBlockMaskEnableCapture(&amp;amp;amp;amp;amp;amp;stateBlockMask,
-                                 D3D10_DST_GS_SAMPLERS,
-                                 2, 13);
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-functions">Core Functions</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-functions">Effect Functions</seealso>
+    <summary>Enable a range of state values in a state block mask.</summary>
+    <param name="pMask">A state block mask (see <see cref="D3D10_STATE_BLOCK_MASK" />).</param>
+    <param name="StateType">The type of device state to enable (see <see cref="D3D10_DEVICE_STATE_TYPES" />.</param>
+    <param name="RangeStart">The lower end of the range of values to set to true.</param>
+    <param name="RangeLength">The upper end of the range of values to set to true.</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="DirectX.D3D10StateBlockMaskGetSetting">
-    <summary>
-      <para>Get an element in a state-block mask; determine if an element is allowed by the mask for capturing and applying.</para>
-    </summary>
-    <param name="pMask">
-      <para>Type: <b><see cref="D3D10_STATE_BLOCK_MASK" />*</b></para>
-      <para>State block mask. See <see cref="D3D10_STATE_BLOCK_MASK" />.</para>
-    </param>
-    <param name="StateType">
-      <para>Type: <b><see cref="D3D10_DEVICE_STATE_TYPES" /></b></para>
-      <para>The type of device state. See <see cref="D3D10_DEVICE_STATE_TYPES" />.</para>
-    </param>
-    <param name="Entry">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The entry within the device state. This is only relevant for state types that have more than one entry, such as D3D10_DST_GS_SAMPLERS.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>Returns true if the specified feature is allowed by the mask for capturing and applying, and false otherwise.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-functions">Core Functions</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-functions">Effect Functions</seealso>
+    <summary>Get an element in a state-block mask; determine if an element is allowed by the mask for capturing and applying.</summary>
+    <param name="pMask">State block mask. See <see cref="D3D10_STATE_BLOCK_MASK" />.</param>
+    <param name="StateType">The type of device state. See <see cref="D3D10_DEVICE_STATE_TYPES" />.</param>
+    <param name="Entry">The entry within the device state. This is only relevant for state types that have more than one entry, such as D3D10_DST_GS_SAMPLERS.</param>
+    <returns>Returns true if the specified feature is allowed by the mask for capturing and applying, and false otherwise.</returns>
   </member>
   <member name="DirectX.D3D10StateBlockMaskIntersect">
-    <summary>
-      <para>Combine two state-block masks with a bitwise AND.</para>
-    </summary>
-    <param name="pA">
-      <para>Type: <b><see cref="D3D10_STATE_BLOCK_MASK" />*</b></para>
-      <para>State block mask on the left side of the bitwise AND operation. See <see cref="D3D10_STATE_BLOCK_MASK" />.</para>
-    </param>
-    <param name="pB">
-      <para>Type: <b><see cref="D3D10_STATE_BLOCK_MASK" />*</b></para>
-      <para>State block mask on the right side of the bitwise AND operation.</para>
-    </param>
-    <param name="pResult">
-      <para>Type: <b><see cref="D3D10_STATE_BLOCK_MASK" />*</b></para>
-      <para>The result of the bitwise AND operation.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-functions">Core Functions</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-functions">Effect Functions</seealso>
+    <summary>Combine two state-block masks with a bitwise AND.</summary>
+    <param name="pA">State block mask on the left side of the bitwise AND operation. See <see cref="D3D10_STATE_BLOCK_MASK" />.</param>
+    <param name="pB">State block mask on the right side of the bitwise AND operation.</param>
+    <param name="pResult">The result of the bitwise AND operation.</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="DirectX.D3D10StateBlockMaskUnion">
-    <summary>
-      <para>Combine two state-block masks with a bitwise OR.</para>
-    </summary>
-    <param name="pA">
-      <para>Type: <b><see cref="D3D10_STATE_BLOCK_MASK" />*</b></para>
-      <para>State block mask on the left side of the bitwise OR operation. See <see cref="D3D10_STATE_BLOCK_MASK" />.</para>
-    </param>
-    <param name="pB">
-      <para>Type: <b><see cref="D3D10_STATE_BLOCK_MASK" />*</b></para>
-      <para>State block mask on the right side of the bitwise OR operation.</para>
-    </param>
-    <param name="pResult">
-      <para>Type: <b><see cref="D3D10_STATE_BLOCK_MASK" />*</b></para>
-      <para>The result of the bitwise OR operation.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-functions">Core Functions</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-functions">Effect Functions</seealso>
+    <summary>Combine two state-block masks with a bitwise OR.</summary>
+    <param name="pA">State block mask on the left side of the bitwise OR operation. See <see cref="D3D10_STATE_BLOCK_MASK" />.</param>
+    <param name="pB">State block mask on the right side of the bitwise OR operation.</param>
+    <param name="pResult">The result of the bitwise OR operation.</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
 </doc>

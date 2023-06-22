@@ -3,28 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="APPX_KEY_INFO">
-    <summary>
-      <para>Windows app package key information.</para>
-    </summary>
+    <summary>Windows app package key information.</summary>
   </member>
   <member name="APPX_KEY_INFO.keyLength">
-    <summary>
-      <para>The length of the key.</para>
-    </summary>
+    <summary>The length of the key.</summary>
   </member>
   <member name="APPX_KEY_INFO.keyIdLength">
-    <summary>
-      <para>The length of the key Id.</para>
-    </summary>
+    <summary>The length of the key Id.</summary>
   </member>
   <member name="APPX_KEY_INFO.key">
-    <summary>
-      <para>The app package key.</para>
-    </summary>
+    <summary>The app package key.</summary>
   </member>
   <member name="APPX_KEY_INFO.keyId">
-    <summary>
-      <para>The app package key Id.</para>
-    </summary>
+    <summary>The app package key Id.</summary>
   </member>
 </doc>

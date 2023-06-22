@@ -3,44 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CONFIRM_CONFLICT_ITEM">
-    <summary>
-      <para>Defines conflict item structure.</para>
-    </summary>
+    <summary>Defines conflict item structure.</summary>
   </member>
   <member name="CONFIRM_CONFLICT_ITEM.pShellItem">
-    <summary>
-      <para>Type: <b><see cref="IShellItem2" />*</b></para>
-      <para>A pointer to <see cref="IShellItem2" /> interface.</para>
-    </summary>
+    <summary>A pointer to <see cref="IShellItem2" /> interface.</summary>
   </member>
   <member name="CONFIRM_CONFLICT_ITEM.pszOriginalName">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>A pointer to the original name. If set to <b>NULL</b> then IShellItem's display name will be used.</para>
-    </summary>
+    <summary>A pointer to the original name. If set to <b>NULL</b> then IShellItem's display name will be used.</summary>
   </member>
   <member name="CONFIRM_CONFLICT_ITEM.pszAlternateName">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>A pointer to the alternate name. If multiple items are kept, then item must be renamed to this name. User may or may not have an ability to change the name.</para>
-    </summary>
+    <summary>A pointer to the alternate name. If multiple items are kept, then item must be renamed to this name. User may or may not have an ability to change the name.</summary>
   </member>
   <member name="CONFIRM_CONFLICT_ITEM.pszLocationShort">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>A pointer to the short location.</para>
-    </summary>
+    <summary>A pointer to the short location.</summary>
   </member>
   <member name="CONFIRM_CONFLICT_ITEM.pszLocationFull">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>A pointer to the full location.</para>
-    </summary>
+    <summary>A pointer to the full location.</summary>
   </member>
   <member name="CONFIRM_CONFLICT_ITEM.nType">
-    <summary>
-      <para>Type: <b><see cref="SYNCMGR_CONFLICT_ITEM_TYPE" /></b></para>
-      <para>The conflict item type. See <see cref="SYNCMGR_CONFLICT_ITEM_TYPE" />.</para>
-    </summary>
+    <summary>The conflict item type. See <see cref="SYNCMGR_CONFLICT_ITEM_TYPE" />.</summary>
   </member>
 </doc>

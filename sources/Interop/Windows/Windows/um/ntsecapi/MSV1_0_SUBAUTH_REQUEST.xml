@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MSV1_0_SUBAUTH_REQUEST">
+    <summary>
+      <para>The <b>MSV1_0_SUBAUTH_REQUEST</b> structure contains information to pass to a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">subauthentication package</a>.</para>
+      <para>It is used by<see cref="LsaCallAuthenticationPackage" />.</para>
+    </summary>
+  </member>
+  <member name="MSV1_0_SUBAUTH_REQUEST.MessageType">
+    <summary>
+      <see cref="MSV1_0_PROTOCOL_MESSAGE_TYPE" /> value identifying the type of request being made. This member should be set to <b>MsV1_0SubAuth</b> for local subauthentication and <b>MsV1_0GenericPassthrough</b> for subauthentication on the domain controller.</summary>
+  </member>
+  <member name="MSV1_0_SUBAUTH_REQUEST.SubAuthPackageId">
+    <summary>Contains a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">subauthentication package</a> identifier. The value of subauthentication package identifiers is established by the creator of the subauthentication package.</summary>
+  </member>
+  <member name="MSV1_0_SUBAUTH_REQUEST.SubAuthInfoLength">
+    <summary>Indicates the length, in bytes, of the buffer passed to the subauthentication package in <b>SubAuthSubmitBuffer</b>.</summary>
+  </member>
+  <member name="MSV1_0_SUBAUTH_REQUEST.SubAuthSubmitBuffer">
+    <summary>Containing the data to pass to the subauthentication package. The format and content of this data is specific to the subauthentication package. For more information, see the documentation for specific subauthentication packages.</summary>
+  </member>
+</doc>

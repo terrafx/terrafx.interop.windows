@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_FILL_MODE">
-    <summary>
-      <para>Determines the fill mode to use when rendering triangles.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is part of a rasterizer-state object description (see <see cref="D3D11_RASTERIZER_DESC" />).</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-enums">Core Enumerations</seealso>
+    <summary>Determines the fill mode to use when rendering triangles.</summary>
   </member>
   <member name="D3D11_FILL_MODE.D3D11_FILL_WIREFRAME">
-    <summary>
-      <para>Draw lines connecting the vertices. Adjacent vertices are not drawn.</para>
-    </summary>
+    <summary>Draw lines connecting the vertices. Adjacent vertices are not drawn.</summary>
   </member>
   <member name="D3D11_FILL_MODE.D3D11_FILL_SOLID">
-    <summary>
-      <para>Fill the triangles formed by the vertices. Adjacent vertices are not drawn.</para>
-    </summary>
+    <summary>Fill the triangles formed by the vertices. Adjacent vertices are not drawn.</summary>
   </member>
 </doc>

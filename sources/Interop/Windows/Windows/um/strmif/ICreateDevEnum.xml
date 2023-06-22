@@ -2,14 +2,104 @@
 <!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
+  <member name="ICreateDevEnum.CreateClassEnumerator">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>The <b>CreateClassEnumerator</b> method creates an enumerator for a specified device category.</para>
+    </summary>
+    <param name="clsidDeviceClass">Specifies the class identifier (CLSID) of the device category. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/filter-categories">Filter Categories</a>.</param>
+    <param name="ppEnumMoniker">Receives a pointer to the <see cref="IEnumMoniker" /> interface. The caller must release the interface.</param>
+    <param name="dwFlags">
+      <para>Bitwise combination of zero or more flags. If zero, the method enumerates every filter in the category. If any flags are set, the enumeration includes only filters that match the specified flags. The following flags are defined:</para>
+      <list type="table">
+        <listheader>
+          <description>Flag</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>CDEF_DEVMON_CMGR_DEVICE</description>
+          <description>Enumerate audio or video codecs, using the audio compression manager (ACM) or video compression manager (VCM).</description>
+        </listheader>
+        <listheader>
+          <description>CDEF_DEVMON_DMO</description>
+          <description>Enumerate DirectX Media Objects (DMOs).</description>
+        </listheader>
+        <listheader>
+          <description>CDEF_DEVMON_FILTER</description>
+          <description>Enumerate native DirectShow filters.</description>
+        </listheader>
+        <listheader>
+          <description>CDEF_DEVMON_PNP_DEVICE</description>
+          <description>Enumerate Plug and Play hardware devices.</description>
+        </listheader>
+      </list>
+    </param>
+    <returns>
+      <para>Returns one of the following <b>HRESULT</b> values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Out of memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The category specified by <i>clsidDeviceClass</i> does not exist or is empty.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
   <member name="ICreateDevEnum">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>ICreateDevEnum</b> interface creates an enumerator for a category of filters, such as video capture devices or audio capture devices. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/system-device-enumerator">System Device Enumerator</a> exposes this interface.</para>
       <para>Applications can use this interface to enumerate filters within a category. The <see cref="CreateClassEnumerator" /> method returns an enumerator object for a specific filter category. The enumerator object supports the <see cref="IEnumMoniker" /> interface and returns a list of monikers, where each moniker represents a filter.</para>
       <para>In some cases, the same DirectShow filter manages an entire category of hardware devices. In that case, the moniker represents the device, and the moniker is used to initialize the filter. The application can treat each device as a separate filter, regardless of the underlying implementation.</para>
       <para>For more information on using this interface, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-system-device-enumerator">Using the System Device Enumerator</a>.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/interfaces">Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-system-device-enumerator">Using the System Device Enumerator</seealso>
   </member>
 </doc>

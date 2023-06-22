@@ -3,17 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT">
-    <summary>
-      <para>Provides detail about whether a DirectML device supports a particular data type within tensors. See <see cref="IDMLDevice.CheckFeatureSupport" />. The query type is <see cref="DML_FEATURE_QUERY_TENSOR_DATA_TYPE_SUPPORT" />, and
-the support data type is <b>DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT</b>.</para>
-    </summary>
-    <seealso cref="IDMLDevice.CheckFeatureSupport" />
+    <summary>Provides detail about whether a DirectML device supports a particular data type within tensors. See <see cref="IDMLDevice.CheckFeatureSupport" />. The query type is <see cref="DML_FEATURE_QUERY_TENSOR_DATA_TYPE_SUPPORT" />, and the support data type is <b>DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT</b>.</summary>
   </member>
   <member name="DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT.IsSupported">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>
-        <b>TRUE</b> if the tensor data type is supported within tensors by the DirectML device. Otherwise, <b>FALSE</b>.</para>
-    </summary>
+      <b>TRUE</b> if the tensor data type is supported within tensors by the DirectML device. Otherwise, <b>FALSE</b>.</summary>
   </member>
 </doc>

@@ -3,32 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="XAUDIO2_EFFECT_DESCRIPTOR">
-    <summary>
-      <para>Contains information about an <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xapo-overview">XAPO</a> for use in an effect chain.</para>
-    </summary>
-    <remarks>
-      <para>XAPO instances are passed to XAudio2 as <b>IUnknown</b> interfaces and XAudio2 uses <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ee418457(v=vs.85)">IXAPO.QueryInterface</a> to acquire an <see cref="IXAPO" /> interface and to detect whether the XAPO implements the <see cref="IXAPOParameters" /> interface.</para>
-      <para>For additional information on using XAPOs with XAudio2 see <a href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--create-an-effect-chain">How to: Create an Effect Chain</a> and <a href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--use-an-xapo-in-xaudio2">How to: Use an XAPO in XAudio2</a>.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xapo-overview">XAPO Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/structures">XAudio2 Structures</seealso>
-    <seealso cref="XAudio2_Effect_Chain" />
+    <summary>Contains information about an <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xapo-overview">XAPO</a> for use in an effect chain.</summary>
   </member>
   <member name="XAUDIO2_EFFECT_DESCRIPTOR.pEffect">
-    <summary>
-      <para>Pointer to the <b>IUnknown</b> interface of the <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xapo-overview">XAPO</a> object.</para>
-    </summary>
+    <summary>Pointer to the <b>IUnknown</b> interface of the <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xapo-overview">XAPO</a> object.</summary>
   </member>
   <member name="XAUDIO2_EFFECT_DESCRIPTOR.InitialState">
-    <summary>
-      <para>TRUE if the effect should begin in the enabled state. Otherwise, FALSE.</para>
-    </summary>
+    <summary>TRUE if the effect should begin in the enabled state. Otherwise, FALSE.</summary>
   </member>
   <member name="XAUDIO2_EFFECT_DESCRIPTOR.OutputChannels">
-    <summary>
-      <para>Number of output channels the effect should produce.</para>
-    </summary>
+    <summary>Number of output channels the effect should produce.</summary>
   </member>
 </doc>

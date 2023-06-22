@@ -3,25 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_INFO_QUEUE_FILTER">
-    <summary>
-      <para>Debug message filter; contains a lists of message types to allow or deny.</para>
-    </summary>
-    <remarks>
-      <para>For use with an <see cref="ID3D11InfoQueue Interface" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-structures">Core Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-layer-structures">Layer Structures</seealso>
+    <summary>Debug message filter; contains a lists of message types to allow or deny.</summary>
   </member>
   <member name="D3D11_INFO_QUEUE_FILTER.AllowList">
-    <summary>
-      <para>Type: <b><see cref="D3D11_INFO_QUEUE_FILTER_DESC" /></b></para>
-      <para>Types of messages that you want to allow. See <see cref="D3D11_INFO_QUEUE_FILTER_DESC" />.</para>
-    </summary>
+    <summary>Types of messages that you want to allow. See <see cref="D3D11_INFO_QUEUE_FILTER_DESC" />.</summary>
   </member>
   <member name="D3D11_INFO_QUEUE_FILTER.DenyList">
-    <summary>
-      <para>Type: <b><see cref="D3D11_INFO_QUEUE_FILTER_DESC" /></b></para>
-      <para>Types of messages that you want to deny.</para>
-    </summary>
+    <summary>Types of messages that you want to deny.</summary>
   </member>
 </doc>

@@ -3,28 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="APPCATEGORYINFO">
-    <summary>
-      <para>Provides application category information to Add/Remove Programs in Control Panel. The <see cref="APPCATEGORYINFOLIST" /> structure is used create a complete list of categories for an application publisher.</para>
-    </summary>
-    <seealso cref="APPCATEGORYINFOLIST" />
-    <seealso cref="IAppPublisher.GetCategories" />
+    <summary>Provides application category information to Add/Remove Programs in Control Panel. The <see cref="APPCATEGORYINFOLIST" /> structure is used create a complete list of categories for an application publisher.</summary>
   </member>
   <member name="APPCATEGORYINFO.Locale">
-    <summary>
-      <para>Type: <b>LCID</b></para>
-      <para>Unused.</para>
-    </summary>
+    <summary>Unused.</summary>
   </member>
   <member name="APPCATEGORYINFO.pszDescription">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>A pointer to a string containing the display name of the category. This string displays in the <b>Category</b> list in Add/Remove Programs. This string buffer must be allocated using <see cref="CoTaskMemAlloc" /> and freed using <see cref="CoTaskMemFree" />.</para>
-    </summary>
+    <summary>A pointer to a string containing the display name of the category. This string displays in the <b>Category</b> list in Add/Remove Programs. This string buffer must be allocated using <see cref="CoTaskMemAlloc" /> and freed using <see cref="CoTaskMemFree" />.</summary>
   </member>
   <member name="APPCATEGORYINFO.AppCategoryId">
-    <summary>
-      <para>Type: <b>GUID</b></para>
-      <para>A GUID identifying the application category.</para>
-    </summary>
+    <summary>A GUID identifying the application category.</summary>
   </member>
 </doc>

@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="eAVEncAdaptiveMode">
-    <summary>
-      <para>Specifies the adaptive encoding mode for a video encoder.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies the adaptive encoding mode for a video encoder.</summary>
   </member>
   <member name="eAVEncAdaptiveMode.eAVEncAdaptiveMode_None">
-    <summary>
-      <para>Do not perform adaptive encoding.</para>
-    </summary>
+    <summary>Do not perform adaptive encoding.</summary>
   </member>
   <member name="eAVEncAdaptiveMode.eAVEncAdaptiveMode_Resolution">
-    <summary>
-      <para>Adaptively change the frame resolution.</para>
-    </summary>
+    <summary>Adaptively change the frame resolution.</summary>
   </member>
   <member name="eAVEncAdaptiveMode.eAVEncAdaptiveMode_FrameRate">
-    <summary>
-      <para>Adaptively change the frame rate.</para>
-    </summary>
+    <summary>Adaptively change the frame rate.</summary>
   </member>
 </doc>

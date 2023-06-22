@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Color.Color">
+    <summary>Creates a <b>Color.Color</b> object by using an<b>ARGB</b> value.</summary>
+    <param name="argb">Value that specifies the alpha, red, green, and blue color components.</param>
+  </member>
+  <member name="Color.Color">
+    <summary>Creates a <b>Color.Color</b> object by using specified values for the red, green, and blue components. This constructor sets the alpha component to 255 (opaque).</summary>
+    <param name="r">Byte that specifies the red component.</param>
+    <param name="g">Byte that specifies the green component.</param>
+    <param name="b">Byte that specifies the blue component.</param>
+  </member>
+  <member name="Color.Color">
+    <summary>Creates a <b>Color.Color</b> object by using specified values for the alpha, red, green, and blue components.</summary>
+    <param name="a">Byte that specifies the alpha component.</param>
+    <param name="r">Byte that specifies the red component.</param>
+    <param name="g">Byte that specifies the green component.</param>
+    <param name="b">Byte that specifies the blue component.</param>
+  </member>
+  <member name="Color.Color">
+    <summary>Creates a <b>Color.Color</b> object and initializes it to opaque black. This is the default constructor.</summary>
+  </member>
+  <member name="Color.GetA">
+    <summary>The <b>Color.GetA</b> method gets the alpha component of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object.</summary>
+    <returns>This method returns the alpha component of this color.</returns>
+  </member>
+  <member name="Color.GetAlpha">
+    <summary>The <b>Color.GetAlpha</b> method gets the alpha component of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object.</summary>
+    <returns>This method returns the alpha component of this color.</returns>
+  </member>
+  <member name="Color.GetB">
+    <summary>The <b>Color.GetB</b> method gets the blue component of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object.</summary>
+    <returns>This method returns the blue component of this color.</returns>
+  </member>
+  <member name="Color.GetBlue">
+    <summary>The <b>Color.GetBlue</b> method gets the blue component of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object.</summary>
+    <returns>This method returns the blue component of this color.</returns>
+  </member>
+  <member name="Color.GetG">
+    <summary>The <b>Color.GetG</b> method gets the green component of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object.</summary>
+    <returns>This method returns the green component of this color.</returns>
+  </member>
+  <member name="Color.GetGreen">
+    <summary>The <b>Color.GetGreen</b> method gets the green component of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object.</summary>
+    <returns>This method returns the green component of this color.</returns>
+  </member>
+  <member name="Color.GetR">
+    <summary>The <b>Color.GetR</b> method gets the red component of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object.</summary>
+    <returns>This method returns the red component of this color.</returns>
+  </member>
+  <member name="Color.GetRed">
+    <summary>The <b>Color.GetRed</b> method gets the red component of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object.</summary>
+    <returns>This method returns the red component of this color.</returns>
+  </member>
+  <member name="Color.GetValue">
+    <summary>The <b>Color.GetValue</b> method gets the <b>ARGB</b> value of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object.</summary>
+    <returns>This method returns a 32-bit <b>ARGB</b> value that holds the alpha, red, green, and blue components of this color. <b>ARGB</b> is defined in Gdipluspixelformats.h.</returns>
+  </member>
+  <member name="Color.MakeARGB">
+    <summary>The <b>Color.MakeARGB</b> method creates a 32-bit value that consolidates the specified alpha, red, green, and blue components.</summary>
+    <param name="a">Byte that specifies the alpha component.</param>
+    <param name="r">Byte that specifies the red component.</param>
+    <param name="g">Byte that specifies the green component.</param>
+    <param name="b">Byte that specifies the blue component.</param>
+    <returns>This method returns an <b>ARGB</b> value that holds the specified alpha, red, green, and blue components.</returns>
+  </member>
+  <member name="Color.SetFromCOLORREF">
+    <summary>The <b>Color.SetFromCOLORREF</b> method uses a Windows Graphics Device Interface (GDI)<b>COLORREF</b> value to set the <b>ARGB</b> value of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object.</summary>
+    <param name="rgb">GDI <b>COLORREF</b> value that specifies the red, green, and blue components of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object's <b>ARGB</b> value. The default value of the alpha component for this <b>Color</b> object is 255.</param>
+  </member>
+  <member name="Color.SetValue">
+    <summary>The <b>Color.SetValue</b> method sets the color of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object.</summary>
+    <param name="argb">Thirty-two bit <b>ARGB</b> value that specifies the color. An <b>ARGB</b> value consolidates the alpha, red, green, and blue components of a color. <b>ARGB</b> is defined in Gdipluspixelformats.h.</param>
+  </member>
+  <member name="Color.ToCOLORREF">
+    <summary>The <b>Color.ToCOLORREF</b> method converts this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object's <b>ARGB</b> value to a Windows Graphics Device Interface (GDI)<b>COLORREF</b> value.</summary>
+    <returns>This method returns a GDI <b>COLORREF</b> value that has the same red, green, and blue components as this color's <b>ARGB</b> value.</returns>
+  </member>
+</doc>

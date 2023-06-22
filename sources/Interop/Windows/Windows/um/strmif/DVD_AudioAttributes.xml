@@ -4,56 +4,36 @@
 <doc>
   <member name="DVD_AudioAttributes">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>DVD_AudioAttributes</code> structure is used in <see cref="IDvdInfo2.GetAudioAttributes" /> to receive the various audio attributes of the disc.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="DVD_AudioAttributes.AppMode">
-    <summary>
-      <para>Indicates the current audio mode. If the mode returned is DVD_AudioMode_Karaoke, call <see cref="IDvdInfo2.GetKaraokeAttributes" /> to get more info.</para>
-    </summary>
+    <summary>Indicates the current audio mode. If the mode returned is DVD_AudioMode_Karaoke, call <see cref="IDvdInfo2.GetKaraokeAttributes" /> to get more info.</summary>
   </member>
-  <member name="DVD_AudioAttributes.AppModeData">
-    <summary></summary>
-  </member>
+  <member name="DVD_AudioAttributes.AppModeData"></member>
   <member name="DVD_AudioAttributes.AudioFormat">
-    <summary>
-      <para>Describes the format (encoding mode) of the audio stream.</para>
-    </summary>
+    <summary>Describes the format (encoding mode) of the audio stream.</summary>
   </member>
   <member name="DVD_AudioAttributes.Language">
-    <summary>
-      <para>An <b>LCID</b> value indicating the language of the audio stream. Is zero if no language is present.</para>
-    </summary>
+    <summary>An <b>LCID</b> value indicating the language of the audio stream. Is zero if no language is present.</summary>
   </member>
   <member name="DVD_AudioAttributes.LanguageExtension">
-    <summary>
-      <para>A <see cref="DVD_AUDIO_LANG_EXT" /> enumeration that will be filled in if any information is available on the disc.</para>
-    </summary>
+    <summary>A <see cref="DVD_AUDIO_LANG_EXT" /> enumeration that will be filled in if any information is available on the disc.</summary>
   </member>
   <member name="DVD_AudioAttributes.fHasMultichannelInfo">
-    <summary>
-      <para>Indicates whether multichannel attributes are present. If <b>TRUE</b>, it means there is additional mixing information available, such as for SurroundSound. Call <see cref="IDvdInfo2.GetTitleAttributes" /> to retrieve the multichannel information.</para>
-    </summary>
+    <summary>Indicates whether multichannel attributes are present. If <b>TRUE</b>, it means there is additional mixing information available, such as for SurroundSound. Call <see cref="IDvdInfo2.GetTitleAttributes" /> to retrieve the multichannel information.</summary>
   </member>
   <member name="DVD_AudioAttributes.dwFrequency">
-    <summary>
-      <para>The frequency in hertz (48k, 96k) of the audio stream.</para>
-    </summary>
+    <summary>The frequency in hertz (48k, 96k) of the audio stream.</summary>
   </member>
   <member name="DVD_AudioAttributes.bQuantization">
-    <summary>
-      <para>The resolution of the audio stream (16, 20, 24 bits, or other) Zero indicates the resolution is unknown.</para>
-    </summary>
+    <summary>The resolution of the audio stream (16, 20, 24 bits, or other) Zero indicates the resolution is unknown.</summary>
   </member>
   <member name="DVD_AudioAttributes.bNumberOfChannels">
-    <summary>
-      <para>The number of channels. For example, 5.1 Dolby AC-3 has six channels.</para>
-    </summary>
+    <summary>The number of channels. For example, 5.1 Dolby AC-3 has six channels.</summary>
   </member>
   <member name="DVD_AudioAttributes.dwReserved">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
 </doc>

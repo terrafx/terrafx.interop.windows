@@ -3,27 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SOCKADDR_IN6_PAIR">
-    <summary>
-      <para>The <b>SOCKADDR_IN6_PAIR</b> structure contains pointers to a pair of IP addresses that represent a source and destination address pair.</para>
-    </summary>
-    <remarks>
-      <para>The <b>SOCKADDR_IN6_PAIR</b> structure is defined on Windows Vista and later.</para>
-      <para>Any IPv4 addresses in the <b>SOCKADDR_IN6_PAIR</b> structure must be represented in the IPv4-mapped IPv6 address format which enables an IPv6 only application to communicate with an IPv4 node. For more information on the IPv4-mapped IPv6 address format, see <a href="https://docs.microsoft.com//windows/desktop/WinSock/dual-stack-sockets">Dual-Stack Sockets</a>.</para>
-      <para>The <b>SOCKADDR_IN6_PAIR</b> structure is used by the <see cref="CreateSortedAddressPairs" /> function.</para>
-      <para>Note that the <i>Ws2ipdef.h</i> header file is automatically included in <i>Ws2tcpip.h</i> header file, and should never be used directly.</para>
-    </remarks>
-    <seealso cref="CreateSortedAddressPairs" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/dual-stack-sockets">Dual-Stack Sockets</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">sockaddr</seealso>
+    <summary>The <b>SOCKADDR_IN6_PAIR</b> structure contains pointers to a pair of IP addresses that represent a source and destination address pair.</summary>
   </member>
   <member name="SOCKADDR_IN6_PAIR.SourceAddress">
-    <summary>
-      <para>A pointer to an IP source address represented as a <a href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">SOCKADDR_IN6</a> structure. The address family is in host byte order and the IPv6 address, port, flow information, and zone ID are  in network byte order.</para>
-    </summary>
+    <summary>A pointer to an IP source address represented as a <a href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">SOCKADDR_IN6</a> structure. The address family is in host byte order and the IPv6 address, port, flow information, and zone ID are in network byte order.</summary>
   </member>
   <member name="SOCKADDR_IN6_PAIR.DestinationAddress">
-    <summary>
-      <para>A pointer to an IP source address represented as a <a href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">SOCKADDR_IN6</a> structure. The address family is in host byte order and the IPv6 address, port, flow information, and zone ID are  in network byte order.</para>
-    </summary>
+    <summary>A pointer to an IP source address represented as a <a href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">SOCKADDR_IN6</a> structure. The address family is in host byte order and the IPv6 address, port, flow information, and zone ID are in network byte order.</summary>
   </member>
 </doc>

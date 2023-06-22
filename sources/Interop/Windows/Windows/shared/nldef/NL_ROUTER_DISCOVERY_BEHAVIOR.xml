@@ -3,35 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NL_ROUTER_DISCOVERY_BEHAVIOR">
-    <summary>
-      <para>The NL_ROUTER_DISCOVERY_BEHAVIOR enumeration type defines the router discovery behavior, as described
-in RFC 2461.</para>
-    </summary>
-    <remarks>
-      <para>For more information about RFC 2461, see the
-<a href="https://www.ietf.org/rfc/rfc2461.txt">Neighbor Discovery for IP Version 6
-(IPv6)</a> memo by the Network Working Group.</para>
-    </remarks>
+    <summary>The NL_ROUTER_DISCOVERY_BEHAVIOR enumeration type defines the router discovery behavior, as described in RFC 2461.</summary>
   </member>
   <member name="NL_ROUTER_DISCOVERY_BEHAVIOR.RouterDiscoveryDisabled">
-    <summary>
-      <para>Router discovery is disabled.</para>
-    </summary>
+    <summary>Router discovery is disabled.</summary>
   </member>
   <member name="NL_ROUTER_DISCOVERY_BEHAVIOR.RouterDiscoveryEnabled">
-    <summary>
-      <para>Router discovery is enabled. This setting is the default value for IPv6.</para>
-    </summary>
+    <summary>Router discovery is enabled. This setting is the default value for IPv6.</summary>
   </member>
   <member name="NL_ROUTER_DISCOVERY_BEHAVIOR.RouterDiscoveryDhcp">
-    <summary>
-      <para>Router discovery is configured based on DHCP. This setting is the default value for IPv4.</para>
-    </summary>
+    <summary>Router discovery is configured based on DHCP. This setting is the default value for IPv4.</summary>
   </member>
   <member name="NL_ROUTER_DISCOVERY_BEHAVIOR.RouterDiscoveryUnchanged">
-    <summary>
-      <para>When the properties of an IP interface are being set, the value for router discovery should be
-unchanged.</para>
-    </summary>
+    <summary>When the properties of an IP interface are being set, the value for router discovery should be unchanged.</summary>
   </member>
 </doc>

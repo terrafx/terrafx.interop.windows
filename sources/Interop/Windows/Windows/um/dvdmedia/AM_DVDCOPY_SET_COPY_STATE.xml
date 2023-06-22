@@ -4,18 +4,11 @@
 <doc>
   <member name="AM_DVDCOPY_SET_COPY_STATE">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies the copy protection state of the filter.</para>
     </summary>
-    <remarks>
-      <para>Both the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ikspropertyset-get">IKsPropertySet.Get</a> and <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ikspropertyset-set">IKsPropertySet.Set</a> methods are supported on this property. The Get method is called first to determine if authentication is required. If a filter provides multiple pins that use the same authenticator, such as a hardware DVD decoder, the decoder might respond with <b>AM_DVDCOPYSTATE_AUTHENTICATION_NOT_REQUIRED</b> on some pins to indicate that the key exchange algorithm only needs to be applied once. The filter should respond with <b>AM_DVDCOPYSTATE_AUTHENTICATION_REQUIRED</b> to get the copy protection state property on the first pin where this property is issued.</para>
-      <para>The Set method is used to indicate which phase of copy protection negotiation the filter is entering. Specify these by setting the required flag in the <see cref="AM_DVDCOPYSTATE" /> enumerated type.</para>
-      <para>The AM_PROPERTY_DVDCOPY_SET_COPY_STATE property uses this structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-copy-protection-property-set">DVD Copy Protection Property Set</seealso>
   </member>
   <member name="AM_DVDCOPY_SET_COPY_STATE.DVDCopyState">
-    <summary>
-      <para>Copy protection state of the filter. Member of the <see cref="AM_DVDCOPYSTATE" /> enumerated data type.</para>
-    </summary>
+    <summary>Copy protection state of the filter. Member of the <see cref="AM_DVDCOPYSTATE" /> enumerated data type.</summary>
   </member>
 </doc>

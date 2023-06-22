@@ -3,20 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxManifestReader6.GetIsNonQualifiedResourcePackage">
-    <summary>
-      <para>Queries whether an app package is a non-qualified resource package.</para>
-    </summary>
-    <param name="isNonQualifiedResourcePackage">
-      <para>True if the package is a non-qualified resource package, False otherwise.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxManifestReader6" />
+    <summary>Queries whether an app package is a non-qualified resource package.</summary>
+    <param name="isNonQualifiedResourcePackage">True if the package is a non-qualified resource package, False otherwise.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxManifestReader6">
-    <summary>
-      <para>Represents an object model of the package manifest that provides methods to access manifest elements and attributes.</para>
-    </summary>
+    <summary>Represents an object model of the package manifest that provides methods to access manifest elements and attributes.</summary>
   </member>
 </doc>

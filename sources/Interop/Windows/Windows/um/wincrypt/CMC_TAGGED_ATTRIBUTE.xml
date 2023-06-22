@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CMC_TAGGED_ATTRIBUTE">
-    <summary>
-      <para>The <b>CMC_TAGGED_ATTRIBUTE</b> structure is used in the
-<see cref="CMC_DATA_INFO" /> and
-<see cref="CMC_RESPONSE_INFO" /> structures.</para>
-    </summary>
+    <summary>The <b>CMC_TAGGED_ATTRIBUTE</b> structure is used in the<see cref="CMC_DATA_INFO" /> and<see cref="CMC_RESPONSE_INFO" /> structures.</summary>
   </member>
   <member name="CMC_TAGGED_ATTRIBUTE.dwBodyPartID">
-    <summary>
-      <para>A <b>DWORD</b> value that identifies the tagged attribute.</para>
-    </summary>
+    <summary>A <b>DWORD</b> value that identifies the tagged attribute.</summary>
   </member>
   <member name="CMC_TAGGED_ATTRIBUTE.Attribute">
-    <summary>
-      <para>A <see cref="CRYPT_ATTRIBUTE" /> structure that contains the attribute.</para>
-    </summary>
+    <summary>A <see cref="CRYPT_ATTRIBUTE" /> structure that contains the attribute.</summary>
   </member>
 </doc>

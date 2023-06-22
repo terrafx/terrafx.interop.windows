@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SCNRT_STATUS">
-    <summary>
-      <para>Indicates whether to enable or disable Async Register and Deregister for <see cref="SHChangeNotifyRegisterThread" />.</para>
-    </summary>
-    <seealso cref="SHChangeNotifyRegisterThread" />
+    <summary>Indicates whether to enable or disable Async Register and Deregister for <see cref="SHChangeNotifyRegisterThread" />.</summary>
   </member>
   <member name="SCNRT_STATUS.SCNRT_ENABLE">
-    <summary>
-      <para>Enable Async Register and Deregister for <see cref="SHChangeNotifyRegisterThread" />.</para>
-    </summary>
+    <summary>Enable Async Register and Deregister for <see cref="SHChangeNotifyRegisterThread" />.</summary>
   </member>
   <member name="SCNRT_STATUS.SCNRT_DISABLE">
-    <summary>
-      <para>Disable Async Register and Deregister for <see cref="SHChangeNotifyRegisterThread" />.</para>
-    </summary>
+    <summary>Disable Async Register and Deregister for <see cref="SHChangeNotifyRegisterThread" />.</summary>
   </member>
 </doc>

@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LinearGradientBrush.GetBlend">
+    <summary>The <b>LinearGradientBrush.GetBlend</b> method gets the blend factors and their corresponding blend positions from a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-lineargradientbrush">LinearGradientBrush</a> object.</summary>
+    <param name="blendFactors">Pointer to an array that receives the blend factors. Each number in the array indicates a percentage of the ending color and is in the range from 0.0 through 1.0.</param>
+    <param name="blendPositions">Pointer to an array that receives the blend positions. Each number in the array indicates a percentage of the distance between the starting boundary and the ending boundary and is in the range from 0.0 through 1.0, where 0.0 indicates the starting boundary of the gradient and 1.0 indicates the ending boundary. A blend position between 0.0 and 1.0 indicates a line, parallel to the boundary lines, that is a certain fraction of the distance from the starting boundary to the ending boundary. For example, a blend position of 0.7 indicates the line that is 70 percent of the distance from the starting boundary to the ending boundary. The color is constant on lines that are parallel to the boundary lines.</param>
+    <param name="count">Integer that specifies the number of blend factors to retrieve. Before calling the <b>LinearGradientBrush.GetBlend</b> method of a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-lineargradientbrush">LinearGradientBrush</a> object, call the <see cref="LinearGradientBrush.GetBlendCount" /> method of that same<b>LinearGradientBrush</b> object to determine the current number of blend factors. The number of blend positions retrieved is the same as the number of blend factors retrieved.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="LinearGradientBrush.GetBlendCount">
+    <summary>The <b>LinearGradientBrush.GetBlendCount</b> method gets the number of blend factors currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-lineargradientbrush">LinearGradientBrush</a> object.</summary>
+    <returns>This method returns the number of blend factors currently set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-lineargradientbrush">LinearGradientBrush</a> object. If no custom blend has been set by using <see cref="LinearGradientBrush.SetBlend" />, or if invalid positions were passed to <b>LinearGradientBrush.SetBlend</b>, then <see cref="LinearGradientBrush.GetBlend" /> returns 1.</returns>
+  </member>
+  <member name="LinearGradientBrush.GetGammaCorrection">
+    <summary>The <b>LinearGradientBrush.GetGammaCorrection</b> method determines whether gamma correction is enabled for this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-lineargradientbrush">LinearGradientBrush</a> object.</summary>
+    <returns>If gamma correction is enabled, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="LinearGradientBrush.GetInterpolationColorCount">
+    <summary>The <b>LinearGradientBrush.GetInterpolationColorCount</b> method gets the number of colors currently set to be interpolated for this linear gradient brush.</summary>
+    <returns>This method returns the number of colors to be interpolated for this linear gradient brush. If no colors have been set by using <see cref="LinearGradientBrush.SetInterpolationColors" />, or if invalid positions were passed to <b>LinearGradientBrush.SetInterpolationColors</b>, then <b>LinearGradientBrush.GetInterpolationColorCount</b> returns 0.</returns>
+  </member>
+  <member name="LinearGradientBrush.GetInterpolationColors">
+    <summary>The <b>LinearGradientBrush.GetInterpolationColors</b> method gets the colors currently set to be interpolated for this linear gradient brush and their corresponding blend positions.</summary>
+    <param name="presetColors">Pointer to an array that receives the colors. A color of a given index in the<i>presetColors</i> array corresponds to the blend position of that same index in the<i>blendPositions</i> array.</param>
+    <param name="blendPositions">Pointer to an array that receives the blend positions. Each number in the array indicates a percentage of the distance between the starting boundary and the ending boundary and is in the range from 0.0 through 1.0, where 0.0 indicates the starting boundary of the gradient and 1.0 indicates the ending boundary. A blend position between 0.0 and 1.0 indicates a line, parallel to the boundary lines, that is a certain fraction of the distance from the starting boundary to the ending boundary. For example, a blend position of 0.7 indicates the line that is 70 percent of the distance from the starting boundary to the ending boundary. The color is constant on lines that are parallel to the boundary lines.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>presetColors</i> array. This is the same as the number of elements in the<i>blendPositions</i> array. Before calling the <b>LinearGradientBrush.GetInterpolationColors</b> method of a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-lineargradientbrush">LinearGradientBrush</a> object, call the <see cref="LinearGradientBrush.GetInterpolationColorCount" /> method of that same<b>LinearGradientBrush</b> object to determine the current number of colors. The number of blend positions retrieved is the same as the number of colors retrieved.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="LinearGradientBrush.GetLinearColors">
+    <summary>The <b>LinearGradientBrush.GetLinearColors</b> method gets the starting color and ending color of this linear gradient brush.</summary>
+    <param name="colors">Pointer to an array that receives the starting color and the ending color. The first color in the<i>colors</i> array is the color at the starting boundary line of the gradient; the second color in the<i>colors</i> array is the color at the ending boundary line.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="LinearGradientBrush.GetRectangle">
+    <summary>The <b>LinearGradientBrush.GetRectangle</b> method gets the rectangle that defines the boundaries of the gradient.</summary>
+    <param name="rect">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rect">Rect</a> object that receives the rectangle that defines the boundaries of the gradient. For example, if a linear gradient brush is constructed with a starting point at (20, 50) and an ending point at (60, 110), then the defining rectangle has its upper-left point at (20, 50), a width of 40, and a height of 60.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="LinearGradientBrush.GetTransform">
+    <summary>The <b>LinearGradientBrush.GetTransform</b> method gets the transformation matrix of this linear gradient brush.</summary>
+    <param name="matrix">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that receives the transformation matrix.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="LinearGradientBrush.GetWrapMode">
+    <summary>The <b>LinearGradientBrush.GetWrapMode</b> method gets the wrap mode for this brush. The wrap mode determines how an area is tiled when it is painted with a brush.</summary>
+    <returns>
+      <para>This method returns one of the following elements of the <see cref="WrapMode" /> enumeration:</para>
+      <list type="bullet">
+        <item>
+          <description>WrapModeTile</description>
+        </item>
+        <item>
+          <description>WrapModeTileFlipX</description>
+        </item>
+        <item>
+          <description>WrapModeTileFlipY</description>
+        </item>
+        <item>
+          <description>WrapModeTileFlipXY</description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="LinearGradientBrush.LinearGradientBrush">
+    <summary>Creates a <b>LinearGradientBrush.LinearGradientBrush</b> object from a set of boundary points and boundary colors.</summary>
+    <param name="point1">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-point">Point</a> object that specifies the starting point of the gradient. The starting boundary line passes through the starting point.</param>
+    <param name="point2">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-point">Point</a> object that specifies the ending point of the gradient. The ending boundary line passes through the ending point.</param>
+    <param name="color1">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the color at the starting boundary line of this linear gradient brush.</param>
+    <param name="color2">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the color at the ending boundary line of this linear gradient brush.</param>
+  </member>
+  <member name="LinearGradientBrush.LinearGradientBrush">
+    <summary>Creates a <b>LinearGradientBrush.LinearGradientBrush</b> object from a set of boundary points and boundary colors.</summary>
+    <param name="point1">Reference to a <b>Point</b> object that specifies the starting point of the gradient. The starting boundary line passes through the starting point.</param>
+    <param name="point2">Reference to a <b>Point</b> object that specifies the ending point of the gradient. The ending boundary line passes through the ending point.</param>
+    <param name="color1">Reference to a <a href="https://docs.microsoft.com//windows/win32/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the color at the starting boundary line of this linear gradient brush.</param>
+    <param name="color2">Reference to a <a href="https://docs.microsoft.com//windows/win32/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the color at the ending boundary line of this linear gradient brush.</param>
+  </member>
+  <member name="LinearGradientBrush.LinearGradientBrush">
+    <summary>Creates a <b>LinearGradientBrush.LinearGradientBrush</b> object based on a rectangle and mode of direction.</summary>
+    <param name="rect">Reference to a rectangle that specifies the starting and ending points of the gradient. The direction of the gradient, specified by <i>mode</i>, affects how these points are defined. The dimensions of the rectangle affect the direction of the gradient for forward diagonal mode and backward diagonal mode.</param>
+    <param name="color1">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the color at the starting boundary line of this linear gradient brush.</param>
+    <param name="color2">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the color at the ending boundary line of this linear gradient brush.</param>
+    <param name="mode">Element of the <see cref="LinearGradientMode" /> enumeration that specifies the direction of the gradient.</param>
+  </member>
+  <member name="LinearGradientBrush.LinearGradientBrush">
+    <summary>Creates a <b>LinearGradientBrush.LinearGradientBrush</b> object from a rectangle and angle of direction.</summary>
+    <param name="rect">Reference to a rectangle that specifies the starting and ending points of the gradient. The upper-left corner of the rectangle is the starting point. The lower-right corner is the ending point.</param>
+    <param name="color1">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the color at the starting boundary line of this linear gradient brush.</param>
+    <param name="color2">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the color at the ending boundary line of this linear gradient brush.</param>
+    <param name="angle">Real number that, if <i>isAngleScalable</i> is <b>TRUE</b>, specifies the base angle from which the angle of the directional line is calculated, or that, if <i>isAngleScalable</i> is <b>FALSE</b>, specifies the angle of the directional line. The angle is measured from the top of the rectangle that is specified by <i>rect</i> and must be in degrees. The gradient follows the directional line.</param>
+    <param name="isAngleScalable">
+      <b>BOOL</b> value that specifies whether the angle is scalable. If <i>isAngleScalable</i> is <b>TRUE</b>, the angle of the directional line is scalable; otherwise, the angle is not scalable.</param>
+  </member>
+  <member name="LinearGradientBrush.LinearGradientBrush">
+    <summary>Creates a <b>LinearGradientBrush.LinearGradientBrush</b> object based on a rectangle and mode of direction.</summary>
+    <param name="rect">Reference to a rectangle that specifies the starting and ending points of the gradient. The direction of the gradient, specified by <i>mode</i>, affects how these points are defined. The dimensions of the rectangle affect the direction of the gradient for forward diagonal mode and backward diagonal mode.</param>
+    <param name="color1">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the color at the starting boundary line of this linear gradient brush.</param>
+    <param name="color2">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the color at the ending boundary line of this linear gradient brush.</param>
+    <param name="mode">Element of the <see cref="LinearGradientMode" /> enumeration that specifies the direction of the gradient.</param>
+  </member>
+  <member name="LinearGradientBrush.LinearGradientBrush">
+    <summary>Creates a <b>LinearGradientBrush.LinearGradientBrush</b> object from a rectangle and angle of direction.</summary>
+    <param name="rect">Reference to a rectangle that specifies the starting and ending points of the gradient. The upper-left corner of the rectangle is the starting point. The lower-right corner is the ending point.</param>
+    <param name="color1">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the color at the starting boundary line of this linear gradient brush.</param>
+    <param name="color2">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the color at the ending boundary line of this linear gradient brush.</param>
+    <param name="angle">Real number that, if <i>isAngleScalable</i> is <b>TRUE</b>, specifies the base angle from which the angle of the directional line is calculated, or that, if <i>isAngleScalable</i> is <b>FALSE</b>, specifies the angle of the directional line. The angle is measured from the top of the rectangle that is specified by <i>rect</i> and must be in degrees. The gradient follows the directional line.</param>
+    <param name="isAngleScalable">Boolean value that specifies whether the angle is scalable. If <i>isAngleScalable</i> is <b>TRUE</b>, the angle of the directional line is scalable; otherwise, the angle is not scalable.</param>
+  </member>
+  <member name="LinearGradientBrush.MultiplyTransform">
+    <summary>The <b>LinearGradientBrush.MultiplyTransform</b> method updates this brush's transformation matrix with the product of itself and another matrix.</summary>
+    <param name="matrix">Pointer to a matrix to be multiplied by the brush's current transformation matrix.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of the multiplication. MatrixOrderPrepend specifies that the passed matrix is on the left, and MatrixOrderAppend specifies that the passed matrix is on the right. The default value is MatrixOrderPrepend.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="LinearGradientBrush.ResetTransform">
+    <summary>The <b>LinearGradientBrush.ResetTransform</b> method resets the transformation matrix of this linear gradient brush to the identity matrix. This means that no transformation takes place.</summary>
+    <returns>
+      <para>If the method succeeds, it returns OK, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="LinearGradientBrush.RotateTransform">
+    <summary>The <b>LinearGradientBrush.RotateTransform</b> method updates this brush's current transformation matrix with the product of itself and a rotation matrix.</summary>
+    <param name="angle">Real number that specifies the angle of rotation in degrees.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of the multiplication. MatrixOrderPrepend specifies that the rotation matrix is on the left, and MatrixOrderAppend specifies that the rotation matrix is on the right. The default value is MatrixOrderPrepend.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="LinearGradientBrush.ScaleTransform">
+    <summary>The <b>LinearGradientBrush.ScaleTransform</b> method updates this brush's current transformation matrix with the product of itself and a scaling matrix.</summary>
+    <param name="sx">Real number that specifies the amount to scale in the x direction.</param>
+    <param name="sy">Real number that specifies the amount to scale in the y direction.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of the multiplication. MatrixOrderPrepend specifies that the scaling matrix is on the left, and MatrixOrderAppend specifies that the scaling matrix is on the right. The default value is MatrixOrderPrepend.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="LinearGradientBrush.SetBlend">
+    <summary>The <b>LinearGradientBrush.SetBlend</b> method sets the blend factors and the blend positions of this linear gradient brush to create a custom blend.</summary>
+    <param name="blendFactors">Pointer to an array of real numbers that specify blend factors. Each number in the array specifies a percentage of the ending color and should be in the range from 0.0 through 1.0.</param>
+    <param name="blendPositions">Pointer to an array of real numbers that specify blend positions. Each number in the array indicates a percentage of the distance between the starting boundary and the ending boundary and is in the range from 0.0 through 1.0, where 0.0 indicates the starting boundary of the gradient and 1.0 indicates the ending boundary. There must be at least two positions specified: the first position, which is always 0.0f, and the last position, which is always 1.0f. Otherwise, the behavior is undefined. A blend position between 0.0 and 1.0 indicates a line, parallel to the boundary lines, that is a certain fraction of the distance from the starting boundary to the ending boundary. For example, a blend position of 0.7 indicates the line that is 70 percent of the distance from the starting boundary to the ending boundary. The color is constant on lines that are parallel to the boundary lines.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>blendFactors</i> array. This is the same as the number of elements in the<i>blendPositions</i> array. The blend factor at a given array index corresponds to the blend position at that same array index.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="LinearGradientBrush.SetBlendBellShape">
+    <summary>The <b>LinearGradientBrush.SetBlendBellShape</b> method sets the blend shape of this linear gradient brush to create a custom blend based on a bell-shaped curve.</summary>
+    <param name="focus">Real number that specifies the position of the ending color. This number is a percentage of the distance between the boundary lines and must be in the range from 0.0 through 1.0.</param>
+    <param name="scale">Optional. Real number that specifies the percentage of the gradient's ending color that gets blended, at the focus position, with the gradient's starting color. This number must be in the range from 0.0 through 1.0. The default value is 1.0, which specifies that the ending color is at full intensity.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="LinearGradientBrush.SetBlendTriangularShape">
+    <summary>The <b>LinearGradientBrush.SetBlendTriangularShape</b> method sets the blend shape of this linear gradient brush to create a custom blend based on a triangular shape.</summary>
+    <param name="focus">Real number that specifies the position of the ending color. This number is a percentage of the distance between the boundary lines and must be in the range from 0.0 through 1.0.</param>
+    <param name="scale">Optional. Real number that specifies the percentage of the gradient's ending color that gets blended, at the focus position, with the gradient's starting color. This number must be in the range from 0.0 through 1.0. The default value is 1.0, which specifies that the ending color is at full intensity.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="LinearGradientBrush.SetGammaCorrection">
+    <summary>The <b>LinearGradientBrush.SetGammaCorrection</b> method specifies whether gamma correction is enabled for this linear gradient brush.</summary>
+    <param name="useGammaCorrection">Boolean value that specifies whether gamma correction occurs during rendering. <b>TRUE</b> specifies that gamma correction is enabled, and <b>FALSE</b> specifies that gamma correction is not enabled. By default, gamma correction is disabled during construction of a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-lineargradientbrush">LinearGradientBrush</a> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="LinearGradientBrush.SetInterpolationColors">
+    <summary>The <b>LinearGradientBrush.SetInterpolationColors</b> method sets the colors to be interpolated for this linear gradient brush and their corresponding blend positions.</summary>
+    <param name="presetColors">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> objects that specify the colors to be interpolated for this linear gradient brush. A color of a given index in the<i>presetColors</i> array corresponds to the blend position of that same index in the<i>blendPositions</i> array.</param>
+    <param name="blendPositions">Pointer to an array of real numbers that specify the blend positions. Each number in the array specifies a percentage of the distance between the starting boundary and the ending boundary and is in the range from 0.0 through 1.0, where 0.0 indicates the starting boundary of the gradient and 1.0 indicates the ending boundary. There must be at least two positions specified: the first position, which is always 0.0f, and the last position, which is always 1.0f. Otherwise, the behavior is undefined. A blend position between 0.0 and 1.0 indicates the line, parallel to the boundary lines, that is a certain fraction of the distance from the starting boundary to the ending boundary. For example, a blend position of 0.7 indicates the line that is 70 percent of the distance from the starting boundary to the ending boundary. The color is constant on lines that are parallel to the boundary lines.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>presetColors</i> array. This is the same as the number of elements in the<i>blendPositions</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="LinearGradientBrush.SetLinearColors">
+    <summary>The <b>LinearGradientBrush.SetLinearColors</b> method sets the starting color and ending color of this linear gradient brush.</summary>
+    <param name="color1">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the color at the starting boundary line of this linear gradient brush.</param>
+    <param name="color2">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the color at the ending boundary line of this linear gradient brush.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="LinearGradientBrush.SetTransform">
+    <summary>The <b>LinearGradientBrush.SetTransform</b> method sets the transformation matrix of this linear gradient brush.</summary>
+    <param name="matrix">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that specifies the transformation matrix.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="LinearGradientBrush.SetWrapMode">
+    <summary>The <b>LinearGradientBrush.SetWrapMode</b> method sets the wrap mode of this linear gradient brush.</summary>
+    <param name="wrapMode">
+      <para>Element of the <see cref="WrapMode" /> enumeration that specifies how areas painted with this linear gradient brush will be tiled. The value of this parameter must be one of the following elements:</para>
+      <list type="bullet">
+        <item>
+          <description>WrapModeTile</description>
+        </item>
+        <item>
+          <description>WrapModeTileFlipX</description>
+        </item>
+        <item>
+          <description>WrapModeTileFlipY</description>
+        </item>
+        <item>
+          <description>WrapModeTileFlipXY</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="LinearGradientBrush.TranslateTransform">
+    <summary>The <b>LinearGradientBrush.TranslateTransform</b> method updates this brush's current transformation matrix with the product of itself and a translation matrix.</summary>
+    <param name="dx">Real number that specifies the horizontal component of the translation.</param>
+    <param name="dy">Real number that specifies the vertical component of the translation.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of the multiplication. MatrixOrderPrepend specifies that the translation matrix is on the left, and MatrixOrderAppend specifies that the translation matrix is on the right. The default value is MatrixOrderPrepend.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+</doc>

@@ -3,285 +3,120 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1PathGeometry1.ComputePointAndSegmentAtLength">
-    <summary>
-      <para>Computes the point that exists at a given distance along the path geometry along with the index of the segment
-the point is on and the directional vector at that point.</para>
-    </summary>
-    <param name="length">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The distance to walk along the path.</para>
-    </param>
-    <param name="startSegment">
-      <para>Type: <b>UINT32</b></para>
-      <para>The index of the segment at which to begin walking. Note: This index is global to the entire path, not just a particular figure.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to the path prior to walking.</para>
-    </param>
-    <param name="pointDescription">
-      <para>Type: <b><see cref="D2D1_POINT_DESCRIPTION" />*</b></para>
-      <para>When this method returns, contains a description of the point that can be found at the given location.</para>
-    </param>
+    <summary>Computes the point that exists at a given distance along the path geometry along with the index of the segment the point is on and the directional vector at that point.</summary>
+    <param name="length">The distance to walk along the path.</param>
+    <param name="startSegment">The index of the segment at which to begin walking. Note: This index is global to the entire path, not just a particular figure.</param>
+    <param name="worldTransform">The transform to apply to the path prior to walking.</param>
+    <param name="pointDescription">When this method returns, contains a description of the point that can be found at the given location.</param>
     <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>One of the inputs was in an invalid range.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1PathGeometry1" />
   </member>
   <member name="ID2D1PathGeometry1.ComputePointAndSegmentAtLength">
-    <summary>
-      <para>Computes the point that exists at a given distance along the path geometry along with the index of the segment
-the point is on and the directional vector at that point.</para>
-    </summary>
-    <param name="length">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The distance to walk along the path.</para>
-    </param>
-    <param name="startSegment">
-      <para>Type: <b>UINT</b></para>
-      <para>The index of the segment at which to begin walking. Note: This index is global to the entire path, not just a particular figure.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to the path prior to walking.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The flattening tolerance to use when walking along an arc or Bezier segment. The flattening tolerance is the maximum
-error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge
-from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="pointDescription">
-      <para>Type: <b><see cref="D2D1_POINT_DESCRIPTION" />*</b></para>
-      <para>When this method returns, contains a description of the point that can be found at the given location.</para>
-    </param>
+    <summary>Computes the point that exists at a given distance along the path geometry along with the index of the segment the point is on and the directional vector at that point.</summary>
+    <param name="length">The distance to walk along the path.</param>
+    <param name="startSegment">The index of the segment at which to begin walking. Note: This index is global to the entire path, not just a particular figure.</param>
+    <param name="worldTransform">The transform to apply to the path prior to walking.</param>
+    <param name="flatteningTolerance">The flattening tolerance to use when walking along an arc or Bezier segment. The flattening tolerance is the maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="pointDescription">When this method returns, contains a description of the point that can be found at the given location.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>One of the inputs was in an invalid range.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A <i>length</i> that is less than 0 or is not a number is treated as if it were 0.</para>
-      <para>If <i>length</i> is greater than the total length of the path, then the end point of the path is returned.</para>
-      <h3>Example Illustration</h3>
-      <para>Consider this example that explains the value of different parameters returned for the given path geometry.</para>
-      <para>
-        <img alt="A diagram of a path geometry and its lengths." src="https://docs.microsoft.com/windows/win32/api/d2d1_1mages/computepointandsegmentatlength.png" />
-      </para>
-      <para>Here are two different scenarios.</para>
-      <h3>You want to retrieve the segment at a length L2</h3>
-      <para>You call ComputePointAndSegmentAtLength(Length = L2, startSegment =0). The API returns the following:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="D2D1_POINT_DESCRIPTION.point" />  = p2.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="D2D1_POINT_DESCRIPTION.endSegment " />= 3 (segment DE). This is the value you want.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="D2D1_POINT_DESCRIPTION.lengthToEndSegment" /> = length (AD).
-</description>
-        </item>
-      </list>
-      <h3>You wants to improve the performance of calculating a point at a given length for animating along a path</h3>
-      <para>Normally, the time intervals would be small and regular, resulting in many animation points per segment. For the purposes of demonstration, however, we will assume the you query ComputePointAndSegmentAtLength three times, with irregularly-spaced lengths L1, L2, L3:</para>
-      <para>You call ComputePointAndSegmentAtLength(Length = L1, startSegment = 0). The API returns the following:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="D2D1_POINT_DESCRIPTION.point" />  = P1.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="D2D1_POINT_DESCRIPTION.endSegment" /> = 1 (segment BC). </description>
-        </item>
-        <item>
-          <description>
-            <see cref="D2D1_POINT_DESCRIPTION.lengthToEndSegment" /> = length (AB).
-</description>
-        </item>
-      </list>
-      <para>You call ComputePointAndSegmentAtLength(Length = L2 - Length(AB), startSegment = 1). The API returns the following:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="D2D1_POINT_DESCRIPTION.point" />  = P2.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="D2D1_POINT_DESCRIPTION.endSegment " />= 3 (segment DE). </description>
-        </item>
-        <item>
-          <description>
-            <see cref="D2D1_POINT_DESCRIPTION.lengthToEndSegment" /> = length (AD).
-</description>
-        </item>
-      </list>
-      <para>You call ComputePointAndSegmentAtLength(= L3-length(AB)-length(BD), startSegment = 3). The API returns the following:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="D2D1_POINT_DESCRIPTION.point" />  = P3.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="D2D1_POINT_DESCRIPTION.endSegment " />= 3 (segment DE). </description>
-        </item>
-        <item>
-          <description>
-            <see cref="D2D1_POINT_DESCRIPTION.lengthToEndSegment" /> =0.
-</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</seealso>
-    <seealso cref="D2D1_POINT_DESCRIPTION" />
-    <seealso cref="ID2D1PathGeometry" />
-    <seealso cref="ID2D1PathGeometry1" />
   </member>
   <member name="ID2D1PathGeometry1.ComputePointAndSegmentAtLength">
-    <summary>
-      <para>Computes the point that exists at a given distance along the path geometry along with the index of the segment
-the point is on and the directional vector at that point.</para>
-    </summary>
-    <param name="length">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The distance to walk along the path.</para>
-    </param>
-    <param name="startSegment">
-      <para>Type: <b>UINT32</b></para>
-      <para>The index of the segment at which to begin walking. Note: This index is global to the entire path, not just a particular figure.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a></b></para>
-      <para>The transform to apply to the path prior to walking.</para>
-    </param>
-    <param name="pointDescription">
-      <para>Type: <b><see cref="D2D1_POINT_DESCRIPTION" />*</b></para>
-      <para>When this method returns, contains a description of the point that can be found at the given location.</para>
-    </param>
+    <summary>Computes the point that exists at a given distance along the path geometry along with the index of the segment the point is on and the directional vector at that point.</summary>
+    <param name="length">The distance to walk along the path.</param>
+    <param name="startSegment">The index of the segment at which to begin walking. Note: This index is global to the entire path, not just a particular figure.</param>
+    <param name="worldTransform">The transform to apply to the path prior to walking.</param>
+    <param name="pointDescription">When this method returns, contains a description of the point that can be found at the given location.</param>
     <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>One of the inputs was in an invalid range.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1PathGeometry1" />
   </member>
   <member name="ID2D1PathGeometry1.ComputePointAndSegmentAtLength">
-    <summary>
-      <para>Computes the point that exists at a given distance along the path geometry along with the index of the segment
-the point is on and the directional vector at that point.</para>
-    </summary>
-    <param name="length">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The distance to walk along the path.</para>
-    </param>
-    <param name="startSegment">
-      <para>Type: <b>UINT32</b></para>
-      <para>The index of the segment at which to begin walking. Note: This index is global to the entire path, not just a particular figure.</para>
-    </param>
-    <param name="worldTransform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a></b></para>
-      <para>The transform to apply to the path prior to walking.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The flattening tolerance to use when walking along an arc or Bezier segment. The flattening tolerance is the maximum
-error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge
-from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</para>
-    </param>
-    <param name="pointDescription">
-      <para>Type: <b><see cref="D2D1_POINT_DESCRIPTION" />*</b></para>
-      <para>When this method returns, contains a description of the point that can be found at the given location.</para>
-    </param>
+    <summary>Computes the point that exists at a given distance along the path geometry along with the index of the segment the point is on and the directional vector at that point.</summary>
+    <param name="length">The distance to walk along the path.</param>
+    <param name="startSegment">The index of the segment at which to begin walking. Note: This index is global to the entire path, not just a particular figure.</param>
+    <param name="worldTransform">The transform to apply to the path prior to walking.</param>
+    <param name="flatteningTolerance">The flattening tolerance to use when walking along an arc or Bezier segment. The flattening tolerance is the maximum error allowed when constructing a polygonal approximation of the geometry. No point in the polygonal representation will diverge from the original geometry by more than the flattening tolerance. Smaller values produce more accurate results but cause slower execution.</param>
+    <param name="pointDescription">When this method returns, contains a description of the point that can be found at the given location.</param>
     <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>One of the inputs was in an invalid range.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1PathGeometry1" />
   </member>
   <member name="ID2D1PathGeometry1">
-    <summary>
-      <para>The <b>ID2D1PathGeometry1</b> interface adds functionality to <see cref="ID2D1PathGeometry" />. In particular, it provides the path geometry-specific <see cref="ComputePointAndSegmentAtLength" /> method.</para>
-    </summary>
-    <remarks>
-      <para>This interface adds functionality to <see cref="ID2D1PathGeometry" />.</para>
-    </remarks>
-    <seealso cref="ID2D1PathGeometry" />
+    <summary>The <b>ID2D1PathGeometry1</b> interface adds functionality to <see cref="ID2D1PathGeometry" />. In particular, it provides the path geometry-specific <see cref="ComputePointAndSegmentAtLength" /> method.</summary>
   </member>
 </doc>

@@ -3,39 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_CAPTURE_ENGINE_STREAM_CATEGORY">
-    <summary>
-      <para>Defines the values for the source stream category.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Defines the values for the source stream category.</summary>
   </member>
   <member name="MF_CAPTURE_ENGINE_STREAM_CATEGORY.MF_CAPTURE_ENGINE_STREAM_CATEGORY_VIDEO_PREVIEW">
-    <summary>
-      <para>Specifies a video preview stream.</para>
-    </summary>
+    <summary>Specifies a video preview stream.</summary>
   </member>
   <member name="MF_CAPTURE_ENGINE_STREAM_CATEGORY.MF_CAPTURE_ENGINE_STREAM_CATEGORY_VIDEO_CAPTURE">
-    <summary>
-      <para>Specifies a video capture stream.</para>
-    </summary>
+    <summary>Specifies a video capture stream.</summary>
   </member>
   <member name="MF_CAPTURE_ENGINE_STREAM_CATEGORY.MF_CAPTURE_ENGINE_STREAM_CATEGORY_PHOTO_INDEPENDENT">
-    <summary>
-      <para>Specifies an independent photo stream.</para>
-    </summary>
+    <summary>Specifies an independent photo stream.</summary>
   </member>
   <member name="MF_CAPTURE_ENGINE_STREAM_CATEGORY.MF_CAPTURE_ENGINE_STREAM_CATEGORY_PHOTO_DEPENDENT">
-    <summary>
-      <para>Specifies a dependent photo stream.</para>
-    </summary>
+    <summary>Specifies a dependent photo stream.</summary>
   </member>
   <member name="MF_CAPTURE_ENGINE_STREAM_CATEGORY.MF_CAPTURE_ENGINE_STREAM_CATEGORY_AUDIO">
-    <summary>
-      <para>Specifies an audio stream.</para>
-    </summary>
+    <summary>Specifies an audio stream.</summary>
   </member>
   <member name="MF_CAPTURE_ENGINE_STREAM_CATEGORY.MF_CAPTURE_ENGINE_STREAM_CATEGORY_UNSUPPORTED">
-    <summary>
-      <para>Specifies an unsupported stream.</para>
-    </summary>
+    <summary>Specifies an unsupported stream.</summary>
   </member>
 </doc>

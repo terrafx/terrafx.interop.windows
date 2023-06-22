@@ -3,25 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_EXECUTION_FLAGS">
-    <summary>
-      <para>Supplies options to DirectML to control execution of operators. These flags can be bitwise OR'd together to specify multiple flags at once.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-binding">Binding in DirectML</seealso>
+    <summary>Supplies options to DirectML to control execution of operators. These flags can be bitwise OR'd together to specify multiple flags at once.</summary>
   </member>
   <member name="DML_EXECUTION_FLAGS.DML_EXECUTION_FLAG_NONE">
-    <summary>
-      <para>No execution flags are specified.</para>
-    </summary>
+    <summary>No execution flags are specified.</summary>
   </member>
   <member name="DML_EXECUTION_FLAGS.DML_EXECUTION_FLAG_ALLOW_HALF_PRECISION_COMPUTATION">
-    <summary>
-      <para>Allows DirectML to perform computation using half-precision floating-point (FP16), if supported by the hardware device.</para>
-    </summary>
+    <summary>Allows DirectML to perform computation using half-precision floating-point (FP16), if supported by the hardware device.</summary>
   </member>
   <member name="DML_EXECUTION_FLAGS.DML_EXECUTION_FLAG_DISABLE_META_COMMANDS">
-    <summary>
-      <para>Forces DirectML execute the operator using DirectCompute instead of meta commands. DirectML uses meta commands by default, if available.</para>
-    </summary>
+    <summary>Forces DirectML execute the operator using DirectCompute instead of meta commands. DirectML uses meta commands by default, if available.</summary>
   </member>
   <member name="DML_EXECUTION_FLAGS.DML_EXECUTION_FLAG_DESCRIPTORS_VOLATILE">
     <summary>

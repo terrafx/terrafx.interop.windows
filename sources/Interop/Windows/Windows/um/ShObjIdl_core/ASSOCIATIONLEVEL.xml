@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ASSOCIATIONLEVEL">
-    <summary>
-      <para>Specifies the source of the default association for a file name extension. Used by methods of the <see cref="IApplicationAssociationRegistration" /> interface.</para>
-    </summary>
-    <seealso cref="HRESULT_FROM_WIN32" />
+    <summary>Specifies the source of the default association for a file name extension. Used by methods of the <see cref="IApplicationAssociationRegistration" /> interface.</summary>
   </member>
   <member name="ASSOCIATIONLEVEL.AL_MACHINE">
-    <summary>
-      <para>The machine-level default application association.</para>
-    </summary>
+    <summary>The machine-level default application association.</summary>
   </member>
   <member name="ASSOCIATIONLEVEL.AL_EFFECTIVE">
-    <summary>
-      <para>The effective default for the current user. This value should be used by most applications.</para>
-    </summary>
+    <summary>The effective default for the current user. This value should be used by most applications.</summary>
   </member>
   <member name="ASSOCIATIONLEVEL.AL_USER">
-    <summary>
-      <para>The per-user default application association. If this value is used and no per-user default is declared, the calling method fails with a value of <code>HRESULT_FROM_WIN32(ERROR_NO_ASSOCIATION)</code>.</para>
-    </summary>
+    <summary>The per-user default application association. If this value is used and no per-user default is declared, the calling method fails with a value of <code>HRESULT_FROM_WIN32(ERROR_NO_ASSOCIATION)</code>.</summary>
   </member>
 </doc>

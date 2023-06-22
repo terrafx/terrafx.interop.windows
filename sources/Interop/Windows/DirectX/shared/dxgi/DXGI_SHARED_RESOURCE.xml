@@ -3,18 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DXGI_SHARED_RESOURCE">
-    <summary>
-      <para>Represents a handle to a shared resource.</para>
-    </summary>
-    <remarks>
-      <para>To create a shared surface, pass a shared-resource handle into the <see cref="IDXGIDevice.CreateSurface" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
+    <summary>Represents a handle to a shared resource.</summary>
   </member>
   <member name="DXGI_SHARED_RESOURCE.Handle">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HANDLE</a></b></para>
-      <para>A handle to a shared resource.</para>
-    </summary>
+    <summary>A handle to a shared resource.</summary>
   </member>
 </doc>

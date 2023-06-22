@@ -3,64 +3,39 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_PANOSE_STROKE_VARIATION">
-    <summary>
-      <para>The <b>DWRITE_PANOSE_STROKE_VARIATION</b> enumeration contains values that specify the relationship between thin and thick stems of text characters.</para>
-    </summary>
-    <seealso cref="DWRITE_PANOSE" />
+    <summary>The <b>DWRITE_PANOSE_STROKE_VARIATION</b> enumeration contains values that specify the relationship between thin and thick stems of text characters.</summary>
   </member>
   <member name="DWRITE_PANOSE_STROKE_VARIATION.DWRITE_PANOSE_STROKE_VARIATION_ANY">
-    <summary>
-      <para>Any stroke variation for text characters.</para>
-    </summary>
+    <summary>Any stroke variation for text characters.</summary>
   </member>
   <member name="DWRITE_PANOSE_STROKE_VARIATION.DWRITE_PANOSE_STROKE_VARIATION_NO_FIT">
-    <summary>
-      <para>No fit stroke variation for text characters.</para>
-    </summary>
+    <summary>No fit stroke variation for text characters.</summary>
   </member>
   <member name="DWRITE_PANOSE_STROKE_VARIATION.DWRITE_PANOSE_STROKE_VARIATION_NO_VARIATION">
-    <summary>
-      <para>No stroke variation for text characters.</para>
-    </summary>
+    <summary>No stroke variation for text characters.</summary>
   </member>
   <member name="DWRITE_PANOSE_STROKE_VARIATION.DWRITE_PANOSE_STROKE_VARIATION_GRADUAL_DIAGONAL">
-    <summary>
-      <para>The stroke variation for text characters is gradual diagonal.</para>
-    </summary>
+    <summary>The stroke variation for text characters is gradual diagonal.</summary>
   </member>
   <member name="DWRITE_PANOSE_STROKE_VARIATION.DWRITE_PANOSE_STROKE_VARIATION_GRADUAL_TRANSITIONAL">
-    <summary>
-      <para>The stroke variation for text characters is gradual transitional.</para>
-    </summary>
+    <summary>The stroke variation for text characters is gradual transitional.</summary>
   </member>
   <member name="DWRITE_PANOSE_STROKE_VARIATION.DWRITE_PANOSE_STROKE_VARIATION_GRADUAL_VERTICAL">
-    <summary>
-      <para>The stroke variation for text characters is gradual vertical.</para>
-    </summary>
+    <summary>The stroke variation for text characters is gradual vertical.</summary>
   </member>
   <member name="DWRITE_PANOSE_STROKE_VARIATION.DWRITE_PANOSE_STROKE_VARIATION_GRADUAL_HORIZONTAL">
-    <summary>
-      <para>The stroke variation for text characters is gradual horizontal.</para>
-    </summary>
+    <summary>The stroke variation for text characters is gradual horizontal.</summary>
   </member>
   <member name="DWRITE_PANOSE_STROKE_VARIATION.DWRITE_PANOSE_STROKE_VARIATION_RAPID_VERTICAL">
-    <summary>
-      <para>The stroke variation for text characters is rapid vertical.</para>
-    </summary>
+    <summary>The stroke variation for text characters is rapid vertical.</summary>
   </member>
   <member name="DWRITE_PANOSE_STROKE_VARIATION.DWRITE_PANOSE_STROKE_VARIATION_RAPID_HORIZONTAL">
-    <summary>
-      <para>The stroke variation for text characters is rapid horizontal.</para>
-    </summary>
+    <summary>The stroke variation for text characters is rapid horizontal.</summary>
   </member>
   <member name="DWRITE_PANOSE_STROKE_VARIATION.DWRITE_PANOSE_STROKE_VARIATION_INSTANT_VERTICAL">
-    <summary>
-      <para>The stroke variation for text characters is instant vertical.</para>
-    </summary>
+    <summary>The stroke variation for text characters is instant vertical.</summary>
   </member>
   <member name="DWRITE_PANOSE_STROKE_VARIATION.DWRITE_PANOSE_STROKE_VARIATION_INSTANT_HORIZONTAL">
-    <summary>
-      <para>The stroke variation for text characters is instant horizontal.</para>
-    </summary>
+    <summary>The stroke variation for text characters is instant horizontal.</summary>
   </member>
 </doc>

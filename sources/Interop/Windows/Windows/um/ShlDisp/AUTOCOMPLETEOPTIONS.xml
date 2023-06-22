@@ -3,58 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="AUTOCOMPLETEOPTIONS">
-    <summary>
-      <para>Specifies values used by <see cref="IAutoComplete2.GetOptions" /> and <see cref="IAutoComplete2.SetOptions" /> for options surrounding autocomplete.</para>
-    </summary>
+    <summary>Specifies values used by <see cref="IAutoComplete2.GetOptions" /> and <see cref="IAutoComplete2.SetOptions" /> for options surrounding autocomplete.</summary>
   </member>
   <member name="AUTOCOMPLETEOPTIONS.ACO_NONE">
-    <summary>
-      <para>0x0000. Do not autocomplete.</para>
-    </summary>
+    <summary>0x0000. Do not autocomplete.</summary>
   </member>
   <member name="AUTOCOMPLETEOPTIONS.ACO_AUTOSUGGEST">
-    <summary>
-      <para>0x0001. Enable the autosuggest drop-down list.</para>
-    </summary>
+    <summary>0x0001. Enable the autosuggest drop-down list.</summary>
   </member>
   <member name="AUTOCOMPLETEOPTIONS.ACO_AUTOAPPEND">
-    <summary>
-      <para>0x0002. Enable autoappend.</para>
-    </summary>
+    <summary>0x0002. Enable autoappend.</summary>
   </member>
   <member name="AUTOCOMPLETEOPTIONS.ACO_SEARCH">
-    <summary>
-      <para>0x0004. Add a search item to the list of completed strings. When the user selects this item, it launches a search engine.</para>
-    </summary>
+    <summary>0x0004. Add a search item to the list of completed strings. When the user selects this item, it launches a search engine.</summary>
   </member>
   <member name="AUTOCOMPLETEOPTIONS.ACO_FILTERPREFIXES">
-    <summary>
-      <para>0x0008. Do not match common prefixes, such as "www." or "http://".</para>
-    </summary>
+    <summary>0x0008. Do not match common prefixes, such as "www." or "http://".</summary>
   </member>
   <member name="AUTOCOMPLETEOPTIONS.ACO_USETAB">
-    <summary>
-      <para>0x0010. Use the TAB key to select an item from the drop-down list.</para>
-    </summary>
+    <summary>0x0010. Use the TAB key to select an item from the drop-down list.</summary>
   </member>
   <member name="AUTOCOMPLETEOPTIONS.ACO_UPDOWNKEYDROPSLIST">
-    <summary>
-      <para>0x0020. Use the UP ARROW and DOWN ARROW keys to display the autosuggest drop-down list.</para>
-    </summary>
+    <summary>0x0020. Use the UP ARROW and DOWN ARROW keys to display the autosuggest drop-down list.</summary>
   </member>
   <member name="AUTOCOMPLETEOPTIONS.ACO_RTLREADING">
-    <summary>
-      <para>0x0040. Normal windows display text left-to-right (LTR). Windows can be mirrored to display languages such as Hebrew or Arabic that read right-to-left (RTL). Typically, control text is displayed in the same direction as the text in its parent window. If <see cref="ACO_RTLREADING" /> is set, the text reads in the opposite direction from the text in the parent window.</para>
-    </summary>
+    <summary>0x0040. Normal windows display text left-to-right (LTR). Windows can be mirrored to display languages such as Hebrew or Arabic that read right-to-left (RTL). Typically, control text is displayed in the same direction as the text in its parent window. If <see cref="ACO_RTLREADING" /> is set, the text reads in the opposite direction from the text in the parent window.</summary>
   </member>
   <member name="AUTOCOMPLETEOPTIONS.ACO_WORD_FILTER">
-    <summary>
-      <para>0x0080. <b>Windows Vista and later</b>. If set, the autocompleted suggestion is treated as a phrase for search purposes. The suggestion, <i>Microsoft Office</i>, would be treated as <i>"Microsoft Office"</i> (where both <i>Microsoft</i> AND <i>Office</i> must appear in the search results).</para>
-    </summary>
+    <summary>0x0080. <b>Windows Vista and later</b>. If set, the autocompleted suggestion is treated as a phrase for search purposes. The suggestion, <i>Microsoft Office</i>, would be treated as <i>"Microsoft Office"</i> (where both <i>Microsoft</i> AND <i>Office</i> must appear in the search results).</summary>
   </member>
   <member name="AUTOCOMPLETEOPTIONS.ACO_NOPREFIXFILTERING">
-    <summary>
-      <para>0x0100. <b>Windows Vista and later</b>. Disable prefix filtering when displaying the autosuggest dropdown. Always display all suggestions.</para>
-    </summary>
+    <summary>0x0100. <b>Windows Vista and later</b>. Disable prefix filtering when displaying the autosuggest dropdown. Always display all suggestions.</summary>
   </member>
 </doc>

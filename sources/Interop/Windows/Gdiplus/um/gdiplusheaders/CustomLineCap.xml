@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CustomLineCap.Clone">
+    <summary>The <b>CustomLineCap.Clone</b> method copies the contents of the existing object into a new <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-customlinecap">CustomLineCap</a> object.</summary>
+    <returns>This method returns a pointer to the new <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-customlinecap">CustomLineCap</a> object.</returns>
+  </member>
+  <member name="CustomLineCap.CustomLineCap">
+    <summary>Copy constructor for <b>CustomLineCap</b>.</summary>
+    <param name="unnamedParam1">The object to copy into this object.</param>
+  </member>
+  <member name="CustomLineCap.CustomLineCap">
+    <summary>Creates a <b>CustomLineCap.CustomLineCap</b> object.</summary>
+    <param name="fillPath">Pointer to a path.</param>
+    <param name="strokePath">Pointer to a path.</param>
+    <param name="baseCap">Optional. Element of the<see cref="LineCap" /> enumeration that specifies the line cap that will be used. The default value is LineCapFlat.</param>
+    <param name="baseInset">Optional. The default value is 0.</param>
+  </member>
+  <member name="CustomLineCap.CustomLineCap">
+    <summary>Creates a <b>CustomLineCap.CustomLineCap</b> object.</summary>
+    <param name="nativeCap">Optional. Element of the<see cref="LineCap" /> enumeration that specifies the line cap that will be used. The default value is LineCapFlat.</param>
+    <param name="status">TBD</param>
+  </member>
+  <member name="CustomLineCap.GetBaseCap">
+    <summary>The <b>CustomLineCap.GetBaseCap</b> method gets the style of the base cap. The base cap is a <see cref="LineCap" /> object used as a cap at the end of a line along with this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-customlinecap">CustomLineCap</a> object.</summary>
+    <returns>This method returns the value of the line cap used at the base of the line.</returns>
+  </member>
+  <member name="CustomLineCap.GetBaseInset">
+    <summary>The <b>CustomLineCap.GetBaseInset</b> method gets the distance between the base cap to the start of the line.</summary>
+    <returns>This method returns the base inset value.</returns>
+  </member>
+  <member name="CustomLineCap.GetLastStatus">
+    <summary>The <b>CustomLineCap.GetLastStatus</b> method returns a value that indicates the nature of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-customlinecap">CustomLineCap</a> object's most recent method failure.</summary>
+    <returns>
+      <para>The <b>CustomLineCap.GetLastStatus</b> method returns an element of the <see cref="Status" /> enumeration.</para>
+      <para>If no methods invoked on this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-customlinecap">CustomLineCap</a> object have failed since the previous call to <b>CustomLineCap.GetLastStatus</b>, then <b>CustomLineCap.GetLastStatus</b> returns Ok.</para>
+      <para>If at least one method invoked on this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-customlinecap">CustomLineCap</a> object has failed since the previous call to <b>CustomLineCap.GetLastStatus</b>, then <b>CustomLineCap.GetLastStatus</b> returns a value that indicates the nature of the most recent failure.</para>
+    </returns>
+  </member>
+  <member name="CustomLineCap.GetStrokeCaps">
+    <summary>The <b>CustomLineCap.GetStrokeCaps</b> method gets the end cap styles for both the start line cap and the end line cap. Line caps are <see cref="LineCap" /> objects that end the individual lines within a path.</summary>
+    <param name="startCap">Pointer to a variable that receives an element of the <see cref="LineCap" /> enumeration that indicates the line cap used at the start of the line to be drawn.</param>
+    <param name="endCap">Pointer to a variable that receives an element of the <see cref="LineCap" /> enumeration that indicates the line cap used at the end of the line to be drawn.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="CustomLineCap.GetStrokeJoin">
+    <summary>The <b>CustomLineCap.GetStrokeJoin</b> method returns the style of <see cref="LineJoin" /> used to join multiple lines in the same <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object.</summary>
+    <returns>This method returns the style of line join.</returns>
+  </member>
+  <member name="CustomLineCap.GetWidthScale">
+    <summary>The <b>CustomLineCap.GetWidthScale</b> method gets the value of the scale width. This is the amount to scale the custom line cap relative to the width of the<b>Pen</b> object used to draw a line. The default value of 1.0 does not scale the line cap.</summary>
+    <returns>This method returns the value of the width-scaling factor. It is of type<b>REAL</b>.</returns>
+  </member>
+  <member name="CustomLineCap.SetBaseCap">
+    <summary>The <b>CustomLineCap.SetBaseCap</b> method sets the <see cref="LineCap" /> that appears as part of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-customlinecap">CustomLineCap</a> at the end of a line.</summary>
+    <param name="baseCap">Element of the <see cref="LineCap" /> enumeration that specifies the line cap used on the ends of the line to be drawn.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="CustomLineCap.SetBaseInset">
+    <summary>The <b>CustomLineCap.SetBaseInset</b> method sets the base inset value of this custom line cap. This is the distance between the end of a line and the base cap.</summary>
+    <param name="inset">Real number that specifies the distance, in units, from the base cap to the start of the line. If this value is greater than the length of the line, the behavior of this method is undefined.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="CustomLineCap.SetStrokeCap">
+    <summary>The <b>CustomLineCap.SetStrokeCap</b> method sets the <see cref="LineCap" /> object used to start and end lines within the <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object that defines this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-customlinecap">CustomLineCap</a> object.</summary>
+    <param name="strokeCap">Element of the <see cref="LineCap" /> enumeration that specifies the line cap that will be used on the ends of the line to be drawn.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="CustomLineCap.SetStrokeCaps">
+    <summary>The <b>CustomLineCap.SetStrokeCaps</b> method sets the <see cref="LineCap" /> objects used to start and end lines within the <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object that defines this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-customlinecap">CustomLineCap</a> object.</summary>
+    <param name="startCap">Element of the <see cref="LineCap" /> enumeration that specifies the line cap that will be used for the start of the line to be drawn.</param>
+    <param name="endCap">Element of the <see cref="LineCap" /> enumeration that specifies the line cap that will be used for the end of the line to be drawn.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="CustomLineCap.SetStrokeJoin">
+    <summary>The <b>CustomLineCap.SetStrokeJoin</b> method sets the style of line join for the stroke. The line join specifies how two lines that intersect within the <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object that makes up the custom line cap are joined.</summary>
+    <param name="lineJoin">Element of the <see cref="LineJoin" /> enumeration that specifies the line join that will be used for two lines that are drawn by the same pen and that have overlapping ends.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="CustomLineCap.SetWidthScale">
+    <summary>The <b>CustomLineCap.SetWidthScale</b> method sets the value of the scale width. This is the amount to scale the custom line cap relative to the width of the <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspen/nl-gdipluspen-pen">Pen</a> used to draw lines. The default value of 1.0 does not scale the line cap.</summary>
+    <param name="widthScale">Real number that specifies the scaling factor that will be used to scale the line width.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+</doc>

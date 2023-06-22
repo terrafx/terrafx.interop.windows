@@ -3,57 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.AddPackageDependency">
-    <summary>
-      <para>Adds a run-time reference for the framework package dependency you created earlier by using the <see cref="TryCreatePackageDependency" /> method, with the specified options. After this method successfully returns, your app can activate types and use content from the framework package.</para>
-    </summary>
-    <param name="packageDependencyId">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The ID of the package dependency to be resolved and added to the invoking process' package graph. This parameter must match a package dependency defined by using the <see cref="TryCreatePackageDependency" /> function for the calling user or the system (via the <see cref="CreatePackageDependencyOptions_ScopeIsSystem" /> option), or else an error is returned.</para>
-    </param>
-    <param name="rank">
-      <para>Type: <b>INT32</b></para>
-      <para>The rank to use to add the resolved package to the caller's package graph. For more information, see the remarks.</para>
-    </param>
-    <param name="options">
-      <para>Type: <b><see cref="AddPackageDependencyOptions" /></b></para>
-      <para>The options to apply when adding the package dependency.</para>
-    </param>
-    <param name="packageDependencyContext">
-      <para>Type: <b>PACKAGEDEPENDENCY_CONTEXT*</b></para>
-      <para>The handle of the added package dependency. This handle is valid until it is passed to <see cref="RemovePackageDependency" />.</para>
-    </param>
-    <param name="packageFullName">
-      <para>Type: <b>PCWSTR*</b></para>
-      <para>When this method returns, contains the address of a pointer to a null-terminated Unicode string that specifies the full name of the package to which the dependency has been resolved. The caller is responsible for freeing this resource once it is no longer needed by calling <see cref="HeapFree" />.</para>
-    </param>
+    <summary>Adds a run-time reference for the framework package dependency you created earlier by using the <see cref="TryCreatePackageDependency" /> method, with the specified options. After this method successfully returns, your app can activate types and use content from the framework package.</summary>
+    <param name="packageDependencyId">The ID of the package dependency to be resolved and added to the invoking process' package graph. This parameter must match a package dependency defined by using the <see cref="TryCreatePackageDependency" /> function for the calling user or the system (via the <see cref="CreatePackageDependencyOptions_ScopeIsSystem" /> option), or else an error is returned.</param>
+    <param name="rank">The rank to use to add the resolved package to the caller's package graph. For more information, see the remarks.</param>
+    <param name="options">The options to apply when adding the package dependency.</param>
+    <param name="packageDependencyContext">The handle of the added package dependency. This handle is valid until it is passed to <see cref="RemovePackageDependency" />.</param>
+    <param name="packageFullName">When this method returns, contains the address of a pointer to a null-terminated Unicode string that specifies the full name of the package to which the dependency has been resolved. The caller is responsible for freeing this resource once it is no longer needed by calling <see cref="HeapFree" />.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
-      <para>| Return code | Description |
-|-------------|-------------|
-| E_INVALIDARG | The <i>packageDependencyId</i> or <i>packageDependencyContext</i> parameter is NULL on input. |</para>
+      <para>| Return code | Description | |-------------|-------------| | E_INVALIDARG | The <i>packageDependencyId</i> or <i>packageDependencyContext</i> parameter is NULL on input. |</para>
     </returns>
-    <remarks>
-      <para>Calling this method resolves the framework package dependency to a specific package on the system. It also informs the OS that the framework package is in active use and to handle any version updates in a side-by-side manner (effectively delay uninstalling or otherwise servicing the older version until after your app is done using it). Package resolution is specific to a user and can return different values for different users on a system.</para>
-      <para>Each successful <b>AddPackageDependency</b> call adds the resolved package to the calling process' package graph, even if already present. There is no duplicate detection or filtering applied by the API (that is, multiple references from a package is not harmful). After resolution is complete, the package dependency stays resolved for that user until the last reference across all processes for that user is removed via <see cref="RemovePackageDependency" /> or the process is terminated.</para>
-      <para>After this method successfully returns, your app can activate types and use content from the framework package until <see cref="RemovePackageDependency" /> is called.</para>
-      <para>If multiple packages are present in the package graph with the same rank as the call to <b>AddPackageDependency</b>, the resolved package is (by default) added after others of the same rank. To add a package before others of the same rank, specify <see cref="AddPackageDependencyOptions_PrependIfRankCollision" /> for the <i>options</i> parameter.</para>
-      <para>For more information, see <a href="https://docs.microsoft.com//windows/apps/desktop/modernize/framework-packages/use-the-dynamic-dependency-api">Use the dynamic dependency API to reference framework packages at run time</a>.</para>
-    </remarks>
-    <seealso cref="RemovePackageDependency" />
-    <seealso cref="TryCreatePackageDependency" />
-    <seealso href="https://docs.microsoft.com//windows/apps/desktop/modernize/framework-packages/use-the-dynamic-dependency-api">Use the dynamic dependency API to reference framework packages at run time</seealso>
   </member>
   <member name="Windows.AppPolicyGetClrCompat">
-    <summary>
-      <para>Retrieves a value indicating the application type of a process so that you can determine whether to enable private reflection and/or make managed objects agile.</para>
-    </summary>
-    <param name="processToken">
-      <para>A handle that identifies the access token for a process.</para>
-    </param>
-    <param name="policy">
-      <para>A pointer to a variable of the <see cref="AppPolicyClrCompat" /> enumerated type. When the function returns successfully, the variable contains an enumerated constant value indicating the application type of the identified process.</para>
-    </param>
+    <summary>Retrieves a value indicating the application type of a process so that you can determine whether to enable private reflection and/or make managed objects agile.</summary>
+    <param name="processToken">A handle that identifies the access token for a process.</param>
+    <param name="policy">A pointer to a variable of the <see cref="AppPolicyClrCompat" /> enumerated type. When the function returns successfully, the variable contains an enumerated constant value indicating the application type of the identified process.</param>
     <returns>
       <para>If the function succeeds, the function returns ERROR_SUCCESS.</para>
       <para>If no known application type was found for the process token, the function raises a STATUS_ASSERTION_FAILURE exception and returns ERROR_NOT_FOUND.</para>
@@ -61,15 +25,9 @@
     </returns>
   </member>
   <member name="Windows.AppPolicyGetCreateFileAccess">
-    <summary>
-      <para>Retrieves a value indicating whether a process has full or restricted access to the IO devices (file, file stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and pipe).</para>
-    </summary>
-    <param name="processToken">
-      <para>A handle that identifies the access token for a process.</para>
-    </param>
-    <param name="policy">
-      <para>A pointer to a variable of the <see cref="AppPolicyCreateFileAccess" /> enumerated type. When the function returns successfully, the variable contains an enumerated constant value indicating whether the process has full or restricted access to the IO devices.</para>
-    </param>
+    <summary>Retrieves a value indicating whether a process has full or restricted access to the IO devices (file, file stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and pipe).</summary>
+    <param name="processToken">A handle that identifies the access token for a process.</param>
+    <param name="policy">A pointer to a variable of the <see cref="AppPolicyCreateFileAccess" /> enumerated type. When the function returns successfully, the variable contains an enumerated constant value indicating whether the process has full or restricted access to the IO devices.</param>
     <returns>
       <para>If the function succeeds, the function returns ERROR_SUCCESS.</para>
       <para>If no known create file access policy was found for the process token, the function raises a STATUS_ASSERTION_FAILURE exception and returns ERROR_NOT_FOUND.</para>
@@ -77,15 +35,9 @@
     </returns>
   </member>
   <member name="Windows.AppPolicyGetLifecycleManagement">
-    <summary>
-      <para>Retrieves a value indicating whether a process can be suspended/resumed by the Process Lifecycle Manager (PLM). You can use the value to decide whether to subscribe to relevant notifications from the PLM, or to register for a classic system suspend notification.</para>
-    </summary>
-    <param name="processToken">
-      <para>A handle that identifies the access token for a process.</para>
-    </param>
-    <param name="policy">
-      <para>A pointer to a variable of the <see cref="AppPolicyLifecycleManagement" /> enumerated type. When the function returns successfully, the variable contains an enumerated constant value indicating whether the identified process is lifecycle-managed or not.</para>
-    </param>
+    <summary>Retrieves a value indicating whether a process can be suspended/resumed by the Process Lifecycle Manager (PLM). You can use the value to decide whether to subscribe to relevant notifications from the PLM, or to register for a classic system suspend notification.</summary>
+    <param name="processToken">A handle that identifies the access token for a process.</param>
+    <param name="policy">A pointer to a variable of the <see cref="AppPolicyLifecycleManagement" /> enumerated type. When the function returns successfully, the variable contains an enumerated constant value indicating whether the identified process is lifecycle-managed or not.</param>
     <returns>
       <para>If the function succeeds, the function returns ERROR_SUCCESS.</para>
       <para>If no known lifecycle management policy was found for the process token, the function raises a STATUS_ASSERTION_FAILURE exception and returns ERROR_NOT_FOUND.</para>
@@ -93,15 +45,9 @@
     </returns>
   </member>
   <member name="Windows.AppPolicyGetMediaFoundationCodecLoading">
-    <summary>
-      <para>Retrieves a value indicating whether a process’s policy allows it to load non-Windows (third-party) plugins. You can use the value to decide whether or not to allow non-Windows (third-party) plugins.</para>
-    </summary>
-    <param name="processToken">
-      <para>A handle that identifies the access token for a process.</para>
-    </param>
-    <param name="policy">
-      <para>A pointer to a variable of the <see cref="AppPolicyMediaFoundationCodecLoading" /> enumerated type. When the function returns successfully, the variable contains an enumerated constant value indicating the codec-loading policy of the identified process.</para>
-    </param>
+    <summary>Retrieves a value indicating whether a process’s policy allows it to load non-Windows (third-party) plugins. You can use the value to decide whether or not to allow non-Windows (third-party) plugins.</summary>
+    <param name="processToken">A handle that identifies the access token for a process.</param>
+    <param name="policy">A pointer to a variable of the <see cref="AppPolicyMediaFoundationCodecLoading" /> enumerated type. When the function returns successfully, the variable contains an enumerated constant value indicating the codec-loading policy of the identified process.</param>
     <returns>
       <para>If the function succeeds, the function returns ERROR_SUCCESS.</para>
       <para>If no known codec-loading policy was found for the process token, the function raises a STATUS_ASSERTION_FAILURE exception and returns ERROR_NOT_FOUND.</para>
@@ -109,15 +55,9 @@
     </returns>
   </member>
   <member name="Windows.AppPolicyGetProcessTerminationMethod">
-    <summary>
-      <para>Retrieves the method used to end a process.</para>
-    </summary>
-    <param name="processToken">
-      <para>A handle that identifies the access token for a process.</para>
-    </param>
-    <param name="policy">
-      <para>A pointer to a variable of the <see cref="AppPolicyProcessTerminationMethod" /> enumerated type. When the function returns successfully, the variable contains a value indicating the method used to end the process.</para>
-    </param>
+    <summary>Retrieves the method used to end a process.</summary>
+    <param name="processToken">A handle that identifies the access token for a process.</param>
+    <param name="policy">A pointer to a variable of the <see cref="AppPolicyProcessTerminationMethod" /> enumerated type. When the function returns successfully, the variable contains a value indicating the method used to end the process.</param>
     <returns>
       <para>If the function succeeds, the function returns ERROR_SUCCESS.</para>
       <para>If no known process termination policy was found for the process token, the function raises a STATUS_ASSERTION_FAILURE exception and returns ERROR_NOT_FOUND.</para>
@@ -125,31 +65,19 @@
     </returns>
   </member>
   <member name="Windows.AppPolicyGetShowDeveloperDiagnostic">
-    <summary>
-      <para>Retrieves the method used for a process to surface developer information, such as asserts, to the user.</para>
-    </summary>
-    <param name="processToken">
-      <para>A handle that identifies the access token for a process.</para>
-    </param>
-    <param name="policy">
-      <para>A pointer to a variable of the <see cref="AppPolicyShowDeveloperDiagnostic" /> enumerated type. When the function returns successfully, the variable contains a value indicating the method used for the process to surface developer information, such as asserts, to the user.</para>
-    </param>
+    <summary>Retrieves the method used for a process to surface developer information, such as asserts, to the user.</summary>
+    <param name="processToken">A handle that identifies the access token for a process.</param>
+    <param name="policy">A pointer to a variable of the <see cref="AppPolicyShowDeveloperDiagnostic" /> enumerated type. When the function returns successfully, the variable contains a value indicating the method used for the process to surface developer information, such as asserts, to the user.</param>
     <returns>
       <para>If the function succeeds, the function returns ERROR_SUCCESS.</para>
-      <para>If no known developer information  policy was found for the process token, the function raises a STATUS_ASSERTION_FAILURE exception and returns ERROR_NOT_FOUND.</para>
+      <para>If no known developer information policy was found for the process token, the function raises a STATUS_ASSERTION_FAILURE exception and returns ERROR_NOT_FOUND.</para>
       <para>If either processToken or policy are null, the function returns ERROR_INVALID_PARAMETER.</para>
     </returns>
   </member>
   <member name="Windows.AppPolicyGetThreadInitializationType">
-    <summary>
-      <para>Retrieves the kind of initialization that should be automatically performed for a process when beginthread[ex] creates a thread.</para>
-    </summary>
-    <param name="processToken">
-      <para>A handle that identifies the access token for a process.</para>
-    </param>
-    <param name="policy">
-      <para>A pointer to a variable of the <see cref="AppPolicyThreadInitializationType" /> enumerated type. When the function returns successfully, the variable contains a value indicating the kind of initialization that should be automatically performed for the process when beginthread[ex] creates a thread.</para>
-    </param>
+    <summary>Retrieves the kind of initialization that should be automatically performed for a process when beginthread[ex] creates a thread.</summary>
+    <param name="processToken">A handle that identifies the access token for a process.</param>
+    <param name="policy">A pointer to a variable of the <see cref="AppPolicyThreadInitializationType" /> enumerated type. When the function returns successfully, the variable contains a value indicating the kind of initialization that should be automatically performed for the process when beginthread[ex] creates a thread.</param>
     <returns>
       <para>If the function succeeds, the function returns ERROR_SUCCESS.</para>
       <para>If no known thread initialization policy was found for the process token, the function raises a STATUS_ASSERTION_FAILURE exception and returns ERROR_NOT_FOUND.</para>
@@ -157,15 +85,9 @@
     </returns>
   </member>
   <member name="Windows.AppPolicyGetWindowingModel">
-    <summary>
-      <para>Retrieves a value indicating whether a process uses a CoreWindow-based, or a HWND-based, windowing model. You can use the value to decide how to register for window state change notifications (size changed, visibility changed, etc.).</para>
-    </summary>
-    <param name="processToken">
-      <para>A handle that identifies the access token for a process.</para>
-    </param>
-    <param name="policy">
-      <para>A pointer to a variable of the <see cref="AppPolicyWindowingModel" /> enumerated type. When the function returns successfully, the variable contains an enumerated constant value indicating the windowing model of the identified process.</para>
-    </param>
+    <summary>Retrieves a value indicating whether a process uses a CoreWindow-based, or a HWND-based, windowing model. You can use the value to decide how to register for window state change notifications (size changed, visibility changed, etc.).</summary>
+    <param name="processToken">A handle that identifies the access token for a process.</param>
+    <param name="policy">A pointer to a variable of the <see cref="AppPolicyWindowingModel" /> enumerated type. When the function returns successfully, the variable contains an enumerated constant value indicating the windowing model of the identified process.</param>
     <returns>
       <para>If the function succeeds, the function returns ERROR_SUCCESS.</para>
       <para>If no known windowing model policy was found for the process token, the function raises a STATUS_ASSERTION_FAILURE exception and returns ERROR_NOT_FOUND.</para>
@@ -173,159 +95,100 @@
     </returns>
   </member>
   <member name="Windows.ClosePackageInfo">
-    <summary>
-      <para>Closes a reference to the specified package information.</para>
-    </summary>
-    <param name="packageInfoReference">
-      <para>Type: <b>PACKAGE_INFO_REFERENCE</b></para>
-      <para>A reference to package information.</para>
-    </param>
-    <returns>
-      <para>Type: <b>LONG</b></para>
-      <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code.</para>
-    </returns>
-    <seealso cref="OpenPackageInfoByFullName" />
+    <summary>Closes a reference to the specified package information.</summary>
+    <param name="packageInfoReference">A reference to package information.</param>
+    <returns>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code.</returns>
   </member>
   <member name="Windows.DeletePackageDependency">
-    <summary>
-      <para>Deletes the install-time reference for the framework package dependency you created earlier by using the <see cref="TryCreatePackageDependency" /> method. This method informs the OS that it is safe to remove the framework package if no other apps have a dependency on it.</para>
-    </summary>
-    <param name="packageDependencyId">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The ID of the package dependency to remove.</para>
-    </param>
-    <returns>
-      <para>| Return code | Description |
-|-------------|-------------|
-| E_INVALIDARG | The <i>packageDependencyId</i> parameter is NULL on input. |</para>
-    </returns>
-    <remarks>
-      <para>Removing a package dependency is typically done when an app is uninstalled. A package dependency is implicitly removed if its lifetime artifact (specified via the <i>lifetimeArtifact</i> parameter of the <see cref="TryCreatePackageDependency" /> function) is deleted. Package dependencies that are not referenced by other packages are elegible to be removed.</para>
-      <para>The caller of this function must have administrative privileges if the package dependency was created using <see cref="CreatePackageDependencyOptions_ScopeIsSystem" />.</para>
-    </remarks>
-    <seealso cref="TryCreatePackageDependency" />
-    <seealso href="https://docs.microsoft.com//windows/apps/desktop/modernize/framework-packages/use-the-dynamic-dependency-api">Use the dynamic dependency API to reference framework packages at run time</seealso>
+    <summary>Deletes the install-time reference for the framework package dependency you created earlier by using the <see cref="TryCreatePackageDependency" /> method. This method informs the OS that it is safe to remove the framework package if no other apps have a dependency on it.</summary>
+    <param name="packageDependencyId">The ID of the package dependency to remove.</param>
+    <returns>| Return code | Description | |-------------|-------------| | E_INVALIDARG | The <i>packageDependencyId</i> parameter is NULL on input. |</returns>
   </member>
   <member name="Windows.FindPackagesByPackageFamily">
-    <summary>
-      <para>Finds the packages  with the specified family name for the current user.</para>
-    </summary>
-    <param name="packageFamilyName">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The package family name.</para>
-    </param>
-    <param name="packageFilters">
-      <para>Type: <b>UINT32</b></para>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/appxpkg/package-constants">package constants</a> that specify how package information is retrieved. All package constants except <b>PACKAGE_FILTER_ALL_LOADED</b> are supported.</para>
-    </param>
+    <summary>Finds the packages with the specified family name for the current user.</summary>
+    <param name="packageFamilyName">The package family name.</param>
+    <param name="packageFilters">The <a href="https://docs.microsoft.com//windows/desktop/appxpkg/package-constants">package constants</a> that specify how package information is retrieved. All package constants except <b>PACKAGE_FILTER_ALL_LOADED</b> are supported.</param>
     <param name="count">
-      <para>Type: <b>UINT32*</b></para>
       <para>A pointer to a variable that holds the number of package full names that were found.</para>
       <para>First you pass <b>NULL</b> to <i>packageFullNames</i> to get the number of package full names that were found. You use this number to allocate memory space for <i>packageFullNames</i>. Then you pass the address of this memory space to fill <i>packageFullNames</i>.</para>
     </param>
-    <param name="packageFullNames">
-      <para>Type: <b>PWSTR*</b></para>
-      <para>A pointer to memory space that receives  the strings of package full names that were found.</para>
-    </param>
+    <param name="packageFullNames">A pointer to memory space that receives the strings of package full names that were found.</param>
     <param name="bufferLength">
-      <para>Type: <b>UINT32*</b></para>
       <para>A pointer to a variable that holds the number of characters in the string of package full names.</para>
       <para>First you pass <b>NULL</b> to <i>buffer</i> to get the number of characters. You use this number to allocate memory space for <i>buffer</i>. Then you pass the address of this memory space to fill <i>buffer</i>.</para>
     </param>
-    <param name="buffer">
-      <para>Type: <b>WCHAR*</b></para>
-      <para>A pointer to memory space that receives  the string of characters for all of the package full names.</para>
-    </param>
-    <param name="packageProperties">
-      <para>Type: <b>UINT32*</b></para>
-      <para>A pointer to memory space that receives  the <a href="https://docs.microsoft.com//windows/desktop/appxpkg/package-constants">package properties</a> for all of the packages that were found.</para>
-    </param>
+    <param name="buffer">A pointer to memory space that receives the string of characters for all of the package full names.</param>
+    <param name="packageProperties">A pointer to memory space that receives the <a href="https://docs.microsoft.com//windows/desktop/appxpkg/package-constants">package properties</a> for all of the packages that were found.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more buffer is not large enough to hold the data. The required size is specified  by either <i>count</i> or <i>buffer</i>.</para>
-          </description>
-        </item>
+          <description>One or more buffer is not large enough to hold the data. The required size is specified by either <i>count</i> or <i>buffer</i>.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="Windows.FormatApplicationUserModelId">
-    <summary>
-      <para>Constructs an <a href="https://docs.microsoft.com//windows/desktop/appxpkg/appx-packaging-glossary">application user model ID</a> from the <i>package family name</i> and the <i>package relative application ID</i> (PRAID).</para>
-    </summary>
-    <param name="packageFamilyName">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The package family name.</para>
-    </param>
-    <param name="packageRelativeApplicationId">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The package-relative app ID (PRAID).</para>
-    </param>
+    <summary>Constructs an <a href="https://docs.microsoft.com//windows/desktop/appxpkg/appx-packaging-glossary">application user model ID</a> from the <i>package family name</i> and the <i>package relative application ID</i> (PRAID).</summary>
+    <param name="packageFamilyName">The package family name.</param>
+    <param name="packageRelativeApplicationId">The package-relative app ID (PRAID).</param>
     <param name="applicationUserModelIdLength">
-      <para>Type: <b>UINT32*</b></para>
       <para>A pointer to a variable that holds the number of characters (<b>WCHAR</b>s) in the app user model ID string, which includes the null-terminator.</para>
       <para>First you pass <b>NULL</b> to <i>applicationUserModelId</i> to get the number of characters. You use this number to allocate memory space for <i>applicationUserModelId</i>. Then you pass the address of this memory space to fill <i>applicationUserModelId</i>.</para>
     </param>
-    <param name="applicationUserModelId">
-      <para>Type: <b>PWSTR</b></para>
-      <para>A pointer to memory space that receives  the app user model ID string, which includes the null-terminator.</para>
-    </param>
+    <param name="applicationUserModelId">A pointer to memory space that receives the app user model ID string, which includes the null-terminator.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INVALID_PARAMETER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <i>packageFamilyName</i> or <i>packageRelativeApplicationId</i> parameter isn't valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <i>packageFamilyName</i> or <i>packageRelativeApplicationId</i> parameter isn't valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <para>The buffer specified by <i>applicationUserModelId</i> is not large enough to hold the data; the required buffer size, in <b>WCHAR</b>s, is stored in the variable pointed to by <i>applicationUserModelIdLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer specified by <i>applicationUserModelId</i> is not large enough to hold the data; the required buffer size, in <b>WCHAR</b>s, is stored in the variable pointed to by <i>applicationUserModelIdLength</i>.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="Windows.GetApplicationUserModelId">
-    <summary>
-      <para>Gets the <a href="https://docs.microsoft.com//windows/desktop/appxpkg/appx-packaging-glossary">application user model ID</a> for the specified process.</para>
-    </summary>
-    <param name="hProcess">
-      <para>A handle to the process. This handle must have the <b>PROCESS_QUERY_LIMITED_INFORMATION</b> access right. For more info, see <a href="https://docs.microsoft.com//windows/desktop/ProcThread/process-security-and-access-rights">Process Security and Access Rights</a>.</para>
-    </param>
-    <param name="applicationUserModelIdLength">
-      <para>On input, the size of the  <i>applicationUserModelId</i> buffer, in wide characters. On success, the size of the buffer used, including the null terminator.</para>
-    </param>
-    <param name="applicationUserModelId">
-      <para>A pointer to a buffer that receives the application user model ID.</para>
-    </param>
+    <summary>Gets the <a href="https://docs.microsoft.com//windows/desktop/appxpkg/appx-packaging-glossary">application user model ID</a> for the specified process.</summary>
+    <param name="hProcess">A handle to the process. This handle must have the <b>PROCESS_QUERY_LIMITED_INFORMATION</b> access right. For more info, see <a href="https://docs.microsoft.com//windows/desktop/ProcThread/process-security-and-access-rights">Process Security and Access Rights</a>.</param>
+    <param name="applicationUserModelIdLength">On input, the size of the <i>applicationUserModelId</i> buffer, in wide characters. On success, the size of the buffer used, including the null terminator.</param>
+    <param name="applicationUserModelId">A pointer to a buffer that receives the application user model ID.</param>
     <returns>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
@@ -333,124 +196,38 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>APPMODEL_ERROR_NO_APPLICATION</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>APPMODEL_ERROR_NO_APPLICATION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The process has no application identity.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The process has no application identity.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <para>The buffer is not large enough to hold the data. The required size is specified  by <i>applicationUserModelIdLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer is not large enough to hold the data. The required size is specified by <i>applicationUserModelIdLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For info about string size limits, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/identity-constants">Identity constants</a>.</para>
-      <h4>Examples</h4>
-      <code>#define _UNICODE 1
-#define UNICODE 1
-
-#include &lt;Windows.h&gt;
-#include &lt;appmodel.h&gt;
-#include &lt;malloc.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;stdio.h&gt;
-
-int ShowUsage();
-void ShowProcessApplicationUserModelId(__in const UINT32 pid, __in HANDLE process);
-
-int ShowUsage()
-{
-    wprintf(L"Usage: GetApplicationUserModelId &lt;pid&gt; [&lt;pid&gt;...]\n");
-    return 1;
-}
-
-int __cdecl wmain(__in int argc, __in_ecount(argc) WCHAR * argv[])
-{
-    if (argc &lt;= 1)
-        return ShowUsage();
-
-    for (int i=1; i&lt;argc; ++i)
-    {
-        UINT32 pid = wcstoul(argv[i], NULL, 10);
-        if (pid &gt; 0)
-        {
-            HANDLE process = OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, FALSE, pid);
-            if (process == NULL)
-                wprintf(L"Error %d in OpenProcess (pid=%u)\n", GetLastError(), pid);
-            else
-            {
-                ShowProcessApplicationUserModelId(pid, process);
-                CloseHandle(process);
-            }
-        }
-    }
-    return 0;
-}
-
-void ShowProcessApplicationUserModelId(__in const UINT32 pid, __in HANDLE process)
-{
-    wprintf(L"Process %u (handle=%p)\n", pid, process);
-
-    UINT32 length = 0;
-    LONG rc = GetApplicationUserModelId(process, &amp;amp;amp;amp;amp;amp;length, NULL);
-    if (rc != ERROR_INSUFFICIENT_BUFFER)
-    {
-        if (rc == APPMODEL_ERROR_NO_APPLICATION)
-            wprintf(L"Desktop application\n");
-        else
-            wprintf(L"Error %d in GetApplicationUserModelId\n", rc);
-        return;
-    }
-
-    PWSTR fullName = (PWSTR) malloc(length * sizeof(*fullName));
-    if (fullName == NULL)
-    {
-        wprintf(L"Error allocating memory\n");
-        return;
-    }
-
-    rc = GetApplicationUserModelId(process, &amp;amp;amp;amp;amp;amp;length, fullName);
-    if (rc != ERROR_SUCCESS)
-        wprintf(L"Error %d retrieving ApplicationUserModelId\n", rc);
-    else
-        wprintf(L"%s\n", fullName);
-
-    free(fullName);
-}
-
-</code>
-    </remarks>
-    <seealso cref="GetCurrentApplicationUserModelId" />
-    <seealso cref="GetPackageFamilyName" />
-    <seealso cref="GetPackageId" />
-    <seealso cref="GetPackageInfo" />
-    <seealso cref="GetPackagePath" />
   </member>
   <member name="Windows.GetApplicationUserModelIdFromToken">
-    <summary>
-      <para>Gets the <a href="https://docs.microsoft.com//windows/desktop/appxpkg/appx-packaging-glossary">application user model ID</a> for the specified token.</para>
-    </summary>
-    <param name="token">
-      <para>A token that contains the application identity. This handle must have the <b>PROCESS_QUERY_LIMITED_INFORMATION</b> access right. For more info, see <a href="https://docs.microsoft.com//windows/desktop/ProcThread/process-security-and-access-rights">Process Security and Access Rights</a>.</para>
-    </param>
-    <param name="applicationUserModelIdLength">
-      <para>On input, the size of the  <i>applicationUserModelId</i> buffer, in wide characters. On success, the size of the buffer used, including the null terminator.</para>
-    </param>
-    <param name="applicationUserModelId">
-      <para>A pointer to a buffer that receives the application user model ID.</para>
-    </param>
+    <summary>Gets the <a href="https://docs.microsoft.com//windows/desktop/appxpkg/appx-packaging-glossary">application user model ID</a> for the specified token.</summary>
+    <param name="token">A token that contains the application identity. This handle must have the <b>PROCESS_QUERY_LIMITED_INFORMATION</b> access right. For more info, see <a href="https://docs.microsoft.com//windows/desktop/ProcThread/process-security-and-access-rights">Process Security and Access Rights</a>.</param>
+    <param name="applicationUserModelIdLength">On input, the size of the <i>applicationUserModelId</i> buffer, in wide characters. On success, the size of the buffer used, including the null terminator.</param>
+    <param name="applicationUserModelId">A pointer to a buffer that receives the application user model ID.</param>
     <returns>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
@@ -458,130 +235,37 @@ void ShowProcessApplicationUserModelId(__in const UINT32 pid, __in HANDLE proces
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>APPMODEL_ERROR_NO_APPLICATION</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>APPMODEL_ERROR_NO_APPLICATION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The token has no application identity.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The token has no application identity.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <para>The buffer is not large enough to hold the data. The required size is specified  by <i>applicationUserModelIdLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer is not large enough to hold the data. The required size is specified by <i>applicationUserModelIdLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For info about string size limits, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/identity-constants">Identity constants</a>.</para>
-      <h4>Examples</h4>
-      <code>/***************************************************
-*                                                  *
-*   Copyright (C) Microsoft. All rights reserved.  *
-*                                                  *
-***************************************************/
-
-#define _UNICODE 1
-#define UNICODE 1
-
-#include &lt;Windows.h&gt;
-#include &lt;appmodel.h&gt;
-#include &lt;appmodelp.h&gt;
-#include &lt;malloc.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;stdio.h&gt;
-
-int ShowUsage();
-void ShowProcessApplicationUserModelId(__in const UINT32 pid, __in HANDLE token);
-
-int ShowUsage()
-{
-    wprintf(L"Usage: GetApplicationUserModelIdFromToken &lt;pid&gt; [&lt;pid&gt;...]\n");
-    return 1;
-}
-
-int __cdecl wmain(__in int argc, __in_ecount(argc) WCHAR * argv[])
-{
-    if (argc &lt;= 1)
-        return ShowUsage();
-
-    for (int i=1; i&lt;argc; ++i)
-    {
-        UINT32 pid = wcstoul(argv[i], NULL, 10);
-        if (pid &gt; 0)
-        {
-            HANDLE process = OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, FALSE, pid);
-            if (process == NULL)
-                wprintf(L"Error %d in OpenProcess (pid=%u)\n", GetLastError(), pid);
-            else
-            {
-                HANDLE token;
-                if (!OpenProcessToken(process, TOKEN_QUERY, &amp;amp;amp;amp;amp;amp;token))
-                    wprintf(L"Error %d in OpenProcessToken (pid=%u)\n", GetLastError(), pid);
-                else
-                {
-                    ShowProcessApplicationUserModelId(pid, token);
-                    CloseHandle(token);
-                }
-                CloseHandle(process);
-            }
-        }
-    }
-    return 0;
-}
-
-void ShowProcessApplicationUserModelId(__in const UINT32 pid, __in HANDLE token)
-{
-    wprintf(L"Process %u (token=%p)\n", pid, token);
-
-    UINT32 length = 0;
-    LONG rc = GetApplicationUserModelIdFromToken(token, &amp;amp;amp;amp;amp;amp;length, NULL);
-    if (rc != ERROR_INSUFFICIENT_BUFFER)
-    {
-        if (rc == APPMODEL_ERROR_NO_PACKAGE)
-            wprintf(L"Token has no package identity\n");
-        else
-            wprintf(L"Error %d in GetApplicationUserModelIdFromToken\n", rc);
-        return;
-    }
-
-    PWSTR applicationUserModelId = (PWSTR) malloc(length * sizeof(*applicationUserModelId));
-    if (applicationUserModelId == NULL)
-    {
-        wprintf(L"Error allocating memory\n");
-        return;
-    }
-
-    rc = GetApplicationUserModelIdFromToken(token, &amp;amp;amp;amp;amp;amp;length, applicationUserModelId);
-    if (rc != ERROR_SUCCESS)
-        wprintf(L"Error %d retrieving ApplicationUserModelId\n", rc);
-    else
-        wprintf(L"%s\n", applicationUserModelId);
-
-    free(applicationUserModelId);
-}
-
-</code>
-    </remarks>
   </member>
   <member name="Windows.GetCurrentApplicationUserModelId">
-    <summary>
-      <para>Gets the <a href="https://docs.microsoft.com//windows/desktop/appxpkg/appx-packaging-glossary">application user model ID</a> for the current process.</para>
-    </summary>
-    <param name="applicationUserModelIdLength">
-      <para>On input, the size of the  <i>applicationUserModelId</i> buffer, in wide characters. On success, the size of the buffer used, including the null terminator.</para>
-    </param>
-    <param name="applicationUserModelId">
-      <para>A pointer to a buffer that receives the application user model ID.</para>
-    </param>
+    <summary>Gets the <a href="https://docs.microsoft.com//windows/desktop/appxpkg/appx-packaging-glossary">application user model ID</a> for the current process.</summary>
+    <param name="applicationUserModelIdLength">On input, the size of the <i>applicationUserModelId</i> buffer, in wide characters. On success, the size of the buffer used, including the null terminator.</param>
+    <param name="applicationUserModelId">A pointer to a buffer that receives the application user model ID.</param>
     <returns>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
@@ -589,2610 +273,1058 @@ void ShowProcessApplicationUserModelId(__in const UINT32 pid, __in HANDLE token)
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>APPMODEL_ERROR_NO_APPLICATION</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>APPMODEL_ERROR_NO_APPLICATION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The process has no application identity.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The process has no application identity.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <para>The buffer is not large enough to hold the data. The required size is specified  by <i>applicationUserModelIdLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer is not large enough to hold the data. The required size is specified by <i>applicationUserModelIdLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For info about string size limits, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/identity-constants">Identity constants</a>.</para>
-      <h4>Examples</h4>
-      <code>#define _UNICODE 1
-#define UNICODE 1
-
-#include &lt;Windows.h&gt;
-#include &lt;appmodel.h&gt;
-#include &lt;malloc.h&gt;
-#include &lt;stdio.h&gt;
-
-int __cdecl wmain()
-{
-    UINT32 length = 0;
-    LONG rc = GetCurrentApplicationUserModelId(&amp;amp;amp;amp;amp;amp;length, NULL);
-    if (rc != ERROR_INSUFFICIENT_BUFFER)
-    {
-        if (rc == APPMODEL_ERROR_NO_APPLICATION)
-            wprintf(L"Desktop application\n");
-        else
-            wprintf(L"Error %d in GetCurrentApplicationUserModelId\n", rc);
-        return 1;
-    }
-
-    PWSTR fullName = (PWSTR) malloc(length * sizeof(*fullName));
-    if (fullName == NULL)
-    {
-        wprintf(L"Error allocating memory\n");
-        return 2;
-    }
-
-    rc = GetCurrentApplicationUserModelId(&amp;amp;amp;amp;amp;amp;length, fullName);
-    if (rc != ERROR_SUCCESS)
-    {
-        wprintf(L"Error %d retrieving ApplicationUserModelId\n", rc);
-        return 3;
-    }
-    wprintf(L"%s\n", fullName);
-
-    free(fullName);
-
-    return 0;
-}
-
-</code>
-    </remarks>
-    <seealso cref="GetApplicationUserModelId" />
-    <seealso cref="GetCurrentPackageFullName" />
   </member>
   <member name="Windows.GetCurrentPackageFamilyName">
-    <summary>
-      <para>Gets the package family name for the calling process.</para>
-    </summary>
-    <param name="packageFamilyNameLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>On input, the size of the <i>packageFamilyName</i> buffer, in characters, including the null terminator. On output, the size of the package family name returned, in characters, including the null terminator.</para>
-    </param>
-    <param name="packageFamilyName">
-      <para>Type: <b>PWSTR</b></para>
-      <para>The package family name.</para>
-    </param>
+    <summary>Gets the package family name for the calling process.</summary>
+    <param name="packageFamilyNameLength">On input, the size of the <i>packageFamilyName</i> buffer, in characters, including the null terminator. On output, the size of the package family name returned, in characters, including the null terminator.</param>
+    <param name="packageFamilyName">The package family name.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>APPMODEL_ERROR_NO_PACKAGE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>APPMODEL_ERROR_NO_PACKAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The process has no package identity.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The process has no package identity.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <para>The buffer is not large enough to hold the data. The required size is specified  by <i>packageFamilyNameLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer is not large enough to hold the data. The required size is specified by <i>packageFamilyNameLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For info about string size limits, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/identity-constants">Identity constants</a>.</para>
-      <h4>Examples</h4>
-      <code>#define _UNICODE 1
-#define UNICODE 1
-
-#include &lt;Windows.h&gt;
-#include &lt;appmodel.h&gt;
-#include &lt;malloc.h&gt;
-#include &lt;stdio.h&gt;
-
-int __cdecl wmain()
-{
-    UINT32 length = 0;
-    LONG rc = GetCurrentPackageFamilyName(&amp;amp;amp;amp;amp;amp;length, NULL);
-    if (rc != ERROR_INSUFFICIENT_BUFFER)
-    {
-        if (rc == APPMODEL_ERROR_NO_PACKAGE)
-            wprintf(L"Process has no package identity\n");
-        else
-            wprintf(L"Error %d in GetCurrentPackageFamilyName\n", rc);
-        return 1;
-    }
-
-    PWSTR familyName = (PWSTR) malloc(length * sizeof(*familyName));
-    if (familyName == NULL)
-    {
-        wprintf(L"Error allocating memory\n");
-        return 2;
-    }
-
-    rc = GetCurrentPackageFamilyName(&amp;amp;amp;amp;amp;amp;length, familyName);
-    if (rc != ERROR_SUCCESS)
-    {
-        wprintf(L"Error %d retrieving PackageFamilyName\n", rc);
-        return 3;
-    }
-    wprintf(L"%s\n", familyName);
-
-    free(familyName);
-
-    return 0;
-}
-
-</code>
-    </remarks>
-    <seealso cref="GetCurrentPackageFullName" />
-    <seealso cref="GetCurrentPackageId" />
-    <seealso cref="GetCurrentPackageInfo" />
-    <seealso cref="GetCurrentPackagePath" />
-    <seealso cref="GetPackageFamilyName" />
-    <seealso cref="PackageFamilyNameFromFullName" />
-    <seealso cref="PackageFamilyNameFromId" />
   </member>
   <member name="Windows.GetCurrentPackageFullName">
-    <summary>
-      <para>Gets the package full name for the calling process.</para>
-    </summary>
-    <param name="packageFullNameLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>On input, the size of the <i>packageFullName</i> buffer, in characters. On output, the size of the package full name returned, in characters, including the null terminator.</para>
-    </param>
-    <param name="packageFullName">
-      <para>Type: <b>PWSTR</b></para>
-      <para>The package full name.</para>
-    </param>
+    <summary>Gets the package full name for the calling process.</summary>
+    <param name="packageFullNameLength">On input, the size of the <i>packageFullName</i> buffer, in characters. On output, the size of the package full name returned, in characters, including the null terminator.</param>
+    <param name="packageFullName">The package full name.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>APPMODEL_ERROR_NO_PACKAGE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>APPMODEL_ERROR_NO_PACKAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The process has no package identity.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The process has no package identity.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <para>The buffer is not large enough to hold the data. The required size is specified  by <i>packageFullNameLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer is not large enough to hold the data. The required size is specified by <i>packageFullNameLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For info about string size limits, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/identity-constants">Identity constants</a>.</para>
-      <h4>Examples</h4>
-      <code>#define _UNICODE 1
-#define UNICODE 1
-
-#include &lt;Windows.h&gt;
-#include &lt;appmodel.h&gt;
-#include &lt;malloc.h&gt;
-#include &lt;stdio.h&gt;
-
-int __cdecl wmain()
-{
-    UINT32 length = 0;
-    LONG rc = GetCurrentPackageFullName(&amp;amp;amp;amp;amp;amp;length, NULL);
-    if (rc != ERROR_INSUFFICIENT_BUFFER)
-    {
-        if (rc == APPMODEL_ERROR_NO_PACKAGE)
-            wprintf(L"Process has no package identity\n");
-        else
-            wprintf(L"Error %d in GetCurrentPackageFullName\n", rc);
-        return 1;
-    }
-
-    PWSTR fullName = (PWSTR) malloc(length * sizeof(*fullName));
-    if (fullName == NULL)
-    {
-        wprintf(L"Error allocating memory\n");
-        return 2;
-    }
-
-    rc = GetCurrentPackageFullName(&amp;amp;amp;amp;amp;amp;length, fullName);
-    if (rc != ERROR_SUCCESS)
-    {
-        wprintf(L"Error %d retrieving PackageFullName\n", rc);
-        return 3;
-    }
-    wprintf(L"%s\n", fullName);
-
-    free(fullName);
-
-    return 0;
-}
-
-</code>
-    </remarks>
-    <seealso cref="GetCurrentPackageFamilyName" />
-    <seealso cref="GetCurrentPackageId" />
-    <seealso cref="GetCurrentPackageInfo" />
-    <seealso cref="GetCurrentPackagePath" />
-    <seealso cref="GetPackageFullName" />
-    <seealso cref="PackageFullNameFromId" />
   </member>
   <member name="Windows.GetCurrentPackageId">
-    <summary>
-      <para>Gets the package identifier (ID) for the calling process.</para>
-    </summary>
-    <param name="bufferLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>On input, the size of <i>buffer</i>, in bytes. On output, the size of the structure returned, in bytes.</para>
-    </param>
-    <param name="buffer">
-      <para>Type: <b>BYTE*</b></para>
-      <para>The package ID, represented as a <see cref="PACKAGE_ID" /> structure.</para>
-    </param>
+    <summary>Gets the package identifier (ID) for the calling process.</summary>
+    <param name="bufferLength">On input, the size of <i>buffer</i>, in bytes. On output, the size of the structure returned, in bytes.</param>
+    <param name="buffer">The package ID, represented as a <see cref="PACKAGE_ID" /> structure.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>APPMODEL_ERROR_NO_PACKAGE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>APPMODEL_ERROR_NO_PACKAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The process has no package identity.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The process has no package identity.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <para>The buffer is not large enough to hold the data. The required size is specified  by <i>bufferLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer is not large enough to hold the data. The required size is specified by <i>bufferLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="GetCurrentPackageFamilyName" />
-    <seealso cref="GetCurrentPackageFullName" />
-    <seealso cref="GetCurrentPackageInfo" />
-    <seealso cref="GetCurrentPackagePath" />
-    <seealso cref="GetPackageId" />
-    <seealso cref="PackageIdFromFullName" />
   </member>
   <member name="Windows.GetCurrentPackageInfo">
-    <summary>
-      <para>Gets the package information for the calling process.</para>
-    </summary>
-    <param name="flags">
-      <para>Type: <b>const UINT32</b></para>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/appxpkg/package-constants">package constants</a> that specify how package information is retrieved. The <b>PACKAGE_FILTER_*</b> flags are supported.</para>
-    </param>
-    <param name="bufferLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>On input, the size of <i>buffer</i>, in bytes. On output, the size of the array of structures returned, in bytes.</para>
-    </param>
-    <param name="buffer">
-      <para>Type: <b>BYTE*</b></para>
-      <para>The package information, represented as an array of <see cref="PACKAGE_INFO" /> structures.</para>
-    </param>
-    <param name="count">
-      <para>Type: <b>UINT32*</b></para>
-      <para>The number of structures in the buffer.</para>
-    </param>
+    <summary>Gets the package information for the calling process.</summary>
+    <param name="flags">The <a href="https://docs.microsoft.com//windows/desktop/appxpkg/package-constants">package constants</a> that specify how package information is retrieved. The <b>PACKAGE_FILTER_*</b> flags are supported.</param>
+    <param name="bufferLength">On input, the size of <i>buffer</i>, in bytes. On output, the size of the array of structures returned, in bytes.</param>
+    <param name="buffer">The package information, represented as an array of <see cref="PACKAGE_INFO" /> structures.</param>
+    <param name="count">The number of structures in the buffer.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>APPMODEL_ERROR_NO_PACKAGE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>APPMODEL_ERROR_NO_PACKAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The process has no package identity.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The process has no package identity.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <para>The buffer is not large enough to hold the data. The required size is specified  by <i>bufferLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer is not large enough to hold the data. The required size is specified by <i>bufferLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="GetCurrentPackageInfo2" />
-    <seealso cref="GetCurrentPackageFamilyName" />
-    <seealso cref="GetCurrentPackageFullName" />
-    <seealso cref="GetCurrentPackageId" />
-    <seealso cref="GetCurrentPackagePath" />
-    <seealso cref="GetPackageInfo" />
   </member>
   <member name="Windows.GetCurrentPackageInfo2">
-    <summary>
-      <para>Gets the package information for the calling process, with the option to specify the type of folder path to retrieve for the package.</para>
-    </summary>
-    <param name="flags">
-      <para>Type: <b>const UINT32</b></para>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/appxpkg/package-constants">package constants</a> that specify how package information is retrieved. The <b>PACKAGE_FILTER_*</b> flags are supported.</para>
-    </param>
-    <param name="packagePathType">
-      <para>Type: <see cref="PackagePathType" /></para>
-      <para>Indicates the type of folder path to retrieve for the package (the original install folder or the mutable folder).</para>
-    </param>
-    <param name="bufferLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>On input, the size of <i>buffer</i>, in bytes. On output, the size of the array of structures returned, in bytes.</para>
-    </param>
-    <param name="buffer">
-      <para>Type: <b>BYTE*</b></para>
-      <para>The package information, represented as an array of <see cref="PACKAGE_INFO" /> structures.</para>
-    </param>
-    <param name="count">
-      <para>Type: <b>UINT32*</b></para>
-      <para>The number of structures in the buffer.</para>
-    </param>
+    <summary>Gets the package information for the calling process, with the option to specify the type of folder path to retrieve for the package.</summary>
+    <param name="flags">The <a href="https://docs.microsoft.com//windows/desktop/appxpkg/package-constants">package constants</a> that specify how package information is retrieved. The <b>PACKAGE_FILTER_*</b> flags are supported.</param>
+    <param name="packagePathType">Indicates the type of folder path to retrieve for the package (the original install folder or the mutable folder).</param>
+    <param name="bufferLength">On input, the size of <i>buffer</i>, in bytes. On output, the size of the array of structures returned, in bytes.</param>
+    <param name="buffer">The package information, represented as an array of <see cref="PACKAGE_INFO" /> structures.</param>
+    <param name="count">The number of structures in the buffer.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>APPMODEL_ERROR_NO_PACKAGE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>APPMODEL_ERROR_NO_PACKAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The process has no package identity.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The process has no package identity.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <para>The buffer is not large enough to hold the data. The required size is specified  by <i>bufferLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer is not large enough to hold the data. The required size is specified by <i>bufferLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <i>packagePathType</i> parameter is useful for applications that use the <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-package-extension">windows.mutablePackageDirectories extension</a> in their package manifest. This extension specifies a folder under the %ProgramFiles%\ModifiableWindowsApps path where the contents of the application's install folder are projected so that users can modify the installation files. This feature is currently available only for certain types of desktop PC games that are published by Microsoft and our partners, and it enables these types of games to support mods.</para>
-    </remarks>
-    <seealso cref="GetCurrentPackageInfo" />
-    <seealso cref="GetCurrentPackageFamilyName" />
-    <seealso cref="GetCurrentPackageFullName" />
-    <seealso cref="GetCurrentPackageId" />
-    <seealso cref="GetCurrentPackagePath" />
-    <seealso cref="GetPackageInfo" />
-    <seealso cref="GetPackageInfo2" />
   </member>
   <member name="Windows.GetCurrentPackagePath">
-    <summary>
-      <para>Gets the package path for the calling process.</para>
-    </summary>
-    <param name="pathLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>On input, the size of the <i>path</i> buffer, in characters. On output, the size of the package path returned, in characters, including the null terminator.</para>
-    </param>
-    <param name="path">
-      <para>Type: <b>PWSTR</b></para>
-      <para>The package path.</para>
-    </param>
+    <summary>Gets the package path for the calling process.</summary>
+    <param name="pathLength">On input, the size of the <i>path</i> buffer, in characters. On output, the size of the package path returned, in characters, including the null terminator.</param>
+    <param name="path">The package path.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>APPMODEL_ERROR_NO_PACKAGE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>APPMODEL_ERROR_NO_PACKAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The process has no package identity.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The process has no package identity.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <para>The buffer is not large enough to hold the data. The required size is specified  by <i>pathLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer is not large enough to hold the data. The required size is specified by <i>pathLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="GetCurrentPackagePath2" />
-    <seealso cref="GetCurrentPackageFamilyName" />
-    <seealso cref="GetCurrentPackageFullName" />
-    <seealso cref="GetCurrentPackageId" />
-    <seealso cref="GetCurrentPackageInfo" />
-    <seealso cref="GetPackagePath" />
   </member>
   <member name="Windows.GetCurrentPackagePath2">
-    <summary>
-      <para>Gets the package path for the calling process, with the option to specify the type of folder path to retrieve for the package.</para>
-    </summary>
-    <param name="packagePathType">
-      <para>Type: <see cref="PackagePathType" /></para>
-      <para>Indicates the type of folder path to retrieve for the package (the original install folder or the mutable folder).</para>
-    </param>
-    <param name="pathLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>On input, the size of the <i>path</i> buffer, in characters. On output, the size of the package path returned, in characters, including the null terminator.</para>
-    </param>
-    <param name="path">
-      <para>Type: <b>PWSTR</b></para>
-      <para>The package path.</para>
-    </param>
+    <summary>Gets the package path for the calling process, with the option to specify the type of folder path to retrieve for the package.</summary>
+    <param name="packagePathType">Indicates the type of folder path to retrieve for the package (the original install folder or the mutable folder).</param>
+    <param name="pathLength">On input, the size of the <i>path</i> buffer, in characters. On output, the size of the package path returned, in characters, including the null terminator.</param>
+    <param name="path">The package path.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>APPMODEL_ERROR_NO_PACKAGE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>APPMODEL_ERROR_NO_PACKAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The process has no package identity.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The process has no package identity.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <para>The buffer is not large enough to hold the data. The required size is specified  by <i>pathLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer is not large enough to hold the data. The required size is specified by <i>pathLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <i>packagePathType</i> parameter is useful for applications that use the <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-package-extension">windows.mutablePackageDirectories extension</a> in their package manifest. This extension specifies a folder under the %ProgramFiles%\ModifiableWindowsApps path where the contents of the application's install folder are projected so that users can modify the installation files. This feature is currently available only for certain types of desktop PC games that are published by Microsoft and our partners, and it enables these types of games to support mods.</para>
-    </remarks>
-    <seealso cref="GetCurrentPackagePath" />
-    <seealso cref="GetCurrentPackageFamilyName" />
-    <seealso cref="GetCurrentPackageFullName" />
-    <seealso cref="GetCurrentPackageId" />
-    <seealso cref="GetCurrentPackageInfo" />
-    <seealso cref="GetCurrentPackageInfo2" />
-    <seealso cref="GetPackagePath" />
   </member>
   <member name="Windows.GetIdForPackageDependencyContext">
-    <summary>
-      <para>Returns the package dependency for the specified context handle.</para>
-    </summary>
-    <param name="packageDependencyContext">
-      <para>Type: <b>PACKAGEDEPENDENCY_CONTEXT</b></para>
-      <para>The handle of the package dependency to return.</para>
-    </param>
-    <param name="packageDependencyId">
-      <para>Type: <b>PCWSTR*</b></para>
-      <para>The ID of the package dependency for the specified context handle. If the package dependency cannot be resolved, the function succeeds but this parameter is <b>nullptr</b> on output. Use the <see cref="HeapAlloc" /> function to allocate memory for this parameter, and use <see cref="HeapFree" /> to deallocate the memory.</para>
-    </param>
-    <returns>
-      <para>| Return code | Description |
-|-------------|-------------|
-| E_INVALIDARG | The <i>packageDependencyContext</i> or <i>packageDependencyId</i> parameter is NULL on input. |</para>
-    </returns>
+    <summary>Returns the package dependency for the specified context handle.</summary>
+    <param name="packageDependencyContext">The handle of the package dependency to return.</param>
+    <param name="packageDependencyId">The ID of the package dependency for the specified context handle. If the package dependency cannot be resolved, the function succeeds but this parameter is <b>nullptr</b> on output. Use the <see cref="HeapAlloc" /> function to allocate memory for this parameter, and use <see cref="HeapFree" /> to deallocate the memory.</param>
+    <returns>| Return code | Description | |-------------|-------------| | E_INVALIDARG | The <i>packageDependencyContext</i> or <i>packageDependencyId</i> parameter is NULL on input. |</returns>
   </member>
   <member name="Windows.GetPackageApplicationIds">
-    <summary>
-      <para>Gets the IDs of apps in the specified package.</para>
-    </summary>
-    <param name="packageInfoReference">
-      <para>Type: <b>PACKAGE_INFO_REFERENCE</b></para>
-      <para>A reference to package information.</para>
-    </param>
+    <summary>Gets the IDs of apps in the specified package.</summary>
+    <param name="packageInfoReference">A reference to package information.</param>
     <param name="bufferLength">
-      <para>Type: <b>UINT32*</b></para>
       <para>A pointer to a variable that holds the size of <i>buffer</i>, in bytes.</para>
       <para>First you pass <b>NULL</b> to <i>buffer</i> to get the required size of <i>buffer</i>. You use this number to allocate memory space for <i>buffer</i>. Then you pass the address of this memory space to fill <i>buffer</i>.</para>
     </param>
-    <param name="buffer">
-      <para>Type: <b>BYTE*</b></para>
-      <para>A pointer to memory space that receives  the app IDs.</para>
-    </param>
-    <param name="count">
-      <para>Type: <b>UINT32*</b></para>
-      <para>A pointer to a variable that receives the number of app IDs in <i>buffer</i>.</para>
-    </param>
+    <param name="buffer">A pointer to memory space that receives the app IDs.</param>
+    <param name="count">A pointer to a variable that receives the number of app IDs in <i>buffer</i>.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The buffer is not large enough to hold the data. The required size is specified  by <i>bufferLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer is not large enough to hold the data. The required size is specified by <i>bufferLength</i>.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="Windows.GetPackageFamilyName">
-    <summary>
-      <para>Gets the package family name for the specified process.</para>
-    </summary>
-    <param name="hProcess">
-      <para>Type: <b>HANDLE</b></para>
-      <para>A handle to the process that has the <b>PROCESS_QUERY_INFORMATION</b> or <b>PROCESS_QUERY_LIMITED_INFORMATION</b> access right. For more information, see <a href="https://docs.microsoft.com//windows/desktop/ProcThread/process-security-and-access-rights">Process Security and Access Rights</a>.</para>
-    </param>
-    <param name="packageFamilyNameLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>On input, the size of the <i>packageFamilyName</i> buffer, in characters. On output, the size of the package family name returned, in characters, including the null-terminator.</para>
-    </param>
-    <param name="packageFamilyName">
-      <para>Type: <b>PWSTR</b></para>
-      <para>The package family name.</para>
-    </param>
+    <summary>Gets the package family name for the specified process.</summary>
+    <param name="hProcess">A handle to the process that has the <b>PROCESS_QUERY_INFORMATION</b> or <b>PROCESS_QUERY_LIMITED_INFORMATION</b> access right. For more information, see <a href="https://docs.microsoft.com//windows/desktop/ProcThread/process-security-and-access-rights">Process Security and Access Rights</a>.</param>
+    <param name="packageFamilyNameLength">On input, the size of the <i>packageFamilyName</i> buffer, in characters. On output, the size of the package family name returned, in characters, including the null-terminator.</param>
+    <param name="packageFamilyName">The package family name.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>APPMODEL_ERROR_NO_PACKAGE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>APPMODEL_ERROR_NO_PACKAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The process has no package identity.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The process has no package identity.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <para>The buffer is not large enough to hold the data. The required size is specified  by <i>packageFamilyNameLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer is not large enough to hold the data. The required size is specified by <i>packageFamilyNameLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For info about string size limits, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/identity-constants">Identity constants</a>.</para>
-      <h4>Examples</h4>
-      <code>#define _UNICODE 1
-#define UNICODE 1
-
-#include &lt;Windows.h&gt;
-#include &lt;appmodel.h&gt;
-#include &lt;malloc.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;stdio.h&gt;
-
-int ShowUsage();
-void ShowProcessPackageFamilyName(__in const UINT32 pid, __in HANDLE process);
-
-int ShowUsage()
-{
-    wprintf(L"Usage: GetPackageFamilyName &lt;pid&gt; [&lt;pid&gt;...]\n");
-    return 1;
-}
-
-int __cdecl wmain(__in int argc, __in_ecount(argc) WCHAR * argv[])
-{
-    if (argc &lt;= 1)
-        return ShowUsage();
-
-    for (int i=1; i&lt;argc; ++i)
-    {
-        UINT32 pid = wcstoul(argv[i], NULL, 10);
-        if (pid &gt; 0)
-        {
-            HANDLE process = OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, FALSE, pid);
-            if (process == NULL)
-                wprintf(L"Error %d in OpenProcess (pid=%u)\n", GetLastError(), pid);
-            else
-            {
-                ShowProcessPackageFamilyName(pid, process);
-                CloseHandle(process);
-            }
-        }
-    }
-    return 0;
-}
-
-void ShowProcessPackageFamilyName(__in const UINT32 pid, __in HANDLE process)
-{
-    wprintf(L"Process %u (handle=%p)\n", pid, process);
-
-    UINT32 length = 0;
-    LONG rc = GetPackageFamilyName(process, &amp;amp;amp;amp;amp;amp;length, NULL);
-    if (rc != ERROR_INSUFFICIENT_BUFFER)
-    {
-        if (rc == APPMODEL_ERROR_NO_PACKAGE)
-            wprintf(L"Process has no package identity\n");
-        else
-            wprintf(L"Error %d in GetPackageFamilyName\n", rc);
-        return;
-    }
-
-    PWSTR familyName = (PWSTR) malloc(length * sizeof(*familyName));
-    if (familyName == NULL)
-    {
-        wprintf(L"Error allocating memory\n");
-        return;
-    }
-
-    rc = GetPackageFamilyName(process, &amp;amp;amp;amp;amp;amp;length, familyName);
-    if (rc != ERROR_SUCCESS)
-        wprintf(L"Error %d retrieving PackageFamilyName\n", rc);
-    else
-        wprintf(L"%s\n", familyName);
-
-    free(familyName);
-}
-
-
-</code>
-    </remarks>
-    <seealso cref="GetCurrentPackageFamilyName" />
-    <seealso cref="GetPackageFullName" />
-    <seealso cref="GetPackageId" />
-    <seealso cref="PackageFamilyNameFromFullName" />
-    <seealso cref="PackageFamilyNameFromId" />
   </member>
   <member name="Windows.GetPackageFamilyNameFromToken">
-    <summary>
-      <para>Gets the package family name for the specified token.</para>
-    </summary>
-    <param name="token">
-      <para>Type: <b>HANDLE</b></para>
-      <para>A token that contains the package identity.</para>
-    </param>
-    <param name="packageFamilyNameLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>On input, the size of the <i>packageFamilyName</i> buffer, in characters. On output, the size of the package family name returned, in characters, including the null-terminator.</para>
-    </param>
-    <param name="packageFamilyName">
-      <para>Type: <b>PWSTR</b></para>
-      <para>The package family name.</para>
-    </param>
+    <summary>Gets the package family name for the specified token.</summary>
+    <param name="token">A token that contains the package identity.</param>
+    <param name="packageFamilyNameLength">On input, the size of the <i>packageFamilyName</i> buffer, in characters. On output, the size of the package family name returned, in characters, including the null-terminator.</param>
+    <param name="packageFamilyName">The package family name.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>APPMODEL_ERROR_NO_PACKAGE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>APPMODEL_ERROR_NO_PACKAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The token has no package identity.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The token has no package identity.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <para>The buffer is not large enough to hold the data. The required size is specified  by <i>packageFamilyNameLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer is not large enough to hold the data. The required size is specified by <i>packageFamilyNameLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For info about string size limits, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/identity-constants">Identity constants</a>.</para>
-      <h4>Examples</h4>
-      <code>/***************************************************
-*                                                  *
-*   Copyright (C) Microsoft. All rights reserved.  *
-*                                                  *
-***************************************************/
-
-#define _UNICODE 1
-#define UNICODE 1
-
-#include &lt;Windows.h&gt;
-#include &lt;appmodel.h&gt;
-#include &lt;appmodelp.h&gt;
-#include &lt;malloc.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;stdio.h&gt;
-
-int ShowUsage();
-void ShowProcessPackageFamilyName(__in const UINT32 pid, __in HANDLE token);
-
-int ShowUsage()
-{
-    wprintf(L"Usage: GetPackageFamilyNameFromToken &lt;pid&gt; [&lt;pid&gt;...]\n");
-    return 1;
-}
-
-int __cdecl wmain(__in int argc, __in_ecount(argc) WCHAR * argv[])
-{
-    if (argc &lt;= 1)
-        return ShowUsage();
-
-    for (int i=1; i&lt;argc; ++i)
-    {
-        UINT32 pid = wcstoul(argv[i], NULL, 10);
-        if (pid &gt; 0)
-        {
-            HANDLE process = OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, FALSE, pid);
-            if (process == NULL)
-                wprintf(L"Error %d in OpenProcess (pid=%u)\n", GetLastError(), pid);
-            else
-            {
-                HANDLE token;
-                if (!OpenProcessToken(process, TOKEN_QUERY, &amp;amp;amp;amp;amp;amp;token))
-                    wprintf(L"Error %d in OpenProcessToken (pid=%u)\n", GetLastError(), pid);
-                else
-                {
-                    ShowProcessPackageFamilyName(pid, token);
-                    CloseHandle(token);
-                }
-                CloseHandle(process);
-            }
-        }
-    }
-    return 0;
-}
-
-void ShowProcessPackageFamilyName(__in const UINT32 pid, __in HANDLE token)
-{
-    wprintf(L"Process %u (token=%p)\n", pid, token);
-
-    UINT32 length = 0;
-    LONG rc = GetPackageFamilyNameFromToken(token, &amp;amp;amp;amp;amp;amp;length, NULL);
-    if (rc != ERROR_INSUFFICIENT_BUFFER)
-    {
-        if (rc == APPMODEL_ERROR_NO_PACKAGE)
-            wprintf(L"Token has no package identity\n");
-        else
-            wprintf(L"Error %d in GetPackageFamilyNameFromToken\n", rc);
-        return;
-    }
-
-    PWSTR familyName = (PWSTR) malloc(length * sizeof(*familyName));
-    if (familyName == NULL)
-    {
-        wprintf(L"Error allocating memory\n");
-        return;
-    }
-
-    rc = GetPackageFamilyNameFromToken(token, &amp;amp;amp;amp;amp;amp;length, familyName);
-    if (rc != ERROR_SUCCESS)
-        wprintf(L"Error %d retrieving PackageFamilyName\n", rc);
-    else
-        wprintf(L"%s\n", familyName);
-
-    free(familyName);
-}
-
-</code>
-    </remarks>
   </member>
   <member name="Windows.GetPackageFullName">
-    <summary>
-      <para>Gets the package full name for the specified process.</para>
-    </summary>
-    <param name="hProcess">
-      <para>Type: <b>HANDLE</b></para>
-      <para>A handle to the process that has the <b>PROCESS_QUERY_INFORMATION</b> or <b>PROCESS_QUERY_LIMITED_INFORMATION</b> access right. For more information, see <a href="https://docs.microsoft.com//windows/desktop/ProcThread/process-security-and-access-rights">Process Security and Access Rights</a>.</para>
-    </param>
-    <param name="packageFullNameLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>On input, the size of the <i>packageFullName</i> buffer, in characters. On output, the size of the package full name returned, in characters, including the null terminator.</para>
-    </param>
-    <param name="packageFullName">
-      <para>Type: <b>PWSTR</b></para>
-      <para>The package full name.</para>
-    </param>
+    <summary>Gets the package full name for the specified process.</summary>
+    <param name="hProcess">A handle to the process that has the <b>PROCESS_QUERY_INFORMATION</b> or <b>PROCESS_QUERY_LIMITED_INFORMATION</b> access right. For more information, see <a href="https://docs.microsoft.com//windows/desktop/ProcThread/process-security-and-access-rights">Process Security and Access Rights</a>.</param>
+    <param name="packageFullNameLength">On input, the size of the <i>packageFullName</i> buffer, in characters. On output, the size of the package full name returned, in characters, including the null terminator.</param>
+    <param name="packageFullName">The package full name.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>APPMODEL_ERROR_NO_PACKAGE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>APPMODEL_ERROR_NO_PACKAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The process has no package identity.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The process has no package identity.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <para>The buffer is not large enough to hold the data. The required size is specified  by <i>packageFullNameLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer is not large enough to hold the data. The required size is specified by <i>packageFullNameLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For info about string size limits, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/identity-constants">Identity constants</a>.</para>
-      <h4>Examples</h4>
-      <code>#define _UNICODE 1
-#define UNICODE 1
-
-#include &lt;Windows.h&gt;
-#include &lt;appmodel.h&gt;
-#include &lt;malloc.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;stdio.h&gt;
-
-int ShowUsage();
-void ShowProcessPackageFullName(__in const UINT32 pid, __in HANDLE process);
-
-int ShowUsage()
-{
-    wprintf(L"Usage: GetPackageFullName &lt;pid&gt; [&lt;pid&gt;...]\n");
-    return 1;
-}
-
-int __cdecl wmain(__in int argc, __in_ecount(argc) WCHAR * argv[])
-{
-    if (argc &lt;= 1)
-        return ShowUsage();
-
-    for (int i=1; i&lt;argc; ++i)
-    {
-        UINT32 pid = wcstoul(argv[i], NULL, 10);
-        if (pid &gt; 0)
-        {
-            HANDLE process = OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, FALSE, pid);
-            if (process == NULL)
-                wprintf(L"Error %d in OpenProcess (pid=%u)\n", GetLastError(), pid);
-            else
-            {
-                ShowProcessPackageFullName(pid, process);
-                CloseHandle(process);
-            }
-        }
-    }
-    return 0;
-}
-
-void ShowProcessPackageFullName(__in const UINT32 pid, __in HANDLE process)
-{
-    wprintf(L"Process %u (handle=%p)\n", pid, process);
-
-    UINT32 length = 0;
-    LONG rc = GetPackageFullName(process, &amp;amp;amp;amp;amp;amp;length, NULL);
-    if (rc != ERROR_INSUFFICIENT_BUFFER)
-    {
-        if (rc == APPMODEL_ERROR_NO_PACKAGE)
-            wprintf(L"Process has no package identity\n");
-        else
-            wprintf(L"Error %d in GetPackageFullName\n", rc);
-        return;
-    }
-
-    PWSTR fullName = (PWSTR) malloc(length * sizeof(*fullName));
-    if (fullName == NULL)
-    {
-        wprintf(L"Error allocating memory\n");
-        return;
-    }
-
-    rc = GetPackageFullName(process, &amp;amp;amp;amp;amp;amp;length, fullName);
-    if (rc != ERROR_SUCCESS)
-        wprintf(L"Error %d retrieving PackageFullName\n", rc);
-    else
-        wprintf(L"%s\n", fullName);
-
-    free(fullName);
-}
-
-
-</code>
-    </remarks>
-    <seealso cref="GetCurrentPackageFullName" />
-    <seealso cref="GetPackageFamilyName" />
-    <seealso cref="GetPackageId" />
-    <seealso cref="PackageFullNameFromId" />
   </member>
   <member name="Windows.GetPackageFullNameFromToken">
-    <summary>
-      <para>Gets the package full name for the specified token.</para>
-    </summary>
-    <param name="token">
-      <para>A token that contains the package identity.</para>
-    </param>
-    <param name="packageFullNameLength">
-      <para>On input, the size of the <i>packageFullName</i> buffer, in characters. On output, the
-size of the package full name returned, in characters, including the null terminator.</para>
-    </param>
-    <param name="packageFullName">
-      <para>The package full name.</para>
-    </param>
+    <summary>Gets the package full name for the specified token.</summary>
+    <param name="token">A token that contains the package identity.</param>
+    <param name="packageFullNameLength">On input, the size of the <i>packageFullName</i> buffer, in characters. On output, the size of the package full name returned, in characters, including the null terminator.</param>
+    <param name="packageFullName">The package full name.</param>
     <returns>
-      <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function
-returns an error code. The possible error codes include the following.</para>
+      <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>APPMODEL_ERROR_NO_PACKAGE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>APPMODEL_ERROR_NO_PACKAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The token has no package identity.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The token has no package identity.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <para>The buffer is not large enough to hold the data. The required size is specified  by
-<i>packageFullNameLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer is not large enough to hold the data. The required size is specified by <i>packageFullNameLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For info about string size limits, see
-<a href="https://docs.microsoft.com//windows/desktop/appxpkg/identity-constants">Identity constants</a>.</para>
-      <h4>Examples</h4>
-      <code>/***************************************************
-*                                                  *
-*   Copyright (C) Microsoft. All rights reserved.  *
-*                                                  *
-***************************************************/
-
-#define _UNICODE 1
-#define UNICODE 1
-
-#include &lt;Windows.h&gt;
-#include &lt;appmodel.h&gt;
-#include &lt;appmodelp.h&gt;
-#include &lt;malloc.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;stdio.h&gt;
-
-int ShowUsage();
-void ShowProcessPackageFullName(__in const UINT32 pid, __in HANDLE token);
-
-int ShowUsage()
-{
-    wprintf(L"Usage: GetPackageFullNameFromToken &lt;pid&gt; [&lt;pid&gt;...]\n");
-    return 1;
-}
-
-int __cdecl wmain(__in int argc, __in_ecount(argc) WCHAR * argv[])
-{
-    if (argc &lt;= 1)
-        return ShowUsage();
-
-    for (int i=1; i&lt;argc; ++i)
-    {
-        UINT32 pid = wcstoul(argv[i], NULL, 10);
-        if (pid &gt; 0)
-        {
-            HANDLE process = OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, FALSE, pid);
-            if (process == NULL)
-                wprintf(L"Error %d in OpenProcess (pid=%u)\n", GetLastError(), pid);
-            else
-            {
-                HANDLE token;
-                if (!OpenProcessToken(process, TOKEN_QUERY, &amp;amp;amp;amp;amp;amp;token))
-                    wprintf(L"Error %d in OpenProcessToken (pid=%u)\n", GetLastError(), pid);
-                else
-                {
-                    ShowProcessPackageFullName(pid, token);
-                    CloseHandle(token);
-                }
-                CloseHandle(process);
-            }
-        }
-    }
-    return 0;
-}
-
-void ShowProcessPackageFullName(__in const UINT32 pid, __in HANDLE token)
-{
-    wprintf(L"Process %u (token=%p)\n", pid, token);
-
-    UINT32 length = 0;
-    LONG rc = GetPackageFullNameFromToken(token, &amp;amp;amp;amp;amp;amp;length, NULL);
-    if (rc != ERROR_INSUFFICIENT_BUFFER)
-    {
-        if (rc == APPMODEL_ERROR_NO_PACKAGE)
-            wprintf(L"Token has no package identity\n");
-        else
-            wprintf(L"Error %d in GetPackageFullNameFromToken\n", rc);
-        return;
-    }
-
-    PWSTR fullName = (PWSTR) malloc(length * sizeof(*fullName));
-    if (fullName == NULL)
-    {
-        wprintf(L"Error allocating memory\n");
-        return;
-    }
-
-    rc = GetPackageFullNameFromToken(token, &amp;amp;amp;amp;amp;amp;length, fullName);
-    if (rc != ERROR_SUCCESS)
-        wprintf(L"Error %d retrieving PackageFullName\n", rc);
-    else
-        wprintf(L"%s\n", fullName);
-
-    free(fullName);
-}
-</code>
-    </remarks>
   </member>
   <member name="Windows.GetPackageId">
-    <summary>
-      <para>Gets the package identifier (ID) for the specified process.</para>
-    </summary>
-    <param name="hProcess">
-      <para>Type: <b>HANDLE</b></para>
-      <para>A handle to the process that has the <b>PROCESS_QUERY_INFORMATION</b> or <b>PROCESS_QUERY_LIMITED_INFORMATION</b> access right. For more information, see <a href="https://docs.microsoft.com//windows/desktop/ProcThread/process-security-and-access-rights">Process Security and Access Rights</a>.</para>
-    </param>
-    <param name="bufferLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>On input, the size of <i>buffer</i>, in bytes. On output, the size of the structure returned, in bytes.</para>
-    </param>
-    <param name="buffer">
-      <para>Type: <b>BYTE*</b></para>
-      <para>The package ID, represented as a <see cref="PACKAGE_ID" /> structure.</para>
-    </param>
+    <summary>Gets the package identifier (ID) for the specified process.</summary>
+    <param name="hProcess">A handle to the process that has the <b>PROCESS_QUERY_INFORMATION</b> or <b>PROCESS_QUERY_LIMITED_INFORMATION</b> access right. For more information, see <a href="https://docs.microsoft.com//windows/desktop/ProcThread/process-security-and-access-rights">Process Security and Access Rights</a>.</param>
+    <param name="bufferLength">On input, the size of <i>buffer</i>, in bytes. On output, the size of the structure returned, in bytes.</param>
+    <param name="buffer">The package ID, represented as a <see cref="PACKAGE_ID" /> structure.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>APPMODEL_ERROR_NO_PACKAGE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>APPMODEL_ERROR_NO_PACKAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The process has no package identity.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The process has no package identity.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <para>The buffer is not large enough to hold the data. The required size is specified  by <i>bufferLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer is not large enough to hold the data. The required size is specified by <i>bufferLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="GetCurrentPackageId" />
-    <seealso cref="GetPackageFamilyName" />
-    <seealso cref="GetPackageFullName" />
   </member>
   <member name="Windows.GetPackageInfo">
-    <summary>
-      <para>Gets the package information for the specified package.</para>
-    </summary>
-    <param name="packageInfoReference">
-      <para>Type: <b>PACKAGE_INFO_REFERENCE</b></para>
-      <para>A reference to package information.</para>
-    </param>
-    <param name="flags">
-      <para>Type: <b>const UINT32</b></para>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/appxpkg/package-constants">package constants</a> that specify how package information is retrieved.</para>
-    </param>
-    <param name="bufferLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>On input, the size of <i>buffer</i>, in bytes. On output, the size of the package information returned, in bytes.</para>
-    </param>
-    <param name="buffer">
-      <para>Type: <b>BYTE*</b></para>
-      <para>The package information, represented as an array of <see cref="PACKAGE_INFO" /> structures.</para>
-    </param>
-    <param name="count">
-      <para>Type: <b>UINT32*</b></para>
-      <para>The number of packages in the buffer.</para>
-    </param>
+    <summary>Gets the package information for the specified package.</summary>
+    <param name="packageInfoReference">A reference to package information.</param>
+    <param name="flags">The <a href="https://docs.microsoft.com//windows/desktop/appxpkg/package-constants">package constants</a> that specify how package information is retrieved.</param>
+    <param name="bufferLength">On input, the size of <i>buffer</i>, in bytes. On output, the size of the package information returned, in bytes.</param>
+    <param name="buffer">The package information, represented as an array of <see cref="PACKAGE_INFO" /> structures.</param>
+    <param name="count">The number of packages in the buffer.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The buffer is not large enough to hold the data. The required size is specified  by <i>bufferLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer is not large enough to hold the data. The required size is specified by <i>bufferLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="GetPackageInfo2" />
-    <seealso cref="ClosePackageInfo" />
-    <seealso cref="GetCurrentPackageInfo" />
-    <seealso cref="GetPackagePath" />
-    <seealso cref="OpenPackageInfoByFullName" />
   </member>
   <member name="Windows.GetPackageInfo2">
-    <summary>
-      <para>Gets the package information for the specified package, with the option to specify the type of folder path to retrieve for the package.</para>
-    </summary>
-    <param name="packageInfoReference">
-      <para>Type: <b>PACKAGE_INFO_REFERENCE</b></para>
-      <para>A reference to package information.</para>
-    </param>
-    <param name="flags">
-      <para>Type: <b>const UINT32</b></para>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/appxpkg/package-constants">package constants</a> that specify how package information is retrieved.</para>
-    </param>
-    <param name="packagePathType">
-      <para>Type: <see cref="PackagePathType" /></para>
-      <para>Indicates the type of folder path to retrieve for the package (the original install folder or the mutable folder).</para>
-    </param>
-    <param name="bufferLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>On input, the size of <i>buffer</i>, in bytes. On output, the size of the package information returned, in bytes.</para>
-    </param>
-    <param name="buffer">
-      <para>Type: <b>BYTE*</b></para>
-      <para>The package information, represented as an array of <see cref="PACKAGE_INFO" /> structures.</para>
-    </param>
-    <param name="count">
-      <para>Type: <b>UINT32*</b></para>
-      <para>The number of packages in the buffer.</para>
-    </param>
+    <summary>Gets the package information for the specified package, with the option to specify the type of folder path to retrieve for the package.</summary>
+    <param name="packageInfoReference">A reference to package information.</param>
+    <param name="flags">The <a href="https://docs.microsoft.com//windows/desktop/appxpkg/package-constants">package constants</a> that specify how package information is retrieved.</param>
+    <param name="packagePathType">Indicates the type of folder path to retrieve for the package (the original install folder or the mutable folder).</param>
+    <param name="bufferLength">On input, the size of <i>buffer</i>, in bytes. On output, the size of the package information returned, in bytes.</param>
+    <param name="buffer">The package information, represented as an array of <see cref="PACKAGE_INFO" /> structures.</param>
+    <param name="count">The number of packages in the buffer.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The buffer is not large enough to hold the data. The required size is specified  by <i>bufferLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer is not large enough to hold the data. The required size is specified by <i>bufferLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <i>packagePathType</i> parameter is useful for applications that use the <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-package-extension">windows.mutablePackageDirectories extension</a> in their package manifest. This extension specifies a folder under the %ProgramFiles%\ModifiableWindowsApps path where the contents of the application's install folder are projected so that users can modify the installation files. This feature is currently available only for certain types of desktop PC games that are published by Microsoft and our partners, and it enables these types of games to support mods.</para>
-    </remarks>
-    <seealso cref="GetPackageInfo" />
-    <seealso cref="GetCurrentPackageInfo2" />
-    <seealso cref="ClosePackageInfo" />
-    <seealso cref="GetCurrentPackageInfo" />
-    <seealso cref="GetPackagePath" />
-    <seealso cref="OpenPackageInfoByFullName" />
   </member>
   <member name="Windows.GetPackagePath">
-    <summary>
-      <para>Gets the path for the specified package.</para>
-    </summary>
-    <param name="packageId">
-      <para>Type: <b>const <see cref="PACKAGE_ID" />*</b></para>
-      <para>The package identifier.</para>
-    </param>
-    <param name="reserved">
-      <para>Type: <b>const UINT32</b></para>
-      <para>Reserved, do not use.</para>
-    </param>
-    <param name="pathLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>On input, the size of the <i>path</i> buffer, in characters. On output, the size of the package path returned, in characters, including the null-terminator.</para>
-    </param>
-    <param name="path">
-      <para>Type: <b>PWSTR</b></para>
-      <para>The package path.</para>
-    </param>
+    <summary>Gets the path for the specified package.</summary>
+    <param name="packageId">The package identifier.</param>
+    <param name="reserved">Reserved, do not use.</param>
+    <param name="pathLength">On input, the size of the <i>path</i> buffer, in characters. On output, the size of the package path returned, in characters, including the null-terminator.</param>
+    <param name="path">The package path.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The buffer specified by <i>path</i> is not large enough to hold the data. The required size is specified  by <i>pathLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer specified by <i>path</i> is not large enough to hold the data. The required size is specified by <i>pathLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="GetPackageInfo" />
   </member>
   <member name="Windows.GetPackagePathByFullName">
-    <summary>
-      <para>Gets the path of the specified package.</para>
-    </summary>
-    <param name="packageFullName">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The full name of the package.</para>
-    </param>
+    <summary>Gets the path of the specified package.</summary>
+    <param name="packageFullName">The full name of the package.</param>
     <param name="pathLength">
-      <para>Type: <b>UINT32*</b></para>
       <para>A pointer to a variable that holds the number of characters (<b>WCHAR</b>s) in the package path string, which includes the null-terminator.</para>
       <para>First you pass <b>NULL</b> to <i>path</i> to get the number of characters. You use this number to allocate memory space for <i>path</i>. Then you pass the address of this memory space to fill <i>path</i>.</para>
     </param>
-    <param name="path">
-      <para>Type: <b>PWSTR</b></para>
-      <para>A pointer to memory space that receives  the package path string, which includes the null-terminator.</para>
-    </param>
+    <param name="path">A pointer to memory space that receives the package path string, which includes the null-terminator.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The buffer specified by <i>path</i> is not large enough to hold the data. The required size is specified  by <i>pathLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer specified by <i>path</i> is not large enough to hold the data. The required size is specified by <i>pathLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="GetPackagePathByFullName2" />
   </member>
   <member name="Windows.GetPackagePathByFullName2">
-    <summary>
-      <para>Gets the path of the specified package, with the option to specify the type of folder path to retrieve for the package.</para>
-    </summary>
-    <param name="packageFullName">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The full name of the package.</para>
-    </param>
-    <param name="packagePathType">
-      <para>Type: <see cref="PackagePathType" /></para>
-      <para>Indicates the type of folder path to retrieve for the package (the original install folder or the mutable folder).</para>
-    </param>
+    <summary>Gets the path of the specified package, with the option to specify the type of folder path to retrieve for the package.</summary>
+    <param name="packageFullName">The full name of the package.</param>
+    <param name="packagePathType">Indicates the type of folder path to retrieve for the package (the original install folder or the mutable folder).</param>
     <param name="pathLength">
-      <para>Type: <b>UINT32*</b></para>
       <para>A pointer to a variable that holds the number of characters (<b>WCHAR</b>s) in the package path string, which includes the null-terminator.</para>
       <para>First you pass <b>NULL</b> to <i>path</i> to get the number of characters. You use this number to allocate memory space for <i>path</i>. Then you pass the address of this memory space to fill <i>path</i>.</para>
     </param>
-    <param name="path">
-      <para>Type: <b>PWSTR</b></para>
-      <para>A pointer to memory space that receives  the package path string, which includes the null-terminator.</para>
-    </param>
+    <param name="path">A pointer to memory space that receives the package path string, which includes the null-terminator.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The buffer specified by <i>path</i> is not large enough to hold the data. The required size is specified  by <i>pathLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer specified by <i>path</i> is not large enough to hold the data. The required size is specified by <i>pathLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <i>packagePathType</i> parameter is useful for applications that use the <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-package-extension">windows.mutablePackageDirectories extension</a> in their package manifest. This extension specifies a folder under the %ProgramFiles%\ModifiableWindowsApps path where the contents of the application's install folder are projected so that users can modify the installation files. This feature is currently available only for certain types of desktop PC games that are published by Microsoft and our partners, and it enables these types of games to support mods.</para>
-    </remarks>
-    <seealso cref="GetPackagePathByFullName" />
   </member>
   <member name="Windows.GetPackagesByPackageFamily">
-    <summary>
-      <para>Gets the packages  with the specified family name for the current user.</para>
-    </summary>
-    <param name="packageFamilyName">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The package family name.</para>
-    </param>
+    <summary>Gets the packages with the specified family name for the current user.</summary>
+    <param name="packageFamilyName">The package family name.</param>
     <param name="count">
-      <para>Type: <b>UINT32*</b></para>
       <para>A pointer to a variable that holds the number of package full names.</para>
       <para>First you pass <b>NULL</b> to <i>packageFullNames</i> to get the number of package full names. You use this number to allocate memory space for <i>packageFullNames</i>. Then you pass the address of this number to fill <i>packageFullNames</i>.</para>
     </param>
-    <param name="packageFullNames">
-      <para>Type: <b>PWSTR*</b></para>
-      <para>A pointer to the strings of package full names.</para>
-    </param>
+    <param name="packageFullNames">A pointer to the strings of package full names.</param>
     <param name="bufferLength">
-      <para>Type: <b>UINT32*</b></para>
       <para>A pointer to a variable that holds the number of characters in the string of package full names.</para>
       <para>First you pass <b>NULL</b> to <i>buffer</i> to get the number of characters. You use this number to allocate memory space for <i>buffer</i>. Then you pass the address of this number to fill <i>buffer</i>.</para>
     </param>
-    <param name="buffer">
-      <para>Type: <b>WCHAR*</b></para>
-      <para>The string of characters for all of the package full names.</para>
-    </param>
+    <param name="buffer">The string of characters for all of the package full names.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more buffer is not large enough to hold the data. The required size is specified  by either <i>count</i> or <i>buffer</i>.</para>
-          </description>
-        </item>
+          <description>One or more buffer is not large enough to hold the data. The required size is specified by either <i>count</i> or <i>buffer</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="PackageNameAndPublisherIdFromFamilyName" />
   </member>
   <member name="Windows.GetResolvedPackageFullNameForPackageDependency">
-    <summary>
-      <para>Returns the package full name that would be used if the package dependency were to be resolved. This function does not add the package to the invoking process' package graph.</para>
-    </summary>
-    <param name="packageDependencyId">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The ID of the package dependency to be resolved. This parameter must match a package dependency defined by using the <see cref="TryCreatePackageDependency" /> function for the calling user or the system (via the <see cref="CreatePackageDependencyOptions_ScopeIsSystem" /> option), or else an error is returned.</para>
-    </param>
-    <param name="packageFullName">
-      <para>Type: <b>PCWSTR*</b></para>
-      <para>The full name of the package to which the dependency has been resolved. If the package dependency cannot be resolved, the function succeeds but this parameter is <b>nullptr</b> on output. Use the <see cref="HeapAlloc" /> function to allocate memory for this parameter, and use <see cref="HeapFree" /> to deallocate the memory.</para>
-    </param>
-    <returns>
-      <para>| Return code | Description |
-|-------------|-------------|
-| E_INVALIDARG | The <i>packageDependencyId</i> or <i>packageFullName</i> parameter is NULL on input. |</para>
-    </returns>
-    <remarks>
-      <para>To add the package to the invoking process' package graph, use the <see cref="AddPackageDependency" /> function.</para>
-    </remarks>
-    <seealso cref="TryCreatePackageDependency" />
-    <seealso cref="AddPackageDependency" />
+    <summary>Returns the package full name that would be used if the package dependency were to be resolved. This function does not add the package to the invoking process' package graph.</summary>
+    <param name="packageDependencyId">The ID of the package dependency to be resolved. This parameter must match a package dependency defined by using the <see cref="TryCreatePackageDependency" /> function for the calling user or the system (via the <see cref="CreatePackageDependencyOptions_ScopeIsSystem" /> option), or else an error is returned.</param>
+    <param name="packageFullName">The full name of the package to which the dependency has been resolved. If the package dependency cannot be resolved, the function succeeds but this parameter is <b>nullptr</b> on output. Use the <see cref="HeapAlloc" /> function to allocate memory for this parameter, and use <see cref="HeapFree" /> to deallocate the memory.</param>
+    <returns>| Return code | Description | |-------------|-------------| | E_INVALIDARG | The <i>packageDependencyId</i> or <i>packageFullName</i> parameter is NULL on input. |</returns>
   </member>
   <member name="Windows.GetStagedPackageOrigin">
-    <summary>
-      <para>Gets the origin of the specified package.</para>
-    </summary>
-    <param name="packageFullName">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The full name of the package.</para>
-    </param>
-    <param name="origin">
-      <para>Type: <b><see cref="PackageOrigin" />*</b></para>
-      <para>A pointer to a variable that receives a <see cref="PackageOrigin" />-typed value that indicates the origin of the package specified by <i>packageFullName</i>.</para>
-    </param>
+    <summary>Gets the origin of the specified package.</summary>
+    <param name="packageFullName">The full name of the package.</param>
+    <param name="origin">A pointer to a variable that receives a <see cref="PackageOrigin" />-typed value that indicates the origin of the package specified by <i>packageFullName</i>.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INVALID_PARAMETER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <i>packageFullName</i> parameter isn't valid.</para>
-          </description>
-        </item>
+          <description>The <i>packageFullName</i> parameter isn't valid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="Windows.GetStagedPackagePathByFullName">
-    <summary>
-      <para>Gets the path of the specified staged package.</para>
-    </summary>
-    <param name="packageFullName">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The full name of the staged package.</para>
-    </param>
+    <summary>Gets the path of the specified staged package.</summary>
+    <param name="packageFullName">The full name of the staged package.</param>
     <param name="pathLength">
-      <para>Type: <b>UINT32*</b></para>
       <para>A pointer to a variable that holds the number of characters (<b>WCHAR</b>s) in the package path string, which includes the null-terminator.</para>
       <para>First you pass <b>NULL</b> to <i>path</i> to get the number of characters. You use this number to allocate memory space for <i>path</i>. Then you pass the address of this memory space to fill <i>path</i>.</para>
     </param>
-    <param name="path">
-      <para>Type: <b>PWSTR</b></para>
-      <para>A pointer to memory space that receives  the package path string, which includes the null-terminator.</para>
-    </param>
+    <param name="path">A pointer to memory space that receives the package path string, which includes the null-terminator.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The buffer specified by <i>path</i> is not large enough to hold the data. The required size is specified  by <i>pathLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer specified by <i>path</i> is not large enough to hold the data. The required size is specified by <i>pathLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This function succeeds if the package is staged, regardless of the user context or if the package is registered for the current user.</para>
-    </remarks>
-    <seealso cref="GetStagedPackagePathByFullName2" />
   </member>
   <member name="Windows.GetStagedPackagePathByFullName2">
-    <summary>
-      <para>Gets the path of the specified staged package, with the option to specify the type of folder path to retrieve for the package.</para>
-    </summary>
-    <param name="packageFullName">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The full name of the staged package.</para>
-    </param>
-    <param name="packagePathType">
-      <para>Type: <see cref="PackagePathType" /></para>
-      <para>Indicates the type of folder path to retrieve for the package (the original install folder or the mutable folder).</para>
-    </param>
+    <summary>Gets the path of the specified staged package, with the option to specify the type of folder path to retrieve for the package.</summary>
+    <param name="packageFullName">The full name of the staged package.</param>
+    <param name="packagePathType">Indicates the type of folder path to retrieve for the package (the original install folder or the mutable folder).</param>
     <param name="pathLength">
-      <para>Type: <b>UINT32*</b></para>
       <para>A pointer to a variable that holds the number of characters (<b>WCHAR</b>s) in the package path string, which includes the null-terminator.</para>
       <para>First you pass <b>NULL</b> to <i>path</i> to get the number of characters. You use this number to allocate memory space for <i>path</i>. Then you pass the address of this memory space to fill <i>path</i>.</para>
     </param>
-    <param name="path">
-      <para>Type: <b>PWSTR</b></para>
-      <para>A pointer to memory space that receives  the package path string, which includes the null-terminator.</para>
-    </param>
+    <param name="path">A pointer to memory space that receives the package path string, which includes the null-terminator.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The buffer specified by <i>path</i> is not large enough to hold the data. The required size is specified  by <i>pathLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer specified by <i>path</i> is not large enough to hold the data. The required size is specified by <i>pathLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <i>packagePathType</i> parameter is useful for applications that use the <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/uapmanifestschema/element-desktop6-package-extension">windows.mutablePackageDirectories extension</a> in their package manifest. This extension specifies a folder under the %ProgramFiles%\ModifiableWindowsApps path where the contents of the application's install folder are projected so that users can modify the installation files. This feature is currently available only for certain types of desktop PC games that are published by Microsoft and our partners, and it enables these types of games to support mods.</para>
-    </remarks>
-    <seealso cref="GetStagedPackagePathByFullName" />
   </member>
   <member name="Windows.OpenPackageInfoByFullName">
-    <summary>
-      <para>Opens the package information of the specified package.</para>
-    </summary>
-    <param name="packageFullName">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The full name of the package.</para>
-    </param>
-    <param name="reserved">
-      <para>Type: <b>const UINT32</b></para>
-      <para>Reserved; must be 0.</para>
-    </param>
-    <param name="packageInfoReference">
-      <para>Type: <b>PACKAGE_INFO_REFERENCE*</b></para>
-      <para>A reference to package information.</para>
-    </param>
+    <summary>Opens the package information of the specified package.</summary>
+    <param name="packageFullName">The full name of the package.</param>
+    <param name="reserved">Reserved; must be 0.</param>
+    <param name="packageInfoReference">A reference to package information.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_NOT_FOUND</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NOT_FOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The package is not installed for the current user.</para>
-          </description>
-        </item>
+          <description>The package is not installed for the current user.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ClosePackageInfo" />
-    <seealso cref="GetPackageInfo" />
   </member>
   <member name="Windows.PackageFamilyNameFromFullName">
-    <summary>
-      <para>Gets the package family name for the specified package full name.</para>
-    </summary>
-    <param name="packageFullName">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The full name of a package.</para>
-    </param>
-    <param name="packageFamilyNameLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>On input, the size of the <i>packageFamilyName</i> buffer, in characters. On output, the size of the package family name returned, in characters, including the null terminator.</para>
-    </param>
-    <param name="packageFamilyName">
-      <para>Type: <b>PWSTR</b></para>
-      <para>The package family name.</para>
-    </param>
+    <summary>Gets the package family name for the specified package full name.</summary>
+    <param name="packageFullName">The full name of a package.</param>
+    <param name="packageFamilyNameLength">On input, the size of the <i>packageFamilyName</i> buffer, in characters. On output, the size of the package family name returned, in characters, including the null terminator.</param>
+    <param name="packageFamilyName">The package family name.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The buffer is not large enough to hold the data. The required size is specified  by <i>packageFamilyNameLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer is not large enough to hold the data. The required size is specified by <i>packageFamilyNameLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For info about string size limits, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/identity-constants">Identity constants</a>.</para>
-      <h4>Examples</h4>
-      <code>#define _UNICODE 1
-#define UNICODE 1
-
-#include &lt;Windows.h&gt;
-#include &lt;appmodel.h&gt;
-#include &lt;malloc.h&gt;
-#include &lt;stdio.h&gt;
-
-int ShowUsage();
-void FullNameToFamilyName(__in PCWSTR fullName);
-
-int ShowUsage()
-{
-    wprintf(L"Usage: PackageFamilyNameFromFullName &lt;fullname&gt; [&lt;fullname&gt;...]\n");
-    return 1;
-}
-
-int __cdecl wmain(__in int argc, __in_ecount(argc) WCHAR * argv[])
-{
-    if (argc &lt;= 1)
-        return ShowUsage();
-
-    for (int i=1; i&lt;argc; ++i)
-        FullNameToFamilyName(argv[i]);
-
-    return 0;
-}
-
-void FullNameToFamilyName(__in PCWSTR fullName)
-{
-    wprintf(L"FullName: %s\n", fullName);
-    UINT32 length = 0;
-    LONG rc = PackageFamilyNameFromFullName(fullName, &amp;amp;amp;amp;amp;amp;length, NULL);
-    if (rc == ERROR_SUCCESS)
-    {
-        wprintf(L"PackageFamilyNameFromFullName unexpectedly succeeded\n");
-        return;
-    }
-    else if (rc != ERROR_INSUFFICIENT_BUFFER)
-    {
-        wprintf(L"Error %d in PackageFamilyNameFromFullName\n", rc);
-        return;
-    }
-
-    PWSTR familyName = (PWSTR) malloc(length * sizeof(WCHAR));
-    if (familyName == NULL)
-    {
-        wprintf(L"Error allocating memory\n");
-        return;
-    }
-
-    rc = PackageFamilyNameFromFullName(fullName, &amp;amp;amp;amp;amp;amp;length, familyName);
-    if (rc != ERROR_SUCCESS)
-        wprintf(L"Error %d converting PackageFamilyName to FullName\n", rc);
-    else
-        wprintf(L"Package Family Name = %s\n", familyName);
-
-    free(familyName);
-}
-
-</code>
-    </remarks>
-    <seealso cref="GetCurrentPackageFamilyName" />
-    <seealso cref="GetPackageFamilyName" />
-    <seealso cref="PackageFamilyNameFromId" />
-    <seealso cref="PackageFullNameFromId" />
-    <seealso cref="PackageIdFromFullName" />
-    <seealso cref="PackageNameAndPublisherIdFromFamilyName" />
   </member>
   <member name="Windows.PackageFamilyNameFromId">
-    <summary>
-      <para>Gets the package family name for the specified package identifier.</para>
-    </summary>
-    <param name="packageId">
-      <para>Type: <b>const <see cref="PACKAGE_ID" />*</b></para>
-      <para>The package identifier.</para>
-    </param>
-    <param name="packageFamilyNameLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>On input, the size of the <i>packageFamilyName</i> buffer, in characters. On output, the size of the package family name returned, in characters, including the null terminator.</para>
-    </param>
-    <param name="packageFamilyName">
-      <para>Type: <b>PWSTR</b></para>
-      <para>The package family name.</para>
-    </param>
+    <summary>Gets the package family name for the specified package identifier.</summary>
+    <param name="packageId">The package identifier.</param>
+    <param name="packageFamilyNameLength">On input, the size of the <i>packageFamilyName</i> buffer, in characters. On output, the size of the package family name returned, in characters, including the null terminator.</param>
+    <param name="packageFamilyName">The package family name.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The buffer is not large enough to hold the data. The required size is specified  by <i>packageFamilyNameLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer is not large enough to hold the data. The required size is specified by <i>packageFamilyNameLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For info about string size limits, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/identity-constants">Identity constants</a>.</para>
-      <h4>Examples</h4>
-      <code>#define _UNICODE 1
-#define UNICODE 1
-
-#include &lt;Windows.h&gt;
-#include &lt;appmodel.h&gt;
-#include &lt;malloc.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;errno.h&gt;
-#include &lt;stdio.h&gt;
-
-int ShowUsage();
-bool ParseArchitecture(__in PCWSTR architectureString, __out UINT32 * architecture);
-bool ParseVersion(__in PCWSTR versionString, __out PACKAGE_VERSION * version);
-
-int ShowUsage()
-{
-    wprintf(L"Usage: PackageFamilyNameFromId &lt;name&gt;&lt;version&gt;&lt;arch&gt;&lt;resourceid&gt;&lt;publisher&gt;\n");
-    return 1;
-}
-
-int __cdecl wmain(__in int argc, __in_ecount(argc) WCHAR * argv[])
-{
-    if (argc &lt;= 5)
-        return ShowUsage();
-
-    PACKAGE_ID packageId;
-    ZeroMemory(&amp;amp;amp;amp;amp;amp;packageId, sizeof(packageId));
-    packageId.name = argv[1];
-    if (!ParseVersion(argv[2], &amp;amp;amp;amp;amp;amp;packageId.version))
-        return 2;
-    if (!ParseArchitecture(argv[3], &amp;amp;amp;amp;amp;amp;packageId.processorArchitecture))
-        return 3;
-    packageId.resourceId = argv[4];
-    packageId.publisher = argv[5];
-
-    UINT32 length = 0;
-    LONG rc = PackageFamilyNameFromId(&amp;amp;amp;amp;amp;amp;packageId, &amp;amp;amp;amp;amp;amp;length, NULL);
-    if (rc == ERROR_SUCCESS)
-    {
-        wprintf(L"PackageFamilyNameFromId unexpected succeeded\n");
-        return 4;
-    }
-    else if (rc != ERROR_INSUFFICIENT_BUFFER)
-    {
-        wprintf(L"Error %d in PackageFamilyNameFromId\n", rc);
-        return 5;
-    }
-
-    PWSTR familyName = (PWSTR) malloc(length * sizeof(WCHAR));
-    if (familyName == NULL)
-    {
-        wprintf(L"Error allocating memory\n");
-        return 6;
-    }
-
-    rc = PackageFamilyNameFromId(&amp;amp;amp;amp;amp;amp;packageId, &amp;amp;amp;amp;amp;amp;length, familyName);
-    if (rc != ERROR_SUCCESS)
-        wprintf(L"Error %d converting Package Id to Family Name\n", rc);
-    else
-        wprintf(L"Package Family Name = %s\n", familyName);
-
-    free(familyName);
-
-    return rc == ERROR_SUCCESS ? 0 : 7;
-}
-
-bool ParseArchitecture(__in PCWSTR architectureString, __out UINT32 * architecture)
-{
-    if (_wcsicmp(architectureString, L"neutral") == 0)
-        *architecture = PROCESSOR_ARCHITECTURE_NEUTRAL;
-    else if (_wcsicmp(architectureString, L"x86") == 0)
-        *architecture = PROCESSOR_ARCHITECTURE_INTEL;
-    else if (_wcsicmp(architectureString, L"x64") == 0)
-        *architecture = PROCESSOR_ARCHITECTURE_AMD64;
-    else if (_wcsicmp(architectureString, L"arm") == 0)
-        *architecture = PROCESSOR_ARCHITECTURE_ARM;
-    else
-    {
-        wprintf(L"Invalid architecture\n");
-        return false;
-    }
-    return true;
-}
-
-bool ParseVersion(__in PCWSTR versionString, __out PACKAGE_VERSION * version)
-{
-    PWSTR s = (PWSTR) versionString;
-
-    ULONG n = wcstoul(s, &amp;amp;amp;amp;amp;amp;s, 10);
-    if (((n == 0) || (n &gt; 65535)) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; (errno == ERANGE)) {
-        wprintf(L"Invalid Version (Major)\n");
-        return false;
-    }
-    version-&gt;Major = (USHORT) n;
-
-    if (*s != L'.')
-    {
-        wprintf(L"Invalid Version\n");
-        return false;
-    }
-
-    n = wcstoul(++s, &amp;amp;amp;amp;amp;amp;s, 10);
-    if (((n == 0) || (n &gt; 65535)) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; (errno == ERANGE)) {
-        wprintf(L"Invalid Version (Minor)\n");
-        return false;
-    }
-    version-&gt;Minor = (USHORT) n;
-
-    if (*s != L'.')
-    {
-        wprintf(L"Invalid Version\n");
-        return false;
-    }
-
-    n = wcstoul(++s, &amp;amp;amp;amp;amp;amp;s, 10);
-    if (((n == 0) || (n &gt; 65535)) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; (errno == ERANGE)) {
-        wprintf(L"Invalid Version (Build)\n");
-        return false;
-    }
-    version-&gt;Build = (USHORT) n;
-
-    if (*s != L'.')
-    {
-        wprintf(L"Invalid Version\n");
-        return false;
-    }
-
-    n = wcstoul(++s, &amp;amp;amp;amp;amp;amp;s, 10);
-    if (((n == 0) || (n &gt; 65535)) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; (errno == ERANGE)) {
-        wprintf(L"Invalid Version (Revision)\n");
-        return false;
-    }
-    version-&gt;Revision = (USHORT) n;
-
-    return true;
-}
-
-</code>
-    </remarks>
-    <seealso cref="GetCurrentPackageFamilyName" />
-    <seealso cref="GetPackageFamilyName" />
-    <seealso cref="PackageFamilyNameFromFullName" />
-    <seealso cref="PackageFullNameFromId" />
-    <seealso cref="PackageIdFromFullName" />
-    <seealso cref="PackageNameAndPublisherIdFromFamilyName" />
   </member>
   <member name="Windows.PackageFullNameFromId">
-    <summary>
-      <para>Gets the package full name for the specified package identifier (ID).</para>
-    </summary>
-    <param name="packageId">
-      <para>Type: <b>const <see cref="PACKAGE_ID" />*</b></para>
-      <para>The package ID.</para>
-    </param>
-    <param name="packageFullNameLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>On input, the size of the <i>packageFullName</i> buffer, in characters. On output, the size of the package full name returned, in characters, including the null terminator.</para>
-    </param>
-    <param name="packageFullName">
-      <para>Type: <b>PWSTR</b></para>
-      <para>The package full name.</para>
-    </param>
+    <summary>Gets the package full name for the specified package identifier (ID).</summary>
+    <param name="packageId">The package ID.</param>
+    <param name="packageFullNameLength">On input, the size of the <i>packageFullName</i> buffer, in characters. On output, the size of the package full name returned, in characters, including the null terminator.</param>
+    <param name="packageFullName">The package full name.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The buffer is not large enough to hold the data. The required size is specified  by <i>packageFullNameLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer is not large enough to hold the data. The required size is specified by <i>packageFullNameLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For info about string size limits, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/identity-constants">Identity constants</a>.</para>
-      <h4>Examples</h4>
-      <code>#define _UNICODE 1
-#define UNICODE 1
-
-#include &lt;Windows.h&gt;
-#include &lt;appmodel.h&gt;
-#include &lt;malloc.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;errno.h&gt;
-#include &lt;stdio.h&gt;
-
-int ShowUsage();
-bool ParseArchitecture(__in PCWSTR architectureString, __out UINT32 * architecture);
-bool ParseVersion(__in PCWSTR versionString, __out PACKAGE_VERSION * version);
-
-int ShowUsage()
-{
-    wprintf(L"Usage: PackageFullNameFromId &lt;name&gt;&lt;version&gt;&lt;arch&gt;&lt;resourceid&gt;&lt;publisher&gt;\n");
-    return 1;
-}
-
-int __cdecl wmain(__in int argc, __in_ecount(argc) WCHAR * argv[])
-{
-    if (argc &lt;= 5)
-        return ShowUsage();
-
-    PACKAGE_ID packageId;
-    ZeroMemory(&amp;amp;amp;amp;amp;amp;packageId, sizeof(packageId));
-    packageId.name = argv[1];
-    if (!ParseVersion(argv[2], &amp;amp;amp;amp;amp;amp;packageId.version))
-        return 2;
-    if (!ParseArchitecture(argv[3], &amp;amp;amp;amp;amp;amp;packageId.processorArchitecture))
-        return 3;
-    packageId.resourceId = argv[4];
-    packageId.publisher = argv[5];
-
-    UINT32 length = 0;
-    LONG rc = PackageFullNameFromId(&amp;amp;amp;amp;amp;amp;packageId, &amp;amp;amp;amp;amp;amp;length, NULL);
-    if (rc == ERROR_SUCCESS)
-    {
-        wprintf(L"PackageFullNameFromId unexpectedly succeeded\n");
-        return 4;
-    }
-    else if (rc != ERROR_INSUFFICIENT_BUFFER)
-    {
-        wprintf(L"Error %d in PackageFullNameFromId\n", rc);
-        return 5;
-    }
-
-    PWSTR fullName = (PWSTR) malloc(length * sizeof(WCHAR));
-    if (fullName == NULL)
-    {
-        wprintf(L"Error allocating memory\n");
-        return 6;
-    }
-
-    rc = PackageFullNameFromId(&amp;amp;amp;amp;amp;amp;packageId, &amp;amp;amp;amp;amp;amp;length, fullName);
-    if (rc != ERROR_SUCCESS)
-        wprintf(L"Error %d converting Package Id to Full Name\n", rc);
-    else
-        wprintf(L"Package Full Name = %s\n", fullName);
-
-    free(fullName);
-
-    return rc == ERROR_SUCCESS ? 0 : 7;
-}
-
-bool ParseArchitecture(__in PCWSTR architectureString, __out UINT32 * architecture)
-{
-    if (_wcsicmp(architectureString, L"neutral") == 0)
-        *architecture = PROCESSOR_ARCHITECTURE_NEUTRAL;
-    else if (_wcsicmp(architectureString, L"x86") == 0)
-        *architecture = PROCESSOR_ARCHITECTURE_INTEL;
-    else if (_wcsicmp(architectureString, L"x64") == 0)
-        *architecture = PROCESSOR_ARCHITECTURE_AMD64;
-    else if (_wcsicmp(architectureString, L"arm") == 0)
-        *architecture = PROCESSOR_ARCHITECTURE_ARM;
-    else
-    {
-        wprintf(L"Invalid architecture\n");
-        return false;
-    }
-    return true;
-}
-
-bool ParseVersion(__in PCWSTR versionString, __out PACKAGE_VERSION * version)
-{
-    PWSTR s = (PWSTR) versionString;
-
-    ULONG n = wcstoul(s, &amp;amp;amp;amp;amp;amp;s, 10);
-    if (((n == 0) || (n &gt; 65535)) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; (errno == ERANGE)) {
-        wprintf(L"Invalid Version (Major)\n");
-        return false;
-    }
-    version-&gt;Major = (USHORT) n;
-
-    if (*s != L'.')
-    {
-        wprintf(L"Invalid Version\n");
-        return false;
-    }
-
-    n = wcstoul(++s, &amp;amp;amp;amp;amp;amp;s, 10);
-    if (((n == 0) || (n &gt; 65535)) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; (errno == ERANGE)) {
-        wprintf(L"Invalid Version (Minor)\n");
-        return false;
-    }
-    version-&gt;Minor = (USHORT) n;
-
-    if (*s != L'.')
-    {
-        wprintf(L"Invalid Version\n");
-        return false;
-    }
-
-    n = wcstoul(++s, &amp;amp;amp;amp;amp;amp;s, 10);
-    if (((n == 0) || (n &gt; 65535)) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; (errno == ERANGE)) {
-        wprintf(L"Invalid Version (Build)\n");
-        return false;
-    }
-    version-&gt;Build = (USHORT) n;
-
-    if (*s != L'.')
-    {
-        wprintf(L"Invalid Version\n");
-        return false;
-    }
-
-    n = wcstoul(++s, &amp;amp;amp;amp;amp;amp;s, 10);
-    if (((n == 0) || (n &gt; 65535)) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; (errno == ERANGE)) {
-        wprintf(L"Invalid Version (Revision)\n");
-        return false;
-    }
-    version-&gt;Revision = (USHORT) n;
-
-    return true;
-}
-
-</code>
-    </remarks>
-    <seealso cref="GetCurrentPackageFullName" />
-    <seealso cref="GetPackageFullName" />
-    <seealso cref="PackageFamilyNameFromFullName" />
-    <seealso cref="PackageFamilyNameFromId" />
-    <seealso cref="PackageIdFromFullName" />
-    <seealso cref="PackageNameAndPublisherIdFromFamilyName" />
   </member>
   <member name="Windows.PackageIdFromFullName">
-    <summary>
-      <para>Gets the package identifier (ID) for the specified package full name.</para>
-    </summary>
-    <param name="packageFullName">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The full name of a package.</para>
-    </param>
-    <param name="flags">
-      <para>Type: <b>const UINT32</b></para>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/appxpkg/package-constants">package constants</a> that specify how package information is retrieved. The <b>PACKAGE_INFORMATION_*</b> flags are supported.</para>
-    </param>
-    <param name="bufferLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>On input, the size of <i>buffer</i>, in bytes. On output, the size of the data returned, in bytes.</para>
-    </param>
-    <param name="buffer">
-      <para>Type: <b>BYTE*</b></para>
-      <para>The package ID, represented as a <see cref="PACKAGE_ID" /> structure.</para>
-    </param>
+    <summary>Gets the package identifier (ID) for the specified package full name.</summary>
+    <param name="packageFullName">The full name of a package.</param>
+    <param name="flags">The <a href="https://docs.microsoft.com//windows/desktop/appxpkg/package-constants">package constants</a> that specify how package information is retrieved. The <b>PACKAGE_INFORMATION_*</b> flags are supported.</param>
+    <param name="bufferLength">On input, the size of <i>buffer</i>, in bytes. On output, the size of the data returned, in bytes.</param>
+    <param name="buffer">The package ID, represented as a <see cref="PACKAGE_ID" /> structure.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The buffer is not large enough to hold the data. The required size is specified by <i>bufferLength</i>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The buffer is not large enough to hold the data. The required size is specified  by <i>bufferLength</i>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NOT_FOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_NOT_FOUND</b>
-            </para>
-          </description>
-          <description>
-            <para>The package is not installed for the user.</para>
-          </description>
-        </item>
+          <description>The package is not installed for the user.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If <i>flags</i> specifies <b>PACKAGE_INFORMATION_BASIC</b>, the following fields are retrieved:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <b>name</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>processorArchitecture</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>publisherId</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>resourceId</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>version</b>
-          </description>
-        </item>
-      </list>
-      <para>If <i>flags</i> specifies <b>PACKAGE_INFORMATION_FULL</b>, the following fields are retrieved:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <b>name</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>processorArchitecture</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>publisher</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>publisherId</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>resourceId</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>version</b>
-          </description>
-        </item>
-      </list>
-      <para>A request for <b>PACKAGE_INFORMATION_FULL</b> succeeds only if the package corresponding to <i>packageFullName</i> is installed for and accessible to the current user. If the package full name is syntactically correct but does not correspond to a package that is installed for and accessible to the current user, the function returns <b>ERROR_NOT_FOUND</b>.</para>
-      <para>For info about string size limits, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/identity-constants">Identity constants</a>.</para>
-      <h4>Examples</h4>
-      <code>#define _UNICODE 1
-#define UNICODE 1
-
-#include &lt;Windows.h&gt;
-#include &lt;appmodel.h&gt;
-#include &lt;malloc.h&gt;
-#include &lt;stdio.h&gt;
-
-int ShowUsage();
-void FullNameToId(__in PCWSTR fullName, __in const UINT32 flags);
-void ShowPackageId(__in const PACKAGE_ID * packageId);
-
-int ShowUsage()
-{
-    wprintf(L"Usage: PackageIdFromFullName &lt;[flags]fullname&gt; [&lt;[flags]fullname&gt;...]\n"
-            L"flags:\n"
-            L"    ? = Basic information (PACKAGE_INFORMATION_BASIC)\n"
-            L"    * = Full information (PACKAGE_INFORMATION_FULL)\n"
-            L"Default = Basic\n");
-    return 1;
-}
-
-int __cdecl wmain(__in int argc, __in_ecount(argc) WCHAR * argv[])
-{
-    if (argc &lt;= 1)
-        return ShowUsage();
-
-    for (int i=1; i&lt;argc; ++i)
-    {
-        PCWSTR fullName = argv[i];
-        UINT32 flags = PACKAGE_INFORMATION_BASIC;
-        if (*fullName != L'\0')
-        {
-            if (*fullName == L'?')
-            {
-                flags = PACKAGE_INFORMATION_BASIC;
-                ++fullName;
-            }
-            else if (*fullName == L'*')
-            {
-                flags = PACKAGE_INFORMATION_FULL;
-                ++fullName;
-            }
-        }
-        FullNameToId(fullName, flags);
-    }
-
-    return 0;
-}
-
-void FullNameToId(__in PCWSTR fullName, __in const UINT32 flags)
-{
-    wprintf(L"FullName: %s%s\n", fullName, ((flags &amp;amp;amp;amp;amp;amp; PACKAGE_INFORMATION_FULL) == 0 ? L"  [BASIC]" : L"  [FULL]"));
-    UINT32 length = 0;
-    LONG rc = PackageIdFromFullName(fullName, flags, &amp;amp;amp;amp;amp;amp;length, NULL);
-    if (rc == ERROR_SUCCESS)
-    {
-        wprintf(L"PackageIdFromFullName unexpected succeeded\n");
-        return;
-    }
-    else if (rc != ERROR_INSUFFICIENT_BUFFER)
-    {
-        wprintf(L"Error %d in PackageIdFromFullName\n", rc);
-        return;
-    }
-
-    BYTE * buffer = (PBYTE) malloc(length);
-    if (buffer == NULL)
-    {
-        wprintf(L"Error allocating memory\n");
-        return;
-    }
-
-    rc = PackageIdFromFullName(fullName, flags, &amp;amp;amp;amp;amp;amp;length, buffer);
-    if (rc != ERROR_SUCCESS)
-        wprintf(L"Error %d converting Package Full Name to Id\n", rc);
-    else
-    {
-        ShowPackageId((PACKAGE_ID *) buffer);
-    }
-
-    free(buffer);
-}
-
-void ShowPackageId(__in const PACKAGE_ID * packageId)
-{
-    wprintf(L"    Name        : %s\n", packageId-&gt;name);
-    if (packageId-&gt;publisher != NULL)
-        wprintf(L"    Publisher   : %s\n", packageId-&gt;publisher);
-    if (packageId-&gt;publisherId != NULL)
-        wprintf(L"    PublisherId : %s\n", packageId-&gt;publisherId);
-    wprintf(L"    Version     : %hu.%hu.%hu.%hu\n",
-            packageId-&gt;version.Major,
-            packageId-&gt;version.Minor,
-            packageId-&gt;version.Build,
-            packageId-&gt;version.Revision);
-    wprintf(L"    Architecture: %u\n", packageId-&gt;processorArchitecture);
-    if (packageId-&gt;resourceId != NULL)
-        wprintf(L"    Resource    : %s\n", packageId-&gt;resourceId);
-}
-
-</code>
-    </remarks>
-    <seealso cref="GetCurrentPackageId" />
-    <seealso cref="GetPackageId" />
-    <seealso cref="PackageFamilyNameFromFullName" />
-    <seealso cref="PackageFamilyNameFromId" />
-    <seealso cref="PackageFullNameFromId" />
-    <seealso cref="PackageNameAndPublisherIdFromFamilyName" />
   </member>
   <member name="Windows.PackageNameAndPublisherIdFromFamilyName">
-    <summary>
-      <para>Gets the package name and publisher identifier (ID) for the specified package family name.</para>
-    </summary>
-    <param name="packageFamilyName">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The family name of a package.</para>
-    </param>
-    <param name="packageNameLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>On input, the size of the <i>packageName</i> buffer, in characters. On output, the size of the package name returned, in characters, including the null-terminator.</para>
-    </param>
-    <param name="packageName">
-      <para>Type: <b>PWSTR</b></para>
-      <para>The package name.</para>
-    </param>
-    <param name="packagePublisherIdLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>On input, the size of the <i>packagePublishId</i> buffer, in characters. On output, the size of the publisher ID returned, in characters, including the null-terminator.</para>
-    </param>
-    <param name="packagePublisherId">
-      <para>Type: <b>PWSTR</b></para>
-      <para>The package publisher ID.</para>
-    </param>
+    <summary>Gets the package name and publisher identifier (ID) for the specified package family name.</summary>
+    <param name="packageFamilyName">The family name of a package.</param>
+    <param name="packageNameLength">On input, the size of the <i>packageName</i> buffer, in characters. On output, the size of the package name returned, in characters, including the null-terminator.</param>
+    <param name="packageName">The package name.</param>
+    <param name="packagePublisherIdLength">On input, the size of the <i>packagePublishId</i> buffer, in characters. On output, the size of the publisher ID returned, in characters, including the null-terminator.</param>
+    <param name="packagePublisherId">The package publisher ID.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One of the buffers is not large enough to hold the data. The required sizes are specified  by <i>packageNameLength</i> and <i>packagePublisherIdLength</i>.</para>
-          </description>
-        </item>
+          <description>One of the buffers is not large enough to hold the data. The required sizes are specified by <i>packageNameLength</i> and <i>packagePublisherIdLength</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For info about string size limits, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/identity-constants">Identity constants</a>.</para>
-      <h4>Examples</h4>
-      <code>#define _UNICODE 1
-#define UNICODE 1
-
-#include &lt;Windows.h&gt;
-#include &lt;appmodel.h&gt;
-#include &lt;malloc.h&gt;
-#include &lt;stdio.h&gt;
-
-int ShowUsage();
-void FamilyNameToNameAndPublisherId(__in PCWSTR familyName);
-
-int ShowUsage()
-{
-    wprintf(L"Usage: PackageNameAndPublisherIdFromFamilyName &lt;familyname&gt; [&lt;familyname&gt;...]\n");
-    return 1;
-}
-
-int __cdecl wmain(__in int argc, __in_ecount(argc) WCHAR * argv[])
-{
-    if (argc &lt;= 1)
-        return ShowUsage();
-
-    for (int i=1; i&lt;argc; ++i)
-        FamilyNameToNameAndPublisherId(argv[i]);
-
-    return 0;
-}
-
-void FamilyNameToNameAndPublisherId(__in PCWSTR familyName)
-{
-    wprintf(L"FamilyName: %s\n", familyName);
-    UINT32 nameLength = 0;
-    UINT32 publisherIdLength = 0;
-    LONG rc = PackageNameAndPublisherIdFromFamilyName(familyName, &amp;amp;amp;amp;amp;amp;nameLength, NULL, &amp;amp;amp;amp;amp;amp;publisherIdLength, NULL);
-    if (rc == ERROR_SUCCESS)
-    {
-        wprintf(L"PackageNameAndPublisherIdFromFamilyName unexpectedly succeeded\n");
-        return;
-    }
-    else if (rc != ERROR_INSUFFICIENT_BUFFER)
-    {
-        wprintf(L"Error %d in PackageNameAndPublisherIdFromFamilyName\n", rc);
-        return;
-    }
-
-    PWSTR name = (PWSTR) malloc(nameLength * sizeof(WCHAR));
-    if (name == NULL)
-    {
-        wprintf(L"Error allocating memory\n");
-        return;
-    }
-
-    PWSTR publisherId = (PWSTR) malloc(publisherIdLength * sizeof(WCHAR));
-    if (publisherId == NULL)
-    {
-        wprintf(L"Error allocating memory\n");
-        free(name);
-        return;
-    }
-
-    rc = PackageNameAndPublisherIdFromFamilyName(familyName, &amp;amp;amp;amp;amp;amp;nameLength, name, &amp;amp;amp;amp;amp;amp;publisherIdLength, publisherId);
-    if (rc != ERROR_SUCCESS)
-        wprintf(L"Error %d converting PackageFamilyName to Name and PublisherId\n", rc);
-    else
-    {
-        wprintf(L"        Name = %s\n", name);
-        wprintf(L"Publisher Id = %s\n", publisherId);
-    }
-
-    free(name);
-    free(publisherId);
-}
-
-</code>
-    </remarks>
-    <seealso cref="PackageFamilyNameFromFullName" />
-    <seealso cref="PackageFamilyNameFromId" />
-    <seealso cref="PackageFullNameFromId" />
-    <seealso cref="PackageIdFromFullName" />
   </member>
   <member name="Windows.ParseApplicationUserModelId">
-    <summary>
-      <para>Deconstructs an <a href="https://docs.microsoft.com//windows/desktop/appxpkg/appx-packaging-glossary">application user model ID</a> to its <i>package family name</i> and <i>package relative application ID</i> (PRAID).</para>
-    </summary>
-    <param name="applicationUserModelId">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The app user model ID.</para>
-    </param>
+    <summary>Deconstructs an <a href="https://docs.microsoft.com//windows/desktop/appxpkg/appx-packaging-glossary">application user model ID</a> to its <i>package family name</i> and <i>package relative application ID</i> (PRAID).</summary>
+    <param name="applicationUserModelId">The app user model ID.</param>
     <param name="packageFamilyNameLength">
-      <para>Type: <b>UINT32*</b></para>
       <para>A pointer to a variable that holds the number of characters (<b>WCHAR</b>s) in the package family name string, which includes the null-terminator.</para>
       <para>First you pass <b>NULL</b> to <i>packageFamilyName</i> to get the number of characters. You use this number to allocate memory space for <i>packageFamilyName</i>. Then you pass the address of this memory space to fill <i>packageFamilyName</i>.</para>
     </param>
-    <param name="packageFamilyName">
-      <para>Type: <b>PWSTR</b></para>
-      <para>A pointer to memory space that receives  the package family name string, which includes the null-terminator.</para>
-    </param>
+    <param name="packageFamilyName">A pointer to memory space that receives the package family name string, which includes the null-terminator.</param>
     <param name="packageRelativeApplicationIdLength">
-      <para>Type: <b>UINT32*</b></para>
       <para>A pointer to a variable that holds the number of characters (<b>WCHAR</b>s) in the package-relative app ID string, which includes the null-terminator.</para>
       <para>First you pass <b>NULL</b> to <i>packageRelativeApplicationId</i> to get the number of characters. You use this number to allocate memory space for <i>packageRelativeApplicationId</i>. Then you pass the address of this memory space to fill <i>packageRelativeApplicationId</i>.</para>
     </param>
-    <param name="packageRelativeApplicationId">
-      <para>Type: <b>PWSTR</b></para>
-      <para>A pointer to memory space that receives  the package-relative app ID (PRAID) string, which includes the null-terminator.</para>
-    </param>
+    <param name="packageRelativeApplicationId">A pointer to memory space that receives the package-relative app ID (PRAID) string, which includes the null-terminator.</param>
     <returns>
-      <para>Type: <b>LONG</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INVALID_PARAMETER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <i>applicationUserModelId</i> parameter isn't valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <i>applicationUserModelId</i> parameter isn't valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <para>The buffer specified by <i>packageFamilyName</i> or <i>packageRelativeApplicationId</i> is not large enough to hold the data; the required buffer size, in <b>WCHAR</b>s, is stored in the variable pointed to by <i>packageFamilyNameLength</i> or <i>packageRelativeApplicationIdLength</i>.</para>
-          </description>
-        </item>
+          <description>The buffer specified by <i>packageFamilyName</i> or <i>packageRelativeApplicationId</i> is not large enough to hold the data; the required buffer size, in <b>WCHAR</b>s, is stored in the variable pointed to by <i>packageFamilyNameLength</i> or <i>packageRelativeApplicationIdLength</i>.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="Windows.RemovePackageDependency">
-    <summary>
-      <para>Removes a resolved package dependency from the current process' package graph (that is, a run-time reference for a framework package dependency that was added by using the <see cref="AddPackageDependency" /> method).</para>
-    </summary>
-    <param name="packageDependencyContext">
-      <para>Type: <b>PACKAGEDEPENDENCY_CONTEXT</b></para>
-      <para>The handle of the package dependency to remove.</para>
-    </param>
+    <summary>Removes a resolved package dependency from the current process' package graph (that is, a run-time reference for a framework package dependency that was added by using the <see cref="AddPackageDependency" /> method).</summary>
+    <param name="packageDependencyContext">The handle of the package dependency to remove.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
-      <para>| Return code | Description |
-|-------------|-------------|
-| E_INVALIDARG | The <i>packageDependencyContext</i> parameter is NULL on input. |</para>
+      <para>| Return code | Description | |-------------|-------------| | E_INVALIDARG | The <i>packageDependencyContext</i> parameter is NULL on input. |</para>
     </returns>
-    <remarks>
-      <para>This function does not unload loaded resources such as DLLs. After removing a package dependency, any files loaded from the package can continue
-to be used. Future file resolution will fail to see the removed package dependency.</para>
-    </remarks>
-    <seealso cref="AddPackageDependency" />
   </member>
   <member name="Windows.TryCreatePackageDependency">
-    <summary>
-      <para>Creates an install-time reference for a framework package dependency for the current app, using the specified package family name, minimum version, and additional criteria.</para>
-    </summary>
-    <param name="user">
-      <para>Type: <b>PSID</b></para>
-      <para>The user scope of the package dependency. If NULL, the caller's user context is used. Must be NULL if <see cref="CreatePackageDependencyOptions_ScopeIsSystem" /> is specified.</para>
-    </param>
-    <param name="packageFamilyName">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The package family name of the framework package on which to take dependency.</para>
-    </param>
-    <param name="minVersion">
-      <para>Type: <b><see cref="PACKAGE_VERSION" /></b></para>
-      <para>The minimum version of the framework package on which to take dependency.</para>
-    </param>
-    <param name="packageDependencyProcessorArchitectures">
-      <para>Type: <b><see cref="PackageDependencyProcessorArchitectures" /></b></para>
-      <para>The processor architectures of the package dependency.</para>
-    </param>
-    <param name="lifetimeKind">
-      <para>Type: <b><see cref="PackageDependencyLifetimeKind" /></b></para>
-      <para>The type of artifact to use to define the lifetime of the package dependency. For more information, see the remarks.</para>
-    </param>
-    <param name="lifetimeArtifact">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The name of the artifact used to define the lifetime of the package dependency. Must be NULL if the <i>lifetimeKind</i> parameter is <see cref="PackageDependencyLifetimeKind_Process" />. For more information, see the remarks.</para>
-    </param>
-    <param name="options">
-      <para>Type: <b><see cref="CreatePackageDependencyOptions" /></b></para>
-      <para>The options to apply when creating the package dependency.</para>
-    </param>
-    <param name="packageDependencyId">
-      <para>Type: <b>PWSTR*</b></para>
-      <para>When this method returns, contains the address of a pointer to a null-terminated Unicode string that specifies the ID of the new package dependency. The caller is responsible for freeing this resource once it is no longer needed by calling <see cref="HeapFree" />.</para>
-    </param>
+    <summary>Creates an install-time reference for a framework package dependency for the current app, using the specified package family name, minimum version, and additional criteria.</summary>
+    <param name="user">The user scope of the package dependency. If NULL, the caller's user context is used. Must be NULL if <see cref="CreatePackageDependencyOptions_ScopeIsSystem" /> is specified.</param>
+    <param name="packageFamilyName">The package family name of the framework package on which to take dependency.</param>
+    <param name="minVersion">The minimum version of the framework package on which to take dependency.</param>
+    <param name="packageDependencyProcessorArchitectures">The processor architectures of the package dependency.</param>
+    <param name="lifetimeKind">The type of artifact to use to define the lifetime of the package dependency. For more information, see the remarks.</param>
+    <param name="lifetimeArtifact">The name of the artifact used to define the lifetime of the package dependency. Must be NULL if the <i>lifetimeKind</i> parameter is <see cref="PackageDependencyLifetimeKind_Process" />. For more information, see the remarks.</param>
+    <param name="options">The options to apply when creating the package dependency.</param>
+    <param name="packageDependencyId">When this method returns, contains the address of a pointer to a null-terminated Unicode string that specifies the ID of the new package dependency. The caller is responsible for freeing this resource once it is no longer needed by calling <see cref="HeapFree" />.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>If the function succeeds it returns <b>ERROR_SUCCESS</b>. Otherwise, the function returns an error code. The possible error codes include the following.</para>
-      <para>| Return code | Description |
-|-------------|-------------|
-| E_INVALIDARG | The <i>packageDependencyId</i> parameter is NULL on input. |</para>
+      <para>| Return code | Description | |-------------|-------------| | E_INVALIDARG | The <i>packageDependencyId</i> parameter is NULL on input. |</para>
     </returns>
-    <remarks>
-      <para>In your app's installer or during the first run of your app, call this method to specify a set of criteria for a framework package you want to use in your app. This informs the OS that your app has a dependency upon a framework package that meets the specified criteria. If one or more framework packages are installed that meet the criteria, Windows will ensure that at least one of these framework packages will remain installed until the install-time reference is deleted. For more information, see <a href="https://docs.microsoft.com//windows/apps/desktop/modernize/framework-packages/use-the-dynamic-dependency-api">Use the dynamic dependency API to reference framework packages at run time</a>.</para>
-      <para>This function fails if the specified dependency criteria cannot be resolved to a specific package. This package resolution check is skipped if <see cref="CreatePackageDependencyOptions_DoNotVerifyDependencyResolution" /> is specified for the <i>options</i> parameter. This is useful for installers running as user contexts other than the target user (for example, installers running as LocalSystem).</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/apps/desktop/modernize/framework-packages/use-the-dynamic-dependency-api">Use the dynamic dependency API to reference framework packages at run time</seealso>
   </member>
 </doc>

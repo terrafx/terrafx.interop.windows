@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_AUTHENTICATED_QUERY_PROTECTION_OUTPUT">
-    <summary>
-      <para>Contains the response to a <b>D3D11_AUTHENTICATED_QUERY_PROTECTION</b> query.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+    <summary>Contains the response to a <b>D3D11_AUTHENTICATED_QUERY_PROTECTION</b> query.</summary>
   </member>
   <member name="D3D11_AUTHENTICATED_QUERY_PROTECTION_OUTPUT.Output">
-    <summary>
-      <para>A <see cref="D3D11_AUTHENTICATED_QUERY_OUTPUT" /> structure that contains a Message Authentication Code (MAC) and other data.</para>
-    </summary>
+    <summary>A <see cref="D3D11_AUTHENTICATED_QUERY_OUTPUT" /> structure that contains a Message Authentication Code (MAC) and other data.</summary>
   </member>
   <member name="D3D11_AUTHENTICATED_QUERY_PROTECTION_OUTPUT.ProtectionFlags">
-    <summary>
-      <para>A <see cref="D3D11_AUTHENTICATED_PROTECTION_FLAGS" /> union that specifies the protection level.</para>
-    </summary>
+    <summary>A <see cref="D3D11_AUTHENTICATED_PROTECTION_FLAGS" /> union that specifies the protection level.</summary>
   </member>
 </doc>

@@ -4,14 +4,11 @@
 <doc>
   <member name="IDvdGraphBuilder.GetDvdInterface">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>GetDvdInterface</b> method retrieves interfaces from the DVD-Video playback graph to make DVD-Video playback development easier.</para>
     </summary>
-    <param name="riid">
-      <para>IID of the requested interface.</para>
-    </param>
-    <param name="ppvIF">
-      <para>Receives a pointer to the interface. The application must release the interface.</para>
-    </param>
+    <param name="riid">IID of the requested interface.</param>
+    <param name="ppvIF">Receives a pointer to the interface. The application must release the interface.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -19,119 +16,61 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <i>ppvIF</i> parameter is invalid. This parameter must not be <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <i>ppvIF</i> parameter is invalid. This parameter must not be <b>NULL</b>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The requested interface could not be returned.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOINTERFACE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_GRAPHNOTREADY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The requested interface could not be returned.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_GRAPHNOTREADY</b>
-            </para>
-          </description>
-          <description>
-            <para>The graph is not built yet. See Remarks.</para>
-          </description>
-        </item>
+          <description>The graph is not built yet. See Remarks.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>You can use this method to select and configure a video renderer filter before you build the filter graph for DVD playback. The following interfaces are available:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <b>Overlay Mixer Filter</b>: <see cref="IDDrawExclModeVideo" />.</description>
-        </item>
-        <item>
-          <description>
-            <b>Video Mixing Renderer 7 (VMR-7)</b>: <see cref="IVMRFilterConfig" />, <see cref="IVMRMixerBitmap" />, <see cref="IVMRWindowlessControl" />, and <see cref="IVMRMonitorConfig" />.</description>
-        </item>
-        <item>
-          <description>
-            <b>Video Mixing Renderer 9 (VMR-9)</b>: <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/vmr9/nn-vmr9-ivmrfilterconfig9">IVMRFilterConfig9</a>, <see cref="IVMRMixerBitmap9" />, <a href="https://docs.microsoft.com//previous-versions/ms787155(v=vs.85)">IVMRWindowlessControl9</a>, and <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/vmr9/nn-vmr9-ivmrmonitorconfig9">IVMRMonitorConfig9</a>.</description>
-        </item>
-        <item>
-          <description>
-            <b>Enhanced Video Renderer (EVR)</b>: <see cref="IEVRFilterConfig" /> and <see cref="IMFVideoRenderer" />.<b>Windows Server 2003, Windows XP and Windows 2000:  </b>This interface is not supported.
-</description>
-        </item>
-      </list>
-      <para>If you call <b>GetDvdInterface</b> to get any of these interfaces before you build the filter graph, the DVD Graph Builder creates the appropriate video renderer. It will use this renderer later when you build the graph. After the video renderer has been selected, you can no longer retrieve the interfaces for the other video renderers. (The <b>GetDvdInterface</b> method will return E_NOINTERFACE.)</para>
-      <para>Before the DVD playback graph is built, if you request any interfaces that are not on the previous list, the method returns VFW_E_DVD_GRAPHNOTREADY. To build the DVD graph, call <see cref="IDvdGraphBuilder.RenderDvdVideoVolume" />. After you build the graph, you can use <b>GetDvdInterface</b> to retrieve some additional interfaces:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="IDvdControl" /> (deprecated), <see cref="IDvdControl2" />, <see cref="IDvdInfo" /> (deprecated), and <see cref="IDvdInfo2" /> to control DVD playback.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="IVideoWindow" />, <see cref="IBasicVideo" />, and <see cref="IBasicVideo2" /> to control the video settings, in windowed mode only.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="IBasicAudio" /> to control the audio settings.</description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/il21dec/nn-il21dec-iamline21decoder">IAMLine21Decoder</a> to control closed caption display.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="IMixerPinConfig" /> and <see cref="IMixerPinConfig2" /> to configure the Overlay Mixer filter's first input pin, which delivers the primary video stream. (To get this interface for the other pins on the Overlay Mixer, enumerate the filter's pins and query them directly.) New applications should avoid using the Overlay Mixer filter.</description>
-        </item>
-      </list>
-      <para>To get other interfaces, call <see cref="IDvdGraphBuilder.GetFiltergraph" />. Query the returned <b>IGraphBuilder</b> interface or use <b>EnumFilters</b> to enumerate the filters.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdGraphBuilder Interface" />
   </member>
   <member name="IDvdGraphBuilder.GetFiltergraph">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetFiltergraph</code> method retrieves the <see cref="IGraphBuilder" /> interface for the filter graph used by the DVD-Video graph builder object.</para>
     </summary>
-    <param name="ppGB">
-      <para>Address of a pointer to the <see cref="IGraphBuilder" /> interface that the DVD-Video graph builder object is using.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface. The current DirectShow implementation returns E_INVALIDARG if <i>ppGB</i> is invalid.</para>
-    </returns>
-    <remarks>
-      <para>The returned <b>IGraphBuilder</b> interface pointer has an outstanding reference count. The caller must release the interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdGraphBuilder Interface" />
+    <param name="ppGB">Address of a pointer to the <see cref="IGraphBuilder" /> interface that the DVD-Video graph builder object is using.</param>
+    <returns>Returns an <b>HRESULT</b> value that depends on the implementation of the interface. The current DirectShow implementation returns E_INVALIDARG if <i>ppGB</i> is invalid.</returns>
   </member>
   <member name="IDvdGraphBuilder.RenderDvdVideoVolume">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>RenderDvdVideoVolume</code> method completes building a filter graph according to user specifications for playing a DVD-Video volume.</para>
     </summary>
-    <param name="lpcwszPathName">
-      <para>Pointer to the path for the DVD-Video volume to play. Can be <b>NULL</b>.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Bitwise OR of flags from <see cref="AM_DVD_GRAPH_FLAGS" /> enumeration, specifying how to build the DVD playback graph.</para>
-    </param>
-    <param name="pStatus">
-      <para>Pointer to a <see cref="AM_DVD_RENDERSTATUS" /> structure. When the method returns, the structure indicates any rendering failures.</para>
-    </param>
+    <param name="lpcwszPathName">Pointer to the path for the DVD-Video volume to play. Can be <b>NULL</b>.</param>
+    <param name="dwFlags">Bitwise OR of flags from <see cref="AM_DVD_GRAPH_FLAGS" /> enumeration, specifying how to build the DVD playback graph.</param>
+    <param name="pStatus">Pointer to a <see cref="AM_DVD_RENDERSTATUS" /> structure. When the method returns, the structure indicates any rendering failures.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface. The DirectShow implementation return values include the following:</para>
       <list type="table">
@@ -139,103 +78,99 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <i>dwFlags</i> parameter specifies conflicting options.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <i>dwFlags</i> parameter specifies conflicting options.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The method partially succeeded. To find out which errors occurred, examine the <i>pStatus</i> parameter.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded, and all streams were rendered.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method partially succeeded. To find out which errors occurred, examine the <i>pStatus</i> parameter.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_DECNOTENOUGH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more streams could not be rendered.<para>If you specified the AM_DVD_HWDEC_ONLY or AM_DVD_SWDEC_ONLY flag in the <i>dwFlags</i> parameter, try calling the method again with the AM_DVD_HWDEC_PREFER or AM_DVD_SWDEC_PREFER flag.</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_NON_EVR_RENDERER_IN_FILTER_GRAPH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The filter graph already contains a video renderer. The method returns this error code if you specify the AM_DVD_EVR_ONLY flag in the <i>dwFlags</i> parameter but the graph already contains a video renderer other than the Enhanced Video Renderer (VMR) filter.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded, and all streams were rendered.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_RENDERFAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An error occurred while building the graph. For example, the DVD Graph Builder could not create a required filter or could not render any of the streams.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>VFW_E_DVD_DECNOTENOUGH</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_TOO_MANY_RENDERERS_IN_FILTER_GRAPH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more streams could not be rendered.</para>
-            <para>If you specified the AM_DVD_HWDEC_ONLY or AM_DVD_SWDEC_ONLY flag in the <i>dwFlags</i> parameter, try calling the method again with the AM_DVD_HWDEC_PREFER or AM_DVD_SWDEC_PREFER flag.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_NON_EVR_RENDERER_IN_FILTER_GRAPH</b>
-            </para>
-          </description>
-          <description>
-            <para>The filter graph already contains a video renderer. The method returns this error code if you specify the AM_DVD_EVR_ONLY flag in the <i>dwFlags</i> parameter but the graph already contains a video renderer other than the Enhanced Video Renderer (VMR) filter.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_RENDERFAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An error occurred while building the graph. For example, the DVD Graph Builder could not create a required filter or could not render any of the streams.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_TOO_MANY_RENDERERS_IN_FILTER_GRAPH</b>
-            </para>
-          </description>
-          <description>
-            <para>The filter graph contains more than one video renderer.</para>
-          </description>
-        </item>
+          <description>The filter graph contains more than one video renderer.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <see cref="AM_DVD_RENDERSTATUS" /> structure reflects failure codes for this method. Reasons for this method returning S_FALSE include the following:</para>
-      <list type="bullet">
-        <item>
-          <description>The graph has been completely built, but one of the following is true.<list type="bullet"><item><description>Overlay mixing doesn't work—the application did not set the AM_DVD_NOVPE flag and the video stream could not be put through the Overlay Mixer. In this case, if the video is decoded in software the application will have enough information to inform the user that the video won't be visible. Hardware-decoded video will be visible only on a TV connected to the NTSC out port of the hardware video decoder.</description></item><item><description>The video decoder does not produce line 21 data. The application can display a warning or informative message that closed captioning is not available because of the decoder.</description></item><item><description>No volume path is specified and the DVD Navigator did not locate any DVD-Video volume to be played. The application can ask the user to insert a DVD-Video disc if none is available in the drive when playback starts.</description></item></list></description>
-        </item>
-        <item>
-          <description>Some streams did not render. The application can indicate to the user that some streams can't be played.</description>
-        </item>
-      </list>
-      <para>This method builds the graph without any knowledge of the DVD-Video file or volume to play. The DVD-Video graph builder builds the graph even if <i>lpcwszPathName</i> is <b>NULL</b> or if the DVD Navigator filter does not find a default DVD-Video volume to play.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdGraphBuilder Interface" />
   </member>
   <member name="IDvdGraphBuilder">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IDvdGraphBuilder</code> interface builds a filter graph for DVD-Video playback. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-graph-builder">DVD Graph Builder</a> object implements this interface.</para>
       <para>The <see cref="RenderDvdVideoVolume" /> method builds a DVD playback graph from the available software and hardware on the system. For information on how to build the DVD filter graph and obtain the pointers to all the necessary interfaces, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/building-the-dvd-filter-graph">Building the DVD Filter Graph</a>.</para>
-      <para>
-        <b>Note</b>  A DVD filter graph requires either a hardware or software MPEG-2 decoder.</para>
-      <para>Generally, you should not add, remove, connect, disconnect, or access individual filters in the graph created by <b>RenderDvdVideoVolume</b>, because doing so might confuse the cleanup code. The purpose of the <b>DvdGraphBuilder</b> object is to simplify the development of DVD-Video applications. If you need a specific type of graph for a particular solution, you should manually create the entire filter graph.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
+      <div>
+        <b>Note</b>  A DVD filter graph requires either a hardware or software MPEG-2 decoder.</div>Generally, you should not add, remove, connect, disconnect, or access individual filters in the graph created by <b>RenderDvdVideoVolume</b>, because doing so might confuse the cleanup code. The purpose of the <b>DvdGraphBuilder</b> object is to simplify the development of DVD-Video applications. If you need a specific type of graph for a particular solution, you should manually create the entire filter graph.</summary>
   </member>
 </doc>

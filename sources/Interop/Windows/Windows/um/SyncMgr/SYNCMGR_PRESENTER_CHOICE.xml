@@ -3,40 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYNCMGR_PRESENTER_CHOICE">
-    <summary>
-      <para>Describes what choice a user makes about a sync manager conflict resolution. Used by <see cref="ISyncMgrConflictPresenter" />.</para>
-    </summary>
-    <seealso cref="ISyncMgrConflictResolveInfo.GetPresenterChoice" />
-    <seealso cref="ISyncMgrConflictResolveInfo.SetPresenterChoice" />
+    <summary>Describes what choice a user makes about a sync manager conflict resolution. Used by <see cref="ISyncMgrConflictPresenter" />.</summary>
   </member>
   <member name="SYNCMGR_PRESENTER_CHOICE.SYNCMGR_PC_NO_CHOICE">
-    <summary>
-      <para>The user is skipping this conflict, or conflict resolution is being canceled.</para>
-    </summary>
+    <summary>The user is skipping this conflict, or conflict resolution is being canceled.</summary>
   </member>
   <member name="SYNCMGR_PRESENTER_CHOICE.SYNCMGR_PC_KEEP_ONE">
-    <summary>
-      <para>The user chooses to keep only one item.</para>
-    </summary>
+    <summary>The user chooses to keep only one item.</summary>
   </member>
   <member name="SYNCMGR_PRESENTER_CHOICE.SYNCMGR_PC_KEEP_MULTIPLE">
-    <summary>
-      <para>The user chooses to keep multiple items.</para>
-    </summary>
+    <summary>The user chooses to keep multiple items.</summary>
   </member>
   <member name="SYNCMGR_PRESENTER_CHOICE.SYNCMGR_PC_KEEP_RECENT">
-    <summary>
-      <para>The user chooses to keep the most recent item.</para>
-    </summary>
+    <summary>The user chooses to keep the most recent item.</summary>
   </member>
   <member name="SYNCMGR_PRESENTER_CHOICE.SYNCMGR_PC_REMOVE_FROM_SYNC_SET">
-    <summary>
-      <para>The item is to be removed from the sync set.</para>
-    </summary>
+    <summary>The item is to be removed from the sync set.</summary>
   </member>
   <member name="SYNCMGR_PRESENTER_CHOICE.SYNCMGR_PC_SKIP">
-    <summary>
-      <para>The item is not being resolved now but is instead being skipped so that it can be resolved later.</para>
-    </summary>
+    <summary>The item is not being resolved now but is instead being skipped so that it can be resolved later.</summary>
   </member>
 </doc>

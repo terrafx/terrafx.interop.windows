@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TRUSTED_DOMAIN_AUTH_INFORMATION">
+    <summary>The <b>TRUSTED_DOMAIN_AUTH_INFORMATION</b> structure is used to retrieve authentication information for a trusted domain. The<see cref="LsaQueryTrustedDomainInfo" /> function uses this structure when its <i>InformationClass</i> parameter is set to <b>TrustedDomainAuthInformation</b>.</summary>
+  </member>
+  <member name="TRUSTED_DOMAIN_AUTH_INFORMATION.IncomingAuthInfos">
+    <summary>Specifies the number of entries in the <b>IncomingAuthenticationInformation</b> and <b>IncomingPreviousAuthenticationInformation</b> arrays.</summary>
+  </member>
+  <member name="TRUSTED_DOMAIN_AUTH_INFORMATION.IncomingAuthenticationInformation">
+    <summary>Pointer to an array of<see cref="LSA_AUTH_INFORMATION" /> structures containing the authentication information for the incoming side of a trust relationship.</summary>
+  </member>
+  <member name="TRUSTED_DOMAIN_AUTH_INFORMATION.IncomingPreviousAuthenticationInformation">
+    <summary>Pointer to an array of <see cref="LSA_AUTH_INFORMATION" /> structures containing the previous authentication information (or old password) for the incoming side of a trust relationship. There must be one of these for every entry in the <b>IncomingAuthenticationInformation</b> array.</summary>
+  </member>
+  <member name="TRUSTED_DOMAIN_AUTH_INFORMATION.OutgoingAuthInfos">
+    <summary>Specifies the number of entries in the <b>OutgoingAuthenticationInformation</b> and <b>OutgoingPreviousAuthenticationInformation</b> arrays.</summary>
+  </member>
+  <member name="TRUSTED_DOMAIN_AUTH_INFORMATION.OutgoingAuthenticationInformation">
+    <summary>Pointer to an array of <see cref="LSA_AUTH_INFORMATION" /> structures containing the authentication information for the outgoing side of a trust relationship.</summary>
+  </member>
+  <member name="TRUSTED_DOMAIN_AUTH_INFORMATION.OutgoingPreviousAuthenticationInformation">
+    <summary>Pointer to an array of <see cref="LSA_AUTH_INFORMATION" /> structures containing the previous authentication information (or old password) for the outgoing side of a trust relationship. There must be one of these for every entry in the <b>OutgoingAuthenticationInformation</b> array.</summary>
+  </member>
+</doc>

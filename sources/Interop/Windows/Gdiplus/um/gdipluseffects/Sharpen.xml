@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Sharpen.GetParameters">
+    <summary>The <b>Sharpen.GetParameters</b> method gets the current values of the parameters of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-sharpen">Sharpen</a> object.</summary>
+    <param name="size">Pointer to a <b>UINT</b> that specifies the size, in bytes, of a <see cref="SharpenParams" /> structure.</param>
+    <param name="parameters">Pointer to a <see cref="SharpenParams" /> structure that receives the parameter values.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Sharpen.SetParameters">
+    <summary>The <b>Sharpen.SetParameters</b> method sets the parameters of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-sharpen">Sharpen</a> object.</summary>
+    <param name="parameters">Pointer to a <see cref="SharpenParams" /> structure that specifies the parameters.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Sharpen.Sharpen">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-sharpen">Sharpen</a> object.</summary>
+  </member>
+</doc>

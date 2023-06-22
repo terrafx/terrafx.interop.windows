@@ -3,55 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYSTEM_POWER_STATE">
-    <summary>
-      <para>Defines values that are used to specify system power states.</para>
-    </summary>
-    <seealso cref="ADMINISTRATOR_POWER_POLICY" />
-    <seealso cref="GLOBAL_MACHINE_POWER_POLICY" />
-    <seealso cref="MACHINE_POWER_POLICY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Power/power-management-enumeration-types">Power Management Enumeration Types</seealso>
-    <seealso cref="SYSTEM_POWER_CAPABILITIES" />
-    <seealso cref="SYSTEM_POWER_POLICY" />
-    <seealso cref="USER_POWER_POLICY" />
+    <summary>Defines values that are used to specify system power states.</summary>
   </member>
   <member name="SYSTEM_POWER_STATE.PowerSystemUnspecified">
-    <summary>
-      <para>Unspecified system power state.</para>
-    </summary>
+    <summary>Unspecified system power state.</summary>
   </member>
   <member name="SYSTEM_POWER_STATE.PowerSystemWorking">
-    <summary>
-      <para>Specifies system power state S0.</para>
-    </summary>
+    <summary>Specifies system power state S0.</summary>
   </member>
   <member name="SYSTEM_POWER_STATE.PowerSystemSleeping1">
-    <summary>
-      <para>Specifies system power state S1.</para>
-    </summary>
+    <summary>Specifies system power state S1.</summary>
   </member>
   <member name="SYSTEM_POWER_STATE.PowerSystemSleeping2">
-    <summary>
-      <para>Specifies system power state S2.</para>
-    </summary>
+    <summary>Specifies system power state S2.</summary>
   </member>
   <member name="SYSTEM_POWER_STATE.PowerSystemSleeping3">
-    <summary>
-      <para>Specifies system power state S3.</para>
-    </summary>
+    <summary>Specifies system power state S3.</summary>
   </member>
   <member name="SYSTEM_POWER_STATE.PowerSystemHibernate">
-    <summary>
-      <para>Specifies system power state S4 (HIBERNATE).</para>
-    </summary>
+    <summary>Specifies system power state S4 (HIBERNATE).</summary>
   </member>
   <member name="SYSTEM_POWER_STATE.PowerSystemShutdown">
-    <summary>
-      <para>Specifies system power state S5 (OFF).</para>
-    </summary>
+    <summary>Specifies system power state S5 (OFF).</summary>
   </member>
   <member name="SYSTEM_POWER_STATE.PowerSystemMaximum">
-    <summary>
-      <para>Specifies the maximum enumeration value.</para>
-    </summary>
+    <summary>Specifies the maximum enumeration value.</summary>
   </member>
 </doc>

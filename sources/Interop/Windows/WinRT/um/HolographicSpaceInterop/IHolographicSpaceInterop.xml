@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IHolographicSpaceInterop.CreateForWindow">
+    <summary>Instantiates a <a href="https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographicspace">HolographicSpace</a> object, and binds it to the current application.</summary>
+    <param name="window">Handle to the window of the active application.</param>
+    <param name="riid">
+      <para>The RUID for the resource interface.</para>
+      <para>The REFIID, or GUID, of the interface to the resource can be obtained by using the __uuidof() macro. For example, __uuidof(IRadialController) will get the GUID of the interface to a buffer resource.</para>
+    </param>
+    <param name="holographicSpace">Address of a pointer to a <a href="https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographicspace">HolographicSpace</a> object.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IHolographicSpaceInterop">
+    <summary>Enables interoperability with a WinRT <a href="https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographicspace">HolographicSpace</a> object, and provides access to <b>HolographicSpace</b> members for representing a holographic scene.</summary>
+  </member>
+</doc>

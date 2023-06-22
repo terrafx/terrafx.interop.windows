@@ -7,200 +7,50 @@
       <para>Contains video format information that applies to both compressed and uncompressed formats.</para>
       <para>This structure is used in the <see cref="MFVIDEOFORMAT" /> structure.</para>
     </summary>
-    <remarks>
-      <para>Developers are encouraged to use media type attributes instead of using the <b>MFVideoInfo</b> structure. The following table lists the attributes that correspond to the members of this structure.</para>
-      <list type="table">
-        <listheader>
-          <description>Structure Member</description>
-          <description>Media Type Attribute</description>
-        </listheader>
-        <item>
-          <description>
-            <b>dwWidth</b>, <b>dwHeight</b></description>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-frame-size-attribute">MF_MT_FRAME_SIZE</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>PixelAspectRatio</b>
-          </description>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-pixel-aspect-ratio-attribute">MF_MT_PIXEL_ASPECT_RATIO</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SourceChromaSubsampling</b>
-          </description>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-video-chroma-siting-attribute">MF_MT_VIDEO_CHROMA_SITING</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>InterlaceMode</b>
-          </description>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-interlace-mode-attribute">MF_MT_INTERLACE_MODE</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>TransferFunction</b>
-          </description>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-transfer-function-attribute">MF_MT_TRANSFER_FUNCTION</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>ColorPrimaries</b>
-          </description>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-video-primaries-attribute">MF_MT_VIDEO_PRIMARIES</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>TransferMatrix</b>
-          </description>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-yuv-matrix-attribute">MF_MT_YUV_MATRIX</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SourceLighting</b>
-          </description>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-video-lighting-attribute">MF_MT_VIDEO_LIGHTING</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>FramesPerSecond</b>
-          </description>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-frame-rate-attribute">MF_MT_FRAME_RATE</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>NominalRange</b>
-          </description>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-video-nominal-range-attribute">MF_MT_VIDEO_NOMINAL_RANGE</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>GeometricAperture</b>
-          </description>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-geometric-aperture-attribute">MF_MT_GEOMETRIC_APERTURE</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MinimumDisplayAperture</b>
-          </description>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-minimum-display-aperture-attribute">MF_MT_MINIMUM_DISPLAY_APERTURE</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>PanScanAperture</b>
-          </description>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-pan-scan-aperture-attribute">MF_MT_PAN_SCAN_APERTURE</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>VideoFlags</b>
-          </description>
-          <description>See <see cref="MFVideoFlags" />.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-types">Media Types</seealso>
   </member>
   <member name="MFVideoInfo.dwWidth">
-    <summary>
-      <para>Width of the decoded image, in pixels.</para>
-    </summary>
+    <summary>Width of the decoded image, in pixels.</summary>
   </member>
   <member name="MFVideoInfo.dwHeight">
-    <summary>
-      <para>Height of the decoded image, in pixels.</para>
-    </summary>
+    <summary>Height of the decoded image, in pixels.</summary>
   </member>
   <member name="MFVideoInfo.PixelAspectRatio">
-    <summary>
-      <para>Pixel aspect ratio, specified as an <see cref="MFRatio" /> structure.</para>
-    </summary>
+    <summary>Pixel aspect ratio, specified as an <see cref="MFRatio" /> structure.</summary>
   </member>
   <member name="MFVideoInfo.SourceChromaSubsampling">
-    <summary>
-      <para>Chroma sub-sampling of the original image, specified as a member of the <see cref="MFVideoChromaSubsampling" /> enumeration.</para>
-    </summary>
+    <summary>Chroma sub-sampling of the original image, specified as a member of the <see cref="MFVideoChromaSubsampling" /> enumeration.</summary>
   </member>
   <member name="MFVideoInfo.InterlaceMode">
-    <summary>
-      <para>Image interlacing, specified as a member of the <see cref="MFVideoInterlaceMode" /> enumeration.</para>
-    </summary>
+    <summary>Image interlacing, specified as a member of the <see cref="MFVideoInterlaceMode" /> enumeration.</summary>
   </member>
   <member name="MFVideoInfo.TransferFunction">
-    <summary>
-      <para>R'G'B' gamma curve function, specified as a member of the <see cref="MFVideoTransferFunction" /> enumeration.</para>
-    </summary>
+    <summary>R'G'B' gamma curve function, specified as a member of the <see cref="MFVideoTransferFunction" /> enumeration.</summary>
   </member>
   <member name="MFVideoInfo.ColorPrimaries">
-    <summary>
-      <para>Color primaries of the video source, specified as a member of the <see cref="MFVideoPrimaries" /> enumeration. This value provides the conversion from R'G'B' to linear RGB.</para>
-    </summary>
+    <summary>Color primaries of the video source, specified as a member of the <see cref="MFVideoPrimaries" /> enumeration. This value provides the conversion from R'G'B' to linear RGB.</summary>
   </member>
   <member name="MFVideoInfo.TransferMatrix">
-    <summary>
-      <para>Conversion matrix from Y'Cb'Cr' to R'G'B, specified as a member of the <see cref="MFVideoTransferMatrix" /> enumeration.</para>
-    </summary>
+    <summary>Conversion matrix from Y'Cb'Cr' to R'G'B, specified as a member of the <see cref="MFVideoTransferMatrix" /> enumeration.</summary>
   </member>
   <member name="MFVideoInfo.SourceLighting">
-    <summary>
-      <para>Intended viewing conditions, specified as a member of the <see cref="MFVideoLighting" /> enumeration.</para>
-    </summary>
+    <summary>Intended viewing conditions, specified as a member of the <see cref="MFVideoLighting" /> enumeration.</summary>
   </member>
   <member name="MFVideoInfo.FramesPerSecond">
-    <summary>
-      <para>Frames per second, specified as an <see cref="MFRatio" /> structure. If the frame rate is unknown or variable, the numerator and denominator should both be set to zero. It is invalid for only one member of the <b>MFRatio</b> structure to be zero.</para>
-    </summary>
+    <summary>Frames per second, specified as an <see cref="MFRatio" /> structure. If the frame rate is unknown or variable, the numerator and denominator should both be set to zero. It is invalid for only one member of the <b>MFRatio</b> structure to be zero.</summary>
   </member>
   <member name="MFVideoInfo.NominalRange">
-    <summary>
-      <para>Range of valid RGB values, specified as a member of the <see cref="MFNominalRange" /> enumeration. The value indicates whether color values contain headroom and toeroom.</para>
-    </summary>
+    <summary>Range of valid RGB values, specified as a member of the <see cref="MFNominalRange" /> enumeration. The value indicates whether color values contain headroom and toeroom.</summary>
   </member>
   <member name="MFVideoInfo.GeometricAperture">
-    <summary>
-      <para>Geometric aperture, specified as an <see cref="MFVideoArea" /> structure. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-geometric-aperture-attribute">MF_MT_GEOMETRIC_APERTURE</a>.</para>
-    </summary>
+    <summary>Geometric aperture, specified as an <see cref="MFVideoArea" /> structure. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-geometric-aperture-attribute">MF_MT_GEOMETRIC_APERTURE</a>.</summary>
   </member>
   <member name="MFVideoInfo.MinimumDisplayAperture">
-    <summary>
-      <para>The display aperture, specified as an <see cref="MFVideoArea" /> structure. The display aperture is the region of the video image that is intended to be shown. Any data outside of this area is the overscan region. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-minimum-display-aperture-attribute">MF_MT_MINIMUM_DISPLAY_APERTURE</a>.</para>
-    </summary>
+    <summary>The display aperture, specified as an <see cref="MFVideoArea" /> structure. The display aperture is the region of the video image that is intended to be shown. Any data outside of this area is the overscan region. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-minimum-display-aperture-attribute">MF_MT_MINIMUM_DISPLAY_APERTURE</a>.</summary>
   </member>
   <member name="MFVideoInfo.PanScanAperture">
-    <summary>
-      <para>Pan-scan rectangle, specified as an <see cref="MFVideoArea" /> structure. The pan-scan rectangle defines a region of the image that is displayed in pan-and-scan mode. It can be used when wide-screen content is shown on a 4 x 3 display. The value is valid only when the <b>VideoFlags</b> member contains the MFVideoFlag_PanScanEnabled flag.</para>
-    </summary>
+    <summary>Pan-scan rectangle, specified as an <see cref="MFVideoArea" /> structure. The pan-scan rectangle defines a region of the image that is displayed in pan-and-scan mode. It can be used when wide-screen content is shown on a 4 x 3 display. The value is valid only when the <b>VideoFlags</b> member contains the MFVideoFlag_PanScanEnabled flag.</summary>
   </member>
   <member name="MFVideoInfo.VideoFlags">
-    <summary>
-      <para>Bitwise <b>OR</b> of zero or more flags from the <see cref="MFVideoFlags" /> enumeration.</para>
-    </summary>
+    <summary>Bitwise <b>OR</b> of zero or more flags from the <see cref="MFVideoFlags" /> enumeration.</summary>
   </member>
 </doc>

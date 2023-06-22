@@ -3,19 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteRenderingParams3.GetRenderingMode1">
-    <summary>
-      <para>Gets the rendering mode.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="DWRITE_RENDERING_MODE1" /></b></para>
-      <para>Returns a <see cref="DWRITE_RENDERING_MODE1" />-typed value for the rendering mode.</para>
-    </returns>
-    <seealso cref="IDWriteRenderingParams3" />
+    <summary>Gets the rendering mode.</summary>
+    <returns>Returns a <see cref="DWRITE_RENDERING_MODE1" />-typed value for the rendering mode.</returns>
   </member>
   <member name="IDWriteRenderingParams3">
-    <summary>
-      <para>Represents text rendering settings for glyph rasterization and filtering.</para>
-    </summary>
-    <seealso cref="IDWriteRenderingParams2" />
+    <summary>Represents text rendering settings for glyph rasterization and filtering.</summary>
   </member>
 </doc>

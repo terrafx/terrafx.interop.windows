@@ -3,32 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CTL_VERIFY_USAGE_STATUS">
-    <summary>
-      <para>The <b>CTL_VERIFY_USAGE_STATUS</b> structure contains information about a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">Certificate Trust List</a> (CTL) returned by
-<see cref="CertVerifyCTLUsage" />.</para>
-    </summary>
-    <remarks>
-      <para>The members <b>dwError</b>, <b>dwFlags</b>, <b>dwCtlEntryIndex</b>, and <b>dwSignerIndex</b> should be initialized to zero by the calling application.</para>
-    </remarks>
-    <seealso cref="CERT_CONTEXT" />
-    <seealso cref="CTL_CONTEXT" />
-    <seealso cref="CertVerifyCTLUsage" />
+    <summary>The <b>CTL_VERIFY_USAGE_STATUS</b> structure contains information about a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">Certificate Trust List</a> (CTL) returned by<see cref="CertVerifyCTLUsage" />.</summary>
   </member>
   <member name="CTL_VERIFY_USAGE_STATUS.cbSize">
-    <summary>
-      <para>The size, in bytes, of the structure. The application calling
-<see cref="CertVerifyCTLUsage" /> sets this parameter. If <b>cbSize</b> is not greater than or equal to the required size of the structure, <b>CertVerifyCTLUsage</b> returns <b>FALSE</b> and <see cref="GetLastError" /> returns <b>E_INVALIDARG</b>.</para>
-    </summary>
+    <summary>The size, in bytes, of the structure. The application calling<see cref="CertVerifyCTLUsage" /> sets this parameter. If <b>cbSize</b> is not greater than or equal to the required size of the structure, <b>CertVerifyCTLUsage</b> returns <b>FALSE</b> and <see cref="GetLastError" /> returns <b>E_INVALIDARG</b>.</summary>
   </member>
   <member name="CTL_VERIFY_USAGE_STATUS.dwError">
-    <summary>
-      <para>The error status, if any, returned by the call to <see cref="CertVerifyCTLUsage" />. For the list of possible error values, see the Return Values section in <b>CertVerifyCTLUsage</b>.</para>
-    </summary>
+    <summary>The error status, if any, returned by the call to <see cref="CertVerifyCTLUsage" />. For the list of possible error values, see the Return Values section in <b>CertVerifyCTLUsage</b>.</summary>
   </member>
   <member name="CTL_VERIFY_USAGE_STATUS.dwFlags">
-    <summary>
-      <para>If <b>CERT_VERIFY_UPDATED_CTL_FLAG</b> is returned, <see cref="CertVerifyCTLUsage" /> updated a CTL whose time was no longer valid with a new, time-valid CTL.</para>
-    </summary>
+    <summary>If <b>CERT_VERIFY_UPDATED_CTL_FLAG</b> is returned, <see cref="CertVerifyCTLUsage" /> updated a CTL whose time was no longer valid with a new, time-valid CTL.</summary>
   </member>
   <member name="CTL_VERIFY_USAGE_STATUS.ppCtl">
     <summary>
@@ -37,9 +21,7 @@
     </summary>
   </member>
   <member name="CTL_VERIFY_USAGE_STATUS.dwCtlEntryIndex">
-    <summary>
-      <para>Returns the array location of the matching subject's entry in the CTL's array.</para>
-    </summary>
+    <summary>Returns the array location of the matching subject's entry in the CTL's array.</summary>
   </member>
   <member name="CTL_VERIFY_USAGE_STATUS.ppSigner">
     <summary>
@@ -48,8 +30,6 @@
     </summary>
   </member>
   <member name="CTL_VERIFY_USAGE_STATUS.dwSignerIndex">
-    <summary>
-      <para>Index of the signer actually used. Needed if a message has more than one signer.</para>
-    </summary>
+    <summary>Index of the signer actually used. Needed if a message has more than one signer.</summary>
   </member>
 </doc>

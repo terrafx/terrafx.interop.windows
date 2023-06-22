@@ -3,31 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_LINE_SPACING_METHOD">
-    <summary>
-      <para>The method used for line spacing in a text layout.</para>
-    </summary>
-    <remarks>
-      <para>The line spacing method is set by using the <see cref="SetLineSpacing" /> method of the <see cref="IDWriteTextFormat" /> or <see cref="IDWriteTextLayout" /> interfaces.  To get  the current line spacing method of a text format or text layout use the <see cref="GetLineSpacing" />.</para>
-    </remarks>
-    <seealso cref="GetLineSpacing" />
-    <seealso cref="SetLineSpacing" />
+    <summary>The method used for line spacing in a text layout.</summary>
   </member>
   <member name="DWRITE_LINE_SPACING_METHOD.DWRITE_LINE_SPACING_METHOD_DEFAULT">
-    <summary>
-      <para>Line spacing depends solely on the content, adjusting to accommodate the size of fonts and inline objects.</para>
-    </summary>
+    <summary>Line spacing depends solely on the content, adjusting to accommodate the size of fonts and inline objects.</summary>
   </member>
   <member name="DWRITE_LINE_SPACING_METHOD.DWRITE_LINE_SPACING_METHOD_UNIFORM">
-    <summary>
-      <para>Lines are explicitly set to uniform spacing, regardless of the size of fonts and inline objects. This can be useful to avoid the uneven appearance that can occur from font fallback.</para>
-    </summary>
+    <summary>Lines are explicitly set to uniform spacing, regardless of the size of fonts and inline objects. This can be useful to avoid the uneven appearance that can occur from font fallback.</summary>
   </member>
   <member name="DWRITE_LINE_SPACING_METHOD.DWRITE_LINE_SPACING_METHOD_PROPORTIONAL">
     <summary>
       <para>Line spacing and baseline distances are proportional to the computed values based on the content, the size of the fonts and inline objects.</para>
-      <para>
-        <b>Note</b>  This value is only available on Windows 10 or later and it can be used with <a href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextlayout3-setlinespacing">IDWriteTextLayout3.SetLineSpacing</a>,
-but can not be used with <see cref="IDWriteTextFormat.SetLineSpacing" />.</para>
+      <div>
+        <b>Note</b>  This value is only available on Windows 10 or later and it can be used with <a href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextlayout3-setlinespacing">IDWriteTextLayout3.SetLineSpacing</a>, but can not be used with <see cref="IDWriteTextFormat.SetLineSpacing" />.</div>
     </summary>
   </member>
 </doc>

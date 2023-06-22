@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SpatialAudioHrtfDirectivityUnion">
-    <summary>
-      <para>Defines a spatial audio directivity model for an <see cref="ISpatialAudioObjectForHrtf" />.</para>
-    </summary>
+    <summary>Defines a spatial audio directivity model for an <see cref="ISpatialAudioObjectForHrtf" />.</summary>
   </member>
   <member name="SpatialAudioHrtfDirectivityUnion.Cone">
-    <summary>
-      <para>A cone-shaped directivity model</para>
-    </summary>
+    <summary>A cone-shaped directivity model</summary>
   </member>
-  <member name="SpatialAudioHrtfDirectivityUnion.Cardioid">
-    <summary></summary>
-  </member>
+  <member name="SpatialAudioHrtfDirectivityUnion.Cardioid"></member>
   <member name="SpatialAudioHrtfDirectivityUnion.Omni">
     <summary>
       <para>And omni-direction directivity model that can be interpolated linearly with one of the other directivity models.</para>

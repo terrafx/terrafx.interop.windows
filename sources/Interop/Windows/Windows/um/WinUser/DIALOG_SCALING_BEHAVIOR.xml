@@ -3,30 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DIALOG_SCALING_BEHAVIOR">
-    <summary>
-      <para>Describes per-monitor DPI scaling behavior overrides for child windows within dialogs. The values in this enumeration are bitfields and can be combined.</para>
-    </summary>
-    <remarks>
-      <para>This enum is used with <see cref="SetDialogControlDpiChangeBehavior" /> in order to override the default per-monitor DPI scaling behavior for a child window within a dialog.</para>
-      <para>These settings only apply to individual controls within dialogs. The dialog-wide per-monitor DPI scaling behavior of a dialog is controlled by <see cref="DIALOG_DPI_CHANGE_BEHAVIORS" />.</para>
-    </remarks>
-    <seealso cref="DIALOG_DPI_CHANGE_BEHAVIORS" />
-    <seealso cref="GetDialogControlDpiChangeBehavior" />
-    <seealso cref="SetDialogControlDpiChangeBehavior" />
+    <summary>Describes per-monitor DPI scaling behavior overrides for child windows within dialogs. The values in this enumeration are bitfields and can be combined.</summary>
   </member>
   <member name="DIALOG_SCALING_BEHAVIOR.DCDC_DEFAULT">
-    <summary>
-      <para>The default behavior of the dialog manager. The dialog managed will update the font, size, and position of the child window on DPI changes.</para>
-    </summary>
+    <summary>The default behavior of the dialog manager. The dialog managed will update the font, size, and position of the child window on DPI changes.</summary>
   </member>
   <member name="DIALOG_SCALING_BEHAVIOR.DCDC_DISABLE_FONT_UPDATE">
-    <summary>
-      <para>Prevents the dialog manager from sending an updated font to the child window via WM_SETFONT in response to a DPI change.</para>
-    </summary>
+    <summary>Prevents the dialog manager from sending an updated font to the child window via WM_SETFONT in response to a DPI change.</summary>
   </member>
   <member name="DIALOG_SCALING_BEHAVIOR.DCDC_DISABLE_RELAYOUT">
-    <summary>
-      <para>Prevents the dialog manager from resizing and repositioning  the child window in response to a DPI change.</para>
-    </summary>
+    <summary>Prevents the dialog manager from resizing and repositioning the child window in response to a DPI change.</summary>
   </member>
 </doc>

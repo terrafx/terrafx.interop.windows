@@ -7,61 +7,33 @@
       <para>Performs a batch normalization on the input. This operator performs the following computation: <code>Output = FusedActivation(Scale * ((Input - Mean) / sqrt(Variance + Epsilon)) + Bias)</code>.</para>
       <para>Any dimension in <i>MeanTensor</i>, <i>VarianceTensor</i>, <i>ScaleTensor</i>, and <i>BiasTensor</i> can be set to 1, and be automatically broadcast to match <i>InputTensor</i>, but otherwise must equal the corresponding dimension's size from <i>InputTensor</i>.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-fused-activations">Using fused operators for improved performance</seealso>
   </member>
   <member name="DML_BATCH_NORMALIZATION_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the Input data.</para>
-    </summary>
+    <summary>A tensor containing the Input data.</summary>
   </member>
   <member name="DML_BATCH_NORMALIZATION_OPERATOR_DESC.MeanTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the Mean data.</para>
-    </summary>
+    <summary>A tensor containing the Mean data.</summary>
   </member>
   <member name="DML_BATCH_NORMALIZATION_OPERATOR_DESC.VarianceTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the Variance data.</para>
-    </summary>
+    <summary>A tensor containing the Variance data.</summary>
   </member>
   <member name="DML_BATCH_NORMALIZATION_OPERATOR_DESC.ScaleTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the Scale data.</para>
-    </summary>
+    <summary>A tensor containing the Scale data.</summary>
   </member>
   <member name="DML_BATCH_NORMALIZATION_OPERATOR_DESC.BiasTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the Bias data.</para>
-    </summary>
+    <summary>A tensor containing the Bias data.</summary>
   </member>
   <member name="DML_BATCH_NORMALIZATION_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor to write the results to.</para>
-    </summary>
+    <summary>A tensor to write the results to.</summary>
   </member>
   <member name="DML_BATCH_NORMALIZATION_OPERATOR_DESC.Spatial">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>
-        <b>TRUE</b> to specify that locations are spatial, otherwise <b>FALSE</b>. Setting this to <b>FALSE</b> will require the Width and Height dimensions of <i>MeanTensor</i> and <i>VarianceTensor</i> to not be broadcast. This parameter was deprecated in <b>DML_FEATURE_LEVEL_4_0</b>, and has no effect.</para>
-    </summary>
+      <b>TRUE</b> to specify that locations are spatial, otherwise <b>FALSE</b>. Setting this to <b>FALSE</b> will require the Width and Height dimensions of <i>MeanTensor</i> and <i>VarianceTensor</i> to not be broadcast. This parameter was deprecated in <b>DML_FEATURE_LEVEL_4_0</b>, and has no effect.</summary>
   </member>
   <member name="DML_BATCH_NORMALIZATION_OPERATOR_DESC.Epsilon">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
-      <para>The epsilon value to use to avoid division by zero.</para>
-    </summary>
+    <summary>The epsilon value to use to avoid division by zero.</summary>
   </member>
   <member name="DML_BATCH_NORMALIZATION_OPERATOR_DESC.FusedActivation">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_OPERATOR_DESC" />*</b></para>
-      <para>An optional fused activation layer to apply after the normalization.</para>
-    </summary>
+    <summary>An optional fused activation layer to apply after the normalization. For more info, see <a href="https://docs.microsoft.com//windows/ai/directml/dml-fused-activations">Using fused operators for improved performance</a>.</summary>
   </member>
 </doc>

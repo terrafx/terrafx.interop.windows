@@ -3,107 +3,71 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DDBLTBATCH">
-    <summary>
-      <para>The DDBLTBATCH structure passes bit block transfer (bitblt) operations to the <see cref="IDirectDrawSurface7.BltBatch" /> method.</para>
-    </summary>
+    <summary>The DDBLTBATCH structure passes bit block transfer (bitblt) operations to the <see cref="IDirectDrawSurface7.BltBatch" /> method.</summary>
   </member>
   <member name="DDBLTBATCH.lprDest">
-    <summary>
-      <para>Address of a <see cref="RECT" /> structure that defines the destination for the bitblt.</para>
-    </summary>
+    <summary>Address of a <see cref="RECT" /> structure that defines the destination for the bitblt.</summary>
   </member>
   <member name="DDBLTBATCH.lpDDSSrc">
-    <summary>
-      <para>Address of a DirectDrawSurface object to be the source of the bitblt.</para>
-    </summary>
+    <summary>Address of a DirectDrawSurface object to be the source of the bitblt.</summary>
   </member>
   <member name="DDBLTBATCH.lprSrc">
-    <summary>
-      <para>Address of a <see cref="RECT" /> structure that defines the source rectangle of the bitblt.</para>
-    </summary>
+    <summary>Address of a <see cref="RECT" /> structure that defines the source rectangle of the bitblt.</summary>
   </member>
   <member name="DDBLTBATCH.dwFlags">
     <summary>
       <para>Optional control flags. The following values are defined:</para>
-      <list type="bullet">
-        <item>
-          <description>DDBLT_ALPHADEST - Uses either the alpha information in pixel format or the alpha channel surface attached to the destination surface as the alpha channel for this bitblt.</description>
-        </item>
-        <item>
-          <description>DDBLT_ALPHADESTCONSTOVERRIDE - Uses the <b>dwAlphaDestConst</b> member of the <see cref="DDBLTFX" /> structure as the alpha channel for the destination surface for this bitblt.</description>
-        </item>
-        <item>
-          <description>DDBLT_ALPHADESTNEG - The destination surface becomes more transparent as the alpha value increases (0 is opaque).</description>
-        </item>
-        <item>
-          <description>DDBLT_ALPHADESTSURFACEOVERRIDE - Uses the <b>lpDDSAlphaDest</b> member of the <see cref="DDBLTFX" /> structure as the alpha channel for the destination surface for this bitblt.</description>
-        </item>
-        <item>
-          <description>DDBLT_ALPHAEDGEBLEND - Uses the <b>dwAlphaEdgeBlend</b> member of the <see cref="DDBLTFX" /> structure as the alpha channel for the edges of the image that border the color key colors.</description>
-        </item>
-        <item>
-          <description>DDBLT_ALPHASRC - Uses either the alpha information in pixel format or the alpha channel surface attached to the source surface as the alpha channel for this bitblt.</description>
-        </item>
-        <item>
-          <description>DDBLT_ALPHASRCCONSTOVERRIDE - Uses the <b>dwAlphaSrcConst</b> member of the <see cref="DDBLTFX" /> structure as the source alpha channel for this bitblt.</description>
-        </item>
-        <item>
-          <description>DDBLT_ALPHASRCNEG - The source surface becomes more transparent as the alpha value increases (0 is opaque).</description>
-        </item>
-        <item>
-          <description>DDBLT_ALPHASRCSURFACEOVERRIDE - Uses the <b>lpDDSAlphaSrc</b> member of the <see cref="DDBLTFX" /> structure as the alpha channel source for this bitblt.</description>
-        </item>
-        <item>
-          <description>DDBLT_ASYNC - Performs this bitblt asynchronously through the first in, first out (FIFO) hardware in the order received. If no room is available in the FIFO hardware, the call fails.</description>
-        </item>
-        <item>
-          <description>DDBLT_COLORFILL - Uses the <b>dwFillColor</b> member of the <see cref="DDBLTFX" /> structure as the RGB color that fills the destination rectangle on the destination surface.</description>
-        </item>
-        <item>
-          <description>DDBLT_DDFX - Uses the <b>dwDDFX</b> member of the <see cref="DDBLTFX" /> structure to specify the effects to use for this bitblt.</description>
-        </item>
-        <item>
-          <description>DDBLT_DDROPS - Uses the <b>dwDDROP</b> member of the <see cref="DDBLTFX" /> structure to specify the raster operations (ROPS) that are not part of the Win32 API.</description>
-        </item>
-        <item>
-          <description>DDBLT_KEYDEST - Uses the color key that is associated with the destination surface.</description>
-        </item>
-        <item>
-          <description>DDBLT_KEYDESTOVERRIDE - Uses the <b>ddckDestColorkey</b> member of the <see cref="DDBLTFX" /> structure as the color key for the destination surface.</description>
-        </item>
-        <item>
-          <description>DDBLT_KEYSRC - Uses the color key that is associated with the source surface.</description>
-        </item>
-        <item>
-          <description>DDBLT_KEYSRCOVERRIDE - Uses the <b>ddckSrcColorkey</b> member of the <see cref="DDBLTFX" /> structure as the color key for the source surface.</description>
-        </item>
-        <item>
-          <description>DDBLT_ROP - Uses the <b>dwROP</b> member of the <see cref="DDBLTFX" /> structure for the ROP for this bitblt. These ROPs are the same as those defined in the Win32 API.</description>
-        </item>
-        <item>
-          <description>DDBLT_ROTATIONANGLE - Uses the <b>dwRotationAngle</b> member of the <see cref="DDBLTFX" /> structure as the rotation angle (specified in 1/100s of a degree) for the surface.</description>
-        </item>
-        <item>
-          <description>DDBLT_ZBUFFER - Performs a z-buffered bitblt, using the z-buffers that are attached to the source and destination surfaces and the <b>dwZBufferOpCode</b> member of the <see cref="DDBLTFX" /> structure as the z-buffer opcode.</description>
-        </item>
-        <item>
-          <description>DDBLT_ZBUFFERDESTCONSTOVERRIDE - Performs a z-buffered bitblt, using the <b>dwZDestConst</b> and <b>dwZBufferOpCode</b> members of the <see cref="DDBLTFX" /> structure as the z-buffer and z-buffer opcode, respectively, for the destination.</description>
-        </item>
-        <item>
-          <description>DDBLT_ZBUFFERDESTOVERRIDE - Performs a z-buffered bitblt, using the <b>lpDDSZBufferDest</b> and <b>dwZBufferOpCode</b> members of the <see cref="DDBLTFX" /> structure as the z-buffer and z-buffer opcode, respectively, for the destination.</description>
-        </item>
-        <item>
-          <description>DDBLT_ZBUFFERSRCCONSTOVERRIDE - Performs a z-buffered bitblt, using the <b>dwZSrcConst</b> and <b>dwZBufferOpCode</b> members of the <see cref="DDBLTFX" /> structure as the z-buffer and z-buffer opcode, respectively, for the source.</description>
-        </item>
-        <item>
-          <description>DDBLT_ZBUFFERSRCOVERRIDE - Performs a z-buffered bitblt, using the <b>lpDDSZBufferSrc</b> and <b>dwZBufferOpCode</b> members of the <see cref="DDBLTFX" /> structure as the z-buffer and z-buffer opcode, respectively, for the source.</description>
-        </item>
-      </list>
+      <h4>DDBLT_ALPHADEST</h4>
+      <para>Uses either the alpha information in pixel format or the alpha channel surface attached to the destination surface as the alpha channel for this bitblt.</para>
+      <h4>DDBLT_ALPHADESTCONSTOVERRIDE</h4>
+      <para>Uses the <b>dwAlphaDestConst</b> member of the <see cref="DDBLTFX" /> structure as the alpha channel for the destination surface for this bitblt.</para>
+      <h4>DDBLT_ALPHADESTNEG</h4>
+      <para>The destination surface becomes more transparent as the alpha value increases (0 is opaque).</para>
+      <h4>DDBLT_ALPHADESTSURFACEOVERRIDE</h4>
+      <para>Uses the <b>lpDDSAlphaDest</b> member of the <see cref="DDBLTFX" /> structure as the alpha channel for the destination surface for this bitblt.</para>
+      <h4>DDBLT_ALPHAEDGEBLEND</h4>
+      <para>Uses the <b>dwAlphaEdgeBlend</b> member of the <see cref="DDBLTFX" /> structure as the alpha channel for the edges of the image that border the color key colors.</para>
+      <h4>DDBLT_ALPHASRC</h4>
+      <para>Uses either the alpha information in pixel format or the alpha channel surface attached to the source surface as the alpha channel for this bitblt.</para>
+      <h4>DDBLT_ALPHASRCCONSTOVERRIDE</h4>
+      <para>Uses the <b>dwAlphaSrcConst</b> member of the <see cref="DDBLTFX" /> structure as the source alpha channel for this bitblt.</para>
+      <h4>DDBLT_ALPHASRCNEG</h4>
+      <para>The source surface becomes more transparent as the alpha value increases (0 is opaque).</para>
+      <h4>DDBLT_ALPHASRCSURFACEOVERRIDE</h4>
+      <para>Uses the <b>lpDDSAlphaSrc</b> member of the <see cref="DDBLTFX" /> structure as the alpha channel source for this bitblt.</para>
+      <h4>DDBLT_ASYNC</h4>
+      <para>Performs this bitblt asynchronously through the first in, first out (FIFO) hardware in the order received. If no room is available in the FIFO hardware, the call fails.</para>
+      <h4>DDBLT_COLORFILL</h4>
+      <para>Uses the <b>dwFillColor</b> member of the <see cref="DDBLTFX" /> structure as the RGB color that fills the destination rectangle on the destination surface.</para>
+      <h4>DDBLT_DDFX</h4>
+      <para>Uses the <b>dwDDFX</b> member of the <see cref="DDBLTFX" /> structure to specify the effects to use for this bitblt.</para>
+      <h4>DDBLT_DDROPS</h4>
+      <para>Uses the <b>dwDDROP</b> member of the <see cref="DDBLTFX" /> structure to specify the raster operations (ROPS) that are not part of the Win32 API.</para>
+      <h4>DDBLT_KEYDEST</h4>
+      <para>Uses the color key that is associated with the destination surface.</para>
+      <h4>DDBLT_KEYDESTOVERRIDE</h4>
+      <para>Uses the <b>ddckDestColorkey</b> member of the <see cref="DDBLTFX" /> structure as the color key for the destination surface.</para>
+      <h4>DDBLT_KEYSRC</h4>
+      <para>Uses the color key that is associated with the source surface.</para>
+      <h4>DDBLT_KEYSRCOVERRIDE</h4>
+      <para>Uses the <b>ddckSrcColorkey</b> member of the <see cref="DDBLTFX" /> structure as the color key for the source surface.</para>
+      <h4>DDBLT_ROP</h4>
+      <para>Uses the <b>dwROP</b> member of the <see cref="DDBLTFX" /> structure for the ROP for this bitblt. These ROPs are the same as those defined in the Win32 API.</para>
+      <h4>DDBLT_ROTATIONANGLE</h4>
+      <para>Uses the <b>dwRotationAngle</b> member of the <see cref="DDBLTFX" /> structure as the rotation angle (specified in 1/100s of a degree) for the surface.</para>
+      <h4>DDBLT_ZBUFFER</h4>
+      <para>Performs a z-buffered bitblt, using the z-buffers that are attached to the source and destination surfaces and the <b>dwZBufferOpCode</b> member of the <see cref="DDBLTFX" /> structure as the z-buffer opcode.</para>
+      <h4>DDBLT_ZBUFFERDESTCONSTOVERRIDE</h4>
+      <para>Performs a z-buffered bitblt, using the <b>dwZDestConst</b> and <b>dwZBufferOpCode</b> members of the <see cref="DDBLTFX" /> structure as the z-buffer and z-buffer opcode, respectively, for the destination.</para>
+      <h4>DDBLT_ZBUFFERDESTOVERRIDE</h4>
+      <para>Performs a z-buffered bitblt, using the <b>lpDDSZBufferDest</b> and <b>dwZBufferOpCode</b> members of the <see cref="DDBLTFX" /> structure as the z-buffer and z-buffer opcode, respectively, for the destination.</para>
+      <h4>DDBLT_ZBUFFERSRCCONSTOVERRIDE</h4>
+      <para>Performs a z-buffered bitblt, using the <b>dwZSrcConst</b> and <b>dwZBufferOpCode</b> members of the <see cref="DDBLTFX" /> structure as the z-buffer and z-buffer opcode, respectively, for the source.</para>
+      <h4>DDBLT_ZBUFFERSRCOVERRIDE</h4>
+      <para>Performs a z-buffered bitblt, using the <b>lpDDSZBufferSrc</b> and <b>dwZBufferOpCode</b> members of the <see cref="DDBLTFX" /> structure as the z-buffer and z-buffer opcode, respectively, for the source.</para>
     </summary>
   </member>
   <member name="DDBLTBATCH.lpDDBltFx">
-    <summary>
-      <para>Address of a <see cref="DDBLTFX" /> structure that specifies additional bitblt effects.</para>
-    </summary>
+    <summary>Address of a <see cref="DDBLTFX" /> structure that specifies additional bitblt effects.</summary>
   </member>
 </doc>

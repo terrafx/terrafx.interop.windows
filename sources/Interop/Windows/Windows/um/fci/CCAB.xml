@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CCAB">
+    <summary>The <b>CCAB</b> structure contains cabinet information.</summary>
+  </member>
+  <member name="CCAB.cb">
+    <summary>The maximum size, in bytes, of a cabinet created by FCI.</summary>
+  </member>
+  <member name="CCAB.cbFolderThresh">
+    <summary>The maximum size, in bytes, that a folder will contain before a new folder is created.</summary>
+  </member>
+  <member name="CCAB.cbReserveCFHeader">
+    <summary>The size, in bytes, of the CFHeader reserve area. Possible value range is 0-60,000.</summary>
+  </member>
+  <member name="CCAB.cbReserveCFFolder">
+    <summary>The size, in bytes, of the CFFolder reserve area. Possible value range is 0-255.</summary>
+  </member>
+  <member name="CCAB.cbReserveCFData">
+    <summary>The size, in bytes, of the CFData reserve area. Possible value range is 0-255.</summary>
+  </member>
+  <member name="CCAB.iCab">
+    <summary>The number of created cabinets.</summary>
+  </member>
+  <member name="CCAB.iDisk">
+    <summary>The maximum size, in bytes, of a cabinet created by FCI.</summary>
+  </member>
+  <member name="CCAB.fFailOnIncompressible">
+    <summary>TBD</summary>
+  </member>
+  <member name="CCAB.setID">
+    <summary>A value that represents the association between a collection of linked cabinet files.</summary>
+  </member>
+  <member name="CCAB.szDisk">
+    <summary>The name of the disk on which the cabinet is placed.</summary>
+  </member>
+  <member name="CCAB.szCab">
+    <summary>The name of the cabinet.</summary>
+  </member>
+  <member name="CCAB.szCabPath">
+    <summary>The full path that indicates where to create the cabinet.</summary>
+  </member>
+</doc>

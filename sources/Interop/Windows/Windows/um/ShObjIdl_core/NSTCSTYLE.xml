@@ -3,47 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NSTCSTYLE">
-    <summary>
-      <para>Describes the characteristics of a given namespace tree control.</para>
-    </summary>
-    <remarks>
-      <para>Three values have effect only in conjunction with NSTCS_CHECKBOXES: NSTCS_PARTIALCHECKBOXES, NSTCS_EXCLUSIONCHECKBOXES, and NSTCS_DIMMEDCHECKBOXES. The icons associated with these states are inserted into the state image list as follows:</para>
-      <list type="table">
-        <listheader>
-          <description>Image Slot</description>
-          <description>Image</description>
-          <description>Associated Flags</description>
-        </listheader>
-        <item>
-          <description>0</description>
-          <description>Blank</description>
-          <description>NSTCS_CHECKBOXES</description>
-        </item>
-        <item>
-          <description>1</description>
-          <description>Unchecked</description>
-          <description>NSTCS_CHECKBOXES</description>
-        </item>
-        <item>
-          <description>2</description>
-          <description>Checked</description>
-          <description>NSTCS_CHECKBOXES</description>
-        </item>
-        <item>
-          <description>3</description>
-          <description>Partial</description>
-          <description>NSTCS_CHECKBOXES | NSTCS_PARTIALCHECKBOXES</description>
-        </item>
-        <item>
-          <description>4</description>
-          <description>Exclusion (red X)</description>
-          <description>NSTCS_CHECKBOXES | NSTCS_EXCLUSIONCHECKBOXES</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="INameSpaceTreeControl2.GetControlStyle" />
-    <seealso cref="INameSpaceTreeControl2.SetControlStyle" />
-    <seealso cref="INameSpaceTreeControl.Initialize" />
+    <summary>Describes the characteristics of a given namespace tree control.</summary>
   </member>
   <member name="NSTCSTYLE.NSTCS_HASEXPANDOS">
     <summary>
@@ -106,9 +66,7 @@
     </summary>
   </member>
   <member name="NSTCSTYLE.NSTCS_NOREPLACEOPEN">
-    <summary>
-      <para>Do not replace the <b>Open</b> command in the shortcut menu with a user-defined function.</para>
-    </summary>
+    <summary>Do not replace the <b>Open</b> command in the shortcut menu with a user-defined function.</summary>
   </member>
   <member name="NSTCSTYLE.NSTCS_DISABLEDRAGDROP">
     <summary>
@@ -117,9 +75,7 @@
     </summary>
   </member>
   <member name="NSTCSTYLE.NSTCS_NOORDERSTREAM">
-    <summary>
-      <para>Do not persist reordering changes. Used with NSTCS_FAVORITESMODE. If favorites mode is not specified, this flag has no effect.</para>
-    </summary>
+    <summary>Do not persist reordering changes. Used with NSTCS_FAVORITESMODE. If favorites mode is not specified, this flag has no effect.</summary>
   </member>
   <member name="NSTCSTYLE.NSTCS_RICHTOOLTIP">
     <summary>
@@ -129,9 +85,7 @@
     </summary>
   </member>
   <member name="NSTCSTYLE.NSTCS_BORDER">
-    <summary>
-      <para>Draw a thin border around the control. Corresponds to <a href="https://docs.microsoft.com//windows/desktop/winmsg/window-styles">WS_BORDER</a>.</para>
-    </summary>
+    <summary>Draw a thin border around the control. Corresponds to <a href="https://docs.microsoft.com//windows/desktop/winmsg/window-styles">WS_BORDER</a>.</summary>
   </member>
   <member name="NSTCSTYLE.NSTCS_NOEDITLABELS">
     <summary>
@@ -140,14 +94,10 @@
     </summary>
   </member>
   <member name="NSTCSTYLE.NSTCS_TABSTOP">
-    <summary>
-      <para>If the control is hosted, you can tabstop into the control. Corresponds to <a href="https://docs.microsoft.com//windows/desktop/winmsg/extended-window-styles">WS_EX_CONTROLPARENT</a>.</para>
-    </summary>
+    <summary>If the control is hosted, you can tabstop into the control. Corresponds to <a href="https://docs.microsoft.com//windows/desktop/winmsg/extended-window-styles">WS_EX_CONTROLPARENT</a>.</summary>
   </member>
   <member name="NSTCSTYLE.NSTCS_FAVORITESMODE">
-    <summary>
-      <para>The control has the appearance of the favorites band in Windows XP.</para>
-    </summary>
+    <summary>The control has the appearance of the favorites band in Windows XP.</summary>
   </member>
   <member name="NSTCSTYLE.NSTCS_AUTOHSCROLL">
     <summary>
@@ -162,9 +112,7 @@
     </summary>
   </member>
   <member name="NSTCSTYLE.NSTCS_EMPTYTEXT">
-    <summary>
-      <para>If an item has no children and is not expanded, then that item contains a line of text at the child level that says "empty".</para>
-    </summary>
+    <summary>If an item has no children and is not expanded, then that item contains a line of text at the child level that says "empty".</summary>
   </member>
   <member name="NSTCSTYLE.NSTCS_CHECKBOXES">
     <summary>
@@ -203,18 +151,12 @@
     </summary>
   </member>
   <member name="NSTCSTYLE.NSTCS_SHOWTABSBUTTON">
-    <summary>
-      <para>Displays an arrow on the right side of an item if the item is a folder. The action associated with the arrow is implementation specific. Cannot be combined with NSTCS_SHOWDELETEBUTTON or NSTCS_SHOWREFRESHBUTTON.</para>
-    </summary>
+    <summary>Displays an arrow on the right side of an item if the item is a folder. The action associated with the arrow is implementation specific. Cannot be combined with NSTCS_SHOWDELETEBUTTON or NSTCS_SHOWREFRESHBUTTON.</summary>
   </member>
   <member name="NSTCSTYLE.NSTCS_SHOWDELETEBUTTON">
-    <summary>
-      <para>Displays a red <b>X</b> on the right side of an item. The action associated with the <b>X</b> is implementation specific. Cannot be combined with NSTCS_SHOWTABSBUTTON or NSTCS_SHOWREFRESHBUTTON.</para>
-    </summary>
+    <summary>Displays a red <b>X</b> on the right side of an item. The action associated with the <b>X</b> is implementation specific. Cannot be combined with NSTCS_SHOWTABSBUTTON or NSTCS_SHOWREFRESHBUTTON.</summary>
   </member>
   <member name="NSTCSTYLE.NSTCS_SHOWREFRESHBUTTON">
-    <summary>
-      <para>Displays a refresh button on the right side of an item. The action associated with the button is implementation specific. Cannot be combined with NSTCS_SHOWTABSBUTTON or NSTCS_SHOWDELETEBUTTON.</para>
-    </summary>
+    <summary>Displays a refresh button on the right side of an item. The action associated with the button is implementation specific. Cannot be combined with NSTCS_SHOWTABSBUTTON or NSTCS_SHOWDELETEBUTTON.</summary>
   </member>
 </doc>

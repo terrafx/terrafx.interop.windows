@@ -3,27 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_FONT_PROPERTY">
-    <summary>
-      <para>Font property used for filtering font sets and
-building a font set with explicit properties.</para>
-    </summary>
+    <summary>Font property used for filtering font sets and building a font set with explicit properties.</summary>
   </member>
   <member name="DWRITE_FONT_PROPERTY.propertyId">
-    <summary>
-      <para>Specifies the requested font property, such as DWRITE_FONT_PROPERTY_ID_FAMILY_NAME.</para>
-    </summary>
+    <summary>Specifies the requested font property, such as DWRITE_FONT_PROPERTY_ID_FAMILY_NAME.</summary>
   </member>
   <member name="DWRITE_FONT_PROPERTY.propertyValue">
-    <summary>
-      <para>Specifies the value, such as "Segoe UI".</para>
-    </summary>
+    <summary>Specifies the value, such as "Segoe UI".</summary>
   </member>
   <member name="DWRITE_FONT_PROPERTY.localeName">
-    <summary>
-      <para>Specifies the locale to use, such as "en-US". Simply leave this empty when used
-with the font set filtering functions, as they will find a match regardless of
-language. For passing to AddFontFaceReference, the localeName specifies the language
-of the property value.</para>
-    </summary>
+    <summary>Specifies the locale to use, such as "en-US". Simply leave this empty when used with the font set filtering functions, as they will find a match regardless of language. For passing to AddFontFaceReference, the localeName specifies the language of the property value.</summary>
   </member>
 </doc>

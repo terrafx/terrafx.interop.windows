@@ -3,33 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.RegisterAppStateChangeNotification">
-    <summary>
-      <para>Enables an app to register a callback function through which it can be notified that its library is going into or coming out of a suspended state. The app can use this information to perform any necessary operations, such as preserving state, that should be performed at that point.</para>
-    </summary>
-    <param name="Routine">
-      <para>A pointer to a callback function that is called when the app enters or leaves the suspended state. See <a href="https://docs.microsoft.com//windows/desktop/api/appnotify/nc-appnotify-pappstate_change_routine">PAPPSTATE_CHANGE_ROUTINE</a> for more detail on this function.</para>
-    </param>
-    <param name="Context">
-      <para>App-specific context information that the app uses when going into or out of a suspended state. This is commonly a "this" pointer.</para>
-    </param>
-    <param name="Registration">
-      <para>When this function returns successfully, this parameter receives the address of a pointer to a value that can be used to identify the registration. Store this value to use with <see cref="UnregisterAppStateChangeNotification" />.</para>
-    </param>
-    <returns>
-      <para>A standard Win32 status code.</para>
-    </returns>
-    <seealso cref="UnregisterAppStateChangeNotification" />
+    <summary>Enables an app to register a callback function through which it can be notified that its library is going into or coming out of a suspended state. The app can use this information to perform any necessary operations, such as preserving state, that should be performed at that point.</summary>
+    <param name="Routine">A pointer to a callback function that is called when the app enters or leaves the suspended state. See <a href="https://docs.microsoft.com//windows/desktop/api/appnotify/nc-appnotify-pappstate_change_routine">PAPPSTATE_CHANGE_ROUTINE</a> for more detail on this function.</param>
+    <param name="Context">App-specific context information that the app uses when going into or out of a suspended state. This is commonly a "this" pointer.</param>
+    <param name="Registration">When this function returns successfully, this parameter receives the address of a pointer to a value that can be used to identify the registration. Store this value to use with <see cref="UnregisterAppStateChangeNotification" />.</param>
+    <returns>A standard Win32 status code.</returns>
   </member>
   <member name="Windows.UnregisterAppStateChangeNotification">
-    <summary>
-      <para>Cancels a change notification registered through <see cref="RegisterAppStateChangeNotification" />.</para>
-    </summary>
-    <param name="Registration">
-      <para>A pointer to the registration handle retrieved by <see cref="RegisterAppStateChangeNotification" /> through its <i>Registration</i> parameter.</para>
-    </param>
-    <returns>
-      <para>This function does not return a value.</para>
-    </returns>
-    <seealso cref="RegisterAppStateChangeNotification" />
+    <summary>Cancels a change notification registered through <see cref="RegisterAppStateChangeNotification" />.</summary>
+    <param name="Registration">A pointer to the registration handle retrieved by <see cref="RegisterAppStateChangeNotification" /> through its <i>Registration</i> parameter.</param>
+    <returns>This function does not return a value.</returns>
   </member>
 </doc>

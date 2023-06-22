@@ -3,27 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NSTCFOLDERCAPABILITIES">
-    <summary>
-      <para>Specifies the state of a tree item. These values are used by methods of the <see cref="INameSpaceTreeControlFolderCapabilities" /> interface.</para>
-    </summary>
-    <remarks>
-      <para>The <b>NSTCFOLDERCAPABILITIES</b> type is defined in Shobjidl.h beginning in Windows 7.</para>
-    </remarks>
-    <seealso cref="INameSpaceTreeControlFolderCapabilities.GetFolderCapabilities" />
+    <summary>Specifies the state of a tree item. These values are used by methods of the <see cref="INameSpaceTreeControlFolderCapabilities" /> interface.</summary>
   </member>
   <member name="NSTCFOLDERCAPABILITIES.NSTCFC_NONE">
-    <summary>
-      <para>The property does not exist. Filtering is not supported.</para>
-    </summary>
+    <summary>The property does not exist. Filtering is not supported.</summary>
   </member>
   <member name="NSTCFOLDERCAPABILITIES.NSTCFC_PINNEDITEMFILTERING">
-    <summary>
-      <para>Property exists. Supports filtering based on the value specified in <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-ispinnedtonamespacetree">System.IsPinnedToNameSpaceTree</a>.</para>
-    </summary>
+    <summary>Property exists. Supports filtering based on the value specified in <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-ispinnedtonamespacetree">System.IsPinnedToNameSpaceTree</a>.</summary>
   </member>
   <member name="NSTCFOLDERCAPABILITIES.NSTCFC_DELAY_REGISTER_NOTIFY">
-    <summary>
-      <para>Delays registration for change notifications until the tree is expanded in the navigation pane.</para>
-    </summary>
+    <summary>Delays registration for change notifications until the tree is expanded in the navigation pane.</summary>
   </member>
 </doc>

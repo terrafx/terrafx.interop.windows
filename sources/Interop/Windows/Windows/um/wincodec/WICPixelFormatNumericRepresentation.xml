@@ -3,43 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICPixelFormatNumericRepresentation">
-    <summary>
-      <para>Defines constants that specify a primitive type for numeric representation of a WIC pixel format.</para>
-    </summary>
+    <summary>Defines constants that specify a primitive type for numeric representation of a WIC pixel format.</summary>
   </member>
   <member name="WICPixelFormatNumericRepresentation.WICPixelFormatNumericRepresentationUnspecified">
-    <summary>
-      <para>The format is not specified.</para>
-    </summary>
+    <summary>The format is not specified.</summary>
   </member>
   <member name="WICPixelFormatNumericRepresentation.WICPixelFormatNumericRepresentationIndexed">
-    <summary>
-      <para>Specifies that the format is indexed.</para>
-    </summary>
+    <summary>Specifies that the format is indexed.</summary>
   </member>
   <member name="WICPixelFormatNumericRepresentation.WICPixelFormatNumericRepresentationUnsignedInteger">
-    <summary>
-      <para>Specifies that the format is represented as an unsigned integer.</para>
-    </summary>
+    <summary>Specifies that the format is represented as an unsigned integer.</summary>
   </member>
   <member name="WICPixelFormatNumericRepresentation.WICPixelFormatNumericRepresentationSignedInteger">
-    <summary>
-      <para>Specifies that the format is represented as a signed integer.</para>
-    </summary>
+    <summary>Specifies that the format is represented as a signed integer.</summary>
   </member>
   <member name="WICPixelFormatNumericRepresentation.WICPixelFormatNumericRepresentationFixed">
-    <summary>
-      <para>Specifies that the format is represented as a fixed-point number.</para>
-    </summary>
+    <summary>Specifies that the format is represented as a fixed-point number.</summary>
   </member>
   <member name="WICPixelFormatNumericRepresentation.WICPixelFormatNumericRepresentationFloat">
-    <summary>
-      <para>Specifies that the format is represented as a floating-point number.</para>
-    </summary>
+    <summary>Specifies that the format is represented as a floating-point number.</summary>
   </member>
   <member name="WICPixelFormatNumericRepresentation.WICPixelFormatNumericRepresentation_FORCE_DWORD">
-    <summary>
-      <para>This constant contains the maximum <b>DWORD</b> value.</para>
-    </summary>
+    <summary>This constant contains the maximum <b>DWORD</b> value.</summary>
   </member>
 </doc>

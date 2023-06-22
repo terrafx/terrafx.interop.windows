@@ -3,26 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="XAPO_BUFFER_FLAGS">
-    <summary>
-      <para>Describes the contents of a stream buffer.</para>
-    </summary>
-    <remarks>
-      <para>This metadata can be used to implement optimizations that require knowledge of a stream buffer's contents. For example, XAPOs that always produce silent output from silent input can check the flag on the input stream buffer to determine if any signal processing is necessary. If silent, the XAPO can simply set the flag on the output stream buffer to silent and return, thus averting the work of processing silent data.</para>
-      <para>Likewise, XAPOs that receive valid input data, but generate silence (for any reason), may set the output stream buffer's flag accordingly, rather than writing silent samples to the buffer.</para>
-      <para>These flags represent what should be assumed is in the respective buffer. The flags may not reflect what is actually stored in memory. For example, the XAPO_BUFFER_SILENT indicates that silent data should be assumed, however the respective memory may be uninitialized</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/enumerations">Enumerations</seealso>
+    <summary>Describes the contents of a stream buffer.</summary>
   </member>
   <member name="XAPO_BUFFER_FLAGS.XAPO_BUFFER_SILENT">
-    <summary>
-      <para>Stream buffer contains only silent samples.</para>
-    </summary>
+    <summary>Stream buffer contains only silent samples.</summary>
   </member>
   <member name="XAPO_BUFFER_FLAGS.XAPO_BUFFER_VALID">
-    <summary>
-      <para>Stream buffer contains audio data to be processed.</para>
-    </summary>
+    <summary>Stream buffer contains audio data to be processed.</summary>
   </member>
 </doc>

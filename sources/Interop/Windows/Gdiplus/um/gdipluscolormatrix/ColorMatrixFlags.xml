@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ColorMatrixFlags">
+    <summary>The <b>ColorMatrixFlags</b> enumeration specifies the types of images and colors that will be affected by the color and grayscale adjustment settings of an<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object.</summary>
+  </member>
+  <member name="ColorMatrixFlags.ColorMatrixFlagsDefault">
+    <summary>Specifies that all color values (including grays) are adjusted by the same color-adjustment matrix.</summary>
+  </member>
+  <member name="ColorMatrixFlags.ColorMatrixFlagsSkipGrays">
+    <summary>Specifies that colors are adjusted but gray shades are not adjusted. A gray shade is any color that has the same value for its red, green, and blue components.</summary>
+  </member>
+  <member name="ColorMatrixFlags.ColorMatrixFlagsAltGray">
+    <summary>Specifies that colors are adjusted by one matrix and gray shades are adjusted by another matrix.</summary>
+  </member>
+</doc>

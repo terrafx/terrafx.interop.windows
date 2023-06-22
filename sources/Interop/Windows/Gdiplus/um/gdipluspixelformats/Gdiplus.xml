@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Gdiplus.GetPixelFormatSize">
+    <summary>The <b>GetPixelFormatSize</b> method returns the number of bits per pixel used by a specified pixel format.</summary>
+    <param name="pixfmt">A <a href="https://docs.microsoft.com//windows/desktop/gdiplus/-gdiplus-constant-image-pixel-format-constants">PixelFormat</a> constant that specifies the pixel format to be tested.</param>
+    <returns>This method returns the number of bits per pixel used by the specified pixel format.</returns>
+  </member>
+  <member name="Gdiplus.IsAlphaPixelFormat">
+    <summary>The <b>IsAlphaPixelFormat</b> method determines whether a specified pixel format has an alpha component.</summary>
+    <param name="pixfmt">A <a href="https://docs.microsoft.com//windows/desktop/gdiplus/-gdiplus-constant-image-pixel-format-constants">PixelFormat</a> constant that specifies the pixel format to be tested.</param>
+    <returns>If the pixel format has an alpha component, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Gdiplus.IsCanonicalPixelFormat">
+    <summary>The <b>IsCanonicalPixelFormat</b> method determines whether a specified pixel format is one of the canonical formats: <a href="https://docs.microsoft.com//windows/desktop/gdiplus/-gdiplus-constant-image-pixel-format-constants">PixelFormat32bppARGB</a> or <a href="https://docs.microsoft.com//windows/desktop/gdiplus/-gdiplus-constant-image-pixel-format-constants">PixelFormat64bppARGB</a>.</summary>
+    <param name="pixfmt">A <a href="https://docs.microsoft.com//windows/desktop/gdiplus/-gdiplus-constant-image-pixel-format-constants">PixelFormat</a> constant that specifies the pixel format to be tested.</param>
+    <returns>If the pixel format is <a href="https://docs.microsoft.com//windows/desktop/gdiplus/-gdiplus-constant-image-pixel-format-constants">PixelFormat32bppARGB</a> or <b>PixelFormat64bppARGB</b>, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Gdiplus.IsExtendedPixelFormat">
+    <summary>The <b>IsExtendedPixelFormat</b> method determines whether a specified pixel format uses 16 bits per color channel.</summary>
+    <param name="pixfmt">A <a href="https://docs.microsoft.com//windows/desktop/gdiplus/-gdiplus-constant-image-pixel-format-constants">PixelFormat</a> constant that specifies the pixel format to be tested.</param>
+    <returns>If the pixel format uses 16 bits per color channel, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Gdiplus.IsIndexedPixelFormat">
+    <summary>The <b>IsIndexedPixelFormat</b> method determines whether a specified pixel format is an indexed format.</summary>
+    <param name="pixfmt">A <a href="https://docs.microsoft.com//windows/desktop/gdiplus/-gdiplus-constant-image-pixel-format-constants">PixelFormat</a> constant that specifies the pixel format to be tested.</param>
+    <returns>If the pixel format is an indexed format, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+</doc>

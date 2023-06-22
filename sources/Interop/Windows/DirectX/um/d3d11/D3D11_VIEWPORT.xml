@@ -3,66 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_VIEWPORT">
-    <summary>
-      <para>Defines the dimensions of a viewport.</para>
-    </summary>
-    <remarks>
-      <para>In all cases, <b>Width</b> and <b>Height</b> must be &gt;= 0 and <b>TopLeftX</b> + <b>Width</b> and <b>TopLeftY</b> + <b>Height</b> must be &lt;= D3D11_VIEWPORT_BOUNDS_MAX.</para>
-      <list type="table">
-        <listheader>
-          <description>
-            <para>Viewport Sizes and Feature Level Support Differences between Direct3D 11 and Direct3D 10:</para>
-            <para>The range for the minimum and maximum viewport size is dependent on the feature level defined by <see cref="D3D_FEATURE_LEVEL" />.</para>
-            <list type="bullet">
-              <item>
-                <description>Direct3D 11 supports fractional viewports; the parameter types are  floating-point numbers. The feature level, D3D_FEATURE_LEVEL_11_0, supports (D3D11_VIEWPORT_BOUNDS_MIN, D3D11_VIEWPORT_BOUNDS_MAX) values between (-32768, 32,767).</description>
-              </item>
-              <item>
-                <description>Direct3D 10 does not support fractional viewports. The feature levels, D3D_FEATURE_LEVEL_10_1 (or below), supports (D3D10_VIEWPORT_BOUNDS_MIN, D3D10_VIEWPORT_BOUNDS_MAX) values between (-16384, 16383).</description>
-              </item>
-            </list>
-          </description>
-        </listheader>
-      </list>
-      <para>
-        <b>Note</b>  Even though you specify float values to the members of the <b>D3D11_VIEWPORT</b> structure for the <i>pViewports</i> array in a call to  <see cref="ID3D11DeviceContext.RSSetViewports" /> for <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature levels</a> 9_x, <b>RSSetViewports</b> uses DWORDs internally. Because of this behavior, when you use a negative top left corner for the viewport, the call to  <b>RSSetViewports</b> for feature levels 9_x fails. This failure occurs because <b>RSSetViewports</b> for 9_x casts the floating point values into unsigned integers without validation, which results in integer overflow.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-structures">Core Structures</seealso>
+    <summary>Defines the dimensions of a viewport.</summary>
   </member>
   <member name="D3D11_VIEWPORT.TopLeftX">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
-      <para>X position of the left hand side of the viewport. Ranges between D3D11_VIEWPORT_BOUNDS_MIN and D3D11_VIEWPORT_BOUNDS_MAX.</para>
-    </summary>
+    <summary>X position of the left hand side of the viewport. Ranges between D3D11_VIEWPORT_BOUNDS_MIN and D3D11_VIEWPORT_BOUNDS_MAX.</summary>
   </member>
   <member name="D3D11_VIEWPORT.TopLeftY">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
-      <para>Y position of the top of the viewport. Ranges between D3D11_VIEWPORT_BOUNDS_MIN and D3D11_VIEWPORT_BOUNDS_MAX.</para>
-    </summary>
+    <summary>Y position of the top of the viewport. Ranges between D3D11_VIEWPORT_BOUNDS_MIN and D3D11_VIEWPORT_BOUNDS_MAX.</summary>
   </member>
   <member name="D3D11_VIEWPORT.Width">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
-      <para>Width of the viewport.</para>
-    </summary>
+    <summary>Width of the viewport.</summary>
   </member>
   <member name="D3D11_VIEWPORT.Height">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
-      <para>Height of the viewport.</para>
-    </summary>
+    <summary>Height of the viewport.</summary>
   </member>
   <member name="D3D11_VIEWPORT.MinDepth">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
-      <para>Minimum depth of the viewport. Ranges between 0 and 1.</para>
-    </summary>
+    <summary>Minimum depth of the viewport. Ranges between 0 and 1.</summary>
   </member>
   <member name="D3D11_VIEWPORT.MaxDepth">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
-      <para>Maximum depth of the viewport. Ranges between 0 and 1.</para>
-    </summary>
+    <summary>Maximum depth of the viewport. Ranges between 0 and 1.</summary>
   </member>
 </doc>

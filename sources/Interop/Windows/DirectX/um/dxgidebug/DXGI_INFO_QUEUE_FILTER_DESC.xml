@@ -3,43 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DXGI_INFO_QUEUE_FILTER_DESC">
-    <summary>
-      <para>Describes the types of messages to allow or deny to pass through a filter.</para>
-    </summary>
-    <remarks>
-      <para>This structure is a member of the <see cref="DXGI_INFO_QUEUE_FILTER" /> structure.</para>
-      <para>This API requires the Windows Software Development Kit (SDK) for Windows 8.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
+    <summary>Describes the types of messages to allow or deny to pass through a filter.</summary>
   </member>
   <member name="DXGI_INFO_QUEUE_FILTER_DESC.NumCategories">
-    <summary>
-      <para>The number of message categories to allow or deny.</para>
-    </summary>
+    <summary>The number of message categories to allow or deny.</summary>
   </member>
   <member name="DXGI_INFO_QUEUE_FILTER_DESC.pCategoryList">
-    <summary>
-      <para>An array of <see cref="DXGI_INFO_QUEUE_MESSAGE_CATEGORY" /> enumeration values that describe the message categories to allow or deny. The array must have at least <b>NumCategories</b> number of elements.</para>
-    </summary>
+    <summary>An array of <see cref="DXGI_INFO_QUEUE_MESSAGE_CATEGORY" /> enumeration values that describe the message categories to allow or deny. The array must have at least <b>NumCategories</b> number of elements.</summary>
   </member>
   <member name="DXGI_INFO_QUEUE_FILTER_DESC.NumSeverities">
-    <summary>
-      <para>The number of message severity levels to allow or deny.</para>
-    </summary>
+    <summary>The number of message severity levels to allow or deny.</summary>
   </member>
   <member name="DXGI_INFO_QUEUE_FILTER_DESC.pSeverityList">
-    <summary>
-      <para>An array of <see cref="DXGI_INFO_QUEUE_MESSAGE_SEVERITY" /> enumeration values that describe the message severity levels to allow or deny. The array must have at least <b>NumSeverities</b> number of elements.</para>
-    </summary>
+    <summary>An array of <see cref="DXGI_INFO_QUEUE_MESSAGE_SEVERITY" /> enumeration values that describe the message severity levels to allow or deny. The array must have at least <b>NumSeverities</b> number of elements.</summary>
   </member>
   <member name="DXGI_INFO_QUEUE_FILTER_DESC.NumIDs">
-    <summary>
-      <para>The number of message IDs to allow or deny.</para>
-    </summary>
+    <summary>The number of message IDs to allow or deny.</summary>
   </member>
   <member name="DXGI_INFO_QUEUE_FILTER_DESC.pIDList">
-    <summary>
-      <para>An array of integers that represent the message IDs to allow or deny. The array must have at least <b>NumIDs</b> number of elements.</para>
-    </summary>
+    <summary>An array of integers that represent the message IDs to allow or deny. The array must have at least <b>NumIDs</b> number of elements.</summary>
   </member>
 </doc>

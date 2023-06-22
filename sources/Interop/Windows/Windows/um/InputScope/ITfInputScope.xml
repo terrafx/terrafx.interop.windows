@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfInputScope.GetInputScopes">
-    <summary>
-      <para>Gets the input scopes that are associated with this context.</para>
-    </summary>
-    <param name="pprgInputScopes">
-      <para>Pointer to an array of pointers to the input scopes. The calling function must call <b>CoTaskMemFree()</b> to free the buffer.</para>
-    </param>
-    <param name="pcCount">
-      <para>Pointer to the number of input scopes returned.</para>
-    </param>
+    <summary>Gets the input scopes that are associated with this context.</summary>
+    <param name="pprgInputScopes">Pointer to an array of pointers to the input scopes. The calling function must call <b>CoTaskMemFree()</b> to free the buffer.</param>
+    <param name="pcCount">Pointer to the number of input scopes returned.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -19,29 +13,25 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfInputScope.GetPhrase">
-    <summary>
-      <para>Gets the phrase list set to this context.</para>
-    </summary>
-    <param name="ppbstrPhrases">
-      <para>Pointer to an array of pointers to strings containing phrases. The calling function must call <b>SystFreeString()</b> to free the memory allocated to the strings and <b>CoTaskMemFree</b> to free the buffer.</para>
-    </param>
-    <param name="pcCount">
-      <para>Pointer to the number of phrases returned.</para>
-    </param>
+    <summary>Gets the phrase list set to this context.</summary>
+    <param name="ppbstrPhrases">Pointer to an array of pointers to strings containing phrases. The calling function must call <b>SystFreeString()</b> to free the memory allocated to the strings and <b>CoTaskMemFree</b> to free the buffer.</param>
+    <param name="pcCount">Pointer to the number of phrases returned.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -49,26 +39,24 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfInputScope.GetRegularExpression">
-    <summary>
-      <para>Gets the regular expression string to be rssecognized.</para>
-    </summary>
-    <param name="pbstrRegExp">
-      <para>Pointer to a string containing the regular expression. The calling function must call <b>SystFreeString()</b> to free the memory allocated to the strings.</para>
-    </param>
+    <summary>Gets the regular expression string to be rssecognized.</summary>
+    <param name="pbstrRegExp">Pointer to a string containing the regular expression. The calling function must call <b>SystFreeString()</b> to free the memory allocated to the strings.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -76,26 +64,24 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfInputScope.GetSRGS">
-    <summary>
-      <para>Gets the Speech Recognition Grammar Specification (SRGS) string to be recognized.</para>
-    </summary>
-    <param name="pbstrSRGS">
-      <para>The xml string. The calling function must call <b>SysFreeString()</b> to free the buffer.</para>
-    </param>
+    <summary>Gets the Speech Recognition Grammar Specification (SRGS) string to be recognized.</summary>
+    <param name="pbstrSRGS">The xml string. The calling function must call <b>SysFreeString()</b> to free the buffer.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -103,31 +89,24 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <a href="https://www.w3.org/tr/speech-grammar">http://www.w3.org/TR/speech-grammar</a>
-      </para>
-    </remarks>
   </member>
   <member name="ITfInputScope.GetXML">
-    <summary>
-      <para>Gets the custom XML string to be recognized.</para>
-    </summary>
-    <param name="pbstrXML">
-      <para>Pointer to a string containing the xml string. The calling function must call <b>SysFreeString()</b> to free the buffer.</para>
-    </param>
+    <summary>Gets the custom XML string to be recognized.</summary>
+    <param name="pbstrXML">Pointer to a string containing the xml string. The calling function must call <b>SysFreeString()</b> to free the buffer.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -135,16 +114,18 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
   </member>
@@ -154,38 +135,7 @@
       <para>The interface ID is IID_ITfInputScope.</para>
       <para>The document context is used by the speech and handwriting recognition engine and is set by a text input processor by calling the <see cref="SetInputScope" /> method. A TSF-aware application does not call <b>SetInputScope</b> directly, but rather implements either <see cref="ITextStoreACP" /> or <see cref="ITfContextOwner" /> to get a pointer to <b>ITfInputScope</b>.</para>
       <para>To get the pointer to the <b>ITfInputScope</b> interface, the text input processor or TSF-aware application calls <see cref="ITfContext.GetAppProperty" />, passing in <b>GUID_PROP_INPUTSCOPE</b> and a pointer to the <see cref="ITFReadOnlyProperty" /> interface, as in the following example.</para>
-      <code>
-extern const GUID GUID_PROP_INPUTSCOPE;
-//
-// The TIP can call this to get the input scope of the document mgr.
-//
-HRESULT GetInputScope(ITfContext *pic, ITfRange *pRange, TfEditCookie ec, ITfInutScope **ppiscope){
-    ITFReadOnlyProperty *prop;
-    HRESULT hr;
-    If (SUCCEEDED(hr = pic-&gt;GetAppProperty(GUID_PROP_INPUTSCOPE, &amp;amp;amp;amp;amp;amp;prop))
-    {   VARIANT var;
-        If (SUCCEEDED(hr = prop-&gt;GetValue(ec, pRange, &amp;amp;amp;amp;amp;amp;var)))
-        {  hr = var.punkVal-&gt;QueryInterface(IID_ITfInputScope, (void **)ppiscope);
-        }
-        prop-&gt;Release();
-    }
-    return hr
-}
-
-</code>
+      <code>extern const GUID GUID_PROP_INPUTSCOPE; // // The TIP can call this to get the input scope of the document mgr. // HRESULT GetInputScope(ITfContext *pic, ITfRange *pRange, TfEditCookie ec, ITfInutScope **ppiscope){ ITFReadOnlyProperty *prop; HRESULT hr; If (SUCCEEDED(hr = pic-&gt;GetAppProperty(GUID_PROP_INPUTSCOPE, &amp;prop)) { VARIANT var; If (SUCCEEDED(hr = prop-&gt;GetValue(ec, pRange, &amp;var))) { hr = var.punkVal-&gt;QueryInterface(IID_ITfInputScope, (void **)ppiscope); } prop-&gt;Release(); } return hr }</code>
     </summary>
-    <remarks>
-      <para>To use this interface with window-less controls, an application has two options.</para>
-      <list type="number">
-        <item>
-          <description>
-            <b>Make the application TSF-aware:  </b>A TSF-aware application must implement either <see cref="ITextStoreACP" /> or <see cref="ITfContextOwner" /> to get a pointer to <b>ITfInputScope</b>.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="SetInputScopes" />  This is not recommended, but if the application is not TSF-aware, there is no other way to maintain the association between the input scope and the application. In this case, the application must call SetInputScopes whenever focus changes among window-less controls.</description>
-        </item>
-      </list>
-    </remarks>
   </member>
 </doc>

@@ -3,23 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRSETVIEWPORTORGEX">
-    <summary>
-      <para>The <b>EMRSETVIEWPORTORGEX, </b><b>EMRSETWINDOWORGEX, </b> and <b>EMRSETBRUSHORGEX</b> structures contain members for the <b>SetViewportOrgEx</b>, <b>SetWindowOrgEx</b>, and <b>SetBrushOrgEx</b> enhanced metafile records.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
-    <seealso cref="SetBrushOrgEx" />
-    <seealso cref="SetViewportOrgEx" />
-    <seealso cref="SetWindowOrgEx" />
+    <summary>The <b>EMRSETVIEWPORTORGEX,</b><b>EMRSETWINDOWORGEX,</b> and <b>EMRSETBRUSHORGEX</b> structures contain members for the <b>SetViewportOrgEx</b>, <b>SetWindowOrgEx</b>, and <b>SetBrushOrgEx</b> enhanced metafile records.</summary>
   </member>
   <member name="EMRSETVIEWPORTORGEX.emr">
-    <summary>
-      <para>Base structure for all record types.</para>
-    </summary>
+    <summary>Base structure for all record types.</summary>
   </member>
   <member name="EMRSETVIEWPORTORGEX.ptlOrigin">
-    <summary>
-      <para>Coordinates of the origin. For <b>EMRSETVIEWPORTORGEX</b> and <b>EMRSETBRUSHORGEX</b>, this is in device units. For <b>EMRSETWINDOWORGEX</b>, this is in logical units.</para>
-    </summary>
+    <summary>Coordinates of the origin. For <b>EMRSETVIEWPORTORGEX</b> and <b>EMRSETBRUSHORGEX</b>, this is in device units. For <b>EMRSETWINDOWORGEX</b>, this is in logical units.</summary>
   </member>
 </doc>

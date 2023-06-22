@@ -3,26 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_GAUSSIANBLUR_OPTIMIZATION">
-    <summary>
-      <para>The optimization mode for the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/gaussian-blur">Gaussian blur effect</a>.</para>
-    </summary>
+    <summary>The optimization mode for the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/gaussian-blur">Gaussian blur effect</a>.</summary>
   </member>
   <member name="D2D1_GAUSSIANBLUR_OPTIMIZATION.D2D1_GAUSSIANBLUR_OPTIMIZATION_SPEED">
-    <summary>
-      <para>Applies internal optimizations such as pre-scaling at relatively small radii. Uses linear filtering.</para>
-    </summary>
+    <summary>Applies internal optimizations such as pre-scaling at relatively small radii. Uses linear filtering.</summary>
   </member>
   <member name="D2D1_GAUSSIANBLUR_OPTIMIZATION.D2D1_GAUSSIANBLUR_OPTIMIZATION_BALANCED">
-    <summary>
-      <para>Uses the same optimization thresholds as Speed mode, but uses trilinear filtering.</para>
-    </summary>
+    <summary>Uses the same optimization thresholds as Speed mode, but uses trilinear filtering.</summary>
   </member>
   <member name="D2D1_GAUSSIANBLUR_OPTIMIZATION.D2D1_GAUSSIANBLUR_OPTIMIZATION_QUALITY">
-    <summary>
-      <para>Only uses internal optimizations with large blur radii, where approximations are less likely to be visible. Uses trilinear filtering.</para>
-    </summary>
+    <summary>Only uses internal optimizations with large blur radii, where approximations are less likely to be visible. Uses trilinear filtering.</summary>
   </member>
-  <member name="D2D1_GAUSSIANBLUR_OPTIMIZATION.D2D1_GAUSSIANBLUR_OPTIMIZATION_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_GAUSSIANBLUR_OPTIMIZATION.D2D1_GAUSSIANBLUR_OPTIMIZATION_FORCE_DWORD"></member>
 </doc>

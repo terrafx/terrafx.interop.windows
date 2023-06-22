@@ -3,46 +3,28 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WIC8BIMResolutionInfoProperties">
-    <summary>
-      <para>Specifies the identifiers of the metadata items in an 8BIMResolutionInfo block.</para>
-    </summary>
+    <summary>Specifies the identifiers of the metadata items in an 8BIMResolutionInfo block.</summary>
   </member>
   <member name="WIC8BIMResolutionInfoProperties.WIC8BIMResolutionInfoPString">
-    <summary>
-      <para>[VT_LPSTR] A name that identifies the 8BIM block.</para>
-    </summary>
+    <summary>[VT_LPSTR] A name that identifies the 8BIM block.</summary>
   </member>
   <member name="WIC8BIMResolutionInfoProperties.WIC8BIMResolutionInfoHResolution">
-    <summary>
-      <para>[VT_UI4] The horizontal resolution of the image.</para>
-    </summary>
+    <summary>[VT_UI4] The horizontal resolution of the image.</summary>
   </member>
   <member name="WIC8BIMResolutionInfoProperties.WIC8BIMResolutionInfoHResolutionUnit">
-    <summary>
-      <para>[VT_UI2] The units that the horizontal resolution is specified in; a 1 indicates pixels per inch and a 2 indicates pixels per centimeter.</para>
-    </summary>
+    <summary>[VT_UI2] The units that the horizontal resolution is specified in; a 1 indicates pixels per inch and a 2 indicates pixels per centimeter.</summary>
   </member>
   <member name="WIC8BIMResolutionInfoProperties.WIC8BIMResolutionInfoWidthUnit">
-    <summary>
-      <para>[VT_UI2] The units that the image width is specified in; a 1 indicates inches, a 2 indicates centimeters, a 3 indicates points, a 4 specifies picas, and a 5 specifies columns.</para>
-    </summary>
+    <summary>[VT_UI2] The units that the image width is specified in; a 1 indicates inches, a 2 indicates centimeters, a 3 indicates points, a 4 specifies picas, and a 5 specifies columns.</summary>
   </member>
   <member name="WIC8BIMResolutionInfoProperties.WIC8BIMResolutionInfoVResolution">
-    <summary>
-      <para>[VT_UI4] The vertical resolution of the image.</para>
-    </summary>
+    <summary>[VT_UI4] The vertical resolution of the image.</summary>
   </member>
   <member name="WIC8BIMResolutionInfoProperties.WIC8BIMResolutionInfoVResolutionUnit">
-    <summary>
-      <para>[VT_UI2] The units that the vertical resolution is specified in; a 1 indicates pixels per inch and a 2 indicates pixels per centimeter.</para>
-    </summary>
+    <summary>[VT_UI2] The units that the vertical resolution is specified in; a 1 indicates pixels per inch and a 2 indicates pixels per centimeter.</summary>
   </member>
   <member name="WIC8BIMResolutionInfoProperties.WIC8BIMResolutionInfoHeightUnit">
-    <summary>
-      <para>[VT_UI2] The units that the image height is specified in; a 1 indicates inches, a 2 indicates centimeters, a 3 indicates points, a 4 specifies picas, and a 5 specifies columns.</para>
-    </summary>
+    <summary>[VT_UI2] The units that the image height is specified in; a 1 indicates inches, a 2 indicates centimeters, a 3 indicates points, a 4 specifies picas, and a 5 specifies columns.</summary>
   </member>
-  <member name="WIC8BIMResolutionInfoProperties.WIC8BIMResolutionInfoProperties_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WIC8BIMResolutionInfoProperties.WIC8BIMResolutionInfoProperties_FORCE_DWORD"></member>
 </doc>

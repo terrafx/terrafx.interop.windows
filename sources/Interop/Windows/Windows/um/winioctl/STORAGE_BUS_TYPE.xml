@@ -3,59 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STORAGE_BUS_TYPE">
-    <summary>
-      <para>Specifies the various types of storage buses.</para>
-    </summary>
-    <seealso cref="DEVICE_MEDIA_INFO" />
+    <summary>Specifies the various types of storage buses.</summary>
   </member>
   <member name="STORAGE_BUS_TYPE.BusTypeUnknown">
-    <summary>
-      <para>Unknown bus type.</para>
-    </summary>
+    <summary>Unknown bus type.</summary>
   </member>
   <member name="STORAGE_BUS_TYPE.BusTypeScsi">
-    <summary>
-      <para>SCSI bus.</para>
-    </summary>
+    <summary>SCSI bus.</summary>
   </member>
   <member name="STORAGE_BUS_TYPE.BusTypeAtapi">
-    <summary>
-      <para>ATAPI bus.</para>
-    </summary>
+    <summary>ATAPI bus.</summary>
   </member>
   <member name="STORAGE_BUS_TYPE.BusTypeAta">
-    <summary>
-      <para>ATA bus.</para>
-    </summary>
+    <summary>ATA bus.</summary>
   </member>
   <member name="STORAGE_BUS_TYPE.BusType1394">
-    <summary>
-      <para>IEEE-1394 bus.</para>
-    </summary>
+    <summary>IEEE-1394 bus.</summary>
   </member>
   <member name="STORAGE_BUS_TYPE.BusTypeSsa">
-    <summary>
-      <para>SSA bus.</para>
-    </summary>
+    <summary>SSA bus.</summary>
   </member>
   <member name="STORAGE_BUS_TYPE.BusTypeFibre">
-    <summary>
-      <para>Fibre Channel bus.</para>
-    </summary>
+    <summary>Fibre Channel bus.</summary>
   </member>
   <member name="STORAGE_BUS_TYPE.BusTypeUsb">
-    <summary>
-      <para>USB bus.</para>
-    </summary>
+    <summary>USB bus.</summary>
   </member>
   <member name="STORAGE_BUS_TYPE.BusTypeRAID">
-    <summary>
-      <para>RAID bus.</para>
-    </summary>
+    <summary>RAID bus.</summary>
   </member>
-  <member name="STORAGE_BUS_TYPE.BusTypeiScsi">
-    <summary></summary>
-  </member>
+  <member name="STORAGE_BUS_TYPE.BusTypeiScsi"></member>
   <member name="STORAGE_BUS_TYPE.BusTypeSas">
     <summary>
       <para>Serial Attached SCSI (SAS) bus.</para>
@@ -70,36 +47,16 @@
         <b>Windows Server 2003:</b>  This is not supported before Windows Server 2003 with SP1.</para>
     </summary>
   </member>
-  <member name="STORAGE_BUS_TYPE.BusTypeSd">
-    <summary></summary>
-  </member>
-  <member name="STORAGE_BUS_TYPE.BusTypeMmc">
-    <summary></summary>
-  </member>
-  <member name="STORAGE_BUS_TYPE.BusTypeVirtual">
-    <summary></summary>
-  </member>
-  <member name="STORAGE_BUS_TYPE.BusTypeFileBackedVirtual">
-    <summary></summary>
-  </member>
-  <member name="STORAGE_BUS_TYPE.BusTypeSpaces">
-    <summary></summary>
-  </member>
-  <member name="STORAGE_BUS_TYPE.BusTypeNvme">
-    <summary></summary>
-  </member>
-  <member name="STORAGE_BUS_TYPE.BusTypeSCM">
-    <summary></summary>
-  </member>
-  <member name="STORAGE_BUS_TYPE.BusTypeUfs">
-    <summary></summary>
-  </member>
-  <member name="STORAGE_BUS_TYPE.BusTypeMax">
-    <summary></summary>
-  </member>
-  <member name="STORAGE_BUS_TYPE.BusTypeMaxReserved">
-    <summary></summary>
-  </member>
+  <member name="STORAGE_BUS_TYPE.BusTypeSd"></member>
+  <member name="STORAGE_BUS_TYPE.BusTypeMmc"></member>
+  <member name="STORAGE_BUS_TYPE.BusTypeVirtual"></member>
+  <member name="STORAGE_BUS_TYPE.BusTypeFileBackedVirtual"></member>
+  <member name="STORAGE_BUS_TYPE.BusTypeSpaces"></member>
+  <member name="STORAGE_BUS_TYPE.BusTypeNvme"></member>
+  <member name="STORAGE_BUS_TYPE.BusTypeSCM"></member>
+  <member name="STORAGE_BUS_TYPE.BusTypeUfs"></member>
+  <member name="STORAGE_BUS_TYPE.BusTypeMax"></member>
+  <member name="STORAGE_BUS_TYPE.BusTypeMaxReserved"></member>
   <member name="STORAGE_BUS_TYPE.BusTypeiSCSI">
     <summary>
       <para>iSCSI bus.</para>

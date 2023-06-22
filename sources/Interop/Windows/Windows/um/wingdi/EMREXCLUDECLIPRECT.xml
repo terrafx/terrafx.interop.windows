@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMREXCLUDECLIPRECT">
-    <summary>
-      <para>The <b>EMREXCLUDECLIPRECT</b> and <b>EMRINTERSECTCLIPRECT</b> structures contain members for the <see cref="ExcludeClipRect" /> and <see cref="IntersectClipRect" /> enhanced metafile records.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <summary>The <b>EMREXCLUDECLIPRECT</b> and <b>EMRINTERSECTCLIPRECT</b> structures contain members for the <see cref="ExcludeClipRect" /> and <see cref="IntersectClipRect" /> enhanced metafile records.</summary>
   </member>
   <member name="EMREXCLUDECLIPRECT.emr">
-    <summary>
-      <para>Base structure for all record types.</para>
-    </summary>
+    <summary>Base structure for all record types.</summary>
   </member>
   <member name="EMREXCLUDECLIPRECT.rclClip">
-    <summary>
-      <para>Clipping rectangle in logical units.</para>
-    </summary>
+    <summary>Clipping rectangle in logical units.</summary>
   </member>
 </doc>

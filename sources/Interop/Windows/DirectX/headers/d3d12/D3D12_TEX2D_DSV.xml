@@ -3,17 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_TEX2D_DSV">
-    <summary>
-      <para>Describes the subresource from a 2D texture that is accessible to a depth-stencil view.</para>
-    </summary>
-    <remarks>
-      <para>Use this structure with a <see cref="D3D12_DEPTH_STENCIL_VIEW_DESC" /> structure to view the resource as a 2D texture.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-12-structures">Core Structures</seealso>
+    <summary>Describes the subresource from a 2D texture that is accessible to a depth-stencil view.</summary>
   </member>
   <member name="D3D12_TEX2D_DSV.MipSlice">
-    <summary>
-      <para>The index of the first mipmap level to use.</para>
-    </summary>
+    <summary>The index of the first mipmap level to use.</summary>
   </member>
 </doc>

@@ -3,33 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PDOPSTATUS">
-    <summary>
-      <para>Provides operation status flags.</para>
-    </summary>
+    <summary>Provides operation status flags.</summary>
   </member>
   <member name="PDOPSTATUS.PDOPS_RUNNING">
-    <summary>
-      <para>Operation is running, no user intervention.</para>
-    </summary>
+    <summary>Operation is running, no user intervention.</summary>
   </member>
   <member name="PDOPSTATUS.PDOPS_PAUSED">
-    <summary>
-      <para>Operation has been paused by the user.</para>
-    </summary>
+    <summary>Operation has been paused by the user.</summary>
   </member>
   <member name="PDOPSTATUS.PDOPS_CANCELLED">
-    <summary>
-      <para>Operation has been canceled by the user - now go undo.</para>
-    </summary>
+    <summary>Operation has been canceled by the user - now go undo.</summary>
   </member>
   <member name="PDOPSTATUS.PDOPS_STOPPED">
-    <summary>
-      <para>Operation has been stopped by the user - terminate completely.</para>
-    </summary>
+    <summary>Operation has been stopped by the user - terminate completely.</summary>
   </member>
   <member name="PDOPSTATUS.PDOPS_ERRORS">
-    <summary>
-      <para>Operation has gone as far as it can go without throwing error dialogs.</para>
-    </summary>
+    <summary>Operation has gone as far as it can go without throwing error dialogs.</summary>
   </member>
 </doc>

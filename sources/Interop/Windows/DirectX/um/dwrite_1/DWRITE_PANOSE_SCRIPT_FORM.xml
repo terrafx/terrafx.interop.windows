@@ -3,79 +3,48 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_PANOSE_SCRIPT_FORM">
-    <summary>
-      <para>The <b>DWRITE_PANOSE_SCRIPT_FORM</b> enumeration contains values that specify the general look of the character face, with consideration of its  slope and tails.</para>
-    </summary>
-    <seealso cref="DWRITE_PANOSE" />
+    <summary>The <b>DWRITE_PANOSE_SCRIPT_FORM</b> enumeration contains values that specify the general look of the character face, with consideration of its slope and tails.</summary>
   </member>
   <member name="DWRITE_PANOSE_SCRIPT_FORM.DWRITE_PANOSE_SCRIPT_FORM_ANY">
-    <summary>
-      <para>Any script form.</para>
-    </summary>
+    <summary>Any script form.</summary>
   </member>
   <member name="DWRITE_PANOSE_SCRIPT_FORM.DWRITE_PANOSE_SCRIPT_FORM_NO_FIT">
-    <summary>
-      <para>No fit for script form.</para>
-    </summary>
+    <summary>No fit for script form.</summary>
   </member>
   <member name="DWRITE_PANOSE_SCRIPT_FORM.DWRITE_PANOSE_SCRIPT_FORM_UPRIGHT_NO_WRAPPING">
-    <summary>
-      <para>Script form is upright with no wrapping.</para>
-    </summary>
+    <summary>Script form is upright with no wrapping.</summary>
   </member>
   <member name="DWRITE_PANOSE_SCRIPT_FORM.DWRITE_PANOSE_SCRIPT_FORM_UPRIGHT_SOME_WRAPPING">
-    <summary>
-      <para>Script form is upright with some wrapping.</para>
-    </summary>
+    <summary>Script form is upright with some wrapping.</summary>
   </member>
   <member name="DWRITE_PANOSE_SCRIPT_FORM.DWRITE_PANOSE_SCRIPT_FORM_UPRIGHT_MORE_WRAPPING">
-    <summary>
-      <para>Script form is upright with more wrapping.</para>
-    </summary>
+    <summary>Script form is upright with more wrapping.</summary>
   </member>
   <member name="DWRITE_PANOSE_SCRIPT_FORM.DWRITE_PANOSE_SCRIPT_FORM_UPRIGHT_EXTREME_WRAPPING">
-    <summary>
-      <para>Script form is upright with extreme wrapping.</para>
-    </summary>
+    <summary>Script form is upright with extreme wrapping.</summary>
   </member>
   <member name="DWRITE_PANOSE_SCRIPT_FORM.DWRITE_PANOSE_SCRIPT_FORM_OBLIQUE_NO_WRAPPING">
-    <summary>
-      <para>Script form is oblique with no wrapping.</para>
-    </summary>
+    <summary>Script form is oblique with no wrapping.</summary>
   </member>
   <member name="DWRITE_PANOSE_SCRIPT_FORM.DWRITE_PANOSE_SCRIPT_FORM_OBLIQUE_SOME_WRAPPING">
-    <summary>
-      <para>Script form is oblique with some wrapping.</para>
-    </summary>
+    <summary>Script form is oblique with some wrapping.</summary>
   </member>
   <member name="DWRITE_PANOSE_SCRIPT_FORM.DWRITE_PANOSE_SCRIPT_FORM_OBLIQUE_MORE_WRAPPING">
-    <summary>
-      <para>Script form is oblique with more wrapping.</para>
-    </summary>
+    <summary>Script form is oblique with more wrapping.</summary>
   </member>
   <member name="DWRITE_PANOSE_SCRIPT_FORM.DWRITE_PANOSE_SCRIPT_FORM_OBLIQUE_EXTREME_WRAPPING">
-    <summary>
-      <para>Script form is oblique with extreme wrapping.</para>
-    </summary>
+    <summary>Script form is oblique with extreme wrapping.</summary>
   </member>
   <member name="DWRITE_PANOSE_SCRIPT_FORM.DWRITE_PANOSE_SCRIPT_FORM_EXAGGERATED_NO_WRAPPING">
-    <summary>
-      <para>Script form is exaggerated with no wrapping.</para>
-    </summary>
+    <summary>Script form is exaggerated with no wrapping.</summary>
   </member>
   <member name="DWRITE_PANOSE_SCRIPT_FORM.DWRITE_PANOSE_SCRIPT_FORM_EXAGGERATED_SOME_WRAPPING">
-    <summary>
-      <para>Script form is exaggerated with some wrapping.</para>
-    </summary>
+    <summary>Script form is exaggerated with some wrapping.</summary>
   </member>
   <member name="DWRITE_PANOSE_SCRIPT_FORM.DWRITE_PANOSE_SCRIPT_FORM_EXAGGERATED_MORE_WRAPPING">
-    <summary>
-      <para>Script form is exaggerated with more wrapping.</para>
-    </summary>
+    <summary>Script form is exaggerated with more wrapping.</summary>
   </member>
   <member name="DWRITE_PANOSE_SCRIPT_FORM.DWRITE_PANOSE_SCRIPT_FORM_EXAGGERATED_EXTREME_WRAPPING">
-    <summary>
-      <para>Script form is exaggerated with extreme wrapping.</para>
-    </summary>
+    <summary>Script form is exaggerated with extreme wrapping.</summary>
   </member>
 </doc>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IGraphicsCaptureItemInterop.CreateForMonitor">
+    <summary>Targets a monitor(s) for the creation of a graphics capture item.</summary>
+    <param name="monitor">The monitor handle that represents the monitor to capture.</param>
+    <param name="riid">GUID for the type returned. Supported value: <a href="https://docs.microsoft.com//uwp/api/windows.graphics.capture.graphicscaptureitem">GraphicsCaptureItem</a>.</param>
+    <param name="result">Out pointer for the object to receive.</param>
+    <returns>The return error code.</returns>
+  </member>
+  <member name="IGraphicsCaptureItemInterop.CreateForWindow">
+    <summary>Targets a single window for the creation of a graphics capture item.</summary>
+    <param name="window">The window handle that represents the window to capture.</param>
+    <param name="riid">GUID for the type returned. Supported value: <a href="https://docs.microsoft.com//uwp/api/windows.graphics.capture.graphicscaptureitem">GraphicsCaptureItem</a>.</param>
+    <param name="result">Out pointer for the object to receive.</param>
+    <returns>The return error code.</returns>
+  </member>
+  <member name="IGraphicsCaptureItemInterop">
+    <summary>Desktop interop interface for the <a href="https://docs.microsoft.com//uwp/api/windows.graphics.capture.graphicscaptureitem">GraphicsCaptureItem</a> activation factory.</summary>
+  </member>
+</doc>

@@ -3,22 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWbemShutdown.Shutdown">
-    <summary>
-      <para>The <b>IWbemShutdown.Shutdown</b> method indicates to the provider that the  provider services are not required.</para>
-    </summary>
-    <param name="uReason">
-      <para>Reserved. This value must be zero (0).</para>
-    </param>
-    <param name="uMaxMilliseconds">
-      <para>Reserved. This value must be zero (0).</para>
-    </param>
-    <param name="pCtx">
-      <para>Reserved. This value must be <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>This method returns an <b>HRESULT</b>, which identifies the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
-    </returns>
-    <seealso cref="IWbemShutdown" />
+    <summary>The <b>IWbemShutdown.Shutdown</b> method indicates to the provider that the provider services are not required.</summary>
+    <param name="uReason">Reserved. This value must be zero (0).</param>
+    <param name="uMaxMilliseconds">Reserved. This value must be zero (0).</param>
+    <param name="pCtx">Reserved. This value must be <b>NULL</b>.</param>
+    <returns>This method returns an <b>HRESULT</b>, which identifies the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</returns>
   </member>
   <member name="IWbemShutdown">
     <summary>

@@ -4,28 +4,20 @@
 <doc>
   <member name="DVD_SubpictureAttributes">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>DVD_SubpictureAttributes</code> structure contains information about the DVD subpicture. The <see cref="IDvdInfo2.GetSubpictureAttributes" /> method fills in a <code>DVD_SubpictureAttributes</code> structure for a specified stream.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="DVD_SubpictureAttributes.Type">
-    <summary>
-      <para>Variable of type <see cref="DVD_SUBPICTURE_TYPE" /> that indicates whether the subpicture contains language-related content.</para>
-    </summary>
+    <summary>Variable of type <see cref="DVD_SUBPICTURE_TYPE" /> that indicates whether the subpicture contains language-related content.</summary>
   </member>
   <member name="DVD_SubpictureAttributes.CodingMode">
-    <summary>
-      <para>Variable of type <see cref="DVD_SUBPICTURE_CODING" /> that indicates how the subpicture graphics stream is encoded.</para>
-    </summary>
+    <summary>Variable of type <see cref="DVD_SUBPICTURE_CODING" /> that indicates how the subpicture graphics stream is encoded.</summary>
   </member>
   <member name="DVD_SubpictureAttributes.Language">
-    <summary>
-      <para>Variable of type LCID that identifies the subpicture language if Type equals DVD_SPType_Language.</para>
-    </summary>
+    <summary>Variable of type LCID that identifies the subpicture language if Type equals DVD_SPType_Language.</summary>
   </member>
   <member name="DVD_SubpictureAttributes.LanguageExtension">
-    <summary>
-      <para>Variable of type <see cref="DVD_SUBPICTURE_LANG_EXT" /> that identifies the subpicture language extension if Type equals DVD_SPType_Language.</para>
-    </summary>
+    <summary>Variable of type <see cref="DVD_SUBPICTURE_LANG_EXT" /> that identifies the subpicture language extension if Type equals DVD_SPType_Language.</summary>
   </member>
 </doc>

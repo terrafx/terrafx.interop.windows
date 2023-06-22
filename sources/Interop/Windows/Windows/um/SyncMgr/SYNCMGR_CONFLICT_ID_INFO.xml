@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYNCMGR_CONFLICT_ID_INFO">
-    <summary>
-      <para>Describes conflict ID information structure.</para>
-    </summary>
+    <summary>Describes conflict ID information structure.</summary>
   </member>
   <member name="SYNCMGR_CONFLICT_ID_INFO.pblobID">
-    <summary>
-      <para>Type: <b>BYTE_BLOB*</b></para>
-      <para>A pointer to a blob used for comparison.</para>
-    </summary>
+    <summary>A pointer to a blob used for comparison.</summary>
   </member>
   <member name="SYNCMGR_CONFLICT_ID_INFO.pblobExtra">
-    <summary>
-      <para>Type: <b>BYTE_BLOB*</b></para>
-      <para>A pointer to extra data used to initialize conflict objects.</para>
-    </summary>
+    <summary>A pointer to extra data used to initialize conflict objects.</summary>
   </member>
 </doc>

@@ -3,28 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IN6_ADDR">
-    <summary>
-      <para>The IN6_ADDR structure specifies an IPv6 transport address.</para>
-    </summary>
-    <remarks>
-      <para>All members of the IN6_ADDR structure must be specified in network-byte-order (big-endian).</para>
-    </remarks>
-    <seealso cref="SOCKADDR_IN6" />
+    <summary>The IN6_ADDR structure specifies an IPv6 transport address.</summary>
   </member>
   <member name="IN6_ADDR.u">
-    <summary>
-      <para>A union that contains the following different representations of the IPv6 transport
-address:</para>
-    </summary>
+    <summary>A union that contains the following different representations of the IPv6 transport address:</summary>
   </member>
   <member name="IN6_ADDR.u.Byte">
-    <summary>
-      <para>An array that contains 16 UCHAR-typed values.</para>
-    </summary>
+    <summary>An array that contains 16 UCHAR-typed values.</summary>
   </member>
   <member name="IN6_ADDR.u.Word">
-    <summary>
-      <para>An array that contains eight USHORT-typed values.</para>
-    </summary>
+    <summary>An array that contains eight USHORT-typed values.</summary>
   </member>
 </doc>

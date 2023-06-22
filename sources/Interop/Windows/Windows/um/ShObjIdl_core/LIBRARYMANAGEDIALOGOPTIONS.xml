@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="LIBRARYMANAGEDIALOGOPTIONS">
-    <summary>
-      <para>Used by <see cref="SHShowManageLibraryUI" /> to define options for handling a name collision when saving a library.</para>
-    </summary>
+    <summary>Used by <see cref="SHShowManageLibraryUI" /> to define options for handling a name collision when saving a library.</summary>
   </member>
   <member name="LIBRARYMANAGEDIALOGOPTIONS.LMD_DEFAULT">
-    <summary>
-      <para>Show default warning UI to the user.</para>
-    </summary>
+    <summary>Show default warning UI to the user.</summary>
   </member>
   <member name="LIBRARYMANAGEDIALOGOPTIONS.LMD_ALLOWUNINDEXABLENETWORKLOCATIONS">
-    <summary>
-      <para>Do not display a warning dialog to the user in collisions that concern network locations that cannot be indexed.</para>
-    </summary>
+    <summary>Do not display a warning dialog to the user in collisions that concern network locations that cannot be indexed.</summary>
   </member>
 </doc>

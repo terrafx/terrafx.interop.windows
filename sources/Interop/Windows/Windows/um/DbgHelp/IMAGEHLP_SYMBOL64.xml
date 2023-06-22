@@ -3,168 +3,66 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAGEHLP_SYMBOL64">
-    <summary>
-      <para>Contains symbol information.</para>
-    </summary>
-    <remarks>
-      <para>This structure supersedes the <b>IMAGEHLP_SYMBOL</b> structure. For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/Debug/updated-platform-support">Updated Platform Support</a>. <b>IMAGEHLP_SYMBOL</b> is defined as follows in DbgHelp.h.</para>
-      <code>#if !defined(_IMAGEHLP_SOURCE_) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; defined(_IMAGEHLP64)
- #define IMAGEHLP_SYMBOL IMAGEHLP_SYMBOL64
- #define PIMAGEHLP_SYMBOL PIMAGEHLP_SYMBOL64
-#else
- typedef struct _IMAGEHLP_SYMBOL {
-     DWORD SizeOfStruct;
-     DWORD Address;
-     DWORD Size;
-     DWORD Flags;
-     DWORD MaxNameLength;
-     CHAR  Name[1];
- } IMAGEHLP_SYMBOL, *PIMAGEHLP_SYMBOL;
-#endif
-</code>
-    </remarks>
-    <seealso cref="SymGetSymFromAddr64" />
-    <seealso cref="SymGetSymFromName64" />
+    <summary>Contains symbol information.</summary>
   </member>
   <member name="IMAGEHLP_SYMBOL64.SizeOfStruct">
-    <summary>
-      <para>The size of the structure, in bytes. The caller must set this member to <code>sizeof(IMAGEHLP_SYMBOL64)</code>.</para>
-    </summary>
+    <summary>The size of the structure, in bytes. The caller must set this member to <code>sizeof(IMAGEHLP_SYMBOL64)</code>.</summary>
   </member>
   <member name="IMAGEHLP_SYMBOL64.Address">
-    <summary>
-      <para>The virtual address for the symbol.</para>
-    </summary>
+    <summary>The virtual address for the symbol.</summary>
   </member>
   <member name="IMAGEHLP_SYMBOL64.Size">
-    <summary>
-      <para>The size of the symbol, in bytes. This value is a best guess and can be zero.</para>
-    </summary>
+    <summary>The size of the symbol, in bytes. This value is a best guess and can be zero.</summary>
   </member>
   <member name="IMAGEHLP_SYMBOL64.Flags">
-    <summary>
-      <para>This member is reserved for use by the operating system.</para>
-    </summary>
+    <summary>This member is reserved for use by the operating system.</summary>
   </member>
   <member name="IMAGEHLP_SYMBOL64.MaxNameLength">
-    <summary>
-      <para>The maximum length of the string that the <b>Name</b> member can contain, in characters, not including the null-terminating character. Because symbol names can vary in length, this data structure is allocated by the caller. This member is used so the library knows how much memory is available for use by the symbol name.</para>
-    </summary>
+    <summary>The maximum length of the string that the <b>Name</b> member can contain, in characters, not including the null-terminating character. Because symbol names can vary in length, this data structure is allocated by the caller. This member is used so the library knows how much memory is available for use by the symbol name.</summary>
   </member>
   <member name="IMAGEHLP_SYMBOL64.Name">
-    <summary>
-      <para>The decorated or undecorated symbol name. If the buffer is not large enough for the complete name, it is truncated to <b>MaxNameLength</b> characters, including the null-terminating character.</para>
-    </summary>
+    <summary>The decorated or undecorated symbol name. If the buffer is not large enough for the complete name, it is truncated to <b>MaxNameLength</b> characters, including the null-terminating character.</summary>
   </member>
   <member name="IMAGEHLP_SYMBOL64">
-    <summary>
-      <para>Contains symbol information.</para>
-    </summary>
-    <remarks>
-      <para>This structure supersedes the <b>IMAGEHLP_SYMBOL</b> structure. For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/Debug/updated-platform-support">Updated Platform Support</a>. <b>IMAGEHLP_SYMBOL</b> is defined as follows in DbgHelp.h.</para>
-      <code>#if !defined(_IMAGEHLP_SOURCE_) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; defined(_IMAGEHLP64)
- #define IMAGEHLP_SYMBOL IMAGEHLP_SYMBOL64
- #define PIMAGEHLP_SYMBOL PIMAGEHLP_SYMBOL64
-#else
- typedef struct _IMAGEHLP_SYMBOL {
-     DWORD SizeOfStruct;
-     DWORD Address;
-     DWORD Size;
-     DWORD Flags;
-     DWORD MaxNameLength;
-     CHAR  Name[1];
- } IMAGEHLP_SYMBOL, *PIMAGEHLP_SYMBOL;
-#endif
-</code>
-    </remarks>
-    <seealso cref="SymGetSymFromAddr64" />
-    <seealso cref="SymGetSymFromName64" />
+    <summary>Contains symbol information.</summary>
   </member>
   <member name="IMAGEHLP_SYMBOL64.SizeOfStruct">
-    <summary>
-      <para>The size of the structure, in bytes. The caller must set this member to <code>sizeof(IMAGEHLP_SYMBOL64)</code>.</para>
-    </summary>
+    <summary>The size of the structure, in bytes. The caller must set this member to <code>sizeof(IMAGEHLP_SYMBOL64)</code>.</summary>
   </member>
   <member name="IMAGEHLP_SYMBOL64.Address">
-    <summary>
-      <para>The virtual address for the symbol.</para>
-    </summary>
+    <summary>The virtual address for the symbol.</summary>
   </member>
   <member name="IMAGEHLP_SYMBOL64.Size">
-    <summary>
-      <para>The size of the symbol, in bytes. This value is a best guess and can be zero.</para>
-    </summary>
+    <summary>The size of the symbol, in bytes. This value is a best guess and can be zero.</summary>
   </member>
   <member name="IMAGEHLP_SYMBOL64.Flags">
-    <summary>
-      <para>This member is reserved for use by the operating system.</para>
-    </summary>
+    <summary>This member is reserved for use by the operating system.</summary>
   </member>
   <member name="IMAGEHLP_SYMBOL64.MaxNameLength">
-    <summary>
-      <para>The maximum length of the string that the <b>Name</b> member can contain, in characters, not including the null-terminating character. Because symbol names can vary in length, this data structure is allocated by the caller. This member is used so the library knows how much memory is available for use by the symbol name.</para>
-    </summary>
+    <summary>The maximum length of the string that the <b>Name</b> member can contain, in characters, not including the null-terminating character. Because symbol names can vary in length, this data structure is allocated by the caller. This member is used so the library knows how much memory is available for use by the symbol name.</summary>
   </member>
   <member name="IMAGEHLP_SYMBOL64.Name">
-    <summary>
-      <para>The decorated or undecorated symbol name. If the buffer is not large enough for the complete name, it is truncated to <b>MaxNameLength</b> characters, including the null-terminating character.</para>
-    </summary>
+    <summary>The decorated or undecorated symbol name. If the buffer is not large enough for the complete name, it is truncated to <b>MaxNameLength</b> characters, including the null-terminating character.</summary>
   </member>
   <member name="IMAGEHLP_SYMBOL64">
-    <summary>
-      <para>Contains symbol information.</para>
-    </summary>
-    <remarks>
-      <para>This structure supersedes the <b>IMAGEHLP_SYMBOL</b> structure. For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/Debug/updated-platform-support">Updated Platform Support</a>. <b>IMAGEHLP_SYMBOL</b> is defined as follows in DbgHelp.h.</para>
-      <code>#if !defined(_IMAGEHLP_SOURCE_) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; defined(_IMAGEHLP64)
- #define IMAGEHLP_SYMBOL IMAGEHLP_SYMBOL64
- #define PIMAGEHLP_SYMBOL PIMAGEHLP_SYMBOL64
-#else
- typedef struct _IMAGEHLP_SYMBOL {
-     DWORD SizeOfStruct;
-     DWORD Address;
-     DWORD Size;
-     DWORD Flags;
-     DWORD MaxNameLength;
-     CHAR  Name[1];
- } IMAGEHLP_SYMBOL, *PIMAGEHLP_SYMBOL;
-#endif
-</code>
-    </remarks>
-    <seealso cref="SymGetSymFromAddr64" />
-    <seealso cref="SymGetSymFromName64" />
+    <summary>Contains symbol information.</summary>
   </member>
   <member name="IMAGEHLP_SYMBOL64.SizeOfStruct">
-    <summary>
-      <para>The size of the structure, in bytes. The caller must set this member to <code>sizeof(IMAGEHLP_SYMBOL64)</code>.</para>
-    </summary>
+    <summary>The size of the structure, in bytes. The caller must set this member to <code>sizeof(IMAGEHLP_SYMBOL64)</code>.</summary>
   </member>
   <member name="IMAGEHLP_SYMBOL64.Address">
-    <summary>
-      <para>The virtual address for the symbol.</para>
-    </summary>
+    <summary>The virtual address for the symbol.</summary>
   </member>
   <member name="IMAGEHLP_SYMBOL64.Size">
-    <summary>
-      <para>The size of the symbol, in bytes. This value is a best guess and can be zero.</para>
-    </summary>
+    <summary>The size of the symbol, in bytes. This value is a best guess and can be zero.</summary>
   </member>
   <member name="IMAGEHLP_SYMBOL64.Flags">
-    <summary>
-      <para>This member is reserved for use by the operating system.</para>
-    </summary>
+    <summary>This member is reserved for use by the operating system.</summary>
   </member>
   <member name="IMAGEHLP_SYMBOL64.MaxNameLength">
-    <summary>
-      <para>The maximum length of the string that the <b>Name</b> member can contain, in characters, not including the null-terminating character. Because symbol names can vary in length, this data structure is allocated by the caller. This member is used so the library knows how much memory is available for use by the symbol name.</para>
-    </summary>
+    <summary>The maximum length of the string that the <b>Name</b> member can contain, in characters, not including the null-terminating character. Because symbol names can vary in length, this data structure is allocated by the caller. This member is used so the library knows how much memory is available for use by the symbol name.</summary>
   </member>
   <member name="IMAGEHLP_SYMBOL64.Name">
-    <summary>
-      <para>The decorated or undecorated symbol name. If the buffer is not large enough for the complete name, it is truncated to <b>MaxNameLength</b> characters, including the null-terminating character.</para>
-    </summary>
+    <summary>The decorated or undecorated symbol name. If the buffer is not large enough for the complete name, it is truncated to <b>MaxNameLength</b> characters, including the null-terminating character.</summary>
   </member>
 </doc>

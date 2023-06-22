@@ -1,0 +1,582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RESTRICTIONS">
+    <summary>These flags are used with the <see cref="SHRestricted" /> function. <b>SHRestricted</b> is used to determine whether a specified administrator policy is in effect. In many cases, applications need to modify certain behaviors in order to comply with the policies enacted by system administrators.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NONE">
+    <summary>Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NORUN">
+    <summary>If nonzero, the system administrator has forbidden access to the <b>Run</b> command on the <b>Start</b> menu. Applications should remove similar functionality. For example, a browser with an address bar should deny attempts by the user to type the path of a local file into the address bar.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOCLOSE">
+    <summary>If nonzero, the system administrator has forbidden access to the <b>Shut Down</b> command on the <b>Start</b> menu. Applications should remove the ability to shut down or restart the computer.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSAVESET">
+    <summary>If nonzero, the system administrator has requested that applications do not save their state at exit for restoration the next time they are run. Applications should disable saving their window position and settings.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOFILEMENU">
+    <summary>If nonzero, the system administrator has forbidden access to the Windows Explorer <b>File</b> menu. Applications should remove similar functionality.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSETFOLDERS">
+    <summary>If nonzero, the system administrator has forbidden access to <b>Control Panel</b>, <b>Printers</b>, and <b>Network and Dial up Connections</b>. Applications should prevent users from viewing those folders.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSETTASKBAR">
+    <summary>If nonzero, the system administrator has forbidden access to taskbar settings. Applications should prevent users from changing those settings.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NODESKTOP">
+    <summary>If nonzero, the system administrator has specified that all icons on the desktop should be hidden. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOFIND">
+    <summary>If nonzero, the system administrator has indicated that the user should not be enabled to search for files. Applications should remove similar functionality.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NODRIVES">
+    <summary>A 32-bit value that specifies the drives that should not be displayed to the user. Bit 0 corresponds to drive A, up to bit 25 which corresponds to drive Z. Applications that display a list of drives should remove drives that have their corresponding bits set.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NODRIVEAUTORUN">
+    <summary>A 32-bit value that specifies the drives for which AutoRun should be disabled. Bit 0 corresponds to drive A, up to bit 25 which corresponds to drive Z. Applications should not offer to AutoRun any drive that has its corresponding bit set.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NODRIVETYPEAUTORUN">
+    <summary>A 32-bit value that specifies the drive types for which AutoRun should be disabled. The bits are numbered according to the return value of <see cref="GetDriveType" />. For example, bit <b>DRIVE_CDROM</b> disables AutoRun on CD-ROM drives. Applications should not offer to AutoRun any drive whose type has its corresponding bit set.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NONETHOOD">
+    <summary>If nonzero, the system administrator has removed <b>Network Neighborhood</b> (also known as <b>My Network Places</b>) from the Shell namespace. Applications should disable functionality that enables the user to browse the network.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_STARTBANNER">
+    <summary>Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_RESTRICTRUN">
+    <summary>If nonzero, the system administrator has restricted the programs the user can run. Only programs listed under the registry key <b>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer</b> can be run either from the <b>Run</b> dialog box, by double-clicking, or by selecting from the <b>File</b> menu. Applications should prevent users from running programs not listed under that key. Applications that use the <see cref="ShellExecute" /> or <see cref="ShellExecuteEx" /> functions to run programs do not need to take any special action because those functions check the policy.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOPRINTERTABS">
+    <summary>Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOPRINTERDELETE">
+    <summary>If nonzero, the system administrator has disabled the user's ability to delete printers. Applications should remove the ability to delete printers.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOPRINTERADD">
+    <summary>If nonzero, the system administrator has disabled the user's ability to add printers. Applications should remove the ability to add printers.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSTARTMENUSUBFOLDERS">
+    <summary>If nonzero, subfolders of the <b>Start</b> menu and <b>Programs</b> menu are not shown on the top of the classic <b>Start</b> menu, the <b>Programs</b> list on the classic <b>Start</b> menu, or the <b>All Programs</b> list on the <b>Start</b> menu. Applications that enumerate the contents of the <b>Start</b> menu should avoid subfolders. If nonzero, this flag does not restrict any menus other than those listed here; in particular, <b>My Computer</b> can still expand.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_MYDOCSONNET">
+    <summary>Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOEXITTODOS">
+    <summary>Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_ENFORCESHELLEXTSECURITY">
+    <summary>If nonzero, the system administrator has forbidden the use of unapproved Shell extensions. Applications should not instantiate Shell extensions unless they are marked as approved by the system administrator. For more information, see <a href="https://docs.microsoft.com//windows/desktop/shell/handlers">Creating Shell Extension Handlers</a>.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_LINKRESOLVEIGNORELINKINFO">
+    <summary>If nonzero, the system does not attempt to reconnect mapped network drives when resolving a broken shortcut to a file or folder on a mapped network drive. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOCOMMONGROUPS">
+    <summary>If nonzero, indicates the system administrator has forbidden access to the <b>CSIDL_COMMON_STARTMENU</b> or <b>CSIDL_COMMON_PROGRAMS</b> folders on the <b>Start</b> menu. Applications that enumerate the contents of the <b>Start</b> menu should avoid those folders.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_SEPARATEDESKTOPPROCESS">
+    <summary>If nonzero, the administrator has required that folders be opened in a separate process. This overrides and disables the corresponding setting in the <b>Folder Options</b> dialog box. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOWEB">
+    <summary>If nonzero, the system administrator has removed the <b>Web</b> tab from the desktop <b>Properties</b> dialog box. Applications do not need to perform any special actions. <b>Windows XP and later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOTRAYCONTEXTMENU">
+    <summary>If nonzero, the system administrator has forbidden access to context menus for the taskbar. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOVIEWCONTEXTMENU">
+    <summary>If nonzero, the system administrator has forbidden access to context menus for Shell objects. Applications should disable context menus for Shell objects.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NONETCONNECTDISCONNECT">
+    <summary>If nonzero, the system administrator has denied users the ability to map or disconnect network drives. Applications should remove the ability to map or disconnect network drives.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_STARTMENULOGOFF">
+    <summary>If 1, the system administrator has removed the <b>Log Off</b> option from the <b>Start</b> menu. If 2, the system administrator has forced the <b>Log Off</b> option to be shown. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSETTINGSASSIST">
+    <summary>Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOINTERNETICON">
+    <summary>If nonzero, the system administrator has removed the Internet Explorer icon from the desktop. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NORECENTDOCSHISTORY">
+    <summary>If nonzero, the system administrator has disabled recent document history. Applications must disable all MRU lists, such as those that are often displayed on the <b>File</b> menu. Adherence to this setting is mandatory for Windows logo compliance.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NORECENTDOCSMENU">
+    <summary>If nonzero, the system administrator has removed the <b>Recent Documents</b> menu from the <b>Start</b> menu. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOACTIVEDESKTOP">
+    <summary>If nonzero, the system administrator has disabled the ability to create web content on the desktop. Applications do not need to perform any special actions. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOACTIVEDESKTOPCHANGES">
+    <summary>If nonzero, the system administrator has disabled the ability to change web content on the desktop. Applications do not need to perform any special actions. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOFAVORITESMENU">
+    <summary>If nonzero, the system administrator has removed the <b>Favorites</b> menu from the <b>Start</b> menu. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_CLEARRECENTDOCSONEXIT">
+    <summary>If nonzero, the system administrator has required that recent document history and related history information be deleted when the user logs off. Applications should erase recent document history when they exit.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_CLASSICSHELL">
+    <summary>Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOCUSTOMIZEWEBVIEW">
+    <summary>If nonzero, the system administrator has disabled the ability to customize the appearance of Windows Explorer folders. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOHTMLWALLPAPER">
+    <summary>If nonzero, the system administrator has disabled the ability to set the wallpaper to any image that is not a bitmap (*.bmp) image. Applications that enable the user to change desktop wallpaper should disable web content. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOCHANGINGWALLPAPER">
+    <summary>If nonzero, the system administrator has disabled the ability to change the desktop wallpaper. Applications should disable corresponding functionality.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NODESKCOMP">
+    <summary>If nonzero, the system administrator has disabled desktop components. Applications that create or modify desktop components should disable this functionality. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOADDDESKCOMP">
+    <summary>If nonzero, the system administrator has disabled the ability to create desktop components. Applications that create desktop components should disable this functionality.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NODELDESKCOMP">
+    <summary>If nonzero, the system administrator has disabled the ability to delete desktop components. Applications that delete desktop components should disable this functionality. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOCLOSEDESKCOMP">
+    <summary>If nonzero, the system administrator has disabled the ability to close desktop components. Applications do not need to perform any special actions. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOCLOSE_DRAGDROPBAND">
+    <summary>If nonzero, the system administrator has disabled the ability to drag, drop, or close desktop bands. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOMOVINGBAND">
+    <summary>If nonzero, the system administrator has disabled the ability to move a desktop band. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOEDITDESKCOMP">
+    <summary>If nonzero, indicates the system administrator has disabled the ability to modify desktop components. Applications that modify desktop components should disable this functionality. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NORESOLVESEARCH">
+    <summary>If nonzero, the system administrator has disabled heuristic file searching when resolving broken shortcuts. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NORESOLVETRACK">
+    <summary>If nonzero, the system administrator has disabled the use of the link tracking service when resolving broken shortcuts. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_FORCECOPYACLWITHFILE">
+    <summary>If nonzero, the system administrator has forced Shell file copy operations to copy the ACL with the file rather than inheriting the ACL from the target folder. Applications that use the <see cref="SHFileOperation" /> function do not need to perform any special actions. Applications that copy files manually should ensure that the source ACL is copied.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOLOGO3CHANNELNOTIFY">
+    <summary>If nonzero, the system administrator has disabled channel updates when resolving shortcuts. Applications do not need to perform any special actions. <b>Windows Vista or later</b>: Not supported.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOFORGETSOFTWAREUPDATE">
+    <summary>If nonzero, the system administrator has disabled the ability to uncheck the <b>Remind me until I update the current version</b> checkbox in the <see cref="SoftwareUpdateMessageBox" /> function. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSETACTIVEDESKTOP">
+    <summary>If nonzero, the system administrator has disabled the ability to change settings for web content on the desktop. Applications do not need to perform any special actions. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOUPDATEWINDOWS">
+    <summary>If nonzero, the system administrator has hidden the <b>Windows Update</b> shortcut on the <b>Start</b> menu. Applications that enumerate the contents of the <b>Start</b> menu should not show the <b>Windows Update</b> shortcut to the user.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOCHANGESTARMENU">
+    <summary>If nonzero, the system administrator has disabled the ability to make changes to the <b>Start</b> menu. Applications should disable any feature that enables the user to reorganize their <b>Start</b> menu.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOFOLDEROPTIONS">
+    <summary>If nonzero, the system administrator has denied access to the <b>Folder Options</b> dialog box. Applications that display <b>Folder Options</b> in <b>Control Panel</b> should disable this functionality.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_HASFINDCOMPUTERS">
+    <summary>If nonzero, the system administrator has disabled the ability to search for computers on the network. Applications should remove the ability to search for computers on the network.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_INTELLIMENUS">
+    <summary>If nonzero, the system administrator has disabled personalized menus. Applications should not hide infrequently-used menu commands.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_RUNDLGMEMCHECKBOX">
+    <summary>If nonzero, the system administrator has disabled the <b>Run in separate memory space</b> option in the <b>Run</b> dialog. Applications that provide similar functionality should remove the corresponding checkbox.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_ARP_ShowPostSetup">
+    <summary>If nonzero, the system administrator has removed the list of incomplete setup operations from the "Add/Remove Windows Components" section of the <b>Add/Remove Programs</b> dialog box. Applications do not need to perform any special actions. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOCSC">
+    <summary>If nonzero, the system administrator has removed <b>Synchronize All</b> from the <b>Start</b> menu. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOCONTROLPANEL">
+    <summary>If nonzero, the system administrator has denied access to <b>Control Panel</b>. Applications should disable any functionality that runs <code>Control Panel</code>.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_ENUMWORKGROUP">
+    <summary>If nonzero, the system administrator has indicated that the <b>Network Neighborhood</b> should include the computer workgroup. Applications do not need to perform any special actions. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_ARP_NOARP">
+    <summary>If nonzero, the system administrator has denied access to the <b>Add/Remove Programs</b> dialog box. Applications should disable any functionality that runs the <b>Add/Remove Programs</b> dialog box. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_ARP_NOREMOVEPAGE">
+    <summary>If nonzero, the system administrator has denied access to the <b>Change or Remove Programs</b> section of the <b>Add/Remove Programs</b> dialog box. Applications do not need to perform any special actions. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_ARP_NOADDPAGE">
+    <summary>If nonzero, the system administrator has denied access to the <b>Add Programs</b> section of the <b>Add/Remove Programs</b> dialog box. Applications do not need to perform any special actions. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_ARP_NOWINSETUPPAGE">
+    <summary>If nonzero, the system administrator has denied access to the <b>Add/Remove Windows Components</b> section of the <b>Add/Remove Programs</b> dialog box. Applications do not need to perform any special actions. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_GREYMSIADS">
+    <summary>If nonzero, the system administrator has specified that Windows Installer shortcuts that refer to applications that are available but not yet installed should be displayed on the <b>Start</b> menu in gray. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOCHANGEMAPPEDDRIVELABEL">
+    <summary>Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOCHANGEMAPPEDDRIVECOMMENT">
+    <summary>Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_MaxRecentDocs">
+    <summary>A 32-bit value that specifies the maximum number of documents to be retained in the <b>Recent Documents</b> menu. If this value is zero, then the system administrator has not specified any maximum, and applications can choose a default. If this value is nonzero, applications should restrict their <b>Recent Documents</b> list to the specified number of items.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NONETWORKCONNECTIONS">
+    <summary>If nonzero, the system administrator has removed the <b>Network Connections</b> menu from the <b>Start</b> menu. Applications should hide lists of network and dial-up connections.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_FORCESTARTMENULOGOFF">
+    <summary>If nonzero, the system administrator has forced the <b>Log Off</b> command onto the <b>Start</b> menu. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOWEBVIEW">
+    <summary>If nonzero, the system administrator has disabled folder HTML templates (Windows 2000) or folder tasks (Windows XP) in Windows Explorer. Applications do not need to perform any special actions. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOCUSTOMIZETHISFOLDER">
+    <summary>If nonzero, the system administrator has disabled the ability to customize the appearance of Windows Explorer folders. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOENCRYPTION">
+    <summary>If nonzero, the system administrator has disabled the ability to encrypt and decrypt files and folders. Applications should not call <see cref="EncryptFile" /> or <see cref="DecryptFile" />.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_DONTSHOWSUPERHIDDEN">
+    <summary>If nonzero, the system administrator has disabled the ability to view files marked System and Hidden ("super-hidden files"), overriding the <b>fShowSuperHidden</b> member of the <see cref="SHELLSTATE" /> structure. Applications should not show files that have both the FILE_ATTRIBUTE_SYSTEM and FILE_ATTRIBUTE_HIDDEN attributes to the user.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSHELLSEARCHBUTTON">
+    <summary>If nonzero, the system administrator has disabled the <b>Search</b> button in the Windows Explorer toolbar. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOHARDWARETAB">
+    <summary>If nonzero, the system administrator has disabled the <b>Hardware</b> tab in the <b>Drive</b>, <b>Mouse</b>, <b>Keyboard</b>, and <b>Multimedia</b> property sheets. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NORUNASINSTALLPROMPT">
+    <summary>If nonzero, the system administrator has disabled the automatic prompt for automatic credentials when installing an application. Applications do not need to perform any special actions. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_PROMPTRUNASINSTALLNETPATH">
+    <summary>If nonzero, the system administrator has disabled the automatic prompt for automatic credentials when installing an application from a network path. Applications do not need to perform any special actions. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOMANAGEMYCOMPUTERVERB">
+    <summary>If nonzero, the system administrator has removed the <b>Manage</b> command from the <b>My Computer</b> context menu. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_DISALLOWRUN">
+    <summary>
+      <para>If nonzero, the system administrator has restricted the programs the user can run. Programs listed under the registry key</para>
+      <code> &lt;b&gt;HKEY_CURRENT_USER&lt;/b&gt;&amp;#92;&lt;b&gt;Software&lt;/b&gt;&amp;#92;&lt;b&gt;Microsoft&lt;/b&gt;&amp;#92;&lt;b&gt;Windows&lt;/b&gt;&amp;#92;&lt;b&gt;CurrentVersion&lt;/b&gt;&amp;#92;&lt;b&gt;Policies&lt;/b&gt;&amp;#92;&lt;b&gt;Explorer&lt;/b&gt;&amp;#92;&lt;b&gt;DisallowRun&lt;/b&gt; may not be run from the &lt;b&gt;Run&lt;/b&gt; dialog box, by double-clicking, or by selecting from the &lt;b&gt;File&lt;/b&gt; menu. Programs are listed by their full path (for example, "C:\Windows\system32\cmd.exe"). Applications should prevent users from running programs listed under that key. Applications that use the &lt;a href="/windows/desktop/api/shellapi/nf-shellapi-shellexecutea"&gt;ShellExecute&lt;/a&gt; or &lt;a href="/windows/desktop/api/shellapi/nf-shellapi-shellexecuteexa"&gt;ShellExecuteEx&lt;/a&gt; function to run programs do not need to take any special action because those functions will check the policy.</code>
+    </summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOWELCOMESCREEN">
+    <summary>If nonzero, the system administrator has disabled the <b>Welcome to Windows</b> program that is run when a user logs on. Applications do not need to perform any special actions. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_RESTRICTCPL">
+    <summary>If nonzero, the system administrator has restricted the control panel applications the user can run. In order to be run, a control panel application must be listed under the registry key<b>HKEY_CURRENT_USER</b>\<b>Software</b>\<b>Microsoft</b>\<b>Windows</b>\<b>CurrentVersion</b>\<b>Policies</b>\<b>Explorer</b>\<b>RestrictCpl</b>. The control panel application can be listed either under its display name (for example, "Mouse") or under its filename (for example, "main.cpl"). Applications that launch control panel applications should prevent users from running control panel applications not listed under that key.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_DISALLOWCPL">
+    <summary>If nonzero, the system administrator has restricted the control panel applications the user can run. In order to be run, a control panel application must not be listed under the registry key<b>HKEY_CURRENT_USER</b>\<b>Software</b>\<b>Microsoft</b>\<b>Windows</b>\<b>CurrentVersion</b>\<b>Policies</b>\<b>Explorer</b>\<b>DisallowCpl</b>. The control panel application can be listed either under its display name (for example, "Mouse") or under its filename (for example, "main.cpl"). Applications that launch control panel applications should prevent users from running control panel applications listed under that key.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSMBALLOONTIP">
+    <summary>If nonzero, the system administrator has disabled balloon tips that are displayed by the <b>Start</b> menu. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSMHELP">
+    <summary>If nonzero, the system administrator has removed the <b>Help</b> option from the <b>Start</b> menu. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOWINKEYS">
+    <summary>If nonzero, the system administrator has disabled the keyboard shortcut associated with the Windows logo key. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOENCRYPTONMOVE">
+    <summary>If nonzero, the system administrator has specified that unencrypted files and folders moved into an encrypted folder should remain unencrypted instead of inheriting the encryption attribute from the enclosing folder. Applications that move files and folders should unencrypt them if they were originally unencrypted and are moved into an encrypted folder. Applications that use the <see cref="SHFileOperation" /> function to move files do not need to perform any special actions because the <b>SHFileOperation</b> function respects this policy.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOLOCALMACHINERUN">
+    <summary>If nonzero, the system administrator has disabled the execution of programs listed in the<b>HKEY_LOCAL_MACHINE</b>\<b>Software</b>\<b>Microsoft</b>\<b>Windows</b>\<b>CurrentVersion</b>\<b>Run</b> registry key. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOCURRENTUSERRUN">
+    <summary>If nonzero, the system administrator has disabled the execution of programs listed in the<b>HKEY_CURRENT_USER</b>\<b>Software</b>\<b>Microsoft</b>\<b>Windows</b>\<b>CurrentVersion</b>\<b>Run</b> registry key. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOLOCALMACHINERUNONCE">
+    <summary>If nonzero, the system administrator has disabled the execution of programs listed in the<b>HKEY_LOCAL_MACHINE</b>\<b>Software</b>\<b>Microsoft</b>\<b>Windows</b>\<b>CurrentVersion</b>\<b>RunOnce</b> registry key. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOCURRENTUSERRUNONCE">
+    <summary>If nonzero, the system administrator has disabled the execution of programs listed in the<b>HKEY_CURRENT_USER</b>\<b>Software</b>\<b>Microsoft</b>\<b>Windows</b>\<b>CurrentVersion</b>\<b>RunOnce</b> registry key. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_FORCEACTIVEDESKTOPON">
+    <summary>If nonzero, the system administrator has forced web content to be enabled on the desktop. Applications do not need to perform any special actions. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOVIEWONDRIVE">
+    <summary>A 32-bit value that specifies the drives the user cannot open or drop files into. Bit 0 corresponds to drive A, up to bit 25 which corresponds to drive Z. Applications that enable the user to open folders or drop files should prevent the user from opening a folder on a restricted drive or dropping files onto a restricted drive.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NONETCRAWL">
+    <summary>Windows XP, Windows<b>2003, or IE_BACKCOMPAT_VERSION defined.</b> If nonzero, the system administrator has disabled automatic searching for network folders and printers, overriding the <i>fNoNetCrawling</i> member of the <b>SHELLSTATE</b> structure. Applications do not need to perform any special actions. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSHAREDDOCUMENTS">
+    <summary>Windows XP, Windows<b>2003 or IE_BACKCOMPAT_VERSION defined.</b> If nonzero, the system administrator has hidden the <b>Shared Documents</b> icon in <b>My Computer</b>. Applications should hide access to CSIDL_COMMON_DOCUMENTS. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSMMYDOCS">
+    <summary>If nonzero, the system administrator has hidden the <b>My Documents</b> icon on the <b>Start</b> menu. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSMMYPICS">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has hidden the <b>My Pictures</b> icon on the <b>Start</b> menu. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_ALLOWBITBUCKDRIVES">
+    <summary>
+      <b>Windows XP or later.</b> A 32-bit value that specifies the drives for which the <b>Recycle Bin</b> should be forced to be enabled. The system typically disables the <b>Recycle Bin</b> on drives that are not local fixed drives. Bit 0 corresponds to drive A, up to bit 25 which corresponds to drive Z. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NONLEGACYSHELLMODE">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has hidden the <b>Back</b> and <b>Forward</b> buttons in the Internet Explorer toolbar. Applications do not need to perform any special actions. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOCONTROLPANELBARRICADE">
+    <summary>
+      <b>Windows XP or later.</b> Ignored.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSTARTPAGE">
+    <summary>
+      <b>Windows XP or later.</b> Ignored.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOAUTOTRAYNOTIFY">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has forced all taskbar icons to be visible, even if they are inactive, overriding the user's decision to hide inactive taskbar icons. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOTASKGROUPING">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has disabled grouping of similar taskbar buttons, overriding the user's decision to enable taskbar button grouping. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOCDBURNING">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has disabled CD burning. Applications should disable any CD-burning capabilities.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_MYCOMPNOPROP">
+    <summary>
+      <b> Windows 2000 SP3 or later.</b> If nonzero, the system administrator has disabled the <b>System Properties</b> dialog box. Applications should not launch the <b>System Properties</b> dialog box.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_MYDOCSNOPROP">
+    <summary>
+      <b> Windows 2000 SP3 or later.</b> If nonzero, the system administrator has disabled the ability to view properties of the <b>My Documents</b> folder. Applications should not redirect the <b>My Documents</b> folder.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSTARTPANEL">
+    <summary>
+      <b> Windows XP or later.</b> If nonzero, the system administrator has disabled the Windows XP <b>Start</b> menu. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NODISPLAYAPPEARANCEPAGE">
+    <summary>
+      <b>Windows XP or later.</b> If 1, the system administrator has disabled the <b>Themes</b> and <b>Appearance</b> pages from the <b>Desktop Properties</b> dialog box. Applications should not change system colors and appearance.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOTHEMESTAB">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has disabled the <b>Themes</b> page from the <b>Desktop Properties</b> dialog. Applications should not change visual styles.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOVISUALSTYLECHOICE">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has disabled the ability to change visual styles. Applications should not change visual styles.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSIZECHOICE">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has disabled the ability to change font sizes from the <b>Appearance</b> page on the Desktop Properties dialog box. Applications should not change system metrics.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOCOLORCHOICE">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has disabled the ability to change system colors from the <b>Appearance</b> page on the <b>Desktop Properties</b> dialog box. Applications should not change system colors.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_SETVISUALSTYLE">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has forced a specific visual style. Applications should not change visual styles.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_STARTRUNNOHOMEPATH">
+    <summary>
+      <b> Windows 2000 SP3 or later.</b> If nonzero, the default working directory for programs run from the Run dialog is not forced to the user's home directory. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOUSERNAMEINSTARTPANEL">
+    <summary>Windows XP, Windows <b>2003.</b> If nonzero, the system administrator has hidden the user name on the Windows XP <b>Start</b> menu. Applications do not need to perform any special actions. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOMYCOMPUTERICON">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has hidden the <b>My Computer</b> icon. Applications should not permit access to the <b>My Computer</b> icon.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSMNETWORKPLACES">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has hidden the <b>Network Places</b> icon on the <b>Start</b> menu. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSMPINNEDLIST">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has hidden the list of "pinned" items on the <b>Start</b> menu. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSMMYMUSIC">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has hidden the <b>My Music</b> icon on the <b>Start</b> menu. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSMEJECTPC">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has hidden the <b>Eject</b> command on the <b>Start</b> menu. Applications should not enable the user to eject the computer.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSMMOREPROGRAMS">
+    <summary>
+      <b> Windows XP or later.</b> If nonzero, the system administrator has hidden the <b>All Programs</b> item on the Windows XP <b>Start</b> menu. Applications should not show the contents of the <b>Start</b> menu folder to the user.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSMMFUPROGRAMS">
+    <summary>
+      <b> Windows XP or later.</b> If nonzero, the system administrator has hidden the list of most frequently used programs on the Windows XP <b>Start</b> menu. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOTRAYITEMSDISPLAY">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has hidden all taskbar notification icons, regardless of activity. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOTOOLBARSONTASKBAR">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has hidden all taskbar toolbars, such as <b>Quick Launch</b>. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSMCONFIGUREPROGRAMS">
+    <summary>
+      <b> Windows 2000 SP3 or later.</b> If nonzero, the system administrator has hidden the <b>Set Program Access</b> and <b>Defaults</b> shortcut on the <b>Start</b> menu. Applications that enumerate the contents of the <b>Start</b> menu should not show the <b>Set Program Access</b> and <b>Defaults</b> shortcut to the user.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_HIDECLOCK">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has hidden the clock on the taskbar, overriding any user preference. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOLOWDISKSPACECHECKS">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has disabled taskbar warnings when disk space has become low. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOENTIRENETWORK">
+    <summary>
+      <b>Windows 2000 Service Pack 4 (SP4) or later.</b> If nonzero, the system administrator has disabled the <b>Entire Network</b> icon in <b>Network Places</b>. Applications should remove the ability to browse domain resources.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NODESKTOPCLEANUP">
+    <summary>Windows XP, Windows<b>2003.</b> If nonzero, the system administrator has disabled the desktop cleaner. Applications do not need to perform any special actions. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_BITBUCKNUKEONDELETE">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has required that deleted files be removed immediately instead of being placed in the <b>Recycle Bin</b>, overriding any user preference. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_BITBUCKCONFIRMDELETE">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has disabled the user's ability to specify whether confirmation dialogs should be displayed when files are moved to the <b>Recycle Bin</b>. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_BITBUCKNOPROP">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has disabled the user's ability to view or modify <b>Recycle Bin</b> properties. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NODISPBACKGROUND">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has disabled the user's ability to view or modify the desktop wallpaper. Applications should remove the ability to change the desktop wallpaper.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NODISPSCREENSAVEPG">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has disabled the user's ability to view or modify screensaver settings. Applications should remove the ability to change the screensaver or screensaver settings.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NODISPSETTINGSPG">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has disabled the user's ability to view or modify screen color depth and resolution settings. Applications should remove the ability to change display color depth and resolution.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NODISPSCREENSAVEPREVIEW">
+    <summary>
+      <b>Windows XP or later.</b> Ignored.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NODISPLAYCPL">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has disabled the <b>Display Properties</b> dialog box in <b>Control Panel</b>. Applications should remove the ability to change system colors, metrics, visual styles, font size, desktop wallpaper, screensaver, screensaver settings, screen color depth, or display resolution.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_HIDERUNASVERB">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has disabled the "Run As" command for Shell objects. Applications should remove corresponding functionality.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOTHUMBNAILCACHE">
+    <summary>
+      <b>Windows XP or later.</b> If nonzero, the system administrator has disabled caching of thumbnails. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSTRCMPLOGICAL">
+    <summary>
+      <b> Windows XP SP1 or later, or IE_BACKCOMPAT_VERSION defined.</b> If nonzero, the system administrator has specified that filenames should be sorted with the <b>StringCompare</b> function instead of the <b>StrCmpLogical</b> function. Applications that sort filenames should sort accordingly. (This policy does not apply to Windows 2000.)</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOPUBLISHWIZARD">
+    <summary>
+      <b> Windows XP SP1 or later service pack, Windows Server 2003 or IE_BACKCOMPAT_VERSION defined.</b> Disables the Windows Publishing Wizard (WPW).<b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOONLINEPRINTSWIZARD">
+    <summary>
+      <b> Windows XP SP1 or later, or IE_BACKCOMPAT_VERSION defined.</b> Disables the Online Prints Wizard (OPW). <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOWEBSERVICES">
+    <summary>
+      <b> Windows XP SP1 or later, or IE_BACKCOMPAT_VERSION defined.</b> Disables the web specified services for both the Online Prints Wizard (OPW) and the Windows Publishing Wizard (WPW).</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_ALLOWUNHASHEDWEBVIEW">
+    <summary>
+      <b> Windows 2000 SP3 or later, Windows XP, or Windows Server 2003.</b> If nonzero, the system administrator has granted permission for unregistered web view templates to be displayed. Applications do not need to perform any special actions. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_ALLOWLEGACYWEBVIEW">
+    <summary>If nonzero, the system administrator has granted permission for old web view templates (created prior to Windows XP) to be converted to Windows XP templates. Applications do not need to perform any special actions. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_REVERTWEBVIEWSECURITY">
+    <summary>
+      <b> Windows 2000 SP3 or later, Windows XP, or Windows Server 2003.</b> If nonzero, the system administrator has reduced web view security to the level that existed in Windows 2000 SP2 or earlier. Applications do not need to perform any special actions. (This policy does not apply to Windows 2000 SP2 or earlier.) <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_INHERITCONSOLEHANDLES">
+    <summary>
+      <b>Windows 2000 Service Pack 4 (SP4) or later.</b> If nonzero, the ShellExec function checks if the current process and target process are console processes that can inherit handles.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_SORTMAXITEMCOUNT">
+    <summary>
+      <b> Windows XP SP2 and SP3 only. Not supported under Windows Vista or later.</b> Do not sort views with more items than this key. Useful for viewing large numbers of files in one folder.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOREMOTERECURSIVEEVENTS">
+    <summary>
+      <b> Windows XP SP2 or later.</b> Do not register network change events recursively. This helps to avoid network traffic.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOREMOTECHANGENOTIFY">
+    <summary>
+      <b> Windows XP SP2 or later.</b> Do not notify for remote change notifications.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSIMPLENETIDLIST">
+    <summary>
+      <b> Windows XP SP2 or SP3 only. Not supported under Windows Vista or later.</b> No simple network IDLists.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOENUMENTIRENETWORK">
+    <summary>
+      <b> Windows XP SP2 or later.</b> Do not enumerate the entire network.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NODETAILSTHUMBNAILONNETWORK">
+    <summary>
+      <b> Windows XP SP2 and SP3 only. Not supported under Windows Vista or later.</b>
+    </summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOINTERNETOPENWITH">
+    <summary>
+      <b> Windows XP SP2 or later.</b> If nonzero, the system administrator has removed the ability to resolve file associations using the Internet. The option <b>Use the web service to find the appropriate program</b> is unavailable in the dialog displayed when the user selects <b>Open With</b> or double-clicks an unassociated file type.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_DONTRETRYBADNETNAME">
+    <summary>
+      <b> Windows XP SP2 or later.</b> In <b>Network Places</b>, if the provider returns ERROR_BAD_NET_NAME, do not retry.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_ALLOWFILECLSIDJUNCTIONS">
+    <summary>
+      <b> Windows XP SP2 or later, Windows Server 2003.</b> Re-enable legacy support for file.{guid} junctions in file system folders.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOUPNPINSTALL">
+    <summary>
+      <b> Windows XP SP2 or later.</b> Disable the <b>Install Universal Plug and Play (UPnP)</b> task in <b>My Network Places</b>.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_ARP_DONTGROUPPATCHES">
+    <summary>If nonzero, the system administrator has removed the option to list individual patches in Add/Remove Programs. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_ARP_NOCHOOSEPROGRAMSPAGE">
+    <summary>If nonzero, the system administrator has removed the option to choose the programs page. <b>Windows Vista or later</b>: Not used.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NODISCONNECT">
+    <summary>
+      <b>Not supported under Windows Vista or later</b>. If nonzero, the system administrator has removed the <b>Disconnect</b> option from the <b>Start</b> menu and <b>Task Manager</b>. Applications should remove the ability to disconnect users from a Terminal Server session.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOSECURITY">
+    <summary>
+      <b>Not supported under Windows Vista and later</b>. If nonzero, the system administrator has removed the <b>Windows Security</b> option from the <b>Start</b> menu and <b>Task Manager</b>. Applications do not need to perform any special actions.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_NOFILEASSOCIATE">
+    <summary>
+      <b>Not supported under Windows Vista and later</b>. If nonzero, the system administrator has removed the ability to change file associations. Applications should not enable users to change file associations arbitrarily.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_ALLOWCOMMENTTOGGLE">
+    <summary>
+      <b> Windows XP SP2 only. Not supported under Windows Vista or later.</b> Allows the user to toggle the position of the Comment and the Computer Name.</summary>
+  </member>
+  <member name="RESTRICTIONS.REST_USEDESKTOPINICACHE">
+    <summary>
+      <b> Windows XP SP2 and SP3 only. Not supported under Windows Vista or later.</b> Cache desktop.ini entries from network folders.<h4>- REST_ALLOWLEGACYLMZBEHAVIOR</h4><b> Windows XP SP2 only. Not supported under Windows Vista or later.</b> Indicates allowable LMZ behavior for ActiveX objects changed in Windows XP SP2, this policy gets the pre-Windows XP SP2 behavior.<h4>- REST_NOCOMPUTERSNEARME</h4><para><b>Not supported under Windows Vista and later</b>. If nonzero, the system administrator has hidden the <b>Computers Near Me</b> icon in the <b>My Network Places</b> folder. Applications should remove access to CSIDL_COMPUTERSNEARME.</para><h4>- REST_NORECENTDOCSNETHOOD</h4><para>Windows Vista. If nonzero, the system administrator has disabled the automatic addition of shortcuts in <b>Network Neighborhood</b> to recently-accessed network resources. Applications do not need to perform any special actions.</para></summary>
+  </member>
+</doc>

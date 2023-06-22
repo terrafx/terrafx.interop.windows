@@ -3,28 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="BP_ANIMATIONSTYLE">
-    <summary>
-      <para>Used in the <see cref="BP_ANIMATIONPARAMS" /> structure to declare animation options.</para>
-    </summary>
+    <summary>Used in the <see cref="BP_ANIMATIONPARAMS" /> structure to declare animation options.</summary>
   </member>
   <member name="BP_ANIMATIONSTYLE.BPAS_NONE">
-    <summary>
-      <para>No animation. Not implemented in Windows Vista.</para>
-    </summary>
+    <summary>No animation. Not implemented in Windows Vista.</summary>
   </member>
   <member name="BP_ANIMATIONSTYLE.BPAS_LINEAR">
-    <summary>
-      <para>Linear fade animation.</para>
-    </summary>
+    <summary>Linear fade animation.</summary>
   </member>
   <member name="BP_ANIMATIONSTYLE.BPAS_CUBIC">
-    <summary>
-      <para>Cubic fade animation. Not implemented in Windows Vista.</para>
-    </summary>
+    <summary>Cubic fade animation. Not implemented in Windows Vista.</summary>
   </member>
   <member name="BP_ANIMATIONSTYLE.BPAS_SINE">
-    <summary>
-      <para>Sinusoid fade animation. Not implemented in Windows Vista.</para>
-    </summary>
+    <summary>Sinusoid fade animation. Not implemented in Windows Vista.</summary>
   </member>
 </doc>

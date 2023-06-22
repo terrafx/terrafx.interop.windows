@@ -3,130 +3,101 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TRACKMOUSEEVENT">
-    <summary>
-      <para>Used by the <see cref="TrackMouseEvent" /> function to track when the mouse pointer leaves a window or hovers over a window for a specified amount of time.</para>
-    </summary>
-    <remarks>
-      <para>The system default hover time-out is initially the menu drop-down time, which is 400 milliseconds. You can call <see cref="SystemParametersInfo" /> and use <b>SPI_GETMOUSEHOVERTIME</b> to retrieve the default hover time-out.</para>
-      <para>The system default hover rectangle is the same as the double-click rectangle. You can call <see cref="SystemParametersInfo" /> and use <b>SPI_GETMOUSEHOVERWIDTH</b> and <b>SPI_GETMOUSEHOVERHEIGHT</b> to retrieve the size of the rectangle within which the mouse pointer has to stay for <see cref="TrackMouseEvent" /> to generate a <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-mousehover">WM_MOUSEHOVER</a> message.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/mouse-input">Mouse Input</seealso>
+    <summary>Used by the <see cref="TrackMouseEvent" /> function to track when the mouse pointer leaves a window or hovers over a window for a specified amount of time.</summary>
   </member>
   <member name="TRACKMOUSEEVENT.cbSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of the <b>TRACKMOUSEEVENT</b> structure, in bytes.</para>
-    </summary>
+    <summary>The size of the <b>TRACKMOUSEEVENT</b> structure, in bytes.</summary>
   </member>
   <member name="TRACKMOUSEEVENT.dwFlags">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The services requested. This member can be a combination of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TME_CANCEL</b>
-                </description>
-              </item>
-              <item>
-                <description>0x80000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x80000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The caller wants to cancel a prior tracking request. The caller should also specify the type of tracking that it wants to cancel. For example, to cancel hover tracking, the caller must pass the <b>TME_CANCEL</b> and <b>TME_HOVER</b> flags.</para>
-          </description>
-        </item>
-        <item>
+          <description>The caller wants to cancel a prior tracking request. The caller should also specify the type of tracking that it wants to cancel. For example, to cancel hover tracking, the caller must pass the <b>TME_CANCEL</b> and <b>TME_HOVER</b> flags.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TME_HOVER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The caller wants hover notification. Notification is delivered as a <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-mousehover">WM_MOUSEHOVER</a> message.</para>
-            <para>If the caller requests hover tracking while hover tracking is already active, the hover timer will be reset.</para>
-            <para>This flag is ignored if the mouse pointer is not over the specified window or area.</para>
-          </description>
-        </item>
-        <item>
+          <description>The caller wants hover notification. Notification is delivered as a <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-mousehover">WM_MOUSEHOVER</a> message. <para>If the caller requests hover tracking while hover tracking is already active, the hover timer will be reset.</para><para>This flag is ignored if the mouse pointer is not over the specified window or area.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TME_LEAVE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The caller wants leave notification. Notification is delivered as a <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-mouseleave">WM_MOUSELEAVE</a> message. If the mouse is not over the specified window or area, a leave notification is generated immediately and no further tracking is performed.</para>
-          </description>
-        </item>
-        <item>
+          <description>The caller wants leave notification. Notification is delivered as a <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-mouseleave">WM_MOUSELEAVE</a> message. If the mouse is not over the specified window or area, a leave notification is generated immediately and no further tracking is performed.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TME_NONCLIENT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The caller wants hover and leave notification for the nonclient areas. Notification is delivered as <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-ncmousehover">WM_NCMOUSEHOVER</a> and <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-ncmouseleave">WM_NCMOUSELEAVE</a> messages.</para>
-          </description>
-        </item>
-        <item>
+          <description> The caller wants hover and leave notification for the nonclient areas. Notification is delivered as <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-ncmousehover">WM_NCMOUSEHOVER</a> and <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-ncmouseleave">WM_NCMOUSELEAVE</a> messages.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TME_QUERY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x40000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x40000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The function fills in the structure instead of treating it as a tracking request. The structure is filled such that had that structure been passed to <see cref="TrackMouseEvent" />, it would generate the current tracking. The only anomaly is that the hover time-out returned is always the actual time-out and not <b>HOVER_DEFAULT</b>, if <b>HOVER_DEFAULT</b> was specified during the original <b>TrackMouseEvent</b> request.</para>
-          </description>
-        </item>
+          <description>The function fills in the structure instead of treating it as a tracking request. The structure is filled such that had that structure been passed to <see cref="TrackMouseEvent" />, it would generate the current tracking. The only anomaly is that the hover time-out returned is always the actual time-out and not <b>HOVER_DEFAULT</b>, if <b>HOVER_DEFAULT</b> was specified during the original <b>TrackMouseEvent</b> request.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="TRACKMOUSEEVENT.hwndTrack">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the window to track.</para>
-    </summary>
+    <summary>A handle to the window to track.</summary>
   </member>
   <member name="TRACKMOUSEEVENT.dwHoverTime">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The hover time-out (if <b>TME_HOVER</b> was specified in <b>dwFlags</b>), in milliseconds. Can be <b>HOVER_DEFAULT</b>, which means to use the system default hover time-out.</para>
-    </summary>
+    <summary>The hover time-out (if <b>TME_HOVER</b> was specified in <b>dwFlags</b>), in milliseconds. Can be <b>HOVER_DEFAULT</b>, which means to use the system default hover time-out.</summary>
   </member>
 </doc>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISoftwareBitmapNativeFactory.CreateFromMF2DBuffer2">
+    <summary>Creates a Windows Runtime <a href="https://docs.microsoft.com//uwp/api/windows.graphics.imaging.softwarebitmap">SoftwareBitmap</a> object from the provided <see cref="IMF2DBuffer2" />.</summary>
+    <param name="data">The source buffer containing a two-dimensional surface, such as a video frame.</param>
+    <param name="subtype">A GUID specifying the video subtype of the source buffer.</param>
+    <param name="width">The width of the source surface.</param>
+    <param name="height">The height of the source surface.</param>
+    <param name="forceReadOnly">
+      <para>A value indicating whether the created software bitmap is read-only.</para>
+      <div>
+        <b>Note</b>  The read-only access applies only to the Windows Runtime <a href="https://docs.microsoft.com//uwp/api/windows.graphics.imaging.softwarebitmap">SoftwareBitmap</a> object. Access to the underlying Media Foundation buffer is not restricted.</div>
+    </param>
+    <param name="minDisplayAperture">The rectangular area within the surface that contains valid image data. Use NULL if the full frame is valid.</param>
+    <param name="riid">The interface to obtain from the created <a href="https://docs.microsoft.com//uwp/api/windows.graphics.imaging.softwarebitmap">SoftwareBitmap</a> object. This is usually Windows.Graphics.Imaging.ISoftwareBitmap.</param>
+    <param name="ppv">When this method returns successfully, contains the requested interface.</param>
+    <returns>Returns S_OK on successful completion.</returns>
+  </member>
+  <member name="ISoftwareBitmapNativeFactory.CreateFromWICBitmap">
+    <summary>Creates a Windows Runtime <a href="https://docs.microsoft.com//uwp/api/windows.graphics.imaging.softwarebitmap">SoftwareBitmap</a> object from the provided <see cref="IWICBitmap" />.</summary>
+    <param name="data">The source WIC bitmap.</param>
+    <param name="forceReadOnly">
+      <para>A value indicating whether the created software bitmap is read-only.</para>
+      <div>
+        <b>Note</b>  The read-only access applies only to the Windows Runtime <a href="https://docs.microsoft.com//uwp/api/windows.graphics.imaging.softwarebitmap">SoftwareBitmap</a> object. Access to the underlying WIC bitmap is not restricted.</div>
+    </param>
+    <param name="riid">The interface to obtain from the created <a href="https://docs.microsoft.com//uwp/api/windows.graphics.imaging.softwarebitmap">SoftwareBitmap</a> object. This is usually Windows.Graphics.Imaging.ISoftwareBitmap.</param>
+    <param name="ppv">When this method returns successfully, contains the requested interface.</param>
+    <returns>Returns S_OK on successful completion.</returns>
+  </member>
+  <member name="ISoftwareBitmapNativeFactory">
+    <summary>Creates instances of <see cref="ISoftwareBitmapNative" />.</summary>
+  </member>
+</doc>

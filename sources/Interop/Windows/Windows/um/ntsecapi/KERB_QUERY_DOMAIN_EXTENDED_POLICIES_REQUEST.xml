@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_QUERY_DOMAIN_EXTENDED_POLICIES_REQUEST">
+    <summary>Contains information used to query the domain for the extended policies. You must have the <b>SeTcbPrivilege</b> privilege set.</summary>
+  </member>
+  <member name="KERB_QUERY_DOMAIN_EXTENDED_POLICIES_REQUEST.MessageType">
+    <summary>A value of the <see cref="KERB_PROTOCOL_MESSAGE_TYPE" /> enumeration that lists the types of messages that can be sent to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">Kerberos</a> authentication package by calling the <see cref="LsaCallAuthenticationPackage" /> function. This member must be set to <b>KerbQueryDomainExtendedPoliciesMessage</b>.</summary>
+  </member>
+  <member name="KERB_QUERY_DOMAIN_EXTENDED_POLICIES_REQUEST.Flags">
+    <summary>Reserved.</summary>
+  </member>
+  <member name="KERB_QUERY_DOMAIN_EXTENDED_POLICIES_REQUEST.DomainName">
+    <summary>The 	name of the domain that you are querying for the extended policies.</summary>
+  </member>
+</doc>

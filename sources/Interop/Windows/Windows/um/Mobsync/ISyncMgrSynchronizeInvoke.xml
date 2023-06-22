@@ -3,97 +3,70 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISyncMgrSynchronizeInvoke.UpdateAll">
-    <summary>
-      <para>Programmatically starts an update for all items.</para>
-    </summary>
+    <summary>Programmatically starts an update for all items.</summary>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method can return one of these values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Call was completed successfully.</para>
-          </description>
-        </item>
+          <description>Call was completed successfully.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method returns immediately and the synchronization manager performs the synchronizations in a separate process from the calling application.</para>
-    </remarks>
-    <seealso cref="ISyncMgrSynchronizeInvoke" />
   </member>
   <member name="ISyncMgrSynchronizeInvoke.UpdateItems">
-    <summary>
-      <para>Programmatically starts an update for specified items.</para>
-    </summary>
-    <param name="dwInvokeFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>Specifies how an item should be invoked using the <see cref="SYNCMGRINVOKEFLAGS" /> enumeration values.</para>
-    </param>
-    <param name="clsid">
-      <para>Type: <b>REFCLSID</b></para>
-      <para>The CLSID of a registered application to be invoked for an update.</para>
-    </param>
-    <param name="cbCookie">
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of <i>pCookie</i> data, in bytes.</para>
-    </param>
-    <param name="pCookie">
-      <para>Type: <b>const BYTE*</b></para>
-      <para>A pointer to a private token that identifies an application. The token is passed in the <see cref="Initialize" /> method.</para>
-    </param>
+    <summary>Programmatically starts an update for specified items.</summary>
+    <param name="dwInvokeFlags">Specifies how an item should be invoked using the <see cref="SYNCMGRINVOKEFLAGS" /> enumeration values.</param>
+    <param name="clsid">The CLSID of a registered application to be invoked for an update.</param>
+    <param name="cbCookie">The size of <i>pCookie</i> data, in bytes.</param>
+    <param name="pCookie">A pointer to a private token that identifies an application. The token is passed in the <see cref="Initialize" /> method.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method supports the standard return values E_INVALIDARG, E_UNEXPECTED and E_OUTOFMEMORY, and the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The synchronization is successfully updated.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The synchronization is successfully updated.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>The errors occur during a synchronization update.</para>
-          </description>
-        </item>
+          <description>The errors occur during a synchronization update.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ISyncMgrSynchronizeInvoke" />
-    <seealso cref="Initialize" />
-    <seealso cref="SYNCMGRINVOKEFLAGS" />
   </member>
   <member name="ISyncMgrSynchronizeInvoke">
-    <summary>
-      <para>Exposes methods that enable a registered application to invoke the synchronization manager to update items.</para>
-    </summary>
-    <remarks>
-      <h3>When to Implement</h3>
-      <para>This interface is implemented by the synchronization manager.</para>
-      <h3>When to Use</h3>
-      <para>A registered application calls the methods of this interface to update all items or to update specific items.</para>
-    </remarks>
+    <summary>Exposes methods that enable a registered application to invoke the synchronization manager to update items.</summary>
   </member>
 </doc>

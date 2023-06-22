@@ -3,61 +3,37 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_SVG_ASPECT_ALIGN">
-    <summary>
-      <para>The alignment portion of the SVG preserveAspectRatio attribute.</para>
-    </summary>
+    <summary>The alignment portion of the SVG preserveAspectRatio attribute.</summary>
   </member>
   <member name="D2D1_SVG_ASPECT_ALIGN.D2D1_SVG_ASPECT_ALIGN_NONE">
-    <summary>
-      <para>The alignment is set to SVG's 'none' value.</para>
-    </summary>
+    <summary>The alignment is set to SVG's 'none' value.</summary>
   </member>
   <member name="D2D1_SVG_ASPECT_ALIGN.D2D1_SVG_ASPECT_ALIGN_X_MIN_Y_MIN">
-    <summary>
-      <para>The alignment is set to SVG's 'xMinYMin' value.</para>
-    </summary>
+    <summary>The alignment is set to SVG's 'xMinYMin' value.</summary>
   </member>
   <member name="D2D1_SVG_ASPECT_ALIGN.D2D1_SVG_ASPECT_ALIGN_X_MID_Y_MIN">
-    <summary>
-      <para>The alignment is set to SVG's 'xMidYMin' value.</para>
-    </summary>
+    <summary>The alignment is set to SVG's 'xMidYMin' value.</summary>
   </member>
   <member name="D2D1_SVG_ASPECT_ALIGN.D2D1_SVG_ASPECT_ALIGN_X_MAX_Y_MIN">
-    <summary>
-      <para>The alignment is set to SVG's 'xMaxYMin' value.</para>
-    </summary>
+    <summary>The alignment is set to SVG's 'xMaxYMin' value.</summary>
   </member>
   <member name="D2D1_SVG_ASPECT_ALIGN.D2D1_SVG_ASPECT_ALIGN_X_MIN_Y_MID">
-    <summary>
-      <para>The alignment is set to SVG's 'xMinYMid' value.</para>
-    </summary>
+    <summary>The alignment is set to SVG's 'xMinYMid' value.</summary>
   </member>
   <member name="D2D1_SVG_ASPECT_ALIGN.D2D1_SVG_ASPECT_ALIGN_X_MID_Y_MID">
-    <summary>
-      <para>The alignment is set to SVG's 'xMidYMid' value.</para>
-    </summary>
+    <summary>The alignment is set to SVG's 'xMidYMid' value.</summary>
   </member>
   <member name="D2D1_SVG_ASPECT_ALIGN.D2D1_SVG_ASPECT_ALIGN_X_MAX_Y_MID">
-    <summary>
-      <para>The alignment is set to SVG's 'xMaxYMid' value.</para>
-    </summary>
+    <summary>The alignment is set to SVG's 'xMaxYMid' value.</summary>
   </member>
   <member name="D2D1_SVG_ASPECT_ALIGN.D2D1_SVG_ASPECT_ALIGN_X_MIN_Y_MAX">
-    <summary>
-      <para>The alignment is set to SVG's 'xMinYMax' value.</para>
-    </summary>
+    <summary>The alignment is set to SVG's 'xMinYMax' value.</summary>
   </member>
   <member name="D2D1_SVG_ASPECT_ALIGN.D2D1_SVG_ASPECT_ALIGN_X_MID_Y_MAX">
-    <summary>
-      <para>The alignment is set to SVG's 'xMidYMax' value.</para>
-    </summary>
+    <summary>The alignment is set to SVG's 'xMidYMax' value.</summary>
   </member>
   <member name="D2D1_SVG_ASPECT_ALIGN.D2D1_SVG_ASPECT_ALIGN_X_MAX_Y_MAX">
-    <summary>
-      <para>The alignment is set to SVG's 'xMaxYMax' value.</para>
-    </summary>
+    <summary>The alignment is set to SVG's 'xMaxYMax' value.</summary>
   </member>
-  <member name="D2D1_SVG_ASPECT_ALIGN.D2D1_SVG_ASPECT_ALIGN_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_SVG_ASPECT_ALIGN.D2D1_SVG_ASPECT_ALIGN_FORCE_DWORD"></member>
 </doc>

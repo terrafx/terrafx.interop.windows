@@ -3,97 +3,59 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DDOVERLAYFX">
-    <summary>
-      <para>The <b>DDOVERLAYFX</b> structure passes overlay information to the <see cref="IDirectDrawSurface7.UpdateOverlay" /> method.</para>
-    </summary>
-    <remarks>
-      <para>The unions in this structure have been updated to work with compilers that do not support nameless unions. If your compiler does not support nameless unions, define the NONAMELESSUNION token before including the Ddraw.h header file.</para>
-    </remarks>
+    <summary>The <b>DDOVERLAYFX</b> structure passes overlay information to the <see cref="IDirectDrawSurface7.UpdateOverlay" /> method.</summary>
   </member>
   <member name="DDOVERLAYFX.dwSize">
-    <summary>
-      <para>Size of the structure, in bytes. This member must be initialized before the structure is used.</para>
-    </summary>
+    <summary>Size of the structure, in bytes. This member must be initialized before the structure is used.</summary>
   </member>
   <member name="DDOVERLAYFX.dwAlphaEdgeBlendBitDepth">
-    <summary>
-      <para>Bit depth used to specify the constant for an alpha edge blend.</para>
-    </summary>
+    <summary>Bit depth used to specify the constant for an alpha edge blend.</summary>
   </member>
   <member name="DDOVERLAYFX.dwAlphaEdgeBlend">
-    <summary>
-      <para>Constant to use as the alpha for an edge blend.</para>
-    </summary>
+    <summary>Constant to use as the alpha for an edge blend.</summary>
   </member>
   <member name="DDOVERLAYFX.dwReserved">
-    <summary>
-      <para>Reserved</para>
-    </summary>
+    <summary>Reserved</summary>
   </member>
   <member name="DDOVERLAYFX.dwAlphaDestConstBitDepth">
-    <summary>
-      <para>Bit depth used to specify the alpha constant for a destination.</para>
-    </summary>
+    <summary>Bit depth used to specify the alpha constant for a destination.</summary>
   </member>
   <member name="DDOVERLAYFX.DUMMYUNIONNAMEN.dwAlphaDestConst">
-    <summary>
-      <para>Constant to use as the alpha channel for a destination.</para>
-    </summary>
+    <summary>Constant to use as the alpha channel for a destination.</summary>
   </member>
   <member name="DDOVERLAYFX.DUMMYUNIONNAMEN.lpDDSAlphaDest">
-    <summary>
-      <para>Address of a surface to use as the alpha channel for a destination.</para>
-    </summary>
+    <summary>Address of a surface to use as the alpha channel for a destination.</summary>
   </member>
   <member name="DDOVERLAYFX.dwAlphaSrcConstBitDepth">
-    <summary>
-      <para>Bit depth used to specify the alpha constant for a source.</para>
-    </summary>
+    <summary>Bit depth used to specify the alpha constant for a source.</summary>
   </member>
   <member name="DDOVERLAYFX.DUMMYUNIONNAMEN">
-    <summary>
-      <para>See <b>Remarks</b>.</para>
-    </summary>
+    <summary>See <b>Remarks</b>.</summary>
   </member>
   <member name="DDOVERLAYFX.DUMMYUNIONNAMEN.dwAlphaSrcConst">
-    <summary>
-      <para>Constant to use as the alpha channel for a source.</para>
-    </summary>
+    <summary>Constant to use as the alpha channel for a source.</summary>
   </member>
   <member name="DDOVERLAYFX.DUMMYUNIONNAMEN.lpDDSAlphaSrc">
-    <summary>
-      <para>Address of a surface to use as the alpha channel for a source.</para>
-    </summary>
+    <summary>Address of a surface to use as the alpha channel for a source.</summary>
   </member>
   <member name="DDOVERLAYFX.dckDestColorkey">
-    <summary>
-      <para>Destination color key for the overlay.</para>
-    </summary>
+    <summary>Destination color key for the overlay.</summary>
   </member>
   <member name="DDOVERLAYFX.dckSrcColorkey">
-    <summary>
-      <para>Source color key for the overlay.</para>
-    </summary>
+    <summary>Source color key for the overlay.</summary>
   </member>
   <member name="DDOVERLAYFX.dwDDFX">
     <summary>
       <para>The following flags that specify overlay effects.</para>
-      <list type="bullet">
-        <item>
-          <description>DDOVERFX_ARITHSTRETCHY - If stretching, use arithmetic stretching along the y-axis for this overlay.</description>
-        </item>
-        <item>
-          <description>DDOVERFX_MIRRORLEFTRIGHT - Mirror the overlay around the vertical axis.</description>
-        </item>
-        <item>
-          <description>DDOVERFX_MIRRORUPDOWN - Mirror the overlay around the horizontal axis.</description>
-        </item>
-      </list>
+      <h4>DDOVERFX_ARITHSTRETCHY</h4>
+      <para>If stretching, use arithmetic stretching along the y-axis for this overlay.</para>
+      <h4>DDOVERFX_MIRRORLEFTRIGHT</h4>
+      <para>Mirror the overlay around the vertical axis.</para>
+      <h4>DDOVERFX_MIRRORUPDOWN</h4>
+      <para>Mirror the overlay around the horizontal axis.</para>
     </summary>
   </member>
   <member name="DDOVERLAYFX.dwFlags">
-    <summary>
-      <para>Currently not used and must be set to 0.</para>
-    </summary>
+    <summary>Currently not used and must be set to 0.</summary>
   </member>
 </doc>

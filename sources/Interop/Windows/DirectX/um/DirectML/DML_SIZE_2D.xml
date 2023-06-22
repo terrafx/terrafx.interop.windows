@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_SIZE_2D">
-    <summary>
-      <para>Contains values that can represent the size (as supplied to a DirectML operator) of a 2-D plane of elements within a tensor, or a 2-D scale, or any 2-D width/height value.</para>
-    </summary>
+    <summary>Contains values that can represent the size (as supplied to a DirectML operator) of a 2-D plane of elements within a tensor, or a 2-D scale, or any 2-D width/height value.</summary>
   </member>
   <member name="DML_SIZE_2D.Width">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The width.</para>
-    </summary>
+    <summary>The width.</summary>
   </member>
   <member name="DML_SIZE_2D.Height">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The height.</para>
-    </summary>
+    <summary>The height.</summary>
   </member>
 </doc>

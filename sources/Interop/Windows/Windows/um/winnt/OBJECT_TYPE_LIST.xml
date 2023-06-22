@@ -3,14 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="OBJECT_TYPE_LIST">
-    <summary>
-      <para>The <b>OBJECT_TYPE_LIST</b> structure identifies an object type element in a hierarchy of object types. The
-<see cref="AccessCheckByType" /> functions use an array of <b>OBJECT_TYPE_LIST</b> structures to define a hierarchy of an object and its subobjects, such as property sets and properties.</para>
-    </summary>
-    <seealso cref="AccessCheckByType" />
-    <seealso cref="AccessCheckByTypeAndAuditAlarm" />
-    <seealso cref="AccessCheckByTypeResultList" />
-    <seealso cref="AccessCheckByTypeResultListAndAuditAlarm" />
+    <summary>The <b>OBJECT_TYPE_LIST</b> structure identifies an object type element in a hierarchy of object types. The<see cref="AccessCheckByType" /> functions use an array of <b>OBJECT_TYPE_LIST</b> structures to define a hierarchy of an object and its subobjects, such as property sets and properties.</summary>
   </member>
   <member name="OBJECT_TYPE_LIST.Level">
     <summary>
@@ -21,41 +14,49 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>ACCESS_OBJECT_GUID</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACCESS_OBJECT_GUID</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Indicates the object itself at level zero.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Indicates the object itself at level zero.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACCESS_PROPERTY_SET_GUID</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Indicates a property set at level one.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>ACCESS_PROPERTY_SET_GUID</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACCESS_PROPERTY_GUID</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Indicates a property set at level one.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>ACCESS_PROPERTY_GUID</b>
-          </description>
-          <description>
-            <para>Indicates a property at level two.</para>
-          </description>
-        </item>
+          <description>Indicates a property at level two.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="OBJECT_TYPE_LIST.Sbz">
-    <summary>
-      <para>Should be zero. Reserved for future use.</para>
-    </summary>
+    <summary>Should be zero. Reserved for future use.</summary>
   </member>
   <member name="OBJECT_TYPE_LIST.ObjectType">
-    <summary>
-      <para>A pointer to the GUID for the object or subobject.</para>
-    </summary>
+    <summary>A pointer to the GUID for the object or subobject.</summary>
   </member>
 </doc>

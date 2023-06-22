@@ -3,52 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IShellFolderBand.GetBandInfoSFB">
-    <summary>
-      <para>Gets information concerning an <see cref="IShellFolderBand" /> object and places it in a <see cref="BANDINFOSFB" /> structure.</para>
-    </summary>
-    <param name="pbi">
-      <para>Type: <b>PBANDINFOSFB</b></para>
-      <para>A pointer to a <see cref="BANDINFOSFB" /> structure.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or an error code otherwise.</para>
-    </returns>
-    <seealso cref="IShellFolder" />
-    <seealso cref="IShellFolderBand" />
+    <summary>Gets information concerning an <see cref="IShellFolderBand" /> object and places it in a <see cref="BANDINFOSFB" /> structure.</summary>
+    <param name="pbi">A pointer to a <see cref="BANDINFOSFB" /> structure.</param>
+    <returns>Returns S_OK if successful, or an error code otherwise.</returns>
   </member>
   <member name="IShellFolderBand.InitializeSFB">
-    <summary>
-      <para>Initializes an <see cref="IShellFolderBand" /> object.</para>
-    </summary>
-    <param name="psf">
-      <para>Type: <b><see cref="IShellFolder" />*</b></para>
-      <para>A pointer to an <see cref="IShellFolder" /> object.</para>
-    </param>
-    <param name="pidl">
-      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
-      <para>A PIDL.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IShellFolder" />
-    <seealso cref="IShellFolderBand" />
+    <summary>Initializes an <see cref="IShellFolderBand" /> object.</summary>
+    <param name="psf">A pointer to an <see cref="IShellFolder" /> object.</param>
+    <param name="pidl">A PIDL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolderBand.SetBandInfoSFB">
-    <summary>
-      <para>Uses the information in a <see cref="BANDINFOSFB" /> structure to set the band information for a <see cref="IShellFolderBand" /> object.</para>
-    </summary>
-    <param name="pbi">
-      <para>Type: <b>PBANDINFOSFB</b></para>
-      <para>A pointer to a <see cref="BANDINFOSFB" /> structure.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or an error code otherwise.</para>
-    </returns>
-    <seealso cref="IShellFolder" />
-    <seealso cref="IShellFolderBand" />
+    <summary>Uses the information in a <see cref="BANDINFOSFB" /> structure to set the band information for a <see cref="IShellFolderBand" /> object.</summary>
+    <param name="pbi">A pointer to a <see cref="BANDINFOSFB" /> structure.</param>
+    <returns>Returns S_OK if successful, or an error code otherwise.</returns>
   </member>
 </doc>

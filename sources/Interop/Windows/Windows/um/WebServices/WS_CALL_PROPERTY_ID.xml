@@ -3,31 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_CALL_PROPERTY_ID">
-    <summary>
-      <para>Optional parameters for configuring a call on a client side service operation.</para>
-    </summary>
+    <summary>Optional parameters for configuring a call on a client side service operation.</summary>
   </member>
   <member name="WS_CALL_PROPERTY_ID.WS_CALL_PROPERTY_CHECK_MUST_UNDERSTAND">
-    <summary>
-      <para>An application can suppress or enable must understand header processing
-on the proxy using this setting. This is <b>TRUE</b> by default.</para>
-    </summary>
+    <summary>An application can suppress or enable must understand header processing on the proxy using this setting. This is <b>TRUE</b> by default.</summary>
   </member>
   <member name="WS_CALL_PROPERTY_ID.WS_CALL_PROPERTY_SEND_MESSAGE_CONTEXT">
-    <summary>
-      <para>Enables an application to put headers into the input message for a given call.</para>
-    </summary>
+    <summary>Enables an application to put headers into the input message for a given call.</summary>
   </member>
   <member name="WS_CALL_PROPERTY_ID.WS_CALL_PROPERTY_RECEIVE_MESSAGE_CONTEXT">
-    <summary>
-      <para>Enables an application to extract headers from the output message for a given call.</para>
-    </summary>
+    <summary>Enables an application to extract headers from the output message for a given call.</summary>
   </member>
   <member name="WS_CALL_PROPERTY_ID.WS_CALL_PROPERTY_CALL_ID">
     <summary>
-      <para>On a <a href="https://docs.microsoft.com//windows/desktop/wsw/service-operation">service operation</a> an application can use the call id property to uniquely identify
-a service operation function all on a channel. This ID can be passed on to <see cref="WsAbandonCall" /> along with the
-service proxy to abandon the call.</para>
+      <para>On a <a href="https://docs.microsoft.com//windows/desktop/wsw/service-operation">service operation</a> an application can use the call id property to uniquely identify a service operation function all on a channel. This ID can be passed on to <see cref="WsAbandonCall" /> along with the service proxy to abandon the call.</para>
       <para>For more information about abandoning calls see <a href="https://docs.microsoft.com//windows/desktop/wsw/client-side-service-operations">service operation</a>.</para>
     </summary>
   </member>

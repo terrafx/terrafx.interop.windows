@@ -3,57 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFPMPHostApp.ActivateClassById">
-    <summary>
-      <para>Creates a Windows Runtime object in the protected media path (PMP) process.</para>
-    </summary>
-    <param name="id">
-      <para>Id of object to create.</para>
-    </param>
-    <param name="pStream">
-      <para>Data to be passed to the object by way of a <see cref="IPersistStream" />.</para>
-    </param>
-    <param name="riid">
-      <para>The interface identifier (IID) of the interface to retrieve.</para>
-    </param>
-    <param name="ppv">
-      <para>Receives a pointer to the created object.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFPMPHostApp" />
+    <summary>Creates a Windows Runtime object in the protected media path (PMP) process.</summary>
+    <param name="id">Id of object to create.</param>
+    <param name="pStream">Data to be passed to the object by way of a <see cref="IPersistStream" />.</param>
+    <param name="riid">The interface identifier (IID) of the interface to retrieve.</param>
+    <param name="ppv">Receives a pointer to the created object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFPMPHostApp.LockProcess">
-    <summary>
-      <para>Blocks the protected media path (PMP) process from ending.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>When this method is called, it increments the lock count on the PMP process. For every call to this method, the application should make a corresponding call to <see cref="IMFPMPHostApp.UnlockProcess" />, which decrements the lock count. When the PMP process is ready to exit, it waits for about 3 seconds, or until the lock count reaches zero, before exiting.</para>
-    </remarks>
-    <seealso cref="IMFPMPHostApp" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/pmp-media-session">PMP Media Session</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/protected-media-path">Protected Media Path</seealso>
+    <summary>Blocks the protected media path (PMP) process from ending.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFPMPHostApp.UnlockProcess">
-    <summary>
-      <para>Decrements the lock count on the protected media path (PMP) process. Call this method once for each call to <see cref="IMFPMPHostApp.LockProcess" />.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFPMPHostApp" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/pmp-media-session">PMP Media Session</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/protected-media-path">Protected Media Path</seealso>
+    <summary>Decrements the lock count on the protected media path (PMP) process. Call this method once for each call to <see cref="IMFPMPHostApp.LockProcess" />.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFPMPHostApp">
-    <summary>
-      <para>Allows a media source to create a <a href="https://docs.microsoft.com//windows/desktop/WinRT/reference">Windows Runtime</a> object in the <a href="https://docs.microsoft.com//windows/desktop/medfound/protected-media-path">Protected Media Path</a> (PMP) process.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/pmp-media-session">PMP Media Session</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/protected-media-path">Protected Media Path</seealso>
+    <summary>Allows a media source to create a <a href="https://docs.microsoft.com//windows/desktop/WinRT/reference">Windows Runtime</a> object in the <a href="https://docs.microsoft.com//windows/desktop/medfound/protected-media-path">Protected Media Path</a> (PMP) process.</summary>
   </member>
 </doc>

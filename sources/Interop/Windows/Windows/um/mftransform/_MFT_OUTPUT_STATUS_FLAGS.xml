@@ -3,16 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="_MFT_OUTPUT_STATUS_FLAGS">
-    <summary>
-      <para>Indicates whether a Media Foundation transform (MFT) can produce output data.</para>
-    </summary>
-    <seealso cref="IMFTransform.GetOutputStatus" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
+    <summary>Indicates whether a Media Foundation transform (MFT) can produce output data.</summary>
   </member>
   <member name="_MFT_OUTPUT_STATUS_FLAGS.MFT_OUTPUT_STATUS_SAMPLE_READY">
-    <summary>
-      <para>There is a sample available for at least one output stream. To retrieve the available output samples, call <see cref="IMFTransform.ProcessOutput" />.</para>
-    </summary>
+    <summary>There is a sample available for at least one output stream. To retrieve the available output samples, call <see cref="IMFTransform.ProcessOutput" />.</summary>
   </member>
 </doc>

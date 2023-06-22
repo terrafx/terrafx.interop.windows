@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfReadingInformationUIElement.GetContext">
-    <summary>
-      <para>This method returns the target <see cref="ITfContext" /> of this reading information UI.</para>
-    </summary>
-    <param name="ppic">
-      <para>[out] A pointer to receive the target <see cref="ITfContext" /> interface of this UI element.</para>
-    </param>
+    <summary>This method returns the target <see cref="ITfContext" /> of this reading information UI.</summary>
+    <param name="ppic">[out] A pointer to receive the target <see cref="ITfContext" /> interface of this UI element.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,46 +12,48 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfReadingInformationUIElement.GetErrorIndex">
-    <summary>
-      <para>This method returns the char index where the typing error occurs.</para>
-    </summary>
-    <param name="pErrorIndex">
-      <para>[out] A pointer to receive the char index where the typing error occurs.</para>
-    </param>
+    <summary>This method returns the char index where the typing error occurs.</summary>
+    <param name="pErrorIndex">[out] A pointer to receive the char index where the typing error occurs.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -63,46 +61,48 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfReadingInformationUIElement.GetMaxReadingStringLength">
-    <summary>
-      <para>The <b>ITfReadingInformationUIElement.GetMaxReadingStringLength</b> method returns the max string count of the reading information UI.</para>
-    </summary>
-    <param name="pcchMax">
-      <para>[out] A pointer to the max length of the reading information string.</para>
-    </param>
+    <summary>The <b>ITfReadingInformationUIElement.GetMaxReadingStringLength</b> method returns the max string count of the reading information UI.</summary>
+    <param name="pcchMax">[out] A pointer to the max length of the reading information string.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -110,46 +110,48 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfReadingInformationUIElement.GetString">
-    <summary>
-      <para>This  method returns the string on the reading information UI.</para>
-    </summary>
-    <param name="pstr">
-      <para>[out] A pointer to the BSTR of the reading information string.</para>
-    </param>
+    <summary>This method returns the string on the reading information UI.</summary>
+    <param name="pstr">[out] A pointer to the BSTR of the reading information string.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -157,43 +159,47 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfReadingInformationUIElement.GetUpdatedFlags">
-    <summary>
-      <para>This method returns the flag that tells which part of this element was updated.</para>
-    </summary>
+    <summary>This method returns the flag that tells which part of this element was updated.</summary>
     <param name="pdwFlags">
       <para>[out] A pointer to receive the flags that is a combination of the following bits:</para>
       <list type="table">
@@ -201,46 +207,66 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TF_RIUIE_CONTEXT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_RIUIE_CONTEXT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The target <see cref="ITfContext" /> was changed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The target <see cref="ITfContext" /> was changed.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_RIUIE_STRING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The reading information string was changed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>TF_RIUIE_STRING</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_RIUIE_MAXREADINGSTRINGLENGTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The max length of the reading information string was changed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The reading information string was changed.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_RIUIE_ERRORINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The error index of the reading information string was changed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>TF_RIUIE_MAXREADINGSTRINGLENGTH</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_RIUIE_VERTICALORDER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The max length of the reading information string was changed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>TF_RIUIE_ERRORINDEX</b>
-          </description>
-          <description>
-            <para>The error index of the reading information string was changed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>TF_RIUIE_VERTICALORDER</b>
-          </description>
-          <description>
-            <para>The vertical order preference was changed.</para>
-          </description>
-        </item>
+          <description>The vertical order preference was changed.</description>
+        </listheader>
       </list>
     </param>
     <returns>
@@ -250,46 +276,48 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfReadingInformationUIElement.IsVerticalOrderPreferred">
-    <summary>
-      <para>This method returns if the UI prefers to be shown in vertical order.</para>
-    </summary>
-    <param name="pfVertical">
-      <para>[out] True if the UI prefers to be shown in the vertical order.</para>
-    </param>
+    <summary>This method returns if the UI prefers to be shown in vertical order.</summary>
+    <param name="pfVertical">[out] True if the UI prefers to be shown in the vertical order.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -297,42 +325,46 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfReadingInformationUIElement">
-    <summary>
-      <para>The <b>ITfCandidateListUIElement</b> interface is implemented by a text service that has a UI for reading information UI at the near caret.</para>
-    </summary>
+    <summary>The <b>ITfCandidateListUIElement</b> interface is implemented by a text service that has a UI for reading information UI at the near caret.</summary>
   </member>
 </doc>

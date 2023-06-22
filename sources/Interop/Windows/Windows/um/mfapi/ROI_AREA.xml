@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ROI_AREA">
-    <summary>
-      <para>Defines a regions of interest.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/mfsampleextension-roirectangle">MFSampleExtension_ROIRectangle</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <summary>Defines a regions of interest.</summary>
   </member>
   <member name="ROI_AREA.rect">
-    <summary>
-      <para>The bounds of the region.</para>
-    </summary>
+    <summary>The bounds of the region.</summary>
   </member>
   <member name="ROI_AREA.QPDelta">
-    <summary>
-      <para>Specifies the  quantization parameter delta for the specified region from the rest of the frame.</para>
-    </summary>
+    <summary>Specifies the quantization parameter delta for the specified region from the rest of the frame.</summary>
   </member>
 </doc>

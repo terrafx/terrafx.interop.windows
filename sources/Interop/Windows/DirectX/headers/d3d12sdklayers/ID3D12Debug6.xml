@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12Debug6.SetForceLegacyBarrierValidation">
+    <summary>
+      <para>TBD</para>
+      <para>Requires the DirectX 12 Agility SDK 1.7 or later.</para>
+    </summary>
+  </member>
+  <member name="ID3D12Debug6">
+    <summary>
+      <para>A debug interface controls debug settings.</para>
+      <para>Requires the DirectX 12 Agility SDK 1.7 or later.</para>
+    </summary>
+  </member>
+</doc>

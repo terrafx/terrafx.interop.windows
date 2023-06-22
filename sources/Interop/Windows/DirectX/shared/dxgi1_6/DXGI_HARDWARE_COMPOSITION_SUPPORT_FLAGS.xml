@@ -3,28 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS">
-    <summary>
-      <para>Describes which levels of hardware composition are supported.</para>
-    </summary>
-    <remarks>
-      <para>Values of this enumeration are returned from the <see cref="IDXGIOutput6.CheckHardwareCompositionSupport" /> method in the <i>pFlags</i> out parameter.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-enums">DXGI Enumerations</seealso>
-    <seealso cref="IDXGIOutput6.CheckHardwareCompositionSupport method" />
+    <summary>Describes which levels of hardware composition are supported.</summary>
   </member>
   <member name="DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS.DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAG_FULLSCREEN">
-    <summary>
-      <para>This flag specifies that swapchain composition can be facilitated in a performant manner using hardware for fullscreen applications.</para>
-    </summary>
+    <summary>This flag specifies that swapchain composition can be facilitated in a performant manner using hardware for fullscreen applications.</summary>
   </member>
   <member name="DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS.DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAG_WINDOWED">
-    <summary>
-      <para>This flag specifies that swapchain composition can be facilitated in a performant manner using hardware for windowed applications.</para>
-    </summary>
+    <summary>This flag specifies that swapchain composition can be facilitated in a performant manner using hardware for windowed applications.</summary>
   </member>
   <member name="DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS.DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAG_CURSOR_STRETCHED">
-    <summary>
-      <para>This flag specifies that swapchain composition facilitated using hardware can cause the cursor to appear stretched.</para>
-    </summary>
+    <summary>This flag specifies that swapchain composition facilitated using hardware can cause the cursor to appear stretched.</summary>
   </member>
 </doc>

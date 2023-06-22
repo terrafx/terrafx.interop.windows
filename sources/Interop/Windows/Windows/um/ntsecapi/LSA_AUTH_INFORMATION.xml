@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LSA_AUTH_INFORMATION">
+    <summary>The <b>LSA_AUTH_INFORMATION</b> structure contains authentication information for a trusted domain.</summary>
+  </member>
+  <member name="LSA_AUTH_INFORMATION.LastUpdateTime">
+    <summary>A<see cref="LARGE_INTEGER" /> structure that uses the Coordinated Universal Time (Greenwich Mean Time) format to indicate the time that this value was set. For more information about Coordinated Universal Time, see the<see cref="FILETIME" /> structure.</summary>
+  </member>
+  <member name="LSA_AUTH_INFORMATION.AuthType">
+    <summary>
+      <para>Specifies one of the following values to indicate the type of authentication information in the <b>AuthInfo</b> buffer.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUST_AUTH_TYPE_NONE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The format is unknown and will be ignored.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUST_AUTH_TYPE_NT4OWF</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The Windows NT 4.0 one-way format (OWF) of a plaintext password. Note that you cannot derive the clear password back from the OWF form of the password. <para>The system sets this information.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUST_AUTH_TYPE_CLEAR</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Plaintext password to use for the trust.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUST_AUTH_TYPE_VERSION</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Plaintext password version number.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="LSA_AUTH_INFORMATION.AuthInfoLength">
+    <summary>Specifies the size, in bytes, of the <b>AuthInfo</b> member.</summary>
+  </member>
+  <member name="LSA_AUTH_INFORMATION.AuthInfo">
+    <summary>Pointer to an array of bytes that contains the type of authentication information indicated by the <b>AuthType</b> member.</summary>
+  </member>
+</doc>

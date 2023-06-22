@@ -4,24 +4,17 @@
 <doc>
   <member name="eAVDecVideoSWPowerLevel">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies the power-saving level of a video decoder. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avdecvideoswpowerlevel-property">AVDecVideoSWPowerLevel</a> property.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVDecVideoSWPowerLevel.eAVDecVideoSWPowerLevel_BatteryLife">
-    <summary>
-      <para>Optimize for battery life.</para>
-    </summary>
+    <summary>Optimize for battery life.</summary>
   </member>
   <member name="eAVDecVideoSWPowerLevel.eAVDecVideoSWPowerLevel_Balanced">
-    <summary>
-      <para>Balanced power-saving profile.</para>
-    </summary>
+    <summary>Balanced power-saving profile.</summary>
   </member>
   <member name="eAVDecVideoSWPowerLevel.eAVDecVideoSWPowerLevel_VideoQuality">
-    <summary>
-      <para>Optimize for video quality.</para>
-    </summary>
+    <summary>Optimize for video quality.</summary>
   </member>
 </doc>

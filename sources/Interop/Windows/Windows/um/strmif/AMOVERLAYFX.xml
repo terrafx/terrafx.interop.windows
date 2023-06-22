@@ -4,29 +4,20 @@
 <doc>
   <member name="AMOVERLAYFX">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies effects on a DirectDraw hardware overlay surface.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso cref="IAMOverlayFX Interface" />
   </member>
   <member name="AMOVERLAYFX.AMOVERFX_NOFX">
-    <summary>
-      <para>Normal video (no effects).</para>
-    </summary>
+    <summary>Normal video (no effects).</summary>
   </member>
   <member name="AMOVERLAYFX.AMOVERFX_MIRRORLEFTRIGHT">
-    <summary>
-      <para>Mirror the overlay across the vertical axis.</para>
-    </summary>
+    <summary>Mirror the overlay across the vertical axis.</summary>
   </member>
   <member name="AMOVERLAYFX.AMOVERFX_MIRRORUPDOWN">
-    <summary>
-      <para>Mirror the overlay across the horizontal axis.</para>
-    </summary>
+    <summary>Mirror the overlay across the horizontal axis.</summary>
   </member>
   <member name="AMOVERLAYFX.AMOVERFX_DEINTERLACE">
-    <summary>
-      <para>When used in <see cref="IAMOverlayFX.QueryOverlayFXCaps" />, this flag specifies whether the hardware can support the DirectDraw 7 DDOVERFX_DEINTERLACE hint. When used with the <see cref="IAMOverlayFX.GetOverlayFX" /> or <see cref="IAMOverlayFX.SetOverlayFX" /> methods, this flag indicates that the overlay should be deinterlaced if possible.</para>
-    </summary>
+    <summary>When used in <see cref="IAMOverlayFX.QueryOverlayFXCaps" />, this flag specifies whether the hardware can support the DirectDraw 7 DDOVERFX_DEINTERLACE hint. When used with the <see cref="IAMOverlayFX.GetOverlayFX" /> or <see cref="IAMOverlayFX.SetOverlayFX" /> methods, this flag indicates that the overlay should be deinterlaced if possible.</summary>
   </member>
 </doc>

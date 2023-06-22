@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FILE_STORAGE_TIER_REGION">
-    <summary>
-      <para>Describes a single storage tier region.</para>
-    </summary>
+    <summary>Describes a single storage tier region.</summary>
   </member>
   <member name="FILE_STORAGE_TIER_REGION.TierId">
-    <summary>
-      <para>Tier ID.</para>
-    </summary>
+    <summary>Tier ID.</summary>
   </member>
   <member name="FILE_STORAGE_TIER_REGION.Offset">
-    <summary>
-      <para>Offset from the beginning of the volume of this region, in bytes.</para>
-    </summary>
+    <summary>Offset from the beginning of the volume of this region, in bytes.</summary>
   </member>
   <member name="FILE_STORAGE_TIER_REGION.Length">
-    <summary>
-      <para>Length of region in bytes.</para>
-    </summary>
+    <summary>Length of region in bytes.</summary>
   </member>
 </doc>

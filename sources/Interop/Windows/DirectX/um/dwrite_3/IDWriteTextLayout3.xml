@@ -3,70 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteTextLayout3.GetLineMetrics">
-    <summary>
-      <para>Retrieves properties of each line.</para>
-    </summary>
-    <param name="lineMetrics">
-      <para>The array to fill with line information.</para>
-    </param>
-    <param name="maxLineCount">
-      <para>The maximum size of the lineMetrics array.</para>
-    </param>
-    <param name="actualLineCount">
-      <para>The actual size of the lineMetrics
-array that is needed.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If maxLineCount is not large enough E_NOT_SUFFICIENT_BUFFER,
-which is equivalent to HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER),
-is returned and actualLineCount is set to the number of lines
-needed.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextlayout3">IDWriteTextLayout3</seealso>
+    <summary>Retrieves properties of each line.</summary>
+    <param name="lineMetrics">The array to fill with line information.</param>
+    <param name="maxLineCount">The maximum size of the lineMetrics array.</param>
+    <param name="actualLineCount">The actual size of the lineMetrics<br />array that is needed.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout3.GetLineSpacing">
-    <summary>
-      <para>Gets line spacing information.</para>
-    </summary>
-    <param name="lineSpacingOptions">
-      <para>How to manage space between lines.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextlayout3">IDWriteTextLayout3</seealso>
+    <summary>Gets line spacing information.</summary>
+    <param name="lineSpacingOptions">How to manage space between lines.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout3.InvalidateLayout">
-    <summary>
-      <para>Invalidates the layout, forcing layout to remeasure before calling the
-metrics or drawing functions. This is useful if the locality of a font
-changes, and layout should be redrawn, or if the size of a client
-implemented IDWriteInlineObject changes.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextlayout3">IDWriteTextLayout3</seealso>
+    <summary>Invalidates the layout, forcing layout to remeasure before calling the<br />metrics or drawing functions. This is useful if the locality of a font<br />changes, and layout should be redrawn, or if the size of a client<br />implemented IDWriteInlineObject changes.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout3.SetLineSpacing">
-    <summary>
-      <para>Set line spacing.</para>
-    </summary>
-    <param name="lineSpacingOptions">
-      <para>How to manage space between lines.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextlayout3">IDWriteTextLayout3</seealso>
+    <summary>Set line spacing.</summary>
+    <param name="lineSpacingOptions">How to manage space between lines.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout3">
-    <summary>
-      <para>Represents a block of text after it has been fully analyzed and formatted.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextlayout2">IDWriteTextLayout2</seealso>
+    <summary>Represents a block of text after it has been fully analyzed and formatted.</summary>
   </member>
 </doc>

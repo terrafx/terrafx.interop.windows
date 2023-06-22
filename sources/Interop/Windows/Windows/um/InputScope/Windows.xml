@@ -3,141 +3,69 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.SetInputScope">
-    <summary>
-      <para>Sets an input scope for the specified window.</para>
-    </summary>
-    <param name="hwnd">
-      <para>The window to set the scope on.</para>
-    </param>
-    <param name="inputscope">
-      <para>The input scope to associate with the window. To remove the input scope association, pass IS_DEFAULT to this parameter.</para>
-    </param>
+    <summary>Sets an input scope for the specified window.</summary>
+    <param name="hwnd">The window to set the scope on.</param>
+    <param name="inputscope">The input scope to associate with the window. To remove the input scope association, pass IS_DEFAULT to this parameter.</param>
     <returns>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>The method was successful.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Calling this method replaces whatever scope is associated with the window.</para>
-      <para>An application must call this method, passing in IS_DEFAULT to the <i>hwnd</i> parameter, to remove the input scope association before the window is destroyed.</para>
-      <para>This API works only when the window (<i>hwnd</i> parameter) and the calling thread are in the same thread. If you call this API for a different thread's window, it fails with E_INVALIDARG.</para>
-      <para>If you call this method on a window (<i>hwnd</i> parameter) that has
-not been associated with a Document Manager, then no text service notifications are sent to interested clients (such as the touch keyboard) that may want to respond to the
-scope change.</para>
-      <h4>Examples</h4>
-      <para>[C++]</para>
-      <para>The following code illustrates how to set an input scope for a window.</para>
-      <code>
-SetInputScope(hwnd, IS_EMAIL_USERNAME);
-
-</code>
-    </remarks>
   </member>
   <member name="Windows.SetInputScopes">
-    <summary>
-      <para>Sets a combination of one input scope, multiple input scopes, one phrase list, a regular expression, and/or Speech Recognition Grammar Specification (SRGS) rules for the specified window.</para>
-    </summary>
-    <param name="hwnd">
-      <para>The window to set the scope on.</para>
-    </param>
-    <param name="pInputScopes">
-      <para>Pointer to an array of input scopes. Can be <b>NULL</b>. If not <b>NULL</b>, all of the input scopes in the array are set as the input scope of the window with equal weighting. Use IS_DEFAULT to accept all other input scopes as well.</para>
-    </param>
-    <param name="cInputScopes">
-      <para>The number of input scopes in the array pointed to by <i>*pInputScopes</i>. This value must be zero if the array is <b>NULL</b>.</para>
-    </param>
-    <param name="ppszPhraseList">
-      <para>Pointer to an array of pointers to <b>NULL</b>-terminated phrases. Can be <b>NULL</b>.</para>
-    </param>
-    <param name="cPhrases">
-      <para>Number of pointers pointed to by <i>**ppszPhraseList</i>, which represents the number of phrases.</para>
-    </param>
-    <param name="pszRegExp">
-      <para>Pointer to a <b>NULL</b>-terminated string containing the regular expression to be recognized. Can be <b>NULL</b>.</para>
-    </param>
-    <param name="pszSRGS">
-      <para>Pointer to a <b>NULL</b>-terminated XML string that provides speech-specific hints and rules to aid in speech recognition. The XML format conforms to the Speech Recognition Grammar Specification (SRGS) standard, outlined at <a href="https://www.w3.org/tr/speech-grammar">http://www.w3.org/TR/speech-grammar</a>. Can be <b>NULL</b>. $</para>
-    </param>
+    <summary>Sets a combination of one input scope, multiple input scopes, one phrase list, a regular expression, and/or Speech Recognition Grammar Specification (SRGS) rules for the specified window.</summary>
+    <param name="hwnd">The window to set the scope on.</param>
+    <param name="pInputScopes">Pointer to an array of input scopes. Can be <b>NULL</b>. If not <b>NULL</b>, all of the input scopes in the array are set as the input scope of the window with equal weighting. Use IS_DEFAULT to accept all other input scopes as well.</param>
+    <param name="cInputScopes">The number of input scopes in the array pointed to by <i>*pInputScopes</i>. This value must be zero if the array is <b>NULL</b>.</param>
+    <param name="ppszPhraseList">Pointer to an array of pointers to <b>NULL</b>-terminated phrases. Can be <b>NULL</b>.</param>
+    <param name="cPhrases">Number of pointers pointed to by <i>**ppszPhraseList</i>, which represents the number of phrases.</param>
+    <param name="pszRegExp">Pointer to a <b>NULL</b>-terminated string containing the regular expression to be recognized. Can be <b>NULL</b>.</param>
+    <param name="pszSRGS">Pointer to a <b>NULL</b>-terminated XML string that provides speech-specific hints and rules to aid in speech recognition. The XML format conforms to the Speech Recognition Grammar Specification (SRGS) standard, outlined at <a href="https://www.w3.org/tr/speech-grammar">http://www.w3.org/TR/speech-grammar</a>. Can be <b>NULL</b>. $</param>
     <returns>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>The method was successful.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Calling this method replaces whatever scope is associated with the window.</para>
-      <para>This API works only when the window (hwnd parameter) and the calling thread are in the same thread. If you call this API for a different thread's window, it fails with E_INVALIDARG.</para>
-      <para>If you call this method on a window (<i>hwnd</i> parameter) that has
-not been associated with a Document Manager, then no text service notifications are sent to interested clients (such as the touch keyboard) that may want to respond to the
-scope change.</para>
-    </remarks>
   </member>
   <member name="Windows.SetInputScopes2">
-    <summary>
-      <para>The application must call <see cref="SetInputScope" /> with IS_DEFAULT before a window is destroyed to clear the reference of the interface.</para>
-    </summary>
-    <param name="hwnd">
-      <para>The window to set the scope on. This call will replace whatever scope may have been on the hwnd before.</para>
-    </param>
-    <param name="pInputScopes">
-      <para>Pointer to an array of input scopes. May be <b>NULL</b>. If not <b>NULL</b>, all of the scopes contained within will be set as the input scope of the hwnd with equal weighting. Use IS_DEFAULT to accept all other input as well (this is the "don’t coerce" option).</para>
-    </param>
-    <param name="cInputScopes">
-      <para>A count of the number of input scopes in <i>pInputScopes</i>. Must be zero if rgScopes is <b>NULL</b>, must be nonzero if <i>pInputScopes</i> is non-<b>NULL</b>.</para>
-    </param>
-    <param name="pEnumString">
-      <para>IenumString interface pointer of the phrase list.</para>
-    </param>
-    <param name="pszRegExp">
-      <para>Pointer to a <b>NULL</b>-terminated string describing the regular expression to be recognized. May be <b>NULL</b>.</para>
-    </param>
-    <param name="pszSRGS">
-      <para>Pointer to a <b>NULL</b>-terminated XML string that provides speech-specific hints and rules to aid in speech recognition. The XML format conforms to the Speech Recognition Grammar Specification (SRGS) standard, outlined at <a href="https://www.w3.org/tr/speech-grammar">http://www.w3.org/TR/speech-grammar</a>. Can be <b>NULL</b>. $</para>
-    </param>
+    <summary>The application must call <see cref="SetInputScope" /> with IS_DEFAULT before a window is destroyed to clear the reference of the interface.</summary>
+    <param name="hwnd">The window to set the scope on. This call will replace whatever scope may have been on the hwnd before.</param>
+    <param name="pInputScopes">Pointer to an array of input scopes. May be <b>NULL</b>. If not <b>NULL</b>, all of the scopes contained within will be set as the input scope of the hwnd with equal weighting. Use IS_DEFAULT to accept all other input as well (this is the "don’t coerce" option).</param>
+    <param name="cInputScopes">A count of the number of input scopes in <i>pInputScopes</i>. Must be zero if rgScopes is <b>NULL</b>, must be nonzero if <i>pInputScopes</i> is non-<b>NULL</b>.</param>
+    <param name="pEnumString">IenumString interface pointer of the phrase list.</param>
+    <param name="pszRegExp">Pointer to a <b>NULL</b>-terminated string describing the regular expression to be recognized. May be <b>NULL</b>.</param>
+    <param name="pszSRGS">Pointer to a <b>NULL</b>-terminated XML string that provides speech-specific hints and rules to aid in speech recognition. The XML format conforms to the Speech Recognition Grammar Specification (SRGS) standard, outlined at <a href="https://www.w3.org/tr/speech-grammar">http://www.w3.org/TR/speech-grammar</a>. Can be <b>NULL</b>. $</param>
     <returns>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>The input scope set or cleared successfully.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The application must call <see cref="SetInputScope" /> with IS_DEFAULT before a window is destroyed to clear the reference of the interface.</para>
-      <para>If you call this method on a window (<i>hwnd</i> parameter) that has
-not been associated with a Document Manager, then no text service notifications are sent to interested clients (such as the touch keyboard) that may want to respond to the
-scope change.</para>
-    </remarks>
   </member>
   <member name="Windows.SetInputScopeXML">
-    <summary>
-      <para>Do not use.</para>
-    </summary>
-    <param name="hwnd">
-      <para>N/A</para>
-    </param>
-    <param name="pszXML">
-      <para>N/A</para>
-    </param>
-    <returns>
-      <para>This function does not return a value.</para>
-    </returns>
+    <summary>Do not use.</summary>
+    <param name="hwnd">N/A</param>
+    <param name="pszXML">N/A</param>
+    <returns>This function does not return a value.</returns>
   </member>
 </doc>

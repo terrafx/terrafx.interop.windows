@@ -3,12 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_RDN_ATTR">
-    <summary>
-      <para>The <b>CERT_RDN_ATTR</b> structure contains a single attribute of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/r-gly">relative distinguished name</a> (RDN). A whole RDN is expressed in a <see cref="CERT_RDN" /> structure that contains an array of <b>CERT_RDN_ATTR</b> structures.</para>
-    </summary>
-    <seealso cref="CERT_RDN" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
-    <seealso cref="CertIsRDNAttrsInCertificateName" />
+    <summary>The <b>CERT_RDN_ATTR</b> structure contains a single attribute of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/r-gly">relative distinguished name</a> (RDN). A whole RDN is expressed in a <see cref="CERT_RDN" /> structure that contains an array of <b>CERT_RDN_ATTR</b> structures.</summary>
   </member>
   <member name="CERT_RDN_ATTR.pszObjId">
     <summary>
@@ -19,378 +14,534 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <b>szOID_AUTHORITY_REVOCATION_LIST</b>
-          </description>
-          <description>
-            <para>Security attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_BUSINESS_CATEGORY</b>
-          </description>
-          <description>
-            <para>Case-insensitive string.
-Explanatory attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_CA_CERTIFICATE</b>
-          </description>
-          <description>
-            <para>Security attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_CERTIFICATE_REVOCATION_LIST</b>
-          </description>
-          <description>
-            <para>Security attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_COMMON_NAME</b>
-          </description>
-          <description>
-            <para>Case-insensitive string.
-Labeling attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_COUNTRY_NAME</b>
-          </description>
-          <description>
-            <para>Two-character printable string.
-Geographic attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_CROSS_CERTIFICATE_PAIR</b>
-          </description>
-          <description>
-            <para>Security attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_DESCRIPTION</b>
-          </description>
-          <description>
-            <para>Case-insensitive string. Explanatory attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_DESTINATION_INDICATOR</b>
-          </description>
-          <description>
-            <para>Printable string.
-Telecommunications addressing attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_DEVICE_SERIAL_NUMBER</b>
-          </description>
-          <description>
-            <para>Printable string.
-Labeling attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_DOMAIN_COMPONENT</b>
-          </description>
-          <description>
-            <para>IA5 string. DNS name component such as "com."</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_FACSIMILE_TELEPHONE_NUMBER</b>
-          </description>
-          <description>
-            <para>Telecommunications addressing attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_GIVEN_NAME</b>
-          </description>
-          <description>
-            <para>Case-insensitive string.
-Name attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_INITIALS</b>
-          </description>
-          <description>
-            <para>Case-insensitive string. Name attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_INTERNATIONAL_ISDN_NUMBER</b>
-          </description>
-          <description>
-            <para>Numeric string.
-Telecommunications addressing attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_LOCALITY_NAME</b>
-          </description>
-          <description>
-            <para>Case-insensitive string.
-Geographic attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_MEMBER</b>
-          </description>
-          <description>
-            <para>Relational application attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_ORGANIZATION_NAME</b>
-          </description>
-          <description>
-            <para>Case-insensitive string.
-Organizational attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_ORGANIZATIONAL_UNIT_NAME</b>
-          </description>
-          <description>
-            <para>Case-insensitive string.
-Organizational attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_OWNER</b>
-          </description>
-          <description>
-            <para>Relational application attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_PHYSICAL_DELIVERY_OFFICE_NAME</b>
-          </description>
-          <description>
-            <para>Case-insensitive string.
-Postal addressing attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_PKCS_12_FRIENDLY_NAME_ATTR</b>
-          </description>
-          <description>
-            <para>PKCS #12 attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_PKCS_12_LOCAL_KEY_ID</b>
-          </description>
-          <description>
-            <para>PKCS #12 attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_POST_OFFICE_BOX</b>
-          </description>
-          <description>
-            <para>Case-insensitive string.
-Postal addressing attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_POSTAL_ADDRESS</b>
-          </description>
-          <description>
-            <para>Printable string.
-Postal addressing attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_POSTAL_CODE</b>
-          </description>
-          <description>
-            <para>Case-insensitive string.
-Postal addressing attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_PREFERRED_DELIVERY_METHOD</b>
-          </description>
-          <description>
-            <para>Preference attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_PRESENTATION_ADDRESS</b>
-          </description>
-          <description>
-            <para>OSI application attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_REGISTERED_ADDRESS</b>
-          </description>
-          <description>
-            <para>Telecommunications addressing attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_ROLE_OCCUPANT</b>
-          </description>
-          <description>
-            <para>Relational application attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_RSA_emailAddr</b>
-          </description>
-          <description>
-            <para>IA5 string.
-Email attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_SEARCH_GUIDE</b>
-          </description>
-          <description>
-            <para>Explanatory attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_SEE_ALSO</b>
-          </description>
-          <description>
-            <para>Relational application attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_STATE_OR_PROVINCE_NAME</b>
-          </description>
-          <description>
-            <para>Case-insensitive string.
-Geographic attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_STREET_ADDRESS</b>
-          </description>
-          <description>
-            <para>Case-insensitive string.
-Geographic attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_SUPPORTED_APPLICATION_CONTEXT</b>
-          </description>
-          <description>
-            <para>OSI application attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_SUR_NAME</b>
-          </description>
-          <description>
-            <para>Case-insensitive string.
-Labeling attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_TELEPHONE_NUMBER</b>
-          </description>
-          <description>
-            <para>Telecommunications addressing attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_TELETEXT_TERMINAL_IDENTIFIER</b>
-          </description>
-          <description>
-            <para>Telecommunications addressing attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_TELEX_NUMBER</b>
-          </description>
-          <description>
-            <para>Telecommunications addressing attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_TITLE</b>
-          </description>
-          <description>
-            <para>Case-insensitive string.
-Organizational attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_USER_CERTIFICATE</b>
-          </description>
-          <description>
-            <para>Security attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_USER_PASSWORD</b>
-          </description>
-          <description>
-            <para>Security attribute.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>szOID_X21_ADDRESS</b>
-          </description>
-          <description>
-            <para>Numeric string.
-Telecommunications addressing attribute.</para>
-          </description>
-        </item>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_AUTHORITY_REVOCATION_LIST</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Security attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_BUSINESS_CATEGORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Case-insensitive string. Explanatory attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_CA_CERTIFICATE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Security attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_CERTIFICATE_REVOCATION_LIST</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Security attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_COMMON_NAME</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Case-insensitive string. Labeling attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_COUNTRY_NAME</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Two-character printable string. Geographic attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_CROSS_CERTIFICATE_PAIR</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Security attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_DESCRIPTION</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Case-insensitive string. Explanatory attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_DESTINATION_INDICATOR</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Printable string. Telecommunications addressing attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_DEVICE_SERIAL_NUMBER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Printable string. Labeling attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_DOMAIN_COMPONENT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>IA5 string. DNS name component such as "com."</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_FACSIMILE_TELEPHONE_NUMBER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Telecommunications addressing attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_GIVEN_NAME</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Case-insensitive string. Name attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_INITIALS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Case-insensitive string. Name attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_INTERNATIONAL_ISDN_NUMBER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Numeric string. Telecommunications addressing attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_LOCALITY_NAME</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Case-insensitive string. Geographic attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_MEMBER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Relational application attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_ORGANIZATION_NAME</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Case-insensitive string. Organizational attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_ORGANIZATIONAL_UNIT_NAME</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Case-insensitive string. Organizational attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_OWNER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Relational application attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_PHYSICAL_DELIVERY_OFFICE_NAME</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Case-insensitive string. Postal addressing attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_PKCS_12_FRIENDLY_NAME_ATTR</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>PKCS #12 attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_PKCS_12_LOCAL_KEY_ID</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>PKCS #12 attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_POST_OFFICE_BOX</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Case-insensitive string. Postal addressing attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_POSTAL_ADDRESS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Printable string. Postal addressing attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_POSTAL_CODE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Case-insensitive string. Postal addressing attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_PREFERRED_DELIVERY_METHOD</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Preference attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_PRESENTATION_ADDRESS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>OSI application attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_REGISTERED_ADDRESS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Telecommunications addressing attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_ROLE_OCCUPANT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Relational application attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_RSA_emailAddr</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>IA5 string. Email attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_SEARCH_GUIDE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Explanatory attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_SEE_ALSO</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Relational application attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_STATE_OR_PROVINCE_NAME</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Case-insensitive string. Geographic attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_STREET_ADDRESS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Case-insensitive string. Geographic attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_SUPPORTED_APPLICATION_CONTEXT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>OSI application attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_SUR_NAME</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Case-insensitive string. Labeling attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_TELEPHONE_NUMBER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Telecommunications addressing attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_TELETEXT_TERMINAL_IDENTIFIER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Telecommunications addressing attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_TELEX_NUMBER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Telecommunications addressing attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_TITLE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Case-insensitive string. Organizational attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_USER_CERTIFICATE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Security attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_USER_PASSWORD</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Security attribute.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>szOID_X21_ADDRESS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Numeric string. Telecommunications addressing attribute.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -403,216 +554,223 @@ Telecommunications addressing attribute.</para>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <b>CERT_RDN_ANY_TYPE</b>
-          </description>
-          <description>
-            <para>The <b>pszObjId</b> member determines the assumed type and length.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CERT_RDN_BMP_STRING</b>
-          </description>
-          <description>
-            <para>An array of Unicode characters (16-bit).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CERT_RDN_ENCODED_BLOB</b>
-          </description>
-          <description>
-            <para>An encoded data BLOB.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CERT_RDN_GENERAL_STRING</b>
-          </description>
-          <description>
-            <para>Currently not used.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CERT_RDN_GRAPHIC_STRING</b>
-          </description>
-          <description>
-            <para>Currently not used.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CERT_RDN_IA5_STRING</b>
-          </description>
-          <description>
-            <para>An arbitrary string of IA5 (<a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">ASCII</a>) characters.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CERT_RDN_INT4_STRING</b>
-          </description>
-          <description>
-            <para>An array of <b>INT4</b> elements (32-bit).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CERT_RDN_ISO646_STRING</b>
-          </description>
-          <description>
-            <para>A 128-character set (8-bit).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CERT_RDN_NUMERIC_STRING</b>
-          </description>
-          <description>
-            <para>Only the characters 0 through 9 and the space character (8-bit).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CERT_RDN_OCTET_STRING</b>
-          </description>
-          <description>
-            <para>An arbitrary string of octets (8-bit).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CERT_RDN_PRINTABLE_STRING</b>
-          </description>
-          <description>
-            <para>An arbitrary string of printable characters (8-bit).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CERT_RDN_T61_STRING</b>
-          </description>
-          <description>
-            <para>An arbitrary string of T.61 characters (8-bit).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CERT_RDN_TELETEX_STRING</b>
-          </description>
-          <description>
-            <para>An arbitrary string of T.61 characters (8-bit)</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CERT_RDN_UNICODE_STRING</b>
-          </description>
-          <description>
-            <para>An array of Unicode characters (16-bit).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CERT_RDN_UNIVERSAL_STRING</b>
-          </description>
-          <description>
-            <para>An array of <b>INT4</b> elements (32-bit).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CERT_RDN_UTF8_STRING</b>
-          </description>
-          <description>
-            <para>An array of 16 bit Unicode characters UTF8 encoded on the wire as a sequence of one, two, or three, eight-bit characters.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CERT_RDN_VIDEOTEX_STRING</b>
-          </description>
-          <description>
-            <para>An arbitrary string of videotext characters.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CERT_RDN_VISIBLE_STRING</b>
-          </description>
-          <description>
-            <para>A 95-character set (8-bit).</para>
-          </description>
-        </item>
-      </list>
-      <para>The following flags can be combined by using a bitwise-<b>OR</b> operation into the <b>dwValueType</b> member.</para>
-      <list type="table">
         <listheader>
-          <description>Value</description>
-          <description>Meaning</description>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_RDN_ANY_TYPE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>pszObjId</b> member determines the assumed type and length.</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>CERT_RDN_DISABLE_CHECK_TYPE_FLAG</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_RDN_BMP_STRING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>An array of Unicode characters (16-bit).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>For encoding. When set, the characters are not checked to determine whether they are valid for the value type.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_RDN_ENCODED_BLOB</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An encoded data BLOB.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>CERT_RDN_DISABLE_IE4_UTF8_FLAG</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_RDN_GENERAL_STRING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Currently not used.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>For decoding. By default, <b>CERT_RDN_T61_STRING</b> encoded values are initially decoded as UTF8. If the UTF8 decoding fails, the value is decoded as 8-bit characters. If this flag is set, it skips the initial attempt to decode as UTF8 and decodes the value as 8-bit characters.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_RDN_GRAPHIC_STRING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Currently not used.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>CERT_RDN_ENABLE_T61_UNICODE_FLAG</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_RDN_IA5_STRING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>An arbitrary string of IA5 (<a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">ASCII</a>) characters.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>For encoding. When set, if all the Unicode characters are &lt;= 0xFF, the <b>CERT_RDN_T61_STRING</b> value is selected instead of the <b>CERT_RDN_UNICODE_STRING</b> value.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_RDN_INT4_STRING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An array of <b>INT4</b> elements (32-bit).</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>CERT_RDN_ENABLE_UTF8_UNICODE_FLAG</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_RDN_ISO646_STRING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>A 128-character set (8-bit).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>For encoding. When set, strings are encoded with the <b>CERT_RDN_UTF8_STRING</b> value instead of
-the <b>CERT_RDN_UNICODE_STRING</b> value.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_RDN_NUMERIC_STRING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Only the characters 0 through 9 and the space character (8-bit).</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>CERT_RDN_FORCE_UTF8_UNICODE_FLAG</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_RDN_OCTET_STRING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>An arbitrary string of octets (8-bit).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>For encoding. When set, strings are encoded with the <b>CERT_RDN_UTF8_STRING</b> value instead of <b>CERT_RDN_PRINTABLE_STRING</b> value for DirectoryString types. In addition, <b>CERT_RDN_ENABLE_UTF8_UNICODE_FLAG</b> is enabled.</para>
-            <para>
-              <b>Windows Vista, Windows Server 2003 and Windows XP:  </b>This flag is not supported.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_RDN_PRINTABLE_STRING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An arbitrary string of printable characters (8-bit).</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>CERT_RDN_ENABLE_PUNYCODE_FLAG</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_RDN_T61_STRING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>An arbitrary string of T.61 characters (8-bit).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>For encoding.  If the string contains an email RDN, and the email address is Punycode encoded, then the resultant email address is encoded as an <b>IA5String</b>. The Punycode encoding of the host name is performed on
-a label-by-label basis.</para>
-            <para>For decoding. If the name contains an email RDN, and the local part or host name
-portion of the email address contains a Punycode encoded <b>IA5String</b>,
-the RDN string value is converted to its Unicode equivalent.</para>
-            <para>
-              <b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This flag is not supported.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_RDN_TELETEX_STRING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-      </list>
-    </summary>
+          <description>An arbitrary string of T.61 characters (8-bit)</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_RDN_UNICODE_STRING</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>An array of Unicode characters (16-bit).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_RDN_UNIVERSAL_STRING</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>An array of <b>INT4</b> elements (32-bit).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_RDN_UTF8_STRING</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>An array of 16 bit Unicode characters UTF8 encoded on the wire as a sequence of one, two, or three, eight-bit characters.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_RDN_VIDEOTEX_STRING</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>An arbitrary string of videotext characters.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_RDN_VISIBLE_STRING</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A 95-character set (8-bit).</description>
+        </listheader>
+      </list> <para>The following flags can be combined by using a bitwise-<b>OR</b> operation into the <b>dwValueType</b> member.</para><list type="table"><listheader><description>Value</description><description>Meaning</description></listheader><listheader><description><list type="bullet"><listheader><term><b>CERT_RDN_DISABLE_CHECK_TYPE_FLAG</b></term></listheader></list></description><description>For encoding. When set, the characters are not checked to determine whether they are valid for the value type.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>CERT_RDN_DISABLE_IE4_UTF8_FLAG</b></term></listheader></list></description><description>For decoding. By default, <b>CERT_RDN_T61_STRING</b> encoded values are initially decoded as UTF8. If the UTF8 decoding fails, the value is decoded as 8-bit characters. If this flag is set, it skips the initial attempt to decode as UTF8 and decodes the value as 8-bit characters.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>CERT_RDN_ENABLE_T61_UNICODE_FLAG</b></term></listheader></list></description><description>For encoding. When set, if all the Unicode characters are &lt;= 0xFF, the <b>CERT_RDN_T61_STRING</b> value is selected instead of the <b>CERT_RDN_UNICODE_STRING</b> value.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>CERT_RDN_ENABLE_UTF8_UNICODE_FLAG</b></term></listheader></list></description><description>For encoding. When set, strings are encoded with the <b>CERT_RDN_UTF8_STRING</b> value instead of the <b>CERT_RDN_UNICODE_STRING</b> value.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>CERT_RDN_FORCE_UTF8_UNICODE_FLAG</b></term></listheader></list></description><description>For encoding. When set, strings are encoded with the <b>CERT_RDN_UTF8_STRING</b> value instead of <b>CERT_RDN_PRINTABLE_STRING</b> value for DirectoryString types. In addition, <b>CERT_RDN_ENABLE_UTF8_UNICODE_FLAG</b> is enabled.<para><b>Windows Vista, Windows Server 2003 and Windows XP:  </b>This flag is not supported.</para></description></listheader><listheader><description><list type="bullet"><listheader><term><b>CERT_RDN_ENABLE_PUNYCODE_FLAG</b></term></listheader></list></description><description>For encoding. If the string contains an email RDN, and the email address is Punycode encoded, then the resultant email address is encoded as an <b>IA5String</b>. The Punycode encoding of the host name is performed on a label-by-label basis.<para>For decoding. If the name contains an email RDN, and the local part or host name portion of the email address contains a Punycode encoded <b>IA5String</b>, the RDN string value is converted to its Unicode equivalent.</para><para><b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This flag is not supported.</para></description></listheader></list></summary>
   </member>
   <member name="CERT_RDN_ATTR.Value">
     <summary>

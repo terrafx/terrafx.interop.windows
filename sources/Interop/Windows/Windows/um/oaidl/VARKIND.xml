@@ -3,28 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="VARKIND">
-    <summary>
-      <para>Specifies the variable type.</para>
-    </summary>
+    <summary>Specifies the variable type.</summary>
   </member>
   <member name="VARKIND.VAR_PERINSTANCE">
-    <summary>
-      <para>The variable is a field or member of the type. It exists at a fixed offset within each instance of the type.</para>
-    </summary>
+    <summary>The variable is a field or member of the type. It exists at a fixed offset within each instance of the type.</summary>
   </member>
   <member name="VARKIND.VAR_STATIC">
-    <summary>
-      <para>There is only one instance of the variable.</para>
-    </summary>
+    <summary>There is only one instance of the variable.</summary>
   </member>
   <member name="VARKIND.VAR_CONST">
-    <summary>
-      <para>The VARDESC describes a symbolic constant. There is no memory associated with it.</para>
-    </summary>
+    <summary>The VARDESC describes a symbolic constant. There is no memory associated with it.</summary>
   </member>
   <member name="VARKIND.VAR_DISPATCH">
-    <summary>
-      <para>The variable can only be accessed through <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-idispatch-invoke">IDispatch.Invoke</a>.</para>
-    </summary>
+    <summary>The variable can only be accessed through <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-idispatch-invoke">IDispatch.Invoke</a>.</summary>
   </member>
 </doc>

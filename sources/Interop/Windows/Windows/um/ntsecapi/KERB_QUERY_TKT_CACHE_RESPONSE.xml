@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_QUERY_TKT_CACHE_RESPONSE">
+    <summary>
+      <para>The <b>KERB_QUERY_TKT_CACHE_RESPONSE</b> structure contains the results of querying the ticket cache.</para>
+      <para>It is used by<see cref="LsaCallAuthenticationPackage" />.</para>
+    </summary>
+  </member>
+  <member name="KERB_QUERY_TKT_CACHE_RESPONSE.MessageType">
+    <summary>
+      <see cref="KERB_PROTOCOL_MESSAGE_TYPE" /> value identifying the type of request being made. This member must be set to <b>KerbQueryTicketCacheMessage</b>.</summary>
+  </member>
+  <member name="KERB_QUERY_TKT_CACHE_RESPONSE.CountOfTickets">
+    <summary>Number of tickets in <b>Tickets</b> array. This can be zero if no tickets are available for the specified logon session.</summary>
+  </member>
+  <member name="KERB_QUERY_TKT_CACHE_RESPONSE.Tickets">
+    <summary>Array of length <b>CountOfTickets</b> of<see cref="KERB_TICKET_CACHE_INFO" /> structures.</summary>
+  </member>
+</doc>

@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IForegroundTransfer.AllowForegroundTransfer">
-    <summary>
-      <para>Yields the foreground window to the COM server process.</para>
-    </summary>
-    <param name="lpvReserved">
-      <para>This parameter is reserved and must be <b>NULL</b>.</para>
-    </param>
+    <summary>Yields the foreground window to the COM server process.</summary>
+    <param name="lpvReserved">This parameter is reserved and must be <b>NULL</b>.</param>
     <returns>
       <para>This method can return the following values.</para>
       <list type="table">
@@ -16,34 +12,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>lpvReserved</i> parameter is not <b>NULL</b>, or this interface is on a proxy that does not support foreground control.</para>
-          </description>
-        </item>
+          <description>The <i>lpvReserved</i> parameter is not <b>NULL</b>, or this interface is on a proxy that does not support foreground control.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="CoAllowSetForegroundWindow" />
-    <seealso cref="IForegroundTransfer" />
   </member>
   <member name="IForegroundTransfer">
-    <summary>
-      <para>Transfers the foreground window to the process hosting the COM server.</para>
-    </summary>
+    <summary>Transfers the foreground window to the process hosting the COM server.</summary>
   </member>
 </doc>

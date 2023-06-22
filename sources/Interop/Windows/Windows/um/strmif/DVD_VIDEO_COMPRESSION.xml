@@ -4,26 +4,17 @@
 <doc>
   <member name="DVD_VIDEO_COMPRESSION">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Defines the possible DVD video compression types.</para>
     </summary>
-    <remarks>
-      <para>This enumeration is a member of the <see cref="DVD_VideoAttributes" /> structure, which is filled by a call to the <see cref="IDvdInfo2.GetCurrentVideoAttributes" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
   </member>
   <member name="DVD_VIDEO_COMPRESSION.DVD_VideoCompression_Other">
-    <summary>
-      <para>Unrecognized compression type.</para>
-    </summary>
+    <summary>Unrecognized compression type.</summary>
   </member>
   <member name="DVD_VIDEO_COMPRESSION.DVD_VideoCompression_MPEG1">
-    <summary>
-      <para>MPEG-1 compression type.</para>
-    </summary>
+    <summary>MPEG-1 compression type.</summary>
   </member>
   <member name="DVD_VIDEO_COMPRESSION.DVD_VideoCompression_MPEG2">
-    <summary>
-      <para>MPEG-2 compression type.</para>
-    </summary>
+    <summary>MPEG-2 compression type.</summary>
   </member>
 </doc>

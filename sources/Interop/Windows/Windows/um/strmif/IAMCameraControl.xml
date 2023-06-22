@@ -4,85 +4,41 @@
 <doc>
   <member name="IAMCameraControl.Get">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>Get</b> method gets the current setting of a camera property.</para>
     </summary>
-    <param name="Property">
-      <para>Specifies the property to retrieve, as a value from the <see cref="CameraControlProperty" /> enumeration.</para>
-    </param>
-    <param name="lValue">
-      <para>Receives the value of the property.</para>
-    </param>
-    <param name="Flags">
-      <para>Receives a member of the <see cref="CameraControlFlags" /> enumeration. The returned value indicates whether the setting is controlled manually or automatically.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/configure-the-video-quality">Configure the Video Quality</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMCameraControl Interface" />
-    <seealso cref="IAMCameraControl.Set" />
+    <param name="Property">Specifies the property to retrieve, as a value from the <see cref="CameraControlProperty" /> enumeration.</param>
+    <param name="lValue">Receives the value of the property.</param>
+    <param name="Flags">Receives a member of the <see cref="CameraControlFlags" /> enumeration. The returned value indicates whether the setting is controlled manually or automatically.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMCameraControl.GetRange">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>GetRange</b> method gets the range and default value of a specified camera property.</para>
     </summary>
-    <param name="Property">
-      <para>Specifies the property to query, as a value from the <see cref="CameraControlProperty" /> enumeration.</para>
-    </param>
-    <param name="pMin">
-      <para>Receives the minimum value of the property.</para>
-    </param>
-    <param name="pMax">
-      <para>Receives the maximum value of the property.</para>
-    </param>
-    <param name="pSteppingDelta">
-      <para>Receives the step size for the property. The step size is the smallest increment by which the property can change.</para>
-    </param>
-    <param name="pDefault">
-      <para>Receives the default value of the property.</para>
-    </param>
-    <param name="pCapsFlags">
-      <para>Receives a member of the <see cref="CameraControlFlags" /> enumeration, indicating whether the property is controlled automatically or manually.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/configure-the-video-quality">Configure the Video Quality</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMCameraControl Interface" />
+    <param name="Property">Specifies the property to query, as a value from the <see cref="CameraControlProperty" /> enumeration.</param>
+    <param name="pMin">Receives the minimum value of the property.</param>
+    <param name="pMax">Receives the maximum value of the property.</param>
+    <param name="pSteppingDelta">Receives the step size for the property. The step size is the smallest increment by which the property can change.</param>
+    <param name="pDefault">Receives the default value of the property.</param>
+    <param name="pCapsFlags">Receives a member of the <see cref="CameraControlFlags" /> enumeration, indicating whether the property is controlled automatically or manually.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMCameraControl.Set">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>Set</b> method sets a specified property on the camera.</para>
     </summary>
-    <param name="Property">
-      <para>Specifies the property to set, as a value from the <see cref="CameraControlProperty" /> enumeration.</para>
-    </param>
-    <param name="lValue">
-      <para>Specifies the new value of the property.</para>
-    </param>
-    <param name="Flags">
-      <para>Specifies the desired control setting, as a member of the <see cref="CameraControlFlags" /> enumeration.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If the <i>Flags</i> parameter is <b>CameraControl_Flags_Auto</b>, the method ignores the <i>lValue</i> parameter.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/configure-the-video-quality">Configure the Video Quality</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMCameraControl Interface" />
-    <seealso cref="IAMCameraControl.Get" />
+    <param name="Property">Specifies the property to set, as a value from the <see cref="CameraControlProperty" /> enumeration.</param>
+    <param name="lValue">Specifies the new value of the property.</param>
+    <param name="Flags">Specifies the desired control setting, as a member of the <see cref="CameraControlFlags" /> enumeration.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMCameraControl">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>IAMCameraControl</b> interface controls camera settings such as zoom, pan, aperture adjustment, or shutter speed. To obtain this interface, query the filter that controls the camera.</para>
     </summary>
-    <remarks>
-      <para>For Windows Driver Model (WDM) devices, the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/wdm-video-capture-filter">WDM Video Capture Filter</a> automatically exposes this interface if the WDM driver supports the <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/propsetid-vidcap-cameracontrol">PROPSETID_VIDCAP_CAMERACONTROL</a> property set. For more information, see the <a href="https://docs.microsoft.com//windows-hardware/drivers/gettingstarted/">Windows Driver Kit (WDK)</a> documentation.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/configure-the-video-quality">Configure the Video Quality</seealso>
   </member>
 </doc>

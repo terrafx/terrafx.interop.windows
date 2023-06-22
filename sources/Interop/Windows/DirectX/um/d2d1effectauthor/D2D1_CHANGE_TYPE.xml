@@ -3,32 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_CHANGE_TYPE">
-    <summary>
-      <para>Describes flags that influence how the renderer interacts with a custom vertex shader.</para>
-    </summary>
-    <seealso cref="ID2D1EffectImpl.PrepareForRender" />
+    <summary>Describes flags that influence how the renderer interacts with a custom vertex shader.</summary>
   </member>
   <member name="D2D1_CHANGE_TYPE.D2D1_CHANGE_TYPE_NONE">
-    <summary>
-      <para>There were no changes.</para>
-    </summary>
+    <summary>There were no changes.</summary>
   </member>
   <member name="D2D1_CHANGE_TYPE.D2D1_CHANGE_TYPE_PROPERTIES">
-    <summary>
-      <para>The properties of the effect changed.</para>
-    </summary>
+    <summary>The properties of the effect changed.</summary>
   </member>
   <member name="D2D1_CHANGE_TYPE.D2D1_CHANGE_TYPE_CONTEXT">
-    <summary>
-      <para>The context state changed.</para>
-    </summary>
+    <summary>The context state changed.</summary>
   </member>
   <member name="D2D1_CHANGE_TYPE.D2D1_CHANGE_TYPE_GRAPH">
-    <summary>
-      <para>The effect’s transform graph has changed.  This happens only when an effect supports a variable input count.</para>
-    </summary>
+    <summary>The effect’s transform graph has changed. This happens only when an effect supports a variable input count.</summary>
   </member>
-  <member name="D2D1_CHANGE_TYPE.D2D1_CHANGE_TYPE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_CHANGE_TYPE.D2D1_CHANGE_TYPE_FORCE_DWORD"></member>
 </doc>

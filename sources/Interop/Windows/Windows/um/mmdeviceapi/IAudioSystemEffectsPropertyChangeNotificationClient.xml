@@ -3,26 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAudioSystemEffectsPropertyChangeNotificationClient.OnPropertyChanged">
-    <summary>
-      <para>Called by the system when an audio system effects property changes.</para>
-    </summary>
-    <param name="type">
-      <para>A value from the <see cref="AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE" /> specifying the type of the property store that triggered the callback.</para>
-    </param>
-    <param name="key">
-      <para>A <see cref="PROPERTYKEY" /> structure identifying the property that changed.</para>
-    </param>
-    <remarks>
-      <para>Register to receive callbacks by calling <see cref="IAudioSystemEffectsPropertyStore.RegisterPropertyChangeNotification" />. Unregister the callback interface by calling <see cref="IAudioSystemEffectsPropertyStore.UnregisterPropertyChangeNotification" />.</para>
-      <para>This method will not be called if the registry is manually edited. A notification is generated only when <see cref="IPropertyStore.SetValue" /> is called on the associated default, user, or volatile property store.</para>
-    </remarks>
+    <summary>Called by the system when an audio system effects property changes.</summary>
+    <param name="type">A value from the <see cref="AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE" /> specifying the type of the property store that triggered the callback.</param>
+    <param name="key">A <see cref="PROPERTYKEY" /> structure identifying the property that changed.</param>
   </member>
   <member name="IAudioSystemEffectsPropertyChangeNotificationClient">
-    <summary>
-      <para>A callback interface implemented by clients to receive notifications when audio system effect properties change.</para>
-    </summary>
-    <remarks>
-      <para>Register the interface to receive callbacks by calling <see cref="IAudioSystemEffectsPropertyStore.RegisterPropertyChangeNotification" />. Unregister the callback interface by calling <see cref="IAudioSystemEffectsPropertyStore.UnregisterPropertyChangeNotification" />.</para>
-    </remarks>
+    <summary>A callback interface implemented by clients to receive notifications when audio system effect properties change.</summary>
   </member>
 </doc>

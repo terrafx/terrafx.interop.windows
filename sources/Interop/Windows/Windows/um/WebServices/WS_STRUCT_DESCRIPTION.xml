@@ -3,129 +3,37 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_STRUCT_DESCRIPTION">
-    <summary>
-      <para>Information about C struct type, and how it maps to an XML element.
-This is used with <see cref="WS_STRUCT_TYPE" />.</para>
-    </summary>
-    <remarks>
-      <para>The following is the grammar describing the order of the fields
-within a structure.  The order is defined based on the
-mapping field of each <see cref="WS_FIELD_DESCRIPTION" />.</para>
-      <code>
-Fields := TypeAttributeField? AttributeField* ContentFields UnmappedFields*
-ContentFields := TextContentField | ElementContentFields
-ElementContentFields := ElementContentField* ? AnyElementField?
-ElementContentField := ElementField | RepeatingElementField | ElementChoiceField | RepeatingElementChoiceField
-ElementField := WS_ELEMENT_FIELD_MAPPING
-RepeatingElementField := WS_REPEATING_ELEMENT_FIELD_MAPPING
-ElementChoiceField := WS_ELEMENT_CHOICE_FIELD_MAPPING
-RepeatingElementChoiceField := WS_REPEATING_ELEMENT_CHOICE_FIELD_MAPPING
-AnyElementField := WS_ANY_ELEMENT_FIELD_MAPPING
-TextContentField := WS_TEXT_FIELD_MAPPING
-UnmappedField := WS_NO_FIELD_MAPPING
-TypeAttributeField := WS_TYPE_ATTRIBUTE_FIELD_MAPPING
-AttributeField := WS_ATTRIBUTE_FIELD_MAPPING
-</code>
-      <para>Note that the fields descriptions of a structure are serialized and deserialized in
-the order specified.  The deserialization process is "greedy", that is, as much content
-as will match the definition a specific field description will be consumed before
-the next field description will be considered.  This approach resolves any ambiguity
-when content could match the current field description or a following one.</para>
-      <para>The deserialization process is also restrictive. All the content must be deserialized according
-to the field descriptions. By default any unhandled elements and attributes will cause the deserialization
-process to fail. However, trailing contents of the element are ignored and discarded when
-<see cref="WS_STRUCT_IGNORE_TRAILING_ELEMENT_CONTENT" /> flag is set. Similarly, unhandled attributes are
-ignored and discarded when <b>WS_STRUCT_IGNORE_UNHANDLED_ATTRIBUTES</b> flag is set.</para>
-      <para>Note that since the <see cref="WS_FIELD_DESCRIPTION" /> structures determine the location
-of the actual field within the structure using an offset, there is no restriction
-as to the actual order of the fields within the structure.</para>
-      <para>When one structure derives from (extends) another, the fields for both structures
-must be included in the derived struct description, and the above grammar must be
-maintained.  For example:</para>
-      <code>struct BaseStructure
-{
-    const WS_STRUCT_DESCRIPTION* _type;
-    int baseAttribute;
-    int baseElement;
-};
-
-// BaseStructure field descriptions:
-//    WS_TYPE_ATTRIBUTE_FIELD_MAPPING       // _type
-//    WS_ATTRIBUTE_FIELD_MAPPING            // baseAttribute
-//    WS_ELEMENT_FIELD_MAPPING              // baseElement
-
-struct DerivedStructure
-{
-    struct BaseStructure _base;
-    int derivedAttribute;
-    int derivedElement;
-};
-
-// DerivedStructure field descriptions:
-//    WS_TYPE_ATTRIBUTE_FIELD_MAPPING       // _type
-//    WS_ATTRIBUTE_FIELD_MAPPING            // baseAttribute
-//    WS_ATTRIBUTE_FIELD_MAPPING            // derivedAttribute
-//    WS_ELEMENT_FIELD_MAPPING              // baseElement
-//    WS_ELEMENT_FIELD_MAPPING              // derivedElement
-</code>
-    </remarks>
+    <summary>Information about C struct type, and how it maps to an XML element. This is used with <see cref="WS_STRUCT_TYPE" />.</summary>
   </member>
   <member name="WS_STRUCT_DESCRIPTION.size">
-    <summary>
-      <para>The size of the structure, in bytes.</para>
-    </summary>
+    <summary>The size of the structure, in bytes.</summary>
   </member>
   <member name="WS_STRUCT_DESCRIPTION.alignment">
-    <summary>
-      <para>The alignment requirement of the structure.  This must be a power
-of two between 1 and 8.</para>
-    </summary>
+    <summary>The alignment requirement of the structure. This must be a power of two between 1 and 8.</summary>
   </member>
   <member name="WS_STRUCT_DESCRIPTION.fields">
     <summary>
       <para>An array of pointers to the descriptions of the fields of the structure.</para>
-      <para>See the Remarks section for information about ordering of the fields
-in this array.</para>
+      <para>See the Remarks section for information about ordering of the fields in this array.</para>
     </summary>
   </member>
   <member name="WS_STRUCT_DESCRIPTION.fieldCount">
-    <summary>
-      <para>The number of fields in the fields array.  Any part of the structure
-that is not represented by a field will be left uninitialized.
-No two fields descriptions may reference the same offset of the structure.</para>
-    </summary>
+    <summary>The number of fields in the fields array. Any part of the structure that is not represented by a field will be left uninitialized. No two fields descriptions may reference the same offset of the structure.</summary>
   </member>
   <member name="WS_STRUCT_DESCRIPTION.typeLocalName">
-    <summary>
-      <para>The XML type name of the structure.  This is only used when
-structures derive from other structures, and may be <b>NULL</b> otherwise.</para>
-    </summary>
+    <summary>The XML type name of the structure. This is only used when structures derive from other structures, and may be <b>NULL</b> otherwise.</summary>
   </member>
   <member name="WS_STRUCT_DESCRIPTION.typeNs">
-    <summary>
-      <para>The XML type namespace of the structure.  This is only used when
-structures derive from other structures, and may be <b>NULL</b> otherwise.</para>
-    </summary>
+    <summary>The XML type namespace of the structure. This is only used when structures derive from other structures, and may be <b>NULL</b> otherwise.</summary>
   </member>
   <member name="WS_STRUCT_DESCRIPTION.parentType">
-    <summary>
-      <para>The type this type is derived from.  This is only used when
-structures derive from other structures, and may be <b>NULL</b> otherwise.</para>
-    </summary>
+    <summary>The type this type is derived from. This is only used when structures derive from other structures, and may be <b>NULL</b> otherwise.</summary>
   </member>
   <member name="WS_STRUCT_DESCRIPTION.subTypes">
-    <summary>
-      <para>An array of pointers to derived types.  This is only used when
-structures derive from other structures, and may be <b>NULL</b> otherwise.</para>
-    </summary>
+    <summary>An array of pointers to derived types. This is only used when structures derive from other structures, and may be <b>NULL</b> otherwise.</summary>
   </member>
   <member name="WS_STRUCT_DESCRIPTION.subTypeCount">
-    <summary>
-      <para>The number of types in the subTypes array.  This is only used when
-structures derive from other structures, and may be <b>NULL</b> otherwise.</para>
-    </summary>
+    <summary>The number of types in the subTypes array. This is only used when structures derive from other structures, and may be <b>NULL</b> otherwise.</summary>
   </member>
-  <member name="WS_STRUCT_DESCRIPTION.structOptions">
-    <summary></summary>
-  </member>
+  <member name="WS_STRUCT_DESCRIPTION.structOptions"></member>
 </doc>

@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_COLORMATRIX_ALPHA_MODE">
-    <summary>
-      <para>The alpha mode of the output of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/color-matrix">Color matrix effect</a>.</para>
-    </summary>
+    <summary>The alpha mode of the output of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/color-matrix">Color matrix effect</a>.</summary>
   </member>
   <member name="D2D1_COLORMATRIX_ALPHA_MODE.D2D1_COLORMATRIX_ALPHA_MODE_PREMULTIPLIED">
-    <summary>
-      <para>The effect un-premultiplies the input, applies the color matrix, and premultiplies the output.</para>
-    </summary>
+    <summary>The effect un-premultiplies the input, applies the color matrix, and premultiplies the output.</summary>
   </member>
   <member name="D2D1_COLORMATRIX_ALPHA_MODE.D2D1_COLORMATRIX_ALPHA_MODE_STRAIGHT">
-    <summary>
-      <para>The effect applies the color matrix directly to the input, and doesn't premultiply the output.</para>
-    </summary>
+    <summary>The effect applies the color matrix directly to the input, and doesn't premultiply the output.</summary>
   </member>
-  <member name="D2D1_COLORMATRIX_ALPHA_MODE.D2D1_COLORMATRIX_ALPHA_MODE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_COLORMATRIX_ALPHA_MODE.D2D1_COLORMATRIX_ALPHA_MODE_FORCE_DWORD"></member>
 </doc>

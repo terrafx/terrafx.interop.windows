@@ -3,32 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_BEZIER_SEGMENT">
-    <summary>
-      <para>Represents a cubic bezier segment drawn  between two points.</para>
-    </summary>
-    <remarks>
-      <para>A cubic Bezier curve is defined by four points: a start point, an end point (<i>point3</i>), and two control points (<i>point1</i> and <i>point2</i>). A Bezier segment does not contain a property for the starting point of the curve; it defines only the end point. The beginning point of the curve is the current point of the path to which the Bezier curve is added.</para>
-      <para>The two control points of a cubic Bezier curve behave like magnets, attracting portions of what would otherwise be a straight line toward themselves and producing a curve. The first control point, <i>point1</i>, affects the beginning portion of the curve; the second control point, <i>point2</i>, affects the ending portion of the curve.</para>
-      <para>
-        <b>Note</b>  The curve doesn't necessarily pass through either of the control points; each control point moves its portion of the line toward itself, but not through itself.</para>
-    </remarks>
+    <summary>Represents a cubic bezier segment drawn between two points.</summary>
   </member>
   <member name="D2D1_BEZIER_SEGMENT.point1">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The first control point for the Bezier segment.</para>
-    </summary>
+    <summary>The first control point for the Bezier segment.</summary>
   </member>
   <member name="D2D1_BEZIER_SEGMENT.point2">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The second control point for the Bezier segment.</para>
-    </summary>
+    <summary>The second control point for the Bezier segment.</summary>
   </member>
   <member name="D2D1_BEZIER_SEGMENT.point3">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The end point for the Bezier segment.</para>
-    </summary>
+    <summary>The end point for the Bezier segment.</summary>
   </member>
 </doc>

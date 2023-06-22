@@ -3,47 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPreviewHandlerFrame.GetWindowContext">
-    <summary>
-      <para>Gets a list of the keyboard shortcuts for the preview host.</para>
-    </summary>
-    <param name="pinfo">
-      <para>Type: <b><see cref="PREVIEWHANDLERFRAMEINFO" />*</b></para>
-      <para>A pointer to a <see cref="PREVIEWHANDLERFRAMEINFO" /> structure that receives accelerator table information.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>An accelerator table is a list of keyboard shortcuts and the commands that the host should execute. As an optimization, the preview handler can then look at the keystrokes it receives, check them against the accelerator table to see if the host is interested in them, and forward them on if appropriate, ignoring the commands in the structure. The accelerator table returned from <b>IPreviewHandlerFrame.GetWindowContext</b>, contains only keystrokes and does not contain valid command entries. Preview handlers can also skip this optimization and simply call <see cref="IPreviewHandlerFrame.TranslateAccelerator" /> for every keystroke. When the preview handler is destroyed, the accelerator table must be freed using the <see cref="DestroyAcceleratorTable" /> function.</para>
-      <para>This method should be called at the point when the preview handler has called <see cref="SetSite" /> and the results have been cached for later use by the preview handler. This method cannot be called by preview handlers running in low-integrity mode.  Those preview handlers must always call <see cref="IPreviewHandlerFrame.TranslateAccelerator" /> for every keystroke.</para>
-    </remarks>
-    <seealso cref="IPreviewHandlerFrame" />
-    <seealso cref="IPreviewHandlerFrame.TranslateAccelerator" />
+    <summary>Gets a list of the keyboard shortcuts for the preview host.</summary>
+    <param name="pinfo">A pointer to a <see cref="PREVIEWHANDLERFRAMEINFO" /> structure that receives accelerator table information.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPreviewHandlerFrame.TranslateAccelerator">
-    <summary>
-      <para>Directs the host to handle a keyboard shortcut passed from the preview handler.</para>
-    </summary>
-    <param name="pmsg">
-      <para>Type: <b><see cref="MSG" />*</b></para>
-      <para>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-command">WM_COMMAND</a> or <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-syscommand">WM_SYSCOMMAND</a> window message that corresponds to a keyboard shortcut.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If the keyboard shortcut is one that the host intends to handle, the host will process it and return <b>S_OK</b>; otherwise, it returns <b>S_FALSE</b>.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  This method is only called by a preview handler in response to an <see cref="TranslateAccelerator" /> call.</para>
-    </remarks>
+    <summary>Directs the host to handle a keyboard shortcut passed from the preview handler.</summary>
+    <param name="pmsg">A pointer to a <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-command">WM_COMMAND</a> or <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-syscommand">WM_SYSCOMMAND</a> window message that corresponds to a keyboard shortcut.</param>
+    <returns>If the keyboard shortcut is one that the host intends to handle, the host will process it and return <b>S_OK</b>; otherwise, it returns <b>S_FALSE</b>.</returns>
   </member>
   <member name="IPreviewHandlerFrame">
-    <summary>
-      <para>Enables preview handlers to pass keyboard shortcuts to the host. This interface retrieves a list of keyboard shortcuts and directs the host to handle a keyboard shortcut.</para>
-    </summary>
-    <remarks>
-      <para>This is an interface that preview handlers use to communicate keyboard shortcuts to the host. Preview handlers obtain this interface by calling <see cref="QueryInterface" /> on the pointer passed as a parameter to <see cref="SetSite" />. Preview handlers do not need to implement this interface.</para>
-    </remarks>
+    <summary>Enables preview handlers to pass keyboard shortcuts to the host. This interface retrieves a list of keyboard shortcuts and directs the host to handle a keyboard shortcut.</summary>
   </member>
 </doc>

@@ -3,53 +3,28 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="RM_PROCESS_INFO">
-    <summary>
-      <para>Describes an application that is to be registered with the Restart Manager.</para>
-    </summary>
-    <seealso cref="RM_APP_TYPE" />
-    <seealso cref="RM_FILTER_INFO" />
-    <seealso cref="RM_UNIQUE_PROCESS" />
-    <seealso cref="RmGetList" />
-    <seealso cref="RmRestart" />
-    <seealso cref="RmShutdown" />
+    <summary>Describes an application that is to be registered with the Restart Manager.</summary>
   </member>
   <member name="RM_PROCESS_INFO.Process">
-    <summary>
-      <para>Contains an <see cref="RM_UNIQUE_PROCESS" /> structure that  uniquely identifies the application by its PID and the time the process began.</para>
-    </summary>
+    <summary>Contains an <see cref="RM_UNIQUE_PROCESS" /> structure that uniquely identifies the application by its PID and the time the process began.</summary>
   </member>
   <member name="RM_PROCESS_INFO.strAppName">
-    <summary>
-      <para>If the process is a service, this parameter returns the long name for the service. If the process is not a service, this parameter returns the  user-friendly name for the application. If the process is a critical process, and the installer is run  with elevated privileges, this parameter returns the name of the executable file of the critical process. If the process is a critical process, and the installer is run as a service, this parameter returns the long name of the critical process.</para>
-    </summary>
+    <summary>If the process is a service, this parameter returns the long name for the service. If the process is not a service, this parameter returns the user-friendly name for the application. If the process is a critical process, and the installer is run with elevated privileges, this parameter returns the name of the executable file of the critical process. If the process is a critical process, and the installer is run as a service, this parameter returns the long name of the critical process.</summary>
   </member>
   <member name="RM_PROCESS_INFO.strServiceShortName">
-    <summary>
-      <para>If the process is a service,  this is the short name for the service. This member is not used if the process is not a service.</para>
-    </summary>
+    <summary>If the process is a service, this is the short name for the service. This member is not used if the process is not a service.</summary>
   </member>
   <member name="RM_PROCESS_INFO.ApplicationType">
-    <summary>
-      <para>Contains an <see cref="RM_APP_TYPE" /> enumeration value that specifies the type of application as <b>RmUnknownApp</b>,  <b>RmMainWindow</b>, <b>RmOtherWindow</b>, <b>RmService</b>, <b>RmExplorer</b> or <b>RmCritical</b>.</para>
-    </summary>
+    <summary>Contains an <see cref="RM_APP_TYPE" /> enumeration value that specifies the type of application as <b>RmUnknownApp</b>, <b>RmMainWindow</b>, <b>RmOtherWindow</b>, <b>RmService</b>, <b>RmExplorer</b> or <b>RmCritical</b>.</summary>
   </member>
   <member name="RM_PROCESS_INFO.AppStatus">
-    <summary>
-      <para>Contains a bit mask that describes the current status of the application. See the <see cref="RM_APP_STATUS" /> enumeration.</para>
-    </summary>
+    <summary>Contains a bit mask that describes the current status of the application. See the <see cref="RM_APP_STATUS" /> enumeration.</summary>
   </member>
   <member name="RM_PROCESS_INFO.TSSessionId">
-    <summary>
-      <para>Contains the Terminal Services session ID
-of the process.  If the terminal session of the process cannot be determined, the value of this member is set to <b>RM_INVALID_SESSION</b> (-1).
-This member is not used if the process is a service  or a  system critical process.</para>
-    </summary>
+    <summary>Contains the Terminal Services session ID of the process. If the terminal session of the process cannot be determined, the value of this member is set to <b>RM_INVALID_SESSION</b> (-1). This member is not used if the process is a service or a system critical process.</summary>
   </member>
   <member name="RM_PROCESS_INFO.bRestartable">
     <summary>
-      <para>
-        <b>TRUE</b> if the application can be restarted by the Restart Manager; otherwise, <b>FALSE</b>.
-This member is always <b>TRUE</b> if the process is a service. This member is always  <b>FALSE</b> if the process is a critical system process.</para>
-    </summary>
+      <b>TRUE</b> if the application can be restarted by the Restart Manager; otherwise, <b>FALSE</b>. This member is always <b>TRUE</b> if the process is a service. This member is always <b>FALSE</b> if the process is a critical system process.</summary>
   </member>
 </doc>

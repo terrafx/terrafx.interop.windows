@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IProgressItem.get_BlockCount">
-    <summary>
-      <para>Retrieves the number of blocks in the progress item.</para>
-    </summary>
-    <param name="blocks">
-      <para>Number of blocks in the segment.</para>
-    </param>
+    <summary>Retrieves the number of blocks in the progress item.</summary>
+    <param name="blocks">Number of blocks in the segment.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -16,30 +12,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IProgressItem" />
-    <seealso cref="IProgressItem.get_FirstBlock" />
-    <seealso cref="IProgressItem.get_LastBlock" />
   </member>
   <member name="IProgressItem.get_Description">
-    <summary>
-      <para>Retrieves the description in the progress item.</para>
-    </summary>
-    <param name="desc">
-      <para>String containing the description. The description contains the name of the file in the file system image.</para>
-    </param>
+    <summary>Retrieves the description in the progress item.</summary>
+    <param name="desc">String containing the description. The description contains the name of the file in the file system image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -47,28 +37,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IProgressItem" />
   </member>
   <member name="IProgressItem.get_FirstBlock">
-    <summary>
-      <para>Retrieves the first block number in this segment of the result image.</para>
-    </summary>
-    <param name="block">
-      <para>First block number of this segment.</para>
-    </param>
+    <summary>Retrieves the first block number in this segment of the result image.</summary>
+    <param name="block">First block number of this segment.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -76,30 +62,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IProgressItem" />
-    <seealso cref="IProgressItem.get_BlockCount" />
-    <seealso cref="IProgressItem.get_LastBlock" />
   </member>
   <member name="IProgressItem.get_LastBlock">
-    <summary>
-      <para>Retrieves the last block in this segment of the result image.</para>
-    </summary>
-    <param name="block">
-      <para>Number of the last block of this segment.</para>
-    </param>
+    <summary>Retrieves the last block in this segment of the result image.</summary>
+    <param name="block">Number of the last block of this segment.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -107,33 +87,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IProgressItem" />
-    <seealso cref="IProgressItem.get_BlockCount" />
-    <seealso cref="IProgressItem.get_FirstBlock" />
   </member>
   <member name="IProgressItem">
     <summary>
       <para>Use this interface to retrieve block information for one segment of the result file image. This can be used to determine the LBA ranges of files in the resulting image. This information can then be used to display to the user which file is currently being written to the media or used for other advanced burning functionality.</para>
       <para>To get this interface, call the <see cref="IEnumProgressItems.Next" /> or <a href="https://docs.microsoft.com//windows/desktop/imapi/ienumprogressitems-remotenext">IEnumProgressItems.RemoteNext</a> method.</para>
     </summary>
-    <remarks>
-      <para>This is a <b>ProgressItem</b> object in script.</para>
-    </remarks>
-    <seealso cref="IEnumProgressItems" />
-    <seealso cref="IFileSystemImageResult" />
-    <seealso cref="IProgressItems" />
   </member>
 </doc>

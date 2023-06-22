@@ -3,24 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D10DepthStencilState.GetDesc">
-    <summary>
-      <para>Get the depth-stencil state.</para>
-    </summary>
-    <param name="pDesc">
-      <para>Type: <b><see cref="D3D10_DEPTH_STENCIL_DESC" />*</b></para>
-      <para>A pointer to the depth-stencil state (see <see cref="D3D10_DEPTH_STENCIL_DESC" />).</para>
-    </param>
-    <seealso cref="ID3D10DepthStencilState Interface" />
+    <summary>Get the depth-stencil state.</summary>
+    <param name="pDesc">A pointer to the depth-stencil state (see <see cref="D3D10_DEPTH_STENCIL_DESC" />).</param>
   </member>
   <member name="ID3D10DepthStencilState">
-    <summary>
-      <para>A depth-stencil-state interface accesses depth-stencil state which sets up the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">depth-stencil test</a> for the output-merger stage.</para>
-    </summary>
-    <remarks>
-      <para>Create a depth-stencil state object by calling <see cref="ID3D10Device.CreateDepthStencilState" />.</para>
-      <para>To initialize depth-stencil state, bind the depth-stencil-state object to the pipeline by calling <see cref="ID3D10Device.OMSetDepthStencilState" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-interfaces">Core Interfaces</seealso>
-    <seealso cref="ID3D10DeviceChild" />
+    <summary>A depth-stencil-state interface accesses depth-stencil state which sets up the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">depth-stencil test</a> for the output-merger stage.</summary>
   </member>
 </doc>

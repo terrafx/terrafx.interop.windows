@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_SECURITY_KEY_ENTROPY_MODE">
-    <summary>
-      <para>Defines how randomness should be contributed to the issued key during
-a security token negotiation done with message and mixed-mode security.</para>
-    </summary>
+    <summary>Defines how randomness should be contributed to the issued key during a security token negotiation done with message and mixed-mode security.</summary>
   </member>
   <member name="WS_SECURITY_KEY_ENTROPY_MODE.WS_SECURITY_KEY_ENTROPY_MODE_CLIENT_ONLY">
-    <summary>
-      <para>Only client contributes entropy.</para>
-    </summary>
+    <summary>Only client contributes entropy.</summary>
   </member>
   <member name="WS_SECURITY_KEY_ENTROPY_MODE.WS_SECURITY_KEY_ENTROPY_MODE_SERVER_ONLY">
-    <summary>
-      <para>Only service contributes entropy.</para>
-    </summary>
+    <summary>Only service contributes entropy.</summary>
   </member>
   <member name="WS_SECURITY_KEY_ENTROPY_MODE.WS_SECURITY_KEY_ENTROPY_MODE_COMBINED">
-    <summary>
-      <para>Both contribute entropy.</para>
-    </summary>
+    <summary>Both contribute entropy.</summary>
   </member>
 </doc>

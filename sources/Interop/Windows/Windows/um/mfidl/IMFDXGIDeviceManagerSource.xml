@@ -3,21 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFDXGIDeviceManagerSource.GetManager">
-    <summary>
-      <para>Gets the <see cref="IMFDXGIDeviceManager" /> from the Microsoft Media Foundation video rendering sink.</para>
-    </summary>
-    <param name="ppManager">
-      <para>The <see cref="IMFDXGIDeviceManager" /> object.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/imfdxgidevicemanagersource">IMFDXGIDeviceManagerSource</seealso>
+    <summary>Gets the <see cref="IMFDXGIDeviceManager" /> from the Microsoft Media Foundation video rendering sink.</summary>
+    <param name="ppManager">The <see cref="IMFDXGIDeviceManager" /> object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFDXGIDeviceManagerSource">
-    <summary>
-      <para>Provides functionality for getting the <see cref="IMFDXGIDeviceManager" /> from the Microsoft Media Foundation video rendering sink.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Provides functionality for getting the <see cref="IMFDXGIDeviceManager" /> from the Microsoft Media Foundation video rendering sink.</summary>
   </member>
 </doc>

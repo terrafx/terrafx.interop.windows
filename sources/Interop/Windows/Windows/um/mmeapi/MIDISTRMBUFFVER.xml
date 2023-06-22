@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIDISTRMBUFFVER">
-    <summary>
-      <para>The <b>MIDISTRMBUFFVER</b> structure contains version information for a long MIDI event of the MEVT_VERSION type.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/midi-structures">MIDI Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/musical-instrument-digital-interface--midi">Musical Instrument Digital Interface (MIDI)</seealso>
+    <summary>The <b>MIDISTRMBUFFVER</b> structure contains version information for a long MIDI event of the MEVT_VERSION type.</summary>
   </member>
   <member name="MIDISTRMBUFFVER.dwVersion">
-    <summary>
-      <para>Version of the stream. The high 16 bits contain the major version, and the low 16 bits contain the minor version. The version number for the first implementation of MIDI streams should be 1.0.</para>
-    </summary>
+    <summary>Version of the stream. The high 16 bits contain the major version, and the low 16 bits contain the minor version. The version number for the first implementation of MIDI streams should be 1.0.</summary>
   </member>
   <member name="MIDISTRMBUFFVER.dwMid">
-    <summary>
-      <para>Manufacturer identifier. Manufacturer identifiers are defined in Manufacturer and Product Identifiers.</para>
-    </summary>
+    <summary>Manufacturer identifier. Manufacturer identifiers are defined in Manufacturer and Product Identifiers.</summary>
   </member>
   <member name="MIDISTRMBUFFVER.dwOEMVersion">
-    <summary>
-      <para>OEM version of the stream. Original equipment manufacturers can use this field to version-stamp any custom events they have specified. If a custom event is specified, it must be the first event sent after the stream is opened.</para>
-    </summary>
+    <summary>OEM version of the stream. Original equipment manufacturers can use this field to version-stamp any custom events they have specified. If a custom event is specified, it must be the first event sent after the stream is opened.</summary>
   </member>
 </doc>

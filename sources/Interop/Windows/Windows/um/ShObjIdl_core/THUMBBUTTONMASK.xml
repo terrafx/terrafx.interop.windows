@@ -3,30 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="THUMBBUTTONMASK">
-    <summary>
-      <para>Used by the <see cref="THUMBBUTTON" /> structure to specify which members of that structure contain valid data.</para>
-    </summary>
-    <seealso cref="THUMBBUTTON" />
-    <seealso cref="THUMBBUTTONFLAGS" />
+    <summary>Used by the <see cref="THUMBBUTTON" /> structure to specify which members of that structure contain valid data.</summary>
   </member>
   <member name="THUMBBUTTONMASK.THB_BITMAP">
-    <summary>
-      <para>The <b>iBitmap</b> member contains valid information.</para>
-    </summary>
+    <summary>The <b>iBitmap</b> member contains valid information.</summary>
   </member>
   <member name="THUMBBUTTONMASK.THB_ICON">
-    <summary>
-      <para>The <b>hIcon</b> member contains valid information.</para>
-    </summary>
+    <summary>The <b>hIcon</b> member contains valid information.</summary>
   </member>
   <member name="THUMBBUTTONMASK.THB_TOOLTIP">
-    <summary>
-      <para>The <b>szTip</b> member contains valid information.</para>
-    </summary>
+    <summary>The <b>szTip</b> member contains valid information.</summary>
   </member>
   <member name="THUMBBUTTONMASK.THB_FLAGS">
-    <summary>
-      <para>The <b>dwFlags</b> member contains valid information.</para>
-    </summary>
+    <summary>The <b>dwFlags</b> member contains valid information.</summary>
   </member>
 </doc>

@@ -3,176 +3,46 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ICondition.Clone">
-    <summary>
-      <para>Creates a deep copy of this <see cref="ICondition" /> object.</para>
-    </summary>
-    <param name="ppc">
-      <para>Type: <b><see cref="ICondition" />**</b></para>
-      <para>Receives a pointer to the clone of this <see cref="ICondition" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Because there are no methods for modifying an <see cref="ICondition" />, there are few occasions when this method is necessary. In many cases it is adequate to call the <see cref="IUnknown.QueryInterface" /> method on the <b>ICondition</b> to obtain an additional reference to the same object.</para>
-    </remarks>
-    <seealso cref="CONDITION_OPERATION" />
-    <seealso cref="CONDITION_TYPE" />
-    <seealso cref="ICondition" />
-    <seealso cref="ICondition2" />
+    <summary>Creates a deep copy of this <see cref="ICondition" /> object.</summary>
+    <param name="ppc">Receives a pointer to the clone of this <see cref="ICondition" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICondition.GetComparisonInfo">
-    <summary>
-      <para>Retrieves the property name, operation, and value from a leaf search condition node.</para>
-    </summary>
-    <param name="ppszPropertyName">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>Receives the name of the property of the leaf condition as a Unicode string.</para>
-    </param>
-    <param name="pcop">
-      <para>Type: <b><see cref="CONDITION_OPERATION" />*</b></para>
-      <para>Receives the operation of the leaf condition as a <see cref="CONDITION_OPERATION" /> enumeration.</para>
-    </param>
-    <param name="ppropvar">
-      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
-      <para>Receives the value of the leaf condition as a <see cref="PROPVARIANT" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, E_FAIL if this is not a leaf node, or an error value otherwise.</para>
-    </returns>
-    <remarks>
-      <para>Any or all of the three parameters can be <b>NULL</b>.</para>
-    </remarks>
-    <seealso cref="CONDITION_OPERATION" />
-    <seealso cref="CONDITION_TYPE" />
-    <seealso cref="ICondition" />
-    <seealso cref="ICondition2" />
+    <summary>Retrieves the property name, operation, and value from a leaf search condition node.</summary>
+    <param name="ppszPropertyName">Receives the name of the property of the leaf condition as a Unicode string.</param>
+    <param name="pcop">Receives the operation of the leaf condition as a <see cref="CONDITION_OPERATION" /> enumeration.</param>
+    <param name="ppropvar">Receives the value of the leaf condition as a <see cref="PROPVARIANT" />.</param>
+    <returns>Returns S_OK if successful, E_FAIL if this is not a leaf node, or an error value otherwise.</returns>
   </member>
   <member name="ICondition.GetConditionType">
-    <summary>
-      <para>Retrieves the condition type for this search condition node, identifying it as a logical AND, OR, or NOT, or as a leaf node.</para>
-    </summary>
-    <param name="pNodeType">
-      <para>Type: <b><see cref="CONDITION_TYPE" />*</b></para>
-      <para>Receives the <see cref="CONDITION_TYPE" /> enumeration for this node.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <a href="https://github.com/microsoft/windows-classic-samples/tree/master/samples/win7samples/winui/windowssearch/structuredquerysample">StructuredQuerySample</a> demonstrates how to read lines from the console, parse them using the system schema, and display the resulting condition trees.</para>
-    </remarks>
-    <seealso cref="CONDITION_OPERATION" />
-    <seealso cref="CONDITION_TYPE" />
-    <seealso cref="ICondition" />
-    <seealso cref="ICondition2" />
+    <summary>Retrieves the condition type for this search condition node, identifying it as a logical AND, OR, or NOT, or as a leaf node.</summary>
+    <param name="pNodeType">Receives the <see cref="CONDITION_TYPE" /> enumeration for this node.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICondition.GetInputTerms">
-    <summary>
-      <para>For a leaf node, <b>ICondition.GetInputTerms</b> retrieves information about what parts (or ranges) of the input string produced the property, the operation, and the value for the search condition node.</para>
-    </summary>
-    <param name="ppPropertyTerm">
-      <para>Type: <b><see cref="IRichChunk" />**</b></para>
-      <para>Receives a pointer to an <see cref="IRichChunk" /> interface that provides information about what part of the input string produced the property of the leaf node, if that can be determined; otherwise, this parameter is set to <b>NULL</b>.</para>
-    </param>
-    <param name="ppOperationTerm">
-      <para>Type: <b><see cref="IRichChunk" />**</b></para>
-      <para>Receives a pointer to an <see cref="IRichChunk" /> interface that provides information about what part of the input string produced the operation of the leaf node, if that can be determined; otherwise, this parameter is set to <b>NULL</b>.</para>
-    </param>
-    <param name="ppValueTerm">
-      <para>Type: <b><see cref="IRichChunk" />**</b></para>
-      <para>Receives a pointer to an <see cref="IRichChunk" /> interface that provides information about what part of the input string produced the value of the leaf node, if that can be determined; otherwise, this parameter is set to <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Any or all of the parameters <i>ppPropertyTerm</i>, <i>ppOperationTerm</i> and <i>ppValueTerm</i> can be <b>NULL</b>.</para>
-      <para>Each <see cref="IRichChunk" /> object retrieved by this method represents a range of tokens from the input string. The range tokens identifies the substring that produced the property, operation, or value of the input string. The <b>IRichChunk</b>'s <see cref="PROPVARIANT" /> out parameter is not used.</para>
-    </remarks>
-    <seealso cref="CONDITION_OPERATION" />
-    <seealso cref="CONDITION_TYPE" />
-    <seealso cref="ICondition" />
-    <seealso cref="ICondition2" />
+    <summary>For a leaf node, <b>ICondition.GetInputTerms</b> retrieves information about what parts (or ranges) of the input string produced the property, the operation, and the value for the search condition node.</summary>
+    <param name="ppPropertyTerm">Receives a pointer to an <see cref="IRichChunk" /> interface that provides information about what part of the input string produced the property of the leaf node, if that can be determined; otherwise, this parameter is set to <b>NULL</b>.</param>
+    <param name="ppOperationTerm">Receives a pointer to an <see cref="IRichChunk" /> interface that provides information about what part of the input string produced the operation of the leaf node, if that can be determined; otherwise, this parameter is set to <b>NULL</b>.</param>
+    <param name="ppValueTerm">Receives a pointer to an <see cref="IRichChunk" /> interface that provides information about what part of the input string produced the value of the leaf node, if that can be determined; otherwise, this parameter is set to <b>NULL</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICondition.GetSubConditions">
-    <summary>
-      <para>Retrieves a collection of the subconditions of the search condition node and the IID of the interface for enumerating the collection.</para>
-    </summary>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>The desired IID of the enumerating interface: either IID_IEnumUnknown, IID_IEnumVARIANT or (for a negation condition) IID_ICondition.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>Receives a collection of zero or more <see cref="ICondition" /> objects. Each object is a subcondition of this condition node. If <i>riid</i> was IID_ICondition and this is a negation condition, this parameter receives the single subcondition.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, E_FAIL if this is a leaf node, or an error value otherwise.</para>
-    </returns>
-    <remarks>
-      <para>The <i>riid</i> parameter must be the <b>GUID</b> of an <see cref="IEnumUnknown" /> or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-ienumvariant">IEnumVARIANT</a> interface or in the case of a negation node, IID_ICondition.</para>
-      <para>If the subcondition is a negation node, <i>ppv</i> is set to an enumeration of one element.</para>
-      <para>If the node is a conjunction or disjunction node, <i>ppv</i> is set to an enumeration of the subconditions.</para>
-    </remarks>
-    <seealso cref="CONDITION_OPERATION" />
-    <seealso cref="CONDITION_TYPE" />
-    <seealso cref="ICondition" />
-    <seealso cref="ICondition2" />
+    <summary>Retrieves a collection of the subconditions of the search condition node and the IID of the interface for enumerating the collection.</summary>
+    <param name="riid">The desired IID of the enumerating interface: either IID_IEnumUnknown, IID_IEnumVARIANT or (for a negation condition) IID_ICondition.</param>
+    <param name="ppv">Receives a collection of zero or more <see cref="ICondition" /> objects. Each object is a subcondition of this condition node. If <i>riid</i> was IID_ICondition and this is a negation condition, this parameter receives the single subcondition.</param>
+    <returns>Returns S_OK if successful, E_FAIL if this is a leaf node, or an error value otherwise.</returns>
   </member>
   <member name="ICondition.GetValueNormalization">
-    <summary>
-      <para>Retrieves the character-normalized value of the search condition node.</para>
-    </summary>
-    <param name="ppszNormalization">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>Receives a pointer to a Unicode string representation of the value.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, E_FAIL if this is not a leaf node, or an error value otherwise.</para>
-    </returns>
-    <remarks>
-      <para>In <b>Windows 7 and later</b>, if the value of the leaf node is <b>VT_EMPTY</b>, <i>ppwszNormalization</i> points to an empty string. If the value is a string, such as VT_LPWSTR, VT_BSTR or VT_LPSTR, then <i>ppwszNormalization</i> is set to a character-normalized form of the value. In other cases, <i>ppwszNormalization</i> is set to some other character-normalized string representation of the value.</para>
-    </remarks>
-    <seealso cref="CONDITION_OPERATION" />
-    <seealso cref="CONDITION_TYPE" />
-    <seealso cref="ICondition" />
-    <seealso cref="ICondition2" />
+    <summary>Retrieves the character-normalized value of the search condition node.</summary>
+    <param name="ppszNormalization">Receives a pointer to a Unicode string representation of the value.</param>
+    <returns>Returns S_OK if successful, E_FAIL if this is not a leaf node, or an error value otherwise.</returns>
   </member>
   <member name="ICondition.GetValueType">
-    <summary>
-      <para>Retrieves the semantic type of the value of the search condition node.</para>
-    </summary>
-    <param name="ppszValueTypeName">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>Receives either a pointer to the semantic type of the value as a Unicode string or <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, E_FAIL if this is not a leaf node, or an error value otherwise.</para>
-    </returns>
-    <seealso cref="CONDITION_OPERATION" />
-    <seealso cref="CONDITION_TYPE" />
-    <seealso cref="ICondition" />
-    <seealso cref="ICondition2" />
+    <summary>Retrieves the semantic type of the value of the search condition node.</summary>
+    <param name="ppszValueTypeName">Receives either a pointer to the semantic type of the value as a Unicode string or <b>NULL</b>.</param>
+    <returns>Returns S_OK if successful, E_FAIL if this is not a leaf node, or an error value otherwise.</returns>
   </member>
   <member name="ICondition">
-    <summary>
-      <para>Provides methods for retrieving information about a search condition. An <b>ICondition</b> object represents the result of parsing an input string (using methods such as <see cref="IQueryParser.Parse" /> or <see cref="IQuerySolution.GetQuery" />) into a tree of search condition nodes. A node can be a logical AND, OR, or NOT for comparing subnodes, or it can be a leaf node comparing a property and a constant value.</para>
-    </summary>
-    <remarks>
-      <para>Prior to Windows 7, this interface was only declared in structuredquery.h and structuredquery.idl. In Windows 7, this interface is also defined in structuredquerycondition.idl and structuredquerycondition.h.</para>
-      <para>The <a href="https://github.com/microsoft/windows-classic-samples/tree/master/samples/win7samples/winui/windowssearch/structuredquerysample">StructuredQuerySample</a> demonstrates how to read lines from the console, parse them using the system schema, and display the resulting condition trees.</para>
-    </remarks>
-    <seealso cref="CONDITION_OPERATION" />
-    <seealso cref="CONDITION_TYPE" />
-    <seealso cref="ICondition2" />
-    <seealso cref="IPersistStream" />
+    <summary>Provides methods for retrieving information about a search condition. An <b>ICondition</b> object represents the result of parsing an input string (using methods such as <see cref="IQueryParser.Parse" /> or <see cref="IQuerySolution.GetQuery" />) into a tree of search condition nodes. A node can be a logical AND, OR, or NOT for comparing subnodes, or it can be a leaf node comparing a property and a constant value.</summary>
   </member>
 </doc>

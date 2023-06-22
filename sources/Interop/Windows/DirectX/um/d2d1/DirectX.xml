@@ -3,126 +3,43 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DirectX.D2D1CreateFactory">
-    <summary>
-      <para>Creates a factory object that can be used to create Direct2D resources.</para>
-    </summary>
-    <param name="factoryType">
-      <para>Type: <b><see cref="D2D1_FACTORY_TYPE" /></b></para>
-      <para>The threading model of the factory and the resources it creates.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the IID of <see cref="ID2D1Factory" /> that is obtained by using <code>__uuidof(ID2D1Factory)</code>.</para>
-    </param>
-    <param name="pFactoryOptions">
-      <para>Type: <b>const <see cref="D2D1_FACTORY_OPTIONS" />*</b></para>
-      <para>The level of detail provided to the debugging layer.</para>
-    </param>
-    <param name="ppIFactory">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns, contains the address to a pointer to the new factory.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
-    </returns>
-    <remarks>
-      <para>The <see cref="ID2D1Factory" /> interface provides the starting point for Direct2D. In general, an object created from a single instance of a factory object can be used with other resources created from that instance, but not with resources created by other factory instances.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/the-direct2d-api">Direct2D API Overview</seealso>
+    <summary>Creates a factory object that can be used to create Direct2D resources.</summary>
+    <param name="factoryType">The threading model of the factory and the resources it creates.</param>
+    <param name="riid">A reference to the IID of <see cref="ID2D1Factory" /> that is obtained by using <code>__uuidof(ID2D1Factory)</code>.</param>
+    <param name="pFactoryOptions">The level of detail provided to the debugging layer.</param>
+    <param name="ppIFactory">When this method returns, contains the address to a pointer to the new factory.</param>
+    <returns>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</returns>
   </member>
   <member name="DirectX.D2D1CreateFactory">
-    <summary>
-      <para>Creates a factory object that can be used to create Direct2D resources.</para>
-    </summary>
-    <param name="factoryType">
-      <para>Type: <b><see cref="D2D1_FACTORY_TYPE" /></b></para>
-      <para>The threading model of the factory and the resources it creates.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the IID of <see cref="ID2D1Factory" /> that is obtained by using <code>__uuidof(ID2D1Factory)</code>.</para>
-    </param>
-    <param name="ppIFactory">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns, contains the address to a pointer to the new factory.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
-    </returns>
-    <remarks>
-      <para>The <see cref="ID2D1Factory" /> interface provides the starting point for Direct2D. In general, an object created from a single instance of a factory object can be used with other resources created from that instance, but not with resources created by other factory instances.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/the-direct2d-api">Direct2D API Overview</seealso>
+    <summary>Creates a factory object that can be used to create Direct2D resources.</summary>
+    <param name="factoryType">The threading model of the factory and the resources it creates.</param>
+    <param name="riid">A reference to the IID of <see cref="ID2D1Factory" /> that is obtained by using <code>__uuidof(ID2D1Factory)</code>.</param>
+    <param name="ppIFactory">When this method returns, contains the address to a pointer to the new factory.</param>
+    <returns>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</returns>
   </member>
   <member name="DirectX.D2D1InvertMatrix">
-    <summary>
-      <para>Tries to invert the specified matrix.</para>
-    </summary>
-    <param name="matrix">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The matrix to invert.</para>
-    </param>
+    <summary>Tries to invert the specified matrix.</summary>
+    <param name="matrix">The matrix to invert.</param>
     <returns>
-      <para>Type: <b>BOOL</b></para>
-      <para>
-        <b>true</b> if the matrix was inverted; otherwise, <b>false</b>.</para>
-    </returns>
+      <b>true</b> if the matrix was inverted; otherwise, <b>false</b>.</returns>
   </member>
   <member name="DirectX.D2D1IsMatrixInvertible">
-    <summary>
-      <para>Indicates whether the specified matrix is invertible.</para>
-    </summary>
-    <param name="matrix">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The matrix to test.</para>
-    </param>
+    <summary>Indicates whether the specified matrix is invertible.</summary>
+    <param name="matrix">The matrix to test.</param>
     <returns>
-      <para>Type: <b>BOOL</b></para>
-      <para>
-        <b>true</b> if the matrix was inverted; otherwise, <b>false</b>.</para>
-    </returns>
+      <b>true</b> if the matrix was inverted; otherwise, <b>false</b>.</returns>
   </member>
   <member name="DirectX.D2D1MakeRotateMatrix">
-    <summary>
-      <para>Creates a rotation transformation that rotates by the specified angle about the specified point.</para>
-    </summary>
-    <param name="angle">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The clockwise rotation angle, in degrees.</para>
-    </param>
-    <param name="center">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The point about which to rotate.</para>
-    </param>
-    <param name="matrix">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>When this method returns, contains the new rotation transformation. You must allocate storage for this parameter.</para>
-    </param>
-    <remarks>
-      <para>Rotation occurs in the plane of the 2-D surface.</para>
-    </remarks>
+    <summary>Creates a rotation transformation that rotates by the specified angle about the specified point.</summary>
+    <param name="angle">The clockwise rotation angle, in degrees.</param>
+    <param name="center">The point about which to rotate.</param>
+    <param name="matrix">When this method returns, contains the new rotation transformation. You must allocate storage for this parameter.</param>
   </member>
   <member name="DirectX.D2D1MakeSkewMatrix">
-    <summary>
-      <para>Creates a skew transformation that has the specified x-axis angle, y-axis angle, and center point.</para>
-    </summary>
-    <param name="angleX">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The x-axis skew angle, which is measured in degrees counterclockwise from the y-axis.</para>
-    </param>
-    <param name="angleY">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The y-axis skew angle, which is measured in degrees counterclockwise from the x-axis.</para>
-    </param>
-    <param name="center">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The center point of the skew operation.</para>
-    </param>
-    <param name="matrix">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>When this method returns, contains the rotation transformation. You must allocate storage for this parameter.</para>
-    </param>
+    <summary>Creates a skew transformation that has the specified x-axis angle, y-axis angle, and center point.</summary>
+    <param name="angleX">The x-axis skew angle, which is measured in degrees counterclockwise from the y-axis.</param>
+    <param name="angleY">The y-axis skew angle, which is measured in degrees counterclockwise from the x-axis.</param>
+    <param name="center">The center point of the skew operation.</param>
+    <param name="matrix">When this method returns, contains the rotation transformation. You must allocate storage for this parameter.</param>
   </member>
 </doc>

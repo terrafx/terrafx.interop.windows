@@ -3,48 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxBundleManifestOptionalBundleInfo.GetFileName">
-    <summary>
-      <para>Retrieves the file-name attribute of the &lt;OptionalBundle&gt;.</para>
-    </summary>
-    <param name="fileName">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPWSTR</a>*</b></para>
-      <para>A string that contains the file name of the package.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxBundleManifestOptionalBundleInfo" />
+    <summary>Retrieves the file-name attribute of the &lt;OptionalBundle&gt;.</summary>
+    <param name="fileName">A string that contains the file name of the package.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxBundleManifestOptionalBundleInfo.GetPackageId">
-    <summary>
-      <para>Retrieves an object that represents the identity of the &lt;OptionalBundle&gt;.</para>
-    </summary>
-    <param name="packageId">
-      <para>The package identifier.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxBundleManifestOptionalBundleInfo" />
+    <summary>Retrieves an object that represents the identity of the &lt;OptionalBundle&gt;.</summary>
+    <param name="packageId">The package identifier.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxBundleManifestOptionalBundleInfo.GetPackageInfoItems">
-    <summary>
-      <para>Retrieves optional packages in the bundle.</para>
-    </summary>
-    <param name="packageInfoItems">
-      <para>Type: <b>IAppxBundleManifestPackageInfoEnumerator**</b></para>
-      <para>An enumerator over all payload packages in a &lt;OptionalBundle&gt; element of a bundle.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxBundleManifestOptionalBundleInfo" />
+    <summary>Retrieves optional packages in the bundle.</summary>
+    <param name="packageInfoItems">An enumerator over all payload packages in a &lt;OptionalBundle&gt; element of a bundle.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxBundleManifestOptionalBundleInfo">
-    <summary>
-      <para>Provides a read-only object model for an &lt;OptionalBundle&gt; element in a bundle package manifest.</para>
-    </summary>
+    <summary>Provides a read-only object model for an &lt;OptionalBundle&gt; element in a bundle package manifest.</summary>
   </member>
 </doc>

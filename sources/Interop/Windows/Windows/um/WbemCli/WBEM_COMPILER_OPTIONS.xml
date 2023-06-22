@@ -3,32 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WBEM_COMPILER_OPTIONS">
-    <summary>
-      <para>Contains option flags for <see cref="IMofCompiler" /> methods.</para>
-    </summary>
-    <seealso cref="CompileBuffer" />
-    <seealso cref="CompileFile" />
-    <seealso cref="CreateBMOF" />
+    <summary>Contains option flags for <see cref="IMofCompiler" /> methods.</summary>
   </member>
-  <member name="WBEM_COMPILER_OPTIONS.WBEM_FLAG_CHECK_ONLY">
-    <summary></summary>
-  </member>
-  <member name="WBEM_COMPILER_OPTIONS.WBEM_FLAG_AUTORECOVER">
-    <summary></summary>
-  </member>
-  <member name="WBEM_COMPILER_OPTIONS.WBEM_FLAG_WMI_CHECK">
-    <summary></summary>
-  </member>
-  <member name="WBEM_COMPILER_OPTIONS.WBEM_FLAG_CONSOLE_PRINT">
-    <summary></summary>
-  </member>
-  <member name="WBEM_COMPILER_OPTIONS.WBEM_FLAG_DONT_ADD_TO_LIST">
-    <summary></summary>
-  </member>
-  <member name="WBEM_COMPILER_OPTIONS.WBEM_FLAG_SPLIT_FILES">
-    <summary></summary>
-  </member>
-  <member name="WBEM_COMPILER_OPTIONS.WBEM_FLAG_STORE_FILE">
-    <summary></summary>
-  </member>
+  <member name="WBEM_COMPILER_OPTIONS.WBEM_FLAG_CHECK_ONLY"></member>
+  <member name="WBEM_COMPILER_OPTIONS.WBEM_FLAG_AUTORECOVER"></member>
+  <member name="WBEM_COMPILER_OPTIONS.WBEM_FLAG_WMI_CHECK"></member>
+  <member name="WBEM_COMPILER_OPTIONS.WBEM_FLAG_CONSOLE_PRINT"></member>
+  <member name="WBEM_COMPILER_OPTIONS.WBEM_FLAG_DONT_ADD_TO_LIST"></member>
+  <member name="WBEM_COMPILER_OPTIONS.WBEM_FLAG_SPLIT_FILES"></member>
+  <member name="WBEM_COMPILER_OPTIONS.WBEM_FLAG_STORE_FILE"></member>
 </doc>

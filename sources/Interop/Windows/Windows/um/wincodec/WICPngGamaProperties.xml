@@ -3,16 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICPngGamaProperties">
-    <summary>
-      <para>Specifies the Portable Network Graphics (PNG) gAMA chunk metadata properties.</para>
-    </summary>
+    <summary>Specifies the Portable Network Graphics (PNG) gAMA chunk metadata properties.</summary>
   </member>
   <member name="WICPngGamaProperties.WICPngGamaGamma">
-    <summary>
-      <para>[VT_UI4] Indicates the gamma value.</para>
-    </summary>
+    <summary>[VT_UI4] Indicates the gamma value.</summary>
   </member>
-  <member name="WICPngGamaProperties.WICPngGamaProperties_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICPngGamaProperties.WICPngGamaProperties_FORCE_DWORD"></member>
 </doc>

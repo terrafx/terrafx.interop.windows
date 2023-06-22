@@ -3,28 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE">
-    <summary>
-      <para>Specifies the alpha fill mode for video processing. This value is used by the <see cref="D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC" /> structure.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE_OPAQUE</b> must be always supported.  The background, destination, and source stream modes are only supported when the driver reports <see cref="D3D12_VIDEO_PROCESS_FEATURE_FLAG_ALPHA_FILL" />.</para>
-    </remarks>
+    <summary>Specifies the alpha fill mode for video processing. This value is used by the <see cref="D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC" /> structure.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE.D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE_OPAQUE">
-    <summary>
-      <para>Alpha values inside the target rectangle are set to opaque.</para>
-    </summary>
+    <summary>Alpha values inside the target rectangle are set to opaque.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE.D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE_BACKGROUND">
-    <summary>
-      <para>Alpha values inside the target rectangle are set to the alpha value specified in the background color.</para>
-    </summary>
+    <summary>Alpha values inside the target rectangle are set to the alpha value specified in the background color.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE.D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE_DESTINATION">
-    <summary>
-      <para>Existing alpha values remain unchanged in the output surface.</para>
-    </summary>
+    <summary>Existing alpha values remain unchanged in the output surface.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE.D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE_SOURCE_STREAM">
     <summary>

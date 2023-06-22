@@ -3,23 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIB_ICMP">
-    <summary>
-      <para>The
-<b>MIB_ICMP</b> structure contains the Internet Control Message Protocol (ICMP) statistics for a particular computer.</para>
-    </summary>
-    <remarks>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>MIB_ICMP</b> structure is defined in the <i>Ipmib.h</i> header file not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i> which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
-    </remarks>
-    <seealso cref="GetIcmpStatistics" />
-    <seealso cref="MIBICMPINFO" />
-    <seealso cref="MIBICMPSTATS" />
-    <seealso cref="MIBICMPSTATS_EX" />
-    <seealso cref="MIB_ICMP_EX" />
+    <summary>The<b>MIB_ICMP</b> structure contains the Internet Control Message Protocol (ICMP) statistics for a particular computer.</summary>
   </member>
   <member name="MIB_ICMP.stats">
-    <summary>
-      <para>A
-<see cref="MIBICMPINFO" /> structure that contains the ICMP statistics for the computer.</para>
-    </summary>
+    <summary>A<see cref="MIBICMPINFO" /> structure that contains the ICMP statistics for the computer.</summary>
   </member>
 </doc>

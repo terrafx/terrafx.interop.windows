@@ -3,170 +3,61 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISyncMgrEvent.GetContext">
-    <summary>
-      <para>Gets a context object that can be used by a handler to display properties or execute a context menu action.</para>
-    </summary>
-    <param name="ppszContext">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>When this method returns, contains a pointer to the context as a Unicode string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The handler is expected to allocate the buffer using <see cref="CoTaskMemAlloc" />, which Sync Center uses to deallocate the string buffer.</para>
-    </remarks>
+    <summary>Gets a context object that can be used by a handler to display properties or execute a context menu action.</summary>
+    <param name="ppszContext">When this method returns, contains a pointer to the context as a Unicode string.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrEvent.GetDescription">
-    <summary>
-      <para>Gets the event description.</para>
-    </summary>
-    <param name="ppszDescription">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>When this method returns, contains the address of a pointer to a null-terminated Unicode buffer that contains the description.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the event description.</summary>
+    <param name="ppszDescription">When this method returns, contains the address of a pointer to a null-terminated Unicode buffer that contains the description.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrEvent.GetEventID">
-    <summary>
-      <para>Gets the event ID.</para>
-    </summary>
-    <param name="pguidEventID">
-      <para>Type: <b>GUID*</b></para>
-      <para>When this method returns, contains a pointer to an event ID.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the event ID.</summary>
+    <param name="pguidEventID">When this method returns, contains a pointer to an event ID.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrEvent.GetFlags">
-    <summary>
-      <para>Gets event flags.</para>
-    </summary>
-    <param name="pnFlags">
-      <para>Type: <b><see cref="SYNCMGR_EVENT_FLAGS" />*</b></para>
-      <para>When this method returns, contains a pointer to a value that indicates the currently set flags, taken from members of the <see cref="SYNCMGR_EVENT_FLAGS" /> enumeration.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets event flags.</summary>
+    <param name="pnFlags">When this method returns, contains a pointer to a value that indicates the currently set flags, taken from members of the <see cref="SYNCMGR_EVENT_FLAGS" /> enumeration.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrEvent.GetHandlerID">
-    <summary>
-      <para>Gets the ID of the handler for which the event was logged.</para>
-    </summary>
-    <param name="ppszHandlerID">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>When this method returns, contains a pointer to a handler ID as a Unicode string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The handler ID can have a maximum length of MAX_SYNCMGR_ID, including the terminating null character. The event is expected to allocate the string buffer using <see cref="CoTaskMemAlloc" />, which Sync Center uses to deallocate the string buffer.</para>
-    </remarks>
+    <summary>Gets the ID of the handler for which the event was logged.</summary>
+    <param name="ppszHandlerID">When this method returns, contains a pointer to a handler ID as a Unicode string.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrEvent.GetItemID">
-    <summary>
-      <para>Gets the ID of the item for which the event was logged.</para>
-    </summary>
-    <param name="ppszItemID">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>Contains a pointer to an item ID as a Unicode string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The item ID can have a maximum length of MAX_SYNCMGR_ID, including the terminating null character. The event is expected to allocate the string buffer using <see cref="CoTaskMemAlloc" />, which Sync Center uses to deallocate the string buffer.</para>
-    </remarks>
+    <summary>Gets the ID of the item for which the event was logged.</summary>
+    <param name="ppszItemID">Contains a pointer to an item ID as a Unicode string.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrEvent.GetLevel">
-    <summary>
-      <para>Gets the log level of the event.</para>
-    </summary>
-    <param name="pnLevel">
-      <para>Type: <b><see cref="SYNCMGR_EVENT_LEVEL" />*</b></para>
-      <para>When this method returns, contains a pointer to a member of the <see cref="SYNCMGR_EVENT_LEVEL" /> enumeration that indicates the log level.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the log level of the event.</summary>
+    <param name="pnLevel">When this method returns, contains a pointer to a member of the <see cref="SYNCMGR_EVENT_LEVEL" /> enumeration that indicates the log level.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrEvent.GetLinkReference">
-    <summary>
-      <para>Gets the reference for the hot link for the event. The hot link is a displayed property that the user can click to execute an action. This allows the handler to show an available action that the user can see at a glance in the folder.</para>
-    </summary>
-    <param name="ppszLinkReference">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>When this method returns, contains a pointer to a link reference as a Unicode string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The link reference is executed when the user clicks on the hot link. When the user clicks the link, Sync Center calls <see cref="GetObject" />, requesting the SYNCMGR_OBJECTID_EventLinkClick object for the <see cref="ISyncMgrEventLinkUIOperation" /> interface. The object is initialized with an <see cref="ISyncMgrEvent" /> interface pointer that can be used by the <i>Run</i> method. If the handler does not support this object ID, Sync Center passes the link reference to <see cref="ShellExecute" />.</para>
-      <para>The event is expected to allocate the string buffer using <see cref="CoTaskMemAlloc" />, which Sync Center uses to deallocate the string buffer.</para>
-    </remarks>
+    <summary>Gets the reference for the hot link for the event. The hot link is a displayed property that the user can click to execute an action. This allows the handler to show an available action that the user can see at a glance in the folder.</summary>
+    <param name="ppszLinkReference">When this method returns, contains a pointer to a link reference as a Unicode string.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrEvent.GetLinkText">
-    <summary>
-      <para>Gets the text for the hot link for the event. The hot link is a displayed property that the user can click to execute an action. This allows the handler to show an available action that the user can see at a glance in the folder. The link text is the text that is displayed to the user.</para>
-    </summary>
-    <param name="ppszLinkText">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>When this method returns, contains a pointer to the link text as a Unicode string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The event is expected to allocate the string buffer using <see cref="CoTaskMemAlloc" />, which Sync Center uses to deallocate the string buffer.</para>
-    </remarks>
+    <summary>Gets the text for the hot link for the event. The hot link is a displayed property that the user can click to execute an action. This allows the handler to show an available action that the user can see at a glance in the folder. The link text is the text that is displayed to the user.</summary>
+    <param name="ppszLinkText">When this method returns, contains a pointer to the link text as a Unicode string.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrEvent.GetName">
-    <summary>
-      <para>Gets the name of the event. This string can be a simple name for the event or a short summary. It is displayed in the folder and in the property sheet for the event.</para>
-    </summary>
-    <param name="ppszName">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>When this method returns, contains a pointer to a name as a Unicode string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The event is expected to allocate the string buffer using <see cref="CoTaskMemAlloc" />, which Sync Center uses to deallocate the string buffer.</para>
-    </remarks>
+    <summary>Gets the name of the event. This string can be a simple name for the event or a short summary. It is displayed in the folder and in the property sheet for the event.</summary>
+    <param name="ppszName">When this method returns, contains a pointer to a name as a Unicode string.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrEvent.GetTime">
-    <summary>
-      <para>Gets the creation time.</para>
-    </summary>
-    <param name="pfCreationTime">
-      <para>Type: <b>FILETIME*</b></para>
-      <para>When this method returns, contains a pointer to a creation time as a <see cref="FILETIME" /> structure.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the creation time.</summary>
+    <param name="pfCreationTime">When this method returns, contains a pointer to a creation time as a <see cref="FILETIME" /> structure.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrEvent">
-    <summary>
-      <para>Exposes methods that retrieve data from an event store. An event store allows Sync Center to get an enumerator of all events in the store, as well as to retrieve individual events.</para>
-    </summary>
+    <summary>Exposes methods that retrieve data from an event store. An event store allows Sync Center to get an enumerator of all events in the store, as well as to retrieve individual events.</summary>
   </member>
 </doc>

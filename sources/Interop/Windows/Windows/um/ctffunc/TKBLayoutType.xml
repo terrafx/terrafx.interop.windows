@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TKBLayoutType">
-    <summary>
-      <para>Elements of the <b>TKBLayoutType</b> enumeration are passed by an IME in a call to <see cref="ITfFnGetPreferredTouchKeyboardLayout.GetLayout" /> to specify the type of layout.</para>
-    </summary>
-    <seealso cref="ITfFnGetPreferredTouchKeyboardLayout.GetLayout" />
+    <summary>Elements of the <b>TKBLayoutType</b> enumeration are passed by an IME in a call to <see cref="ITfFnGetPreferredTouchKeyboardLayout.GetLayout" /> to specify the type of layout.</summary>
   </member>
   <member name="TKBLayoutType.TKBLT_UNDEFINED">
-    <summary>
-      <para>Undefined. If specified, it will cause the layout to fallback to a classic layout.</para>
-    </summary>
+    <summary>Undefined. If specified, it will cause the layout to fallback to a classic layout.</summary>
   </member>
   <member name="TKBLayoutType.TKBLT_CLASSIC">
-    <summary>
-      <para>The touch keyboard is to use a classic layout.</para>
-    </summary>
+    <summary>The touch keyboard is to use a classic layout.</summary>
   </member>
   <member name="TKBLayoutType.TKBLT_OPTIMIZED">
-    <summary>
-      <para>The touch keyboard is to use a touch-optimized layout.</para>
-    </summary>
+    <summary>The touch keyboard is to use a touch-optimized layout.</summary>
   </member>
 </doc>

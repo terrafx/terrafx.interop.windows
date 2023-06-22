@@ -2,99 +2,159 @@
 <!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
-  <member name="IDXGIResource.GetUsage">
-    <summary>
-      <para>Get the expected resource usage.</para>
-    </summary>
-    <param name="pUsage">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-usage">DXGI_USAGE</a>*</b></para>
-      <para>A pointer to a usage flag (see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-usage">DXGI_USAGE</a>). For Direct3D 10, a surface can be used as a shader input or a render-target output.</para>
+  <member name="IDXGIResource.GetEvictionPriority">
+    <summary>Get the eviction priority.</summary>
+    <param name="pEvictionPriority">
+      <para>A pointer to the eviction priority, which determines when a resource can be evicted from memory.</para>
+      <para>The following defined values are possible.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DXGI_RESOURCE_PRIORITY_MINIMUM (0x28000000)</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The resource is unused and can be evicted as soon as another resource requires the memory that the resource occupies.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DXGI_RESOURCE_PRIORITY_LOW (0x50000000)</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The eviction priority of the resource is low. The placement of the resource is not critical, and minimal work is performed to find a location for the resource. For example, if a GPU can render with a vertex buffer from either local or non-local memory with little difference in performance, that vertex buffer is low priority. Other more critical resources (for example, a render target or texture) can then occupy the faster memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DXGI_RESOURCE_PRIORITY_NORMAL (0x78000000)</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The eviction priority of the resource is normal. The placement of the resource is important, but not critical, for performance. The resource is placed in its preferred location instead of a low-priority resource.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DXGI_RESOURCE_PRIORITY_HIGH (0xa0000000)</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The eviction priority of the resource is high. The resource is placed in its preferred location instead of a low-priority or normal-priority resource.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DXGI_RESOURCE_PRIORITY_MAXIMUM (0xc8000000)</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The resource is evicted from memory only if there is no other way of resolving the memory requirement.</description>
+        </listheader>
+      </list>
     </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</para>
-    </returns>
-    <seealso cref="IDXGIResource" />
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</returns>
+  </member>
+  <member name="IDXGIResource.GetUsage">
+    <summary>Get the expected resource usage.</summary>
+    <param name="pUsage">A pointer to a usage flag (see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-usage">DXGI_USAGE</a>). For Direct3D 10, a surface can be used as a shader input or a render-target output.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</returns>
   </member>
   <member name="IDXGIResource.SetEvictionPriority">
-    <summary>
-      <para>Set the priority for evicting the resource from memory.</para>
-    </summary>
+    <summary>Set the priority for evicting the resource from memory.</summary>
     <param name="EvictionPriority">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>The priority is one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>DXGI_RESOURCE_PRIORITY_MINIMUM (0x28000000)</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DXGI_RESOURCE_PRIORITY_MINIMUM (0x28000000)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The resource is unused and can be evicted as soon as another resource requires the memory that the resource occupies.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The resource is unused and can be evicted as soon as another resource requires the memory that the resource occupies.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DXGI_RESOURCE_PRIORITY_LOW (0x50000000)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The eviction priority of the resource is low. The placement of the resource is not critical, and minimal work is performed to find a location for the resource. For example, if a GPU can render with a vertex buffer from either local or non-local memory with little difference in performance, that vertex buffer is low priority. Other more critical resources (for example, a render target or texture) can then occupy the faster memory.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>DXGI_RESOURCE_PRIORITY_LOW (0x50000000)</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DXGI_RESOURCE_PRIORITY_NORMAL (0x78000000)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The eviction priority of the resource is normal. The placement of the resource is important, but not critical, for performance. The resource is placed in its preferred location instead of a low-priority resource.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The eviction priority of the resource is low. The placement of the resource is not critical, and minimal work is performed to find a location for the resource. For example, if a GPU can render with a vertex buffer from either local or non-local memory with little difference in performance, that vertex buffer is low priority. Other more critical resources (for example, a render target or texture) can then occupy the faster memory.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DXGI_RESOURCE_PRIORITY_HIGH (0xa0000000)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The eviction priority of the resource is high. The resource is placed in its preferred location instead of a low-priority or normal-priority resource.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>DXGI_RESOURCE_PRIORITY_NORMAL (0x78000000)</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DXGI_RESOURCE_PRIORITY_MAXIMUM (0xc8000000)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The eviction priority of the resource is normal. The placement of the resource is important, but not critical, for performance. The resource is placed in its preferred location instead of a low-priority resource.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>DXGI_RESOURCE_PRIORITY_HIGH (0xa0000000)</b>
-          </description>
-          <description>
-            <para>The eviction priority of the resource is high. The resource is placed in its preferred location instead of a low-priority or normal-priority resource.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>DXGI_RESOURCE_PRIORITY_MAXIMUM (0xc8000000)</b>
-          </description>
-          <description>
-            <para>The resource is evicted from memory only if there is no other way of resolving the memory requirement.</para>
-          </description>
-        </item>
+          <description>The resource is evicted from memory only if there is no other way of resolving the memory requirement.</description>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</para>
-    </returns>
-    <remarks>
-      <para>The eviction priority is a memory-management variable that is used by DXGI for determining how to populate overcommitted memory.</para>
-      <para>You can set priority levels other than the defined values when appropriate. For example, you can set a resource with a priority level of 0x78000001 to indicate that the resource is slightly above normal.</para>
-    </remarks>
-    <seealso cref="IDXGIResource" />
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</returns>
   </member>
   <member name="IDXGIResource">
-    <summary>
-      <para>An <b>IDXGIResource</b> interface allows resource sharing and identifies the memory that a resource resides in.</para>
-    </summary>
-    <remarks>
-      <para>To find out what type of memory a resource is currently located in, use <see cref="IDXGIDevice.QueryResourceResidency" />. To share resources between processes, use <see cref="ID3D10Device.OpenSharedResource" />. For information about how to share resources between multiple Windows graphics APIs, including Direct3D 11, Direct2D, Direct3D 10, and Direct3D 9Ex, see <a href="https://docs.microsoft.com//windows/desktop/direct3darticles/surface-sharing-between-windows-graphics-apis">Surface Sharing Between Windows Graphics APIs</a>.</para>
-      <para>You can retrieve the <b>IDXGIResource</b>  interface from any video memory resource that you create from a Direct3D 10 and later function. Any Direct3D object that supports <see cref="ID3D10Resource" /> or <see cref="ID3D11Resource" /> also supports <b>IDXGIResource</b>. For example, the Direct3D 2D texture object that you create from <see cref="ID3D11Device.CreateTexture2D" /> supports <b>IDXGIResource</b>. You can call <see cref="QueryInterface" /> on the 2D texture object (<see cref="ID3D11Texture2D" />) to retrieve the <b>IDXGIResource</b> interface. For example, to retrieve the <b>IDXGIResource</b>  interface from  the 2D texture object, use the following code.</para>
-      <code>IDXGIResource * pDXGIResource;
-hr = g_pd3dTexture2D-&gt;QueryInterface(__uuidof(IDXGIResource), (void **)&amp;amp;amp;amp;amp;amp;pDXGIResource);
-</code>
-      <para>
-        <b>Windows Phone 8:
-</b> This API is supported.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IDXGIDeviceSubObject" />
+    <summary>An <b>IDXGIResource</b> interface allows resource sharing and identifies the memory that a resource resides in.</summary>
   </member>
 </doc>

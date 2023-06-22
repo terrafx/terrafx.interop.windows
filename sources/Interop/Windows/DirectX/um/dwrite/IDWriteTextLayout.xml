@@ -3,546 +3,167 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteTextLayout.DetermineMinWidth">
-    <summary>
-      <para>Determines the minimum possible width the layout can be set to without emergency breaking between the characters of whole words occurring.</para>
-    </summary>
-    <param name="minWidth">
-      <para>Type: <b>FLOAT*</b></para>
-      <para>Minimum width.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Determines the minimum possible width the layout can be set to without emergency breaking between the characters of whole words occurring.</summary>
+    <param name="minWidth">Minimum width.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.Draw">
-    <summary>
-      <para>Draws text using the specified client drawing context.</para>
-    </summary>
-    <param name="clientDrawingContext">
-      <para>Type: <b>void*</b></para>
-      <para>An application-defined drawing context.</para>
-    </param>
-    <param name="renderer">
-      <para>Type: <b><see cref="IDWriteTextRenderer" />*</b></para>
-      <para>Pointer to the set of callback functions used to draw parts of a text string.</para>
-    </param>
-    <param name="originX">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The x-coordinate of the layout's left side.</para>
-    </param>
-    <param name="originY">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The y-coordinate of the layout's top side.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>To draw text with this method, a <i>textLayout</i> object needs to be created by the application using <see cref="IDWriteFactory.CreateTextLayout" />.</para>
-      <para>After the <i>textLayout</i> object is obtained, the application calls the  <b>IDWriteTextLayout.Draw</b> method  to draw the text, decorations, and inline objects. The actual drawing is done through the callback interface passed in as the <i>textRenderer</i> argument; there, the corresponding <see cref="DrawGlyphRun" /> API is called.</para>
-      <para>If you set a vertical text reading direction on IDWriteTextLayout via SetReadingDirection with DWRITE_READING_DIRECTION_TOP_TO_BOTTOM (or bottom to top), then you must pass an interface that implements IDWriteTextRenderer1. Otherwise you get the error DWRITE_E_TEXTRENDERERINCOMPATIBLE because the original IDWriteTextRenderer interface only supported horizontal text.</para>
-    </remarks>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Draws text using the specified client drawing context.</summary>
+    <param name="clientDrawingContext">An application-defined drawing context.</param>
+    <param name="renderer">Pointer to the set of callback functions used to draw parts of a text string.</param>
+    <param name="originX">The x-coordinate of the layout's left side.</param>
+    <param name="originY">The y-coordinate of the layout's top side.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.GetClusterMetrics">
-    <summary>
-      <para>Retrieves logical properties and measurements of each glyph cluster.</para>
-    </summary>
-    <param name="clusterMetrics">
-      <para>Type: <b><see cref="DWRITE_CLUSTER_METRICS" />*</b></para>
-      <para>When this method returns, contains metrics, such as line-break or total advance width, for a glyph cluster.</para>
-    </param>
-    <param name="maxClusterCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The maximum size of the <i>clusterMetrics</i> array.</para>
-    </param>
-    <param name="actualClusterCount">
-      <para>Type: <b>UINT32*</b></para>
-      <para>When this method returns, contains the actual size of the <i>clusterMetrics</i> array that is needed.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If <i>maxClusterCount</i> is not large enough, then E_NOT_SUFFICIENT_BUFFER, which is equivalent to HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER), is
-returned and <i>actualClusterCount</i> is set to the number of clusters
-needed.</para>
-    </remarks>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Retrieves logical properties and measurements of each glyph cluster.</summary>
+    <param name="clusterMetrics">When this method returns, contains metrics, such as line-break or total advance width, for a glyph cluster.</param>
+    <param name="maxClusterCount">The maximum size of the <i>clusterMetrics</i> array.</param>
+    <param name="actualClusterCount">When this method returns, contains the actual size of the <i>clusterMetrics</i> array that is needed.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.GetDrawingEffect">
-    <summary>
-      <para>Gets the application-defined drawing effect at the specified text position.</para>
-    </summary>
-    <param name="currentPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The position of the text whose drawing effect is to be retrieved.</para>
-    </param>
-    <param name="drawingEffect">
-      <para>Type: <b>IUnknown**</b></para>
-      <para>When this method returns, contains an address of a pointer to  the current application-defined drawing effect. Usually this effect is a foreground brush that  is used in glyph drawing.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" />*</b></para>
-      <para>Contains the range of text that has the same  formatting as the text at the position specified by <i>currentPosition</i>.  This means the run has the exact  formatting as the position specified, including but not limited to the drawing effect.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Gets the application-defined drawing effect at the specified text position.</summary>
+    <param name="currentPosition">The position of the text whose drawing effect is to be retrieved.</param>
+    <param name="drawingEffect">When this method returns, contains an address of a pointer to the current application-defined drawing effect. Usually this effect is a foreground brush that is used in glyph drawing.</param>
+    <param name="textRange">Contains the range of text that has the same formatting as the text at the position specified by <i>currentPosition</i>. This means the run has the exact formatting as the position specified, including but not limited to the drawing effect.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.GetFontCollection">
-    <summary>
-      <para>Gets the font collection associated with the text at the specified position.</para>
-    </summary>
-    <param name="currentPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The position of the text to inspect.</para>
-    </param>
-    <param name="fontCollection">
-      <para>Type: <b><see cref="IDWriteFontCollection" />**</b></para>
-      <para>Contains an address of a  pointer to the current font collection.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" />*</b></para>
-      <para>The range of text that has the same  formatting as the text at the position specified by <i>currentPosition</i>.  This means the run has the exact  formatting as the position specified, including but not limited to the underline.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Gets the font collection associated with the text at the specified position.</summary>
+    <param name="currentPosition">The position of the text to inspect.</param>
+    <param name="fontCollection">Contains an address of a pointer to the current font collection.</param>
+    <param name="textRange">The range of text that has the same formatting as the text at the position specified by <i>currentPosition</i>. This means the run has the exact formatting as the position specified, including but not limited to the underline.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.GetFontFamilyName">
-    <summary>
-      <para>Copies the font family name of the text at the specified position.</para>
-    </summary>
-    <param name="currentPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The position of the text to examine.</para>
-    </param>
-    <param name="fontFamilyName">
-      <para>Type: <b>WCHAR*</b></para>
-      <para>When this method returns, contains an array of characters that receives the current font family name. You must allocate storage for this parameter.</para>
-    </param>
-    <param name="nameSize">
-      <para>Type: <b>UINT32</b></para>
-      <para>The size of the character array in character count including the terminated <b>NULL</b> character.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" />*</b></para>
-      <para>The range of text that has the same  formatting as the text at the position specified by <i>currentPosition</i>.  This means the run has the exact  formatting as the position specified, including but not limited to the font family name.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Copies the font family name of the text at the specified position.</summary>
+    <param name="currentPosition">The position of the text to examine.</param>
+    <param name="fontFamilyName">When this method returns, contains an array of characters that receives the current font family name. You must allocate storage for this parameter.</param>
+    <param name="nameSize">The size of the character array in character count including the terminated <b>NULL</b> character.</param>
+    <param name="textRange">The range of text that has the same formatting as the text at the position specified by <i>currentPosition</i>. This means the run has the exact formatting as the position specified, including but not limited to the font family name.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.GetFontFamilyNameLength">
-    <summary>
-      <para>Get the length of the font family name at the current position.</para>
-    </summary>
-    <param name="currentPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The current text position.</para>
-    </param>
-    <param name="nameLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>When this method returns, contains the size of the character array containing the font family name, in character count, not including the terminated <b>NULL</b> character.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" />*</b></para>
-      <para>The range of text that has the same  formatting as the text at the position specified by <i>currentPosition</i>.  This means the run has the exact  formatting as the position specified, including but not limited to the font family.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Get the length of the font family name at the current position.</summary>
+    <param name="currentPosition">The current text position.</param>
+    <param name="nameLength">When this method returns, contains the size of the character array containing the font family name, in character count, not including the terminated <b>NULL</b> character.</param>
+    <param name="textRange">The range of text that has the same formatting as the text at the position specified by <i>currentPosition</i>. This means the run has the exact formatting as the position specified, including but not limited to the font family.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.GetFontSize">
-    <summary>
-      <para>Gets the font em height of the text at the specified position.</para>
-    </summary>
-    <param name="currentPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The position of the text to inspect.</para>
-    </param>
-    <param name="fontSize">
-      <para>Type: <b>FLOAT*</b></para>
-      <para>When this method returns, contains the size of the font in ems  of the text at the specified position.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" />*</b></para>
-      <para>The range of text that has the same  formatting as the text at the position specified by <i>currentPosition</i>.  This means the run has the exact  formatting as the position specified, including but not limited to the font size.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Gets the font em height of the text at the specified position.</summary>
+    <param name="currentPosition">The position of the text to inspect.</param>
+    <param name="fontSize">When this method returns, contains the size of the font in ems of the text at the specified position.</param>
+    <param name="textRange">The range of text that has the same formatting as the text at the position specified by <i>currentPosition</i>. This means the run has the exact formatting as the position specified, including but not limited to the font size.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.GetFontStretch">
-    <summary>
-      <para>Gets the font stretch of the text at the specified position.</para>
-    </summary>
-    <param name="currentPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The position of the text to inspect.</para>
-    </param>
-    <param name="fontStretch">
-      <para>Type: <b><see cref="DWRITE_FONT_STRETCH" />*</b></para>
-      <para>When this method returns, contains a value which indicates the type of font stretch (also known as width) being applied at the specified position.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" />*</b></para>
-      <para>The range of text that has the same  formatting as the text at the position specified by <i>currentPosition</i>.  This means the run has the exact  formatting as the position specified, including but not limited to the font stretch.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Gets the font stretch of the text at the specified position.</summary>
+    <param name="currentPosition">The position of the text to inspect.</param>
+    <param name="fontStretch">When this method returns, contains a value which indicates the type of font stretch (also known as width) being applied at the specified position.</param>
+    <param name="textRange">The range of text that has the same formatting as the text at the position specified by <i>currentPosition</i>. This means the run has the exact formatting as the position specified, including but not limited to the font stretch.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.GetFontStyle">
-    <summary>
-      <para>Gets the font style (also known as slope) of the text at the specified position.</para>
-    </summary>
-    <param name="currentPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The position of the text to inspect.</para>
-    </param>
-    <param name="fontStyle">
-      <para>Type: <b><see cref="DWRITE_FONT_STYLE" />*</b></para>
-      <para>When this method returns, contains a value which indicates the type of font style (also known as slope or incline) being applied at the specified position.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" />*</b></para>
-      <para>The range of text that has the same  formatting as the text at the position specified by <i>currentPosition</i>.  This means the run has the exact  formatting as the position specified, including but not limited to the font style.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Gets the font style (also known as slope) of the text at the specified position.</summary>
+    <param name="currentPosition">The position of the text to inspect.</param>
+    <param name="fontStyle">When this method returns, contains a value which indicates the type of font style (also known as slope or incline) being applied at the specified position.</param>
+    <param name="textRange">The range of text that has the same formatting as the text at the position specified by <i>currentPosition</i>. This means the run has the exact formatting as the position specified, including but not limited to the font style.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.GetFontWeight">
-    <summary>
-      <para>Gets the font weight of the text at the specified position.</para>
-    </summary>
-    <param name="currentPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The position of the text to inspect.</para>
-    </param>
-    <param name="fontWeight">
-      <para>Type: <b><see cref="DWRITE_FONT_WEIGHT" />*</b></para>
-      <para>When this method returns, contains a value which indicates the type of font weight being applied at the specified position.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" />*</b></para>
-      <para>The range of text that has the same  formatting as the text at the position specified by <i>currentPosition</i>.  This means the run has the exact  formatting as the position specified, including but not limited to the font weight.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Gets the font weight of the text at the specified position.</summary>
+    <param name="currentPosition">The position of the text to inspect.</param>
+    <param name="fontWeight">When this method returns, contains a value which indicates the type of font weight being applied at the specified position.</param>
+    <param name="textRange">The range of text that has the same formatting as the text at the position specified by <i>currentPosition</i>. This means the run has the exact formatting as the position specified, including but not limited to the font weight.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.GetInlineObject">
-    <summary>
-      <para>Gets the inline object at the specified position.</para>
-    </summary>
-    <param name="currentPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The specified text position.</para>
-    </param>
-    <param name="inlineObject">
-      <para>Type: <b><see cref="IDWriteInlineObject" />**</b></para>
-      <para>Contains the application-defined inline object.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" />*</b></para>
-      <para>The range of text that has the same  formatting as the text at the position specified by <i>currentPosition</i>.  This means the run has the exact  formatting as the position specified, including but not limited to the inline object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Gets the inline object at the specified position.</summary>
+    <param name="currentPosition">The specified text position.</param>
+    <param name="inlineObject">Contains the application-defined inline object.</param>
+    <param name="textRange">The range of text that has the same formatting as the text at the position specified by <i>currentPosition</i>. This means the run has the exact formatting as the position specified, including but not limited to the inline object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.GetLineMetrics">
-    <summary>
-      <para>Retrieves the information about each individual text line of the  text string.</para>
-    </summary>
-    <param name="lineMetrics">
-      <para>Type: <b><see cref="DWRITE_LINE_METRICS" />*</b></para>
-      <para>When this method returns, contains a pointer to an array of structures containing various calculated length values of individual text lines.</para>
-    </param>
-    <param name="maxLineCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The maximum size of the <i>lineMetrics</i> array.</para>
-    </param>
-    <param name="actualLineCount">
-      <para>Type: <b>UINT32*</b></para>
-      <para>When this method returns, contains the actual size of the <i>lineMetrics</i> array that is needed.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If <i>maxLineCount</i> is not large enough E_NOT_SUFFICIENT_BUFFER, which is equivalent to HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER), is
-returned and <i>*actualLineCount</i> is set to the number of lines
-needed.</para>
-    </remarks>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Retrieves the information about each individual text line of the text string.</summary>
+    <param name="lineMetrics">When this method returns, contains a pointer to an array of structures containing various calculated length values of individual text lines.</param>
+    <param name="maxLineCount">The maximum size of the <i>lineMetrics</i> array.</param>
+    <param name="actualLineCount">When this method returns, contains the actual size of the <i>lineMetrics</i> array that is needed.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.GetLocaleName">
-    <summary>
-      <para>Gets the locale name of the text at the specified position.</para>
-    </summary>
-    <param name="currentPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The position of the text to inspect.</para>
-    </param>
-    <param name="localeName">
-      <para>Type: <b>WCHAR*</b></para>
-      <para>When this method returns, contains the character array receiving the current locale name.</para>
-    </param>
-    <param name="nameSize">
-      <para>Type: <b>UINT32</b></para>
-      <para>Size of the character array, in character count, including the terminated <b>NULL</b> character.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" />*</b></para>
-      <para>The range of text that has the same  formatting as the text at the position specified by <i>currentPosition</i>.  This means the run has the exact  formatting as the position specified, including but not limited to the locale name.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Gets the locale name of the text at the specified position.</summary>
+    <param name="currentPosition">The position of the text to inspect.</param>
+    <param name="localeName">When this method returns, contains the character array receiving the current locale name.</param>
+    <param name="nameSize">Size of the character array, in character count, including the terminated <b>NULL</b> character.</param>
+    <param name="textRange">The range of text that has the same formatting as the text at the position specified by <i>currentPosition</i>. This means the run has the exact formatting as the position specified, including but not limited to the locale name.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.GetLocaleNameLength">
-    <summary>
-      <para>Gets the length of the locale name of the text at the specified position.</para>
-    </summary>
-    <param name="currentPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The position of the text to inspect.</para>
-    </param>
-    <param name="nameLength">
-      <para>Type: <b>UINT32*</b></para>
-      <para>Size of the character array, in character count, not including the terminated <b>NULL</b> character.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" />*</b></para>
-      <para>The range of text that has the same  formatting as the text at the position specified by <i>currentPosition</i>.  This means the run has the exact  formatting as the position specified, including but not limited to the locale name.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Gets the length of the locale name of the text at the specified position.</summary>
+    <param name="currentPosition">The position of the text to inspect.</param>
+    <param name="nameLength">Size of the character array, in character count, not including the terminated <b>NULL</b> character.</param>
+    <param name="textRange">The range of text that has the same formatting as the text at the position specified by <i>currentPosition</i>. This means the run has the exact formatting as the position specified, including but not limited to the locale name.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.GetMaxHeight">
-    <summary>
-      <para>Gets the layout maximum height.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The layout maximum height.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Gets the layout maximum height.</summary>
+    <returns>The layout maximum height.</returns>
   </member>
   <member name="IDWriteTextLayout.GetMaxWidth">
-    <summary>
-      <para>Gets the layout maximum width.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>FLOAT</b></para>
-      <para>Returns the layout maximum width.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Gets the layout maximum width.</summary>
+    <returns>Returns the layout maximum width.</returns>
   </member>
   <member name="IDWriteTextLayout.GetMetrics">
-    <summary>
-      <para>Retrieves overall metrics for the formatted string.</para>
-    </summary>
-    <param name="textMetrics">
-      <para>Type: <b><see cref="DWRITE_TEXT_METRICS" />*</b></para>
-      <para>When this method returns, contains the measured distances of text and associated content after being formatted.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Retrieves overall metrics for the formatted string.</summary>
+    <param name="textMetrics">When this method returns, contains the measured distances of text and associated content after being formatted.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.GetOverhangMetrics">
-    <summary>
-      <para>Returns the overhangs (in DIPs) of the layout and all
-objects contained in it, including text glyphs and inline objects.</para>
-    </summary>
-    <param name="overhangs">
-      <para>Type: <b><see cref="DWRITE_OVERHANG_METRICS" />*</b></para>
-      <para>Overshoots of visible extents (in DIPs) outside the layout.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Underlines and strikethroughs do not contribute to the black box determination, since these are actually drawn by the renderer, which is allowed to draw them in any variety of styles.</para>
-    </remarks>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Returns the overhangs (in DIPs) of the layout and all objects contained in it, including text glyphs and inline objects.</summary>
+    <param name="overhangs">Overshoots of visible extents (in DIPs) outside the layout.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.GetStrikethrough">
-    <summary>
-      <para>Get the strikethrough presence of the text at the specified position.</para>
-    </summary>
-    <param name="currentPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The position of the text to inspect.</para>
-    </param>
-    <param name="hasStrikethrough">
-      <para>Type: <b>BOOL*</b></para>
-      <para>A Boolean  flag that indicates whether strikethrough is present at the position indicated by <i>currentPosition</i>.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" />*</b></para>
-      <para>Contains the range of text that has the same  formatting as the text at the position specified by <i>currentPosition</i>.  This means the run has the exact  formatting as the position specified, including but not limited to strikethrough.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Get the strikethrough presence of the text at the specified position.</summary>
+    <param name="currentPosition">The position of the text to inspect.</param>
+    <param name="hasStrikethrough">A Boolean flag that indicates whether strikethrough is present at the position indicated by <i>currentPosition</i>.</param>
+    <param name="textRange">Contains the range of text that has the same formatting as the text at the position specified by <i>currentPosition</i>. This means the run has the exact formatting as the position specified, including but not limited to strikethrough.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.GetTypography">
-    <summary>
-      <para>Gets the typography setting of the text at the specified position.</para>
-    </summary>
-    <param name="currentPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The position of the text to inspect.</para>
-    </param>
-    <param name="typography">
-      <para>Type: <b><see cref="IDWriteTypography" />**</b></para>
-      <para>When this method returns, contains an address of a  pointer to the current typography setting.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" />*</b></para>
-      <para>The range of text that has the same  formatting as the text at the position specified by <i>currentPosition</i>.  This means the run has the exact  formatting as the position specified, including but not limited to the typography.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Gets the typography setting of the text at the specified position.</summary>
+    <param name="currentPosition">The position of the text to inspect.</param>
+    <param name="typography">When this method returns, contains an address of a pointer to the current typography setting.</param>
+    <param name="textRange">The range of text that has the same formatting as the text at the position specified by <i>currentPosition</i>. This means the run has the exact formatting as the position specified, including but not limited to the typography.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.GetUnderline">
-    <summary>
-      <para>Gets the underline presence of the text at the specified position.</para>
-    </summary>
-    <param name="currentPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The current text position.</para>
-    </param>
-    <param name="hasUnderline">
-      <para>Type: <b>BOOL*</b></para>
-      <para>A Boolean  flag that indicates whether underline is present at the position indicated by <i>currentPosition</i>.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" />*</b></para>
-      <para>The range of text that has the same  formatting as the text at the position specified by <i>currentPosition</i>.  This means the run has the exact  formatting as the position specified, including but not limited to the underline.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Gets the underline presence of the text at the specified position.</summary>
+    <param name="currentPosition">The current text position.</param>
+    <param name="hasUnderline">A Boolean flag that indicates whether underline is present at the position indicated by <i>currentPosition</i>.</param>
+    <param name="textRange">The range of text that has the same formatting as the text at the position specified by <i>currentPosition</i>. This means the run has the exact formatting as the position specified, including but not limited to the underline.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.HitTestPoint">
-    <summary>
-      <para>The application calls this function passing in a specific pixel location
-relative to the top-left location of the layout box and obtains the
-information about the correspondent hit-test metrics of the text string
-where the hit-test has occurred. When the specified pixel location is
-outside the text string, the function sets the output value <i>*isInside</i> to
-<b>FALSE</b>.</para>
-    </summary>
-    <param name="pointX">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The pixel location X to hit-test, relative to the top-left location of the layout box.</para>
-    </param>
-    <param name="pointY">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The pixel location Y to hit-test, relative to the top-left location of the layout box.</para>
-    </param>
-    <param name="isTrailingHit">
-      <para>Type: <b>BOOL*</b></para>
-      <para>An output flag that indicates whether the hit-test location is at the leading or the trailing
-side of the character. When the output <i>*isInside</i> value is set to <b>FALSE</b>, this value is set according to the output
-<i>hitTestMetrics-&gt;textPosition</i> value to represent the edge closest to the hit-test location.</para>
-    </param>
-    <param name="isInside">
-      <para>Type: <b>BOOL*</b></para>
-      <para>An output flag that indicates whether the hit-test location is inside the text string.
-When <b>FALSE</b>, the position nearest the text's edge is returned.</para>
-    </param>
-    <param name="hitTestMetrics">
-      <para>Type: <b><see cref="DWRITE_HIT_TEST_METRICS" />*</b></para>
-      <para>The output geometry fully enclosing the hit-test location. When the output <i>*isInside</i> value
-is set to <b>FALSE</b>, this structure represents the geometry enclosing the edge closest to the hit-test location.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>The application calls this function passing in a specific pixel location relative to the top-left location of the layout box and obtains the information about the correspondent hit-test metrics of the text string where the hit-test has occurred. When the specified pixel location is outside the text string, the function sets the output value <i>*isInside</i> to<b>FALSE</b>.</summary>
+    <param name="pointX">The pixel location X to hit-test, relative to the top-left location of the layout box.</param>
+    <param name="pointY">The pixel location Y to hit-test, relative to the top-left location of the layout box.</param>
+    <param name="isTrailingHit">An output flag that indicates whether the hit-test location is at the leading or the trailing side of the character. When the output <i>*isInside</i> value is set to <b>FALSE</b>, this value is set according to the output<i>hitTestMetrics-&gt;textPosition</i> value to represent the edge closest to the hit-test location.</param>
+    <param name="isInside">An output flag that indicates whether the hit-test location is inside the text string. When <b>FALSE</b>, the position nearest the text's edge is returned.</param>
+    <param name="hitTestMetrics">The output geometry fully enclosing the hit-test location. When the output <i>*isInside</i> value is set to <b>FALSE</b>, this structure represents the geometry enclosing the edge closest to the hit-test location.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.HitTestTextPosition">
-    <summary>
-      <para>The application calls this function to get the pixel location relative
-to the top-left of the layout box given the text position and the
-logical side of the position. This function is normally used as part of
-caret positioning of text where the caret is drawn at the location
-corresponding to the current text editing position. It may also be used
-as a way to programmatically obtain the geometry of a particular text
-position in UI automation.</para>
-    </summary>
-    <param name="textPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The text position used to get the pixel location.</para>
-    </param>
-    <param name="isTrailingHit">
-      <para>Type: <b>BOOL</b></para>
-      <para>A Boolean flag that indicates whether the pixel location is of the leading or the trailing side of the specified text position.</para>
-    </param>
-    <param name="pointX">
-      <para>Type: <b>FLOAT*</b></para>
-      <para>When this method returns, contains the output pixel location X, relative to the top-left location of the layout box.</para>
-    </param>
-    <param name="pointY">
-      <para>Type: <b>FLOAT*</b></para>
-      <para>When this method returns, contains the output pixel location Y, relative to the top-left location of the layout box.</para>
-    </param>
-    <param name="hitTestMetrics">
-      <para>Type: <b><see cref="DWRITE_HIT_TEST_METRICS" />*</b></para>
-      <para>When this method returns, contains the output geometry fully enclosing the specified text position.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>The application calls this function to get the pixel location relative to the top-left of the layout box given the text position and the logical side of the position. This function is normally used as part of caret positioning of text where the caret is drawn at the location corresponding to the current text editing position. It may also be used as a way to programmatically obtain the geometry of a particular text position in UI automation.</summary>
+    <param name="textPosition">The text position used to get the pixel location.</param>
+    <param name="isTrailingHit">A Boolean flag that indicates whether the pixel location is of the leading or the trailing side of the specified text position.</param>
+    <param name="pointX">When this method returns, contains the output pixel location X, relative to the top-left location of the layout box.</param>
+    <param name="pointY">When this method returns, contains the output pixel location Y, relative to the top-left location of the layout box.</param>
+    <param name="hitTestMetrics">When this method returns, contains the output geometry fully enclosing the specified text position.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.HitTestTextRange">
     <summary>
@@ -550,403 +171,101 @@ position in UI automation.</para>
       <para>The function returns E_NOT_SUFFICIENT_BUFFER, which is equivalent to HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER), when the buffer size of hitTestMetrics is too small to hold all the regions calculated by the function. In this situation, the function sets the output value *actualHitTestMetricsCount to the number of geometries calculated.</para>
       <para>The application is responsible for allocating a new buffer of greater size and calling the function again.</para>
       <para>A good value to use as an initial value for maxHitTestMetricsCount may be calculated from the following equation:</para>
-      <code>maxHitTestMetricsCount = lineCount * maxBidiReorderingDepth
-</code>
-      <para>where lineCount is obtained from the value of the output argument
-*actualLineCount (from the function <see cref="IDWriteTextLayout" />.GetLineLengths),
-and the maxBidiReorderingDepth value from the <see cref="DWRITE_TEXT_METRICS" /> structure of the output argument *textMetrics (from the function
-<see cref="IDWriteFactory" />.<see cref="CreateTextLayout" />).</para>
+      <code>maxHitTestMetricsCount = lineCount * maxBidiReorderingDepth</code>
+      <para>where lineCount is obtained from the value of the output argument *actualLineCount (from the function <see cref="IDWriteTextLayout" />.GetLineLengths), and the maxBidiReorderingDepth value from the <see cref="DWRITE_TEXT_METRICS" /> structure of the output argument *textMetrics (from the function<see cref="IDWriteFactory" />.<see cref="CreateTextLayout" />).</para>
     </summary>
-    <param name="textPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The first text position of the specified range.</para>
-    </param>
-    <param name="textLength">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of positions of the specified range.</para>
-    </param>
-    <param name="originX">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The origin pixel location X at the left of the layout box. This offset is added to the hit-test metrics returned.</para>
-    </param>
-    <param name="originY">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The origin pixel location Y at the top of the layout box. This offset is added to the hit-test metrics returned.</para>
-    </param>
-    <param name="hitTestMetrics">
-      <para>Type: <b><see cref="DWRITE_HIT_TEST_METRICS" />*</b></para>
-      <para>When this method returns, contains a pointer to a buffer of the output geometry fully enclosing the specified position range.  The buffer must be at least as large as <i>maxHitTestMetricsCount</i>.</para>
-    </param>
-    <param name="maxHitTestMetricsCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>Maximum number of boxes <i>hitTestMetrics</i> could hold in its buffer memory.</para>
-    </param>
-    <param name="actualHitTestMetricsCount">
-      <para>Type: <b>UINT32*</b></para>
-      <para>Actual number of geometries <i>hitTestMetrics</i> holds in its buffer memory.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <param name="textPosition">The first text position of the specified range.</param>
+    <param name="textLength">The number of positions of the specified range.</param>
+    <param name="originX">The origin pixel location X at the left of the layout box. This offset is added to the hit-test metrics returned.</param>
+    <param name="originY">The origin pixel location Y at the top of the layout box. This offset is added to the hit-test metrics returned.</param>
+    <param name="hitTestMetrics">When this method returns, contains a pointer to a buffer of the output geometry fully enclosing the specified position range. The buffer must be at least as large as <i>maxHitTestMetricsCount</i>.</param>
+    <param name="maxHitTestMetricsCount">Maximum number of boxes <i>hitTestMetrics</i> could hold in its buffer memory.</param>
+    <param name="actualHitTestMetricsCount">Actual number of geometries <i>hitTestMetrics</i> holds in its buffer memory.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.SetDrawingEffect">
-    <summary>
-      <para>Sets the application-defined drawing effect.</para>
-    </summary>
-    <param name="drawingEffect">
-      <para>Type: <b>IUnknown*</b></para>
-      <para>Application-defined drawing effects that apply to the range. This data object will be passed back to the application's drawing callbacks for final rendering.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" /></b></para>
-      <para>The text range to which this change applies.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>An <see cref="ID2D1Brush" />, such as a color or gradient brush, can be set as a drawing effect if you are using the <see cref="ID2D1RenderTarget.DrawTextLayout" /> to draw text and that brush will be used to draw the specified range of text.</para>
-      <para>This drawing effect is associated with the specified range and will be passed back
-to the application by way of the callback when the range is drawn at drawing time.</para>
-    </remarks>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Sets the application-defined drawing effect.</summary>
+    <param name="drawingEffect">Application-defined drawing effects that apply to the range. This data object will be passed back to the application's drawing callbacks for final rendering.</param>
+    <param name="textRange">The text range to which this change applies.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.SetFontCollection">
-    <summary>
-      <para>Sets the font collection.</para>
-    </summary>
-    <param name="fontCollection">
-      <para>Type: <b><see cref="IDWriteFontCollection" />*</b></para>
-      <para>The font collection to set.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" /></b></para>
-      <para>Text range to which this change applies.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Sets the font collection.</summary>
+    <param name="fontCollection">The font collection to set.</param>
+    <param name="textRange">Text range to which this change applies.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.SetFontFamilyName">
-    <summary>
-      <para>Sets null-terminated font family name for text within a specified  text range.</para>
-    </summary>
-    <param name="fontFamilyName">
-      <para>Type: <b>const WCHAR*</b></para>
-      <para>The font family name that applies to the entire text string within the range specified by <i>textRange</i>.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" /></b></para>
-      <para>Text range to which this change applies.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Sets null-terminated font family name for text within a specified text range.</summary>
+    <param name="fontFamilyName">The font family name that applies to the entire text string within the range specified by <i>textRange</i>.</param>
+    <param name="textRange">Text range to which this change applies.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.SetFontSize">
-    <summary>
-      <para>Sets the font size in DIP units for text within a specified text range.</para>
-    </summary>
-    <param name="fontSize">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The  font size in DIP units to be set for   text in the range specified by <i>textRange</i>.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" /></b></para>
-      <para>Text range to which this change applies.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Sets the font size in DIP units for text within a specified text range.</summary>
+    <param name="fontSize">The font size in DIP units to be set for text in the range specified by <i>textRange</i>.</param>
+    <param name="textRange">Text range to which this change applies.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.SetFontStretch">
-    <summary>
-      <para>Sets the  font stretch for text within a specified text range.</para>
-    </summary>
-    <param name="fontStretch">
-      <para>Type: <b><see cref="DWRITE_FONT_STRETCH" /></b></para>
-      <para>A value which indicates the type of font stretch for text within the range specified by <i>textRange</i>.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" /></b></para>
-      <para>Text range to which this change applies.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Sets the font stretch for text within a specified text range.</summary>
+    <param name="fontStretch">A value which indicates the type of font stretch for text within the range specified by <i>textRange</i>.</param>
+    <param name="textRange">Text range to which this change applies.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.SetFontStyle">
-    <summary>
-      <para>Sets the font style for  text within a text range specified by a <see cref="DWRITE_TEXT_RANGE" /> structure.</para>
-    </summary>
-    <param name="fontStyle">
-      <para>Type: <b><see cref="DWRITE_FONT_STYLE" /></b></para>
-      <para>The  font style to be set   for text within a range specified by <i>textRange</i>.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" /></b></para>
-      <para>The text range to which this change applies.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The font style can be set to Normal, Italic or Oblique. The following illustration shows  three styles for the Palatino font.  For more information, see <see cref="DWRITE_FONT_STYLE" />.</para>
-      <para>
-        <img alt="Illustration of normal, italic, and oblique font styles for the Palatino font" src="https://docs.microsoft.com/windows/win32/api/dwritemages/FontStyle_for_Palatino.png" />
-      </para>
-      <h4>Examples</h4>
-      <para>The following code illustrates how to set the font style to italic.</para>
-      <code>
-// Set the font style to italic for the entire string.
-DWRITE_TEXT_RANGE textRange = {0, cTextLength_};
-
-if (SUCCEEDED(hr))
-{
-    hr = pTextLayout_-&gt;SetFontStyle(DWRITE_FONT_STYLE_ITALIC, textRange);
-}
-
-
-</code>
-    </remarks>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Sets the font style for text within a text range specified by a <see cref="DWRITE_TEXT_RANGE" /> structure.</summary>
+    <param name="fontStyle">The font style to be set for text within a range specified by <i>textRange</i>.</param>
+    <param name="textRange">The text range to which this change applies.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.SetFontWeight">
-    <summary>
-      <para>Sets the font weight for text within a text range specified by a <see cref="DWRITE_TEXT_RANGE" /> structure.</para>
-    </summary>
-    <param name="fontWeight">
-      <para>Type: <b><see cref="DWRITE_FONT_WEIGHT" /></b></para>
-      <para>The font weight to be set for text within the range specified by <i>textRange</i>.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" /></b></para>
-      <para>Text range to which this change applies.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The font weight can be set to one of the predefined font weight values provided in the <see cref="DWRITE_FONT_WEIGHT" /> enumeration or an integer from 1 to 999.  Values outside this range will cause the method to fail with an <b>E_INVALIDARG</b> return value.</para>
-      <para>The following illustration shows an example of Normal and UltraBold weights for the Palatino Linotype typeface.</para>
-      <para>
-        <img alt="Illustration of the letter &quot;W&quot; in Normal and UltraBold weights" src="https://docs.microsoft.com/windows/win32/api/dwritemages/FontWeight_for_Palatino.png" />
-      </para>
-      <h4>Examples</h4>
-      <para>The following code illustrates how to set the font weight to bold.</para>
-      <code>
-// Set the font weight to bold for the entire string.
-DWRITE_TEXT_RANGE textRange = {0, cTextLength_};
-
-if (SUCCEEDED(hr))
-{
-    hr = pTextLayout_-&gt;SetFontWeight(DWRITE_FONT_WEIGHT_BOLD, textRange);
-}
-
-
-</code>
-    </remarks>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Sets the font weight for text within a text range specified by a <see cref="DWRITE_TEXT_RANGE" /> structure.</summary>
+    <param name="fontWeight">The font weight to be set for text within the range specified by <i>textRange</i>.</param>
+    <param name="textRange">Text range to which this change applies.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.SetInlineObject">
-    <summary>
-      <para>Sets the inline object.</para>
-    </summary>
-    <param name="inlineObject">
-      <para>Type: <b><see cref="IDWriteInlineObject" />*</b></para>
-      <para>An application-defined inline object.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" /></b></para>
-      <para>Text range to which this change applies.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The application may call this function to specify the set of properties describing an application-defined inline object for specific range.</para>
-      <para>This inline object applies to the specified range and will be passed back
-to the application by way of the <see cref="DrawInlineObject" /> callback when the range is drawn.
-Any text in that range will be suppressed.</para>
-    </remarks>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Sets the inline object.</summary>
+    <param name="inlineObject">An application-defined inline object.</param>
+    <param name="textRange">Text range to which this change applies.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.SetLocaleName">
-    <summary>
-      <para>Sets the locale name for text
-within a specified text range.</para>
-    </summary>
-    <param name="localeName">
-      <para>Type: <b>const WCHAR*</b></para>
-      <para>A null-terminated locale name string.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" /></b></para>
-      <para>Text range to which this change applies.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Sets the locale name for text within a specified text range.</summary>
+    <param name="localeName">A null-terminated locale name string.</param>
+    <param name="textRange">Text range to which this change applies.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.SetMaxHeight">
-    <summary>
-      <para>Sets the layout maximum height.</para>
-    </summary>
-    <param name="maxHeight">
-      <para>Type: <b>FLOAT</b></para>
-      <para>A value that indicates the maximum height of the layout box.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Sets the layout maximum height.</summary>
+    <param name="maxHeight">A value that indicates the maximum height of the layout box.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.SetMaxWidth">
-    <summary>
-      <para>Sets the layout maximum width.</para>
-    </summary>
-    <param name="maxWidth">
-      <para>Type: <b>FLOAT</b></para>
-      <para>A value that indicates the maximum width of the layout box.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Sets the layout maximum width.</summary>
+    <param name="maxWidth">A value that indicates the maximum width of the layout box.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.SetStrikethrough">
-    <summary>
-      <para>Sets strikethrough for text within a specified text range.</para>
-    </summary>
-    <param name="hasStrikethrough">
-      <para>Type: <b>BOOL</b></para>
-      <para>A Boolean flag that indicates whether strikethrough takes place in the range specified by <i>textRange</i>.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" /></b></para>
-      <para>Text range to which this change applies.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Sets strikethrough for text within a specified text range.</summary>
+    <param name="hasStrikethrough">A Boolean flag that indicates whether strikethrough takes place in the range specified by <i>textRange</i>.</param>
+    <param name="textRange">Text range to which this change applies.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.SetTypography">
-    <summary>
-      <para>Sets  font typography features for text within a specified text range.</para>
-    </summary>
-    <param name="typography">
-      <para>Type: <b><see cref="IDWriteTypography" />*</b></para>
-      <para>Pointer to font typography settings.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" /></b></para>
-      <para>Text range to which this change applies.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Sets font typography features for text within a specified text range.</summary>
+    <param name="typography">Pointer to font typography settings.</param>
+    <param name="textRange">Text range to which this change applies.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout.SetUnderline">
-    <summary>
-      <para>Sets underlining for text within a specified text range.</para>
-    </summary>
-    <param name="hasUnderline">
-      <para>Type: <b>BOOL</b></para>
-      <para>A Boolean flag that indicates whether underline takes place within a specified text range.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" /></b></para>
-      <para>Text range to which this change applies.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Sets underlining for text within a specified text range.</summary>
+    <param name="hasUnderline">A Boolean flag that indicates whether underline takes place within a specified text range.</param>
+    <param name="textRange">Text range to which this change applies.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout">
-    <summary>
-      <para>The <b>IDWriteTextLayout</b> interface represents a block of text after it has been fully analyzed and formatted.</para>
-    </summary>
-    <remarks>
-      <para>To get a reference to the <b>IDWriteTextLayout</b> interface, the application must call the <see cref="IDWriteFactory.CreateTextLayout" /> method, as shown in the following code.</para>
-      <code>
-// Create a text layout using the text format.
-if (SUCCEEDED(hr))
-{
-    RECT rect;
-    GetClientRect(hwnd_, &amp;amp;amp;amp;amp;amp;rect);
-    float width  = rect.right  / dpiScaleX_;
-    float height = rect.bottom / dpiScaleY_;
-
-    hr = pDWriteFactory_-&gt;CreateTextLayout(
-        wszText_,      // The string to be laid out and formatted.
-        cTextLength_,  // The length of the string.
-        pTextFormat_,  // The text format to apply to the string (contains font information, etc).
-        width,         // The width of the layout box.
-        height,        // The height of the layout box.
-        &amp;amp;amp;amp;amp;amp;pTextLayout_  // The IDWriteTextLayout interface pointer.
-        );
-}
-
-
-</code>
-      <para>The <b>IDWriteTextLayout</b> interface allows the application to change the format for ranges of the text it represents, specified by a <see cref="DWRITE_TEXT_RANGE" /> structure.   The following example shows how to set the font weight for a text range.</para>
-      <code>
-// Set the font weight to bold for the first 5 letters.
-DWRITE_TEXT_RANGE textRange = {0, 4};
-
-if (SUCCEEDED(hr))
-{
-    hr = pTextLayout_-&gt;SetFontWeight(DWRITE_FONT_WEIGHT_BOLD, textRange);
-}
-
-
-</code>
-      <para>
-        <b>IDWriteTextLayout</b> also provides methods for adding strikethrough,  underline, and inline objects to the text.</para>
-      <para>To draw the block of text represented by an <b>IDWriteTextLayout</b> object, <a href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-portal">Direct2D</a> provides the <see cref="ID2D1RenderTarget.DrawTextLayout" /> method. To draw using a custom renderer implement an <see cref="IDWriteTextRenderer" /> interface and  call the  <see cref="IDWriteTextLayout.Draw" /> method</para>
-      <h3>DirectWrite and Direct2D</h3>
-      <para>To draw a formatted string represented by an <b>IDWriteTextLayout</b> object, <a href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-portal">Direct2D</a> provides the  <see cref="ID2D1RenderTarget.DrawTextLayout" /> method.</para>
-      <h3>Other Rendering Options</h3>
-      <para>To render using a custom renderer, use the <see cref="IDWriteTextLayout.Draw" /> method, which takes a callback interface derived from <see cref="IDWriteTextRenderer" /> as an argument, as shown in the following code.</para>
-      <code>
-// Draw the text layout using DirectWrite and the CustomTextRenderer class.
-hr = pTextLayout_-&gt;Draw(
-        NULL,
-        pTextRenderer_,  // Custom text renderer.
-        origin.x,
-        origin.y
-        );
-
-
-</code>
-      <para>
-        <see cref="IDWriteTextRenderer" /> declares methods for drawing a glyph run, underline, strikethrough and inline objects.  It is up to the application to implement these methods.  Creating a custom text renderer allows the application to apply additional effects when rendering text, such as a custom fill or outline.</para>
-      <para>Using a custom text renderer also enables you to render using another technology, such as GDI.</para>
-    </remarks>
-    <seealso cref="IDWriteTextFormat" />
+    <summary>The <b>IDWriteTextLayout</b> interface represents a block of text after it has been fully analyzed and formatted.</summary>
   </member>
 </doc>

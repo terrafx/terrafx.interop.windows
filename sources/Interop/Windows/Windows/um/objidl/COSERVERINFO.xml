@@ -3,59 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="COSERVERINFO">
-    <summary>
-      <para>Identifies a remote computer resource to the activation functions.</para>
-    </summary>
-    <remarks>
-      <para>The <b>COSERVERINFO</b> structure is used primarily to identify a remote system in object creation functions. Computer resources are named using the naming scheme of the network transport. By default, all UNC ("\\<i>server</i>" or "<i>server</i>") and DNS names ("<i>domain</i>.com", "<i>example</i>.microsoft.com", or "135.5.33.19") names are allowed.</para>
-      <para>If <b>pAuthInfo</b> is set to <b>NULL</b>, <a href="https://docs.microsoft.com//windows/desktop/com/snego">Snego</a> will be used to negotiate an authentication service that will work between the client and server. However, a non-<b>NULL</b><see cref="COAUTHINFO" /> structure can be specified for <b>pAuthInfo</b> to meet any one of the following needs:</para>
-      <list type="bullet">
-        <item>
-          <description>To specify a different client identity for computer remote activations. The specified identity will be used for the launch permission check on the server rather than the real client identity.
-</description>
-        </item>
-        <item>
-          <description>To specify that Kerberos, rather than NTLMSSP, is used for machine remote activation. A nondefault client identity may or may not be specified.
-</description>
-        </item>
-        <item>
-          <description>To request unsecure activation.
-</description>
-        </item>
-        <item>
-          <description>To specify a proprietary authentication service.</description>
-        </item>
-      </list>
-      <para>If <b>pAuthInfo</b> is not <b>NULL</b>, those values will be used to specify the authentication settings for the remote call. These settings will be passed to the <see cref="RpcBindingSetAuthInfoEx" /> function.</para>
-      <para>If the <i>pAuthInfo</i> parameter is <b>NULL</b>, then <i>dwAuthnLevel</i> can be overridden by the authentication level set by the <see cref="CoInitializeSecurity" /> function. If the <b>CoInitializeSecurity</b> function isn't called, then the authentication level specified under the <a href="https://docs.microsoft.com//windows/desktop/com/appid-key">AppID</a> registry key is used, if it exists.</para>
-      <para>Starting with Windows XP with Service Pack 2 (SP2), <i>dwAuthnLevel</i> is the maximum of RPC_C_AUTHN_LEVEL_CONNECT and the process-wide authentication level of the client process that is issuing the activation request. For earlier versions of the operating system, this is RPC_C_AUTHN_LEVEL_CONNECT.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/com/activation-security">Activation Security</seealso>
-    <seealso cref="COAUTHINFO" />
-    <seealso cref="CoCreateInstanceEx" />
-    <seealso cref="CoGetClassObject" />
-    <seealso cref="CoGetInstanceFromFile" />
-    <seealso cref="CoGetInstanceFromIStorage" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/com/turning-off-activation-security">Turning Off Activation Security</seealso>
+    <summary>Identifies a remote computer resource to the activation functions.</summary>
   </member>
   <member name="COSERVERINFO.dwReserved1">
-    <summary>
-      <para>This member is reserved and must be 0.</para>
-    </summary>
+    <summary>This member is reserved and must be 0.</summary>
   </member>
   <member name="COSERVERINFO.pwszName">
-    <summary>
-      <para>The name of the computer.</para>
-    </summary>
+    <summary>The name of the computer.</summary>
   </member>
   <member name="COSERVERINFO.pAuthInfo">
-    <summary>
-      <para>A pointer to a <see cref="COAUTHINFO" /> structure to override the default activation security for machine remote activations. Otherwise, set to <b>NULL</b> to indicate that default values should be used. For more information, see the Remarks section.</para>
-    </summary>
+    <summary>A pointer to a <see cref="COAUTHINFO" /> structure to override the default activation security for machine remote activations. Otherwise, set to <b>NULL</b> to indicate that default values should be used. For more information, see the Remarks section.</summary>
   </member>
   <member name="COSERVERINFO.dwReserved2">
-    <summary>
-      <para>This member is reserved and must be 0.</para>
-    </summary>
+    <summary>This member is reserved and must be 0.</summary>
   </member>
 </doc>

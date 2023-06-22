@@ -3,48 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMarshalingStream.GetMarshalingContextAttribute">
-    <summary>
-      <para>Gets information about the marshaling context.</para>
-    </summary>
-    <param name="attribute">
-      <para>The attribute to query.</para>
-    </param>
-    <param name="pAttributeValue">
-      <para>The value of <i>attribute</i>.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Each possible value of the attribute parameter is paired with the data type of the attribute this identifies.</para>
-      <para>You can query the following attributes with this method.</para>
-      <list type="table">
-        <listheader>
-          <description>Attribute</description>
-          <description>Values</description>
-        </listheader>
-        <item>
-          <description>
-            <para>CO_MARSHALING_SOURCE_IS_APP_CONTAINER</para>
-          </description>
-          <description>
-            <para>This attribute is a boolean value, with 0 representing <b>TRUE</b> and nonzero representing <b>FALSE</b>. You can safely cast the value of the result to <b>BOOL</b>, but it isn't safe for the caller to cast a <b>BOOL*</b> to <b>ULONG_PTR*</b> for the <i>pAttributeValue</i> parameter, or for the implementation to cast <i>pAttributeValue</i> to <b>BOOL*</b> when setting it.</para>
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="CO_MARSHALING_CONTEXT_ATTRIBUTES" />
-    <seealso cref="IGlobalOptions" />
-    <seealso cref="IMarshalingStream" />
+    <summary>Gets information about the marshaling context.</summary>
+    <param name="attribute">The attribute to query.</param>
+    <param name="pAttributeValue">The value of <i>attribute</i>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMarshalingStream">
-    <summary>
-      <para>Provides additional information about the marshaling context to custom-marshaled objects and unmarshalers.</para>
-    </summary>
-    <remarks>
-      <para>Implement <b>IMarshalingStream</b> interface if you have <see cref="IStream" /> implementations that call the marshaling APIs and provide the correct value of any of the attributes. This is essential only for <b>IStream</b> implementations that are used in hybrid policy processes.</para>
-    </remarks>
-    <seealso cref="GLOBALOPT_UNMARSHALING_POLICY_VALUES" />
-    <seealso cref="IStream" />
+    <summary>Provides additional information about the marshaling context to custom-marshaled objects and unmarshalers.</summary>
   </member>
 </doc>

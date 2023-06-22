@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TOOLTIP_DISMISS_FLAGS">
+    <summary>Defines constants that indicate whether a window is registered or unregistered to receive tooltip dismiss notifications.</summary>
+  </member>
+  <member name="TOOLTIP_DISMISS_FLAGS.TDF_REGISTER">
+    <summary>The window is registered to receive tooltip dismiss notifications.</summary>
+  </member>
+  <member name="TOOLTIP_DISMISS_FLAGS.TDF_UNREGISTER">
+    <summary>The window is unregistered from receiving tooltip dismiss notifications.</summary>
+  </member>
+</doc>

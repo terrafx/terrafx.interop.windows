@@ -3,27 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="UDP_TABLE_CLASS">
-    <summary>
-      <para>The <b>UDP_TABLE_CLASS</b> enumeration defines the set of values used to  indicate the type of table returned by calls to <see cref="GetExtendedUdpTable" />.</para>
-    </summary>
-    <remarks>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>UDP_TABLE_CLASS</b> enumeration  is defined in the <i>Iprtrmib.h</i> header file, not in the <i>Iphlpapi.h</i> header file. Note that the <i>Iprtrmib.h</i> header file is automatically included in <i>Iphlpapi.h</i> header file. The <i>Iprtrmib.h</i> header files should never be used directly.</para>
-    </remarks>
-    <seealso cref="GetExtendedUdpTable" />
+    <summary>The <b>UDP_TABLE_CLASS</b> enumeration defines the set of values used to indicate the type of table returned by calls to <see cref="GetExtendedUdpTable" />.</summary>
   </member>
   <member name="UDP_TABLE_CLASS.UDP_TABLE_BASIC">
-    <summary>
-      <para>A <see cref="MIB_UDPTABLE" /> structure that contains all UDP endpoints on the local computer is returned to the caller.</para>
-    </summary>
+    <summary>A <see cref="MIB_UDPTABLE" /> structure that contains all UDP endpoints on the local computer is returned to the caller.</summary>
   </member>
   <member name="UDP_TABLE_CLASS.UDP_TABLE_OWNER_PID">
-    <summary>
-      <para>A <see cref="MIB_UDPTABLE_OWNER_PID" /> or <see cref="MIB_UDP6TABLE_OWNER_PID" /> structure that contains all UDP endpoints on the local computer is returned to the caller.</para>
-    </summary>
+    <summary>A <see cref="MIB_UDPTABLE_OWNER_PID" /> or <see cref="MIB_UDP6TABLE_OWNER_PID" /> structure that contains all UDP endpoints on the local computer is returned to the caller.</summary>
   </member>
   <member name="UDP_TABLE_CLASS.UDP_TABLE_OWNER_MODULE">
-    <summary>
-      <para>A <see cref="MIB_UDPTABLE_OWNER_MODULE" /> or <see cref="MIB_UDP6TABLE_OWNER_MODULE" /> structure that contains all  UDP endpoints on the local computer is returned to the caller.</para>
-    </summary>
+    <summary>A <see cref="MIB_UDPTABLE_OWNER_MODULE" /> or <see cref="MIB_UDP6TABLE_OWNER_MODULE" /> structure that contains all UDP endpoints on the local computer is returned to the caller.</summary>
   </member>
 </doc>

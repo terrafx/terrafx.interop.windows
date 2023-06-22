@@ -3,14 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFTIMER_FLAGS">
-    <summary>
-      <para>Contains flags for the <see cref="IMFTimer.SetTimer" /> method.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Contains flags for the <see cref="IMFTimer.SetTimer" /> method.</summary>
   </member>
   <member name="MFTIMER_FLAGS.MFTIMER_RELATIVE">
-    <summary>
-      <para>The time passed to the timer is relative to the current time. If this flag is absent, the time is expressed as an absolute clock time.</para>
-    </summary>
+    <summary>The time passed to the timer is relative to the current time. If this flag is absent, the time is expressed as an absolute clock time.</summary>
   </member>
 </doc>

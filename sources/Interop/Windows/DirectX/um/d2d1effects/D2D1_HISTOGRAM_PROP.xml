@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_HISTOGRAM_PROP">
-    <summary>
-      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/histogram">Histogram effect</a>.</para>
-    </summary>
+    <summary>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/histogram">Histogram effect</a>.</summary>
   </member>
   <member name="D2D1_HISTOGRAM_PROP.D2D1_HISTOGRAM_PROP_NUM_BINS">
     <summary>
@@ -27,7 +25,5 @@
       <para>The type is FLOAT[].</para>
     </summary>
   </member>
-  <member name="D2D1_HISTOGRAM_PROP.D2D1_HISTOGRAM_PROP_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_HISTOGRAM_PROP.D2D1_HISTOGRAM_PROP_FORCE_DWORD"></member>
 </doc>

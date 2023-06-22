@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICJpegTransferMatrix">
-    <summary>
-      <para>Specifies conversion matrix from Y'Cb'Cr' to R'G'B'.</para>
-    </summary>
-    <seealso cref="WICJpegFrameHeader" />
+    <summary>Specifies conversion matrix from Y'Cb'Cr' to R'G'B'.</summary>
   </member>
   <member name="WICJpegTransferMatrix.WICJpegTransferMatrixIdentity">
-    <summary>
-      <para>Specifies the identity transfer matrix.</para>
-    </summary>
+    <summary>Specifies the identity transfer matrix.</summary>
   </member>
   <member name="WICJpegTransferMatrix.WICJpegTransferMatrixBT601">
-    <summary>
-      <para>Specifies the BT601 transfer matrix.</para>
-    </summary>
+    <summary>Specifies the BT601 transfer matrix.</summary>
   </member>
   <member name="WICJpegTransferMatrix.WICJpegTransferMatrix_FORCE_DWORD">
-    <summary>
-      <para>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. This value is not used.</para>
-    </summary>
+    <summary>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. This value is not used.</summary>
   </member>
 </doc>

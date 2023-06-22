@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICColorContextType">
-    <summary>
-      <para>Specifies the color context types.</para>
-    </summary>
+    <summary>Specifies the color context types.</summary>
   </member>
   <member name="WICColorContextType.WICColorContextUninitialized">
-    <summary>
-      <para>An uninitialized color context.</para>
-    </summary>
+    <summary>An uninitialized color context.</summary>
   </member>
   <member name="WICColorContextType.WICColorContextProfile">
-    <summary>
-      <para>A color context that is a full ICC color profile.</para>
-    </summary>
+    <summary>A color context that is a full ICC color profile.</summary>
   </member>
   <member name="WICColorContextType.WICColorContextExifColorSpace">
-    <summary>
-      <para>A color context that is one of a number of set color spaces (sRGB, AdobeRGB) that are defined in the EXIF specification.</para>
-    </summary>
+    <summary>A color context that is one of a number of set color spaces (sRGB, AdobeRGB) that are defined in the EXIF specification.</summary>
   </member>
 </doc>

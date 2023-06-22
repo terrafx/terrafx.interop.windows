@@ -3,60 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1ComputeTransform.CalculateThreadgroups">
-    <summary>
-      <para>This method allows a compute-shader–based transform to select the number of thread groups to execute based on the number of output pixels it needs to fill.</para>
-    </summary>
-    <param name="outputRect">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh847950(v=vs.85)">D2D1_RECT_L</a>*</b></para>
-      <para>The output rectangle that will be filled by the compute transform.</para>
-    </param>
-    <param name="dimensionX">
-      <para>Type: <b>UINT32*</b></para>
-      <para>The number of threads in the x dimension.</para>
-    </param>
-    <param name="dimensionY">
-      <para>Type: <b>UINT32*</b></para>
-      <para>The number of threads in the y dimension.</para>
-    </param>
-    <param name="dimensionZ">
-      <para>Type: <b>UINT32*</b></para>
-      <para>The number of threads in the z dimension.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If this call fails, the corresponding <see cref="ID2D1Effect" /> instance is placed into an error state and fails to draw.</para>
-    </remarks>
-    <seealso cref="ID2D1ComputeTransform" />
-    <seealso cref="ID2D1EffectContext.LoadComputeShader" />
+    <summary>This method allows a compute-shader–based transform to select the number of thread groups to execute based on the number of output pixels it needs to fill.</summary>
+    <param name="outputRect">The output rectangle that will be filled by the compute transform.</param>
+    <param name="dimensionX">The number of threads in the x dimension.</param>
+    <param name="dimensionY">The number of threads in the y dimension.</param>
+    <param name="dimensionZ">The number of threads in the z dimension.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID2D1ComputeTransform.SetComputeInfo">
-    <summary>
-      <para>Sets the render information used to specify the compute shader pass.</para>
-    </summary>
-    <param name="computeInfo">
-      <para>Type: <b><see cref="ID2D1ComputeInfo" />*</b></para>
-      <para>The render information object to set.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If this method fails, <see cref="ID2D1TransformGraph.AddNode" /> fails.</para>
-    </remarks>
-    <seealso cref="ID2D1ComputeTransform" />
-    <seealso cref="ID2D1EffectContext.LoadComputeShader" />
+    <summary>Sets the render information used to specify the compute shader pass.</summary>
+    <param name="computeInfo">The render information object to set.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID2D1ComputeTransform">
-    <summary>
-      <para>Defines a transform that uses a compute shader.</para>
-    </summary>
-    <remarks>
-      <para>The transform implements the normal Shatzis methods by  implementing <see cref="ID2D1Transform" />. In addition, the caller is passed an <see cref="ID2D1ComputeInfo" /> to describe the compute pass that the transform should execute.</para>
-    </remarks>
-    <seealso cref="ID2D1Transform" />
+    <summary>Defines a transform that uses a compute shader.</summary>
   </member>
 </doc>

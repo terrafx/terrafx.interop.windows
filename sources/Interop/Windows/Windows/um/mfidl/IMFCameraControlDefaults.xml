@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFCameraControlDefaults.GetRangeInfo">
+    <summary>Gets information about the accepted range, step value, and default value for a camera control.</summary>
+    <param name="rangeInfo">Receives a pointer to a <see cref="MF_CAMERA_CONTROL_RANGE_INFO" /> structure representing the range information for the control.</param>
+    <returns>
+      <para>An HRESULT including the following:</para>
+      <para>| Value | Description | | S_OK | Success | | MF_E_NOT_FOUND | The control does not support basic range values. |</para>
+    </returns>
+  </member>
+  <member name="IMFCameraControlDefaults.GetType">
+    <summary>Gets the configuration type of the control, indicating whether the control value must be set before streaming begins or after streaming has started.</summary>
+    <returns>A member of the <see cref="MF_SENSOR_CONTROL_CONFIGURATION_TYPE" /> enumeration specifying the configuration type of the control.</returns>
+  </member>
+  <member name="IMFCameraControlDefaults.LockControlData">
+    <summary>Retrieves the data payload for the control associated with the <b>IMFCameraControlDefaults</b> instance, allowing clients to modify the control value directly.</summary>
+    <param name="control">Receives a pointer to the control being locked.</param>
+    <param name="controlSize">Receives the size of the structure pointed to by <i>control</i>.</param>
+    <param name="data">Receives a pointer to the data payload of the control.</param>
+    <param name="dataSize">Receives the size of the buffer pointed to by <i>dataSize</i>.</param>
+    <returns>S_OK on success.</returns>
+  </member>
+  <member name="IMFCameraControlDefaults.UnlockControlData">
+    <summary>Unlocks the control data buffer unlocked with a call to <see cref="LockControlData" />.</summary>
+    <returns>S_OK on success.</returns>
+  </member>
+  <member name="IMFCameraControlDefaults">
+    <summary>Provides methods for specifying camera control default values.</summary>
+  </member>
+</doc>

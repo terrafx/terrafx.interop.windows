@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DSSSEED">
-    <summary>
-      <para>The <b>DSSSEED</b> structure holds the seed and counter values that can be used to verify the primes of the DSS public key.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381982(v=vs.85)">DSSPUBKEY</seealso>
-    <seealso cref="PUBLICKEYSTRUC" />
-    <seealso cref="RSAPUBKEY" />
+    <summary>The <b>DSSSEED</b> structure holds the seed and counter values that can be used to verify the primes of the DSS public key.</summary>
   </member>
   <member name="DSSSEED.counter">
-    <summary>
-      <para>A <b>DWORD</b> containing the counter value. If the counter value is 0xFFFFFFFF, the seed and counter values are not available.</para>
-    </summary>
+    <summary>A <b>DWORD</b> containing the counter value. If the counter value is 0xFFFFFFFF, the seed and counter values are not available.</summary>
   </member>
   <member name="DSSSEED.seed">
-    <summary>
-      <para>A <b>BYTE</b> string containing the seed value.</para>
-    </summary>
+    <summary>A <b>BYTE</b> string containing the seed value.</summary>
   </member>
 </doc>

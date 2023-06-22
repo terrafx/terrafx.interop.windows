@@ -3,100 +3,44 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY">
-    <summary>
-      <para>Contains process mitigation policy settings for user-mode Hardware-enforced Stack Protection (HSP). The <see cref="GetProcessMitigationPolicy" /> and <see cref="SetProcessMitigationPolicy" /> functions use this structure.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//cpp/build/reference/cetcompat">CETCOMPAT</seealso>
-    <seealso cref="GetProcessMitigationPolicy" />
-    <seealso cref="SetProcessMitigationPolicy" />
+    <summary>Contains process mitigation policy settings for user-mode Hardware-enforced Stack Protection (HSP). The <see cref="GetProcessMitigationPolicy" /> and <see cref="SetProcessMitigationPolicy" /> functions use this structure.</summary>
   </member>
-  <member name="PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.DUMMYUNIONNAME"></member>
   <member name="PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.DUMMYUNIONNAME.Flags">
-    <summary>
-      <para>This member is reserved for system use.</para>
-    </summary>
+    <summary>This member is reserved for system use.</summary>
   </member>
-  <member name="PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME">
-    <summary></summary>
-  </member>
+  <member name="PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME"></member>
   <member name="PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.AuditBlockNonCetBinaries">
-    <summary>
-      <para>If TRUE, binary loads that would have been blocked are instead allowed and diagnostic events are logged in the Event Log.
-When this field is TRUE, BlockNonCetBinaries must be TRUE and BlockNonCetBinariesNonEhcont may be TRUE, depending on which types of binaries are currently being blocked from being loaded into the process.
-This field cannot be changed via <see cref="SetProcessMitigationPolicy" />.</para>
-    </summary>
+    <summary>If TRUE, binary loads that would have been blocked are instead allowed and diagnostic events are logged in the Event Log. When this field is TRUE, BlockNonCetBinaries must be TRUE and BlockNonCetBinariesNonEhcont may be TRUE, depending on which types of binaries are currently being blocked from being loaded into the process. This field cannot be changed via <see cref="SetProcessMitigationPolicy" />.</summary>
   </member>
   <member name="PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.AuditSetContextIpValidation">
-    <summary>
-      <para>If TRUE, Instruction Pointers that would have caused the validation to fail are instead allowed and diagnostic events are logged in the Event Log.
-When this field is TRUE, SetContextIpValidation must be TRUE and SetContextIpValidationRelaxedMode may be TRUE, depending on which mode the Instruction Pointer validation is currently operating in.
-This field cannot be changed via <see cref="SetProcessMitigationPolicy" />.</para>
-    </summary>
+    <summary>If TRUE, Instruction Pointers that would have caused the validation to fail are instead allowed and diagnostic events are logged in the Event Log. When this field is TRUE, SetContextIpValidation must be TRUE and SetContextIpValidationRelaxedMode may be TRUE, depending on which mode the Instruction Pointer validation is currently operating in. This field cannot be changed via <see cref="SetProcessMitigationPolicy" />.</summary>
   </member>
   <member name="PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.AuditUserShadowStack">
-    <summary>
-      <para>If TRUE, shadow stack violations that would have been fatal are instead treated as not fatal and diagnostic events are logged in the Event Log.
-When this field is TRUE, EnableUserShadowStack must be TRUE and EnableUserShadowStackStrictMode may be TRUE, depending on whether compatibility mode is being audited or strict mode is being audited.
-This field cannot be changed via <see cref="SetProcessMitigationPolicy" />.</para>
-    </summary>
+    <summary>If TRUE, shadow stack violations that would have been fatal are instead treated as not fatal and diagnostic events are logged in the Event Log. When this field is TRUE, EnableUserShadowStack must be TRUE and EnableUserShadowStackStrictMode may be TRUE, depending on whether compatibility mode is being audited or strict mode is being audited. This field cannot be changed via <see cref="SetProcessMitigationPolicy" />.</summary>
   </member>
   <member name="PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.BlockNonCetBinaries">
-    <summary>
-      <para>If TRUE, binaries that are not compiled with CETCOMPAT are blocked from being loaded into the process.
-This policy can be enabled after a process has started by calling <see cref="SetProcessMitigationPolicy" />. It cannot be disabled once enabled.</para>
-    </summary>
+    <summary>If TRUE, binaries that are not compiled with CETCOMPAT are blocked from being loaded into the process. This policy can be enabled after a process has started by calling <see cref="SetProcessMitigationPolicy" />. It cannot be disabled once enabled.</summary>
   </member>
   <member name="PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.BlockNonCetBinariesNonEhcont">
-    <summary>
-      <para>If TRUE, binaries that are not compiled with CETCOMPAT or do not contain exception handling continuation metadata (<a href="https://docs.microsoft.com//cpp/build/reference/guard-enable-eh-continuation-metadata">/guard:ehcont</a>) are blocked from being loaded into the process.
-When this field is TRUE, BlockNonCetBinaries must be TRUE.
-This policy can be enabled after a process has started by calling <see cref="SetProcessMitigationPolicy" />. It cannot be disabled or downgraded once enabled.</para>
-    </summary>
+    <summary>If TRUE, binaries that are not compiled with CETCOMPAT or do not contain exception handling continuation metadata (<a href="https://docs.microsoft.com//cpp/build/reference/guard-enable-eh-continuation-metadata">/guard:ehcont</a>) are blocked from being loaded into the process. When this field is TRUE, BlockNonCetBinaries must be TRUE. This policy can be enabled after a process has started by calling <see cref="SetProcessMitigationPolicy" />. It cannot be disabled or downgraded once enabled.</summary>
   </member>
   <member name="PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.CetDynamicApisOutOfProcOnly">
-    <summary>
-      <para>If TRUE, certain HSP APIs used to specify security properties of dynamic code can only be called from outside of the process for security purposes.
-These APIs are <see cref="SetProcessDynamicEHContinuationTargets" /> and <see cref="SetProcessDynamicEnforcedCetCompatibleRanges" />.
-This policy can be enabled after a process has started by calling <see cref="SetProcessMitigationPolicy" />. It cannot be disabled once enabled.</para>
-    </summary>
+    <summary>If TRUE, certain HSP APIs used to specify security properties of dynamic code can only be called from outside of the process for security purposes. These APIs are <see cref="SetProcessDynamicEHContinuationTargets" /> and <see cref="SetProcessDynamicEnforcedCetCompatibleRanges" />. This policy can be enabled after a process has started by calling <see cref="SetProcessMitigationPolicy" />. It cannot be disabled once enabled.</summary>
   </member>
   <member name="PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.EnableUserShadowStack">
-    <summary>
-      <para>If TRUE, user-mode Hardware-enforced Stack Protection is enabled for the process in compatibility mode.
-This means that the CPU verifies function return addresses at runtime by employing a shadow stack mechanism, if supported by the hardware.
-In compatibility mode, only shadow stack violations occurring in modules that are considered compatible with shadow stacks (CETCOMPAT) are fatal.
-For a module to be considered CETCOMPAT, it needs to be either compiled with <a href="https://docs.microsoft.com//cpp/build/reference/cetcompat">CETCOMPAT</a> for binaries, or marked using
-<see cref="SetProcessDynamicEnforcedCetCompatibleRanges" /> for dynamic code.
-This field cannot be changed via <see cref="SetProcessMitigationPolicy" />.</para>
-    </summary>
+    <summary>If TRUE, user-mode Hardware-enforced Stack Protection is enabled for the process in compatibility mode. This means that the CPU verifies function return addresses at runtime by employing a shadow stack mechanism, if supported by the hardware. In compatibility mode, only shadow stack violations occurring in modules that are considered compatible with shadow stacks (CETCOMPAT) are fatal. For a module to be considered CETCOMPAT, it needs to be either compiled with <a href="https://docs.microsoft.com//cpp/build/reference/cetcompat">CETCOMPAT</a> for binaries, or marked using<see cref="SetProcessDynamicEnforcedCetCompatibleRanges" /> for dynamic code. This field cannot be changed via <see cref="SetProcessMitigationPolicy" />.</summary>
   </member>
   <member name="PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.EnableUserShadowStackStrictMode">
-    <summary>
-      <para>If TRUE, user-mode Hardware-enforced Stack Protection is enabled for the process in strict mode. All shadow stack violations are fatal.
-When this field is TRUE, EnableUserShadowStack must be TRUE.
-If HSP is enabled in compatibility mode, it can be upgraded to strict mode at runtime by setting this field to TRUE and calling <see cref="SetProcessMitigationPolicy" />.
-HSP cannot be downgraded or disabled via <see cref="SetProcessMitigationPolicy" />.
-If HSP is disabled, it cannot be enabled via <see cref="SetProcessMitigationPolicy" />.</para>
-    </summary>
+    <summary>If TRUE, user-mode Hardware-enforced Stack Protection is enabled for the process in strict mode. All shadow stack violations are fatal. When this field is TRUE, EnableUserShadowStack must be TRUE. If HSP is enabled in compatibility mode, it can be upgraded to strict mode at runtime by setting this field to TRUE and calling <see cref="SetProcessMitigationPolicy" />. HSP cannot be downgraded or disabled via <see cref="SetProcessMitigationPolicy" />. If HSP is disabled, it cannot be enabled via <see cref="SetProcessMitigationPolicy" />.</summary>
   </member>
   <member name="PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.SetContextIpValidation">
-    <summary>
-      <para>If TRUE, when calling APIs that modify the execution context of a thread such as <see cref="SetThreadContext" /> and <see cref="RtlRestoreContext" />, validation is performed on the Instruction Pointer specified in the new execution context.
-This field cannot be changed via <see cref="SetProcessMitigationPolicy" />.</para>
-    </summary>
+    <summary>If TRUE, when calling APIs that modify the execution context of a thread such as <see cref="SetThreadContext" /> and <see cref="RtlRestoreContext" />, validation is performed on the Instruction Pointer specified in the new execution context. This field cannot be changed via <see cref="SetProcessMitigationPolicy" />.</summary>
   </member>
   <member name="PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.SetContextIpValidationRelaxedMode">
-    <summary>
-      <para>If TRUE, the process's Instruction Pointer validation is downgraded to relaxed mode, which allows all Instruction Pointers that are in dynamic code or in binaries that do not contain <a href="https://docs.microsoft.com//cpp/build/reference/guard-enable-eh-continuation-metadata">exception handling continuation metadata</a>.
-When this field is TRUE, SetContextIpValidation must be TRUE.
-The process can be upgraded from relaxed mode to normal mode at runtime by setting this field to FALSE and calling <see cref="SetProcessMitigationPolicy" />.</para>
-    </summary>
+    <summary>If TRUE, the process's Instruction Pointer validation is downgraded to relaxed mode, which allows all Instruction Pointers that are in dynamic code or in binaries that do not contain <a href="https://docs.microsoft.com//cpp/build/reference/guard-enable-eh-continuation-metadata">exception handling continuation metadata</a>. When this field is TRUE, SetContextIpValidation must be TRUE. The process can be upgraded from relaxed mode to normal mode at runtime by setting this field to FALSE and calling <see cref="SetProcessMitigationPolicy" />.</summary>
   </member>
   <member name="PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.ReservedFlags">
-    <summary>
-      <para>This member is reserved for system use.</para>
-    </summary>
+    <summary>This member is reserved for system use.</summary>
   </member>
 </doc>

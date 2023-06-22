@@ -3,405 +3,123 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFMediaEngine.CanPlayType">
-    <summary>
-      <para>Queries how likely it is that the Media Engine can play a specified type of media resource.</para>
-    </summary>
-    <param name="type">
-      <para>A string that contains a MIME type with an optional codecs parameter, as defined in RFC 4281.</para>
-    </param>
-    <param name="pAnswer">
-      <para>Receives an <see cref="MF_MEDIA_ENGINE_CANPLAY" /> enumeration value.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to the <b>canPlayType</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-      <para>The <b>canPlayType</b> attribute defines the following values.</para>
-      <list type="table">
-        <listheader>
-          <description>Value</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>"" (empty string)</description>
-          <description>The user-agent cannot play the resource, or the resource type is "application/octet-stream".</description>
-        </item>
-        <item>
-          <description>"probably"</description>
-          <description>The user-agent probably can play the resource.</description>
-        </item>
-        <item>
-          <description>"maybe"</description>
-          <description>Neither of the previous values applies.</description>
-        </item>
-      </list>
-      <para>The value "probably" is used because a MIME type for a media resource is generally not a complete description of the resource. For example, "video/mp4" specifies an MP4 file with video, but does not describe the codec. Even with the optional codecs parameter, the MIME type omits some information, such as the actual coded bit rate. Therefore, it is usually impossible to be certain that playback is possible until the actual media resource is opened.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Queries how likely it is that the Media Engine can play a specified type of media resource.</summary>
+    <param name="type">A string that contains a MIME type with an optional codecs parameter, as defined in RFC 4281.</param>
+    <param name="pAnswer">Receives an <see cref="MF_MEDIA_ENGINE_CANPLAY" /> enumeration value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.GetAutoPlay">
-    <summary>
-      <para>Queries whether the Media Engine automatically begins playback.</para>
-    </summary>
-    <returns>
-      <para>Returns <b>TRUE</b> if the Media Engine automatically begins playback, or <b>FALSE</b> otherwise.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to the <b>autoplay</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-      <para>If this method returns <b>TRUE</b>, playback begins automatically after the <see cref="IMFMediaEngine.Load" /> method completes. Otherwise, playback begins when the application calls <see cref="IMFMediaEngine.Play" />.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
-    <seealso cref="IMFMediaEngine.SetAutoPlay" />
+    <summary>Queries whether the Media Engine automatically begins playback.</summary>
+    <returns>Returns <b>TRUE</b> if the Media Engine automatically begins playback, or <b>FALSE</b> otherwise.</returns>
   </member>
   <member name="IMFMediaEngine.GetBuffered">
-    <summary>
-      <para>Queries how much resource data the media engine has buffered.</para>
-    </summary>
-    <param name="ppBuffered">
-      <para>Receives a pointer to the <see cref="IMFMediaTimeRange" /> interface. The caller must release the interface.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to the <b>buffered</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-      <para>The returned  <see cref="IMFMediaTimeRange" /> interface represents a list of time ranges. The time ranges indicate which portions of the media resource have been downloaded. The time range list can be empty.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Queries how much resource data the media engine has buffered.</summary>
+    <param name="ppBuffered">Receives a pointer to the <see cref="IMFMediaTimeRange" /> interface. The caller must release the interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.GetCurrentSource">
-    <summary>
-      <para>Gets the URL of the current media resource, or an empty string if no media resource is present.</para>
-    </summary>
-    <param name="ppUrl">
-      <para>Receives a <b>BSTR</b> that contains the URL of the current media resource. If there is no media resource, <i>ppUrl</i> receives an empty string. The caller must free the  <b>BSTR</b> by calling <b>SysFreeString</b>.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to the <b>currentSrc</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-      <para>Initially, the current media resource is empty. It is updated when the Media Engine performs the resource selection algorithm.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Gets the URL of the current media resource, or an empty string if no media resource is present.</summary>
+    <param name="ppUrl">Receives a <b>BSTR</b> that contains the URL of the current media resource. If there is no media resource, <i>ppUrl</i> receives an empty string. The caller must free the <b>BSTR</b> by calling <b>SysFreeString</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.GetCurrentTime">
-    <summary>
-      <para>Gets the current playback position.</para>
-    </summary>
-    <returns>
-      <para>Returns the playback position, in seconds.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to the <b>currentTime</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-      <para>Note that after you call <see cref="Pause" />, the time returned by <b>GetCurrentTime</b> may not be precisely accurate. Apps that need a frame-accurate position value, such as media editors, should call <see cref="FrameStep" /> immediately after calling <b>Pause</b> before calling <b>GetCurrentTime</b>.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Gets the current playback position.</summary>
+    <returns>Returns the playback position, in seconds.</returns>
   </member>
   <member name="IMFMediaEngine.GetDefaultPlaybackRate">
-    <summary>
-      <para>Gets the default playback rate.</para>
-    </summary>
-    <returns>
-      <para>Returns the default playback rate, as a multiple of normal (1×) playback. A negative value indicates reverse playback.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to getting the <b>defaultPlaybackRate</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-      <para>The default playback rate is used for the next call to the <see cref="IMFMediaEngine.Play" /> method. To change the current playback rate, call <see cref="IMFMediaEngine.SetPlaybackRate" />.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Gets the default playback rate.</summary>
+    <returns>Returns the default playback rate, as a multiple of normal (1×) playback. A negative value indicates reverse playback.</returns>
   </member>
   <member name="IMFMediaEngine.GetDuration">
-    <summary>
-      <para>Gets the duration of the media resource.</para>
-    </summary>
-    <returns>
-      <para>Returns the duration, in seconds. If no media data is available, the method returns not-a-number (NaN). If the duration is unbounded, the method returns an infinite value.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to the <b>duration</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-      <para>If the duration changes, the Media Engine sends an <b>MF_MEDIA_ENGINE_EVENT_DURATIONCHANGE</b> event. See <see cref="IMFMediaEngineNotify.EventNotify" />.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Gets the duration of the media resource.</summary>
+    <returns>Returns the duration, in seconds. If no media data is available, the method returns not-a-number (NaN). If the duration is unbounded, the method returns an infinite value.</returns>
   </member>
   <member name="IMFMediaEngine.GetError">
-    <summary>
-      <para>Gets the most recent error status.</para>
-    </summary>
-    <param name="ppError">
-      <para>Receives either a pointer to the <see cref="IMFMediaError" /> interface, or the value <b>NULL</b>. If the value is <b>non-NULL</b>, the caller must release the interface.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method returns the last error status, if any, that resulted from loading the media source. If there has not been an error, <i>ppError</i> receives the value <b>NULL</b>.</para>
-      <para>This method corresponds to the <b>error</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Gets the most recent error status.</summary>
+    <param name="ppError">Receives either a pointer to the <see cref="IMFMediaError" /> interface, or the value <b>NULL</b>. If the value is <b>non-NULL</b>, the caller must release the interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.GetLoop">
-    <summary>
-      <para>Queries whether the Media Engine will loop playback.</para>
-    </summary>
-    <returns>
-      <para>Returns <b>TRUE</b> if looping is enabled, or <b>FALSE</b> otherwise.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to getting the <b>loop</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-      <para>If looping is enabled, the Media Engine seeks to the start of the content when playback reaches the end.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Queries whether the Media Engine will loop playback.</summary>
+    <returns>Returns <b>TRUE</b> if looping is enabled, or <b>FALSE</b> otherwise.</returns>
   </member>
   <member name="IMFMediaEngine.GetMuted">
-    <summary>
-      <para>Queries whether the audio is muted.</para>
-    </summary>
-    <returns>
-      <para>Returns <b>TRUE</b> if the audio is muted, or <b>FALSE</b> otherwise.</para>
-    </returns>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Queries whether the audio is muted.</summary>
+    <returns>Returns <b>TRUE</b> if the audio is muted, or <b>FALSE</b> otherwise.</returns>
   </member>
   <member name="IMFMediaEngine.GetNativeVideoSize">
-    <summary>
-      <para>Gets the size of the video frame, adjusted for aspect ratio.</para>
-    </summary>
-    <param name="cx">
-      <para>Receives the width in pixels.</para>
-    </param>
-    <param name="cy">
-      <para>Receives the height in pixels.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method adjusts for the correct picture aspect ratio.
-For example, if the encoded frame is 720 × 420 and the picture aspect ratio is 4:3, the method will return a size equal to 640 × 480 pixels.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/picture-aspect-ratio">Picture Aspect Ratio</seealso>
+    <summary>Gets the size of the video frame, adjusted for aspect ratio.</summary>
+    <param name="cx">Receives the width in pixels.</param>
+    <param name="cy">Receives the height in pixels.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.GetNetworkState">
-    <summary>
-      <para>Gets the current network state of the media engine.</para>
-    </summary>
-    <returns>
-      <para>Returns an <see cref="MF_MEDIA_ENGINE_NETWORK" /> enumeration value.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to the <b>networkState</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Gets the current network state of the media engine.</summary>
+    <returns>Returns an <see cref="MF_MEDIA_ENGINE_NETWORK" /> enumeration value.</returns>
   </member>
   <member name="IMFMediaEngine.GetPlaybackRate">
-    <summary>
-      <para>Gets the current playback rate.</para>
-    </summary>
-    <returns>
-      <para>Returns the playback rate, as a multiple of normal (1×) playback. A negative value indicates reverse playback.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to getting the <b>playbackRate</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Gets the current playback rate.</summary>
+    <returns>Returns the playback rate, as a multiple of normal (1×) playback. A negative value indicates reverse playback.</returns>
   </member>
   <member name="IMFMediaEngine.GetPlayed">
-    <summary>
-      <para>Gets the time ranges that have been rendered.</para>
-    </summary>
-    <param name="ppPlayed">
-      <para>Receives a pointer to the <see cref="IMFMediaTimeRange" /> interface. The caller must release the interface.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to the <b>played</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Gets the time ranges that have been rendered.</summary>
+    <param name="ppPlayed">Receives a pointer to the <see cref="IMFMediaTimeRange" /> interface. The caller must release the interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.GetPreload">
-    <summary>
-      <para>Gets the preload flag.</para>
-    </summary>
-    <returns>
-      <para>Returns an <see cref="MF_MEDIA_ENGINE_PRELOAD" /> enumeration value.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to the <b>preload</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5. The value is a hint to the user-agent whether to preload the media resource.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Gets the preload flag.</summary>
+    <returns>Returns an <see cref="MF_MEDIA_ENGINE_PRELOAD" /> enumeration value.</returns>
   </member>
   <member name="IMFMediaEngine.GetReadyState">
-    <summary>
-      <para>Gets the ready state, which indicates whether the current media resource can be rendered.</para>
-    </summary>
-    <returns>
-      <para>Returns an <see cref="MF_MEDIA_ENGINE_READY" /> enumeration value.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to the <b>readyState</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Gets the ready state, which indicates whether the current media resource can be rendered.</summary>
+    <returns>Returns an <see cref="MF_MEDIA_ENGINE_READY" /> enumeration value.</returns>
   </member>
   <member name="IMFMediaEngine.GetSeekable">
-    <summary>
-      <para>Gets the time ranges to which the Media Engine can currently seek.</para>
-    </summary>
-    <param name="ppSeekable">
-      <para>Receives a pointer to the <see cref="IMFMediaTimeRange" /> interface. The caller must release the interface.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to the <b>seekable</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-      <para>To find out whether the media source supports seeking, call <see cref="IMFMediaEngineEx.GetResourceCharacteristics" />.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Gets the time ranges to which the Media Engine can currently seek.</summary>
+    <param name="ppSeekable">Receives a pointer to the <see cref="IMFMediaTimeRange" /> interface. The caller must release the interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.GetStartTime">
-    <summary>
-      <para>Gets the initial playback position.</para>
-    </summary>
-    <returns>
-      <para>Returns the initial playback position, in seconds.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to the <b>initialTime</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Gets the initial playback position.</summary>
+    <returns>Returns the initial playback position, in seconds.</returns>
   </member>
   <member name="IMFMediaEngine.GetVideoAspectRatio">
-    <summary>
-      <para>Gets the picture aspect ratio of the video stream.</para>
-    </summary>
-    <param name="cx">
-      <para>Receives the x component of the aspect ratio.</para>
-    </param>
-    <param name="cy">
-      <para>Receives the y component of the aspect ratio.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The Media Engine automatically converts the pixel aspect ratio to 1:1 (square pixels).</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/picture-aspect-ratio">Picture Aspect Ratio</seealso>
+    <summary>Gets the picture aspect ratio of the video stream.</summary>
+    <param name="cx">Receives the x component of the aspect ratio.</param>
+    <param name="cy">Receives the y component of the aspect ratio.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.GetVolume">
-    <summary>
-      <para>Gets the audio volume level.</para>
-    </summary>
-    <returns>
-      <para>Returns the volume level. Volume is expressed as an attenuation level, where 0.0 indicates silence and 1.0 indicates full volume (no attenuation).</para>
-    </returns>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Gets the audio volume level.</summary>
+    <returns>Returns the volume level. Volume is expressed as an attenuation level, where 0.0 indicates silence and 1.0 indicates full volume (no attenuation).</returns>
   </member>
   <member name="IMFMediaEngine.HasAudio">
-    <summary>
-      <para>Queries whether the current media resource contains an audio stream.</para>
-    </summary>
-    <returns>
-      <para>Returns <b>TRUE</b> if the current media resource contains an audio stream. Returns <b>FALSE</b> if there is no media resource or the media resource does not contain an audio stream.</para>
-    </returns>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Queries whether the current media resource contains an audio stream.</summary>
+    <returns>Returns <b>TRUE</b> if the current media resource contains an audio stream. Returns <b>FALSE</b> if there is no media resource or the media resource does not contain an audio stream.</returns>
   </member>
   <member name="IMFMediaEngine.HasVideo">
-    <summary>
-      <para>Queries whether the current media resource contains a video stream.</para>
-    </summary>
-    <returns>
-      <para>Returns <b>TRUE</b> if the current media resource contains a video stream. Returns <b>FALSE</b> if there is no media resource or the media resource does not contain a video stream.</para>
-    </returns>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Queries whether the current media resource contains a video stream.</summary>
+    <returns>Returns <b>TRUE</b> if the current media resource contains a video stream. Returns <b>FALSE</b> if there is no media resource or the media resource does not contain a video stream.</returns>
   </member>
   <member name="IMFMediaEngine.IsEnded">
-    <summary>
-      <para>Queries whether playback has ended.</para>
-    </summary>
-    <returns>
-      <para>Returns <b>TRUE</b> if the direction of playback is forward and playback has reached the end of the media resource. Returns <b>FALSE</b> otherwise.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to the <b>ended</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Queries whether playback has ended.</summary>
+    <returns>Returns <b>TRUE</b> if the direction of playback is forward and playback has reached the end of the media resource. Returns <b>FALSE</b> otherwise.</returns>
   </member>
   <member name="IMFMediaEngine.IsPaused">
-    <summary>
-      <para>Queries whether playback is currently paused.</para>
-    </summary>
-    <returns>
-      <para>Returns <b>TRUE</b> if playback is paused, or  <b>FALSE</b> otherwise.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to the <b>paused</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Queries whether playback is currently paused.</summary>
+    <returns>Returns <b>TRUE</b> if playback is paused, or <b>FALSE</b> otherwise.</returns>
   </member>
   <member name="IMFMediaEngine.IsSeeking">
-    <summary>
-      <para>Queries whether the Media Engine is currently seeking to a new playback position.</para>
-    </summary>
-    <returns>
-      <para>Returns <b>TRUE</b> if the Media Engine is seeking, or <b>FALSE</b> otherwise.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to the <b>seeking</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Queries whether the Media Engine is currently seeking to a new playback position.</summary>
+    <returns>Returns <b>TRUE</b> if the Media Engine is seeking, or <b>FALSE</b> otherwise.</returns>
   </member>
   <member name="IMFMediaEngine.Load">
-    <summary>
-      <para>Loads the current media source.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The main purpose of this method is to reload a list of source elements after updating the list. For more information, see <see cref="SetSourceElements" />. Otherwise, calling this method is generally not required. To load a new media source, call <see cref="IMFMediaEngine.SetSource" /> or <b>IMFMediaEngine.SetSourceElements</b>.</para>
-      <para>The <b>Load</b> method explicitly invokes the Media Engine's media resource loading algorithm. Before calling this method, you must set the media resource by calling <see cref="IMFMediaEngine.SetSource" /> or <see cref="IMFMediaEngine.SetSourceElements" />.</para>
-      <para>This method completes asynchronously. When the <b>Load</b> operation starts, the Media Engine sends an <b>MF_MEDIA_ENGINE_EVENT_LOADSTART</b> event. If no errors occur during the <b>Load</b> operation, several other events are generated, including the following.</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <b>MF_MEDIA_ENGINE_EVENT_LOADEDMETADATA</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MF_MEDIA_ENGINE_EVENT_LOADEDDATA</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MF_MEDIA_ENGINE_EVENT_CANPLAY</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MF_MEDIA_ENGINE_EVENT_CANPLAYTHROUGH</b>
-          </description>
-        </item>
-      </list>
-      <para>If the Media Engine is unable to load the file, the Media Engine sends an <b>MF_MEDIA_ENGINE_EVENT_ERROR</b> event.</para>
-      <para>For more information about event handling in the Media Engine, see <see cref="IMFMediaEngineNotify" />.</para>
-      <para>This method corresponds to the <b>load</b> method of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Loads the current media source.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.OnVideoStreamTick">
-    <summary>
-      <para>Queries the Media Engine to find out whether a new video frame is ready.</para>
-    </summary>
-    <param name="pPts">
-      <para>If a new frame is ready, receives the presentation time of the frame.</para>
-    </param>
+    <summary>Queries the Media Engine to find out whether a new video frame is ready.</summary>
+    <param name="pPts">If a new frame is ready, receives the presentation time of the frame.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -409,319 +127,109 @@ For example, if the encoded frame is 720 × 420 and the picture aspect ratio is 
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded, but the Media Engine does not have a new frame.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded, but the Media Engine does not have a new frame.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>A new video frame is ready for display.</para>
-          </description>
-        </item>
+          <description>A new video frame is ready for display.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>In frame-server mode, the application should call this method whenever a vertical blank occurs in the display device. If the method returns <b>S_OK</b>, call <see cref="IMFMediaEngine.TransferVideoFrame" /> to blit the frame to the render target. If the method returns <b>S_FALSE</b>, wait for the next vertical blank and call the method again.</para>
-      <para>Do not call this method in rendering mode or audio-only mode.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
   </member>
   <member name="IMFMediaEngine.Pause">
-    <summary>
-      <para>Pauses playback.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to the <b>pause</b> method of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-      <para>The method completes asynchronously. When the transition to paused is complete, the Media Engine sends an <b>MF_MEDIA_ENGINE_EVENT_PAUSE                </b> event. See <see cref="IMFMediaEventNotify.EventNotify" />.</para>
-      <para>Note that after you call <b>Pause</b>, the time returned by <see cref="GetCurrentTime" /> may not be precisely accurate. Apps that need a frame-accurate position value, such as media editors, should call <see cref="FrameStep" /> immediately after calling <b>Pause</b> before calling <b>GetCurrentTime</b>.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Pauses playback.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.Play">
-    <summary>
-      <para>Starts playback.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to the <b>play</b> method of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-      <para>The method completes asynchronously. When the operation starts, the Media Engine sends an <b>MF_MEDIA_ENGINE_EVENT_PLAY</b> event. When playback is under way, the Media Engine sends an <b>MF_MEDIA_ENGINE_EVENT_PLAYING</b> event. See <see cref="IMFMediaEventNotify.EventNotify" />.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Starts playback.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.SetAutoPlay">
-    <summary>
-      <para>Specifies whether the Media Engine automatically begins playback.</para>
-    </summary>
-    <param name="AutoPlay">
-      <para>If <b>TRUE</b>, the Media Engine automatically begins playback after it loads a media source. Otherwise, playback does not begin until the application calls <see cref="IMFMediaEngine.Play" />.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to setting the <b>autoplay</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Specifies whether the Media Engine automatically begins playback.</summary>
+    <param name="AutoPlay">If <b>TRUE</b>, the Media Engine automatically begins playback after it loads a media source. Otherwise, playback does not begin until the application calls <see cref="IMFMediaEngine.Play" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.SetCurrentTime">
-    <summary>
-      <para>Seeks to a new playback position.</para>
-    </summary>
-    <param name="seekTime">
-      <para>The new playback position, in seconds.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to setting the <b>currentTime</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-      <para>The method completes asynchronously. When the seek operation starts, the Media Engine sends an <b>MF_MEDIA_ENGINE_EVENT_SEEKING</b> event. When the seek operation completes, the Media Engine sends an <b>MF_MEDIA_ENGINE_EVENT_SEEKED</b> event. See <see cref="IMFMediaEventNotify.EventNotify" />.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Seeks to a new playback position.</summary>
+    <param name="seekTime">The new playback position, in seconds.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.SetDefaultPlaybackRate">
-    <summary>
-      <para>Sets the default playback rate.</para>
-    </summary>
-    <param name="Rate">
-      <para>The default playback rate, as a multiple of normal (1×) playback. A negative value indicates reverse playback.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to setting the <b>defaultPlaybackRate</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Sets the default playback rate.</summary>
+    <param name="Rate">The default playback rate, as a multiple of normal (1×) playback. A negative value indicates reverse playback.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.SetErrorCode">
-    <summary>
-      <para>Sets the current error code.</para>
-    </summary>
-    <param name="error">
-      <para>The error code, as an <see cref="MF_MEDIA_ENGINE_ERR" /> value.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Sets the current error code.</summary>
+    <param name="error">The error code, as an <see cref="MF_MEDIA_ENGINE_ERR" /> value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.SetLoop">
-    <summary>
-      <para>Specifies whether the Media Engine loops playback.</para>
-    </summary>
-    <param name="Loop">
-      <para>Specify <b>TRUE</b> to enable looping, or <b>FALSE</b> to disable looping.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If <i>Loop</i> is <b>TRUE</b>, playback loops back to the beginning when it reaches the end of the source.</para>
-      <para>This method corresponds to setting the <b>loop</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Specifies whether the Media Engine loops playback.</summary>
+    <param name="Loop">Specify <b>TRUE</b> to enable looping, or <b>FALSE</b> to disable looping.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.SetMuted">
-    <summary>
-      <para>Mutes or unmutes the audio.</para>
-    </summary>
-    <param name="Muted">
-      <para>Specify <b>TRUE</b> to mute the audio, or <b>FALSE</b> to unmute the audio.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Mutes or unmutes the audio.</summary>
+    <param name="Muted">Specify <b>TRUE</b> to mute the audio, or <b>FALSE</b> to unmute the audio.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.SetPlaybackRate">
-    <summary>
-      <para>Sets the current playback rate.</para>
-    </summary>
-    <param name="Rate">
-      <para>The playback rate, as a multiple of normal (1×) playback. A negative value indicates reverse playback.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to setting the <b>playbackRate</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Sets the current playback rate.</summary>
+    <param name="Rate">The playback rate, as a multiple of normal (1×) playback. A negative value indicates reverse playback.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.SetPreload">
-    <summary>
-      <para>Sets the preload flag.</para>
-    </summary>
-    <param name="Preload">
-      <para>An <see cref="MF_MEDIA_ENGINE_PRELOAD" /> value equal to  the preload flag.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to setting the <b>preload</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5. The value is a hint to the user-agent whether to preload the media resource.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Sets the preload flag.</summary>
+    <param name="Preload">An <see cref="MF_MEDIA_ENGINE_PRELOAD" /> value equal to the preload flag.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.SetSource">
-    <summary>
-      <para>Sets the URL of a media resource.</para>
-    </summary>
-    <param name="pUrl">
-      <para>The URL of the media resource.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to setting the <b>src</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
-      <para>The URL specified by this method takes precedence over media resources specified in the <see cref="IMFMediaEngine.SetSourceElements" /> method. To load the URL, call <see cref="IMFMediaEngine.Load" />.</para>
-      <para>This method asynchronously loads the URL. When the operation starts, the Media Engine sends an <b>MF_MEDIA_ENGINE_EVENT_LOADSTART</b> event. If no errors occur during the <see cref="Load" /> operation, several other events are generated, including the following.</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <b>MF_MEDIA_ENGINE_EVENT_LOADEDMETADATA</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MF_MEDIA_ENGINE_EVENT_LOADEDDATA</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MF_MEDIA_ENGINE_EVENT_CANPLAY</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MF_MEDIA_ENGINE_EVENT_CANPLAYTHROUGH</b>
-          </description>
-        </item>
-      </list>
-      <para>If the Media Engine is unable to load the URL, the Media Engine sends an <b>MF_MEDIA_ENGINE_EVENT_ERROR</b> event.</para>
-      <para>For more information about event handling in the Media Engine, see <see cref="IMFMediaEngineNotify" />.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Sets the URL of a media resource.</summary>
+    <param name="pUrl">The URL of the media resource.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.SetSourceElements">
-    <summary>
-      <para>Sets a list of media sources.</para>
-    </summary>
-    <param name="pSrcElements">
-      <para>A pointer to the <see cref="IMFMediaEngineSrcElements" /> interface. The caller must implement this interface.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method corresponds to adding a list of <b>source</b> elements to a media element in HTML5.</para>
-      <para>The Media Engine tries to load each item in the <i>pSrcElements</i> list, until it finds one that loads successfully. After this method is called, the application can use the <see cref="IMFMediaEngineSrcElements" /> interface to update the list at any time. To reload the list, call <see cref="IMFMediaEngine.Load" />.</para>
-      <para>This method completes asynchronously. When the operation starts, the Media Engine sends an <b>MF_MEDIA_ENGINE_EVENT_LOADSTART</b> event. If no errors occur during the <see cref="Load" /> operation, several other events are generated, including the following.</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <b>MF_MEDIA_ENGINE_EVENT_LOADEDMETADATA</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MF_MEDIA_ENGINE_EVENT_LOADEDDATA</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MF_MEDIA_ENGINE_EVENT_CANPLAY</b>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MF_MEDIA_ENGINE_EVENT_CANPLAYTHROUGH</b>
-          </description>
-        </item>
-      </list>
-      <para>If the Media Engine is unable to load a URL, it sends an <b>MF_MEDIA_ENGINE_EVENT_ERROR</b> event.</para>
-      <para>For more information about event handling in the Media Engine, see <see cref="IMFMediaEngineNotify" />.</para>
-      <para>If the application also calls <see cref="IMFMediaEngine.SetSource" />, the URL passed to <b>SetSource</b> takes precedence over the list given to <b>SetSourceElements</b>.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Sets a list of media sources.</summary>
+    <param name="pSrcElements">A pointer to the <see cref="IMFMediaEngineSrcElements" /> interface. The caller must implement this interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.SetVolume">
-    <summary>
-      <para>Sets the audio volume level.</para>
-    </summary>
-    <param name="Volume">
-      <para>The volume level. Volume is expressed as an attenuation level, where 0.0 indicates silence and 1.0 indicates full volume (no attenuation).</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>When the audio balance changes, the Media Engine sends an <b>MF_MEDIA_ENGINE_EVENT_VOLUMECHANGE</b> event. See <see cref="IMFMediaEventNotify.EventNotify" />.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Sets the audio volume level.</summary>
+    <param name="Volume">The volume level. Volume is expressed as an attenuation level, where 0.0 indicates silence and 1.0 indicates full volume (no attenuation).</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.Shutdown">
-    <summary>
-      <para>Shuts down the Media Engine and releases the resources it is using.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Shuts down the Media Engine and releases the resources it is using.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine.TransferVideoFrame">
-    <summary>
-      <para>Copies the current video frame to a DXGI surface or WIC bitmap.</para>
-    </summary>
-    <param name="pDstSurf">
-      <para>A pointer to the <see cref="IUnknown" /> interface of the destination surface.</para>
-    </param>
-    <param name="pSrc">
-      <para>A pointer to an <see cref="MFVideoNormalizedRect" /> structure that specifies the source rectangle.</para>
-    </param>
-    <param name="pDst">
-      <para>A pointer to a <see cref="RECT" /> structure that specifies the destination rectangle.</para>
-    </param>
-    <param name="pBorderClr">
-      <para>A pointer to an <see cref="MFARGB" /> structure that specifies the border color.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>In frame-server mode, call this method to blit the video frame to a DXGI or WIC surface. The application can call this method at any time after the Media Engine loads a video resource. Typically, however, the application calls <see cref="IMFMediaEngine.OnVideoStreamTick" /> first, to determine whether a new frame is available. If <b>OnVideoStreamTick</b> returns <b>S_OK</b>, the application then calls <b>TransferVideoFrame</b>.</para>
-      <para>The Media Engine scales and letterboxes the video to fit the destination rectangle. It fills the letterbox area with the border color.</para>
-      <para>For protected content, call the <see cref="IMFMediaEngineProtectedContent.TransferVideoFrame" /> method instead of this method.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
+    <summary>Copies the current video frame to a DXGI surface or WIC bitmap.</summary>
+    <param name="pDstSurf">A pointer to the <see cref="IUnknown" /> interface of the destination surface.</param>
+    <param name="pSrc">A pointer to an <see cref="MFVideoNormalizedRect" /> structure that specifies the source rectangle.</param>
+    <param name="pDst">A pointer to a <see cref="RECT" /> structure that specifies the destination rectangle.</param>
+    <param name="pBorderClr">A pointer to an <see cref="MFARGB" /> structure that specifies the border color.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngine">
-    <summary>
-      <para>Enables an application to play audio or video files.</para>
-    </summary>
-    <remarks>
-      <para>The Media Engine implements this interface. To create an instance of the Media Engine, call <see cref="IMFMediaEngineClassFactory.CreateInstance" />.</para>
-      <para>This interface is extended with <see cref="IMFMediaEngineEx" />.</para>
-    </remarks>
-    <seealso href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/official%20windows%20platform%20sample/windows%208%20app%20samples/%5bc%2b%2b%5d-windows%208%20app%20samples/c%2b%2b/windows%208%20app%20samples/media%20engine%20native%20c%2b%2b%20video%20playback%20sample%20(windows%208)">Media Engine Sample</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Enables an application to play audio or video files.</summary>
   </member>
 </doc>

@@ -3,44 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DEBUGHOOKINFO">
-    <summary>
-      <para>Contains debugging information passed to a <b>WH_DEBUG</b> hook procedure, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644978(v=vs.85)">DebugProc</a>.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644978(v=vs.85)">DebugProc</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/winmsg/hooks">Hooks</seealso>
-    <seealso cref="SetWindowsHookEx" />
+    <summary>Contains debugging information passed to a <b>WH_DEBUG</b> hook procedure, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644978(v=vs.85)">DebugProc</a>.</summary>
   </member>
   <member name="DEBUGHOOKINFO.idThread">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>A handle to the thread containing the filter function.</para>
-    </summary>
+    <summary>A handle to the thread containing the filter function.</summary>
   </member>
   <member name="DEBUGHOOKINFO.idThreadInstaller">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>A handle to the thread that installed the debugging filter function.</para>
-    </summary>
+    <summary>A handle to the thread that installed the debugging filter function.</summary>
   </member>
   <member name="DEBUGHOOKINFO.lParam">
-    <summary>
-      <para>Type: <b>LPARAM</b></para>
-      <para>The value to be passed to the hook in the
-<i>lParam</i> parameter of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644978(v=vs.85)">DebugProc</a> callback function.</para>
-    </summary>
+    <summary>The value to be passed to the hook in the<i>lParam</i> parameter of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644978(v=vs.85)">DebugProc</a> callback function.</summary>
   </member>
   <member name="DEBUGHOOKINFO.wParam">
-    <summary>
-      <para>Type: <b>WPARAM</b></para>
-      <para>The value to be passed to the hook in the
-<i>wParam</i> parameter of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644978(v=vs.85)">DebugProc</a> callback function.</para>
-    </summary>
+    <summary>The value to be passed to the hook in the<i>wParam</i> parameter of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644978(v=vs.85)">DebugProc</a> callback function.</summary>
   </member>
   <member name="DEBUGHOOKINFO.code">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The value to be passed to the hook in the
-<i>nCode</i> parameter of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644978(v=vs.85)">DebugProc</a> callback function.</para>
-    </summary>
+    <summary>The value to be passed to the hook in the<i>nCode</i> parameter of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644978(v=vs.85)">DebugProc</a> callback function.</summary>
   </member>
 </doc>

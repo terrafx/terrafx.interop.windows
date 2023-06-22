@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RenderTargetBitmapOptions">
+    <summary>Defines constants that specify what parts of the visual tree should be rendered.</summary>
+  </member>
+  <member name="RenderTargetBitmapOptions.RenderTarget">
+    <summary>Only the texture associated with the visual should be rendered.</summary>
+  </member>
+  <member name="RenderTargetBitmapOptions.RenderTargetAndChildren">
+    <summary>The texture associated with the visual and its children should be rendered.</summary>
+  </member>
+</doc>

@@ -4,152 +4,98 @@
 <doc>
   <member name="IAMAnalogVideoEncoder.get_AvailableTVFormats">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IAMAnalogVideoEncoder</b> interface is deprecated.</para>
-      <para>The <code>get_AvailableTVFormats</code> method retrieves the analog video standards (NTSC/M, PAL/B, SECAM/K1, and so on) supported by the encoder.</para>
-    </summary>
-    <param name="lAnalogVideoStandard">
-      <para>Specifies a pointer to a <see cref="AnalogVideoStandard" /> enumeration and the available formats have been combined in this integer with a bitwise OR.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMAnalogVideoEncoder Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IAMAnalogVideoEncoder</b> interface is deprecated.</div>The <code>get_AvailableTVFormats</code> method retrieves the analog video standards (NTSC/M, PAL/B, SECAM/K1, and so on) supported by the encoder.</summary>
+    <param name="lAnalogVideoStandard">Specifies a pointer to a <see cref="AnalogVideoStandard" /> enumeration and the available formats have been combined in this integer with a bitwise OR.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMAnalogVideoEncoder.get_CCEnable">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IAMAnalogVideoEncoder</b> interface is deprecated.</para>
-      <para>The <code>get_CCEnable</code> determines whether closed captioning on the encoder is currently enabled.</para>
-    </summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IAMAnalogVideoEncoder</b> interface is deprecated.</div>The <code>get_CCEnable</code> determines whether closed captioning on the encoder is currently enabled.</summary>
     <param name="lCCEnable">
       <para>Specifies a pointer to a long integer to receive the current status of closed captioning on the encoder.</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>1</description>
           <description>Closed captioning enabled.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>0</description>
           <description>Closed captioning disabled.</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMAnalogVideoEncoder Interface" />
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMAnalogVideoEncoder.get_CopyProtection">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IAMAnalogVideoEncoder</b> interface is deprecated.</para>
-      <para>The <code>get_CopyProtection</code> method determines whether copy protection is currently enabled on the encoder.</para>
-    </summary>
-    <param name="lVideoCopyProtection">
-      <para>Specifies a pointer to a <b>long</b> integer to receive the current copy protection level, as defined in the <see cref="AM_COPY_MACROVISION_LEVEL" /> enumeration.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b></para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMAnalogVideoEncoder Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IAMAnalogVideoEncoder</b> interface is deprecated.</div>The <code>get_CopyProtection</code> method determines whether copy protection is currently enabled on the encoder.</summary>
+    <param name="lVideoCopyProtection">Specifies a pointer to a <b>long</b> integer to receive the current copy protection level, as defined in the <see cref="AM_COPY_MACROVISION_LEVEL" /> enumeration.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b></returns>
   </member>
   <member name="IAMAnalogVideoEncoder.get_TVFormat">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IAMAnalogVideoEncoder</b> interface is deprecated.</para>
-      <para>The <code>get_TVFormat</code> method retrieves the analog video standard that the encoder is currently set to (NTSC/M, PAL/B, SECAM/K1, and so on).</para>
-    </summary>
-    <param name="plAnalogVideoStandard">
-      <para>Specifies a pointer to a <b>long</b> integer to receive the encoder's current video standard.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Possible values and their meaning are defined in the <see cref="AnalogVideoStandard" /> enumeration.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMAnalogVideoEncoder Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IAMAnalogVideoEncoder</b> interface is deprecated.</div>The <code>get_TVFormat</code> method retrieves the analog video standard that the encoder is currently set to (NTSC/M, PAL/B, SECAM/K1, and so on).</summary>
+    <param name="plAnalogVideoStandard">Specifies a pointer to a <b>long</b> integer to receive the encoder's current video standard.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMAnalogVideoEncoder.put_CCEnable">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IAMAnalogVideoEncoder</b> interface is deprecated.</para>
-      <para>The <code>put_CCEnable</code> method enables or disables closed captioning.</para>
-    </summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IAMAnalogVideoEncoder</b> interface is deprecated.</div>The <code>put_CCEnable</code> method enables or disables closed captioning.</summary>
     <param name="lCCEnable">
       <para>Specifies whether closed captioning is on or off as a <b>long</b> integer.</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>1</description>
           <description>Closed captioning is on.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>0</description>
           <description>Closed captioning is off.</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMAnalogVideoEncoder Interface" />
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMAnalogVideoEncoder.put_CopyProtection">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IAMAnalogVideoEncoder</b> interface is deprecated.</para>
-      <para>The <code>put_CopyProtection</code> method sets the level of copy protection for the encoder.</para>
-    </summary>
-    <param name="lVideoCopyProtection">
-      <para>Specifies the level of copy protection as a <b>long</b> integer with a value as defined in the <see cref="AM_COPY_MACROVISION_LEVEL" /> enumeration.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMAnalogVideoEncoder Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IAMAnalogVideoEncoder</b> interface is deprecated.</div>The <code>put_CopyProtection</code> method sets the level of copy protection for the encoder.</summary>
+    <param name="lVideoCopyProtection">Specifies the level of copy protection as a <b>long</b> integer with a value as defined in the <a href="https://docs.microsoft.com//previous-versions/ms778997(v=vs.85)">AM_COPY_MACROVISION_LEVEL</a> enumeration.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMAnalogVideoEncoder.put_TVFormat">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IAMAnalogVideoEncoder</b> interface is deprecated.</para>
-      <para>The <code>put_TVFormat</code> method sets the encoder to a particular analog video standard (NTSC/M, PAL/B, SECAM/K1, and so on).</para>
-    </summary>
-    <param name="lAnalogVideoStandard">
-      <para>Specifies the video standard to set in the encoder as a <see cref="AnalogVideoStandard" /> enumeration.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMAnalogVideoEncoder Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IAMAnalogVideoEncoder</b> interface is deprecated.</div>The <code>put_TVFormat</code> method sets the encoder to a particular analog video standard (NTSC/M, PAL/B, SECAM/K1, and so on).</summary>
+    <param name="lAnalogVideoStandard">Specifies the video standard to set in the encoder as a <see cref="AnalogVideoStandard" /> enumeration.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMAnalogVideoEncoder">
     <summary>
-      <para>
-        <b>Note</b>  This interface has been deprecated.</para>
-      <para>
-        <b>Note</b>  Microsoft does not provide an implementation of this interface. Third parties might implement it.</para>
-      <para>The <b>IAMAnalogVideoEncoder</b> interface might be implemented by a hardware video encoder in video capture operations when an application is streaming data to disk and sending it back out to videotape.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/deprecated-interfaces">Deprecated Interfaces</seealso>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  This interface has been deprecated.</div>
+      <div>
+        <b>Note</b>  Microsoft does not provide an implementation of this interface. Third parties might implement it.</div>The <b>IAMAnalogVideoEncoder</b> interface might be implemented by a hardware video encoder in video capture operations when an application is streaming data to disk and sending it back out to videotape.</summary>
   </member>
 </doc>

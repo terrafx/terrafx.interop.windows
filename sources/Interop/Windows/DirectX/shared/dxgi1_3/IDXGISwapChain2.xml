@@ -5,24 +5,14 @@
   <member name="IDXGISwapChain2.GetFrameLatencyWaitableObject">
     <summary>
       <para>Returns a waitable handle that signals when the DXGI adapter has finished presenting a new frame.</para>
-      <para>Windows 8.1 introduces new APIs that allow lower-latency rendering by waiting  until the previous frame is presented to the display before drawing the next frame. To use this method, first create the DXGI swap chain with the <see cref="DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT" /> flag set, then call <b>GetFrameLatencyWaitableObject</b> to retrieve the waitable handle. Use the waitable handle with <see cref="WaitForSingleObjectEx" /> to synchronize rendering of each new frame with the end of the previous frame. For every frame it renders, the app should wait on this handle before starting any rendering operations. Note that this requirement includes the first frame the app renders with the swap chain. See the <a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/official%20windows%20platform%20sample/directx%20latency%20sample">DirectXLatency sample</a>. When you are done with the handle, use <see cref="CloseHandle" /> to close it.</para>
+      <para>Windows 8.1 introduces new APIs that allow lower-latency rendering by waiting until the previous frame is presented to the display before drawing the next frame. To use this method, first create the DXGI swap chain with the <see cref="DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT" /> flag set, then call <b>GetFrameLatencyWaitableObject</b> to retrieve the waitable handle. Use the waitable handle with <see cref="WaitForSingleObjectEx" /> to synchronize rendering of each new frame with the end of the previous frame. For every frame it renders, the app should wait on this handle before starting any rendering operations. Note that this requirement includes the first frame the app renders with the swap chain. See the <a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/official%20windows%20platform%20sample/directx%20latency%20sample">DirectXLatency sample</a>. When you are done with the handle, use <see cref="CloseHandle" /> to close it.</para>
     </summary>
-    <returns>
-      <para>A handle to the waitable object, or NULL if the swap chain was not created with <see cref="DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT" />.</para>
-    </returns>
-    <remarks>
-      <para>When an application is finished using the object handle returned by
-<b>IDXGISwapChain2.GetFrameLatencyWaitableObject</b>, use the <see cref="CloseHandle" /> function to close the handle.</para>
-    </remarks>
-    <seealso href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/official%20windows%20platform%20sample/directx%20latency%20sample">DirectX latency sample</seealso>
-    <seealso cref="GetMaximumFrameLatency" />
-    <seealso cref="IDXGISwapChain2" />
-    <seealso cref="SetMaximumFrameLatency" />
+    <returns>A handle to the waitable object, or NULL if the swap chain was not created with <see cref="DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT" />.</returns>
   </member>
   <member name="IDXGISwapChain2.GetMatrixTransform">
     <summary>
       <para>Gets the transform matrix that will be applied to a composition swap chain upon the next present.</para>
-      <para>Starting with Windows 8.1, Windows Store apps are able to place DirectX swap chain visuals in XAML pages using the <a href="https://docs.microsoft.com//uwp/api/windows.ui.xaml.controls.swapchainpanel">SwapChainPanel</a> element, which can be placed and sized arbitrarily. This exposes the DirectX swap chain visuals to touch scaling and translation scenarios using touch UI. The <b>GetMatrixTransform</b> and  <see cref="SetMatrixTransform" /> methods are used to synchronize scaling of the DirectX swap chain with its associated <b>SwapChainPanel</b> element. Only simple scale/translation elements in the matrix are allowed – the call will fail if the matrix contains skew/rotation elements.</para>
+      <para>Starting with Windows 8.1, Windows Store apps are able to place DirectX swap chain visuals in XAML pages using the <a href="https://docs.microsoft.com//uwp/api/windows.ui.xaml.controls.swapchainpanel">SwapChainPanel</a> element, which can be placed and sized arbitrarily. This exposes the DirectX swap chain visuals to touch scaling and translation scenarios using touch UI. The <b>GetMatrixTransform</b> and <see cref="SetMatrixTransform" /> methods are used to synchronize scaling of the DirectX swap chain with its associated <b>SwapChainPanel</b> element. Only simple scale/translation elements in the matrix are allowed – the call will fail if the matrix contains skew/rotation elements.</para>
     </summary>
     <param name="pMatrix">
       <para>[out]</para>
@@ -43,16 +33,10 @@
         </item>
       </list>
     </returns>
-    <seealso cref="IDXGISwapChain2" />
-    <seealso cref="SetMatrixTransform" />
   </member>
   <member name="IDXGISwapChain2.GetMaximumFrameLatency">
-    <summary>
-      <para>Gets the number of frames that the swap chain is allowed to queue for rendering.</para>
-    </summary>
-    <param name="pMaxLatency">
-      <para>The maximum number of back buffer frames that will be queued for the swap chain. This value is 1 by default, but should be set to 2 if the scene takes longer than it takes for one vertical refresh (typically about 16ms) to draw.</para>
-    </param>
+    <summary>Gets the number of frames that the swap chain is allowed to queue for rendering.</summary>
+    <param name="pMaxLatency">The maximum number of back buffer frames that will be queued for the swap chain. This value is 1 by default, but should be set to 2 if the scene takes longer than it takes for one vertical refresh (typically about 16ms) to draw.</param>
     <returns>
       <para>Returns S_OK if successful; otherwise, returns one of the following members of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3derr">D3DERR</a> enumerated type:</para>
       <list type="bullet">
@@ -83,35 +67,22 @@
         </item>
       </list>
     </returns>
-    <seealso href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/official%20windows%20platform%20sample/directx%20latency%20sample">DirectX latency sample</seealso>
-    <seealso cref="IDXGISwapChain2" />
-    <seealso cref="SetMaximumFrameLatency" />
   </member>
   <member name="IDXGISwapChain2.GetSourceSize">
     <summary>
       <para>Gets the source region used for the swap chain.</para>
       <para>Use <b>GetSourceSize</b> to get the portion of the swap chain from which the operating system presents. The source rectangle is always defined by the region [0, 0, Width, Height]. Use <see cref="SetSourceSize" /> to set this portion of the swap chain.</para>
     </summary>
-    <param name="pWidth">
-      <para>The current width of the source region of the swap chain. This value can range from 1 to the overall width of the swap chain.</para>
-    </param>
-    <param name="pHeight">
-      <para>The current height of the source region of the swap chain. This value can range from 1 to the overall height of the swap chain.</para>
-    </param>
-    <returns>
-      <para>This method can return error codes that are described in the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> topic.</para>
-    </returns>
-    <seealso cref="IDXGISwapChain2" />
-    <seealso cref="SetSourceSize" />
+    <param name="pWidth">The current width of the source region of the swap chain. This value can range from 1 to the overall width of the swap chain.</param>
+    <param name="pHeight">The current height of the source region of the swap chain. This value can range from 1 to the overall height of the swap chain.</param>
+    <returns>This method can return error codes that are described in the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> topic.</returns>
   </member>
   <member name="IDXGISwapChain2.SetMatrixTransform">
     <summary>
       <para>Sets the transform matrix that will be applied to a composition swap chain upon the next present.</para>
-      <para>Starting with Windows 8.1, Windows Store apps are able to place DirectX swap chain visuals in XAML pages using the <a href="https://docs.microsoft.com//uwp/api/windows.ui.xaml.controls.swapchainpanel">SwapChainPanel</a> element, which can be placed and sized arbitrarily. This exposes the DirectX swap chain visuals to touch scaling and translation scenarios using touch UI. The <see cref="GetMatrixTransform" /> and  <b>SetMatrixTransform</b> methods are used to synchronize scaling of the DirectX swap chain with its associated <b>SwapChainPanel</b> element. Only simple scale/translation elements in the matrix are allowed – the call will fail if the matrix contains skew/rotation elements.</para>
+      <para>Starting with Windows 8.1, Windows Store apps are able to place DirectX swap chain visuals in XAML pages using the <a href="https://docs.microsoft.com//uwp/api/windows.ui.xaml.controls.swapchainpanel">SwapChainPanel</a> element, which can be placed and sized arbitrarily. This exposes the DirectX swap chain visuals to touch scaling and translation scenarios using touch UI. The <see cref="GetMatrixTransform" /> and <b>SetMatrixTransform</b> methods are used to synchronize scaling of the DirectX swap chain with its associated <b>SwapChainPanel</b> element. Only simple scale/translation elements in the matrix are allowed – the call will fail if the matrix contains skew/rotation elements.</para>
     </summary>
-    <param name="pMatrix">
-      <para>The transform matrix to use for swap chain scaling and translation. This function can only be used with composition swap chains created by <see cref="IDXGIFactory2.CreateSwapChainForComposition" />. Only scale and translation components are allowed in the matrix.</para>
-    </param>
+    <param name="pMatrix">The transform matrix to use for swap chain scaling and translation. This function can only be used with composition swap chains created by <see cref="IDXGIFactory2.CreateSwapChainForComposition" />. Only scale and translation components are allowed in the matrix.</param>
     <returns>
       <para>
         <b>SetMatrixTransform</b> returns:</para>
@@ -130,37 +101,19 @@
         </item>
       </list>
     </returns>
-    <seealso cref="GetMatrixTransform" />
-    <seealso cref="IDXGISwapChain2" />
   </member>
   <member name="IDXGISwapChain2.SetMaximumFrameLatency">
-    <summary>
-      <para>Sets the number of frames that the swap chain is allowed to queue for rendering.</para>
-    </summary>
-    <param name="MaxLatency">
-      <para>The maximum number of back buffer frames that will be queued for the swap chain. This value is 1 by default.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful; otherwise, DXGI_ERROR_DEVICE_REMOVED if the device was removed.</para>
-    </returns>
-    <remarks>
-      <para>This method is only valid for use on swap chains created with <see cref="DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT" />. Otherwise, the result will be DXGI_ERROR_INVALID_CALL.</para>
-    </remarks>
-    <seealso href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/official%20windows%20platform%20sample/directx%20latency%20sample">DirectX latency sample</seealso>
-    <seealso cref="GetMaximumFrameLatency" />
-    <seealso cref="IDXGISwapChain2" />
+    <summary>Sets the number of frames that the swap chain is allowed to queue for rendering.</summary>
+    <param name="MaxLatency">The maximum number of back buffer frames that will be queued for the swap chain. This value is 1 by default.</param>
+    <returns>Returns S_OK if successful; otherwise, DXGI_ERROR_DEVICE_REMOVED if the device was removed.</returns>
   </member>
   <member name="IDXGISwapChain2.SetSourceSize">
     <summary>
       <para>Sets the source region to be used for the swap chain.</para>
       <para>Use <b>SetSourceSize</b> to specify the portion of the swap chain from which the operating system presents. This allows an effective resize without calling the more-expensive <see cref="IDXGISwapChain.ResizeBuffers" /> method. Prior to Windows 8.1, calling <b>IDXGISwapChain.ResizeBuffers</b> was the only way to resize the swap chain. The source rectangle is always defined by the region [0, 0, Width, Height].</para>
     </summary>
-    <param name="Width">
-      <para>Source width to use for the swap chain. This value must be greater than zero, and must be less than or equal to the overall width of the swap chain.</para>
-    </param>
-    <param name="Height">
-      <para>Source height to use for the swap chain. This value must be greater than zero, and must be less than or equal to the overall height of the swap chain.</para>
-    </param>
+    <param name="Width">Source width to use for the swap chain. This value must be greater than zero, and must be less than or equal to the overall width of the swap chain.</param>
+    <param name="Height">Source height to use for the swap chain. This value must be greater than zero, and must be less than or equal to the overall height of the swap chain.</param>
     <returns>
       <para>This method can return:</para>
       <list type="bullet">
@@ -172,21 +125,8 @@
         </item>
       </list>
     </returns>
-    <seealso cref="GetSourceSize" />
-    <seealso cref="IDXGISwapChain2" />
   </member>
   <member name="IDXGISwapChain2">
-    <summary>
-      <para>Extends <see cref="IDXGISwapChain1" /> with methods to support swap back buffer scaling and lower-latency swap chains.</para>
-    </summary>
-    <remarks>
-      <para>You can create a swap chain by
-calling <see cref="IDXGIFactory2.CreateSwapChainForHwnd" />, <see cref="IDXGIFactory2.CreateSwapChainForCoreWindow" />, or <see cref="IDXGIFactory2.CreateSwapChainForComposition" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IDXGIFactory2.CreateSwapChainForComposition" />
-    <seealso cref="IDXGIFactory2.CreateSwapChainForCoreWindow" />
-    <seealso cref="IDXGIFactory2.CreateSwapChainForHwnd" />
-    <seealso cref="IDXGISwapChain1" />
+    <summary>Extends <see cref="IDXGISwapChain1" /> with methods to support swap back buffer scaling and lower-latency swap chains.</summary>
   </member>
 </doc>

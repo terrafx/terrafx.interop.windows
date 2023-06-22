@@ -3,27 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_BRUSH_PROPERTIES">
-    <summary>
-      <para>Describes the opacity and transformation of a brush.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used when creating a brush. For convenience, Direct2D provides the <see cref="D2D1.BrushProperties" /> function for creating <b>D2D1_BRUSH_PROPERTIES</b> structures.</para>
-      <para>After creating a brush, you can change its opacity or transform by calling the <see cref="SetOpacity" /> or <see cref="SetTransform" /> methods.</para>
-    </remarks>
-    <seealso cref="D2D1.BrushProperties" />
-    <seealso cref="SetOpacity" />
-    <seealso cref="SetTransform" />
+    <summary>Describes the opacity and transformation of a brush.</summary>
   </member>
   <member name="D2D1_BRUSH_PROPERTIES.opacity">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>A value between 0.0f and 1.0f, inclusive, that specifies the degree of opacity of the brush.</para>
-    </summary>
+    <summary>A value between 0.0f and 1.0f, inclusive, that specifies the degree of opacity of the brush.</summary>
   </member>
   <member name="D2D1_BRUSH_PROPERTIES.transform">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a></b></para>
-      <para>The transformation that is applied to the brush.</para>
-    </summary>
+    <summary>The transformation that is applied to the brush.</summary>
   </member>
 </doc>

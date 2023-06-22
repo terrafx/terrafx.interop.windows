@@ -3,24 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.RmAddFilter">
-    <summary>
-      <para>Modifies the shutdown or restart actions that are applied to an application or service. The primary installer can call the <b>RmAddFilter</b> function multiple times. The most recent call overrides any previous modifications to the same file, process, or service.</para>
-    </summary>
-    <param name="dwSessionHandle">
-      <para>A handle to an existing Restart Manager session.</para>
-    </param>
-    <param name="strModuleName">
-      <para>A pointer to a <b>null</b>-terminated string value that contains the full path to the application's executable file. Modifications to shutdown or restart actions are applied for the application that is referenced by the full path.  This parameter must be <b>NULL</b> if the <i>Application</i> or <i>strServiceShortName</i> parameter is non-<b>NULL</b>.</para>
-    </param>
-    <param name="pProcess">
-      <para>A pointer to a <see cref="RM_UNIQUE_PROCESS" /> structure for the application.  Modifications to shutdown or restart actions are applied for the application that is referenced by the <b>RM_UNIQUE_PROCESS</b> structure. This parameter must be <b>NULL</b> if the <i>strFilename</i>  or <i>strShortServiceName</i> parameter is non-<b>NULL</b>.</para>
-    </param>
-    <param name="strServiceShortName">
-      <para>A pointer to a <b>null</b>-terminated string value that contains the short service name. Modifications to shutdown or restart actions are applied for the service that is referenced by short service filename.  This parameter must be <b>NULL</b> if the <i>strFilename</i> or <i>Application</i> parameter is non-<b>NULL</b>.</para>
-    </param>
-    <param name="FilterAction">
-      <para>An <see cref="RM_FILTER_ACTION" /> enumeration value that specifies the type of modification to be applied.</para>
-    </param>
+    <summary>Modifies the shutdown or restart actions that are applied to an application or service. The primary installer can call the <b>RmAddFilter</b> function multiple times. The most recent call overrides any previous modifications to the same file, process, or service.</summary>
+    <param name="dwSessionHandle">A handle to an existing Restart Manager session.</param>
+    <param name="strModuleName">A pointer to a <b>null</b>-terminated string value that contains the full path to the application's executable file. Modifications to shutdown or restart actions are applied for the application that is referenced by the full path. This parameter must be <b>NULL</b> if the <i>Application</i> or <i>strServiceShortName</i> parameter is non-<b>NULL</b>.</param>
+    <param name="pProcess">A pointer to a <see cref="RM_UNIQUE_PROCESS" /> structure for the application. Modifications to shutdown or restart actions are applied for the application that is referenced by the <b>RM_UNIQUE_PROCESS</b> structure. This parameter must be <b>NULL</b> if the <i>strFilename</i> or <i>strShortServiceName</i> parameter is non-<b>NULL</b>.</param>
+    <param name="strServiceShortName">A pointer to a <b>null</b>-terminated string value that contains the short service name. Modifications to shutdown or restart actions are applied for the service that is referenced by short service filename. This parameter must be <b>NULL</b> if the <i>strFilename</i> or <i>Application</i> parameter is non-<b>NULL</b>.</param>
+    <param name="FilterAction">An <see cref="RM_FILTER_ACTION" /> enumeration value that specifies the type of modification to be applied.</param>
     <returns>
       <para>This is the most recent error received. The function can return one of the <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error codes</a> that are defined in Winerror.h.</para>
       <list type="table">
@@ -28,68 +16,57 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SUCCESS</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The function completed successfully.</para>
-          </description>
-        </item>
-        <item>
+          <description>The function completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_BAD_ARGUMENTS</b>
-                </description>
-              </item>
-              <item>
-                <description>160</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>160</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>One or more arguments are not correct. This error value is returned by the Restart Manager function if a <b>NULL</b> pointer or 0 is passed in as a parameter that requires a non-<b>null</b> and non-zero value.</para>
-          </description>
-        </item>
-        <item>
+          <description>One or more arguments are not correct. This error value is returned by the Restart Manager function if a <b>NULL</b> pointer or 0 is passed in as a parameter that requires a non-<b>null</b> and non-zero value.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SESSION_CREDENTIAL_CONFLICT</b>
-                </description>
-              </item>
-              <item>
-                <description> 1219</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term> 1219</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>This error is returned when a secondary installer calls this function. This function is only available to primary installers.</para>
-          </description>
-        </item>
+          <description>This error is returned when a secondary installer calls this function. This function is only available to primary installers.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="RmGetFilterList" />
   </member>
   <member name="Windows.RmCancelCurrentTask">
-    <summary>
-      <para>Cancels the current  <see cref="RmShutdown" /> or  <see cref="RmRestart" /> operation.  This function must be called from the application that has started the session by calling the <see cref="RmStartSession" /> function.</para>
-    </summary>
-    <param name="dwSessionHandle">
-      <para>A handle to an existing session.</para>
-    </param>
+    <summary>Cancels the current <see cref="RmShutdown" /> or <see cref="RmRestart" /> operation. This function must be called from the application that has started the session by calling the <see cref="RmStartSession" /> function.</summary>
+    <param name="dwSessionHandle">A handle to an existing session.</param>
     <returns>
       <para>This is the most recent error received. The function can return one of the <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error codes</a> that are defined in Winerror.h.</para>
       <list type="table">
@@ -97,86 +74,72 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SUCCESS</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A cancellation of the current operation is requested.</para>
-          </description>
-        </item>
-        <item>
+          <description>A cancellation of the current operation is requested.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_BAD_ARGUMENTS</b>
-                </description>
-              </item>
-              <item>
-                <description>160</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>160</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>One or more arguments are not correct. This error value is returned by the Restart Manager function if a <b>NULL</b> pointer or 0 is passed in a parameter that requires a non-<b>null</b> and non-zero value.</para>
-          </description>
-        </item>
-        <item>
+          <description>One or more arguments are not correct. This error value is returned by the Restart Manager function if a <b>NULL</b> pointer or 0 is passed in a parameter that requires a non-<b>null</b> and non-zero value.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_OUTOFMEMORY</b>
-                </description>
-              </item>
-              <item>
-                <description>14</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>14</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A Restart Manager operation could not complete because not enough memory was available.</para>
-          </description>
-        </item>
-        <item>
+          <description>A Restart Manager operation could not complete because not enough memory was available.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_INVALID_HANDLE</b>
-                </description>
-              </item>
-              <item>
-                <description>6</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>6</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No Restart Manager session exists for the handle supplied.</para>
-          </description>
-        </item>
+          <description>No Restart Manager session exists for the handle supplied.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="RmRestart" />
-    <seealso cref="RmShutdown" />
   </member>
   <member name="Windows.RmEndSession">
-    <summary>
-      <para>Ends the Restart Manager session. This function should be called by the primary installer that has previously started the session by calling the <see cref="RmStartSession" /> function. The <b>RmEndSession</b> function can be called by a secondary installer that is joined to the session once no more resources need to be registered by the secondary installer.</para>
-    </summary>
-    <param name="dwSessionHandle">
-      <para>A handle to an existing Restart Manager session.</para>
-    </param>
+    <summary>Ends the Restart Manager session. This function should be called by the primary installer that has previously started the session by calling the <see cref="RmStartSession" /> function. The <b>RmEndSession</b> function can be called by a secondary installer that is joined to the session once no more resources need to be registered by the secondary installer.</summary>
+    <param name="dwSessionHandle">A handle to an existing Restart Manager session.</param>
     <returns>
       <para>This is the most recent error received. The function can return one of the <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error codes</a> that are defined in Winerror.h.</para>
       <list type="table">
@@ -184,112 +147,90 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SUCCESS</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The function completed successfully.</para>
-          </description>
-        </item>
-        <item>
+          <description>The function completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SEM_TIMEOUT</b>
-                </description>
-              </item>
-              <item>
-                <description>121</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>121</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A Restart Manager function could not obtain a Registry write mutex in the allotted time. A system restart is recommended because further use of the Restart Manager is likely to fail.</para>
-          </description>
-        </item>
-        <item>
+          <description>A Restart Manager function could not obtain a Registry write mutex in the allotted time. A system restart is recommended because further use of the Restart Manager is likely to fail.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_WRITE_FAULT</b>
-                </description>
-              </item>
-              <item>
-                <description>29</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>29</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An operation was unable  to read or write to the registry.</para>
-          </description>
-        </item>
-        <item>
+          <description>An operation was unable to read or write to the registry.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_OUTOFMEMORY</b>
-                </description>
-              </item>
-              <item>
-                <description>14</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>14</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A Restart Manager operation could not complete because not enough memory was available.</para>
-          </description>
-        </item>
-        <item>
+          <description>A Restart Manager operation could not complete because not enough memory was available.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_INVALID_HANDLE</b>
-                </description>
-              </item>
-              <item>
-                <description>6</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>6</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An invalid handle was passed to the function. No Restart Manager session exists for the handle supplied.</para>
-          </description>
-        </item>
+          <description>An invalid handle was passed to the function. No Restart Manager session exists for the handle supplied.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="RmJoinSession" />
-    <seealso cref="RmStartSession" />
   </member>
   <member name="Windows.RmGetFilterList">
-    <summary>
-      <para>Lists the modifications to shutdown and restart actions that have already been applied by the <see cref="RmAddFilter" /> function. The function returns a pointer to a buffer containing information about the modifications which have been applied.</para>
-    </summary>
-    <param name="dwSessionHandle">
-      <para>A handle to an existing Restart Manager session.</para>
-    </param>
-    <param name="pbFilterBuf">
-      <para>A pointer to a buffer that contains modification information.</para>
-    </param>
-    <param name="cbFilterBuf">
-      <para>The size of the buffer that contains modification information in bytes.</para>
-    </param>
-    <param name="cbFilterBufNeeded">
-      <para>The number of bytes needed in the buffer.</para>
-    </param>
+    <summary>Lists the modifications to shutdown and restart actions that have already been applied by the <see cref="RmAddFilter" /> function. The function returns a pointer to a buffer containing information about the modifications which have been applied.</summary>
+    <param name="dwSessionHandle">A handle to an existing Restart Manager session.</param>
+    <param name="pbFilterBuf">A pointer to a buffer that contains modification information.</param>
+    <param name="cbFilterBuf">The size of the buffer that contains modification information in bytes.</param>
+    <param name="cbFilterBufNeeded">The number of bytes needed in the buffer.</param>
     <returns>
       <para>This is the most recent error received. The function can return one of the <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error codes</a> that are defined in Winerror.h.</para>
       <list type="table">
@@ -297,100 +238,76 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SUCCESS</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The function completed successfully.</para>
-          </description>
-        </item>
-        <item>
+          <description>The function completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_BAD_ARGUMENTS</b>
-                </description>
-              </item>
-              <item>
-                <description>160</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>160</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>One or more arguments are not correct. This error value is returned by the Restart Manager function if a <b>NULL</b> pointer or 0 is passed in as a parameter that requires a non-<b>null</b> and non-zero value.</para>
-          </description>
-        </item>
-        <item>
+          <description>One or more arguments are not correct. This error value is returned by the Restart Manager function if a <b>NULL</b> pointer or 0 is passed in as a parameter that requires a non-<b>null</b> and non-zero value.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_MORE_DATA</b>
-                </description>
-              </item>
-              <item>
-                <description>234</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>234</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>This error value is returned by the <see cref="RmGetFilterList" /> function if the <i>pbFilterBuf</i> buffer is too small to hold all the application information in the list or if <i>cbFilterBufNeeded</i> was not specified.</para>
-          </description>
-        </item>
-        <item>
+          <description>This error value is returned by the <see cref="RmGetFilterList" /> function if the <i>pbFilterBuf</i> buffer is too small to hold all the application information in the list or if <i>cbFilterBufNeeded</i> was not specified.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SESSION_CREDENTIAL_CONFLICT</b>
-                </description>
-              </item>
-              <item>
-                <description> 1219</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term> 1219</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>This error is returned when a secondary installer calls this function. This function is only available to primary installers.</para>
-          </description>
-        </item>
+          <description>This error is returned when a secondary installer calls this function. This function is only available to primary installers.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The returned <i>pbFilterBuf</i> buffer has to be typecast to <b>RM_FILTER_INFO</b> to access the filter list.</para>
-    </remarks>
-    <seealso cref="RmAddFilter" />
   </member>
   <member name="Windows.RmGetList">
-    <summary>
-      <para>Gets a list of all applications and services that are currently using resources that have been registered with the Restart Manager session.</para>
-    </summary>
-    <param name="dwSessionHandle">
-      <para>A handle to an existing Restart Manager session.</para>
-    </param>
-    <param name="pnProcInfoNeeded">
-      <para>A pointer to an array size necessary to receive <see cref="RM_PROCESS_INFO" /> structures required to return information for all affected applications and services.</para>
-    </param>
-    <param name="pnProcInfo">
-      <para>A pointer to the total number of <see cref="RM_PROCESS_INFO" /> structures in an array and number of structures filled.</para>
-    </param>
-    <param name="rgAffectedApps">
-      <para>An array of <see cref="RM_PROCESS_INFO" /> structures that list the applications and services  using resources that have been registered with the session.</para>
-    </param>
-    <param name="lpdwRebootReasons">
-      <para>Pointer to location that receives a value of the  <see cref="RM_REBOOT_REASON" /> enumeration that describes the reason a system restart is needed.</para>
-    </param>
+    <summary>Gets a list of all applications and services that are currently using resources that have been registered with the Restart Manager session.</summary>
+    <param name="dwSessionHandle">A handle to an existing Restart Manager session.</param>
+    <param name="pnProcInfoNeeded">A pointer to an array size necessary to receive <see cref="RM_PROCESS_INFO" /> structures required to return information for all affected applications and services.</param>
+    <param name="pnProcInfo">A pointer to the total number of <see cref="RM_PROCESS_INFO" /> structures in an array and number of structures filled.</param>
+    <param name="rgAffectedApps">An array of <see cref="RM_PROCESS_INFO" /> structures that list the applications and services using resources that have been registered with the session.</param>
+    <param name="lpdwRebootReasons">Pointer to location that receives a value of the <see cref="RM_REBOOT_REASON" /> enumeration that describes the reason a system restart is needed.</param>
     <returns>
       <para>This is the most recent error received. The function can return one of the <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error codes</a> that are defined in Winerror.h.</para>
       <list type="table">
@@ -398,156 +315,133 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SUCCESS</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The function completed successfully.</para>
-          </description>
-        </item>
-        <item>
+          <description>The function completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_MORE_DATA</b>
-                </description>
-              </item>
-              <item>
-                <description>234</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>234</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>This error value is returned by the <see cref="RmGetList" /> function if the <i>rgAffectedApps</i> buffer is too small to hold all application information in the list.</para>
-          </description>
-        </item>
-        <item>
+          <description>This error value is returned by the <see cref="RmGetList" /> function if the <i>rgAffectedApps</i> buffer is too small to hold all application information in the list.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_CANCELLED</b>
-                </description>
-              </item>
-              <item>
-                <description>1223</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1223</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The current operation is canceled by user.</para>
-          </description>
-        </item>
-        <item>
+          <description>The current operation is canceled by user.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SEM_TIMEOUT</b>
-                </description>
-              </item>
-              <item>
-                <description>121</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>121</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A Restart Manager function could not obtain a Registry write mutex in the allotted time. A system restart is recommended because further use of the Restart Manager is likely to fail.</para>
-          </description>
-        </item>
-        <item>
+          <description>A Restart Manager function could not obtain a Registry write mutex in the allotted time. A system restart is recommended because further use of the Restart Manager is likely to fail.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_BAD_ARGUMENTS</b>
-                </description>
-              </item>
-              <item>
-                <description>160</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>160</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>One or more arguments are not correct. This error value is returned by the Restart Manager function if a <b>NULL</b> pointer or 0 is passed in a parameter that requires a non-<b>null</b> and non-zero value.</para>
-          </description>
-        </item>
-        <item>
+          <description>One or more arguments are not correct. This error value is returned by the Restart Manager function if a <b>NULL</b> pointer or 0 is passed in a parameter that requires a non-<b>null</b> and non-zero value.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_WRITE_FAULT</b>
-                </description>
-              </item>
-              <item>
-                <description>29</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>29</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An operation was unable  to read or write to the registry.</para>
-          </description>
-        </item>
-        <item>
+          <description>An operation was unable to read or write to the registry.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_OUTOFMEMORY</b>
-                </description>
-              </item>
-              <item>
-                <description>14</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>14</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A Restart Manager operation could not complete because not enough memory was available.</para>
-          </description>
-        </item>
-        <item>
+          <description>A Restart Manager operation could not complete because not enough memory was available.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_INVALID_HANDLE</b>
-                </description>
-              </item>
-              <item>
-                <description>6</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>6</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No Restart Manager session exists for the handle supplied.</para>
-          </description>
-        </item>
+          <description>No Restart Manager session exists for the handle supplied.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="RmCancelCurrentTask" />
   </member>
   <member name="Windows.RmJoinSession">
-    <summary>
-      <para>Joins a secondary installer to an existing Restart Manager session. This function must be called with a session key that can only be obtained from the primary installer that started the session. A valid session key is required to use any of the Restart Manager functions. After a secondary installer joins a session, it can call the  <see cref="RmRegisterResources" /> function to register resources.</para>
-    </summary>
-    <param name="pSessionHandle">
-      <para>A pointer to the handle of an existing Restart Manager Session.</para>
-    </param>
-    <param name="strSessionKey">
-      <para>A <b>null</b>-terminated string that contains the session key of an existing session.</para>
-    </param>
+    <summary>Joins a secondary installer to an existing Restart Manager session. This function must be called with a session key that can only be obtained from the primary installer that started the session. A valid session key is required to use any of the Restart Manager functions. After a secondary installer joins a session, it can call the <see cref="RmRegisterResources" /> function to register resources.</summary>
+    <param name="pSessionHandle">A pointer to the handle of an existing Restart Manager Session.</param>
+    <param name="strSessionKey">A <b>null</b>-terminated string that contains the session key of an existing session.</param>
     <returns>
       <para>This is the most recent error received. The function can return one of the <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error codes</a> that are defined in Winerror.h.</para>
       <list type="table">
@@ -555,158 +449,123 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SUCCESS</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The function completed successfully.</para>
-          </description>
-        </item>
-        <item>
+          <description>The function completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SESSION_CREDENTIAL_CONFLICT</b>
-                </description>
-              </item>
-              <item>
-                <description>1219</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1219</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The session key cannot be validated.</para>
-          </description>
-        </item>
-        <item>
+          <description>The session key cannot be validated.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SEM_TIMEOUT</b>
-                </description>
-              </item>
-              <item>
-                <description>121</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>121</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A Restart Manager function could not obtain a Registry write mutex in the allotted time. A system restart is recommended because further use of the Restart Manager is likely to fail.</para>
-          </description>
-        </item>
-        <item>
+          <description>A Restart Manager function could not obtain a Registry write mutex in the allotted time. A system restart is recommended because further use of the Restart Manager is likely to fail.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_BAD_ARGUMENTS</b>
-                </description>
-              </item>
-              <item>
-                <description>22</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>22</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>One or more arguments are not correct. This error value is returned by the Restart Manager function if a <b>NULL</b> pointer or 0 is passed in a parameter that requires a non-<b>null</b> and non-zero value.</para>
-          </description>
-        </item>
-        <item>
+          <description>One or more arguments are not correct. This error value is returned by the Restart Manager function if a <b>NULL</b> pointer or 0 is passed in a parameter that requires a non-<b>null</b> and non-zero value.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_WRITE_FAULT</b>
-                </description>
-              </item>
-              <item>
-                <description>29</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>29</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An operation was unable  to read or write to the registry.</para>
-          </description>
-        </item>
-        <item>
+          <description>An operation was unable to read or write to the registry.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_MAX_SESSIONS_REACHED</b>
-                </description>
-              </item>
-              <item>
-                <description>353</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>353</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The maximum number of sessions has been reached.</para>
-          </description>
-        </item>
-        <item>
+          <description>The maximum number of sessions has been reached.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_OUTOFMEMORY</b>
-                </description>
-              </item>
-              <item>
-                <description>14</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>14</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A Restart Manager operation could not complete because not enough memory was available.</para>
-          </description>
-        </item>
+          <description>A Restart Manager operation could not complete because not enough memory was available.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <b>RmJoinSession</b> function joins a secondary installer to an existing Restart Manager session. This is typically an installer that does not control the user interface and can run either in-process or out-of-process of the primary installer. Only the primary installer can call the <see cref="RmStartSession" /> function and this is typically the application that controls the user interface or that controls the installation sequence of multiple patches in an update.</para>
-    </remarks>
-    <seealso cref="RmEndSession" />
-    <seealso cref="RmStartSession" />
   </member>
   <member name="Windows.RmRegisterResources">
-    <summary>
-      <para>Registers resources to a Restart Manager session. The Restart Manager uses the list of resources registered with the session to determine which applications and services must be shut down and restarted. Resources can be identified by filenames, service short names, or <see cref="RM_UNIQUE_PROCESS" /> structures that describe running applications. The <b>RmRegisterResources</b> function can be used by a primary or secondary installer.</para>
-    </summary>
-    <param name="dwSessionHandle">
-      <para>A handle to an existing Restart Manager session.</para>
-    </param>
-    <param name="nFiles">
-      <para>The number of files being registered.</para>
-    </param>
-    <param name="rgsFileNames">
-      <para>An array of <b>null</b>-terminated strings of full filename paths. This parameter can be <b>NULL</b> if <i>nFiles</i> is 0.</para>
-    </param>
-    <param name="nApplications">
-      <para>The number of processes being registered.</para>
-    </param>
-    <param name="rgApplications">
-      <para>An array of <see cref="RM_UNIQUE_PROCESS" /> structures. This parameter can be <b>NULL</b> if <i>nApplications</i> is 0.</para>
-    </param>
-    <param name="nServices">
-      <para>The number of services to be registered.</para>
-    </param>
-    <param name="rgsServiceNames">
-      <para>An array of <b>null</b>-terminated strings of service short names. This parameter can be <b>NULL</b> if <i>nServices</i> is 0.</para>
-    </param>
+    <summary>Registers resources to a Restart Manager session. The Restart Manager uses the list of resources registered with the session to determine which applications and services must be shut down and restarted. Resources can be identified by filenames, service short names, or <see cref="RM_UNIQUE_PROCESS" /> structures that describe running applications. The <b>RmRegisterResources</b> function can be used by a primary or secondary installer.</summary>
+    <param name="dwSessionHandle">A handle to an existing Restart Manager session.</param>
+    <param name="nFiles">The number of files being registered.</param>
+    <param name="rgsFileNames">An array of <b>null</b>-terminated strings of full filename paths. This parameter can be <b>NULL</b> if <i>nFiles</i> is 0.</param>
+    <param name="nApplications">The number of processes being registered.</param>
+    <param name="rgApplications">An array of <see cref="RM_UNIQUE_PROCESS" /> structures. This parameter can be <b>NULL</b> if <i>nApplications</i> is 0.</param>
+    <param name="nServices">The number of services to be registered.</param>
+    <param name="rgsServiceNames">An array of <b>null</b>-terminated strings of service short names. This parameter can be <b>NULL</b> if <i>nServices</i> is 0.</param>
     <returns>
       <para>This is the most recent error received. The function can return one of the <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error codes</a> that are defined in Winerror.h.</para>
       <list type="table">
@@ -714,130 +573,105 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SUCCESS</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The resources specified have been registered.</para>
-          </description>
-        </item>
-        <item>
+          <description>The resources specified have been registered.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SEM_TIMEOUT</b>
-                </description>
-              </item>
-              <item>
-                <description>121</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>121</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A Restart Manager function could not obtain a Registry write mutex in the allotted time. A system restart is recommended because further use of the Restart Manager is likely to fail.</para>
-          </description>
-        </item>
-        <item>
+          <description>A Restart Manager function could not obtain a Registry write mutex in the allotted time. A system restart is recommended because further use of the Restart Manager is likely to fail.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_BAD_ARGUMENTS</b>
-                </description>
-              </item>
-              <item>
-                <description>160</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>160</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>One or more arguments are not correct. This error value is returned by Restart Manager function if a <b>NULL</b> pointer or 0 is passed in a parameter that requires a non-<b>null</b> and non-zero value.</para>
-          </description>
-        </item>
-        <item>
+          <description>One or more arguments are not correct. This error value is returned by Restart Manager function if a <b>NULL</b> pointer or 0 is passed in a parameter that requires a non-<b>null</b> and non-zero value.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_WRITE_FAULT</b>
-                </description>
-              </item>
-              <item>
-                <description>29</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>29</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An operation was unable  to read or write to the registry.</para>
-          </description>
-        </item>
-        <item>
+          <description>An operation was unable to read or write to the registry.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_OUTOFMEMORY</b>
-                </description>
-              </item>
-              <item>
-                <description>14</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>14</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A Restart Manager operation could not complete because not enough memory was available.</para>
-          </description>
-        </item>
-        <item>
+          <description>A Restart Manager operation could not complete because not enough memory was available.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_INVALID_HANDLE</b>
-                </description>
-              </item>
-              <item>
-                <description>6</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>6</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No Restart Manager session exists for the handle supplied.</para>
-          </description>
-        </item>
+          <description> No Restart Manager session exists for the handle supplied.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Each call to the <b>RmRegisterResources</b> function performs relatively expensive write operations. Do not call this function once per file, instead group related files together into components and register these together.</para>
-    </remarks>
   </member>
   <member name="Windows.RmRemoveFilter">
-    <summary>
-      <para>Removes any modifications to shutdown or restart actions that have been applied using the <see cref="RmAddFilter" /> function. The primary installer can call  the <b>RmRemoveFilter</b> function multiple times.</para>
-    </summary>
-    <param name="dwSessionHandle">
-      <para>A handle to an existing Restart Manager session.</para>
-    </param>
-    <param name="strModuleName">
-      <para>A pointer to a <b>null</b>-terminated string value that contains the full path for the application's  executable file. The <b>RmRemoveFilter</b> function removes any modifications to the referenced application's shutdown or restart actions previously applied by the <see cref="RmAddFilter" /> function.  This parameter must be <b>NULL</b> if the <i>Application</i> or <i>strServiceShortName</i> parameter is non-<b>NULL</b>.</para>
-    </param>
-    <param name="pProcess">
-      <para>The <see cref="RM_UNIQUE_PROCESS" /> structure for the application. The <b>RmRemoveFilter</b> function removes any modifications to the referenced application's shutdown or restart actions previously applied by the <see cref="RmAddFilter" /> function.  This parameter must be <b>NULL</b> if the <i>strFilename</i>  or <i>strShortServiceName</i> parameter is non-<b>NULL</b>.</para>
-    </param>
-    <param name="strServiceShortName">
-      <para>A pointer to a <b>null</b>-terminated string value that contains the short service name.  The <b>RmRemoveFilter</b> function removes any modifications to the referenced service's shutdown or restart actions previously applied by the <see cref="RmAddFilter" /> function.  This parameter must be <b>NULL</b> if the <i>strFilename</i> or <i>Application</i> parameter is non-<b>NULL</b>.</para>
-    </param>
+    <summary>Removes any modifications to shutdown or restart actions that have been applied using the <see cref="RmAddFilter" /> function. The primary installer can call the <b>RmRemoveFilter</b> function multiple times.</summary>
+    <param name="dwSessionHandle">A handle to an existing Restart Manager session.</param>
+    <param name="strModuleName">A pointer to a <b>null</b>-terminated string value that contains the full path for the application's executable file. The <b>RmRemoveFilter</b> function removes any modifications to the referenced application's shutdown or restart actions previously applied by the <see cref="RmAddFilter" /> function. This parameter must be <b>NULL</b> if the <i>Application</i> or <i>strServiceShortName</i> parameter is non-<b>NULL</b>.</param>
+    <param name="pProcess">The <see cref="RM_UNIQUE_PROCESS" /> structure for the application. The <b>RmRemoveFilter</b> function removes any modifications to the referenced application's shutdown or restart actions previously applied by the <see cref="RmAddFilter" /> function. This parameter must be <b>NULL</b> if the <i>strFilename</i> or <i>strShortServiceName</i> parameter is non-<b>NULL</b>.</param>
+    <param name="strServiceShortName">A pointer to a <b>null</b>-terminated string value that contains the short service name. The <b>RmRemoveFilter</b> function removes any modifications to the referenced service's shutdown or restart actions previously applied by the <see cref="RmAddFilter" /> function. This parameter must be <b>NULL</b> if the <i>strFilename</i> or <i>Application</i> parameter is non-<b>NULL</b>.</param>
     <returns>
       <para>This is the most recent error received. The function can return one of the <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error codes</a> that are defined in Winerror.h.</para>
       <list type="table">
@@ -845,73 +679,59 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SUCCESS</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The function completed successfully.</para>
-          </description>
-        </item>
-        <item>
+          <description>The function completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_FILE_NOT_FOUND</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The specified filter could not be found.</para>
-          </description>
-        </item>
-        <item>
+          <description>The specified filter could not be found.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SESSION_CREDENTIAL_CONFLICT</b>
-                </description>
-              </item>
-              <item>
-                <description> 1219</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term> 1219</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>This error is returned when a secondary installer calls this function. This function is only available to primary installers.</para>
-          </description>
-        </item>
+          <description>This error is returned when a secondary installer calls this function. This function is only available to primary installers.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="Windows.RmRestart">
-    <summary>
-      <para>Restarts applications and services that have been shut down by the <see cref="RmShutdown" /> function and that have been registered to be restarted using the <see cref="RegisterApplicationRestart" /> function. This function can only be called by the primary installer that called the <see cref="RmStartSession" /> function to start the Restart Manager session.</para>
-    </summary>
-    <param name="dwSessionHandle">
-      <para>A handle to the existing Restart Manager session.</para>
-    </param>
-    <param name="dwRestartFlags">
-      <para>Reserved. This parameter should be 0.</para>
-    </param>
-    <param name="fnStatus">
-      <para>A pointer to a status message callback function that is used to communicate status while the <b>RmRestart</b> function is running. If <b>NULL</b>, no status is provided.</para>
-    </param>
+    <summary>Restarts applications and services that have been shut down by the <see cref="RmShutdown" /> function and that have been registered to be restarted using the <see cref="RegisterApplicationRestart" /> function. This function can only be called by the primary installer that called the <see cref="RmStartSession" /> function to start the Restart Manager session.</summary>
+    <param name="dwSessionHandle">A handle to the existing Restart Manager session.</param>
+    <param name="dwRestartFlags">Reserved. This parameter should be 0.</param>
+    <param name="fnStatus">A pointer to a status message callback function that is used to communicate status while the <b>RmRestart</b> function is running. If <b>NULL</b>, no status is provided.</param>
     <returns>
       <para>This is the most recent error received. The function can return one of the <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error codes</a> that are defined in Winerror.h.</para>
       <list type="table">
@@ -919,226 +739,187 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_REQUEST_OUT_OF_SEQUENCE</b>
-                </description>
-              </item>
-              <item>
-                <description>776</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>776</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>This error value is returned if the <see cref="RmRestart" /> function is called with a valid session handle before calling the <see cref="RmShutdown" /> function.</para>
-          </description>
-        </item>
-        <item>
+          <description>This error value is returned if the <see cref="RmRestart" /> function is called with a valid session handle before calling the <see cref="RmShutdown" /> function.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_FAIL_RESTART</b>
-                </description>
-              </item>
-              <item>
-                <description>352</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>352</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>One or more applications could not be restarted. The <see cref="RM_PROCESS_INFO" /> structures that are returned by the <see cref="RmGetList" /> function contain updated status information.</para>
-          </description>
-        </item>
-        <item>
+          <description>One or more applications could not be restarted. The <see cref="RM_PROCESS_INFO" /> structures that are returned by the <see cref="RmGetList" /> function contain updated status information.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SEM_TIMEOUT</b>
-                </description>
-              </item>
-              <item>
-                <description>121</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>121</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A Restart Manager function could not obtain a registry write mutex in the allotted time. A system restart is recommended because further use of the Restart Manager is likely to fail.</para>
-          </description>
-        </item>
-        <item>
+          <description>A Restart Manager function could not obtain a registry write mutex in the allotted time. A system restart is recommended because further use of the Restart Manager is likely to fail.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_CANCELLED</b>
-                </description>
-              </item>
-              <item>
-                <description>1223</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1223</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>This error value is returned by the <see cref="RmRestart" /> function when the request to cancel an operation is successful.</para>
-          </description>
-        </item>
-        <item>
+          <description>This error value is returned by the <see cref="RmRestart" /> function when the request to cancel an operation is successful.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_BAD_ARGUMENTS</b>
-                </description>
-              </item>
-              <item>
-                <description>160</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>160</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>One or more arguments are not correct. This error value is returned by the Restart Manager function if a <b>NULL</b> pointer or 0 is passed in a parameter that requires a non-<b>null</b> and non-zero value.</para>
-          </description>
-        </item>
-        <item>
+          <description>One or more arguments are not correct. This error value is returned by the Restart Manager function if a <b>NULL</b> pointer or 0 is passed in a parameter that requires a non-<b>null</b> and non-zero value.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_WRITE_FAULT</b>
-                </description>
-              </item>
-              <item>
-                <description>29</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>29</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An operation was unable  to read or write to the registry.</para>
-          </description>
-        </item>
-        <item>
+          <description>An operation was unable to read or write to the registry.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_OUTOFMEMORY</b>
-                </description>
-              </item>
-              <item>
-                <description>14</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>14</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A Restart Manager operation could not complete because not enough memory was available.</para>
-          </description>
-        </item>
-        <item>
+          <description>A Restart Manager operation could not complete because not enough memory was available.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_INVALID_HANDLE</b>
-                </description>
-              </item>
-              <item>
-                <description>6</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>6</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No Restart Manager session exists for the handle supplied.</para>
-          </description>
-        </item>
-        <item>
+          <description>No Restart Manager session exists for the handle supplied.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SUCCESS</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The function succeeds and returns.</para>
-          </description>
-        </item>
+          <description>The function succeeds and returns.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>After calling the <b>RmRestart</b> function, the <see cref="RM_PROCESS_INFO" /> structures that are returned by the <see cref="RmGetList" /> function contain updated status information.</para>
-      <para>The Restart Manager respects the privileges that separate different user or terminal sessions. An installer that is running as a service with LocalSystem privileges cannot shut down or restart any applications in another user or terminal session.  Installers should implement custom methods to shut down and restart applications that are running in other sessions. One method would be to start a new   installer process  in the other session to perform shutdown and restart operations.</para>
-      <para>When a console application is shut down and restarted by Restart Manager, the application is restarted in a new console.</para>
-      <para>Installers should always restart application and services using the <b>RmRestart</b> function even when the <see cref="RmShutdown" /> function returns an error indicating that not all applications and services could be shut down.</para>
-      <para>The <b>RmRestart</b> function does not restart any applications that run with elevated privileges. Even if the application was shutdown by Restart Manager.</para>
-      <para>The <b>RmRestart</b> function does not restart any applications that do not run as the currently-logged on user. Even if the application was shutdown by Restart Manager. For example, the <b>RmRestart</b> function does not restart applications started with the <b>Run As</b> command that do not run as the currently-logged on user. These applications must be manually restarted.</para>
-    </remarks>
-    <seealso cref="RegisterApplicationRestart" />
-    <seealso cref="RmCancelCurrentTask" />
-    <seealso cref="RmShutdown" />
   </member>
   <member name="Windows.RmShutdown">
-    <summary>
-      <para>Initiates the shutdown of applications.  This function can only be called from the installer that started the Restart Manager session using the <see cref="RmStartSession" /> function.</para>
-    </summary>
-    <param name="dwSessionHandle">
-      <para>A handle to an existing Restart Manager session.</para>
-    </param>
+    <summary>Initiates the shutdown of applications. This function can only be called from the installer that started the Restart Manager session using the <see cref="RmStartSession" /> function.</summary>
+    <param name="dwSessionHandle">A handle to an existing Restart Manager session.</param>
     <param name="lActionFlags">
-      <para>One or more   <see cref="RM_SHUTDOWN_TYPE" /> options that configure the shut down of components. The following values can be combined by an OR operator to specify that unresponsive applications and services are to be forced to shut down if, and only if, all applications have been registered for restart.</para>
+      <para>One or more <see cref="RM_SHUTDOWN_TYPE" /> options that configure the shut down of components. The following values can be combined by an OR operator to specify that unresponsive applications and services are to be forced to shut down if, and only if, all applications have been registered for restart.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>RmForceShutdown</b>
-                </description>
-              </item>
-              <item>
-                <description>0x1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Force unresponsive applications and services to shut down after the timeout period. An application that does not respond to a shutdown request is forced to shut down within 30 seconds. A service that does not respond to a shutdown request is forced to shut down after 20 seconds.</para>
-          </description>
-        </item>
-        <item>
+          <description>Force unresponsive applications and services to shut down after the timeout period. An application that does not respond to a shutdown request is forced to shut down within 30 seconds. A service that does not respond to a shutdown request is forced to shut down after 20 seconds.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>RmShutdownOnlyRegistered</b>
-                </description>
-              </item>
-              <item>
-                <description>0x10</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x10</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Shut down applications if and only if all the applications have been registered for restart  using the <see cref="RegisterApplicationRestart" /> function. If any processes or services cannot be restarted, then no processes or services are shut down.</para>
-          </description>
-        </item>
+          <description>Shut down applications if and only if all the applications have been registered for restart using the <see cref="RegisterApplicationRestart" /> function. If any processes or services cannot be restarted, then no processes or services are shut down.</description>
+        </listheader>
       </list>
     </param>
-    <param name="fnStatus">
-      <para>A pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/restartmanager/nc-restartmanager-rm_write_status_callback">RM_WRITE_STATUS_CALLBACK</a> function that is used to communicate detailed status while this function is executing. If <b>NULL</b>, no status is provided.</para>
-    </param>
+    <param name="fnStatus">A pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/restartmanager/nc-restartmanager-rm_write_status_callback">RM_WRITE_STATUS_CALLBACK</a> function that is used to communicate detailed status while this function is executing. If <b>NULL</b>, no status is provided.</param>
     <returns>
       <para>This is the most recent error received. The function can return one of the <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error codes</a> that are defined in Winerror.h.</para>
       <list type="table">
@@ -1146,183 +927,149 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SUCCESS</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>All shutdown, restart, and callback operations were successfully completed.</para>
-          </description>
-        </item>
-        <item>
+          <description>All shutdown, restart, and callback operations were successfully completed.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_FAIL_NOACTION_REBOOT</b>
-                </description>
-              </item>
-              <item>
-                <description>350</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>350</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No shutdown actions were performed. One or more processes or services require a restart of the system to be shut down. This error code is returned when the Restart Manager detects that a restart of the system is required before shutting down any application.</para>
-          </description>
-        </item>
-        <item>
+          <description>No shutdown actions were performed. One or more processes or services require a restart of the system to be shut down. This error code is returned when the Restart Manager detects that a restart of the system is required before shutting down any application.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_FAIL_SHUTDOWN</b>
-                </description>
-              </item>
-              <item>
-                <description>351</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>351</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Some applications could not be shut down. The <b>AppStatus</b>  of the <see cref="RM_PROCESS_INFO" /> structures returned by the <see cref="RmGetList" /> function contain updated status information.</para>
-          </description>
-        </item>
-        <item>
+          <description>Some applications could not be shut down. The <b>AppStatus</b> of the <see cref="RM_PROCESS_INFO" /> structures returned by the <see cref="RmGetList" /> function contain updated status information.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_CANCELLED</b>
-                </description>
-              </item>
-              <item>
-                <description>1223</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1223</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>This error value is returned by the <see cref="RmShutdown" /> function when the request to cancel an operation is successful.</para>
-          </description>
-        </item>
-        <item>
+          <description> This error value is returned by the <see cref="RmShutdown" /> function when the request to cancel an operation is successful.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SEM_TIMEOUT</b>
-                </description>
-              </item>
-              <item>
-                <description>121</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>121</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A Restart Manager function could not obtain a Registry write mutex in the allotted time. A system restart is recommended because further use of the Restart Manager is likely to fail.</para>
-          </description>
-        </item>
-        <item>
+          <description>A Restart Manager function could not obtain a Registry write mutex in the allotted time. A system restart is recommended because further use of the Restart Manager is likely to fail.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_BAD_ARGUMENTS</b>
-                </description>
-              </item>
-              <item>
-                <description>160</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>160</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>One or more arguments are not correct.  This error value is returned by the Restart Manager function if a <b>NULL</b> pointer or 0 is passed in a parameter that requires a non-<b>null</b> and non-zero value.</para>
-          </description>
-        </item>
-        <item>
+          <description>One or more arguments are not correct. This error value is returned by the Restart Manager function if a <b>NULL</b> pointer or 0 is passed in a parameter that requires a non-<b>null</b> and non-zero value.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_WRITE_FAULT</b>
-                </description>
-              </item>
-              <item>
-                <description>29</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>29</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An operation was unable  to read or write to the registry.</para>
-          </description>
-        </item>
-        <item>
+          <description>An operation was unable to read or write to the registry.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_OUTOFMEMORY</b>
-                </description>
-              </item>
-              <item>
-                <description>14</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>14</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A Restart Manager operation could not be completed because not enough memory is available.</para>
-          </description>
-        </item>
-        <item>
+          <description>A Restart Manager operation could not be completed because not enough memory is available.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_INVALID_HANDLE</b>
-                </description>
-              </item>
-              <item>
-                <description>6</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>6</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No Restart Manager session exists for the handle supplied.</para>
-          </description>
-        </item>
+          <description>No Restart Manager session exists for the handle supplied.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <b>RmShutdown</b> function  calls <see cref="RmGetList" /> and updates the list of processes currently using registered resources before attempting to shut down any processes. The  <b>RmShutdown</b> function then attempts to shut down the processes using registered resources in the most current list. The  <b>RmShutdown</b> function updates the <b>AppStatus</b>  member of the <see cref="RM_PROCESS_INFO" /> structures that are returned by the <b>RmGetList</b> function with detailed status information.</para>
-      <para>The Restart Manager respects the privileges that separate different user or terminal sessions. An installer that is running as a service with LocalSystem privileges cannot shut down or restart any applications in another user or terminal session.  Installers should implement custom methods to shut down and restart applications that are running in other sessions. One method would be to start a new   installer process  in the other session to perform shutdown and restart operations.</para>
-      <para>Installers should always restart application and services using the <see cref="RmRestart" /> function even when the <b>RmShutdown</b> function returns an error indicating that not all applications and services could be shut down.</para>
-    </remarks>
-    <seealso cref="RegisterApplicationRestart" />
-    <seealso cref="RmCancelCurrentTask" />
-    <seealso cref="RmRestart" />
   </member>
   <member name="Windows.RmStartSession">
-    <summary>
-      <para>Starts a new Restart Manager session. A maximum of 64 Restart Manager sessions per user session can be open on the system at the same time.   When this function starts a session, it returns a session handle and session key that can be used in subsequent calls to the Restart Manager API.</para>
-    </summary>
-    <param name="pSessionHandle">
-      <para>A pointer to the handle of a Restart Manager session. The session handle can be passed in subsequent calls to the Restart Manager API.</para>
-    </param>
-    <param name="dwSessionFlags">
-      <para>Reserved. This parameter should be 0.</para>
-    </param>
-    <param name="strSessionKey">
-      <para>A <b>null</b>-terminated string that contains the session key to the new session. The string must be allocated before calling  the <b>RmStartSession</b> function.</para>
-    </param>
+    <summary>Starts a new Restart Manager session. A maximum of 64 Restart Manager sessions per user session can be open on the system at the same time. When this function starts a session, it returns a session handle and session key that can be used in subsequent calls to the Restart Manager API.</summary>
+    <param name="pSessionHandle">A pointer to the handle of a Restart Manager session. The session handle can be passed in subsequent calls to the Restart Manager API.</param>
+    <param name="dwSessionFlags">Reserved. This parameter should be 0.</param>
+    <param name="strSessionKey">A <b>null</b>-terminated string that contains the session key to the new session. The string must be allocated before calling the <b>RmStartSession</b> function.</param>
     <returns>
       <para>This is the most recent error received. The function can return one of the <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error codes</a> that are defined in Winerror.h.</para>
       <list type="table">
@@ -1330,116 +1077,97 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SUCCESS</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The function completed successfully.</para>
-          </description>
-        </item>
-        <item>
+          <description>The function completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SEM_TIMEOUT</b>
-                </description>
-              </item>
-              <item>
-                <description>121</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>121</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A Restart Manager function could not obtain a Registry write mutex in the allotted time. A system restart is recommended because further use of the Restart Manager is likely to fail.</para>
-          </description>
-        </item>
-        <item>
+          <description>A Restart Manager function could not obtain a Registry write mutex in the allotted time. A system restart is recommended because further use of the Restart Manager is likely to fail.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_BAD_ARGUMENTS</b>
-                </description>
-              </item>
-              <item>
-                <description>160</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>160</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>One or more arguments are not correct. This error value is returned by the Restart Manager function if a <b>NULL</b> pointer or 0 is passed in a parameter that requires a non-<b>null</b> and non-zero value.</para>
-          </description>
-        </item>
-        <item>
+          <description>One or more arguments are not correct. This error value is returned by the Restart Manager function if a <b>NULL</b> pointer or 0 is passed in a parameter that requires a non-<b>null</b> and non-zero value.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_MAX_SESSIONS_REACHED</b>
-                </description>
-              </item>
-              <item>
-                <description>353</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>353</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The maximum number of sessions has been reached.</para>
-          </description>
-        </item>
-        <item>
+          <description>The maximum number of sessions has been reached.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_WRITE_FAULT</b>
-                </description>
-              </item>
-              <item>
-                <description>29</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>29</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The system cannot write to the specified device.</para>
-          </description>
-        </item>
-        <item>
+          <description>The system cannot write to the specified device.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_OUTOFMEMORY</b>
-                </description>
-              </item>
-              <item>
-                <description>14</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>14</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A Restart Manager operation could not complete because not enough memory was available.</para>
-          </description>
-        </item>
+          <description>A Restart Manager operation could not complete because not enough memory was available.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <b>RmStartSession</b> function returns an error if a session with the same session key already exists.</para>
-      <para>The <b>RmStartSession</b> function should be called by the primary installer that controls the user interface or that controls the installation sequence of multiple patches in an update.</para>
-      <para>A secondary installer can join an existing Restart Manager session by calling the <see cref="RmJoinSession" /> function with the session handle and session key returned from the <b>RmStartSession</b> function call of the primary installer.</para>
-    </remarks>
-    <seealso cref="RmEndSession" />
-    <seealso cref="RmJoinSession" />
   </member>
 </doc>

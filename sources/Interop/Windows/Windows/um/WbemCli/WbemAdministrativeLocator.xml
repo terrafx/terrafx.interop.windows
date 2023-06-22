@@ -4,41 +4,31 @@
 <doc>
   <member name="WbemAdministrativeLocator.ConnectServer">
     <summary>
-      <para>The
-<b>IWbemLocator.ConnectServer</b> method creates a connection through DCOM to a WMI namespace on the computer specified in the <i>strNetworkResource</i> parameter.</para>
+      <para>The<b>IWbemLocator.ConnectServer</b> method creates a connection through DCOM to a WMI namespace on the computer specified in the <i>strNetworkResource</i> parameter.</para>
       <para>
         <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/swbemlocator-connectserver">SWbemLocator.ConnectServer</a> can connect with computers running IPv6 using an IPv6 address in the <i>strNetworkResource</i> parameter. For more information, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/ipv6-and-ipv4-support-in-wmi">IPv6 and IPv4 Support in WMI</a>.</para>
     </summary>
-    <param name="strNetworkResource">
-      <para>Pointer to a valid <b>BSTR</b> that contains the object path of the correct WMI namespace. For local access to the default namespace, use a simple object path: "root\default" or "\.\root\default". For access to the default namespace on a remote computer using COM or Microsoft-compatible networking, include the computer name: "\myserver\root\default".  For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/describing-a-wmi-namespace-object-path">Describing a WMI Namespace Object Path</a>. The computer name also can  be a DNS name or IP  address. Starting with Windows Vista, <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/swbemlocator-connectserver">SWbemLocator.ConnectServer</a> can connect with computers running IPv6 using an IPv6 address. For more information, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/ipv6-and-ipv4-support-in-wmi">IPv6 and IPv4 Support in WMI</a>.</para>
-    </param>
+    <param name="strNetworkResource">Pointer to a valid <b>BSTR</b> that contains the object path of the correct WMI namespace. For local access to the default namespace, use a simple object path: "root\default" or "\.\root\default". For access to the default namespace on a remote computer using COM or Microsoft-compatible networking, include the computer name: "\myserver\root\default". For more information, see<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/describing-a-wmi-namespace-object-path">Describing a WMI Namespace Object Path</a>. The computer name also can be a DNS name or IP address. Starting with Windows Vista, <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/swbemlocator-connectserver">SWbemLocator.ConnectServer</a> can connect with computers running IPv6 using an IPv6 address. For more information, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/ipv6-and-ipv4-support-in-wmi">IPv6 and IPv4 Support in WMI</a>.</param>
     <param name="strUser">
-      <para>Pointer to a valid <b>BSTR</b>, which contains the user name you need for a connection. A <b>NULL</b> value indicates the current security context. If the user name is from a domain different from the current domain, the string may contain the domain name and user name  separated by a backslash.</para>
+      <para>Pointer to a valid <b>BSTR</b>, which contains the user name you need for a connection. A <b>NULL</b> value indicates the current security context. If the user name is from a domain different from the current domain, the string may contain the domain name and user name separated by a backslash.</para>
       <para>
         <code>StrUserName = SysAllocString(L"Domain\UserName");</code>
       </para>
-      <para>The <i>strUser</i> parameter cannot be an empty string.
-Note that if the domain is specified in <i>strAuthority</i>, then it must not be specified here. Specifying the domain in both parameters results in an invalid parameter error.</para>
+      <para>The <i>strUser</i> parameter cannot be an empty string. Note that if the domain is specified in <i>strAuthority</i>, then it must not be specified here. Specifying the domain in both parameters results in an invalid parameter error.</para>
       <para>You can use the user principal name (UPN) format, which is <i>Username@DomainName</i> to specify the <i>strUser</i>.</para>
     </param>
-    <param name="strPassword">
-      <para>Pointer to a valid <b>BSTR</b> that contains the password you need for a connection. A <b>NULL</b> value indicates the current security context. A blank string  ""  specifies a valid zero-length password.</para>
-    </param>
+    <param name="strPassword">Pointer to a valid <b>BSTR</b> that contains the password you need for a connection. A <b>NULL</b> value indicates the current security context. A blank string "" specifies a valid zero-length password.</param>
     <param name="strLocale">
       <para>If <b>NULL</b>, the current locale is used. If not <b>NULL</b>, this parameter must be a valid <b>BSTR</b>, which indicates the correct locale for information retrieval. For Microsoft locale identifiers, the format of the string is "MS_xxx", where xxx is a string in hexadecimal form that indicates the Local Identification (LCID), for example, American English would appear as "MS_409". If an invalid locale is specified, then the method returns <b>WBEM_E_INVALID_PARAMETER</b>.</para>
       <para>
         <b>Windows 7:  </b>If an invalid locale is specified, then the default locale of the server is used unless there is a server-supported locale provided by the user application.</para>
     </param>
     <param name="lSecurityFlags">
-      <para>Long value used to pass flag values to
-<b>ConnectServer</b>. A value of zero (0) for this parameter results in the call to
-<b>ConnectServer</b> returning only after connection to the server is established. This could result in your program ceasing to respond indefinitely if the server is broken. The following list lists the other valid values for <i>lSecurityFlags</i>.</para>
+      <para>Long value used to pass flag values to<b>ConnectServer</b>. A value of zero (0) for this parameter results in the call to<b>ConnectServer</b> returning only after connection to the server is established. This could result in your program ceasing to respond indefinitely if the server is broken. The following list lists the other valid values for <i>lSecurityFlags</i>.</para>
       <h4>WBEM_FLAG_CONNECT_REPOSITORY_ONLY (64 (0x40))</h4>
       <para>Reserved for internal use. Do not use.</para>
       <h4>WBEM_FLAG_CONNECT_USE_MAX_WAIT (128 (0x80))</h4>
-      <para>The
-<b>ConnectServer</b> call  returns in 2 minutes or less. Use this flag to prevent your program from ceasing to respond indefinitely if the server is broken.</para>
+      <para>The<b>ConnectServer</b> call returns in 2 minutes or less. Use this flag to prevent your program from ceasing to respond indefinitely if the server is broken.</para>
     </param>
     <param name="strAuthority">
       <para>This parameter contains the name of the domain of the user to authenticate.</para>
@@ -46,47 +36,22 @@ Note that if the domain is specified in <i>strAuthority</i>, then it must not be
         <i>strAuthority</i> can have the following values:</para>
       <list type="bullet">
         <item>
-          <description>
-            <para>blank</para>
-            <para>If you leave this parameter blank, NTLM authentication is used and the NTLM domain of the current user is used. If the domain  is specified in <i>strUser</i>, which is the recommended location, then it must not be specified here. Specifying the domain in both parameters results in an invalid parameter error.</para>
-          </description>
+          <description>blank<para>If you leave this parameter blank, NTLM authentication is used and the NTLM domain of the current user is used. If the domain is specified in <i>strUser</i>, which is the recommended location, then it must not be specified here. Specifying the domain in both parameters results in an invalid parameter error.</para></description>
         </item>
         <item>
-          <description>
-            <para>Kerberos:&lt;<i>principal name</i>&gt;</para>
-            <para>Kerberos authentication is used and this parameter should contain a Kerberos principal name.</para>
-          </description>
+          <description>Kerberos:&lt;<i>principal name</i>&gt;<para>Kerberos authentication is used and this parameter should contain a Kerberos principal name.</para></description>
         </item>
         <item>
-          <description>
-            <para>NTLMDOMAIN:&lt;<i>domain name</i>&gt;</para>
-            <para>NT LAN Manager authentication is used and this parameter should contain an NTLM domain name.</para>
-          </description>
+          <description>NTLMDOMAIN:&lt;<i>domain name</i>&gt;<para>NT LAN Manager authentication is used and this parameter should contain an NTLM domain name.</para></description>
         </item>
       </list>
     </param>
-    <param name="pCtx">
-      <para>Typically, this is <b>NULL</b>. Otherwise, this is a pointer to an
-<see cref="IWbemContext" /> object required by one or more dynamic class providers. The values in the context object must be specified in the documentation for the providers in question. For more information about this parameter, see
-<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</para>
-    </param>
-    <param name="ppNamespace">
-      <para>Receives a pointer to an
-<see cref="IWbemServices" /> object bound to the specified namespace. This pointer has a positive reference count. The caller must call <see cref="IWbemServices.Release" /> on the pointer when it is no longer required. This pointer is set to point to <b>NULL</b> when there is an error.</para>
-    </param>
+    <param name="pCtx">Typically, this is <b>NULL</b>. Otherwise, this is a pointer to an<see cref="IWbemContext" /> object required by one or more dynamic class providers. The values in the context object must be specified in the documentation for the providers in question. For more information about this parameter, see<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</a>.</param>
+    <param name="ppNamespace">Receives a pointer to an<see cref="IWbemServices" /> object bound to the specified namespace. This pointer has a positive reference count. The caller must call <see cref="IWbemServices.Release" /> on the pointer when it is no longer required. This pointer is set to point to <b>NULL</b> when there is an error.</param>
     <returns>
       <para>This method returns an <b>HRESULT</b> that indicates the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
       <para>COM-specific error codes may be returned if network problems cause you to lose the remote connection to WMI.</para>
       <para>These error return codes are defined in the Wbemcli.h file in the WMI section of the PSDK \Include directory. For more information see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/wmi-error-constants">WMI Error Constants</a>.</para>
     </returns>
-    <remarks>
-      <para>Do not specify <i>strUser</i>, <i>strPassword</i>, or <i>strAuthority</i>  when making a connection to a local namespace. For more information, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/connecting-to-wmi-on-a-remote-computer">Connecting to WMI on a Remote Computer</a>.</para>
-      <para>For more information on how to use <b>ConnectServer</b>, see <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/creating-a-connection-to-a-wmi-namespace">Creating a Connection to a WMI Namespace</a>. Note that the connection to <see cref="IWbemLocator" /> is one of the connections that you must shut down at the end of your application, as described in <a href="https://docs.microsoft.com//windows/desktop/WmiSdk/cleaning-up-and-shutting-down-a-wmi-application">Cleaning up and Shutting Down a WMI Application</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/connecting-to-wmi-on-a-remote-computer">Connecting to WMI on a Remote Computer</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/creating-a-wmi-application-using-c-">Creating a WMI Application Using C++</seealso>
-    <seealso cref="IWbemLocator" />
-    <seealso cref="IWbemServices" />
-    <seealso cref="WBEM_CONNECT_OPTIONS" />
   </member>
 </doc>

@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_SVG_DISPLAY">
-    <summary>
-      <para>Specifies a value for the SVG display property.</para>
-    </summary>
+    <summary>Specifies a value for the SVG display property.</summary>
   </member>
   <member name="D2D1_SVG_DISPLAY.D2D1_SVG_DISPLAY_INLINE">
-    <summary>
-      <para>The element uses the default display behavior.</para>
-    </summary>
+    <summary>The element uses the default display behavior.</summary>
   </member>
   <member name="D2D1_SVG_DISPLAY.D2D1_SVG_DISPLAY_NONE">
-    <summary>
-      <para>The element and all children are not rendered directly.</para>
-    </summary>
+    <summary>The element and all children are not rendered directly.</summary>
   </member>
-  <member name="D2D1_SVG_DISPLAY.D2D1_SVG_DISPLAY_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_SVG_DISPLAY.D2D1_SVG_DISPLAY_FORCE_DWORD"></member>
 </doc>

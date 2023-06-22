@@ -3,12 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DISK_EXTENT">
-    <summary>
-      <para>Represents a disk extent.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com/ni-winioctl-ioctl_volume_get_volume_disk_extents.md">IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS</seealso>
-    <seealso cref="LARGE_INTEGER" />
-    <seealso cref="VOLUME_DISK_EXTENTS" />
+    <summary>Represents a disk extent.</summary>
   </member>
   <member name="DISK_EXTENT.DiskNumber">
     <summary>
@@ -17,13 +12,9 @@
     </summary>
   </member>
   <member name="DISK_EXTENT.StartingOffset">
-    <summary>
-      <para>The offset from the beginning of the disk to the extent, in bytes.</para>
-    </summary>
+    <summary>The offset from the beginning of the disk to the extent, in bytes.</summary>
   </member>
   <member name="DISK_EXTENT.ExtentLength">
-    <summary>
-      <para>The number of bytes in this extent.</para>
-    </summary>
+    <summary>The number of bytes in this extent.</summary>
   </member>
 </doc>

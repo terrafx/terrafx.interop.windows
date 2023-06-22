@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMCHAR">
-    <summary>
-      <para>Contains information used with character notification messages.</para>
-    </summary>
+    <summary>Contains information used with character notification messages.</summary>
   </member>
   <member name="NMCHAR.hdr">
-    <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>An <see cref="NMHDR" /> structure that contains additional information about this notification.</para>
-    </summary>
+    <summary>An <see cref="NMHDR" /> structure that contains additional information about this notification.</summary>
   </member>
   <member name="NMCHAR.ch">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The character that is being processed.</para>
-    </summary>
+    <summary>The character that is being processed.</summary>
   </member>
   <member name="NMCHAR.dwItemPrev">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
-      <para>A 32-bit value that is determined by the control that is sending the notification.</para>
-    </summary>
+    <summary>A 32-bit value that is determined by the control that is sending the notification.</summary>
   </member>
   <member name="NMCHAR.dwItemNext">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
-      <para>A 32-bit value that is determined by the control that is sending the notification.</para>
-    </summary>
+    <summary>A 32-bit value that is determined by the control that is sending the notification.</summary>
   </member>
 </doc>

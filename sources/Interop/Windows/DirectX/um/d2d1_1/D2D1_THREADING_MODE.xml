@@ -3,23 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_THREADING_MODE">
-    <summary>
-      <para>Specifies the threading mode used while simultaneously creating the device, factory, and device context.</para>
-    </summary>
-    <seealso cref="D2D1_CREATION_PROPERTIES" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/multi-threaded-direct2d-apps">Multithreaded Direct2D Apps</seealso>
+    <summary>Specifies the threading mode used while simultaneously creating the device, factory, and device context.</summary>
   </member>
   <member name="D2D1_THREADING_MODE.D2D1_THREADING_MODE_SINGLE_THREADED">
-    <summary>
-      <para>Resources may only be invoked serially.  Device context state is not protected from multi-threaded access.</para>
-    </summary>
+    <summary>Resources may only be invoked serially. Device context state is not protected from multi-threaded access.</summary>
   </member>
   <member name="D2D1_THREADING_MODE.D2D1_THREADING_MODE_MULTI_THREADED">
-    <summary>
-      <para>Resources may be invoked from multiple threads. Resources use interlocked reference counting and their state is protected.</para>
-    </summary>
+    <summary>Resources may be invoked from multiple threads. Resources use interlocked reference counting and their state is protected.</summary>
   </member>
-  <member name="D2D1_THREADING_MODE.D2D1_THREADING_MODE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_THREADING_MODE.D2D1_THREADING_MODE_FORCE_DWORD"></member>
 </doc>

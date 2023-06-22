@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="AUDIOCLIENT_ACTIVATION_TYPE">
-    <summary>
-      <para>Specifies the activation type for an <see cref="AUDIOCLIENT_ACTIVATION_PARAMS" /> structure passed into a call to <see cref="ActivateAudioInterfaceAsync" />.</para>
-    </summary>
-    <seealso cref="AUDIOCLIENT_ACTIVATION_PARAMS" />
-    <seealso cref="ActivateAudioInterfaceAsync" />
+    <summary>Specifies the activation type for an <see cref="AUDIOCLIENT_ACTIVATION_PARAMS" /> structure passed into a call to <see cref="ActivateAudioInterfaceAsync" />.</summary>
   </member>
   <member name="AUDIOCLIENT_ACTIVATION_TYPE.AUDIOCLIENT_ACTIVATION_TYPE_DEFAULT">
-    <summary>
-      <para>Default activation.</para>
-    </summary>
+    <summary>Default activation.</summary>
   </member>
   <member name="AUDIOCLIENT_ACTIVATION_TYPE.AUDIOCLIENT_ACTIVATION_TYPE_PROCESS_LOOPBACK">
-    <summary>
-      <para>Process loopback activation, allowing for the inclusion or exclusion of audio rendered by the specified process and its child processes. For sample code that demonstrates the process loopback capture scenario, see the <a href="https://docs.microsoft.com/en-us/samples/microsoft/windows-classic-samples/applicationloopbackaudio-sample/">Application Loopback API Capture Sample</a>.</para>
-    </summary>
+    <summary>Process loopback activation, allowing for the inclusion or exclusion of audio rendered by the specified process and its child processes. For sample code that demonstrates the process loopback capture scenario, see the <a href="https://docs.microsoft.com/en-us/samples/microsoft/windows-classic-samples/applicationloopbackaudio-sample/">Application Loopback API Capture Sample</a>.</summary>
   </member>
 </doc>

@@ -3,20 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDirectManipulationUpdateHandler.Update">
-    <summary>
-      <para>Notifies the compositor when to update inertia animation.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationupdatehandler">IDirectManipulationUpdateHandler</seealso>
+    <summary>Notifies the compositor when to update inertia animation.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationUpdateHandler">
     <summary>
       <para>Defines methods for handling manipulation update events.</para>
-      <para>
-        <b>Note</b>  When implementing a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> object, ensure that the <see cref="IUnknown" /> implementation supports multithreading through thread-safe reference counting. For more information, see <see cref="InterlockedIncrement" /> and <see cref="InterlockedDecrement" />.</para>
+      <div>
+        <b>Note</b>  When implementing a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> object, ensure that the <see cref="IUnknown" /> implementation supports multithreading through thread-safe reference counting. For more information, see <see cref="InterlockedIncrement" /> and <see cref="InterlockedDecrement" />.</div>
     </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-interfaces">Direct Manipulation Interfaces</seealso>
   </member>
 </doc>

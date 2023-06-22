@@ -3,94 +3,32 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IFileDialogControlEvents.OnButtonClicked">
-    <summary>
-      <para>Called when the user clicks a command button.</para>
-    </summary>
-    <param name="pfdc">
-      <para>Type: <b><see cref="IFileDialogCustomize" />*</b></para>
-      <para>A pointer to the interface through which the application added controls to the dialog.</para>
-    </param>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the button that the user clicked.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Called when the user clicks a command button.</summary>
+    <param name="pfdc">A pointer to the interface through which the application added controls to the dialog.</param>
+    <param name="dwIDCtl">The ID of the button that the user clicked.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogControlEvents.OnCheckButtonToggled">
-    <summary>
-      <para>Called when the user changes the state of a check button (check box).</para>
-    </summary>
-    <param name="pfdc">
-      <para>Type: <b><see cref="IFileDialogCustomize" />*</b></para>
-      <para>A pointer to the interface through which the application added controls to the dialog.</para>
-    </param>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the button that the user clicked.</para>
-    </param>
-    <param name="bChecked">
-      <para>Type: <b>BOOL</b></para>
-      <para>A <b>BOOL</b> indicating the current state of the check button. <b>TRUE</b> if checked; <b>FALSE</b> otherwise.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Called when the user changes the state of a check button (check box).</summary>
+    <param name="pfdc">A pointer to the interface through which the application added controls to the dialog.</param>
+    <param name="dwIDCtl">The ID of the button that the user clicked.</param>
+    <param name="bChecked">A <b>BOOL</b> indicating the current state of the check button. <b>TRUE</b> if checked; <b>FALSE</b> otherwise.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogControlEvents.OnControlActivating">
-    <summary>
-      <para>Called when an <b>Open</b> button drop-down list customized through <see cref="EnableOpenDropDown" /> or a <b>Tools</b> menu is about to display its contents.</para>
-    </summary>
-    <param name="pfdc">
-      <para>Type: <b><see cref="IFileDialogCustomize" />*</b></para>
-      <para>A pointer to an <see cref="IFileDialogCustomize" /> object through which the application adds controls to the dialog.</para>
-    </param>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the list or menu about to display.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>In response to this notification, an application can update the contents of the menu or list about to be displayed, based on the current state of the dialog.</para>
-    </remarks>
+    <summary>Called when an <b>Open</b> button drop-down list customized through <see cref="EnableOpenDropDown" /> or a <b>Tools</b> menu is about to display its contents.</summary>
+    <param name="pfdc">A pointer to an <see cref="IFileDialogCustomize" /> object through which the application adds controls to the dialog.</param>
+    <param name="dwIDCtl">The ID of the list or menu about to display.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogControlEvents.OnItemSelected">
-    <summary>
-      <para>Called when an item is selected in a combo box, when a user clicks an option button (also known as a radio button), or an item is chosen from the <b>Tools</b> menu.</para>
-    </summary>
-    <param name="pfdc">
-      <para>Type: <b><see cref="IFileDialogCustomize" />*</b></para>
-      <para>A pointer to the interface through which the application added controls to the dialog.</para>
-    </param>
-    <param name="dwIDCtl">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the control in which the user made a selection.</para>
-    </param>
-    <param name="dwIDItem">
-      <para>Type: <b>DWORD</b></para>
-      <para>The ID of the selection.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This notification is not sent when the user chooses an item from the drop-down menu attached to the <b>Open</b> button, because the action taken in that case is always the same: close the dialog as if the user had simply clicked the <b>Open</b> button. For that situation, the application can call <see cref="GetSelectedControlItem" /> to obtain the item the user chose from that menu.</para>
-    </remarks>
+    <summary>Called when an item is selected in a combo box, when a user clicks an option button (also known as a radio button), or an item is chosen from the <b>Tools</b> menu.</summary>
+    <param name="pfdc">A pointer to the interface through which the application added controls to the dialog.</param>
+    <param name="dwIDCtl">The ID of the control in which the user made a selection.</param>
+    <param name="dwIDItem">The ID of the selection.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogControlEvents">
-    <summary>
-      <para>Exposes methods that allow an application to be notified of events that are related to controls that the application has added to a common file dialog.</para>
-    </summary>
-    <remarks>
-      <h3>When to Implement</h3>
-      <b>IFileDialogControlEvents</b> is implemented by an application on the same object that it implements <see cref="IFileDialogEvents" /> in.
-<para>The dialog does not check the return values of this interface's methods.</para></remarks>
+    <summary>Exposes methods that allow an application to be notified of events that are related to controls that the application has added to a common file dialog.</summary>
   </member>
 </doc>

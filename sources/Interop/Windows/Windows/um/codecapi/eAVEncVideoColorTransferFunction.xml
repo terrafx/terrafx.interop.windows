@@ -4,54 +4,35 @@
 <doc>
   <member name="eAVEncVideoColorTransferFunction">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies the conversion function from R'G'B' to RGB. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideoinputcolortransferfunction-property">AVEncVideoInputColorTransferFunction</a> and <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideooutputcolortransferfunction-property">AVEncVideoOutputColorTransferFunction</a> properties.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVEncVideoColorTransferFunction.eAVEncVideoColorTransferFunction_SameAsSource">
-    <summary>
-      <para>Use the same function as the input video. This flag applies to the <b>AVEncVideoOutputColorTransferFunction</b> property only.</para>
-    </summary>
+    <summary>Use the same function as the input video. This flag applies to the <b>AVEncVideoOutputColorTransferFunction</b> property only.</summary>
   </member>
   <member name="eAVEncVideoColorTransferFunction.eAVEncVideoColorTransferFunction_10">
-    <summary>
-      <para>Linear RGB (gamma = 1.0).</para>
-    </summary>
+    <summary>Linear RGB (gamma = 1.0).</summary>
   </member>
   <member name="eAVEncVideoColorTransferFunction.eAVEncVideoColorTransferFunction_18">
-    <summary>
-      <para>True 1.8 gamma. L' = L^1/1.8.</para>
-    </summary>
+    <summary>True 1.8 gamma. L' = L^1/1.8.</summary>
   </member>
   <member name="eAVEncVideoColorTransferFunction.eAVEncVideoColorTransferFunction_20">
-    <summary>
-      <para>True 2.0 gamma. L' = L^1/2.0..</para>
-    </summary>
+    <summary>True 2.0 gamma. L' = L^1/2.0..</summary>
   </member>
   <member name="eAVEncVideoColorTransferFunction.eAVEncVideoColorTransferFunction_22">
-    <summary>
-      <para>True 2.2 gamma. L' = L^1/2.2..</para>
-    </summary>
+    <summary>True 2.2 gamma. L' = L^1/2.2..</summary>
   </member>
   <member name="eAVEncVideoColorTransferFunction.eAVEncVideoColorTransferFunction_22_709">
-    <summary>
-      <para>Gamma 2.2 curve with a linear segment in the lower range. L' = 4.5L, for L &lt; 0.018; L' = 1.099L^0.45.- 0.099, for L &gt;= 0.018. This transfer function is used in BT-709, SMPTE 296M, SMPTE 170M, BT-470, and SPMTE 274M.</para>
-    </summary>
+    <summary>Gamma 2.2 curve with a linear segment in the lower range. L' = 4.5L, for L &lt; 0.018; L' = 1.099L^0.45.- 0.099, for L &gt;= 0.018. This transfer function is used in BT-709, SMPTE 296M, SMPTE 170M, BT-470, and SPMTE 274M.</summary>
   </member>
   <member name="eAVEncVideoColorTransferFunction.eAVEncVideoColorTransferFunction_22_240M">
-    <summary>
-      <para>Gamma 2.2 curve with a linear segment in the lower range. L' = 4.0L, for L &lt; 0.0228; L' = 1.1115^L0.45.- 0.01115, for L &gt;= 0.0228. This transfer function is used in SPMTE 240M.</para>
-    </summary>
+    <summary>Gamma 2.2 curve with a linear segment in the lower range. L' = 4.0L, for L &lt; 0.0228; L' = 1.1115^L0.45.- 0.01115, for L &gt;= 0.0228. This transfer function is used in SPMTE 240M.</summary>
   </member>
   <member name="eAVEncVideoColorTransferFunction.eAVEncVideoColorTransferFunction_22_8bit_sRGB">
-    <summary>
-      <para>Gamma 2.4 curve with a linear segment in the lower range. L' = L/12.92, for L &lt; 0.03928; L' = ((L + 0.055) / 1.055)^2.4., for L &gt;= 0.03928.</para>
-    </summary>
+    <summary>Gamma 2.4 curve with a linear segment in the lower range. L' = L/12.92, for L &lt; 0.03928; L' = ((L + 0.055) / 1.055)^2.4., for L &gt;= 0.03928.</summary>
   </member>
   <member name="eAVEncVideoColorTransferFunction.eAVEncVideoColorTransferFunction_28">
-    <summary>
-      <para>True 2.8 gamma. L' = L^1/2.8..</para>
-    </summary>
+    <summary>True 2.8 gamma. L' = L^1/2.8..</summary>
   </member>
 </doc>

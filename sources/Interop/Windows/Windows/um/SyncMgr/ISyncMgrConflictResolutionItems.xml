@@ -3,38 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISyncMgrConflictResolutionItems.GetCount">
-    <summary>
-      <para>Gets item count.</para>
-    </summary>
-    <param name="pCount">
-      <para>Type: <b>UINT*</b></para>
-      <para>A pointer to an item count.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets item count.</summary>
+    <param name="pCount">A pointer to an item count.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrConflictResolutionItems.GetItem">
-    <summary>
-      <para>Gets result information for a specified item, when successful.</para>
-    </summary>
-    <param name="iIndex">
-      <para>Type: <b>UINT</b></para>
-      <para>The index of the item.</para>
-    </param>
-    <param name="pItemInfo">
-      <para>Type: <b><see cref="CONFIRM_CONFLICT_RESULT_INFO" />*</b></para>
-      <para>On success, contains a pointer to a <see cref="CONFIRM_CONFLICT_RESULT_INFO" /> structure.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets result information for a specified item, when successful.</summary>
+    <param name="iIndex">The index of the item.</param>
+    <param name="pItemInfo">On success, contains a pointer to a <see cref="CONFIRM_CONFLICT_RESULT_INFO" /> structure.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrConflictResolutionItems">
-    <summary>
-      <para>Exposes methods that get item info and item count.</para>
-    </summary>
+    <summary>Exposes methods that get item info and item count.</summary>
   </member>
 </doc>

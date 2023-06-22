@@ -3,16 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICWebpAnimProperties">
-    <summary>
-      <para>Specifies the animation properties of a WebP image.</para>
-    </summary>
+    <summary>Specifies the animation properties of a WebP image.</summary>
   </member>
   <member name="WICWebpAnimProperties.WICWebpAnimLoopCount">
-    <summary>
-      <para>The number of times the animation loops. A value of 0 indicates that the animation will loop infinitely.</para>
-    </summary>
+    <summary>The number of times the animation loops. A value of 0 indicates that the animation will loop infinitely.</summary>
   </member>
-  <member name="WICWebpAnimProperties.WICWebpAnimProperties_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICWebpAnimProperties.WICWebpAnimProperties_FORCE_DWORD"></member>
 </doc>

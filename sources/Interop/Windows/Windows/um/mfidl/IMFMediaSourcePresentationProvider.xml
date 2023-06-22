@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFMediaSourcePresentationProvider.ForceEndOfPresentation">
-    <summary>
-      <para>Notifies the source when playback has reached the end of a segment. For timelines, this corresponds to reaching a mark-out point.</para>
-    </summary>
-    <param name="pPresentationDescriptor">
-      <para>Pointer to the <see cref="IMFPresentationDescriptor" /> interface of the presentation descriptor for the segment that has ended.</para>
-    </param>
+    <summary>Notifies the source when playback has reached the end of a segment. For timelines, this corresponds to reaching a mark-out point.</summary>
+    <param name="pPresentationDescriptor">Pointer to the <see cref="IMFPresentationDescriptor" /> interface of the presentation descriptor for the segment that has ended.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,25 +12,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFMediaSourcePresentationProvider" />
   </member>
   <member name="IMFMediaSourcePresentationProvider">
     <summary>
       <para>Provides notifications to the sequencer source. This interface is exposed by the sequencer source. Applications do not use this interface.</para>
       <para>To get a pointer to this interface, call <see cref="IMFGetService.GetService" /> with the service identifier MF_SOURCE_PRESENTATION_PROVIDER_SERVICE.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
   </member>
 </doc>

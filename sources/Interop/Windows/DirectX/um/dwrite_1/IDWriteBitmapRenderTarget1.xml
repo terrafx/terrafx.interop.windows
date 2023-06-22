@@ -3,39 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteBitmapRenderTarget1.GetTextAntialiasMode">
-    <summary>
-      <para>Gets the current text antialiasing mode of the bitmap render target.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="DWRITE_TEXT_ANTIALIAS_MODE" /></b></para>
-      <para>Returns a <see cref="DWRITE_TEXT_ANTIALIAS_MODE" />-typed value that specifies the antialiasing mode.</para>
-    </returns>
-    <seealso cref="IDWriteBitmapRenderTarget1" />
+    <summary>Gets the current text antialiasing mode of the bitmap render target.</summary>
+    <returns>Returns a <see cref="DWRITE_TEXT_ANTIALIAS_MODE" />-typed value that specifies the antialiasing mode.</returns>
   </member>
   <member name="IDWriteBitmapRenderTarget1.SetTextAntialiasMode">
-    <summary>
-      <para>Sets the current text antialiasing mode of the bitmap render target.</para>
-    </summary>
-    <param name="antialiasMode">
-      <para>Type: <b><see cref="DWRITE_TEXT_ANTIALIAS_MODE" /></b></para>
-      <para>A <see cref="DWRITE_TEXT_ANTIALIAS_MODE" />-typed value that specifies the antialiasing mode.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or E_INVALIDARG if the argument is not valid.</para>
-    </returns>
-    <remarks>
-      <para>The antialiasing mode of a newly-created bitmap render target defaults to
-<see cref="DWRITE_TEXT_ANTIALIAS_MODE_CLEARTYPE" />. An app can change the antialiasing
-mode by calling <b>SetTextAntialiasMode</b>. For example, an app might specify
-<see cref="DWRITE_TEXT_ANTIALIAS_MODE_GRAYSCALE" /> for grayscale antialiasing when it renders text onto a transparent bitmap.</para>
-    </remarks>
-    <seealso cref="IDWriteBitmapRenderTarget1" />
+    <summary>Sets the current text antialiasing mode of the bitmap render target.</summary>
+    <param name="antialiasMode">A <see cref="DWRITE_TEXT_ANTIALIAS_MODE" />-typed value that specifies the antialiasing mode.</param>
+    <returns>Returns S_OK if successful, or E_INVALIDARG if the argument is not valid.</returns>
   </member>
   <member name="IDWriteBitmapRenderTarget1">
-    <summary>
-      <para>Encapsulates a 32-bit device independent bitmap and device context, which you can use for rendering glyphs.</para>
-    </summary>
-    <seealso cref="IDWriteBitmapRenderTarget" />
+    <summary>Encapsulates a 32-bit device independent bitmap and device context, which you can use for rendering glyphs.</summary>
   </member>
 </doc>

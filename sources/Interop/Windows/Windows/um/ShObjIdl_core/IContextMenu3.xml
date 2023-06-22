@@ -3,49 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IContextMenu3.HandleMenuMsg2">
-    <summary>
-      <para>Allows client objects of the <see cref="IContextMenu3" /> interface to handle messages associated with owner-drawn menu items.</para>
-    </summary>
-    <param name="uMsg">
-      <para>Type: <b>UINT</b></para>
-      <para>The message to be processed. In the case of some messages, such as WM_INITMENUPOPUP, WM_DRAWITEM, WM_MENUCHAR, or WM_MEASUREITEM, the client object being called may provide owner-drawn menu items.</para>
-    </param>
-    <param name="wParam">
-      <para>Type: <b>WPARAM</b></para>
-      <para>Additional message information. The value of this parameter depends on the value of the <i>uMsg</i> parameter.</para>
-    </param>
-    <param name="lParam">
-      <para>Type: <b>LPARAM</b></para>
-      <para>Additional message information. The value of this parameter depends on the value of the <i>uMsg</i> parameter.</para>
-    </param>
-    <param name="plResult">
-      <para>Type: <b>LRESULT*</b></para>
-      <para>The address of an <b>LRESULT</b> value that the owner of the menu will return from the message. This parameter can be <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>IContextMenu3.HandleMenuMsg2</b> generally replaces <see cref="IContextMenu2.HandleMenuMsg" />, and is called when <see cref="IContextMenu" /> determines that <see cref="IContextMenu3" /> is supported and one of the supported messages (see <i>uMsg</i>) has been received. However, in some cases, <b>IContextMenu2.HandleMenuMsg</b> is still called. Context menu hosts may dispatch menu messages through either or both methods. Consequently, if a Shell extension implements both <b>IContextMenu2.HandleMenuMsg</b> and <b>IContextMenu3.HandleMenuMsg2</b>, it must be prepared for menu messages to arrive through either method.</para>
-      <para>
-        <b>Note</b>  If <see cref="IContextMenu3" /> is not implemented, there is no guarantee that <see cref="IContextMenu2" /> will be called in its place. In some cases, the absence of <b>IContextMenu3</b> is determined and then the process is halted.</para>
-    </remarks>
+    <summary>Allows client objects of the <see cref="IContextMenu3" /> interface to handle messages associated with owner-drawn menu items.</summary>
+    <param name="uMsg">The message to be processed. In the case of some messages, such as WM_INITMENUPOPUP, WM_DRAWITEM, WM_MENUCHAR, or WM_MEASUREITEM, the client object being called may provide owner-drawn menu items.</param>
+    <param name="wParam">Additional message information. The value of this parameter depends on the value of the <i>uMsg</i> parameter.</param>
+    <param name="lParam">Additional message information. The value of this parameter depends on the value of the <i>uMsg</i> parameter.</param>
+    <param name="plResult">The address of an <b>LRESULT</b> value that the owner of the menu will return from the message. This parameter can be <b>NULL</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IContextMenu3">
-    <summary>
-      <para>Exposes methods that either create or merge a shortcut menu associated with a Shell object. Allows client objects to handle messages associated with owner-drawn menu items and extends <see cref="IContextMenu2" /> by accepting a return value from that message handling.</para>
-    </summary>
-    <remarks>
-      <para>This interface also provides the methods of the <see cref="IContextMenu" /> and <see cref="IContextMenu2" /> interfaces, from which it inherits.</para>
-      <h3>When to Implement</h3>
-      <para>Implement <b>IContextMenu3</b> if your shortcut menu extension needs to process the <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-menuchar">WM_MENUCHAR</a> message.</para>
-      <para>This message is forwarded to <see cref="IContextMenu3.HandleMenuMsg2" /> only if a <see cref="QueryInterface" /> call for an <b>IContextMenu3</b> interface pointer is successful, which indicates that the object supports this interface.</para>
-      <h3>When to Use</h3>
-      <para>You do not call this interface directly. <b>IContextMenu3</b> is used by the operating system only when it has confirmed that your application is aware of this interface.</para>
-      <para>
-        <b>Note</b>  <b>Windows Vista and later.</b> Prior to Windows Vista this interface was declared in Shlobj.h.</para>
-    </remarks>
+    <summary>Exposes methods that either create or merge a shortcut menu associated with a Shell object. Allows client objects to handle messages associated with owner-drawn menu items and extends <see cref="IContextMenu2" /> by accepting a return value from that message handling.</summary>
   </member>
 </doc>

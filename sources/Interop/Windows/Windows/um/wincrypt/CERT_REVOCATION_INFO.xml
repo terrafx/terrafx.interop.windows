@@ -3,15 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_REVOCATION_INFO">
-    <summary>
-      <para>The <b>CERT_REVOCATION_INFO</b> structure indicates the revocation status of a certificate in a CERT_CHAIN_ELEMENT.</para>
-    </summary>
-    <seealso cref="CERT_CHAIN_ELEMENT" />
+    <summary>The <b>CERT_REVOCATION_INFO</b> structure indicates the revocation status of a certificate in a CERT_CHAIN_ELEMENT.</summary>
   </member>
   <member name="CERT_REVOCATION_INFO.cbSize">
-    <summary>
-      <para>Size of this structure in bytes.</para>
-    </summary>
+    <summary>Size of this structure in bytes.</summary>
   </member>
   <member name="CERT_REVOCATION_INFO.dwRevocationResult">
     <summary>
@@ -27,28 +22,18 @@
     </summary>
   </member>
   <member name="CERT_REVOCATION_INFO.pszRevocationOid">
-    <summary>
-      <para>Not currently used and is set to <b>NULL</b>.</para>
-    </summary>
+    <summary>Not currently used and is set to <b>NULL</b>.</summary>
   </member>
   <member name="CERT_REVOCATION_INFO.pvOidSpecificInfo">
-    <summary>
-      <para>Not currently used and is set to <b>NULL</b>.</para>
-    </summary>
+    <summary>Not currently used and is set to <b>NULL</b>.</summary>
   </member>
   <member name="CERT_REVOCATION_INFO.fHasFreshnessTime">
-    <summary>
-      <para>BOOL set to <b>TRUE</b> if dwFreshnessTime has been updated.</para>
-    </summary>
+    <summary>BOOL set to <b>TRUE</b> if dwFreshnessTime has been updated.</summary>
   </member>
   <member name="CERT_REVOCATION_INFO.dwFreshnessTime">
-    <summary>
-      <para>If <b>fHasFreshnessTime</b> is <b>TRUE</b>, holds the CurrentTime minus the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation list's</a> (CRL's). This time is in seconds.</para>
-    </summary>
+    <summary>If <b>fHasFreshnessTime</b> is <b>TRUE</b>, holds the CurrentTime minus the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation list's</a> (CRL's). This time is in seconds.</summary>
   </member>
   <member name="CERT_REVOCATION_INFO.pCrlInfo">
-    <summary>
-      <para>For CRL base revocation checking, a non-<b>NULL</b> pointer to a CERT_REVOCATION_CRL_INFO structure.</para>
-    </summary>
+    <summary>For CRL base revocation checking, a non-<b>NULL</b> pointer to a CERT_REVOCATION_CRL_INFO structure.</summary>
   </member>
 </doc>

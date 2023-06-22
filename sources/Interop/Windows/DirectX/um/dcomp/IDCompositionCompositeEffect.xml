@@ -3,25 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDCompositionCompositeEffect.SetMode">
-    <summary>
-      <para>Sets the mode for the composite effect.</para>
-    </summary>
-    <param name="mode">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/composite">D2D1_COMPOSITE_MODE</a></b></para>
-      <para>The mode for the composite effect.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionCompositeEffect" />
+    <summary>Sets the mode for the composite effect.</summary>
+    <param name="mode">The mode for the composite effect.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionCompositeEffect">
-    <summary>
-      <para>The composite effect is used to combine 2 or more images. This effect has 13 different composite modes.
-The composite effect accepts 2 or more inputs. When you specify 2 images, destination is the first input (index 0) and the source is the second input (index 1).
-If you specify more than 2 inputs, the images are composited starting with the first input and the second and so on.</para>
-    </summary>
-    <seealso cref="IDCompositionFilterEffect" />
+    <summary>The composite effect is used to combine 2 or more images. This effect has 13 different composite modes. The composite effect accepts 2 or more inputs. When you specify 2 images, destination is the first input (index 0) and the source is the second input (index 1). If you specify more than 2 inputs, the images are composited starting with the first input and the second and so on.</summary>
   </member>
 </doc>

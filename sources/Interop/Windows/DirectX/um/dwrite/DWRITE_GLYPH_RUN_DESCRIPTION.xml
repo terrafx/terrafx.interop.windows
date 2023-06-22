@@ -3,38 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_GLYPH_RUN_DESCRIPTION">
-    <summary>
-      <para>Contains additional properties related to those in <see cref="DWRITE_GLYPH_RUN" />.</para>
-    </summary>
+    <summary>Contains additional properties related to those in <see cref="DWRITE_GLYPH_RUN" />.</summary>
   </member>
   <member name="DWRITE_GLYPH_RUN_DESCRIPTION.localeName">
-    <summary>
-      <para>Type: <b>const WCHAR*</b></para>
-      <para>An array of characters containing the locale name associated with this run.</para>
-    </summary>
+    <summary>An array of characters containing the locale name associated with this run.</summary>
   </member>
   <member name="DWRITE_GLYPH_RUN_DESCRIPTION.string">
-    <summary>
-      <para>Type: <b>const WCHAR*</b></para>
-      <para>An array of characters containing the text associated with the glyphs.</para>
-    </summary>
+    <summary>An array of characters containing the text associated with the glyphs.</summary>
   </member>
   <member name="DWRITE_GLYPH_RUN_DESCRIPTION.stringLength">
-    <summary>
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of characters in UTF16 code-units. Note that this may be different than the number of glyphs.</para>
-    </summary>
+    <summary>The number of characters in UTF16 code-units. Note that this may be different than the number of glyphs.</summary>
   </member>
   <member name="DWRITE_GLYPH_RUN_DESCRIPTION.clusterMap">
-    <summary>
-      <para>Type: <b>const UINT16*</b></para>
-      <para>An array of indices to the glyph indices array, of the first glyphs of all the glyph clusters of the glyphs to render.</para>
-    </summary>
+    <summary>An array of indices to the glyph indices array, of the first glyphs of all the glyph clusters of the glyphs to render.</summary>
   </member>
   <member name="DWRITE_GLYPH_RUN_DESCRIPTION.textPosition">
-    <summary>
-      <para>Type: <b>UINT32 </b></para>
-      <para>Corresponding text position in the string this glyph run came from.  This is relative to the beginning of the string represented by the <see cref="IDWriteTextLayout" /> object.</para>
-    </summary>
+    <summary>Corresponding text position in the string this glyph run came from. This is relative to the beginning of the string represented by the <see cref="IDWriteTextLayout" /> object.</summary>
   </member>
 </doc>

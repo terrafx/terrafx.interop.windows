@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfDisplayAttributeMgr.EnumDisplayAttributeInfo">
-    <summary>
-      <para>Obtains a display attribute enumerator object.</para>
-    </summary>
-    <param name="ppEnum">
-      <para>Pointer to an <see cref="IEnumTfDisplayAttributeInfo" /> interface pointer that receives the enumerator object.</para>
-    </param>
+    <summary>Obtains a display attribute enumerator object.</summary>
+    <param name="ppEnum">Pointer to an <see cref="IEnumTfDisplayAttributeInfo" /> interface pointer that receives the enumerator object.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,64 +12,63 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>ppEnum</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <i>ppEnum</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>The enumerator object cannot be initialized.</para>
-          </description>
-        </item>
+          <description>The enumerator object cannot be initialized.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfDisplayAttributeMgr interface" />
-    <seealso cref="IEnumTfDisplayAttributeInfo interface" />
   </member>
   <member name="ITfDisplayAttributeMgr.GetDisplayAttributeInfo">
-    <summary>
-      <para>Obtains a display attribute data object.</para>
-    </summary>
-    <param name="guid">
-      <para>Contains a GUID that identifies the display attribute data requested. This value is obtained by obtaining the GUID_PROP_ATTRIBUTE property for the range of text. For more information, see <see cref="ITfContext.GetProperty" /> and <see cref="ITfContext.TrackProperties" />.</para>
-    </param>
-    <param name="ppInfo">
-      <para>Pointer to an <see cref="ITfDisplayAttributeInfo" /> interface pointer that receives the object.</para>
-    </param>
-    <param name="pclsidOwner">
-      <para>Pointer to a CLSID value that receives the CLSID of the display attribute provider. This parameter can be <b>NULL</b> if the CLSID is not required.</para>
-    </param>
+    <summary>Obtains a display attribute data object.</summary>
+    <param name="guid">Contains a GUID that identifies the display attribute data requested. This value is obtained by obtaining the GUID_PROP_ATTRIBUTE property for the range of text. For more information, see <see cref="ITfContext.GetProperty" /> and <see cref="ITfContext.TrackProperties" />.</param>
+    <param name="ppInfo">Pointer to an <see cref="ITfDisplayAttributeInfo" /> interface pointer that receives the object.</param>
+    <param name="pclsidOwner">Pointer to a CLSID value that receives the CLSID of the display attribute provider. This parameter can be <b>NULL</b> if the CLSID is not required.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -81,27 +76,23 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfDisplayAttributeMgr interface" />
-    <seealso cref="IEnumTfDisplayAttributeInfo interface" />
-    <seealso cref="ITfContext.GetProperty" />
-    <seealso cref="ITfContext.TrackProperties" />
   </member>
   <member name="ITfDisplayAttributeMgr.OnUpdateInfo">
-    <summary>
-      <para>Called when a display attribute is changed.</para>
-    </summary>
+    <summary>Called when a display attribute is changed.</summary>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -109,26 +100,22 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfDisplayAttributeMgr interface" />
-    <seealso cref="ITfDisplayAttributeNotifySink.OnUpdateInfo" />
   </member>
   <member name="ITfDisplayAttributeMgr">
-    <summary>
-      <para>The <b>ITfDisplayAttributeMgr</b> interface is implemented by the TSF manager and used by an application to obtain and enumerate display attributes. Individual display attributes are accessed through the <see cref="ITfDisplayAttributeInfo" /> interface.</para>
-    </summary>
-    <seealso cref="ITfDisplayAttributeInfo " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfDisplayAttributeMgr</b> interface is implemented by the TSF manager and used by an application to obtain and enumerate display attributes. Individual display attributes are accessed through the <see cref="ITfDisplayAttributeInfo" /> interface.</summary>
   </member>
 </doc>

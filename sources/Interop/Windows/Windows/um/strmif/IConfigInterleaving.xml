@@ -4,78 +4,42 @@
 <doc>
   <member name="IConfigInterleaving.get_Interleaving">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>get_Interleaving</b> method gets the audio preroll time and the frequency of interleaving for an AVI file.</para>
     </summary>
-    <param name="prtInterleave">
-      <para>Receives the approximate duration of each interleaved group of audio or video chunks.</para>
-    </param>
-    <param name="prtPreroll">
-      <para>Receives the amount of audio data, in 100-nanosecond units, that is written to the file before the first video frame.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
-    </returns>
-    <remarks>
-      <para>For more information, see <see cref="IConfigInterleaving.put_Interleaving" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IConfigInterleaving Interface" />
-    <seealso cref="IConfigInterleaving.put_Interleaving" />
+    <param name="prtInterleave">Receives the approximate duration of each interleaved group of audio or video chunks.</param>
+    <param name="prtPreroll">Receives the amount of audio data, in 100-nanosecond units, that is written to the file before the first video frame.</param>
+    <returns>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</returns>
   </member>
   <member name="IConfigInterleaving.get_Mode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_Mode</code> method retrieves the interleaving quality setting.</para>
     </summary>
-    <param name="pMode">
-      <para>Receives the interleaving quality, specified as a member of the <see cref="InterleavingMode" /> enumeration.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IConfigInterleaving Interface" />
-    <seealso cref="IConfigInterleaving.put_Mode" />
+    <param name="pMode">Receives the interleaving quality, specified as a member of the <see cref="InterleavingMode" /> enumeration.</param>
+    <returns>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</returns>
   </member>
   <member name="IConfigInterleaving.put_Interleaving">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>put_Interleaving</b> method sets the audio preroll time and the frequency of interleaving for an AVI file.</para>
     </summary>
-    <param name="prtInterleave">
-      <para>The approximate duration of each interleaved group of audio or video chunks, in 100-nanosecond units.
-The exact amount of interleaving is also affected by the interleave mode, which is specified by calling <see cref="IConfigInterleaving.put_Mode" />.</para>
-    </param>
-    <param name="prtPreroll">
-      <para>The amount of audio data, in 100-nanosecond units, that is written to the file before the first video frame.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
-    </returns>
-    <remarks>
-      <para>An audio preroll of 750 milliseconds is recommended when authoring a file for distribution.</para>
-      <para>If you do not call this method, the default value for <i>prtInterleave</i> is 1000 milliseconds. The smaller the number, the larger the resulting file.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IConfigInterleaving Interface" />
-    <seealso cref="IConfigInterleaving.get_Interleaving" />
+    <param name="prtInterleave">The approximate duration of each interleaved group of audio or video chunks, in 100-nanosecond units. The exact amount of interleaving is also affected by the interleave mode, which is specified by calling <see cref="IConfigInterleaving.put_Mode" />.</param>
+    <param name="prtPreroll">The amount of audio data, in 100-nanosecond units, that is written to the file before the first video frame.</param>
+    <returns>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</returns>
   </member>
   <member name="IConfigInterleaving.put_Mode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>put_Mode</code> method sets how audio samples and video frames are to be written to disk, by specifying quality of interleaving.</para>
     </summary>
-    <param name="mode">
-      <para>Interleaving quality setting specified in the <see cref="InterleavingMode" /> enumeration.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IConfigInterleaving Interface" />
-    <seealso cref="IConfigInterleaving.get_Mode" />
+    <param name="mode">Interleaving quality setting specified in the <see cref="InterleavingMode" /> enumeration.</param>
+    <returns>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</returns>
   </member>
   <member name="IConfigInterleaving">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>IConfigInterleaving</b> interface controls how the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avi-mux-filter">AVI Mux</a> filter interleaves audio and video samples. Video-authoring applications that handle capturing should use this interface when they need to control how audio samples and video frames will be saved on a disk.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/interfaces">Interfaces</seealso>
   </member>
 </doc>

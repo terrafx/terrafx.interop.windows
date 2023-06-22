@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ILanguageExceptionTransform.GetTransformedRestrictedErrorInfo">
+    <summary>Retrieves the transformed restricted error info.</summary>
+    <param name="restrictedErrorInfo">A pointer to an <see cref="IRestrictedErrorInfo" /> object that contains the restricted error info.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="ILanguageExceptionTransform">
+    <summary>Allows language projections to make available to the system any and all context from an exception that gets thrown from the context of a catch handler that catches a different exception.</summary>
+  </member>
+</doc>

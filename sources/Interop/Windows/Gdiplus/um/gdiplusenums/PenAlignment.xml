@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PenAlignment">
+    <summary>The <b>PenAlignment</b> enumeration specifies the alignment of a pen relative to the stroke that is being drawn.</summary>
+  </member>
+  <member name="PenAlignment.PenAlignmentCenter">
+    <summary>Specifies that the pen is aligned on the center of the line that is drawn.</summary>
+  </member>
+  <member name="PenAlignment.PenAlignmentInset">
+    <summary>Specifies, when drawing a polygon, that the pen is aligned on the inside of the edge of the polygon.</summary>
+  </member>
+</doc>

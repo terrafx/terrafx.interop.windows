@@ -3,60 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DEFAULT_FOLDER_MENU_RESTRICTIONS">
-    <summary>
-      <para>Defines shortcut menu restrictions used by <see cref="IDefaultFolderMenuInitialize.GetMenuRestrictions" /> and <see cref="IDefaultFolderMenuInitialize.SetMenuRestrictions" />.</para>
-    </summary>
-    <seealso cref="IDefaultFolderMenuInitialize.GetMenuRestrictions" />
-    <seealso cref="IDefaultFolderMenuInitialize.SetMenuRestrictions" />
+    <summary>Defines shortcut menu restrictions used by <see cref="IDefaultFolderMenuInitialize.GetMenuRestrictions" /> and <see cref="IDefaultFolderMenuInitialize.SetMenuRestrictions" />.</summary>
   </member>
   <member name="DEFAULT_FOLDER_MENU_RESTRICTIONS.DFMR_DEFAULT">
-    <summary>
-      <para>0x0000. No restrictions.</para>
-    </summary>
+    <summary>0x0000. No restrictions.</summary>
   </member>
   <member name="DEFAULT_FOLDER_MENU_RESTRICTIONS.DFMR_NO_STATIC_VERBS">
-    <summary>
-      <para>0x0008. Don't use the handler for static verbs.</para>
-    </summary>
+    <summary>0x0008. Don't use the handler for static verbs.</summary>
   </member>
   <member name="DEFAULT_FOLDER_MENU_RESTRICTIONS.DFMR_STATIC_VERBS_ONLY">
-    <summary>
-      <para>0x0010. Static verbs only. No dynamic <b>IContextMenu</b> verbs allowed.</para>
-    </summary>
+    <summary>0x0010. Static verbs only. No dynamic <b>IContextMenu</b> verbs allowed.</summary>
   </member>
   <member name="DEFAULT_FOLDER_MENU_RESTRICTIONS.DFMR_NO_RESOURCE_VERBS">
-    <summary>
-      <para>0x0020. Don't add verbs for cut, copy, paste, link, delete, rename, or properties.</para>
-    </summary>
+    <summary>0x0020. Don't add verbs for cut, copy, paste, link, delete, rename, or properties.</summary>
   </member>
   <member name="DEFAULT_FOLDER_MENU_RESTRICTIONS.DFMR_OPTIN_HANDLERS_ONLY">
-    <summary>
-      <para>0x0040. Opt-in to load handler for partial cloud files. Only used for handlers that will not cause implicit hydration. Opt-in handlers must have the registry value "ContextMenuOptIn" under HKCR\CLSID&lt;handler clsid&gt;</para>
-    </summary>
+    <summary>0x0040. Opt-in to load handler for partial cloud files. Only used for handlers that will not cause implicit hydration. Opt-in handlers must have the registry value "ContextMenuOptIn" under HKCR\CLSID&lt;handler clsid&gt;</summary>
   </member>
   <member name="DEFAULT_FOLDER_MENU_RESTRICTIONS.DFMR_RESOURCE_AND_FOLDER_VERBS_ONLY">
-    <summary>
-      <para>0x0080. Only load resource verbs (cut, copy, paste, link, delete, rename, and properties) and folder verbs added by <see cref="IContextMenuCB" />.</para>
-    </summary>
+    <summary>0x0080. Only load resource verbs (cut, copy, paste, link, delete, rename, and properties) and folder verbs added by <see cref="IContextMenuCB" />.</summary>
   </member>
   <member name="DEFAULT_FOLDER_MENU_RESTRICTIONS.DFMR_USE_SPECIFIED_HANDLERS">
-    <summary>
-      <para>0x0100. Use handlers with CLSID values that were added through <see cref="IDefaultFolderMenuInitialize.SetHandlerClsid" /></para>
-    </summary>
+    <summary>0x0100. Use handlers with CLSID values that were added through <see cref="IDefaultFolderMenuInitialize.SetHandlerClsid" /></summary>
   </member>
   <member name="DEFAULT_FOLDER_MENU_RESTRICTIONS.DFMR_USE_SPECIFIED_VERBS">
-    <summary>
-      <para>0x0200. Only load handlers that support the specified verbs.</para>
-    </summary>
+    <summary>0x0200. Only load handlers that support the specified verbs.</summary>
   </member>
   <member name="DEFAULT_FOLDER_MENU_RESTRICTIONS.DFMR_NO_ASYNC_VERBS">
-    <summary>
-      <para>0x0400. Ignore async verbs.</para>
-    </summary>
+    <summary>0x0400. Ignore async verbs.</summary>
   </member>
   <member name="DEFAULT_FOLDER_MENU_RESTRICTIONS.DFMR_NO_NATIVECPU_VERBS">
-    <summary>
-      <para>0x0800. Ignore verbs that are registered for the native CPU architecture.</para>
-    </summary>
+    <summary>0x0800. Ignore verbs that are registered for the native CPU architecture.</summary>
   </member>
 </doc>

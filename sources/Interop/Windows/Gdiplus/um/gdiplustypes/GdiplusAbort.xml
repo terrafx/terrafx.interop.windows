@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="GdiplusAbort.Abort">
+    <summary>
+      <b>Abort</b> is an application-defined method that is called periodically by Windows GDI+ during time-consuming rendering operations. See the <see cref="GdiplusAbort" /> structure.</summary>
+    <param name="unnamedParam1">
+      <b>Abort</b> doesn't take any parameters.</param>
+    <returns>Return <b>S_OK</b> for GDI+ to continue the rendering operation. Return <b>E_ABORT</b> for GDI+ to abort the rendering operation.</returns>
+  </member>
+  <member name="GdiplusAbort">
+    <summary>
+      <para>The <b>GdiplusAbort</b> structure provides a mechanism that allows Windows GDI+ to call an application-defined <b>Abort</b> method periodically during time-consuming rendering operations.</para>
+      <para>See <see cref="GdiplusAbort.Abort" />.</para>
+    </summary>
+  </member>
+</doc>

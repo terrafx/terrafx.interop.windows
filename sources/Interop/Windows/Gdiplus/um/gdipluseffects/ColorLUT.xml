@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ColorLUT.ColorLUT">
+    <summary>Creates a new <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-colorlut">ColorLUT</a> object.</summary>
+  </member>
+  <member name="ColorLUT.GetParameters">
+    <summary>The <b>ColorLUT.GetParameters</b> method gets the current values of the parameters of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-colorlut">ColorLUT</a> object.</summary>
+    <param name="size">Pointer to a <b>UINT</b> that specifies the size, in bytes, of a <see cref="ColorLUTParams" /> structure.</param>
+    <param name="lut">Pointer to a <see cref="ColorLUTParams" /> structure that receives the parameter values.</param>
+    <returns>This method does not return a value.</returns>
+  </member>
+  <member name="ColorLUT.SetParameters">
+    <summary>The <b>ColorLUT.SetParameters</b> method sets the parameters of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-colorlut">ColorLUT</a> object.</summary>
+    <param name="lut">Pointer to a <see cref="ColorLUTParams" /> structure that specifies the parameters.</param>
+    <returns>This method does not return a value.</returns>
+  </member>
+</doc>

@@ -3,179 +3,131 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAudioSessionManager2.GetSessionEnumerator">
-    <summary>
-      <para>The <b>GetSessionEnumerator</b> method gets a pointer to the audio session enumerator object.</para>
-    </summary>
-    <param name="SessionEnum">
-      <para>Receives a pointer to the <see cref="IAudioSessionEnumerator" /> interface of the session enumerator object that the client can use to enumerate audio sessions on the audio device. Through this method, the caller obtains a counted reference to the interface. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK.</para>
-    </returns>
-    <remarks>
-      <para>The session manager maintains a collection of audio sessions that are active on the audio device by querying the audio engine.  <b>GetSessionEnumerator</b>  creates a session control for each session in the collection. To get a reference to the <see cref="IAudioSessionControl" /> interface of the session in the enumerated collection, the application must call <see cref="IAudioSessionEnumerator.GetSession" />. For a code example, see <see cref="IAudioSessionEnumerator Interface" />.</para>
-      <para>The session enumerator might not be aware of the new sessions that are reported through <see cref="IAudioSessionNotification" />. So if an application exclusively relies on the session enumerator for getting all the sessions for an audio endpoint, the results might not be accurate. To work around this, the application should manually maintain a list. For more information, see <see cref="IAudioSessionEnumerator" />.</para>
-    </remarks>
-    <seealso cref="IAudioSessionManager2" />
+    <summary>The <b>GetSessionEnumerator</b> method gets a pointer to the audio session enumerator object.</summary>
+    <param name="SessionEnum">Receives a pointer to the <see cref="IAudioSessionEnumerator" /> interface of the session enumerator object that the client can use to enumerate audio sessions on the audio device. Through this method, the caller obtains a counted reference to the interface. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method.</param>
+    <returns>If the method succeeds, it returns S_OK.</returns>
   </member>
   <member name="IAudioSessionManager2.RegisterDuckNotification">
-    <summary>
-      <para>The <b>RegisterDuckNotification</b> method registers the application with the session manager to receive ducking notifications.</para>
-    </summary>
+    <summary>The <b>RegisterDuckNotification</b> method registers the application with the session manager to receive ducking notifications.</summary>
     <param name="sessionID">
-      <para>Pointer to a null-terminated string that contains a  session instance identifier. Applications that are playing a media stream and want to provide custom stream attenuation or ducking behavior, pass their own session instance identifier.  For more information, see Remarks.</para>
-      <para>Other applications
-that do not want to alter their streams but want to get all the ducking notifications
-must pass <b>NULL</b>.</para>
+      <para>Pointer to a null-terminated string that contains a session instance identifier. Applications that are playing a media stream and want to provide custom stream attenuation or ducking behavior, pass their own session instance identifier. For more information, see Remarks.</para>
+      <para>Other applications that do not want to alter their streams but want to get all the ducking notifications must pass <b>NULL</b>.</para>
     </param>
-    <param name="duckNotification">
-      <para>Pointer to the application's implementation of the <see cref="IAudioVolumeDuckNotification" /> interface. The implementation is called when ducking events are raised by the audio system and  notifications are sent to the registered applications.</para>
-    </param>
+    <param name="duckNotification">Pointer to the application's implementation of the <see cref="IAudioVolumeDuckNotification" /> interface. The implementation is called when ducking events are raised by the audio system and notifications are sent to the registered applications.</param>
     <returns>
-      <para>If the method succeeds, it returns S_OK.
-If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
         <listheader>
           <description>Return value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>E_POINTER</para>
+            <list type="bullet">
+              <listheader>
+                <term>E_POINTER</term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <i>duckNotification</i> is <b>NULL</b>.
-</description>
-        </item>
-        <item>
+            <i>duckNotification</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>E_OUTOFMEMORY</para>
+            <list type="bullet">
+              <listheader>
+                <term>E_OUTOFMEMORY</term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Internal object could not be created due to insufficient memory.</para>
-          </description>
-        </item>
+          <description>Internal object could not be created due to insufficient memory.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <i>Stream Attenuation</i> or <i>ducking</i> is a new feature in Windows 7. An application playing a media stream can make the stream behave differently when a new communication stream is opened on the default communication device. For example, the original media stream can be paused while the new communication stream is open. To provide this custom implementation for stream attenuation, the application can opt out of the default stream attenuation experience by calling <see cref="IAudioSessionControl.SetDuckingPreference" /> and then register itself to receive notifications when session events occur. For stream attenuation, a session event is raised by the system when a communication stream is opened or closed on the default communication device. For more information about this feature, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/handling-audio-ducking-events-from-communication-devices">Getting Ducking Events</a>.</para>
-      <para>To begin receiving notifications, the application calls the <b>RegisterDuckNotification</b> method to register its <see cref="IAudioVolumeDuckNotification" /> interface with the session manager. When the application no longer requires notifications, it calls the <see cref="IAudioSessionManager2.UnregisterDuckNotification" /> method to delete the registration.</para>
-      <para>The application receives notifications about the ducking events through the methods of the <see cref="IAudioVolumeDuckNotification" /> interface. The application implements <b>IAudioVolumeDuckNotification</b>. After the registration call has succeeded, the system calls the methods of this interface when session events occur.</para>
-    </remarks>
-    <seealso cref="IAudioSessionManager2" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/using-the-communication-device">Using a Communication Device</seealso>
   </member>
   <member name="IAudioSessionManager2.RegisterSessionNotification">
-    <summary>
-      <para>The <b>RegisterSessionNotification</b> method registers the application to receive a notification when a session is created.</para>
-    </summary>
-    <param name="SessionNotification">
-      <para>A pointer to the application's implementation of the <see cref="IAudioSessionNotification" /> interface. If the method call succeeds, it calls the <b>AddRef</b> method on the application's <b>IAudioSessionNotification</b> interface.</para>
-    </param>
+    <summary>The <b>RegisterSessionNotification</b> method registers the application to receive a notification when a session is created.</summary>
+    <param name="SessionNotification">A pointer to the application's implementation of the <see cref="IAudioSessionNotification" /> interface. If the method call succeeds, it calls the <b>AddRef</b> method on the application's <b>IAudioSessionNotification</b> interface.</param>
     <returns>
-      <para>If the method succeeds, it returns S_OK.
-If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
         <listheader>
           <description>Return value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>E_POINTER</para>
+            <list type="bullet">
+              <listheader>
+                <term>E_POINTER</term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <i>SessionNotification</i> is <b>NULL</b>.
-</description>
-        </item>
-        <item>
+            <i>SessionNotification</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>E_OUTOFMEMORY</para>
+            <list type="bullet">
+              <listheader>
+                <term>E_OUTOFMEMORY</term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Internal object could not be created due to insufficient memory.</para>
-          </description>
-        </item>
+          <description>Internal object could not be created due to insufficient memory.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The application can register to receive a notification  when a session is created, through the methods  of the <see cref="IAudioSessionNotification" /> interface.  The application implements the <b>IAudioSessionNotification</b> interface. The methods defined in this interface receive callbacks from the  system when a session is created. For example code that shows how to implement this interface, see</para>
-      <para>
-        <see cref="IAudioSessionNotification Interface" />.</para>
-      <para>To begin receiving notifications, the application calls the <b>IAudioSessionManager2.RegisterSessionNotification</b> method to register its <see cref="IAudioSessionNotification" /> interface. When the application no longer requires notifications, it calls the <see cref="IAudioSessionManager2.UnregisterSessionNotification" /> method to delete the registration.</para>
-      <blockquote>
-        <para>[!Important]
-You must call <see cref="IAudioSessionEnumerator.GetCount" /> to begin receiving notifications. The session enumeration API discards new session notifications until the application has first retrieved the list of existing sessions. This is to prevent a race condition that can occur when a session notification arrives while the application using the session APIs is starting up. Calling <b>GetCount</b> triggers the enumeration API to begin sending session notifications.</para>
-      </blockquote>
-      <para>
-        <b>Note</b>  Make sure that the application initializes COM with Multithreaded Apartment (MTA) model by calling <code>CoInitializeEx(NULL, COINIT_MULTITHREADED)</code> in a non-UI thread. If MTA is not initialized, the application does not receive session notifications from the session manager.
-Threads that run the user interface of an application should be initialized apartment threading model.</para>
-    </remarks>
-    <seealso cref="IAudioSessionManager2" />
   </member>
   <member name="IAudioSessionManager2.UnregisterDuckNotification">
-    <summary>
-      <para>The <b>UnregisterDuckNotification</b> method deletes a previous registration by the application to receive notifications.</para>
-    </summary>
-    <param name="duckNotification">
-      <para>Pointer to the <see cref="IAudioVolumeDuckNotification" /> interface that is implemented by the application. Pass the same interface pointer that was specified to the session manager in a previous call to the <see cref="IAudioSessionManager2.RegisterDuckNotification" /> method. If the <b>UnregisterDuckNotification</b> method succeeds, it calls the <b>Release</b> method on the application's <b>IAudioVolumeDuckNotification</b> interface.</para>
-    </param>
+    <summary>The <b>UnregisterDuckNotification</b> method deletes a previous registration by the application to receive notifications.</summary>
+    <param name="duckNotification">Pointer to the <see cref="IAudioVolumeDuckNotification" /> interface that is implemented by the application. Pass the same interface pointer that was specified to the session manager in a previous call to the <see cref="IAudioSessionManager2.RegisterDuckNotification" /> method. If the <b>UnregisterDuckNotification</b> method succeeds, it calls the <b>Release</b> method on the application's <b>IAudioVolumeDuckNotification</b> interface.</param>
     <returns>
-      <para>If the method succeeds, it returns S_OK.
-If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
         <listheader>
           <description>Return value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>E_POINTER</para>
+            <list type="bullet">
+              <listheader>
+                <term>E_POINTER</term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <i>duckNotification</i> is <b>NULL</b>.
-</description>
-        </item>
+            <i>duckNotification</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The application calls this method when it no longer needs to receive notifications. The <b>UnregisterDuckNotification</b> method removes the registration of an <see cref="IAudioVolumeDuckNotification" /> interface that the application previously registered with the session manager by calling the <see cref="IAudioSessionManager2.RegisterDuckNotification" /> method.</para>
-      <para>After the application calls <b>UnregisterDuckNotification</b>, any pending events are not reported to the application.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/stream-attenuation">Default Ducking Experience</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/handling-audio-ducking-events-from-communication-devices">Getting Ducking Events</seealso>
-    <seealso cref="IAudioSessionManager2" />
   </member>
   <member name="IAudioSessionManager2.UnregisterSessionNotification">
-    <summary>
-      <para>The <b>UnregisterSessionNotification</b> method deletes the registration to  receive a notification when a session is created.</para>
-    </summary>
+    <summary>The <b>UnregisterSessionNotification</b> method deletes the registration to receive a notification when a session is created.</summary>
     <param name="SessionNotification">
-      <para>A pointer to the application's implementation of the <see cref="IAudioSessionNotification" /> interface. Pass the same interface pointer that was specified to the session manager in  a previous call to <see cref="IAudioSessionManager2.RegisterSessionNotification" /> to register for notification.</para>
+      <para>A pointer to the application's implementation of the <see cref="IAudioSessionNotification" /> interface. Pass the same interface pointer that was specified to the session manager in a previous call to <see cref="IAudioSessionManager2.RegisterSessionNotification" /> to register for notification.</para>
       <para>If the <b>UnregisterSessionNotification</b> method succeeds, it calls the <b>Release</b> method on the application's <see cref="IAudioSessionNotification" /> interface.</para>
     </param>
     <returns>
-      <para>If the method succeeds, it returns S_OK.
-If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
         <listheader>
           <description>Return value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>E_POINTER</para>
+            <list type="bullet">
+              <listheader>
+                <term>E_POINTER</term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <i>SessionNotification</i> is <b>NULL</b>.
-</description>
-        </item>
+            <i>SessionNotification</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The application calls this method when it no longer needs to receive notifications. The <b>UnregisterSessionNotification</b> method removes the registration of an <see cref="IAudioSessionNotification" /> interface that the application previously registered with the session manager by calling the <see cref="IAudioSessionControl.RegisterAudioSessionNotification" /> method.</para>
-    </remarks>
-    <seealso cref="IAudioSessionManager2" />
   </member>
 </doc>

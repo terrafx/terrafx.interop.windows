@@ -5,27 +5,17 @@
   <member name="DML_ELEMENT_WISE_SUBTRACT_OPERATOR_DESC">
     <summary>
       <para>Subtracts each element of <i>BTensor</i> from the corresponding element of <i>ATensor</i>, placing the result into the corresponding element of <i>OutputTensor</i>.</para>
-      <code>f(a, b) = a - b
-</code>
+      <code>f(a, b) = a - b</code>
       <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias one of the the input tensors during binding.</para>
     </summary>
   </member>
   <member name="DML_ELEMENT_WISE_SUBTRACT_OPERATOR_DESC.ATensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the left-hand side inputs.</para>
-    </summary>
+    <summary>A tensor containing the left-hand side inputs.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_SUBTRACT_OPERATOR_DESC.BTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the right-hand side inputs.</para>
-    </summary>
+    <summary>A tensor containing the right-hand side inputs.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_SUBTRACT_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The output tensor to write the results to.</para>
-    </summary>
+    <summary>The output tensor to write the results to.</summary>
   </member>
 </doc>

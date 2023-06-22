@@ -3,33 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1BitmapBrush1.GetInterpolationMode1">
-    <summary>
-      <para>Returns the current interpolation mode of the brush.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
-      <para>The current interpolation mode.</para>
-    </returns>
-    <seealso cref="ID2D1BitmapBrush1" />
+    <summary>Returns the current interpolation mode of the brush.</summary>
+    <returns>The current interpolation mode.</returns>
   </member>
   <member name="ID2D1BitmapBrush1.SetInterpolationMode1">
-    <summary>
-      <para>Sets the interpolation mode for the brush.</para>
-    </summary>
-    <param name="interpolationMode">
-      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
-      <para>The mode to use.</para>
-    </param>
+    <summary>Sets the interpolation mode for the brush.</summary>
+    <param name="interpolationMode">The mode to use.</param>
     <returns>
-      <para>
-        <b>Note</b>  If <i>interpolationMode</i> is not a valid member of D2D1_INTERPOLATION_MODE, then this method silently ignores the call.</para>
+      <div>
+        <b>Note</b>  If <i>interpolationMode</i> is not a valid member of D2D1_INTERPOLATION_MODE, then this method silently ignores the call.</div>
     </returns>
-    <seealso cref="ID2D1BitmapBrush1" />
   </member>
   <member name="ID2D1BitmapBrush1">
-    <summary>
-      <para>Paints an area with a bitmap.</para>
-    </summary>
-    <seealso cref="ID2D1BitmapBrush" />
+    <summary>Paints an area with a bitmap.</summary>
   </member>
 </doc>

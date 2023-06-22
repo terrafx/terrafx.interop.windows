@@ -3,26 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ACTIVATION_CONTEXT_QUERY_INDEX">
-    <summary>
-      <para>The
-<b>ACTIVATION_CONTEXT_QUERY_INDEX</b> structure is used by
-<see cref="QueryActCtxW" /> function.</para>
-    </summary>
-    <remarks>
-      <para>Calling the
-<see cref="QueryActCtxW" /> function with the FileInformationInAssemblyOfAssemblyInActivationContext option requires that the <i>pvSubInstance</i> parameter point to an
-<b>ACTIVATION_CONTEXT_QUERY_INDEX</b> structure. See the sample for
-<see cref="ASSEMBLY_FILE_DETAILED_INFORMATION" /> for an example of its use.</para>
-    </remarks>
+    <summary>The<b>ACTIVATION_CONTEXT_QUERY_INDEX</b> structure is used by<see cref="QueryActCtxW" /> function.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_QUERY_INDEX.ulAssemblyIndex">
-    <summary>
-      <para>One-based index of the assembly whose file table is to be queried.</para>
-    </summary>
+    <summary>One-based index of the assembly whose file table is to be queried.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_QUERY_INDEX.ulFileIndexInAssembly">
-    <summary>
-      <para>Zero-based index of the file in the above assembly to be queried.</para>
-    </summary>
+    <summary>Zero-based index of the file in the above assembly to be queried.</summary>
   </member>
 </doc>

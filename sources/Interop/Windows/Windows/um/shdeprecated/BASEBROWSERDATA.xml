@@ -3,51 +3,32 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="BASEBROWSERDATA">
-    <summary>
-      <para>Contains protected members of the base class. <b>BASEBROWSERDATA</b> defines the browser state and is used with <see cref="IBrowserService2.GetBaseBrowserData" /> and <see cref="IBrowserService2.PutBaseBrowserData" />.</para>
-    </summary>
+    <summary>Contains protected members of the base class. <b>BASEBROWSERDATA</b> defines the browser state and is used with <see cref="IBrowserService2.GetBaseBrowserData" /> and <see cref="IBrowserService2.PutBaseBrowserData" />.</summary>
   </member>
   <member name="BASEBROWSERDATA._hwnd">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-      <para>The handle of the browser's top-level window.</para>
-    </summary>
+    <summary>The handle of the browser's top-level window.</summary>
   </member>
   <member name="BASEBROWSERDATA._ptl">
-    <summary>
-      <para>Type: <b><see cref="ITravelLog" />*</b></para>
-      <para>A pointer to the browser's <see cref="ITravelLog" />.</para>
-    </summary>
+    <summary>A pointer to the browser's <see cref="ITravelLog" />.</summary>
   </member>
   <member name="BASEBROWSERDATA._phlf">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa767938(v=vs.85)">IHlinkFrame</a>*</b></para>
       <para>A pointer to the browser's <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa767938(v=vs.85)">IHlinkFrame</a>.</para>
-      <para>
-        <b>Note</b>  This member is only valid on first navigation from an hlink element-compatible application such as Word.</para>
+      <div>
+        <b>Note</b>  This member is only valid on first navigation from an hlink element-compatible application such as Word.</div>
     </summary>
   </member>
   <member name="BASEBROWSERDATA._pautoWB2">
-    <summary>
-      <para>Type: <b><see cref="IWebBrowser2" />*</b></para>
-      <para>A pointer to the browser's <see cref="IWebBrowser2" /> object.</para>
-    </summary>
+    <summary>A pointer to the browser's <see cref="IWebBrowser2" /> object.</summary>
   </member>
   <member name="BASEBROWSERDATA._pautoEDS">
-    <summary>
-      <para>Type: <b><see cref="IExpDispSupport" />*</b></para>
-      <para>A pointer to the browser's <see cref="IExpDispSupport" /> object.</para>
-    </summary>
+    <summary>A pointer to the browser's <see cref="IExpDispSupport" /> object.</summary>
   </member>
   <member name="BASEBROWSERDATA._pautoSS">
-    <summary>
-      <para>Type: <b><see cref="IShellService" />*</b></para>
-      <para>A pointer to the browser's <see cref="IShellService" /> object.</para>
-    </summary>
+    <summary>A pointer to the browser's <see cref="IShellService" /> object.</summary>
   </member>
   <member name="BASEBROWSERDATA._eSecureLockIcon">
     <summary>
-      <para>Type: <b>int</b></para>
       <para>One of the following values to indicate the security lock icon.</para>
       <h4>SECURELOCK_NOCHANGE (-1)</h4>
       <para>No change in security encryption status.</para>
@@ -84,89 +65,47 @@
     </summary>
   </member>
   <member name="BASEBROWSERDATA._fCreatingViewWindow">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>A view window is being created by the browser.</para>
-    </summary>
+    <summary>A view window is being created by the browser.</summary>
   </member>
   <member name="BASEBROWSERDATA._uActivateState">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The browser view is in an activated state.</para>
-    </summary>
+    <summary>The browser view is in an activated state.</summary>
   </member>
-  <member name="BASEBROWSERDATA._pidlViewState">
-    <summary></summary>
-  </member>
+  <member name="BASEBROWSERDATA._pidlViewState"></member>
   <member name="BASEBROWSERDATA._pctView">
-    <summary>
-      <para>Type: <b><see cref="IOleCommandTarget" />*</b></para>
-      <para>A cached pointer to the <see cref="IOleCommandTarget" /> object associated with the <see cref="IShellFolder" /> object pointed to by <b>_psv</b>.</para>
-    </summary>
+    <summary>A cached pointer to the <see cref="IOleCommandTarget" /> object associated with the <see cref="IShellFolder" /> object pointed to by <b>_psv</b>.</summary>
   </member>
   <member name="BASEBROWSERDATA._pidlCur">
-    <summary>
-      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
-      <para>A PIDL of the current navigated location of the browser. This value is the same retrieved by <see cref="IBrowserService.GetPidl" />.</para>
-    </summary>
+    <summary>A PIDL of the current navigated location of the browser. This value is the same retrieved by <see cref="IBrowserService.GetPidl" />.</summary>
   </member>
   <member name="BASEBROWSERDATA._psv">
-    <summary>
-      <para>Type: <b><see cref="IShellView" />*</b></para>
-      <para>A pointer to the <see cref="IShellView" /> of the current location. This <b>IShellView</b> is bound to <b>_pidlCur</b> through <see cref="IShellFolder.CreateViewObject" />.</para>
-    </summary>
+    <summary>A pointer to the <see cref="IShellView" /> of the current location. This <b>IShellView</b> is bound to <b>_pidlCur</b> through <see cref="IShellFolder.CreateViewObject" />.</summary>
   </member>
   <member name="BASEBROWSERDATA._psf">
-    <summary>
-      <para>Type: <b><see cref="IShellFolder" />*</b></para>
-      <para>A pointer to the <see cref="IShellFolder" /> of the current location. This <b>IShellFolder</b> is bound to <b>_pidlCur</b>.</para>
-    </summary>
+    <summary>A pointer to the <see cref="IShellFolder" /> of the current location. This <b>IShellFolder</b> is bound to <b>_pidlCur</b>.</summary>
   </member>
   <member name="BASEBROWSERDATA._hwndView">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the window returned by <see cref="_psv-&gt;CreateViewWindow" />.</para>
-    </summary>
+    <summary>A handle to the window returned by <see cref="_psv-&gt;CreateViewWindow" />.</summary>
   </member>
   <member name="BASEBROWSERDATA._pszTitleCur">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>A pointer to a buffer containing the Unicode title text for the current location.</para>
-    </summary>
+    <summary>A pointer to a buffer containing the Unicode title text for the current location.</summary>
   </member>
   <member name="BASEBROWSERDATA._pidlPending">
-    <summary>
-      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
-      <para>The PIDL of the pending target location. Once navigation is complete, this value moves to <b>_pidlCur</b>.</para>
-    </summary>
+    <summary>The PIDL of the pending target location. Once navigation is complete, this value moves to <b>_pidlCur</b>.</summary>
   </member>
   <member name="BASEBROWSERDATA._psvPending">
-    <summary>
-      <para>Type: <b><see cref="IShellView" />*</b></para>
-      <para>The <see cref="IShellView" /> of the pending target location. Once navigation is complete, this value moves to <b>_psv</b>.</para>
-    </summary>
+    <summary>The <see cref="IShellView" /> of the pending target location. Once navigation is complete, this value moves to <b>_psv</b>.</summary>
   </member>
   <member name="BASEBROWSERDATA._psfPending">
-    <summary>
-      <para>Type: <b><see cref="IShellFolder" />*</b></para>
-      <para>The <see cref="IShellFolder" /> of the pending target location. Once navigation is complete, this value moves to <b>_psf</b>.</para>
-    </summary>
+    <summary>The <see cref="IShellFolder" /> of the pending target location. Once navigation is complete, this value moves to <b>_psf</b>.</summary>
   </member>
   <member name="BASEBROWSERDATA._hwndViewPending">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the pending target location's view window. Once navigation is complete, this value moves to <b>_hwndView</b>.</para>
-    </summary>
+    <summary>A handle to the pending target location's view window. Once navigation is complete, this value moves to <b>_hwndView</b>.</summary>
   </member>
   <member name="BASEBROWSERDATA._pszTitlePending">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>A pointer to a buffer containing the Unicode title text for the pending target location. Once navigation is complete, this value moves to <b>_pszTitleCur</b>.</para>
-    </summary>
+    <summary>A pointer to a buffer containing the Unicode title text for the pending target location. Once navigation is complete, this value moves to <b>_pszTitleCur</b>.</summary>
   </member>
   <member name="BASEBROWSERDATA._fIsViewMSHTML">
     <summary>
-      <para>Type: <b>BOOL</b></para>
       <para>A value of type <b>BOOL</b> that indicates whether the browser is hosting folder content or web content.</para>
       <h4>TRUE</h4>
       <para>The browser is hosting web content.</para>
@@ -176,7 +115,6 @@
   </member>
   <member name="BASEBROWSERDATA._fPrivacyImpacted">
     <summary>
-      <para>Type: <b>BOOL</b></para>
       <para>A value of type <b>BOOL</b> that indicates whether there is a privacy concern with the browser's content.</para>
       <h4>TRUE</h4>
       <para>There is a privacy concern with the browser's content.</para>
@@ -184,77 +122,44 @@
       <para>There is not a privacy concern with the browser's content.</para>
     </summary>
   </member>
-  <member name="BASEBROWSERDATA._clsidView">
-    <summary>
-      <para>Type: <b>CLSID</b></para>
-    </summary>
-  </member>
-  <member name="BASEBROWSERDATA._clsidViewPending">
-    <summary>
-      <para>Type: <b>CLSID</b></para>
-    </summary>
-  </member>
-  <member name="BASEBROWSERDATA._hwndFrame">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-    </summary>
-  </member>
+  <member name="BASEBROWSERDATA._clsidView"></member>
+  <member name="BASEBROWSERDATA._clsidViewPending"></member>
+  <member name="BASEBROWSERDATA._hwndFrame"></member>
   <member name="BASEBROWSERDATA._lPhishingFilterStatus">
     <summary>
-      <para>Type: <b>LONG</b></para>
       <para>
         <b>Windows Vista with Service Pack 1 (SP1) and later or Windows Internet Explorer 7 and later only</b>. 0 if the phishing filter is off; 1 if it is on.</para>
       <h4>- _pidlNewShellView</h4>
-      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
       <para>A temporary placeholder for <b>_pidlPending</b> on first navigation to the pending location.</para>
     </summary>
   </member>
   <member name="BASEBROWSERDATA">
-    <summary>
-      <para>Contains protected members of the base class. <b>BASEBROWSERDATA</b> defines the browser state and is used with <see cref="IBrowserService2.GetBaseBrowserData" /> and <see cref="IBrowserService2.PutBaseBrowserData" />.</para>
-    </summary>
+    <summary>Contains protected members of the base class. <b>BASEBROWSERDATA</b> defines the browser state and is used with <see cref="IBrowserService2.GetBaseBrowserData" /> and <see cref="IBrowserService2.PutBaseBrowserData" />.</summary>
   </member>
   <member name="BASEBROWSERDATA._hwnd">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-      <para>The handle of the browser's top-level window.</para>
-    </summary>
+    <summary>The handle of the browser's top-level window.</summary>
   </member>
   <member name="BASEBROWSERDATA._ptl">
-    <summary>
-      <para>Type: <b><see cref="ITravelLog" />*</b></para>
-      <para>A pointer to the browser's <see cref="ITravelLog" />.</para>
-    </summary>
+    <summary>A pointer to the browser's <see cref="ITravelLog" />.</summary>
   </member>
   <member name="BASEBROWSERDATA._phlf">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa767938(v=vs.85)">IHlinkFrame</a>*</b></para>
       <para>A pointer to the browser's <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa767938(v=vs.85)">IHlinkFrame</a>.</para>
-      <para>
-        <b>Note</b>  This member is only valid on first navigation from an hlink element-compatible application such as Word.</para>
+      <div>
+        <b>Note</b>  This member is only valid on first navigation from an hlink element-compatible application such as Word.</div>
     </summary>
   </member>
   <member name="BASEBROWSERDATA._pautoWB2">
-    <summary>
-      <para>Type: <b><see cref="IWebBrowser2" />*</b></para>
-      <para>A pointer to the browser's <see cref="IWebBrowser2" /> object.</para>
-    </summary>
+    <summary>A pointer to the browser's <see cref="IWebBrowser2" /> object.</summary>
   </member>
   <member name="BASEBROWSERDATA._pautoEDS">
-    <summary>
-      <para>Type: <b><see cref="IExpDispSupport" />*</b></para>
-      <para>A pointer to the browser's <see cref="IExpDispSupport" /> object.</para>
-    </summary>
+    <summary>A pointer to the browser's <see cref="IExpDispSupport" /> object.</summary>
   </member>
   <member name="BASEBROWSERDATA._pautoSS">
-    <summary>
-      <para>Type: <b><see cref="IShellService" />*</b></para>
-      <para>A pointer to the browser's <see cref="IShellService" /> object.</para>
-    </summary>
+    <summary>A pointer to the browser's <see cref="IShellService" /> object.</summary>
   </member>
   <member name="BASEBROWSERDATA._eSecureLockIcon">
     <summary>
-      <para>Type: <b>int</b></para>
       <para>One of the following values to indicate the security lock icon.</para>
       <h4>SECURELOCK_NOCHANGE (-1)</h4>
       <para>No change in security encryption status.</para>
@@ -291,89 +196,47 @@
     </summary>
   </member>
   <member name="BASEBROWSERDATA._fCreatingViewWindow">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>A view window is being created by the browser.</para>
-    </summary>
+    <summary>A view window is being created by the browser.</summary>
   </member>
   <member name="BASEBROWSERDATA._uActivateState">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The browser view is in an activated state.</para>
-    </summary>
+    <summary>The browser view is in an activated state.</summary>
   </member>
-  <member name="BASEBROWSERDATA._pidlViewState">
-    <summary></summary>
-  </member>
+  <member name="BASEBROWSERDATA._pidlViewState"></member>
   <member name="BASEBROWSERDATA._pctView">
-    <summary>
-      <para>Type: <b><see cref="IOleCommandTarget" />*</b></para>
-      <para>A cached pointer to the <see cref="IOleCommandTarget" /> object associated with the <see cref="IShellFolder" /> object pointed to by <b>_psv</b>.</para>
-    </summary>
+    <summary>A cached pointer to the <see cref="IOleCommandTarget" /> object associated with the <see cref="IShellFolder" /> object pointed to by <b>_psv</b>.</summary>
   </member>
   <member name="BASEBROWSERDATA._pidlCur">
-    <summary>
-      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
-      <para>A PIDL of the current navigated location of the browser. This value is the same retrieved by <see cref="IBrowserService.GetPidl" />.</para>
-    </summary>
+    <summary>A PIDL of the current navigated location of the browser. This value is the same retrieved by <see cref="IBrowserService.GetPidl" />.</summary>
   </member>
   <member name="BASEBROWSERDATA._psv">
-    <summary>
-      <para>Type: <b><see cref="IShellView" />*</b></para>
-      <para>A pointer to the <see cref="IShellView" /> of the current location. This <b>IShellView</b> is bound to <b>_pidlCur</b> through <see cref="IShellFolder.CreateViewObject" />.</para>
-    </summary>
+    <summary>A pointer to the <see cref="IShellView" /> of the current location. This <b>IShellView</b> is bound to <b>_pidlCur</b> through <see cref="IShellFolder.CreateViewObject" />.</summary>
   </member>
   <member name="BASEBROWSERDATA._psf">
-    <summary>
-      <para>Type: <b><see cref="IShellFolder" />*</b></para>
-      <para>A pointer to the <see cref="IShellFolder" /> of the current location. This <b>IShellFolder</b> is bound to <b>_pidlCur</b>.</para>
-    </summary>
+    <summary>A pointer to the <see cref="IShellFolder" /> of the current location. This <b>IShellFolder</b> is bound to <b>_pidlCur</b>.</summary>
   </member>
   <member name="BASEBROWSERDATA._hwndView">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the window returned by <see cref="_psv-&gt;CreateViewWindow" />.</para>
-    </summary>
+    <summary>A handle to the window returned by <see cref="_psv-&gt;CreateViewWindow" />.</summary>
   </member>
   <member name="BASEBROWSERDATA._pszTitleCur">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>A pointer to a buffer containing the Unicode title text for the current location.</para>
-    </summary>
+    <summary>A pointer to a buffer containing the Unicode title text for the current location.</summary>
   </member>
   <member name="BASEBROWSERDATA._pidlPending">
-    <summary>
-      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
-      <para>The PIDL of the pending target location. Once navigation is complete, this value moves to <b>_pidlCur</b>.</para>
-    </summary>
+    <summary>The PIDL of the pending target location. Once navigation is complete, this value moves to <b>_pidlCur</b>.</summary>
   </member>
   <member name="BASEBROWSERDATA._psvPending">
-    <summary>
-      <para>Type: <b><see cref="IShellView" />*</b></para>
-      <para>The <see cref="IShellView" /> of the pending target location. Once navigation is complete, this value moves to <b>_psv</b>.</para>
-    </summary>
+    <summary>The <see cref="IShellView" /> of the pending target location. Once navigation is complete, this value moves to <b>_psv</b>.</summary>
   </member>
   <member name="BASEBROWSERDATA._psfPending">
-    <summary>
-      <para>Type: <b><see cref="IShellFolder" />*</b></para>
-      <para>The <see cref="IShellFolder" /> of the pending target location. Once navigation is complete, this value moves to <b>_psf</b>.</para>
-    </summary>
+    <summary>The <see cref="IShellFolder" /> of the pending target location. Once navigation is complete, this value moves to <b>_psf</b>.</summary>
   </member>
   <member name="BASEBROWSERDATA._hwndViewPending">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the pending target location's view window. Once navigation is complete, this value moves to <b>_hwndView</b>.</para>
-    </summary>
+    <summary>A handle to the pending target location's view window. Once navigation is complete, this value moves to <b>_hwndView</b>.</summary>
   </member>
   <member name="BASEBROWSERDATA._pszTitlePending">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>A pointer to a buffer containing the Unicode title text for the pending target location. Once navigation is complete, this value moves to <b>_pszTitleCur</b>.</para>
-    </summary>
+    <summary>A pointer to a buffer containing the Unicode title text for the pending target location. Once navigation is complete, this value moves to <b>_pszTitleCur</b>.</summary>
   </member>
   <member name="BASEBROWSERDATA._fIsViewMSHTML">
     <summary>
-      <para>Type: <b>BOOL</b></para>
       <para>A value of type <b>BOOL</b> that indicates whether the browser is hosting folder content or web content.</para>
       <h4>TRUE</h4>
       <para>The browser is hosting web content.</para>
@@ -383,7 +246,6 @@
   </member>
   <member name="BASEBROWSERDATA._fPrivacyImpacted">
     <summary>
-      <para>Type: <b>BOOL</b></para>
       <para>A value of type <b>BOOL</b> that indicates whether there is a privacy concern with the browser's content.</para>
       <h4>TRUE</h4>
       <para>There is a privacy concern with the browser's content.</para>
@@ -391,125 +253,73 @@
       <para>There is not a privacy concern with the browser's content.</para>
     </summary>
   </member>
-  <member name="BASEBROWSERDATA._clsidView">
-    <summary>
-      <para>Type: <b>CLSID</b></para>
-    </summary>
-  </member>
-  <member name="BASEBROWSERDATA._clsidViewPending">
-    <summary>
-      <para>Type: <b>CLSID</b></para>
-    </summary>
-  </member>
-  <member name="BASEBROWSERDATA._hwndFrame">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-    </summary>
-  </member>
+  <member name="BASEBROWSERDATA._clsidView"></member>
+  <member name="BASEBROWSERDATA._clsidViewPending"></member>
+  <member name="BASEBROWSERDATA._hwndFrame"></member>
   <member name="BASEBROWSERDATA._eSecureLockIcon.SECURELOCK_FIRSTSUGGEST">
-    <summary>
-      <para>A security encryption setting should be suggested.</para>
-    </summary>
+    <summary>A security encryption setting should be suggested.</summary>
   </member>
-  <member name="BASEBROWSERDATA._eSecureLockIcon.SECURELOCK_NOCHANGE (-1)">
-    <summary>
-      <para>No change in security encryption status.</para>
-    </summary>
+  <member name="1)">
+    <summary>No change in security encryption status.</summary>
   </member>
   <member name="BASEBROWSERDATA._eSecureLockIcon.SECURELOCK_SET_FORTEZZA">
-    <summary>
-      <para>There is Fortezza security encryption present.</para>
-    </summary>
+    <summary>There is Fortezza security encryption present.</summary>
   </member>
   <member name="BASEBROWSERDATA._eSecureLockIcon.SECURELOCK_SET_MIXED">
-    <summary>
-      <para>There are multiple security encryption methods present.</para>
-    </summary>
+    <summary>There are multiple security encryption methods present.</summary>
   </member>
   <member name="BASEBROWSERDATA._eSecureLockIcon.SECURELOCK_SET_SECURE128BIT">
-    <summary>
-      <para>There is 128-bit security encryption present.</para>
-    </summary>
+    <summary>There is 128-bit security encryption present.</summary>
   </member>
   <member name="BASEBROWSERDATA._eSecureLockIcon.SECURELOCK_SET_SECURE40BIT">
-    <summary>
-      <para>There is 40-bit security encryption present.</para>
-    </summary>
+    <summary>There is 40-bit security encryption present.</summary>
   </member>
   <member name="BASEBROWSERDATA._eSecureLockIcon.SECURELOCK_SET_SECURE56BIT">
-    <summary>
-      <para>There is 56-bit security encryption present.</para>
-    </summary>
+    <summary>There is 56-bit security encryption present.</summary>
   </member>
   <member name="BASEBROWSERDATA._eSecureLockIcon.SECURELOCK_SET_SECUREUNKNOWNBIT">
-    <summary>
-      <para>The security encryption level is not known.</para>
-    </summary>
+    <summary>The security encryption level is not known.</summary>
   </member>
-  <member name="BASEBROWSERDATA._eSecureLockIcon.SECURELOCK_SET_UNSECURE (0)">
-    <summary>
-      <para>Default. 0x0000. No security encryption present.</para>
-    </summary>
+  <member name="BASEBROWSERDATA._eSecureLockIcon.SECURELOCK_SET_UNSECURE">
+    <summary>Default. 0x0000. No security encryption present.</summary>
   </member>
   <member name="BASEBROWSERDATA._eSecureLockIcon.SECURELOCK_SUGGEST_FORTEZZA">
-    <summary>
-      <para>Fortezza security encryption has been suggested.</para>
-    </summary>
+    <summary>Fortezza security encryption has been suggested.</summary>
   </member>
   <member name="BASEBROWSERDATA._eSecureLockIcon.SECURELOCK_SUGGEST_MIXED">
-    <summary>
-      <para>Mixed security encryption methods have been suggested.</para>
-    </summary>
+    <summary>Mixed security encryption methods have been suggested.</summary>
   </member>
   <member name="BASEBROWSERDATA._eSecureLockIcon.SECURELOCK_SUGGEST_SECURE128BIT">
-    <summary>
-      <para>128-bit security encryption has been suggested.</para>
-    </summary>
+    <summary>128-bit security encryption has been suggested.</summary>
   </member>
   <member name="BASEBROWSERDATA._eSecureLockIcon.SECURELOCK_SUGGEST_SECURE40BIT">
-    <summary>
-      <para>40-bit security encryption has been suggested.</para>
-    </summary>
+    <summary>40-bit security encryption has been suggested.</summary>
   </member>
   <member name="BASEBROWSERDATA._eSecureLockIcon.SECURELOCK_SUGGEST_SECURE56BIT">
-    <summary>
-      <para>56-bit security encryption has been suggested.</para>
-    </summary>
+    <summary>56-bit security encryption has been suggested.</summary>
   </member>
   <member name="BASEBROWSERDATA._eSecureLockIcon.SECURELOCK_SUGGEST_SECUREUNKNOWNBIT">
-    <summary>
-      <para>Unknown security encryption method has been suggested.</para>
-    </summary>
+    <summary>Unknown security encryption method has been suggested.</summary>
   </member>
-  <member name="BASEBROWSERDATA._eSecureLockIcon.SECURELOCK_SUGGEST_UNSECURE (SECURELOCK_FIRSTSUGGEST)">
-    <summary>
-      <para>No security encryption has been suggested.</para>
-    </summary>
+  <member name="BASEBROWSERDATA._eSecureLockIcon.SECURELOCK_SUGGEST_UNSECURE">
+    <summary>No security encryption has been suggested.</summary>
   </member>
   <member name="BASEBROWSERDATA._fIsViewMSHTML.FALSE">
-    <summary>
-      <para>The browser is hosting folder content.</para>
-    </summary>
+    <summary>The browser is hosting folder content.</summary>
   </member>
   <member name="BASEBROWSERDATA._fIsViewMSHTML.TRUE">
-    <summary>
-      <para>The browser is hosting web content.</para>
-    </summary>
+    <summary>The browser is hosting web content.</summary>
   </member>
   <member name="BASEBROWSERDATA._fPrivacyImpacted.FALSE">
-    <summary>
-      <para>There is not a privacy concern with the browser's content.</para>
-    </summary>
+    <summary>There is not a privacy concern with the browser's content.</summary>
   </member>
   <member name="BASEBROWSERDATA._fPrivacyImpacted.TRUE">
     <summary>
       <para>There is a privacy concern with the browser's content.</para>
       <h4>- _lPhishingFilterStatus</h4>
-      <para>Type: <b>LONG</b></para>
       <para>
         <b>Windows Vista with Service Pack 1 (SP1) and later or Windows Internet Explorer 7 and later only</b>. 0 if the phishing filter is off; 1 if it is on.</para>
       <h4>- _pidlNewShellView</h4>
-      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
       <para>A temporary placeholder for <b>_pidlPending</b> on first navigation to the pending location.</para>
     </summary>
   </member>

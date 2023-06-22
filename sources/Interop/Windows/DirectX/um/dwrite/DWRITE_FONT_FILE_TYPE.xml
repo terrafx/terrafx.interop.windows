@@ -3,51 +3,31 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_FONT_FILE_TYPE">
-    <summary>
-      <para>The type of a font represented by a single font file. Font formats that consist of multiple files, for example Type 1 .PFM and .PFB, have separate enum values for each of the file types.</para>
-    </summary>
+    <summary>The type of a font represented by a single font file. Font formats that consist of multiple files, for example Type 1 .PFM and .PFB, have separate enum values for each of the file types.</summary>
   </member>
   <member name="DWRITE_FONT_FILE_TYPE.DWRITE_FONT_FILE_TYPE_UNKNOWN">
-    <summary>
-      <para>Font type is not recognized by the DirectWrite font system.</para>
-    </summary>
+    <summary>Font type is not recognized by the DirectWrite font system.</summary>
   </member>
   <member name="DWRITE_FONT_FILE_TYPE.DWRITE_FONT_FILE_TYPE_CFF">
-    <summary>
-      <para>OpenType font with CFF outlines.</para>
-    </summary>
+    <summary>OpenType font with CFF outlines.</summary>
   </member>
   <member name="DWRITE_FONT_FILE_TYPE.DWRITE_FONT_FILE_TYPE_TRUETYPE">
-    <summary>
-      <para>OpenType font with TrueType outlines.</para>
-    </summary>
+    <summary>OpenType font with TrueType outlines.</summary>
   </member>
-  <member name="DWRITE_FONT_FILE_TYPE.DWRITE_FONT_FILE_TYPE_OPENTYPE_COLLECTION">
-    <summary></summary>
-  </member>
+  <member name="DWRITE_FONT_FILE_TYPE.DWRITE_FONT_FILE_TYPE_OPENTYPE_COLLECTION"></member>
   <member name="DWRITE_FONT_FILE_TYPE.DWRITE_FONT_FILE_TYPE_TYPE1_PFM">
-    <summary>
-      <para>Type 1 PFM font.</para>
-    </summary>
+    <summary>Type 1 PFM font.</summary>
   </member>
   <member name="DWRITE_FONT_FILE_TYPE.DWRITE_FONT_FILE_TYPE_TYPE1_PFB">
-    <summary>
-      <para>Type 1 PFB font.</para>
-    </summary>
+    <summary>Type 1 PFB font.</summary>
   </member>
   <member name="DWRITE_FONT_FILE_TYPE.DWRITE_FONT_FILE_TYPE_VECTOR">
-    <summary>
-      <para>Vector .FON font.</para>
-    </summary>
+    <summary>Vector .FON font.</summary>
   </member>
   <member name="DWRITE_FONT_FILE_TYPE.DWRITE_FONT_FILE_TYPE_BITMAP">
-    <summary>
-      <para>Bitmap .FON font.</para>
-    </summary>
+    <summary>Bitmap .FON font.</summary>
   </member>
   <member name="DWRITE_FONT_FILE_TYPE.DWRITE_FONT_FILE_TYPE_TRUETYPE_COLLECTION">
-    <summary>
-      <para>OpenType font that contains a TrueType collection.</para>
-    </summary>
+    <summary>OpenType font that contains a TrueType collection.</summary>
   </member>
 </doc>

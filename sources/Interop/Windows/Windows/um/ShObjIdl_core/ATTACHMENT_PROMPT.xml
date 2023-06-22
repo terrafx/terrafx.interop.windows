@@ -3,28 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ATTACHMENT_PROMPT">
-    <summary>
-      <para>Provides a set of flags to be used with <see cref="IAttachmentExecute.Prompt" /> to indicate the type of prompt UI to display.</para>
-    </summary>
+    <summary>Provides a set of flags to be used with <see cref="IAttachmentExecute.Prompt" /> to indicate the type of prompt UI to display.</summary>
   </member>
   <member name="ATTACHMENT_PROMPT.ATTACHMENT_PROMPT_NONE">
-    <summary>
-      <para>Do not use.</para>
-    </summary>
+    <summary>Do not use.</summary>
   </member>
   <member name="ATTACHMENT_PROMPT.ATTACHMENT_PROMPT_SAVE">
-    <summary>
-      <para>Displays a prompt asking whether the user would like to save the attachment.</para>
-    </summary>
+    <summary>Displays a prompt asking whether the user would like to save the attachment.</summary>
   </member>
   <member name="ATTACHMENT_PROMPT.ATTACHMENT_PROMPT_EXEC">
-    <summary>
-      <para>Displays a prompt asking whether the user would like to execute the attachment.</para>
-    </summary>
+    <summary>Displays a prompt asking whether the user would like to execute the attachment.</summary>
   </member>
   <member name="ATTACHMENT_PROMPT.ATTACHMENT_PROMPT_EXEC_OR_SAVE">
-    <summary>
-      <para>Displays a prompt giving the user a choice of executing or saving the attachment.</para>
-    </summary>
+    <summary>Displays a prompt giving the user a choice of executing or saving the attachment.</summary>
   </member>
 </doc>

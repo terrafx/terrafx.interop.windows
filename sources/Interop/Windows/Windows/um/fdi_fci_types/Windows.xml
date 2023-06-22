@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.TCOMPfromLZXWindow">
+    <summary>The <b>TCOMPfromLZXWindow</b> macro converts window size into an LXZTCOMP value for <see cref="FCIAddFile" />.</summary>
+    <param name="w">The LZX window size. Possible value range is 15-21.</param>
+  </member>
+</doc>

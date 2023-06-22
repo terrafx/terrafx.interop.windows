@@ -3,22 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IActiveDesktopP.SetSafeMode">
-    <summary>
-      <para>Sets or updates the Microsoft Active Desktop to safe mode.</para>
-    </summary>
+    <summary>Sets or updates the Microsoft Active Desktop to safe mode.</summary>
     <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
       <para>One of the following flags.</para>
       <h4>SSM_SET</h4>
       <para>Set to safe mode.</para>
       <h4>SSM_UPDATE</h4>
       <para>Update to safe mode.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or an error code otherwise.</para>
-    </returns>
-    <seealso cref="IActiveDesktopP" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/lwef/active-desktop-interface">Using the Active Desktop Object</seealso>
+    <returns>Returns S_OK if successful, or an error code otherwise.</returns>
   </member>
 </doc>

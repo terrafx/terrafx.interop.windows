@@ -3,34 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TF_DA_LINESTYLE">
-    <summary>
-      <para>Elements of the <b>TF_DA_LINESTYLE</b> enumeration specify the underline style of a display attribute in the <see cref="TF_DA_COLOR" /> structure.</para>
-    </summary>
-    <seealso cref="TF_DA_COLOR " />
+    <summary>Elements of the <b>TF_DA_LINESTYLE</b> enumeration specify the underline style of a display attribute in the <see cref="TF_DA_COLOR" /> structure.</summary>
   </member>
   <member name="TF_DA_LINESTYLE.TF_LS_NONE">
-    <summary>
-      <para>The text is not underlined.</para>
-    </summary>
+    <summary>The text is not underlined.</summary>
   </member>
   <member name="TF_DA_LINESTYLE.TF_LS_SOLID">
-    <summary>
-      <para>The text is underlined with a solid line.</para>
-    </summary>
+    <summary>The text is underlined with a solid line.</summary>
   </member>
   <member name="TF_DA_LINESTYLE.TF_LS_DOT">
-    <summary>
-      <para>The text is underlined with a dotted line.</para>
-    </summary>
+    <summary>The text is underlined with a dotted line.</summary>
   </member>
   <member name="TF_DA_LINESTYLE.TF_LS_DASH">
-    <summary>
-      <para>The text is underlined with a dashed line.</para>
-    </summary>
+    <summary>The text is underlined with a dashed line.</summary>
   </member>
   <member name="TF_DA_LINESTYLE.TF_LS_SQUIGGLE">
-    <summary>
-      <para>The text is underlined with a solid wavy line.</para>
-    </summary>
+    <summary>The text is underlined with a solid wavy line.</summary>
   </member>
 </doc>

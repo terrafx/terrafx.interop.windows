@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYNCMGR_SYNC_CONTROL_FLAGS">
-    <summary>
-      <para>Indicates flags used by <see cref="ISyncMgrControl.StartHandlerSync" /> and <see cref="ISyncMgrControl.StartItemSync" />.</para>
-    </summary>
-    <remarks>
-      <para>Typically, sync requests are queued if a synchronization is currently in progress. An item might be in both the ongoing synchronization and the queued synchronization. These flags specify whether such an item should be resynched when the queued synchronization is performed.</para>
-    </remarks>
+    <summary>Indicates flags used by <see cref="ISyncMgrControl.StartHandlerSync" /> and <see cref="ISyncMgrControl.StartItemSync" />.</summary>
   </member>
   <member name="SYNCMGR_SYNC_CONTROL_FLAGS.SYNCMGR_SCF_NONE">
-    <summary>
-      <para>Sync all items, regardless of whether they were just synced.</para>
-    </summary>
+    <summary>Sync all items, regardless of whether they were just synced.</summary>
   </member>
   <member name="SYNCMGR_SYNC_CONTROL_FLAGS.SYNCMGR_SCF_IGNORE_IF_ALREADY_SYNCING">
-    <summary>
-      <para>Sync only items that are not currently syncing.</para>
-    </summary>
+    <summary>Sync only items that are not currently syncing.</summary>
   </member>
   <member name="SYNCMGR_SYNC_CONTROL_FLAGS.SYNCMGR_SCF_VALID">
-    <summary>
-      <para>A mask used to retrieve or verify valid <see cref="SYNCMGR_SYNC_CONTROL_FLAGS" /> flags.</para>
-    </summary>
+    <summary>A mask used to retrieve or verify valid <see cref="SYNCMGR_SYNC_CONTROL_FLAGS" /> flags.</summary>
   </member>
 </doc>

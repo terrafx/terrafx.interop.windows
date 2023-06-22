@@ -3,34 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_OPM_ACP_PROTECTION_LEVEL">
-    <summary>
-      <para>Defines protection levels for <b>MFPROTECTION_ACP</b>.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Defines protection levels for <b>MFPROTECTION_ACP</b>.</summary>
   </member>
   <member name="MF_OPM_ACP_PROTECTION_LEVEL.MF_OPM_ACP_OFF">
-    <summary>
-      <para>Specifies ACP is disabled.</para>
-    </summary>
+    <summary>Specifies ACP is disabled.</summary>
   </member>
   <member name="MF_OPM_ACP_PROTECTION_LEVEL.MF_OPM_ACP_LEVEL_ONE">
-    <summary>
-      <para>Specifies ACP is level one.</para>
-    </summary>
+    <summary>Specifies ACP is level one.</summary>
   </member>
   <member name="MF_OPM_ACP_PROTECTION_LEVEL.MF_OPM_ACP_LEVEL_TWO">
-    <summary>
-      <para>Specifies ACP is level two.</para>
-    </summary>
+    <summary>Specifies ACP is level two.</summary>
   </member>
   <member name="MF_OPM_ACP_PROTECTION_LEVEL.MF_OPM_ACP_LEVEL_THREE">
-    <summary>
-      <para>Specifies ACP is level three.</para>
-    </summary>
+    <summary>Specifies ACP is level three.</summary>
   </member>
   <member name="MF_OPM_ACP_PROTECTION_LEVEL.MF_OPM_ACP_FORCE_ULONG">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
 </doc>

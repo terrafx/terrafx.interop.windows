@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="INHERITED_FROMA">
+    <summary>The <b>INHERITED_FROM</b> structure provides information about an object's inherited <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control entry</a> (ACE).</summary>
+  </member>
+  <member name="INHERITED_FROMA.GenerationGap">
+    <summary>Number of levels, or generations, between the object and the ancestor. Set this to zero for an explicit ACE. If the ancestor cannot be determined for the inherited ACE, set this member to –1.</summary>
+  </member>
+  <member name="INHERITED_FROMA.AncestorName">
+    <summary>Name of the ancestor from which the ACE was inherited. For an explicit ACE, set this to <b>NULL</b>.</summary>
+  </member>
+  <member name="INHERITED_FROMA">
+    <summary>The <b>INHERITED_FROM</b> structure provides information about an object's inherited <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control entry</a> (ACE).</summary>
+  </member>
+  <member name="INHERITED_FROMA.GenerationGap">
+    <summary>Number of levels, or generations, between the object and the ancestor. Set this to zero for an explicit ACE. If the ancestor cannot be determined for the inherited ACE, set this member to –1.</summary>
+  </member>
+  <member name="INHERITED_FROMA.AncestorName">
+    <summary>Name of the ancestor from which the ACE was inherited. For an explicit ACE, set this to <b>NULL</b>.</summary>
+  </member>
+</doc>

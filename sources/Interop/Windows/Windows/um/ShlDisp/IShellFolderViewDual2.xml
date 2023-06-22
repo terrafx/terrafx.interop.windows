@@ -3,58 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IShellFolderViewDual2.get_CurrentViewMode">
-    <summary>
-      <para>Gets the current view mode of the current folder.</para>
-    </summary>
-    <param name="pViewMode">
-      <para>Type: <b>uint*</b></para>
-      <para>When this method returns, contains a pointer to an unsigned integer that represents the current view mode. For a list of possible values see <see cref="FOLDERVIEWMODE" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IShellFolderViewDual2" />
-    <seealso cref="IShellFolderViewDual2.put_CurrentViewMode" />
+    <summary>Gets the current view mode of the current folder.</summary>
+    <param name="pViewMode">When this method returns, contains a pointer to an unsigned integer that represents the current view mode. For a list of possible values see <see cref="FOLDERVIEWMODE" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolderViewDual2.put_CurrentViewMode">
-    <summary>
-      <para>Sets the current view mode of the current folder.</para>
-    </summary>
-    <param name="ViewMode">
-      <para>Type: <b>uint</b></para>
-      <para>Sets the current view mode. For a list of possible values see <see cref="FOLDERVIEWMODE" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IShellFolderViewDual2" />
-    <seealso cref="IShellFolderViewDual2.get_CurrentViewMode" />
+    <summary>Sets the current view mode of the current folder.</summary>
+    <param name="ViewMode">Sets the current view mode. For a list of possible values see <see cref="FOLDERVIEWMODE" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolderViewDual2.SelectItemRelative">
-    <summary>
-      <para>Selects an item relative to the current item.</para>
-    </summary>
-    <param name="iRelative">
-      <para>Type: <b>int</b></para>
-      <para>The offset of the item to be selected in relation to the current item.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The current item is defined as the item in the view with the SVSI_SELECTIONMARK state. If there is no item with SVSI_SELECTIONMARK, the method returns S_FALSE and does nothing.</para>
-    </remarks>
+    <summary>Selects an item relative to the current item.</summary>
+    <param name="iRelative">The offset of the item to be selected in relation to the current item.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolderViewDual2">
-    <summary>
-      <para>Exposes methods that modify the view and select items in the current folder.</para>
-    </summary>
-    <remarks>
-      <para>This interface also provides the methods of the <see cref="IShellFolderViewDual" /> interface, from which it inherits.</para>
-    </remarks>
-    <seealso cref="IShellFolderViewDual" />
+    <summary>Exposes methods that modify the view and select items in the current folder.</summary>
   </member>
 </doc>

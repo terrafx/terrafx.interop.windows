@@ -3,151 +3,88 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1DeviceContext1.CreateFilledGeometryRealization">
-    <summary>
-      <para>Creates a device-dependent representation of the fill of the geometry that can be subsequently rendered.</para>
-    </summary>
-    <param name="geometry">
-      <para>Type: <b><see cref="ID2D1Geometry" />*</b></para>
-      <para>The geometry to realize.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The flattening tolerance to use when converting Beziers to line segments. This parameter shares the same units as the coordinates of the geometry.</para>
-    </param>
-    <param name="geometryRealization">
-      <para>Type: <b><see cref="ID2D1GeometryRealization" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to a new geometry realization object.</para>
-    </param>
+    <summary>Creates a device-dependent representation of the fill of the geometry that can be subsequently rendered.</summary>
+    <param name="geometry">The geometry to realize.</param>
+    <param name="flatteningTolerance">The flattening tolerance to use when converting Beziers to line segments. This parameter shares the same units as the coordinates of the geometry.</param>
+    <param name="geometryRealization">When this method returns, contains the address of a pointer to a new geometry realization object.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is used in conjunction with <see cref="ID2D1DeviceContext1.DrawGeometryRealization" />. The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dn280327(v=vs.85)">D2D1.ComputeFlatteningTolerance</a> helper API may be used to determine the proper flattening tolerance.</para>
-      <para>If the provided stroke style specifies a stroke transform type other than <see cref="D2D1_STROKE_TRANSFORM_TYPE_NORMAL" />, then the stroke will be realized assuming the identity transform and a DPI of 96.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext1" />
   </member>
   <member name="ID2D1DeviceContext1.CreateStrokedGeometryRealization">
-    <summary>
-      <para>Creates a device-dependent representation of the stroke of a geometry that can be subsequently rendered.</para>
-    </summary>
-    <param name="geometry">
-      <para>Type: <b><see cref="ID2D1Geometry" />*</b></para>
-      <para>The geometry to realize.</para>
-    </param>
-    <param name="flatteningTolerance">
-      <para>Type: <b>FLOAT </b></para>
-      <para>The flattening tolerance to use when converting Beziers to line segments. This parameter shares the same units as the coordinates of the geometry.</para>
-    </param>
-    <param name="strokeWidth">
-      <para>Type: <b>FLOAT </b></para>
-      <para>The width of the stroke. This parameter shares the same units as the coordinates of the geometry.</para>
-    </param>
-    <param name="strokeStyle">
-      <para>Type: <b><see cref="ID2D1StrokeStyle" />*</b></para>
-      <para>The stroke style (optional).</para>
-    </param>
-    <param name="geometryRealization">
-      <para>Type: <b><see cref="ID2D1GeometryRealization" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to a new geometry realization object.</para>
-    </param>
+    <summary>Creates a device-dependent representation of the stroke of a geometry that can be subsequently rendered.</summary>
+    <param name="geometry">The geometry to realize.</param>
+    <param name="flatteningTolerance">The flattening tolerance to use when converting Beziers to line segments. This parameter shares the same units as the coordinates of the geometry.</param>
+    <param name="strokeWidth">The width of the stroke. This parameter shares the same units as the coordinates of the geometry.</param>
+    <param name="strokeStyle">The stroke style (optional).</param>
+    <param name="geometryRealization">When this method returns, contains the address of a pointer to a new geometry realization object.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is used in conjunction with <see cref="ID2D1DeviceContext1.DrawGeometryRealization" />. The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dn280327(v=vs.85)">D2D1.ComputeFlatteningTolerance</a> helper API may be used to determine the proper flattening tolerance.</para>
-      <para>If the provided stroke style specifies a stroke transform type other than <see cref="D2D1_STROKE_TRANSFORM_TYPE_NORMAL" />, then the stroke will be realized assuming the identity transform and a DPI of 96.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext1" />
   </member>
   <member name="ID2D1DeviceContext1.DrawGeometryRealization">
-    <summary>
-      <para>Renders a given geometry realization to the target with the specified brush.</para>
-    </summary>
-    <param name="geometryRealization">
-      <para>Type: <b><see cref="ID2D1GeometryRealization" />*</b></para>
-      <para>The geometry realization to be rendered.</para>
-    </param>
-    <param name="brush">
-      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
-      <para>The brush to render the realization with.</para>
-    </param>
+    <summary>Renders a given geometry realization to the target with the specified brush.</summary>
+    <param name="geometryRealization">The geometry realization to be rendered.</param>
+    <param name="brush">The brush to render the realization with.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
-          <description>Direct2D could not allocate sufficient memory to complete the call.
-</description>
-        </item>
-        <item>
+          <description>Direct2D could not allocate sufficient memory to complete the call.</description>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method respects all currently set state (transform, DPI, unit mode, target image, clips, layers);
-however, artifacts such as faceting may appear when rendering the realizations with a large effective scale (either via the transform or the DPI).
-Callers should create their realizations with an appropriate flattening tolerance using either <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-constants">D2D1_DEFAULT_FLATTENING_TOLERANCE</a></para>
-      <para>or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dn280327(v=vs.85)">ComputeFlatteningTolerance</a> to compensate for this.</para>
-      <para>Additionally, callers should be aware of the safe render bounds when creating geometry realizations.
-If a geometry extends outside of [-524,287, 524,287] DIPs in either the X- or the Y- direction in its original (pre-transform) coordinate space,
-then it may be clipped to those bounds when it is realized. This clipping will be visible even if the realization is subsequently transformed to fit within the safe render bounds.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext1" />
   </member>
   <member name="ID2D1DeviceContext1">
-    <summary>
-      <para>Enables creation and drawing of geometry realization objects.</para>
-    </summary>
-    <seealso cref="ID2D1DeviceContext" />
+    <summary>Enables creation and drawing of geometry realization objects.</summary>
   </member>
 </doc>

@@ -3,49 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="AASHELLMENUITEM">
-    <summary>
-      <para>Contains information about a menu item.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>Important</b>  This structure cannot be used with operating systems later than Windows 2000.</para>
-      <para>If the menu belongs to the Windows Explorer process and the menu item is MFT_OWNERDRAW and <b>dwItemData</b> is not <b>NULL</b>, then the <b>dwItemData</b> member can be probed to determine whether it is a Windows Explorer menu that shows owner-drawn file names.</para>
-      <para>The accessibility tool might treat the <b>dwItemData</b> member as a pointer to an <b>AASHELLMENUITEM</b> structure in the process that owns the menu. In this case the <b>lpName</b> and <b>psz</b> members might be examined to determine the identity of the menu item. If <b>lpName</b> is not <b>NULL</b>, then the menu item represents a file name, expressed as an <see cref="AASHELLMENUFILENAME" /> structure. If <b>lpName</b> is <b>NULL</b> but <b>psz</b> is not <b>NULL</b>, then the menu item represents a string that is pointed to by the <b>psz</b> member.</para>
-      <para>The <b>lpName</b> and <b>psz</b> members contain pointers into the process that owns the menu.</para>
-      <para>
-        <b>Note</b>  Not all owner-draw menus in the Windows Explorer process conform to this convention.</para>
-      <para>Applications that probe owner-draw menu data must validate all data read from the process.</para>
-    </remarks>
-    <seealso cref="AASHELLMENUFILENAME" />
+    <summary>Contains information about a menu item.</summary>
   </member>
   <member name="AASHELLMENUITEM.lpReserved1">
-    <summary>
-      <para>Type: <b>VOID</b></para>
-      <para>Reserved. Applications should ignore this value.</para>
-    </summary>
+    <summary>Reserved. Applications should ignore this value.</summary>
   </member>
   <member name="AASHELLMENUITEM.iReserved">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Reserved. Applications should ignore this value.</para>
-    </summary>
+    <summary>Reserved. Applications should ignore this value.</summary>
   </member>
   <member name="AASHELLMENUITEM.uiReserved">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>Reserved. Applications should ignore this value.</para>
-    </summary>
+    <summary>Reserved. Applications should ignore this value.</summary>
   </member>
   <member name="AASHELLMENUITEM.lpName">
-    <summary>
-      <para>Type: <b>LPAASHELLMENUFILENAME</b></para>
-      <para>If the selected menu item represents a file, this member is a pointer to an <see cref="AASHELLMENUFILENAME" /> structure that contains the name of the file. Otherwise this member is <b>NULL</b>.</para>
-    </summary>
+    <summary>If the selected menu item represents a file, this member is a pointer to an <see cref="AASHELLMENUFILENAME" /> structure that contains the name of the file. Otherwise this member is <b>NULL</b>.</summary>
   </member>
   <member name="AASHELLMENUITEM.psz">
-    <summary>
-      <para>Type: <b>LPTSTR</b></para>
-      <para>A pointer to the string that contains the text to use if there is no file.</para>
-    </summary>
+    <summary>A pointer to the string that contains the text to use if there is no file.</summary>
   </member>
 </doc>

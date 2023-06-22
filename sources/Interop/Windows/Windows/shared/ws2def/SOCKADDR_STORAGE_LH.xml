@@ -3,75 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SOCKADDR_STORAGE_LH">
-    <summary>
-      <para>The SOCKADDR_STORAGE structure is a generic structure that specifies a transport address.</para>
-    </summary>
-    <remarks>
-      <para>A WSK application typically does not directly access any of the members of the SOCKADDR_STORAGE
-structure except for the
-<b>ss_family</b> member. Instead, a pointer to a SOCKADDR_STORAGE structure is normally cast to a pointer
-to the specific SOCKADDR structure type that corresponds to a particular address family.</para>
-    </remarks>
-    <seealso cref="SOCKADDR" />
+    <summary>The SOCKADDR_STORAGE structure is a generic structure that specifies a transport address.</summary>
   </member>
   <member name="SOCKADDR_STORAGE_LH.ss_family">
-    <summary>
-      <para>The address family for the transport address. For more information about supported address
-families, see
-<a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/mt808757(v=vs.85)">WSK Address Families</a>.</para>
-    </summary>
+    <summary>The address family for the transport address. For more information about supported address families, see<a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/mt808757(v=vs.85)">WSK Address Families</a>.</summary>
   </member>
   <member name="SOCKADDR_STORAGE_LH.__ss_pad1">
-    <summary>
-      <para>A padding of 6 bytes that puts the
-<b>__ss_align</b> member on an eight-byte boundary within the structure.</para>
-    </summary>
+    <summary>A padding of 6 bytes that puts the<b>__ss_align</b> member on an eight-byte boundary within the structure.</summary>
   </member>
   <member name="SOCKADDR_STORAGE_LH.__ss_align">
-    <summary>
-      <para>A 64-bit value that forces the structure to be 8-byte aligned.</para>
-    </summary>
+    <summary>A 64-bit value that forces the structure to be 8-byte aligned.</summary>
   </member>
   <member name="SOCKADDR_STORAGE_LH.__ss_pad2">
-    <summary>
-      <para>A padding of an additional 112 bytes that brings the total size of the SOCKADDR_STORAGE structure
-to 128 bytes.</para>
-    </summary>
+    <summary>A padding of an additional 112 bytes that brings the total size of the SOCKADDR_STORAGE structure to 128 bytes.</summary>
   </member>
   <member name="SOCKADDR_STORAGE_LH">
-    <summary>
-      <para>The SOCKADDR_STORAGE structure is a generic structure that specifies a transport address.</para>
-    </summary>
-    <remarks>
-      <para>A WSK application typically does not directly access any of the members of the SOCKADDR_STORAGE
-structure except for the
-<b>ss_family</b> member. Instead, a pointer to a SOCKADDR_STORAGE structure is normally cast to a pointer
-to the specific SOCKADDR structure type that corresponds to a particular address family.</para>
-    </remarks>
-    <seealso cref="SOCKADDR" />
+    <summary>The SOCKADDR_STORAGE structure is a generic structure that specifies a transport address.</summary>
   </member>
   <member name="SOCKADDR_STORAGE_LH.ss_family">
-    <summary>
-      <para>The address family for the transport address. For more information about supported address
-families, see
-<a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/mt808757(v=vs.85)">WSK Address Families</a>.</para>
-    </summary>
+    <summary>The address family for the transport address. For more information about supported address families, see<a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/mt808757(v=vs.85)">WSK Address Families</a>.</summary>
   </member>
   <member name="SOCKADDR_STORAGE_LH.__ss_pad1">
-    <summary>
-      <para>A padding of 6 bytes that puts the
-<b>__ss_align</b> member on an eight-byte boundary within the structure.</para>
-    </summary>
+    <summary>A padding of 6 bytes that puts the<b>__ss_align</b> member on an eight-byte boundary within the structure.</summary>
   </member>
   <member name="SOCKADDR_STORAGE_LH.__ss_align">
-    <summary>
-      <para>A 64-bit value that forces the structure to be 8-byte aligned.</para>
-    </summary>
+    <summary>A 64-bit value that forces the structure to be 8-byte aligned.</summary>
   </member>
   <member name="SOCKADDR_STORAGE_LH.__ss_pad2">
-    <summary>
-      <para>A padding of an additional 112 bytes that brings the total size of the SOCKADDR_STORAGE structure
-to 128 bytes.</para>
-    </summary>
+    <summary>A padding of an additional 112 bytes that brings the total size of the SOCKADDR_STORAGE structure to 128 bytes.</summary>
   </member>
 </doc>

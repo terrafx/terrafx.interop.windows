@@ -3,18 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_COUNTER">
-    <summary>
-      <para>Options for performance counters.</para>
-    </summary>
-    <remarks>
-      <para>Independent hardware vendors may define their own set of performance counters for their devices, by giving the enumeration value a number that is greater than the value for D3D11_COUNTER_DEVICE_DEPENDENT_0.</para>
-      <para>This enumeration is used by <see cref="D3D11_COUNTER_DESC" /> and <see cref="D3D11_COUNTER_INFO" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-enums">Core Enumerations</seealso>
+    <summary>Options for performance counters.</summary>
   </member>
   <member name="D3D11_COUNTER.D3D11_COUNTER_DEVICE_DEPENDENT_0">
-    <summary>
-      <para>Define a performance counter that is dependent on the hardware device.</para>
-    </summary>
+    <summary>Define a performance counter that is dependent on the hardware device.</summary>
   </member>
 </doc>

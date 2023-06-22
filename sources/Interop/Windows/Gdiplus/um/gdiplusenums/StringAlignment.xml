@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="StringAlignment">
+    <summary>The <b>StringAlignment</b> enumeration specifies how a string is aligned in reference to the bounding rectangle. A bounding rectangle is used to define the area in which the text displays.</summary>
+  </member>
+  <member name="StringAlignment.StringAlignmentNear">
+    <summary>Specifies that alignment is towards the origin of the bounding rectangle. May be used for alignment of characters along the line or for alignment of lines within the rectangle. For a right to left bounding rectangle (<see cref="StringFormatFlagsDirectionRightToLeft" />), the origin is at the upper right.</summary>
+  </member>
+  <member name="StringAlignment.StringAlignmentCenter">
+    <summary>Specifies that alignment is centered between origin and extent (width) of the formatting rectangle.</summary>
+  </member>
+  <member name="StringAlignment.StringAlignmentFar">
+    <summary>Specifies that alignment is to the far extent (right side) of the formatting rectangle.</summary>
+  </member>
+</doc>

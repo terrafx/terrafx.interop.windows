@@ -6,31 +6,19 @@
     <summary>
       <para>The <b>CERT_KEY_USAGE_RESTRICTION_INFO</b> structure contains restrictions imposed on the usage of a certificate's public key. This includes purposes for use of the key and policies under which the key can be used.</para>
       <para>
-        <see cref="CryptDecodeObject" /> creates an instance of this structure when performed on a
-<see cref="CERT_EXTENSION" /> structure's <b>Value</b> member with its structure's <b>pszObjId</b> member set to szOID_KEY_USAGE_RESTRICTION.</para>
+        <see cref="CryptDecodeObject" /> creates an instance of this structure when performed on a<see cref="CERT_EXTENSION" /> structure's <b>Value</b> member with its structure's <b>pszObjId</b> member set to szOID_KEY_USAGE_RESTRICTION.</para>
       <para>An instance of this structure can be used as input to the <see cref="CryptEncodeObject" /> function to create an appropriate <see cref="CERT_EXTENSION" />.</para>
     </summary>
-    <seealso cref="CERT_EXTENSION" />
-    <seealso cref="CERT_POLICY_ID" />
-    <seealso cref="CRYPT_BIT_BLOB" />
-    <seealso cref="CryptDecodeObject" />
-    <seealso cref="CryptEncodeObject" />
   </member>
   <member name="CERT_KEY_USAGE_RESTRICTION_INFO.cCertPolicyId">
-    <summary>
-      <para>The number of elements in the <b>rgCertPolicyId</b> array.</para>
-    </summary>
+    <summary>The number of elements in the <b>rgCertPolicyId</b> array.</summary>
   </member>
   <member name="CERT_KEY_USAGE_RESTRICTION_INFO.rgCertPolicyId">
-    <summary>
-      <para>An array of pointers to
-<see cref="CERT_POLICY_ID" /> structures.</para>
-    </summary>
+    <summary>An array of pointers to<see cref="CERT_POLICY_ID" /> structures.</summary>
   </member>
   <member name="CERT_KEY_USAGE_RESTRICTION_INFO.RestrictedKeyUsage">
     <summary>
-      <para>A
-<see cref="CRYPT_BIT_BLOB" /> value that includes, as its <b>pbData</b>, a byte that indicates the purposes for which the key can be used.</para>
+      <para>A<see cref="CRYPT_BIT_BLOB" /> value that includes, as its <b>pbData</b>, a byte that indicates the purposes for which the key can be used.</para>
       <para>If the <b>cbData</b> member is zero, the key has no usage restrictions.</para>
       <para>The following are currently defined values for the <b>pbData</b> member of <b>RestrictedKeyUsage</b>. These can be combined using a bitwise-<b>OR</b> operation.</para>
       <list type="bullet">

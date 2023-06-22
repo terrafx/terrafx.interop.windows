@@ -3,29 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRYPTNET_URL_CACHE_RESPONSE_INFO">
-    <summary>
-      <para>The <b>CRYPTNET_URL_CACHE_RESPONSE_INFO</b> structure contains response information used by the Cryptnet URL Cache (CUC) service to maintain a URL cache entry. This structure composes the <b>pResponseInfo</b> member of the <see cref="CRYPT_RETRIEVE_AUX_INFO" /> structure, which is passed to <see cref="CryptRetrieveObjectByUrl" /> as the <i>pAuxInfo</i> parameter.</para>
-    </summary>
-    <remarks>
-      <para>If not specified in the HTTP response headers, the cache service sets the values of the <b>LastModifiedTime</b>, <b>dwMaxAge</b>, <b>pwszETag</b>, and <b>dwProxyId</b> members to zero.</para>
-      <para>The cache service only allows a strong <b>ETag</b> in the <b>pwszETag</b> member.</para>
-      <para>To determine whether a response is valid, the cache service performs a bitwise <b>AND</b> of the <b>wResponseFlags</b> member with the following constant defined in Wincrypt.h. If the result is <b>TRUE</b>, the response is valid.</para>
-      <list type="table">
-        <listheader>
-          <description>Name</description>
-          <description>Value</description>
-        </listheader>
-        <item>
-          <description>CRYPTNET_URL_CACHE_RESPONSE_VALIDATED</description>
-          <description>0x8000</description>
-        </item>
-      </list>
-    </remarks>
+    <summary>The <b>CRYPTNET_URL_CACHE_RESPONSE_INFO</b> structure contains response information used by the Cryptnet URL Cache (CUC) service to maintain a URL cache entry. This structure composes the <b>pResponseInfo</b> member of the <see cref="CRYPT_RETRIEVE_AUX_INFO" /> structure, which is passed to <see cref="CryptRetrieveObjectByUrl" /> as the <i>pAuxInfo</i> parameter.</summary>
   </member>
   <member name="CRYPTNET_URL_CACHE_RESPONSE_INFO.cbSize">
-    <summary>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="CRYPTNET_URL_CACHE_RESPONSE_INFO.wResponseType">
     <summary>
@@ -35,66 +16,52 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CRYPTNET_URL_CACHE_RESPONSE_NONE</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The cache entry contains no response information.</para>
-          </description>
-        </item>
-        <item>
+          <description>The cache entry contains no response information.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CRYPTNET_URL_CACHE_RESPONSE_HTTP</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The cache entry contains response information derived from HTTP response headers.</para>
-          </description>
-        </item>
+          <description>The cache entry contains response information derived from HTTP response headers.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="CRYPTNET_URL_CACHE_RESPONSE_INFO.wResponseFlags">
-    <summary>
-      <para>A value that specifies a collection of flags that control server-based certificate validation response options.</para>
-    </summary>
+    <summary>A value that specifies a collection of flags that control server-based certificate validation response options.</summary>
   </member>
   <member name="CRYPTNET_URL_CACHE_RESPONSE_INFO.LastModifiedTime">
-    <summary>
-      <para>A <b>FILETIME</b> structure that specifies the <b>Last-Modified</b> entity-header field value  of the cached HTTP response for the URL.</para>
-    </summary>
+    <summary>A <b>FILETIME</b> structure that specifies the <b>Last-Modified</b> entity-header field value of the cached HTTP response for the URL.</summary>
   </member>
   <member name="CRYPTNET_URL_CACHE_RESPONSE_INFO.dwMaxAge">
-    <summary>
-      <para>A value that specifies the number of seconds in the <b>max-age</b> directive  of the <b>Cache-Control</b> header of the cached HTTP response for the URL.</para>
-    </summary>
+    <summary>A value that specifies the number of seconds in the <b>max-age</b> directive of the <b>Cache-Control</b> header of the cached HTTP response for the URL.</summary>
   </member>
   <member name="CRYPTNET_URL_CACHE_RESPONSE_INFO.pwszETag">
-    <summary>
-      <para>A pointer to a string that contains the <b>ETag</b> response-header field value of the cached HTTP response for the URL.</para>
-    </summary>
+    <summary>A pointer to a string that contains the <b>ETag</b> response-header field value of the cached HTTP response for the URL.</summary>
   </member>
   <member name="CRYPTNET_URL_CACHE_RESPONSE_INFO.dwProxyId">
-    <summary>
-      <para>A value that contains the MD5 hash of the HTTP response header values <b>Via</b>, <b>ETag</b>, and <b>Last-Modified</b>, if they exist.</para>
-    </summary>
+    <summary>A value that contains the MD5 hash of the HTTP response header values <b>Via</b>, <b>ETag</b>, and <b>Last-Modified</b>, if they exist.</summary>
   </member>
 </doc>

@@ -3,13 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_COMMAND_LIST_FLAGS">
-    <summary>
-      <para>Specifies flags to be used when creating a command list.</para>
-    </summary>
+    <summary>Specifies flags to be used when creating a command list.</summary>
   </member>
   <member name="D3D12_COMMAND_LIST_FLAGS.D3D12_COMMAND_LIST_FLAG_NONE">
-    <summary>
-      <para>No flags specified.</para>
-    </summary>
+    <summary>No flags specified.</summary>
   </member>
 </doc>

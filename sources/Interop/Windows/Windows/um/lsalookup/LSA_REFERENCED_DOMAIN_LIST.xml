@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LSA_REFERENCED_DOMAIN_LIST">
+    <summary>The <b>LSA_REFERENCED_DOMAIN_LIST</b> structure contains information about the domains referenced in a lookup operation.</summary>
+  </member>
+  <member name="LSA_REFERENCED_DOMAIN_LIST.Entries">
+    <summary>Specifies the number of entries in the <b>Domains</b> array.</summary>
+  </member>
+  <member name="LSA_REFERENCED_DOMAIN_LIST.Domains">
+    <summary>Pointer to an array of<see cref="LSA_TRUST_INFORMATION" /> structures that identify the referenced domains.</summary>
+  </member>
+</doc>

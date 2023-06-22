@@ -3,25 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFExtendedCameraController.GetExtendedCameraControl">
-    <summary>
-      <para>Gets an instance of <see cref="IMFExtendedCameraControl" />, which allows an app to get the current capture device's extended property controls.</para>
-    </summary>
-    <param name="dwStreamIndex">
-      <para>A <b>DWORD</b> indicating stream index to use for this property. Specify <a href="https://docs.microsoft.com//windows/win32/medfound/mf-capture-engine-mediasource-config">MF_CAPTURE_ENGINE_MEDIASOURCE</a> to indicate that the extended property is a filter-level property.</para>
-    </param>
-    <param name="ulPropertyId">
-      <para>The ID indicating the index for identifying the property within <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/kspropertysetid-extendedcameracontrol">KSPROPERTYSETID_ExtendedCameraControl</a>.</para>
-    </param>
-    <param name="ppControl">
-      <para>Receives a pointer to the <b>IMFExtendedCameraControl</b> instance that represents the requested control.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK on success.</para>
-    </returns>
+    <summary>Gets an instance of <see cref="IMFExtendedCameraControl" />, which allows an app to get the current capture device's extended property controls.</summary>
+    <param name="dwStreamIndex">A <b>DWORD</b> indicating stream index to use for this property. Specify <a href="https://docs.microsoft.com//windows/win32/medfound/mf-capture-engine-mediasource-config">MF_CAPTURE_ENGINE_MEDIASOURCE</a> to indicate that the extended property is a filter-level property.</param>
+    <param name="ulPropertyId">The ID indicating the index for identifying the property within <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/kspropertysetid-extendedcameracontrol">KSPROPERTYSETID_ExtendedCameraControl</a>.</param>
+    <param name="ppControl">Receives a pointer to the <b>IMFExtendedCameraControl</b> instance that represents the requested control.</param>
+    <returns>Returns S_OK on success.</returns>
   </member>
   <member name="IMFExtendedCameraController">
-    <summary>
-      <para>Allows apps to retrieve an instance of <see cref="IMFExtendedCameraControl" />, which is used to configure a capture device's extended properties.</para>
-    </summary>
+    <summary>Allows apps to retrieve an instance of <see cref="IMFExtendedCameraControl" />, which is used to configure a capture device's extended properties.</summary>
   </member>
 </doc>

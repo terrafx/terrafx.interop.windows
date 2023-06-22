@@ -3,29 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ABC">
-    <summary>
-      <para>The <b>ABC</b> structure contains the width of a character in a TrueType font.</para>
-    </summary>
-    <remarks>
-      <para>The total width of a character is the summation of the A, B, and C spaces. Either the A or the C space can be negative to indicate underhangs or overhangs.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/font-and-text-structures">Font and Text Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/fonts-and-text">Fonts and Text Overview</seealso>
-    <seealso cref="GetCharABCWidths" />
+    <summary>The <b>ABC</b> structure contains the width of a character in a TrueType font.</summary>
   </member>
   <member name="ABC.abcA">
-    <summary>
-      <para>The A spacing of the character. The A spacing is the distance to add to the current position before drawing the character glyph.</para>
-    </summary>
+    <summary>The A spacing of the character. The A spacing is the distance to add to the current position before drawing the character glyph.</summary>
   </member>
   <member name="ABC.abcB">
-    <summary>
-      <para>The B spacing of the character. The B spacing is the width of the drawn portion of the character glyph.</para>
-    </summary>
+    <summary>The B spacing of the character. The B spacing is the width of the drawn portion of the character glyph.</summary>
   </member>
   <member name="ABC.abcC">
-    <summary>
-      <para>The C spacing of the character. The C spacing is the distance to add to the current position to provide white space to the right of the character glyph.</para>
-    </summary>
+    <summary>The C spacing of the character. The C spacing is the distance to add to the current position to provide white space to the right of the character glyph.</summary>
   </member>
 </doc>

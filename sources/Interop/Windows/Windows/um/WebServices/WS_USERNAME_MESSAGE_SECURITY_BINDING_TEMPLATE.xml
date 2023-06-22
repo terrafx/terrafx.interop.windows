@@ -4,37 +4,20 @@
 <doc>
   <member name="WS_USERNAME_MESSAGE_SECURITY_BINDING_TEMPLATE">
     <summary>
-      <para>The security binding template for specifying the use of an application
-supplied username / password pair as a direct (i.e., one-shot)
-security token.  This security binding may be used only with message
-security.  It provides client authentication, but not traffic signing
-or encryption.  So, it is used in conjunction with another transport
-security or message security binding that provides message protection.</para>
+      <para>The security binding template for specifying the use of an application supplied username / password pair as a direct (i.e., one-shot) security token. This security binding may be used only with message security. It provides client authentication, but not traffic signing or encryption. So, it is used in conjunction with another transport security or message security binding that provides message protection.</para>
       <para>See also <see cref="WS_USERNAME_MESSAGE_SECURITY_BINDING" /></para>
     </summary>
   </member>
   <member name="WS_USERNAME_MESSAGE_SECURITY_BINDING_TEMPLATE.securityBindingProperties">
-    <summary>
-      <para>Application provided security binding properties that cannot be represented in policy.</para>
-    </summary>
+    <summary>Application provided security binding properties that cannot be represented in policy.</summary>
   </member>
   <member name="WS_USERNAME_MESSAGE_SECURITY_BINDING_TEMPLATE.clientCredential">
-    <summary>
-      <para>The username credential to be used with this security binding.  This
-needs to be specified when this security binding is used on the
-client.</para>
-    </summary>
+    <summary>The username credential to be used with this security binding. This needs to be specified when this security binding is used on the client.</summary>
   </member>
   <member name="WS_USERNAME_MESSAGE_SECURITY_BINDING_TEMPLATE.passwordValidator">
-    <summary>
-      <para>The validator to be used to check received username/password pairs.
-This needs to be specified when this security binding is used on the
-service.</para>
-    </summary>
+    <summary>The validator to be used to check received username/password pairs. This needs to be specified when this security binding is used on the service.</summary>
   </member>
   <member name="WS_USERNAME_MESSAGE_SECURITY_BINDING_TEMPLATE.passwordValidatorCallbackState">
-    <summary>
-      <para>The optional state to be passed in as an argument when the username validator is invoked.</para>
-    </summary>
+    <summary>The optional state to be passed in as an argument when the username validator is invoked.</summary>
   </member>
 </doc>

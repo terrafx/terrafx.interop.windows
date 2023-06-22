@@ -4,14 +4,11 @@
 <doc>
   <member name="IFilterGraph.AddFilter">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>AddFilter</code> method adds a filter to the graph.</para>
     </summary>
-    <param name="pFilter">
-      <para>Pointer to the <see cref="IBaseFilter" /> interface of the filter to add.</para>
-    </param>
-    <param name="pName">
-      <para>Pointer to a wide-character string containing a name for filter.</para>
-    </param>
+    <param name="pFilter">Pointer to the <see cref="IBaseFilter" /> interface of the filter to add.</param>
+    <param name="pName">Pointer to a wide-character string containing a name for filter.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -19,100 +16,102 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_S_DUPLICATE_NAME</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Successfully added a filter with a duplicate name.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>VFW_S_DUPLICATE_NAME</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_CERTIFICATION_FAILURE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Use of this filter is restricted by a software key.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Successfully added a filter with a duplicate name.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DUPLICATE_NAME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>Failure.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_CERTIFICATION_FAILURE</b>
-            </para>
-          </description>
-          <description>
-            <para>Use of this filter is restricted by a software key.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DUPLICATE_NAME</b>
-            </para>
-          </description>
-          <description>
-            <para>Failed to add a filter with a duplicate name.</para>
-          </description>
-        </item>
+          <description>Failed to add a filter with a duplicate name.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The name of the filter can be <b>NULL</b>, in which case the Filter Graph Manager generates a name. If the name is not <b>NULL</b> and is not unique, this method will modify the name in an attempt to generate a new unique name. If this is successful, this method returns VFW_S_DUPLICATE_NAME. If it cannot generate a unique name, it returns VFW_E_DUPLICATE_NAME.</para>
-      <para>
-        <code>AddFilter</code> calls the filter's <see cref="IBaseFilter.JoinFilterGraph" /> method to inform the filter that it has been added. <code>AddFilter</code> must be called before attempting to use the <see cref="IGraphBuilder.Connect" />, <see cref="IFilterGraph.ConnectDirect" />, or <see cref="IGraphBuilder.Render" /> method to connect or render pins belonging to the added filter.</para>
-      <para>The Filter Graph Manager holds a reference count on the filter until the filter is removed from the graph or the Filter Graph Manager is released.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterGraph Interface" />
   </member>
   <member name="IFilterGraph.ConnectDirect">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>ConnectDirect</code> method connects the two pins directly (without intervening filters).</para>
     </summary>
-    <param name="ppinOut">
-      <para>Pointer to the output pin.</para>
-    </param>
-    <param name="ppinIn">
-      <para>Pointer to the input pin.</para>
-    </param>
-    <param name="pmt">
-      <para>Pointer to the media type to use for the connection (optional; can be <b>NULL</b>).</para>
-    </param>
+    <param name="ppinOut">Pointer to the output pin.</param>
+    <param name="ppinIn">Pointer to the input pin.</param>
+    <param name="pmt">Pointer to the media type to use for the connection (optional; can be <b>NULL</b>).</param>
     <returns>
       <para>Returns one of the following values, or an error value returned by <see cref="IPin.Connect" />.</para>
       <list type="table">
@@ -120,58 +119,64 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_NOT_IN_GRAPH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One of the specified pins is not in the graph.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_NOT_IN_GRAPH</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_CIRCULAR_GRAPH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One of the specified pins is not in the graph.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_CIRCULAR_GRAPH</b>
-            </para>
-          </description>
-          <description>
-            <para>The input pin is upstream of the output pin, which would result in a circular graph.</para>
-          </description>
-        </item>
+          <description>The input pin is upstream of the output pin, which would result in a circular graph.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterGraph Interface" />
   </member>
   <member name="IFilterGraph.Disconnect">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Disconnect</code> method disconnects this pin.</para>
     </summary>
-    <param name="ppin">
-      <para>Pointer to the pin to disconnect.</para>
-    </param>
+    <param name="ppin">Pointer to the pin to disconnect.</param>
     <returns>
       <para>Returns one of the following values.</para>
       <list type="table">
@@ -179,72 +184,76 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Pin was not connected. No error.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_NOT_STOPPED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pin was not connected. No error.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>Failure.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_NOT_STOPPED</b>
-            </para>
-          </description>
-          <description>
-            <para>The filter is not stopped, but does not support reconnection while in a running state.</para>
-          </description>
-        </item>
+          <description>The filter is not stopped, but does not support reconnection while in a running state.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method does not completely break the connection. To completely break the connection, both ends must be disconnected.</para>
-      <para>To remove a filter from the filter graph entirely, call the <see cref="IFilterGraph.RemoveFilter" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterGraph Interface" />
   </member>
   <member name="IFilterGraph.EnumFilters">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>EnumFilters</code> method provides an enumerator for all filters in the graph.</para>
     </summary>
-    <param name="ppEnum">
-      <para>Receives a pointer to the <see cref="IEnumFilters" /> interface. Use this interface to enumerate the filters. The caller must release the interface.</para>
-    </param>
+    <param name="ppEnum">Receives a pointer to the <see cref="IEnumFilters" /> interface. Use this interface to enumerate the filters. The caller must release the interface.</param>
     <returns>
       <para>Returns one of the following values.</para>
       <list type="table">
@@ -252,51 +261,53 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory to create the enumerator.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory to create the enumerator.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterGraph Interface" />
   </member>
   <member name="IFilterGraph.FindFilterByName">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>FindFilterByName</code> method finds a filter that was added to the filter graph with a specific name.</para>
     </summary>
-    <param name="pName">
-      <para>[in, string] Pointer to the name to search for.</para>
-    </param>
-    <param name="ppFilter">
-      <para>Receives a pointer to the filter's <see cref="IBaseFilter" /> interface. The caller must release the interface.</para>
-    </param>
+    <param name="pName">[in, string] Pointer to the name to search for.</param>
+    <param name="ppFilter">Receives a pointer to the filter's <see cref="IBaseFilter" /> interface. The caller must release the interface.</param>
     <returns>
       <para>Returns one of the following values.</para>
       <list type="table">
@@ -304,53 +315,53 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_NOT_FOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_NOT_FOUND</b>
-            </para>
-          </description>
-          <description>
-            <para>No filter was found with the specified name.</para>
-          </description>
-        </item>
+          <description>No filter was found with the specified name.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If no filter is found, the method returns a <b>NULL</b> pointer in the <i>ppFilter</i> parameter.</para>
-      <para>The returned <b>IBaseFilter</b> interface has an outstanding reference count. The caller must release the interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterGraph Interface" />
   </member>
   <member name="IFilterGraph.Reconnect">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Reconnect</code> method disconnects a pin and then reconnects it to the same pin.</para>
       <para>Applications should not call this method. It is called by filters during the graph building process.</para>
     </summary>
-    <param name="ppin">
-      <para>Pointer to <see cref="IPin" /> interface of the pin to reconnect.</para>
-    </param>
+    <param name="ppin">Pointer to <see cref="IPin" /> interface of the pin to reconnect.</param>
     <returns>
       <para>Returns one of the following values.</para>
       <list type="table">
@@ -358,73 +369,76 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_NOT_CONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pin is not connected.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Failure.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_WRONG_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_NOT_CONNECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>Pin is not connected.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_WRONG_STATE</b>
-            </para>
-          </description>
-          <description>
-            <para>Filter is not stopped.</para>
-          </description>
-        </item>
+          <description>Filter is not stopped.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is obsolete; use the <see cref="IFilterGraph2.ReconnectEx" /> method instead.</para>
-      <para>Filters can call this method in order to renegotiate a pin connection. The method executes on a separate thread. Before calling this method, call <see cref="IPin.QueryAccept" /> on the other pin to ensure that the reconnection attempt will succeed. Do not call this method unless <b>QueryAccept</b> returns S_OK. Otherwise, because the reconnection is performed asynchronously, the reconnection might fail even though the <code>Reconnect</code> method succeeds, leaving the filter graph in an inconsistent state.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterGraph Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/reconnecting-pins">Reconnecting Pins</seealso>
   </member>
   <member name="IFilterGraph.RemoveFilter">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>RemoveFilter</code> method removes a filter from the graph.</para>
     </summary>
-    <param name="pFilter">
-      <para>Pointer to the filter to be removed from the graph.</para>
-    </param>
+    <param name="pFilter">Pointer to the filter to be removed from the graph.</param>
     <returns>
       <para>Returns one of the following values.</para>
       <list type="table">
@@ -432,46 +446,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>Failure.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The Filter Graph Manager notifies the filter that it is being removed by calling the filter's <see cref="IBaseFilter.JoinFilterGraph" /> method with a <b>NULL</b> argument. It is not necessary to disconnect the filter's pins before calling <code>RemoveFilter</code>, but the filter graph should be in the Stopped state. If the filters are not stopped, <code>RemoveFilter</code> may fail to disconnect the pins and then fail to remove the filter from the graph. <see cref="IGraphConfig.RemoveFilterEx" /> enables an application to remove a filter without disconnecting the pins automatically, which improves performance if you want to move groups of connected filters into a new graph.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterGraph Interface" />
   </member>
   <member name="IFilterGraph.SetDefaultSyncSource">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetDefaultSyncSource</code> method sets the reference clock to the default clock.</para>
     </summary>
     <returns>
@@ -481,39 +498,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_NOT_STOPPED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_NOT_STOPPED</b>
-            </para>
-          </description>
-          <description>
-            <para>The filter graph is not stopped.</para>
-          </description>
-        </item>
+          <description>The filter graph is not stopped.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method instructs the Filter Graph Manager to choose a reference clock using its default algorithm. For more information about the algorithm that it uses, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/reference-clocks">Reference Clocks</a>.</para>
-      <para>Usually you do not need to call this method, because the Filter Graph Manager automatically selects a clock. However, if you call <see cref="IMediaFilter.SetSyncSource" /> to override the clock, you can use <code>SetDefaultSyncSource</code> to restore the default clock.</para>
-      <para>This method fails if the filter graph is running or paused.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterGraph Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/time-and-clocks-in-directshow">Time and Clocks in DirectShow</seealso>
   </member>
   <member name="IFilterGraph">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IFilterGraph</code> interface provides methods for building a filter graph. An application can use it to add filters to the graph, connect or disconnect filters, remove filters, and perform other basic operations. However, the <see cref="IGraphBuilder" /> interface inherits from this interface and provides additional methods that are more sophisticated. Therefore, applications should use <b>IGraphBuilder</b> rather than using <code>IFilterGraph</code> directly.</para>
       <para>The filter graph manager implements this interface.</para>
     </summary>

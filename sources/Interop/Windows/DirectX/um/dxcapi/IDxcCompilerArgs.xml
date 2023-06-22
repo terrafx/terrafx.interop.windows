@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDxcCompilerArgs.AddArguments">
+    <summary>Adds additional arguments to this list of compiler arguments.</summary>
+    <param name="pArguments">An array of pointers to arguments to add.</param>
+    <param name="argCount">The number of arguments to add.</param>
+  </member>
+  <member name="IDxcCompilerArgs.AddArgumentsUTF8">
+    <summary>Adds additional UTF-8-encoded arguments to this list of compiler arguments.</summary>
+    <param name="pArguments">An array of pointers to UTF-8 arguments to add.</param>
+    <param name="argCount">The number of arguments to add.</param>
+  </member>
+  <member name="IDxcCompilerArgs.AddDefines">
+    <summary>Adds additional defines to this list of compiler arguments.</summary>
+    <param name="pDefines">An array of defines to add.</param>
+    <param name="defineCount">The number of defines to add.</param>
+  </member>
+  <member name="IDxcCompilerArgs.GetArguments">
+    <summary>
+      <para>Retrieves the array of arguments.</para>
+      <para>You can pass the value returned by <b>GetArguments</b> directly to the <i>pArguments</i> parameter of <see cref="IDxcCompiler3.Compile" />.</para>
+    </summary>
+  </member>
+  <member name="IDxcCompilerArgs.GetCount">
+    <summary>
+      <para>Retrieves the number of arguments.</para>
+      <para>You can pass the value returned by <b>GetCount</b> directly to the <i>argCount</i> parameter of <see cref="IDxcCompiler3.Compile" />.</para>
+    </summary>
+  </member>
+  <member name="IDxcCompilerArgs">
+    <summary>
+      <para>An interface for managing arguments passed to DXC.</para>
+      <para>To create an instance of this interface, call <see cref="IDxcUtils.BuildArguments" />.</para>
+    </summary>
+  </member>
+</doc>

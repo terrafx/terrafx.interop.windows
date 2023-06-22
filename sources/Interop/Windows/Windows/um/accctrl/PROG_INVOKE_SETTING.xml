@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROG_INVOKE_SETTING">
+    <summary>The <b>PROG_INVOKE_SETTING</b> enumeration indicates the initial setting of the function used to track the progress of a call to the <see cref="TreeSetNamedSecurityInfo" /> or <see cref="TreeResetNamedSecurityInfo" /> function.</summary>
+  </member>
+  <member name="PROG_INVOKE_SETTING.ProgressInvokeNever">
+    <summary>Never invoke the progress function.</summary>
+  </member>
+  <member name="PROG_INVOKE_SETTING.ProgressInvokeEveryObject">
+    <summary>Invoke the progress function for every object.</summary>
+  </member>
+  <member name="PROG_INVOKE_SETTING.ProgressInvokeOnError">
+    <summary>Invoke the progress function only when an error is encountered.</summary>
+  </member>
+  <member name="PROG_INVOKE_SETTING.ProgressCancelOperation">
+    <summary>
+      <para>Discontinue the tree operation.</para>
+      <div>
+        <b>Note</b>  The original state of the tree will not be reset, and the results are unpredictable.</div>
+    </summary>
+  </member>
+  <member name="PROG_INVOKE_SETTING.ProgressRetryOperation">
+    <summary>Retry the tree operation.</summary>
+  </member>
+  <member name="PROG_INVOKE_SETTING.ProgressInvokePrePostError">
+    <summary>Invoke the progress function before and after applying security on the object and on the error.</summary>
+  </member>
+</doc>

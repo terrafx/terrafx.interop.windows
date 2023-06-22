@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IUnbufferedFileHandleProvider.CloseUnbufferedFileHandle">
+    <summary>Closes the handle from a random-access byte stream that you created by calling <see cref="IUnbufferedFileHandleProvider.OpenUnbufferedFileHandle" />.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IUnbufferedFileHandleProvider.OpenUnbufferedFileHandle">
+    <summary>Gets a handle from a random-access byte stream that the <a href="https://docs.microsoft.com//uwp/api/windows.storage.storagefile.openasync">StorageFile.OpenAsync</a> method created and registers a callback method that you want to run when the opportunistic lock for the handle is broken.</summary>
+    <param name="oplockBreakCallback">An interface that contains the implementation of the <see cref="IUnbufferedFileHandleOplockCallback.OnBrokenCallback" /> method that you want to run when the opportunistic lock for the handle is broken.</param>
+    <param name="fileHandle">The handle from the random-access byte stream.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IUnbufferedFileHandleProvider">
+    <summary>Provides access to handles from a random-access byte stream that the <a href="https://docs.microsoft.com//uwp/api/windows.storage.storagefile.openasync">StorageFile.OpenAsync</a> method created.</summary>
+  </member>
+</doc>

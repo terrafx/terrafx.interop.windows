@@ -3,47 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IEnumerableView.CreateEnumIDListFromContents">
-    <summary>
-      <para>Creates an enumerator of ID lists from the contents of the view.</para>
-    </summary>
-    <param name="pidlFolder">
-      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
-      <para>A PIDL that is relative to the Desktop.</para>
-    </param>
-    <param name="dwEnumFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>Specifies enumeration flags. See the <see cref="SHCONTF" /> enumerated type.</para>
-    </param>
-    <param name="ppEnumIDList">
-      <para>Type: <b><see cref="IEnumIDList" />**</b></para>
-      <para>When this method returns, contains an <see cref="IEnumIDList" /> interface pointer.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns a success value if successful, or an error value otherwise.</para>
-    </returns>
+    <summary>Creates an enumerator of ID lists from the contents of the view.</summary>
+    <param name="pidlFolder">A PIDL that is relative to the Desktop.</param>
+    <param name="dwEnumFlags">Specifies enumeration flags. See the <see cref="SHCONTF" /> enumerated type.</param>
+    <param name="ppEnumIDList">When this method returns, contains an <see cref="IEnumIDList" /> interface pointer.</param>
+    <returns>Returns a success value if successful, or an error value otherwise.</returns>
   </member>
   <member name="IEnumerableView.SetEnumReadyCallback">
-    <summary>
-      <para>Sets a callback on the view that is notified when the initial view enumeration is complete.</para>
-    </summary>
-    <param name="percb">
-      <para>Type: <b><see cref="IEnumReadyCallback" />*</b></para>
-      <para>A pointer to the <see cref="IEnumReadyCallback" /> interface.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns a success value if successful, or an error value otherwise.</para>
-    </returns>
+    <summary>Sets a callback on the view that is notified when the initial view enumeration is complete.</summary>
+    <param name="percb">A pointer to the <see cref="IEnumReadyCallback" /> interface.</param>
+    <returns>Returns a success value if successful, or an error value otherwise.</returns>
   </member>
   <member name="IEnumerableView">
-    <summary>
-      <para>Exposes methods that enumerate the contents of a view and receive notification from callback upon enumeration completion. This interface enables clients of a view to attempt to share the view's list of folder contents.</para>
-    </summary>
-    <remarks>
-      <para>
-        <see cref="IFolderView" /> (a folder view) supports presentation of the contents of a folder, and exposes the <b>IEnumerableView</b> through <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/cc678966(v=vs.85)">QueryService</a> on service request SID_EnumerableView. <b>IEnumerableView</b> offers enhanced performance compared to obtaining the contents of the folder directly from the folder using <see cref="IEnumIDList" /> (call <see cref="IShellFolder.EnumObjects" /> to return this interface). Since the view asked for the contents of the folder in order to display those contents, using <b>IEnumerableView</b> enables a client to get a copy of the work already done by <b>IFolderView</b>.</para>
-      <para>Typically, this enumeration service is compatible with most folders, and is only provided if it is safe to enumerate the contents of the view.  For example, using this service with a folder containing search results is not supported.</para>
-    </remarks>
+    <summary>Exposes methods that enumerate the contents of a view and receive notification from callback upon enumeration completion. This interface enables clients of a view to attempt to share the view's list of folder contents.</summary>
   </member>
 </doc>

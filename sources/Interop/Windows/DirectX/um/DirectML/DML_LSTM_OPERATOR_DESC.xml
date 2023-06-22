@@ -7,120 +7,69 @@
       <para>Performs a one-layer long short term memory (LSTM) function on the input. This operator uses multiple gates to perform this layer. These gates are performed multiple times in a loop, dictated by the sequence length dimension and the <i>SequenceLengthsTensor</i>.</para>
       <h3>Equation for the forward direction</h3>
       <para>
-        <img alt="equation for the forward direction" src="https://docs.microsoft.com/windows/win32/api/DirectMLmages/lstm_forward.png" />
+        <img alt="equation for the forward direction" src="https://docs.microsoft.com/windows/win32/api/DirectML/images/lstm_forward.png" />
       </para>
       <h3>Equation for the backward direction</h3>
       <para>
-        <img alt="equation for the backward direction" src="https://docs.microsoft.com/windows/win32/api/DirectMLmages/lstm_backward.png" />
+        <img alt="equation for the backward direction" src="https://docs.microsoft.com/windows/win32/api/DirectML/images/lstm_backward.png" />
       </para>
       <h3>Equation legend</h3>
       <para>
-        <img alt="equation legend" src="https://docs.microsoft.com/windows/win32/api/DirectMLmages/lstm_legend.png" />
+        <img alt="equation legend" src="https://docs.microsoft.com/windows/win32/api/DirectML/images/lstm_legend.png" />
       </para>
     </summary>
   </member>
   <member name="DML_LSTM_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the input data, X. Packed (and potentially padded) into one 4-D tensor with the sizes of <code>{ 1, seq_length, batch_size, input_size }</code>. seq_length is the dimension that is mapped to the index, t.</para>
-    </summary>
+    <summary>A tensor containing the input data, X. Packed (and potentially padded) into one 4-D tensor with the sizes of <code>{ 1, seq_length, batch_size, input_size }</code>. seq_length is the dimension that is mapped to the index, t. The tensor doesn't support the <b>DML_TENSOR_FLAG_OWNED_BY_DML</b> flag.</summary>
   </member>
   <member name="DML_LSTM_OPERATOR_DESC.WeightTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the weight data, W. Concatenation of W_[iofc] and W_B[iofc] (if bidirectional). The tensor has sizes <code>{ 1, num_directions, 4 * hidden_size, input_size }</code>.</para>
-    </summary>
+    <summary>A tensor containing the weight data, W. Concatenation of W_[iofc] and W_B[iofc] (if bidirectional). The tensor has sizes <code>{ 1, num_directions, 4 * hidden_size, input_size }</code>. The tensor doesn't support the <b>DML_TENSOR_FLAG_OWNED_BY_DML</b> flag.</summary>
   </member>
   <member name="DML_LSTM_OPERATOR_DESC.RecurrenceTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the recurrence data, R. Concatenation of R_[iofc] and R_B[iofc] (if bidirectional). This tensor has sizes <code>{ 1, num_directions, 4 * hidden_size, hidden_size }</code>.</para>
-    </summary>
+    <summary>A tensor containing the recurrence data, R. Concatenation of R_[iofc] and R_B[iofc] (if bidirectional). This tensor has sizes <code>{ 1, num_directions, 4 * hidden_size, hidden_size }</code>. The tensor doesn't support the <b>DML_TENSOR_FLAG_OWNED_BY_DML</b> flag.</summary>
   </member>
   <member name="DML_LSTM_OPERATOR_DESC.BiasTensor">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An optional tensor containing the bias data, B. Concatenation of <code>{ W_b[iofc], R_b[iofc] }</code>, and <code>{ W_Bb[iofc], R_Bb[iofc] }</code> (if bidirectional). This tensor has sizes <code>{ 1, 1, num_directions, 8 * hidden_size }</code>. If not specified, then defaults to 0 bias.</para>
-    </summary>
+    <summary>An optional tensor containing the bias data, B. Concatenation of <code>{ W_b[iofc], R_b[iofc] }</code>, and <code>{ W_Bb[iofc], R_Bb[iofc] }</code> (if bidirectional). This tensor has sizes <code>{ 1, 1, num_directions, 8 * hidden_size }</code>. If not specified, then defaults to 0 bias. The tensor doesn't support the <b>DML_TENSOR_FLAG_OWNED_BY_DML</b> flag.</summary>
   </member>
   <member name="DML_LSTM_OPERATOR_DESC.HiddenInitTensor">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An optional tensor containing the hidden node initializer data, H_(t-1). Contents of this tensor are only used on the first loop index t. If not specified, then defaults to 0. This tensor has sizes <code>{ 1, num_directions, batch_size, hidden_size }</code>.</para>
-    </summary>
+    <summary>An optional tensor containing the hidden node initializer data, H_(t-1). Contents of this tensor are only used on the first loop index t. If not specified, then defaults to 0. This tensor has sizes <code>{ 1, num_directions, batch_size, hidden_size }</code>. The tensor doesn't support the <b>DML_TENSOR_FLAG_OWNED_BY_DML</b> flag.</summary>
   </member>
   <member name="DML_LSTM_OPERATOR_DESC.CellMemInitTensor">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An optional tensor containing the cell initializer data, C_(t-1). Contents of this tensor are only used on the first loop index t. If not specified, then defaults to 0. This tensor has sizes <code>{ 1, num_directions, batch_size, hidden_size }</code>.</para>
-    </summary>
+    <summary>An optional tensor containing the cell initializer data, C_(t-1). Contents of this tensor are only used on the first loop index t. If not specified, then defaults to 0. This tensor has sizes <code>{ 1, num_directions, batch_size, hidden_size }</code>. The tensor doesn't support the <b>DML_TENSOR_FLAG_OWNED_BY_DML</b> flag.</summary>
   </member>
   <member name="DML_LSTM_OPERATOR_DESC.SequenceLengthsTensor">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An optional tensor containing an independent seq_length for each element in the batch. If not specified, then all sequences in the batch have length seq_length. This tensor has sizes <code>{ 1, 1, 1, batch_size }</code>.</para>
-    </summary>
+    <summary>An optional tensor containing an independent seq_length for each element in the batch. If not specified, then all sequences in the batch have length seq_length. This tensor has sizes <code>{ 1, 1, 1, batch_size }</code>. The tensor doesn't support the <b>DML_TENSOR_FLAG_OWNED_BY_DML</b> flag.</summary>
   </member>
   <member name="DML_LSTM_OPERATOR_DESC.PeepholeTensor">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An optional tensor containing the weight data for peepholes, P. If not specified, then defaults to 0. Concatenation of P_[iof] and P_B[iof] (if bidirectional). This tensor has sizes <code>{ 1, 1, num_directions, 3 * hidden_size }</code>.</para>
-    </summary>
+    <summary>An optional tensor containing the weight data for peepholes, P. If not specified, then defaults to 0. Concatenation of P_[iof] and P_B[iof] (if bidirectional). This tensor has sizes <code>{ 1, 1, num_directions, 3 * hidden_size }</code>. The tensor doesn't support the <b>DML_TENSOR_FLAG_OWNED_BY_DML</b> flag.</summary>
   </member>
   <member name="DML_LSTM_OPERATOR_DESC.OutputSequenceTensor">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An optional tensor with which to write the concatenation of all the intermediate output values of the hidden nodes, H_t. This tensor has sizes <code>{ seq_length, num_directions, batch_size, hidden_size }</code>. seq_length is mapped to the loop index t.</para>
-    </summary>
+    <summary>An optional tensor with which to write the concatenation of all the intermediate output values of the hidden nodes, H_t. This tensor has sizes <code>{ seq_length, num_directions, batch_size, hidden_size }</code>. seq_length is mapped to the loop index t.</summary>
   </member>
   <member name="DML_LSTM_OPERATOR_DESC.OutputSingleTensor">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An optional tensor with which to write the last output value of the hidden nodes, H_t. This tensor has sizes <code>{ 1, num_directions, batch_size, hidden_size }</code>.</para>
-    </summary>
+    <summary>An optional tensor with which to write the last output value of the hidden nodes, H_t. This tensor has sizes <code>{ 1, num_directions, batch_size, hidden_size }</code>.</summary>
   </member>
   <member name="DML_LSTM_OPERATOR_DESC.OutputCellSingleTensor">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An optional tensor with which to write the last output value of the cell, C_t. This tensor has sizes <code>{ 1, num_directions, batch_size, hidden_size }</code>.</para>
-    </summary>
+    <summary>An optional tensor with which to write the last output value of the cell, C_t. This tensor has sizes <code>{ 1, num_directions, batch_size, hidden_size }</code>.</summary>
   </member>
   <member name="DML_LSTM_OPERATOR_DESC.ActivationDescCount">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>This field determines the size of the <i>ActivationDescs</i> array.</para>
-    </summary>
+    <summary>This field determines the size of the <i>ActivationDescs</i> array.</summary>
   </member>
   <member name="DML_LSTM_OPERATOR_DESC.ActivationDescs">
-    <summary>
-      <para>Type: _Field_size_(ActivationDescCount) <b>const <see cref="DML_OPERATOR_DESC" />*</b></para>
-      <para>An array of <see cref="DML_OPERATOR_DESC" /> containing the descriptions of the activation operators f(), g(), and h(). f(), g(), and h() are defined independently of direction, meaning that if <see cref="DML_RECURRENT_NETWORK_DIRECTION_FORWARD" /> or <b>DML_RECURRENT_NETWORK_DIRECTION_BACKWARD</b> are supplied in <i>Direction</i>, then three activations must be provided. If <b>DML_RECURRENT_NETWORK_DIRECTION_BIDIRECTIONAL</b> is defined, then six activations must be provided. For bidirectional, activations must be provided f(), g(), and h() for forward followed by f(), g(), and h() for backwards.</para>
-    </summary>
+    <summary>An array of <see cref="DML_OPERATOR_DESC" /> containing the descriptions of the activation operators f(), g(), and h(). f(), g(), and h() are defined independently of direction, meaning that if <see cref="DML_RECURRENT_NETWORK_DIRECTION_FORWARD" /> or <b>DML_RECURRENT_NETWORK_DIRECTION_BACKWARD</b> are supplied in <i>Direction</i>, then three activations must be provided. If <b>DML_RECURRENT_NETWORK_DIRECTION_BIDIRECTIONAL</b> is defined, then six activations must be provided. For bidirectional, activations must be provided f(), g(), and h() for forward followed by f(), g(), and h() for backwards.</summary>
   </member>
   <member name="DML_LSTM_OPERATOR_DESC.Direction">
-    <summary>
-      <para>Type: <b>const <see cref="DML_RECURRENT_NETWORK_DIRECTION" />*</b></para>
-      <para>The direction of the operator: forward, backward, or bidirectional.</para>
-    </summary>
+    <summary>The direction of the operator: forward, backward, or bidirectional.</summary>
   </member>
   <member name="DML_LSTM_OPERATOR_DESC.ClipThreshold">
-    <summary>
-      <para>Type: <b>float</b></para>
-      <para>The cell clip threshold. Clipping bounds the elements of a tensor in the range of [-<code>ClipThreshold</code>, +<code>ClipThreshold</code>], and is applied to the input of activations.</para>
-    </summary>
+    <summary>The cell clip threshold. Clipping bounds the elements of a tensor in the range of [-<code>ClipThreshold</code>, +<code>ClipThreshold</code>], and is applied to the input of activations.</summary>
   </member>
   <member name="DML_LSTM_OPERATOR_DESC.UseClipThreshold">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>
-        <b>TRUE</b> if <i>ClipThreshold</i> should be used. Otherwise, <b>FALSE</b>.</para>
-    </summary>
+      <b>TRUE</b> if <i>ClipThreshold</i> should be used. Otherwise, <b>FALSE</b>.</summary>
   </member>
   <member name="DML_LSTM_OPERATOR_DESC.CoupleInputForget">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>
-        <b>TRUE</b> if the input and forget gates should be coupled. Otherwise, <b>FALSE</b>.</para>
-    </summary>
+      <b>TRUE</b> if the input and forget gates should be coupled. Otherwise, <b>FALSE</b>.</summary>
   </member>
 </doc>

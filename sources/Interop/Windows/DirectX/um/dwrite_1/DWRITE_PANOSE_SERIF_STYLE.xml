@@ -3,104 +3,63 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_PANOSE_SERIF_STYLE">
-    <summary>
-      <para>The <b>DWRITE_PANOSE_SERIF_STYLE</b> enumeration contains values that specify the appearance of the serif text.</para>
-    </summary>
-    <seealso cref="DWRITE_PANOSE" />
+    <summary>The <b>DWRITE_PANOSE_SERIF_STYLE</b> enumeration contains values that specify the appearance of the serif text.</summary>
   </member>
   <member name="DWRITE_PANOSE_SERIF_STYLE.DWRITE_PANOSE_SERIF_STYLE_ANY">
-    <summary>
-      <para>Any appearance of the serif text.</para>
-    </summary>
+    <summary>Any appearance of the serif text.</summary>
   </member>
   <member name="DWRITE_PANOSE_SERIF_STYLE.DWRITE_PANOSE_SERIF_STYLE_NO_FIT">
-    <summary>
-      <para>No fit appearance of the serif text.</para>
-    </summary>
+    <summary>No fit appearance of the serif text.</summary>
   </member>
   <member name="DWRITE_PANOSE_SERIF_STYLE.DWRITE_PANOSE_SERIF_STYLE_COVE">
-    <summary>
-      <para>Cove appearance of the serif text.</para>
-    </summary>
+    <summary>Cove appearance of the serif text.</summary>
   </member>
   <member name="DWRITE_PANOSE_SERIF_STYLE.DWRITE_PANOSE_SERIF_STYLE_OBTUSE_COVE">
-    <summary>
-      <para>Obtuse cove appearance of the serif text.</para>
-    </summary>
+    <summary>Obtuse cove appearance of the serif text.</summary>
   </member>
   <member name="DWRITE_PANOSE_SERIF_STYLE.DWRITE_PANOSE_SERIF_STYLE_SQUARE_COVE">
-    <summary>
-      <para>Square cove appearance of the serif text.</para>
-    </summary>
+    <summary>Square cove appearance of the serif text.</summary>
   </member>
   <member name="DWRITE_PANOSE_SERIF_STYLE.DWRITE_PANOSE_SERIF_STYLE_OBTUSE_SQUARE_COVE">
-    <summary>
-      <para>Obtuse square cove appearance of the serif text.</para>
-    </summary>
+    <summary>Obtuse square cove appearance of the serif text.</summary>
   </member>
   <member name="DWRITE_PANOSE_SERIF_STYLE.DWRITE_PANOSE_SERIF_STYLE_SQUARE">
-    <summary>
-      <para>Square appearance of the serif text.</para>
-    </summary>
+    <summary>Square appearance of the serif text.</summary>
   </member>
   <member name="DWRITE_PANOSE_SERIF_STYLE.DWRITE_PANOSE_SERIF_STYLE_THIN">
-    <summary>
-      <para>Thin appearance of the serif text.</para>
-    </summary>
+    <summary>Thin appearance of the serif text.</summary>
   </member>
   <member name="DWRITE_PANOSE_SERIF_STYLE.DWRITE_PANOSE_SERIF_STYLE_OVAL">
-    <summary>
-      <para>Oval appearance of the serif text.</para>
-    </summary>
+    <summary>Oval appearance of the serif text.</summary>
   </member>
   <member name="DWRITE_PANOSE_SERIF_STYLE.DWRITE_PANOSE_SERIF_STYLE_EXAGGERATED">
-    <summary>
-      <para>Exaggerated appearance of the serif text.</para>
-    </summary>
+    <summary>Exaggerated appearance of the serif text.</summary>
   </member>
   <member name="DWRITE_PANOSE_SERIF_STYLE.DWRITE_PANOSE_SERIF_STYLE_TRIANGLE">
-    <summary>
-      <para>Triangle appearance of the serif text.</para>
-    </summary>
+    <summary>Triangle appearance of the serif text.</summary>
   </member>
   <member name="DWRITE_PANOSE_SERIF_STYLE.DWRITE_PANOSE_SERIF_STYLE_NORMAL_SANS">
-    <summary>
-      <para>Normal sans appearance of the serif text.</para>
-    </summary>
+    <summary>Normal sans appearance of the serif text.</summary>
   </member>
   <member name="DWRITE_PANOSE_SERIF_STYLE.DWRITE_PANOSE_SERIF_STYLE_OBTUSE_SANS">
-    <summary>
-      <para>Obtuse sans appearance of the serif text.</para>
-    </summary>
+    <summary>Obtuse sans appearance of the serif text.</summary>
   </member>
   <member name="DWRITE_PANOSE_SERIF_STYLE.DWRITE_PANOSE_SERIF_STYLE_PERPENDICULAR_SANS">
-    <summary>
-      <para>Perpendicular sans appearance of the serif text.</para>
-    </summary>
+    <summary>Perpendicular sans appearance of the serif text.</summary>
   </member>
   <member name="DWRITE_PANOSE_SERIF_STYLE.DWRITE_PANOSE_SERIF_STYLE_FLARED">
-    <summary>
-      <para>Flared appearance of the serif text.</para>
-    </summary>
+    <summary>Flared appearance of the serif text.</summary>
   </member>
   <member name="DWRITE_PANOSE_SERIF_STYLE.DWRITE_PANOSE_SERIF_STYLE_ROUNDED">
-    <summary>
-      <para>Rounded appearance of the serif text.</para>
-    </summary>
+    <summary>Rounded appearance of the serif text.</summary>
   </member>
   <member name="DWRITE_PANOSE_SERIF_STYLE.DWRITE_PANOSE_SERIF_STYLE_SCRIPT">
-    <summary>
-      <para>Script appearance of the serif text.</para>
-    </summary>
+    <summary>Script appearance of the serif text.</summary>
   </member>
   <member name="DWRITE_PANOSE_SERIF_STYLE.DWRITE_PANOSE_SERIF_STYLE_PERP_SANS">
-    <summary>
-      <para>Perpendicular sans appearance of the serif text.</para>
-    </summary>
+    <summary>Perpendicular sans appearance of the serif text.</summary>
   </member>
   <member name="DWRITE_PANOSE_SERIF_STYLE.DWRITE_PANOSE_SERIF_STYLE_BONE">
-    <summary>
-      <para>Oval appearance of the serif text.</para>
-    </summary>
+    <summary>Oval appearance of the serif text.</summary>
   </member>
 </doc>

@@ -3,18 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FILE_DISPOSITION_INFO">
-    <summary>
-      <para>Indicates whether a file  should be deleted. Used for any handles. Use only when calling
-<see cref="SetFileInformationByHandle" />.</para>
-    </summary>
-    <seealso cref="FILE_INFO_BY_HANDLE_CLASS" />
-    <seealso cref="SetFileInformationByHandle" />
+    <summary>Indicates whether a file should be deleted. Used for any handles. Use only when calling<see cref="SetFileInformationByHandle" />.</summary>
   </member>
   <member name="FILE_DISPOSITION_INFO.DeleteFile">
-    <summary>
-      <para>Indicates whether the file should be deleted. Set to <b>TRUE</b> to delete the file.
-This member has no effect if the handle was opened with
-<b>FILE_FLAG_DELETE_ON_CLOSE</b>.</para>
-    </summary>
+    <summary>Indicates whether the file should be deleted. Set to <b>TRUE</b> to delete the file. This member has no effect if the handle was opened with<b>FILE_FLAG_DELETE_ON_CLOSE</b>.</summary>
   </member>
 </doc>

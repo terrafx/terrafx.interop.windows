@@ -3,24 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfCreatePropertyStore.CreatePropertyStore">
-    <summary>
-      <para>Creates a property store object from serialized property store data.</para>
-    </summary>
-    <param name="guidProp">
-      <para>Contains the type identifier of the property. For more information, see <see cref="ITfPropertyStore.GetType" />.</para>
-    </param>
-    <param name="pRange">
-      <para>Pointer to an <see cref="ITfRange" /> object that contains the text to be covered by the property store.</para>
-    </param>
-    <param name="cb">
-      <para>Contains the size, in bytes, of the property store data contained in <i>pStream</i>.</para>
-    </param>
-    <param name="pStream">
-      <para>Pointer to an <b>IStream</b> object that contains the property store data.</para>
-    </param>
-    <param name="ppStore">
-      <para>Pointer to an <see cref="ITfPropertyStore" /> interface pointer that receives the property store object created by this method.</para>
-    </param>
+    <summary>Creates a property store object from serialized property store data.</summary>
+    <param name="guidProp">Contains the type identifier of the property. For more information, see <see cref="ITfPropertyStore.GetType" />.</param>
+    <param name="pRange">Pointer to an <see cref="ITfRange" /> object that contains the text to be covered by the property store.</param>
+    <param name="cb">Contains the size, in bytes, of the property store data contained in <i>pStream</i>.</param>
+    <param name="pStream">Pointer to an <b>IStream</b> object that contains the property store data.</param>
+    <param name="ppStore">Pointer to an <see cref="ITfPropertyStore" /> interface pointer that receives the property store object created by this method.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -28,39 +16,27 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfCreatePropertyStore interface" />
-    <seealso cref="ITfPropertyStore interface" />
-    <seealso cref="ITfPropertyStore.GetType" />
-    <seealso cref="ITfRange interface" />
   </member>
   <member name="ITfCreatePropertyStore.IsStoreSerializable">
-    <summary>
-      <para>Determines if a property store can be stored as persistent data.</para>
-    </summary>
-    <param name="guidProp">
-      <para>Contains the type identifier of the property. For more information, see <see cref="ITfPropertyStore.GetType" />.</para>
-    </param>
-    <param name="pRange">
-      <para>Pointer to an <see cref="ITfRange" /> object that contains the text covered by the property store.</para>
-    </param>
-    <param name="pPropStore">
-      <para>Pointer to the <see cref="ITfPropertyStore" /> object.</para>
-    </param>
-    <param name="pfSerializable">
-      <para>Pointer to a <b>BOOL</b> that receives a flag that indicates if the property store can be serialized. Receives nonzero if the property store can be serialized or zero otherwise.</para>
-    </param>
+    <summary>Determines if a property store can be stored as persistent data.</summary>
+    <param name="guidProp">Contains the type identifier of the property. For more information, see <see cref="ITfPropertyStore.GetType" />.</param>
+    <param name="pRange">Pointer to an <see cref="ITfRange" /> object that contains the text covered by the property store.</param>
+    <param name="pPropStore">Pointer to the <see cref="ITfPropertyStore" /> object.</param>
+    <param name="pfSerializable">Pointer to a <b>BOOL</b> that receives a flag that indicates if the property store can be serialized. Receives nonzero if the property store can be serialized or zero otherwise.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -68,31 +44,22 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfCreatePropertyStore interface" />
-    <seealso cref="ITfPropertyStore interface" />
-    <seealso cref="ITfPropertyStore.GetType" />
-    <seealso cref="ITfRange interface" />
   </member>
   <member name="ITfCreatePropertyStore">
-    <summary>
-      <para>The <b>ITfCreatePropertyStore</b> interface is implemented by a text service to support persistence of property store data. The TSF manager uses this interface to determine if a property store can be serialized and to create a property store object for a serialized property.</para>
-    </summary>
-    <remarks>
-      <para>When a property store is unserialized, the TSF manager creates an object from the CLSID obtained from <see cref="ITfPropertyStore.GetPropertyRangeCreator" /> and obtain an <b>ITfCreatePropertyStore</b> interface pointer from it. The manager then uses <b>ITfCreatePropertyStore.CreatePropertyStore</b> to create the property store object.</para>
-    </remarks>
-    <seealso cref="ITfPropertyStore.GetPropertyRangeCreator " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfCreatePropertyStore</b> interface is implemented by a text service to support persistence of property store data. The TSF manager uses this interface to determine if a property store can be serialized and to create a property store object for a serialized property.</summary>
   </member>
 </doc>

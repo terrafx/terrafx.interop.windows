@@ -3,36 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROCESS_MITIGATION_FONT_DISABLE_POLICY">
-    <summary>
-      <para>Contains process mitigation policy settings for the loading of non-system fonts.</para>
-    </summary>
-    <seealso cref="GetProcessMitigationPolicy" />
-    <seealso cref="SetProcessMitigationPolicy" />
+    <summary>Contains process mitigation policy settings for the loading of non-system fonts.</summary>
   </member>
-  <member name="PROCESS_MITIGATION_FONT_DISABLE_POLICY.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="PROCESS_MITIGATION_FONT_DISABLE_POLICY.DUMMYUNIONNAME"></member>
   <member name="PROCESS_MITIGATION_FONT_DISABLE_POLICY.DUMMYUNIONNAME.Flags">
-    <summary>
-      <para>Reserved for system use.</para>
-    </summary>
+    <summary>Reserved for system use.</summary>
   </member>
-  <member name="PROCESS_MITIGATION_FONT_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME">
-    <summary></summary>
-  </member>
+  <member name="PROCESS_MITIGATION_FONT_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME"></member>
   <member name="PROCESS_MITIGATION_FONT_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.DisableNonSystemFonts">
-    <summary>
-      <para>Set (0x1) to prevent the process from loading non-system fonts;  otherwise leave unset (0x0).</para>
-    </summary>
+    <summary>Set (0x1) to prevent the process from loading non-system fonts; otherwise leave unset (0x0).</summary>
   </member>
   <member name="PROCESS_MITIGATION_FONT_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.AuditNonSystemFontLoading">
-    <summary>
-      <para>Set (0x1) to indicate that an Event Tracing for Windows (ETW) event should be logged when the process attempts to load a non-system font; leave unset (0x0) to indicate that an ETW event should not be logged.</para>
-    </summary>
+    <summary>Set (0x1) to indicate that an Event Tracing for Windows (ETW) event should be logged when the process attempts to load a non-system font; leave unset (0x0) to indicate that an ETW event should not be logged.</summary>
   </member>
   <member name="PROCESS_MITIGATION_FONT_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.ReservedFlags">
-    <summary>
-      <para>Reserved for system use.</para>
-    </summary>
+    <summary>Reserved for system use.</summary>
   </member>
 </doc>

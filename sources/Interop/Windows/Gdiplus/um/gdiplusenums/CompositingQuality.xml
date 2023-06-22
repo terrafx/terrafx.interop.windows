@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CompositingQuality">
+    <summary>The <b>CompositingQuality</b> enumeration specifies whether gamma correction is applied when colors are blended with background colors. This enumeration is used by the <see cref="Graphics.GetCompositingQuality" /> and <see cref="Graphics.SetCompositingQuality" /> methods of the<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> class.</summary>
+  </member>
+  <member name="CompositingQuality.CompositingQualityInvalid"></member>
+  <member name="CompositingQuality.CompositingQualityDefault">
+    <summary>Specifies that gamma correction is not applied.</summary>
+  </member>
+  <member name="CompositingQuality.CompositingQualityHighSpeed">
+    <summary>Specifies that gamma correction is not applied.</summary>
+  </member>
+  <member name="CompositingQuality.CompositingQualityHighQuality">
+    <summary>Specifies that gamma correction is applied.</summary>
+  </member>
+  <member name="CompositingQuality.CompositingQualityGammaCorrected">
+    <summary>Specifies that gamma correction is applied.</summary>
+  </member>
+  <member name="CompositingQuality.CompositingQualityAssumeLinear">
+    <summary>Specifies that gamma correction is not applied.</summary>
+  </member>
+</doc>

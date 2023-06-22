@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfMouseTracker.AdviseMouseSink">
-    <summary>
-      <para>Installs a mouse event sink.</para>
-    </summary>
-    <param name="range">
-      <para>Pointer to an <see cref="ITfRange" /> interface that specifies the range of text that the mouse sink is installed for.</para>
-    </param>
-    <param name="pSink">
-      <para>Pointer to the <see cref="ITfMouseSink" /> interface.</para>
-    </param>
-    <param name="pdwCookie">
-      <para>Pointer to a DWORD value that receives a cookie that identifies the mouse event sink.</para>
-    </param>
+    <summary>Installs a mouse event sink.</summary>
+    <param name="range">Pointer to an <see cref="ITfRange" /> interface that specifies the range of text that the mouse sink is installed for.</param>
+    <param name="pSink">Pointer to the <see cref="ITfMouseSink" /> interface.</param>
+    <param name="pdwCookie">Pointer to a DWORD value that receives a cookie that identifies the mouse event sink.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -22,75 +14,72 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_DISCONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The context object is not on a document stack.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One or more parameters are invalid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The context owner does not support mouse event sinks.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_DISCONNECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The context object is not on a document stack.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The context owner does not support mouse event sinks.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>When the advise sink is installed, a mouse event that occurs over the range specified by <i>range</i> will result in the mouse event sink <see cref="ITfMouseSink.OnMouseEvent" /> call.</para>
-      <para>The value placed in <i>pdwCookie</i> must be saved and passed to <see cref="ITfMouseTracker.UnadviseMouseSink" /> to remove the mouse event sink.</para>
-    </remarks>
-    <seealso cref="ITfMouseSink " />
-    <seealso cref="ITfMouseSink.OnMouseEvent " />
-    <seealso cref="ITfMouseTracker" />
-    <seealso cref="ITfMouseTracker.UnadviseMouseSink " />
-    <seealso cref="ITfRange " />
   </member>
   <member name="ITfMouseTracker.UnadviseMouseSink">
-    <summary>
-      <para>Uninstalls a mouse event sink.</para>
-    </summary>
-    <param name="dwCookie">
-      <para>Specifies the mouse advise sink identifier. This value is obtained by a call to <see cref="ITfMouseTracker.AdviseMouseSink" />.</para>
-    </param>
+    <summary>Uninstalls a mouse event sink.</summary>
+    <param name="dwCookie">Specifies the mouse advise sink identifier. This value is obtained by a call to <see cref="ITfMouseTracker.AdviseMouseSink" />.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -98,46 +87,46 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_DISCONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The context object is not on a document stack.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_DISCONNECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The context object is not on a document stack.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The context owner does not support mouse event sinks.</para>
-          </description>
-        </item>
+          <description>The context owner does not support mouse event sinks.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfMouseTracker" />
-    <seealso cref="ITfMouseTracker.AdviseMouseSink " />
   </member>
   <member name="ITfMouseTracker">
-    <summary>
-      <para>The <b>ITfMouseTracker</b> interface is implemented by the TSF manager and is used by a text service to manage mouse event notification sinks. An instance of this interface is obtained by querying an <see cref="ITfContext" /> object for IID_ITfMouseTracker.</para>
-    </summary>
-    <seealso cref="ITfContext " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfMouseTracker</b> interface is implemented by the TSF manager and is used by a text service to manage mouse event notification sinks. An instance of this interface is obtained by querying an <see cref="ITfContext" /> object for IID_ITfMouseTracker.</summary>
   </member>
 </doc>

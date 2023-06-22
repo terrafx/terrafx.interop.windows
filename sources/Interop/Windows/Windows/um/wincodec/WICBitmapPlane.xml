@@ -3,34 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICBitmapPlane">
-    <summary>
-      <para>Specifies the pixel format, buffer, stride and size of a component plane for a planar pixel format.</para>
-    </summary>
-    <seealso cref="IWICPlanarBitmapSourceTransform.CopyPixels" />
-    <seealso cref="IWICPlanarBitmapSourceTransform.DoesSupportTransform" />
+    <summary>Specifies the pixel format, buffer, stride and size of a component plane for a planar pixel format.</summary>
   </member>
   <member name="WICBitmapPlane.Format">
-    <summary>
-      <para>Type: <b>WICPixelFormatGUID</b></para>
-      <para>Describes the pixel format of the plane.</para>
-    </summary>
+    <summary>Describes the pixel format of the plane.</summary>
   </member>
   <member name="WICBitmapPlane.pbBuffer">
-    <summary>
-      <para>Type: <b>BYTE*</b></para>
-      <para>Pointer to the buffer that holds the plane’s pixel components.</para>
-    </summary>
+    <summary>Pointer to the buffer that holds the plane’s pixel components.</summary>
   </member>
   <member name="WICBitmapPlane.cbStride">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The stride of the buffer pointed to by <i>pbData</i>.  Stride indicates the total number of bytes to go from the beginning of one scanline to the beginning of the next scanline.</para>
-    </summary>
+    <summary>The stride of the buffer pointed to by <i>pbData</i>. Stride indicates the total number of bytes to go from the beginning of one scanline to the beginning of the next scanline.</summary>
   </member>
   <member name="WICBitmapPlane.cbBufferSize">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The total size of the buffer pointed to by <i>pbBuffer</i>.</para>
-    </summary>
+    <summary>The total size of the buffer pointed to by <i>pbBuffer</i>.</summary>
   </member>
 </doc>

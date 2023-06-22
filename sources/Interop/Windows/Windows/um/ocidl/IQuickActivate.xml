@@ -3,69 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IQuickActivate.GetContentExtent">
-    <summary>
-      <para>Gets the content extent of a control.</para>
-    </summary>
-    <param name="pSizel">
-      <para>A pointer to a structure that contains size of the content extent.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, the return value is S_OK. Otherwise, it is E_FAIL.</para>
-    </returns>
-    <remarks>
-      <para>The <b>SIZEL</b> structure is defined in Wtypes.h as follows.</para>
-      <code>typedef struct tagSIZEL
-    {
-    LONG cx;
-    LONG cy;
-    }     SIZEL;
-
-typedef struct tagSIZEL *PSIZEL;
-
-typedef struct tagSIZEL *LPSIZEL;
-</code>
-    </remarks>
-    <seealso cref="IQuickActivate" />
+    <summary>Gets the content extent of a control.</summary>
+    <param name="pSizel">A pointer to a structure that contains size of the content extent.</param>
+    <returns>If the method succeeds, the return value is S_OK. Otherwise, it is E_FAIL.</returns>
   </member>
   <member name="IQuickActivate.QuickActivate">
-    <summary>
-      <para>Quick activates a control.</para>
-    </summary>
-    <param name="pQaContainer">
-      <para>A pointer to the <see cref="QACONTAINER" /> structure containing information about the container.</para>
-    </param>
-    <param name="pQaControl">
-      <para>A pointer to the <see cref="QACONTROL" /> structure filled in by the control to return information about the control to the container. The container calling this method must reserve memory for this structure.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, the return value is S_OK. Otherwise, it is E_FAIL.</para>
-    </returns>
-    <remarks>
-      <para>If the control does not support <see cref="IQuickActivate" />, the container performs certain handshaking operations when it loads the control. The container calls certain interfaces on the control and the control, in turn, calls back to certain interfaces on the container's client site. First, the container creates the control object and calls <see cref="QueryInterface" /> to query for interfaces that it needs. Then, the container calls <see cref="IOleObject.SetClientSite" /> on the control, passing a pointer to its client site. Next, the control calls <b>QueryInterface</b> on this site, retrieving a pointer to additional necessary interfaces.</para>
-      <para>Using the <b>QuickActivate</b> method, the container passes a pointer to a <see cref="QACONTAINER" /> structure. The structure contains pointers to interfaces which are needed by the control and the values of some ambient properties that the control may need. Upon return, the control passes a pointer to a <see cref="QACONTROL" /> structure that contains pointers to its own interfaces that the container requires, and additional status information.</para>
-      <para>The <b>IPersist*.Load</b> and <b>IPersist*.InitNew</b> methods should be called after quick activation occurs. The control should establish its connections to the container's sinks during quick activation. However, these connections are not live until <b>IPersist*.Load</b> or <b>IPersist*.InitNew</b> has been called.</para>
-    </remarks>
-    <seealso cref="IPersistFile" />
-    <seealso cref="IPersistStorage" />
-    <seealso cref="IPersistStream" />
-    <seealso cref="IPersistStreamInit" />
-    <seealso cref="IQuickActivate" />
+    <summary>Quick activates a control.</summary>
+    <param name="pQaContainer">A pointer to the <see cref="QACONTAINER" /> structure containing information about the container.</param>
+    <param name="pQaControl">A pointer to the <see cref="QACONTROL" /> structure filled in by the control to return information about the control to the container. The container calling this method must reserve memory for this structure.</param>
+    <returns>If the method succeeds, the return value is S_OK. Otherwise, it is E_FAIL.</returns>
   </member>
   <member name="IQuickActivate.SetContentExtent">
-    <summary>
-      <para>Sets the content extent of a control.</para>
-    </summary>
-    <param name="pSizel">
-      <para>The size of the content extent.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, the return value is S_OK. Otherwise, it is E_FAIL.</para>
-    </returns>
-    <seealso cref="IQuickActivate" />
+    <summary>Sets the content extent of a control.</summary>
+    <param name="pSizel">The size of the content extent.</param>
+    <returns>If the method succeeds, the return value is S_OK. Otherwise, it is E_FAIL.</returns>
   </member>
   <member name="IQuickActivate">
-    <summary>
-      <para>Enables controls and containers to avoid performance bottlenecks on loading controls. It combines the load-time or initialization-time handshaking between the control and its container into a single call.</para>
-    </summary>
+    <summary>Enables controls and containers to avoid performance bottlenecks on loading controls. It combines the load-time or initialization-time handshaking between the control and its container into a single call.</summary>
   </member>
 </doc>

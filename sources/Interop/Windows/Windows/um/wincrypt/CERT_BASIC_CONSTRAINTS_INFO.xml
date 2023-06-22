@@ -5,16 +5,12 @@
   <member name="CERT_BASIC_CONSTRAINTS_INFO">
     <summary>
       <para>The <b>CERT_BASIC_CONSTRAINTS_INFO</b> structure contains information that indicates whether the certified subject can act as a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certification authority</a> (CA), an end entity, or both. If the subject can act as a CA, a certification path-length constraint can also be specified, as can a set of subtrees that must contain all subject names of subsequent certificates in a certification chain. This extension is used in validating certificates used to sign other certificates.</para>
-      <para>The <see cref="CryptDecodeObject" /> function creates an instance of this structure when performed on a
-<see cref="CERT_EXTENSION" /> structure's <b>Value</b> member with its structure's <b>pszObjId</b> member set to szOID_BASIC_CONSTRAINTS.</para>
+      <para>The <see cref="CryptDecodeObject" /> function creates an instance of this structure when performed on a<see cref="CERT_EXTENSION" /> structure's <b>Value</b> member with its structure's <b>pszObjId</b> member set to szOID_BASIC_CONSTRAINTS.</para>
     </summary>
-    <seealso cref="CRYPT_BIT_BLOB" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
   </member>
   <member name="CERT_BASIC_CONSTRAINTS_INFO.SubjectType">
     <summary>
-      <para>A
-<see cref="CRYPT_BIT_BLOB" /> value can contain one of the following:</para>
+      <para>A<see cref="CRYPT_BIT_BLOB" /> value can contain one of the following:</para>
       <list type="bullet">
         <item>
           <description>A CERT_CA_SUBJECT_FLAG that, when set, indicates that the certificate's subject can act as a CA.</description>
@@ -29,24 +25,15 @@
     </summary>
   </member>
   <member name="CERT_BASIC_CONSTRAINTS_INFO.fPathLenConstraint">
-    <summary>
-      <para>A Boolean value that indicates whether the <b>dwPathLenConstraint</b> field sets the maximum length of the certification path.</para>
-    </summary>
+    <summary>A Boolean value that indicates whether the <b>dwPathLenConstraint</b> field sets the maximum length of the certification path.</summary>
   </member>
   <member name="CERT_BASIC_CONSTRAINTS_INFO.dwPathLenConstraint">
-    <summary>
-      <para>The maximum number of CA certificates that can follow this certificate in a certification validation path. A value of zero indicates that the subject of this certificate can issue certificates only to end entities and not to CAs.</para>
-    </summary>
+    <summary>The maximum number of CA certificates that can follow this certificate in a certification validation path. A value of zero indicates that the subject of this certificate can issue certificates only to end entities and not to CAs.</summary>
   </member>
   <member name="CERT_BASIC_CONSTRAINTS_INFO.cSubtreesConstraint">
-    <summary>
-      <para>The number of elements in the <b>rgSubtreesConstraint</b> array.</para>
-    </summary>
+    <summary>The number of elements in the <b>rgSubtreesConstraint</b> array.</summary>
   </member>
   <member name="CERT_BASIC_CONSTRAINTS_INFO.rgSubtreesConstraint">
-    <summary>
-      <para>An array of
-<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CERT_NAME_BLOB</a> structures that establish subtree constraints.</para>
-    </summary>
+    <summary>An array of<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CERT_NAME_BLOB</a> structures that establish subtree constraints.</summary>
   </member>
 </doc>

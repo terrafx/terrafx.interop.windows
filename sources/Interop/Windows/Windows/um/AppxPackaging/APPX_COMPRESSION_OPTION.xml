@@ -3,35 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="APPX_COMPRESSION_OPTION">
-    <summary>
-      <para>Specifies the degree of compression used to store the file in the package.</para>
-    </summary>
-    <seealso cref="IAppxFile.GetCompressionOption" />
-    <seealso cref="IAppxPackageWriter.AddPayloadFile" />
+    <summary>Specifies the degree of compression used to store the file in the package.</summary>
   </member>
   <member name="APPX_COMPRESSION_OPTION.APPX_COMPRESSION_OPTION_NONE">
-    <summary>
-      <para>No compression.</para>
-    </summary>
+    <summary>No compression.</summary>
   </member>
   <member name="APPX_COMPRESSION_OPTION.APPX_COMPRESSION_OPTION_NORMAL">
-    <summary>
-      <para>Normal  compression.</para>
-    </summary>
+    <summary>Normal compression.</summary>
   </member>
   <member name="APPX_COMPRESSION_OPTION.APPX_COMPRESSION_OPTION_MAXIMUM">
-    <summary>
-      <para>Maximum compression.</para>
-    </summary>
+    <summary>Maximum compression.</summary>
   </member>
   <member name="APPX_COMPRESSION_OPTION.APPX_COMPRESSION_OPTION_FAST">
-    <summary>
-      <para>Fast compression.</para>
-    </summary>
+    <summary>Fast compression.</summary>
   </member>
   <member name="APPX_COMPRESSION_OPTION.APPX_COMPRESSION_OPTION_SUPERFAST">
-    <summary>
-      <para>Super-fast compression.</para>
-    </summary>
+    <summary>Super-fast compression.</summary>
   </member>
 </doc>

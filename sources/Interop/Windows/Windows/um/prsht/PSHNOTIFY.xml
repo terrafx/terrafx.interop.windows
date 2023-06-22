@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PSHNOTIFY">
-    <summary>
-      <para>Contains information for the property sheet notification messages.</para>
-    </summary>
+    <summary>Contains information for the property sheet notification messages.</summary>
   </member>
   <member name="PSHNOTIFY.hdr">
-    <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>Address of an <see cref="NMHDR" /> structure that contains additional information about the notification.</para>
-    </summary>
+    <summary>Address of an <see cref="NMHDR" /> structure that contains additional information about the notification.</summary>
   </member>
   <member name="PSHNOTIFY.lParam">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPARAM</a></b></para>
-      <para>Additional information about this notification. To determine what, if any, information is contained in this member, see the description of the particular notification message.</para>
-    </summary>
+    <summary>Additional information about this notification. To determine what, if any, information is contained in this member, see the description of the particular notification message.</summary>
   </member>
 </doc>

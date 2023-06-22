@@ -3,33 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DESIGNVECTOR">
-    <summary>
-      <para>The <b>DESIGNVECTOR</b> structure is used by an application to specify values for the axes of a multiple master font.</para>
-    </summary>
-    <remarks>
-      <para>The <b>dvNumAxes</b> member determines the actual size of <b>dvValues</b>, and thus, of <b>DESIGNVECTOR</b>. The constant MM_MAX_NUMAXES, which is 16, specifies the maximum allowed size of the <b>dvValues</b> array.</para>
-      <para>The PostScript Open Type Font does not support multiple master functionality.</para>
-    </remarks>
-    <seealso cref="AXESLIST" />
-    <seealso cref="AddFontMemResourceEx" />
-    <seealso cref="AddFontResourceEx" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/font-and-text-structures">Font and Text Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/fonts-and-text">Fonts and Text Overview</seealso>
-    <seealso cref="RemoveFontResourceEx" />
+    <summary>The <b>DESIGNVECTOR</b> structure is used by an application to specify values for the axes of a multiple master font.</summary>
   </member>
   <member name="DESIGNVECTOR.dvReserved">
-    <summary>
-      <para>Reserved. Must be STAMP_DESIGNVECTOR.</para>
-    </summary>
+    <summary>Reserved. Must be STAMP_DESIGNVECTOR.</summary>
   </member>
   <member name="DESIGNVECTOR.dvNumAxes">
-    <summary>
-      <para>Number of values in the <b>dvValues</b> array.</para>
-    </summary>
+    <summary>Number of values in the <b>dvValues</b> array.</summary>
   </member>
   <member name="DESIGNVECTOR.dvValues">
-    <summary>
-      <para>An array specifying the values of the axes of a multiple master OpenType font. This array corresponds to the <b>axlAxisInfo</b> array in the <see cref="AXESLIST" /> structure.</para>
-    </summary>
+    <summary>An array specifying the values of the axes of a multiple master OpenType font. This array corresponds to the <b>axlAxisInfo</b> array in the <see cref="AXESLIST" /> structure.</summary>
   </member>
 </doc>

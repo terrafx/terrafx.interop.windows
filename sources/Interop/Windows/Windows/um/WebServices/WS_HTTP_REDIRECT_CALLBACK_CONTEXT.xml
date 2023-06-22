@@ -5,18 +5,13 @@
   <member name="WS_HTTP_REDIRECT_CALLBACK_CONTEXT">
     <summary>
       <para>Specifies the callback function and state for controlling the HTTP auto redirection behavior.</para>
-      <para>See also, <b>WS_HTTP_REDIRECT_CALLBACK_CONTEXT</b></para>
-      <para>and <see cref="WS_CHANNEL_PROPERTY_HTTP_REDIRECT_CALLBACK_CONTEXT" />.</para>
+      <para>See also, <b>WS_HTTP_REDIRECT_CALLBACK_CONTEXT</b>and <see cref="WS_CHANNEL_PROPERTY_HTTP_REDIRECT_CALLBACK_CONTEXT" />.</para>
     </summary>
   </member>
   <member name="WS_HTTP_REDIRECT_CALLBACK_CONTEXT.callback">
-    <summary>
-      <para>Application specific callback for controlling HTTP auto redirections.</para>
-    </summary>
+    <summary>Application specific callback for controlling HTTP auto redirections.</summary>
   </member>
   <member name="WS_HTTP_REDIRECT_CALLBACK_CONTEXT.state">
-    <summary>
-      <para>Application specific state that would be made available to the callback upon its invocation.</para>
-    </summary>
+    <summary>Application specific state that would be made available to the callback upon its invocation.</summary>
   </member>
 </doc>

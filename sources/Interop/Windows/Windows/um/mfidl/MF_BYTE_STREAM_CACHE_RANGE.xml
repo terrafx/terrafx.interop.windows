@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_BYTE_STREAM_CACHE_RANGE">
-    <summary>
-      <para>Specifies a range of bytes.</para>
-    </summary>
-    <seealso cref="IMFByteStreamCacheControl2.GetByteRanges" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <summary>Specifies a range of bytes.</summary>
   </member>
   <member name="MF_BYTE_STREAM_CACHE_RANGE.qwStartOffset">
-    <summary>
-      <para>The offset, in bytes, of the start of the range.</para>
-    </summary>
+    <summary>The offset, in bytes, of the start of the range.</summary>
   </member>
   <member name="MF_BYTE_STREAM_CACHE_RANGE.qwEndOffset">
-    <summary>
-      <para>The offset, in bytes, of the end of the range.</para>
-    </summary>
+    <summary>The offset, in bytes, of the end of the range.</summary>
   </member>
 </doc>

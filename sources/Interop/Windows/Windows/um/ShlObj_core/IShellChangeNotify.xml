@@ -3,11 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IShellChangeNotify.OnChange">
-    <summary>
-      <para>Informs a namespace extension that an event has taken place that affects its items.</para>
-    </summary>
+    <summary>Informs a namespace extension that an event has taken place that affects its items.</summary>
     <param name="lEvent">
-      <para>Type: <b>LONG</b></para>
       <para>A value that describes the event that has occurred. Typically, only one event is specified at a time. If more than one event is specified, the values contained in the <i>pidl1</i> and <i>pidl2</i> parameters must be the same, respectively, for all specified events.The <i>lEvent</i> parameter may contain one or more of the following flags.</para>
       <h4>SHCNE_ALLEVENTS (0x7FFFFFFFL)</h4>
       <para>All events have occurred.</para>
@@ -61,33 +58,11 @@
       <h4>SHCNE_INTERRUPT (0x80000000L)</h4>
       <para>The specified event occurred as a result of a system interrupt.</para>
     </param>
-    <param name="pidl1">
-      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
-      <para>The first event-dependent item identifier.</para>
-    </param>
-    <param name="pidl2">
-      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
-      <para>The second event-dependent item identifier.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is similar in function and usage to <see cref="SHChangeNotify" />.</para>
-    </remarks>
+    <param name="pidl1">The first event-dependent item identifier.</param>
+    <param name="pidl2">The second event-dependent item identifier.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellChangeNotify">
-    <summary>
-      <para>Exposes a method that notifies a Shell namespace extension when the ID of an item has changed.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>IShellChangeNotify</b> is used to let a host of a component communicate the change notifications that it receives to the objects that it hosts. This is used in Windows Explorer to communicate change notifications to band objects.</para>
-      <para>This interface is implemented by all namespace extensions.</para>
-      <para>You do not call this interface directly. <b>IShellChangeNotify</b> is used by the operating system only when it has confirmed that your application is aware of this interface.</para>
-      <para>
-        <b>IShellChangeNotify</b> implements <see cref="IUnknown" /> as well as the listed method.</para>
-    </remarks>
+    <summary>Exposes a method that notifies a Shell namespace extension when the ID of an item has changed.</summary>
   </member>
 </doc>

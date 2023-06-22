@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFRemoteDesktopPlugin.UpdateTopology">
-    <summary>
-      <para>Modifies a topology for use in a Terminal Services environment.</para>
-    </summary>
-    <param name="pTopology">
-      <para>Pointer to the <see cref="IMFTopology" /> interface of the topology.</para>
-    </param>
+    <summary>Modifies a topology for use in a Terminal Services environment.</summary>
+    <param name="pTopology">Pointer to the <see cref="IMFTopology" /> interface of the topology.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,45 +12,22 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the application is running in a Terminal Services client session, call this method before calling <see cref="IMFMediaSession.SetTopology" /> on the Media Session.</para>
-    </remarks>
-    <seealso cref="IMFRemoteDesktopPlugin" />
   </member>
   <member name="IMFRemoteDesktopPlugin">
-    <summary>
-      <para>Modifies a topology for use in a Terminal Services environment.</para>
-    </summary>
-    <remarks>
-      <para>To use this interface, do the following:</para>
-      <list type="number">
-        <item>
-          <description>Call <see cref="GetSystemMetrics" /> with the <b>SM_REMOTESESSION</b> flag. The function returns <b>TRUE</b> if the calling process is associated with a Terminal Services client session.
-</description>
-        </item>
-        <item>
-          <description>If <b>GetSystemMetrics</b> returns <b>TRUE</b>, call <see cref="MFCreateRemoteDesktopPlugin" />. This function returns a pointer to the <b>IMFRemoteDesktopPlugin</b> interface.
-</description>
-        </item>
-        <item>
-          <description>Call <see cref="UpdateTopology" /> with a pointer to the topology.
-</description>
-        </item>
-      </list>
-      <para>The application must call <see cref="UpdateTopology" /> before calling <see cref="IMFMediaSession.SetTopology" /> on the Media Session.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Modifies a topology for use in a Terminal Services environment.</summary>
   </member>
 </doc>

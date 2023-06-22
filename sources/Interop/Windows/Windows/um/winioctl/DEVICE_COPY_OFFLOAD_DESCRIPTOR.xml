@@ -3,80 +3,39 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DEVICE_COPY_OFFLOAD_DESCRIPTOR">
-    <summary>
-      <para>The
-<b>DEVICE_COPY_OFFLOAD_DESCRIPTOR</b></para>
-      <para>structure is one of the query result structures returned from an
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> request. This
-structure contains the copy offload capabilities for a storage device.</para>
-    </summary>
-    <remarks>
-      <para>This structure is returned from a
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> request when the
-<b>PropertyId</b> member of
-<see cref="STORAGE_PROPERTY_QUERY" /> is set to
-<b>StorageDeviceCopyOffloadProperty</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/disk-management-structures">Disk Management Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
-    <seealso cref="STORAGE_PROPERTY_QUERY" />
+    <summary>The<b>DEVICE_COPY_OFFLOAD_DESCRIPTOR</b>structure is one of the query result structures returned from an<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> request. This structure contains the copy offload capabilities for a storage device.</summary>
   </member>
   <member name="DEVICE_COPY_OFFLOAD_DESCRIPTOR.Version">
-    <summary>
-      <para>Contains the size of this structure, in bytes. The value of this member will change as members are added to
-the structure.</para>
-    </summary>
+    <summary>Contains the size of this structure, in bytes. The value of this member will change as members are added to the structure.</summary>
   </member>
   <member name="DEVICE_COPY_OFFLOAD_DESCRIPTOR.Size">
-    <summary>
-      <para>Specifies the total size of the data returned, in bytes. This may include data that follows this
-structure.</para>
-    </summary>
+    <summary>Specifies the total size of the data returned, in bytes. This may include data that follows this structure.</summary>
   </member>
   <member name="DEVICE_COPY_OFFLOAD_DESCRIPTOR.MaximumTokenLifetime">
-    <summary>
-      <para>The maximum lifetime of the token, in seconds.</para>
-    </summary>
+    <summary>The maximum lifetime of the token, in seconds.</summary>
   </member>
   <member name="DEVICE_COPY_OFFLOAD_DESCRIPTOR.DefaultTokenLifetime">
-    <summary>
-      <para>The default lifetime of the token, in seconds.</para>
-    </summary>
+    <summary>The default lifetime of the token, in seconds.</summary>
   </member>
   <member name="DEVICE_COPY_OFFLOAD_DESCRIPTOR.MaximumTransferSize">
-    <summary>
-      <para>The maximum transfer size, in bytes.</para>
-    </summary>
+    <summary>The maximum transfer size, in bytes.</summary>
   </member>
   <member name="DEVICE_COPY_OFFLOAD_DESCRIPTOR.OptimalTransferCount">
-    <summary>
-      <para>The optimal transfer size, in bytes.</para>
-    </summary>
+    <summary>The optimal transfer size, in bytes.</summary>
   </member>
   <member name="DEVICE_COPY_OFFLOAD_DESCRIPTOR.MaximumDataDescriptors">
-    <summary>
-      <para>The maximum number of data descriptors.</para>
-    </summary>
+    <summary>The maximum number of data descriptors.</summary>
   </member>
   <member name="DEVICE_COPY_OFFLOAD_DESCRIPTOR.MaximumTransferLengthPerDescriptor">
-    <summary>
-      <para>The maximum transfer length, in blocks, per descriptor.</para>
-    </summary>
+    <summary>The maximum transfer length, in blocks, per descriptor.</summary>
   </member>
   <member name="DEVICE_COPY_OFFLOAD_DESCRIPTOR.OptimalTransferLengthPerDescriptor">
-    <summary>
-      <para>The optimal transfer length per descriptor.</para>
-    </summary>
+    <summary>The optimal transfer length per descriptor.</summary>
   </member>
   <member name="DEVICE_COPY_OFFLOAD_DESCRIPTOR.OptimalTransferLengthGranularity">
-    <summary>
-      <para>The granularity of the optimal transfer length, in blocks. Transfer lengths that are not an even multiple
-of this length may be delayed.</para>
-    </summary>
+    <summary>The granularity of the optimal transfer length, in blocks. Transfer lengths that are not an even multiple of this length may be delayed.</summary>
   </member>
   <member name="DEVICE_COPY_OFFLOAD_DESCRIPTOR.Reserved">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
 </doc>

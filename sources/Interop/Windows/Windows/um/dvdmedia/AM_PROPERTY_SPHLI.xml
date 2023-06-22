@@ -4,56 +4,35 @@
 <doc>
   <member name="AM_PROPERTY_SPHLI">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Describes the currently selected button from the DVD highlight information.</para>
     </summary>
-    <remarks>
-      <para>The <b>AM_PROPERTY_DVDSUBPIC_HLI</b> property uses this structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-subpicture-property-set">DVD Subpicture Property Set</seealso>
   </member>
   <member name="AM_PROPERTY_SPHLI.HLISS">
-    <summary>
-      <para>Highlight status of current selection.</para>
-    </summary>
+    <summary>Highlight status of current selection.</summary>
   </member>
   <member name="AM_PROPERTY_SPHLI.Reserved">
-    <summary>
-      <para>Reserved for internal use. Do not use or set.</para>
-    </summary>
+    <summary>Reserved for internal use. Do not use or set.</summary>
   </member>
   <member name="AM_PROPERTY_SPHLI.StartPTM">
-    <summary>
-      <para>Start presentation time divided by 90,000.</para>
-    </summary>
+    <summary>Start presentation time divided by 90,000.</summary>
   </member>
   <member name="AM_PROPERTY_SPHLI.EndPTM">
-    <summary>
-      <para>End presentation time divided by 90,000.</para>
-    </summary>
+    <summary>End presentation time divided by 90,000.</summary>
   </member>
   <member name="AM_PROPERTY_SPHLI.StartX">
-    <summary>
-      <para>Start x-coordinate pixel of the current highlight button.</para>
-    </summary>
+    <summary>Start x-coordinate pixel of the current highlight button.</summary>
   </member>
   <member name="AM_PROPERTY_SPHLI.StartY">
-    <summary>
-      <para>Start y-coordinate pixel of the current highlight button.</para>
-    </summary>
+    <summary>Start y-coordinate pixel of the current highlight button.</summary>
   </member>
   <member name="AM_PROPERTY_SPHLI.StopX">
-    <summary>
-      <para>Ending x-coordinate pixel of the current highlight button.</para>
-    </summary>
+    <summary>Ending x-coordinate pixel of the current highlight button.</summary>
   </member>
   <member name="AM_PROPERTY_SPHLI.StopY">
-    <summary>
-      <para>Ending y-coordinate pixel of the current highlight button.</para>
-    </summary>
+    <summary>Ending y-coordinate pixel of the current highlight button.</summary>
   </member>
   <member name="AM_PROPERTY_SPHLI.ColCon">
-    <summary>
-      <para>Color contrast description of type <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/dvdmedia/ns-dvdmedia-am_colcon">AM_COLCON</a>.</para>
-    </summary>
+    <summary>Color contrast description of type <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/dvdmedia/ns-dvdmedia-am_colcon">AM_COLCON</a>.</summary>
   </member>
 </doc>

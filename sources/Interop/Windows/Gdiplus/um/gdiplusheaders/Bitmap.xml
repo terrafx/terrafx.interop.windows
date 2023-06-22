@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Bitmap.ApplyEffect">
+    <summary>The <b>Bitmap.ApplyEffect</b> method creates a new <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object by applying a specified effect to an existing <b>Bitmap</b> object.</summary>
+    <param name="inputs">Address of a pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object to which the effect is applied.</param>
+    <param name="numInputs">Integer that specifies the number of input bitmaps. This parameter must be set to 1.</param>
+    <param name="effect">Pointer to an instance of a descendant of the <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-effect">Effect</a> class. The descendant (for example, a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-blur">Blur</a> object) specifies the effect that is applied.</param>
+    <param name="ROI">Pointer to a RECT structure that specifies the portion of the input bitmap that is used.</param>
+    <param name="outputRect">Pointer to a RECT structure that receives the portion of the input bitmap that was used. If the rectangle specified by <i>ROI</i> lies entirely within the input bitmap, the rectangle returned in <i>outputRect</i> is the same as <i>ROI</i>. If part of rectangle specified by <i>ROI</i> lies outside the input bitmap, then the rectangle returned in <i>outputRect</i> is the portion of <i>ROI</i> that lies within the input bitmap. Pass <b>NULL</b> if you do not want to receive the output rectangle.</param>
+    <param name="output">Address of a variable that receives a pointer to the new <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Bitmap.ApplyEffect">
+    <summary>The <b>Bitmap.ApplyEffect</b> method alters this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object by applying a specified effect.</summary>
+    <param name="effect">Pointer to an instance of a descendant of the <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-effect">Effect</a> class. The descendant (for example, a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-blur">Blur</a> object) specifies the effect that is applied.</param>
+    <param name="ROI">Pointer to a <b>RECT</b> structure that specifies the portion of the input bitmap to which the effect is applied. Pass <b>NULL</b> to specify that the effect applies to the entire input bitmap.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Bitmap.Bitmap">
+    <summary>Creates a <b>Bitmap.Bitmap</b> object based on a<b>BITMAPINFO</b> structure and an array of pixel data.</summary>
+    <param name="gdiBitmapInfo">Pointer to a GDI <b>BITMAPINFO</b> structure. This structure defines several bitmap attributes, such as size and pixel format. The<b>BITMAPINFO</b> structure is defined in Wingdi.h.</param>
+    <param name="gdiBitmapData">Pointer to an array of bytes that contains the pixel data.</param>
+  </member>
+  <member name="Bitmap.Bitmap">
+    <summary>Creates a <b>Bitmap.Bitmap</b> object based on an image file.</summary>
+    <param name="filename">Pointer to a null-terminated string that specifies the path name of the image file. The graphics file formats supported by GDI+ are BMP, GIF, JPEG, PNG, TIFF, Exif, WMF, and EMF.</param>
+    <param name="useEmbeddedColorManagement">Optional. Boolean value that specifies whether the new <b>Bitmap.Bitmap</b> object applies color correction according to color management information that is embedded in the image file. Embedded information can include International Color Consortium (ICC) profiles, gamma values, and chromaticity information. <b>TRUE</b> specifies that color correction is enabled, and <b>FALSE</b> specifies that color correction is not enabled. The default value is <b>FALSE</b>.</param>
+  </member>
+  <member name="Bitmap.Bitmap">
+    <summary>Creates a <b>Bitmap.Bitmap</b> object based on a handle to a Windows Windows Graphics Device Interface (GDI) bitmap and a handle to a GDI palette.</summary>
+    <param name="hbm">Handle to a GDI bitmap.</param>
+    <param name="hpal">Handle to a GDI palette used to define the bitmap colors if<i>hbm</i> is not a device-independent bitmap (DIB).</param>
+  </member>
+  <member name="Bitmap.Bitmap">
+    <summary>Creates a<b> Bitmap</b> object based on an icon.</summary>
+    <param name="hicon">Handle to a GDI icon.</param>
+  </member>
+  <member name="Bitmap.Bitmap">
+    <summary>Creates a <b>Bitmap.Bitmap</b> object based on an application or DLL instance handle and the name of a bitmap resource.</summary>
+    <param name="hInstance">Handle to an instance of a module whose executable file contains a bitmap resource.</param>
+    <param name="bitmapName">Pointer to a null-terminated string that specifies the path name of the bitmap resource to be loaded. Alternatively, this parameter can consist of the resource identifier in the low-order word and zero in the high-order word. You can use the<b>MAKEINTRESOURCE</b> macro to create this value.</param>
+  </member>
+  <member name="Bitmap.Bitmap">
+    <summary>Creates a <b>Bitmap.Bitmap</b> object based on a DirectDraw surface. The <b>Bitmap.Bitmap</b> object maintains a reference to the DirectDraw surface until the <b>Bitmap.Bitmap</b> object is deleted or goes out of scope.</summary>
+    <param name="surface">Pointer to an<b>IDrectDrawSurface7</b> COM interface.</param>
+  </member>
+  <member name="Bitmap.Bitmap">
+    <summary>Creates a <b>Bitmap.Bitmap</b> object based on a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object, a width, and a height.</summary>
+    <param name="width">Integer that specifies the width, in pixels, of the bitmap.</param>
+    <param name="height">Integer that specifies the height, in pixels, of the bitmap.</param>
+    <param name="target">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that contains information used to initialize certain properties (for example, dots per inch) of the new <b>Bitmap.Bitmap</b> object.</param>
+  </member>
+  <member name="Bitmap.Bitmap">
+    <summary>Creates a <b>Bitmap.Bitmap</b> object based on an array of bytes along with size and format information.</summary>
+    <param name="width">Integer that specifies the width, in pixels, of the bitmap.</param>
+    <param name="height">Integer that specifies the height, in pixels, of the bitmap.</param>
+    <param name="stride">Integer that specifies the byte offset between the beginning of one scan line and the next. This is usually (but not necessarily) the number of bytes in the pixel format (for example, 2 for 16 bits per pixel) multiplied by the width of the bitmap. The value passed to this parameter must be a multiple of four.</param>
+    <param name="format">Integer that specifies the pixel format of the bitmap. The<b>PixelFormat</b> data type and constants that represent various pixel formats are defined in Gdipluspixelformats.h. For more information about pixel format constants, see <a href="https://docs.microsoft.com//windows/desktop/gdiplus/-gdiplus-constant-image-pixel-format-constants">Image Pixel Format Constants</a>.</param>
+    <param name="scan0">Pointer to an array of bytes that contains the pixel data. The caller is responsible for allocating and freeing the block of memory pointed to by this parameter.</param>
+  </member>
+  <member name="Bitmap.Bitmap">
+    <summary>Creates a <b>Bitmap.Bitmap</b> object of a specified size and pixel format. The pixel data must be provided after the <b>Bitmap.Bitmap</b> object is constructed.</summary>
+    <param name="width">Integer that specifies the width, in pixels, of the bitmap.</param>
+    <param name="height">Integer that specifies the height, in pixels, of the bitmap.</param>
+    <param name="format">Optional. Integer that specifies the pixel format of the bitmap. The<b>PixelFormat</b> data type and constants that represent various pixel formats are defined in Gdipluspixelformats.h. For more information about pixel format constants, see <a href="https://docs.microsoft.com//windows/desktop/gdiplus/-gdiplus-constant-image-pixel-format-constants">Image Pixel Format Constants</a>. The default value is PixelFormat32bppARGB.</param>
+  </member>
+  <member name="Bitmap.Bitmap">
+    <summary>Creates a <b>Bitmap.Bitmap</b> object based on an <b>IStream</b> COM interface.</summary>
+    <param name="stream">Pointer to an<b>IStream</b> COM interface.</param>
+    <param name="useEmbeddedColorManagement">Boolean value that specifies whether the new <b>Bitmap.Bitmap</b> object applies color correction according to color management information that is embedded in the stream (represented by the <b>stream</b> parameter). Embedded information can include International Color Consortium (ICC) profiles, gamma values, and chromaticity information. <b>TRUE</b> specifies that color correction is enabled, and <b>FALSE</b> specifies that color correction is not enabled. The default value is <b>FALSE</b>.</param>
+  </member>
+  <member name="Bitmap.Clone">
+    <summary>The <b>Bitmap.Clone</b> method creates a new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object by copying a portion of this bitmap.</summary>
+    <param name="rect">Reference to a rectangle that specifies the portion of this bitmap to be copied.</param>
+    <param name="format">Integer that specifies the pixel format of the new bitmap. The<b>PixelFormat</b> data type and constants that represent various pixel formats are defined in Gdipluspixelformats.h. For more information about pixel format constants, see <a href="https://docs.microsoft.com//windows/desktop/gdiplus/-gdiplus-constant-image-pixel-format-constants">Image Pixel Format Constants</a>.</param>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object.</returns>
+  </member>
+  <member name="Bitmap.Clone">
+    <summary>The <b>Bitmap.Clone</b> method creates a new <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object by copying a portion of this bitmap.</summary>
+    <param name="rect">Reference to a rectangle that specifies the portion of this bitmap to be copied.</param>
+    <param name="format">Integer that specifies the pixel format of the new bitmap. The <b>PixelFormat</b> data type and constants that represent various pixel formats are defined in Gdipluspixelformats.h. For more information about pixel format constants, see <a href="https://docs.microsoft.com//windows/desktop/gdiplus/-gdiplus-constant-image-pixel-format-constants">Image Pixel Format Constants</a>.</param>
+    <returns>This method returns a pointer to the new Bitmap object.</returns>
+  </member>
+  <member name="Bitmap.Clone">
+    <summary>The <b>Bitmap.Clone</b> method creates a new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object by copying a portion of this bitmap.</summary>
+    <param name="x">Integer that specifies the x-coordinate of the upper-left corner of the rectangle that specifies the portion of this bitmap to copy.</param>
+    <param name="y">Integer that specifies the y-coordinate of the upper-left corner of the rectangle that specifies the portion of this bitmap to copy.</param>
+    <param name="width">Integer that specifies the width of the rectangle that specifies the portion of this bitmap to copy.</param>
+    <param name="height">Integer that specifies the height of the rectangle that specifies the portion of this image to copy.</param>
+    <param name="format">Integer that specifies the pixel format of the new bitmap. The<b>PixelFormat</b> data type and constants that represent various pixel formats are defined in Gdipluspixelformats.h. For more information about pixel format constants, see <a href="https://docs.microsoft.com//windows/desktop/gdiplus/-gdiplus-constant-image-pixel-format-constants">Image Pixel Format Constants</a>.</param>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object.</returns>
+  </member>
+  <member name="Bitmap.Clone">
+    <summary>The <b>Bitmap.Clone</b> method creates a new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object by copying a portion of this bitmap.</summary>
+    <param name="x">Real number that specifies the x-coordinate of the upper-left corner of the rectangle that specifies the portion of this bitmap to copy.</param>
+    <param name="y">Real number that specifies the y-coordinate of the upper-left corner of the rectangle that specifies the portion of this bitmap to copy.</param>
+    <param name="width">Real number that specifies the width of the rectangle that specifies the portion of this bitmap to copy.</param>
+    <param name="height">Real number that specifies the height of the rectangle that specifies the portion of this image to copy.</param>
+    <param name="format">Integer that specifies the pixel format of the new bitmap. The<b>PixelFormat</b> data type and constants that represent various pixel formats are defined in Gdipluspixelformats.h. For more information about pixel format constants, see <a href="https://docs.microsoft.com//windows/desktop/gdiplus/-gdiplus-constant-image-pixel-format-constants">Image Pixel Format Constants</a>.</param>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object.</returns>
+  </member>
+  <member name="Bitmap.ConvertFormat">
+    <summary>The <b>Bitmap.ConvertFormat</b> method converts a bitmap to a specified pixel format. The original pixel data in the bitmap is replaced by the new pixel data.</summary>
+    <param name="format">
+      <a href="https://docs.microsoft.com//windows/desktop/gdiplus/-gdiplus-constant-image-pixel-format-constants">Pixel format constant</a> that specifies the new pixel format.</param>
+    <param name="dithertype">Element of the <see cref="DitherType" /> enumeration that specifies the dithering algorithm. In cases where the conversion does not reduce the bit depth of the pixel data, pass <b>DitherTypeNone</b>.</param>
+    <param name="palettetype">Element of the <see cref="PaletteType" /> enumeration that specifies a standard palette to be used for dithering. If you are converting to a non-indexed format, this parameter is ignored. In that case, pass any element of the <b>PaletteType</b> enumeration, say <b>PaletteTypeCustom</b>.</param>
+    <param name="palette">Pointer to a <see cref="ColorPalette" /> structure that specifies the palette whose indexes are stored in the pixel data of the converted bitmap. This palette (called the actual palette) does not have to have the type specified by the <i>palettetype</i> parameter. The <i>palettetype</i> parameter specifies a standard palette that can be used by any of the ordered or spiral dithering algorithms. If the actual palette has a type other than that specified by the <i>palettetype</i> parameter, then the <b>Bitmap.ConvertFormat</b> method performs a nearest-color conversion from the standard palette to the actual palette.</param>
+    <param name="alphaThresholdPercent">Real number in the range 0 through 100 that specifies which pixels in the source bitmap will map to the transparent color in the converted bitmap. A value of 0 specifies that none of the source pixels map to the transparent color. A value of 100 specifies that any pixel that is not fully opaque will map to the transparent color. A value of t specifies that any source pixel less than t percent of fully opaque will map to the transparent color. Note that for the alpha threshold to be effective, the palette must have a transparent color. If the palette does not have a transparent color, pixels with alpha values below the threshold will map to color that most closely matches (0, 0, 0, 0), usually black.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Bitmap.FromBITMAPINFO">
+    <summary>The <b>Bitmap.FromBITMAPINFO</b> method creates a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object based on a<see cref="BITMAPINFO" /> structure and an array of pixel data.</summary>
+    <param name="gdiBitmapInfo">Pointer to a GDI<see cref="BITMAPINFO" /> structure. This structure defines several bitmap attributes, such as size and pixel format. The BITMAPINFO structure is defined in Wingdi.h.</param>
+    <param name="gdiBitmapData">Pointer to an array of bytes that contains the pixel data.</param>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object.</returns>
+  </member>
+  <member name="Bitmap.FromDirectDrawSurface7">
+    <summary>The <b>Bitmap.FromDirectDrawSurface7</b> method creates a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object based on a DirectDraw surface. The<b>Bitmap</b> object maintains a reference to the DirectDraw surface until the<b>Bitmap</b> object is deleted.</summary>
+    <param name="surface">Pointer to an<b>IDirectDraw7</b> COM interface.</param>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object.</returns>
+  </member>
+  <member name="Bitmap.FromFile">
+    <summary>The <b>Bitmap.FromFile</b> method creates a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object based on an image file.</summary>
+    <param name="filename">Pointer to a null-terminated string that specifies the path name of the image file. The graphics file formats supported by GDI+ are BMP, GIF, JPEG, PNG, TIFF, Exif, WMF, and EMF.</param>
+    <param name="useEmbeddedColorManagement">Optional. Boolean value that specifies whether the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object applies color correction according to color management information that is embedded in the image file. Embedded information can include International Color Consortium (ICC) profiles, gamma values, and chromaticity information. <b>TRUE</b> specifies that color correction is enabled, and <b>FALSE</b> specifies that color correction is not enabled. The default value is <b>FALSE</b>.</param>
+    <returns>This method returns a pointer to the new<b>Bitmap</b> object.</returns>
+  </member>
+  <member name="Bitmap.FromHBITMAP">
+    <summary>The <b>Bitmap.FromHBITMAP</b> method creates a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object based on a handle to a Windows Graphics Device Interface (GDI) bitmap and a handle to a GDI palette.</summary>
+    <param name="hbm">Handle to GDI bitmap.</param>
+    <param name="hpal">Handle to a GDI palette used to define the bitmap colors if<i>hbm</i> is not a device-independent bitmap (DIB).</param>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object.</returns>
+  </member>
+  <member name="Bitmap.FromHICON">
+    <summary>The <b>Bitmap.FromHICON</b> method creates a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object based on a handle to an icon.</summary>
+    <param name="hicon">Handle to a GDI icon.</param>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object.</returns>
+  </member>
+  <member name="Bitmap.FromResource">
+    <summary>The <b>Bitmap.FromResource</b> method creates a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object based on an application or DLL instance handle and the name of a bitmap resource.</summary>
+    <param name="hInstance">Handle to an instance of a module whose executable file contains a bitmap resource.</param>
+    <param name="bitmapName">Pointer to a null-terminated string that specifies the path name of the bitmap resource to be loaded. Alternatively, this parameter can consist of the resource identifier in the low-order word and zero in the high-order word. You can use the<see cref="MAKEINTRESOURCE" /> macro to create this value.</param>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object.</returns>
+  </member>
+  <member name="Bitmap.FromStream">
+    <summary>The <b>Bitmap.FromStream</b> method creates a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object based on a stream.</summary>
+    <param name="stream">Pointer to an<see cref="IStream" /> COM interface. The implementation of IStream must include the<see cref="IStream.Seek" />,<b>Read</b>, and<see cref="IStream.Stat" /> methods.</param>
+    <param name="useEmbeddedColorManagement">Optional. <b>BOOL</b> value that specifies whether the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object applies color correction according to color management information that is embedded in the stream. Embedded information can include International Color Consortium (ICC) profiles, gamma values, and chromaticity information. <b>TRUE</b> specifies that color correction is enabled, and <b>FALSE</b> specifies that color correction is not enabled. The default value is <b>FALSE</b>.</param>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object.</returns>
+  </member>
+  <member name="Bitmap.GetHBITMAP">
+    <summary>The <b>Bitmap.GetHBITMAP</b> method creates a Windows Graphics Device Interface (GDI) bitmap from this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object.</summary>
+    <param name="colorBackground">Reference to a<a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the background color. This parameter is ignored if the bitmap is totally opaque.</param>
+    <param name="hbmReturn">Pointer to an<b>HBITMAP</b> that receives a handle to the GDI bitmap.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Bitmap.GetHICON">
+    <summary>The <b>Bitmap.GetHICON</b> method creates an icon from this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object.</summary>
+    <param name="hicon">Pointer to an <b>HICON</b> that receives a handle to the icon.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Bitmap.GetHistogram">
+    <summary>The <b>Bitmap.GetHistogram</b> method returns one or more histograms for specified color channels of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object.</summary>
+    <param name="format">Element of the <see cref="HistogramFormat" /> enumeration that specifies the channels for which histograms will be created.</param>
+    <param name="NumberOfEntries">Integer that specifies the number of elements (of type <b>UINT</b>) in each of the arrays pointed to by <i>channel0</i>, <i>channel1</i>, <i>channel2</i>, and <i>channel3</i>. You must allocate memory for those arrays before you call <b>Bitmap.GetHistogram</b>. To determine the required number of elements, call <see cref="Bitmap.GetHistogramSize" />.</param>
+    <param name="channel0">Pointer to an array of <b>UINT</b>s that receives the first histogram.</param>
+    <param name="channel1">Pointer to an array of <b>UINT</b>s that receives the second histogram if there is a second histogram. Pass <b>NULL</b> if there is no second histogram.</param>
+    <param name="channel2">Pointer to an array of <b>UINT</b>s that receives the third histogram if there is a third histogram. Pass <b>NULL</b> if there is no third histogram.</param>
+    <param name="channel3">Pointer to an array of <b>UINT</b>s that receives the fourth histogram if there is a fourth histogram. Pass <b>NULL</b> if there is no fourth histogram.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Bitmap.GetHistogramSize">
+    <summary>The <b>Bitmap.GetHistogramSize</b> returns the number of elements (in an array of <b>UINT</b>s) that you must allocate before you call the <see cref="Bitmap.GetHistogram" /> method of a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object.</summary>
+    <param name="format">Element of the <see cref="HistogramFormat" /> enumeration that specifies the pixel format of the bitmap.</param>
+    <param name="NumberOfEntries">Pointer to a <b>UINT</b> that receives the number of entries.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Bitmap.GetPixel">
+    <summary>The <b>Bitmap.GetPixel</b> method gets the color of a specified pixel in this bitmap.</summary>
+    <param name="x">Integer that specifies the x-coordinate (column) of the pixel.</param>
+    <param name="y">Integer that specifies the y-coordinate (row) of the pixel.</param>
+    <param name="color">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that receives the color of the specified pixel.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Bitmap.InitializePalette">
+    <summary>The <b>Bitmap.InitializePalette</b> method initializes a standard, optimal, or custom color palette.</summary>
+    <param name="palette">Pointer to a buffer that contains a <see cref="ColorPalette" /> structure followed by an array of <b>ARGB</b> values. The <b>Entries</b> member of a <b>ColorPalette</b> structure is an array of one <b>ARGB</b> value. You must allocate memory for the <b>ColorPalette</b> structure and for the additional <b>ARGB</b> values in the palette. For example, if the palette has 36 <b>ARGB</b> values, allocate a buffer as follows: <code>malloc(sizeof(ColorPalette) + 35*sizeof(ARGB))</code>.</param>
+    <param name="palettetype">Element of the <see cref="PaletteType" /> enumeration that specifies the palette type. The palette can have one of several standard types, or it can be a custom palette that you define. Also, the <b>Bitmap.InitializePalette</b> method can create an optimal palette based on a specified bitmap.</param>
+    <param name="optimalColors">Integer that specifies the number of colors you want to have in an optimal palette based on a specified bitmap. If this parameter is greater than 0, the <i>palettetype</i> parameter must be set to <b>PaletteTypeOptimal</b>, and the <i>bitmap</i> parameter must point to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object. If you are creating a standard or custom palette rather than an optimal palette, set this parameter to 0.</param>
+    <param name="useTransparentColor">Boolean value that specifies whether to include the transparent color in the palette. Set to <b>TRUE</b> to include the transparent color; otherwise <b>FALSE</b>.</param>
+    <param name="bitmap">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object for which an optimal palette will be created. If <i>palettetype</i> is set to <b>PaletteTypeOptimal</b> and <i>optimalColors</i> is set to a positive integer, set this parameter to the address of a <b>Bitmap</b> object. Otherwise, set this parameter to <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Bitmap.LockBits">
+    <summary>The <b>Bitmap.LockBits</b> method locks a rectangular portion of this bitmap and provides a temporary buffer that you can use to read or write pixel data in a specified format. Any pixel data that you write to the buffer is copied to the<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object when you call <see cref="Bitmap.UnlockBits" />.</summary>
+    <param name="rect">Pointer to a rectangle that specifies the portion of the bitmap to be locked.</param>
+    <param name="flags">Set of flags that specify whether the locked portion of the bitmap is available for reading or for writing and whether the caller has already allocated a buffer. Individual flags are defined in the <see cref="ImageLockMode" /> enumeration.</param>
+    <param name="format">Integer that specifies the format of the pixel data in the temporary buffer. The pixel format of the temporary buffer does not have to be the same as the pixel format of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object. The<b>PixelFormat</b> data type and constants that represent various pixel formats are defined in Gdipluspixelformats.h. For more information about pixel format constants, see <a href="https://docs.microsoft.com//windows/desktop/gdiplus/-gdiplus-constant-image-pixel-format-constants">Image Pixel Format Constants</a>. GDI+ version 1.0 does not support processing of 16-bits-per-channel images, so you should not set this parameter equal to PixelFormat48bppRGB, PixelFormat64bppARGB, or PixelFormat64bppPARGB.</param>
+    <param name="lockedBitmapData">Pointer to a <a href="https://docs.microsoft.com//previous-versions/ms534421(v=vs.85)">BitmapData</a> object. If the ImageLockModeUserInputBuf flag of the<i>flags</i> parameter is cleared, then<i>lockedBitmapData</i> serves only as an output parameter. In that case, the<b>Scan0</b> data member of the <b>BitmapData</b> object receives a pointer to a temporary buffer, which is filled with the values of the requested pixels. The other data members of the <b>BitmapData</b> object receive attributes (width, height, format, and stride) of the pixel data in the temporary buffer. If the pixel data is stored bottom-up, the<b>Stride</b> data member is negative. If the pixel data is stored top-down, the<b>Stride</b> data member is positive. If the ImageLockModeUserInputBuf flag of the<i>flags</i> parameter is set, then<i>lockedBitmapData</i> serves as an input parameter (and possibly as an output parameter). In that case, the caller must allocate a buffer for the pixel data that will be read or written. The caller also must create a <b>BitmapData</b> object, set the<b>Scan0</b> data member of that <b>BitmapData</b> object to the address of the buffer, and set the other data members of the <b>BitmapData</b> object to specify the attributes (width, height, format, and stride) of the buffer.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Bitmap.SetPixel">
+    <summary>The <b>Bitmap.SetPixel</b> method sets the color of a specified pixel in this bitmap.</summary>
+    <param name="x">
+      <b>int</b> that specifies the x-coordinate (column) of the pixel.</param>
+    <param name="y">
+      <b>int</b> that specifies the y-coordinate (row) of the pixel.</param>
+    <param name="color">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the color to set.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Bitmap.SetResolution">
+    <summary>The <b>Bitmap.SetResolution</b> method sets the resolution of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-bitmap">Bitmap</a> object.</summary>
+    <param name="xdpi">Real number that specifies the horizontal resolution in dots per inch.</param>
+    <param name="ydpi">Real number that specifies the vertical resolution in dots per inch.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Bitmap.UnlockBits">
+    <summary>The <b>Bitmap.UnlockBits</b> method unlocks a portion of this bitmap that was previously locked by a call to <see cref="Bitmap.LockBits" />.</summary>
+    <param name="lockedBitmapData">Pointer to a<a href="https://docs.microsoft.com//previous-versions/ms534421(v=vs.85)">BitmapData</a> object that was previously passed to <see cref="Bitmap.LockBits" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+</doc>

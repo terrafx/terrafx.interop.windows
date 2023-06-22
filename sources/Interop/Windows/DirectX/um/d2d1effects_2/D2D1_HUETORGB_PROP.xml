@@ -3,21 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_HUETORGB_PROP">
-    <summary>
-      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/hue-to-rgb-effect">Hue to RGB effect</a>.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/built-in-effects">Built-in Effects</seealso>
-    <seealso cref="CreateEffect" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/hue-to-rgb-effect">Hue to RGB effect</seealso>
+    <summary>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/hue-to-rgb-effect">Hue to RGB effect</a>.</summary>
   </member>
   <member name="D2D1_HUETORGB_PROP.D2D1_HUETORGB_PROP_INPUT_COLOR_SPACE">
-    <summary>
-      <para>The D2D1_HUETORGB_PROP_INPUT_COLOR_SPACE property is an enumeration value which indicates which color space to convert from.
-The default value for the property is D2D1_HUETORGB_INPUT_COLOR_SPACE_HUE_SATURATION_VALUE.
-See <see cref="D2D1_HUETORGB_INPUT_COLOR_SPACE" /> enumeration for more information.</para>
-    </summary>
+    <summary>The D2D1_HUETORGB_PROP_INPUT_COLOR_SPACE property is an enumeration value which indicates which color space to convert from. The default value for the property is D2D1_HUETORGB_INPUT_COLOR_SPACE_HUE_SATURATION_VALUE. See <see cref="D2D1_HUETORGB_INPUT_COLOR_SPACE" /> enumeration for more information.</summary>
   </member>
-  <member name="D2D1_HUETORGB_PROP.D2D1_HUETORGB_PROP_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_HUETORGB_PROP.D2D1_HUETORGB_PROP_FORCE_DWORD"></member>
 </doc>

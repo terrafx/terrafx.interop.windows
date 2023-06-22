@@ -3,28 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_ENCODER_OUTPUT_METADATA">
-    <summary>
-      <para>Represents metadata about an <see cref="ID3D12VideoEncodeCommandList2.EncodeFrame" /> operation.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>D3D12_VIDEO_ENCODER_OUTPUT_METADATA</b> and its child structures are all aligned to a 64-bit access boundary for use with <see cref="SetPredication" />.</para>
-    </remarks>
+    <summary>Represents metadata about an <see cref="ID3D12VideoEncodeCommandList2.EncodeFrame" /> operation.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_OUTPUT_METADATA.EncodeErrorFlags">
-    <summary>
-      <para>A <b>UINT64</b> representing a bitwise OR combination of values from the <see cref="D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAG" /> enumeration specifying information about the encode execution status.</para>
-    </summary>
+    <summary>A <b>UINT64</b> representing a bitwise OR combination of values from the <see cref="D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAG" /> enumeration specifying information about the encode execution status.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_OUTPUT_METADATA.EncodeStats">
-    <summary>
-      <para>A <see cref="D3D12_VIDEO_ENCODER_OUTPUT_METADATA_STATISTICS" /> representing statistics for an <b>EncodeFrame</b> operation.</para>
-    </summary>
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_OUTPUT_METADATA_STATISTICS" /> representing statistics for an <b>EncodeFrame</b> operation.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_OUTPUT_METADATA.EncodedBitstreamWrittenBytesCount">
-    <summary>
-      <para>Output field that receives a <b>UINT64</b> indicating how many bytes were into <see cref="D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM.pBuffer" /> plus the value of  <see cref="D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM.FrameStartOffset" />.</para>
-    </summary>
+    <summary>Output field that receives a <b>UINT64</b> indicating how many bytes were into <see cref="D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM.pBuffer" /> plus the value of <see cref="D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM.FrameStartOffset" />.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_OUTPUT_METADATA.WrittenSubregionsCount">
     <summary>

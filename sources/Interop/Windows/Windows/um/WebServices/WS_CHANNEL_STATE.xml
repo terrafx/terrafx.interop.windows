@@ -3,41 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_CHANNEL_STATE">
-    <summary>
-      <para>The different states that a channel can be in.</para>
-    </summary>
-    <remarks>
-      <para>The following are the state transitions for a channel.</para>
-      <para>.:image type="content" source="./images/ChannelStates.png" border="false" alt-text="Diagram of the state transitions for a Channel object. A second diagram shows the Sub-states for the Channel's Open state.".:</para>
-      <para>A channel may move to the <b>WS_CHANNEL_STATE_FAULTED</b></para>
-      <para>state even if <see cref="WsAbortChannel" /> was never called.
-This will only occur if the channel can no longer be used.</para>
-      <para>Note that only the valid state transitions are shown.  Using
-a function not shown for a given state will result in an
-<b>WS_E_INVALID_OPERATION</b> error being returned from
-the function (or crash in the case of <see cref="WsFreeChannel" />).
-For information on error codes, see<a href="https://docs.microsoft.com//windows/desktop/wsw/windows-web-services-return-values">Windows Web Services Return Values</a>.</para>
-    </remarks>
+    <summary>The different states that a channel can be in.</summary>
   </member>
-  <member name="WS_CHANNEL_STATE.WS_CHANNEL_STATE_CREATED">
-    <summary></summary>
-  </member>
-  <member name="WS_CHANNEL_STATE.WS_CHANNEL_STATE_OPENING">
-    <summary></summary>
-  </member>
-  <member name="WS_CHANNEL_STATE.WS_CHANNEL_STATE_ACCEPTING">
-    <summary></summary>
-  </member>
-  <member name="WS_CHANNEL_STATE.WS_CHANNEL_STATE_OPEN">
-    <summary></summary>
-  </member>
-  <member name="WS_CHANNEL_STATE.WS_CHANNEL_STATE_FAULTED">
-    <summary></summary>
-  </member>
-  <member name="WS_CHANNEL_STATE.WS_CHANNEL_STATE_CLOSING">
-    <summary></summary>
-  </member>
-  <member name="WS_CHANNEL_STATE.WS_CHANNEL_STATE_CLOSED">
-    <summary></summary>
-  </member>
+  <member name="WS_CHANNEL_STATE.WS_CHANNEL_STATE_CREATED"></member>
+  <member name="WS_CHANNEL_STATE.WS_CHANNEL_STATE_OPENING"></member>
+  <member name="WS_CHANNEL_STATE.WS_CHANNEL_STATE_ACCEPTING"></member>
+  <member name="WS_CHANNEL_STATE.WS_CHANNEL_STATE_OPEN"></member>
+  <member name="WS_CHANNEL_STATE.WS_CHANNEL_STATE_FAULTED"></member>
+  <member name="WS_CHANNEL_STATE.WS_CHANNEL_STATE_CLOSING"></member>
+  <member name="WS_CHANNEL_STATE.WS_CHANNEL_STATE_CLOSED"></member>
 </doc>

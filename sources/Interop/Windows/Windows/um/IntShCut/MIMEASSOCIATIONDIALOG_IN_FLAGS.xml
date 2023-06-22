@@ -3,16 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIMEASSOCIATIONDIALOG_IN_FLAGS">
-    <summary>
-      <para>Used with the <see cref="MIMEAssociationDialog" /> function to determine how it executes.</para>
-    </summary>
-    <remarks>
-      <para>An application is registered only if this flag is set and the user indicates that a persistent association is to be made.</para>
-    </remarks>
+    <summary>Used with the <see cref="MIMEAssociationDialog" /> function to determine how it executes.</summary>
   </member>
   <member name="MIMEASSOCIATIONDIALOG_IN_FLAGS.MIMEASSOCDLG_FL_REGISTER_ASSOC">
-    <summary>
-      <para>If this bit is set, the selected application is registered as the handler for the given MIME type. If this bit is clear, no association is registered.</para>
-    </summary>
+    <summary>If this bit is set, the selected application is registered as the handler for the given MIME type. If this bit is clear, no association is registered.</summary>
   </member>
 </doc>

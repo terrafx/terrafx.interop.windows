@@ -4,35 +4,18 @@
 <doc>
   <member name="IDXGISwapChain4.SetHDRMetaData">
     <summary>
-      <para>This method sets High Dynamic Range (HDR) and Wide Color Gamut (WCG)  header metadata.</para>
+      <blockquote>
+        <para>[!WARNING] It is no longer recommended for apps to explicitly set HDR metadata on their swap chain using <b>SetHDRMetaData</b>. Windows does not guarantee that swap chain metadata is sent to the monitor, and monitors do not handle HDR metadata consistently. Therefore it's recommended that apps always tone-map content into the range reported by the monitor. For more details on how to write apps that react dynamically to monitor capabilities, see <a href="https://docs.microsoft.com//windows/win32/direct3darticles/high-dynamic-range">Using DirectX with high dynamic range displays and Advanced Color</a>.</para>
+        <para>See Remarks for more details.</para>
+      </blockquote>
+      <para>This method sets High Dynamic Range (HDR) and Wide Color Gamut (WCG) header metadata.</para>
     </summary>
-    <param name="Type">
-      <para>Type: <b><see cref="DXGI_HDR_METADATA_TYPE" /></b></para>
-      <para>Specifies one member of the  <see cref="DXGI_HDR_METADATA_TYPE" /> enum.</para>
-    </param>
-    <param name="Size">
-      <para>Type: <b>UINT</b></para>
-      <para>Specifies the size of <i>pMetaData</i>, in bytes.</para>
-    </param>
-    <param name="pMetaData">
-      <para>Type: <b>void*</b></para>
-      <para>Specifies a void pointer that references the metadata, if it exists. Refer to the <see cref="DXGI_HDR_METADATA_HDR10" /> structure.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <remarks>
-      <para>This method sets metadata to enable a monitor's output to be adjusted depending on its capabilities.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-1-5-improvements">DXGI 1.5 Improvements</seealso>
-    <seealso cref="IDXGISwapChain4" />
+    <param name="Type">Specifies one member of the <see cref="DXGI_HDR_METADATA_TYPE" /> enum.</param>
+    <param name="Size">Specifies the size of <i>pMetaData</i>, in bytes.</param>
+    <param name="pMetaData">Specifies a void pointer that references the metadata, if it exists. Refer to the <see cref="DXGI_HDR_METADATA_HDR10" /> structure.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="IDXGISwapChain4">
-    <summary>
-      <para>This interface exposes a single method for setting video metadata.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IDXGISwapChain3" />
+    <summary>This interface exposes a single method for setting video metadata.</summary>
   </member>
 </doc>

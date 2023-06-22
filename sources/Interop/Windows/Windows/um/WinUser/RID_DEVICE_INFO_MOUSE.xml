@@ -3,41 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="RID_DEVICE_INFO_MOUSE">
-    <summary>
-      <para>Defines the raw input data coming from the specified mouse.</para>
-    </summary>
-    <remarks>
-      <para>For the mouse, the Usage Page is 1 and the Usage is 2.</para>
-    </remarks>
-    <seealso cref="RID_DEVICE_INFO" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/raw-input">Raw Input</seealso>
+    <summary>Defines the raw input data coming from the specified mouse.</summary>
   </member>
   <member name="RID_DEVICE_INFO_MOUSE.dwId">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The bitfield of the mouse device identification properties:</para>
-      <para>| Value  | ntddmou.h constant         | Description                                                                            |
-|:------:|----------------------------|----------------------------------------------------------------------------------------|
-| 0x0080 | MOUSE_HID_HARDWARE       | <a href="https://docs.microsoft.com//windows-hardware/drivers/hid/keyboard-and-mouse-hid-client-drivers">HID mouse</a>       |
-| 0x0100 | WHEELMOUSE_HID_HARDWARE  | <a href="https://docs.microsoft.com//windows-hardware/drivers/hid/keyboard-and-mouse-hid-client-drivers">HID wheel mouse</a> |
-| 0x8000 | HORIZONTAL_WHEEL_PRESENT | Mouse with horizontal wheel                                                            |</para>
+      <para>| Value | ntddmou.h constant | Description | |:------:|----------------------------|----------------------------------------------------------------------------------------| | 0x0080 | MOUSE_HID_HARDWARE | <a href="https://docs.microsoft.com//windows-hardware/drivers/hid/keyboard-and-mouse-hid-client-drivers">HID mouse</a> | | 0x0100 | WHEELMOUSE_HID_HARDWARE | <a href="https://docs.microsoft.com//windows-hardware/drivers/hid/keyboard-and-mouse-hid-client-drivers">HID wheel mouse</a> | | 0x8000 | HORIZONTAL_WHEEL_PRESENT | Mouse with horizontal wheel |</para>
     </summary>
   </member>
   <member name="RID_DEVICE_INFO_MOUSE.dwNumberOfButtons">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of buttons for the mouse.</para>
-    </summary>
+    <summary>The number of buttons for the mouse.</summary>
   </member>
   <member name="RID_DEVICE_INFO_MOUSE.dwSampleRate">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of data points per second. This information may not be applicable for every mouse device.</para>
-    </summary>
+    <summary>The number of data points per second. This information may not be applicable for every mouse device.</summary>
   </member>
   <member name="RID_DEVICE_INFO_MOUSE.fHasHorizontalWheel">
     <summary>
-      <para>Type: <b>BOOL</b></para>
       <para>
         <b>TRUE</b> if the mouse has a wheel for horizontal scrolling; otherwise, <b>FALSE</b>.</para>
       <para>

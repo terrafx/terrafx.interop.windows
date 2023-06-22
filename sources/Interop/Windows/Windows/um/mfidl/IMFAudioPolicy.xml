@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFAudioPolicy.GetDisplayName">
-    <summary>
-      <para>Retrieves the display name of the audio session. The Windows volume control displays this name.</para>
-    </summary>
-    <param name="pszName">
-      <para>Receives a pointer to the display name string. The caller must free the memory allocated for the string by calling <see cref="CoTaskMemFree" />.</para>
-    </param>
+    <summary>Retrieves the display name of the audio session. The Windows volume control displays this name.</summary>
+    <param name="pszName">Receives a pointer to the display name string. The caller must free the memory allocated for the string by calling <see cref="CoTaskMemFree" />.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,31 +12,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the application does not set a display name, Windows creates one.</para>
-    </remarks>
-    <seealso cref="IMFAudioPolicy" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/streaming-audio-renderer">Streaming Audio Renderer</seealso>
   </member>
   <member name="IMFAudioPolicy.GetGroupingParam">
-    <summary>
-      <para>Retrieves the group of sessions to which this audio session belongs.</para>
-    </summary>
-    <param name="pguidClass">
-      <para>Receives a GUID that identifies the session group.</para>
-    </param>
+    <summary>Retrieves the group of sessions to which this audio session belongs.</summary>
+    <param name="pguidClass">Receives a GUID that identifies the session group.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -48,31 +37,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If two or more audio sessions share the same group, the Windows volume control displays one slider control for the entire group. Otherwise, it displays a slider for each session. For more information, see <b>IAudioSessionControl.SetGroupingParam</b> in the core audio API documentation.</para>
-    </remarks>
-    <seealso cref="IMFAudioPolicy" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/streaming-audio-renderer">Streaming Audio Renderer</seealso>
   </member>
   <member name="IMFAudioPolicy.GetIconPath">
-    <summary>
-      <para>Retrieves the icon resource for the audio session. The Windows volume control displays this icon.</para>
-    </summary>
-    <param name="pszPath">
-      <para>Receives a pointer to a wide-character string that specifies a shell resource. The format of the string is described in the topic <see cref="IMFAudioPolicy.SetIconPath" />. The caller must free the memory allocated for the string by calling <see cref="CoTaskMemFree" />.</para>
-    </param>
+    <summary>Retrieves the icon resource for the audio session. The Windows volume control displays this icon.</summary>
+    <param name="pszPath">Receives a pointer to a wide-character string that specifies a shell resource. The format of the string is described in the topic <see cref="IMFAudioPolicy.SetIconPath" />. The caller must free the memory allocated for the string by calling <see cref="CoTaskMemFree" />.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -80,32 +62,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the application did not set an icon path, the method returns an empty string ("").</para>
-      <para>For more information, see <b>IAudioSessionControl.GetIconPath</b> in the core audio API documentation.</para>
-    </remarks>
-    <seealso cref="IMFAudioPolicy" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/streaming-audio-renderer">Streaming Audio Renderer</seealso>
   </member>
   <member name="IMFAudioPolicy.SetDisplayName">
-    <summary>
-      <para>Sets the display name of the audio session. The Windows volume control displays this name.</para>
-    </summary>
-    <param name="pszName">
-      <para>A null-terminated wide-character string that contains the display name.</para>
-    </param>
+    <summary>Sets the display name of the audio session. The Windows volume control displays this name.</summary>
+    <param name="pszName">A null-terminated wide-character string that contains the display name.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -113,31 +87,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the application does not set a display name, Windows creates one.</para>
-    </remarks>
-    <seealso cref="IMFAudioPolicy" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/streaming-audio-renderer">Streaming Audio Renderer</seealso>
   </member>
   <member name="IMFAudioPolicy.SetGroupingParam">
-    <summary>
-      <para>Assigns the audio session to a group of sessions.</para>
-    </summary>
-    <param name="rguidClass">
-      <para>A <b>GUID</b> that identifies the session group. Groups are application-defined. To create a new session group, assign a new GUID.</para>
-    </param>
+    <summary>Assigns the audio session to a group of sessions.</summary>
+    <param name="rguidClass">A <b>GUID</b> that identifies the session group. Groups are application-defined. To create a new session group, assign a new GUID.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -145,100 +112,30 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If two or more audio sessions share the same group, the Windows volume control displays one slider control for the entire group. Otherwise, it displays a slider for each session. For more information, see <b>IAudioSessionControl.SetGroupingParam</b> in the core audio API documentation.</para>
-    </remarks>
-    <seealso cref="IMFAudioPolicy" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/streaming-audio-renderer">Streaming Audio Renderer</seealso>
   </member>
   <member name="IMFAudioPolicy.SetIconPath">
-    <summary>
-      <para>Sets the icon resource for the audio session. The Windows volume control displays this icon.</para>
-    </summary>
-    <param name="pszPath">
-      <para>A wide-character string that specifies the icon. See Remarks.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The icon path has the format "path,index" or "path,-id", where <i>path</i> is the fully qualified path to a DLL, executable file, or icon file; <i>index</i> is the zero-based index of the icon within the file; and <i>id</i> is a resource identifier. Note that resource identifiers are preceded by a minus sign (-) to distinguish them from indexes. The path can contain environment variables, such as "%windir%". For more information, see <see cref="IAudioSessionControl.SetIconPath" /> in the Windows SDK.</para>
-      <h4>Examples</h4>
-      <para>The following example sets the icon using a resource identifier for an icon in the application's executable file.</para>
-      <code>HRESULT SetIcon(IMFMediaSession *pSession, int nID)
-{
-    IMFAudioPolicy *pPolicy = NULL;
-
-    const DWORD CCH_ICON_PATH = MAX_PATH + 16;
-    WCHAR szFileName[MAX_PATH];
-    WCHAR szIconPath[CCH_ICON_PATH];
-
-    HRESULT hr = S_OK;
-
-    DWORD result = GetModuleFileNameW(NULL, szFileName, MAX_PATH);
-
-    // Note: GetModuleFileName can return a truncated string without a
-    // NULL terminator. If so, the function succeeds but sets the last
-    // error to ERROR_INSUFFICIENT_BUFFER.
-    if ((result == 0) || (GetLastError() ==  ERROR_INSUFFICIENT_BUFFER))
-    {
-        hr = E_FAIL;
-        goto done;
-    }
-
-    hr = StringCchPrintfW(szIconPath, CCH_ICON_PATH,
-                 L"%s,-%d", szFileName, nID);
-
-    if (FAILED(hr))
-    {
-        goto done;
-    }
-
-    hr = MFGetService(
-        pSession,
-        MR_AUDIO_POLICY_SERVICE,
-        IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pPolicy)
-        );
-
-    if (FAILED(hr))
-    {
-        goto done;
-    }
-
-    hr = pPolicy-&gt;SetIconPath(szIconPath);
-    if (FAILED(hr))
-    {
-        goto done;
-    }
-
-done:
-    SafeRelease(&amp;amp;amp;amp;amp;amp;pPolicy);
-    return hr;
-}
-
-</code>
-    </remarks>
-    <seealso cref="IMFAudioPolicy" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/streaming-audio-renderer">Streaming Audio Renderer</seealso>
+    <summary>Sets the icon resource for the audio session. The Windows volume control displays this icon.</summary>
+    <param name="pszPath">A wide-character string that specifies the icon. See Remarks.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFAudioPolicy">
     <summary>
       <para>Configures the audio session that is associated with the streaming audio renderer (SAR). Use this interface to change how the audio session appears in the Windows volume control.</para>
       <para>The SAR exposes this interface as a service. To get a pointer to the interface, call <see cref="IMFGetService.GetService" /> with the service identifier MR_AUDIO_POLICY_SERVICE. You can call <b>GetService</b> directly on the SAR or call it on the Media Session.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/streaming-audio-renderer">Streaming Audio Renderer</seealso>
   </member>
 </doc>

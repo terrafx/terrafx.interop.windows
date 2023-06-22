@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_COLOR_GLYPH_RUN1">
-    <summary>
-      <para>Represents a color glyph run. The IDWriteFactory4.TranslateColorGlyphRun method returns an ordered collection of color glyph runs of varying types depending on what the font supports.</para>
-    </summary>
+    <summary>Represents a color glyph run. The IDWriteFactory4.TranslateColorGlyphRun method returns an ordered collection of color glyph runs of varying types depending on what the font supports.</summary>
   </member>
   <member name="DWRITE_COLOR_GLYPH_RUN1.glyphImageFormat">
-    <summary>
-      <para>Type of glyph image format for this color run. Exactly one type will be set since TranslateColorGlyphRun has already broken down the run into separate parts.</para>
-    </summary>
+    <summary>Type of glyph image format for this color run. Exactly one type will be set since TranslateColorGlyphRun has already broken down the run into separate parts.</summary>
   </member>
   <member name="DWRITE_COLOR_GLYPH_RUN1.measuringMode">
-    <summary>
-      <para>Measuring mode to use for this glyph run.</para>
-    </summary>
+    <summary>Measuring mode to use for this glyph run.</summary>
   </member>
-  <member name="DWRITE_COLOR_GLYPH_RUN1.DWRITE_COLOR_GLYPH_RUN">
-    <summary></summary>
-  </member>
+  <member name="DWRITE_COLOR_GLYPH_RUN1.DWRITE_COLOR_GLYPH_RUN"></member>
 </doc>

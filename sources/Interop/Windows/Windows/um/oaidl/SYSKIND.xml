@@ -3,28 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYSKIND">
-    <summary>
-      <para>Identifies the target operating system platform.</para>
-    </summary>
+    <summary>Identifies the target operating system platform.</summary>
   </member>
   <member name="SYSKIND.SYS_WIN16">
-    <summary>
-      <para>The target operating system for the type library is 16-bit Windows. By default, data members are packed.</para>
-    </summary>
+    <summary>The target operating system for the type library is 16-bit Windows. By default, data members are packed.</summary>
   </member>
   <member name="SYSKIND.SYS_WIN32">
-    <summary>
-      <para>The target operating system for the type library is 32-bit Windows. By default, data members are naturally aligned (for example, 2-byte integers are aligned on even-byte boundaries; 4-byte integers are aligned on quad-word boundaries, and so on).</para>
-    </summary>
+    <summary>The target operating system for the type library is 32-bit Windows. By default, data members are naturally aligned (for example, 2-byte integers are aligned on even-byte boundaries; 4-byte integers are aligned on quad-word boundaries, and so on).</summary>
   </member>
   <member name="SYSKIND.SYS_MAC">
-    <summary>
-      <para>The target operating system for the type library is Apple Macintosh. By default, all data members are aligned on even-byte boundaries.</para>
-    </summary>
+    <summary>The target operating system for the type library is Apple Macintosh. By default, all data members are aligned on even-byte boundaries.</summary>
   </member>
   <member name="SYSKIND.SYS_WIN64">
-    <summary>
-      <para>The target operating system for the type library is 64-bit Windows.</para>
-    </summary>
+    <summary>The target operating system for the type library is 64-bit Windows.</summary>
   </member>
 </doc>

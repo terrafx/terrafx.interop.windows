@@ -3,39 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IInitializeWithFile.Initialize">
-    <summary>
-      <para>Initializes a handler with a file path.</para>
-    </summary>
-    <param name="pszFilePath">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer that contains the file path as a null-terminated Unicode string.</para>
-    </param>
+    <summary>Initializes a handler with a file path.</summary>
+    <param name="pszFilePath">A pointer to a buffer that contains the file path as a null-terminated Unicode string.</param>
     <param name="grfMode">
-      <para>Type: <b>DWORD</b></para>
       <para>One of the following <a href="https://docs.microsoft.com//windows/desktop/Stg/stgm-constants">STGM</a> values that indicates the access mode for <i>pszFilePath</i>.</para>
       <h4>STGM_READ</h4>
       <para>The file indicated by <b>IInitializeWithFile.Initialize</b> is read-only.</para>
       <h4>STGM_READWRITE</h4>
       <para>The file indicated by <b>IInitializeWithFile.Initialize</b> can be read from and written to.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <see cref="Initialize" /> is preferred to this method because of its ability to use files that are not accessible through a Win32 path, such as the contents of a compressed file with a .zip file name extension. Use <b>IInitializeWithFile.Initialize</b> only when the API used by the handler to access the file accepts file paths only.</para>
-      <para>The file pointed to by <i>pszFilePath</i> must remain open for the lifetime of the handler or until <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb761470(v=vs.85)">IPropertyStore.Commit</a> is called.</para>
-      <para>If the file cannot be opened according to the method's parameter values, this method returns a suitable error code.</para>
-      <para>A handler instance should be initialized only once in its lifetime. Attempts by the calling application to reinitialize the handler should result in the error <code>HRESULT_FROM_WIN32(ERROR_ALREADY_INITIALIZED)</code>.</para>
-    </remarks>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IInitializeWithFile">
-    <summary>
-      <para>Exposes a method to initialize a handler, such as a property handler, thumbnail handler, or preview handler, with a file path.</para>
-    </summary>
-    <remarks>
-      <para>Whenever possible, it is recommended that initialization be done through a stream using <see cref="IInitializeWithStream" />. Benefits of this include increased security and stability.</para>
-    </remarks>
+    <summary>Exposes a method to initialize a handler, such as a property handler, thumbnail handler, or preview handler, with a file path.</summary>
   </member>
 </doc>

@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="VERIFY_INFORMATION">
-    <summary>
-      <para>Contains information used to verify a disk extent. It is the output buffer for the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_verify">IOCTL_DISK_VERIFY</a> control code.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_verify">IOCTL_DISK_VERIFY</seealso>
+    <summary>Contains information used to verify a disk extent. It is the output buffer for the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_verify">IOCTL_DISK_VERIFY</a> control code.</summary>
   </member>
   <member name="VERIFY_INFORMATION.StartingOffset">
-    <summary>
-      <para>The starting offset of the disk extent.</para>
-    </summary>
+    <summary>The starting offset of the disk extent.</summary>
   </member>
   <member name="VERIFY_INFORMATION.Length">
-    <summary>
-      <para>The length of the disk extent, in bytes.</para>
-    </summary>
+    <summary>The length of the disk extent, in bytes.</summary>
   </member>
 </doc>

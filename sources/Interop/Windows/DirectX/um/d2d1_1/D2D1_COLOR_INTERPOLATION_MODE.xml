@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_COLOR_INTERPOLATION_MODE">
-    <summary>
-      <para>Defines how to interpolate between colors.</para>
-    </summary>
+    <summary>Defines how to interpolate between colors.</summary>
   </member>
   <member name="D2D1_COLOR_INTERPOLATION_MODE.D2D1_COLOR_INTERPOLATION_MODE_STRAIGHT">
-    <summary>
-      <para>Colors are interpolated with straight alpha.</para>
-    </summary>
+    <summary>Colors are interpolated with straight alpha.</summary>
   </member>
   <member name="D2D1_COLOR_INTERPOLATION_MODE.D2D1_COLOR_INTERPOLATION_MODE_PREMULTIPLIED">
-    <summary>
-      <para>Colors are interpolated with premultiplied alpha.</para>
-    </summary>
+    <summary>Colors are interpolated with premultiplied alpha.</summary>
   </member>
-  <member name="D2D1_COLOR_INTERPOLATION_MODE.D2D1_COLOR_INTERPOLATION_MODE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_COLOR_INTERPOLATION_MODE.D2D1_COLOR_INTERPOLATION_MODE_FORCE_DWORD"></member>
 </doc>

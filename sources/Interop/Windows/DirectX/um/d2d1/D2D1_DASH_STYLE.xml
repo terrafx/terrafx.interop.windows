@@ -3,51 +3,37 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_DASH_STYLE">
-    <summary>
-      <para>Describes the sequence of dashes and gaps in a stroke.</para>
-    </summary>
-    <remarks>
-      <para>The following illustration shows several available dash styles.</para>
-      <para>
-        <img alt="Illustration of available dash styles" src="https://docs.microsoft.com/windows/win32/api/d2d1mages/StrokeStyle_DashStyle.png" />
-      </para>
-    </remarks>
+    <summary>Describes the sequence of dashes and gaps in a stroke.</summary>
   </member>
   <member name="D2D1_DASH_STYLE.D2D1_DASH_STYLE_SOLID">
-    <summary>
-      <para>A solid line with no breaks.</para>
-    </summary>
+    <summary>A solid line with no breaks.</summary>
   </member>
   <member name="D2D1_DASH_STYLE.D2D1_DASH_STYLE_DASH">
     <summary>
       <para>A dash followed by a gap of equal length. The dash and the gap are each twice as long as the stroke thickness.</para>
-      <para>The equivalent dash  array for  <b>D2D1_DASH_STYLE_DASH</b> is {2, 2}.</para>
+      <para>The equivalent dash array for <b>D2D1_DASH_STYLE_DASH</b> is {2, 2}.</para>
     </summary>
   </member>
   <member name="D2D1_DASH_STYLE.D2D1_DASH_STYLE_DOT">
     <summary>
       <para>A dot followed by a longer gap.</para>
-      <para>The equivalent dash  array for  <b>D2D1_DASH_STYLE_DOT</b> is {0, 2}.</para>
+      <para>The equivalent dash array for <b>D2D1_DASH_STYLE_DOT</b> is {0, 2}.</para>
     </summary>
   </member>
   <member name="D2D1_DASH_STYLE.D2D1_DASH_STYLE_DASH_DOT">
     <summary>
       <para>A dash, followed by a gap, followed by a dot, followed by another gap.</para>
-      <para>The equivalent dash array for  <b>D2D1_DASH_STYLE_DASH_DOT</b> is {2, 2, 0, 2}.</para>
+      <para>The equivalent dash array for <b>D2D1_DASH_STYLE_DASH_DOT</b> is {2, 2, 0, 2}.</para>
     </summary>
   </member>
   <member name="D2D1_DASH_STYLE.D2D1_DASH_STYLE_DASH_DOT_DOT">
     <summary>
       <para>A dash, followed by a gap, followed by a dot, followed by another gap, followed by another dot, followed by another gap.</para>
-      <para>The equivalent dash array for  <b>D2D1_DASH_STYLE_DASH_DOT_DOT</b> is {2, 2, 0, 2, 0, 2}.</para>
+      <para>The equivalent dash array for <b>D2D1_DASH_STYLE_DASH_DOT_DOT</b> is {2, 2, 0, 2, 0, 2}.</para>
     </summary>
   </member>
   <member name="D2D1_DASH_STYLE.D2D1_DASH_STYLE_CUSTOM">
-    <summary>
-      <para>The dash pattern is specified by an array of floating-point values.</para>
-    </summary>
+    <summary>The dash pattern is specified by an array of floating-point values.</summary>
   </member>
-  <member name="D2D1_DASH_STYLE.D2D1_DASH_STYLE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_DASH_STYLE.D2D1_DASH_STYLE_FORCE_DWORD"></member>
 </doc>

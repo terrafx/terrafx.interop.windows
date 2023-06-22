@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_MEDIA_ENGINE_S3D_PACKING_MODE">
-    <summary>
-      <para>Specifies the layout for a packed 3D video frame.</para>
-    </summary>
-    <seealso cref="IMFMediaEngineEx.GetStereo3DFramePackingMode" />
-    <seealso cref="IMFMediaEngineEx.SetStereo3DFramePackingMode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies the layout for a packed 3D video frame.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_S3D_PACKING_MODE.MF_MEDIA_ENGINE_S3D_PACKING_MODE_NONE">
-    <summary>
-      <para>None.</para>
-    </summary>
+    <summary>None.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_S3D_PACKING_MODE.MF_MEDIA_ENGINE_S3D_PACKING_MODE_SIDE_BY_SIDE">
-    <summary>
-      <para>The views are packed side-by-side in a single frame.</para>
-    </summary>
+    <summary>The views are packed side-by-side in a single frame.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_S3D_PACKING_MODE.MF_MEDIA_ENGINE_S3D_PACKING_MODE_TOP_BOTTOM">
-    <summary>
-      <para>The views are packed top-to-bottom in a single frame.</para>
-    </summary>
+    <summary>The views are packed top-to-bottom in a single frame.</summary>
   </member>
 </doc>

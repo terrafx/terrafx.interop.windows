@@ -4,24 +4,17 @@
 <doc>
   <member name="eAVEncVideoFilmContent">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies whether the original source of the input video was film or video. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideosourcefilmcontent-property">AVEncVideoSourceFilmContent</a> property.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVEncVideoFilmContent.eAVEncVideoFilmContent_VideoOnly">
-    <summary>
-      <para>The original source was video.</para>
-    </summary>
+    <summary>The original source was video.</summary>
   </member>
   <member name="eAVEncVideoFilmContent.eAVEncVideoFilmContent_FilmOnly">
-    <summary>
-      <para>The original source was film.</para>
-    </summary>
+    <summary>The original source was film.</summary>
   </member>
   <member name="eAVEncVideoFilmContent.eAVEncVideoFilmContent_Mixed">
-    <summary>
-      <para>The original source contains a mix of video and film.</para>
-    </summary>
+    <summary>The original source contains a mix of video and film.</summary>
   </member>
 </doc>

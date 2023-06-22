@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IVisualTreeServiceCallback.OnVisualTreeChange">
+    <summary>Communicates the state of the visual tree when it changes.</summary>
+    <param name="relation">The association of a parent object with a child object.</param>
+    <param name="element">The XAML element in the visual tree.</param>
+    <param name="mutationType">A value that indicates whether the change was an add or remove.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IVisualTreeServiceCallback">
+    <summary>Communicates the state of the visual tree.</summary>
+  </member>
+</doc>

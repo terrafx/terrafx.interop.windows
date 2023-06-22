@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IBlockRange.get_EndLba">
-    <summary>
-      <para>Retrieves the end sector of the range specified by the <see cref="IBlockRange" /> interface.</para>
-    </summary>
-    <param name="value">
-      <para>The end sector of the range.</para>
-    </param>
+    <summary>Retrieves the end sector of the range specified by the <see cref="IBlockRange" /> interface.</summary>
+    <param name="value">The end sector of the range.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -16,37 +12,27 @@
           <description>Return code/value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>E_POINTER</b>
-                </description>
-              </item>
-              <item>
-                <description>Value: 0x80004003</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>Value: 0x80004003</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Invalid pointer.</para>
-          </description>
-        </item>
+          <description>Invalid pointer.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The sector number returned by this method is included in the range.</para>
-    </remarks>
-    <seealso cref="IBlockRange" />
   </member>
   <member name="IBlockRange.get_StartLba">
-    <summary>
-      <para>Retrieves the start sector of the range described by <see cref="IBlockRange" />.</para>
-    </summary>
-    <param name="value">
-      <para>The start sector of the range.</para>
-    </param>
+    <summary>Retrieves the start sector of the range described by <see cref="IBlockRange" />.</summary>
+    <param name="value">The start sector of the range.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -54,35 +40,25 @@
           <description>Return code/value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>E_POINTER</b>
-                </description>
-              </item>
-              <item>
-                <description>Value: 0x80004003</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>Value: 0x80004003</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Invalid pointer.</para>
-          </description>
-        </item>
+          <description>Invalid pointer.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IBlockRange" />
   </member>
   <member name="IBlockRange">
-    <summary>
-      <para>Use this interface to retrieve information about a single continuous range of sectors on the media. This interface is typically used together with the <see cref="IBlockRangeList" /> interface to describe a collection of sector ranges.</para>
-    </summary>
-    <remarks>
-      <para>The values returned by the <see cref="IBlockRange.get_StartLba" /> and <see cref="IBlockRange.get_EndLba" /> methods define an inclusive range, i.e. both the start and end sectors belong to the range.</para>
-    </remarks>
-    <seealso cref="IBlockRangeList" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</seealso>
+    <summary>Use this interface to retrieve information about a single continuous range of sectors on the media. This interface is typically used together with the <see cref="IBlockRangeList" /> interface to describe a collection of sector ranges.</summary>
   </member>
 </doc>

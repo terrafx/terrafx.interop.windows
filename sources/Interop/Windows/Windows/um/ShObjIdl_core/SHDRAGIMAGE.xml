@@ -3,56 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SHDRAGIMAGE">
-    <summary>
-      <para>Contains the information needed to create a drag image.</para>
-    </summary>
-    <remarks>
-      <para>In Windows Vista this structure is defined in Shobjidl.idl. Prior to that, it was defined in Shlobj.h.</para>
-      <para>Use the following procedure to create the drag image.</para>
-      <list type="number">
-        <item>
-          <description>Create a bitmap of the size specified by <b>sizeDragImage</b> with a handle to a device context (HDC) that is compatible with the screen.</description>
-        </item>
-        <item>
-          <description>Draw the bitmap.</description>
-        </item>
-        <item>
-          <description>Select the bitmap out of the HDC it was created with.</description>
-        </item>
-        <item>
-          <description>Destroy the HDC.</description>
-        </item>
-        <item>
-          <description>Assign the bitmap handle to <b>hbmpDragImage</b>.</description>
-        </item>
-      </list>
-      <b>Note</b>  Turn off antialiasing when drawing text. Otherwise, artifacts could occur at the edges, between the text color and the color key.
-</remarks>
-    <seealso cref="IDragSourceHelper.InitializeFromBitmap" />
-    <seealso cref="IDragSourceHelper.InitializeFromWindow" />
+    <summary>Contains the information needed to create a drag image.</summary>
   </member>
   <member name="SHDRAGIMAGE.sizeDragImage">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</a></b></para>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</a> structure with the length and width of the drag image.</para>
-    </summary>
+    <summary>A <see cref="SIZE" /> structure with the length and width of the drag image.</summary>
   </member>
   <member name="SHDRAGIMAGE.ptOffset">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a></b></para>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure that specifies the location of the cursor within the drag image. The structure should contain the offset from the upper-left corner of the drag image to the location of the cursor.</para>
-    </summary>
+    <summary>A <see cref="POINT" /> structure that specifies the location of the cursor within the drag image. The structure should contain the offset from the upper-left corner of the drag image to the location of the cursor.</summary>
   </member>
   <member name="SHDRAGIMAGE.hbmpDragImage">
-    <summary>
-      <para>Type: <b>HBITMAP</b></para>
-      <para>The drag image's bitmap handle.</para>
-    </summary>
+    <summary>The drag image's bitmap handle.</summary>
   </member>
   <member name="SHDRAGIMAGE.crColorKey">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a></b></para>
-      <para>The color used by the control to fill the background of the drag image.</para>
-    </summary>
+    <summary>The color used by the control to fill the background of the drag image.</summary>
   </member>
 </doc>

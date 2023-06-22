@@ -3,13 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TOKEN_APPCONTAINER_INFORMATION">
-    <summary>
-      <para>The <b>TOKEN_APPCONTAINER_INFORMATION</b> structure specifies all the information in a token that is necessary for an app container.</para>
-    </summary>
+    <summary>The <b>TOKEN_APPCONTAINER_INFORMATION</b> structure specifies all the information in a token that is necessary for an app container.</summary>
   </member>
   <member name="TOKEN_APPCONTAINER_INFORMATION.TokenAppContainer">
-    <summary>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) of the app container.</para>
-    </summary>
+    <summary>The <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) of the app container.</summary>
   </member>
 </doc>

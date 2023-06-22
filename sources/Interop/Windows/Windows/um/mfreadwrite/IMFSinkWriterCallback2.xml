@@ -3,36 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFSinkWriterCallback2.OnStreamError">
-    <summary>
-      <para>Called when an asynchronous error occurs with the <see cref="IMFSinkWriter" />.</para>
-    </summary>
-    <param name="dwStreamIndex">
-      <para>The index of the stream of the transform that raised the asynchronous error.</para>
-    </param>
-    <param name="hrStatus">
-      <para>The error that occurred.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value. Currently, the sink writer ignores the return value.</para>
-    </returns>
-    <seealso cref="IMFSinkWriterCallback2" />
+    <summary>Called when an asynchronous error occurs with the <see cref="IMFSinkWriter" />.</summary>
+    <param name="dwStreamIndex">The index of the stream of the transform that raised the asynchronous error.</param>
+    <param name="hrStatus">The error that occurred.</param>
+    <returns>Returns an <b>HRESULT</b> value. Currently, the sink writer ignores the return value.</returns>
   </member>
   <member name="IMFSinkWriterCallback2.OnTransformChange">
-    <summary>
-      <para>Called when the transform chain in the <see cref="IMFSourceReader" /> is built or modified.</para>
-    </summary>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value. Currently, the sink writer ignores the return value.</para>
-    </returns>
-    <seealso cref="IMFSinkWriterCallback2" />
+    <summary>Called when the transform chain in the <see cref="IMFSourceReader" /> is built or modified.</summary>
+    <returns>Returns an <b>HRESULT</b> value. Currently, the sink writer ignores the return value.</returns>
   </member>
   <member name="IMFSinkWriterCallback2">
-    <summary>
-      <para>Extends the <see cref="IMFSinkWriterCallback" /> interface.</para>
-    </summary>
-    <remarks>
-      <para>This interface provides a mechanism for apps that use <see cref="IMFSinkWriter" /> to receive asynchronous notifications when the transform chain is complete and the system is ready for use or when an asynchronous error occurs.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Extends the <see cref="IMFSinkWriterCallback" /> interface.</summary>
   </member>
 </doc>

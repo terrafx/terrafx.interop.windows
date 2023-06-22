@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ARP_SEND_REPLY">
-    <summary>
-      <para>The <b>ARP_SEND_REPLY</b> structure stores information about an Address Resolution Protocol (ARP) reply messages.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-start-page">IP Helper Start Page</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-structures">IP Helper Structures</seealso>
-    <seealso cref="IPAddr" />
+    <summary>The <b>ARP_SEND_REPLY</b> structure stores information about an Address Resolution Protocol (ARP) reply messages.</summary>
   </member>
   <member name="ARP_SEND_REPLY.DestAddress">
-    <summary>
-      <para>The destination  IPv4 address to which the ARP message is sent, in the form of an <see cref="IPAddr" /> structure.</para>
-    </summary>
+    <summary>The destination IPv4 address to which the ARP message is sent, in the form of an <see cref="IPAddr" /> structure.</summary>
   </member>
   <member name="ARP_SEND_REPLY.SrcAddress">
-    <summary>
-      <para>The source IPv4 address from which the ARP message is being transmitted, in the form of an <see cref="IPAddr" /> structure.</para>
-    </summary>
+    <summary>The source IPv4 address from which the ARP message is being transmitted, in the form of an <see cref="IPAddr" /> structure.</summary>
   </member>
 </doc>

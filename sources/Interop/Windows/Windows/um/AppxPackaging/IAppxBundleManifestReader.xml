@@ -3,56 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxBundleManifestReader.GetPackageId">
-    <summary>
-      <para>Retrieves an object that represents the &lt;Identity&gt; element under the root &lt;Bundle&gt; element.</para>
-    </summary>
-    <param name="packageId">
-      <para>Type: <b><see cref="IAppxManifestPackageId" />**</b></para>
-      <para>The package identifier.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Call the <see cref="IUnknown.Release" /> method when you have finished using the <i>packageId</i> object.</para>
-    </remarks>
-    <seealso cref="IAppxBundleManifestReader" />
+    <summary>Retrieves an object that represents the &lt;Identity&gt; element under the root &lt;Bundle&gt; element.</summary>
+    <param name="packageId">The package identifier.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxBundleManifestReader.GetPackageInfoItems">
-    <summary>
-      <para>Retrieves an enumerator over all the &lt;Package&gt; elements under the &lt;Packages&gt; element.</para>
-    </summary>
-    <param name="packageInfoItems">
-      <para>Type: <b>IAppxBundleManifestPackageInfoEnumerator**</b></para>
-      <para>An enumerator over all payload packages in a &lt;Packages&gt; element of a bundle.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxBundleManifestReader" />
+    <summary>Retrieves an enumerator over all the &lt;Package&gt; elements under the &lt;Packages&gt; element.</summary>
+    <param name="packageInfoItems">An enumerator over all payload packages in a &lt;Packages&gt; element of a bundle.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxBundleManifestReader.GetStream">
-    <summary>
-      <para>Gets the raw XML document without any preprocessing.</para>
-    </summary>
-    <param name="manifestStream">
-      <para>Type: <b><see cref="IStream" />**</b></para>
-      <para>The read-only stream that represents the XML content of the manifest.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The raw XML stream is the entire source stream and might contain elements and attributes in other namespaces that are ignored by the manifest reader.  For example, the XML stream might have elements in other namespaces that were marked in the <b>IgnorableNamespaces</b> attribute in the <b>Package</b> element, which were not validated. So, we recommend not to trust or parse this XML without security testing.</para>
-    </remarks>
-    <seealso cref="IAppxBundleManifestReader" />
+    <summary>Gets the raw XML document without any preprocessing.</summary>
+    <param name="manifestStream">The read-only stream that represents the XML content of the manifest.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxBundleManifestReader">
-    <summary>
-      <para>Provides a read-only object model for manifests of bundle packages.</para>
-    </summary>
+    <summary>Provides a read-only object model for manifests of bundle packages.</summary>
   </member>
 </doc>

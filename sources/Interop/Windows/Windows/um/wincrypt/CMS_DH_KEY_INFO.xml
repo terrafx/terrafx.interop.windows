@@ -3,34 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CMS_DH_KEY_INFO">
-    <summary>
-      <para>The <b>CMS_DH_KEY_INFO</b> structure is used with the <b>KP_CMS_DH_KEY_INFO</b> parameter in the <see cref="CryptSetKeyParam" /> function to contain <a href="https://docs.microsoft.com//windows/desktop/SecGloss/d-gly">Diffie-Hellman</a> key information.</para>
-    </summary>
-    <seealso cref="CryptSetKeyParam" />
+    <summary>The <b>CMS_DH_KEY_INFO</b> structure is used with the <b>KP_CMS_DH_KEY_INFO</b> parameter in the <see cref="CryptSetKeyParam" /> function to contain <a href="https://docs.microsoft.com//windows/desktop/SecGloss/d-gly">Diffie-Hellman</a> key information.</summary>
   </member>
   <member name="CMS_DH_KEY_INFO.dwVersion">
-    <summary>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="CMS_DH_KEY_INFO.Algid">
-    <summary>
-      <para>One of the <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/alg-id">ALG_ID</a> values that identifies the algorithm for the key to be converted.</para>
-    </summary>
+    <summary>One of the <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/alg-id">ALG_ID</a> values that identifies the algorithm for the key to be converted.</summary>
   </member>
   <member name="CMS_DH_KEY_INFO.pszContentEncObjId">
-    <summary>
-      <para>The address of a null-terminated ANSI string that contains the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifier</a> (OID) of the content encryption algorithm.</para>
-    </summary>
+    <summary>The address of a null-terminated ANSI string that contains the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifier</a> (OID) of the content encryption algorithm.</summary>
   </member>
   <member name="CMS_DH_KEY_INFO.PubInfo">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> structure that contains additional public information. This member is optional and the <b>cbData</b> member of this structure can be zero if this is not needed.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> structure that contains additional public information. This member is optional and the <b>cbData</b> member of this structure can be zero if this is not needed.</summary>
   </member>
   <member name="CMS_DH_KEY_INFO.pReserved">
-    <summary>
-      <para>Reserved for future use and must be <b>NULL</b>.</para>
-    </summary>
+    <summary>Reserved for future use and must be <b>NULL</b>.</summary>
   </member>
 </doc>

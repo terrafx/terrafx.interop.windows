@@ -3,64 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="COMSTAT">
-    <summary>
-      <para>Contains information about a communications device. This structure is filled by the
-<see cref="ClearCommError" /> function.</para>
-    </summary>
-    <seealso cref="ClearCommError" />
-    <seealso cref="ReadFile" />
-    <seealso cref="TransmitCommChar" />
+    <summary>Contains information about a communications device. This structure is filled by the<see cref="ClearCommError" /> function.</summary>
   </member>
   <member name="COMSTAT.fCtsHold">
-    <summary>
-      <para>If this member is <b>TRUE</b>, transmission is waiting for the CTS (clear-to-send) signal to be sent.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, transmission is waiting for the CTS (clear-to-send) signal to be sent.</summary>
   </member>
   <member name="COMSTAT.fDsrHold">
-    <summary>
-      <para>If this member is <b>TRUE</b>, transmission is waiting for the DSR (data-set-ready) signal to be sent.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, transmission is waiting for the DSR (data-set-ready) signal to be sent.</summary>
   </member>
   <member name="COMSTAT.fRlsdHold">
-    <summary>
-      <para>If this member is <b>TRUE</b>, transmission is waiting for the RLSD (receive-line-signal-detect) signal to be sent.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, transmission is waiting for the RLSD (receive-line-signal-detect) signal to be sent.</summary>
   </member>
   <member name="COMSTAT.fXoffHold">
-    <summary>
-      <para>If this member is <b>TRUE</b>, transmission is waiting because the XOFF character was received.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, transmission is waiting because the XOFF character was received.</summary>
   </member>
   <member name="COMSTAT.fXoffSent">
-    <summary>
-      <para>If this member is <b>TRUE</b>, transmission is waiting because the XOFF character was transmitted. (Transmission halts when the XOFF character is transmitted to a system that takes the next character as XON, regardless of the actual character.)</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, transmission is waiting because the XOFF character was transmitted. (Transmission halts when the XOFF character is transmitted to a system that takes the next character as XON, regardless of the actual character.)</summary>
   </member>
   <member name="COMSTAT.fEof">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the end-of-file (EOF) character has been received.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the end-of-file (EOF) character has been received.</summary>
   </member>
   <member name="COMSTAT.fTxim">
-    <summary>
-      <para>If this member is <b>TRUE</b>, there is a character queued for transmission that has come to the communications device by way of the
-<see cref="TransmitCommChar" /> function. The communications device transmits such a character ahead of other characters in the device's output buffer.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, there is a character queued for transmission that has come to the communications device by way of the<see cref="TransmitCommChar" /> function. The communications device transmits such a character ahead of other characters in the device's output buffer.</summary>
   </member>
   <member name="COMSTAT.fReserved">
-    <summary>
-      <para>Reserved; do not use.</para>
-    </summary>
+    <summary>Reserved; do not use.</summary>
   </member>
   <member name="COMSTAT.cbInQue">
-    <summary>
-      <para>The number of bytes received by the serial provider but not yet read by a
-<see cref="ReadFile" /> operation.</para>
-    </summary>
+    <summary>The number of bytes received by the serial provider but not yet read by a<see cref="ReadFile" /> operation.</summary>
   </member>
   <member name="COMSTAT.cbOutQue">
-    <summary>
-      <para>The number of bytes of user data remaining to be transmitted for all write operations. This value will be zero for a nonoverlapped write.</para>
-    </summary>
+    <summary>The number of bytes of user data remaining to be transmitted for all write operations. This value will be zero for a nonoverlapped write.</summary>
   </member>
 </doc>

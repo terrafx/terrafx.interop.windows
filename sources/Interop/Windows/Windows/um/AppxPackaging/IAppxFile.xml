@@ -3,85 +3,31 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxFile.GetCompressionOption">
-    <summary>
-      <para>Retrieves the compression option that is used to store the file in the package.</para>
-    </summary>
-    <param name="compressionOption">
-      <para>Type: <b><see cref="APPX_COMPRESSION_OPTION" />*</b></para>
-      <para>A compression option that describes how the file is stored in the package.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="APPX_COMPRESSION_OPTION" />
-    <seealso cref="IAppxFile" />
+    <summary>Retrieves the compression option that is used to store the file in the package.</summary>
+    <param name="compressionOption">A compression option that describes how the file is stored in the package.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxFile.GetContentType">
-    <summary>
-      <para>Retrieves the content type of the file.</para>
-    </summary>
-    <param name="contentType">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPWSTR</a>*</b></para>
-      <para>The content type of the file.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The caller is responsible for deallocating the memory used by <i>contentType</i>. Use the <see cref="CoTaskMemFree" /> function to deallocate the string's memory.</para>
-      <h4>Examples</h4>
-      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-extract-content-from-a-package">Quickstart: Extract app package contents</a>.</para>
-    </remarks>
-    <seealso cref="IAppxFile" />
+    <summary>Retrieves the content type of the file.</summary>
+    <param name="contentType">The content type of the file.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxFile.GetName">
-    <summary>
-      <para>Retrieves the name of the file, including its path relative to the package root directory.</para>
-    </summary>
-    <param name="fileName">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPWSTR</a>*</b></para>
-      <para>A string that contains the name and relative path of the file.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The string returned in <i>fileName</i> is identical to the file name listed in the block map.</para>
-      <para>The caller is responsible for deallocating the memory used by <i>fileName</i>. Use the <see cref="CoTaskMemFree" /> function to deallocate the string's memory.</para>
-      <h4>Examples</h4>
-      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-extract-content-from-a-package">Quickstart: Extract app package contents</a>.</para>
-    </remarks>
-    <seealso cref="IAppxFile" />
+    <summary>Retrieves the name of the file, including its path relative to the package root directory.</summary>
+    <param name="fileName">A string that contains the name and relative path of the file.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxFile.GetSize">
-    <summary>
-      <para>Retrieves the uncompressed size of the file.</para>
-    </summary>
-    <param name="size">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT64</a>*</b></para>
-      <para>The uncompressed size, in bytes.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxFile" />
+    <summary>Retrieves the uncompressed size of the file.</summary>
+    <param name="size">The uncompressed size, in bytes.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxFile.GetStream">
-    <summary>
-      <para>Gets a read-only stream that contains the uncompressed content of the file.</para>
-    </summary>
-    <param name="stream">
-      <para>Type: <b><see cref="IStream" />**</b></para>
-      <para>A read-only stream that contains the uncompressed content of the file.</para>
-    </param>
+    <summary>Gets a read-only stream that contains the uncompressed content of the file.</summary>
+    <param name="stream">A read-only stream that contains the uncompressed content of the file.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>If the method succeeds, it returns <b>S_OK</b>.</para>
-      <para>[Fatal] OPC error codes (0x8051xxxx) if the file’s local file header or data descriptor in the zip archive is invalid.  This failure causes the entire OPC zip consumer to enter an invalid state, no other file can be accessed from the <see cref="IAppxPackageReader" /> object after this error occurs.</para>
+      <para>[Fatal] OPC error codes (0x8051xxxx) if the file’s local file header or data descriptor in the zip archive is invalid. This failure causes the entire OPC zip consumer to enter an invalid state, no other file can be accessed from the <see cref="IAppxPackageReader" /> object after this error occurs.</para>
       <para>HRESULT_FROM_WIN32(ERROR_CRC) (0x80070017) if the stream has been previously read and its CRC was invalid.</para>
       <para>
         <b>Return value from the returned IStream’s Read and CopyTo methods</b>
@@ -91,18 +37,8 @@
       <para>HRESULT_FROM_WIN32(ERROR_INVALID_DATA) (0x8007000d) if a block in the file can't be read completely or the size of the block is unexpected</para>
       <para>APPX_E_BLOCK_HASH_INVALID (0x80080207) if the content of this file’s blocks is inconsistent with its hash in the block map</para>
     </returns>
-    <remarks>
-      <para>The <i>stream</i> returned is read-only and cloneable.</para>
-      <para>Validation of payload files is "lazy."  On the first call to the file’s <b>GetStream</b> method, the corresponding zip file item’s local file header and data descriptor is validated and might cause <b>GetStream</b> to fail.  Subsequent calls to <b>GetStream</b> on the same file don't repeat these validations.  The zip file item’s CRC checksum is only validated if the stream is read in its entirety in sequential order.</para>
-      <para>Instances of <see cref="IStream" /> that are returned for payload files are optimized for sequential access.  While random access to the stream is supported, that random access might be slower and more CPU-intensive.  We recommend a single sequential read of these streams whenever possible.  Reading the same range multiple times is supported but not recommended for performance; consider caching such ranges if their usage scenario demands it.</para>
-    </remarks>
-    <seealso cref="IAppxFile" />
-    <seealso cref="IAppxPackageReader" />
   </member>
   <member name="IAppxFile">
-    <summary>
-      <para>Retrieves information about a payload or footprint file in a package.</para>
-    </summary>
-    <seealso cref="IAppxFilesEnumerator" />
+    <summary>Retrieves information about a payload or footprint file in a package.</summary>
   </member>
 </doc>

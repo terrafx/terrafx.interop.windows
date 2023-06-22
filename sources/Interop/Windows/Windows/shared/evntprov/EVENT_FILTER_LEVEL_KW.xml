@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EVENT_FILTER_LEVEL_KW">
+    <summary>
+      <para>The <b>EVENT_FILTER_LEVEL_KW</b> structure defines event IDs used in an<see cref="EVENT_FILTER_DESCRIPTOR" />structure for a stack walk level-keyword filter.</para>
+      <para>This filter is only applied to events that are otherwise enabled on the logging session, via a level/keyword in the enable call.</para>
+    </summary>
+  </member>
+  <member name="EVENT_FILTER_LEVEL_KW.MatchAnyKeyword">
+    <summary>Bitmask of keywords that determine the category of events to filter on.</summary>
+  </member>
+  <member name="EVENT_FILTER_LEVEL_KW.MatchAllKeyword">
+    <summary>This bitmask is optional. This mask further restricts the category of events that you want to filter on. If the event's keyword meets the <b>MatchAnyKeyword</b>condition, the provider will filter the event only if all of the bits in this mask exist in the event's keyword. This mask is not used if <b>MatchAnyKeyword</b>is zero.</summary>
+  </member>
+  <member name="EVENT_FILTER_LEVEL_KW.Level">
+    <summary>Defines the severity level of the event to filter on.</summary>
+  </member>
+  <member name="EVENT_FILTER_LEVEL_KW.FilterIn">
+    <summary>
+      <para>
+        <b>true</b> to filter the events matching the provided names in; <b>false</b> to filter them out.</para>
+      <para>If set to <b>true</b>, the filtered events will have stacks collected.</para>
+    </summary>
+  </member>
+</doc>

@@ -3,29 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_FACTORY_TYPE">
-    <summary>
-      <para>Specifies whether Direct2D provides synchronization for an <see cref="ID2D1Factory" /> and the resources it creates, so that they may be safely accessed from multiple threads.</para>
-    </summary>
-    <remarks>
-      <para>When you create a factory, you can specify whether it is multithreaded or singlethreaded. A singlethreaded factory provides no serialization against any other single threaded instance within Direct2D, so this mechanism provides a very large degree of scaling on the CPU.</para>
-      <para>You can also create a multithreaded factory instance. In this case, the factory and all derived objects can be used from any thread, and each render target can be rendered to independently. Direct2D serializes calls to these objects, so a single multithreaded Direct2D instance won't scale as well on the CPU as many single threaded instances. However, the resources can be shared within the multithreaded instance.</para>
-      <para>Note the qualifier "On the CPU": GPUs generally take advantage of fine-grained parallelism more so than CPUs. For example, multithreaded calls from the CPU might still end up being serialized when being sent to the GPU; however, a whole bank of pixel and vertex shaders will run in parallel to perform the rendering.</para>
-    </remarks>
-    <seealso cref="CreateFactory" />
-    <seealso cref="ID2D1Factory" />
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/multi-threaded-direct2d-apps">Multithreaded Direct2D Apps</seealso>
+    <summary>Specifies whether Direct2D provides synchronization for an <see cref="ID2D1Factory" /> and the resources it creates, so that they may be safely accessed from multiple threads.</summary>
   </member>
   <member name="D2D1_FACTORY_TYPE.D2D1_FACTORY_TYPE_SINGLE_THREADED">
-    <summary>
-      <para>No synchronization is provided for accessing or writing to the factory or the objects it creates. If the factory or the objects are called from multiple threads, it is up to the application to provide access locking.</para>
-    </summary>
+    <summary>No synchronization is provided for accessing or writing to the factory or the objects it creates. If the factory or the objects are called from multiple threads, it is up to the application to provide access locking.</summary>
   </member>
   <member name="D2D1_FACTORY_TYPE.D2D1_FACTORY_TYPE_MULTI_THREADED">
-    <summary>
-      <para>Direct2D provides synchronization for accessing and writing to the factory and the objects it creates, enabling safe access from multiple threads.</para>
-    </summary>
+    <summary>Direct2D provides synchronization for accessing and writing to the factory and the objects it creates, enabling safe access from multiple threads.</summary>
   </member>
-  <member name="D2D1_FACTORY_TYPE.D2D1_FACTORY_TYPE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_FACTORY_TYPE.D2D1_FACTORY_TYPE_FORCE_DWORD"></member>
 </doc>

@@ -3,93 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICMetadataBlockReader.GetContainerFormat">
-    <summary>
-      <para>Retrieves the container format of the decoder.</para>
-    </summary>
-    <param name="pguidContainerFormat">
-      <para>Type: <b>GUID*</b></para>
-      <para>The container format of the decoder. The native container format GUIDs are listed in <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-guids-clsids">WIC GUIDs and CLSIDs</a>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-howtowriteacodec">How to Write a WIC-Enabled CODEC</seealso>
-    <seealso cref="IWICMetadataBlockReader" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-windows-imaging-codec">Windows Imaging Component Overview</seealso>
+    <summary>Retrieves the container format of the decoder.</summary>
+    <param name="pguidContainerFormat">The container format of the decoder. The native container format GUIDs are listed in <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-guids-clsids">WIC GUIDs and CLSIDs</a>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICMetadataBlockReader.GetCount">
-    <summary>
-      <para>Retrieves the number of top level metadata blocks.</para>
-    </summary>
-    <param name="pcCount">
-      <para>Type: <b>UINT*</b></para>
-      <para>When this method returns, contains the number of top level metadata blocks.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-howtowriteacodec">How to Write a WIC-Enabled CODEC</seealso>
-    <seealso cref="IWICMetadataBlockReader" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-windows-imaging-codec">Windows Imaging Component Overview</seealso>
+    <summary>Retrieves the number of top level metadata blocks.</summary>
+    <param name="pcCount">When this method returns, contains the number of top level metadata blocks.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICMetadataBlockReader.GetEnumerator">
-    <summary>
-      <para>Retrieves an enumeration of <see cref="IWICMetadataReader" /> objects representing each of the top level metadata blocks.</para>
-    </summary>
-    <param name="ppIEnumMetadata">
-      <para>Type: <b><see cref="IEnumUnknown" />**</b></para>
-      <para>When this method returns, contains a pointer to an enumeration of <see cref="IWICMetadataReader" /> objects.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-howtowriteacodec">How to Write a WIC-Enabled CODEC</seealso>
-    <seealso cref="IWICMetadataBlockReader" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-windows-imaging-codec">Windows Imaging Component Overview</seealso>
+    <summary>Retrieves an enumeration of <see cref="IWICMetadataReader" /> objects representing each of the top level metadata blocks.</summary>
+    <param name="ppIEnumMetadata">When this method returns, contains a pointer to an enumeration of <see cref="IWICMetadataReader" /> objects.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICMetadataBlockReader.GetReaderByIndex">
-    <summary>
-      <para>Retrieves an <see cref="IWICMetadataReader" /> for a specified top level metadata block.</para>
-    </summary>
-    <param name="nIndex">
-      <para>Type: <b>UINT</b></para>
-      <para>The index of the desired top level metadata block to retrieve.</para>
-    </param>
-    <param name="ppIMetadataReader">
-      <para>Type: <b><see cref="IWICMetadataReader" />**</b></para>
-      <para>When this method returns, contains a pointer to the <see cref="IWICMetadataReader" /> specified by <i>nIndex</i>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-howtowriteacodec">How to Write a WIC-Enabled CODEC</seealso>
-    <seealso cref="IWICMetadataBlockReader" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-windows-imaging-codec">Windows Imaging Component Overview</seealso>
+    <summary>Retrieves an <see cref="IWICMetadataReader" /> for a specified top level metadata block.</summary>
+    <param name="nIndex">The index of the desired top level metadata block to retrieve.</param>
+    <param name="ppIMetadataReader">When this method returns, contains a pointer to the <see cref="IWICMetadataReader" /> specified by <i>nIndex</i>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICMetadataBlockReader">
-    <summary>
-      <para>Exposes methods that provide access to all of the codec's top level metadata blocks.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>IWICMetadataBlockReader</b> and <see cref="IWICMetadataBlockWriter" /> operate at the root level only; that is, they provide read and write access, respectively, to the top level metadata blocks. They are implemented by <see cref="IWICBitmapFrameDecode" /> and <see cref="IWICBitmapFrameEncode" />, respectively. To handle any metadata blocks that are not at the top level of the hierarchy, use <see cref="IWICMetadataReader" /> or <see cref="IWICMetadataWriter" />.</para>
-      <para>
-        <b>Note</b>  The codec's decoder and encoder implement this interface to expose the enumeration of all top level metadata blocks.  While the codec parses the image stream, it calls services like <see cref="CreateMetadataReaderFromContainer" /> to instantiate metadata readers for any block that is recognized as being able to be embedded in the decoder's container format.  The collection of metadata readers is exposed through this interface. For more info, see <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-howtowriteacodec">How to Write a WIC-Enabled CODEC</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadatahandlers">Metadata Extensibility Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+    <summary>Exposes methods that provide access to all of the codec's top level metadata blocks.</summary>
   </member>
 </doc>

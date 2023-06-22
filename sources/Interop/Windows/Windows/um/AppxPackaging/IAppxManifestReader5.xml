@@ -3,20 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxManifestReader5.GetMainPackageDependencies">
-    <summary>
-      <para>Gets a main package dependencies enumerator.</para>
-    </summary>
-    <param name="mainPackageDependencies">
-      <para>The main package dependencies enumerator.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxManifestReader5" />
+    <summary>Gets a main package dependencies enumerator.</summary>
+    <param name="mainPackageDependencies">The main package dependencies enumerator.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxManifestReader5">
-    <summary>
-      <para>Represents an object model of the package manifest that provides methods to access manifest elements and attributes.</para>
-    </summary>
+    <summary>Represents an object model of the package manifest that provides methods to access manifest elements and attributes.</summary>
   </member>
 </doc>

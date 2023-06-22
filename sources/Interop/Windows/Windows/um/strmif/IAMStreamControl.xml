@@ -4,11 +4,10 @@
 <doc>
   <member name="IAMStreamControl.GetInfo">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetInfo</code> method retrieves information about the current stream-control settings, including the start and stop times.</para>
     </summary>
-    <param name="pInfo">
-      <para>Pointer to an <see cref="AM_STREAM_INFO" /> structure, allocated by the caller, that receives the current stream-control settings.</para>
-    </param>
+    <param name="pInfo">Pointer to an <see cref="AM_STREAM_INFO" /> structure, allocated by the caller, that receives the current stream-control settings.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -16,107 +15,62 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <b>NULL</b> pointer value.
-</description>
-        </item>
+            <b>NULL</b> pointer value.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMStreamControl Interface" />
   </member>
   <member name="IAMStreamControl.StartAt">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>StartAt</code> method informs the pin when to start delivering data.</para>
     </summary>
     <param name="ptStart">
       <para>Pointer to a <a href="https://docs.microsoft.com//windows/desktop/DirectShow/reference-time">REFERENCE_TIME</a> value that specifies when the pin should start delivering data. If the value is <b>MAXLONGLONG</b> (0x7FFFFFFFFFFFFFFF), the method cancels the previous start request. If <i>psStart</i> is <b>NULL</b>, the pin starts immediately when the graph runs.</para>
       <para>For preview pins, only the values <b>NULL</b> and <b>MAXLONGLONG</b> are valid, because preview pins do not time stamp the samples they deliver.</para>
     </param>
-    <param name="dwCookie">
-      <para>Specifies a value to send along with the start notification. See Remarks.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, the return value is S_OK. Otherwise, returns an <b>HRESULT</b> value indicating the cause of the failure.</para>
-    </returns>
-    <remarks>
-      <para>By default, the pin delivers data as soon as the filter graph runs. The <code>StartAt</code> method causes the pin to wait until a specified time after the graph runs, before the pin begins delivering data.</para>
-      <para>If the <i>dwCookie</i> parameter is non-zero, the pin will send an <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-stream-control-started">EC_STREAM_CONTROL_STARTED</a> event when it starts to deliver data. The first event parameter is a pointer to the pin's <see cref="IPin" /> interface, and the second is the value of <i>dwCookie</i>.</para>
-      <para>This method implements the following special cases:</para>
-      <list type="bullet">
-        <item>
-          <description>If <i>ptStart</i> is <b>NULL</b>, the pin starts as soon as the graph runs. No event is sent, and the value of <i>dwCookie</i> is ignored.</description>
-        </item>
-        <item>
-          <description>If <i>ptStart</i> contains the value <b>MAXLONGLONG</b>, and there is a pending stop request, the pin starts when the graph runs. If there is no pending stop request, the pin remains stopped. In either case, no start event is sent, and the value of <i>dwCookie</i> is ignored.</description>
-        </item>
-      </list>
-      <para>This method also handles the following boundary conditions:</para>
-      <list type="bullet">
-        <item>
-          <description>If the start time falls between the start and stop times of a sample, the pin delivers that sample.</description>
-        </item>
-        <item>
-          <description>If the start time equals the stop time, the pin delivers one sample.</description>
-        </item>
-      </list>
-      <b>MAXLONGLONG</b> is the largest possible <b>REFERENCE_TIME</b> value. In the base class library, it is also defined as the constant <b>MAX_TIME</b>.
-</remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMStreamControl Interface" />
+    <param name="dwCookie">Specifies a value to send along with the start notification. See Remarks.</param>
+    <returns>If the method succeeds, the return value is S_OK. Otherwise, returns an <b>HRESULT</b> value indicating the cause of the failure.</returns>
   </member>
   <member name="IAMStreamControl.StopAt">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>StopAt</code> method informs the pin when to stop delivering data.</para>
     </summary>
     <param name="ptStop">
       <para>Pointer to a <a href="https://docs.microsoft.com//windows/desktop/DirectShow/reference-time">REFERENCE_TIME</a> value that specifies when the pin should stop delivering data. If the value is <b>MAXLONGLONG</b> (0x7FFFFFFFFFFFFFFF), the method cancels any previous stop request. If <i>psStop</i> is <b>NULL</b>, the pin stops immediately.</para>
       <para>For preview pins, only the values <b>NULL</b> and <b>MAXLONGLONG</b> are valid, because preview pins do not time stamp the samples they deliver.</para>
     </param>
-    <param name="bSendExtra">
-      <para>Specifies a Boolean value that indicates whether to send an extra sample after the scheduled stop time. If <b>TRUE</b>, the pin sends one extra sample.</para>
-    </param>
-    <param name="dwCookie">
-      <para>Specifies a value to send along with the start notification. See Remarks.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, the return value is S_OK. Otherwise, returns an <b>HRESULT</b> value indicating the cause of the failure.</para>
-    </returns>
-    <remarks>
-      <para>If the <i>dwCookie</i> parameter is non-zero, the pin will send an <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-stream-control-stopped">EC_STREAM_CONTROL_STOPPED</a> event when it stops delivering data. The first event parameter is a pointer to the pin's <see cref="IPin" /> interface, and the second is the value of <i>dwCookie</i>. If <i>ptStop</i> is <b>NULL</b> or <b>MAXLONGLONG</b>, no event is sent, and the value of <i>dwCookie</i> is ignored.</para>
-      <para>In video capture, you would typically call this method on the capture filter's output pin and the multiplexer's input pin. The application should wait for the stop event from the multiplexer. This ensures that the capture filter sends the right number of frames, while guaranteeing that all frames reach the multiplexer. Also, set the <i>bSendExtra</i> parameter to <b>TRUE</b> for the capture pin, but <b>FALSE</b> for the multiplexer pin. This causes the capture filter to send one additional frame. The multiplexer relies on the time stamps from the capture pin, so if the extra frame is not sent, the multiplexer will wait indefinitely for the stop time. When the multiplexer receives the extra frame, it will discard it.</para>
-      <para>This method handles the following boundary conditions:</para>
-      <list type="bullet">
-        <item>
-          <description>If the stop time falls between the start and stop times of a sample, the pin delivers that sample.</description>
-        </item>
-        <item>
-          <description>If the start time equals the stop time, the pin delivers one sample.</description>
-        </item>
-      </list>
-      <b>MAXLONGLONG</b> is the largest possible <a href="https://docs.microsoft.com//windows/desktop/DirectShow/reference-time">REFERENCE_TIME</a> value. In the base class library, it is also defined as the constant <b>MAX_TIME</b>.
-</remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMStreamControl Interface" />
+    <param name="bSendExtra">Specifies a Boolean value that indicates whether to send an extra sample after the scheduled stop time. If <b>TRUE</b>, the pin sends one extra sample.</param>
+    <param name="dwCookie">Specifies a value to send along with the start notification. See Remarks.</param>
+    <returns>If the method succeeds, the return value is S_OK. Otherwise, returns an <b>HRESULT</b> value indicating the cause of the failure.</returns>
   </member>
   <member name="IAMStreamControl">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IAMStreamControl</code> interface controls individual streams on a filter. Pins on some filters expose this interface. For example, the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avi-mux-filter">AVI Mux Filter</a> supports this interface on its input pins, and the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/audio-capture-filter">Audio Capture Filter</a> and <a href="https://docs.microsoft.com//windows/desktop/DirectShow/wdm-video-capture-filter">WDM Video Capture Filter</a> support it on their output pins.</para>
       <para>This interface enables an application to turn streams on and off at specified times. For example, an application might turn off an audio stream to mute the audio during video preview. Capture applications can use this interface to specify exact start and stop times for capture, and to control capture and preview streams independently of each other.</para>
       <para>To use this interface, call the <see cref="IAMStreamControl.StartAt" /> method to specify when the pin will start delivering data, and the <see cref="IAMStreamControl.StopAt" /> method to specify when it will stop delivering data. Then call <see cref="IMediaControl.Run" /> on the Filter Graph Manager to run the filter graph. All times are relative to when the graph starts running.</para>
@@ -131,12 +85,6 @@
         <item>
           <description>If you are capturing audio and video to an interleaved AVI file, the AVI Mux filter requires data both streams. If you stop one stream, the filter cannot interleave the data. For more information, see <see cref="IConfigInterleaving Interface" />.</description>
         </item>
-      </list>
-      <para>Depending on the application, you might find the <see cref="ICaptureGraphBuilder2.ControlStream" /> method more convenient, because it supports stream control at the graph level, so that you do not have to enumerate individual filters and pins.</para>
-      <para>
-        <b>Filter developers</b>: The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cbasestreamcontrol">CBaseStreamControl</a> base class implements this interface.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/cbasestreamcontrol">CBaseStreamControl Class</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+      </list>Depending on the application, you might find the <see cref="ICaptureGraphBuilder2.ControlStream" /> method more convenient, because it supports stream control at the graph level, so that you do not have to enumerate individual filters and pins.<para><b>Filter developers</b>: The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cbasestreamcontrol">CBaseStreamControl</a> base class implements this interface.</para></summary>
   </member>
 </doc>

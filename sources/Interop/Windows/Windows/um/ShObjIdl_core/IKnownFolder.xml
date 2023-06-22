@@ -3,189 +3,60 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IKnownFolder.GetCategory">
-    <summary>
-      <para>Retrieves the category—virtual, fixed, common, or per-user—of the selected folder.</para>
-    </summary>
-    <param name="pCategory">
-      <para>Type: <b><see cref="KF_CATEGORY" />*</b></para>
-      <para>When this method returns, contains a pointer to the <see cref="KF_CATEGORY" /> of the selected folder.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IKnownFolder" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
+    <summary>Retrieves the category—virtual, fixed, common, or per-user—of the selected folder.</summary>
+    <param name="pCategory">When this method returns, contains a pointer to the <see cref="KF_CATEGORY" /> of the selected folder.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IKnownFolder.GetFolderDefinition">
-    <summary>
-      <para>Retrieves a structure that contains the defining elements of a known folder, which includes the folder's category, name, path, description, tooltip, icon, and other properties.</para>
-    </summary>
-    <param name="pKFD">
-      <para>Type: <b><see cref="KNOWNFOLDER_DEFINITION" />*</b></para>
-      <para>When this method returns, contains a pointer to the <see cref="KNOWNFOLDER_DEFINITION" /> structure. When no longer needed, the calling application is responsible for calling <see cref="FreeKnownFolderDefinitionFields" /> to free this resource.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>When a third-party application creates their own known folder, they do so by defining it with a <see cref="KNOWNFOLDER_DEFINITION" /> structure, then registering it with the system. Any registered known folder definition information—system-provided or application-created—can be retrieved through this method.</para>
-      <para>To call this method, the caller must have at least User privileges.</para>
-    </remarks>
-    <seealso cref="IKnownFolder" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
+    <summary>Retrieves a structure that contains the defining elements of a known folder, which includes the folder's category, name, path, description, tooltip, icon, and other properties.</summary>
+    <param name="pKFD">When this method returns, contains a pointer to the <see cref="KNOWNFOLDER_DEFINITION" /> structure. When no longer needed, the calling application is responsible for calling <see cref="FreeKnownFolderDefinitionFields" /> to free this resource.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IKnownFolder.GetFolderType">
-    <summary>
-      <para>Retrieves the folder type.</para>
-    </summary>
-    <param name="pftid">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/shell/foldertypeid">FOLDERTYPEID</a>*</b></para>
-      <para>When this returns, contains a pointer to a <a href="https://docs.microsoft.com//windows/desktop/shell/foldertypeid">FOLDERTYPEID</a> (a GUID) that identifies the known folder type.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IKnownFolder" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
+    <summary>Retrieves the folder type.</summary>
+    <param name="pftid">When this returns, contains a pointer to a <a href="https://docs.microsoft.com//windows/desktop/shell/foldertypeid">FOLDERTYPEID</a> (a GUID) that identifies the known folder type.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IKnownFolder.GetId">
-    <summary>
-      <para>Gets the ID of the selected folder.</para>
-    </summary>
-    <param name="pkfid">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a>*</b></para>
-      <para>When this method returns, returns the <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> value of the known folder. Note, <b>KNOWNFOLDERID</b> values are GUIDs.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IKnownFolder" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
+    <summary>Gets the ID of the selected folder.</summary>
+    <param name="pkfid">When this method returns, returns the <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> value of the known folder. Note, <b>KNOWNFOLDERID</b> values are GUIDs.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IKnownFolder.GetIDList">
-    <summary>
-      <para>Gets the location of the Shell namespace folder in the IDList (<see cref="ITEMIDLIST" />) form.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>Flags that specify special retrieval options. This value can be 0; otherwise, one or more of the <see cref="KNOWN_FOLDER_FLAG" /> values.</para>
-    </param>
-    <param name="ppidl">
-      <para>Type: <b>PIDLIST_ABSOLUTE*</b></para>
-      <para>When this method returns, contains the address of an absolute PIDL. This parameter is passed uninitialized. The calling application is responsible for freeing this resource when it is no longer needed.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Equivalent to <see cref="SHGetKnownFolderIDList" />.</para>
-    </remarks>
-    <seealso cref="IKnownFolder" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
-    <seealso cref="SHGetKnownFolderIDList" />
+    <summary>Gets the location of the Shell namespace folder in the IDList (<see cref="ITEMIDLIST" />) form.</summary>
+    <param name="dwFlags">Flags that specify special retrieval options. This value can be 0; otherwise, one or more of the <see cref="KNOWN_FOLDER_FLAG" /> values.</param>
+    <param name="ppidl">When this method returns, contains the address of an absolute PIDL. This parameter is passed uninitialized. The calling application is responsible for freeing this resource when it is no longer needed.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IKnownFolder.GetPath">
-    <summary>
-      <para>Retrieves the path of a known folder as a string.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>Flags that specify special retrieval options. This value can be 0; otherwise, one or more of the <see cref="KNOWN_FOLDER_FLAG" /> values.</para>
-    </param>
-    <param name="ppszPath">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>When this method returns, contains the address of a pointer to a null-terminated buffer that contains the path. The calling application is responsible for calling <see cref="CoTaskMemFree" /> to free this resource when it is no longer needed.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Equivalent to <see cref="SHGetKnownFolderPath" /></para>
-    </remarks>
-    <seealso cref="IKnownFolder" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
-    <seealso cref="SHGetKnownFolderPath" />
+    <summary>Retrieves the path of a known folder as a string.</summary>
+    <param name="dwFlags">Flags that specify special retrieval options. This value can be 0; otherwise, one or more of the <see cref="KNOWN_FOLDER_FLAG" /> values.</param>
+    <param name="ppszPath">When this method returns, contains the address of a pointer to a null-terminated buffer that contains the path. The calling application is responsible for calling <see cref="CoTaskMemFree" /> to free this resource when it is no longer needed.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IKnownFolder.GetRedirectionCapabilities">
-    <summary>
-      <para>Gets a value that states whether the known folder can have its path set to a new value or what specific restrictions or prohibitions are placed on that redirection.</para>
-    </summary>
-    <param name="pCapabilities">
-      <para>Type: <b><see cref="KF_REDIRECTION_CAPABILITIES" />*</b></para>
-      <para>When this method returns, contains a pointer to a <see cref="KF_REDIRECTION_CAPABILITIES" /> value that indicates the redirection capabilities for this folder.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IKnownFolder" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
+    <summary>Gets a value that states whether the known folder can have its path set to a new value or what specific restrictions or prohibitions are placed on that redirection.</summary>
+    <param name="pCapabilities">When this method returns, contains a pointer to a <see cref="KF_REDIRECTION_CAPABILITIES" /> value that indicates the redirection capabilities for this folder.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IKnownFolder.GetShellItem">
-    <summary>
-      <para>Retrieves the location of a known folder in the Shell namespace in the form of a Shell item (<see cref="IShellItem" /> or derived interface).</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>Flags that specify special retrieval options. This value can be 0; otherwise, one or more of the <see cref="KNOWN_FOLDER_FLAG" /> values.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the IID of the requested interface.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns, contains the interface pointer requested in <i>riid</i>. This is typically <see cref="IShellItem" /> or <see cref="IShellItem2" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IKnownFolder" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
+    <summary>Retrieves the location of a known folder in the Shell namespace in the form of a Shell item (<see cref="IShellItem" /> or derived interface).</summary>
+    <param name="dwFlags">Flags that specify special retrieval options. This value can be 0; otherwise, one or more of the <see cref="KNOWN_FOLDER_FLAG" /> values.</param>
+    <param name="riid">A reference to the IID of the requested interface.</param>
+    <param name="ppv">When this method returns, contains the interface pointer requested in <i>riid</i>. This is typically <see cref="IShellItem" /> or <see cref="IShellItem2" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IKnownFolder.SetPath">
-    <summary>
-      <para>Assigns a new path to a known folder.</para>
-    </summary>
+    <summary>Assigns a new path to a known folder.</summary>
     <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
       <para>Either zero or the following value:</para>
       <h4>KF_FLAG_DONT_UNEXPAND</h4>
       <para>Set the full path without environment strings. If this flag is not set, portions of the path at <i>pszPath</i> may be represented by environment strings such as <code>%USERPROFILE%</code>.</para>
     </param>
-    <param name="pszPath">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>Pointer to the folder's new path. This is a null-terminated Unicode string of length MAX_PATH. This path cannot be of zero length. If this value is <b>NULL</b>, the <b>IKnownFolder.SetPath</b> sets the path to the default value.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method cannot be called on folders of type <see cref="KF_CATEGORY_FIXED" /> or <see cref="KF_CATEGORY_VIRTUAL" />.</para>
-      <para>To call this method on a folder of type <see cref="KF_CATEGORY_COMMON" />, the calling application must be running with elevated privileges.</para>
-      <para>This method is equivalent to <see cref="SHSetKnownFolderPath" />.</para>
-    </remarks>
-    <seealso cref="IKnownFolder" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
-    <seealso cref="SHSetKnownFolderPath" />
+    <param name="pszPath">Pointer to the folder's new path. This is a null-terminated Unicode string of length MAX_PATH. This path cannot be of zero length. If this value is <b>NULL</b>, the <b>IKnownFolder.SetPath</b> sets the path to the default value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IKnownFolder">
-    <summary>
-      <para>Exposes methods that allow an application to retrieve information about a known folder's category, type, GUID, pointer to an item identifier list (PIDL) value, redirection capabilities, and definition. It provides a method for the retrieval of a known folder's <see cref="IShellItem" /> object. It also provides methods to get or set the path of the known folder.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>IKnownFolder</b> objects can be obtained through several methods of the <see cref="IKnownFolderManager" /> interface, such as <see cref="IKnownFolderManager.GetFolder" /> and <see cref="IKnownFolderManager.FindFolderFromIDList" />.</para>
-      <para>Third parties do not implement <b>IKnownFolder</b>. Use the provided implementation.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
+    <summary>Exposes methods that allow an application to retrieve information about a known folder's category, type, GUID, pointer to an item identifier list (PIDL) value, redirection capabilities, and definition. It provides a method for the retrieval of a known folder's <see cref="IShellItem" /> object. It also provides methods to get or set the path of the known folder.</summary>
   </member>
 </doc>

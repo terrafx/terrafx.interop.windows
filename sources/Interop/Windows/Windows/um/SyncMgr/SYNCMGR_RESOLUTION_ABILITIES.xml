@@ -3,38 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYNCMGR_RESOLUTION_ABILITIES">
-    <summary>
-      <para>Indicates abilities and the conflict resolution activity to follow. Used with <see cref="ISyncMgrResolutionHandler.QueryAbilities" />.</para>
-    </summary>
+    <summary>Indicates abilities and the conflict resolution activity to follow. Used with <see cref="ISyncMgrResolutionHandler.QueryAbilities" />.</summary>
   </member>
   <member name="SYNCMGR_RESOLUTION_ABILITIES.SYNCMGR_RA_KEEPOTHER">
-    <summary>
-      <para>The resolution handler supports merging items and will produce a merged file to keep.</para>
-    </summary>
+    <summary>The resolution handler supports merging items and will produce a merged file to keep.</summary>
   </member>
   <member name="SYNCMGR_RESOLUTION_ABILITIES.SYNCMGR_RA_KEEPRECENT">
-    <summary>
-      <para>Enables methods <see cref="ISyncMgrResolutionHandler.KeepRecent" /> and <see cref="ISyncMgrResolutionHandler.KeepOther" /> to be called.</para>
-    </summary>
+    <summary>Enables methods <see cref="ISyncMgrResolutionHandler.KeepRecent" /> and <see cref="ISyncMgrResolutionHandler.KeepOther" /> to be called.</summary>
   </member>
   <member name="SYNCMGR_RESOLUTION_ABILITIES.SYNCMGR_RA_REMOVEFROMSYNCSET">
-    <summary>
-      <para>Enables method <see cref="ISyncMgrResolutionHandler.RemoveFromSyncSet" /> to be called.</para>
-    </summary>
+    <summary>Enables method <see cref="ISyncMgrResolutionHandler.RemoveFromSyncSet" /> to be called.</summary>
   </member>
   <member name="SYNCMGR_RESOLUTION_ABILITIES.SYNCMGR_RA_KEEP_SINGLE">
-    <summary>
-      <para>Not used.</para>
-    </summary>
+    <summary>Not used.</summary>
   </member>
   <member name="SYNCMGR_RESOLUTION_ABILITIES.SYNCMGR_RA_KEEP_MULTIPLE">
-    <summary>
-      <para>Enables method <see cref="ISyncMgrResolutionHandler.KeepItems" /> to be called with more than one item in <i>pArray</i>.</para>
-    </summary>
+    <summary>Enables method <see cref="ISyncMgrResolutionHandler.KeepItems" /> to be called with more than one item in <i>pArray</i>.</summary>
   </member>
   <member name="SYNCMGR_RESOLUTION_ABILITIES.SYNCMGR_RA_VALID">
-    <summary>
-      <para>A mask for valid <see cref="SYNCMGR_RESOLUTION_ABILITIES" /> values.</para>
-    </summary>
+    <summary>A mask for valid <see cref="SYNCMGR_RESOLUTION_ABILITIES" /> values.</summary>
   </member>
 </doc>

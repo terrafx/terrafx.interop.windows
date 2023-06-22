@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ColorLUTParams">
+    <summary>
+      <para>A <b>ColorLUTParams</b> structure contains members (color lookup tables) that specify color adjustments to a bitmap.</para>
+      <para>You can apply a custom adjustment to a bitmap by following these steps.</para>
+      <list type="number">
+        <item>
+          <description>Create a <b>ColorLUTParams</b> structure.</description>
+        </item>
+        <item>
+          <description>Each member of the <b>ColorLUTParams</b> structure is a color lookup table (array of 256 bytes) for a particular color channel, alpha, red, green, or blue. Assign values of your choice to the four lookup tables.</description>
+        </item>
+        <item>
+          <description>Pass the address of the <b>ColorLUTParams</b> structure to the <see cref="ColorLUT.SetParameters" /> method of a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-colorlut">ColorLUT</a> object.</description>
+        </item>
+        <item>
+          <description>Pass the address of the <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-colorlut">ColorLUT</a> object to the <a href="https://docs.microsoft.com//previous-versions/ms536058(v=vs.85)">Graphics.DrawImage</a> method or to the <see cref="Bitmap.ApplyEffect" /> method.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="ColorLUTParams.lutB">
+    <summary>Array of 256 bytes that specifies the adjustment for the blue channel.</summary>
+  </member>
+  <member name="ColorLUTParams.lutG">
+    <summary>Array of 256 bytes that specifies the adjustment for the green channel.</summary>
+  </member>
+  <member name="ColorLUTParams.lutR">
+    <summary>Array of 256 bytes that specifies the adjustment for the red channel.</summary>
+  </member>
+  <member name="ColorLUTParams.lutA">
+    <summary>Array of 256 bytes that specifies the adjustment for the alpha channel.</summary>
+  </member>
+</doc>

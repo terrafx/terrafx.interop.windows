@@ -3,61 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IImageRecompress.RecompressImage">
-    <summary>
-      <para>Recompresses an image. Implemented in an
-<a href="https://docs.microsoft.com//windows/desktop/shell/known-folders">ImageRecompress</a> object, this method
-accepts x and y dimensions with a designation of quality. The method
-creates a stream containing the new image that has been recompressed
-to the    specified size.</para>
-    </summary>
-    <param name="psi">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the object containing the stream of the image to read.</para>
-    </param>
-    <param name="cx">
-      <para>Type: <b>int</b></para>
-      <para>The x dimension of the image to return.</para>
-    </param>
-    <param name="cy">
-      <para>Type: <b>int</b></para>
-      <para>The y dimension of the image to return.</para>
-    </param>
-    <param name="iQuality">
-      <para>Type: <b>int</b></para>
-      <para>An indication of recompression quality that can range from 0 to 100.</para>
-    </param>
-    <param name="pstg">
-      <para>Type: <b><see cref="IStorage" />*</b></para>
-      <para>A pointer to an <see cref="IStorage" /> interface on the
-object that contains the stream to be written to.</para>
-    </param>
-    <param name="ppstrmOut">
-      <para>Type: <b><see cref="IStream" />**</b></para>
-      <para>The address of an <see cref="IStream" /> interface pointer
-variable that receives the output stream written to.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or a COM-defined error code otherwise.
-If the image in the input stream is less than the size specified by
-<i>cx</i> and
-<i>cy</i>,
-then S_FALSE is returned.</para>
-    </returns>
-    <seealso cref="IImageRecompress" />
-    <seealso cref="IShellItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/shell/known-folders">ImageRecompress</seealso>
+    <summary>Recompresses an image. Implemented in an<a href="https://docs.microsoft.com//windows/desktop/shell/known-folders">ImageRecompress</a> object, this method accepts x and y dimensions with a designation of quality. The method creates a stream containing the new image that has been recompressed to the	specified size.</summary>
+    <param name="psi">A pointer to the object containing the stream of the image to read.</param>
+    <param name="cx">The x dimension of the image to return.</param>
+    <param name="cy">The y dimension of the image to return.</param>
+    <param name="iQuality">An indication of recompression quality that can range from 0 to 100.</param>
+    <param name="pstg">A pointer to an <see cref="IStorage" /> interface on the object that contains the stream to be written to.</param>
+    <param name="ppstrmOut">The address of an <see cref="IStream" /> interface pointer variable that receives the output stream written to.</param>
+    <returns>Returns S_OK if successful, or a COM-defined error code otherwise. If the image in the input stream is less than the size specified by<i>cx</i> and<i>cy</i>, then S_FALSE is returned.</returns>
   </member>
   <member name="IImageRecompress">
-    <summary>
-      <para>Exposes a method that recompress images.</para>
-    </summary>
-    <remarks>
-      <para>Implement <b>IImageRecompress</b> if you are implementing
-an image object that may need recompressing. The
-<b>IImageRecompress</b> interface is implemented in the
-<a href="https://docs.microsoft.com//windows/desktop/shell/known-folders">ImageRecompress</a> object.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/shell/known-folders">ImageRecompress</seealso>
+    <summary>Exposes a method that recompress images.</summary>
   </member>
 </doc>

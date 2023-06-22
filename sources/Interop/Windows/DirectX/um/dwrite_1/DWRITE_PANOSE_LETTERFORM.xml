@@ -3,89 +3,54 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_PANOSE_LETTERFORM">
-    <summary>
-      <para>The <b>DWRITE_PANOSE_LETTERFORM</b> enumeration contains values that specify the roundness of letterform for text.</para>
-    </summary>
-    <seealso cref="DWRITE_PANOSE" />
+    <summary>The <b>DWRITE_PANOSE_LETTERFORM</b> enumeration contains values that specify the roundness of letterform for text.</summary>
   </member>
   <member name="DWRITE_PANOSE_LETTERFORM.DWRITE_PANOSE_LETTERFORM_ANY">
-    <summary>
-      <para>Any letterform.</para>
-    </summary>
+    <summary>Any letterform.</summary>
   </member>
   <member name="DWRITE_PANOSE_LETTERFORM.DWRITE_PANOSE_LETTERFORM_NO_FIT">
-    <summary>
-      <para>No fit letterform.</para>
-    </summary>
+    <summary>No fit letterform.</summary>
   </member>
   <member name="DWRITE_PANOSE_LETTERFORM.DWRITE_PANOSE_LETTERFORM_NORMAL_CONTACT">
-    <summary>
-      <para>Normal contact letterform.</para>
-    </summary>
+    <summary>Normal contact letterform.</summary>
   </member>
   <member name="DWRITE_PANOSE_LETTERFORM.DWRITE_PANOSE_LETTERFORM_NORMAL_WEIGHTED">
-    <summary>
-      <para>Normal weighted letterform.</para>
-    </summary>
+    <summary>Normal weighted letterform.</summary>
   </member>
   <member name="DWRITE_PANOSE_LETTERFORM.DWRITE_PANOSE_LETTERFORM_NORMAL_BOXED">
-    <summary>
-      <para>Normal boxed letterform.</para>
-    </summary>
+    <summary>Normal boxed letterform.</summary>
   </member>
   <member name="DWRITE_PANOSE_LETTERFORM.DWRITE_PANOSE_LETTERFORM_NORMAL_FLATTENED">
-    <summary>
-      <para>Normal flattened letterform.</para>
-    </summary>
+    <summary>Normal flattened letterform.</summary>
   </member>
   <member name="DWRITE_PANOSE_LETTERFORM.DWRITE_PANOSE_LETTERFORM_NORMAL_ROUNDED">
-    <summary>
-      <para>Normal rounded letterform.</para>
-    </summary>
+    <summary>Normal rounded letterform.</summary>
   </member>
   <member name="DWRITE_PANOSE_LETTERFORM.DWRITE_PANOSE_LETTERFORM_NORMAL_OFF_CENTER">
-    <summary>
-      <para>Normal off-center letterform.</para>
-    </summary>
+    <summary>Normal off-center letterform.</summary>
   </member>
   <member name="DWRITE_PANOSE_LETTERFORM.DWRITE_PANOSE_LETTERFORM_NORMAL_SQUARE">
-    <summary>
-      <para>Normal square letterform.</para>
-    </summary>
+    <summary>Normal square letterform.</summary>
   </member>
   <member name="DWRITE_PANOSE_LETTERFORM.DWRITE_PANOSE_LETTERFORM_OBLIQUE_CONTACT">
-    <summary>
-      <para>Oblique contact letterform.</para>
-    </summary>
+    <summary>Oblique contact letterform.</summary>
   </member>
   <member name="DWRITE_PANOSE_LETTERFORM.DWRITE_PANOSE_LETTERFORM_OBLIQUE_WEIGHTED">
-    <summary>
-      <para>Oblique weighted letterform.</para>
-    </summary>
+    <summary>Oblique weighted letterform.</summary>
   </member>
   <member name="DWRITE_PANOSE_LETTERFORM.DWRITE_PANOSE_LETTERFORM_OBLIQUE_BOXED">
-    <summary>
-      <para>Oblique boxed letterform.</para>
-    </summary>
+    <summary>Oblique boxed letterform.</summary>
   </member>
   <member name="DWRITE_PANOSE_LETTERFORM.DWRITE_PANOSE_LETTERFORM_OBLIQUE_FLATTENED">
-    <summary>
-      <para>Oblique flattened letterform.</para>
-    </summary>
+    <summary>Oblique flattened letterform.</summary>
   </member>
   <member name="DWRITE_PANOSE_LETTERFORM.DWRITE_PANOSE_LETTERFORM_OBLIQUE_ROUNDED">
-    <summary>
-      <para>Oblique rounded letterform.</para>
-    </summary>
+    <summary>Oblique rounded letterform.</summary>
   </member>
   <member name="DWRITE_PANOSE_LETTERFORM.DWRITE_PANOSE_LETTERFORM_OBLIQUE_OFF_CENTER">
-    <summary>
-      <para>Oblique off-center letterform.</para>
-    </summary>
+    <summary>Oblique off-center letterform.</summary>
   </member>
   <member name="DWRITE_PANOSE_LETTERFORM.DWRITE_PANOSE_LETTERFORM_OBLIQUE_SQUARE">
-    <summary>
-      <para>Oblique square letterform.</para>
-    </summary>
+    <summary>Oblique square letterform.</summary>
   </member>
 </doc>

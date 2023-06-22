@@ -3,83 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAGE_NT_HEADERS">
-    <summary>
-      <para>Represents the PE header format.</para>
-    </summary>
-    <remarks>
-      <para>The actual structure in WinNT.h is named <b>IMAGE_NT_HEADERS32</b> and <b>IMAGE_NT_HEADERS</b> is defined as <b>IMAGE_NT_HEADERS32</b>. However, if _WIN64 is defined,  then <b>IMAGE_NT_HEADERS</b> is defined as <b>IMAGE_NT_HEADERS64</b>.</para>
-      <code>typedef struct _IMAGE_NT_HEADERS64 {
-    DWORD Signature;
-    IMAGE_FILE_HEADER FileHeader;
-    IMAGE_OPTIONAL_HEADER64 OptionalHeader;
-} IMAGE_NT_HEADERS64, *PIMAGE_NT_HEADERS64;
-</code>
-    </remarks>
-    <seealso cref="CheckSumMappedFile" />
-    <seealso cref="IMAGE_FILE_HEADER" />
-    <seealso cref="IMAGE_OPTIONAL_HEADER" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/imagehlp-structures">ImageHlp Structures</seealso>
-    <seealso cref="ImageNtHeader" />
-    <seealso cref="ImageRvaToSection" />
-    <seealso cref="ImageRvaToVa" />
-    <seealso cref="LOADED_IMAGE" />
-    <seealso cref="UpdateDebugInfoFile" />
+    <summary>Represents the PE header format.</summary>
   </member>
   <member name="IMAGE_NT_HEADERS.Signature">
-    <summary>
-      <para>A 4-byte signature identifying the file as a PE image. The bytes are "PE\0\0".</para>
-    </summary>
+    <summary>A 4-byte signature identifying the file as a PE image. The bytes are "PE\0\0".</summary>
   </member>
   <member name="IMAGE_NT_HEADERS.FileHeader">
-    <summary>
-      <para>An
-<see cref="IMAGE_FILE_HEADER" /> structure that specifies the file header.</para>
-    </summary>
+    <summary>An<see cref="IMAGE_FILE_HEADER" /> structure that specifies the file header.</summary>
   </member>
   <member name="IMAGE_NT_HEADERS.OptionalHeader">
-    <summary>
-      <para>An
-<see cref="IMAGE_OPTIONAL_HEADER" /> structure that specifies the optional file header.</para>
-    </summary>
+    <summary>An<see cref="IMAGE_OPTIONAL_HEADER" /> structure that specifies the optional file header.</summary>
   </member>
   <member name="IMAGE_NT_HEADERS">
-    <summary>
-      <para>Represents the PE header format.</para>
-    </summary>
-    <remarks>
-      <para>The actual structure in WinNT.h is named <b>IMAGE_NT_HEADERS32</b> and <b>IMAGE_NT_HEADERS</b> is defined as <b>IMAGE_NT_HEADERS32</b>. However, if _WIN64 is defined,  then <b>IMAGE_NT_HEADERS</b> is defined as <b>IMAGE_NT_HEADERS64</b>.</para>
-      <code>typedef struct _IMAGE_NT_HEADERS64 {
-    DWORD Signature;
-    IMAGE_FILE_HEADER FileHeader;
-    IMAGE_OPTIONAL_HEADER64 OptionalHeader;
-} IMAGE_NT_HEADERS64, *PIMAGE_NT_HEADERS64;
-</code>
-    </remarks>
-    <seealso cref="CheckSumMappedFile" />
-    <seealso cref="IMAGE_FILE_HEADER" />
-    <seealso cref="IMAGE_OPTIONAL_HEADER" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/imagehlp-structures">ImageHlp Structures</seealso>
-    <seealso cref="ImageNtHeader" />
-    <seealso cref="ImageRvaToSection" />
-    <seealso cref="ImageRvaToVa" />
-    <seealso cref="LOADED_IMAGE" />
-    <seealso cref="UpdateDebugInfoFile" />
+    <summary>Represents the PE header format.</summary>
   </member>
   <member name="IMAGE_NT_HEADERS.Signature">
-    <summary>
-      <para>A 4-byte signature identifying the file as a PE image. The bytes are "PE\0\0".</para>
-    </summary>
+    <summary>A 4-byte signature identifying the file as a PE image. The bytes are "PE\0\0".</summary>
   </member>
   <member name="IMAGE_NT_HEADERS.FileHeader">
-    <summary>
-      <para>An
-<see cref="IMAGE_FILE_HEADER" /> structure that specifies the file header.</para>
-    </summary>
+    <summary>An<see cref="IMAGE_FILE_HEADER" /> structure that specifies the file header.</summary>
   </member>
   <member name="IMAGE_NT_HEADERS.OptionalHeader">
-    <summary>
-      <para>An
-<see cref="IMAGE_OPTIONAL_HEADER" /> structure that specifies the optional file header.</para>
-    </summary>
+    <summary>An<see cref="IMAGE_OPTIONAL_HEADER" /> structure that specifies the optional file header.</summary>
   </member>
 </doc>

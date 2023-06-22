@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OBJECTS_AND_NAME_A">
+    <summary>The <b>OBJECTS_AND_NAME</b> structure contains a string that identifies a trustee by name and additional strings that identify the object types of an object-specific <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control entry</a> (ACE).</summary>
+  </member>
+  <member name="OBJECTS_AND_NAME_A.ObjectsPresent">
+    <summary>
+      <para>Indicates whether the <b>ObjectTypeName</b> and <b>InheritedObjectTypeName</b> members contain strings. This parameter can be a combination of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACE_OBJECT_TYPE_PRESENT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>ObjectTypeName</b> member contains a string.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACE_INHERITED_OBJECT_TYPE_PRESENT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>InheritedObjectTypeName</b> member contains a string.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="OBJECTS_AND_NAME_A.ObjectType">
+    <summary>Specifies a value from the<see cref="SE_OBJECT_TYPE" /> enumeration that indicates the type of object.</summary>
+  </member>
+  <member name="OBJECTS_AND_NAME_A.ObjectTypeName">
+    <summary>
+      <para>A pointer to a null-terminated string that identifies the type of object to which the ACE applies.</para>
+      <para>This string must be a valid <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">LDAP</a> display name in the Active Directory schema.</para>
+    </summary>
+  </member>
+  <member name="OBJECTS_AND_NAME_A.InheritedObjectTypeName">
+    <summary>
+      <para>A pointer to a null-terminated string that identifies the type of object that can inherit the ACE.</para>
+      <para>This string must be a valid <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">LDAP</a> display name in the Active Directory schema.</para>
+      <para>If the ACE_INHERITED_OBJECT_TYPE_PRESENT bit is not set in the <b>ObjectsPresent</b> member, the <b>InheritedObjectTypeName</b> member is ignored, and all types of child objects can inherit the ACE. Otherwise, only the specified object type can inherit the ACE. In either case, inheritance is also controlled by the inheritance flags in the <see cref="ACE_HEADER" /> structure as well as by any protection against inheritance placed on the child objects.</para>
+    </summary>
+  </member>
+  <member name="OBJECTS_AND_NAME_A.ptstrName">
+    <summary>A pointer to a null-terminated string that contains the name of the trustee.</summary>
+  </member>
+  <member name="OBJECTS_AND_NAME_A">
+    <summary>The <b>OBJECTS_AND_NAME</b> structure contains a string that identifies a trustee by name and additional strings that identify the object types of an object-specific <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control entry</a> (ACE).</summary>
+  </member>
+  <member name="OBJECTS_AND_NAME_A.ObjectsPresent">
+    <summary>
+      <para>Indicates whether the <b>ObjectTypeName</b> and <b>InheritedObjectTypeName</b> members contain strings. This parameter can be a combination of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACE_OBJECT_TYPE_PRESENT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>ObjectTypeName</b> member contains a string.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACE_INHERITED_OBJECT_TYPE_PRESENT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>InheritedObjectTypeName</b> member contains a string.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="OBJECTS_AND_NAME_A.ObjectType">
+    <summary>Specifies a value from the<see cref="SE_OBJECT_TYPE" /> enumeration that indicates the type of object.</summary>
+  </member>
+  <member name="OBJECTS_AND_NAME_A.ObjectTypeName">
+    <summary>
+      <para>A pointer to a null-terminated string that identifies the type of object to which the ACE applies.</para>
+      <para>This string must be a valid <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">LDAP</a> display name in the Active Directory schema.</para>
+    </summary>
+  </member>
+  <member name="OBJECTS_AND_NAME_A.InheritedObjectTypeName">
+    <summary>
+      <para>A pointer to a null-terminated string that identifies the type of object that can inherit the ACE.</para>
+      <para>This string must be a valid <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">LDAP</a> display name in the Active Directory schema.</para>
+      <para>If the ACE_INHERITED_OBJECT_TYPE_PRESENT bit is not set in the <b>ObjectsPresent</b> member, the <b>InheritedObjectTypeName</b> member is ignored, and all types of child objects can inherit the ACE. Otherwise, only the specified object type can inherit the ACE. In either case, inheritance is also controlled by the inheritance flags in the <see cref="ACE_HEADER" /> structure as well as by any protection against inheritance placed on the child objects.</para>
+    </summary>
+  </member>
+  <member name="OBJECTS_AND_NAME_A.ptstrName">
+    <summary>A pointer to a null-terminated string that contains the name of the trustee.</summary>
+  </member>
+</doc>

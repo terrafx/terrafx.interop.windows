@@ -10,6 +10,7 @@
   </member>
   <member name="D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER.D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER_0">
     <summary>
+      <para>Related to <see cref="D3D11_SHARED_RESOURCE_TIER.D3D11_SHARED_RESOURCE_TIER_1" />.</para>
       <para>Specifies that the most basic level of cross-API sharing is supported, including the following resource data formats.</para>
       <list type="bullet">
         <item>
@@ -41,7 +42,8 @@
   </member>
   <member name="D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER.D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER_1">
     <summary>
-      <para>Specifies that cross-API sharing functionality of Tier 0 is supported, plus the following formats.</para>
+      <para>Related to <see cref="D3D11_SHARED_RESOURCE_TIER.D3D11_SHARED_RESOURCE_TIER_2" />.</para>
+      <para>Specifies that cross-API sharing functionality of <b>D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER_0</b> is supported, plus the following formats.</para>
       <list type="bullet">
         <item>
           <description>DXGI_FORMAT_R16G16B16A16_TYPELESS</description>
@@ -77,7 +79,8 @@
   </member>
   <member name="D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER.D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER_2">
     <summary>
-      <para>Specifies that cross-API sharing functionality of Tier 1 is supported, plus the following formats.</para>
+      <para>Related to <see cref="D3D11_SHARED_RESOURCE_TIER.D3D11_SHARED_RESOURCE_TIER_3" />.</para>
+      <para>Specifies that cross-API sharing functionality of <b>D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER_1</b> is supported, plus the following formats.</para>
       <list type="bullet">
         <item>
           <description>DXGI_FORMAT_NV12 (also see <a href="https://docs.microsoft.com//windows/win32/direct3d11/direct3d-11-4-features#extended-nv12-texture-support">Extended NV12 texture support</a>)</description>
@@ -87,7 +90,7 @@
   </member>
   <member name="D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER.D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER_3">
     <summary>
-      <para>Specifies that cross-API sharing functionality of Tier 2 is supported, plus the following formats.</para>
+      <para>Specifies that cross-API sharing functionality of <b>D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER_2</b> is supported, plus the following formats.</para>
       <list type="bullet">
         <item>
           <description>DXGI_FORMAT_R11G11B10_FLOAT</description>

@@ -3,23 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="GETPROPERTYSTOREFLAGS">
-    <summary>
-      <para>Indicates flags that modify the property store object retrieved by methods that create a property store, such as <see cref="IShellItem2.GetPropertyStore" /> or <see cref="IPropertyStoreFactory.GetPropertyStore" />.</para>
-    </summary>
-    <remarks>
-      <para>If the Shell item is a file, the property store contains the following items.</para>
-      <list type="bullet">
-        <item>
-          <description>Properties from the file system that concern the file.</description>
-        </item>
-        <item>
-          <description>Properties from the file itself that are provided by the file's property handler, unless the file is offline (see GPS_OPENSLOWITEM).</description>
-        </item>
-      </list>
-      <para>Non-file Shell items return a similar read-only store.</para>
-      <para>
-        <b>Note</b>  GPS_INCLUDEOFFLINEPROPERTIES has been superseded by GPS_OPENSLOWITEM.</para>
-    </remarks>
+    <summary>Indicates flags that modify the property store object retrieved by methods that create a property store, such as <see cref="IShellItem2.GetPropertyStore" /> or <see cref="IPropertyStoreFactory.GetPropertyStore" />.</summary>
   </member>
   <member name="GETPROPERTYSTOREFLAGS.GPS_DEFAULT">
     <summary>
@@ -93,29 +77,17 @@
   </member>
   <member name="GETPROPERTYSTOREFLAGS.GPS_PREFERQUERYPROPERTIES">
     <summary>
-      <para>
-        <b>Windows 8 and later</b>. Use this flag to retrieve only properties from the indexer for WDS results.</para>
-    </summary>
+      <b>Windows 8 and later</b>. Use this flag to retrieve only properties from the indexer for WDS results.</summary>
   </member>
   <member name="GETPROPERTYSTOREFLAGS.GPS_EXTRINSICPROPERTIES">
-    <summary>
-      <para>Include properties from the file's secondary stream.</para>
-    </summary>
+    <summary>Include properties from the file's secondary stream.</summary>
   </member>
   <member name="GETPROPERTYSTOREFLAGS.GPS_EXTRINSICPROPERTIESONLY">
-    <summary>
-      <para>Include only properties from the file's secondary stream.</para>
-    </summary>
+    <summary>Include only properties from the file's secondary stream.</summary>
   </member>
-  <member name="GETPROPERTYSTOREFLAGS.GPS_VOLATILEPROPERTIES">
-    <summary></summary>
-  </member>
-  <member name="GETPROPERTYSTOREFLAGS.GPS_VOLATILEPROPERTIESONLY">
-    <summary></summary>
-  </member>
+  <member name="GETPROPERTYSTOREFLAGS.GPS_VOLATILEPROPERTIES"></member>
+  <member name="GETPROPERTYSTOREFLAGS.GPS_VOLATILEPROPERTIESONLY"></member>
   <member name="GETPROPERTYSTOREFLAGS.GPS_MASK_VALID">
-    <summary>
-      <para>Mask for valid <see cref="GETPROPERTYSTOREFLAGS" /> values.</para>
-    </summary>
+    <summary>Mask for valid <see cref="GETPROPERTYSTOREFLAGS" /> values.</summary>
   </member>
 </doc>

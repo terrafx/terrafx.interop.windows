@@ -3,46 +3,28 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICPngFilterOption">
-    <summary>
-      <para>Specifies the Portable Network Graphics (PNG) filters available for compression optimization.</para>
-    </summary>
+    <summary>Specifies the Portable Network Graphics (PNG) filters available for compression optimization.</summary>
   </member>
   <member name="WICPngFilterOption.WICPngFilterUnspecified">
-    <summary>
-      <para>Indicates an unspecified PNG filter. This enables WIC to algorithmically choose the best filtering option for the image.</para>
-    </summary>
+    <summary>Indicates an unspecified PNG filter. This enables WIC to algorithmically choose the best filtering option for the image.</summary>
   </member>
   <member name="WICPngFilterOption.WICPngFilterNone">
-    <summary>
-      <para>Indicates no PNG filter.</para>
-    </summary>
+    <summary>Indicates no PNG filter.</summary>
   </member>
   <member name="WICPngFilterOption.WICPngFilterSub">
-    <summary>
-      <para>Indicates a PNG sub filter.</para>
-    </summary>
+    <summary>Indicates a PNG sub filter.</summary>
   </member>
   <member name="WICPngFilterOption.WICPngFilterUp">
-    <summary>
-      <para>Indicates a PNG up filter.</para>
-    </summary>
+    <summary>Indicates a PNG up filter.</summary>
   </member>
   <member name="WICPngFilterOption.WICPngFilterAverage">
-    <summary>
-      <para>Indicates a PNG average filter.</para>
-    </summary>
+    <summary>Indicates a PNG average filter.</summary>
   </member>
   <member name="WICPngFilterOption.WICPngFilterPaeth">
-    <summary>
-      <para>Indicates a PNG paeth filter.</para>
-    </summary>
+    <summary>Indicates a PNG paeth filter.</summary>
   </member>
   <member name="WICPngFilterOption.WICPngFilterAdaptive">
-    <summary>
-      <para>Indicates a PNG adaptive filter. This enables WIC to choose the best filtering mode on a per-scanline basis.</para>
-    </summary>
+    <summary>Indicates a PNG adaptive filter. This enables WIC to choose the best filtering mode on a per-scanline basis.</summary>
   </member>
-  <member name="WICPngFilterOption.WICPNGFILTEROPTION_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICPngFilterOption.WICPNGFILTEROPTION_FORCE_DWORD"></member>
 </doc>

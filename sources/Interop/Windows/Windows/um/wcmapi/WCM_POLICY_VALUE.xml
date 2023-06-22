@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WCM_POLICY_VALUE">
-    <summary>
-      <para>The <b>WCM_POLICY_VALUE</b> structure contains information about the current value of a policy.</para>
-    </summary>
+    <summary>The <b>WCM_POLICY_VALUE</b> structure contains information about the current value of a policy.</summary>
   </member>
   <member name="WCM_POLICY_VALUE.fValue">
-    <summary>
-      <para>Type: <b>BOOL</b></para>
-      <para>True if the policy is enabled; otherwise, false.</para>
-    </summary>
+    <summary>True if the policy is enabled; otherwise, false.</summary>
   </member>
   <member name="WCM_POLICY_VALUE.fIsGroupPolicy">
-    <summary>
-      <para>Type: <b>BOOL</b></para>
-      <para>True if the current value was provided by Group Policy; otherwise, false.</para>
-    </summary>
+    <summary>True if the current value was provided by Group Policy; otherwise, false.</summary>
   </member>
 </doc>

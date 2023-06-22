@@ -4,59 +4,38 @@
 <doc>
   <member name="VideoProcAmpProperty">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>VideoProcAmpProperty</b> enumeration specifies video properties on a video capture device.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso cref="IAMVideoProcAmp" />
   </member>
   <member name="VideoProcAmpProperty.VideoProcAmp_Brightness">
-    <summary>
-      <para>Specifies the brightness, also called the <i>black level</i>. For NTSC, the value is expressed in IRE units * 100. For non-NTSC sources, the units are arbitrary, with zero representing blanking and 10,000 representing pure white. Values range from –10,000 to 10,000.</para>
-    </summary>
+    <summary>Specifies the brightness, also called the <i>black level</i>. For NTSC, the value is expressed in IRE units * 100. For non-NTSC sources, the units are arbitrary, with zero representing blanking and 10,000 representing pure white. Values range from –10,000 to 10,000.</summary>
   </member>
   <member name="VideoProcAmpProperty.VideoProcAmp_Contrast">
-    <summary>
-      <para>Specifies the contrast, expressed as gain factor * 100. Values range from zero to 10,000.</para>
-    </summary>
+    <summary>Specifies the contrast, expressed as gain factor * 100. Values range from zero to 10,000.</summary>
   </member>
   <member name="VideoProcAmpProperty.VideoProcAmp_Hue">
-    <summary>
-      <para>Specifies the hue, in degrees * 100. Values range from -180,000 to 180,000 (-180 to +180 degrees).</para>
-    </summary>
+    <summary>Specifies the hue, in degrees * 100. Values range from -180,000 to 180,000 (-180 to +180 degrees).</summary>
   </member>
   <member name="VideoProcAmpProperty.VideoProcAmp_Saturation">
-    <summary>
-      <para>Specifies the saturation. Values range from 0 to 10,000.</para>
-    </summary>
+    <summary>Specifies the saturation. Values range from 0 to 10,000.</summary>
   </member>
   <member name="VideoProcAmpProperty.VideoProcAmp_Sharpness">
-    <summary>
-      <para>Specifies the sharpness. Values range from 0 to 100.</para>
-    </summary>
+    <summary>Specifies the sharpness. Values range from 0 to 100.</summary>
   </member>
   <member name="VideoProcAmpProperty.VideoProcAmp_Gamma">
-    <summary>
-      <para>Specifies the gamma, as gamma * 100. Values range from 1 to 500.</para>
-    </summary>
+    <summary>Specifies the gamma, as gamma * 100. Values range from 1 to 500.</summary>
   </member>
   <member name="VideoProcAmpProperty.VideoProcAmp_ColorEnable">
-    <summary>
-      <para>Specifies the color enable setting. The possible values are 0 (off) and 1 (on).</para>
-    </summary>
+    <summary>Specifies the color enable setting. The possible values are 0 (off) and 1 (on).</summary>
   </member>
   <member name="VideoProcAmpProperty.VideoProcAmp_WhiteBalance">
-    <summary>
-      <para>Specifies the white balance, as a color temperature in degrees Kelvin. The range of values depends on the device.</para>
-    </summary>
+    <summary>Specifies the white balance, as a color temperature in degrees Kelvin. The range of values depends on the device.</summary>
   </member>
   <member name="VideoProcAmpProperty.VideoProcAmp_BacklightCompensation">
-    <summary>
-      <para>Specifies the backlight compensation setting. Possible values are 0 (off) and 1 (on).</para>
-    </summary>
+    <summary>Specifies the backlight compensation setting. Possible values are 0 (off) and 1 (on).</summary>
   </member>
   <member name="VideoProcAmpProperty.VideoProcAmp_Gain">
-    <summary>
-      <para>Specifies the gain adjustment. Zero is normal. Positive values are brighter and negative values are darker. The range of values depends on the device.</para>
-    </summary>
+    <summary>Specifies the gain adjustment. Zero is normal. Positive values are brighter and negative values are darker. The range of values depends on the device.</summary>
   </member>
 </doc>

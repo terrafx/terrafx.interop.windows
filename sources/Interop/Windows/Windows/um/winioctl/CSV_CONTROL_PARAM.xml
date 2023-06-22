@@ -3,27 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CSV_CONTROL_PARAM">
-    <summary>
-      <para>Represents a type of CSV control operation.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used with the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_csv_control">FSCTL_CSV_CONTROL</a></para>
-      <para>control code to indicate what kind of CSV control operation is being undertaken. It is an alternative to calling
-that control code by just passing a <see cref="CSV_CONTROL_OP" /></para>
-      <para>enumeration value, as the structure encapsulates an enumeration value of that type.</para>
-    </remarks>
-    <seealso cref="CSV_CONTROL_OP" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_csv_control">FSCTL_CSV_CONTROL</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-structures">File Management Structures</seealso>
+    <summary>Represents a type of CSV control operation.</summary>
   </member>
   <member name="CSV_CONTROL_PARAM.Operation">
-    <summary>
-      <para>The type of CSV control operation to undertake.</para>
-    </summary>
+    <summary>The type of CSV control operation to undertake.</summary>
   </member>
   <member name="CSV_CONTROL_PARAM.Unused">
-    <summary>
-      <para>Unused.</para>
-    </summary>
+    <summary>Unused.</summary>
   </member>
 </doc>

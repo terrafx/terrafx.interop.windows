@@ -3,63 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="COPYFILE2_COPY_PHASE">
-    <summary>
-      <para>Indicates the phase of a copy at the time of an error. This is used in the
-<b>Error</b> structure embedded in the
-<see cref="COPYFILE2_MESSAGE" /> structure.</para>
-    </summary>
-    <remarks>
-      <para>To compile an application that uses this enumeration, define the <b>_WIN32_WINNT</b></para>
-      <para>macro as 0x0601 or later. For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/WinProg/using-the-windows-headers">Using the Windows Headers</a>.</para>
-    </remarks>
-    <seealso cref="COPYFILE2_MESSAGE" />
-    <seealso cref="CopyFile2" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-enumerations">File Management Enumerations</seealso>
+    <summary>Indicates the phase of a copy at the time of an error. This is used in the<b>Error</b> structure embedded in the<see cref="COPYFILE2_MESSAGE" /> structure.</summary>
   </member>
   <member name="COPYFILE2_COPY_PHASE.COPYFILE2_PHASE_NONE">
-    <summary>
-      <para>The copy had not yet started processing.</para>
-    </summary>
+    <summary>The copy had not yet started processing.</summary>
   </member>
   <member name="COPYFILE2_COPY_PHASE.COPYFILE2_PHASE_PREPARE_SOURCE">
-    <summary>
-      <para>The source was being prepared including opening a handle to the source. This phase happens once per stream
-copy operation.</para>
-    </summary>
+    <summary>The source was being prepared including opening a handle to the source. This phase happens once per stream copy operation.</summary>
   </member>
   <member name="COPYFILE2_COPY_PHASE.COPYFILE2_PHASE_PREPARE_DEST">
-    <summary>
-      <para>The destination was being prepared including opening a handle to the destination. This phase happens once
-per stream copy operation.</para>
-    </summary>
+    <summary>The destination was being prepared including opening a handle to the destination. This phase happens once per stream copy operation.</summary>
   </member>
   <member name="COPYFILE2_COPY_PHASE.COPYFILE2_PHASE_READ_SOURCE">
-    <summary>
-      <para>The source file was being read. This phase happens one or more times per stream copy operation.</para>
-    </summary>
+    <summary>The source file was being read. This phase happens one or more times per stream copy operation.</summary>
   </member>
   <member name="COPYFILE2_COPY_PHASE.COPYFILE2_PHASE_WRITE_DESTINATION">
-    <summary>
-      <para>The destination file was being written. This phase happens one or more times per stream copy
-operation.</para>
-    </summary>
+    <summary>The destination file was being written. This phase happens one or more times per stream copy operation.</summary>
   </member>
   <member name="COPYFILE2_COPY_PHASE.COPYFILE2_PHASE_SERVER_COPY">
-    <summary>
-      <para>Both the source and destination were on the same remote server and the copy was being processed remotely.
-This phase happens once per stream copy operation.</para>
-    </summary>
+    <summary>Both the source and destination were on the same remote server and the copy was being processed remotely. This phase happens once per stream copy operation.</summary>
   </member>
   <member name="COPYFILE2_COPY_PHASE.COPYFILE2_PHASE_NAMEGRAFT_COPY">
-    <summary>
-      <para>The copy operation was processing symbolic links and/or reparse points. This phase happens once per file
-copy operation.</para>
-    </summary>
+    <summary>The copy operation was processing symbolic links and/or reparse points. This phase happens once per file copy operation.</summary>
   </member>
   <member name="COPYFILE2_COPY_PHASE.COPYFILE2_PHASE_MAX">
-    <summary>
-      <para>One greater than the maximum value. Valid values for this enumeration will be less than this value.</para>
-    </summary>
+    <summary>One greater than the maximum value. Valid values for this enumeration will be less than this value.</summary>
   </member>
 </doc>

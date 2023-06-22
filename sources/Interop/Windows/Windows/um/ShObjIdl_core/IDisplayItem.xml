@@ -3,11 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDisplayItem">
-    <summary>
-      <para>Exposes methods that find a version of the current item to be used to get display properties, such as the item name, that will be displayed in the UI. Used by the copy engine dialogs to provide the UI with an appropriate item to display. If no other version can be found, the current item is used.</para>
-    </summary>
-    <remarks>
-      <para>This interface provides only the methods of the <see cref="IRelatedItem" /> interface, from which it inherits.</para>
-    </remarks>
+    <summary>Exposes methods that find a version of the current item to be used to get display properties, such as the item name, that will be displayed in the UI. Used by the copy engine dialogs to provide the UI with an appropriate item to display. If no other version can be found, the current item is used.</summary>
   </member>
 </doc>

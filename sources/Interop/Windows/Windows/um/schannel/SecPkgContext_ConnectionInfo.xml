@@ -4,8 +4,7 @@
 <doc>
   <member name="SecPkgContext_ConnectionInfo">
     <summary>
-      <para>The <b>SecPkgContext_ConnectionInfo</b> structure contains protocol and cipher information. This structure is used by the
-<a href="https://docs.microsoft.com//windows/win32/secauthn/initializesecuritycontext--schannel">InitializeSecurityContext (Schannel)</a> function.</para>
+      <para>The <b>SecPkgContext_ConnectionInfo</b> structure contains protocol and cipher information. This structure is used by the<a href="https://docs.microsoft.com//windows/win32/secauthn/initializesecuritycontext--schannel">InitializeSecurityContext (Schannel)</a> function.</para>
       <para>This attribute is supported only by the Schannel <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security support provider</a> (SSP).</para>
     </summary>
   </member>
@@ -17,210 +16,247 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>SP_PROT_TLS1_CLIENT</b>
-                </description>
-              </item>
-              <item>
-                <description>128 (0x80)</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/SecGloss/t-gly">Transport Layer Security</a> 1.0 client-side.
-</description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>SP_PROT_TLS1_SERVER</b>
-                </description>
-              </item>
-              <item>
-                <description>64 (0x40)</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>Transport Layer Security 1.0 server-side.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>SP_PROT_SSL3_CLIENT</b>
-                </description>
-              </item>
-              <item>
-                <description>32 (0x20)</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>Secure Sockets Layer 3.0 client-side.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>SP_PROT_SSL3_SERVER</b>
-                </description>
-              </item>
-              <item>
-                <description>16 (0x10)</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>Secure Sockets Layer 3.0 server-side.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>SP_PROT_TLS1_1_CLIENT</b>
-                </description>
-              </item>
-              <item>
-                <description>512 (0x200)</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>Transport Layer Security 1.1 client-side.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>SP_PROT_TLS1_1_SERVER</b>
-                </description>
-              </item>
-              <item>
-                <description>256 (0x100)</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>Transport Layer Security 1.1 server-side.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>SP_PROT_TLS1_2_CLIENT</b>
-                </description>
-              </item>
-              <item>
-                <description>2048 (0x800)</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>Transport Layer Security 1.2 client-side.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>SP_PROT_TLS1_2_SERVER</b>
-                </description>
-              </item>
-              <item>
-                <description>1024 (0x400)</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>Transport Layer Security 1.2 server-side.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>SP_PROT_PCT1_CLIENT</b>
-                </description>
-              </item>
-              <item>
-                <description>2 (0x2)</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>Private Communications Technology 1.0 client-side. Obsolete.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>SP_PROT_PCT1_SERVER</b>
-                </description>
-              </item>
-              <item>
-                <description>1 (0x1)</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>Private Communications Technology 1.0 server-side. Obsolete.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SP_PROT_SSL2_CLIENT</b>
-                </description>
-              </item>
-              <item>
-                <description>8 (0x8)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>8 (0x8)</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Secure Sockets Layer 2.0 client-side. Superseded by SP_PROT_TLS1_CLIENT.</para>
-          </description>
-        </item>
-        <item>
+          <description>Secure Sockets Layer 2.0 client-side. Superseded by SP_PROT_TLS1_CLIENT.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SP_PROT_SSL2_SERVER</b>
-                </description>
-              </item>
-              <item>
-                <description>4 (0x4)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4 (0x4)</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Secure Sockets Layer 2.0 server-side. Superseded by SP_PROT_TLS1_SERVER.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_PROT_SSL3_CLIENT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>32 (0x20)</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Secure Sockets Layer 3.0 client-side.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_PROT_SSL3_SERVER</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>16 (0x10)</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Secure Sockets Layer 3.0 server-side.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_PROT_TLS1_0_CLIENT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>128 (0x80)</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>Secure Sockets Layer 2.0 server-side. Superseded by SP_PROT_TLS1_SERVER.</para>
+            <a href="https://docs.microsoft.com//windows/desktop/SecGloss/t-gly">Transport Layer Security</a> 1.0 client-side.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_PROT_TLS1_0_SERVER</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>64 (0x40)</term>
+              </listheader>
+            </list>
           </description>
-        </item>
+          <description>Transport Layer Security 1.0 server-side.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_PROT_TLS1_1_CLIENT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>512 (0x200)</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Transport Layer Security 1.1 client-side.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_PROT_TLS1_1_SERVER</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>256 (0x100)</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Transport Layer Security 1.1 server-side.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_PROT_TLS1_2_CLIENT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2048 (0x800)</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Transport Layer Security 1.2 client-side.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_PROT_TLS1_2_SERVER</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1024 (0x400)</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Transport Layer Security 1.2 server-side.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_PROT_TLS1_3_CLIENT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2048 (0x2000)</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Transport Layer Security 1.3 client-side.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_PROT_TLS1_3_SERVER</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1024 (0x1000)</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Transport Layer Security 1.3 server-side.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_PROT_DTLS1_0_CLIENT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1024 (0x00020000)</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Datagram Transport Layer Security 1.0 client-side.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_PROT_DTLS1_0_SERVER</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1024 (0x00010000)</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Datagram Transport Layer Security 1.0 server-side.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_PROT_DTLS1_2_CLIENT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1024 (0x00080000)</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Datagram Transport Layer Security 1.2 client-side.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_PROT_DTLS1_2_SERVER</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1024 (0x00040000)</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Datagram Transport Layer Security 1.2 server-side.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -232,69 +268,95 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>CALG_3DES</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CALG_3DES</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>3DES block encryption algorithm</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>3DES block encryption algorithm</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CALG_AES_128</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>AES 128-bit encryption algorithm</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>CALG_AES_128</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CALG_AES_256</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>AES 256-bit encryption algorithm</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>AES 128-bit encryption algorithm</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CALG_DES</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>DES encryption algorithm</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>CALG_AES_256</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CALG_RC2</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>RC2 block encryption algorithm</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>AES 256-bit encryption algorithm</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CALG_RC4</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>RC4 stream encryption algorithm</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>CALG_DES</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>0 (Zero)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>DES encryption algorithm</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CALG_RC2</b>
-          </description>
-          <description>
-            <para>RC2 block encryption algorithm</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CALG_RC4</b>
-          </description>
-          <description>
-            <para>RC4 stream encryption algorithm</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>0 (Zero)</b>
-          </description>
-          <description>
-            <para>No encryption</para>
-          </description>
-        </item>
+          <description>No encryption</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="SecPkgContext_ConnectionInfo.dwCipherStrength">
-    <summary>
-      <para>Strength of the bulk encryption cipher, in bits. Can be one of the following values: 0, 40, 56, 128, 168, or 256.</para>
-    </summary>
+    <summary>Strength of the bulk encryption cipher, in bits. Can be one of the following values: 0, 40, 56, 128, 168, or 256.</summary>
   </member>
   <member name="SecPkgContext_ConnectionInfo.aiHash">
     <summary>
@@ -305,29 +367,35 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>CALG_MD5</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CALG_MD5</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>MD5 hashing algorithm.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>MD5 hashing algorithm.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CALG_SHA</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>CALG_SHA</b>
-          </description>
-          <description>
-            <para>SHA hashing algorithm.</para>
-          </description>
-        </item>
+          <description>SHA hashing algorithm.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="SecPkgContext_ConnectionInfo.dwHashStrength">
-    <summary>
-      <para>Strength of the hash, in bits: 128 or 160.</para>
-    </summary>
+    <summary>Strength of the hash, in bits: 128 or 160.</summary>
   </member>
   <member name="SecPkgContext_ConnectionInfo.aiExch">
     <summary>
@@ -338,28 +406,34 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>CALG_RSA_KEYX</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CALG_RSA_KEYX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>RSA key exchange.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>RSA key exchange.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CALG_DH_EPHEM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>CALG_DH_EPHEM</b>
-          </description>
-          <description>
-            <para>Diffie-Hellman key exchange.</para>
-          </description>
-        </item>
+          <description>Diffie-Hellman key exchange.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="SecPkgContext_ConnectionInfo.dwExchStrength">
-    <summary>
-      <para>Key length, in bits. For RSA key exchange, this member will typically contain one of the following values: 512, 768, 1024, or 2048.  For Diffie-Hellman key exchange, this member will typically contain one of the following values: 224, 256, 384 or 512.</para>
-    </summary>
+    <summary>Key length, in bits. For RSA key exchange, this member will typically contain one of the following values: 512, 768, 1024, or 2048. For Diffie-Hellman key exchange, this member will typically contain one of the following values: 224, 256, 384 or 512.</summary>
   </member>
 </doc>

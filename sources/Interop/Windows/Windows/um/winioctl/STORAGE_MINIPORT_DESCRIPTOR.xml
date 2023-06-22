@@ -3,107 +3,78 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STORAGE_MINIPORT_DESCRIPTOR">
-    <summary>
-      <para>Reserved for system use.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/disk-management-structures">Disk Management Structures</seealso>
-    <seealso cref="STORAGE_PORT_CODE_SET" />
+    <summary>Reserved for system use.</summary>
   </member>
   <member name="STORAGE_MINIPORT_DESCRIPTOR.Version">
-    <summary>
-      <para>Contains the size of this structure, in bytes. The value of this member will change as members are added to
-the structure.</para>
-    </summary>
+    <summary>Contains the size of this structure, in bytes. The value of this member will change as members are added to the structure.</summary>
   </member>
   <member name="STORAGE_MINIPORT_DESCRIPTOR.Size">
-    <summary>
-      <para>Specifies the total size of the data returned, in bytes. This may include data that follows this
-structure.</para>
-    </summary>
+    <summary>Specifies the total size of the data returned, in bytes. This may include data that follows this structure.</summary>
   </member>
   <member name="STORAGE_MINIPORT_DESCRIPTOR.Portdriver">
     <summary>
-      <para>Type of port driver as enumerated by the
-<see cref="STORAGE_PORT_CODE_SET" /> enumeration.</para>
+      <para>Type of port driver as enumerated by the<see cref="STORAGE_PORT_CODE_SET" /> enumeration.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>StoragePortCodeSetReserved</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Indicates an unknown storage adapter driver type.</para>
-          </description>
-        </item>
-        <item>
+          <description>Indicates an unknown storage adapter driver type.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>StoragePortCodeSetStorport</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Storage adapter driver is a Storport-miniport driver.</para>
-          </description>
-        </item>
-        <item>
+          <description>Storage adapter driver is a Storport-miniport driver.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>StoragePortCodeSetSCSIport</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Storage adapter driver is a SCSI Port-miniport driver.</para>
-          </description>
-        </item>
+          <description>Storage adapter driver is a SCSI Port-miniport driver.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="STORAGE_MINIPORT_DESCRIPTOR.LUNResetSupported">
-    <summary>
-      <para>Indicates whether a LUN reset is supported.</para>
-    </summary>
+    <summary>Indicates whether a LUN reset is supported.</summary>
   </member>
   <member name="STORAGE_MINIPORT_DESCRIPTOR.TargetResetSupported">
-    <summary>
-      <para>Indicates whether a target reset is supported.</para>
-    </summary>
+    <summary>Indicates whether a target reset is supported.</summary>
   </member>
-  <member name="STORAGE_MINIPORT_DESCRIPTOR.IoTimeoutValue">
-    <summary></summary>
-  </member>
-  <member name="STORAGE_MINIPORT_DESCRIPTOR.ExtraIoInfoSupported">
-    <summary></summary>
-  </member>
-  <member name="STORAGE_MINIPORT_DESCRIPTOR.Reserved0">
-    <summary></summary>
-  </member>
-  <member name="STORAGE_MINIPORT_DESCRIPTOR.Reserved1">
-    <summary></summary>
-  </member>
+  <member name="STORAGE_MINIPORT_DESCRIPTOR.IoTimeoutValue"></member>
+  <member name="STORAGE_MINIPORT_DESCRIPTOR.ExtraIoInfoSupported"></member>
+  <member name="STORAGE_MINIPORT_DESCRIPTOR.Reserved0"></member>
+  <member name="STORAGE_MINIPORT_DESCRIPTOR.Reserved1"></member>
 </doc>

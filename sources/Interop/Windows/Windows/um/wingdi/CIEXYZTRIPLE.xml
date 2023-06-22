@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CIEXYZTRIPLE">
+    <summary>The <b>CIEXYZTRIPLE</b> structure contains the <i>x</i>,<i>y</i>, and <i>z</i> coordinates of the three colors that correspond to the red, green, and blue endpoints for a specified logical color space.</summary>
+  </member>
+  <member name="CIEXYZTRIPLE.ciexyzRed">
+    <summary>The xyz coordinates of red endpoint.</summary>
+  </member>
+  <member name="CIEXYZTRIPLE.ciexyzGreen">
+    <summary>The xyz coordinates of green endpoint.</summary>
+  </member>
+  <member name="CIEXYZTRIPLE.ciexyzBlue">
+    <summary>The xyz coordinates of blue endpoint.</summary>
+  </member>
+</doc>

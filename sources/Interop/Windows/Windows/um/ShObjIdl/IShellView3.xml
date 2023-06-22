@@ -3,19 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IShellView3.CreateViewWindow3">
-    <summary>
-      <para>Requests the creation of a new Shell view window. The view can be either the right pane of Windows Explorer or the client window of a folder window. This method replaces <see cref="CreateViewWindow2" />.</para>
-    </summary>
-    <param name="psbOwner">
-      <para>Type: <b><see cref="IShellBrowser" />*</b></para>
-      <para>A pointer to an <see cref="IShellBrowser" /> interface to provide namespace extension services.</para>
-    </param>
-    <param name="psvPrev">
-      <para>Type: <b><see cref="IShellView" />*</b></para>
-      <para>A pointer to an <see cref="IShellView" /> interface that represents the previous view in the Windows Explorer or folder window.</para>
-    </param>
+    <summary>Requests the creation of a new Shell view window. The view can be either the right pane of Windows Explorer or the client window of a folder window. This method replaces <see cref="CreateViewWindow2" />.</summary>
+    <param name="psbOwner">A pointer to an <see cref="IShellBrowser" /> interface to provide namespace extension services.</param>
+    <param name="psvPrev">A pointer to an <see cref="IShellView" /> interface that represents the previous view in the Windows Explorer or folder window.</param>
     <param name="dwViewFlags">
-      <para>Type: <b>SV3CVW3_FLAGS</b></para>
       <para>Flags that specify details of the view being created.</para>
       <h4>SV3CVW3_DEFAULT</h4>
       <para>The default view.</para>
@@ -26,41 +17,15 @@
       <h4>SV3CVW3_FORCEFOLDERFLAGS</h4>
       <para>Folder flags set by <b>IShellView3.CreateViewWindow3</b> override the saved view state.</para>
     </param>
-    <param name="dwMask">
-      <para>Type: <b><see cref="FOLDERFLAGS" /></b></para>
-      <para>A bitwise mask that specifies which folder options specified in <i>dwFlags</i> are to be used.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Type: <b><see cref="FOLDERFLAGS" /></b></para>
-      <para>A bitwise value that contains the folder options, as <see cref="FOLDERFLAGS" />, to use in the new view.</para>
-    </param>
-    <param name="fvMode">
-      <para>Type: <b><see cref="FOLDERVIEWMODE" /></b></para>
-      <para>A bitwise value that contains the folder view mode options, as <see cref="FOLDERVIEWMODE" />, to use in the new view.</para>
-    </param>
-    <param name="pvid">
-      <para>Type: <b>const SHELLVIEWID*</b></para>
-      <para>A pointer to Shell view ID as a <b>GUID</b>.</para>
-    </param>
-    <param name="prcView">
-      <para>Type: <b>const <see cref="RECT" />*</b></para>
-      <para>A pointer to a <b>RECT</b> structure that provides the dimensions of the view window.</para>
-    </param>
-    <param name="phwndView">
-      <para>Type: <b>HWND*</b></para>
-      <para>A value that receives a pointer to the handle of the new Shell view window.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <param name="dwMask">A bitwise mask that specifies which folder options specified in <i>dwFlags</i> are to be used.</param>
+    <param name="dwFlags">A bitwise value that contains the folder options, as <see cref="FOLDERFLAGS" />, to use in the new view.</param>
+    <param name="fvMode">A bitwise value that contains the folder view mode options, as <see cref="FOLDERVIEWMODE" />, to use in the new view.</param>
+    <param name="pvid">A pointer to Shell view ID as a <b>GUID</b>.</param>
+    <param name="prcView">A pointer to a <b>RECT</b> structure that provides the dimensions of the view window.</param>
+    <param name="phwndView">A value that receives a pointer to the handle of the new Shell view window.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellView3">
-    <summary>
-      <para>Extends the capabilities of <see cref="IShellView2" /> by providing a method to replace <see cref="IShellView2.CreateViewWindow2" />.</para>
-    </summary>
-    <remarks>
-      <para>This interface also provides the methods of the <see cref="IShellView" /> and <see cref="IShellView2" /> interfaces, from which it inherits.</para>
-    </remarks>
+    <summary>Extends the capabilities of <see cref="IShellView2" /> by providing a method to replace <see cref="IShellView2.CreateViewWindow2" />.</summary>
   </member>
 </doc>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFCameraControlDefaultsCollection.GetControl">
+    <summary>Gets the control from the collection using the specified zero-based index.</summary>
+    <param name="index">The index of the control to retrieve.</param>
+    <param name="configuration">Receives a pointer to a <see cref="IMFCameraControlDefaults" /> instance representing the retrieved control.</param>
+    <returns>
+      <para>A HRESULT value, including the following.</para>
+      <para>| Value | Description | |-------|-------------| | S_OK | Success. | | MF_E_INVALIDINDEX | The index was out of the allowed range.</para>
+    </returns>
+  </member>
+  <member name="IMFCameraControlDefaultsCollection.GetControlCount">
+    <summary>Gets the number of controls currently in the control defaults collection.</summary>
+    <returns>A ULONG indicating the number of controls in the collection.</returns>
+  </member>
+  <member name="IMFCameraControlDefaultsCollection.GetOrAddControl">
+    <summary>Adds a new camera control to the camera control collection.</summary>
+    <param name="configType">A value from the <see cref="MF_CAMERA_CONTROL_CONFIGURATION_TYPE" /> specifying whether the control value must be set before streaming begins or after streaming starts.</param>
+    <param name="controlSet">A GUID specifying the control set to which the control belongs.</param>
+    <param name="constrolId">The ID of the control to be added to the collection. This value must be an ID in the <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/kspropertysetid-extendedcameracontrol">KSPROPERTYSETID_ExtendedCameraControl</a> property set.</param>
+    <param name="controlSize">The size of the control, in bytes. This value must be greater than or equal to the size of <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/ksproperty-structure">KSPROPERTY</a>.</param>
+    <param name="dataSize">The size of the data payload for the control, in bytes.</param>
+    <param name="defaults">Receives a pointer to a <see cref="IMFCameraControlDefaults" /> instance representing the added control.</param>
+    <returns>
+      <para>An HRESULT, including the following:</para>
+      <para>| Value | Description | |------------|-----------| | S_OK | Success. |</para>
+    </returns>
+  </member>
+  <member name="IMFCameraControlDefaultsCollection.GetOrAddExtendedControl">
+    <summary>Adds a new extended camera control to the camera control collection.</summary>
+    <param name="configType">A value from the <see cref="MF_CAMERA_CONTROL_CONFIGURATION_TYPE" /> specifying whether the control value must be set before streaming begins or after streaming starts.</param>
+    <param name="constrolId">The ID of the control to be added to the collection. This value must be an ID in the <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/kspropertysetid-extendedcameracontrol">KSPROPERTYSETID_ExtendedCameraControl</a> property set.</param>
+    <param name="streamId">The ID of the stream associated with the control. This paramater is only used for pin-level controls. Otherwise, this value is ignored.</param>
+    <param name="dataSize">The size of the data payload for the control, in bytes.</param>
+    <param name="defaults">Receives a pointer to a <see cref="IMFCameraControlDefaults" /> instance representing the added control.</param>
+    <returns>
+      <para>An HRESULT, including the following:</para>
+      <para>| Value | Description | |------------|-----------| | S_OK | Success. | | MF_E_INVALIDREQUEST | The specified control ID is not in the KSPROPERTYSETID_ExtendedCameraControl property set. |</para>
+    </returns>
+  </member>
+  <member name="IMFCameraControlDefaultsCollection.RemoveAllControls">
+    <summary>Removes all controls from the camera control collection.</summary>
+    <returns>S_OK on success.</returns>
+  </member>
+  <member name="IMFCameraControlDefaultsCollection.RemoveControl">
+    <summary>Removes the control with the specified control set and ID from the camera control collection.</summary>
+    <param name="controlSet">A GUID specifying the control set to which the control belongs.</param>
+    <param name="constrolId">The ID of the control to be removed from the collection.</param>
+    <returns>S_OK on success.</returns>
+  </member>
+  <member name="IMFCameraControlDefaultsCollection">
+    <summary>Represents a collection of camera controls.</summary>
+  </member>
+</doc>

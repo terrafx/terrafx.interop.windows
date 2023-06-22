@@ -4,70 +4,13 @@
 <doc>
   <member name="MPEG1WAVEFORMAT">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>MPEG1WAVEFORMAT</code> structure describes the format of MPEG-1 audio data.</para>
     </summary>
-    <remarks>
-      <para>For MPEG-1 audio, the <a href="https://docs.microsoft.com//previous-versions/dd757713(v=vs.85)">WAVEFORMATEX</a> structure defined in the <b>wfx</b> member must have the following values.</para>
-      <list type="table">
-        <listheader>
-          <description>WAVEFORMATEX Member
-</description>
-          <description>Description
-</description>
-        </listheader>
-        <item>
-          <description>
-            <b>wFormatTag</b>
-          </description>
-          <description>Must be WAVE_FORMAT_MPEG</description>
-        </item>
-        <item>
-          <description>
-            <b>nChannels</b>
-          </description>
-          <description>1 for mono, 2 for stereo</description>
-        </item>
-        <item>
-          <description>
-            <b>nSamplesPerSec</b>
-          </description>
-          <description>Specifies the sampling frequency, if the sampling frequency is fixed. If it is variable, set this field to zero.</description>
-        </item>
-        <item>
-          <description>
-            <b>nAvgBytesPerSec</b>
-          </description>
-          <description>Specifies the average data rate. If variable bitrate encoding is used under layer 3, the value might not be a legal MPEG-1 bit rate.</description>
-        </item>
-        <item>
-          <description>
-            <b>nBlockAlign</b>
-          </description>
-          <description>For audio streams with a fixed audio frame length, this field specifies the length of the audio frame. If the frame length is variable, set this field to 1.If the sampling frequency is 32 kHz or 48 kHz and the bit rate is constant, the audio frame size is constant. In that case, calculate <b>nBlockAlign</b> as follows:
-<list type="bullet"><item><description>Layer 1: <code>4 * (int)(12 * bitrate / sampling frequency)</code></description></item><item><description>Layers 2 and 3: <code>(int)(144 * bitrate / sampling frequency)</code></description></item></list><para>If the bit rate is variable or the sampling frequency is 44.1 kHz, the audio frame size is not constant and <b>nBlockAlign</b> should be 1.</para></description>
-        </item>
-        <item>
-          <description>
-            <b>wBitsPerSample</b>
-          </description>
-          <description>Not used; set to zero.</description>
-        </item>
-        <item>
-          <description>
-            <b>cbSize</b>
-          </description>
-          <description>Specifies the size of the format data after the <a href="https://docs.microsoft.com//previous-versions/dd757713(v=vs.85)">WAVEFORMATEX</a> structure, in bytes. For the standard <b>MPEG1WAVEFORMAT</b> structure, this value is 22 bytes.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/mpeg-1-media-types">MPEG-1 Media Types</seealso>
   </member>
   <member name="MPEG1WAVEFORMAT.wfx">
     <summary>
-      <para>
-        <a href="https://docs.microsoft.com//previous-versions/dd757713(v=vs.85)">WAVEFORMATEX</a> structure that contains information about the audio format. See Remarks.</para>
-    </summary>
+      <a href="https://docs.microsoft.com//previous-versions/dd757713(v=vs.85)">WAVEFORMATEX</a> structure that contains information about the audio format. See Remarks.</summary>
   </member>
   <member name="MPEG1WAVEFORMAT.fwHeadLayer">
     <summary>
@@ -77,38 +20,46 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>ACM_MPEG_LAYER1</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACM_MPEG_LAYER1</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Layer 1</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Layer 1</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACM_MPEG_LAYER2</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Layer 2</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>ACM_MPEG_LAYER2</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACM_MPEG_LAYER3</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Layer 2</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>ACM_MPEG_LAYER3</b>
-          </description>
-          <description>
-            <para>Layer 3</para>
-          </description>
-        </item>
-      </list>
-      <para>Some MPEG streams may contain frames from more than one layer. If so, combine the flags with a bitwise <b>OR</b>.</para>
-    </summary>
+          <description>Layer 3</description>
+        </listheader>
+      </list> <para>Some MPEG streams may contain frames from more than one layer. If so, combine the flags with a bitwise <b>OR</b>.</para></summary>
   </member>
   <member name="MPEG1WAVEFORMAT.dwHeadBitrate">
-    <summary>
-      <para>Specifies the bitrate, in bits per second. This value gives the actual bitrate, not the MPEG frame header code. If the bitrate is variable, or is a non-standard bitrate, set this field to zero.</para>
-    </summary>
+    <summary>Specifies the bitrate, in bits per second. This value gives the actual bitrate, not the MPEG frame header code. If the bitrate is variable, or is a non-standard bitrate, set this field to zero.</summary>
   </member>
   <member name="MPEG1WAVEFORMAT.fwHeadMode">
     <summary>
@@ -118,41 +69,55 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>ACM_MPEG_STEREO</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACM_MPEG_STEREO</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Stereo</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Stereo</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACM_MPEG_JOINTSTEREO</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Joint stereo</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>ACM_MPEG_JOINTSTEREO</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACM_MPEG_DUALCHANNEL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Dual channel</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Joint stereo</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACM_MPEG_SINGLECHANNEL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>ACM_MPEG_DUALCHANNEL</b>
-          </description>
-          <description>
-            <para>Dual channel</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>ACM_MPEG_SINGLECHANNEL</b>
-          </description>
-          <description>
-            <para>Single channel</para>
-          </description>
-        </item>
-      </list>
-      <para>Some MPEG streams may contain frames with different modes. If so, combine the flags with a bitwise OR.</para>
-    </summary>
+          <description>Single channel</description>
+        </listheader>
+      </list> <para>Some MPEG streams may contain frames with different modes. If so, combine the flags with a bitwise OR.</para></summary>
   </member>
   <member name="MPEG1WAVEFORMAT.fwHeadModeExt">
     <summary>
@@ -164,34 +129,31 @@
           <description>Layers 1 and 2</description>
           <description>Layer 3</description>
         </listheader>
-        <item>
+        <listheader>
           <description>0x01</description>
           <description>'00'</description>
           <description>Intensity stereo in bands 4 to 31</description>
-          <description>Intensity stereo off; Middle/Side (MS) stereo off </description>
-        </item>
-        <item>
+          <description>Intensity stereo off; Middle/Side (MS) stereo off</description>
+        </listheader>
+        <listheader>
           <description>0x02</description>
           <description>'01'</description>
           <description>Intensity stereo in bands 8 to 31</description>
-          <description>Intensity stereo on; MS stereo off </description>
-        </item>
-        <item>
+          <description>Intensity stereo on; MS stereo off</description>
+        </listheader>
+        <listheader>
           <description>0x04</description>
           <description>'10'</description>
           <description>Intensity stereo in bands 12 to 31</description>
-          <description>Intensity stereo off; MS stereo on </description>
-        </item>
-        <item>
+          <description>Intensity stereo off; MS stereo on</description>
+        </listheader>
+        <listheader>
           <description>0x08</description>
           <description>'11'</description>
           <description>Intensity stereo in bands 16 to 31</description>
-          <description>Intensity stereo off; MS stereo on </description>
-        </item>
-      </list>
-      <para>These values may be combined with a bitwise <b>OR</b>. In general, encoders will dynamically switch between extension modes according to the characteristics of the signal. Therefore, for normal joint-stereo encoding, set this field to 0x0F (the bitwise OR of all the flags). However, you can use this field to limit the encoder to a set of allowable encoding types.</para>
-      <para>This field applies only when <b>fwHeadMode</b> includes ACM_MPEG_JOINTSTEREO. For other modes, set this field to zero.</para>
-    </summary>
+          <description>Intensity stereo off; MS stereo on</description>
+        </listheader>
+      </list> <para>These values may be combined with a bitwise <b>OR</b>. In general, encoders will dynamically switch between extension modes according to the characteristics of the signal. Therefore, for normal joint-stereo encoding, set this field to 0x0F (the bitwise OR of all the flags). However, you can use this field to limit the encoder to a set of allowable encoding types.</para><para>This field applies only when <b>fwHeadMode</b> includes ACM_MPEG_JOINTSTEREO. For other modes, set this field to zero.</para></summary>
   </member>
   <member name="MPEG1WAVEFORMAT.wHeadEmphasis">
     <summary>
@@ -200,28 +162,28 @@
         <listheader>
           <description>Value</description>
           <description>MPEG Frame Header</description>
-          <description>Code De-emphasis Required </description>
+          <description>Code De-emphasis Required</description>
         </listheader>
-        <item>
+        <listheader>
           <description>1</description>
           <description>'00'</description>
-          <description>None </description>
-        </item>
-        <item>
+          <description>None</description>
+        </listheader>
+        <listheader>
           <description>2</description>
           <description>'01'</description>
-          <description>50/15 ms emphasis </description>
-        </item>
-        <item>
+          <description>50/15 ms emphasis</description>
+        </listheader>
+        <listheader>
           <description>3</description>
           <description>'10'</description>
-          <description>Reserved </description>
-        </item>
-        <item>
+          <description>Reserved</description>
+        </listheader>
+        <listheader>
           <description>4</description>
           <description>'11'</description>
-          <description>CCITT J.17 </description>
-        </item>
+          <description>CCITT J.17</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -233,58 +195,72 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>ACM_MPEG_PRIVATEBIT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACM_MPEG_PRIVATEBIT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Set the private bit.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Set the private bit.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACM_MPEG_COPYRIGHT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Set the copyright bit.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>ACM_MPEG_COPYRIGHT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACM_MPEG_ORIGINALHOME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Set the original/home bit.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Set the copyright bit.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACM_MPEG_PROTECTIONBIT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Set the protection bit, and insert a 16-bit error protection code into each frame.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>ACM_MPEG_ORIGINALHOME</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACM_MPEG_ID_MPEG1</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Set the original/home bit.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>ACM_MPEG_PROTECTIONBIT</b>
-          </description>
-          <description>
-            <para>Set the protection bit, and insert a 16-bit error protection code into each frame.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>ACM_MPEG_ID_MPEG1</b>
-          </description>
-          <description>
-            <para>Set the ID bit to 1, defining the stream as an MPEG-1 audio stream.</para>
-          </description>
-        </item>
-      </list>
-      <para>An encoder will use these flags to set the corresponding bits in the MPEG audio frame headers.</para>
-    </summary>
+          <description>Set the ID bit to 1, defining the stream as an MPEG-1 audio stream.</description>
+        </listheader>
+      </list> <para>An encoder will use these flags to set the corresponding bits in the MPEG audio frame headers.</para></summary>
   </member>
   <member name="MPEG1WAVEFORMAT.dwPTSLow">
-    <summary>
-      <para>Specifies the least significant 32 bits of the presentation time stamp (PTS) of the first frame of the audio stream.</para>
-    </summary>
+    <summary>Specifies the least significant 32 bits of the presentation time stamp (PTS) of the first frame of the audio stream.</summary>
   </member>
   <member name="MPEG1WAVEFORMAT.dwPTSHigh">
-    <summary>
-      <para>Specifies the most significant bit of the PTS. The <b>dwPTSLow</b> and <b>dwPTSHigh</b> fields can be treated as a single 64-bit value.</para>
-    </summary>
+    <summary>Specifies the most significant bit of the PTS. The <b>dwPTSLow</b> and <b>dwPTSHigh</b> fields can be treated as a single 64-bit value.</summary>
   </member>
 </doc>

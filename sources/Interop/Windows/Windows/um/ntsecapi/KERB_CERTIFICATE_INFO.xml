@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_CERTIFICATE_INFO">
+    <summary>The <b>KERB_CERTIFICATE_INFO</b> structure contains the certificate information.</summary>
+  </member>
+  <member name="KERB_CERTIFICATE_INFO.CertInfoSize">
+    <summary>The size, in bytes, of the <b>KERB_CERTIFICATE_INFO</b> structure including the marshaled payload which is a structure of type specified in the <i>InfoType</i> parameter and immediately follows the <b>KERB_CERTIFICATE_INFO</b> structure in contiguous memory.</summary>
+  </member>
+  <member name="KERB_CERTIFICATE_INFO.InfoType">
+    <summary>A value of the <see cref="KERB_CERTIFICATE_INFO_TYPE" /> 	enumeration that specifies the type of certificate information that is provided.</summary>
+  </member>
+</doc>

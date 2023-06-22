@@ -3,45 +3,23 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_SYSTEM_STORE_RELOCATE_PARA">
-    <summary>
-      <para>The <b>CERT_SYSTEM_STORE_RELOCATE_PARA</b> structure contains data to be passed to
-<see cref="CertOpenStore" /> when that function's <i>dwFlags</i> parameter is set to CERT_SYSTEM_STORE_RELOCATE_FLAG. It allows the application to specify not only the name of the store to be opened, but also registry hKey information indicating a registry location other than the default location.</para>
-    </summary>
-    <remarks>
-      <para>The relocate capability is used to access system stores persisted in the Group Policy Template (GPT). For example, the Group Policy Editor's MMC snap-in extension for managing group policy trust lists and certificates uses the GPT's base HKEY to call
-<see cref="CertOpenStore" />.</para>
-    </remarks>
-    <seealso cref="CertOpenStore" />
+    <summary>The <b>CERT_SYSTEM_STORE_RELOCATE_PARA</b> structure contains data to be passed to<see cref="CertOpenStore" /> when that function's <i>dwFlags</i> parameter is set to CERT_SYSTEM_STORE_RELOCATE_FLAG. It allows the application to specify not only the name of the store to be opened, but also registry hKey information indicating a registry location other than the default location.</summary>
   </member>
-  <member name="CERT_SYSTEM_STORE_RELOCATE_PARA.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="CERT_SYSTEM_STORE_RELOCATE_PARA.DUMMYUNIONNAME"></member>
   <member name="CERT_SYSTEM_STORE_RELOCATE_PARA.DUMMYUNIONNAME.hKeyBase">
-    <summary>
-      <para>A handle to registry hKey.</para>
-    </summary>
+    <summary>A handle to registry hKey.</summary>
   </member>
   <member name="CERT_SYSTEM_STORE_RELOCATE_PARA.DUMMYUNIONNAME.pvBase">
-    <summary>
-      <para>A pointer to a void to allow the system store location's base to be passed in a number of different forms.</para>
-    </summary>
+    <summary>A pointer to a void to allow the system store location's base to be passed in a number of different forms.</summary>
   </member>
-  <member name="CERT_SYSTEM_STORE_RELOCATE_PARA.DUMMYUNIONNAME2">
-    <summary></summary>
-  </member>
+  <member name="CERT_SYSTEM_STORE_RELOCATE_PARA.DUMMYUNIONNAME2"></member>
   <member name="CERT_SYSTEM_STORE_RELOCATE_PARA.DUMMYUNIONNAME2.pvSystemStore">
-    <summary>
-      <para>A pointer to a void to allow the name of the system store to be passed in various forms.</para>
-    </summary>
+    <summary>A pointer to a void to allow the name of the system store to be passed in various forms.</summary>
   </member>
   <member name="CERT_SYSTEM_STORE_RELOCATE_PARA.DUMMYUNIONNAME2.pszSystemStore">
-    <summary>
-      <para>A null-terminated <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">ASCII</a> string that names the system store.</para>
-    </summary>
+    <summary>A null-terminated <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">ASCII</a> string that names the system store.</summary>
   </member>
   <member name="CERT_SYSTEM_STORE_RELOCATE_PARA.DUMMYUNIONNAME2.pwszSystemStore">
-    <summary>
-      <para>A null-terminated Unicode string that names the system store.</para>
-    </summary>
+    <summary>A null-terminated Unicode string that names the system store.</summary>
   </member>
 </doc>

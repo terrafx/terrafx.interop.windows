@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STORAGE_PROTOCOL_SPECIFIC_DATA">
+    <summary>Describes protocol-specific device data, provided in the input and output buffer of an <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> request.</summary>
+  </member>
+  <member name="STORAGE_PROTOCOL_SPECIFIC_DATA.ProtocolType">
+    <summary>The protocol type. Values for this member are defined in the <see cref="STORAGE_PROTOCOL_TYPE" /> enumeration.</summary>
+  </member>
+  <member name="STORAGE_PROTOCOL_SPECIFIC_DATA.DataType">
+    <summary>The protocol data type. Data types are defined in the <see cref="STORAGE_PROTOCOL_NVME_DATA_TYPE" /> and <see cref="STORAGE_PROTOCOL_ATA_DATA_TYPE" /> enumerations.</summary>
+  </member>
+  <member name="STORAGE_PROTOCOL_SPECIFIC_DATA.ProtocolDataRequestValue">
+    <summary>The protocol data request value.</summary>
+  </member>
+  <member name="STORAGE_PROTOCOL_SPECIFIC_DATA.ProtocolDataRequestSubValue">
+    <summary>The sub value of the protocol data request.</summary>
+  </member>
+  <member name="STORAGE_PROTOCOL_SPECIFIC_DATA.ProtocolDataOffset">
+    <summary>The offset of the data buffer that is from the beginning of this structure. The typical value can be sizeof(<b>STORAGE_PROTOCOL_SPECIFIC_DATA</b>).</summary>
+  </member>
+  <member name="STORAGE_PROTOCOL_SPECIFIC_DATA.ProtocolDataLength">
+    <summary>The length of the protocol data.</summary>
+  </member>
+  <member name="STORAGE_PROTOCOL_SPECIFIC_DATA.FixedProtocolReturnData">
+    <summary>The returned data.</summary>
+  </member>
+  <member name="STORAGE_PROTOCOL_SPECIFIC_DATA.ProtocolDataRequestSubValue2"></member>
+  <member name="STORAGE_PROTOCOL_SPECIFIC_DATA.ProtocolDataRequestSubValue3"></member>
+  <member name="STORAGE_PROTOCOL_SPECIFIC_DATA.Reserved">
+    <summary>Reserved for future use.</summary>
+  </member>
+</doc>

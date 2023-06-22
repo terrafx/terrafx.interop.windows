@@ -3,18 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ENCLAVE_CREATE_INFO_SGX">
-    <summary>
-      <para>Contains architecture-specific information to use to create an enclave when the enclave type is <b>ENCLAVE_TYPE_SGX</b>, which specifies an enclave for the Intel Software Guard Extensions (SGX) architecture extension.</para>
-    </summary>
-    <remarks>
-      <para>For more information about the <b>SECS</b> structure, see the Intel SGX Programming Reference that is available from <a href="https://software.intel.com/sgx">Intel Software Guard Extensions</a>.</para>
-    </remarks>
-    <seealso cref="CreateEnclave" />
-    <seealso cref="ENCLAVE_INIT_INFO_SGX" />
+    <summary>Contains architecture-specific information to use to create an enclave when the enclave type is <b>ENCLAVE_TYPE_SGX</b> or <b>ENCLAVE_TYPE_SGX2</b>, which specifies an enclave for one of the Intel Software Guard Extensions (SGX) architecture extensions.</summary>
   </member>
   <member name="ENCLAVE_CREATE_INFO_SGX.Secs">
-    <summary>
-      <para>The SGX enclave control structure (<b>SECS</b>) to use to create the enclave.</para>
-    </summary>
+    <summary>The SGX enclave control structure (<b>SECS</b>) to use to create the enclave.</summary>
   </member>
 </doc>

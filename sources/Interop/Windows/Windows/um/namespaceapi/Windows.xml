@@ -3,59 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.AddSIDToBoundaryDescriptor">
-    <summary>
-      <para>Adds a security identifier (SID) to the specified boundary descriptor.</para>
-    </summary>
-    <param name="BoundaryDescriptor">
-      <para>A handle to the boundary descriptor. The <see cref="CreateBoundaryDescriptor" /> function returns this handle.</para>
-    </param>
-    <param name="RequiredSid">
-      <para>A pointer to a <see cref="SID" /> structure.</para>
-    </param>
+    <summary>Adds a security identifier (SID) to the specified boundary descriptor.</summary>
+    <param name="BoundaryDescriptor">A handle to the boundary descriptor. The <see cref="CreateBoundaryDescriptor" /> function returns this handle.</param>
+    <param name="RequiredSid">A pointer to a <see cref="SID" /> structure.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
-      <para>If the function fails, the return value is zero. To get extended error information, call
-<see cref="GetLastError" />.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />.</para>
     </returns>
-    <remarks>
-      <para>The <b>AddSIDToBoundaryDescriptor</b> function must be called once for each SID to be added to the boundary descriptor.</para>
-      <para>To compile an application that uses this function, define <b>_WIN32_WINNT</b> as 0x0600 or later.</para>
-    </remarks>
-    <seealso cref="CreateBoundaryDescriptor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Sync/object-namespaces">Object Namespaces</seealso>
   </member>
   <member name="Windows.ClosePrivateNamespace">
-    <summary>
-      <para>Closes an open namespace handle.</para>
-    </summary>
-    <param name="Handle">
-      <para>The namespace handle. This handle is created by <see cref="CreatePrivateNamespace" /> or <see cref="OpenPrivateNamespace" />.</para>
-    </param>
-    <param name="Flags">
-      <para>If this parameter is <b>PRIVATE_NAMESPACE_FLAG_DESTROY</b> (0x00000001), the namespace is destroyed.</para>
-    </param>
+    <summary>Closes an open namespace handle.</summary>
+    <param name="Handle">The namespace handle. This handle is created by <see cref="CreatePrivateNamespace" /> or <see cref="OpenPrivateNamespace" />.</param>
+    <param name="Flags">If this parameter is <b>PRIVATE_NAMESPACE_FLAG_DESTROY</b> (0x00000001), the namespace is destroyed.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
-      <para>If the function fails, the return value is zero. To get extended error information, call
-<see cref="GetLastError" />.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />.</para>
     </returns>
-    <remarks>
-      <para>To compile an application that uses this function, define <b>_WIN32_WINNT</b> as 0x0600 or later.</para>
-    </remarks>
-    <seealso cref="CreatePrivateNamespace" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Sync/object-namespaces">Object Namespaces</seealso>
-    <seealso cref="OpenPrivateNamespace" />
   </member>
   <member name="Windows.CreatePrivateNamespaceW">
-    <summary>
-      <para>Creates a private namespace.</para>
-    </summary>
-    <param name="lpPrivateNamespaceAttributes">
-      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa379560(v=vs.85)">SECURITY_ATTRIBUTES</a> structure that specifies the security attributes of the namespace object.</para>
-    </param>
-    <param name="lpBoundaryDescriptor">
-      <para>A descriptor that defines how the namespace is to be isolated. The caller must be within this boundary. The <see cref="CreateBoundaryDescriptor" /> function creates a boundary descriptor.</para>
-    </param>
+    <summary>Creates a private namespace.</summary>
+    <param name="lpPrivateNamespaceAttributes">A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa379560(v=vs.85)">SECURITY_ATTRIBUTES</a> structure that specifies the security attributes of the namespace object.</param>
+    <param name="lpBoundaryDescriptor">A descriptor that defines how the namespace is to be isolated. The caller must be within this boundary. The <see cref="CreateBoundaryDescriptor" /> function creates a boundary descriptor.</param>
     <param name="lpAliasPrefix">
       <para>The prefix for the namespace. To create an object in this namespace, specify the object name as <i>prefix</i>\<i>objectname</i>.</para>
       <para>The system supports multiple private namespaces with the same name, as long as they define different boundaries.</para>
@@ -64,47 +32,15 @@
       <para>If the function succeeds, it returns a handle to the new namespace.</para>
       <para>If the function fails, the return value is <b>NULL</b>. To get extended error information, call <see cref="GetLastError" />.</para>
     </returns>
-    <remarks>
-      <para>Other applications can access the namespace using the <see cref="OpenPrivateNamespace" /> function.</para>
-      <para>The application that created the namespace can use the <see cref="ClosePrivateNamespace" /> function to close the handle to the namespace. The handle is also closed when the creating process terminates. After the namespace handle is closed, subsequent calls to <see cref="OpenPrivateNamespace" /> fail, but all operations on objects in the namespace succeed.</para>
-      <para>To compile an application that uses this function, define <b>_WIN32_WINNT</b> as 0x0600 or later.</para>
-    </remarks>
-    <seealso cref="ClosePrivateNamespace" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Sync/object-namespaces">Object Namespaces</seealso>
-    <seealso cref="OpenPrivateNamespace" />
   </member>
   <member name="Windows.DeleteBoundaryDescriptor">
-    <summary>
-      <para>Deletes the specified boundary descriptor.</para>
-    </summary>
-    <param name="BoundaryDescriptor">
-      <para>A handle to the boundary descriptor. The <see cref="CreateBoundaryDescriptor" /> function returns this handle.</para>
-    </param>
-    <remarks>
-      <para>To compile an application that uses this function, define <b>_WIN32_WINNT</b> as 0x0600 or later.</para>
-    </remarks>
-    <seealso cref="CreateBoundaryDescriptor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Sync/object-namespaces">Object Namespaces</seealso>
+    <summary>Deletes the specified boundary descriptor.</summary>
+    <param name="BoundaryDescriptor">A handle to the boundary descriptor. The <see cref="CreateBoundaryDescriptor" /> function returns this handle.</param>
   </member>
   <member name="Windows.OpenPrivateNamespaceW">
-    <summary>
-      <para>Opens a private namespace.</para>
-    </summary>
-    <param name="lpBoundaryDescriptor">
-      <para>A descriptor that defines how the namespace is to be isolated. The <see cref="CreateBoundaryDescriptor" /> function creates a boundary descriptor.</para>
-    </param>
-    <param name="lpAliasPrefix">
-      <para>The prefix for the namespace. To create an object in this namespace, specify the object name as <i>prefix</i>\<i>objectname</i>.</para>
-    </param>
-    <returns>
-      <para>The function returns the handle to the existing namespace.</para>
-    </returns>
-    <remarks>
-      <para>To compile an application that uses this function, define <b>_WIN32_WINNT</b> as 0x0600 or later.</para>
-    </remarks>
-    <seealso cref="ClosePrivateNamespace" />
-    <seealso cref="CreateBoundaryDescriptor" />
-    <seealso cref="CreatePrivateNamespace" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Sync/object-namespaces">Object Namespaces</seealso>
+    <summary>Opens a private namespace.</summary>
+    <param name="lpBoundaryDescriptor">A descriptor that defines how the namespace is to be isolated. The <see cref="CreateBoundaryDescriptor" /> function creates a boundary descriptor.</param>
+    <param name="lpAliasPrefix">The prefix for the namespace. To create an object in this namespace, specify the object name as <i>prefix</i>\<i>objectname</i>.</param>
+    <returns>The function returns the handle to the existing namespace.</returns>
   </member>
 </doc>

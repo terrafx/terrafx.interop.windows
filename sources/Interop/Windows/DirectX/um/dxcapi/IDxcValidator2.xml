@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDxcValidator2.ValidateWithDebug">
+    <summary>Validate a shader, with optional debug bitcode.</summary>
+    <param name="pShader">The shader to validate.</param>
+    <param name="Flags">Validation flags.</param>
+    <param name="pOptDebugBitcode">Optional debug module bitcode to provide line numbers.</param>
+    <param name="ppResult">Validation output status, buffer, and errors.</param>
+  </member>
+  <member name="IDxcValidator2">
+    <summary>
+      <para>Interface representing the DXC shader validator.</para>
+      <para>To obtain an instance of this interface, call <see cref="DxcCreateInstance" /> with <b>CLSID_DxcValidator</b>.</para>
+    </summary>
+  </member>
+</doc>

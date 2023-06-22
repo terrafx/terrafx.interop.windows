@@ -4,32 +4,21 @@
 <doc>
   <member name="IEnumDMO.Clone">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>This method is not implemented.</para>
     </summary>
-    <param name="ppEnum">
-      <para>Reserved.</para>
-    </param>
-    <returns>
-      <para>Returns E_NOTIMPL.</para>
-    </returns>
-    <seealso cref="IEnumDMO Interface" />
+    <param name="ppEnum">Reserved.</param>
+    <returns>Returns E_NOTIMPL.</returns>
   </member>
   <member name="IEnumDMO.Next">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Next</code> method retrieves a specified number of items in the enumeration sequence.</para>
     </summary>
-    <param name="cItemsToFetch">
-      <para>Number of items to retrieve.</para>
-    </param>
-    <param name="pCLSID">
-      <para>Array of size <i>cItemsToFetch</i> that is filled with the CLSIDs of the enumerated DMOs.</para>
-    </param>
-    <param name="Names">
-      <para>Array of size <i>cItemsToFetch</i> that is filled with the friendly names of the enumerated DMOs.</para>
-    </param>
-    <param name="pcItemsFetched">
-      <para>Pointer to a variable that receives the actual number of items retrieved. Can be <b>NULL</b> if <i>cItemsToFetch</i> equals 1.</para>
-    </param>
+    <param name="cItemsToFetch">Number of items to retrieve.</param>
+    <param name="pCLSID">Array of size <i>cItemsToFetch</i> that is filled with the CLSIDs of the enumerated DMOs.</param>
+    <param name="Names">Array of size <i>cItemsToFetch</i> that is filled with the friendly names of the enumerated DMOs.</param>
+    <param name="pcItemsFetched">Pointer to a variable that receives the actual number of items retrieved. Can be <b>NULL</b> if <i>cItemsToFetch</i> equals 1.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -37,88 +26,88 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Retrieved fewer items than requested.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Insufficient memory.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>Retrieved fewer items than requested.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Retrieved the requested number of items.</para>
-          </description>
-        </item>
+          <description>Retrieved the requested number of items.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the method succeeds, the arrays given by the <i>pCLSID</i> and <i>Names</i> parameters are filled with CLSIDs and wide-character strings. The value of *<i>pcItemsFetched</i> specifies the number of items returned in these arrays.</para>
-      <para>The method returns S_OK if it retrieves the requested number of items (in other words, if *<i>pcItemsFetched</i> equals <i>cItemsToFetch</i>). Otherwise, it returns S_FALSE or an error code.</para>
-      <para>The caller must free the memory allocated for each string returned in the <i>Names</i> parameter, using the <b>CoTaskMemFree</b> function.</para>
-    </remarks>
-    <seealso cref="IEnumDMO Interface" />
   </member>
   <member name="IEnumDMO.Reset">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Reset</code> method resets the enumeration sequence to the beginning.</para>
     </summary>
-    <returns>
-      <para>Returns S_OK.</para>
-    </returns>
-    <seealso cref="IEnumDMO Interface" />
+    <returns>Returns S_OK.</returns>
   </member>
   <member name="IEnumDMO.Skip">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Skip</code> method skips over a specified number of items in the enumeration sequence.</para>
     </summary>
-    <param name="cItemsToSkip">
-      <para>Number of items to skip.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if the number items skipped equals <i>cItemsToSkip</i>. Otherwise, returns S_FALSE.</para>
-    </returns>
-    <seealso cref="IEnumDMO Interface" />
+    <param name="cItemsToSkip">Number of items to skip.</param>
+    <returns>Returns S_OK if the number items skipped equals <i>cItemsToSkip</i>. Otherwise, returns S_FALSE.</returns>
   </member>
   <member name="IEnumDMO">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IEnumDMO</code> interface provides methods for enumerating Microsoft DirectX Media Objects (DMOs). It is based on the OLE enumeration interfaces. For more information, see the <i>IEnumXXXX</i> topic in the Platform SDK.</para>
       <para>To enumerate registered DMOs, call the <see cref="DMOEnum" /> function.</para>
     </summary>

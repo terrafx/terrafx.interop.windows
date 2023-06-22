@@ -3,16 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_TEX2D_SRV1">
-    <summary>
-      <para>Describes the subresource from a 2D texture to use in a shader-resource view.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-structures">Resource Structures</seealso>
+    <summary>Describes the subresource from a 2D texture to use in a shader-resource view.</summary>
   </member>
   <member name="D3D11_TEX2D_SRV1.MostDetailedMip">
-    <summary>
-      <para>Index of the most detailed mipmap level to use; this number is between 0 and (<b>MipLevels</b> (from the original Texture2D for which
-<see cref="ID3D11Device3.CreateShaderResourceView1" /> creates a view) - 1 ).</para>
-    </summary>
+    <summary>Index of the most detailed mipmap level to use; this number is between 0 and (<b>MipLevels</b> (from the original Texture2D for which<see cref="ID3D11Device3.CreateShaderResourceView1" /> creates a view) - 1 ).</summary>
   </member>
   <member name="D3D11_TEX2D_SRV1.MipLevels">
     <summary>
@@ -21,8 +15,6 @@
     </summary>
   </member>
   <member name="D3D11_TEX2D_SRV1.PlaneSlice">
-    <summary>
-      <para>The index (plane slice number) of the plane to use in the texture.</para>
-    </summary>
+    <summary>The index (plane slice number) of the plane to use in the texture.</summary>
   </member>
 </doc>

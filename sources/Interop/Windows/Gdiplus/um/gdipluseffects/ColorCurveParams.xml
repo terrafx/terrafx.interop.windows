@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ColorCurveParams">
+    <summary>
+      <para>A <b>ColorCurveParams</b> structure contains members that specify an adjustment to the colors of a bitmap.</para>
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-colorcurve">ColorCurve</a> class encompasses eight separate adjustments: exposure, density, contrast, highlight, shadow, midtone, white saturation, and black saturation. You can apply one of those adjustments to a bitmap by following these steps.</para>
+      <list type="number">
+        <item>
+          <description>Create and initialize a <b>ColorCurveParams</b> structure.</description>
+        </item>
+        <item>
+          <description>Pass the address of the <b>ColorCurveParams</b> structure to the <see cref="ColorCurve.SetParameters" /> method of a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-colorcurve">ColorCurve</a> object.</description>
+        </item>
+        <item>
+          <description>Pass the address of the <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-colorcurve">ColorCurve</a> object to the <a href="https://docs.microsoft.com//previous-versions/ms536058(v=vs.85)">Graphics.DrawImage</a> method or to the <see cref="Bitmap.ApplyEffect" /> method.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="ColorCurveParams.adjustment">
+    <summary>Element of the <see cref="CurveAdjustments" /> enumeration that specifies the adjustment to be applied.</summary>
+  </member>
+  <member name="ColorCurveParams.channel">
+    <summary>Element of the <see cref="CurveChannel" /> enumeration that specifies the color channel to which the adjustment applies.</summary>
+  </member>
+  <member name="ColorCurveParams.adjustValue">
+    <summary>Integer that specifies the intensity of the adjustment. The range of acceptable values depends on which adjustment is being applied. To see the range of acceptable values for a particular adjustment, see the <see cref="CurveAdjustments" /> enumeration.</summary>
+  </member>
+</doc>

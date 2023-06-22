@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_2DAFFINETRANSFORM_PROP">
-    <summary>
-      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/2d-affine-transform">2D affine transform effect</a>.</para>
-    </summary>
+    <summary>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/2d-affine-transform">2D affine transform effect</a>.</summary>
   </member>
   <member name="D2D1_2DAFFINETRANSFORM_PROP.D2D1_2DAFFINETRANSFORM_PROP_INTERPOLATION_MODE">
     <summary>
@@ -30,15 +28,9 @@
   </member>
   <member name="D2D1_2DAFFINETRANSFORM_PROP.D2D1_2DAFFINETRANSFORM_PROP_SHARPNESS">
     <summary>
-      <para>In the high quality cubic interpolation mode, the sharpness level of the scaling filter as a float between 0 and 1. The values are unitless. You can use sharpness to adjust the quality of an image when you scale the image.
-The sharpness factor affects the shape of the kernel. The higher the sharpness factor, the smaller the kernel.</para>
-      <para>
-        <b>Note</b>  This property affects only the high quality cubic interpolation mode.</para>
-      <para>Type is FLOAT.</para>
-      <para>Default value is 1.0f.</para>
-    </summary>
+      <para>In the high quality cubic interpolation mode, the sharpness level of the scaling filter as a float between 0 and 1. The values are unitless. You can use sharpness to adjust the quality of an image when you scale the image. The sharpness factor affects the shape of the kernel. The higher the sharpness factor, the smaller the kernel.</para>
+      <div>
+        <b>Note</b>  This property affects only the high quality cubic interpolation mode.</div>Type is FLOAT.<para>Default value is 1.0f.</para></summary>
   </member>
-  <member name="D2D1_2DAFFINETRANSFORM_PROP.D2D1_2DAFFINETRANSFORM_PROP_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_2DAFFINETRANSFORM_PROP.D2D1_2DAFFINETRANSFORM_PROP_FORCE_DWORD"></member>
 </doc>

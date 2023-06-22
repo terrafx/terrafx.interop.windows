@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_FILTER_REDUCTION_TYPE">
-    <summary>
-      <para>Specifies the type of sampler filter reduction.</para>
-    </summary>
-    <remarks>
-      <para>This enum is used by the <see cref="D3D11_SAMPLER_DESC" /> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-enums">Core Enumerations</seealso>
+    <summary>Specifies the type of sampler filter reduction.</summary>
   </member>
   <member name="D3D11_FILTER_REDUCTION_TYPE.D3D11_FILTER_REDUCTION_TYPE_STANDARD">
-    <summary>
-      <para>Indicates standard (default) filter reduction.</para>
-    </summary>
+    <summary>Indicates standard (default) filter reduction.</summary>
   </member>
   <member name="D3D11_FILTER_REDUCTION_TYPE.D3D11_FILTER_REDUCTION_TYPE_COMPARISON">
-    <summary>
-      <para>Indicates a comparison filter reduction.</para>
-    </summary>
+    <summary>Indicates a comparison filter reduction.</summary>
   </member>
   <member name="D3D11_FILTER_REDUCTION_TYPE.D3D11_FILTER_REDUCTION_TYPE_MINIMUM">
-    <summary>
-      <para>Indicates minimum filter reduction.</para>
-    </summary>
+    <summary>Indicates minimum filter reduction.</summary>
   </member>
   <member name="D3D11_FILTER_REDUCTION_TYPE.D3D11_FILTER_REDUCTION_TYPE_MAXIMUM">
-    <summary>
-      <para>Indicates maximum filter reduction.</para>
-    </summary>
+    <summary>Indicates maximum filter reduction.</summary>
   </member>
 </doc>

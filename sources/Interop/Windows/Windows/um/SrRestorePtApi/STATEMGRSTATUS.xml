@@ -3,57 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STATEMGRSTATUS">
-    <summary>
-      <para>Contains status information used by the
-<see cref="SRSetRestorePoint" /> function.</para>
-    </summary>
-    <remarks>
-      <para>The following table lists the status codes returned in the <b>nStatus</b> member. Note that all the status codes indicate failure except ERROR_SUCCESS.</para>
-      <list type="table">
-        <listheader>
-          <description>Status Code</description>
-          <description>Meaning</description>
-        </listheader>
-        <item>
-          <description>ERROR_SUCCESS</description>
-          <description>The call succeeded.</description>
-        </item>
-        <item>
-          <description>ERROR_BAD_ENVIRONMENT</description>
-          <description>The function was called in safe mode.</description>
-        </item>
-        <item>
-          <description>ERROR_DISK_FULL</description>
-          <description>System Restore is in standby mode because disk space is low.</description>
-        </item>
-        <item>
-          <description>ERROR_INTERNAL_ERROR</description>
-          <description>An internal error occurred.</description>
-        </item>
-        <item>
-          <description>ERROR_INVALID_DATA</description>
-          <description>The sequence number is invalid.</description>
-        </item>
-        <item>
-          <description>ERROR_SERVICE_DISABLED</description>
-          <description>System Restore is disabled.</description>
-        </item>
-        <item>
-          <description>ERROR_TIMEOUT</description>
-          <description>The call timed out due to a wait on a mutex for setting restore points.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="SRSetRestorePoint" />
+    <summary>Contains status information used by the<see cref="SRSetRestorePoint" /> function.</summary>
   </member>
   <member name="STATEMGRSTATUS.nStatus">
-    <summary>
-      <para>The status code. For a list of values, see the Remarks section.</para>
-    </summary>
+    <summary>The status code. For a list of values, see the Remarks section.</summary>
   </member>
   <member name="STATEMGRSTATUS.llSequenceNumber">
-    <summary>
-      <para>The sequence number of the restore point.</para>
-    </summary>
+    <summary>The sequence number of the restore point.</summary>
   </member>
 </doc>

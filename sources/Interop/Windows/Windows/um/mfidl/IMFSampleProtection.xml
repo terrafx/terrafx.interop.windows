@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFSampleProtection.GetInputProtectionVersion">
-    <summary>
-      <para>Retrieves the version of sample protection that the component implements on input.</para>
-    </summary>
-    <param name="pdwVersion">
-      <para>Receives a member of the <see cref="SAMPLE_PROTECTION_VERSION" /> enumeration.</para>
-    </param>
+    <summary>Retrieves the version of sample protection that the component implements on input.</summary>
+    <param name="pdwVersion">Receives a member of the <see cref="SAMPLE_PROTECTION_VERSION" /> enumeration.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,27 +12,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFSampleProtection" />
   </member>
   <member name="IMFSampleProtection.GetOutputProtectionVersion">
-    <summary>
-      <para>Retrieves the version of sample protection that the component implements on output.</para>
-    </summary>
-    <param name="pdwVersion">
-      <para>Receives a member of the <see cref="SAMPLE_PROTECTION_VERSION" /> enumeration.</para>
-    </param>
+    <summary>Retrieves the version of sample protection that the component implements on output.</summary>
+    <param name="pdwVersion">Receives a member of the <see cref="SAMPLE_PROTECTION_VERSION" /> enumeration.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -44,33 +37,26 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFSampleProtection" />
   </member>
   <member name="IMFSampleProtection.GetProtectionCertificate">
-    <summary>
-      <para>Retrieves the sample protection certificate.</para>
-    </summary>
-    <param name="dwVersion">
-      <para>Specifies the version number of the sample protection scheme for which to receive a certificate. The version number is specified as a <see cref="SAMPLE_PROTECTION_VERSION" /> enumeration value.</para>
-    </param>
-    <param name="ppCert">
-      <para>Receives a pointer to a buffer containing the certificate. The caller must free the memory for the buffer by calling <see cref="CoTaskMemFree" />.</para>
-    </param>
-    <param name="pcbCert">
-      <para>Receives the size of the <i>ppCert</i> buffer, in bytes.</para>
-    </param>
+    <summary>Retrieves the sample protection certificate.</summary>
+    <param name="dwVersion">Specifies the version number of the sample protection scheme for which to receive a certificate. The version number is specified as a <see cref="SAMPLE_PROTECTION_VERSION" /> enumeration value.</param>
+    <param name="ppCert">Receives a pointer to a buffer containing the certificate. The caller must free the memory for the buffer by calling <see cref="CoTaskMemFree" />.</param>
+    <param name="pcbCert">Receives the size of the <i>ppCert</i> buffer, in bytes.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -78,49 +64,39 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>Not implemented.</para>
-          </description>
-        </item>
+          <description>Not implemented.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For certain version numbers of sample protection, the downstream component must provide a certificate. Components that do not support these version numbers can return E_NOTIMPL.</para>
-    </remarks>
-    <seealso cref="IMFSampleProtection" />
   </member>
   <member name="IMFSampleProtection.InitInputProtection">
-    <summary>
-      <para>Initializes sample protection on the downstream component.</para>
-    </summary>
-    <param name="dwVersion">
-      <para>Specifies the version number of the sample protection scheme. The version number is specified as a <see cref="SAMPLE_PROTECTION_VERSION" /> enumeration value.</para>
-    </param>
-    <param name="dwInputId">
-      <para>Identifier of the input stream. The identifier corresponds to the output stream identifier returned by the <see cref="IMFTransform" /> interface.</para>
-    </param>
-    <param name="pbSeed">
-      <para>Pointer to a buffer that contains the initialization data provided by the upstream component. To retrieve this buffer, call <see cref="IMFSampleProtection.InitOutputProtection" />.</para>
-    </param>
-    <param name="cbSeed">
-      <para>Size of the <i>pbSeed</i> buffer, in bytes.</para>
-    </param>
+    <summary>Initializes sample protection on the downstream component.</summary>
+    <param name="dwVersion">Specifies the version number of the sample protection scheme. The version number is specified as a <see cref="SAMPLE_PROTECTION_VERSION" /> enumeration value.</param>
+    <param name="dwInputId">Identifier of the input stream. The identifier corresponds to the output stream identifier returned by the <see cref="IMFTransform" /> interface.</param>
+    <param name="pbSeed">Pointer to a buffer that contains the initialization data provided by the upstream component. To retrieve this buffer, call <see cref="IMFSampleProtection.InitOutputProtection" />.</param>
+    <param name="cbSeed">Size of the <i>pbSeed</i> buffer, in bytes.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -128,42 +104,29 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFSampleProtection" />
   </member>
   <member name="IMFSampleProtection.InitOutputProtection">
-    <summary>
-      <para>Retrieves initialization information for sample protection from the upstream component.</para>
-    </summary>
-    <param name="dwVersion">
-      <para>Specifies the version number of the sample protection scheme. The version number is specified as a <see cref="SAMPLE_PROTECTION_VERSION" /> enumeration value.</para>
-    </param>
-    <param name="dwOutputId">
-      <para>Identifier of the output stream. The identifier corresponds to the output stream identifier returned by the <see cref="IMFTransform" /> interface.</para>
-    </param>
-    <param name="pbCert">
-      <para>Pointer to a certificate provided by the downstream component.</para>
-    </param>
-    <param name="cbCert">
-      <para>Size of the certificate, in bytes.</para>
-    </param>
-    <param name="ppbSeed">
-      <para>Receives a pointer to a buffer that contains the initialization information for downstream component. The caller must free the memory for the buffer by calling <see cref="CoTaskMemFree" />.</para>
-    </param>
-    <param name="pcbSeed">
-      <para>Receives the size of the <i>ppbSeed</i> buffer, in bytes.</para>
-    </param>
+    <summary>Retrieves initialization information for sample protection from the upstream component.</summary>
+    <param name="dwVersion">Specifies the version number of the sample protection scheme. The version number is specified as a <see cref="SAMPLE_PROTECTION_VERSION" /> enumeration value.</param>
+    <param name="dwOutputId">Identifier of the output stream. The identifier corresponds to the output stream identifier returned by the <see cref="IMFTransform" /> interface.</param>
+    <param name="pbCert">Pointer to a certificate provided by the downstream component.</param>
+    <param name="cbCert">Size of the certificate, in bytes.</param>
+    <param name="ppbSeed">Receives a pointer to a buffer that contains the initialization information for downstream component. The caller must free the memory for the buffer by calling <see cref="CoTaskMemFree" />.</param>
+    <param name="pcbSeed">Receives the size of the <i>ppbSeed</i> buffer, in bytes.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -171,37 +134,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>Not implemented.</para>
-          </description>
-        </item>
+          <description>Not implemented.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method must be implemented by the upstream component. The method fails if the component does not support the requested sample protection version. Downstream components do not implement this method and should return E_NOTIMPL.</para>
-    </remarks>
-    <seealso cref="IMFSampleProtection" />
   </member>
   <member name="IMFSampleProtection">
-    <summary>
-      <para>Provides encryption for media data inside the protected media path (PMP).</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Provides encryption for media data inside the protected media path (PMP).</summary>
   </member>
 </doc>

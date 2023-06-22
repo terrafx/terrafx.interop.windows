@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="KSJACK_SINK_CONNECTIONTYPE">
-    <summary>
-      <para>The <b>KSJACK_SINK_CONNECTIONTYPE</b> enumeration defines constants that specify the type of connection. These values are used in  the <see cref="KSJACK_SINK_INFORMATION" /> structure that stores information about an audio jack sink.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-enumerations">Core Audio Enumerations</seealso>
-    <seealso cref="IKsJackSinkInformation.GetJackSinkInformation" />
-    <seealso cref="KSJACK_SINK_INFORMATION" />
+    <summary>The <b>KSJACK_SINK_CONNECTIONTYPE</b> enumeration defines constants that specify the type of connection. These values are used in the <see cref="KSJACK_SINK_INFORMATION" /> structure that stores information about an audio jack sink.</summary>
   </member>
   <member name="KSJACK_SINK_CONNECTIONTYPE.KSJACK_SINK_CONNECTIONTYPE_HDMI">
-    <summary>
-      <para>High-Definition Multimedia Interface (HDMI) connection.</para>
-    </summary>
+    <summary>High-Definition Multimedia Interface (HDMI) connection.</summary>
   </member>
   <member name="KSJACK_SINK_CONNECTIONTYPE.KSJACK_SINK_CONNECTIONTYPE_DISPLAYPORT">
-    <summary>
-      <para>Display port.</para>
-    </summary>
+    <summary>Display port.</summary>
   </member>
 </doc>

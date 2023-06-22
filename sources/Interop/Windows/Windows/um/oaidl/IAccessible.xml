@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAccessible.GetTypeInfoCount">
-    <summary>
-      <para>Retrieves the number of type information interfaces that an object provides (either 0 or 1).</para>
-    </summary>
-    <param name="pctinfo">
-      <para>The number of type information interfaces provided by the object. If the object provides type information, this number is 1; otherwise the number is 0.</para>
-    </param>
+    <summary>Retrieves the number of type information interfaces that an object provides (either 0 or 1).</summary>
+    <param name="pctinfo">The number of type information interfaces provided by the object. If the object provides type information, this number is 1; otherwise the number is 0.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,49 +12,31 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>E_NOTIMPL
-</b>
-                </description>
-              </item>
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
             </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Failure.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
+          <description>Failure.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The method may return zero, which indicates that the object does not provide any type information. In this case, the object may still be programmable through <b>IDispatch</b> or a VTBL, but does not provide run-time type information for browsers, compilers, or other programming tools that access type information. This can be useful for hiding an object from browsers.</para>
-      <h4>Examples</h4>
-      <para>This code from the Lines sample file Lines.cpp implements the <b>GetTypeInfoCount</b> member function for the <b>CLines</b> class (ActiveX or OLE object).</para>
-      <code>STDMETHODIMP
-CLines.GetTypeInfoCount(UINT * pctinfo)
-{
-   if (pctinfo == NULL) {
-      return E_INVALIDARG;
-}
-   *pctinfo = 1;
-   return NOERROR;
-}
-</code>
-    </remarks>
-    <seealso cref="IAccessible" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</seealso>
   </member>
 </doc>

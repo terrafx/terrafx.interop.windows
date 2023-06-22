@@ -3,63 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="tagSTGMEDIUM">
-    <summary>
-      <para>Represents a generalized global memory handle used for data transfer operations by the <see cref="IAdviseSink" />, <see cref="IDataObject" />, and <see cref="IOleCache" /> interfaces.</para>
-    </summary>
-    <seealso cref="FORMATETC" />
-    <seealso cref="IAdviseSink" />
-    <seealso cref="IDataObject" />
-    <seealso cref="IOleCache" />
-    <seealso cref="ReleaseStgMedium" />
+    <summary>Represents a generalized global memory handle used for data transfer operations by the <see cref="IAdviseSink" />, <see cref="IDataObject" />, and <see cref="IOleCache" /> interfaces.</summary>
   </member>
   <member name="tagSTGMEDIUM.tymed">
-    <summary>
-      <para>The type of storage medium. The marshaling and unmarshaling routines use this value to determine which union member was used. This value must be one of the elements of the <see cref="TYMED" /> enumeration.</para>
-    </summary>
+    <summary>The type of storage medium. The marshaling and unmarshaling routines use this value to determine which union member was used. This value must be one of the elements of the <see cref="TYMED" /> enumeration.</summary>
   </member>
   <member name="tagSTGMEDIUM.DUMMYUNIONNAME">
-    <summary>
-      <para>Handle, string, or interface pointer that the receiving process can use to access the data being transferred. If tymed is TYMED_NULL, the union member is undefined; otherwise, it is one of the following values.</para>
-    </summary>
+    <summary>Handle, string, or interface pointer that the receiving process can use to access the data being transferred. If tymed is TYMED_NULL, the union member is undefined; otherwise, it is one of the following values.</summary>
   </member>
   <member name="tagSTGMEDIUM.DUMMYUNIONNAME.hBitmap">
-    <summary>
-      <para>Bitmap handle. The tymed member is TYMED_GDI.</para>
-    </summary>
+    <summary>Bitmap handle. The tymed member is TYMED_GDI.</summary>
   </member>
   <member name="tagSTGMEDIUM.DUMMYUNIONNAME.hMetaFilePict">
-    <summary>
-      <para>Metafile handle. The tymed member is TYMED_MFPICT.</para>
-    </summary>
+    <summary>Metafile handle. The tymed member is TYMED_MFPICT.</summary>
   </member>
   <member name="tagSTGMEDIUM.DUMMYUNIONNAME.hEnhMetaFile">
-    <summary>
-      <para>Enhanced metafile handle. The tymed member is TYMED_ENHMF.</para>
-    </summary>
+    <summary>Enhanced metafile handle. The tymed member is TYMED_ENHMF.</summary>
   </member>
   <member name="tagSTGMEDIUM.DUMMYUNIONNAME.hGlobal">
-    <summary>
-      <para>Global memory handle. The tymed member is TYMED_HGLOBAL.</para>
-    </summary>
+    <summary>Global memory handle. The tymed member is TYMED_HGLOBAL.</summary>
   </member>
   <member name="tagSTGMEDIUM.DUMMYUNIONNAME.lpszFileName">
-    <summary>
-      <para>Pointer to the path of a disk file that contains the data. The tymed member is TYMED_FILE.</para>
-    </summary>
+    <summary>Pointer to the path of a disk file that contains the data. The tymed member is TYMED_FILE.</summary>
   </member>
   <member name="tagSTGMEDIUM.DUMMYUNIONNAME.pstm">
-    <summary>
-      <para>Pointer to an <see cref="IStream" /> interface. The tymed member is TYMED_ISTREAM.</para>
-    </summary>
+    <summary>Pointer to an <see cref="IStream" /> interface. The tymed member is TYMED_ISTREAM.</summary>
   </member>
   <member name="tagSTGMEDIUM.DUMMYUNIONNAME.pstg">
-    <summary>
-      <para>Pointer to an <see cref="IStorage" /> interface. The tymed member is TYMED_ISTORAGE.</para>
-    </summary>
+    <summary>Pointer to an <see cref="IStorage" /> interface. The tymed member is TYMED_ISTORAGE.</summary>
   </member>
   <member name="tagSTGMEDIUM.pUnkForRelease">
-    <summary>
-      <para>Pointer to an interface instance that allows the sending process to control the way the storage is released when the receiving process calls the <see cref="ReleaseStgMedium" /> function. If <i>pUnkForRelease</i> is <b>NULL</b>, <b>ReleaseStgMedium</b> uses default procedures to release the storage; otherwise, <b>ReleaseStgMedium</b> uses the specified IUnknown interface.</para>
-    </summary>
+    <summary>Pointer to an interface instance that allows the sending process to control the way the storage is released when the receiving process calls the <see cref="ReleaseStgMedium" /> function. If <i>pUnkForRelease</i> is <b>NULL</b>, <b>ReleaseStgMedium</b> uses default procedures to release the storage; otherwise, <b>ReleaseStgMedium</b> uses the specified IUnknown interface.</summary>
   </member>
 </doc>

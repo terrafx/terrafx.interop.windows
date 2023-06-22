@@ -4,102 +4,62 @@
 <doc>
   <member name="eAVAudioChannelConfig">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies the speaker configuration for the audio channels in the audio bit stream. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avaudiochannelconfig-property">AVAudioChannelConfig</a> property.</para>
     </summary>
-    <remarks>
-      <para>These values correspond to the flags used for the <b>dwChannelMask</b> member of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd390971(v=vs.85)">WAVEFORMATEXTENSIBLE</a> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVAudioChannelConfig.eAVAudioChannelConfig_FRONT_LEFT">
-    <summary>
-      <para>Front left</para>
-    </summary>
+    <summary>Front left</summary>
   </member>
   <member name="eAVAudioChannelConfig.eAVAudioChannelConfig_FRONT_RIGHT">
-    <summary>
-      <para>Front right</para>
-    </summary>
+    <summary>Front right</summary>
   </member>
   <member name="eAVAudioChannelConfig.eAVAudioChannelConfig_FRONT_CENTER">
-    <summary>
-      <para>Front center</para>
-    </summary>
+    <summary>Front center</summary>
   </member>
   <member name="eAVAudioChannelConfig.eAVAudioChannelConfig_LOW_FREQUENCY">
-    <summary>
-      <para>Low frequency effect (LFE)</para>
-    </summary>
+    <summary>Low frequency effect (LFE)</summary>
   </member>
   <member name="eAVAudioChannelConfig.eAVAudioChannelConfig_BACK_LEFT">
-    <summary>
-      <para>Back left</para>
-    </summary>
+    <summary>Back left</summary>
   </member>
   <member name="eAVAudioChannelConfig.eAVAudioChannelConfig_BACK_RIGHT">
-    <summary>
-      <para>Back right</para>
-    </summary>
+    <summary>Back right</summary>
   </member>
   <member name="eAVAudioChannelConfig.eAVAudioChannelConfig_FRONT_LEFT_OF_CENTER">
-    <summary>
-      <para>Front, left of center</para>
-    </summary>
+    <summary>Front, left of center</summary>
   </member>
   <member name="eAVAudioChannelConfig.eAVAudioChannelConfig_FRONT_RIGHT_OF_CENTER">
-    <summary>
-      <para>Front, right of center</para>
-    </summary>
+    <summary>Front, right of center</summary>
   </member>
   <member name="eAVAudioChannelConfig.eAVAudioChannelConfig_BACK_CENTER">
-    <summary>
-      <para>Back center</para>
-    </summary>
+    <summary>Back center</summary>
   </member>
   <member name="eAVAudioChannelConfig.eAVAudioChannelConfig_SIDE_LEFT">
-    <summary>
-      <para>Side left</para>
-    </summary>
+    <summary>Side left</summary>
   </member>
   <member name="eAVAudioChannelConfig.eAVAudioChannelConfig_SIDE_RIGHT">
-    <summary>
-      <para>Side right</para>
-    </summary>
+    <summary>Side right</summary>
   </member>
   <member name="eAVAudioChannelConfig.eAVAudioChannelConfig_TOP_CENTER">
-    <summary>
-      <para>Top center</para>
-    </summary>
+    <summary>Top center</summary>
   </member>
   <member name="eAVAudioChannelConfig.eAVAudioChannelConfig_TOP_FRONT_LEFT">
-    <summary>
-      <para>Top, front left</para>
-    </summary>
+    <summary>Top, front left</summary>
   </member>
   <member name="eAVAudioChannelConfig.eAVAudioChannelConfig_TOP_FRONT_CENTER">
-    <summary>
-      <para>Top, front center</para>
-    </summary>
+    <summary>Top, front center</summary>
   </member>
   <member name="eAVAudioChannelConfig.eAVAudioChannelConfig_TOP_FRONT_RIGHT">
-    <summary>
-      <para>Top, front right</para>
-    </summary>
+    <summary>Top, front right</summary>
   </member>
   <member name="eAVAudioChannelConfig.eAVAudioChannelConfig_TOP_BACK_LEFT">
-    <summary>
-      <para>Top, back left</para>
-    </summary>
+    <summary>Top, back left</summary>
   </member>
   <member name="eAVAudioChannelConfig.eAVAudioChannelConfig_TOP_BACK_CENTER">
-    <summary>
-      <para>Top, back center</para>
-    </summary>
+    <summary>Top, back center</summary>
   </member>
   <member name="eAVAudioChannelConfig.eAVAudioChannelConfig_TOP_BACK_RIGHT">
-    <summary>
-      <para>Top, back right</para>
-    </summary>
+    <summary>Top, back right</summary>
   </member>
 </doc>

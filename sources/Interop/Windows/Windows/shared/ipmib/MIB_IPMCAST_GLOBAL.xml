@@ -3,20 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIB_IPMCAST_GLOBAL">
-    <summary>
-      <para>The
-<b>MIB_IPMCAST_GLOBAL</b> structure stores global information for IP multicast on a particular computer.</para>
-    </summary>
-    <remarks>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed. This  structure is defined in the <i>Ipmib.h</i> header file, not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i>, which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
-    </remarks>
-    <seealso cref="MIB_IPMCAST_IF_ENTRY" />
-    <seealso cref="MIB_IPMCAST_MFE" />
-    <seealso cref="MIB_IPMCAST_OIF" />
+    <summary>The<b>MIB_IPMCAST_GLOBAL</b> structure stores global information for IP multicast on a particular computer.</summary>
   </member>
   <member name="MIB_IPMCAST_GLOBAL.dwEnable">
-    <summary>
-      <para>Specifies whether IP multicast is enabled on the computer.</para>
-    </summary>
+    <summary>Specifies whether IP multicast is enabled on the computer.</summary>
   </member>
 </doc>

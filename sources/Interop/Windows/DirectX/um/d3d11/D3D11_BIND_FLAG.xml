@@ -3,79 +3,46 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_BIND_FLAG">
-    <summary>
-      <para>Identifies how to bind a resource to the pipeline.</para>
-    </summary>
-    <remarks>
-      <para>In general, binding flags can be combined using a bitwise OR (except the constant-buffer flag); however, you should use a single flag to allow the device to optimize the resource usage.</para>
-      <para>This enumeration is used by a:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="Buffer description" /> when creating a buffer.</description>
-        </item>
-        <item>
-          <description>Texture description when creating a texture (see <see cref="D3D11_TEXTURE1D_DESC" /> or <see cref="D3D11_TEXTURE2D_DESC" /> or <see cref="D3D11_TEXTURE3D_DESC" />).</description>
-        </item>
-      </list>
-      <para>A shader-resource buffer is NOT a constant buffer; rather, it is a texture or buffer resource that is bound to a shader, that contains texture or buffer data (it is not limited to a single element type in the buffer). A shader-resource buffer is created with the D3D11_BIND_SHADER_RESOURCE flag and is bound to the pipeline using one of these APIs: <see cref="ID3D11DeviceContext.GSSetShaderResources" />, <see cref="ID3D11DeviceContext.PSSetShaderResources" />, or <see cref="ID3D11DeviceContext.VSSetShaderResources" />. Furthermore, a shader-resource buffer cannot use the <see cref="D3D11_MAP_WRITE_NO_OVERWRITE" /> flag.</para>
-      <para>
-        <b>Note</b>  The Direct3D 11.1 runtime, which is available starting with Windows 8, enables  mapping dynamic constant buffers and shader resource views (SRVs) of dynamic buffers with <see cref="D3D11_MAP_WRITE_NO_OVERWRITE" />.  The Direct3D 11 and earlier runtimes limited mapping to vertex or index buffers. To determine if a Direct3D device supports these features, call <see cref="ID3D11Device.CheckFeatureSupport" /> with <see cref="D3D11_FEATURE_D3D11_OPTIONS" />. <b>CheckFeatureSupport</b> fills members of a <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS" /> structure with the device's features. The relevant members here are <b>MapNoOverwriteOnDynamicConstantBuffer</b> and <b>MapNoOverwriteOnDynamicBufferSRV</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-enums">Resource Enumerations</seealso>
+    <summary>Identifies how to bind a resource to the pipeline.</summary>
   </member>
   <member name="D3D11_BIND_FLAG.D3D11_BIND_VERTEX_BUFFER">
-    <summary>
-      <para>Bind a buffer as a vertex buffer to the input-assembler stage.</para>
-    </summary>
+    <summary>Bind a buffer as a vertex buffer to the input-assembler stage.</summary>
   </member>
   <member name="D3D11_BIND_FLAG.D3D11_BIND_INDEX_BUFFER">
-    <summary>
-      <para>Bind a buffer as an index buffer to the input-assembler stage.</para>
-    </summary>
+    <summary>Bind a buffer as an index buffer to the input-assembler stage.</summary>
   </member>
   <member name="D3D11_BIND_FLAG.D3D11_BIND_CONSTANT_BUFFER">
-    <summary>
-      <para>Bind a buffer as a constant buffer to a shader stage; this flag may NOT be combined with any other bind flag.</para>
-    </summary>
+    <summary>Bind a buffer as a constant buffer to a shader stage; this flag may NOT be combined with any other bind flag.</summary>
   </member>
   <member name="D3D11_BIND_FLAG.D3D11_BIND_SHADER_RESOURCE">
     <summary>
       <para>Bind a buffer or texture to a shader stage; this flag cannot be used with the <see cref="D3D11_MAP_WRITE_NO_OVERWRITE" /> flag.</para>
-      <para>
-        <b>Note</b>  The Direct3D 11.1 runtime, which is available starting with Windows 8, enables  mapping dynamic constant buffers and shader resource views (SRVs) of dynamic buffers with <see cref="D3D11_MAP_WRITE_NO_OVERWRITE" />.  The Direct3D 11 and earlier runtimes limited mapping to vertex or index buffers. To determine if a Direct3D device supports these features, call <see cref="ID3D11Device.CheckFeatureSupport" /> with <see cref="D3D11_FEATURE_D3D11_OPTIONS" />. <b>CheckFeatureSupport</b> fills members of a <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS" /> structure with the device's features. The relevant members here are <b>MapNoOverwriteOnDynamicConstantBuffer</b> and <b>MapNoOverwriteOnDynamicBufferSRV</b>.</para>
+      <div>
+        <b>Note</b>  The Direct3D 11.1 runtime, which is available starting with Windows 8, enables mapping dynamic constant buffers and shader resource views (SRVs) of dynamic buffers with <see cref="D3D11_MAP_WRITE_NO_OVERWRITE" />. The Direct3D 11 and earlier runtimes limited mapping to vertex or index buffers. To determine if a Direct3D device supports these features, call <see cref="ID3D11Device.CheckFeatureSupport" /> with <see cref="D3D11_FEATURE_D3D11_OPTIONS" />. <b>CheckFeatureSupport</b> fills members of a <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS" /> structure with the device's features. The relevant members here are <b>MapNoOverwriteOnDynamicConstantBuffer</b> and <b>MapNoOverwriteOnDynamicBufferSRV</b>.</div>
     </summary>
   </member>
   <member name="D3D11_BIND_FLAG.D3D11_BIND_STREAM_OUTPUT">
-    <summary>
-      <para>Bind an output buffer for the stream-output stage.</para>
-    </summary>
+    <summary>Bind an output buffer for the stream-output stage.</summary>
   </member>
   <member name="D3D11_BIND_FLAG.D3D11_BIND_RENDER_TARGET">
-    <summary>
-      <para>Bind a texture as a render target for the output-merger stage.</para>
-    </summary>
+    <summary>Bind a texture as a render target for the output-merger stage.</summary>
   </member>
   <member name="D3D11_BIND_FLAG.D3D11_BIND_DEPTH_STENCIL">
-    <summary>
-      <para>Bind a texture as a depth-stencil target for the output-merger stage.</para>
-    </summary>
+    <summary>Bind a texture as a depth-stencil target for the output-merger stage.</summary>
   </member>
   <member name="D3D11_BIND_FLAG.D3D11_BIND_UNORDERED_ACCESS">
-    <summary>
-      <para>Bind an <a href="https://docs.microsoft.com//windows/desktop/direct3d11/direct3d-11-advanced-stages-cs-resources">unordered access</a> resource.</para>
-    </summary>
+    <summary>Bind an <a href="https://docs.microsoft.com//windows/desktop/direct3d11/direct3d-11-advanced-stages-cs-resources">unordered access</a> resource.</summary>
   </member>
   <member name="D3D11_BIND_FLAG.D3D11_BIND_DECODER">
     <summary>
-      <para>Set this flag to indicate that a  <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-textures-intro">2D texture</a> is used to receive output from the decoder API. The common way to create resources for a decoder output is by calling the  <see cref="ID3D11Device.CreateTexture2D" /> method to create an array of 2D  textures. However, you cannot use texture arrays that are created with this flag in calls to <see cref="ID3D11Device.CreateShaderResourceView" />.</para>
+      <para>Set this flag to indicate that a <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-textures-intro">2D texture</a> is used to receive output from the decoder API. The common way to create resources for a decoder output is by calling the <see cref="ID3D11Device.CreateTexture2D" /> method to create an array of 2D textures. However, you cannot use texture arrays that are created with this flag in calls to <see cref="ID3D11Device.CreateShaderResourceView" />.</para>
       <para>
         <b>Direct3D 11:  </b>This value is not supported until Direct3D 11.1.</para>
     </summary>
   </member>
   <member name="D3D11_BIND_FLAG.D3D11_BIND_VIDEO_ENCODER">
     <summary>
-      <para>Set this flag to indicate that a  <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-textures-intro">2D texture</a> is used to receive input from the video encoder API. The common way to create resources for a video encoder is by calling the  <see cref="ID3D11Device.CreateTexture2D" /> method to create an array of 2D  textures. However, you cannot use texture arrays that are created with this flag in calls to <see cref="ID3D11Device.CreateShaderResourceView" />.</para>
+      <para>Set this flag to indicate that a <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-textures-intro">2D texture</a> is used to receive input from the video encoder API. The common way to create resources for a video encoder is by calling the <see cref="ID3D11Device.CreateTexture2D" /> method to create an array of 2D textures. However, you cannot use texture arrays that are created with this flag in calls to <see cref="ID3D11Device.CreateShaderResourceView" />.</para>
       <para>
         <b>Direct3D 11:  </b>This value is not supported until Direct3D 11.1.</para>
     </summary>

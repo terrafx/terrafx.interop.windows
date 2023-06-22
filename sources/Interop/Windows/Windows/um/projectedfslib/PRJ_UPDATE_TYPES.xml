@@ -3,48 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PRJ_UPDATE_TYPES">
-    <summary>
-      <para>Flags to specify whether updates will be allowed given the state of a file or directory on disk.</para>
-    </summary>
+    <summary>Flags to specify whether updates will be allowed given the state of a file or directory on disk.</summary>
   </member>
   <member name="PRJ_UPDATE_TYPES.PRJ_UPDATE_NONE">
-    <summary>
-      <para>Allow update only if the item is a placeholder (whether hydrated or not).</para>
-    </summary>
+    <summary>Allow update only if the item is a placeholder (whether hydrated or not).</summary>
   </member>
   <member name="PRJ_UPDATE_TYPES.PRJ_UPDATE_ALLOW_DIRTY_METADATA">
-    <summary>
-      <para>Allow update if the item is a placeholder or a dirty placeholder.</para>
-    </summary>
+    <summary>Allow update if the item is a placeholder or a dirty placeholder.</summary>
   </member>
   <member name="PRJ_UPDATE_TYPES.PRJ_UPDATE_ALLOW_DIRTY_DATA">
-    <summary>
-      <para>Allow update if the item is a placeholder or if it is a full file.</para>
-    </summary>
+    <summary>Allow update if the item is a placeholder or if it is a full file.</summary>
   </member>
   <member name="PRJ_UPDATE_TYPES.PRJ_UPDATE_ALLOW_TOMBSTONE">
-    <summary>
-      <para>Allow update if the item is a placeholder or if it is a tombstone.</para>
-    </summary>
+    <summary>Allow update if the item is a placeholder or if it is a tombstone.</summary>
   </member>
   <member name="PRJ_UPDATE_TYPES.PRJ_UPDATE_RESERVED1">
-    <summary>
-      <para>Reserved for future use.</para>
-    </summary>
+    <summary>Reserved for future use.</summary>
   </member>
   <member name="PRJ_UPDATE_TYPES.PRJ_UPDATE_RESERVED2">
-    <summary>
-      <para>Reserved for future use.</para>
-    </summary>
+    <summary>Reserved for future use.</summary>
   </member>
   <member name="PRJ_UPDATE_TYPES.PRJ_UPDATE_ALLOW_READ_ONLY">
-    <summary>
-      <para>Allow update regardless of whether the DOS read-only bit is set on the item.</para>
-    </summary>
+    <summary>Allow update regardless of whether the DOS read-only bit is set on the item.</summary>
   </member>
   <member name="PRJ_UPDATE_TYPES.PRJ_UPDATE_MAX_VAL">
-    <summary>
-      <para>Maximum value.</para>
-    </summary>
+    <summary>Maximum value.</summary>
   </member>
 </doc>

@@ -3,30 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="RETRIEVAL_POINTERS_BUFFER">
-    <summary>
-      <para>Contains the output for the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_retrieval_pointers">FSCTL_GET_RETRIEVAL_POINTERS</a> control code.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/defragmenting-files">Defragmentation</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_retrieval_pointers">FSCTL_GET_RETRIEVAL_POINTERS</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_move_file">FSCTL_MOVE_FILE</seealso>
+    <summary>Contains the output for the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_retrieval_pointers">FSCTL_GET_RETRIEVAL_POINTERS</a> control code.</summary>
   </member>
   <member name="RETRIEVAL_POINTERS_BUFFER.ExtentCount">
-    <summary>
-      <para>The count of elements in the <b>Extents</b> array.</para>
-    </summary>
+    <summary>The count of elements in the <b>Extents</b> array.</summary>
   </member>
   <member name="RETRIEVAL_POINTERS_BUFFER.StartingVcn">
-    <summary>
-      <para>The starting VCN returned by the function call. This is not necessarily the VCN requested by the function call, as the file system driver may round down to the first VCN of the extent in which the requested starting VCN is found.</para>
-    </summary>
+    <summary>The starting VCN returned by the function call. This is not necessarily the VCN requested by the function call, as the file system driver may round down to the first VCN of the extent in which the requested starting VCN is found.</summary>
   </member>
-  <member name="RETRIEVAL_POINTERS_BUFFER.NextVcn">
-    <summary></summary>
-  </member>
-  <member name="RETRIEVAL_POINTERS_BUFFER.Lcn">
-    <summary></summary>
-  </member>
+  <member name="RETRIEVAL_POINTERS_BUFFER.NextVcn"></member>
+  <member name="RETRIEVAL_POINTERS_BUFFER.Lcn"></member>
   <member name="RETRIEVAL_POINTERS_BUFFER.Extents">
     <summary>
       <para>Array of <b>Extents</b> structures. For the number of members in the array, see <b>ExtentCount</b>. Each member of the array has the following members.</para>

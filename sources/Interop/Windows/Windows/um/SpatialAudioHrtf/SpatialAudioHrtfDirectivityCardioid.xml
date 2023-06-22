@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SpatialAudioHrtfDirectivityCardioid">
-    <summary>
-      <para>Represents a cardioid-shaped directivity model for an <see cref="ISpatialAudioObjectForHrtf" />.</para>
-    </summary>
+    <summary>Represents a cardioid-shaped directivity model for an <see cref="ISpatialAudioObjectForHrtf" />.</summary>
   </member>
   <member name="SpatialAudioHrtfDirectivityCardioid.directivity">
-    <summary>
-      <para>A structure that expresses the direction in which sound is emitted by an <see cref="ISpatialAudioObjectForHrtf" />.</para>
-    </summary>
+    <summary>A structure that expresses the direction in which sound is emitted by an <see cref="ISpatialAudioObjectForHrtf" />.</summary>
   </member>
   <member name="SpatialAudioHrtfDirectivityCardioid.Order">
-    <summary>
-      <para>The order of the cardioid.</para>
-    </summary>
+    <summary>The order of the cardioid.</summary>
   </member>
 </doc>

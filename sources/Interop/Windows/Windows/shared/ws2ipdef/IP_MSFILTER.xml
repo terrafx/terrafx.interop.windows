@@ -3,65 +3,28 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IP_MSFILTER">
-    <summary>
-      <para>The <b>ip_msfilter</b> structure provides multicast filtering parameters for IPv4 addresses.</para>
-    </summary>
-    <remarks>
-      <para>The <b>ip_msfilter</b> structure is used with IPv4 addresses. The <b>ip_msfilter</b> structure is passed as an argument  for the <b>SIO_GET_MULTICAST_FILTER</b> and <b>SIO_SET_MULTICAST_FILTER</b> IOCTLs.</para>
-      <para>The <b>ip_msfilter</b> structure and related structures used for IPv4 multicast programming are based on IETF recommendations in sections 4 and 8.1 of RFC 3768. For more information, see <a href="http://tools.ietf.org/html/rfc3678">http://www.ietf.org/rfc/rfc3678.txt</a>.</para>
-      <para>On Windows Vista and later, a set of socket options are available for multicast programming that support IPv6 and IPv4 addresses. These socket options are IP agnostic and can be used on both IPv6 and IPv4. These IP agnostic options use the <see cref="GROUP_REQ" /> and the <see cref="GROUP_SOURCE_REQ" /> structures and the <b>SIOCSMSFILTER</b> and <b>SIOCGMSFILTER</b> IOCTLs. These are the preferred socket options and IOCTLs for multicast programming on Windows Vista and later.</para>
-      <para>The <b>imsf_interface</b> member can be an interface index. Any IPv4 address in the 0.x.x.x block (first octet of 0) except for the IPv4 address of 0.0.0.0 is treated as an interface index.
-An interface index is a 24-bit number. The 0.0.0.0/8 IPv4 address block is not used (this range is reserved). The <see cref="GetAdaptersAddresses" /> function can be used to obtain interface index information to use for the <b>imsf_interface</b> member.</para>
-      <para>It is recommended that a local IPv4 address or interface index always be specified in the <b>imsf_interface</b> member of the <b>ip_msfilter</b> structure, rather than use the default interface.  This is particularly important on computers with multiple network interfaces and multiple public IPv4 addresses.</para>
-      <para>The default interface used for IPv4 multicast is  determined by the networking stack in Windows. An application can determine the default interface used for IPv4 multicast using the <see cref="GetIpForwardTable" /> function to retrieve the IPv4 routing table. The network interface with the lowest value for the routing metric for a destination IP address of 224.0.0.0 is the default interface for IPv4 multicast. The routing table can also be displayed from the command prompt with the following command:</para>
-      <para>
-        <b>route print</b>
-      </para>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/WinSock/ipproto-ip-socket-options">IP_MULTICAST_IF</a> socket option can be used to set the default interface to send IPv4 multicast packets. This socket option does not change the default interface used to receive IPv4 multicast packets.</para>
-      <para>A typical IPv4  multicast application would use the <a href="https://docs.microsoft.com//windows/desktop/WinSock/ipproto-ip-socket-options">IP_ADD_MEMBERSHIP</a> socket option with the <see cref="ip_mreq" /> structure or the <b>IP_ADD_SOURCE_MEMBERSHIP</b> socket option with the <see cref="ip_mreq_source" /> structure to join a multicast group and listen for multicast packets on a specific interface. The <b>IP_MULTICAST_IF</b> socket option would be used to set the interface to send IPv4 multicast packets to the multicast group. The most common scenario would be a multicast application that listens and sends on the same interface for a multicast group. Multiple sockets might be used by a multicast application with one  socket for listening and one or more sockets for sending.</para>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>ip_msfilter</b> structure is defined in the <i>Ws2ipdef.h</i> header file which is automatically included in the <i>Ws2tcpip.h</i> header file. The <i>Ws2ipdef.h</i>  header files should never be used directly.</para>
-      <para>
-        <b>Note</b>  The <b>IP_MSFILTER</b> and <b>PIP_MSFILTER</b> derived structures are only defined on the Windows SDK released with Windows Vista and later. The <b>ip_msfilter</b> structure should be used on earlier versions of the Windows SDK.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/final-state-based-multicast-programming">Final-State-Based Multicast Programming</seealso>
-    <seealso cref="GROUP_FILTER" />
-    <seealso cref="GROUP_REQ" />
-    <seealso cref="GROUP_SOURCE_REQ" />
-    <seealso cref="GetAdaptersAddresses" />
-    <seealso cref="GetIpForwardTable" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/ipproto-ip-socket-options">IPPROTO_IP Socket Options</seealso>
-    <seealso cref="MULTICAST_MODE_TYPE" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/multicast-programming">Multicast Programming</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/socket-options">Socket Options</seealso>
-    <seealso cref="ip_mreq" />
-    <seealso cref="ip_mreq_source" />
+    <summary>The <b>ip_msfilter</b> structure provides multicast filtering parameters for IPv4 addresses.</summary>
   </member>
   <member name="IP_MSFILTER.imsf_multiaddr">
-    <summary>
-      <para>The IPv4 address of the multicast group.</para>
-    </summary>
+    <summary>The IPv4 address of the multicast group.</summary>
   </member>
   <member name="IP_MSFILTER.imsf_interface">
     <summary>
-      <para>The local IPv4 address of the interface  or the interface index on which the multicast group should be filtered. This value is in network byte order. If this member specifies an IPv4 address of 0.0.0.0, the default IPv4 multicast interface is used.</para>
-      <para>To use an interface index of 1 would be the same as an IP address of  0.0.0.1.</para>
+      <para>The local IPv4 address of the interface or the interface index on which the multicast group should be filtered. This value is in network byte order. If this member specifies an IPv4 address of 0.0.0.0, the default IPv4 multicast interface is used.</para>
+      <para>To use an interface index of 1 would be the same as an IP address of 0.0.0.1.</para>
     </summary>
   </member>
   <member name="IP_MSFILTER.imsf_fmode">
     <summary>
-      <para>The multicast filter mode to be used. This parameter can be either MCAST_INCLUDE (value of 0) to include particular multicast sources, or MCAST_EXCLUDE (value of 1) to exclude traffic from  specified sources.</para>
+      <para>The multicast filter mode to be used. This parameter can be either MCAST_INCLUDE (value of 0) to include particular multicast sources, or MCAST_EXCLUDE (value of 1) to exclude traffic from specified sources.</para>
       <para>On Windows Server 2003 and Windows XP, these values are defined in the <i>Ws2tcpip.h</i> header file.</para>
       <para>On Windows Vista and later, these values are defined as enumeration values in the <see cref="MULTICAST_MODE_TYPE" /> enumeration defined in the <i>Ws2ipdef.h</i> header file.</para>
     </summary>
   </member>
   <member name="IP_MSFILTER.imsf_numsrc">
-    <summary>
-      <para>The number of sources in the <b>imsf_slist</b> member.</para>
-    </summary>
+    <summary>The number of sources in the <b>imsf_slist</b> member.</summary>
   </member>
   <member name="IP_MSFILTER.imsf_slist">
-    <summary>
-      <para>An array of <see cref="in_addr" /> structures that specify the IPv4 multicast source addresses to include or exclude.</para>
-    </summary>
+    <summary>An array of <see cref="in_addr" /> structures that specify the IPv4 multicast source addresses to include or exclude.</summary>
   </member>
 </doc>

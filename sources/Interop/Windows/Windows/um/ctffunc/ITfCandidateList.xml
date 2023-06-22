@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfCandidateList.EnumCandidates">
-    <summary>
-      <para>Obtains an enumerator that contains all the candidate string objects in the candidate list.</para>
-    </summary>
-    <param name="ppEnum">
-      <para>Pointer to an <see cref="IEnumTfCandidates" /> interface pointer that receives the enumerator object. The caller must release this interface when it is no longer required.</para>
-    </param>
+    <summary>Obtains an enumerator that contains all the candidate string objects in the candidate list.</summary>
+    <param name="ppEnum">Pointer to an <see cref="IEnumTfCandidates" /> interface pointer that receives the enumerator object. The caller must release this interface when it is no longer required.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,51 +12,50 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>ppEnum</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <i>ppEnum</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IEnumTfCandidates " />
-    <seealso cref="ITfCandidateList" />
   </member>
   <member name="ITfCandidateList.GetCandidate">
-    <summary>
-      <para>Obtains a specific candidate string object.</para>
-    </summary>
-    <param name="nIndex">
-      <para>Specifies the zero-based index of the candidate string to obtain.</para>
-    </param>
-    <param name="ppCand">
-      <para>Pointer to an <see cref="ITfCandidateString" /> interface pointer that receives the candidate string object. The caller must release this interface when it is no longer required.</para>
-    </param>
+    <summary>Obtains a specific candidate string object.</summary>
+    <param name="nIndex">Specifies the zero-based index of the candidate string to obtain.</param>
+    <param name="ppCand">Pointer to an <see cref="ITfCandidateString" /> interface pointer that receives the candidate string object. The caller must release this interface when it is no longer required.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -68,58 +63,62 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>nIndex</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <i>nIndex</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <i>ppCand</i> is invalid.
-</description>
-        </item>
-        <item>
+            <i>ppCand</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfCandidateList" />
-    <seealso cref="ITfCandidateString " />
   </member>
   <member name="ITfCandidateList.GetCandidateNum">
-    <summary>
-      <para>Obtains the number of candidate string objects in the candidate list.</para>
-    </summary>
-    <param name="pnCnt">
-      <para>Pointer to a <b>ULONG</b> value that receives the number of candidate string objects in the candidate list.</para>
-    </param>
+    <summary>Obtains the number of candidate string objects in the candidate list.</summary>
+    <param name="pnCnt">Pointer to a <b>ULONG</b> value that receives the number of candidate string objects in the candidate list.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -127,39 +126,38 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>pnCnt</i> is invalid.
-</description>
-        </item>
+            <i>pnCnt</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfCandidateList.SetResult">
-    <summary>
-      <para>Specifies the result of a reconversion operation for s specific candidate string.</para>
-    </summary>
-    <param name="nIndex">
-      <para>Specifies the zero-based index of the candidate string to set the result for. This parameter is ignored if <i>imcr</i> contains CAND_CANCELED.</para>
-    </param>
-    <param name="imcr">
-      <para>Contains one of the <see cref="TfCandidateResult" /> values that specifies the result of the reconversion operation.</para>
-    </param>
+    <summary>Specifies the result of a reconversion operation for s specific candidate string.</summary>
+    <param name="nIndex">Specifies the zero-based index of the candidate string to set the result for. This parameter is ignored if <i>imcr</i> contains CAND_CANCELED.</param>
+    <param name="imcr">Contains one of the <see cref="TfCandidateResult" /> values that specifies the result of the reconversion operation.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -167,50 +165,32 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A typical reconversion operation would include the following operations.</para>
-      <list type="number">
-        <item>
-          <description>A list of candidates is obtained and displayed to the user in a dialog box.</description>
-        </item>
-        <item>
-          <description>When the user selects a candidate, but before the dialog box is dismissed, <b>ITfCandidateList.SetResult</b> is called with the index of the newly selected candidate and CAND_SELECTED.</description>
-        </item>
-        <item>
-          <description>If a different candidate is selected, <b>ITfCandidateList.SetResult</b> is called agian with the index of the newly selected candidate and CAND_SELECTED.</description>
-        </item>
-        <item>
-          <description>If the user chooses to accept the new candidate, <b>ITfCandidateList.SetResult</b> is called with the index of the currently selected candidate and CAND_FINALIZED.</description>
-        </item>
-        <item>
-          <description>If the user cancels the dialog, <b>ITfCandidateList.SetResult</b> is called with an index of zero and CAND_CANCELED.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="ITfCandidateList" />
-    <seealso cref="TfCandidateResult " />
   </member>
   <member name="ITfCandidateList">
     <summary>
@@ -218,10 +198,5 @@
       <para>The TSF manager implements this interface to provide access to this interface to other clients. This enables the TSF manager to function as a mediator between the client and the text service.</para>
       <para>To obtain an instance of this interface the TSF manager or client can call <see cref="ITfFnReconversion.GetReconversion" />.</para>
     </summary>
-    <remarks>
-      <para>When a text service must interpret text before it is inserted into a context, there might be more than one possible interpretation of the text. Speech input is an example of this. If the spoken word is "there", other possible interpretations might be "their" or "they're". The text service will insert the most appropriate text, but there is still some chance of error involved. Text reconversion is the process of allowing the user to select alternate text for the inserted text. The alternate text objects are known as candidates.</para>
-    </remarks>
-    <seealso cref="ITfFnReconversion.GetReconversion " />
-    <seealso cref="IUnknown" />
   </member>
 </doc>

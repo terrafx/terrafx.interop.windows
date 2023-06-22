@@ -3,60 +3,31 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TEXTMETRICA">
-    <summary>
-      <para>The <b>TEXTMETRIC</b> structure contains basic information about a physical font. All sizes are specified in logical units; that is, they depend on the current mapping mode of the display context.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The wingdi.h header defines TEXTMETRIC as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/font-and-text-structures">Font and Text Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/fonts-and-text">Fonts and Text Overview</seealso>
-    <seealso cref="GetTextExtentPoint32" />
-    <seealso cref="GetTextMetrics" />
-    <seealso cref="LOGFONT" />
+    <summary>The <b>TEXTMETRIC</b> structure contains basic information about a physical font. All sizes are specified in logical units; that is, they depend on the current mapping mode of the display context.</summary>
   </member>
   <member name="TEXTMETRICA.tmHeight">
-    <summary>
-      <para>The height (ascent + descent) of characters.</para>
-    </summary>
+    <summary>The height (ascent + descent) of characters.</summary>
   </member>
   <member name="TEXTMETRICA.tmAscent">
-    <summary>
-      <para>The ascent (units above the base line) of characters.</para>
-    </summary>
+    <summary>The ascent (units above the base line) of characters.</summary>
   </member>
   <member name="TEXTMETRICA.tmDescent">
-    <summary>
-      <para>The descent (units below the base line) of characters.</para>
-    </summary>
+    <summary>The descent (units below the base line) of characters.</summary>
   </member>
   <member name="TEXTMETRICA.tmInternalLeading">
-    <summary>
-      <para>The amount of leading (space) inside the bounds set by the <b>tmHeight</b> member. Accent marks and other diacritical characters may occur in this area. The designer may set this member to zero.</para>
-    </summary>
+    <summary>The amount of leading (space) inside the bounds set by the <b>tmHeight</b> member. Accent marks and other diacritical characters may occur in this area. The designer may set this member to zero.</summary>
   </member>
   <member name="TEXTMETRICA.tmExternalLeading">
-    <summary>
-      <para>The amount of extra leading (space) that the application adds between rows. Since this area is outside the font, it contains no marks and is not altered by text output calls in either OPAQUE or TRANSPARENT mode. The designer may set this member to zero.</para>
-    </summary>
+    <summary>The amount of extra leading (space) that the application adds between rows. Since this area is outside the font, it contains no marks and is not altered by text output calls in either OPAQUE or TRANSPARENT mode. The designer may set this member to zero.</summary>
   </member>
   <member name="TEXTMETRICA.tmAveCharWidth">
-    <summary>
-      <para>The average width of characters in the font (generally defined as the width of the letter <i>x</i> ). This value does not include the overhang required for bold or italic characters.</para>
-    </summary>
+    <summary>The average width of characters in the font (generally defined as the width of the letter <i>x</i> ). This value does not include the overhang required for bold or italic characters.</summary>
   </member>
   <member name="TEXTMETRICA.tmMaxCharWidth">
-    <summary>
-      <para>The width of the widest character in the font.</para>
-    </summary>
+    <summary>The width of the widest character in the font.</summary>
   </member>
   <member name="TEXTMETRICA.tmWeight">
-    <summary>
-      <para>The weight of the font.</para>
-    </summary>
+    <summary>The weight of the font.</summary>
   </member>
   <member name="TEXTMETRICA.tmOverhang">
     <summary>
@@ -65,49 +36,31 @@ The wingdi.h header defines TEXTMETRIC as an alias which automatically selects t
     </summary>
   </member>
   <member name="TEXTMETRICA.tmDigitizedAspectX">
-    <summary>
-      <para>The horizontal aspect of the device for which the font was designed.</para>
-    </summary>
+    <summary>The horizontal aspect of the device for which the font was designed.</summary>
   </member>
   <member name="TEXTMETRICA.tmDigitizedAspectY">
-    <summary>
-      <para>The vertical aspect of the device for which the font was designed. The ratio of the <b>tmDigitizedAspectX</b> and <b>tmDigitizedAspectY</b> members is the aspect ratio of the device for which the font was designed.</para>
-    </summary>
+    <summary>The vertical aspect of the device for which the font was designed. The ratio of the <b>tmDigitizedAspectX</b> and <b>tmDigitizedAspectY</b> members is the aspect ratio of the device for which the font was designed.</summary>
   </member>
   <member name="TEXTMETRICA.tmFirstChar">
-    <summary>
-      <para>The value of the first character defined in the font.</para>
-    </summary>
+    <summary>The value of the first character defined in the font.</summary>
   </member>
   <member name="TEXTMETRICA.tmLastChar">
-    <summary>
-      <para>The value of the last character defined in the font.</para>
-    </summary>
+    <summary>The value of the last character defined in the font.</summary>
   </member>
   <member name="TEXTMETRICA.tmDefaultChar">
-    <summary>
-      <para>The value of the character to be substituted for characters not in the font.</para>
-    </summary>
+    <summary>The value of the character to be substituted for characters not in the font.</summary>
   </member>
   <member name="TEXTMETRICA.tmBreakChar">
-    <summary>
-      <para>The value of the character that will be used to define word breaks for text justification.</para>
-    </summary>
+    <summary>The value of the character that will be used to define word breaks for text justification.</summary>
   </member>
   <member name="TEXTMETRICA.tmItalic">
-    <summary>
-      <para>Specifies an italic font if it is nonzero.</para>
-    </summary>
+    <summary>Specifies an italic font if it is nonzero.</summary>
   </member>
   <member name="TEXTMETRICA.tmUnderlined">
-    <summary>
-      <para>Specifies an underlined font if it is nonzero.</para>
-    </summary>
+    <summary>Specifies an underlined font if it is nonzero.</summary>
   </member>
   <member name="TEXTMETRICA.tmStruckOut">
-    <summary>
-      <para>A strikeout font if it is nonzero.</para>
-    </summary>
+    <summary>A strikeout font if it is nonzero.</summary>
   </member>
   <member name="TEXTMETRICA.tmPitchAndFamily">
     <summary>
@@ -118,26 +71,23 @@ The wingdi.h header defines TEXTMETRIC as an alias which automatically selects t
           <description>Constant</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>TMPF_FIXED_PITCH</description>
           <description>If this bit is set the font is a variable pitch font. If this bit is clear the font is a fixed pitch font. Note very carefully that those meanings are the opposite of what the constant name implies.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>TMPF_VECTOR</description>
           <description>If this bit is set the font is a vector font.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>TMPF_TRUETYPE</description>
           <description>If this bit is set the font is a TrueType font.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>TMPF_DEVICE</description>
           <description>If this bit is set the font is a device font.</description>
-        </item>
-      </list>
-      <para>An application should carefully test for qualities encoded in these low-order bits, making no arbitrary assumptions. For example, besides having their own bits set, TrueType and PostScript fonts set the TMPF_VECTOR bit. A monospace bitmap font has all of these low-order bits clear; a proportional bitmap font sets the TMPF_FIXED_PITCH bit. A Postscript printer device font sets the TMPF_DEVICE, TMPF_VECTOR, and TMPF_FIXED_PITCH bits.</para>
-      <para>The four high-order bits of <b>tmPitchAndFamily</b> designate the font's font family. An application can use the value 0xF0 and the bitwise AND operator to mask out the four low-order bits of <b>tmPitchAndFamily</b>, thus obtaining a value that can be directly compared with font family names to find an identical match. For information about font families, see the description of the <see cref="LOGFONT" /> structure.</para>
-    </summary>
+        </listheader>
+      </list> <para>An application should carefully test for qualities encoded in these low-order bits, making no arbitrary assumptions. For example, besides having their own bits set, TrueType and PostScript fonts set the TMPF_VECTOR bit. A monospace bitmap font has all of these low-order bits clear; a proportional bitmap font sets the TMPF_FIXED_PITCH bit. A Postscript printer device font sets the TMPF_DEVICE, TMPF_VECTOR, and TMPF_FIXED_PITCH bits.</para><para>The four high-order bits of <b>tmPitchAndFamily</b> designate the font's font family. An application can use the value 0xF0 and the bitwise AND operator to mask out the four low-order bits of <b>tmPitchAndFamily</b>, thus obtaining a value that can be directly compared with font family names to find an identical match. For information about font families, see the description of the <see cref="LOGFONT" /> structure.</para></summary>
   </member>
   <member name="TEXTMETRICA.tmCharSet">
     <summary>
@@ -192,89 +142,52 @@ The wingdi.h header defines TEXTMETRIC as an alias which automatically selects t
       <b>Korean language edition of Windows:</b>
       <list type="bullet">
         <item>
-          <description>
-            <para>JOHAB_CHARSET</para>
-          </description>
+          <description>JOHAB_CHARSET</description>
         </item>
       </list>
       <b>Middle East language edition of Windows:</b>
       <list type="bullet">
         <item>
-          <description>
-            <para>ARABIC_CHARSET</para>
-          </description>
+          <description>ARABIC_CHARSET</description>
         </item>
         <item>
-          <description>
-            <para>HEBREW_CHARSET</para>
-          </description>
+          <description>HEBREW_CHARSET</description>
         </item>
       </list>
       <b>Thai language edition of Windows:</b>
       <list type="bullet">
         <item>
-          <description>
-            <para>THAI_CHARSET</para>
-          </description>
+          <description>THAI_CHARSET</description>
         </item>
       </list>
     </summary>
   </member>
   <member name="TEXTMETRICA">
-    <summary>
-      <para>The <b>TEXTMETRIC</b> structure contains basic information about a physical font. All sizes are specified in logical units; that is, they depend on the current mapping mode of the display context.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The wingdi.h header defines TEXTMETRIC as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/font-and-text-structures">Font and Text Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/fonts-and-text">Fonts and Text Overview</seealso>
-    <seealso cref="GetTextExtentPoint32" />
-    <seealso cref="GetTextMetrics" />
-    <seealso cref="LOGFONT" />
+    <summary>The <b>TEXTMETRIC</b> structure contains basic information about a physical font. All sizes are specified in logical units; that is, they depend on the current mapping mode of the display context.</summary>
   </member>
   <member name="TEXTMETRICA.tmHeight">
-    <summary>
-      <para>The height (ascent + descent) of characters.</para>
-    </summary>
+    <summary>The height (ascent + descent) of characters.</summary>
   </member>
   <member name="TEXTMETRICA.tmAscent">
-    <summary>
-      <para>The ascent (units above the base line) of characters.</para>
-    </summary>
+    <summary>The ascent (units above the base line) of characters.</summary>
   </member>
   <member name="TEXTMETRICA.tmDescent">
-    <summary>
-      <para>The descent (units below the base line) of characters.</para>
-    </summary>
+    <summary>The descent (units below the base line) of characters.</summary>
   </member>
   <member name="TEXTMETRICA.tmInternalLeading">
-    <summary>
-      <para>The amount of leading (space) inside the bounds set by the <b>tmHeight</b> member. Accent marks and other diacritical characters may occur in this area. The designer may set this member to zero.</para>
-    </summary>
+    <summary>The amount of leading (space) inside the bounds set by the <b>tmHeight</b> member. Accent marks and other diacritical characters may occur in this area. The designer may set this member to zero.</summary>
   </member>
   <member name="TEXTMETRICA.tmExternalLeading">
-    <summary>
-      <para>The amount of extra leading (space) that the application adds between rows. Since this area is outside the font, it contains no marks and is not altered by text output calls in either OPAQUE or TRANSPARENT mode. The designer may set this member to zero.</para>
-    </summary>
+    <summary>The amount of extra leading (space) that the application adds between rows. Since this area is outside the font, it contains no marks and is not altered by text output calls in either OPAQUE or TRANSPARENT mode. The designer may set this member to zero.</summary>
   </member>
   <member name="TEXTMETRICA.tmAveCharWidth">
-    <summary>
-      <para>The average width of characters in the font (generally defined as the width of the letter <i>x</i> ). This value does not include the overhang required for bold or italic characters.</para>
-    </summary>
+    <summary>The average width of characters in the font (generally defined as the width of the letter <i>x</i> ). This value does not include the overhang required for bold or italic characters.</summary>
   </member>
   <member name="TEXTMETRICA.tmMaxCharWidth">
-    <summary>
-      <para>The width of the widest character in the font.</para>
-    </summary>
+    <summary>The width of the widest character in the font.</summary>
   </member>
   <member name="TEXTMETRICA.tmWeight">
-    <summary>
-      <para>The weight of the font.</para>
-    </summary>
+    <summary>The weight of the font.</summary>
   </member>
   <member name="TEXTMETRICA.tmOverhang">
     <summary>
@@ -283,49 +196,31 @@ The wingdi.h header defines TEXTMETRIC as an alias which automatically selects t
     </summary>
   </member>
   <member name="TEXTMETRICA.tmDigitizedAspectX">
-    <summary>
-      <para>The horizontal aspect of the device for which the font was designed.</para>
-    </summary>
+    <summary>The horizontal aspect of the device for which the font was designed.</summary>
   </member>
   <member name="TEXTMETRICA.tmDigitizedAspectY">
-    <summary>
-      <para>The vertical aspect of the device for which the font was designed. The ratio of the <b>tmDigitizedAspectX</b> and <b>tmDigitizedAspectY</b> members is the aspect ratio of the device for which the font was designed.</para>
-    </summary>
+    <summary>The vertical aspect of the device for which the font was designed. The ratio of the <b>tmDigitizedAspectX</b> and <b>tmDigitizedAspectY</b> members is the aspect ratio of the device for which the font was designed.</summary>
   </member>
   <member name="TEXTMETRICA.tmFirstChar">
-    <summary>
-      <para>The value of the first character defined in the font.</para>
-    </summary>
+    <summary>The value of the first character defined in the font.</summary>
   </member>
   <member name="TEXTMETRICA.tmLastChar">
-    <summary>
-      <para>The value of the last character defined in the font.</para>
-    </summary>
+    <summary>The value of the last character defined in the font.</summary>
   </member>
   <member name="TEXTMETRICA.tmDefaultChar">
-    <summary>
-      <para>The value of the character to be substituted for characters not in the font.</para>
-    </summary>
+    <summary>The value of the character to be substituted for characters not in the font.</summary>
   </member>
   <member name="TEXTMETRICA.tmBreakChar">
-    <summary>
-      <para>The value of the character that will be used to define word breaks for text justification.</para>
-    </summary>
+    <summary>The value of the character that will be used to define word breaks for text justification.</summary>
   </member>
   <member name="TEXTMETRICA.tmItalic">
-    <summary>
-      <para>Specifies an italic font if it is nonzero.</para>
-    </summary>
+    <summary>Specifies an italic font if it is nonzero.</summary>
   </member>
   <member name="TEXTMETRICA.tmUnderlined">
-    <summary>
-      <para>Specifies an underlined font if it is nonzero.</para>
-    </summary>
+    <summary>Specifies an underlined font if it is nonzero.</summary>
   </member>
   <member name="TEXTMETRICA.tmStruckOut">
-    <summary>
-      <para>A strikeout font if it is nonzero.</para>
-    </summary>
+    <summary>A strikeout font if it is nonzero.</summary>
   </member>
   <member name="TEXTMETRICA.tmPitchAndFamily">
     <summary>
@@ -336,26 +231,23 @@ The wingdi.h header defines TEXTMETRIC as an alias which automatically selects t
           <description>Constant</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>TMPF_FIXED_PITCH</description>
           <description>If this bit is set the font is a variable pitch font. If this bit is clear the font is a fixed pitch font. Note very carefully that those meanings are the opposite of what the constant name implies.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>TMPF_VECTOR</description>
           <description>If this bit is set the font is a vector font.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>TMPF_TRUETYPE</description>
           <description>If this bit is set the font is a TrueType font.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>TMPF_DEVICE</description>
           <description>If this bit is set the font is a device font.</description>
-        </item>
-      </list>
-      <para>An application should carefully test for qualities encoded in these low-order bits, making no arbitrary assumptions. For example, besides having their own bits set, TrueType and PostScript fonts set the TMPF_VECTOR bit. A monospace bitmap font has all of these low-order bits clear; a proportional bitmap font sets the TMPF_FIXED_PITCH bit. A Postscript printer device font sets the TMPF_DEVICE, TMPF_VECTOR, and TMPF_FIXED_PITCH bits.</para>
-      <para>The four high-order bits of <b>tmPitchAndFamily</b> designate the font's font family. An application can use the value 0xF0 and the bitwise AND operator to mask out the four low-order bits of <b>tmPitchAndFamily</b>, thus obtaining a value that can be directly compared with font family names to find an identical match. For information about font families, see the description of the <see cref="LOGFONT" /> structure.</para>
-    </summary>
+        </listheader>
+      </list> <para>An application should carefully test for qualities encoded in these low-order bits, making no arbitrary assumptions. For example, besides having their own bits set, TrueType and PostScript fonts set the TMPF_VECTOR bit. A monospace bitmap font has all of these low-order bits clear; a proportional bitmap font sets the TMPF_FIXED_PITCH bit. A Postscript printer device font sets the TMPF_DEVICE, TMPF_VECTOR, and TMPF_FIXED_PITCH bits.</para><para>The four high-order bits of <b>tmPitchAndFamily</b> designate the font's font family. An application can use the value 0xF0 and the bitwise AND operator to mask out the four low-order bits of <b>tmPitchAndFamily</b>, thus obtaining a value that can be directly compared with font family names to find an identical match. For information about font families, see the description of the <see cref="LOGFONT" /> structure.</para></summary>
   </member>
   <member name="TEXTMETRICA.tmCharSet">
     <summary>
@@ -410,30 +302,22 @@ The wingdi.h header defines TEXTMETRIC as an alias which automatically selects t
       <b>Korean language edition of Windows:</b>
       <list type="bullet">
         <item>
-          <description>
-            <para>JOHAB_CHARSET</para>
-          </description>
+          <description>JOHAB_CHARSET</description>
         </item>
       </list>
       <b>Middle East language edition of Windows:</b>
       <list type="bullet">
         <item>
-          <description>
-            <para>ARABIC_CHARSET</para>
-          </description>
+          <description>ARABIC_CHARSET</description>
         </item>
         <item>
-          <description>
-            <para>HEBREW_CHARSET</para>
-          </description>
+          <description>HEBREW_CHARSET</description>
         </item>
       </list>
       <b>Thai language edition of Windows:</b>
       <list type="bullet">
         <item>
-          <description>
-            <para>THAI_CHARSET</para>
-          </description>
+          <description>THAI_CHARSET</description>
         </item>
       </list>
     </summary>

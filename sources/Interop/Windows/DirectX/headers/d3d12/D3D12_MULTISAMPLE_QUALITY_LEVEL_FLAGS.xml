@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_MULTISAMPLE_QUALITY_LEVEL_FLAGS">
-    <summary>
-      <para>Specifies options for determining quality levels.</para>
-    </summary>
-    <remarks>
-      <para>This enum is used by the <see cref="D3D12_FEATURE_DATA_MULTISAMPLE_QUALITY_LEVELS" /> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-12-enumerations">Core Enumerations</seealso>
+    <summary>Specifies options for determining quality levels.</summary>
   </member>
   <member name="D3D12_MULTISAMPLE_QUALITY_LEVEL_FLAGS.D3D12_MULTISAMPLE_QUALITY_LEVELS_FLAG_NONE">
-    <summary>
-      <para>No options are supported.</para>
-    </summary>
+    <summary>No options are supported.</summary>
   </member>
   <member name="D3D12_MULTISAMPLE_QUALITY_LEVEL_FLAGS.D3D12_MULTISAMPLE_QUALITY_LEVELS_FLAG_TILED_RESOURCE">
-    <summary>
-      <para>The number of quality levels can be determined for tiled resources.</para>
-    </summary>
+    <summary>The number of quality levels can be determined for tiled resources.</summary>
   </member>
 </doc>

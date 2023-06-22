@@ -3,22 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_SVG_ASPECT_SCALING">
-    <summary>
-      <para>The meetOrSlice portion of the SVG preserveAspectRatio attribute.</para>
-    </summary>
+    <summary>The meetOrSlice portion of the SVG preserveAspectRatio attribute.</summary>
   </member>
   <member name="D2D1_SVG_ASPECT_SCALING.D2D1_SVG_ASPECT_SCALING_MEET">
-    <summary>
-      <para>Scale the viewBox up as much as possible such that the entire viewBox is visible within the viewport.</para>
-    </summary>
+    <summary>Scale the viewBox up as much as possible such that the entire viewBox is visible within the viewport.</summary>
   </member>
   <member name="D2D1_SVG_ASPECT_SCALING.D2D1_SVG_ASPECT_SCALING_SLICE">
-    <summary>
-      <para>Scale the viewBox down as much as possible such that the entire viewport is
-covered by the viewBox.</para>
-    </summary>
+    <summary>Scale the viewBox down as much as possible such that the entire viewport is covered by the viewBox.</summary>
   </member>
-  <member name="D2D1_SVG_ASPECT_SCALING.D2D1_SVG_ASPECT_SCALING_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_SVG_ASPECT_SCALING.D2D1_SVG_ASPECT_SCALING_FORCE_DWORD"></member>
 </doc>

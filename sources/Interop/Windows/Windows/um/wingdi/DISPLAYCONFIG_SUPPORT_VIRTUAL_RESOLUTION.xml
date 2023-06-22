@@ -3,34 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION">
-    <summary>
-      <para>The DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION structure contains information on the state of virtual resolution support for the monitor.</para>
-    </summary>
+    <summary>The DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION structure contains information on the state of virtual resolution support for the monitor.</summary>
   </member>
   <member name="DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION.header">
-    <summary>
-      <para>A <see cref="DISPLAYCONFIG_DEVICE_INFO_HEADER" /> structure that holds information on the type, size, adapterID, and ID of the target the monitor is connected to.</para>
-    </summary>
+    <summary>A <see cref="DISPLAYCONFIG_DEVICE_INFO_HEADER" /> structure that holds information on the type, size, adapterID, and ID of the target the monitor is connected to.</summary>
   </member>
-  <member name="DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION.DUMMYSTRUCTNAME">
-    <summary></summary>
-  </member>
-  <member name="DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION.DUMMYSTRUCTNAME.DUMMYSTRUCTNAME">
-    <summary></summary>
-  </member>
+  <member name="DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION.DUMMYSTRUCTNAME"></member>
+  <member name="DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION.DUMMYSTRUCTNAME.DUMMYSTRUCTNAME"></member>
   <member name="DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION.DUMMYSTRUCTNAME.DUMMYSTRUCTNAME.disableMonitorVirtualResolution">
-    <summary>
-      <para>Setting this bit disables virtual mode for the monitor using information found in <b>header</b>.</para>
-    </summary>
+    <summary>Setting this bit disables virtual mode for the monitor using information found in <b>header</b>.</summary>
   </member>
   <member name="DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION.DUMMYSTRUCTNAME.DUMMYSTRUCTNAME.reserved">
-    <summary>
-      <para>Reserved for system use. Do not use in your driver.</para>
-    </summary>
+    <summary>Reserved for system use. Do not use in your driver.</summary>
   </member>
   <member name="DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION.DUMMYSTRUCTNAME.value">
-    <summary>
-      <para>Reflects the value of <b>disableMonitorVirtualResolution</b> in cases where debugging is utilized.</para>
-    </summary>
+    <summary>Reflects the value of <b>disableMonitorVirtualResolution</b> in cases where debugging is utilized.</summary>
   </member>
 </doc>

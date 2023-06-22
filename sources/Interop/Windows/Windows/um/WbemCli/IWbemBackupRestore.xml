@@ -3,28 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWbemBackupRestore.Backup">
-    <summary>
-      <para>The <b>IWbemBackupRestore.Backup</b> method backs up the contents of the static repository to a separate file.</para>
-    </summary>
-    <param name="strBackupToFile">
-      <para>Constant, null-terminated string of 16-bit Unicode characters that contains the file name to which to back up the contents of the repository.</para>
-    </param>
-    <param name="lFlags">
-      <para>Reserved. This parameter must be 0 (zero).</para>
-    </param>
-    <returns>
-      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
-    </returns>
+    <summary>The <b>IWbemBackupRestore.Backup</b> method backs up the contents of the static repository to a separate file.</summary>
+    <param name="strBackupToFile">Constant, null-terminated string of 16-bit Unicode characters that contains the file name to which to back up the contents of the repository.</param>
+    <param name="lFlags">Reserved. This parameter must be 0 (zero).</param>
+    <returns>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</returns>
   </member>
   <member name="IWbemBackupRestore.Restore">
     <summary>
       <para>The <b>IWbemBackupRestore.Restore</b> method deletes the contents of the current repository and restores them with the contents of a previously specified backup.</para>
       <para>Because Windows Management Instrumentation (WMI) is the server for this interface and must be stopped to complete this operation successfully, the COM connection is broken if this call is successful.</para>
     </summary>
-    <param name="strRestoreFromFile">
-      <para>Constant, null-terminated string of 16-bit Unicode characters that contains the file name of the file to be restored. The specified file should point to a file previously created with
-<see cref="IWbemBackupRestore.Backup" />.</para>
-    </param>
+    <param name="strRestoreFromFile">Constant, null-terminated string of 16-bit Unicode characters that contains the file name of the file to be restored. The specified file should point to a file previously created with<see cref="IWbemBackupRestore.Backup" />.</param>
     <param name="lFlags">
       <para>One of the following flags from the <see cref="WBEM_BACKUP_RESTORE_FLAGS" /> enumeration.</para>
       <h4>WBEM_FLAG_BACKUP_RESTORE_DEFAULT</h4>
@@ -32,34 +21,9 @@
       <h4>WBEM_FLAG_BACKUP_RESTORE_FORCE_SHUTDOWN</h4>
       <para>Shuts down any active clients.</para>
     </param>
-    <returns>
-      <para>This method returns an <b>HRESULT</b> that indicates the status of the method call. The following list lists the value contained within the <b>HRESULT</b>.</para>
-    </returns>
-    <remarks>
-      <para>The default mode is the same as setting the force-mode flag, which breaks all active connections. This results in remote procedure call (RPC) errors from  active COM connections to WMI—until new connections are established.</para>
-      <h4>Examples</h4>
-      <para>The following C++ example shows how to call the <b>IWbemBackupRestore.Restore</b> method.</para>
-      <code>// The pInt variable is of type IWbemBackupRestore*
-pInt-&gt;Restore(
-        L"c:\\\\Windows\\System32\\wbem\\repository\\back.x",
-        WBEM_FLAG_BACKUP_RESTORE_FORCE_SHUTDOWN
-      );
-</code>
-    </remarks>
+    <returns>This method returns an <b>HRESULT</b> that indicates the status of the method call. The following list lists the value contained within the <b>HRESULT</b>.</returns>
   </member>
   <member name="IWbemBackupRestore">
-    <summary>
-      <para>The
-<b>IWbemBackupRestore</b> interface backs up and restores the contents of the WMI repository. The affected content of the repository is static data, such as the class definitions that are compiled into the repository when a MOF file is loaded. The dynamic data supplied through providers is not included.</para>
-    </summary>
-    <remarks>
-      <para>The default mode is the same as setting the force mode flag, which breaks all active connections. This results in remote procedure call (RPC) errors from any active COM connections to WMI until new connections are established.</para>
-      <para>There can be no active connections to the repository during a restore operation. For this reason, the restore operation fails if default parameters are used and there are active connections. A flag can be specified to break all active connections.</para>
-      <para>
-        <b>Note</b>  The client making the call must have the proper privilege enabled. Backup requires the <b>SE_RESTORE_NAME</b> privilege, while restoration requires <b>SE_RESTORE_NAME</b>. To enable a privilege, a client application must be running under a user account that has that privilege,  and the privilege must be enabled using the Windows <see cref="AdjustTokenPrivileges" /> function.</para>
-      <para>For computers running Windows, any local user can make these calls,  but remote users must have the <b>WBEM_FULL_WRITE_REP</b> access right to the root namespace.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/com-api-for-wmi">COM API for
-WMI</seealso>
+    <summary>The<b>IWbemBackupRestore</b> interface backs up and restores the contents of the WMI repository. The affected content of the repository is static data, such as the class definitions that are compiled into the repository when a MOF file is loaded. The dynamic data supplied through providers is not included.</summary>
   </member>
 </doc>

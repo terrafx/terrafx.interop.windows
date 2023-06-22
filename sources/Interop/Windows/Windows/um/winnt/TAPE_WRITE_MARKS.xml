@@ -3,10 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TAPE_WRITE_MARKS">
-    <summary>
-      <para>The
-<b>TAPE_WRITE_MARKS</b> structure describes the type and number of tapemarks to write.</para>
-    </summary>
+    <summary>The<b>TAPE_WRITE_MARKS</b> structure describes the type and number of tapemarks to write.</summary>
   </member>
   <member name="TAPE_WRITE_MARKS.Type">
     <summary>
@@ -16,85 +13,71 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TAPE_FILEMARKS</b>
-                </description>
-              </item>
-              <item>
-                <description></description>
-              </item>
+                </term>
+              </listheader>
+              <listheader></listheader>
             </list>
           </description>
-          <description>
-            <para>Writes filemarks.</para>
-          </description>
-        </item>
-        <item>
+          <description>Writes filemarks.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TAPE_LONG_FILEMARKS</b>
-                </description>
-              </item>
-              <item>
-                <description>3L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Writes long filemarks.</para>
-          </description>
-        </item>
-        <item>
+          <description>Writes long filemarks.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TAPE_SETMARKS</b>
-                </description>
-              </item>
-              <item>
-                <description>0L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Writes setmarks.</para>
-          </description>
-        </item>
-        <item>
+          <description>Writes setmarks.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TAPE_SHORT_FILEMARKS</b>
-                </description>
-              </item>
-              <item>
-                <description>2L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Writes short filemarks.</para>
-          </description>
-        </item>
+          <description>Writes short filemarks.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="TAPE_WRITE_MARKS.Count">
-    <summary>
-      <para>Number of tapemarks to write.</para>
-    </summary>
+    <summary>Number of tapemarks to write.</summary>
   </member>
   <member name="TAPE_WRITE_MARKS.Immediate">
-    <summary>
-      <para>If this member is <b>TRUE</b>, return as soon as the operation begins. Otherwise, return after the operation has completed.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, return as soon as the operation begins. Otherwise, return after the operation has completed.</summary>
   </member>
 </doc>

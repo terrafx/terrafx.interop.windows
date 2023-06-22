@@ -4,31 +4,20 @@
 <doc>
   <member name="NORMALIZEDRECT">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>NORMALIZEDRECT</code> structure is used with the VMR filter in mixing operations to specify the location of a video rectangle in composition space.</para>
     </summary>
-    <remarks>
-      <para>This structure is used in methods involving "composition space," which refers to the visible video rectangle, as well as the offscreen space necessary to contain rectangles from secondary streams. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</a> for more information.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="NORMALIZEDRECT.left">
-    <summary>
-      <para>The left corner of the normalized rectangle.</para>
-    </summary>
+    <summary>The left corner of the normalized rectangle.</summary>
   </member>
   <member name="NORMALIZEDRECT.top">
-    <summary>
-      <para>The top corner of the normalized rectangle.</para>
-    </summary>
+    <summary>The top corner of the normalized rectangle.</summary>
   </member>
   <member name="NORMALIZEDRECT.right">
-    <summary>
-      <para>The right corner of the normalized rectangle.</para>
-    </summary>
+    <summary>The right corner of the normalized rectangle.</summary>
   </member>
   <member name="NORMALIZEDRECT.bottom">
-    <summary>
-      <para>The bottom corner of the normalized rectangle.</para>
-    </summary>
+    <summary>The bottom corner of the normalized rectangle.</summary>
   </member>
 </doc>

@@ -3,213 +3,59 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.WICConvertBitmapSource">
-    <summary>
-      <para>Obtains a <see cref="IWICBitmapSource" /> in the desired pixel format from a given <b>IWICBitmapSource</b>.</para>
-    </summary>
-    <param name="dstFormat">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-native-pixel-formats">REFWICPixelFormatGUID</a></b></para>
-      <para>The pixel format to convert to.</para>
-    </param>
-    <param name="pISrc">
-      <para>Type: <b><see cref="IWICBitmapSource" />*</b></para>
-      <para>The source bitmap.</para>
-    </param>
-    <param name="ppIDst">
-      <para>Type: <b><see cref="IWICBitmapSource" />**</b></para>
-      <para>A pointer to the <b>null</b>-initialized destination bitmap pointer.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If the <i>pISrc</i> bitmap is already in the desired format, then <i>pISrc</i> is copied to the destination bitmap pointer and a reference is added. If it is not in the desired format however, <b>WICConvertBitmapSource</b> will instantiate a <i>dstFormat</i> format converter and initialize it with <i>pISrc</i>.</para>
-    </remarks>
+    <summary>Obtains a <see cref="IWICBitmapSource" /> in the desired pixel format from a given <b>IWICBitmapSource</b>.</summary>
+    <param name="dstFormat">The pixel format to convert to.</param>
+    <param name="pISrc">The source bitmap.</param>
+    <param name="ppIDst">A pointer to the <b>null</b>-initialized destination bitmap pointer.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="Windows.WICCreateBitmapFromSection">
-    <summary>
-      <para>Returns a <see cref="IWICBitmapSource" /> that is backed by the pixels of a Windows Graphics Device Interface (GDI) section handle.</para>
-    </summary>
-    <param name="width">
-      <para>Type: <b>UINT</b></para>
-      <para>The width of the bitmap pixels.</para>
-    </param>
-    <param name="height">
-      <para>Type: <b>UINT</b></para>
-      <para>The height of the bitmap pixels.</para>
-    </param>
-    <param name="pixelFormat">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-native-pixel-formats">REFWICPixelFormatGUID</a></b></para>
-      <para>The pixel format of the bitmap.</para>
-    </param>
-    <param name="hSection">
-      <para>Type: <b>HANDLE</b></para>
-      <para>The section handle. This is a file mapping object handle returned by the <see cref="CreateFileMapping" /> function.</para>
-    </param>
-    <param name="stride">
-      <para>Type: <b>UINT</b></para>
-      <para>The byte count of each scanline.</para>
-    </param>
-    <param name="offset">
-      <para>Type: <b>UINT</b></para>
-      <para>The offset into the section.</para>
-    </param>
-    <param name="ppIBitmap">
-      <para>Type: <b><see cref="IWICBitmap" />**</b></para>
-      <para>A pointer that receives the bitmap.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <b>WICCreateBitmapFromSection</b> function calls the <see cref="WICCreateBitmapFromSectionEx" /> function with the <i>desiredAccessLevel</i> parameter set to <b>WICSectionAccessLevelRead</b>.</para>
-    </remarks>
+    <summary>Returns a <see cref="IWICBitmapSource" /> that is backed by the pixels of a Windows Graphics Device Interface (GDI) section handle.</summary>
+    <param name="width">The width of the bitmap pixels.</param>
+    <param name="height">The height of the bitmap pixels.</param>
+    <param name="pixelFormat">The pixel format of the bitmap.</param>
+    <param name="hSection">The section handle. This is a file mapping object handle returned by the <see cref="CreateFileMapping" /> function.</param>
+    <param name="stride">The byte count of each scanline.</param>
+    <param name="offset">The offset into the section.</param>
+    <param name="ppIBitmap">A pointer that receives the bitmap.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="Windows.WICCreateBitmapFromSectionEx">
-    <summary>
-      <para>Returns a <see cref="IWICBitmapSource" /> that is backed by the pixels of a Windows Graphics Device Interface (GDI) section handle.</para>
-    </summary>
-    <param name="width">
-      <para>Type: <b>UINT</b></para>
-      <para>The width of the bitmap pixels.</para>
-    </param>
-    <param name="height">
-      <para>Type: <b>UINT</b></para>
-      <para>The height of the bitmap pixels.</para>
-    </param>
-    <param name="pixelFormat">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-native-pixel-formats">REFWICPixelFormatGUID</a></b></para>
-      <para>The pixel format of the bitmap.</para>
-    </param>
-    <param name="hSection">
-      <para>Type: <b>HANDLE</b></para>
-      <para>The section handle. This is a file mapping object handle returned by the <see cref="CreateFileMapping" /> function.</para>
-    </param>
-    <param name="stride">
-      <para>Type: <b>UINT</b></para>
-      <para>The byte count of each scanline.</para>
-    </param>
-    <param name="offset">
-      <para>Type: <b>UINT</b></para>
-      <para>The offset into the section.</para>
-    </param>
-    <param name="desiredAccessLevel">
-      <para>Type: <b><see cref="WICSectionAccessLevel" /></b></para>
-      <para>The desired access level.</para>
-    </param>
-    <param name="ppIBitmap">
-      <para>Type: <b><see cref="IWICBitmap" />**</b></para>
-      <para>A pointer that receives the bitmap.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Returns a <see cref="IWICBitmapSource" /> that is backed by the pixels of a Windows Graphics Device Interface (GDI) section handle.</summary>
+    <param name="width">The width of the bitmap pixels.</param>
+    <param name="height">The height of the bitmap pixels.</param>
+    <param name="pixelFormat">The pixel format of the bitmap.</param>
+    <param name="hSection">The section handle. This is a file mapping object handle returned by the <see cref="CreateFileMapping" /> function.</param>
+    <param name="stride">The byte count of each scanline.</param>
+    <param name="offset">The offset into the section.</param>
+    <param name="desiredAccessLevel">The desired access level.</param>
+    <param name="ppIBitmap">A pointer that receives the bitmap.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="Windows.WICMapGuidToShortName">
-    <summary>
-      <para>Obtains the short name associated with a given GUID.</para>
-    </summary>
-    <param name="guid">
-      <para>Type: <b>REFGUID</b></para>
-      <para>The GUID to retrieve the short name for.</para>
-    </param>
-    <param name="cchName">
-      <para>Type: <b>UINT</b></para>
-      <para>The size of the <i>wzName</i> buffer.</para>
-    </param>
-    <param name="wzName">
-      <para>Type: <b>WCHAR*</b></para>
-      <para>A pointer that receives the short name associated with the GUID.</para>
-    </param>
-    <param name="pcchActual">
-      <para>Type: <b>UINT*</b></para>
-      <para>The actual size needed to retrieve the entire short name associated with the GUID.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Windows Imaging Component (WIC) short name mappings can be found within the following registry key:</para>
-      <code>
-        <b>HKEY_CLASSES_ROOT</b>
-        <b>CLSID</b>
-        <b>{FAE3D380-FEA4-4623-8C75-C6B61110B681}</b>
-        <b>Namespace</b>
-        <b>...</b>
-      </code>
-    </remarks>
+    <summary>Obtains the short name associated with a given GUID.</summary>
+    <param name="guid">The GUID to retrieve the short name for.</param>
+    <param name="cchName">The size of the <i>wzName</i> buffer.</param>
+    <param name="wzName">A pointer that receives the short name associated with the GUID.</param>
+    <param name="pcchActual">The actual size needed to retrieve the entire short name associated with the GUID.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="Windows.WICMapSchemaToName">
-    <summary>
-      <para>Obtains the name associated with a given schema.</para>
-    </summary>
-    <param name="guidMetadataFormat">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/wic/-wic-guids-clsids">REFGUID</a></b></para>
-      <para>The metadata format GUID.</para>
-    </param>
-    <param name="pwzSchema">
-      <para>Type: <b>LPWSTR</b></para>
-      <para>The URI string of the schema for which the name is to be retrieved.</para>
-    </param>
-    <param name="cchName">
-      <para>Type: <b>UINT</b></para>
-      <para>The size of the <i>wzName</i> buffer.</para>
-    </param>
+    <summary>Obtains the name associated with a given schema.</summary>
+    <param name="guidMetadataFormat">The metadata format GUID.</param>
+    <param name="pwzSchema">The URI string of the schema for which the name is to be retrieved.</param>
+    <param name="cchName">The size of the <i>wzName</i> buffer.</param>
     <param name="wzName">
-      <para>Type: <b>WCHAR*</b></para>
       <para>A pointer to a buffer that receives the schema's name.</para>
       <para>To obtain the required buffer size, call <b>WICMapSchemaToName</b> with <i>cchName</i> set to 0 and <i>wzName</i> set to <b>NULL</b>.</para>
     </param>
-    <param name="pcchActual">
-      <para>Type: <b>UINT</b></para>
-      <para>The actual buffer size needed to retrieve the entire schema name.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>You can extend the schema name mapping by adding to the following registry key:</para>
-      <code>
-        <b>HKEY_CLASSES_ROOT</b>
-        <b>CLSID</b>
-        <b>{FAE3D380-FEA4-4623-8C75-C6B61110B681}</b>
-        <b>Schemas</b>
-        <b>BB5ACC38-F216-4CEC-A6C5-5F6E739763A9</b>
-        <b>...</b>
-      </code>
-      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-howtowriteacodec">How to Write a WIC-Enabled Codec</a>.</para>
-    </remarks>
+    <param name="pcchActual">The actual buffer size needed to retrieve the entire schema name.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="Windows.WICMapShortNameToGuid">
-    <summary>
-      <para>Obtains the GUID associated with the given short name.</para>
-    </summary>
-    <param name="wzName">
-      <para>Type: <b>const WCHAR*</b></para>
-      <para>A pointer to the short name.</para>
-    </param>
-    <param name="pguid">
-      <para>Type: <b>GUID*</b></para>
-      <para>A pointer that receives the GUID associated with the given short name.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>You can extend the short name mapping by adding to  the following registry key:</para>
-      <code>
-        <b>HKEY_CLASSES_ROOT</b>
-        <b>CLSID</b>
-        <b>{FAE3D380-FEA4-4623-8C75-C6B61110B681}</b>
-        <b>Namespace</b>
-        <b>...</b>
-      </code>
-      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-howtowriteacodec">How to Write a WIC-Enabled Codec</a>.</para>
-    </remarks>
+    <summary>Obtains the GUID associated with the given short name.</summary>
+    <param name="wzName">A pointer to the short name.</param>
+    <param name="pguid">A pointer that receives the GUID associated with the given short name.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
 </doc>

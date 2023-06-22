@@ -3,79 +3,45 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="_SVSIF">
-    <summary>
-      <para>Indicates flags used by <see cref="IFolderView" />, <see cref="IFolderView2" />, <see cref="IShellView" /> and  <see cref="IShellView2" /> to specify a type of selection to apply.</para>
-    </summary>
-    <remarks>
-      <para>An additional value SVSI_NOSTATECHANGE is also defined outside of the enumeration. This value indicates that an operation to edit or position an item should not affect the item's focus or selected state. Its numeric value is (UINT)0x80000000.</para>
-      <para>The <b>SVSIF</b> type used to refer to members of the <b>_SVSIF</b> enumeration is defined in Shobjidl.h as shown here.</para>
-      <code>typedef UINT SVSIF;
-</code>
-    </remarks>
+    <summary>Indicates flags used by <see cref="IFolderView" />, <see cref="IFolderView2" />, <see cref="IShellView" /> and <see cref="IShellView2" /> to specify a type of selection to apply.</summary>
   </member>
   <member name="_SVSIF.SVSI_DESELECT">
-    <summary>
-      <para>0x00000000. Deselect the item.</para>
-    </summary>
+    <summary>0x00000000. Deselect the item.</summary>
   </member>
   <member name="_SVSIF.SVSI_SELECT">
-    <summary>
-      <para>0x00000001. Select the item.</para>
-    </summary>
+    <summary>0x00000001. Select the item.</summary>
   </member>
   <member name="_SVSIF.SVSI_EDIT">
-    <summary>
-      <para>0x00000003. Put the name of the item into rename mode. This value includes SVSI_SELECT.</para>
-    </summary>
+    <summary>0x00000003. Put the name of the item into rename mode. This value includes SVSI_SELECT.</summary>
   </member>
   <member name="_SVSIF.SVSI_DESELECTOTHERS">
-    <summary>
-      <para>0x00000004. Deselect all but the selected item. If the item parameter is <b>NULL</b>, deselect all items.</para>
-    </summary>
+    <summary>0x00000004. Deselect all but the selected item. If the item parameter is <b>NULL</b>, deselect all items.</summary>
   </member>
   <member name="_SVSIF.SVSI_ENSUREVISIBLE">
-    <summary>
-      <para>0x00000008. In the case of a folder that cannot display all of its contents on one screen, display the portion that contains the selected item.</para>
-    </summary>
+    <summary>0x00000008. In the case of a folder that cannot display all of its contents on one screen, display the portion that contains the selected item.</summary>
   </member>
   <member name="_SVSIF.SVSI_FOCUSED">
-    <summary>
-      <para>0x00000010. Give the selected item the focus when multiple items are selected, placing the item first in any list of the collection returned by a method.</para>
-    </summary>
+    <summary>0x00000010. Give the selected item the focus when multiple items are selected, placing the item first in any list of the collection returned by a method.</summary>
   </member>
   <member name="_SVSIF.SVSI_TRANSLATEPT">
-    <summary>
-      <para>0x00000020. Convert the input point from screen coordinates to the list-view client coordinates.</para>
-    </summary>
+    <summary>0x00000020. Convert the input point from screen coordinates to the list-view client coordinates.</summary>
   </member>
   <member name="_SVSIF.SVSI_SELECTIONMARK">
-    <summary>
-      <para>0x00000040. Mark the item so that it can be queried using <see cref="IFolderView.GetSelectionMarkedItem" />.</para>
-    </summary>
+    <summary>0x00000040. Mark the item so that it can be queried using <see cref="IFolderView.GetSelectionMarkedItem" />.</summary>
   </member>
   <member name="_SVSIF.SVSI_POSITIONITEM">
-    <summary>
-      <para>0x00000080. Allows the window's default view to position the item. In most cases, this will place the item in the first available position. However, if the call comes during the processing of a mouse-positioned context menu, the position of the context menu is used to position the item.</para>
-    </summary>
+    <summary>0x00000080. Allows the window's default view to position the item. In most cases, this will place the item in the first available position. However, if the call comes during the processing of a mouse-positioned context menu, the position of the context menu is used to position the item.</summary>
   </member>
   <member name="_SVSIF.SVSI_CHECK">
-    <summary>
-      <para>0x00000100. The item should be checked. This flag is used with items in views where the checked mode is supported.</para>
-    </summary>
+    <summary>0x00000100. The item should be checked. This flag is used with items in views where the checked mode is supported.</summary>
   </member>
   <member name="_SVSIF.SVSI_CHECK2">
-    <summary>
-      <para>0x00000200. The second check state when the view is in tri-check mode, in which there are three values for the checked state. You can indicate tri-check mode by specifying FWF_TRICHECKSELECT in <see cref="IFolderView2.SetCurrentFolderFlags" />. The 3 states for FWF_TRICHECKSELECT are unchecked, SVSI_CHECK and SVSI_CHECK2.</para>
-    </summary>
+    <summary>0x00000200. The second check state when the view is in tri-check mode, in which there are three values for the checked state. You can indicate tri-check mode by specifying FWF_TRICHECKSELECT in <see cref="IFolderView2.SetCurrentFolderFlags" />. The 3 states for FWF_TRICHECKSELECT are unchecked, SVSI_CHECK and SVSI_CHECK2.</summary>
   </member>
   <member name="_SVSIF.SVSI_KEYBOARDSELECT">
-    <summary>
-      <para>0x00000401. Selects the item and marks it as selected by the keyboard. This value includes SVSI_SELECT.</para>
-    </summary>
+    <summary>0x00000401. Selects the item and marks it as selected by the keyboard. This value includes SVSI_SELECT.</summary>
   </member>
   <member name="_SVSIF.SVSI_NOTAKEFOCUS">
-    <summary>
-      <para>0x40000000. An operation to select or focus an item should not also set focus on the view itself.</para>
-    </summary>
+    <summary>0x40000000. An operation to select or focus an item should not also set focus on the view itself.</summary>
   </member>
 </doc>

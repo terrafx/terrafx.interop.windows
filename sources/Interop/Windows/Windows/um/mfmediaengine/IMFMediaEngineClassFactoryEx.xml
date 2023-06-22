@@ -3,35 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFMediaEngineClassFactoryEx.CreateMediaKeys">
-    <summary>
-      <para>Creates a media keys object based on the specified key system.</para>
-    </summary>
-    <param name="keySystem">
-      <para>The media keys system.</para>
-    </param>
-    <param name="cdmStorePath">
-      <para>Points to a location to store Content Decryption Module (CDM) data which might be locked by multiple process and so might be incompatible with store app suspension.</para>
-    </param>
-    <param name="ppKeys">
-      <para>The media keys.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Checks if <i>keySystem</i> is a supported key system and creates the related Content Decryption Module (CDM).</para>
-    </remarks>
-    <seealso cref="IMFMediaEngineClassFactoryEx" />
+    <summary>Creates a media keys object based on the specified key system.</summary>
+    <param name="keySystem">The media keys system.</param>
+    <param name="cdmStorePath">Points to a location to store Content Decryption Module (CDM) data which might be locked by multiple process and so might be incompatible with store app suspension.</param>
+    <param name="ppKeys">The media keys.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineClassFactoryEx.CreateMediaSourceExtension">
-    <summary>
-      <para>Creates an instance of <see cref="IMFMediaSourceExtension" />.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>This parameter is reserved and must be set to 0.</para>
-    </param>
+    <summary>Creates an instance of <see cref="IMFMediaSourceExtension" />.</summary>
+    <param name="dwFlags">This parameter is reserved and must be set to 0.</param>
     <param name="pAttr">
-      <para>This method supports the following  Media Foundation attributes:</para>
+      <para>This method supports the following Media Foundation attributes:</para>
       <list type="bullet">
         <item>
           <description>
@@ -50,40 +32,18 @@
         </item>
       </list>
     </param>
-    <param name="ppMSE">
-      <para>The <see cref="IMFMediaSourceExtension" /> which was created.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineClassFactoryEx" />
+    <param name="ppMSE">The <see cref="IMFMediaSourceExtension" /> which was created.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineClassFactoryEx.IsTypeSupported">
-    <summary>
-      <para>Gets a value that indicates if the specified key system supports the specified media type.</para>
-    </summary>
-    <param name="type">
-      <para>The MIME type to check support for.</para>
-    </param>
-    <param name="keySystem">
-      <para>The key system to check support for.</para>
-    </param>
+    <summary>Gets a value that indicates if the specified key system supports the specified media type.</summary>
+    <param name="type">The MIME type to check support for.</param>
+    <param name="keySystem">The key system to check support for.</param>
     <param name="isSupported">
-      <para>
-        <b>true</b> if type is supported by <i>keySystem</i>; otherwise, <b>false.</b></para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineClassFactoryEx" />
+      <b>true</b> if type is supported by <i>keySystem</i>; otherwise, <b>false.</b></param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineClassFactoryEx">
-    <summary>
-      <para>Extension for the <see cref="IMFMediaEngineClassFactory" /> interface.</para>
-    </summary>
-    <remarks>
-      <para>This class is implemented by the Media Engine (CLSID_MFMediaEngineClassFactory).</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Extension for the <see cref="IMFMediaEngineClassFactory" /> interface.</summary>
   </member>
 </doc>

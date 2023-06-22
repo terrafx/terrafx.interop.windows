@@ -4,82 +4,32 @@
 <doc>
   <member name="DVD_PARENTAL_LEVEL">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Identifies flags for the generic parental levels defined in the DVD specification.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DVD_PARENTAL_LEVEL_8</b> is the most restrictive level and <b>DVD_PARENTAL_LEVEL_1</b> is the least restrictive. The way in which the levels are interpreted or used varies from country/region to country/region. In the United States and Canada, the levels correspond to the Motion Picture Association of America (MPAA) rating levels as shown in the following table.</para>
-      <list type="table">
-        <listheader>
-          <description>Parental level
-</description>
-          <description>Meaning
-</description>
-        </listheader>
-        <item>
-          <description>1</description>
-          <description>The rating is G, General.</description>
-        </item>
-        <item>
-          <description>3</description>
-          <description>The rating is PG, Parental Guidance Suggested.</description>
-        </item>
-        <item>
-          <description>4</description>
-          <description>The rating is PG-13, Parental Guidance Suggested, not recommended for those under 13.</description>
-        </item>
-        <item>
-          <description>6</description>
-          <description>The rating is R, Restricted.</description>
-        </item>
-        <item>
-          <description>7</description>
-          <description>The rating is NC-17.</description>
-        </item>
-      </list>
-      <para>This enumeration is used in the <see cref="IDvdInfo2.GetTitleParentalLevels" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso cref="IDvdInfo2.GetTitleParentalLevels" />
   </member>
   <member name="DVD_PARENTAL_LEVEL.DVD_PARENTAL_LEVEL_8">
-    <summary>
-      <para>Parental level 8.</para>
-    </summary>
+    <summary>Parental level 8.</summary>
   </member>
   <member name="DVD_PARENTAL_LEVEL.DVD_PARENTAL_LEVEL_7">
-    <summary>
-      <para>Parental level 7.</para>
-    </summary>
+    <summary>Parental level 7.</summary>
   </member>
   <member name="DVD_PARENTAL_LEVEL.DVD_PARENTAL_LEVEL_6">
-    <summary>
-      <para>Parental level 6.</para>
-    </summary>
+    <summary>Parental level 6.</summary>
   </member>
   <member name="DVD_PARENTAL_LEVEL.DVD_PARENTAL_LEVEL_5">
-    <summary>
-      <para>Parental level 5.</para>
-    </summary>
+    <summary>Parental level 5.</summary>
   </member>
   <member name="DVD_PARENTAL_LEVEL.DVD_PARENTAL_LEVEL_4">
-    <summary>
-      <para>Parental level 4.</para>
-    </summary>
+    <summary>Parental level 4.</summary>
   </member>
   <member name="DVD_PARENTAL_LEVEL.DVD_PARENTAL_LEVEL_3">
-    <summary>
-      <para>Parental level 3.</para>
-    </summary>
+    <summary>Parental level 3.</summary>
   </member>
   <member name="DVD_PARENTAL_LEVEL.DVD_PARENTAL_LEVEL_2">
-    <summary>
-      <para>Parental level 2.</para>
-    </summary>
+    <summary>Parental level 2.</summary>
   </member>
   <member name="DVD_PARENTAL_LEVEL.DVD_PARENTAL_LEVEL_1">
-    <summary>
-      <para>Parental level 1.</para>
-    </summary>
+    <summary>Parental level 1.</summary>
   </member>
 </doc>

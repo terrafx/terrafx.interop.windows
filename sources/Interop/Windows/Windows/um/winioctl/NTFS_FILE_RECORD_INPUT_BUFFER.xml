@@ -3,22 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NTFS_FILE_RECORD_INPUT_BUFFER">
-    <summary>
-      <para>Contains data for the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_ntfs_file_record">FSCTL_GET_NTFS_FILE_RECORD</a> control code.</para>
-    </summary>
-    <remarks>
-      <para>Pass this structure as input to the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_ntfs_file_record">FSCTL_GET_NTFS_FILE_RECORD</a> control code.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_ntfs_file_record">FSCTL_GET_NTFS_FILE_RECORD</seealso>
-    <seealso cref="NTFS_FILE_RECORD_OUTPUT_BUFFER" />
+    <summary>Contains data for the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_ntfs_file_record">FSCTL_GET_NTFS_FILE_RECORD</a> control code.</summary>
   </member>
   <member name="NTFS_FILE_RECORD_INPUT_BUFFER.FileReferenceNumber">
-    <summary>
-      <para>The file identifier of the file record to be retrieved. This is not necessarily the file identifier returned in the <b>FileReferenceNumber</b> member of the
-<see cref="NTFS_FILE_RECORD_OUTPUT_BUFFER" /> structure. Refer to the Remarks section of the reference page for
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_ntfs_file_record">FSCTL_GET_NTFS_FILE_RECORD</a> for more information.</para>
-    </summary>
+    <summary>The file identifier of the file record to be retrieved. This is not necessarily the file identifier returned in the <b>FileReferenceNumber</b> member of the<see cref="NTFS_FILE_RECORD_OUTPUT_BUFFER" /> structure. Refer to the Remarks section of the reference page for<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_ntfs_file_record">FSCTL_GET_NTFS_FILE_RECORD</a> for more information.</summary>
   </member>
 </doc>

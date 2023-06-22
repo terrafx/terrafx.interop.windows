@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Gdiplus.ObjectTypeIsValid">
+    <summary>The <b>ObjectTypeIsValid</b> function determines whether an element of the ObjectType enumeration represents a valid object type.</summary>
+    <param name="type">Element of the ObjectType enumeration to be tested.</param>
+    <returns>
+      <para>If objectType is equal to ObjectTypeInvalid, this function returns <b>FALSE</b>.</para>
+      <para>If objectType is equal to any other element of the ObjectType enumeration, this function returns <b>TRUE</b>.</para>
+    </returns>
+  </member>
+</doc>

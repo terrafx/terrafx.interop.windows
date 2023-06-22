@@ -3,27 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_FILE_ACCESSMODE">
-    <summary>
-      <para>Specifies the requested access mode for opening a file.</para>
-    </summary>
-    <seealso cref="MFBeginCreateFile" />
-    <seealso cref="MFCreateFile" />
-    <seealso cref="MFCreateTempFile" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies the requested access mode for opening a file.</summary>
   </member>
   <member name="MF_FILE_ACCESSMODE.MF_ACCESSMODE_READ">
-    <summary>
-      <para>Read mode.</para>
-    </summary>
+    <summary>Read mode.</summary>
   </member>
   <member name="MF_FILE_ACCESSMODE.MF_ACCESSMODE_WRITE">
-    <summary>
-      <para>Write mode.</para>
-    </summary>
+    <summary>Write mode.</summary>
   </member>
   <member name="MF_FILE_ACCESSMODE.MF_ACCESSMODE_READWRITE">
-    <summary>
-      <para>Read and write mode.</para>
-    </summary>
+    <summary>Read and write mode.</summary>
   </member>
 </doc>

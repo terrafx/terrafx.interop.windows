@@ -3,30 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DISPLAYCONFIG_TARGET_PREFERRED_MODE">
-    <summary>
-      <para>The <b>DISPLAYCONFIG_TARGET_PREFERRED_MODE</b> structure contains information about the preferred mode of a display.</para>
-    </summary>
-    <seealso cref="DISPLAYCONFIG_DEVICE_INFO_HEADER" />
-    <seealso cref="DISPLAYCONFIG_TARGET_MODE" />
+    <summary>The <b>DISPLAYCONFIG_TARGET_PREFERRED_MODE</b> structure contains information about the preferred mode of a display.</summary>
   </member>
   <member name="DISPLAYCONFIG_TARGET_PREFERRED_MODE.header">
-    <summary>
-      <para>A <see cref="DISPLAYCONFIG_DEVICE_INFO_HEADER" /> structure that contains information about the request for the target preferred mode. The caller should set the <b>type</b> member of DISPLAYCONFIG_DEVICE_INFO_HEADER to DISPLAYCONFIG_DEVICE_INFO_GET_TARGET_PREFERRED_MODE and the <b>adapterId</b> and <b>id</b> members of DISPLAYCONFIG_DEVICE_INFO_HEADER to the target for which the caller wants the preferred mode. The caller should set the <b>size</b> member of DISPLAYCONFIG_DEVICE_INFO_HEADER to at least the size of the DISPLAYCONFIG_TARGET_PREFERRED_MODE structure.</para>
-    </summary>
+    <summary>A <see cref="DISPLAYCONFIG_DEVICE_INFO_HEADER" /> structure that contains information about the request for the target preferred mode. The caller should set the <b>type</b> member of DISPLAYCONFIG_DEVICE_INFO_HEADER to DISPLAYCONFIG_DEVICE_INFO_GET_TARGET_PREFERRED_MODE and the <b>adapterId</b> and <b>id</b> members of DISPLAYCONFIG_DEVICE_INFO_HEADER to the target for which the caller wants the preferred mode. The caller should set the <b>size</b> member of DISPLAYCONFIG_DEVICE_INFO_HEADER to at least the size of the DISPLAYCONFIG_TARGET_PREFERRED_MODE structure.</summary>
   </member>
   <member name="DISPLAYCONFIG_TARGET_PREFERRED_MODE.width">
-    <summary>
-      <para>The width in pixels of the best mode for the monitor that is connected to the target that the <b>targetMode</b> member specifies.</para>
-    </summary>
+    <summary>The width in pixels of the best mode for the monitor that is connected to the target that the <b>targetMode</b> member specifies.</summary>
   </member>
   <member name="DISPLAYCONFIG_TARGET_PREFERRED_MODE.height">
-    <summary>
-      <para>The height in pixels of the best mode for the monitor that is connected to the target that the <b>targetMode</b> member specifies.</para>
-    </summary>
+    <summary>The height in pixels of the best mode for the monitor that is connected to the target that the <b>targetMode</b> member specifies.</summary>
   </member>
   <member name="DISPLAYCONFIG_TARGET_PREFERRED_MODE.targetMode">
-    <summary>
-      <para>A <see cref="DISPLAYCONFIG_TARGET_MODE" /> structure that describes the best target mode for the monitor that is connected to the specified target.</para>
-    </summary>
+    <summary>A <see cref="DISPLAYCONFIG_TARGET_MODE" /> structure that describes the best target mode for the monitor that is connected to the specified target.</summary>
   </member>
 </doc>

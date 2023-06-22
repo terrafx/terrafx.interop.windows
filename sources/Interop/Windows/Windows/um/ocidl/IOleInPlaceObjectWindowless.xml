@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IOleInPlaceObjectWindowless.GetDropTarget">
-    <summary>
-      <para>Retrieves the <see cref="IDropTarget" /> interface for an in-place active, windowless object that supports drag and drop.</para>
-    </summary>
-    <param name="ppDropTarget">
-      <para>A pointer to an <see cref="IDropTarget" /> pointer variable that receives the interface pointer to the windowless object.</para>
-    </param>
+    <summary>Retrieves the <see cref="IDropTarget" /> interface for an in-place active, windowless object that supports drag and drop.</summary>
+    <param name="ppDropTarget">A pointer to an <see cref="IDropTarget" /> pointer variable that receives the interface pointer to the windowless object.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -16,70 +12,27 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The windowless object does not support drag and drop.</para>
-          </description>
-        </item>
+          <description>The windowless object does not support drag and drop.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A windowed object registers its <see cref="IDropTarget" /> interface by calling the <see cref="RegisterDragDrop" /> function and supplying its window handle as a parameter. Registering its <b>IDropTarget</b> interface enables the object to participate in drag and drop operations. Because it does not have a window when active, a windowless object cannot register its <b>IDropTarget</b> interface. Therefore, it cannot directly participate in drag and drop operations without support from its container.</para>
-      <para>The following events occur during a drag and drop operation involving windowless objects:</para>
-      <list type="bullet">
-        <item>
-          <description>The container registers its own <see cref="IDropTarget" /> interface through the <see cref="RegisterDragDrop" /> function.</description>
-        </item>
-        <item>
-          <description>In the container's implementation of its own <see cref="IDropTarget.DragEnter" /> or <see cref="IDropTarget.DragOver" /> methods, the container detects whether the mouse pointer just entered an embedded object.</description>
-        </item>
-        <item>
-          <description>If the object is inactive, the container calls the object's <see cref="IPointerInactive.GetActivationPolicy" /> method. The object returns the POINTERINACTIVE_ACTIVATEONDRAG flag. The container then activates the object in place. If the object was already active, the container does not have to do this step.</description>
-        </item>
-        <item>
-          <description>After the object is active, the container must then obtain the object's <see cref="IDropTarget" /> interface.</description>
-        </item>
-        <item>
-          <description>A windowless object that wishes to be a drop target still implements the <see cref="IDropTarget" /> interface, but does not register it and does not return it through calls to <see cref="IUnknown.QueryInterface" />. Instead, the container can obtain this interface by calling the object's <b>IOleInPlaceObjectWindowless.GetDropTarget</b> method. The object returns a pointer to its own <b>IDropTarget</b> interface if it wants to participate in drag and drop operations. The container can cache this interface pointer for later use. For example, on subsequent calls to the container's <see cref="IDropTarget.DragEnter" /> or <see cref="IDropTarget.DragLeave" /> methods, the container can use the cached pointer instead of calling the object's GetDropTarget method again.</description>
-        </item>
-        <item>
-          <description>The container then calls the object's <see cref="IDropTarget.DragEnter" /> and passes the returned value for <i>pdwEffect</i> from its own <see cref="IDropTarget.DragOver" /> or <b>IDropTarget.DragEnter</b> methods. From this point on, the container forwards all subsequent <b>IDropTarget.DragOver</b> calls to the windowless object until the mouse leaves the object or a drop occurs on the object. If the mouse leaves the object, the container calls the object's <see cref="IDropTarget.DragLeave" /> and then releases the object's <see cref="IDropTarget" /> interface. If the drop occurs, the container forwards the <see cref="IDropTarget.Drop" /> call to the object.</description>
-        </item>
-        <item>
-          <description>Finally, the container in-place deactivates the object.</description>
-        </item>
-      </list>
-      <para>An object can return S_FALSE from its own <see cref="IDropTarget.DragEnter" /> to indicate that it does not accept any of the data formats in the data object. In that case, the container can decide to accept the data for itself and return an appropriate <i>dwEffect</i> from its own <b>IDropTarget.DragEnter</b> or <see cref="IDropTarget.DragOver" /> methods.</para>
-      <para>An object that returns S_FALSE from <see cref="IDropTarget.DragEnter" /> should be prepared to receive subsequent calls to <b>IDropTarget.DragEnter</b> without any <see cref="IDropTarget.DragLeave" /> in between. Indeed, if the mouse is still over the same object during the next call to the container's <see cref="IDropTarget.DragOver" />, the container may decide to try and call <b>IDropTarget.DragEnter</b> again on the object.</para>
-      <h3>Notes to Callers</h3>
-      <para>A container can cache the pointer to the object's <see cref="IDropTarget" /> interface for later use.</para>
-    </remarks>
-    <seealso cref="IDropTarget" />
-    <seealso cref="IOleInPlaceObjectWindowless" />
-    <seealso cref="IPointerInactive.GetActivationPolicy" />
-    <seealso cref="RegisterDragDrop" />
   </member>
   <member name="IOleInPlaceObjectWindowless.OnWindowMessage">
-    <summary>
-      <para>Dispatches a message from a container to a windowless object that is in-place active.</para>
-    </summary>
-    <param name="msg">
-      <para>The identifier for the window message provided to the container by Windows.</para>
-    </param>
-    <param name="wParam">
-      <para>A parameter for the window message provided to the container by Windows.</para>
-    </param>
-    <param name="lParam">
-      <para>A parameter for the window message provided to the container by Windows.</para>
-    </param>
-    <param name="plResult">
-      <para>A pointer to result code for the window message.</para>
-    </param>
+    <summary>Dispatches a message from a container to a windowless object that is in-place active.</summary>
+    <param name="msg">The identifier for the window message provided to the container by Windows.</param>
+    <param name="wParam">A parameter for the window message provided to the container by Windows.</param>
+    <param name="lParam">A parameter for the window message provided to the container by Windows.</param>
+    <param name="plResult">A pointer to result code for the window message.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -87,136 +40,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The windowless object did not process the window message. The container should call the DefWindowProc for the message or process the message itself as described below.</para>
-          </description>
-        </item>
+          <description>The windowless object did not process the window message. The container should call the DefWindowProc for the message or process the message itself as described below.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A container calls this method to send window messages to a windowless object that is in-place active. The container should dispatch messages according to the following guidelines:</para>
-      <para>For the following messages, the container should first dispatch the message to the windowless object that has captured the mouse, if any. Otherwise, the container should dispatch the message to the windowless object under the mouse cursor. If there is no such object, the container is free to process the following messages for itself:</para>
-      <list type="bullet">
-        <item>
-          <description>WM_MOUSEMOVE</description>
-        </item>
-        <item>
-          <description>WM_SETCURSOR</description>
-        </item>
-        <item>
-          <description>WM_XBUTTONDOWN</description>
-        </item>
-        <item>
-          <description>WM_XBUTTONUP</description>
-        </item>
-        <item>
-          <description>WM_XBUTTONDBLCLK</description>
-        </item>
-      </list>
-      <para>The container should dispatch the message to the windowless object with the keyboard focus for the following messages:</para>
-      <list type="bullet">
-        <item>
-          <description>WM_CANCELMODE</description>
-        </item>
-        <item>
-          <description>WM_CHAR</description>
-        </item>
-        <item>
-          <description>WM_DEADCHAR</description>
-        </item>
-        <item>
-          <description>WM_HELP</description>
-        </item>
-        <item>
-          <description>WM_IMExxx</description>
-        </item>
-        <item>
-          <description>WM_KEYDOWN</description>
-        </item>
-        <item>
-          <description>WM_KEYUP</description>
-        </item>
-        <item>
-          <description>WM_SYSDEADCHAR</description>
-        </item>
-        <item>
-          <description>WM_SYSKEYDOWN</description>
-        </item>
-        <item>
-          <description>WM_SYSKEYUP</description>
-        </item>
-      </list>
-      <para>For all other messages, the container should process the message on its own.</para>
-      <para>The windowless object can return S_FALSE to this method to indicate that it did not process the message. Then, the container either performs the default behavior for the message by calling the <see cref="DefWindowProc" /> function, or processes the message itself.</para>
-      <para>The container must pass the following window messages to the default window procedure:</para>
-      <list type="bullet">
-        <item>
-          <description>WM_CHAR</description>
-        </item>
-        <item>
-          <description>WM_DEADCHAR</description>
-        </item>
-        <item>
-          <description>WM_IMExxx</description>
-        </item>
-        <item>
-          <description>WM_KEYDOWN</description>
-        </item>
-        <item>
-          <description>WM_KEYUP</description>
-        </item>
-        <item>
-          <description>WM_MOUSEMOVE</description>
-        </item>
-        <item>
-          <description>WM_SYSCHAR</description>
-        </item>
-        <item>
-          <description>WM_SYSDEADCHAR</description>
-        </item>
-        <item>
-          <description>WM_SYSKEYUP</description>
-        </item>
-        <item>
-          <description>WM_XBUTTONDOWN</description>
-        </item>
-        <item>
-          <description>WM_XBUTTONUP</description>
-        </item>
-        <item>
-          <description>WM_XBUTTONDBLCLK</description>
-        </item>
-      </list>
-      <para>The container must process the following window messages as its own:</para>
-      <list type="bullet">
-        <item>
-          <description>WM_CONTEXTMENU</description>
-        </item>
-        <item>
-          <description>WM_HELP</description>
-        </item>
-        <item>
-          <description>WM_SETCURSOR</description>
-        </item>
-      </list>
-      <b>Note</b>  For WM_SETCURSOR, the container can either set the cursor itself or do nothing.
-<para>Objects can also use <see cref="IOleInPlaceSiteWindowless.OnDefWindowMessage" /> to explicitly invoke the default message processing from the container. In the case of the WM_SETCURSOR message, this allows an object to take action if the container does not set the cursor.</para><para>All coordinates passed to the object in <i>wParam</i> and <i>lParam</i> are specified as client coordinates of the containing window.</para></remarks>
-    <seealso cref="IOleInPlaceObjectWindowless" />
-    <seealso cref="IOleInPlaceSiteWindowless.OnDefWindowMessage" />
-    <seealso cref="IOleInPlaceSiteWindowless:SetCapture" />
   </member>
   <member name="IOleInPlaceObjectWindowless">
     <summary>
       <para>Enables a windowless object to process window messages and participate in drag and drop operations. It is derived from and extends the <see cref="IOleInPlaceObject" /> interface.</para>
       <para>A small object, such as a control, does not need a window of its own. Instead, it can rely on its container to dispatch window messages and help the object to participate in drag and drop operations. The container must implement the <see cref="IOleInPlaceSiteWindowless" /> interface. Otherwise, the object must act as a normal compound document object and create a window when it is activated.</para>
     </summary>
-    <seealso cref="IOleInPlaceObject" />
-    <seealso cref="IOleInPlaceSiteWindowless" />
   </member>
 </doc>

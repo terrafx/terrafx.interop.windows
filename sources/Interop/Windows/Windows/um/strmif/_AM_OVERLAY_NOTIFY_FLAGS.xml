@@ -4,27 +4,17 @@
 <doc>
   <member name="_AM_OVERLAY_NOTIFY_FLAGS">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The AM_OVERLAY_NOTIFY_FLAGS enumeration indicates what the overlay has changed, or is about to change.</para>
     </summary>
-    <remarks>
-      <para>The <see cref="IDDrawExclModeVideoCallback.OnUpdateOverlay" /> method uses these flags to indicate how the overlay has changed, so that applications can take the necessary steps.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso cref="IDDrawExclModeVideoCallback.OnUpdateOverlay" />
   </member>
   <member name="_AM_OVERLAY_NOTIFY_FLAGS.AM_OVERLAY_NOTIFY_VISIBLE_CHANGE">
-    <summary>
-      <para>The rectangle will be changed from visible to invisible, or vice-versa.</para>
-    </summary>
+    <summary>The rectangle will be changed from visible to invisible, or vice-versa.</summary>
   </member>
   <member name="_AM_OVERLAY_NOTIFY_FLAGS.AM_OVERLAY_NOTIFY_SOURCE_CHANGE">
-    <summary>
-      <para>Source rectangle changed or changing.</para>
-    </summary>
+    <summary>Source rectangle changed or changing.</summary>
   </member>
   <member name="_AM_OVERLAY_NOTIFY_FLAGS.AM_OVERLAY_NOTIFY_DEST_CHANGE">
-    <summary>
-      <para>Destination rectangle changed or changing.</para>
-    </summary>
+    <summary>Destination rectangle changed or changing.</summary>
   </member>
 </doc>

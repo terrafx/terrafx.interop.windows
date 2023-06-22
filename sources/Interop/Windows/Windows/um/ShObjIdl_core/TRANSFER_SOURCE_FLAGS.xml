@@ -3,85 +3,48 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TRANSFER_SOURCE_FLAGS">
-    <summary>
-      <para>Used by methods of the <see cref="ITransferSource" /> and <see cref="ITransferDestination" /> interfaces to control their file operations.</para>
-    </summary>
-    <seealso cref="ITransferDestination.CreateItem" />
-    <seealso cref="ITransferSource.LinkItem" />
-    <seealso cref="ITransferSource.MoveItem" />
-    <seealso cref="ITransferSource.OpenItem" />
-    <seealso cref="ITransferSource.RecycleItem" />
-    <seealso cref="ITransferSource.RemoveItem" />
-    <seealso cref="ITransferSource.RenameItem" />
+    <summary>Used by methods of the <see cref="ITransferSource" /> and <see cref="ITransferDestination" /> interfaces to control their file operations.</summary>
   </member>
   <member name="TRANSFER_SOURCE_FLAGS.TSF_NORMAL">
-    <summary>
-      <para>Fail if the destination already exists, unless TSF_OVERWRITE_EXIST is specified. This is a default behavior.</para>
-    </summary>
+    <summary>Fail if the destination already exists, unless TSF_OVERWRITE_EXIST is specified. This is a default behavior.</summary>
   </member>
   <member name="TRANSFER_SOURCE_FLAGS.TSF_FAIL_EXIST">
-    <summary>
-      <para>Fail if the destination already exists, unless TSF_OVERWRITE_EXIST is specified. This is a default behavior.</para>
-    </summary>
+    <summary>Fail if the destination already exists, unless TSF_OVERWRITE_EXIST is specified. This is a default behavior.</summary>
   </member>
   <member name="TRANSFER_SOURCE_FLAGS.TSF_RENAME_EXIST">
-    <summary>
-      <para>Rename with auto-name generation if the destination already exists.</para>
-    </summary>
+    <summary>Rename with auto-name generation if the destination already exists.</summary>
   </member>
   <member name="TRANSFER_SOURCE_FLAGS.TSF_OVERWRITE_EXIST">
-    <summary>
-      <para>Overwrite or merge with the destination.</para>
-    </summary>
+    <summary>Overwrite or merge with the destination.</summary>
   </member>
   <member name="TRANSFER_SOURCE_FLAGS.TSF_ALLOW_DECRYPTION">
-    <summary>
-      <para>Allow creation of a decrypted destination.</para>
-    </summary>
+    <summary>Allow creation of a decrypted destination.</summary>
   </member>
   <member name="TRANSFER_SOURCE_FLAGS.TSF_NO_SECURITY">
-    <summary>
-      <para>No discretionary access control list (DACL), system access control list (SACL), or owner.</para>
-    </summary>
+    <summary>No discretionary access control list (DACL), system access control list (SACL), or owner.</summary>
   </member>
   <member name="TRANSFER_SOURCE_FLAGS.TSF_COPY_CREATION_TIME">
-    <summary>
-      <para>Copy the creation time as part of the copy. This can be useful for a move operation that is being used as a copy and delete operation (TSF_MOVE_AS_COPY_DELETE).</para>
-    </summary>
+    <summary>Copy the creation time as part of the copy. This can be useful for a move operation that is being used as a copy and delete operation (TSF_MOVE_AS_COPY_DELETE).</summary>
   </member>
   <member name="TRANSFER_SOURCE_FLAGS.TSF_COPY_WRITE_TIME">
-    <summary>
-      <para>Copy the last write time as part of the copy.</para>
-    </summary>
+    <summary>Copy the last write time as part of the copy.</summary>
   </member>
   <member name="TRANSFER_SOURCE_FLAGS.TSF_USE_FULL_ACCESS">
-    <summary>
-      <para>Assign write, read, and delete permissions as share mode.</para>
-    </summary>
+    <summary>Assign write, read, and delete permissions as share mode.</summary>
   </member>
   <member name="TRANSFER_SOURCE_FLAGS.TSF_DELETE_RECYCLE_IF_POSSIBLE">
-    <summary>
-      <para>Recycle on file delete, if possible.</para>
-    </summary>
+    <summary>Recycle on file delete, if possible.</summary>
   </member>
   <member name="TRANSFER_SOURCE_FLAGS.TSF_COPY_HARD_LINK">
-    <summary>
-      <para>Hard link to the desired source (not required). This avoids a normal copy operation.</para>
-    </summary>
+    <summary>Hard link to the desired source (not required). This avoids a normal copy operation.</summary>
   </member>
   <member name="TRANSFER_SOURCE_FLAGS.TSF_COPY_LOCALIZED_NAME">
-    <summary>
-      <para>Copy the localized name.</para>
-    </summary>
+    <summary>Copy the localized name.</summary>
   </member>
   <member name="TRANSFER_SOURCE_FLAGS.TSF_MOVE_AS_COPY_DELETE">
-    <summary>
-      <para>Move as a copy and delete operation.</para>
-    </summary>
+    <summary>Move as a copy and delete operation.</summary>
   </member>
   <member name="TRANSFER_SOURCE_FLAGS.TSF_SUSPEND_SHELLEVENTS">
-    <summary>
-      <para>Suspend Shell events.</para>
-    </summary>
+    <summary>Suspend Shell events.</summary>
   </member>
 </doc>

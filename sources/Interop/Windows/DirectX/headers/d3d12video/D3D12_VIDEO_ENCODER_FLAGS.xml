@@ -3,13 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_ENCODER_FLAGS">
-    <summary>
-      <para>Specifies flags for video encoder creation.</para>
-    </summary>
+    <summary>Specifies flags for video encoder creation.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_FLAGS.D3D12_VIDEO_ENCODER_FLAG_NONE">
-    <summary>
-      <para>None.</para>
-    </summary>
+    <summary>None.</summary>
   </member>
 </doc>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EVENT_DESCRIPTOR">
+    <summary>The <b>EVENT_DESCRIPTOR</b> structure contains information (metadata) about an ETW event.</summary>
+  </member>
+  <member name="EVENT_DESCRIPTOR.Id">
+    <summary>
+      <para>A 16-bit number used to identify manifest-based events.</para>
+      <para>For manifest-based ETW, the combination Provider.DecodeGuid + Event.Id + Event.Version should uniquely identify an event, i.e. all events with the same DecodeGuid, Id, and Version should have the same set of fields with no changes in field names, field types, or field ordering.</para>
+      <para>For manifest-free ETW (i.e. TraceLogging), the Id field is usually not meaningful and will normally be set to 0. TraceLogging events are generally identified by their event name, not the event ID.</para>
+    </summary>
+  </member>
+  <member name="EVENT_DESCRIPTOR.Version">
+    <summary>
+      <para>An 8-bit number used to specify the version of a manifest-based event.</para>
+      <para>The version indicates a revision to the definition of an event with a particular Id. All events with a given Id should have similar semantics, but a change in version can be used to indicate a minor modification of the event details, e.g. a change to the type of a field or the addition of a new field.</para>
+    </summary>
+  </member>
+  <member name="EVENT_DESCRIPTOR.Channel">
+    <summary>
+      <para>An 8-bit number used to enable special event processing.</para>
+      <list type="bullet">
+        <item>
+          <description>Manifest-based events normally use channel 0.</description>
+        </item>
+        <item>
+          <description>TraceLogging-based events normally use channel 11.</description>
+        </item>
+        <item>
+          <description>Manifest-based events with provider traits normally use channel 12.</description>
+        </item>
+        <item>
+          <description>Other channel values may be used with Event Log events.</description>
+        </item>
+      </list>
+      <para>Channel values below 16 are reserved for use by Microsoft to enable special treatment by the ETW runtime. Channel values 16 and above will be ignored by the ETW runtime (treated the same as channel 0) and can be given user-defined semantics.</para>
+    </summary>
+  </member>
+  <member name="EVENT_DESCRIPTOR.Level">
+    <summary>
+      <para>An 8-bit number used to describe an event's severity or importance.</para>
+      <blockquote>[!Important] Event level is a primary means for filtering events. Always assign a meaningful (non-zero) level to every event.</blockquote>
+      <para>Level values 0 through 5 are defined by Microsoft (see <code>evntrace.h</code> and<code>winmeta.h</code>). Level values 6 through 15 are reserved. Level values 16 through 255 can be defined by the event provider.</para>
+      <para>| Value | Semantics | | ------------------ | ----------------------------------------------------------------------------- | | <b>LOG_ALWAYS</b> (0) | Event bypasses level-based event filtering. Events should not use this level. | | <b>CRITICAL</b> (1) | Critical error | | <b>ERROR</b> (2) | Error | | <b>WARNING</b> (3) | Warning | | <b>INFO</b> (4) | Informational | | <b>VERBOSE</b> (5) | Verbose |</para>
+      <para>Event collection sessions can set a level filter, meaning that the session will only accept events where <code>eventDescriptor.Level &lt;= session.LevelFilter</code>. Note that events with a level of 0 will bypass level-based filtering.</para>
+    </summary>
+  </member>
+  <member name="EVENT_DESCRIPTOR.Opcode">
+    <summary>
+      <para>An 8-bit number used to mark events with special semantics. This value can be used by trace decoders to organize and correlate events. Globally-recognized opcode values are defined in winmeta.h. Most events use INFO (0). Opcode values 10 through 239 can be given user-defined semantics.</para>
+      <para>Opcodes START (1) and STOP (2) are used to indicate the beginning and end of ETW activities as follows:</para>
+      <list type="number">
+        <item>
+          <description>Generate an activity ID that is unique within the trace, typically using<see cref="EventActivityIdControl" />.</description>
+        </item>
+        <item>
+          <description>Write a start event with opcode = START, activity ID = the generated activity ID, and related activity ID = the parent activity ID (if any).</description>
+        </item>
+        <item>
+          <description>Write any number of activity information events with opcode = INFO, activity ID = the generated activity ID.</description>
+        </item>
+        <item>
+          <description>Write a stop event with opcode = STOP, activity ID = the generated activity ID.</description>
+        </item>
+      </list>
+      <para>Trace decoding tools can then organize these events into groups based on their activity IDs.</para>
+    </summary>
+  </member>
+  <member name="EVENT_DESCRIPTOR.Task">
+    <summary>
+      <para>A 16-bit number used to annotate an event or related group of events.</para>
+      <para>The event task code can be used for any purpose defined by the provider. The task code 0 is the default, used to indicate that no special task code has been assigned to the event. The ETW manifest supports assigning localized strings to each task code. The task code might be used to group events into categories or to simply associate a localized "task" string with each event.</para>
+    </summary>
+  </member>
+  <member name="EVENT_DESCRIPTOR.Keyword">
+    <summary>
+      <para>A 64-bit bitmask used to indicate an event's membership in a set of event categories.</para>
+      <blockquote>[!Important] Event keyword is a primary means for filtering events. Always assign a meaningful (non-zero) keyword to every event.</blockquote>
+      <para>The top 16 bits of the keyword (bitmask 0xFFFF000000000000) are defined by Microsoft. The low 48 bits of the keyword (bitmask 0x0000FFFFFFFFFFFF) are defined by the event provider. For example, the event provider might define bit 0 (bitmask 0x1) to be the "I/O" category, bit 1 (bitmask 0x2) to be the "UI" category, and bit 2 (bitmask 0x4) to be the "performance measurement" category. In this scenario, an event might have its keyword set to 0x5, indicating that the event is in both the "I/O" and "performance measurement" categories.</para>
+      <para>Event collection sessions can set MatchAnyKeyword and MatchAllKeyword filters, meaning that the session will only accept events where the following expression is true:</para>
+      <code>eventDescriptor.Keyword == 0 || ( (eventDescriptor.Keyword &amp; session.MatchAnyKeyword) != 0 &amp;&amp; (eventDescriptor.Keyword &amp; session.MatchAllKeyword) == session.MatchAllKeyword )</code>
+      <para>Note that events with a keyword of 0 will normally bypass keyword-based filtering.</para>
+      <blockquote>[!Tip] Starting with Windows 10 version 1507 and later, an event collection session can exclude events that have their keyword set to 0. To do this, include the <code>EVENT_ENABLE_PROPERTY_IGNORE_KEYWORD_0</code> flag in the<code>EnableProperty</code> field of the<see cref="ENABLE_TRACE_PARAMETERS" />structure that is passed to<see cref="EnableTraceEx2" /> when configuring the provider.</blockquote>
+    </summary>
+  </member>
+</doc>

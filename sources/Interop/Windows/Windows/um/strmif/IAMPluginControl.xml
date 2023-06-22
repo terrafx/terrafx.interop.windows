@@ -4,14 +4,11 @@
 <doc>
   <member name="IAMPluginControl.GetDisabledByIndex">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Gets a class identifier (CLSID) from the blocked list.</para>
     </summary>
-    <param name="index">
-      <para>The zero-based index of the CLSID to retrieve.</para>
-    </param>
-    <param name="clsid">
-      <para>Receives the CLSID at the specified index.</para>
-    </param>
+    <param name="index">The zero-based index of the CLSID to retrieve.</param>
+    <param name="clsid">Receives the CLSID at the specified index.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -19,41 +16,40 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HRESULT_FROM_WIN32(ERROR_NO_MORE_ITEMS)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>HRESULT_FROM_WIN32(ERROR_NO_MORE_ITEMS)</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>index</i> parameter is out of range.</para>
-          </description>
-        </item>
+          <description>The <i>index</i> parameter is out of range.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IAMPluginControl" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/intelligent-connect">Intelligent Connect</seealso>
   </member>
   <member name="IAMPluginControl.GetPreferredClsid">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Searches the preferred list for a class identifier (CLSID) that matches a specified subtype.</para>
     </summary>
-    <param name="subType">
-      <para>A media subtype GUID to match.</para>
-    </param>
-    <param name="clsid">
-      <para>Receives a CLSID from the preferred list.</para>
-    </param>
+    <param name="subType">A media subtype GUID to match.</param>
+    <param name="clsid">Receives a CLSID from the preferred list.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -61,44 +57,41 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HRESULT_FROM_WIN32(ERROR_NOT_FOUND)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>HRESULT_FROM_WIN32(ERROR_NOT_FOUND)</b>
-            </para>
-          </description>
-          <description>
-            <para>No CLSID matching this subtype was found.</para>
-          </description>
-        </item>
+          <description>No CLSID matching this subtype was found.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IAMPluginControl" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/intelligent-connect">Intelligent Connect</seealso>
   </member>
   <member name="IAMPluginControl.GetPreferredClsidByIndex">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Gets a class identifier (CLSID) from the preferred list, specified by index value.</para>
     </summary>
-    <param name="index">
-      <para>The zero-based index of the CLSID to retrieve.</para>
-    </param>
-    <param name="subType">
-      <para>Receives the subtype GUID associated with the CLSID.</para>
-    </param>
-    <param name="clsid">
-      <para>Receives the CLSID at the specified index.</para>
-    </param>
+    <param name="index">The zero-based index of the CLSID to retrieve.</param>
+    <param name="subType">Receives the subtype GUID associated with the CLSID.</param>
+    <param name="clsid">Receives the CLSID at the specified index.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -106,38 +99,39 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HRESULT_FROM_WIN32(ERROR_NO_MORE_ITEMS)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>HRESULT_FROM_WIN32(ERROR_NO_MORE_ITEMS)</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>index</i> parameter is out of range.</para>
-          </description>
-        </item>
+          <description>The <i>index</i> parameter is out of range.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IAMPluginControl" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/intelligent-connect">Intelligent Connect</seealso>
   </member>
   <member name="IAMPluginControl.IsDisabled">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Queries whether a class identifier (CLSID) appears in the blocked list.</para>
     </summary>
-    <param name="clsid">
-      <para>The CLSID to search for.</para>
-    </param>
+    <param name="clsid">The CLSID to search for.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -145,38 +139,39 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The specified CLSID appears in the blocked list.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The specified CLSID appears in the blocked list.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HRESULT_FROM_WIN32(ERROR_NOT_FOUND)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>HRESULT_FROM_WIN32(ERROR_NOT_FOUND)</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified CLSID is not in the blocked list.</para>
-          </description>
-        </item>
+          <description>The specified CLSID is not in the blocked list.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IAMPluginControl" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/intelligent-connect">Intelligent Connect</seealso>
   </member>
   <member name="IAMPluginControl.IsLegacyDisabled">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Queries whether an Audio Compression Manager (ACM) or Video Compression Manager (VCM) codec appears in the blocked list.</para>
     </summary>
-    <param name="dllName">
-      <para>The name of the DLL that implements the codec.</para>
-    </param>
+    <param name="dllName">The name of the DLL that implements the codec.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -184,68 +179,56 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The specified DLL appears in the blocked list.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The specified DLL appears in the blocked list.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND)</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified DLL is not in the blocked list.</para>
-          </description>
-        </item>
+          <description>The specified DLL is not in the blocked list.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IAMPluginControl" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/intelligent-connect">Intelligent Connect</seealso>
   </member>
   <member name="IAMPluginControl.SetDisabled">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Adds a class identifier (CLSID) to the blocked list, or removes a CLSID from the list.</para>
     </summary>
-    <param name="clsid">
-      <para>The CLSID to add or remove.</para>
-    </param>
-    <param name="disabled">
-      <para>Specifies whether to add or remove the CSLID. If the value is <b>TRUE</b>, the method adds the CLSID to the blocked list. Otherwise, the method removes it from the list.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAMPluginControl" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/intelligent-connect">Intelligent Connect</seealso>
+    <param name="clsid">The CLSID to add or remove.</param>
+    <param name="disabled">Specifies whether to add or remove the CSLID. If the value is <b>TRUE</b>, the method adds the CLSID to the blocked list. Otherwise, the method removes it from the list.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMPluginControl.SetPreferredClsid">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Adds a class identifier (CLSID) to the preferred list or removes a CLSID from the list.</para>
     </summary>
-    <param name="subType">
-      <para>A media subtype GUID to associate with the CLSID.</para>
-    </param>
-    <param name="clsid">
-      <para>Pointer to the CLSID to add to the list. If this parameter is <b>NULL</b>, the entry associated with <i>subType</i> is removed from the list</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAMPluginControl" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/intelligent-connect">Intelligent Connect</seealso>
+    <param name="subType">A media subtype GUID to associate with the CLSID.</param>
+    <param name="clsid">Pointer to the CLSID to add to the list. If this parameter is <b>NULL</b>, the entry associated with <i>subType</i> is removed from the list</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMPluginControl">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Controls the preferred and blocked filter lists.</para>
       <para>To get a pointer to this interface, call <b>CoCreateInstance</b>. The class identifier (CLSID) is <b>CLSID_DirectShowPluginControl</b>, which is defined in the header file uuids.h.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/intelligent-connect">Intelligent Connect</seealso>
   </member>
 </doc>

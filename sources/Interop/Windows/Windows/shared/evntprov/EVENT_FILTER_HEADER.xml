@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EVENT_FILTER_HEADER">
+    <summary>Defines the header data that must precede the filter data that is defined in the instrumentation manifest.</summary>
+  </member>
+  <member name="EVENT_FILTER_HEADER.Id">
+    <summary>The identifier that identifies the filter in the manifest for a schematized filter. The <b>value</b> attribute of the <b>filter</b> element contains the identifier.</summary>
+  </member>
+  <member name="EVENT_FILTER_HEADER.Version">
+    <summary>The version number of the filter for a schematized filter. The <b>version</b>attribute of the <b>filter</b> element contains the version number.</summary>
+  </member>
+  <member name="EVENT_FILTER_HEADER.Reserved">
+    <summary>Reserved</summary>
+  </member>
+  <member name="EVENT_FILTER_HEADER.InstanceId">
+    <summary>
+      <para>An identifier that identifies the session that passed the filter. ETW sets this value; the session must set this member to zero.</para>
+      <para>Providers use this value to set the <i>Filter</i> parameter of<see cref="EventWriteEx" /> to prevent the event from being written to the session if the event data does not match the filter criteria (the provider determines the semantics of how the filter data is used in determining whether the event is written to the session).</para>
+    </summary>
+  </member>
+  <member name="EVENT_FILTER_HEADER.Size">
+    <summary>The size, in bytes, of this header and the filter data that is appended to the end of this header.</summary>
+  </member>
+  <member name="EVENT_FILTER_HEADER.NextOffset">
+    <summary>The offset from the beginning of this filter object to the next filter object. The value is zero if there are no more filter blocks. ETW sets this value; the session must set this member to zero.</summary>
+  </member>
+</doc>

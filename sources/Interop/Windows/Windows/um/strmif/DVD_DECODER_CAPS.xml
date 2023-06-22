@@ -4,15 +4,12 @@
 <doc>
   <member name="DVD_DECODER_CAPS">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>DVD_DECODER_CAPS</code> structure indicates the capabilities of a DVD decoder.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
-    <seealso cref="IDvdInfo2.GetDecoderCaps" />
   </member>
   <member name="DVD_DECODER_CAPS.dwSize">
-    <summary>
-      <para>Size of this structure.</para>
-    </summary>
+    <summary>Size of this structure.</summary>
   </member>
   <member name="DVD_DECODER_CAPS.dwAudioCaps">
     <summary>
@@ -22,142 +19,112 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DVD_AUDIO_CAPS_AC3</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Dolby Digital (AC3).</para>
-          </description>
-        </item>
-        <item>
+          <description>Dolby Digital (AC3).</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DVD_AUDIO_CAPS_MPEG2</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>MPEG-2 audio.</para>
-          </description>
-        </item>
-        <item>
+          <description>MPEG-2 audio.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DVD_AUDIO_CAPS_LPCM</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Linear pulse code modulation (LPCM).</para>
-          </description>
-        </item>
-        <item>
+          <description>Linear pulse code modulation (LPCM).</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DVD_AUDIO_CAPS_DTS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>DTS audio.</para>
-          </description>
-        </item>
-        <item>
+          <description>DTS audio.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DVD_AUDIO_CAPS_SDDS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Sony Dynamic Digital Sound (SDDS) audio.</para>
-          </description>
-        </item>
+          <description>Sony Dynamic Digital Sound (SDDS) audio.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="DVD_DECODER_CAPS.dFwdMaxRateVideo">
-    <summary>
-      <para>Maximum video data rate in forward direction.</para>
-    </summary>
+    <summary>Maximum video data rate in forward direction.</summary>
   </member>
   <member name="DVD_DECODER_CAPS.dFwdMaxRateAudio">
-    <summary>
-      <para>Maximum audio data rate in forward direction.</para>
-    </summary>
+    <summary>Maximum audio data rate in forward direction.</summary>
   </member>
   <member name="DVD_DECODER_CAPS.dFwdMaxRateSP">
-    <summary>
-      <para>Maximum subpicture data rate in forward direction.</para>
-    </summary>
+    <summary>Maximum subpicture data rate in forward direction.</summary>
   </member>
   <member name="DVD_DECODER_CAPS.dBwdMaxRateVideo">
-    <summary>
-      <para>Maximum video data rate in reverse direction. (0 if decoder does not support the smooth reverse mechanism.)</para>
-    </summary>
+    <summary>Maximum video data rate in reverse direction. (0 if decoder does not support the smooth reverse mechanism.)</summary>
   </member>
   <member name="DVD_DECODER_CAPS.dBwdMaxRateAudio">
-    <summary>
-      <para>Maximum audio data rate in reverse direction. (0 if decoder does not support the smooth reverse mechanism.)</para>
-    </summary>
+    <summary>Maximum audio data rate in reverse direction. (0 if decoder does not support the smooth reverse mechanism.)</summary>
   </member>
   <member name="DVD_DECODER_CAPS.dBwdMaxRateSP">
-    <summary>
-      <para>Maximum subpicture data rate in reverse direction. (0 if decoder does not support the smooth reverse mechanism.)</para>
-    </summary>
+    <summary>Maximum subpicture data rate in reverse direction. (0 if decoder does not support the smooth reverse mechanism.)</summary>
   </member>
   <member name="DVD_DECODER_CAPS.dwRes1">
-    <summary>
-      <para>Reserved for future use.</para>
-    </summary>
+    <summary>Reserved for future use.</summary>
   </member>
   <member name="DVD_DECODER_CAPS.dwRes2">
-    <summary>
-      <para>Reserved for future use.</para>
-    </summary>
+    <summary>Reserved for future use.</summary>
   </member>
   <member name="DVD_DECODER_CAPS.dwRes3">
-    <summary>
-      <para>Reserved for future use.</para>
-    </summary>
+    <summary>Reserved for future use.</summary>
   </member>
   <member name="DVD_DECODER_CAPS.dwRes4">
-    <summary>
-      <para>Reserved for future use.</para>
-    </summary>
+    <summary>Reserved for future use.</summary>
   </member>
 </doc>

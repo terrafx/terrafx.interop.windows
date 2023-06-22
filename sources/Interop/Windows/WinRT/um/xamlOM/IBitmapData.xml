@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IBitmapData.CopyBytesTo">
+    <summary>Copies up to the specified maximum number of bytes from the given offset in the bitmap data into the caller’s buffer (<i>pvBytes</i>), and returns the number of bytes copied.</summary>
+    <param name="sourceOffsetInBytes">The place in the bitmap data to start copying from, in bytes.</param>
+    <param name="maxBytesToCopy">The maximum number of bytes to copy.</param>
+    <param name="pvBytes">The buffer into which the bytes are copied.</param>
+    <param name="numberOfBytesCopied">The number of bytes copied.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IBitmapData.GetBitmapDescription">
+    <summary>Gets a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xamlom/ns-xamlom-bitmapdescription">BitmapDescription</a> that describes the bitmap data stored in the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xamlom/nn-xamlom-ibitmapdata">IBitmapData</a>.</summary>
+    <param name="pBitmapDescription">Information about the bitmap stored in the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xamlom/nn-xamlom-ibitmapdata">IBitmapData</a>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IBitmapData.GetSourceBitmapDescription">
+    <summary>Gets a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xamlom/ns-xamlom-bitmapdescription">BitmapDescription</a> that describes the original format of the bitmap data stored in the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xamlom/nn-xamlom-ibitmapdata">IBitmapData</a>.</summary>
+    <param name="pBitmapDescription">Information about the original format of the bitmap stored in the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xamlom/nn-xamlom-ibitmapdata">IBitmapData</a>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IBitmapData.GetStride">
+    <summary>Gets the stride of the data. This is the length in bytes of each row of the bitmap.</summary>
+    <param name="pStride">The length in bytes of each row of the bitmap.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IBitmapData">
+    <summary>Represents an image associated with a node in the visual tree.</summary>
+  </member>
+</doc>

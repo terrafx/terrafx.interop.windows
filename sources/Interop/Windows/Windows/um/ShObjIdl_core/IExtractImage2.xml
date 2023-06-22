@@ -3,28 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IExtractImage2.GetDateStamp">
-    <summary>
-      <para>Requests the date the image was last modified. This method allows the Shell to determine whether cached images are out-of-date.</para>
-    </summary>
-    <param name="pDateStamp">
-      <para>Type: <b>FILETIME*</b></para>
-      <para>A pointer to a <see cref="FILETIME" /> structure used to return the last time the image was modified.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Return S_OK if successful, or a COM-defined error code otherwise.</para>
-    </returns>
+    <summary>Requests the date the image was last modified. This method allows the Shell to determine whether cached images are out-of-date.</summary>
+    <param name="pDateStamp">A pointer to a <see cref="FILETIME" /> structure used to return the last time the image was modified.</param>
+    <returns>Return S_OK if successful, or a COM-defined error code otherwise.</returns>
   </member>
   <member name="IExtractImage2">
-    <summary>
-      <para>Extends the capabilities of <see cref="IExtractImage" />.</para>
-    </summary>
-    <remarks>
-      <para>Implement <b>IExtractImage2</b> to provide date stamps for your thumbnail images.</para>
-      <para>You do not call this interface directly. <b>IExtractImage2</b> is used by the operating system only when it has confirmed that your application is aware of this interface.</para>
-      <para>
-        <b>IExtractImage2</b> implements all the <see cref="IExtractImage" /> methods as well as
-<b>IUnknown</b>. The listed method is specific to <b>IExtractImage2</b>.</para>
-    </remarks>
+    <summary>Extends the capabilities of <see cref="IExtractImage" />.</summary>
   </member>
 </doc>

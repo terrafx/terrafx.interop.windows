@@ -3,16 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICJpegLuminanceProperties">
-    <summary>
-      <para>Specifies the JPEG luminance table property.</para>
-    </summary>
+    <summary>Specifies the JPEG luminance table property.</summary>
   </member>
   <member name="WICJpegLuminanceProperties.WICJpegLuminanceTable">
-    <summary>
-      <para>[VT_UI2|VT_VECTOR] Indicates the metadata property is a luminance table.</para>
-    </summary>
+    <summary>[VT_UI2|VT_VECTOR] Indicates the metadata property is a luminance table.</summary>
   </member>
-  <member name="WICJpegLuminanceProperties.WICJpegLuminanceProperties_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICJpegLuminanceProperties.WICJpegLuminanceProperties_FORCE_DWORD"></member>
 </doc>

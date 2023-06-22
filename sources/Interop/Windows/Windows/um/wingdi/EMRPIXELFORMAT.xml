@@ -3,24 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRPIXELFORMAT">
-    <summary>
-      <para>The <b>EMRPIXELFORMAT</b> structure contains the members for the <see cref="SetPixelFormat" /> enhanced metafile record. The pixel format information in <see cref="ENHMETAHEADER" /> refers to this structure.</para>
-    </summary>
-    <seealso cref="ENHMETAHEADER" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
-    <seealso cref="PIXELFORMATDESCRIPTOR" />
-    <seealso cref="SetPixelFormat" />
+    <summary>The <b>EMRPIXELFORMAT</b> structure contains the members for the <see cref="SetPixelFormat" /> enhanced metafile record. The pixel format information in <see cref="ENHMETAHEADER" /> refers to this structure.</summary>
   </member>
   <member name="EMRPIXELFORMAT.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMRPIXELFORMAT.pfd">
-    <summary>
-      <para>A
-<see cref="PIXELFORMATDESCRIPTOR" /> structure, which describes the pixel format.</para>
-    </summary>
+    <summary>A<see cref="PIXELFORMATDESCRIPTOR" /> structure, which describes the pixel format.</summary>
   </member>
 </doc>

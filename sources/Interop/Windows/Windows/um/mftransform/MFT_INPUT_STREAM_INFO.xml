@@ -3,51 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFT_INPUT_STREAM_INFO">
-    <summary>
-      <para>Contains information about an input stream on a Media Foundation transform (MFT). To get these values, call <see cref="IMFTransform.GetInputStreamInfo" />.</para>
-    </summary>
-    <remarks>
-      <para>Before the media types are set, the only values that should be considered valid are the MFT_INPUT_STREAM_REMOVABLE and MFT_INPUT_STREAM_OPTIONAL flags in the <b>dwFlags</b> member.</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <para>The MFT_INPUT_STREAM_REMOVABLE flag indicates that the stream can be deleted.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>The MFT_INPUT_STREAM_OPTIONAL flag indicates that the stream is optional and does not require a media type.</para>
-          </description>
-        </item>
-      </list>
-      <para>After you set a media type on all of the input and output streams (not including optional streams), all of the values returned by the <see cref="GetInputStreamInfo" /> method are valid. They might change if you set different media types.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
+    <summary>Contains information about an input stream on a Media Foundation transform (MFT). To get these values, call <see cref="IMFTransform.GetInputStreamInfo" />.</summary>
   </member>
   <member name="MFT_INPUT_STREAM_INFO.hnsMaxLatency">
-    <summary>
-      <para>Maximum amount of time between an input sample and the corresponding output sample, in 100-nanosecond units. For example, an MFT that buffers two samples, each with a duration of 1 second, has a maximum latency of two seconds. If the MFT always turns input samples directly into output samples, with no buffering, the latency is zero.</para>
-    </summary>
+    <summary>Maximum amount of time between an input sample and the corresponding output sample, in 100-nanosecond units. For example, an MFT that buffers two samples, each with a duration of 1 second, has a maximum latency of two seconds. If the MFT always turns input samples directly into output samples, with no buffering, the latency is zero.</summary>
   </member>
   <member name="MFT_INPUT_STREAM_INFO.dwFlags">
-    <summary>
-      <para>Bitwise <b>OR</b> of zero or more flags from the <see cref="_MFT_INPUT_STREAM_INFO_FLAGS" /> enumeration.</para>
-    </summary>
+    <summary>Bitwise <b>OR</b> of zero or more flags from the <see cref="_MFT_INPUT_STREAM_INFO_FLAGS" /> enumeration.</summary>
   </member>
   <member name="MFT_INPUT_STREAM_INFO.cbSize">
-    <summary>
-      <para>The minimum size of each input buffer, in bytes. If the size is variable or the MFT does not require a specific size, the value is zero. For uncompressed audio, the value should be the audio frame size, which you can get from the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-audio-block-alignment-attribute">MF_MT_AUDIO_BLOCK_ALIGNMENT</a> attribute in the media type.</para>
-    </summary>
+    <summary>The minimum size of each input buffer, in bytes. If the size is variable or the MFT does not require a specific size, the value is zero. For uncompressed audio, the value should be the audio frame size, which you can get from the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-audio-block-alignment-attribute">MF_MT_AUDIO_BLOCK_ALIGNMENT</a> attribute in the media type.</summary>
   </member>
   <member name="MFT_INPUT_STREAM_INFO.cbMaxLookahead">
-    <summary>
-      <para>Maximum amount of input data, in bytes, that the MFT holds to perform lookahead. <i>Lookahead</i> is the action of looking forward in the data before processing it. This value should be the worst-case value. If the MFT does not keep a lookahead buffer, the value is zero.</para>
-    </summary>
+    <summary>Maximum amount of input data, in bytes, that the MFT holds to perform lookahead. <i>Lookahead</i> is the action of looking forward in the data before processing it. This value should be the worst-case value. If the MFT does not keep a lookahead buffer, the value is zero.</summary>
   </member>
   <member name="MFT_INPUT_STREAM_INFO.cbAlignment">
-    <summary>
-      <para>The memory alignment required for input buffers. If the MFT does not require a specific alignment, the value is zero.</para>
-    </summary>
+    <summary>The memory alignment required for input buffers. If the MFT does not require a specific alignment, the value is zero.</summary>
   </member>
 </doc>

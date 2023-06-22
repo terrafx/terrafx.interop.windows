@@ -4,13 +4,10 @@
 <doc>
   <member name="IDvdInfo.GetAllGPRMs">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</para>
-      <para>Retrieves the current contents of all general parameter registers (GPRMs).</para>
-    </summary>
-    <param name="pRegisterArray">
-      <para>Pointer to the retrieved array of general parameter registers.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves the current contents of all general parameter registers (GPRMs).</summary>
+    <param name="pRegisterArray">Pointer to the retrieved array of general parameter registers.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value.</para>
       <list type="table">
@@ -18,64 +15,63 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>DVD is not initialized or domain is not DVD_DOMAIN_Title.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>DVD is not initialized or domain is not DVD_DOMAIN_Title.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_OPERATION_INHIBITED</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</para>
-          </description>
-        </item>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is valid in any domain. For more information, see <see cref="DVD_DOMAIN" />.</para>
-      <para>Use of GPRMs is title specific. GPRMs are general parameter registers. For an explanation of GPRMs, see the DVD specifications.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo Interface" />
   </member>
   <member name="IDvdInfo.GetAllSPRMs">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</para>
-      <para>Retrieves the current contents of all system parameter registers (SPRMs).</para>
-    </summary>
-    <param name="pRegisterArray">
-      <para>Pointer to the retrieved array of system parameter registers.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves the current contents of all system parameter registers (SPRMs).</summary>
+    <param name="pRegisterArray">Pointer to the retrieved array of system parameter registers.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value.</para>
       <list type="table">
@@ -83,67 +79,129 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>DVD is not initialized or domain is not DVD_DOMAIN_Title.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>DVD is not initialized or domain is not DVD_DOMAIN_Title.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_OPERATION_INHIBITED</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</para>
-          </description>
-        </item>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is valid in any domain. For more information, see <see cref="DVD_DOMAIN" />.</para>
-      <para>For use of individual registers, see the DVD-Video specification.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo Interface" />
+  </member>
+  <member name="IDvdInfo.GetAudioLanguage">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves the language of the specified audio stream within the current title.</summary>
+    <param name="ulStream">Stream number.</param>
+    <param name="pLanguage">Pointer to the retrieved language.</param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>DVD is not initialized or domain is not DVD_DOMAIN_Title.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
+      </list>
+    </returns>
   </member>
   <member name="IDvdInfo.GetCurrentAngle">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</para>
-      <para>Retrieves the number of available angles and the currently selected angle number.</para>
-    </summary>
-    <param name="pulAnglesAvailable">
-      <para>Pointer to the retrieved number of available angles. If the value pointed to equals 1, then the current video does not contain multiple angles.</para>
-    </param>
-    <param name="pulCurrentAngle">
-      <para>Pointer to the retrieved current angle number.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves the number of available angles and the currently selected angle number.</summary>
+    <param name="pulAnglesAvailable">Pointer to the retrieved number of available angles. If the value pointed to equals 1, then the current video does not contain multiple angles.</param>
+    <param name="pulCurrentAngle">Pointer to the retrieved current angle number.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value.</para>
       <list type="table">
@@ -151,67 +209,64 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>DVD is not initialized or domain is not DVD_DOMAIN_Title.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>DVD is not initialized or domain is not DVD_DOMAIN_Title.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_OPERATION_INHIBITED</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</para>
-          </description>
-        </item>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Angles are interleaved video streams that presumably contain the same scene shot from different camera angles.</para>
-      <para>This method returns an error unless the domain is DVD_DOMAIN_Title. For more information, see <see cref="DVD_DOMAIN" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo Interface" />
   </member>
   <member name="IDvdInfo.GetCurrentAudio">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</para>
-      <para>Retrieves the number of available audio streams and the number of the currently selected audio stream.</para>
-    </summary>
-    <param name="pulStreamsAvailable">
-      <para>Pointer to the retrieved number of available audio streams</para>
-    </param>
-    <param name="pulCurrentStream">
-      <para>Pointer to the current stream number.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves the number of available audio streams and the number of the currently selected audio stream.</summary>
+    <param name="pulStreamsAvailable">Pointer to the retrieved number of available audio streams</param>
+    <param name="pulCurrentStream">Pointer to the current stream number.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value.</para>
       <list type="table">
@@ -219,63 +274,63 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>DVD is not initialized or domain is not DVD_DOMAIN_Title.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>DVD is not initialized or domain is not DVD_DOMAIN_Title.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_OPERATION_INHIBITED</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</para>
-          </description>
-        </item>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method returns an error unless the domain is DVD_DOMAIN_Title. For more information, see <see cref="DVD_DOMAIN" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo Interface" />
   </member>
   <member name="IDvdInfo.GetCurrentAudioAttributes">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</para>
-      <para>Retrieves the attributes for the current audio stream in the current title or menu.</para>
-    </summary>
-    <param name="pATR">
-      <para>Pointer to the retrieved audio attributes.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves the attributes for the current audio stream in the current title or menu.</summary>
+    <param name="pATR">Pointer to the retrieved audio attributes.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value.</para>
       <list type="table">
@@ -283,67 +338,64 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>DVD is not initialized or domain is not DVD_DOMAIN_Title.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>DVD is not initialized or domain is not DVD_DOMAIN_Title.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_OPERATION_INHIBITED</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</para>
-          </description>
-        </item>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method returns an error unless the domain is DVD_DOMAIN_VideoManagerMenu, DVD_DOMAIN_VideoTitleSetMenu, or DVD_DOMAIN_Title. For more information, see <see cref="DVD_DOMAIN" />.</para>
-      <para>For information about the DVD_AudioATR data type, consult the DVD-Video specification.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo Interface" />
   </member>
   <member name="IDvdInfo.GetCurrentButton">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</para>
-      <para>Retrieves the number of available buttons and the currently selected button number.</para>
-    </summary>
-    <param name="pulButtonsAvailable">
-      <para>Pointer to the number of buttons available.</para>
-    </param>
-    <param name="pulCurrentButton">
-      <para>Pointer to the number of the current button.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves the number of available buttons and the currently selected button number.</summary>
+    <param name="pulButtonsAvailable">Pointer to the number of buttons available.</param>
+    <param name="pulCurrentButton">Pointer to the number of the current button.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value .</para>
       <list type="table">
@@ -351,44 +403,39 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_OPERATION_INHIBITED</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</para>
-          </description>
-        </item>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If buttons are not present this method returns zero for both <i>pnButtonsAvailable</i> and <i>pnCurrentButton</i>.</para>
-      <para>This method is valid in any domain. For more information, see <see cref="DVD_DOMAIN" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo Interface" />
   </member>
   <member name="IDvdInfo.GetCurrentDomain">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</para>
-      <para>Retrieves the current DVD domain of the DVD player.</para>
-    </summary>
-    <param name="pDomain">
-      <para>Pointer to the current domain that is a member of the <see cref="DVD_DOMAIN" /> enumerated type.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves the current DVD domain of the DVD player.</summary>
+    <param name="pDomain">Pointer to the current domain that is a member of the <see cref="DVD_DOMAIN" /> enumerated type.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value .</para>
       <list type="table">
@@ -396,43 +443,39 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_OPERATION_INHIBITED</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</para>
-          </description>
-        </item>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is valid in any domain. For more information, see <see cref="DVD_DOMAIN" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo Interface" />
   </member>
   <member name="IDvdInfo.GetCurrentLocation">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</para>
-      <para>Retrieves the current playback location.</para>
-    </summary>
-    <param name="pLocation">
-      <para>Pointer to the retrieved playback location information in a <see cref="DVD_PLAYBACK_LOCATION" /> structure.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves the current playback location.</summary>
+    <param name="pLocation">Pointer to the retrieved playback location information in a <see cref="DVD_PLAYBACK_LOCATION" /> structure.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value.</para>
       <list type="table">
@@ -440,70 +483,65 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>DVD is not initialized or domain is not DVD_DOMAIN_Title.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>DVD is not initialized or domain is not DVD_DOMAIN_Title.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_OPERATION_INHIBITED</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</para>
-          </description>
-        </item>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method retrieves information sufficient to restart playback of a video from the current playback location in titles that don't explicitly disable seeking to the current location.</para>
-      <para>This method returns an error unless the domain is DVD_DOMAIN_Title. For more information, see <see cref="DVD_DOMAIN" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo Interface" />
   </member>
   <member name="IDvdInfo.GetCurrentSubpicture">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</para>
-      <para>Retrieves the number of available subpicture streams, the currently selected subpicture stream number, and whether the subpicture display is disabled.</para>
-    </summary>
-    <param name="pulStreamsAvailable">
-      <para>Pointer to the retrieved number of available subpicture streams.</para>
-    </param>
-    <param name="pulCurrentStream">
-      <para>Pointer to the retrieved number of the currently selected subpicture stream.</para>
-    </param>
-    <param name="pIsDisabled">
-      <para>Pointer to a value indicating whether the subpicture display is disabled.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves the number of available subpicture streams, the currently selected subpicture stream number, and whether the subpicture display is disabled.</summary>
+    <param name="pulStreamsAvailable">Pointer to the retrieved number of available subpicture streams.</param>
+    <param name="pulCurrentStream">Pointer to the retrieved number of the currently selected subpicture stream.</param>
+    <param name="pIsDisabled">Pointer to a value indicating whether the subpicture display is disabled.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value .</para>
       <list type="table">
@@ -511,64 +549,63 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>DVD is not initialized or domain is not DVD_DOMAIN_Title.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>DVD is not initialized or domain is not DVD_DOMAIN_Title.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_OPERATION_INHIBITED</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</para>
-          </description>
-        </item>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Subpicture streams authored as forcedly activated streams will be displayed even if the application has disabled subpicture display with the <see cref="IDvdControl.SubpictureStreamChange" /> method.</para>
-      <para>This method returns an error unless the domain is DVD_DOMAIN_Title. For more information, see <see cref="DVD_DOMAIN" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo Interface" />
   </member>
   <member name="IDvdInfo.GetCurrentSubpictureAttributes">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</para>
-      <para>Retrieves the attributes for the current subpicture stream in the current title or menu.</para>
-    </summary>
-    <param name="pATR">
-      <para>Pointer to the retrieved subpicture attributes.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves the attributes for the current subpicture stream in the current title or menu.</summary>
+    <param name="pATR">Pointer to the retrieved subpicture attributes.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value .</para>
       <list type="table">
@@ -576,54 +613,51 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>DVD is not initialized or domain is not DVD_DOMAIN_Title.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>DVD is not initialized or domain is not DVD_DOMAIN_Title.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_OPERATION_INHIBITED</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</para>
-          </description>
-        </item>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method returns an error unless the domain is DVD_DOMAIN_VideoManagerMenu, DVD_DOMAIN_VideoTitleSetMenu, or DVD_DOMAIN_Title. For more information, see <see cref="DVD_DOMAIN" />.</para>
-      <para>For information about DVD_SubpictureATR, see the DVD-Video specification.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo Interface" />
   </member>
   <member name="IDvdInfo.GetCurrentUOPS">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</para>
-      <para>Retrieves which <see cref="IDvdControl" /> methods are currently valid.</para>
-    </summary>
-    <param name="pUOP">
-      <para>Pointer to a <b>DWORD</b> value containing bits for all user operations (UOP). Each bit in the <b>DWORD</b> represents the state (valid or not valid) of a user operation. If the bit corresponding to a user operation is set, then that user operation is prohibited. For more information, see Remarks.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves which <see cref="IDvdControl" /> methods are currently valid.</summary>
+    <param name="pUOP">Pointer to a <b>DWORD</b> value containing bits for all user operations (UOP). Each bit in the <b>DWORD</b> represents the state (valid or not valid) of a user operation. If the bit corresponding to a user operation is set, then that user operation is prohibited. For more information, see Remarks.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value.</para>
       <list type="table">
@@ -631,235 +665,63 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>DVD is not initialized or domain is not DVD_DOMAIN_Title.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>DVD is not initialized or domain is not DVD_DOMAIN_Title.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_OPERATION_INHIBITED</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</para>
-          </description>
-        </item>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is valid in any domain. For more information, see <see cref="DVD_DOMAIN" />.</para>
-      <para>The value of <i>pUOP</i> is a bit field defined as follows.</para>
-      <list type="table">
-        <listheader>
-          <description>Bit
-</description>
-          <description>Flag
-</description>
-          <description>User function
-</description>
-        </listheader>
-        <item>
-          <description>0</description>
-          <description>UOP_FLAG_Title_Or_Time_Play</description>
-          <description>
-            <see cref="TitlePlay" />, <see cref="TimePlay" /></description>
-        </item>
-        <item>
-          <description>1</description>
-          <description>UOP_FLAG_Chapter_Search_Or_Play</description>
-          <description>
-            <see cref="ChapterSearch" />, <see cref="ChapterPlay" /></description>
-        </item>
-        <item>
-          <description>2</description>
-          <description>UOP_FLAG_Title_Play</description>
-          <description>TitlePlay</description>
-        </item>
-        <item>
-          <description>3</description>
-          <description>UOP_FLAG_Stop</description>
-          <description>
-            <see cref="StopForResume" />
-          </description>
-        </item>
-        <item>
-          <description>4</description>
-          <description>UOP_FLAG_GoUp</description>
-          <description>
-            <see cref="GoUp" />
-          </description>
-        </item>
-        <item>
-          <description>5</description>
-          <description>UOP_FLAG_Time_Or_Chapter_Search</description>
-          <description>
-            <see cref="TimeSearch" />, <see cref="ChapterSearch" /></description>
-        </item>
-        <item>
-          <description>6</description>
-          <description>UOP_FLAG_Prev_Or_Top_PG_Search</description>
-          <description>
-            <see cref="PrevPGSearch" />, <see cref="TopPGSearch" /></description>
-        </item>
-        <item>
-          <description>7</description>
-          <description>UOP_FLAG_Next_PG_Search</description>
-          <description>
-            <see cref="NextPGSearch" />
-          </description>
-        </item>
-        <item>
-          <description>8</description>
-          <description>UOP_FLAG_Forward_Scan</description>
-          <description>
-            <see cref="ForwardScan" />
-          </description>
-        </item>
-        <item>
-          <description>9</description>
-          <description>UOP_FLAG_Backward_Scan</description>
-          <description>
-            <see cref="BackwardScan" />
-          </description>
-        </item>
-        <item>
-          <description>10</description>
-          <description>UOP_FLAG_Title_Menu_Call</description>
-          <description>
-            <see cref="MenuCall" /> with a parameter value of 2 (DVD_MENU_Title)</description>
-        </item>
-        <item>
-          <description>11</description>
-          <description>UOP_FLAG_Root_Menu_Call</description>
-          <description>
-            <see cref="MenuCall" /> with a parameter value of 3 (DVD_MENU_Root)</description>
-        </item>
-        <item>
-          <description>12</description>
-          <description>UOP_FLAG_SubPic_Menu_Call</description>
-          <description>
-            <see cref="MenuCall" /> with a parameter value of 4 (DVD_MENU_Subpicture)</description>
-        </item>
-        <item>
-          <description>13</description>
-          <description>UOP_FLAG_Audio_Menu_Call</description>
-          <description>
-            <see cref="MenuCall" /> with a parameter value of 5 (DVD_MENU_Audio)</description>
-        </item>
-        <item>
-          <description>14</description>
-          <description>UOP_FLAG_Angle_Menu_Call</description>
-          <description>
-            <see cref="MenuCall" /> with a parameter value of 6 (DVD_MENU_Angle)</description>
-        </item>
-        <item>
-          <description>15</description>
-          <description>UOP_FLAG_Chapter_Menu_Call</description>
-          <description>
-            <see cref="MenuCall" /> with a parameter value of 7 (DVD_MENU_Chapter)</description>
-        </item>
-        <item>
-          <description>16</description>
-          <description>UOP_FLAG_Resume</description>
-          <description>
-            <see cref="Resume" />
-          </description>
-        </item>
-        <item>
-          <description>17</description>
-          <description>UOP_FLAG_Button_Select_Or_Activate</description>
-          <description>
-            <see cref="UpperButtonSelect" />, <see cref="LowerButtonSelect" />, <see cref="LeftButtonSelect" />, <see cref="RightButtonSelect" />, <see cref="ButtonActivate" />, <see cref="ButtonSelectAndActivate" /></description>
-        </item>
-        <item>
-          <description>18</description>
-          <description>UOP_FLAG_Still_Off</description>
-          <description>
-            <see cref="StillOff" />
-          </description>
-        </item>
-        <item>
-          <description>19</description>
-          <description>UOP_FLAG_Pause_On</description>
-          <description>
-            <see cref="PauseOn" />, <see cref="MenuLanguageSelect" /></description>
-        </item>
-        <item>
-          <description>20</description>
-          <description>UOP_FLAG_Audio_Stream_Change</description>
-          <description>
-            <see cref="AudioStreamChange" />
-          </description>
-        </item>
-        <item>
-          <description>21</description>
-          <description>UOP_FLAG_SubPic_Stream_Change</description>
-          <description>
-            <see cref="SubpictureStreamChange" />
-          </description>
-        </item>
-        <item>
-          <description>22</description>
-          <description>UOP_FLAG_Angle_Change</description>
-          <description>
-            <see cref="AngleChange" />, <see cref="ParentalLevelSelect" /></description>
-        </item>
-        <item>
-          <description>23</description>
-          <description>UOP_FLAG_Karaoke_Audio_Pres_Mode_Change</description>
-          <description>
-            <see cref="KaraokeAudioPresentationModeChange" />
-          </description>
-        </item>
-        <item>
-          <description>24</description>
-          <description>UOP_FLAG_Video_Pres_Mode_Change</description>
-          <description>
-            <see cref="VideoModePreferrence" />
-          </description>
-        </item>
-      </list>
-      <para>This method is useful because DVD titles can enable or disable individual user operations at almost any point during playback.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo Interface" />
   </member>
   <member name="IDvdInfo.GetCurrentVideoAttributes">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</para>
-      <para>Retrieves the current video attributes for the current title or menu.</para>
-    </summary>
-    <param name="pATR">
-      <para>Pointer to the retrieved video attributes.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves the current video attributes for the current title or menu.</summary>
+    <param name="pATR">Pointer to the retrieved video attributes.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value .</para>
       <list type="table">
@@ -867,73 +729,66 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>DVD is not initialized or domain is not DVD_DOMAIN_Title.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>DVD is not initialized or domain is not DVD_DOMAIN_Title.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_OPERATION_INHIBITED</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</para>
-          </description>
-        </item>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method returns an error unless the domain is DVD_DOMAIN_VideoManagerMenu, DVD_DOMAIN_VideoTitleSetMenu, or DVD_DOMAIN_Title. For more information, see <see cref="DVD_DOMAIN" />.</para>
-      <para>For information about DVD_VideoATR, see the DVD-Video specification.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo Interface" />
   </member>
   <member name="IDvdInfo.GetCurrentVolumeInfo">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</para>
-      <para>Retrieves the current DVD volume information.</para>
-    </summary>
-    <param name="pulNumOfVol">
-      <para>Pointer to the retrieved number of volumes in the volume set.</para>
-    </param>
-    <param name="pulThisVolNum">
-      <para>Pointer to the retrieved volume number for this root directory.</para>
-    </param>
-    <param name="pSide">
-      <para>Pointer to the retrieved current disc side (<see cref="DVD_DISC_SIDE" />).</para>
-    </param>
-    <param name="pulNumOfTitles">
-      <para>Pointer to the retrieved number of titles available in this volume.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves the current DVD volume information.</summary>
+    <param name="pulNumOfVol">Pointer to the retrieved number of volumes in the volume set.</param>
+    <param name="pulThisVolNum">Pointer to the retrieved volume number for this root directory.</param>
+    <param name="pSide">Pointer to the retrieved current disc side (<see cref="DVD_DISC_SIDE" />).</param>
+    <param name="pulNumOfTitles">Pointer to the retrieved number of titles available in this volume.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value .</para>
       <list type="table">
@@ -941,69 +796,65 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>DVD is not initialized or domain is not DVD_DOMAIN_Title.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>DVD is not initialized or domain is not DVD_DOMAIN_Title.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_OPERATION_INHIBITED</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</para>
-          </description>
-        </item>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is valid in any domain. For more information, see <see cref="DVD_DOMAIN" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo Interface" />
   </member>
   <member name="IDvdInfo.GetDVDTextInfo">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</para>
-      <para>Retrieves the <b>TXTDT_MG</b> structure, which can contain text descriptions for title name, volume name, producer name, vocalist name, and so on, in various languages.</para>
-    </summary>
-    <param name="pTextManager">
-      <para>Pointer to the retrieved text manager.</para>
-    </param>
-    <param name="ulBufSize">
-      <para>Size of the buffer for <i>pTextManager</i>, in bytes.</para>
-    </param>
-    <param name="pulActualSize">
-      <para>Pointer to a value containing the number of bytes of data returned.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves the <b>TXTDT_MG</b> structure, which can contain text descriptions for title name, volume name, producer name, vocalist name, and so on, in various languages.</summary>
+    <param name="pTextManager">Pointer to the retrieved text manager.</param>
+    <param name="ulBufSize">Size of the buffer for <i>pTextManager</i>, in bytes.</param>
+    <param name="pulActualSize">Pointer to a value containing the number of bytes of data returned.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value .</para>
       <list type="table">
@@ -1011,68 +862,64 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>DVD is not initialized or domain is not DVD_DOMAIN_Title.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>DVD is not initialized or domain is not DVD_DOMAIN_Title.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_OPERATION_INHIBITED</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</para>
-          </description>
-        </item>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is valid in any domain. For more information, see <see cref="DVD_DOMAIN" />.</para>
-      <para>If the supplied buffer size in <i>cbBufSize</i> is too small for the data, (for example if <i>cbBufSize</i> equals zero), then this method returns E_OUTOFMEMORY and sets the value pointed to by <i>pcbActualSize</i> to the required size.</para>
-      <para>For more information, refer to Section 4.1.6 and Annex A of the DVD-Video specification.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo Interface" />
   </member>
   <member name="IDvdInfo.GetNumberOfChapters">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</para>
-      <para>Retrieves the number of chapters that are defined for a given title.</para>
-    </summary>
-    <param name="ulTitle">
-      <para>Title for which to retrieve the number of chapters.</para>
-    </param>
-    <param name="pulNumberOfChapters">
-      <para>Pointer to the retrieved number of chapters for the specified title.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves the number of chapters that are defined for a given title.</summary>
+    <param name="ulTitle">Title for which to retrieve the number of chapters.</param>
+    <param name="pulNumberOfChapters">Pointer to the retrieved number of chapters for the specified title.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value.</para>
       <list type="table">
@@ -1080,66 +927,64 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>DVD is not initialized or domain is not DVD_DOMAIN_Title.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>DVD is not initialized or domain is not DVD_DOMAIN_Title.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_OPERATION_INHIBITED</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</para>
-          </description>
-        </item>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is valid in any domain. For more information, see <see cref="DVD_DOMAIN" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo Interface" />
   </member>
   <member name="IDvdInfo.GetPlayerParentalLevel">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</para>
-      <para>Retrieves the current parental level and country/region code settings for the DVD player.</para>
-    </summary>
-    <param name="pulParentalLevel">
-      <para>Pointer to a value indicating the current parental level.</para>
-    </param>
-    <param name="pulCountryCode">
-      <para>Pointer to a value indicating the current country/region code.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves the current parental level and country/region code settings for the DVD player.</summary>
+    <param name="pulParentalLevel">Pointer to a value indicating the current parental level.</param>
+    <param name="pulCountryCode">Pointer to a value indicating the current country/region code.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value.</para>
       <list type="table">
@@ -1147,72 +992,65 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>DVD is not initialized or domain is not DVD_DOMAIN_Title.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>DVD is not initialized or domain is not DVD_DOMAIN_Title.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_OPERATION_INHIBITED</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</para>
-          </description>
-        </item>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is valid in any domain. For more information, see <see cref="DVD_DOMAIN" />.</para>
-      <para>For the defined parental levels, see Table 3.3.4-1 of the DVD-Video specification.</para>
-      <para>Valid parental levels are 1 through 8 if parental management is enabled, 0xffffffff if parental management is disabled.</para>
-      <para>For the country/region codes, see ISO3166 : Alpha-2 Code.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo Interface" />
   </member>
   <member name="IDvdInfo.GetRoot">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</para>
-      <para>Retrieves the root directory that is set in the player.</para>
-    </summary>
-    <param name="pRoot">
-      <para>Pointer to the buffer to receive the root string. Note that the root string uses ANSI characters.</para>
-    </param>
-    <param name="ulBufSize">
-      <para>Size of buffer passed in, in bytes.</para>
-    </param>
-    <param name="pulActualSize">
-      <para>Pointer to a value containing the size of the actual data returned.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves the root directory that is set in the player.</summary>
+    <param name="pRoot">Pointer to the buffer to receive the root string. Note that the root string uses ANSI characters.</param>
+    <param name="ulBufSize">Size of buffer passed in, in bytes.</param>
+    <param name="pulActualSize">Pointer to a value containing the size of the actual data returned.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value.</para>
       <list type="table">
@@ -1220,66 +1058,129 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>DVD is not initialized or domain is not DVD_DOMAIN_Title.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>DVD is not initialized or domain is not DVD_DOMAIN_Title.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_OPERATION_INHIBITED</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</para>
-          </description>
-        </item>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If a valid root was found, this method returns the root string. Otherwise, it returns zero for <i>pcbActualSize</i>, indicating that a valid root directory has not been found or initialized.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo Interface" />
+  </member>
+  <member name="IDvdInfo.GetSubpictureLanguage">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves the language of the specified subpicture stream within the current title.</summary>
+    <param name="ulStream">Stream number.</param>
+    <param name="pLanguage">Pointer to the retrieved language.</param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value .</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>DVD is not initialized or domain is not DVD_DOMAIN_Title.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
+      </list>
+    </returns>
   </member>
   <member name="IDvdInfo.GetTitleAttributes">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</para>
-      <para>Retrieves attributes of all video, audio, and subpicture streams for the specified title, including menus.</para>
-    </summary>
-    <param name="ulTitle">
-      <para>Requested title number. Specify 0xFFFFFFFF for the current title.</para>
-    </param>
-    <param name="pATR">
-      <para>Pointer to the retrieved attributes structure.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves attributes of all video, audio, and subpicture streams for the specified title, including menus.</summary>
+    <param name="ulTitle">Requested title number. Specify 0xFFFFFFFF for the current title.</param>
+    <param name="pATR">Pointer to the retrieved attributes structure.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value.</para>
       <list type="table">
@@ -1287,63 +1188,63 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>DVD is not initialized or domain is not DVD_DOMAIN_Title.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>DVD is not initialized or domain is not DVD_DOMAIN_Title.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_OPERATION_INHIBITED</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</para>
-          </description>
-        </item>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is valid in any domain. For more information, see <see cref="DVD_DOMAIN" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo Interface" />
   </member>
   <member name="IDvdInfo.GetTitleParentalLevels">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</para>
-      <para>Retrieves the parental levels that are defined for a particular title.</para>
-    </summary>
-    <param name="ulTitle">
-      <para>Title for which parental levels are requested.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves the parental levels that are defined for a particular title.</summary>
+    <param name="ulTitle">Title for which parental levels are requested.</param>
     <param name="pulParentalLevels">
       <para>Pointer to a logical OR combination of the parental levels defined for the title. A higher setting will block out more content than a lower setting. Valid parental levels are the following:</para>
       <list type="bullet">
@@ -1380,63 +1281,63 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>DVD is not initialized or domain is not DVD_DOMAIN_Title.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>DVD is not initialized or domain is not DVD_DOMAIN_Title.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_OPERATION_INHIBITED</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</para>
-          </description>
-        </item>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is valid in any domain. For more information, see <see cref="DVD_DOMAIN" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo Interface" />
   </member>
   <member name="IDvdInfo.GetTotalTitleTime">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</para>
-      <para>Retrieves the total playback time for the current title.</para>
-    </summary>
-    <param name="pulTotalTime">
-      <para>Pointer to the total time in <see cref="DVD_TIMECODE" /> format, which includes hours, minutes, seconds, and frames.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves the total playback time for the current title.</summary>
+    <param name="pulTotalTime">Pointer to the total time in <see cref="DVD_TIMECODE" /> format, which includes hours, minutes, seconds, and frames.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value.</para>
       <list type="table">
@@ -1444,64 +1345,63 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>DVD is not initialized or domain is not DVD_DOMAIN_Title.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>DVD is not initialized or domain is not DVD_DOMAIN_Title.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_OPERATION_INHIBITED</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</para>
-          </description>
-        </item>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method returns an error unless the domain is DVD_DOMAIN_Title. For more information, see <see cref="DVD_DOMAIN" />.</para>
-      <para>The method is restricted to simple linear movies by design.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo Interface" />
   </member>
   <member name="IDvdInfo.GetVMGAttributes">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</para>
-      <para>Retrieves attributes of all video, audio, and subpicture streams for video manager (VMG) menus.</para>
-    </summary>
-    <param name="pATR">
-      <para>Pointer to the retrieved attributes structure.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IDvdInfo</b> interface is deprecated. Use <see cref="IDvdInfo2" /> instead.</div>Retrieves attributes of all video, audio, and subpicture streams for video manager (VMG) menus.</summary>
+    <param name="pATR">Pointer to the retrieved attributes structure.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value.</para>
       <list type="table">
@@ -1509,61 +1409,61 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>DVD is not initialized or domain is not DVD_DOMAIN_Title.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>DVD is not initialized or domain is not DVD_DOMAIN_Title.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_INVALIDDOMAIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DVD_OPERATION_INHIBITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_INVALIDDOMAIN</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action is not supported on this domain (<see cref="DVD_DOMAIN" />).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DVD_OPERATION_INHIBITED</b>
-            </para>
-          </description>
-          <description>
-            <para>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</para>
-          </description>
-        </item>
+          <description>Requested action cannot occur at this point in the movie due to the authoring of the current DVD-Video disc.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is valid in any domain. For more information, see <see cref="DVD_DOMAIN" />.</para>
-      <para>The video manager contains a separate group of streams, such as the DVD_MENU_Title menus (see <see cref="DVD_MENU_ID" />), and the streams are not associated with any particular title number.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDvdInfo Interface" />
   </member>
   <member name="IDvdInfo">
     <summary>
-      <para>
-        <b>Note</b>  This interface has been deprecated. It will continue to be supported for backward compatibility with existing applications, but new applications should use <see cref="IDvdInfo2" />.</para>
-      <para>The <b>IDvdInfo</b> interface enables an application to query for attributes of available DVD titles and the DVD player status. It also allows for control of a DVD player beyond Annex J in the DVD specification. Use this interface to retrieve details about a DVD-Video or about the current state of the DVD player filter graph.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/deprecated-interfaces">Deprecated Interfaces</seealso>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  This interface has been deprecated. It will continue to be supported for backward compatibility with existing applications, but new applications should use <see cref="IDvdInfo2" />.</div>The <b>IDvdInfo</b> interface enables an application to query for attributes of available DVD titles and the DVD player status. It also allows for control of a DVD player beyond Annex J in the DVD specification. Use this interface to retrieve details about a DVD-Video or about the current state of the DVD player filter graph.</summary>
   </member>
 </doc>

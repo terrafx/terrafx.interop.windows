@@ -4,20 +4,15 @@
 <doc>
   <member name="CRYPT_SMIME_CAPABILITIES">
     <summary>
-      <para>The <b>CRYPT_SMIME_CAPABILITIES</b> structure contains a prioritized array of supported capabilities. Capabilities include signature algorithms, <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">symmetric algorithms</a>, key enciphering algorithms, and non-algorithm capabilities, which are the preference for <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">signed data</a> and the preference for unencrypted messages.
-<b>Note</b>  The <b>CRYPT_SMIME_CAPABILITIES</b> are part of an Internet draft proposal. For a complete definition, see "draft-dusse-s/mime-cert-01.txt" dated May 5, 1997.</para>
+      <para>The <b>CRYPT_SMIME_CAPABILITIES</b> structure contains a prioritized array of supported capabilities. Capabilities include signature algorithms, <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">symmetric algorithms</a>, key enciphering algorithms, and non-algorithm capabilities, which are the preference for <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">signed data</a> and the preference for unencrypted messages.</para>
+      <div>
+        <b>Note</b>  The <b>CRYPT_SMIME_CAPABILITIES</b> are part of an Internet draft proposal. For a complete definition, see "draft-dusse-s/mime-cert-01.txt" dated May 5, 1997.</div>
     </summary>
-    <seealso cref="CRYPT_SMIME_CAPABILITY" />
   </member>
   <member name="CRYPT_SMIME_CAPABILITIES.cCapability">
-    <summary>
-      <para>Count of elements in the <b>rgCapability</b> array.</para>
-    </summary>
+    <summary>Count of elements in the <b>rgCapability</b> array.</summary>
   </member>
   <member name="CRYPT_SMIME_CAPABILITIES.rgCapability">
-    <summary>
-      <para>Prioritized array of pointers to
-<see cref="CRYPT_SMIME_CAPABILITY" /> structures each indicating a capability or preference of a user.</para>
-    </summary>
+    <summary>Prioritized array of pointers to<see cref="CRYPT_SMIME_CAPABILITY" /> structures each indicating a capability or preference of a user.</summary>
   </member>
 </doc>

@@ -3,9 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDMLOperator">
-    <summary>
-      <para>Represents a DirectML operator. The <b>IDMLOperator</b> interface inherits from <see cref="IDMLDeviceChild" />.</para>
-    </summary>
-    <seealso cref="IDMLDeviceChild" />
+    <summary>Represents a DirectML operator. The <b>IDMLOperator</b> interface inherits from <see cref="IDMLDeviceChild" />.</summary>
   </member>
 </doc>

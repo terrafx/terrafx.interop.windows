@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="POLICY_DOMAIN_INFORMATION_CLASS">
+    <summary>The <b>POLICY_DOMAIN_INFORMATION_CLASS</b> enumeration defines the type of policy domain information.</summary>
+  </member>
+  <member name="POLICY_DOMAIN_INFORMATION_CLASS.PolicyDomainQualityOfServiceInformation"></member>
+  <member name="POLICY_DOMAIN_INFORMATION_CLASS.PolicyDomainEfsInformation">
+    <summary>The information is for <a href="https://docs.microsoft.com//windows/desktop/SecGloss/e-gly">Encrypting File System</a>.</summary>
+  </member>
+  <member name="POLICY_DOMAIN_INFORMATION_CLASS.PolicyDomainKerberosTicketInformation">
+    <summary>The information is for a Kerberos ticket.</summary>
+  </member>
+</doc>

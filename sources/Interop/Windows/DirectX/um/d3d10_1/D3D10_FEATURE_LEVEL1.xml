@@ -3,44 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_FEATURE_LEVEL1">
-    <summary>
-      <para>The version of hardware acceleration requested.</para>
-    </summary>
-    <remarks>
-      <para>Use this enumeration when creating a device with <see cref="D3D10CreateDevice1" /> or <see cref="D3D10CreateDeviceAndSwapChain1" />.</para>
-      <para>Note that 10level9 feature levels 9_1, 9_2, and 9_3 are only available with the Direct3D 11 runtime (Windows 7, Windows Server 2008 R2, updated
-Windows Vista with Service Pack 2 (SP2) [<a href="https://support.microsoft.com/kb/971644">KB 971644</a>], and updated Windows Server 2008 [<a href="https://support.microsoft.com/kb/971512/">KB 971512</a>]).</para>
-      <para>For information about limitations creating nonhardware-type devices on certain feature levels, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-limitations">Limitations Creating WARP and Reference Devices</a>.</para>
-      <para>For an overview of
-the capabilities of each feature level, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">Overview For Each Feature Level</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-enums">Core Enumerations</seealso>
-    <seealso href="https://msdn.microsoft.com/529ced9a-d4fa-4b41-932b-343638cd5c7c">Hardware Support for Direct3D 10 Formats</seealso>
-    <seealso href="https://msdn.microsoft.com/011ad888-1c1d-4cbd-ab70-12fb8adc000f">Hardware Support for Direct3D 10.1 Formats</seealso>
+    <summary>The version of hardware acceleration requested.</summary>
   </member>
   <member name="D3D10_FEATURE_LEVEL1.D3D10_FEATURE_LEVEL_10_0">
-    <summary>
-      <para>The hardware supports Direct3D 10.0 features.</para>
-    </summary>
+    <summary>The hardware supports Direct3D 10.0 features.</summary>
   </member>
   <member name="D3D10_FEATURE_LEVEL1.D3D10_FEATURE_LEVEL_10_1">
-    <summary>
-      <para>The hardware supports Direct3D 10.1 features.</para>
-    </summary>
+    <summary>The hardware supports Direct3D 10.1 features.</summary>
   </member>
   <member name="D3D10_FEATURE_LEVEL1.D3D10_FEATURE_LEVEL_9_1">
-    <summary>
-      <para>The hardware supports 9.1 <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a>.</para>
-    </summary>
+    <summary>The hardware supports 9.1 <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a>.</summary>
   </member>
   <member name="D3D10_FEATURE_LEVEL1.D3D10_FEATURE_LEVEL_9_2">
-    <summary>
-      <para>The hardware supports 9.2 <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a>.</para>
-    </summary>
+    <summary>The hardware supports 9.2 <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a>.</summary>
   </member>
   <member name="D3D10_FEATURE_LEVEL1.D3D10_FEATURE_LEVEL_9_3">
-    <summary>
-      <para>The hardware supports 9.3 <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a>.</para>
-    </summary>
+    <summary>The hardware supports 9.3 <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a>.</summary>
   </member>
 </doc>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDxcBlobUtf8.GetStringLength">
+    <summary>Retrieves the length of the string stored in this blob, in characters, excluding the null-terminator.</summary>
+  </member>
+  <member name="IDxcBlobUtf8.GetStringPointer">
+    <summary>Retrieves a pointer to the string stored in this blob.</summary>
+  </member>
+  <member name="IDxcBlobUtf8">
+    <summary>A blob containing a null-terminated string, and using the UTF-8 character encoding. Depending on the <code>-encoding</code> option passed to the compiler, this interface is used to return string output blobs (such as errors/warnings, preprocessed HLSL, or other text). The methods of <b>IDxcBlobUtf8</b> guarantee null-terminated text, and UTF-8 character encoding. <see cref="IDxcBlobUtf16" /> is used to return output name strings in DXC.</summary>
+  </member>
+</doc>

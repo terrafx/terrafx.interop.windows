@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_XML_UTF8_TEXT">
-    <summary>
-      <para>Represents text encoded as UTF-8 bytes.</para>
-    </summary>
+    <summary>Represents text encoded as UTF-8 bytes.</summary>
   </member>
   <member name="WS_XML_UTF8_TEXT.text">
-    <summary>
-      <para>The base type for all types that derive from <see cref="WS_XML_TEXT" />.</para>
-    </summary>
+    <summary>The base type for all types that derive from <see cref="WS_XML_TEXT" />.</summary>
   </member>
   <member name="WS_XML_UTF8_TEXT.value">
-    <summary>
-      <para>The text value.</para>
-    </summary>
+    <summary>The text value.</summary>
   </member>
 </doc>

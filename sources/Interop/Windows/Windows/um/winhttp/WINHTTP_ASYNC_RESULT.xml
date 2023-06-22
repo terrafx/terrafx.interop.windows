@@ -3,16 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WINHTTP_ASYNC_RESULT">
-    <summary>
-      <para>The <b>WINHTTP_ASYNC_RESULT</b> structure contains the result of a call to an asynchronous function. This structure is used with the
-<a href="https://docs.microsoft.com//windows/desktop/api/winhttp/nc-winhttp-winhttp_status_callback">WINHTTP_STATUS_CALLBACK</a> prototype.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>Note</b>  For Windows XP and Windows 2000, see the <a href="https://docs.microsoft.com//windows/desktop/WinHttp/winhttp-start-page">Run-Time Requirements</a> section of the WinHttp start page.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinHttp/winhttp-versions">WinHTTP
-Versions</seealso>
+    <summary>The <b>WINHTTP_ASYNC_RESULT</b> structure contains the result of a call to an asynchronous function. This structure is used with the<a href="https://docs.microsoft.com//windows/desktop/api/winhttp/nc-winhttp-winhttp_status_callback">WINHTTP_STATUS_CALLBACK</a> prototype.</summary>
   </member>
   <member name="WINHTTP_ASYNC_RESULT.dwResult">
     <summary>
@@ -22,103 +13,100 @@ Versions</seealso>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>API_RECEIVE_RESPONSE</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The error occurred during a call to
-<see cref="WinHttpReceiveResponse" />.</para>
-          </description>
-        </item>
-        <item>
+          <description>The error occurred during a call to <see cref="WinHttpReceiveResponse" />.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>API_QUERY_DATA_AVAILABLE</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The error occurred during a call to
-<see cref="WinHttpQueryDataAvailable" />.</para>
-          </description>
-        </item>
-        <item>
+          <description>The error occurred during a call to <see cref="WinHttpQueryDataAvailable" />.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>API_READ_DATA</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The error occurred during a call to
-<see cref="WinHttpReadData" />.</para>
-          </description>
-        </item>
-        <item>
+          <description>The error occurred during a call to <see cref="WinHttpReadData" />.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>API_WRITE_DATA</b>
-                </description>
-              </item>
-              <item>
-                <description>4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The error occurred during a call to
-<see cref="WinHttpWriteData" />.</para>
-          </description>
-        </item>
-        <item>
+          <description>The error occurred during a call to <see cref="WinHttpWriteData" />.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>API_SEND_REQUEST</b>
-                </description>
-              </item>
-              <item>
-                <description>5</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>5</term>
+              </listheader>
             </list>
           </description>
+          <description>The error occurred during a call to <see cref="WinHttpSendRequest" />.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The error occurred during a call to
-<see cref="WinHttpSendRequest" />.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>API_GET_PROXY_FOR_URL</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>6</term>
+              </listheader>
+            </list>
           </description>
-        </item>
+          <description>The error occurred during a call to <see cref="WinHttpGetProxyForUrlEx" />.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="WINHTTP_ASYNC_RESULT.dwError">
-    <summary>
-      <para>Contains the error code if
-<b>dwResult</b> indicates that the function failed.</para>
-    </summary>
+    <summary>Contains the error code if<b>dwResult</b> indicates that the function failed.</summary>
   </member>
 </doc>

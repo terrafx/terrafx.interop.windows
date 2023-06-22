@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFGetService.GetService">
-    <summary>
-      <para>Retrieves a service interface.</para>
-    </summary>
-    <param name="guidService">
-      <para>The service identifier (SID) of the service. For a list of service identifiers, see <a href="https://docs.microsoft.com//windows/desktop/medfound/service-interfaces">Service Interfaces</a>.</para>
-    </param>
-    <param name="riid">
-      <para>The interface identifier (IID) of the interface being requested.</para>
-    </param>
-    <param name="ppvObject">
-      <para>Receives the interface pointer. The caller must release the interface.</para>
-    </param>
+    <summary>Retrieves a service interface.</summary>
+    <param name="guidService">The service identifier (SID) of the service. For a list of service identifiers, see <a href="https://docs.microsoft.com//windows/desktop/medfound/service-interfaces">Service Interfaces</a>.</param>
+    <param name="riid">The interface identifier (IID) of the interface being requested.</param>
+    <param name="ppvObject">Receives the interface pointer. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -22,41 +14,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_UNSUPPORTED_SERVICE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_UNSUPPORTED_SERVICE</b>
-            </para>
-          </description>
-          <description>
-            <para>The object does not support the service.</para>
-          </description>
-        </item>
+          <description>The object does not support the service.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFGetService" />
-    <seealso cref="MFGetService" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/service-interfaces">Service Interfaces</seealso>
   </member>
   <member name="IMFGetService">
-    <summary>
-      <para>Queries an object for a specified service interface.</para>
-    </summary>
-    <remarks>
-      <para>A service is an interface that is exposed by one object but might be implemented by another object. The <see cref="GetService" /> method is equivalent to <b>QueryInterface</b>, with the following difference: when <b>QueryInterface</b> retrieves a pointer to an interface, it is guaranteed that you can query the returned interface and get back the original interface. The <b>GetService</b> method does not make this guarantee, because the retrieved interface might be implemented by a separate object.</para>
-      <para>The <see cref="MFGetService" /> function is a helper function that queries an object for <b>IMFGetService</b> and calls the <see cref="GetService" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/service-interfaces">Service Interfaces</seealso>
+    <summary>Queries an object for a specified service interface.</summary>
   </member>
 </doc>

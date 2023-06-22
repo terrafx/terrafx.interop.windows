@@ -3,26 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DirectX.DXGIGetDebugInterface">
-    <summary>
-      <para>Retrieves a debugging interface.</para>
-    </summary>
-    <param name="riid">
-      <para>The globally unique identifier (GUID) of the requested interface type.</para>
-    </param>
-    <param name="ppDebug">
-      <para>A pointer to a buffer that receives a pointer to the debugging interface.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful; an error code otherwise. For a list of error codes, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</para>
-    </returns>
-    <remarks>
-      <para>
-        <see cref="IDXGIDebug" /> and <see cref="IDXGIInfoQueue" /> are debugging interfaces.</para>
-      <para>To access <b>DXGIGetDebugInterface</b>, call the <see cref="GetModuleHandle" /> function to get Dxgidebug.dll and the <see cref="GetProcAddress" /> function to get the address of <b>DXGIGetDebugInterface</b>.<b>Windows 8.1:  </b>Starting in Windows 8.1, Windows Store apps call the <see cref="DXGIGetDebugInterface1" /> function to get an  <see cref="IDXGIDebug1" /> interface.</para>
-      <para>
-        <b>Note</b>  This API requires the Windows Software Development Kit (SDK) for Windows 8.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-functions">DXGI Functions</seealso>
-    <seealso cref="IDXGIDebug" />
+    <summary>Retrieves a debugging interface.</summary>
+    <param name="riid">The globally unique identifier (GUID) of the requested interface type.</param>
+    <param name="ppDebug">A pointer to a buffer that receives a pointer to the debugging interface.</param>
+    <returns>Returns S_OK if successful; an error code otherwise. For a list of error codes, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</returns>
   </member>
 </doc>

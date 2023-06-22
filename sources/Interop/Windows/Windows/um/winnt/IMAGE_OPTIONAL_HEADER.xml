@@ -3,53 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAGE_OPTIONAL_HEADER">
-    <summary>
-      <para>Represents the optional header format.</para>
-    </summary>
-    <remarks>
-      <para>The number of directories is not fixed. Check the <b>NumberOfRvaAndSizes</b> member before
-looking for a specific directory.</para>
-      <para>The actual structure in WinNT.h is named <b>IMAGE_OPTIONAL_HEADER32</b></para>
-      <para>and <b>IMAGE_OPTIONAL_HEADER</b> is defined as
-<b>IMAGE_OPTIONAL_HEADER32</b>. However, if <b>_WIN64</b> is
-defined, then <b>IMAGE_OPTIONAL_HEADER</b> is defined as
-<b>IMAGE_OPTIONAL_HEADER64</b>.</para>
-      <code>typedef struct _IMAGE_OPTIONAL_HEADER64 {
- WORD        Magic;
- BYTE        MajorLinkerVersion;
- BYTE        MinorLinkerVersion;
- DWORD       SizeOfCode;
- DWORD       SizeOfInitializedData;
- DWORD       SizeOfUninitializedData;
- DWORD       AddressOfEntryPoint;
- DWORD       BaseOfCode;
- ULONGLONG   ImageBase;
- DWORD       SectionAlignment;
- DWORD       FileAlignment;
- WORD        MajorOperatingSystemVersion;
- WORD        MinorOperatingSystemVersion;
- WORD        MajorImageVersion;
- WORD        MinorImageVersion;
- WORD        MajorSubsystemVersion;
- WORD        MinorSubsystemVersion;
- DWORD       Win32VersionValue;
- DWORD       SizeOfImage;
- DWORD       SizeOfHeaders;
- DWORD       CheckSum;
- WORD        Subsystem;
- WORD        DllCharacteristics;
- ULONGLONG   SizeOfStackReserve;
- ULONGLONG   SizeOfStackCommit;
- ULONGLONG   SizeOfHeapReserve;
- ULONGLONG   SizeOfHeapCommit;
- DWORD       LoaderFlags;
- DWORD       NumberOfRvaAndSizes;
- IMAGE_DATA_DIRECTORY DataDirectory[IMAGE_NUMBEROF_DIRECTORY_ENTRIES];
-} IMAGE_OPTIONAL_HEADER64, *PIMAGE_OPTIONAL_HEADER64;
-</code>
-    </remarks>
-    <seealso cref="IMAGE_DATA_DIRECTORY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/imagehlp-structures">ImageHlp Structures</seealso>
+    <summary>Represents the optional header format.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.Magic">
     <summary>
@@ -59,181 +13,126 @@ defined, then <b>IMAGE_OPTIONAL_HEADER</b> is defined as
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <b>IMAGE_NT_OPTIONAL_HDR_MAGIC</b>
-          </description>
-          <description>
-            <para>The file is an executable image. This value is defined as
-<b>IMAGE_NT_OPTIONAL_HDR32_MAGIC</b> in a 32-bit application and as
-<b>IMAGE_NT_OPTIONAL_HDR64_MAGIC</b> in a 64-bit application.</para>
-          </description>
-        </item>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
+                  <b>IMAGE_NT_OPTIONAL_HDR_MAGIC</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The file is an executable image. This value is defined as <b>IMAGE_NT_OPTIONAL_HDR32_MAGIC</b> in a 32-bit application and as <b>IMAGE_NT_OPTIONAL_HDR64_MAGIC</b> in a 64-bit application.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
                   <b>IMAGE_NT_OPTIONAL_HDR32_MAGIC</b>
-                </description>
-              </item>
-              <item>
-                <description>0x10b</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x10b</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file is an executable image.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file is an executable image.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_NT_OPTIONAL_HDR64_MAGIC</b>
-                </description>
-              </item>
-              <item>
-                <description>0x20b</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x20b</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file is an executable image.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file is an executable image.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_ROM_OPTIONAL_HDR_MAGIC</b>
-                </description>
-              </item>
-              <item>
-                <description>0x107</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x107</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file is a ROM image.</para>
-          </description>
-        </item>
+          <description>The file is a ROM image.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.MajorLinkerVersion">
-    <summary>
-      <para>The major version number of the linker.</para>
-    </summary>
+    <summary>The major version number of the linker.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.MinorLinkerVersion">
-    <summary>
-      <para>The minor version number of the linker.</para>
-    </summary>
+    <summary>The minor version number of the linker.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.SizeOfCode">
-    <summary>
-      <para>The size of the code section, in bytes, or the sum of all such sections if there are multiple code
-sections.</para>
-    </summary>
+    <summary>The size of the code section, in bytes, or the sum of all such sections if there are multiple code sections.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.SizeOfInitializedData">
-    <summary>
-      <para>The size of the initialized data section, in bytes, or the sum of all such sections if there are multiple
-initialized data sections.</para>
-    </summary>
+    <summary>The size of the initialized data section, in bytes, or the sum of all such sections if there are multiple initialized data sections.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.SizeOfUninitializedData">
-    <summary>
-      <para>The size of the uninitialized data section, in bytes, or the sum of all such sections if there are multiple
-uninitialized data sections.</para>
-    </summary>
+    <summary>The size of the uninitialized data section, in bytes, or the sum of all such sections if there are multiple uninitialized data sections.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.AddressOfEntryPoint">
-    <summary>
-      <para>A pointer to the entry point function, relative to the image base address. For executable files, this is
-the starting address. For device drivers, this is the address of the initialization function. The entry point
-function is optional for DLLs. When no entry point is present, this member is zero.</para>
-    </summary>
+    <summary>A pointer to the entry point function, relative to the image base address. For executable files, this is the starting address. For device drivers, this is the address of the initialization function. The entry point function is optional for DLLs. When no entry point is present, this member is zero.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.BaseOfCode">
-    <summary>
-      <para>A pointer to the beginning of the code section, relative to the image base.</para>
-    </summary>
+    <summary>A pointer to the beginning of the code section, relative to the image base.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.BaseOfData">
-    <summary>
-      <para>A pointer to the beginning of the data section, relative to the image base.</para>
-    </summary>
+    <summary>A pointer to the beginning of the data section, relative to the image base.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.ImageBase">
-    <summary>
-      <para>The preferred address of the first byte of the image when it is loaded in memory. This value is a multiple
-of 64K bytes. The default value for DLLs is 0x10000000. The default value for applications is 0x00400000, except
-on Windows CE where it is 0x00010000.</para>
-    </summary>
+    <summary>The preferred address of the first byte of the image when it is loaded in memory. This value is a multiple of 64K bytes. The default value for DLLs is 0x10000000. The default value for applications is 0x00400000, except on Windows CE where it is 0x00010000.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.SectionAlignment">
-    <summary>
-      <para>The alignment of sections loaded in memory, in bytes. This value must be greater than or equal to the
-<b>FileAlignment</b> member. The default value is the page size for the system.</para>
-    </summary>
+    <summary>The alignment of sections loaded in memory, in bytes. This value must be greater than or equal to the<b>FileAlignment</b> member. The default value is the page size for the system.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.FileAlignment">
-    <summary>
-      <para>The alignment of the raw data of sections in the image file, in bytes. The value should be a power of 2
-between 512 and 64K (inclusive). The default is 512. If the <b>SectionAlignment</b> member
-is less than the system page size, this member must be the same as
-<b>SectionAlignment</b>.</para>
-    </summary>
+    <summary>The alignment of the raw data of sections in the image file, in bytes. The value should be a power of 2 between 512 and 64K (inclusive). The default is 512. If the <b>SectionAlignment</b> member is less than the system page size, this member must be the same as<b>SectionAlignment</b>.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.MajorOperatingSystemVersion">
-    <summary>
-      <para>The major version number of the required operating system.</para>
-    </summary>
+    <summary>The major version number of the required operating system.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.MinorOperatingSystemVersion">
-    <summary>
-      <para>The minor version number of the required operating system.</para>
-    </summary>
+    <summary>The minor version number of the required operating system.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.MajorImageVersion">
-    <summary>
-      <para>The major version number of the image.</para>
-    </summary>
+    <summary>The major version number of the image.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.MinorImageVersion">
-    <summary>
-      <para>The minor version number of the image.</para>
-    </summary>
+    <summary>The minor version number of the image.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.MajorSubsystemVersion">
-    <summary>
-      <para>The major version number of the subsystem.</para>
-    </summary>
+    <summary>The major version number of the subsystem.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.MinorSubsystemVersion">
-    <summary>
-      <para>The minor version number of the subsystem.</para>
-    </summary>
+    <summary>The minor version number of the subsystem.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.Win32VersionValue">
-    <summary>
-      <para>This member is reserved and must be 0.</para>
-    </summary>
+    <summary>This member is reserved and must be 0.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.SizeOfImage">
-    <summary>
-      <para>The size of the image, in bytes, including all headers. Must be a multiple of
-<b>SectionAlignment</b>.</para>
-    </summary>
+    <summary>The size of the image, in bytes, including all headers. Must be a multiple of<b>SectionAlignment</b>.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.SizeOfHeaders">
     <summary>
-      <para>The combined size of the following items, rounded to a multiple of the value specified in the
-<b>FileAlignment</b> member.</para>
+      <para>The combined size of the following items, rounded to a multiple of the value specified in the<b>FileAlignment</b> member.</para>
       <list type="bullet">
         <item>
           <description>
@@ -255,10 +154,7 @@ is less than the system page size, this member must be the same as
     </summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.CheckSum">
-    <summary>
-      <para>The image file checksum. The following files are validated at load time: all drivers, any DLL loaded at
-boot time, and any DLL loaded into a critical system process.</para>
-    </summary>
+    <summary>The image file checksum. The following files are validated at load time: all drivers, any DLL loaded at boot time, and any DLL loaded into a critical system process.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.Subsystem">
     <summary>
@@ -268,227 +164,201 @@ boot time, and any DLL loaded into a critical system process.</para>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_UNKNOWN</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Unknown subsystem.</para>
-          </description>
-        </item>
-        <item>
+          <description>Unknown subsystem.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_NATIVE</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No subsystem required (device drivers and native system processes).</para>
-          </description>
-        </item>
-        <item>
+          <description>No subsystem required (device drivers and native system processes).</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_WINDOWS_GUI</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Windows graphical user interface (GUI) subsystem.</para>
-          </description>
-        </item>
-        <item>
+          <description>Windows graphical user interface (GUI) subsystem.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_WINDOWS_CUI</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Windows character-mode user interface (CUI) subsystem.</para>
-          </description>
-        </item>
-        <item>
+          <description>Windows character-mode user interface (CUI) subsystem.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_OS2_CUI</b>
-                </description>
-              </item>
-              <item>
-                <description>5</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>5</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>OS/2 CUI subsystem.</para>
-          </description>
-        </item>
-        <item>
+          <description>OS/2 CUI subsystem.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_POSIX_CUI</b>
-                </description>
-              </item>
-              <item>
-                <description>7</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>7</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>POSIX CUI subsystem.</para>
-          </description>
-        </item>
-        <item>
+          <description>POSIX CUI subsystem.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_WINDOWS_CE_GUI</b>
-                </description>
-              </item>
-              <item>
-                <description>9</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>9</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Windows CE system.</para>
-          </description>
-        </item>
-        <item>
+          <description>Windows CE system.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_EFI_APPLICATION</b>
-                </description>
-              </item>
-              <item>
-                <description>10</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>10</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Extensible Firmware Interface (EFI) application.</para>
-          </description>
-        </item>
-        <item>
+          <description>Extensible Firmware Interface (EFI) application.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_EFI_BOOT_SERVICE_DRIVER</b>
-                </description>
-              </item>
-              <item>
-                <description>11</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>EFI driver with boot services.</para>
-          </description>
-        </item>
-        <item>
+          <description>EFI driver with boot services.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_EFI_RUNTIME_DRIVER</b>
-                </description>
-              </item>
-              <item>
-                <description>12</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>12</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>EFI driver with run-time services.</para>
-          </description>
-        </item>
-        <item>
+          <description>EFI driver with run-time services.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_EFI_ROM</b>
-                </description>
-              </item>
-              <item>
-                <description>13</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>13</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>EFI ROM image.</para>
-          </description>
-        </item>
-        <item>
+          <description>EFI ROM image.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_XBOX</b>
-                </description>
-              </item>
-              <item>
-                <description>14</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>14</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Xbox system.</para>
-          </description>
-        </item>
-        <item>
+          <description>Xbox system.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_WINDOWS_BOOT_APPLICATION</b>
-                </description>
-              </item>
-              <item>
-                <description>16</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>16</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Boot application.</para>
-          </description>
-        </item>
+          <description>Boot application.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -500,584 +370,471 @@ boot time, and any DLL loaded into a critical system process.</para>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <para>0x0001</para>
-          </description>
-          <description>
-            <para>Reserved.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>0x0002</para>
-          </description>
-          <description>
-            <para>Reserved.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>0x0004</para>
-          </description>
-          <description>
-            <para>Reserved.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>0x0008</para>
-          </description>
-          <description>
-            <para>Reserved.</para>
-          </description>
-        </item>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Reserved.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>0x0002</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Reserved.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>0x0004</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Reserved.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>0x0008</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Reserved.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
                   <b>IMAGE_DLL_CHARACTERISTICS_HIGH_ENTROPY_VA</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0020</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0020</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>ASLR with 64 bit address space.</para>
-          </description>
-        </item>
-        <item>
+          <description>ASLR with 64 bit address space.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DLLCHARACTERISTICS_DYNAMIC_BASE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0040</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0040</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The DLL can be relocated at load time.</para>
-          </description>
-        </item>
-        <item>
+          <description>The DLL can be relocated at load time.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DLLCHARACTERISTICS_FORCE_INTEGRITY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0080</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0080</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Code integrity checks are forced. If you set this flag and a section contains only uninitialized data,
-set the <b>PointerToRawData</b> member of
-<see cref="IMAGE_SECTION_HEADER" /> for that section to
-zero; otherwise, the image will fail to load because the digital signature cannot be verified.</para>
-          </description>
-        </item>
-        <item>
+          <description>Code integrity checks are forced. If you set this flag and a section contains only uninitialized data, set the <b>PointerToRawData</b> member of <see cref="IMAGE_SECTION_HEADER" /> for that section to zero; otherwise, the image will fail to load because the digital signature cannot be verified.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DLLCHARACTERISTICS_NX_COMPAT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0100</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0100</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The image is compatible with data execution prevention (DEP).</para>
-          </description>
-        </item>
-        <item>
+          <description>The image is compatible with data execution prevention (DEP).</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DLLCHARACTERISTICS_NO_ISOLATION</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0200</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0200</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The image is isolation aware, but should not be isolated.</para>
-          </description>
-        </item>
-        <item>
+          <description>The image is isolation aware, but should not be isolated.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DLLCHARACTERISTICS_NO_SEH</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0400</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0400</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The image does not use structured exception handling (SEH). No handlers can be called in this
-image.</para>
-          </description>
-        </item>
-        <item>
+          <description>The image does not use structured exception handling (SEH). No handlers can be called in this image.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DLLCHARACTERISTICS_NO_BIND</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0800</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0800</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Do not bind the image.</para>
-          </description>
-        </item>
-        <item>
+          <description>Do not bind the image.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DLL_CHARACTERISTICS_APPCONTAINER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x1000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Image should execute in an AppContainer.</para>
-          </description>
-        </item>
-        <item>
+          <description>Image should execute in an AppContainer.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DLLCHARACTERISTICS_WDM_DRIVER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x2000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A WDM driver.</para>
-          </description>
-        </item>
-        <item>
+          <description>A WDM driver.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DLL_CHARACTERISTICS_GUARD_CF</b>
-                </description>
-              </item>
-              <item>
-                <description>0x4000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x4000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Image supports Control Flow Guard.</para>
-          </description>
-        </item>
-        <item>
+          <description>Image supports Control Flow Guard.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DLLCHARACTERISTICS_TERMINAL_SERVER_AWARE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x8000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x8000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The image is terminal server aware.</para>
-          </description>
-        </item>
+          <description>The image is terminal server aware.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.SizeOfStackReserve">
-    <summary>
-      <para>The number of bytes to reserve for the stack. Only the memory specified by the
-<b>SizeOfStackCommit</b> member is committed at load time; the rest is made available one
-page at a time until this reserve size is reached.</para>
-    </summary>
+    <summary>The number of bytes to reserve for the stack. Only the memory specified by the<b>SizeOfStackCommit</b> member is committed at load time; the rest is made available one page at a time until this reserve size is reached.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.SizeOfStackCommit">
-    <summary>
-      <para>The number of bytes to commit for the stack.</para>
-    </summary>
+    <summary>The number of bytes to commit for the stack.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.SizeOfHeapReserve">
-    <summary>
-      <para>The number of bytes to reserve for the local heap. Only the memory specified by the
-<b>SizeOfHeapCommit</b> member is committed at load time; the rest is made available one
-page at a time until this reserve size is reached.</para>
-    </summary>
+    <summary>The number of bytes to reserve for the local heap. Only the memory specified by the<b>SizeOfHeapCommit</b> member is committed at load time; the rest is made available one page at a time until this reserve size is reached.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.SizeOfHeapCommit">
-    <summary>
-      <para>The number of bytes to commit for the local heap.</para>
-    </summary>
+    <summary>The number of bytes to commit for the local heap.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.LoaderFlags">
-    <summary>
-      <para>This member is obsolete.</para>
-    </summary>
+    <summary>This member is obsolete.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.NumberOfRvaAndSizes">
-    <summary>
-      <para>The number of directory entries in the remainder of the optional header. Each entry describes a location
-and size.</para>
-    </summary>
+    <summary>The number of directory entries in the remainder of the optional header. Each entry describes a location and size.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.DataDirectory">
     <summary>
-      <para>A pointer to the first
-<see cref="IMAGE_DATA_DIRECTORY" /> structure in the data
-directory.</para>
+      <para>A pointer to the first<see cref="IMAGE_DATA_DIRECTORY" /> structure in the data directory.</para>
       <para>The index number of the desired directory entry. This parameter can be one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DIRECTORY_ENTRY_ARCHITECTURE</b>
-                </description>
-              </item>
-              <item>
-                <description>7</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>7</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Architecture-specific data</para>
-          </description>
-        </item>
-        <item>
+          <description>Architecture-specific data</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DIRECTORY_ENTRY_BASERELOC</b>
-                </description>
-              </item>
-              <item>
-                <description>5</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>5</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Base relocation table</para>
-          </description>
-        </item>
-        <item>
+          <description>Base relocation table</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DIRECTORY_ENTRY_BOUND_IMPORT</b>
-                </description>
-              </item>
-              <item>
-                <description>11</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Bound import directory</para>
-          </description>
-        </item>
-        <item>
+          <description>Bound import directory</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DIRECTORY_ENTRY_COM_DESCRIPTOR</b>
-                </description>
-              </item>
-              <item>
-                <description>14</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>14</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>COM descriptor table</para>
-          </description>
-        </item>
-        <item>
+          <description>COM descriptor table</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DIRECTORY_ENTRY_DEBUG</b>
-                </description>
-              </item>
-              <item>
-                <description>6</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>6</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Debug directory</para>
-          </description>
-        </item>
-        <item>
+          <description>Debug directory</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DIRECTORY_ENTRY_DELAY_IMPORT</b>
-                </description>
-              </item>
-              <item>
-                <description>13</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>13</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Delay import table</para>
-          </description>
-        </item>
-        <item>
+          <description>Delay import table</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DIRECTORY_ENTRY_EXCEPTION</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Exception directory</para>
-          </description>
-        </item>
-        <item>
+          <description>Exception directory</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DIRECTORY_ENTRY_EXPORT</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Export directory</para>
-          </description>
-        </item>
-        <item>
+          <description>Export directory</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DIRECTORY_ENTRY_GLOBALPTR</b>
-                </description>
-              </item>
-              <item>
-                <description>8</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>8</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The relative virtual address of global pointer</para>
-          </description>
-        </item>
-        <item>
+          <description>The relative virtual address of global pointer</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DIRECTORY_ENTRY_IAT</b>
-                </description>
-              </item>
-              <item>
-                <description>12</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>12</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Import address table</para>
-          </description>
-        </item>
-        <item>
+          <description>Import address table</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DIRECTORY_ENTRY_IMPORT</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Import directory</para>
-          </description>
-        </item>
-        <item>
+          <description>Import directory</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DIRECTORY_ENTRY_LOAD_CONFIG</b>
-                </description>
-              </item>
-              <item>
-                <description>10</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>10</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Load configuration directory</para>
-          </description>
-        </item>
-        <item>
+          <description>Load configuration directory</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DIRECTORY_ENTRY_RESOURCE</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Resource directory</para>
-          </description>
-        </item>
-        <item>
+          <description>Resource directory</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DIRECTORY_ENTRY_SECURITY</b>
-                </description>
-              </item>
-              <item>
-                <description>4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Security directory</para>
-          </description>
-        </item>
-        <item>
+          <description>Security directory</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DIRECTORY_ENTRY_TLS</b>
-                </description>
-              </item>
-              <item>
-                <description>9</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>9</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Thread local storage directory</para>
-          </description>
-        </item>
+          <description>Thread local storage directory</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER">
-    <summary>
-      <para>Represents the optional header format.</para>
-    </summary>
-    <remarks>
-      <para>The number of directories is not fixed. Check the <b>NumberOfRvaAndSizes</b> member before
-looking for a specific directory.</para>
-      <para>The actual structure in WinNT.h is named <b>IMAGE_OPTIONAL_HEADER32</b></para>
-      <para>and <b>IMAGE_OPTIONAL_HEADER</b> is defined as
-<b>IMAGE_OPTIONAL_HEADER32</b>. However, if <b>_WIN64</b> is
-defined, then <b>IMAGE_OPTIONAL_HEADER</b> is defined as
-<b>IMAGE_OPTIONAL_HEADER64</b>.</para>
-      <code>typedef struct _IMAGE_OPTIONAL_HEADER64 {
- WORD        Magic;
- BYTE        MajorLinkerVersion;
- BYTE        MinorLinkerVersion;
- DWORD       SizeOfCode;
- DWORD       SizeOfInitializedData;
- DWORD       SizeOfUninitializedData;
- DWORD       AddressOfEntryPoint;
- DWORD       BaseOfCode;
- ULONGLONG   ImageBase;
- DWORD       SectionAlignment;
- DWORD       FileAlignment;
- WORD        MajorOperatingSystemVersion;
- WORD        MinorOperatingSystemVersion;
- WORD        MajorImageVersion;
- WORD        MinorImageVersion;
- WORD        MajorSubsystemVersion;
- WORD        MinorSubsystemVersion;
- DWORD       Win32VersionValue;
- DWORD       SizeOfImage;
- DWORD       SizeOfHeaders;
- DWORD       CheckSum;
- WORD        Subsystem;
- WORD        DllCharacteristics;
- ULONGLONG   SizeOfStackReserve;
- ULONGLONG   SizeOfStackCommit;
- ULONGLONG   SizeOfHeapReserve;
- ULONGLONG   SizeOfHeapCommit;
- DWORD       LoaderFlags;
- DWORD       NumberOfRvaAndSizes;
- IMAGE_DATA_DIRECTORY DataDirectory[IMAGE_NUMBEROF_DIRECTORY_ENTRIES];
-} IMAGE_OPTIONAL_HEADER64, *PIMAGE_OPTIONAL_HEADER64;
-</code>
-    </remarks>
-    <seealso cref="IMAGE_DATA_DIRECTORY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/imagehlp-structures">ImageHlp Structures</seealso>
+    <summary>Represents the optional header format.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.Magic">
     <summary>
@@ -1087,176 +844,123 @@ defined, then <b>IMAGE_OPTIONAL_HEADER</b> is defined as
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <b>IMAGE_NT_OPTIONAL_HDR_MAGIC</b>
-          </description>
-          <description>
-            <para>The file is an executable image. This value is defined as
-<b>IMAGE_NT_OPTIONAL_HDR32_MAGIC</b> in a 32-bit application and as
-<b>IMAGE_NT_OPTIONAL_HDR64_MAGIC</b> in a 64-bit application.</para>
-          </description>
-        </item>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
+                  <b>IMAGE_NT_OPTIONAL_HDR_MAGIC</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The file is an executable image. This value is defined as <b>IMAGE_NT_OPTIONAL_HDR32_MAGIC</b> in a 32-bit application and as <b>IMAGE_NT_OPTIONAL_HDR64_MAGIC</b> in a 64-bit application.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
                   <b>IMAGE_NT_OPTIONAL_HDR32_MAGIC</b>
-                </description>
-              </item>
-              <item>
-                <description>0x10b</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x10b</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file is an executable image.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file is an executable image.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_NT_OPTIONAL_HDR64_MAGIC</b>
-                </description>
-              </item>
-              <item>
-                <description>0x20b</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x20b</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file is an executable image.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file is an executable image.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_ROM_OPTIONAL_HDR_MAGIC</b>
-                </description>
-              </item>
-              <item>
-                <description>0x107</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x107</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file is a ROM image.</para>
-          </description>
-        </item>
+          <description>The file is a ROM image.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.MajorLinkerVersion">
-    <summary>
-      <para>The major version number of the linker.</para>
-    </summary>
+    <summary>The major version number of the linker.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.MinorLinkerVersion">
-    <summary>
-      <para>The minor version number of the linker.</para>
-    </summary>
+    <summary>The minor version number of the linker.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.SizeOfCode">
-    <summary>
-      <para>The size of the code section, in bytes, or the sum of all such sections if there are multiple code
-sections.</para>
-    </summary>
+    <summary>The size of the code section, in bytes, or the sum of all such sections if there are multiple code sections.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.SizeOfInitializedData">
-    <summary>
-      <para>The size of the initialized data section, in bytes, or the sum of all such sections if there are multiple
-initialized data sections.</para>
-    </summary>
+    <summary>The size of the initialized data section, in bytes, or the sum of all such sections if there are multiple initialized data sections.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.SizeOfUninitializedData">
-    <summary>
-      <para>The size of the uninitialized data section, in bytes, or the sum of all such sections if there are multiple
-uninitialized data sections.</para>
-    </summary>
+    <summary>The size of the uninitialized data section, in bytes, or the sum of all such sections if there are multiple uninitialized data sections.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.AddressOfEntryPoint">
-    <summary>
-      <para>A pointer to the entry point function, relative to the image base address. For executable files, this is
-the starting address. For device drivers, this is the address of the initialization function. The entry point
-function is optional for DLLs. When no entry point is present, this member is zero.</para>
-    </summary>
+    <summary>A pointer to the entry point function, relative to the image base address. For executable files, this is the starting address. For device drivers, this is the address of the initialization function. The entry point function is optional for DLLs. When no entry point is present, this member is zero.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.BaseOfCode">
-    <summary>
-      <para>A pointer to the beginning of the code section, relative to the image base.</para>
-    </summary>
+    <summary>A pointer to the beginning of the code section, relative to the image base.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.ImageBase">
-    <summary>
-      <para>The preferred address of the first byte of the image when it is loaded in memory. This value is a multiple
-of 64K bytes. The default value for DLLs is 0x10000000. The default value for applications is 0x00400000, except
-on Windows CE where it is 0x00010000.</para>
-    </summary>
+    <summary>The preferred address of the first byte of the image when it is loaded in memory. This value is a multiple of 64K bytes. The default value for DLLs is 0x10000000. The default value for applications is 0x00400000, except on Windows CE where it is 0x00010000.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.SectionAlignment">
-    <summary>
-      <para>The alignment of sections loaded in memory, in bytes. This value must be greater than or equal to the
-<b>FileAlignment</b> member. The default value is the page size for the system.</para>
-    </summary>
+    <summary>The alignment of sections loaded in memory, in bytes. This value must be greater than or equal to the<b>FileAlignment</b> member. The default value is the page size for the system.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.FileAlignment">
-    <summary>
-      <para>The alignment of the raw data of sections in the image file, in bytes. The value should be a power of 2
-between 512 and 64K (inclusive). The default is 512. If the <b>SectionAlignment</b> member
-is less than the system page size, this member must be the same as
-<b>SectionAlignment</b>.</para>
-    </summary>
+    <summary>The alignment of the raw data of sections in the image file, in bytes. The value should be a power of 2 between 512 and 64K (inclusive). The default is 512. If the <b>SectionAlignment</b> member is less than the system page size, this member must be the same as<b>SectionAlignment</b>.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.MajorOperatingSystemVersion">
-    <summary>
-      <para>The major version number of the required operating system.</para>
-    </summary>
+    <summary>The major version number of the required operating system.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.MinorOperatingSystemVersion">
-    <summary>
-      <para>The minor version number of the required operating system.</para>
-    </summary>
+    <summary>The minor version number of the required operating system.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.MajorImageVersion">
-    <summary>
-      <para>The major version number of the image.</para>
-    </summary>
+    <summary>The major version number of the image.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.MinorImageVersion">
-    <summary>
-      <para>The minor version number of the image.</para>
-    </summary>
+    <summary>The minor version number of the image.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.MajorSubsystemVersion">
-    <summary>
-      <para>The major version number of the subsystem.</para>
-    </summary>
+    <summary>The major version number of the subsystem.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.MinorSubsystemVersion">
-    <summary>
-      <para>The minor version number of the subsystem.</para>
-    </summary>
+    <summary>The minor version number of the subsystem.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.Win32VersionValue">
-    <summary>
-      <para>This member is reserved and must be 0.</para>
-    </summary>
+    <summary>This member is reserved and must be 0.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.SizeOfImage">
-    <summary>
-      <para>The size of the image, in bytes, including all headers. Must be a multiple of
-<b>SectionAlignment</b>.</para>
-    </summary>
+    <summary>The size of the image, in bytes, including all headers. Must be a multiple of<b>SectionAlignment</b>.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.SizeOfHeaders">
     <summary>
-      <para>The combined size of the following items, rounded to a multiple of the value specified in the
-<b>FileAlignment</b> member.</para>
+      <para>The combined size of the following items, rounded to a multiple of the value specified in the<b>FileAlignment</b> member.</para>
       <list type="bullet">
         <item>
           <description>
@@ -1278,10 +982,7 @@ is less than the system page size, this member must be the same as
     </summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.CheckSum">
-    <summary>
-      <para>The image file checksum. The following files are validated at load time: all drivers, any DLL loaded at
-boot time, and any DLL loaded into a critical system process.</para>
-    </summary>
+    <summary>The image file checksum. The following files are validated at load time: all drivers, any DLL loaded at boot time, and any DLL loaded into a critical system process.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.Subsystem">
     <summary>
@@ -1291,227 +992,201 @@ boot time, and any DLL loaded into a critical system process.</para>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_UNKNOWN</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Unknown subsystem.</para>
-          </description>
-        </item>
-        <item>
+          <description>Unknown subsystem.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_NATIVE</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No subsystem required (device drivers and native system processes).</para>
-          </description>
-        </item>
-        <item>
+          <description>No subsystem required (device drivers and native system processes).</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_WINDOWS_GUI</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Windows graphical user interface (GUI) subsystem.</para>
-          </description>
-        </item>
-        <item>
+          <description>Windows graphical user interface (GUI) subsystem.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_WINDOWS_CUI</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Windows character-mode user interface (CUI) subsystem.</para>
-          </description>
-        </item>
-        <item>
+          <description>Windows character-mode user interface (CUI) subsystem.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_OS2_CUI</b>
-                </description>
-              </item>
-              <item>
-                <description>5</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>5</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>OS/2 CUI subsystem.</para>
-          </description>
-        </item>
-        <item>
+          <description>OS/2 CUI subsystem.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_POSIX_CUI</b>
-                </description>
-              </item>
-              <item>
-                <description>7</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>7</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>POSIX CUI subsystem.</para>
-          </description>
-        </item>
-        <item>
+          <description>POSIX CUI subsystem.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_WINDOWS_CE_GUI</b>
-                </description>
-              </item>
-              <item>
-                <description>9</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>9</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Windows CE system.</para>
-          </description>
-        </item>
-        <item>
+          <description>Windows CE system.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_EFI_APPLICATION</b>
-                </description>
-              </item>
-              <item>
-                <description>10</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>10</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Extensible Firmware Interface (EFI) application.</para>
-          </description>
-        </item>
-        <item>
+          <description>Extensible Firmware Interface (EFI) application.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_EFI_BOOT_SERVICE_DRIVER</b>
-                </description>
-              </item>
-              <item>
-                <description>11</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>EFI driver with boot services.</para>
-          </description>
-        </item>
-        <item>
+          <description>EFI driver with boot services.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_EFI_RUNTIME_DRIVER</b>
-                </description>
-              </item>
-              <item>
-                <description>12</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>12</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>EFI driver with run-time services.</para>
-          </description>
-        </item>
-        <item>
+          <description>EFI driver with run-time services.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_EFI_ROM</b>
-                </description>
-              </item>
-              <item>
-                <description>13</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>13</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>EFI ROM image.</para>
-          </description>
-        </item>
-        <item>
+          <description>EFI ROM image.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_XBOX</b>
-                </description>
-              </item>
-              <item>
-                <description>14</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>14</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Xbox system.</para>
-          </description>
-        </item>
-        <item>
+          <description>Xbox system.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_SUBSYSTEM_WINDOWS_BOOT_APPLICATION</b>
-                </description>
-              </item>
-              <item>
-                <description>16</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>16</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Boot application.</para>
-          </description>
-        </item>
+          <description>Boot application.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -1523,237 +1198,210 @@ boot time, and any DLL loaded into a critical system process.</para>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <para>0x0001</para>
-          </description>
-          <description>
-            <para>Reserved.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>0x0002</para>
-          </description>
-          <description>
-            <para>Reserved.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>0x0004</para>
-          </description>
-          <description>
-            <para>Reserved.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>0x0008</para>
-          </description>
-          <description>
-            <para>Reserved.</para>
-          </description>
-        </item>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Reserved.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>0x0002</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Reserved.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>0x0004</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Reserved.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>0x0008</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Reserved.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
                   <b>IMAGE_DLLCHARACTERISTICS_DYNAMIC_BASE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0040</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0040</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The DLL can be relocated at load time.</para>
-          </description>
-        </item>
-        <item>
+          <description>The DLL can be relocated at load time.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DLLCHARACTERISTICS_FORCE_INTEGRITY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0080</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0080</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Code integrity checks are forced. If you set this flag and a section contains only uninitialized data,
-set the <b>PointerToRawData</b> member of
-<see cref="IMAGE_SECTION_HEADER" /> for that section to
-zero; otherwise, the image will fail to load because the digital signature cannot be verified.</para>
-          </description>
-        </item>
-        <item>
+          <description>Code integrity checks are forced. If you set this flag and a section contains only uninitialized data, set the <b>PointerToRawData</b> member of <see cref="IMAGE_SECTION_HEADER" /> for that section to zero; otherwise, the image will fail to load because the digital signature cannot be verified.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DLLCHARACTERISTICS_NX_COMPAT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0100</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0100</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The image is compatible with data execution prevention (DEP).</para>
-          </description>
-        </item>
-        <item>
+          <description>The image is compatible with data execution prevention (DEP).</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DLLCHARACTERISTICS_NO_ISOLATION</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0200</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0200</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The image is isolation aware, but should not be isolated.</para>
-          </description>
-        </item>
-        <item>
+          <description>The image is isolation aware, but should not be isolated.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DLLCHARACTERISTICS_NO_SEH</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0400</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0400</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The image does not use structured exception handling (SEH). No handlers can be called in this
-image.</para>
-          </description>
-        </item>
-        <item>
+          <description>The image does not use structured exception handling (SEH). No handlers can be called in this image.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_DLLCHARACTERISTICS_NO_BIND</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0800</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0800</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Do not bind the image.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>0x1000</para>
-          </description>
-          <description>
-            <para>Reserved.</para>
-          </description>
-        </item>
-        <item>
+          <description>Do not bind the image.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>0x1000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Reserved.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
                   <b>IMAGE_DLLCHARACTERISTICS_WDM_DRIVER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x2000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A WDM driver.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>0x4000</para>
-          </description>
-          <description>
-            <para>Reserved.</para>
-          </description>
-        </item>
-        <item>
+          <description>A WDM driver.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>IMAGE_DLLCHARACTERISTICS_TERMINAL_SERVER_AWARE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x8000</description>
-              </item>
+              <listheader>
+                <term>0x4000</term>
+              </listheader>
             </list>
           </description>
+          <description>Reserved.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The image is terminal server aware.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAGE_DLLCHARACTERISTICS_TERMINAL_SERVER_AWARE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x8000</term>
+              </listheader>
+            </list>
           </description>
-        </item>
+          <description>The image is terminal server aware.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.SizeOfStackReserve">
-    <summary>
-      <para>The number of bytes to reserve for the stack. Only the memory specified by the
-<b>SizeOfStackCommit</b> member is committed at load time; the rest is made available one
-page at a time until this reserve size is reached.</para>
-    </summary>
+    <summary>The number of bytes to reserve for the stack. Only the memory specified by the<b>SizeOfStackCommit</b> member is committed at load time; the rest is made available one page at a time until this reserve size is reached.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.SizeOfStackCommit">
-    <summary>
-      <para>The number of bytes to commit for the stack.</para>
-    </summary>
+    <summary>The number of bytes to commit for the stack.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.SizeOfHeapReserve">
-    <summary>
-      <para>The number of bytes to reserve for the local heap. Only the memory specified by the
-<b>SizeOfHeapCommit</b> member is committed at load time; the rest is made available one
-page at a time until this reserve size is reached.</para>
-    </summary>
+    <summary>The number of bytes to reserve for the local heap. Only the memory specified by the<b>SizeOfHeapCommit</b> member is committed at load time; the rest is made available one page at a time until this reserve size is reached.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.SizeOfHeapCommit">
-    <summary>
-      <para>The number of bytes to commit for the local heap.</para>
-    </summary>
+    <summary>The number of bytes to commit for the local heap.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.LoaderFlags">
-    <summary>
-      <para>This member is obsolete.</para>
-    </summary>
+    <summary>This member is obsolete.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.NumberOfRvaAndSizes">
-    <summary>
-      <para>The number of directory entries in the remainder of the optional header. Each entry describes a location
-and size.</para>
-    </summary>
+    <summary>The number of directory entries in the remainder of the optional header. Each entry describes a location and size.</summary>
   </member>
   <member name="IMAGE_OPTIONAL_HEADER.DataDirectory">
     <summary>
-      <para>A pointer to the first
-<see cref="IMAGE_DATA_DIRECTORY" /> structure in the data
-directory.</para>
+      <para>A pointer to the first<see cref="IMAGE_DATA_DIRECTORY" /> structure in the data directory.</para>
       <h4>- BaseOfData</h4>
       <para>A pointer to the beginning of the data section, relative to the image base.</para>
     </summary>

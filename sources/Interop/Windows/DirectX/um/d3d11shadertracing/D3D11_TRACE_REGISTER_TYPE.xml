@@ -3,195 +3,114 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_TRACE_REGISTER_TYPE">
-    <summary>
-      <para>Identifies a type of trace register.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>D3D11_TRACE_REGISTER_TYPE</b> identifies the type of trace register in a <see cref="D3D11_TRACE_REGISTER" /> structure.</para>
-      <para>
-        <b>Note</b>  This API requires the Windows Software Development Kit (SDK) for Windows 8.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-shader-enums">Shader Enumerations</seealso>
+    <summary>Identifies a type of trace register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_OUTPUT_NULL_REGISTER">
-    <summary>
-      <para>Output <b>NULL</b> register.</para>
-    </summary>
+    <summary>Output <b>NULL</b> register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_INPUT_REGISTER">
-    <summary>
-      <para>Input register.</para>
-    </summary>
+    <summary>Input register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_INPUT_PRIMITIVE_ID_REGISTER">
-    <summary>
-      <para>Input primitive ID register.</para>
-    </summary>
+    <summary>Input primitive ID register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_IMMEDIATE_CONSTANT_BUFFER">
-    <summary>
-      <para>Immediate constant buffer.</para>
-    </summary>
+    <summary>Immediate constant buffer.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_TEMP_REGISTER">
-    <summary>
-      <para>Temporary register.</para>
-    </summary>
+    <summary>Temporary register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_INDEXABLE_TEMP_REGISTER">
-    <summary>
-      <para>Temporary register that can be indexed.</para>
-    </summary>
+    <summary>Temporary register that can be indexed.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_OUTPUT_REGISTER">
-    <summary>
-      <para>Output register.</para>
-    </summary>
+    <summary>Output register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_OUTPUT_DEPTH_REGISTER">
-    <summary>
-      <para>Output oDepth register.</para>
-    </summary>
+    <summary>Output oDepth register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_CONSTANT_BUFFER">
-    <summary>
-      <para>Constant buffer.</para>
-    </summary>
+    <summary>Constant buffer.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_IMMEDIATE32">
-    <summary>
-      <para>Immediate32 register.</para>
-    </summary>
+    <summary>Immediate32 register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_SAMPLER">
-    <summary>
-      <para>Sampler.</para>
-    </summary>
+    <summary>Sampler.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_RESOURCE">
-    <summary>
-      <para>Resource.</para>
-    </summary>
+    <summary>Resource.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_RASTERIZER">
-    <summary>
-      <para>Rasterizer.</para>
-    </summary>
+    <summary>Rasterizer.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_OUTPUT_COVERAGE_MASK">
-    <summary>
-      <para>Output coverage mask.</para>
-    </summary>
+    <summary>Output coverage mask.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_STREAM">
-    <summary>
-      <para>Stream.</para>
-    </summary>
+    <summary>Stream.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_THIS_POINTER">
-    <summary>
-      <para>This pointer.</para>
-    </summary>
+    <summary>This pointer.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_OUTPUT_CONTROL_POINT_ID_REGISTER">
-    <summary>
-      <para>Output control point ID register (this is actually an input; it defines the output that the thread controls).</para>
-    </summary>
+    <summary>Output control point ID register (this is actually an input; it defines the output that the thread controls).</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_INPUT_FORK_INSTANCE_ID_REGISTER">
-    <summary>
-      <para>Input fork instance ID register.</para>
-    </summary>
+    <summary>Input fork instance ID register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_INPUT_JOIN_INSTANCE_ID_REGISTER">
-    <summary>
-      <para>Input join instance ID register.</para>
-    </summary>
+    <summary>Input join instance ID register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_INPUT_CONTROL_POINT_REGISTER">
-    <summary>
-      <para>Input control point register.</para>
-    </summary>
+    <summary>Input control point register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_OUTPUT_CONTROL_POINT_REGISTER">
-    <summary>
-      <para>Output control point register.</para>
-    </summary>
+    <summary>Output control point register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_INPUT_PATCH_CONSTANT_REGISTER">
-    <summary>
-      <para>Input patch constant register.</para>
-    </summary>
+    <summary>Input patch constant register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_INPUT_DOMAIN_POINT_REGISTER">
-    <summary>
-      <para>Input domain point register.</para>
-    </summary>
+    <summary>Input domain point register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_UNORDERED_ACCESS_VIEW">
-    <summary>
-      <para>Unordered-access view.</para>
-    </summary>
+    <summary>Unordered-access view.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_THREAD_GROUP_SHARED_MEMORY">
-    <summary>
-      <para>Thread group shared memory.</para>
-    </summary>
+    <summary>Thread group shared memory.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_INPUT_THREAD_ID_REGISTER">
-    <summary>
-      <para>Input thread ID register.</para>
-    </summary>
+    <summary>Input thread ID register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_INPUT_THREAD_GROUP_ID_REGISTER">
-    <summary>
-      <para>Thread group ID register.</para>
-    </summary>
+    <summary>Thread group ID register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_INPUT_THREAD_ID_IN_GROUP_REGISTER">
-    <summary>
-      <para>Input thread ID in-group register.</para>
-    </summary>
+    <summary>Input thread ID in-group register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_INPUT_COVERAGE_MASK_REGISTER">
-    <summary>
-      <para>Input coverage mask register.</para>
-    </summary>
+    <summary>Input coverage mask register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_INPUT_THREAD_ID_IN_GROUP_FLATTENED_REGISTER">
-    <summary>
-      <para>Input thread ID in-group flattened register.</para>
-    </summary>
+    <summary>Input thread ID in-group flattened register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_INPUT_GS_INSTANCE_ID_REGISTER">
-    <summary>
-      <para>Input geometry shader (GS) instance ID register.</para>
-    </summary>
+    <summary>Input geometry shader (GS) instance ID register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_OUTPUT_DEPTH_GREATER_EQUAL_REGISTER">
-    <summary>
-      <para>Output oDepth greater than or equal register.</para>
-    </summary>
+    <summary>Output oDepth greater than or equal register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_OUTPUT_DEPTH_LESS_EQUAL_REGISTER">
-    <summary>
-      <para>Output oDepth less than or equal register.</para>
-    </summary>
+    <summary>Output oDepth less than or equal register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_IMMEDIATE64">
-    <summary>
-      <para>Immediate64 register.</para>
-    </summary>
+    <summary>Immediate64 register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_INPUT_CYCLE_COUNTER_REGISTER">
-    <summary>
-      <para>Cycle counter register.</para>
-    </summary>
+    <summary>Cycle counter register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER_TYPE.D3D11_TRACE_INTERFACE_POINTER">
-    <summary>
-      <para>Interface pointer.</para>
-    </summary>
+    <summary>Interface pointer.</summary>
   </member>
 </doc>

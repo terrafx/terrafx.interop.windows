@@ -3,122 +3,39 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteGdiInterop.ConvertFontFaceToLOGFONT">
-    <summary>
-      <para>Initializes a LOGFONT structure based on the GDI-compatible properties of the specified font.</para>
-    </summary>
-    <param name="font">
-      <para>Type: <b><see cref="IDWriteFontFace" />*</b></para>
-      <para>An <see cref="IDWriteFontFace" /> object to be converted into a GDI-compatible LOGFONT structure.</para>
-    </param>
-    <param name="logFont">
-      <para>Type: <b>LOGFONTW*</b></para>
-      <para>When this method returns, contains a pointer to a structure that receives a GDI-compatible font description.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The conversion to a  LOGFONT by using <b>ConvertFontFaceToLOGFONT</b> operates at the logical font level and does not guarantee that it will map to a specific physical font. It is not guaranteed that GDI will select the same physical font for displaying  text formatted by a LOGFONT as the <see cref="IDWriteFont" /> object that was converted.</para>
-    </remarks>
-    <seealso cref="IDWriteGdiInterop" />
+    <summary>Initializes a LOGFONT structure based on the GDI-compatible properties of the specified font.</summary>
+    <param name="font">An <see cref="IDWriteFontFace" /> object to be converted into a GDI-compatible LOGFONT structure.</param>
+    <param name="logFont">When this method returns, contains a pointer to a structure that receives a GDI-compatible font description.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteGdiInterop.ConvertFontToLOGFONT">
-    <summary>
-      <para>Initializes a <b>LOGFONT</b> structure based on the GDI-compatible properties of the specified font.</para>
-    </summary>
-    <param name="font">
-      <para>Type: <b><see cref="IDWriteFont" />*</b></para>
-      <para>An <see cref="IDWriteFont" /> object to be converted into a GDI-compatible <b>LOGFONT</b> structure.</para>
-    </param>
-    <param name="logFont">
-      <para>Type: <b>LOGFONTW*</b></para>
-      <para>When this method returns, contains a structure that receives a GDI-compatible font description.</para>
-    </param>
-    <param name="isSystemFont">
-      <para>Type: <b>BOOL*</b></para>
-      <para>When this method returns, contains <b>TRUE</b> if the specified font object is part of the system font collection; otherwise, <b>FALSE</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The conversion to a  <b>LOGFONT</b> by using <b>ConvertFontToLOGFONT</b> operates at the logical font level and does not guarantee that it will map to a specific physical font. It is not guaranteed that GDI will select the same physical font for displaying  text formatted by a <b>LOGFONT</b> as the <see cref="IDWriteFont" /> object that was converted.</para>
-    </remarks>
-    <seealso cref="IDWriteGdiInterop" />
+    <summary>Initializes a <b>LOGFONT</b> structure based on the GDI-compatible properties of the specified font.</summary>
+    <param name="font">An <see cref="IDWriteFont" /> object to be converted into a GDI-compatible <b>LOGFONT</b> structure.</param>
+    <param name="logFont">When this method returns, contains a structure that receives a GDI-compatible font description.</param>
+    <param name="isSystemFont">When this method returns, contains <b>TRUE</b> if the specified font object is part of the system font collection; otherwise, <b>FALSE</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteGdiInterop.CreateBitmapRenderTarget">
-    <summary>
-      <para>Creates an object that encapsulates a bitmap and memory DC (device context) which can be used for rendering glyphs.</para>
-    </summary>
-    <param name="hdc">
-      <para>Type: <b>HDC</b></para>
-      <para>A handle to the optional device context used to create a compatible memory DC (device context).</para>
-    </param>
-    <param name="width">
-      <para>Type: <b>UINT32</b></para>
-      <para>The width of the bitmap render target.</para>
-    </param>
-    <param name="height">
-      <para>Type: <b>UINT32</b></para>
-      <para>The height of the bitmap render target.</para>
-    </param>
-    <param name="renderTarget">
-      <para>Type: <b><see cref="IDWriteBitmapRenderTarget" />**</b></para>
-      <para>When this method returns, contains an address of a pointer to the newly created <see cref="IDWriteBitmapRenderTarget" /> object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteGdiInterop" />
+    <summary>Creates an object that encapsulates a bitmap and memory DC (device context) which can be used for rendering glyphs.</summary>
+    <param name="hdc">A handle to the optional device context used to create a compatible memory DC (device context).</param>
+    <param name="width">The width of the bitmap render target.</param>
+    <param name="height">The height of the bitmap render target.</param>
+    <param name="renderTarget">When this method returns, contains an address of a pointer to the newly created <see cref="IDWriteBitmapRenderTarget" /> object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteGdiInterop.CreateFontFaceFromHdc">
-    <summary>
-      <para>Creates an <b>IDWriteFontFace</b> object that corresponds to the currently selected <b>HFONT</b> of the specified <b>HDC</b>.</para>
-    </summary>
-    <param name="hdc">
-      <para>Type: <b>HDC</b></para>
-      <para>A handle to a device context into which a font has been selected. It is assumed that the client
-has already performed font mapping and that the font selected into the device context is the actual font to be used
-for rendering glyphs.</para>
-    </param>
-    <param name="fontFace">
-      <para>Type: <b><see cref="IDWriteFontFace" />**</b></para>
-      <para>Contains an address of a pointer to  the newly created font face object, or <b>NULL</b> in case of failure. The font face returned is guaranteed to reference the same physical typeface that would be used for drawing glyphs (but not necessarily characters) using ExtTextOut.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This function is intended for scenarios in which an application wants to use GDI and Uniscribe 1.x for text layout and shaping, but  DirectWrite for final rendering. This function assumes the client is performing text output using glyph indexes.</para>
-    </remarks>
-    <seealso cref="IDWriteGdiInterop" />
+    <summary>Creates an <b>IDWriteFontFace</b> object that corresponds to the currently selected <b>HFONT</b> of the specified <b>HDC</b>.</summary>
+    <param name="hdc">A handle to a device context into which a font has been selected. It is assumed that the client has already performed font mapping and that the font selected into the device context is the actual font to be used for rendering glyphs.</param>
+    <param name="fontFace">Contains an address of a pointer to the newly created font face object, or <b>NULL</b> in case of failure. The font face returned is guaranteed to reference the same physical typeface that would be used for drawing glyphs (but not necessarily characters) using ExtTextOut.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteGdiInterop.CreateFontFromLOGFONT">
-    <summary>
-      <para>Creates a font object that matches the properties specified by the <b>LOGFONT</b> structure.</para>
-    </summary>
-    <param name="logFont">
-      <para>Type: <b>const LOGFONTW*</b></para>
-      <para>A structure containing a GDI-compatible font description.</para>
-    </param>
-    <param name="font">
-      <para>Type: <b><see cref="IDWriteFont" />**</b></para>
-      <para>When this method returns, contains an address of a  pointer to a newly created <see cref="IDWriteFont" />  object if successful; otherwise, <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteGdiInterop" />
+    <summary>Creates a font object that matches the properties specified by the <b>LOGFONT</b> structure.</summary>
+    <param name="logFont">A structure containing a GDI-compatible font description.</param>
+    <param name="font">When this method returns, contains an address of a pointer to a newly created <see cref="IDWriteFont" /> object if successful; otherwise, <b>NULL</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteGdiInterop">
-    <summary>
-      <para>Provides interoperability with GDI, such as methods to convert a font face to a LOGFONT structure, or to convert a GDI font description into a font face. It is also used to create bitmap render target objects.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/interoperating-with-gdi">Interoperating with GDI</seealso>
+    <summary>Provides interoperability with GDI, such as methods to convert a font face to a LOGFONT structure, or to convert a GDI font description into a font face. It is also used to create bitmap render target objects.</summary>
   </member>
 </doc>

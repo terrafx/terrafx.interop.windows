@@ -3,55 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFVideoProcessorControl2.EnableHardwareEffects">
-    <summary>
-      <para>Enables effects that were implemented with <see cref="IDirectXVideoProcessor.VideoProcessorBlt" />.</para>
-    </summary>
-    <param name="fEnabled">
-      <para>Type: <b>BOOL</b></para>
-      <para>Specifies whether effects are to be enabled. <b>TRUE</b> specifies to enable effects. <b>FALSE</b> specifies to disable effects.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFVideoProcessorControl2" />
+    <summary>Enables effects that were implemented with <see cref="IDirectXVideoProcessor.VideoProcessorBlt" />.</summary>
+    <param name="fEnabled">Specifies whether effects are to be enabled. <b>TRUE</b> specifies to enable effects. <b>FALSE</b> specifies to disable effects.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFVideoProcessorControl2.GetSupportedHardwareEffects">
-    <summary>
-      <para>Returns the list of supported effects in the currently configured video processor.</para>
-    </summary>
-    <param name="puiSupport">
-      <para>Type: <b>UINT*</b></para>
-      <para>A combination of <see cref="D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS" />-typed values that are combined by using a bitwise OR operation. The resulting value specifies the list of supported effect capabilities.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFVideoProcessorControl2" />
+    <summary>Returns the list of supported effects in the currently configured video processor.</summary>
+    <param name="puiSupport">A combination of <see cref="D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS" />-typed values that are combined by using a bitwise OR operation. The resulting value specifies the list of supported effect capabilities.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFVideoProcessorControl2.SetRotationOverride">
-    <summary>
-      <para>Overrides the rotation operation that is performed in the video processor.</para>
-    </summary>
-    <param name="uiRotation">
-      <para>Type: <b>UINT</b></para>
-      <para>Rotation value in degrees.  Typically, you can only use values from the <see cref="MFVideoRotationFormat" /> enumeration.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFVideoProcessorControl2" />
+    <summary>Overrides the rotation operation that is performed in the video processor.</summary>
+    <param name="uiRotation">Rotation value in degrees. Typically, you can only use values from the <see cref="MFVideoRotationFormat" /> enumeration.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFVideoProcessorControl2">
-    <summary>
-      <para>Configures the <a href="https://docs.microsoft.com//windows/desktop/medfound/video-processor-mft">Video Processor MFT</a>.</para>
-    </summary>
-    <remarks>
-      <para>This interface controls how the <a href="https://docs.microsoft.com//windows/desktop/medfound/video-processor-mft">Video Processor MFT</a> generates output frames.</para>
-    </remarks>
-    <seealso cref="IMFVideoProcessorControl" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Configures the <a href="https://docs.microsoft.com//windows/desktop/medfound/video-processor-mft">Video Processor MFT</a>.</summary>
   </member>
 </doc>

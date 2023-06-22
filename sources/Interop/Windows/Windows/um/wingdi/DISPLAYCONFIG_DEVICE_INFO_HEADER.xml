@@ -3,34 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DISPLAYCONFIG_DEVICE_INFO_HEADER">
-    <summary>
-      <para>The DISPLAYCONFIG_DEVICE_INFO_HEADER structure contains display information about the device.</para>
-    </summary>
-    <remarks>
-      <para>The <see cref="DisplayConfigGetDeviceInfo" /> function uses the DISPLAYCONFIG_DEVICE_INFO_HEADER structure for retrieving display configuration information about the device, and the <see cref="DisplayConfigSetDeviceInfo" /> function uses the DISPLAYCONFIG_DEVICE_INFO_HEADER structure for setting display configuration information for the device.</para>
-    </remarks>
-    <seealso cref="DISPLAYCONFIG_DEVICE_INFO_TYPE" />
-    <seealso cref="DisplayConfigGetDeviceInfo" />
-    <seealso cref="DisplayConfigSetDeviceInfo" />
+    <summary>The DISPLAYCONFIG_DEVICE_INFO_HEADER structure contains display information about the device.</summary>
   </member>
   <member name="DISPLAYCONFIG_DEVICE_INFO_HEADER.type">
-    <summary>
-      <para>A <see cref="DISPLAYCONFIG_DEVICE_INFO_TYPE" /> enumerated value that determines the type of device information to retrieve or set. The remainder of the packet for the retrieve or set operation follows immediately after the DISPLAYCONFIG_DEVICE_INFO_HEADER structure.</para>
-    </summary>
+    <summary>A <see cref="DISPLAYCONFIG_DEVICE_INFO_TYPE" /> enumerated value that determines the type of device information to retrieve or set. The remainder of the packet for the retrieve or set operation follows immediately after the DISPLAYCONFIG_DEVICE_INFO_HEADER structure.</summary>
   </member>
   <member name="DISPLAYCONFIG_DEVICE_INFO_HEADER.size">
-    <summary>
-      <para>The size, in bytes, of the device information that is retrieved or set. This size includes the size of the header and the size of the additional data that follows the header. This device information depends on the request type.</para>
-    </summary>
+    <summary>The size, in bytes, of the device information that is retrieved or set. This size includes the size of the header and the size of the additional data that follows the header. This device information depends on the request type.</summary>
   </member>
   <member name="DISPLAYCONFIG_DEVICE_INFO_HEADER.adapterId">
-    <summary>
-      <para>A locally unique identifier (LUID) that identifies the adapter that the device information packet refers to.</para>
-    </summary>
+    <summary>A locally unique identifier (LUID) that identifies the adapter that the device information packet refers to.</summary>
   </member>
   <member name="DISPLAYCONFIG_DEVICE_INFO_HEADER.id">
-    <summary>
-      <para>The source or target identifier to get or set the device information for. The meaning of this identifier is related to the type of information being requested. For example, in the case of DISPLAYCONFIG_DEVICE_INFO_GET_SOURCE_NAME, this is the source identifier.</para>
-    </summary>
+    <summary>The source or target identifier to get or set the device information for. The meaning of this identifier is related to the type of information being requested. For example, in the case of DISPLAYCONFIG_DEVICE_INFO_GET_SOURCE_NAME, this is the source identifier.</summary>
   </member>
 </doc>

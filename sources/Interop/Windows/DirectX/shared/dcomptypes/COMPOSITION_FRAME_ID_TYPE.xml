@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="COMPOSITION_FRAME_ID_TYPE">
-    <summary>
-      <para>Defines constants that specify the status of a compositor frame.</para>
-    </summary>
+    <summary>Defines constants that specify the status of a compositor frame.</summary>
   </member>
   <member name="COMPOSITION_FRAME_ID_TYPE.COMPOSITION_FRAME_ID_CREATED">
-    <summary>
-      <para>The compositor has started working on the frame.</para>
-    </summary>
+    <summary>The compositor has started working on the frame.</summary>
   </member>
   <member name="COMPOSITION_FRAME_ID_TYPE.COMPOSITION_FRAME_ID_CONFIRMED">
-    <summary>
-      <para>CPU work is completed and any presents have taken place.</para>
-    </summary>
+    <summary>CPU work is completed and any presents have taken place.</summary>
   </member>
   <member name="COMPOSITION_FRAME_ID_TYPE.COMPOSITION_FRAME_ID_COMPLETED">
-    <summary>
-      <para>GPU work is completed for all render targets associated with the frame.</para>
-    </summary>
+    <summary>GPU work is completed for all render targets associated with the frame.</summary>
   </member>
 </doc>

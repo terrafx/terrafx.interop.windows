@@ -3,46 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="XAUDIO2_FILTER_TYPE">
-    <summary>
-      <para>Indicates the filter type.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>Note</b>  Note that the DirectX SDK versions of XAUDIO2 do not support the <b>LowPassOnePoleFilter</b> or the <b>HighPassOnePoleFilter</b>.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso cref="XAUDIO2_FILTER_PARAMETERS" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/enumerations">XAudio2.Enumerations</seealso>
+    <summary>Indicates the filter type.</summary>
   </member>
   <member name="XAUDIO2_FILTER_TYPE.LowPassFilter">
-    <summary>
-      <para>Attenuates (reduces) frequencies above the cutoff frequency.</para>
-    </summary>
+    <summary>Attenuates (reduces) frequencies above the cutoff frequency.</summary>
   </member>
   <member name="XAUDIO2_FILTER_TYPE.BandPassFilter">
-    <summary>
-      <para>Attenuates frequencies outside a given range.</para>
-    </summary>
+    <summary>Attenuates frequencies outside a given range.</summary>
   </member>
   <member name="XAUDIO2_FILTER_TYPE.HighPassFilter">
-    <summary>
-      <para>Attenuates frequencies below the cutoff frequency.</para>
-    </summary>
+    <summary>Attenuates frequencies below the cutoff frequency.</summary>
   </member>
   <member name="XAUDIO2_FILTER_TYPE.NotchFilter">
-    <summary>
-      <para>Attenuates frequencies inside a given range.</para>
-    </summary>
+    <summary>Attenuates frequencies inside a given range.</summary>
   </member>
   <member name="XAUDIO2_FILTER_TYPE.LowPassOnePoleFilter">
-    <summary>
-      <para>Attenuates frequencies above the cutoff frequency. This is a one-pole filter, and <see cref="XAUDIO2_FILTER_PARAMETERS" />.<b>OneOverQ</b> has no effect.</para>
-    </summary>
+    <summary>Attenuates frequencies above the cutoff frequency. This is a one-pole filter, and <see cref="XAUDIO2_FILTER_PARAMETERS" />.<b>OneOverQ</b> has no effect.</summary>
   </member>
   <member name="XAUDIO2_FILTER_TYPE.HighPassOnePoleFilter">
-    <summary>
-      <para>Attenuates frequencies below the cutoff frequency. This is a one-pole filter, and <see cref="XAUDIO2_FILTER_PARAMETERS" />.<b>OneOverQ</b> has no effect.</para>
-    </summary>
+    <summary>Attenuates frequencies below the cutoff frequency. This is a one-pole filter, and <see cref="XAUDIO2_FILTER_PARAMETERS" />.<b>OneOverQ</b> has no effect.</summary>
   </member>
 </doc>

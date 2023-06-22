@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFQualityManager.NotifyPresentationClock">
-    <summary>
-      <para>Called when the Media Session selects a presentation clock.</para>
-    </summary>
-    <param name="pClock">
-      <para>Pointer to the <see cref="IMFPresentationClock" /> interface of the presentation clock. If this parameter is <b>NULL</b>, the quality manager should release any references to the presentation clock.</para>
-    </param>
+    <summary>Called when the Media Session selects a presentation clock.</summary>
+    <param name="pClock">Pointer to the <see cref="IMFPresentationClock" /> interface of the presentation clock. If this parameter is <b>NULL</b>, the quality manager should release any references to the presentation clock.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,33 +12,26 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFQualityManager" />
   </member>
   <member name="IMFQualityManager.NotifyProcessInput">
-    <summary>
-      <para>Called when the media processor is about to deliver an input sample to a pipeline component.</para>
-    </summary>
-    <param name="pNode">
-      <para>Pointer to the <see cref="IMFTopologyNode" /> interface of the topology node that represents the pipeline component.</para>
-    </param>
-    <param name="lInputIndex">
-      <para>Index of the input stream on the topology node.</para>
-    </param>
-    <param name="pSample">
-      <para>Pointer to the <see cref="IMFSample" /> interface of the input sample.</para>
-    </param>
+    <summary>Called when the media processor is about to deliver an input sample to a pipeline component.</summary>
+    <param name="pNode">Pointer to the <see cref="IMFTopologyNode" /> interface of the topology node that represents the pipeline component.</param>
+    <param name="lInputIndex">Index of the input stream on the topology node.</param>
+    <param name="pSample">Pointer to the <see cref="IMFSample" /> interface of the input sample.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -50,36 +39,26 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is called for every sample passing through every pipeline component. Therefore, the method must return quickly to avoid introducing too much latency into the pipeline.</para>
-    </remarks>
-    <seealso cref="IMFQualityManager" />
   </member>
   <member name="IMFQualityManager.NotifyProcessOutput">
-    <summary>
-      <para>Called after the media processor gets an output sample from a pipeline component.</para>
-    </summary>
-    <param name="pNode">
-      <para>Pointer to the <see cref="IMFTopologyNode" /> interface of the topology node that represents the pipeline component.</para>
-    </param>
-    <param name="lOutputIndex">
-      <para>Index of the output stream on the topology node.</para>
-    </param>
-    <param name="pSample">
-      <para>Pointer to the <see cref="IMFSample" /> interface of the output sample.</para>
-    </param>
+    <summary>Called after the media processor gets an output sample from a pipeline component.</summary>
+    <param name="pNode">Pointer to the <see cref="IMFTopologyNode" /> interface of the topology node that represents the pipeline component.</param>
+    <param name="lOutputIndex">Index of the output stream on the topology node.</param>
+    <param name="pSample">Pointer to the <see cref="IMFSample" /> interface of the output sample.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -87,33 +66,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is called for every sample passing through every pipeline component. Therefore, the method must return quickly to avoid introducing too much latency into the pipeline.</para>
-    </remarks>
-    <seealso cref="IMFQualityManager" />
   </member>
   <member name="IMFQualityManager.NotifyQualityEvent">
-    <summary>
-      <para>Called when a pipeline component sends an <a href="https://docs.microsoft.com//windows/desktop/medfound/mequalitynotify">MEQualityNotify</a> event.</para>
-    </summary>
-    <param name="pObject">
-      <para>Pointer to the <b>IUnknown</b> interface of the object that sent the event. The object is either a Media Foundation transform (MFT) or a stream sink.</para>
-    </param>
-    <param name="pEvent">
-      <para>Pointer to the <see cref="IMFMediaEvent" /> interface of the event.</para>
-    </param>
+    <summary>Called when a pipeline component sends an <a href="https://docs.microsoft.com//windows/desktop/medfound/mequalitynotify">MEQualityNotify</a> event.</summary>
+    <param name="pObject">Pointer to the <b>IUnknown</b> interface of the object that sent the event. The object is either a Media Foundation transform (MFT) or a stream sink.</param>
+    <param name="pEvent">Pointer to the <see cref="IMFMediaEvent" /> interface of the event.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -121,27 +92,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFQualityManager" />
   </member>
   <member name="IMFQualityManager.NotifyTopology">
-    <summary>
-      <para>Called when the Media Session is about to start playing a new topology.</para>
-    </summary>
-    <param name="pTopology">
-      <para>Pointer to the <see cref="IMFTopology" /> interface of the new topology. If this parameter is <b>NULL</b>, the quality manager should release any references to the previous topology.</para>
-    </param>
+    <summary>Called when the Media Session is about to start playing a new topology.</summary>
+    <param name="pTopology">Pointer to the <see cref="IMFTopology" /> interface of the new topology. If this parameter is <b>NULL</b>, the quality manager should release any references to the previous topology.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -149,45 +117,23 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>In a typical quality manager this method does the following:</para>
-      <list type="number">
-        <item>
-          <description>
-            <para>Enumerates the nodes in the topology.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>Calls <see cref="IMFTopologyNode.GetObject" /> to get the node's underlying object.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>Queries for the <see cref="IMFQualityAdvise" /> interface.</para>
-          </description>
-        </item>
-      </list>
-      <para>The quality manager can then use the <see cref="IMFQualityAdvise" /> pointers to adjust audio-video quality as needed.</para>
-    </remarks>
-    <seealso cref="IMFQualityManager" />
   </member>
   <member name="IMFQualityManager.Shutdown">
-    <summary>
-      <para>Called when the Media Session is shutting down.</para>
-    </summary>
+    <summary>Called when the Media Session is shutting down.</summary>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -195,30 +141,22 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The quality manager should release all references to the Media Session when this method is called.</para>
-    </remarks>
-    <seealso cref="IMFQualityManager" />
   </member>
   <member name="IMFQualityManager">
-    <summary>
-      <para>Adjusts playback quality. This interface is exposed by the quality manager.</para>
-    </summary>
-    <remarks>
-      <para>Media Foundation provides a default quality manager that is tuned for playback. Applications can provide a custom quality manager to the Media Session by setting the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-session-quality-manager-attribute">MF_SESSION_QUALITY_MANAGER</a> attribute when creating the Media Session.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Adjusts playback quality. This interface is exposed by the quality manager.</summary>
   </member>
 </doc>

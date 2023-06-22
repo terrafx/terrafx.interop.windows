@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPartsList.GetCount">
-    <summary>
-      <para>The <b>GetCount</b> method gets the number of parts in the parts list.</para>
-    </summary>
-    <param name="pCount">
-      <para>Pointer to a <b>UINT</b> variable into which the method writes the parts count (the number of parts in the parts list).</para>
-    </param>
+    <summary>The <b>GetCount</b> method gets the number of parts in the parts list.</summary>
+    <param name="pCount">Pointer to a <b>UINT</b> variable into which the method writes the parts count (the number of parts in the parts list).</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -16,30 +12,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer <i>pCount</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>Pointer <i>pCount</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IPartsList Interface" />
   </member>
   <member name="IPartsList.GetPart">
-    <summary>
-      <para>The <b>GetPart</b> method gets a part from the parts list.</para>
-    </summary>
-    <param name="nIndex">
-      <para>The part number of the part to retrieve. If the parts list contains <i>n</i> parts, the parts are numbered 0 to <i>n</i>– 1. Call the <see cref="IPartsList.GetCount" /> method to get the number of parts in the list.</para>
-    </param>
-    <param name="ppPart">
-      <para>Pointer to a pointer variable into which the method writes the address of the <see cref="IPart" /> interface of the part object. Through this method, the caller obtains a counted reference to the <b>IPart</b> interface. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the <b>GetPart</b> call fails,  <i>*ppPart</i> is <b>NULL</b>.</para>
-    </param>
+    <summary>The <b>GetPart</b> method gets a part from the parts list.</summary>
+    <param name="nIndex">The part number of the part to retrieve. If the parts list contains <i>n</i> parts, the parts are numbered 0 to <i>n</i>– 1. Call the <see cref="IPartsList.GetCount" /> method to get the number of parts in the list.</param>
+    <param name="ppPart">Pointer to a pointer variable into which the method writes the address of the <see cref="IPart" /> interface of the part object. Through this method, the caller obtains a counted reference to the <b>IPart</b> interface. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the <b>GetPart</b> call fails, <i>*ppPart</i> is <b>NULL</b>.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -47,45 +38,37 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Parameter <i>nIndex</i> is out of range.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Parameter <i>nIndex</i> is out of range.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>Pointer <i>ppPart</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>Pointer <i>ppPart</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For a code example that calls the <b>GetPart</b> method, see the implementation of the SelectCaptureDevice function in <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-topologies">Device Topologies</a>.</para>
-    </remarks>
-    <seealso cref="IPart Interface" />
-    <seealso cref="IPartsList Interface" />
-    <seealso cref="IPartsList.GetCount" />
   </member>
   <member name="IPartsList">
     <summary>
       <para>The <b>IPartsList</b> interface represents a list of parts, each of which is an object with an <see cref="IPart" /> interface that represents a connector or subunit. A client obtains a reference to an <b>IPartsList</b> interface by calling the <see cref="IPart.EnumPartsIncoming" />, <see cref="IPart.EnumPartsOutgoing" />, or <see cref="IDeviceTopology.GetSignalPath" /> method.</para>
       <para>For a code example that uses the <b>IPartsList</b> interface, see the implementation of the SelectCaptureDevice function in <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-topologies">Device Topologies</a>.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/devicetopology-api">DeviceTopology API</seealso>
-    <seealso cref="IDeviceTopology.GetSignalPath" />
-    <seealso cref="IPart Interface" />
-    <seealso cref="IPart.EnumPartsIncoming" />
-    <seealso cref="IPart.EnumPartsOutgoing" />
   </member>
 </doc>

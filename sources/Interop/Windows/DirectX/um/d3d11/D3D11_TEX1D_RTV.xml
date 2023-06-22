@@ -3,18 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_TEX1D_RTV">
-    <summary>
-      <para>Specifies the subresource from a 1D texture to use in a render-target view.</para>
-    </summary>
-    <remarks>
-      <para>This structure is one member of a render-target-view description (see <see cref="D3D11_RENDER_TARGET_VIEW_DESC" />).</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-structures">Resource Structures</seealso>
+    <summary>Specifies the subresource from a 1D texture to use in a render-target view.</summary>
   </member>
   <member name="D3D11_TEX1D_RTV.MipSlice">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The index of the mipmap level to use mip slice.</para>
-    </summary>
+    <summary>The index of the mipmap level to use mip slice.</summary>
   </member>
 </doc>

@@ -3,117 +3,69 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAPI_MEDIA_PHYSICAL_TYPE">
-    <summary>
-      <para>Defines values for the currently known media types supported by IMAPI.</para>
-    </summary>
-    <remarks>
-      <para>The values in the range 0x00000000..0x0000FFFF inclusive are reserved for extension by Microsoft. If third parties wish to report a media type not in this list using this enumeration (for example, if implementing <see cref="IDiscFormat2Data.get_CurrentPhysicalMediaType" /> to support a non-listed format) they should define values only in the range 0x00010000..0xFFFFFFFF for these media types.</para>
-    </remarks>
-    <seealso cref="IDiscFormat2Data.get_CurrentPhysicalMediaType" />
+    <summary>Defines values for the currently known media types supported by IMAPI.</summary>
   </member>
   <member name="IMAPI_MEDIA_PHYSICAL_TYPE.IMAPI_MEDIA_TYPE_UNKNOWN">
-    <summary>
-      <para>The disc recorder contains an unknown media type or the recorder is empty.</para>
-    </summary>
+    <summary>The disc recorder contains an unknown media type or the recorder is empty.</summary>
   </member>
   <member name="IMAPI_MEDIA_PHYSICAL_TYPE.IMAPI_MEDIA_TYPE_CDROM">
-    <summary>
-      <para>The drive contains CD-ROM or CD-R/RW media.</para>
-    </summary>
+    <summary>The drive contains CD-ROM or CD-R/RW media.</summary>
   </member>
   <member name="IMAPI_MEDIA_PHYSICAL_TYPE.IMAPI_MEDIA_TYPE_CDR">
-    <summary>
-      <para>The drive contains write once (CD-R) media.</para>
-    </summary>
+    <summary>The drive contains write once (CD-R) media.</summary>
   </member>
   <member name="IMAPI_MEDIA_PHYSICAL_TYPE.IMAPI_MEDIA_TYPE_CDRW">
-    <summary>
-      <para>The drive contains rewritable (CD-RW) media.</para>
-    </summary>
+    <summary>The drive contains rewritable (CD-RW) media.</summary>
   </member>
   <member name="IMAPI_MEDIA_PHYSICAL_TYPE.IMAPI_MEDIA_TYPE_DVDROM">
-    <summary>
-      <para>Either the DVD drive or DVD media is read-only.</para>
-    </summary>
+    <summary>Either the DVD drive or DVD media is read-only.</summary>
   </member>
   <member name="IMAPI_MEDIA_PHYSICAL_TYPE.IMAPI_MEDIA_TYPE_DVDRAM">
-    <summary>
-      <para>The drive contains DVD-RAM media.</para>
-    </summary>
+    <summary>The drive contains DVD-RAM media.</summary>
   </member>
   <member name="IMAPI_MEDIA_PHYSICAL_TYPE.IMAPI_MEDIA_TYPE_DVDPLUSR">
-    <summary>
-      <para>The drive contains write once media that supports the DVD plus format (DVD+R) .</para>
-    </summary>
+    <summary>The drive contains write once media that supports the DVD plus format (DVD+R) .</summary>
   </member>
   <member name="IMAPI_MEDIA_PHYSICAL_TYPE.IMAPI_MEDIA_TYPE_DVDPLUSRW">
-    <summary>
-      <para>The drive contains rewritable media that supports the DVD plus format (DVD+RW).</para>
-    </summary>
+    <summary>The drive contains rewritable media that supports the DVD plus format (DVD+RW).</summary>
   </member>
   <member name="IMAPI_MEDIA_PHYSICAL_TYPE.IMAPI_MEDIA_TYPE_DVDPLUSR_DUALLAYER">
-    <summary>
-      <para>The drive contains write once dual layer media that supports the DVD plus format (DVD+R DL).</para>
-    </summary>
+    <summary>The drive contains write once dual layer media that supports the DVD plus format (DVD+R DL).</summary>
   </member>
   <member name="IMAPI_MEDIA_PHYSICAL_TYPE.IMAPI_MEDIA_TYPE_DVDDASHR">
-    <summary>
-      <para>The drive contains write once media that supports the DVD dash format (DVD-R).</para>
-    </summary>
+    <summary>The drive contains write once media that supports the DVD dash format (DVD-R).</summary>
   </member>
   <member name="IMAPI_MEDIA_PHYSICAL_TYPE.IMAPI_MEDIA_TYPE_DVDDASHRW">
-    <summary>
-      <para>The drive contains rewritable media that supports the DVD dash format (DVD-RW).</para>
-    </summary>
+    <summary>The drive contains rewritable media that supports the DVD dash format (DVD-RW).</summary>
   </member>
   <member name="IMAPI_MEDIA_PHYSICAL_TYPE.IMAPI_MEDIA_TYPE_DVDDASHR_DUALLAYER">
-    <summary>
-      <para>The drive contains write once dual layer media that supports the DVD dash format (DVD-R DL).</para>
-    </summary>
+    <summary>The drive contains write once dual layer media that supports the DVD dash format (DVD-R DL).</summary>
   </member>
   <member name="IMAPI_MEDIA_PHYSICAL_TYPE.IMAPI_MEDIA_TYPE_DISK">
-    <summary>
-      <para>The drive contains a media type that supports random-access writes. This media type supports hardware defect management that identifies and avoids using damaged tracks.</para>
-    </summary>
+    <summary>The drive contains a media type that supports random-access writes. This media type supports hardware defect management that identifies and avoids using damaged tracks.</summary>
   </member>
   <member name="IMAPI_MEDIA_PHYSICAL_TYPE.IMAPI_MEDIA_TYPE_DVDPLUSRW_DUALLAYER">
-    <summary>
-      <para>The drive contains rewritable dual layer media that supports the DVD plus format (DVD+RW DL).</para>
-    </summary>
+    <summary>The drive contains rewritable dual layer media that supports the DVD plus format (DVD+RW DL).</summary>
   </member>
   <member name="IMAPI_MEDIA_PHYSICAL_TYPE.IMAPI_MEDIA_TYPE_HDDVDROM">
-    <summary>
-      <para>The drive contains high definition read only DVD media (HD DVD-ROM).</para>
-    </summary>
+    <summary>The drive contains high definition read only DVD media (HD DVD-ROM).</summary>
   </member>
   <member name="IMAPI_MEDIA_PHYSICAL_TYPE.IMAPI_MEDIA_TYPE_HDDVDR">
-    <summary>
-      <para>The drive contains write once high definition media (HD DVD-R).</para>
-    </summary>
+    <summary>The drive contains write once high definition media (HD DVD-R).</summary>
   </member>
   <member name="IMAPI_MEDIA_PHYSICAL_TYPE.IMAPI_MEDIA_TYPE_HDDVDRAM">
-    <summary>
-      <para>The drive contains random access high definition media (HD DVD-RAM).</para>
-    </summary>
+    <summary>The drive contains random access high definition media (HD DVD-RAM).</summary>
   </member>
   <member name="IMAPI_MEDIA_PHYSICAL_TYPE.IMAPI_MEDIA_TYPE_BDROM">
-    <summary>
-      <para>The drive contains read only Blu-ray media (BD-ROM).</para>
-    </summary>
+    <summary>The drive contains read only Blu-ray media (BD-ROM).</summary>
   </member>
   <member name="IMAPI_MEDIA_PHYSICAL_TYPE.IMAPI_MEDIA_TYPE_BDR">
-    <summary>
-      <para>The drive contains write once Blu-ray media (BD-R).</para>
-    </summary>
+    <summary>The drive contains write once Blu-ray media (BD-R).</summary>
   </member>
   <member name="IMAPI_MEDIA_PHYSICAL_TYPE.IMAPI_MEDIA_TYPE_BDRE">
-    <summary>
-      <para>The drive contains rewritable Blu-ray media (BD-RE) media.</para>
-    </summary>
+    <summary>The drive contains rewritable Blu-ray media (BD-RE) media.</summary>
   </member>
   <member name="IMAPI_MEDIA_PHYSICAL_TYPE.IMAPI_MEDIA_TYPE_MAX">
-    <summary>
-      <para>This value is the maximum value defined in IMAPI_MEDIA_PHYSICAL_TYPE.</para>
-    </summary>
+    <summary>This value is the maximum value defined in IMAPI_MEDIA_PHYSICAL_TYPE.</summary>
   </member>
 </doc>

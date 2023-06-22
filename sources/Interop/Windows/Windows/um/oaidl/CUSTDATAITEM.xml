@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CUSTDATAITEM">
-    <summary>
-      <para>Represents a custom data item.</para>
-    </summary>
+    <summary>Represents a custom data item.</summary>
   </member>
   <member name="CUSTDATAITEM.guid">
-    <summary>
-      <para>The unique identifier of the data item.</para>
-    </summary>
+    <summary>The unique identifier of the data item.</summary>
   </member>
   <member name="CUSTDATAITEM.varValue">
-    <summary>
-      <para>The value of the data item.</para>
-    </summary>
+    <summary>The value of the data item.</summary>
   </member>
 </doc>

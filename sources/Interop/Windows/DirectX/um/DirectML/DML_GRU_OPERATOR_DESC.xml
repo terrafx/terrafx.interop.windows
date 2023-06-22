@@ -7,89 +7,53 @@
       <para>Performs a (standard layers) one-layer gated recurrent unit (GRU) function on the input. This operator uses multiple gates to perform this layer. These gates are performed multiple times in a loop dictated by the sequence length dimension and the <i>SequenceLengthsTensor</i>.</para>
       <h3>Equation for the forward direction</h3>
       <para>
-        <img alt="equation for the forward direction" src="https://docs.microsoft.com/windows/win32/api/DirectMLmages/gru_forward.png" />
+        <img alt="equation for the forward direction" src="https://docs.microsoft.com/windows/win32/api/DirectML/images/gru_forward.png" />
       </para>
       <h3>Equation for the backward direction</h3>
       <para>
-        <img alt="equation for the backward direction" src="https://docs.microsoft.com/windows/win32/api/DirectMLmages/gru_backward.png" />
+        <img alt="equation for the backward direction" src="https://docs.microsoft.com/windows/win32/api/DirectML/images/gru_backward.png" />
       </para>
       <h3>Equation legend</h3>
       <para>
-        <img alt="equation legend" src="https://docs.microsoft.com/windows/win32/api/DirectMLmages/gru_legend.png" />
+        <img alt="equation legend" src="https://docs.microsoft.com/windows/win32/api/DirectML/images/gru_legend.png" />
       </para>
     </summary>
   </member>
   <member name="DML_GRU_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the input data, X. Packed (and potentially padded) into one 4D tensor with the <i>Sizes</i> of <code>{ 1, seq_length, batch_size, input_size }</code>. seq_length is the dimension that is mapped to the index, t.</para>
-    </summary>
+    <summary>A tensor containing the input data, X. Packed (and potentially padded) into one 4D tensor with the <i>Sizes</i> of <code>{ 1, seq_length, batch_size, input_size }</code>. seq_length is the dimension that is mapped to the index, t. The tensor doesn't support the <b>DML_TENSOR_FLAG_OWNED_BY_DML</b> flag.</summary>
   </member>
   <member name="DML_GRU_OPERATOR_DESC.WeightTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the weight data, W. Concatenation of W_[zrh] and W_B[zrh] (if bidirectional). The tensor has <i>Sizes</i><code>{ 1, num_directions, 3 * hidden_size, input_size }</code>.</para>
-    </summary>
+    <summary>A tensor containing the weight data, W. Concatenation of W_[zrh] and W_B[zrh] (if bidirectional). The tensor has <i>Sizes</i><code>{ 1, num_directions, 3 * hidden_size, input_size }</code>. The tensor doesn't support the <b>DML_TENSOR_FLAG_OWNED_BY_DML</b> flag.</summary>
   </member>
   <member name="DML_GRU_OPERATOR_DESC.RecurrenceTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the recurrence data, R. Concatenation of R_[zrh] and R_B[zrh] (if bidirectional). The tensor has <i>Sizes</i><code>{ 1, num_directions, 3 * hidden_size, hidden_size }</code>.</para>
-    </summary>
+    <summary>A tensor containing the recurrence data, R. Concatenation of R_[zrh] and R_B[zrh] (if bidirectional). The tensor has <i>Sizes</i><code>{ 1, num_directions, 3 * hidden_size, hidden_size }</code>. The tensor doesn't support the <b>DML_TENSOR_FLAG_OWNED_BY_DML</b> flag.</summary>
   </member>
   <member name="DML_GRU_OPERATOR_DESC.BiasTensor">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An optional tensor containing the bias data, B. Concatenation of (W_b[zrh], R_b[zrh]) and (W_Bb[zrh], R_Bb[zrh]) (if bidirectional). The tensor has <i>Sizes</i><code>{ 1, 1, num_directions, 6 * hidden_size }</code>.</para>
-    </summary>
+    <summary>An optional tensor containing the bias data, B. Concatenation of (W_b[zrh], R_b[zrh]) and (W_Bb[zrh], R_Bb[zrh]) (if bidirectional). The tensor has <i>Sizes</i><code>{ 1, 1, num_directions, 6 * hidden_size }</code>. The tensor doesn't support the <b>DML_TENSOR_FLAG_OWNED_BY_DML</b> flag.</summary>
   </member>
   <member name="DML_GRU_OPERATOR_DESC.HiddenInitTensor">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An optional tensor containing the hidden node initializer tensor, H_t-1 for the first loop index t. If not specified, then defaults to 0. This tensor has <i>Sizes</i><code>{ 1, num_directions, batch_size, hidden_size }</code>.</para>
-    </summary>
+    <summary>An optional tensor containing the hidden node initializer tensor, H_t-1 for the first loop index t. If not specified, then defaults to 0. This tensor has <i>Sizes</i><code>{ 1, num_directions, batch_size, hidden_size }</code>. The tensor doesn't support the <b>DML_TENSOR_FLAG_OWNED_BY_DML</b> flag.</summary>
   </member>
   <member name="DML_GRU_OPERATOR_DESC.SequenceLengthsTensor">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An optional tensor containing an independent seq_length for each element in the batch. If not specified, then all sequences in the batch have length seq_length. This tensor has <i>Sizes</i><code>{ 1, 1, 1, batch_size }</code>.</para>
-    </summary>
+    <summary>An optional tensor containing an independent seq_length for each element in the batch. If not specified, then all sequences in the batch have length seq_length. This tensor has <i>Sizes</i><code>{ 1, 1, 1, batch_size }</code>. The tensor doesn't support the <b>DML_TENSOR_FLAG_OWNED_BY_DML</b> flag.</summary>
   </member>
   <member name="DML_GRU_OPERATOR_DESC.OutputSequenceTensor">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An optional tensor with which to write the concatenation of all the intermediate output values of the hidden nodes, H_t. This tensor has <i>Sizes</i><code>{ seq_length, num_directions, batch_size, hidden_size }</code>. seq_length is mapped to the loop index t.</para>
-    </summary>
+    <summary>An optional tensor with which to write the concatenation of all the intermediate output values of the hidden nodes, H_t. This tensor has <i>Sizes</i><code>{ seq_length, num_directions, batch_size, hidden_size }</code>. seq_length is mapped to the loop index t.</summary>
   </member>
   <member name="DML_GRU_OPERATOR_DESC.OutputSingleTensor">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An optional tensor with which to write the last output value of the hidden nodes, H_t. This tensor has <i>Sizes</i><code>{ 1, num_directions, batch_size, hidden_size }</code>.</para>
-    </summary>
+    <summary>An optional tensor with which to write the last output value of the hidden nodes, H_t. This tensor has <i>Sizes</i><code>{ 1, num_directions, batch_size, hidden_size }</code>.</summary>
   </member>
   <member name="DML_GRU_OPERATOR_DESC.ActivationDescCount">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>This field determines the size of the <i>ActivationDescs</i> array.</para>
-    </summary>
+    <summary>This field determines the size of the <i>ActivationDescs</i> array.</summary>
   </member>
   <member name="DML_GRU_OPERATOR_DESC.ActivationDescs">
-    <summary>
-      <para>Type: _Field_size_(ActivationDescCount) <b>const <see cref="DML_OPERATOR_DESC" />*</b></para>
-      <para>An array of <see cref="DML_OPERATOR_DESC" /> containing the descriptions of the activation operators, f() and g(). Both f() and g() are defined independently of direction, meaning that if <see cref="DML_RECURRENT_NETWORK_DIRECTION_FORWARD" /> or <b>DML_RECURRENT_NETWORK_DIRECTION_BACKWARD</b> are supplied in <i>Direction</i>, then two activations must be provided. If <b>DML_RECURRENT_NETWORK_DIRECTION_BIDIRECTIONAL</b> is supplied, then four activations must be provided. For bidirectional, activations must be provided f() and g() for forward followed by f() and g() for backwards.</para>
-    </summary>
+    <summary>An array of <see cref="DML_OPERATOR_DESC" /> containing the descriptions of the activation operators, f() and g(). Both f() and g() are defined independently of direction, meaning that if <see cref="DML_RECURRENT_NETWORK_DIRECTION_FORWARD" /> or <b>DML_RECURRENT_NETWORK_DIRECTION_BACKWARD</b> are supplied in <i>Direction</i>, then two activations must be provided. If <b>DML_RECURRENT_NETWORK_DIRECTION_BIDIRECTIONAL</b> is supplied, then four activations must be provided. For bidirectional, activations must be provided f() and g() for forward followed by f() and g() for backwards.</summary>
   </member>
   <member name="DML_GRU_OPERATOR_DESC.Direction">
-    <summary>
-      <para>Type: <b>const <see cref="DML_RECURRENT_NETWORK_DIRECTION" />*</b></para>
-      <para>The direction of the operator—forward, backwards, or bidirectional.</para>
-    </summary>
+    <summary>The direction of the operator—forward, backwards, or bidirectional.</summary>
   </member>
   <member name="DML_GRU_OPERATOR_DESC.LinearBeforeReset">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>
-        <b>TRUE</b> to specify that, when computing the output of the hidden gate, the linear transformation should be applied before multiplying by the output of the reset gate. Otherwise, <b>FALSE</b>.</para>
-    </summary>
+      <b>TRUE</b> to specify that, when computing the output of the hidden gate, the linear transformation should be applied before multiplying by the output of the reset gate. Otherwise, <b>FALSE</b>.</summary>
   </member>
 </doc>

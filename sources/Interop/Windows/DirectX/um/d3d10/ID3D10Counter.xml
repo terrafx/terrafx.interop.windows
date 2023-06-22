@@ -3,27 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D10Counter.GetDesc">
-    <summary>
-      <para>Get a counter description.</para>
-    </summary>
-    <param name="pDesc">
-      <para>Type: <b><see cref="D3D10_COUNTER_DESC" />*</b></para>
-      <para>Pointer to a counter description (see <see cref="D3D10_COUNTER_DESC" />).</para>
-    </param>
-    <seealso cref="ID3D10Counter Interface" />
+    <summary>Get a counter description.</summary>
+    <param name="pDesc">Pointer to a counter description (see <see cref="D3D10_COUNTER_DESC" />).</param>
   </member>
   <member name="ID3D10Counter">
-    <summary>
-      <para>This interface encapsulates methods for measuring GPU performance.</para>
-    </summary>
-    <remarks>
-      <para>A counter can be created with <see cref="ID3D10Device.CreateCounter" />.</para>
-      <para>This is a derived class of <see cref="ID3D10Asynchronous Interface" />.</para>
-      <para>Counter data is gathered by issuing an <see cref="ID3D10Asynchronous.Begin" /> command, issuing some graphics commands, issuing an <see cref="ID3D10Asynchronous.End" /> command, and then calling <see cref="ID3D10Asynchronous.GetData" /> to get data about what happened in between the Begin and End calls. The data returned by GetData will be different depending on the type of counter. The call to End causes the data returned by GetData to be accurate up until the last call to End.</para>
-      <para>Counters are best suited for profiling.</para>
-      <para>For a list of the types of performance counters, see <see cref="D3D10_COUNTER" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-interfaces">Core Interfaces</seealso>
-    <seealso cref="ID3D10Asynchronous" />
+    <summary>This interface encapsulates methods for measuring GPU performance.</summary>
   </member>
 </doc>

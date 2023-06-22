@@ -3,34 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_XML_QNAME_DESCRIPTION">
-    <summary>
-      <para>This type description is used with <see cref="WS_XML_QNAME_TYPE" /> and is optional.
-It is used to specify constraints on the set of values
-which can be deserialized.</para>
-    </summary>
+    <summary>This type description is used with <see cref="WS_XML_QNAME_TYPE" /> and is optional. It is used to specify constraints on the set of values which can be deserialized.</summary>
   </member>
   <member name="WS_XML_QNAME_DESCRIPTION.minLocalNameByteCount">
-    <summary>
-      <para>The minimum number of bytes of UTF8 character data
-for the local name string.</para>
-    </summary>
+    <summary>The minimum number of bytes of UTF8 character data for the local name string.</summary>
   </member>
   <member name="WS_XML_QNAME_DESCRIPTION.maxLocalNameByteCount">
-    <summary>
-      <para>The maximum number of bytes of UTF8 character data
-for the local name string.</para>
-    </summary>
+    <summary>The maximum number of bytes of UTF8 character data for the local name string.</summary>
   </member>
   <member name="WS_XML_QNAME_DESCRIPTION.minNsByteCount">
-    <summary>
-      <para>The minimum number of bytes of UTF8 character data
-for the namespace string.</para>
-    </summary>
+    <summary>The minimum number of bytes of UTF8 character data for the namespace string.</summary>
   </member>
   <member name="WS_XML_QNAME_DESCRIPTION.maxNsByteCount">
-    <summary>
-      <para>The maximum number of bytes of UTF8 character data
-for the namespace string.</para>
-    </summary>
+    <summary>The maximum number of bytes of UTF8 character data for the namespace string.</summary>
   </member>
 </doc>

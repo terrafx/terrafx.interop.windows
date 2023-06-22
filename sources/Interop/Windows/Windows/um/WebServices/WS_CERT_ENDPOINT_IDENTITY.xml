@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_CERT_ENDPOINT_IDENTITY">
-    <summary>
-      <para>Type for certificate endpoint identity</para>
-    </summary>
+    <summary>Type for certificate endpoint identity</summary>
   </member>
   <member name="WS_CERT_ENDPOINT_IDENTITY.identity">
-    <summary>
-      <para>The base type from which this type and all other endpoint identity types derive.</para>
-    </summary>
+    <summary>The base type from which this type and all other endpoint identity types derive.</summary>
   </member>
   <member name="WS_CERT_ENDPOINT_IDENTITY.rawCertificateData">
-    <summary>
-      <para>The raw certificate data of the endpoint that is represented by this endpoint identity.</para>
-    </summary>
+    <summary>The raw certificate data of the endpoint that is represented by this endpoint identity.</summary>
   </member>
 </doc>

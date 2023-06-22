@@ -3,13 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="XINPUT_BATTERY_INFORMATION">
-    <summary>
-      <para>Contains information on battery type and charge state.</para>
-    </summary>
-    <seealso cref="XINPUT_GAMEPAD" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/xinput/structures">XInput Structures</seealso>
-    <seealso cref="XInputGetCapabilities" />
-    <seealso cref="XInputSetState" />
+    <summary>Contains information on battery type and charge state.</summary>
   </member>
   <member name="XINPUT_BATTERY_INFORMATION.BatteryType">
     <summary>
@@ -19,26 +13,26 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>BATTERY_TYPE_DISCONNECTED</description>
           <description>The device is not connected. </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>BATTERY_TYPE_WIRED</description>
           <description>The device is a wired device and does not have a battery. </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>BATTERY_TYPE_ALKALINE</description>
           <description>The device has an alkaline battery. </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>BATTERY_TYPE_NIMH</description>
           <description>The device has a nickel metal hydride battery. </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>BATTERY_TYPE_UNKNOWN</description>
-          <description>The device has an unknown  battery type. </description>
-        </item>
+          <description>The device has an unknown battery type. </description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -49,18 +43,18 @@
         <listheader>
           <description>Value</description>
         </listheader>
-        <item>
+        <listheader>
           <description>BATTERY_LEVEL_EMPTY</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>BATTERY_LEVEL_LOW</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>BATTERY_LEVEL_MEDIUM</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>BATTERY_LEVEL_FULL</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>

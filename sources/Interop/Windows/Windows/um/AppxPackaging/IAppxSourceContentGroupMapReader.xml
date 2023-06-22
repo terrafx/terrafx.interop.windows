@@ -3,32 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxSourceContentGroupMapReader.GetAutomaticGroups">
-    <summary>
-      <para>Gets the automatic content group(s) from the source content group map.</para>
-    </summary>
-    <param name="automaticGroupsEnumerator">
-      <para>An enumerator for the automatic content group(s).</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxSourceContentGroupMapReader" />
+    <summary>Gets the automatic content group(s) from the source content group map.</summary>
+    <param name="automaticGroupsEnumerator">An enumerator for the automatic content group(s).</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxSourceContentGroupMapReader.GetRequiredGroup">
-    <summary>
-      <para>Gets the required content group from the source content group map.</para>
-    </summary>
-    <param name="requiredGroup">
-      <para>The required content group.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxSourceContentGroupMapReader" />
+    <summary>Gets the required content group from the source content group map.</summary>
+    <param name="requiredGroup">The required content group.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxSourceContentGroupMapReader">
-    <summary>
-      <para>Gets information about the source content group map.</para>
-    </summary>
+    <summary>Gets information about the source content group map.</summary>
   </member>
 </doc>

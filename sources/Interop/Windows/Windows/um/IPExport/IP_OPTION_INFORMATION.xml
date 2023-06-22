@@ -3,98 +3,60 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IP_OPTION_INFORMATION">
-    <summary>
-      <para>The
-<b>IP_OPTION_INFORMATION</b> structure describes the options to be included in the header of an IP packet.</para>
-    </summary>
-    <remarks>
-      <para>The <b>IP_OPTION_INFORMATION</b> structure is used to describe the options to be included in the header of an IP packet. On a 64-bit platform, the  <see cref="IP_OPTION_INFORMATION32" /> structure should be used.</para>
-      <para>The values in the <b>TTL</b>, <b>TOS</b> and <b>Flags</b>  members are carried in specific fields in the IP header.</para>
-      <para>The bytes in the <b>OptionsData</b>  member are carried in the options area that follows the standard IP header.</para>
-      <para>With the exception of source route options for IPv4, the options data must be in the format to be transmitted on the wire as specified in
-<a href="https://www.ietf.org/rfc/rfc791.txt">RFC 791</a>. An IPv4 source route option should contain the full route, first hop through final destination, in the route data. The first hop is pulled out of the data and the option is reformatted accordingly. Otherwise, the route option should be formatted as specified in
-<a href="https://www.ietf.org/rfc/rfc791.txt">RFC 791</a>.</para>
-      <para>For use with IPv6, the options data must be in the format to be transmitted on the wire as specified in
-<a href="https://www.ietf.org/rfc/rfc2460.txt">RFC 2460</a>.</para>
-      <para>The <b>IP_OPTION_INFORMATION</b> structure is a member of the <see cref="ICMP_ECHO_REPLY" /> structure used by the <see cref="IcmpSendEcho" />, <see cref="IcmpSendEcho2" />, and <see cref="Icmp6SendEcho2" /> functions.</para>
-      <para>This structure is defined in the <i>Ipexport.h</i> header file which is automatically included in the <i>Iphlpapi.h</i> header file. The <i>Ipexport.h</i> header file should never be used directly.</para>
-    </remarks>
-    <seealso cref="ICMP_ECHO_REPLY" />
-    <seealso cref="IP_OPTION_INFORMATION32" />
-    <seealso cref="Icmp6SendEcho2" />
-    <seealso cref="IcmpSendEcho" />
-    <seealso cref="IcmpSendEcho2" />
+    <summary>The<b>IP_OPTION_INFORMATION</b> structure describes the options to be included in the header of an IP packet.</summary>
   </member>
   <member name="IP_OPTION_INFORMATION.Ttl">
-    <summary>
-      <para>Type: <b>UCHAR</b></para>
-      <para>The Time to Live field in an IPv4 packet header. This is the Hop Limit field in an IPv6 header.</para>
-    </summary>
+    <summary>The Time to Live field in an IPv4 packet header. This is the Hop Limit field in an IPv6 header.</summary>
   </member>
   <member name="IP_OPTION_INFORMATION.Tos">
-    <summary>
-      <para>Type: <b>UCHAR</b></para>
-      <para>The type of service field in an IPv4 header. This member is currently silently ignored.</para>
-    </summary>
+    <summary>The type of service field in an IPv4 header. This member is currently silently ignored.</summary>
   </member>
   <member name="IP_OPTION_INFORMATION.Flags">
     <summary>
-      <para>Type: <b>UCHAR</b></para>
-      <para>The Flags field. In IPv4, this is the Flags field in the IPv4 header. In IPv6, this field is represented by  options headers.</para>
+      <para>The Flags field. In IPv4, this is the Flags field in the IPv4 header. In IPv6, this field is represented by options headers.</para>
       <para>For IPv4, the possible values for the <b>Flags</b> member are a combination of the following values defined in the <i>Ipexport.h</i> header file:</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_FLAG_REVERSE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x01</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x01</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>This value causes the IP packet to add in an IP routing header with
-the source. This value is only applicable on Windows Vista and later.</para>
-          </description>
-        </item>
-        <item>
+          <description>This value causes the IP packet to add in an IP routing header with the source. This value is only applicable on Windows Vista and later.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_FLAG_DF</b>
-                </description>
-              </item>
-              <item>
-                <description>0x02</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x02</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>This value indicates that the packet should not be fragmented.</para>
-          </description>
-        </item>
+          <description>This value indicates that the packet should not be fragmented.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="IP_OPTION_INFORMATION.OptionsSize">
-    <summary>
-      <para>Type: <b>UCHAR</b></para>
-      <para>The size, in bytes, of IP options data.</para>
-    </summary>
+    <summary>The size, in bytes, of IP options data.</summary>
   </member>
   <member name="IP_OPTION_INFORMATION.OptionsData">
-    <summary>
-      <para>Type: <b>PUCHAR</b></para>
-      <para>A pointer to options data.</para>
-    </summary>
+    <summary>A pointer to options data.</summary>
   </member>
 </doc>

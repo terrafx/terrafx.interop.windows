@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_LOGOTYPE_IMAGE">
-    <summary>
-      <para>The <b>CERT_LOGOTYPE_IMAGE</b> structure contains information about an image logotype.</para>
-    </summary>
-    <seealso cref="CERT_LOGOTYPE_DATA" />
+    <summary>The <b>CERT_LOGOTYPE_IMAGE</b> structure contains information about an image logotype.</summary>
   </member>
   <member name="CERT_LOGOTYPE_IMAGE.LogotypeDetails">
-    <summary>
-      <para>A <see cref="CERT_LOGOTYPE_DETAILS" /> structure that contains additional information about the image.</para>
-    </summary>
+    <summary>A <see cref="CERT_LOGOTYPE_DETAILS" /> structure that contains additional information about the image.</summary>
   </member>
   <member name="CERT_LOGOTYPE_IMAGE.pLogotypeImageInfo">
-    <summary>
-      <para>The address of a <see cref="CERT_LOGOTYPE_IMAGE_INFO" /> structure that contains the image information.</para>
-    </summary>
+    <summary>The address of a <see cref="CERT_LOGOTYPE_IMAGE_INFO" /> structure that contains the image information.</summary>
   </member>
 </doc>

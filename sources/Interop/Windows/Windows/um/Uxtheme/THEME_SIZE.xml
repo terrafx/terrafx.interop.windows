@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="THEME_SIZE">
-    <summary>
-      <para>Identifies the type of size value to retrieve for a visual style part.</para>
-    </summary>
-    <remarks>
-      <para>A value from the <b>THEMESIZE</b> enumeration is used with the <see cref="GetThemePartSize" /> function to specify the type of size value to retrieve for a particular visual style part.</para>
-    </remarks>
+    <summary>Identifies the type of size value to retrieve for a visual style part.</summary>
   </member>
   <member name="THEME_SIZE.TS_MIN">
-    <summary>
-      <para>Receives the minimum size of a visual style part.</para>
-    </summary>
+    <summary>Receives the minimum size of a visual style part.</summary>
   </member>
   <member name="THEME_SIZE.TS_TRUE">
-    <summary>
-      <para>Receives the size of the visual style part that will best fit the available space.</para>
-    </summary>
+    <summary>Receives the size of the visual style part that will best fit the available space.</summary>
   </member>
   <member name="THEME_SIZE.TS_DRAW">
-    <summary>
-      <para>Receives the size that the theme manager uses to draw a part.</para>
-    </summary>
+    <summary>Receives the size that the theme manager uses to draw a part.</summary>
   </member>
 </doc>

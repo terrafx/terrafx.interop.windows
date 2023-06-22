@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMMNotificationClient.OnDefaultDeviceChanged">
-    <summary>
-      <para>The <b>OnDefaultDeviceChanged</b> method notifies the client that the default audio endpoint device for a particular <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-roles">device role</a> has changed.</para>
-    </summary>
+    <summary>The <b>OnDefaultDeviceChanged</b> method notifies the client that the default audio endpoint device for a particular <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-roles">device role</a> has changed.</summary>
     <param name="flow">
       <para>The data-flow direction of the endpoint device. This parameter is set to one of the following <see cref="EDataFlow" /> enumeration values:</para>
       <para>eRender</para>
@@ -18,57 +16,22 @@
       <para>eMultimedia</para>
       <para>eCommunications</para>
     </param>
-    <param name="pwstrDefaultDeviceId">
-      <para>Pointer to the <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-id-strings">endpoint ID string</a> that identifies the audio endpoint device. This parameter points to a null-terminated, wide-character string containing the endpoint ID. The string remains valid for the duration of the call. If the user has removed or disabled the default device for a particular role, and no other device is available to assume that role, then <i>pwstrDefaultDevice</i> is <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
-    </returns>
-    <remarks>
-      <para>The three input parameters specify the data-flow direction, device role, and endpoint ID string of the new default audio endpoint device.</para>
-      <para>In Windows Vista, the MMDevice API supports device roles but the system-supplied user interface programs do not. The user interface in Windows Vista enables the user to select a default audio device for rendering and a default audio device for capture. When the user changes the default rendering or capture device, the system assigns all three device roles (eConsole, eMultimedia, and eCommunications) to the new device. Thus, when the user changes the default rendering or capture device, the system calls the client's <b>OnDefaultDeviceChanged</b> method three times—once for each of the three device roles.</para>
-      <para>In a future version of Windows, the user interface might enable the user to assign individual roles to different devices. In that case, if the user changes the assignment of only one or two device roles to a new rendering or capture device, the system will call the client's <b>OnDefaultDeviceChanged</b> method only once or twice (that is, one call per changed role). Depending on how the <b>OnDefaultDeviceChanged</b> method responds to role changes, the behavior of an audio application developed to run in Windows Vista might change when run in a future version of Windows. For more information, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-roles-in-windows-vista">Device Roles in Windows Vista</a>.</para>
-      <para>For a code example that implements the <b>OnDefaultDeviceChanged</b> method, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-events">Device Events</a>.</para>
-    </remarks>
-    <seealso cref="IMMNotificationClient Interface" />
+    <param name="pwstrDefaultDeviceId">Pointer to the <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-id-strings">endpoint ID string</a> that identifies the audio endpoint device. This parameter points to a null-terminated, wide-character string containing the endpoint ID. The string remains valid for the duration of the call. If the user has removed or disabled the default device for a particular role, and no other device is available to assume that role, then <i>pwstrDefaultDevice</i> is <b>NULL</b>.</param>
+    <returns>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</returns>
   </member>
   <member name="IMMNotificationClient.OnDeviceAdded">
-    <summary>
-      <para>The <b>OnDeviceAdded</b> method indicates that a new audio endpoint device has been added.</para>
-    </summary>
-    <param name="pwstrDeviceId">
-      <para>Pointer to the <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-id-strings">endpoint ID string</a> that identifies the audio endpoint device. This parameter points to a null-terminated, wide-character string containing the endpoint ID. The string remains valid for the duration of the call.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
-    </returns>
-    <remarks>
-      <para>For a code example that implements the <b>OnDeviceAdded</b> method, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-events">Device Events</a>.</para>
-    </remarks>
-    <seealso cref="IMMNotificationClient Interface" />
+    <summary>The <b>OnDeviceAdded</b> method indicates that a new audio endpoint device has been added.</summary>
+    <param name="pwstrDeviceId">Pointer to the <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-id-strings">endpoint ID string</a> that identifies the audio endpoint device. This parameter points to a null-terminated, wide-character string containing the endpoint ID. The string remains valid for the duration of the call.</param>
+    <returns>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</returns>
   </member>
   <member name="IMMNotificationClient.OnDeviceRemoved">
-    <summary>
-      <para>The <b>OnDeviceRemoved</b> method indicates that an audio endpoint device has been removed.</para>
-    </summary>
-    <param name="pwstrDeviceId">
-      <para>Pointer to the <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-id-strings">endpoint ID string</a> that identifies the audio endpoint device. This parameter points to a null-terminated, wide-character string containing the endpoint ID. The string remains valid for the duration of the call.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
-    </returns>
-    <remarks>
-      <para>For a code example that implements the <b>OnDeviceRemoved</b> method, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-events">Device Events</a>.</para>
-    </remarks>
-    <seealso cref="IMMNotificationClient Interface" />
+    <summary>The <b>OnDeviceRemoved</b> method indicates that an audio endpoint device has been removed.</summary>
+    <param name="pwstrDeviceId">Pointer to the <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-id-strings">endpoint ID string</a> that identifies the audio endpoint device. This parameter points to a null-terminated, wide-character string containing the endpoint ID. The string remains valid for the duration of the call.</param>
+    <returns>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</returns>
   </member>
   <member name="IMMNotificationClient.OnDeviceStateChanged">
-    <summary>
-      <para>The <b>OnDeviceStateChanged</b> method indicates that the state of an audio endpoint device has changed.</para>
-    </summary>
-    <param name="pwstrDeviceId">
-      <para>Pointer to the <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-id-strings">endpoint ID string</a> that identifies the audio endpoint device. This parameter points to a null-terminated, wide-character string containing the endpoint ID. The string remains valid for the duration of the call.</para>
-    </param>
+    <summary>The <b>OnDeviceStateChanged</b> method indicates that the state of an audio endpoint device has changed.</summary>
+    <param name="pwstrDeviceId">Pointer to the <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-id-strings">endpoint ID string</a> that identifies the audio endpoint device. This parameter points to a null-terminated, wide-character string containing the endpoint ID. The string remains valid for the duration of the call.</param>
     <param name="dwNewState">
       <para>Specifies the new state of the endpoint device. The value of this parameter is one of the following <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-state-xxx-constants">DEVICE_STATE_XXX</a> constants:</para>
       <para>DEVICE_STATE_ACTIVE</para>
@@ -76,33 +39,13 @@
       <para>DEVICE_STATE_NOTPRESENT</para>
       <para>DEVICE_STATE_UNPLUGGED</para>
     </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
-    </returns>
-    <remarks>
-      <para>For a code example that implements the <b>OnDeviceStateChanged</b> method, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-events">Device Events</a>.</para>
-    </remarks>
-    <seealso cref="IMMNotificationClient Interface" />
+    <returns>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</returns>
   </member>
   <member name="IMMNotificationClient.OnPropertyValueChanged">
-    <summary>
-      <para>The <b>OnPropertyValueChanged</b> method indicates that the value of a property belonging to an audio endpoint device has changed.</para>
-    </summary>
-    <param name="pwstrDeviceId">
-      <para>Pointer to the <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-id-strings">endpoint ID string</a> that identifies the audio endpoint device. This parameter points to a null-terminated, wide-character string that contains the endpoint ID. The string remains valid for the duration of the call.</para>
-    </param>
-    <param name="key">
-      <para>A <see cref="PROPERTYKEY" /> structure that specifies the property. The structure contains the property-set GUID and an index identifying a property within the set. The structure is passed by value. It remains valid for the duration of the call. For more information about <b>PROPERTYKEY</b>, see the Windows SDK documentation.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
-    </returns>
-    <remarks>
-      <para>A call to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb761475(v=vs.85)">IPropertyStore.SetValue</a> method that successfully changes the value of a property of an audio endpoint device generates a call to <b>OnPropertyValueChanged</b>. For more information about <b>IPropertyStore.SetValue</b>, see the Windows SDK documentation.</para>
-      <para>A client can use the <i>key</i> parameter to retrieve the new property value. For a code example that uses a property key to retrieve a property value from the property store of an endpoint device, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-properties">Device Properties</a>.</para>
-      <para>For a code example that implements the <b>OnPropertyValueChanged</b> method, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-events">Device Events</a>.</para>
-    </remarks>
-    <seealso cref="IMMNotificationClient Interface" />
+    <summary>The <b>OnPropertyValueChanged</b> method indicates that the value of a property belonging to an audio endpoint device has changed.</summary>
+    <param name="pwstrDeviceId">Pointer to the <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-id-strings">endpoint ID string</a> that identifies the audio endpoint device. This parameter points to a null-terminated, wide-character string that contains the endpoint ID. The string remains valid for the duration of the call.</param>
+    <param name="key">A <see cref="PROPERTYKEY" /> structure that specifies the property. The structure contains the property-set GUID and an index identifying a property within the set. The structure is passed by value. It remains valid for the duration of the call. For more information about <b>PROPERTYKEY</b>, see the Windows SDK documentation.</param>
+    <returns>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</returns>
   </member>
   <member name="IMMNotificationClient">
     <summary>
@@ -117,26 +60,6 @@
         <item>
           <description>The client can compare the endpoint ID string with the endpoint ID string of an existing device instance. To obtain the second endpoint ID string, the client calls the <see cref="IMMDevice.GetId" /> method of the device instance. If the two strings match, they identify the same device.</description>
         </item>
-      </list>
-      <para>In implementing the <b>IMMNotificationClient</b> interface, the client should observe these rules to avoid deadlocks and undefined behavior:</para>
-      <list type="bullet">
-        <item>
-          <description>The methods of the interface must be nonblocking. The client should never wait on a synchronization object during an event callback.</description>
-        </item>
-        <item>
-          <description>To avoid dead locks, the client should never call <see cref="IMMDeviceEnumerator.RegisterEndpointNotificationCallback" /> or <see cref="IMMDeviceEnumerator.UnregisterEndpointNotificationCallback" /> in its implementation of  <b>IMMNotificationClient</b> methods. </description>
-        </item>
-        <item>
-          <description>The client should never release the final reference on an MMDevice API object during an event callback.</description>
-        </item>
-      </list>
-      <para>For a code example that implements the <b>IMMNotificationClient</b> interface, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-events">Device Events</a>.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
-    <seealso cref="IMMDevice.GetId" />
-    <seealso cref="IMMDeviceEnumerator.GetDevice" />
-    <seealso cref="IMMDeviceEnumerator.RegisterEndpointNotificationCallback" />
-    <seealso cref="IMMDeviceEnumerator.UnregisterEndpointNotificationCallback" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/mmdevice-api">MMDevice API</seealso>
+      </list>In implementing the <b>IMMNotificationClient</b> interface, the client should observe these rules to avoid deadlocks and undefined behavior:<list type="bullet"><item><description>The methods of the interface must be nonblocking. The client should never wait on a synchronization object during an event callback.</description></item><item><description>To avoid dead locks, the client should never call <see cref="IMMDeviceEnumerator.RegisterEndpointNotificationCallback" /> or <see cref="IMMDeviceEnumerator.UnregisterEndpointNotificationCallback" /> in its implementation of <b>IMMNotificationClient</b> methods.</description></item><item><description>The client should never release the final reference on an MMDevice API object during an event callback.</description></item></list>For a code example that implements the <b>IMMNotificationClient</b> interface, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-events">Device Events</a>.</summary>
   </member>
 </doc>

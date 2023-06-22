@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="COMDLG_FILTERSPEC">
-    <summary>
-      <para>Used generically to filter elements.</para>
-    </summary>
+    <summary>Used generically to filter elements.</summary>
   </member>
   <member name="COMDLG_FILTERSPEC.pszName">
-    <summary>
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer that contains the friendly name of the filter.</para>
-    </summary>
+    <summary>A pointer to a buffer that contains the friendly name of the filter.</summary>
   </member>
   <member name="COMDLG_FILTERSPEC.pszSpec">
-    <summary>
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer that contains the filter pattern.</para>
-    </summary>
+    <summary>A pointer to a buffer that contains the filter pattern.</summary>
   </member>
 </doc>

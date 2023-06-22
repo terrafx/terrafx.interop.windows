@@ -3,39 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="KF_REDIRECTION_CAPABILITIES">
-    <summary>
-      <para>Flags that specify the current redirection capabilities of a known folder. Used by <see cref="IKnownFolder.GetRedirectionCapabilities" />.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
+    <summary>Flags that specify the current redirection capabilities of a known folder. Used by <see cref="IKnownFolder.GetRedirectionCapabilities" />.</summary>
   </member>
   <member name="KF_REDIRECTION_CAPABILITIES.KF_REDIRECTION_CAPABILITIES_ALLOW_ALL">
-    <summary>
-      <para>The folder can be redirected if any of the bits in the lower byte of the value are set but no DENY flag is set. DENY flags are found in the upper byte of the value.</para>
-    </summary>
+    <summary>The folder can be redirected if any of the bits in the lower byte of the value are set but no DENY flag is set. DENY flags are found in the upper byte of the value.</summary>
   </member>
   <member name="KF_REDIRECTION_CAPABILITIES.KF_REDIRECTION_CAPABILITIES_REDIRECTABLE">
-    <summary>
-      <para>The folder can be redirected. Currently, redirection exists for only common and user folders; fixed and virtual folders cannot be redirected.</para>
-    </summary>
+    <summary>The folder can be redirected. Currently, redirection exists for only common and user folders; fixed and virtual folders cannot be redirected.</summary>
   </member>
   <member name="KF_REDIRECTION_CAPABILITIES.KF_REDIRECTION_CAPABILITIES_DENY_ALL">
-    <summary>
-      <para>Redirection is not allowed.</para>
-    </summary>
+    <summary>Redirection is not allowed.</summary>
   </member>
   <member name="KF_REDIRECTION_CAPABILITIES.KF_REDIRECTION_CAPABILITIES_DENY_POLICY_REDIRECTED">
-    <summary>
-      <para>The folder cannot be redirected because it is already redirected by group policy.</para>
-    </summary>
+    <summary>The folder cannot be redirected because it is already redirected by group policy.</summary>
   </member>
   <member name="KF_REDIRECTION_CAPABILITIES.KF_REDIRECTION_CAPABILITIES_DENY_POLICY">
-    <summary>
-      <para>The folder cannot be redirected because the policy prohibits redirecting this folder.</para>
-    </summary>
+    <summary>The folder cannot be redirected because the policy prohibits redirecting this folder.</summary>
   </member>
   <member name="KF_REDIRECTION_CAPABILITIES.KF_REDIRECTION_CAPABILITIES_DENY_PERMISSIONS">
-    <summary>
-      <para>The folder cannot be redirected because the calling application does not have sufficient permissions.</para>
-    </summary>
+    <summary>The folder cannot be redirected because the calling application does not have sufficient permissions.</summary>
   </member>
 </doc>

@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DVASPECTINFO">
-    <summary>
-      <para>Contains information that is used by the <see cref="IViewObject.Draw" /> method to optimize rendering of an inactive object by making more efficient use of the GDI.</para>
-    </summary>
-    <seealso cref="DVASPECTINFOFLAG" />
-    <seealso cref="IViewObject.Draw" />
+    <summary>Contains information that is used by the <see cref="IViewObject.Draw" /> method to optimize rendering of an inactive object by making more efficient use of the GDI.</summary>
   </member>
   <member name="DVASPECTINFO.cb">
-    <summary>
-      <para>The size of the structure, in bytes.</para>
-    </summary>
+    <summary>The size of the structure, in bytes.</summary>
   </member>
   <member name="DVASPECTINFO.dwFlags">
-    <summary>
-      <para>A value taken from the <see cref="DVASPECTINFOFLAG" /> enumeration.</para>
-    </summary>
+    <summary>A value taken from the <see cref="DVASPECTINFOFLAG" /> enumeration.</summary>
   </member>
 </doc>

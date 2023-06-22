@@ -4,14 +4,11 @@
 <doc>
   <member name="IDDrawExclModeVideoCallback.OnUpdateColorKey">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>OnUpdateColorKey</code> method informs the application that the color key has changed so that the application can use the new color key to overlay graphics on the video.</para>
     </summary>
-    <param name="pKey">
-      <para>Pointer to a <see cref="COLORKEY" /> structure that contains the key type and a palette index.</para>
-    </param>
-    <param name="dwColor">
-      <para>Value indicating the 8-bit palette index of the <b>COLORKEY</b> returned in <i>pKey</i>, if the current display mode is 8-bit palettized. Otherwise, it is a value representing the color key in the pixel format of the current display mode.</para>
-    </param>
+    <param name="pKey">Pointer to a <see cref="COLORKEY" /> structure that contains the key type and a palette index.</param>
+    <param name="dwColor">Value indicating the 8-bit palette index of the <b>COLORKEY</b> returned in <i>pKey</i>, if the current display mode is 8-bit palettized. Otherwise, it is a value representing the color key in the pixel format of the current display mode.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -19,59 +16,46 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One of the parameters is invalid.</para>
-          </description>
-        </item>
+          <description>One of the parameters is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDDrawExclModeVideoCallback Interface" />
   </member>
   <member name="IDDrawExclModeVideoCallback.OnUpdateOverlay">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>OnUpdateOverlay</code> method informs the application when the overlay surface for the video is about to become visible, invisible, change size, or change position, so that the application can repaint its window appropriately.</para>
     </summary>
-    <param name="bBefore">
-      <para>Boolean value specifying whether the call is being made before or after the overlay-related change. <b>TRUE</b> specifies before, <b>FALSE</b> specifies after.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Value from the <see cref="AM_OVERLAY_NOTIFY_FLAGS" /> enumeration that specifies what is about to change or what changed.</para>
-    </param>
-    <param name="bOldVisible">
-      <para>Boolean value specifying whether the old window is visible. <b>TRUE</b> means the old window is visible.</para>
-    </param>
-    <param name="prcOldSrc">
-      <para>Pointer to the rectangle representing the old source position of the DirectDraw surface.</para>
-    </param>
-    <param name="prcOldDest">
-      <para>Pointer to the rectangle representing the old destination position of the rectangle in the overlay surface.</para>
-    </param>
-    <param name="bNewVisible">
-      <para>Boolean specifying whether the new window is visible. <b>TRUE</b> means the new window is visible.</para>
-    </param>
-    <param name="prcNewSrc">
-      <para>Pointer to the rectangle representing the new source position of the DirectDraw surface.</para>
-    </param>
-    <param name="prcNewDest">
-      <para>Pointer to the rectangle representing the new destination position of the rectangle in the overlay surface.</para>
-    </param>
+    <param name="bBefore">Boolean value specifying whether the call is being made before or after the overlay-related change. <b>TRUE</b> specifies before, <b>FALSE</b> specifies after.</param>
+    <param name="dwFlags">Value from the <see cref="AM_OVERLAY_NOTIFY_FLAGS" /> enumeration that specifies what is about to change or what changed.</param>
+    <param name="bOldVisible">Boolean value specifying whether the old window is visible. <b>TRUE</b> means the old window is visible.</param>
+    <param name="prcOldSrc">Pointer to the rectangle representing the old source position of the DirectDraw surface.</param>
+    <param name="prcOldDest">Pointer to the rectangle representing the old destination position of the rectangle in the overlay surface.</param>
+    <param name="bNewVisible">Boolean specifying whether the new window is visible. <b>TRUE</b> means the new window is visible.</param>
+    <param name="prcNewSrc">Pointer to the rectangle representing the new source position of the DirectDraw surface.</param>
+    <param name="prcNewDest">Pointer to the rectangle representing the new destination position of the rectangle in the overlay surface.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -79,61 +63,47 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid parameter.</para>
-          </description>
-        </item>
+          <description>Invalid parameter.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The application should call this method once before the overlay-related change occurs and once after the changes are done. In the call before the change, the overlay change doesn't happen until the application completes executing this method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDDrawExclModeVideoCallback Interface" />
   </member>
   <member name="IDDrawExclModeVideoCallback.OnUpdateSize">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>OnUpdateSize</code> method informs the application that the size of the video rectangle is about to change.</para>
     </summary>
-    <param name="dwWidth">
-      <para>The new width, in pixels, of the video stream.</para>
-    </param>
-    <param name="dwHeight">
-      <para>The new height, in pixels, of the video stream.</para>
-    </param>
-    <param name="dwARWidth">
-      <para>The new horizontal value of the aspect ratio.</para>
-    </param>
-    <param name="dwARHeight">
-      <para>The new vertical value of the aspect ratio.</para>
-    </param>
-    <returns>
-      <para>Returns an HRESULT value.</para>
-    </returns>
-    <remarks>
-      <para>This method is called when the size of the rectangle in the video stream changes, for example from 704x480 to 640x480.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDDrawExclModeVideoCallback Interface" />
+    <param name="dwWidth">The new width, in pixels, of the video stream.</param>
+    <param name="dwHeight">The new height, in pixels, of the video stream.</param>
+    <param name="dwARWidth">The new horizontal value of the aspect ratio.</param>
+    <param name="dwARHeight">The new vertical value of the aspect ratio.</param>
+    <returns>Returns an HRESULT value.</returns>
   </member>
   <member name="IDDrawExclModeVideoCallback">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IDDrawExclModeVideoCallback</code> interface is a callback interface for the <see cref="IDDrawExclModeVideo" /> interface.</para>
       <para>This callback interface enables applications to get synchronous notification about changes to the overlay position, size, visibility, and so on, so that the application can adjust its video visibility, size, and position. This avoids any color key flash at the beginning, end, or during playback. The application must implement the interface. It is important that none of the methods block or slow down the video processing, because this will cause problems with playback.</para>
       <para>Use this interface if you are writing a filter that supports <b>IDDrawExclModeVideo</b> or needs to generate callbacks to enable an application to draw color keys at the right time.</para>

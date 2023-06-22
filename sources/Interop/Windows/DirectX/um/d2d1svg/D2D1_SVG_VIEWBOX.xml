@@ -3,28 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_SVG_VIEWBOX">
-    <summary>
-      <para>Represents an SVG viewBox.</para>
-    </summary>
+    <summary>Represents an SVG viewBox.</summary>
   </member>
   <member name="D2D1_SVG_VIEWBOX.x">
-    <summary>
-      <para>X coordinate of the view box.</para>
-    </summary>
+    <summary>X coordinate of the view box.</summary>
   </member>
   <member name="D2D1_SVG_VIEWBOX.y">
-    <summary>
-      <para>Y coordinate of the view box.</para>
-    </summary>
+    <summary>Y coordinate of the view box.</summary>
   </member>
   <member name="D2D1_SVG_VIEWBOX.width">
-    <summary>
-      <para>Width of the view box.</para>
-    </summary>
+    <summary>Width of the view box.</summary>
   </member>
   <member name="D2D1_SVG_VIEWBOX.height">
-    <summary>
-      <para>Height of the view box.</para>
-    </summary>
+    <summary>Height of the view box.</summary>
   </member>
 </doc>

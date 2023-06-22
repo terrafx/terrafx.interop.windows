@@ -3,42 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_INTERMEDIATE_GRAPH_EDGE_DESC">
-    <summary>
-      <para>Describes a connection within a graph of DirectML operators defined by <see cref="DML_GRAPH_DESC" /> and passed to <see cref="IDMLDevice1.CompileGraph" />. This structure is used to define a connection between internal nodes.</para>
-    </summary>
-    <seealso cref="IDMLDevice1.CompileGraph method" />
-    <seealso cref="DML_GRAPH_DESC struct" />
-    <seealso cref="DML_GRAPH_DESC structure" />
-    <seealso cref="DML_GRAPH_EDGE_DESC structure" />
+    <summary>Describes a connection within a graph of DirectML operators defined by <see cref="DML_GRAPH_DESC" /> and passed to <see cref="IDMLDevice1.CompileGraph" />. This structure is used to define a connection between internal nodes.</summary>
   </member>
   <member name="DML_INTERMEDIATE_GRAPH_EDGE_DESC.FromNodeIndex">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></b></para>
-      <para>The index of the graph node from which a connection to another node is specified.</para>
-    </summary>
+    <summary>The index of the graph node from which a connection to another node is specified.</summary>
   </member>
   <member name="DML_INTERMEDIATE_GRAPH_EDGE_DESC.FromNodeOutputIndex">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></b></para>
-      <para>The index of the output on the node at index <i>FromNodeIndex</i> where the connection is specified.</para>
-    </summary>
+    <summary>The index of the output on the node at index <i>FromNodeIndex</i> where the connection is specified.</summary>
   </member>
   <member name="DML_INTERMEDIATE_GRAPH_EDGE_DESC.ToNodeIndex">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></b></para>
-      <para>The index of the graph node into which a connection from another node is specified.</para>
-    </summary>
+    <summary>The index of the graph node into which a connection from another node is specified.</summary>
   </member>
   <member name="DML_INTERMEDIATE_GRAPH_EDGE_DESC.ToNodeInputIndex">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></b></para>
-      <para>The index of the input on the node at index <i>ToNodeIndex</i> where the connection is specified.</para>
-    </summary>
+    <summary>The index of the input on the node at index <i>ToNodeIndex</i> where the connection is specified.</summary>
   </member>
   <member name="DML_INTERMEDIATE_GRAPH_EDGE_DESC.Name">
-    <summary>
-      <para>Type: _Field_z_ _Maybenull_ <b>const char*</b></para>
-      <para>An optional name for the graph connection. If provided, this might be used within certain error messages emitted by the DirectML debug layer.</para>
-    </summary>
+    <summary>An optional name for the graph connection. If provided, this might be used within certain error messages emitted by the DirectML debug layer.</summary>
   </member>
 </doc>

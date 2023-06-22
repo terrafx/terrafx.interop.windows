@@ -3,49 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IHandlerActivationHost.BeforeCoCreateInstance">
-    <summary>
-      <para>Notifies a client of <see cref="ShellExecuteEx" /> that a handler is about to be created, giving that client the opportunity to display UI confirming the use of that handler or reject it by returning a specific error code.</para>
-    </summary>
-    <param name="clsidHandler">
-      <para>Identifies the handler.</para>
-    </param>
-    <param name="itemsBeingActivated">
-      <para>The Shell item objects that will be passed to the handler. Typically there is only one, but in some cases there can be more than one.</para>
-    </param>
-    <param name="handlerInfo">
-      <para>Provides access to information about the handler that will be invoked. This object also supports <b>IHandlerInfo2</b> on versions of Windows that support that interface.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>.
-Otherwise, it returns an <b>HRESULT</b> error code, <b>HRESULT_FROM_WIN32(ERROR_CANCELLED)</b> indicates that the ShellExecute call should be canceled, <b>EXECUTE_E_LAUNCH_APPLICATION</b> indicates that this handler should not be used, but if there is another it should be used.</para>
-    </returns>
-    <seealso cref="IHandlerActivationHost" />
+    <summary>Notifies a client of <see cref="ShellExecuteEx" /> that a handler is about to be created, giving that client the opportunity to display UI confirming the use of that handler or reject it by returning a specific error code.</summary>
+    <param name="clsidHandler">Identifies the handler.</param>
+    <param name="itemsBeingActivated">The Shell item objects that will be passed to the handler. Typically there is only one, but in some cases there can be more than one.</param>
+    <param name="handlerInfo">Provides access to information about the handler that will be invoked. This object also supports <b>IHandlerInfo2</b> on versions of Windows that support that interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code, <b>HRESULT_FROM_WIN32(ERROR_CANCELLED)</b> indicates that the ShellExecute call should be canceled, <b>EXECUTE_E_LAUNCH_APPLICATION</b> indicates that this handler should not be used, but if there is another it should be used.</returns>
   </member>
   <member name="IHandlerActivationHost.BeforeCreateProcess">
-    <summary>
-      <para>Notifies a client of <see cref="ShellExecuteEx" /> that a process is about to created, giving that client the opportunity to display UI confirming that or reject it by returning a specific error code.</para>
-    </summary>
-    <param name="applicationPath">
-      <para>The fully qualified path to the process executable, or in some cases a DLL path.</para>
-    </param>
-    <param name="commandLine">
-      <para>The full command line that will be passed to <b>CreateProcess</b> including the arguments that the handler requested via its registration.</para>
-    </param>
-    <param name="handlerInfo">
-      <para>Provides access to information about the handler that will be invoked. This object also supports <b>IHandlerInfo2</b> on versions of windows that support that interface. This object also implements <see cref="IObjectWithSelection" />. This can be used to get the Shell item, or items in some cases, that are being launched.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>.
-Otherwise, it returns an <b>HRESULT</b> error code, <b>HRESULT_FROM_WIN32(ERROR_CANCELLED)</b> indicates that the ShellExecute call should be canceled.</para>
-    </returns>
-    <seealso cref="IHandlerActivationHost" />
+    <summary>Notifies a client of <see cref="ShellExecuteEx" /> that a process is about to created, giving that client the opportunity to display UI confirming that or reject it by returning a specific error code.</summary>
+    <param name="applicationPath">The fully qualified path to the process executable, or in some cases a DLL path.</param>
+    <param name="commandLine">The full command line that will be passed to <b>CreateProcess</b> including the arguments that the handler requested via its registration.</param>
+    <param name="handlerInfo">Provides access to information about the handler that will be invoked. This object also supports <b>IHandlerInfo2</b> on versions of windows that support that interface. This object also implements <see cref="IObjectWithSelection" />. This can be used to get the Shell item, or items in some cases, that are being launched.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code, <b>HRESULT_FROM_WIN32(ERROR_CANCELLED)</b> indicates that the ShellExecute call should be canceled.</returns>
   </member>
   <member name="IHandlerActivationHost">
-    <summary>
-      <para>Enables a client of Shell item activation (including callers of <see cref="ShellExecuteEx" /> and <see cref="IContextMenu.InvokeCommand" />) to be given a chance to veto or perform some action before the activation of verb handlers.</para>
-    </summary>
-    <remarks>
-      <para>This interface is implemented by an object reachable through the site chain provided to <see cref="ShellExecuteEx" /> or the context menu handler. Applications will return this object in their <b>IServiceProvider.QueryService</b> implementation when asked for the service ID <b>SID_SHandlerActivationHost</b>.</para>
-    </remarks>
+    <summary>Enables a client of Shell item activation (including callers of <see cref="ShellExecuteEx" /> and <see cref="IContextMenu.InvokeCommand" />) to be given a chance to veto or perform some action before the activation of verb handlers.</summary>
   </member>
 </doc>

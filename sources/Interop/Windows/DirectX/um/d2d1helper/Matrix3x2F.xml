@@ -3,350 +3,94 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Matrix3x2F.Determinant">
-    <summary>
-      <para>Calculates the determinant of the matrix.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The determinant of this matrix.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</seealso>
+    <summary>Calculates the determinant of the matrix.</summary>
+    <returns>The determinant of this matrix.</returns>
   </member>
   <member name="Matrix3x2F.Identity">
-    <summary>
-      <para>Creates an identity matrix.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</a></b></para>
-      <para>An identity matrix.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</seealso>
+    <summary>Creates an identity matrix.</summary>
+    <returns>An identity matrix.</returns>
   </member>
   <member name="Matrix3x2F.Invert">
-    <summary>
-      <para>Inverts the matrix, if it is invertible.</para>
-    </summary>
+    <summary>Inverts the matrix, if it is invertible.</summary>
     <returns>
-      <para>Type: <b>bool</b></para>
-      <para>
-        <b>true</b> if the matrix was inverted; otherwise, <b>false</b>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</seealso>
+      <b>true</b> if the matrix was inverted; otherwise, <b>false</b>.</returns>
   </member>
   <member name="Matrix3x2F.IsIdentity">
-    <summary>
-      <para>Indicates whether this matrix is the identity matrix.</para>
-    </summary>
+    <summary>Indicates whether this matrix is the identity matrix.</summary>
     <returns>
-      <para>Type: <b>bool</b></para>
-      <para>
-        <b>true</b> if the matrix is an identity matrix; otherwise, <b>false</b>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</seealso>
+      <b>true</b> if the matrix is an identity matrix; otherwise, <b>false</b>.</returns>
   </member>
   <member name="Matrix3x2F.IsInvertible">
-    <summary>
-      <para>Indicates whether the matrix is invertible.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>bool</b></para>
-      <para>true if the matrix is invertible; otherwise, false.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</seealso>
+    <summary>Indicates whether the matrix is invertible.</summary>
+    <returns>true if the matrix is invertible; otherwise, false.</returns>
   </member>
   <member name="Matrix3x2F.Matrix3x2F">
-    <summary>
-      <para>Instantiates a new instance of the <a href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</a> class that contains the specified values.</para>
-    </summary>
-    <param name="m11">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The value in the first row and first column of the matrix.</para>
-    </param>
-    <param name="m12">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The value in the first row and second column of the matrix.</para>
-    </param>
-    <param name="m21">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The value in the second row and first column of the matrix.</para>
-    </param>
-    <param name="m22">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The value in the second row and second column of the matrix.</para>
-    </param>
-    <param name="m31">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The value in the third row and first column of the matrix.</para>
-    </param>
-    <param name="m32">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The value in the third row and second column of the matrix.</para>
-    </param>
-    <remarks>
-      <para>This method enables you to explicitly set the values of  matrix members. When using this method, ensure that each member represents an appropriate value for your transformation matrix. For example, to create the identity matrix, you must set <i>_11</i> and <i>_22</i> to 1, and the rest to 0. To create a translation matrix, you must set <i>_11</i> and <i>_22</i> to 1, <i>_12</i> and <i>_21</i> to 0, <i>_31</i> to the x displacement, and <i>_32</i> to the y displacement.</para>
-      <para>For convenience and accuracy, we recommended that whenever possible you use other helper functions, such as <see cref="Identity" /> and <see cref="Translation" />, instead of this one.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</seealso>
+    <summary>Instantiates a new instance of the <a href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</a> class that contains the specified values.</summary>
+    <param name="m11">The value in the first row and first column of the matrix.</param>
+    <param name="m12">The value in the first row and second column of the matrix.</param>
+    <param name="m21">The value in the second row and first column of the matrix.</param>
+    <param name="m22">The value in the second row and second column of the matrix.</param>
+    <param name="m31">The value in the third row and first column of the matrix.</param>
+    <param name="m32">The value in the third row and second column of the matrix.</param>
   </member>
   <member name="Matrix3x2F.Matrix3x2F">
-    <summary>
-      <para>Instantiates a new instance of the <a href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</a> class without initializing the matrix values.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</seealso>
+    <summary>Instantiates a new instance of the <a href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</a> class without initializing the matrix values.</summary>
   </member>
   <member name="Matrix3x2F.ReinterpretBaseType">
-    <summary>
-      <para>Converts the specified <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> matrix to a <a href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</a> without making a copy.</para>
-    </summary>
-    <param name="pMatrix">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The matrix to convert.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</a>*</b></para>
-      <para>The converted matrix.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</seealso>
+    <summary>Converts the specified <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> matrix to a <a href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</a> without making a copy.</summary>
+    <param name="pMatrix">The matrix to convert.</param>
+    <returns>The converted matrix.</returns>
   </member>
   <member name="Matrix3x2F.ReinterpretBaseType">
-    <summary>
-      <para>Converts the specified <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> matrix to a <a href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</a> without making a copy.</para>
-    </summary>
-    <param name="pMatrix">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The matrix to convert.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</a>*</b></para>
-      <para>The converted matrix.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</seealso>
+    <summary>Converts the specified <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> matrix to a <a href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</a> without making a copy.</summary>
+    <param name="pMatrix">The matrix to convert.</param>
+    <returns>The converted matrix.</returns>
   </member>
   <member name="Matrix3x2F.Rotation">
-    <summary>
-      <para>Creates a rotation transformation that has the specified angle and center point.</para>
-    </summary>
-    <param name="angle">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The rotation angle in degrees. A positive angle creates a clockwise rotation, and a negative angle creates a counterclockwise rotation.</para>
-    </param>
-    <param name="center">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The point about which the rotation is performed.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</a></b></para>
-      <para>The new rotation transformation.</para>
-    </returns>
-    <remarks>
-      <para>When calling this method, specify a <i>centerPoint</i> to rotate the object about, and the rotation <i>angle</i> in degrees. The following illustration shows a square rotated 45 degrees about its center point.</para>
-      <para>
-        <img alt="Illustration a square rotated clockwise 45 degrees about the center of the original square" src="https://docs.microsoft.com/windows/win32/api/d2d1helpermages/rotate_ovw.PNG" />
-      </para>
-      <h4>Examples</h4>
-      <para>The following example uses the <b>D2D1.Matrix3x2F.Rotation</b>  method to create a rotation matrix that rotates a square clockwise 45 degrees about the center of the square and passes the matrix to the <see cref="SetTransform" /> method of the render target (<i>m_pRenderTarget</i>).</para>
-      <para>The following illustration shows the effect of applying the  preceding rotation transformation to the square. The original square is a dotted outline, and the rotated square is a solid outline.</para>
-      <para>
-        <img alt="Illustration a square rotated 45 degrees about the center of the original square" src="https://docs.microsoft.com/windows/win32/api/d2d1helpermages/rotate_ovw.png" />
-      </para>
-      <code>    // Create a rectangle.
-    D2D1_RECT_F rectangle = D2D1.Rect(438.0f, 301.5f, 498.0f, 361.5f);
-
-    // Draw the rectangle.
-    m_pRenderTarget-&gt;DrawRectangle(
-        rectangle,
-        m_pOriginalShapeBrush,
-        1.0f,
-        m_pStrokeStyleDash
-        );
-
-    // Apply the rotation transform to the render target.
-    m_pRenderTarget-&gt;SetTransform(
-        D2D1.Matrix3x2F.Rotation(
-            45.0f,
-            D2D1.Point2F(468.0f, 331.5f))
-        );
-
-    // Fill the rectangle.
-    m_pRenderTarget-&gt;FillRectangle(rectangle, m_pFillBrush);
-
-    // Draw the transformed rectangle.
-    m_pRenderTarget-&gt;DrawRectangle(rectangle, m_pTransformedShapeBrush);
-
-
-</code>
-      <para>Code has been omitted from this example. For more information about transforms, see the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-transforms-overview">Transforms Overview</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</seealso>
+    <summary>Creates a rotation transformation that has the specified angle and center point.</summary>
+    <param name="angle">The rotation angle in degrees. A positive angle creates a clockwise rotation, and a negative angle creates a counterclockwise rotation.</param>
+    <param name="center">The point about which the rotation is performed.</param>
+    <returns>The new rotation transformation.</returns>
   </member>
   <member name="Matrix3x2F.Scale">
-    <summary>
-      <para>Creates a scale transformation that has the specified scale factors and center point.</para>
-    </summary>
-    <param name="size">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-size-f">D2D1_SIZE_F</a></b></para>
-      <para>The x-axis and y-axis scale factors of the scale transformation.</para>
-    </param>
-    <param name="center">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The point about which the scale is performed.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</a></b></para>
-      <para>The new scale transformation.</para>
-    </returns>
-    <remarks>
-      <para>This method creates a scale transformation for the specified <i>centerPoint</i> and scale factors. The scale factors are stored as an ordered pair in the
-<a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-size-f">D2D1_SIZE_F</a> structure. If you prefer to list each scale factor as a parameter, call the other <see cref="Scale" /> method.</para>
-      <para>The following illustration shows the size of the square increased
-to 130% in each dimension.
-The center point for the scaling is the upper-left corner of the square.</para>
-      <para>
-        <img alt="Illustration of a square scaled by 130% in the x-direction and y-direction" src="https://docs.microsoft.com/windows/win32/api/d2d1helpermages/scale_ovw.png" />
-      </para>
-      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/Direct2D/how-to-scale">How to Scale an Object</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</seealso>
+    <summary>Creates a scale transformation that has the specified scale factors and center point.</summary>
+    <param name="size">The x-axis and y-axis scale factors of the scale transformation.</param>
+    <param name="center">The point about which the scale is performed.</param>
+    <returns>The new scale transformation.</returns>
   </member>
   <member name="Matrix3x2F.Scale">
-    <summary>
-      <para>Creates a scale transformation that has the specified scale factors and center point.</para>
-    </summary>
-    <param name="x">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The x-axis scale factor of the scale transformation.</para>
-    </param>
-    <param name="y">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The y-axis scale factor of the scale transformation.</para>
-    </param>
-    <param name="center">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The point about which the scale is performed.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</a></b></para>
-      <para>The new scale transformation.</para>
-    </returns>
-    <remarks>
-      <para>This method creates a scale transformation for the specified <i>centerPoint</i> and the
-x-axis and y-axis scale factors. If you prefer to create a
-<a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-size-f">D2D1_SIZE_F</a> structure to store the scale factors, call the other <see cref="Scale" /> method.</para>
-      <para>The following illustration shows the size of the square increased
-to 130% in both dimensions.
-The center point of the scaling is the upper-left corner of the square.</para>
-      <para>
-        <img alt="Illustration of a square scaled by 130% in the x-direction and y-direction" src="https://docs.microsoft.com/windows/win32/api/d2d1helpermages/scale_ovw.png" />
-      </para>
-      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/Direct2D/how-to-scale">How to Scale an Object</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</seealso>
+    <summary>Creates a scale transformation that has the specified scale factors and center point.</summary>
+    <param name="x">The x-axis scale factor of the scale transformation.</param>
+    <param name="y">The y-axis scale factor of the scale transformation.</param>
+    <param name="center">The point about which the scale is performed.</param>
+    <returns>The new scale transformation.</returns>
   </member>
   <member name="Matrix3x2F.SetProduct">
-    <summary>
-      <para>Multiplies the two matrices and stores the result in this matrix.</para>
-    </summary>
-    <param name="a">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</a></b></para>
-      <para>The first matrix to multiply.</para>
-    </param>
-    <param name="b">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</a></b></para>
-      <para>The second matrix to multiply.</para>
-    </param>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</seealso>
+    <summary>Multiplies the two matrices and stores the result in this matrix.</summary>
+    <param name="a">The first matrix to multiply.</param>
+    <param name="b">The second matrix to multiply.</param>
   </member>
   <member name="Matrix3x2F.Skew">
-    <summary>
-      <para>Creates a skew transformation that has the specified x-axis and y-axis values and center point.</para>
-    </summary>
-    <param name="angleX">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The x-axis skew angle, which is measured in degrees counterclockwise from the y-axis.</para>
-    </param>
-    <param name="angleY">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The y-axis skew angle, which is measured in degrees clockwise from the x-axis.</para>
-    </param>
-    <param name="center">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The point about which the skew is performed.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</a></b></para>
-      <para>The new skew transformation.</para>
-    </returns>
-    <remarks>
-      <para>The typical y-axis skew means skews the angle in degrees counterclockwise from the x-axis. However, because the y-axis in Direct2D is inverted, the y-axis skew angle in Direct2D means skew the angle in degrees clockwise from the x-axis.</para>
-      <para>For example, the following illustration shows the rectangle skewed with y-axis skew angle of 30 degrees.  Notice that the angle is 30 degrees clockwise from the x-axis.</para>
-      <para>
-        <img alt="Illustration of a rectangle that is skewed along the y-axis for 30 degrees" src="https://docs.microsoft.com/windows/win32/api/d2d1helpermages/skewy.png" />
-      </para>
-      <h4>Examples</h4>
-      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/Direct2D/how-to-skew">How to Skew an Object</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</seealso>
+    <summary>Creates a skew transformation that has the specified x-axis and y-axis values and center point.</summary>
+    <param name="angleX">The x-axis skew angle, which is measured in degrees counterclockwise from the y-axis.</param>
+    <param name="angleY">The y-axis skew angle, which is measured in degrees clockwise from the x-axis.</param>
+    <param name="center">The point about which the skew is performed.</param>
+    <returns>The new skew transformation.</returns>
   </member>
   <member name="Matrix3x2F.TransformPoint">
-    <summary>
-      <para>Uses this matrix to transform the specified point and returns the result.</para>
-    </summary>
-    <param name="point">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The point to transform.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The transformed point.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</seealso>
+    <summary>Uses this matrix to transform the specified point and returns the result.</summary>
+    <param name="point">The point to transform.</param>
+    <returns>The transformed point.</returns>
   </member>
   <member name="Matrix3x2F.Translation">
-    <summary>
-      <para>Creates a translation transformation that has the specified x and y displacements.</para>
-    </summary>
-    <param name="size">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-size-f">D2D1_SIZE_F</a></b></para>
-      <para>The distance to translate along the x-axis and the y-axis.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</a></b></para>
-      <para>A transformation matrix that translates an object the specified horizontal and vertical distance.</para>
-    </returns>
-    <remarks>
-      <para>Translation  is an affine transformation, which moves every point by a fixed distance in the same direction. It is similar to shifting the origin of the coordinate space. You can translate an object along the x-axis, the y-axis, or both.</para>
-      <para>When calling this method, specify the x and y displacements and create  a <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-size-f">D2D1_SIZE_F</a> structure for storing the displacements.   If you prefer to specify each displacement as a parameter, call the  other <see cref="Translation" /> method. The following illustration shows a square moved 20 pixels to the right along the x-axis, and 10 pixels downward along the y-axis.</para>
-      <para>
-        <img alt="Illustration of a square moved to the right and down from its original position" src="https://docs.microsoft.com/windows/win32/api/d2d1helpermages/translation_ovw.png" />
-      </para>
-      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/Direct2D/how-to-translate">How to Translate an Object</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</seealso>
+    <summary>Creates a translation transformation that has the specified x and y displacements.</summary>
+    <param name="size">The distance to translate along the x-axis and the y-axis.</param>
+    <returns>A transformation matrix that translates an object the specified horizontal and vertical distance.</returns>
   </member>
   <member name="Matrix3x2F.Translation">
-    <summary>
-      <para>Creates a translation transformation that has the specified x and y displacements.</para>
-    </summary>
-    <param name="x">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The distance to translate along the x-axis.</para>
-    </param>
-    <param name="y">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The distance to translate along the y-axis.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</a></b></para>
-      <para>A transformation matrix that translates an object the specified horizontal and vertical distance.</para>
-    </returns>
-    <remarks>
-      <para>Translation  is an affine transformation, which moves every point by a fixed distance in the same direction. It is similar to shifting the origin of the coordinate space. You can translate an object along the x-axis, the y-axis, or both.</para>
-      <para>When calling this method, specify the x and y displacements. If you prefer to define both displacements in an ordered pair by using the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-size-f">D2D1_SIZE_F</a> structure, call the  other <see cref="Translation" /> method. The following illustration shows a square moved 20 pixels to the right along the x-axis, and 10 pixels downward along the y-axis.</para>
-      <para>
-        <img alt="Illustration of the square moved to the right and downward" src="https://docs.microsoft.com/windows/win32/api/d2d1helpermages/translation_ovw.png" />
-      </para>
-      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/Direct2D/how-to-translate">How to Translate an Object</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1helper/nl-d2d1helper-matrix3x2f">Matrix3x2F</seealso>
+    <summary>Creates a translation transformation that has the specified x and y displacements.</summary>
+    <param name="x">The distance to translate along the x-axis.</param>
+    <param name="y">The distance to translate along the y-axis.</param>
+    <returns>A transformation matrix that translates an object the specified horizontal and vertical distance.</returns>
   </member>
 </doc>

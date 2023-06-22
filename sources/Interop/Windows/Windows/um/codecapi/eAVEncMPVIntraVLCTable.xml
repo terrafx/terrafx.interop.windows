@@ -4,24 +4,17 @@
 <doc>
   <member name="eAVEncMPVIntraVLCTable">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies which variable-length coding (VLC) table to use for entropy coding. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencmpvintravlctable-property">AVEncMPVIntraVLCTable</a> property.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVEncMPVIntraVLCTable.eAVEncMPVIntraVLCTable_Auto">
-    <summary>
-      <para>The encoder selects the VLC table.</para>
-    </summary>
+    <summary>The encoder selects the VLC table.</summary>
   </member>
   <member name="eAVEncMPVIntraVLCTable.eAVEncMPVIntraVLCTable_MPEG1">
-    <summary>
-      <para>The encoder uses the MPEG-1 VLC table.</para>
-    </summary>
+    <summary>The encoder uses the MPEG-1 VLC table.</summary>
   </member>
   <member name="eAVEncMPVIntraVLCTable.eAVEncMPVIntraVLCTable_Alternate">
-    <summary>
-      <para>The encoder uses the alternate "intra" VLC table for MPEG-2.</para>
-    </summary>
+    <summary>The encoder uses the alternate "intra" VLC table for MPEG-2.</summary>
   </member>
 </doc>

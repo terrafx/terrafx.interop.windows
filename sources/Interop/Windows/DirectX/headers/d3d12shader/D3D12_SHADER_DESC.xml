@@ -3,22 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_SHADER_DESC">
-    <summary>
-      <para>Describes a shader.</para>
-    </summary>
-    <remarks>
-      <para>A shader is written in HLSL and compiled into an intermediate language by the HLSL compiler.
-The shader description returns information about the compiled shader.
-To get a shader description, call <see cref="ID3D12ShaderReflection.GetDesc" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-shader-structures">Shader Structures</seealso>
+    <summary>Describes a shader.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.Version">
     <summary>
-      <para>The Shader version, as an encoded UINT that corresponds to a shader model, such as "ps_5_0".
-<b>Version</b> describes the program type, a major version number, and a minor version number.
-The program type is a <see cref="D3D12_SHADER_VERSION_TYPE" /> enumeration constant.
-<b>Version</b> is decoded in the following way:</para>
+      <para>The Shader version, as an encoded UINT that corresponds to a shader model, such as "ps_5_0".<b>Version</b> describes the program type, a major version number, and a minor version number. The program type is a <see cref="D3D12_SHADER_VERSION_TYPE" /> enumeration constant.<b>Version</b> is decoded in the following way:</para>
       <list type="bullet">
         <item>
           <description>Program type = (Version &amp; 0xFFFF0000) &gt;&gt; 16</description>
@@ -33,188 +22,114 @@ The program type is a <see cref="D3D12_SHADER_VERSION_TYPE" /> enumeration const
     </summary>
   </member>
   <member name="D3D12_SHADER_DESC.Creator">
-    <summary>
-      <para>The name of the originator of the shader.</para>
-    </summary>
+    <summary>The name of the originator of the shader.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.Flags">
-    <summary>
-      <para>Shader compilation/parse flags.</para>
-    </summary>
+    <summary>Shader compilation/parse flags.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.ConstantBuffers">
-    <summary>
-      <para>The number of shader-constant buffers.</para>
-    </summary>
+    <summary>The number of shader-constant buffers.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.BoundResources">
-    <summary>
-      <para>The number of resource (textures and buffers) bound to a shader.</para>
-    </summary>
+    <summary>The number of resource (textures and buffers) bound to a shader.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.InputParameters">
-    <summary>
-      <para>The number of parameters in the input signature.</para>
-    </summary>
+    <summary>The number of parameters in the input signature.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.OutputParameters">
-    <summary>
-      <para>The number of parameters in the output signature.</para>
-    </summary>
+    <summary>The number of parameters in the output signature.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.InstructionCount">
-    <summary>
-      <para>The number of intermediate-language instructions in the compiled shader.</para>
-    </summary>
+    <summary>The number of intermediate-language instructions in the compiled shader.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.TempRegisterCount">
-    <summary>
-      <para>The number of temporary registers in the compiled shader.</para>
-    </summary>
+    <summary>The number of temporary registers in the compiled shader.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.TempArrayCount">
-    <summary>
-      <para>Number of temporary arrays used.</para>
-    </summary>
+    <summary>Number of temporary arrays used.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.DefCount">
-    <summary>
-      <para>Number of constant defines.</para>
-    </summary>
+    <summary>Number of constant defines.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.DclCount">
-    <summary>
-      <para>Number of declarations (input + output).</para>
-    </summary>
+    <summary>Number of declarations (input + output).</summary>
   </member>
   <member name="D3D12_SHADER_DESC.TextureNormalInstructions">
-    <summary>
-      <para>Number of non-categorized texture instructions.</para>
-    </summary>
+    <summary>Number of non-categorized texture instructions.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.TextureLoadInstructions">
-    <summary>
-      <para>Number of texture load instructions</para>
-    </summary>
+    <summary>Number of texture load instructions</summary>
   </member>
   <member name="D3D12_SHADER_DESC.TextureCompInstructions">
-    <summary>
-      <para>Number of texture comparison instructions</para>
-    </summary>
+    <summary>Number of texture comparison instructions</summary>
   </member>
   <member name="D3D12_SHADER_DESC.TextureBiasInstructions">
-    <summary>
-      <para>Number of texture bias instructions</para>
-    </summary>
+    <summary>Number of texture bias instructions</summary>
   </member>
   <member name="D3D12_SHADER_DESC.TextureGradientInstructions">
-    <summary>
-      <para>Number of texture gradient instructions.</para>
-    </summary>
+    <summary>Number of texture gradient instructions.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.FloatInstructionCount">
-    <summary>
-      <para>Number of floating point arithmetic instructions used.</para>
-    </summary>
+    <summary>Number of floating point arithmetic instructions used.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.IntInstructionCount">
-    <summary>
-      <para>Number of signed integer arithmetic instructions used.</para>
-    </summary>
+    <summary>Number of signed integer arithmetic instructions used.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.UintInstructionCount">
-    <summary>
-      <para>Number of unsigned integer arithmetic instructions used.</para>
-    </summary>
+    <summary>Number of unsigned integer arithmetic instructions used.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.StaticFlowControlCount">
-    <summary>
-      <para>Number of static flow control instructions used.</para>
-    </summary>
+    <summary>Number of static flow control instructions used.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.DynamicFlowControlCount">
-    <summary>
-      <para>Number of dynamic flow control instructions used.</para>
-    </summary>
+    <summary>Number of dynamic flow control instructions used.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.MacroInstructionCount">
-    <summary>
-      <para>Number of macro instructions used.</para>
-    </summary>
+    <summary>Number of macro instructions used.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.ArrayInstructionCount">
-    <summary>
-      <para>Number of array instructions used.</para>
-    </summary>
+    <summary>Number of array instructions used.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.CutInstructionCount">
-    <summary>
-      <para>Number of cut instructions used.</para>
-    </summary>
+    <summary>Number of cut instructions used.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.EmitInstructionCount">
-    <summary>
-      <para>Number of emit instructions used.</para>
-    </summary>
+    <summary>Number of emit instructions used.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.GSOutputTopology">
-    <summary>
-      <para>The <see cref="D3D_PRIMITIVE_TOPOLOGY" />-typed value that represents the geometry shader output topology.</para>
-    </summary>
+    <summary>The <see cref="D3D_PRIMITIVE_TOPOLOGY" />-typed value that represents the geometry shader output topology.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.GSMaxOutputVertexCount">
-    <summary>
-      <para>Geometry shader maximum output vertex count.</para>
-    </summary>
+    <summary>Geometry shader maximum output vertex count.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.InputPrimitive">
-    <summary>
-      <para>The <see cref="D3D_PRIMITIVE" />-typed value that represents the input primitive for a  geometry shader or hull shader.</para>
-    </summary>
+    <summary>The <see cref="D3D_PRIMITIVE" />-typed value that represents the input primitive for a geometry shader or hull shader.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.PatchConstantParameters">
-    <summary>
-      <para>Number of parameters in the patch-constant signature.</para>
-    </summary>
+    <summary>Number of parameters in the patch-constant signature.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.cGSInstanceCount">
-    <summary>
-      <para>Number of geometry shader instances.</para>
-    </summary>
+    <summary>Number of geometry shader instances.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.cControlPoints">
-    <summary>
-      <para>Number of control points in the hull shader and domain shader.</para>
-    </summary>
+    <summary>Number of control points in the hull shader and domain shader.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.HSOutputPrimitive">
-    <summary>
-      <para>The <see cref="D3D_TESSELLATOR_OUTPUT_PRIMITIVE" />-typed value that represents the tessellator output-primitive type.</para>
-    </summary>
+    <summary>The <see cref="D3D_TESSELLATOR_OUTPUT_PRIMITIVE" />-typed value that represents the tessellator output-primitive type.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.HSPartitioning">
-    <summary>
-      <para>The <see cref="D3D_TESSELLATOR_PARTITIONING" />-typed value that represents the tessellator partitioning mode.</para>
-    </summary>
+    <summary>The <see cref="D3D_TESSELLATOR_PARTITIONING" />-typed value that represents the tessellator partitioning mode.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.TessellatorDomain">
-    <summary>
-      <para>The <see cref="D3D_TESSELLATOR_DOMAIN" />-typed value that represents the tessellator domain.</para>
-    </summary>
+    <summary>The <see cref="D3D_TESSELLATOR_DOMAIN" />-typed value that represents the tessellator domain.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.cBarrierInstructions">
-    <summary>
-      <para>Number of barrier instructions in a compute shader.</para>
-    </summary>
+    <summary>Number of barrier instructions in a compute shader.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.cInterlockedInstructions">
-    <summary>
-      <para>Number of interlocked instructions in a compute shader.</para>
-    </summary>
+    <summary>Number of interlocked instructions in a compute shader.</summary>
   </member>
   <member name="D3D12_SHADER_DESC.cTextureStoreInstructions">
-    <summary>
-      <para>Number of texture writes in a compute shader.</para>
-    </summary>
+    <summary>Number of texture writes in a compute shader.</summary>
   </member>
 </doc>

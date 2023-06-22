@@ -5,26 +5,16 @@
   <member name="CERT_POLICY_INFO">
     <summary>
       <para>The <b>CERT_POLICY_INFO</b> structure contains an object identifier (OID) specifying a policy and an optional array of policy qualifiers.</para>
-      <para>The <b>CERT_POLICY_INFO</b> structure is a component of
-<see cref="CERT_POLICIES_INFO" />.</para>
+      <para>The <b>CERT_POLICY_INFO</b> structure is a component of<see cref="CERT_POLICIES_INFO" />.</para>
     </summary>
-    <seealso cref="CERT_POLICIES_INFO" />
-    <seealso cref="CERT_POLICY_QUALIFIER_INFO" />
   </member>
   <member name="CERT_POLICY_INFO.pszPolicyIdentifier">
-    <summary>
-      <para>Object identifier (OID) string specifying the policy.</para>
-    </summary>
+    <summary>Object identifier (OID) string specifying the policy.</summary>
   </member>
   <member name="CERT_POLICY_INFO.cPolicyQualifier">
-    <summary>
-      <para>Number of elements in the <b>rgPolicyQualifier</b> array.</para>
-    </summary>
+    <summary>Number of elements in the <b>rgPolicyQualifier</b> array.</summary>
   </member>
   <member name="CERT_POLICY_INFO.rgPolicyQualifier">
-    <summary>
-      <para>Array of
-<see cref="CERT_POLICY_QUALIFIER_INFO" /> structures.</para>
-    </summary>
+    <summary>Array of<see cref="CERT_POLICY_QUALIFIER_INFO" /> structures.</summary>
   </member>
 </doc>

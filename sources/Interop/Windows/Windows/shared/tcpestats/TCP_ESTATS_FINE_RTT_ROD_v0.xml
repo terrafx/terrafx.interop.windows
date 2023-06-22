@@ -3,43 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TCP_ESTATS_FINE_RTT_ROD_v0">
-    <summary>
-      <para>The <b>TCP_ESTATS_FINE_RTT_ROD_v0</b> structure contains read-only dynamic information for extended TCP statistics on fine-grained round-trip time (RTT) estimation  for a TCP connection.</para>
-    </summary>
-    <remarks>
-      <para>The <b>TCP_ESTATS_FINE_RTT_ROD_v0</b> structure is used as part of the TCP extended statistics feature available on Windows Vista and later.</para>
-      <para>The <b>TCP_ESTATS_FINE_RTT_ROD_v0</b> is defined as version 0 of the structure for  read-only dynamic information for extended TCP statistics on fine-grained round-trip time estimation for a TCP connection.  This information is available after the connection has been established.</para>
-      <para>The <b>TCP_ESTATS_FINE_RTT_ROD_v0</b> structure is retrieved by calls to  the <see cref="GetPerTcp6ConnectionEStats" /> or <see cref="GetPerTcpConnectionEStats" /> functions when <b>TcpConnectionEstatsFineRtt</b> is passed in the <i>EstatsType</i> parameter. Extended TCP statistics need to be enabled to retrieve this structure.</para>
-      <para>The TCP retransmission timer is discussed in detail in the IETF RFC 2988 on Computing TCP's Retransmission Timer For more information, see <a href="http://tools.ietf.org/html/rfc2988">http://www.ietf.org/rfc/rfc2988.txt</a>.</para>
-      <para>The members of this structure are not defined in the IETF RFC on the TCP Extended Statistics MIB. However, there are members in the <see cref="TCP_ESTATS_PATH_ROD_v0" /> structure that provide similar time measurements in milliseconds. For more information, see the <b>TCP_ESTATS_PATH_ROD_v0</b> structure and <a href="http://tools.ietf.org/html/rfc4898">http://www.ietf.org/rfc/rfc4898.txt</a>.</para>
-    </remarks>
-    <seealso cref="GetPerTcp6ConnectionEStats" />
-    <seealso cref="GetPerTcpConnectionEStats" />
-    <seealso cref="TCP_ESTATS_PATH_ROD_v0" />
-    <seealso cref="TCP_ESTATS_TYPE" />
+    <summary>The <b>TCP_ESTATS_FINE_RTT_ROD_v0</b> structure contains read-only dynamic information for extended TCP statistics on fine-grained round-trip time (RTT) estimation for a TCP connection.</summary>
   </member>
   <member name="TCP_ESTATS_FINE_RTT_ROD_v0.RttVar">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The round trip time variation, in microseconds, used in receive window auto-tuning when the TCP extended statistics feature is enabled.</para>
-    </summary>
+    <summary>The round trip time variation, in microseconds, used in receive window auto-tuning when the TCP extended statistics feature is enabled.</summary>
   </member>
   <member name="TCP_ESTATS_FINE_RTT_ROD_v0.MaxRtt">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The maximum sampled round trip time, in microseconds.</para>
-    </summary>
+    <summary>The maximum sampled round trip time, in microseconds.</summary>
   </member>
   <member name="TCP_ESTATS_FINE_RTT_ROD_v0.MinRtt">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The minimum sampled round trip time, in microseconds.</para>
-    </summary>
+    <summary>The minimum sampled round trip time, in microseconds.</summary>
   </member>
   <member name="TCP_ESTATS_FINE_RTT_ROD_v0.SumRtt">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>A smoothed value round trip time, in microseconds,  computed from all sampled round trip times. The smoothing is a weighted additive function that uses the <b>RttVar</b> member.</para>
-    </summary>
+    <summary>A smoothed value round trip time, in microseconds, computed from all sampled round trip times. The smoothing is a weighted additive function that uses the <b>RttVar</b> member.</summary>
   </member>
 </doc>

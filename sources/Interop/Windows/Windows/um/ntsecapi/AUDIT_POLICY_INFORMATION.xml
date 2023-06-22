@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AUDIT_POLICY_INFORMATION">
+    <summary>The <b>AUDIT_POLICY_INFORMATION</b> structure specifies a security event type and when to audit that type.</summary>
+  </member>
+  <member name="AUDIT_POLICY_INFORMATION.AuditSubCategoryGuid">
+    <summary>A <b>GUID</b> structure that specifies an audit subcategory.</summary>
+  </member>
+  <member name="AUDIT_POLICY_INFORMATION.AuditingInformation">
+    <summary>
+      <para>A set of bit flags that specify the conditions under which the security event type specified by the <b>AuditSubCategoryGuid</b> and <b>AuditCategoryGuid</b> members are audited. The following values are defined.</para>
+      <div>
+        <b>Important</b>  Note that the meaning of these values differs depending on which function is using this structure.</div>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>POLICY_AUDIT_EVENT_UNCHANGED</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Do not change auditing options for the specified event type.<para>This value is valid for the <see cref="AuditSetSystemPolicy" /> and <see cref="AuditQuerySystemPolicy" /> functions.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>POLICY_AUDIT_EVENT_SUCCESS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Audit successful occurrences of the specified event type.<para>This value is valid for the <see cref="AuditSetSystemPolicy" /> and <see cref="AuditQuerySystemPolicy" /> functions.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>POLICY_AUDIT_EVENT_FAILURE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Audit failed attempts to cause the specified event type.<para>This value is valid for the <see cref="AuditSetSystemPolicy" /> and <see cref="AuditQuerySystemPolicy" /> functions.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>POLICY_AUDIT_EVENT_NONE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Do not audit the specified event type.<para>This value is valid for the <see cref="AuditSetSystemPolicy" /> and <see cref="AuditQuerySystemPolicy" /> functions.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PER_USER_POLICY_UNCHANGED</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Do not change auditing options for the specified event type.<para>This value is valid for the <see cref="AuditSetPerUserPolicy" /> and <see cref="AuditQueryPerUserPolicy" /> functions.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PER_USER_AUDIT_SUCCESS_INCLUDE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x01</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Audit successful occurrences of the specified event type.<para>This value is valid for the <see cref="AuditSetPerUserPolicy" /> and <see cref="AuditQueryPerUserPolicy" /> functions.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PER_USER_AUDIT_SUCCESS_EXCLUDE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x02</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Do not audit successful occurrences of the specified event type.<para>This value is valid for the <see cref="AuditSetPerUserPolicy" /> and <see cref="AuditQueryPerUserPolicy" /> functions.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PER_USER_AUDIT_FAILURE_INCLUDE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x04</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Audit failed attempts to cause the specified event type.<para>This value is valid for the <see cref="AuditSetPerUserPolicy" /> and <see cref="AuditQueryPerUserPolicy" /> functions.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PER_USER_AUDIT_FAILURE_EXCLUDE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x08</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Do not audit failed attempts to cause the specified event type.<para>This value is valid for the <see cref="AuditSetPerUserPolicy" /> and <see cref="AuditQueryPerUserPolicy" /> functions.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PER_USER_AUDIT_NONE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x10</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Do not audit the specified event type.<para>This value is valid for the <see cref="AuditSetPerUserPolicy" /> and <see cref="AuditQueryPerUserPolicy" /> functions.</para></description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="AUDIT_POLICY_INFORMATION.AuditCategoryGuid">
+    <summary>A <b>GUID</b> structure that specifies an audit-policy category.</summary>
+  </member>
+</doc>

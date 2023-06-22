@@ -3,40 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IO_COUNTERS">
-    <summary>
-      <para>Contains I/O accounting information for a process or a job object. For a job object, the counters include all operations performed by all processes that have ever been associated with the job, in addition to all processes currently associated with the job.</para>
-    </summary>
-    <seealso cref="GetProcessIoCounters" />
-    <seealso cref="JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION" />
+    <summary>Contains I/O accounting information for a process or a job object. For a job object, the counters include all operations performed by all processes that have ever been associated with the job, in addition to all processes currently associated with the job.</summary>
   </member>
   <member name="IO_COUNTERS.ReadOperationCount">
-    <summary>
-      <para>The number of read operations performed.</para>
-    </summary>
+    <summary>The number of read operations performed.</summary>
   </member>
   <member name="IO_COUNTERS.WriteOperationCount">
-    <summary>
-      <para>The number of write operations performed.</para>
-    </summary>
+    <summary>The number of write operations performed.</summary>
   </member>
   <member name="IO_COUNTERS.OtherOperationCount">
-    <summary>
-      <para>The number of I/O operations performed, other than read and write operations.</para>
-    </summary>
+    <summary>The number of I/O operations performed, other than read and write operations.</summary>
   </member>
   <member name="IO_COUNTERS.ReadTransferCount">
-    <summary>
-      <para>The number of bytes read.</para>
-    </summary>
+    <summary>The number of bytes read.</summary>
   </member>
   <member name="IO_COUNTERS.WriteTransferCount">
-    <summary>
-      <para>The number of bytes written.</para>
-    </summary>
+    <summary>The number of bytes written.</summary>
   </member>
   <member name="IO_COUNTERS.OtherTransferCount">
-    <summary>
-      <para>The number of bytes transferred during operations other than read and write operations.</para>
-    </summary>
+    <summary>The number of bytes transferred during operations other than read and write operations.</summary>
   </member>
 </doc>

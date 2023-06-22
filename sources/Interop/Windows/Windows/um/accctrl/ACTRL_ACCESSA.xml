@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ACTRL_ACCESSA">
+    <summary>Contains an array of access-control lists for an object and its properties.</summary>
+  </member>
+  <member name="ACTRL_ACCESSA.cEntries">
+    <summary>The number of entries in the <b>pPropertyAccessList</b> array.</summary>
+  </member>
+  <member name="ACTRL_ACCESSA.pPropertyAccessList">
+    <summary>An array of <see cref="ACTRL_PROPERTY_ENTRY" /> structures. Each structure contains a list of access-control entries for an object or a specified property on the object.</summary>
+  </member>
+  <member name="ACTRL_ACCESSA.pPropertyAccessList.size_is"></member>
+  <member name="ACTRL_ACCESSA.pPropertyAccessList.size_is.cEntries"></member>
+  <member name="ACTRL_ACCESSA">
+    <summary>Contains an array of access-control lists for an object and its properties.</summary>
+  </member>
+  <member name="ACTRL_ACCESSA.cEntries">
+    <summary>The number of entries in the <b>pPropertyAccessList</b> array.</summary>
+  </member>
+  <member name="ACTRL_ACCESSA.pPropertyAccessList">
+    <summary>An array of <see cref="ACTRL_PROPERTY_ENTRY" /> structures. Each structure contains a list of access-control entries for an object or a specified property on the object.</summary>
+  </member>
+  <member name="ACTRL_ACCESSA.pPropertyAccessList.size_is"></member>
+  <member name="ACTRL_ACCESSA.pPropertyAccessList.size_is.cEntries"></member>
+</doc>

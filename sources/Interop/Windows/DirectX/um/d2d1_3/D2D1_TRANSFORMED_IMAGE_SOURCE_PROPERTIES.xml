@@ -3,38 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES">
-    <summary>
-      <para>Properties of a transformed image source.</para>
-    </summary>
+    <summary>Properties of a transformed image source.</summary>
   </member>
   <member name="D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.orientation">
-    <summary>
-      <para>Type: <b><see cref="D2D1_ORIENTATION" /></b></para>
-      <para>The orientation at which the image source is drawn.</para>
-    </summary>
+    <summary>The orientation at which the image source is drawn.</summary>
   </member>
   <member name="D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.scaleX">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The horizontal scale factor at which the image source is drawn.</para>
-    </summary>
+    <summary>The horizontal scale factor at which the image source is drawn.</summary>
   </member>
   <member name="D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.scaleY">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The vertical scale factor at which the image source is drawn.</para>
-    </summary>
+    <summary>The vertical scale factor at which the image source is drawn.</summary>
   </member>
   <member name="D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.interpolationMode">
-    <summary>
-      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
-      <para>The interpolation mode used when the image source is drawn.  This is ignored if the image source is drawn using the DrawImage method, or using an image brush.</para>
-    </summary>
+    <summary>The interpolation mode used when the image source is drawn. This is ignored if the image source is drawn using the DrawImage method, or using an image brush.</summary>
   </member>
   <member name="D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES.options">
-    <summary>
-      <para>Type: <b><see cref="D2D1_TRANSFORMED_IMAGE_SOURCE_OPTIONS" /></b></para>
-      <para>Image source option flags.</para>
-    </summary>
+    <summary>Image source option flags.</summary>
   </member>
 </doc>

@@ -3,45 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_SHADER_TYPE">
-    <summary>
-      <para>Identifies a shader type for tracing.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>D3D11_SHADER_TYPE</b> identifies the type of shader in a <see cref="D3D11_SHADER_TRACE_DESC" /> structure.</para>
-      <para>
-        <b>Note</b>  This API requires the Windows Software Development Kit (SDK) for Windows 8.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-shader-enums">Shader Enumerations</seealso>
+    <summary>Identifies a shader type for tracing.</summary>
   </member>
   <member name="D3D11_SHADER_TYPE.D3D11_VERTEX_SHADER">
-    <summary>
-      <para>Identifies a vertex shader.</para>
-    </summary>
+    <summary>Identifies a vertex shader.</summary>
   </member>
   <member name="D3D11_SHADER_TYPE.D3D11_HULL_SHADER">
-    <summary>
-      <para>Identifies a hull shader.</para>
-    </summary>
+    <summary>Identifies a hull shader.</summary>
   </member>
   <member name="D3D11_SHADER_TYPE.D3D11_DOMAIN_SHADER">
-    <summary>
-      <para>Identifies a domain shader.</para>
-    </summary>
+    <summary>Identifies a domain shader.</summary>
   </member>
   <member name="D3D11_SHADER_TYPE.D3D11_GEOMETRY_SHADER">
-    <summary>
-      <para>Identifies a geometry shader.</para>
-    </summary>
+    <summary>Identifies a geometry shader.</summary>
   </member>
   <member name="D3D11_SHADER_TYPE.D3D11_PIXEL_SHADER">
-    <summary>
-      <para>Identifies a pixel shader.</para>
-    </summary>
+    <summary>Identifies a pixel shader.</summary>
   </member>
   <member name="D3D11_SHADER_TYPE.D3D11_COMPUTE_SHADER">
-    <summary>
-      <para>Identifies a compute shader.</para>
-    </summary>
+    <summary>Identifies a compute shader.</summary>
   </member>
 </doc>

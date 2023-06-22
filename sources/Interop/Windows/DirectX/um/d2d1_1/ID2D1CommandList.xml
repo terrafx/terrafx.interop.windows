@@ -3,81 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1CommandList.Close">
-    <summary>
-      <para>Instructs the command list to stop accepting commands so that you can use it as an input to an effect or in a call to <see cref="ID2D1DeviceContext.DrawImage" />.  You should call the method after it has been attached to an <see cref="ID2D1DeviceContext" />  and written to but before the command list is used.</para>
-    </summary>
+    <summary>Instructs the command list to stop accepting commands so that you can use it as an input to an effect or in a call to <see cref="ID2D1DeviceContext.DrawImage" />. You should call the method after it has been attached to an <see cref="ID2D1DeviceContext" /> and written to but before the command list is used.</summary>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
-          <description>D2DERR_WRONG_STATE </description>
+        </listheader>
+        <listheader>
+          <description>D2DERR_WRONG_STATE</description>
           <description>Close has already been called on the command list.</description>
-        </item>
-      </list>
-      <para>
-        <b>Note</b>  If the device context associated with the command list has an error, the command list returns the same error.</para>
-    </returns>
-    <remarks>
-      <para>This method returns D2DERR_WRONG_STATE if it has already been called on the command list. If an error occurred on the device context during population, the method returns that error. Otherwise, the method returns S_OK.</para>
-      <para>If the <b>Close</b> method returns an error, any future use of the command list results in the same error.</para>
-    </remarks>
-    <seealso cref="ID2D1CommandList" />
+        </listheader>
+      </list> <div><b>Note</b>  If the device context associated with the command list has an error, the command list returns the same error.</div></returns>
   </member>
   <member name="ID2D1CommandList.Stream">
-    <summary>
-      <para>Streams the contents of the command list  to the specified command sink.</para>
-    </summary>
-    <param name="sink">
-      <para>Type: <b><see cref="ID2D1CommandSink" />*</b></para>
-      <para>The sink into which the command list will be streamed.</para>
-    </param>
+    <summary>Streams the contents of the command list to the specified command sink.</summary>
+    <param name="sink">The sink into which the command list will be streamed.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
-      <para>The return value indicates any failures the command sink implementation  returns through its <see cref="EndDraw" /> method.</para>
+      <para>The return value indicates any failures the command sink implementation returns through its <see cref="EndDraw" /> method.</para>
     </returns>
-    <remarks>
-      <para>The command sink can be implemented by any caller of the API.</para>
-      <para>If the caller makes any design-time failure calls while a command list is selected as a target, the command list is placed in an error state. The stream call fails without making any calls to the passed in sink.</para>
-      <para>Sample use:</para>
-      <code>Class MyCommandSink : public ID2D1CommandSink
-{
-public:
-    // All of the ID2D1CommandSink methods implemented here.
-};
-
-HRESULT
-StreamToMyCommandSink(
-    __in ID2D1CommandList *pCommandList
-    )
-{
-    HRESULT hr = S_OK;
-
-    MyCommandSink *pCommandSink = new MyCommandSink();
-    hr = pCommandSink ? S_OK : E_OUTOFMEMORY;
-
-    if (SUCCEEDED(hr))
-    {
-        // Receive the contents of the command sink streamed to the sink.
-        hr = pCommandList-&gt;Stream(pCommandSink);
-    }
-
-    SafeRelease(&amp;amp;amp;amp;amp;amp;pCommandSink);
-
-    return hr;
-
-}
-</code>
-    </remarks>
-    <seealso cref="ID2D1CommandList" />
   </member>
 </doc>

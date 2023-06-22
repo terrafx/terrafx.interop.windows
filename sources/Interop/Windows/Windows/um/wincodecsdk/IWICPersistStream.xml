@@ -3,53 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICPersistStream.LoadEx">
-    <summary>
-      <para>Loads data from an input stream using the given parameters.</para>
-    </summary>
-    <param name="pIStream">
-      <para>Type: <b><see cref="IStream" />*</b></para>
-      <para>Pointer to the input stream.</para>
-    </param>
-    <param name="pguidPreferredVendor">
-      <para>Type: <b>const GUID*</b></para>
-      <para>Pointer to the GUID of the preferred vendor .</para>
-    </param>
-    <param name="dwPersistOptions">
-      <para>Type: <b>DWORD</b></para>
-      <para>The <see cref="WICPersistOptions" /> used to load the stream.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>NULL can be passed in for <i>pguidPreferredVendor</i> to indicate no preference.</para>
-    </remarks>
+    <summary>Loads data from an input stream using the given parameters.</summary>
+    <param name="pIStream">Pointer to the input stream.</param>
+    <param name="pguidPreferredVendor">Pointer to the GUID of the preferred vendor .</param>
+    <param name="dwPersistOptions">The <see cref="WICPersistOptions" /> used to load the stream.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICPersistStream.SaveEx">
-    <summary>
-      <para>Saves the <see cref="IWICPersistStream" /> to the given input <see cref="IStream" /> using the given parameters.</para>
-    </summary>
-    <param name="pIStream">
-      <para>Type: <b><see cref="IStream" />*</b></para>
-      <para>The stream to save to.</para>
-    </param>
-    <param name="dwPersistOptions">
-      <para>Type: <b>DWORD</b></para>
-      <para>The <see cref="WICPersistOptions" />  to use when saving.</para>
-    </param>
-    <param name="fClearDirty">
-      <para>Type: <b>BOOL</b></para>
-      <para>Indicates whether the "dirty" value will be cleared from all metadata after saving.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Saves the <see cref="IWICPersistStream" /> to the given input <see cref="IStream" /> using the given parameters.</summary>
+    <param name="pIStream">The stream to save to.</param>
+    <param name="dwPersistOptions">The <see cref="WICPersistOptions" /> to use when saving.</param>
+    <param name="fClearDirty">Indicates whether the "dirty" value will be cleared from all metadata after saving.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICPersistStream">
-    <summary>
-      <para>Exposes methods that provide additional load and save methods that take <see cref="WICPersistOptions" />.</para>
-    </summary>
+    <summary>Exposes methods that provide additional load and save methods that take <see cref="WICPersistOptions" />.</summary>
   </member>
 </doc>

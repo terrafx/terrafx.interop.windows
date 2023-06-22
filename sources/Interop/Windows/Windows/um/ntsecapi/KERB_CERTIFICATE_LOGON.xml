@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_CERTIFICATE_LOGON">
+    <summary>
+      <para>The <b>KERB_CERTIFICATE_LOGON</b> structure contains information about a smart card <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">logon session</a>.</para>
+      <para>It is passed as the <i>AuthenticationInformation</i> parameter to the<see cref="LsaLogonUser" /> function when the <a href="https://docs.microsoft.com//windows/desktop/SecAuthN/kerberos-ssp-ap">Kerberos</a> security package performs an interactive smart card logon.</para>
+    </summary>
+  </member>
+  <member name="KERB_CERTIFICATE_LOGON.MessageType">
+    <summary>
+      <para>A member of the <see cref="KERB_LOGON_SUBMIT_TYPE" /> enumeration that indicates how this structure is used. The member must be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KerbCertificateLogon</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>13</term>
+              </listheader>
+            </list>
+          </description>
+          <description>This structure is passed as the <i>AuthenticationInformation</i> parameter to the <see cref="LsaLogonUser" /> function to perform an interactive smart card logon.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KerbCertificateUnlockLogon</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>15</term>
+              </listheader>
+            </list>
+          </description>
+          <description>This structure is used as the <b>Logon</b> member of a <see cref="KERB_CERTIFICATE_UNLOCK_LOGON" /> structure.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="KERB_CERTIFICATE_LOGON.DomainName">
+    <summary>The domain name of the user to authenticate. The value of this member can be empty. If the value is not empty, <see cref="LsaLogonUser" /> uses the value to locate the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">Key Distribution Center</a> (KDC). If the value is empty, <b>LsaLogonUser</b> attempts to authenticate against the domain to which the computer is joined. The pointer is relative to the beginning of the structure and is not an absolute memory pointer.</summary>
+  </member>
+  <member name="KERB_CERTIFICATE_LOGON.UserName">
+    <summary>The user name of the user to authenticate. The value of this member can be empty. If the value is not empty, <see cref="LsaLogonUser" /> uses the value to locate the user account to authenticate. The pointer is relative to the beginning of the structure and is not an absolute memory pointer.</summary>
+  </member>
+  <member name="KERB_CERTIFICATE_LOGON.Pin">
+    <summary>
+      <para>The PIN to use to authenticate the user. The <b>Length</b> member of this structure does not include the terminating null character of the PIN. The pointer is relative to the beginning of the structure and is not an absolute memory pointer.</para>
+      <para>The PIN can be protected by using the <see cref="CredProtect" /> function.</para>
+    </summary>
+  </member>
+  <member name="KERB_CERTIFICATE_LOGON.Flags">
+    <summary>
+      <para>Optional flags that control the behavior of the authentication. The following values are defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_CERTIFICATE_LOGON_FLAG_CHECK_DUPLICATES</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The KDC checks the certificate for multiple account mappings.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_CERTIFICATE_LOGON_FLAG_USE_CERTIFICATE_INFO</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The KDC uses the certificate information for authentication.<para><b>Windows Server 2008 R2, Windows 7, Windows Server 2008 and Windows Vista:  </b>This flag is not available.</para></description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="KERB_CERTIFICATE_LOGON.CspDataLength">
+    <summary>The length, in characters, of the <b>CspData</b> member.</summary>
+  </member>
+  <member name="KERB_CERTIFICATE_LOGON.CspData">
+    <summary>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/SecAuthN/kerb-smartcard-csp-info">KERB_SMARTCARD_CSP_INFO</a> structure that contains information about the smart card <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">cryptographic service provider</a> (CSP) ) or a pointer to a marshaled <see cref="KERB_CERTIFICATE_INFO" /> structure when updating certificate credentials.</summary>
+  </member>
+</doc>

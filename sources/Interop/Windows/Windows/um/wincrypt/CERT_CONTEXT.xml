@@ -3,24 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_CONTEXT">
-    <summary>
-      <para>The <b>CERT_CONTEXT</b> structure contains both the encoded and decoded representations of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate</a>. A certificate <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">context</a> returned by one of the functions defined in Wincrypt.h must be freed by calling the
-<see cref="CertFreeCertificateContext" /> function. The
-<see cref="CertDuplicateCertificateContext" /> function can be called to make a duplicate copy (which also must be freed by calling <b>CertFreeCertificateContext</b>).</para>
-    </summary>
-    <seealso cref="CERT_INFO" />
-    <seealso cref="CRYPT_SIGN_MESSAGE_PARA" />
-    <seealso cref="CRYPT_VERIFY_MESSAGE_PARA" />
-    <seealso cref="CertAddCertificateContextToStore" />
-    <seealso cref="CertAddEncodedCertificateToStore" />
-    <seealso cref="CertCreateCertificateContext" />
-    <seealso cref="CertEnumCertificatesInStore" />
-    <seealso cref="CertFindCertificateInStore" />
-    <seealso cref="CertFreeCertificateContext" />
-    <seealso cref="CertGetIssuerCertificateFromStore" />
-    <seealso cref="CertGetSubjectCertificateFromStore" />
-    <seealso cref="CertVerifyRevocation" />
-    <seealso cref="CryptVerifyMessageSignature" />
+    <summary>The <b>CERT_CONTEXT</b> structure contains both the encoded and decoded representations of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate</a>. A certificate <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">context</a> returned by one of the functions defined in Wincrypt.h must be freed by calling the<see cref="CertFreeCertificateContext" /> function. The<see cref="CertDuplicateCertificateContext" /> function can be called to make a duplicate copy (which also must be freed by calling <b>CertFreeCertificateContext</b>).</summary>
   </member>
   <member name="CERT_CONTEXT.dwCertEncodingType">
     <summary>
@@ -37,23 +20,15 @@
     </summary>
   </member>
   <member name="CERT_CONTEXT.pbCertEncoded">
-    <summary>
-      <para>A pointer to a buffer that contains the encoded certificate.</para>
-    </summary>
+    <summary>A pointer to a buffer that contains the encoded certificate.</summary>
   </member>
   <member name="CERT_CONTEXT.cbCertEncoded">
-    <summary>
-      <para>The size, in bytes, of the encoded certificate.</para>
-    </summary>
+    <summary>The size, in bytes, of the encoded certificate.</summary>
   </member>
   <member name="CERT_CONTEXT.pCertInfo">
-    <summary>
-      <para>The address of a <see cref="CERT_INFO" /> structure that contains the certificate information.</para>
-    </summary>
+    <summary>The address of a <see cref="CERT_INFO" /> structure that contains the certificate information.</summary>
   </member>
   <member name="CERT_CONTEXT.hCertStore">
-    <summary>
-      <para>A handle to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate store</a> that contains the certificate <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">context</a>.</para>
-    </summary>
+    <summary>A handle to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate store</a> that contains the certificate <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">context</a>.</summary>
   </member>
 </doc>

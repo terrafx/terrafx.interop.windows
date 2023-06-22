@@ -3,58 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDCompositionVisualDebug.DisableHeatMap">
-    <summary>
-      <para>Disables visual heatmaps.</para>
-    </summary>
-    <returns>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <seealso cref="IDCompositionDeviceDebug" />
-    <seealso cref="IDCompositionVisualDebug" />
+    <summary>Disables visual heatmaps.</summary>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionVisualDebug.DisableRedrawRegions">
-    <summary>
-      <para>Disables visual redraw regions.</para>
-    </summary>
-    <returns>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <seealso cref="IDCompositionVisualDebug" />
-    <seealso cref="IDCompositionVisualDebug.EnableRedrawRegions" />
+    <summary>Disables visual redraw regions.</summary>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionVisualDebug.EnableHeatMap">
-    <summary>
-      <para>Enables a visual heatmap that represents overdraw regions.</para>
-    </summary>
-    <param name="color"></param>
-    <returns>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>Heatmaps can be enabled by calling <b>EnableHeatMap</b>. The heatmaps are drawn on the source of the VisualDebug visual and child visuals. The heatmaps are represented in a specified color for all visual content. The heatmap color must have a transparency in order to see the overlaying overdraw regions. The colored surfaces are blended together to visually show all overdraw regions in a single view.</para>
-    </remarks>
-    <seealso cref="IDCompositionDeviceDebug" />
-    <seealso cref="IDCompositionVisualDebug" />
-    <seealso cref="IDCompositionVisualDebug.DisableHeatMap" />
+    <summary>Enables a visual heatmap that represents overdraw regions.</summary>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionVisualDebug.EnableRedrawRegions">
-    <summary>
-      <para>Enables highlighting visuals when content is being redrawn.</para>
-    </summary>
-    <returns>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>Highlighting redraw regions can be enabled by calling <b>EnableRedrawRegions</b>.  With this function, redrawn client areas are visually highlighted every frame the visual is updated. Redraw regions are drawn on the source of the VisualDebug and child visuals. Redraw is triggered when properties of a visual are updated. The updated visual does not necessarily need to visually change to trigger a redraw. The highlighting will cycle through Blue, Yellow, Pink and Green to provide an order of which content is being updated. The redraw regions are only visible while the window of the VisualDebug is being updated.</para>
-    </remarks>
-    <seealso cref="IDCompositionDeviceDebug" />
-    <seealso cref="IDCompositionVisualDebug" />
-    <seealso cref="IDCompositionVisualDebug.DisableRedrawRegions" />
+    <summary>Enables highlighting visuals when content is being redrawn.</summary>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionVisualDebug">
-    <summary>
-      <para>Represents a debug visual.</para>
-    </summary>
-    <seealso cref="IDCompositionVisual2" />
+    <summary>Represents a debug visual.</summary>
   </member>
 </doc>

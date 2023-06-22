@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISpatialAudioMetadataItemsBuffer.AttachToBuffer">
-    <summary>
-      <para>Attaches caller-provided memory for storage of <see cref="ISpatialAudioMetadataItems" /> objects.</para>
-    </summary>
-    <param name="buffer">
-      <para>A pointer to memory to use for storage.</para>
-    </param>
-    <param name="bufferLength">
-      <para>The length of the supplied buffer. This size must match the length required for the metadata format and maximum metadata item count.</para>
-    </param>
+    <summary>Attaches caller-provided memory for storage of <see cref="ISpatialAudioMetadataItems" /> objects.</summary>
+    <param name="buffer">A pointer to memory to use for storage.</param>
+    <param name="bufferLength">The length of the supplied buffer. This size must match the length required for the metadata format and maximum metadata item count.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -19,61 +13,61 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>SPTLAUD_MD_CLNT_E_NO_ITEMS_OPEN</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SPTLAUD_MD_CLNT_E_NO_ITEMS_OPEN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <see cref="ISpatialAudioMetadataItems" /> has not been opened for copying with a call to <see cref="Open" /> or the object has been closed for writing with a call to <see cref="Close" />.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <see cref="ISpatialAudioMetadataItems" /> has not been opened for copying with a call to <see cref="Open" /> or the object has been closed for writing with a call to <see cref="Close" />.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SPTLAUD_MD_CLNT_E_ATTACH_FAILED_INTERNAL_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <see cref="ISpatialAudioMetadataItems" /> was created to use a media pipeline internal buffer, so an external buffer can't be attached.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>SPTLAUD_MD_CLNT_E_ATTACH_FAILED_INTERNAL_BUFFER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SPTLAUD_MD_CLNT_E_BUFFER_ALREADY_ATTACHED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The supplied buffer has already been attached.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <see cref="ISpatialAudioMetadataItems" /> was created to use a media pipeline internal buffer, so an external buffer can't be attached.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>SPTLAUD_MD_CLNT_E_BUFFER_ALREADY_ATTACHED</b>
-            </para>
-          </description>
-          <description>
-            <para>The supplied buffer has already been attached.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One of the provided pointers is not valid.</para>
-            <para>The supplied buffer is not large enough to hold the maximum number of metadata items.</para>
-          </description>
-        </item>
+          <description>One of the provided pointers is not valid.<para>The supplied buffer is not large enough to hold the maximum number of metadata items.</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ISpatialAudioMetadataItemsBuffer" />
   </member>
   <member name="ISpatialAudioMetadataItemsBuffer.AttachToPopulatedBuffer">
-    <summary>
-      <para>Attaches a previously populated buffer for storage of <see cref="ISpatialAudioMetadataItems" /> objects. The metadata items already in the buffer are retained.</para>
-    </summary>
-    <param name="buffer">
-      <para>A pointer to memory to use for storage.</para>
-    </param>
-    <param name="bufferLength">
-      <para>The length of the supplied buffer. This size must match the length required for the metadata format and maximum metadata item count.</para>
-    </param>
+    <summary>Attaches a previously populated buffer for storage of <see cref="ISpatialAudioMetadataItems" /> objects. The metadata items already in the buffer are retained.</summary>
+    <param name="buffer">A pointer to memory to use for storage.</param>
+    <param name="bufferLength">The length of the supplied buffer. This size must match the length required for the metadata format and maximum metadata item count.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -81,65 +75,71 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>SPTLAUD_MD_CLNT_E_NO_ITEMS_OPEN</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SPTLAUD_MD_CLNT_E_NO_ITEMS_OPEN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <see cref="ISpatialAudioMetadataItems" /> has not been opened for copying with a call to <see cref="Open" /> or the object has been closed for writing with a call to <see cref="Close" />.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <see cref="ISpatialAudioMetadataItems" /> has not been opened for copying with a call to <see cref="Open" /> or the object has been closed for writing with a call to <see cref="Close" />.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SPTLAUD_MD_CLNT_E_BUFFER_ALREADY_ATTACHED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The supplied buffer has already been attached.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>SPTLAUD_MD_CLNT_E_BUFFER_ALREADY_ATTACHED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SPTLAUD_MD_CLNT_E_ATTACH_FAILED_INTERNAL_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <see cref="ISpatialAudioMetadataItems" /> was created to use a media pipeline internal buffer, so an external buffer can't be attached.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The supplied buffer has already been attached.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SPTLAUD_MD_CLNT_E_FORMAT_MISMATCH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The supplied populated buffer uses a format that is different from the current format.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>SPTLAUD_MD_CLNT_E_ATTACH_FAILED_INTERNAL_BUFFER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <see cref="ISpatialAudioMetadataItems" /> was created to use a media pipeline internal buffer, so an external buffer can't be attached.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>SPTLAUD_MD_CLNT_E_FORMAT_MISMATCH</b>
-            </para>
-          </description>
-          <description>
-            <para>The supplied populated buffer uses a format that is different from the current format.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One of the provided pointers is not valid.</para>
-            <para>The supplied buffer is not large enough to hold the maximum number of metadata items. Call <see cref="GetSpatialAudioMetadataItemsBufferLength" /> to determine the required buffer size.</para>
-          </description>
-        </item>
+          <description>One of the provided pointers is not valid.<para>The supplied buffer is not large enough to hold the maximum number of metadata items. Call <see cref="GetSpatialAudioMetadataItemsBufferLength" /> to determine the required buffer size.</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ISpatialAudioMetadataItemsBuffer" />
   </member>
   <member name="ISpatialAudioMetadataItemsBuffer.DetachBuffer">
-    <summary>
-      <para>Detaches the buffer.  Memory can only be attached to a single metadata item at a time.</para>
-    </summary>
+    <summary>Detaches the buffer. Memory can only be attached to a single metadata item at a time.</summary>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -147,55 +147,61 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>SPTLAUD_MD_CLNT_E_NO_ITEMS_OPEN</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SPTLAUD_MD_CLNT_E_NO_ITEMS_OPEN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <see cref="ISpatialAudioMetadataItems" /> has not been opened for copying with a call to <see cref="Open" /> or the object has been closed for writing with a call to <see cref="Close" />.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <see cref="ISpatialAudioMetadataItems" /> has not been opened for copying with a call to <see cref="Open" /> or the object has been closed for writing with a call to <see cref="Close" />.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SPTLAUD_MD_CLNT_E_ATTACH_FAILED_INTERNAL_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <see cref="ISpatialAudioMetadataItems" /> was created to use a media pipeline internal buffer which can't be detached.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>SPTLAUD_MD_CLNT_E_ATTACH_FAILED_INTERNAL_BUFFER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SPTLAUD_MD_CLNT_E_BUFFER_NOT_ATTACHED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The supplied buffer is not attached.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <see cref="ISpatialAudioMetadataItems" /> was created to use a media pipeline internal buffer which can't be detached.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>SPTLAUD_MD_CLNT_E_BUFFER_NOT_ATTACHED</b>
-            </para>
-          </description>
-          <description>
-            <para>The supplied buffer is not attached.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One of the provided pointers is not valid.</para>
-            <para>The supplied buffer is not large enough to hold the maximum number of metadata items.</para>
-          </description>
-        </item>
+          <description>One of the provided pointers is not valid.<para>The supplied buffer is not large enough to hold the maximum number of metadata items.</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ISpatialAudioMetadataItemsBuffer" />
   </member>
   <member name="ISpatialAudioMetadataItemsBuffer">
     <summary>
-      <para>Provides methods for attaching buffers to <see cref="SpatialAudioMetadataItems" /> for in-place storage of data. Get an instance of this object by passing a pointer to the interface into <see cref="ActivateSpatialAudioMetadataItems" />. The buffer will be associated with the returned <b>SpatialAudioMetadataItems</b>. This interface allows you to attach a  buffer and reset its contents to the empty set of metadata items  or attach a  previously-populated     buffer and retain the data stored in the buffer.</para>
-      <para>This interface is a part of  Windows Sonic, Microsoft’s audio platform for more immersive audio which includes integrated spatial sound on Xbox and Windows.</para>
+      <para>Provides methods for attaching buffers to <see cref="SpatialAudioMetadataItems" /> for in-place storage of data. Get an instance of this object by passing a pointer to the interface into <see cref="ActivateSpatialAudioMetadataItems" />. The buffer will be associated with the returned <b>SpatialAudioMetadataItems</b>. This interface allows you to attach a buffer and reset its contents to the empty set of metadata items or attach a previously-populated buffer and retain the data stored in the buffer.</para>
+      <para>This interface is a part of Windows Sonic, Microsoft’s audio platform for more immersive audio which includes integrated spatial sound on Xbox and Windows.</para>
     </summary>
   </member>
 </doc>

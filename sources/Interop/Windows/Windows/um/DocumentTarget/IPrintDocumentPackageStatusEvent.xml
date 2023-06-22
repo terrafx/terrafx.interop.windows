@@ -3,21 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPrintDocumentPackageStatusEvent.PackageStatusUpdated">
-    <summary>
-      <para>Updates the status of the package when the  print job in progress raises an event, or the job completes.</para>
-    </summary>
-    <param name="packageStatus">
-      <para>The status update.</para>
-    </param>
-    <returns>
-      <para>If the <b>PackageStatusUpdated</b> method completes successfully, it returns an S_OK. Otherwise it returns an appropriate HRESULT  error code.</para>
-    </returns>
-    <seealso cref="IPrintDocumentPackageStatusEvent" />
-    <seealso cref="PrintDocumentPackageStatus" />
-  </member>
-  <member name="IPrintDocumentPackageStatusEvent">
-    <summary>
-      <para>Represents the progress of the print job.</para>
-    </summary>
+    <summary>Updates the status of the package when the print job in progress raises an event, or the job completes.</summary>
+    <param name="packageStatus">The status update.</param>
+    <returns>If the <b>PackageStatusUpdated</b> method completes successfully, it returns an S_OK. Otherwise it returns an appropriate HRESULT error code.</returns>
   </member>
 </doc>

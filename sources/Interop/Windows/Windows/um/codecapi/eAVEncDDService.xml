@@ -4,49 +4,32 @@
 <doc>
   <member name="eAVEncDDService">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies the audio service contained in a Dolby Digital audio stream. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencddservice-property">AVEncDDService</a> property.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVEncDDService.eAVEncDDService_CM">
-    <summary>
-      <para>Complete main audio service.</para>
-    </summary>
+    <summary>Complete main audio service.</summary>
   </member>
   <member name="eAVEncDDService.eAVEncDDService_ME">
-    <summary>
-      <para>Main service: music and effects. (The main audio service minus the dialog channel.)</para>
-    </summary>
+    <summary>Main service: music and effects. (The main audio service minus the dialog channel.)</summary>
   </member>
   <member name="eAVEncDDService.eAVEncDDService_VI">
-    <summary>
-      <para>Associated service: visually impaired.</para>
-    </summary>
+    <summary>Associated service: visually impaired.</summary>
   </member>
   <member name="eAVEncDDService.eAVEncDDService_HI">
-    <summary>
-      <para>Associated service: hard of hearing.</para>
-    </summary>
+    <summary>Associated service: hard of hearing.</summary>
   </member>
   <member name="eAVEncDDService.eAVEncDDService_D">
-    <summary>
-      <para>Associated service: dialog.</para>
-    </summary>
+    <summary>Associated service: dialog.</summary>
   </member>
   <member name="eAVEncDDService.eAVEncDDService_C">
-    <summary>
-      <para>Associated service: commentary.</para>
-    </summary>
+    <summary>Associated service: commentary.</summary>
   </member>
   <member name="eAVEncDDService.eAVEncDDService_E">
-    <summary>
-      <para>Associated service: emergency.</para>
-    </summary>
+    <summary>Associated service: emergency.</summary>
   </member>
   <member name="eAVEncDDService.eAVEncDDService_VO">
-    <summary>
-      <para>Associated service: voice over.</para>
-    </summary>
+    <summary>Associated service: voice over.</summary>
   </member>
 </doc>

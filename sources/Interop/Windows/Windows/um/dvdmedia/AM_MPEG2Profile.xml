@@ -4,36 +4,23 @@
 <doc>
   <member name="AM_MPEG2Profile">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Indicates an MPEG-2 video profile as specified in the MPEG-2 video standard (ISO13818-2).</para>
     </summary>
-    <remarks>
-      <para>DVD video decoders should support <b>AM_MPEG2Profile_Simple</b> or <b>AM_MPEG2Profile_Main</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
   </member>
   <member name="AM_MPEG2Profile.AM_MPEG2Profile_Simple">
-    <summary>
-      <para>Simple profile.</para>
-    </summary>
+    <summary>Simple profile.</summary>
   </member>
   <member name="AM_MPEG2Profile.AM_MPEG2Profile_Main">
-    <summary>
-      <para>Main profile.</para>
-    </summary>
+    <summary>Main profile.</summary>
   </member>
   <member name="AM_MPEG2Profile.AM_MPEG2Profile_SNRScalable">
-    <summary>
-      <para>Signal to Noise Ratio (SNR) scalable profile</para>
-    </summary>
+    <summary>Signal to Noise Ratio (SNR) scalable profile</summary>
   </member>
   <member name="AM_MPEG2Profile.AM_MPEG2Profile_SpatiallyScalable">
-    <summary>
-      <para>Spatially scalable profile.</para>
-    </summary>
+    <summary>Spatially scalable profile.</summary>
   </member>
   <member name="AM_MPEG2Profile.AM_MPEG2Profile_High">
-    <summary>
-      <para>High profile.</para>
-    </summary>
+    <summary>High profile.</summary>
   </member>
 </doc>

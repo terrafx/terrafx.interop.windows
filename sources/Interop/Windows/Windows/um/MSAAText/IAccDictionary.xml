@@ -4,132 +4,57 @@
 <doc>
   <member name="IAccDictionary.ConvertValueToString">
     <summary>
-      <para>Clients call the <b>IAccDictionary.ConvertValueToString</b> method to convert a value to a localized string.
-<b>Note</b>  Active Accessibility Text Services is deprecated. Please see
-<a href="https://docs.microsoft.com//windows/win32/tsf/text-services-framework">Microsoft Windows Text Services Framework</a> for more information on advanced text input and natural language technologies.</para>
+      <para>Clients call the <b>IAccDictionary.ConvertValueToString</b> method to convert a value to a localized string.</para>
+      <div>
+        <b>Note</b>  Active Accessibility Text Services is deprecated. Please see <a href="https://docs.microsoft.com//windows/win32/tsf/text-services-framework">Microsoft Windows Text Services Framework</a> for more information on advanced text input and natural language technologies. 		</div>
     </summary>
-    <param name="Term">
-      <para>Type: <b>REFGUID</b></para>
-      <para>A GUID that represents a property.</para>
-    </param>
-    <param name="lcid">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LCID</a></b></para>
-      <para>The locale of the string to be returned.</para>
-    </param>
-    <param name="varValue">
-      <para>Type: <b>VARIANT</b></para>
-      <para>The value of the item.</para>
-    </param>
-    <param name="pbstrResult">
-      <para>Type: <b>BSTR*</b></para>
-      <para>A pointer to the converted value.</para>
-    </param>
-    <param name="plcid">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LCID</a>*</b></para>
-      <para>A pointer to the language of the returned string.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If successful, returns S_OK.</para>
-    </returns>
-    <remarks>
-      <para>If the <i>Term</i> parameter can be true or false, <b>ConvertValueToString</b> will return a localized string or <b>TRUE</b> or <b>FALSE</b>. If the <i>Term</i> parameter represents a color, <b>ConvertValueToString</b> will return a string for the closest color name. If the <i>Term</i> parameter is not found in the dictionary, then <i>pbstrResult</i> will be <b>NULL</b>.</para>
-    </remarks>
+    <param name="Term">A GUID that represents a property.</param>
+    <param name="lcid">The locale of the string to be returned.</param>
+    <param name="varValue">The value of the item.</param>
+    <param name="pbstrResult">A pointer to the converted value.</param>
+    <param name="plcid">A pointer to the language of the returned string.</param>
+    <returns>If successful, returns S_OK.</returns>
   </member>
   <member name="IAccDictionary.GetLocalizedString">
     <summary>
-      <para>Clients call the <b>IAccDictionary.GetLocalizedString</b> method to get localized strings for all system properties and their values.
-<b>Note</b>  Active Accessibility Text Services is deprecated. Please see
-<a href="https://docs.microsoft.com//windows/win32/tsf/text-services-framework">Microsoft Windows Text Services Framework</a> for more information on advanced text input and natural language technologies.</para>
+      <para>Clients call the <b>IAccDictionary.GetLocalizedString</b> method to get localized strings for all system properties and their values.</para>
+      <div>
+        <b>Note</b>  Active Accessibility Text Services is deprecated. Please see <a href="https://docs.microsoft.com//windows/win32/tsf/text-services-framework">Microsoft Windows Text Services Framework</a> for more information on advanced text input and natural language technologies. 		</div>
     </summary>
-    <param name="Term">
-      <para>Type: <b>REFGUID</b></para>
-      <para>A globally unique identifier (GUID) that represents a property.</para>
-    </param>
-    <param name="lcid">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LCID</a></b></para>
-      <para>The locale of the string to be returned.</para>
-    </param>
-    <param name="pResult">
-      <para>Type: <b>BSTR*</b></para>
-      <para>A localized string that represents the term.</para>
-    </param>
-    <param name="plcid">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LCID</a>*</b></para>
-      <para>The language of the returned string.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If successful, returns S_OK.</para>
-    </returns>
-    <remarks>
-      <para>This method returns the names of a property in the language specified by <i>lcid</i>. If that language is not on the system, Microsoft Active Accessibility finds the best match and returns the string in that language. If the <i>Term</i> parameter is not found in the dictionary, the <i>pResult</i> will be <b>NULL</b>.</para>
-    </remarks>
+    <param name="Term">A globally unique identifier (GUID) that represents a property.</param>
+    <param name="lcid">The locale of the string to be returned.</param>
+    <param name="pResult">A localized string that represents the term.</param>
+    <param name="plcid">The language of the returned string.</param>
+    <returns>If successful, returns S_OK.</returns>
   </member>
   <member name="IAccDictionary.GetMnemonicString">
     <summary>
-      <para>Retrieves a mnemonic string.
-<b>Note</b>  Active Accessibility Text Services is deprecated. Please see
-<a href="https://docs.microsoft.com//windows/win32/tsf/text-services-framework">Microsoft Windows Text Services Framework</a> for more information on advanced text input and natural language technologies.</para>
+      <para>Retrieves a mnemonic string.</para>
+      <div>
+        <b>Note</b>  Active Accessibility Text Services is deprecated. Please see <a href="https://docs.microsoft.com//windows/win32/tsf/text-services-framework">Microsoft Windows Text Services Framework</a> for more information on advanced text input and natural language technologies. 		</div>
     </summary>
-    <param name="Term">
-      <para>Type: <b>REFGUID</b></para>
-      <para>A GUID representing a property.</para>
-    </param>
-    <param name="pResult">
-      <para>Type: <b>BSTR*</b></para>
-      <para>A mnemonic string for the property. This string is not localized.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If successful, returns S_OK.</para>
-    </returns>
-    <remarks>
-      <para>If the <i>Term</i> parameter is not found in the dictionary, then <i>pResult</i> will be <b>NULL</b>.</para>
-    </remarks>
+    <param name="Term">A GUID representing a property.</param>
+    <param name="pResult">A mnemonic string for the property. This string is not localized.</param>
+    <returns>If successful, returns S_OK.</returns>
   </member>
   <member name="IAccDictionary.GetParentTerm">
     <summary>
-      <para>Clients call the <b>IAccDictionary.GetParentTerm</b> method to navigate through the object hierarchy tree. This method returns the parent object of a specified property.
-<b>Note</b>  Active Accessibility Text Services is deprecated. Please see
-<a href="https://docs.microsoft.com//windows/win32/tsf/text-services-framework">Microsoft Windows Text Services Framework</a> for more information on advanced text input and natural language technologies.</para>
+      <para>Clients call the <b>IAccDictionary.GetParentTerm</b> method to navigate through the object hierarchy tree. This method returns the parent object of a specified property.</para>
+      <div>
+        <b>Note</b>  Active Accessibility Text Services is deprecated. Please see <a href="https://docs.microsoft.com//windows/win32/tsf/text-services-framework">Microsoft Windows Text Services Framework</a> for more information on advanced text input and natural language technologies. 		</div>
     </summary>
-    <param name="Term">
-      <para>Type: <b>REFGUID</b></para>
-      <para>A GUID for a property.</para>
-    </param>
-    <param name="pParentTerm">
-      <para>Type: <b>GUID*</b></para>
-      <para>The parent of the property specified in the <i>Term</i> parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If successful, returns S_OK.</para>
-    </returns>
-    <remarks>
-      <para>If there is not a parent term for <i>Term</i>, then <i>pParentTerm</i> will point to GUID_NULL.</para>
-    </remarks>
+    <param name="Term">A GUID for a property.</param>
+    <param name="pParentTerm">The parent of the property specified in the <i>Term</i> parameter.</param>
+    <returns>If successful, returns S_OK.</returns>
   </member>
   <member name="IAccDictionary.LookupMnemonicTerm">
     <summary>
-      <para>Clients call the <b>IAccDictionary.LookupMnemonicTerm</b> method to find the property for a given mnemonic string.
-<b>Note</b>  Active Accessibility Text Services is deprecated. Please see
-<a href="https://docs.microsoft.com//windows/win32/tsf/text-services-framework">Microsoft Windows Text Services Framework</a> for more information on advanced text input and natural language technologies.</para>
+      <para>Clients call the <b>IAccDictionary.LookupMnemonicTerm</b> method to find the property for a given mnemonic string.</para>
+      <div>
+        <b>Note</b>  Active Accessibility Text Services is deprecated. Please see <a href="https://docs.microsoft.com//windows/win32/tsf/text-services-framework">Microsoft Windows Text Services Framework</a> for more information on advanced text input and natural language technologies. 		</div>
     </summary>
-    <param name="bstrMnemonic">
-      <para>Type: <b>BSTR</b></para>
-      <para>A non-localized mnemonic string for a property.</para>
-    </param>
-    <param name="pTerm">
-      <para>Type: <b>GUID*</b></para>
-      <para>A GUID representing the property in <i>bstrMnemonic</i>.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If successful, returns S_OK.</para>
-    </returns>
-    <remarks>
-      <para>If the <i>bstrMnemonic</i> parameter is not found in the dictionary, then <i>pTerm</i> will be <b>NULL</b>.</para>
-    </remarks>
+    <param name="bstrMnemonic">A non-localized mnemonic string for a property.</param>
+    <param name="pTerm">A GUID representing the property in <i>bstrMnemonic</i>.</param>
+    <returns>If successful, returns S_OK.</returns>
   </member>
 </doc>

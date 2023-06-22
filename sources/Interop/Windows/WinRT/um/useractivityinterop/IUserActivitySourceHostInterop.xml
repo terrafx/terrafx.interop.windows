@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IUserActivitySourceHostInterop.SetActivitySourceHost">
+    <summary>Associates host information with either a <a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.useractivities.useractivitychannel">UserActivityChannel</a> or the <a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.useractivities.useractivity">UserActivity</a> object.</summary>
+    <param name="activitySourceHost">An <b>HSTRING</b> containing the host to be associated with the user activity.</param>
+    <returns>If this function succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</returns>
+  </member>
+  <member name="IUserActivitySourceHostInterop">
+    <summary>Enables interoperability with a WinRT a <a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.useractivities.useractivitychannel">UserActivityChannel</a> or a <a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.useractivities.useractivity">UserActivity</a> object and provides the ability to associate host information with these objects.</summary>
+  </member>
+</doc>

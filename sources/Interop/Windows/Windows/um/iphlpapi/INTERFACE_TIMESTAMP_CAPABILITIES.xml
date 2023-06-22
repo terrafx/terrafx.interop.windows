@@ -8,30 +8,17 @@
       <para>To retrieve the supported timestamp capabilities of a network adapter, call the <see cref="GetInterfaceSupportedTimestampCapabilities" /> function. That function returns the supported timestamping capabilities in the form of an <b>INTERFACE_TIMESTAMP_CAPABILITIES</b> object.</para>
       <para>For more info, and code examples, see <a href="https://docs.microsoft.com//windows/win32/iphlp/packet-timestamping">Packet timestamping</a>.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/win32/iphlp/packet-timestamping">Packet timestamping</seealso>
   </member>
   <member name="INTERFACE_TIMESTAMP_CAPABILITIES.HardwareClockFrequencyHz">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">ULONG64</a></b></para>
-      <para>Contains the frequency of the network adapter's hardware clock, rounded off to the nearest integer in Hertz units. Note this is the nominal frequency, and the actual frequency might not be the same as this. This data could be used to display the nominal clock frequency to end users for informational purposes. It's possible for <i>HardwareClockFrequencyHz</i> to contain the value 0.</para>
-    </summary>
+    <summary>Contains the frequency of the network adapter's hardware clock, rounded off to the nearest integer in Hertz units. Note this is the nominal frequency, and the actual frequency might not be the same as this. This data could be used to display the nominal clock frequency to end users for informational purposes. It's possible for <i>HardwareClockFrequencyHz</i> to contain the value 0.</summary>
   </member>
   <member name="INTERFACE_TIMESTAMP_CAPABILITIES.SupportsCrossTimestamp">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOLEAN</a></b></para>
-      <para>A value of <b>TRUE</b> indicates that the network adapter driver is capable of generating a hardware cross timestamp. A cross timestamp refers to a set of network interface card (NIC) hardware timestamp and system timestamp(s) obtained very close to one another. A value of <b>FALSE</b> indicates that this capability doesn't exist.</para>
-    </summary>
+    <summary>A value of <b>TRUE</b> indicates that the network adapter driver is capable of generating a hardware cross timestamp. A cross timestamp refers to a set of network interface card (NIC) hardware timestamp and system timestamp(s) obtained very close to one another. A value of <b>FALSE</b> indicates that this capability doesn't exist.</summary>
   </member>
   <member name="INTERFACE_TIMESTAMP_CAPABILITIES.HardwareCapabilities">
-    <summary>
-      <para>Type: <b><see cref="INTERFACE_HARDWARE_TIMESTAMP_CAPABILITIES" /></b></para>
-      <para>Describes the timestamping capabilities of the network interface card's (NIC's) hardware. Having both hardware and software timestamps enabled together isn't supported.</para>
-    </summary>
+    <summary>Describes the timestamping capabilities of the network interface card's (NIC's) hardware. Having both hardware and software timestamps enabled together isn't supported.</summary>
   </member>
   <member name="INTERFACE_TIMESTAMP_CAPABILITIES.SoftwareCapabilities">
-    <summary>
-      <para>Type: <b><see cref="INTERFACE_SOFTWARE_TIMESTAMP_CAPABILITIES" /></b></para>
-      <para>Describes the software timestamping capabilities of a network interface card's (NIC's) miniport driver. Having both hardware and software timestamps enabled together isn't supported.</para>
-    </summary>
+    <summary>Describes the software timestamping capabilities of a network interface card's (NIC's) miniport driver. Having both hardware and software timestamps enabled together isn't supported.</summary>
   </member>
 </doc>

@@ -3,18 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FILE_LEVEL_TRIM_OUTPUT">
-    <summary>
-      <para>Used as output to the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_file_level_trim">FSCTL_FILE_LEVEL_TRIM</a> control code.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_file_level_trim">FSCTL_FILE_LEVEL_TRIM</seealso>
+    <summary>Used as output to the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_file_level_trim">FSCTL_FILE_LEVEL_TRIM</a> control code.</summary>
   </member>
   <member name="FILE_LEVEL_TRIM_OUTPUT.NumRangesProcessed">
-    <summary>
-      <para>Contains the number of ranges that were successfully processed. This may be less than the value passed in
-the <b>NumRanges</b> member of the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_file_level_trim">FILE_LEVEL_TRIM</a> structure. If it is then the last
-ranges in the array were not processed.</para>
-    </summary>
+    <summary>Contains the number of ranges that were successfully processed. This may be less than the value passed in the <b>NumRanges</b> member of the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_file_level_trim">FILE_LEVEL_TRIM</a> structure. If it is then the last ranges in the array were not processed.</summary>
   </member>
 </doc>

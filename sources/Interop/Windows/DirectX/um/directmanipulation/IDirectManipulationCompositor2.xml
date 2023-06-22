@@ -3,19 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDirectManipulationCompositor2.AddContentWithCrossProcessChaining">
-    <summary>
-      <para>Associates content (owned by the component host) with the compositor, assigns a composition device to the content, and specifies the position of the content in the composition tree relative to other composition visuals. Represents a compositor object that associates manipulated content with drawing surfaces across multiple processes.</para>
-    </summary>
+    <summary>Associates content (owned by the component host) with the compositor, assigns a composition device to the content, and specifies the position of the content in the composition tree relative to other composition visuals. Represents a compositor object that associates manipulated content with drawing surfaces across multiple processes.</summary>
     <param name="content">
       <para>The content to add to the composition tree.</para>
       <para>
-        <i>content</i> is placed  between <i>parentVisual</i> and <i>childVisual</i> in the composition tree.</para>
+        <i>content</i> is placed between <i>parentVisual</i> and <i>childVisual</i> in the composition tree.</para>
       <para>Only primary content, created at the same time as the viewport, is valid.</para>
     </param>
     <param name="device">
       <para>The device used to compose the content.</para>
-      <para>
-        <b>Note</b>  <i>device</i> is created by the application.</para>
+      <div>
+        <b>Note</b>  <i>device</i> is created by the application.</div>
     </param>
     <param name="parentVisual">
       <para>The parent visuals in the composition tree of the content being added.</para>
@@ -27,68 +25,9 @@
       <para>
         <i>parentVisual</i> must also be a parent of <i>childVisual</i> in the composition tree.</para>
     </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method inserts a small visual tree (owned by the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> device) between the <i>parentVisual</i> and the <i>childVisual</i>. Transforms can then be applied to the inserted content.</para>
-      <para>All content, regardless of type, must be added to the compositor.</para>
-      <para>If the application uses a system-provided <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationcompositor">IDirectManipulationCompositor</a>:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <i>device</i> must be an  <see cref="IDCompositionDevice" /> object, and parent and child visuals must be <see cref="IDCompositionVisual" /> objects.</description>
-        </item>
-        <item>
-          <description>
-            <i>device</i>, <i>parentVisual</i>, and <i>childVisual</i> cannot be NULL. </description>
-        </item>
-        <item>
-          <description>
-            <i>device</i>, <i>parentVisual</i>, and <i>childVisual</i> objects are created and owned by the application.
-</description>
-        </item>
-        <item>
-          <description>When content is added to the composition tree using this method, the new composition visuals are inserted between <i>parentVisual</i> and <i>childVisual</i>. The new visuals should not be destroyed until they are disassociated from the compositor with <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationcompositor-removecontent">RemoveContent</a>.</description>
-        </item>
-      </list>
-      <para>If the application uses a custom implementation of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationcompositor">IDirectManipulationCompositor</a>:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <i>device</i>, <i>parentVisual</i>, and <i>childVisual</i> must be a valid type for the compositor. They do not have to be <see cref="IDCompositionDevice" /> or <see cref="IDCompositionVisual" /> objects.</description>
-        </item>
-        <item>
-          <description>
-            <i>device</i>, <i>parentVisual</i>, and <i>childVisual</i> can be NULL, depending on the compositor. </description>
-        </item>
-      </list>
-      <para>The cross-process pointer events (<a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/wm-pointerroutedaway">WM_POINTERROUTEDAWAY</a>, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/wm-pointerroutedreleased">WM_POINTERROUTEDRELEASED</a>, and <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/wm-pointerroutedto">WM_POINTERROUTEDTO</a>) should be handled appropriately.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationcompositor2">IDirectManipulationCompositor2</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/wm-pointerroutedaway">WM_POINTERROUTEDAWAY</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/wm-pointerroutedreleased">WM_POINTERROUTEDRELEASED</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/wm-pointerroutedto">WM_POINTERROUTEDTO</seealso>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationCompositor2">
-    <summary>
-      <para>Represents a compositor object that associates manipulated content with drawing surfaces across multiple processes.</para>
-    </summary>
-    <remarks>
-      <para>The content of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> viewport must be manually updated during an input event for custom implementations of <b>IDirectManipulationCompositor2</b>. Call <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationupdatemanager-update">Update</a> to redraw the content within the viewport.</para>
-      <para>You specify manual mode on a viewport by calling either of these functions:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setviewportoptions">SetViewportOptions</a>, with <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_viewport_options">DIRECTMANIPULATION_VIEWPORT_OPTIONS_MANUALUPDATE</a> specified.</description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setupdatemode">SetUpdateMode</a>, with <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_input_mode">DIRECTMANIPULATION_INPUT_MODE_MANUAL</a> specified.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-interfaces">Direct Manipulation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationcompositor">IDirectManipulationCompositor</seealso>
+    <summary>Represents a compositor object that associates manipulated content with drawing surfaces across multiple processes.</summary>
   </member>
 </doc>

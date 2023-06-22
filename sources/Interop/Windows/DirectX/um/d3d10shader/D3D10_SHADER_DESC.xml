@@ -3,215 +3,99 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_SHADER_DESC">
-    <summary>
-      <para>Describes a shader.</para>
-    </summary>
-    <remarks>
-      <para>A shader is written in HLSL and compiled into an intermediate language by the HLSL compiler. The shader description returns information about the compiled shader. Get a shader description by calling <see cref="ID3D10ShaderReflection.GetDesc" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-structures">Shader Structures</seealso>
+    <summary>Describes a shader.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.Version">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Shader version.</para>
-    </summary>
+    <summary>Shader version.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.Creator">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>The name of the originator of the shader.</para>
-    </summary>
+    <summary>The name of the originator of the shader.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.Flags">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Shader compilation/parse flags.</para>
-    </summary>
+    <summary>Shader compilation/parse flags.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.ConstantBuffers">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of shader-constant buffers.</para>
-    </summary>
+    <summary>The number of shader-constant buffers.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.BoundResources">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of resource (textures and buffers) bound to a shader.</para>
-    </summary>
+    <summary>The number of resource (textures and buffers) bound to a shader.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.InputParameters">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of parameters in the input signature.</para>
-    </summary>
+    <summary>The number of parameters in the input signature.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.OutputParameters">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of parameters in the output signature.</para>
-    </summary>
+    <summary>The number of parameters in the output signature.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.InstructionCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of intermediate-language instructions in the compiled shader.</para>
-    </summary>
+    <summary>The number of intermediate-language instructions in the compiled shader.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.TempRegisterCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of temporary registers in the compiled shader.</para>
-    </summary>
+    <summary>The number of temporary registers in the compiled shader.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.TempArrayCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of temporary arrays used.</para>
-    </summary>
+    <summary>Number of temporary arrays used.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.DefCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of constant defines.</para>
-    </summary>
+    <summary>Number of constant defines.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.DclCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of declarations (input + output).</para>
-    </summary>
+    <summary>Number of declarations (input + output).</summary>
   </member>
   <member name="D3D10_SHADER_DESC.TextureNormalInstructions">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of non-categorized texture instructions.</para>
-    </summary>
+    <summary>Number of non-categorized texture instructions.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.TextureLoadInstructions">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of texture load instructions</para>
-    </summary>
+    <summary>Number of texture load instructions</summary>
   </member>
   <member name="D3D10_SHADER_DESC.TextureCompInstructions">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of texture comparison instructions</para>
-    </summary>
+    <summary>Number of texture comparison instructions</summary>
   </member>
   <member name="D3D10_SHADER_DESC.TextureBiasInstructions">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of texture bias instructions</para>
-    </summary>
+    <summary>Number of texture bias instructions</summary>
   </member>
   <member name="D3D10_SHADER_DESC.TextureGradientInstructions">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of texture gradient instructions.</para>
-    </summary>
+    <summary>Number of texture gradient instructions.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.FloatInstructionCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of floating point arithmetic instructions used.</para>
-    </summary>
+    <summary>Number of floating point arithmetic instructions used.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.IntInstructionCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of signed integer arithmetic instructions used.</para>
-    </summary>
+    <summary>Number of signed integer arithmetic instructions used.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.UintInstructionCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of unsigned integer arithmetic instructions used.</para>
-    </summary>
+    <summary>Number of unsigned integer arithmetic instructions used.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.StaticFlowControlCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of static flow control instructions used.</para>
-    </summary>
+    <summary>Number of static flow control instructions used.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.DynamicFlowControlCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of dynamic flow control instructions used.</para>
-    </summary>
+    <summary>Number of dynamic flow control instructions used.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.MacroInstructionCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of macro instructions used.</para>
-    </summary>
+    <summary>Number of macro instructions used.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.ArrayInstructionCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of array instructions used.</para>
-    </summary>
+    <summary>Number of array instructions used.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.CutInstructionCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of cut instructions used.</para>
-    </summary>
+    <summary>Number of cut instructions used.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.EmitInstructionCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of emit instructions used.</para>
-    </summary>
+    <summary>Number of emit instructions used.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.GSOutputTopology">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb205334(v=vs.85)">D3D10_PRIMITIVE_TOPOLOGY</a></b></para>
-      <para>Geometry shader output topology.</para>
-    </summary>
+    <summary>Geometry shader output topology.</summary>
   </member>
   <member name="D3D10_SHADER_DESC.GSMaxOutputVertexCount">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>Geometry shader maximum output vertex count.</para>
       <h4>- BitwiseInstructionCount</h4>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>Number of bitwise operations.</para>
       <h4>- ConversionInstructionCount</h4>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>Number of conversion operations.</para>
       <h4>- MovInstructionCount</h4>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>Number of mov instructions.</para>
       <h4>- MovcInstructionCount</h4>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of movc instructions.</para>
-    </summary>
-  </member>
-  <member name="D3D10_SHADER_DESC.seInstructionCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of bitwise operations.</para>
-    </summary>
-  </member>
-  <member name="D3D10_SHADER_DESC.rsionInstructionCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of conversion operations.</para>
-    </summary>
-  </member>
-  <member name="D3D10_SHADER_DESC.structionCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of mov instructions.</para>
-    </summary>
-  </member>
-  <member name="D3D10_SHADER_DESC.nstructionCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>Number of movc instructions.</para>
     </summary>
   </member>

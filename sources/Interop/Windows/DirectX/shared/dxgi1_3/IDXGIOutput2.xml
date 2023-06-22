@@ -3,25 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDXGIOutput2.SupportsOverlays">
-    <summary>
-      <para>Queries an adapter output for multiplane overlay support. If this API returns ‘TRUE’, multiple swap chain composition takes place in a performant manner using overlay hardware. If this API returns false, apps should avoid using foreground swap chains (that is, avoid using swap chains created with the <see cref="DXGI_SWAP_CHAIN_FLAG_FOREGROUND_LAYER" /> flag).</para>
-    </summary>
-    <returns>
-      <para>TRUE if the output adapter is the primary adapter and it supports multiplane overlays, otherwise returns FALSE.</para>
-    </returns>
-    <remarks>
-      <para>See <see cref="CreateSwapChainForCoreWindow" /> for info on creating a foreground swap chain.</para>
-    </remarks>
-    <seealso cref="IDXGIOutput2" />
+    <summary>Queries an adapter output for multiplane overlay support. If this API returns ‘TRUE’, multiple swap chain composition takes place in a performant manner using overlay hardware. If this API returns false, apps should avoid using foreground swap chains (that is, avoid using swap chains created with the <see cref="DXGI_SWAP_CHAIN_FLAG_FOREGROUND_LAYER" /> flag).</summary>
+    <returns>TRUE if the output adapter is the primary adapter and it supports multiplane overlays, otherwise returns FALSE.</returns>
   </member>
   <member name="IDXGIOutput2">
-    <summary>
-      <para>Represents an adapter output (such as a monitor). The <b>IDXGIOutput2</b> interface exposes a method to check for multiplane overlay support on the primary output adapter.</para>
-    </summary>
-    <remarks>
-      <para>To determine  the outputs that are available from the adapter, use <see cref="IDXGIAdapter.EnumOutputs" />. To determine the specific output that the swap chain will update, use <see cref="IDXGISwapChain.GetContainingOutput" />. You can then call <see cref="QueryInterface" /> from any  <see cref="IDXGIOutput" /> or <see cref="IDXGIOutput1" /> object to obtain an <b>IDXGIOutput2</b> object.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IDXGIOutput1" />
+    <summary>Represents an adapter output (such as a monitor). The <b>IDXGIOutput2</b> interface exposes a method to check for multiplane overlay support on the primary output adapter.</summary>
   </member>
 </doc>

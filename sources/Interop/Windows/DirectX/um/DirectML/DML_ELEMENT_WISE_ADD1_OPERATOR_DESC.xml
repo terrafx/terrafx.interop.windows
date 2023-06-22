@@ -5,35 +5,23 @@
   <member name="DML_ELEMENT_WISE_ADD1_OPERATOR_DESC">
     <summary>
       <para>Adds every element in <i>ATensor</i> to its corresponding element in <i>BTensor</i> and places the result into the corresponding element of <i>OutputTensor</i>, with the option for fused activation.</para>
-      <code>f(a, b) = FusedActivation(a + b)
-</code>
+      <code>f(a, b) = FusedActivation(a + b)</code>
       <para>The fused activation operator description, if provided, then executes the given activation operator on the output.</para>
       <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias one or more of the input tensors during binding.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-fused-activations">Using fused operators for improved performance</seealso>
   </member>
   <member name="DML_ELEMENT_WISE_ADD1_OPERATOR_DESC.ATensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the left-hand side inputs.</para>
-    </summary>
+    <summary>A tensor containing the left-hand side inputs.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_ADD1_OPERATOR_DESC.BTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the right-hand side inputs.</para>
-    </summary>
+    <summary>A tensor containing the right-hand side inputs.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_ADD1_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The output tensor to write the results to.</para>
-    </summary>
+    <summary>The output tensor to write the results to.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_ADD1_OPERATOR_DESC.FusedActivation">
     <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_OPERATOR_DESC" />*</b></para>
-      <para>An optional fused activation layer to apply after the addition.</para>
+      <para>An optional fused activation layer to apply after the addition. For more info, see <a href="https://docs.microsoft.com//windows/ai/directml/dml-fused-activations">Using fused operators for improved performance</a>.</para>
       <para>Fused activation may be used only when the output datatype is <b>FLOAT16</b> or <b>FLOAT32</b>.</para>
     </summary>
   </member>

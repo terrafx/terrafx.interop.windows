@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="UNSIGNED_RATIO">
-    <summary>
-      <para>Defines a data type used by the Desktop Window Manager (DWM) APIs. It represents a generic ratio and is used for different purposes and units even within a single API.</para>
-    </summary>
+    <summary>Defines a data type used by the Desktop Window Manager (DWM) APIs. It represents a generic ratio and is used for different purposes and units even within a single API.</summary>
   </member>
   <member name="UNSIGNED_RATIO.uiNumerator">
-    <summary>
-      <para>The ratio numerator.</para>
-    </summary>
+    <summary>The ratio numerator.</summary>
   </member>
   <member name="UNSIGNED_RATIO.uiDenominator">
-    <summary>
-      <para>The ratio denominator.</para>
-    </summary>
+    <summary>The ratio denominator.</summary>
   </member>
 </doc>

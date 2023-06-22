@@ -3,42 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfTextEditSink.OnEndEdit">
-    <summary>
-      <para>Receives a notification upon completion of an ITfEditSession.DoEditSession method that has read/write access to the context.</para>
-    </summary>
-    <param name="pic">
-      <para>Pointer to the <see cref="ITfContext" /> interface for the edited context.</para>
-    </param>
-    <param name="ecReadOnly">
-      <para>Specifies a <a href="https://docs.microsoft.com//windows/desktop/TSF/tfeditcookie">TfEditCookie</a> value for read-only access to the context.</para>
-    </param>
-    <param name="pEditRecord">
-      <para>Pointer to the <see cref="ITfEditRecord" /> interface used to access the modifications to the context.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>An edit session with read/write access is requested with a call to the <see cref="ITfContext.RequestEditSession" /> method using the TF_ES_READWRITE flag, which establishes an <b>ITfEditSession.DoEditSession</b> method to perform the session. When such a <b>ITfEditSession.DoEditSession</b> method completes, TSF calls this method.</para>
-      <para>A text service can use the <i>ecReadOnly</i> parameter only to view the context. If changes are required, the text service must use an asynchronous call to the <b>ITfContext.RequestEditSession</b> method. However, a text service should modify only text that it previously entered as part of a composition. Otherwise, two or more text services could repeatedly modify the same text. A text service can use the <see cref="ITfContext.InWriteSession" /> method to determine if it performed the completed edit session.</para>
-    </remarks>
-    <seealso cref="ITfContext " />
-    <seealso cref="ITfContext.InWriteSession " />
-    <seealso cref="ITfContext.RequestEditSession " />
-    <seealso cref="ITfEditRecord " />
-    <seealso cref="ITfEditSession.DoEditSession " />
-    <seealso cref="ITfTextEditSink" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tfeditcookie">TfEditCookie
-</seealso>
+    <summary>Receives a notification upon completion of an ITfEditSession.DoEditSession method that has read/write access to the context.</summary>
+    <param name="pic">Pointer to the <see cref="ITfContext" /> interface for the edited context.</param>
+    <param name="ecReadOnly">Specifies a <a href="https://docs.microsoft.com//windows/desktop/TSF/tfeditcookie">TfEditCookie</a> value for read-only access to the context.</param>
+    <param name="pEditRecord">Pointer to the <see cref="ITfEditRecord" /> interface used to access the modifications to the context.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITfTextEditSink">
-    <summary>
-      <para>The <b>ITfTextEditSink</b> interface supports completion of an edit session that involves read/write access. Install this advise sink by calling <see cref="ITfSource.AdviseSink" /> with IID_ITfTextEditSink. A text service or application can optionally implement this interface.</para>
-    </summary>
-    <seealso cref="ITfContext " />
-    <seealso cref="ITfContext.RequestEditSession " />
-    <seealso cref="ITfEditSession.DoEditSession " />
-    <seealso cref="ITfSource.AdviseSink " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfTextEditSink</b> interface supports completion of an edit session that involves read/write access. Install this advise sink by calling <see cref="ITfSource.AdviseSink" /> with IID_ITfTextEditSink. A text service or application can optionally implement this interface.</summary>
   </member>
 </doc>

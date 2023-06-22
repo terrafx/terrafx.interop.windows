@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfLanguageProfileNotifySink.OnLanguageChange">
-    <summary>
-      <para>Called when the language profile is about to change.</para>
-    </summary>
-    <param name="langid">
-      <para>Contains a <b>LANGID</b> value the identifies the new language profile.</para>
-    </param>
-    <param name="pfAccept">
-      <para>Pointer to a <b>BOOL</b> value that receives a flag that permits or prevents the language profile change. Receives zero to prevent the language profile change or nonzero to permit the language profile change.</para>
-    </param>
+    <summary>Called when the language profile is about to change.</summary>
+    <param name="langid">Contains a <b>LANGID</b> value the identifies the new language profile.</param>
+    <param name="pfAccept">Pointer to a <b>BOOL</b> value that receives a flag that permits or prevents the language profile change. Receives zero to prevent the language profile change or nonzero to permit the language profile change.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -19,35 +13,29 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfLanguageProfileNotifySink.OnLanguageChanged">
-    <summary>
-      <para>Called after the language profile has changed.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Called after the language profile has changed.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITfLanguageProfileNotifySink">
     <summary>
       <para>The <b>ITfLanguageProfileNotifySink</b> interface is implemented by an application to receive notifications when the language profile changes.</para>
       <para>To install this advise sink, obtain an <see cref="ITfSource" /> object from an <see cref="ITfInputProcessorProfiles" /> object by calling <b>ITfInputProcessorProfiles.QueryInterface</b> with <b>IID_ITfSource</b>. Then call <see cref="ITfSource.AdviseSink" /> with <b>IID_ITfLanguageProfileNotifySink</b>.</para>
     </summary>
-    <seealso cref="ITfInputProcessorProfiles " />
-    <seealso cref="ITfSource " />
-    <seealso cref="ITfSource.AdviseSink " />
-    <seealso cref="IUnknown" />
   </member>
 </doc>

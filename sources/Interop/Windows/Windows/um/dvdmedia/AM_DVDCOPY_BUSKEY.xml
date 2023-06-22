@@ -4,22 +4,14 @@
 <doc>
   <member name="AM_DVDCOPY_BUSKEY">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Identifies the DVD bus key.</para>
     </summary>
-    <remarks>
-      <para>The AM_PROPERTY_DVDCOPY_DVD_KEY1 and AM_PROPERTY_DVDCOPY_DEC_KEY2 properties use this structure.</para>
-      <para>A bus key is used for the DVD CSS key exchange for decryption. Implementors should get a CSS license and further instructions from CSS.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-copy-protection-property-set">DVD Copy Protection Property Set</seealso>
   </member>
   <member name="AM_DVDCOPY_BUSKEY.BusKey">
-    <summary>
-      <para>DVD drive bus key.</para>
-    </summary>
+    <summary>DVD drive bus key.</summary>
   </member>
   <member name="AM_DVDCOPY_BUSKEY.Reserved">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
 </doc>

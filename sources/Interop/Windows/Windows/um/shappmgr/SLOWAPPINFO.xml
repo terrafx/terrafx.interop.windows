@@ -3,36 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SLOWAPPINFO">
-    <summary>
-      <para>Provides specialized application information to <b>Add/Remove Programs</b> in Control Panel. This structure is not applicable to published applications.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used by the <see cref="IShellApp.GetSlowAppInfo" /> and <see cref="IShellApp.GetCachedSlowAppInfo" /> interfaces, neither of which are applicable to published applications. Therefore, this structure is also not applicable to published applications.</para>
-    </remarks>
-    <seealso cref="IAppPublisher" />
+    <summary>Provides specialized application information to <b>Add/Remove Programs</b> in Control Panel. This structure is not applicable to published applications.</summary>
   </member>
   <member name="SLOWAPPINFO.ullSize">
-    <summary>
-      <para>Type: <b>ULONGLONG</b></para>
-      <para>The size of the application in bytes.</para>
-    </summary>
+    <summary>The size of the application in bytes.</summary>
   </member>
   <member name="SLOWAPPINFO.ftLastUsed">
-    <summary>
-      <para>Type: <b>FILETIME</b></para>
-      <para>The time the application was last used.</para>
-    </summary>
+    <summary>The time the application was last used.</summary>
   </member>
   <member name="SLOWAPPINFO.iTimesUsed">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The count of times the application has been used.</para>
-    </summary>
+    <summary>The count of times the application has been used.</summary>
   </member>
   <member name="SLOWAPPINFO.pszImage">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>A pointer to a string containing the path to the image that represents the application. The string buffer must be allocated using <see cref="CoTaskMemAlloc" /> and freed using <see cref="CoTaskMemFree" />.</para>
-    </summary>
+    <summary>A pointer to a string containing the path to the image that represents the application. The string buffer must be allocated using <see cref="CoTaskMemAlloc" /> and freed using <see cref="CoTaskMemFree" />.</summary>
   </member>
 </doc>

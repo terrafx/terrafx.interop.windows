@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_AES_CTR_IV">
-    <summary>
-      <para>Contains an initialization vector (IV) for 128-bit Advanced Encryption Standard CTR mode (AES-CTR) block cipher encryption.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+    <summary>Contains an initialization vector (IV) for 128-bit Advanced Encryption Standard CTR mode (AES-CTR) block cipher encryption.</summary>
   </member>
   <member name="D3D11_AES_CTR_IV.IV">
-    <summary>
-      <para>The IV, in big-endian format.</para>
-    </summary>
+    <summary>The IV, in big-endian format.</summary>
   </member>
   <member name="D3D11_AES_CTR_IV.Count">
-    <summary>
-      <para>The block count, in big-endian format.</para>
-    </summary>
+    <summary>The block count, in big-endian format.</summary>
   </member>
 </doc>

@@ -3,28 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CREATE_DISK_GPT">
-    <summary>
-      <para>Contains information used by the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_create_disk">IOCTL_DISK_CREATE_DISK</a> control code to initialize GUID partition table (GPT) disks.</para>
-    </summary>
-    <remarks>
-      <para>The
-<b>CREATE_DISK_GPT</b> structure is defined as part of the
-<see cref="CREATE_DISK" /> structure.</para>
-      <para>If a maximum partition count of less than 128 is specified, it will be reset to 128. This is in compliance with the EFI specification.</para>
-    </remarks>
-    <seealso cref="CREATE_DISK" />
-    <seealso cref="CREATE_DISK_MBR" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_create_disk">IOCTL_DISK_CREATE_DISK</seealso>
+    <summary>Contains information used by the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_create_disk">IOCTL_DISK_CREATE_DISK</a> control code to initialize GUID partition table (GPT) disks.</summary>
   </member>
   <member name="CREATE_DISK_GPT.DiskId">
-    <summary>
-      <para>The disk identifier (GUID) of the GPT disk to be initialized.</para>
-    </summary>
+    <summary>The disk identifier (GUID) of the GPT disk to be initialized.</summary>
   </member>
   <member name="CREATE_DISK_GPT.MaxPartitionCount">
-    <summary>
-      <para>The maximum number of partitions allowed on the GPT disk to be initialized without repartitioning the disk.</para>
-    </summary>
+    <summary>The maximum number of partitions allowed on the GPT disk to be initialized without repartitioning the disk.</summary>
   </member>
 </doc>

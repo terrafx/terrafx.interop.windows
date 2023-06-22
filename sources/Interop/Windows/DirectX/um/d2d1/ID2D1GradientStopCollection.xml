@@ -3,61 +3,23 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1GradientStopCollection.GetColorInterpolationGamma">
-    <summary>
-      <para>Indicates the gamma space in which the gradient stops are interpolated.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="D2D1_GAMMA" /></b></para>
-      <para>The gamma space in which the gradient stops are interpolated.</para>
-    </returns>
-    <seealso cref="ID2D1GradientStopCollection" />
+    <summary>Indicates the gamma space in which the gradient stops are interpolated.</summary>
+    <returns>The gamma space in which the gradient stops are interpolated.</returns>
   </member>
   <member name="ID2D1GradientStopCollection.GetExtendMode">
-    <summary>
-      <para>Indicates the behavior of the gradient outside the normalized gradient range.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
-      <para>The behavior of the gradient outside the [0,1] normalized gradient range.</para>
-    </returns>
-    <seealso cref="ID2D1GradientStopCollection" />
+    <summary>Indicates the behavior of the gradient outside the normalized gradient range.</summary>
+    <returns>The behavior of the gradient outside the [0,1] normalized gradient range.</returns>
   </member>
   <member name="ID2D1GradientStopCollection.GetGradientStopCount">
-    <summary>
-      <para>Retrieves the number of gradient stops in the collection.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of gradient stops in the collection.</para>
-    </returns>
-    <seealso cref="ID2D1GradientStopCollection" />
+    <summary>Retrieves the number of gradient stops in the collection.</summary>
+    <returns>The number of gradient stops in the collection.</returns>
   </member>
   <member name="ID2D1GradientStopCollection.GetGradientStops">
-    <summary>
-      <para>Copies the gradient stops from the collection into an array of <see cref="D2D1_GRADIENT_STOP" /> structures.</para>
-    </summary>
-    <param name="gradientStops">
-      <para>Type: <b><see cref="D2D1_GRADIENT_STOP" />*</b></para>
-      <para>A pointer to a one-dimensional array of <see cref="D2D1_GRADIENT_STOP" /> structures. When this method returns, the array contains copies of the collection's gradient stops. You must allocate the memory for this array.</para>
-    </param>
-    <param name="gradientStopsCount">
-      <para>Type: <b>UINT</b></para>
-      <para>A value indicating the number of gradient stops to copy. If the value is less than the number of gradient stops in the collection, the remaining gradient stops are omitted. If the value is larger than the number of gradient stops in the collection, the extra gradient stops are set to <b>NULL</b>. To obtain the number of gradient stops in the collection, use the <see cref="GetGradientStopCount" /> method.</para>
-    </param>
-    <remarks>
-      <para>Gradient stops are copied in order of position, starting with the gradient stop with the smallest position value and progressing to the gradient stop with the largest position value.</para>
-    </remarks>
-    <seealso cref="ID2D1GradientStopCollection" />
+    <summary>Copies the gradient stops from the collection into an array of <see cref="D2D1_GRADIENT_STOP" /> structures.</summary>
+    <param name="gradientStops">A pointer to a one-dimensional array of <see cref="D2D1_GRADIENT_STOP" /> structures. When this method returns, the array contains copies of the collection's gradient stops. You must allocate the memory for this array.</param>
+    <param name="gradientStopsCount">A value indicating the number of gradient stops to copy. If the value is less than the number of gradient stops in the collection, the remaining gradient stops are omitted. If the value is larger than the number of gradient stops in the collection, the extra gradient stops are set to <b>NULL</b>. To obtain the number of gradient stops in the collection, use the <see cref="GetGradientStopCount" /> method.</param>
   </member>
   <member name="ID2D1GradientStopCollection">
-    <summary>
-      <para>Represents a collection of <see cref="D2D1_GRADIENT_STOP" /> objects for linear and radial gradient brushes.</para>
-    </summary>
-    <remarks>
-      <h3>Creating ID2D1GradientStopCollection Objects</h3>
-      <para>To create an <b>ID2D1GradientStopCollection</b>, use the  <see cref="ID2D1RenderTarget.CreateGradientStopCollection" /> method.</para>
-      <para>A gradient stop collection is a device-dependent resource: your application should create gradient stop collections after it initializes the render target with which the gradient stop collection will be used, and recreate the gradient stop collection whenever the render target needs recreated. (For more information about resources, see <a href="https://docs.microsoft.com//windows/win32/Direct2D/resources-and-resource-domains">Resources Overview</a>.)</para>
-    </remarks>
-    <seealso cref="ID2D1Resource" />
+    <summary>Represents a collection of <see cref="D2D1_GRADIENT_STOP" /> objects for linear and radial gradient brushes.</summary>
   </member>
 </doc>

@@ -3,23 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="POINT">
-    <summary>
-      <para>The POINT structure defines the x- and y-coordinates of a point.</para>
-    </summary>
-    <remarks>
-      <para>The POINT structure is identical to the <see cref="POINTL" /> structure.</para>
-    </remarks>
-    <seealso cref="POINTL" />
-    <seealso cref="POINTS" />
+    <summary>The POINT structure defines the x- and y-coordinates of a point.</summary>
   </member>
   <member name="POINT.x">
-    <summary>
-      <para>Specifies the <i>x</i>-coordinate of the point.</para>
-    </summary>
+    <summary>Specifies the <i>x</i>-coordinate of the point.</summary>
   </member>
   <member name="POINT.y">
-    <summary>
-      <para>Specifies the <i>y</i>-coordinate of the point.</para>
-    </summary>
+    <summary>Specifies the <i>y</i>-coordinate of the point.</summary>
   </member>
 </doc>

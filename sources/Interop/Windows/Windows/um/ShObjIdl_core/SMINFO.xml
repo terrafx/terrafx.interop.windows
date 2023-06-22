@@ -3,13 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SMINFO">
-    <summary>
-      <para>Contains information about an item from a menu band.</para>
-    </summary>
+    <summary>Contains information about an item from a menu band.</summary>
   </member>
   <member name="SMINFO.dwMask">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>Flags that specify which of the other three members are valid.</para>
       <h4>SMIM_TYPE</h4>
       <para>The <b>dwType</b> member contains valid information.</para>
@@ -21,7 +18,6 @@
   </member>
   <member name="SMINFO.dwType">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>A flag that indicates whether the item is a string or a separator.</para>
       <h4>SMIT_SEPARATOR</h4>
       <para>A menu separator.</para>
@@ -31,7 +27,6 @@
   </member>
   <member name="SMINFO.dwFlags">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>Flags that contain information about the item and how it should be displayed.</para>
       <h4>SMIF_ICON</h4>
       <para>Show an icon.</para>
@@ -64,9 +59,6 @@
     </summary>
   </member>
   <member name="SMINFO.iIcon">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>When <b>SMIF_ICON</b> is set, the index of the requested icon in the toolbar image list.</para>
-    </summary>
+    <summary>When <b>SMIF_ICON</b> is set, the index of the requested icon in the toolbar image list.</summary>
   </member>
 </doc>

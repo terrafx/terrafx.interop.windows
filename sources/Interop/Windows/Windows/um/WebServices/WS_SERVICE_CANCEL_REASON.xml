@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_SERVICE_CANCEL_REASON">
-    <summary>
-      <para>The reasons for a cancellation.</para>
-    </summary>
+    <summary>The reasons for a cancellation.</summary>
   </member>
   <member name="WS_SERVICE_CANCEL_REASON.WS_SERVICE_HOST_ABORT">
-    <summary>
-      <para>A service host is going through an abort.</para>
-    </summary>
+    <summary>A service host is going through an abort.</summary>
   </member>
   <member name="WS_SERVICE_CANCEL_REASON.WS_SERVICE_CHANNEL_FAULTED">
-    <summary>
-      <para>The underlying channel faulted.</para>
-    </summary>
+    <summary>The underlying channel faulted.</summary>
   </member>
 </doc>

@@ -3,17 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D12LifetimeOwner.LifetimeStateUpdated">
-    <summary>
-      <para>Called when the lifetime state of a lifetime-tracked object changes.</para>
-    </summary>
-    <param name="NewState">
-      <para>Type: <b><see cref="D3D12_LIFETIME_STATE" /></b></para>
-      <para>The new state.</para>
-    </param>
+    <summary>Called when the lifetime state of a lifetime-tracked object changes.</summary>
+    <param name="NewState">The new state.</param>
   </member>
   <member name="ID3D12LifetimeOwner">
-    <summary>
-      <para>Represents an application-defined callback used for being notified of lifetime changes of an object.</para>
-    </summary>
+    <summary>Represents an application-defined callback used for being notified of lifetime changes of an object.</summary>
   </member>
 </doc>

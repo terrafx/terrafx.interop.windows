@@ -3,10 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDCompositionClip">
-    <summary>
-      <para>Represents a clip object that is used to restrict the rendering of a visual subtree to a rectangular area.</para>
-    </summary>
-    <seealso cref="IDCompositionRectangleClip" />
-    <seealso cref="IDCompositionVisual.SetClip" />
+    <summary>Represents a clip object that is used to restrict the rendering of a visual subtree to a rectangular area.</summary>
   </member>
 </doc>

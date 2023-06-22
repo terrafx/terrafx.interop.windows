@@ -3,28 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICBitmapAlphaChannelOption">
-    <summary>
-      <para>Specifies the desired alpha channel usage.</para>
-    </summary>
+    <summary>Specifies the desired alpha channel usage.</summary>
   </member>
   <member name="WICBitmapAlphaChannelOption.WICBitmapUseAlpha">
-    <summary>
-      <para>Use alpha channel.</para>
-    </summary>
+    <summary>Use alpha channel.</summary>
   </member>
   <member name="WICBitmapAlphaChannelOption.WICBitmapUsePremultipliedAlpha">
-    <summary>
-      <para>Use a pre-multiplied alpha channel.</para>
-    </summary>
+    <summary>Use a pre-multiplied alpha channel.</summary>
   </member>
   <member name="WICBitmapAlphaChannelOption.WICBitmapIgnoreAlpha">
-    <summary>
-      <para>Ignore alpha channel.</para>
-    </summary>
+    <summary>Ignore alpha channel.</summary>
   </member>
   <member name="WICBitmapAlphaChannelOption.WICBITMAPALPHACHANNELOPTIONS_FORCE_DWORD">
-    <summary>
-      <para>Sentinel value.</para>
-    </summary>
+    <summary>Sentinel value.</summary>
   </member>
 </doc>

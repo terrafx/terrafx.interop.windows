@@ -3,42 +3,28 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_CONNECT_METHOD">
-    <summary>
-      <para>Specifies how the topology loader connects a topology node. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-toponode-connect-method-attribute">MF_TOPONODE_CONNECT_METHOD</a> attribute.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies how the topology loader connects a topology node. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-toponode-connect-method-attribute">MF_TOPONODE_CONNECT_METHOD</a> attribute.</summary>
   </member>
   <member name="MF_CONNECT_METHOD.MF_CONNECT_DIRECT">
-    <summary>
-      <para>Connect the node directly to its upstream neighbor. Fail otherwise.</para>
-    </summary>
+    <summary>Connect the node directly to its upstream neighbor. Fail otherwise.</summary>
   </member>
   <member name="MF_CONNECT_METHOD.MF_CONNECT_ALLOW_CONVERTER">
-    <summary>
-      <para>Add a converter transform upstream from this node, if needed to complete the connection. Converter transforms include color-space converters for video, and audio resamplers for audio.</para>
-    </summary>
+    <summary>Add a converter transform upstream from this node, if needed to complete the connection. Converter transforms include color-space converters for video, and audio resamplers for audio.</summary>
   </member>
   <member name="MF_CONNECT_METHOD.MF_CONNECT_ALLOW_DECODER">
-    <summary>
-      <para>Add a decoder transform upstream upstream from this node, if needed to complete the connection. The numeric value of this flag includes the <b>MF_CONNECT_ALLOW_CONVERTER</b> flag. Therefore, setting the <b>MF_CONNECT_ALLOW_DECODER</b> flag sets the <b>MF_CONNECT_ALLOW_CONVERTER</b> flag as well.</para>
-    </summary>
+    <summary>Add a decoder transform upstream upstream from this node, if needed to complete the connection. The numeric value of this flag includes the <b>MF_CONNECT_ALLOW_CONVERTER</b> flag. Therefore, setting the <b>MF_CONNECT_ALLOW_DECODER</b> flag sets the <b>MF_CONNECT_ALLOW_CONVERTER</b> flag as well.</summary>
   </member>
   <member name="MF_CONNECT_METHOD.MF_CONNECT_RESOLVE_INDEPENDENT_OUTPUTTYPES">
     <summary>
-      <para>Controls the order in which the topology loader attempts to
-use different output types from this node. Currently, this flag applies only to source nodes. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-topology-enumerate-source-types">MF_TOPOLOGY_ENUMERATE_SOURCE_TYPES</a>.</para>
-      <para>
-        <b>Note</b>  Requires Windows 7 or later.</para>
+      <para>Controls the order in which the topology loader attempts to<br />use different output types from this node. Currently, this flag applies only to source nodes. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-topology-enumerate-source-types">MF_TOPOLOGY_ENUMERATE_SOURCE_TYPES</a>.</para>
+      <div>
+        <b>Note</b>  Requires Windows 7 or later.</div>
     </summary>
   </member>
   <member name="MF_CONNECT_METHOD.MF_CONNECT_AS_OPTIONAL">
-    <summary>
-      <para>This node is optional. If the topology loader cannot connect this node, it will skip the node and continue.</para>
-    </summary>
+    <summary>This node is optional. If the topology loader cannot connect this node, it will skip the node and continue.</summary>
   </member>
   <member name="MF_CONNECT_METHOD.MF_CONNECT_AS_OPTIONAL_BRANCH">
-    <summary>
-      <para>The entire topology branch starting at this node is optional. If the topology loader cannot resolve this branch, it will skip the branch and continue.</para>
-    </summary>
+    <summary>The entire topology branch starting at this node is optional. If the topology loader cannot resolve this branch, it will skip the branch and continue.</summary>
   </member>
 </doc>

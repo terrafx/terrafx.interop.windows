@@ -4,44 +4,30 @@
 <doc>
   <member name="VMRVIDEOSTREAMINFO">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>This topic applies to Windows XP or later.</para>
       <para>The <code>VMRVIDEOSTREAMINFO</code> structure is used in the VMR-7 filter's call to <see cref="IVMRImageCompositor.CompositeImage" /> on the image compositor.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="VMRVIDEOSTREAMINFO.pddsVideoSurface">
-    <summary>
-      <para>Specifies the DirectDraw surface that contains the video to be composited.</para>
-    </summary>
+    <summary>Specifies the DirectDraw surface that contains the video to be composited.</summary>
   </member>
   <member name="VMRVIDEOSTREAMINFO.dwWidth">
-    <summary>
-      <para>Specifies the width of the video rectangle.</para>
-    </summary>
+    <summary>Specifies the width of the video rectangle.</summary>
   </member>
   <member name="VMRVIDEOSTREAMINFO.dwHeight">
-    <summary>
-      <para>Specifies the height of the video rectangle.</para>
-    </summary>
+    <summary>Specifies the height of the video rectangle.</summary>
   </member>
   <member name="VMRVIDEOSTREAMINFO.dwStrmID">
-    <summary>
-      <para>Specifies the input stream. This value corresponds to the input pin.</para>
-    </summary>
+    <summary>Specifies the input stream. This value corresponds to the input pin.</summary>
   </member>
   <member name="VMRVIDEOSTREAMINFO.fAlpha">
-    <summary>
-      <para>Specifies the alpha value for this stream. (Not per-pixel alpha.)</para>
-    </summary>
+    <summary>Specifies the alpha value for this stream. (Not per-pixel alpha.)</summary>
   </member>
   <member name="VMRVIDEOSTREAMINFO.ddClrKey">
-    <summary>
-      <para>Specifies the source color key value or -1 if color keying is not to be used for this stream.</para>
-    </summary>
+    <summary>Specifies the source color key value or -1 if color keying is not to be used for this stream.</summary>
   </member>
   <member name="VMRVIDEOSTREAMINFO.rNormal">
-    <summary>
-      <para>Specifies the position of the image in composition space.</para>
-    </summary>
+    <summary>Specifies the position of the image in composition space.</summary>
   </member>
 </doc>

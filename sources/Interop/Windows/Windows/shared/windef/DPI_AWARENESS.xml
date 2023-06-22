@@ -3,42 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DPI_AWARENESS">
-    <summary>
-      <para>Identifies the dots per inch (dpi) setting for a thread, process, or window.</para>
-    </summary>
-    <remarks>
-      <para>In previous versions of Windows, DPI values were only set once for an entire application. For those apps, the <see cref="PROCESS_DPI_AWARENESS" /> type determined the type of DPI awareness for the entire application. Currently, the DPI awareness is defined on an individual thread, window, or process level and is indicated by the <b>DPI_AWARENESS</b> type. While the focus shifted from a process level to a thread level, the different kinds of DPI awareness are the same: unaware, system aware, and per monitor aware. For detailed descriptions and some examples of the different DPI kinds, see <b>PROCESS_DPI_AWARENESS</b>.</para>
-      <para>The old recommendation was to define the DPI awareness level in the application manifest using the setting <i>dpiAware</i> as explained in <see cref="PROCESS_DPI_AWARENESS" />. Now that the DPI awareness is tied to threads and windows instead of an entire application, a new windows setting is added to the app manifest. This setting is <i>dpiAwareness</i> and will override any <i>dpiAware</i> setting if both of them are present in the manifest. While it is still recommended to use the manifest, you can now change the DPI awareness while the app is running by using <see cref="SetThreadDpiAwarenessContext" />.</para>
-      <para>It is important to note that if your application has a <b>DPI_AWARENESS_PER_MONITOR_AWARE</b> window, you are responsible for keeping track of the DPI by responding to <a href="https://docs.microsoft.com//windows/desktop/hidpi/wm-dpichanged">WM_DPICHANGED</a> messages.</para>
-      <h4>Examples</h4>
-      <para>This snippet demonstrates how to set a value of <b>DPI_AWARENESS_SYSTEM_AWARE</b> in your application manifest.</para>
-      <code>&lt;dpiAwareness&gt;System&lt;/dpiAwareness&gt;
-</code>
-      <para>This snippet demonstrates how to set a value of <b>DPI_AWARENESS_PER_MONITOR_AWARE</b> in your application manifest.</para>
-      <code>&lt;dpiAwareness&gt;PerMonitor&lt;/dpiAwareness&gt;
-</code>
-    </remarks>
-    <seealso cref="PROCESS_DPI_AWARENESS" />
-    <seealso cref="SetThreadDpiAwarenessContext" />
+    <summary>Identifies the dots per inch (dpi) setting for a thread, process, or window.</summary>
   </member>
   <member name="DPI_AWARENESS.DPI_AWARENESS_INVALID">
-    <summary>
-      <para>Invalid DPI awareness. This is an invalid DPI awareness value.</para>
-    </summary>
+    <summary>Invalid DPI awareness. This is an invalid DPI awareness value.</summary>
   </member>
   <member name="DPI_AWARENESS.DPI_AWARENESS_UNAWARE">
-    <summary>
-      <para>DPI unaware. This process does not scale for DPI changes and is always assumed to have a scale factor of 100% (96 DPI). It will be automatically scaled by the system on any other DPI setting.</para>
-    </summary>
+    <summary>DPI unaware. This process does not scale for DPI changes and is always assumed to have a scale factor of 100% (96 DPI). It will be automatically scaled by the system on any other DPI setting.</summary>
   </member>
   <member name="DPI_AWARENESS.DPI_AWARENESS_SYSTEM_AWARE">
-    <summary>
-      <para>System DPI aware. This process does not scale for DPI changes. It will query for the DPI once and use that value for the lifetime of the process. If the DPI changes, the process will not adjust to the new DPI value. It will be automatically scaled up or down by the system when the DPI changes from the system value.</para>
-    </summary>
+    <summary>System DPI aware. This process does not scale for DPI changes. It will query for the DPI once and use that value for the lifetime of the process. If the DPI changes, the process will not adjust to the new DPI value. It will be automatically scaled up or down by the system when the DPI changes from the system value.</summary>
   </member>
   <member name="DPI_AWARENESS.DPI_AWARENESS_PER_MONITOR_AWARE">
-    <summary>
-      <para>Per monitor DPI aware. This process checks for the DPI when it is created and adjusts the scale factor whenever the DPI changes. These processes are not automatically scaled by the system.</para>
-    </summary>
+    <summary>Per monitor DPI aware. This process checks for the DPI when it is created and adjusts the scale factor whenever the DPI changes. These processes are not automatically scaled by the system.</summary>
   </member>
 </doc>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PARAMDATA">
+    <summary>Describes a parameter accepted by a method or property.</summary>
+  </member>
+  <member name="PARAMDATA.szName">
+    <summary>The parameter name. Names should follow standard conventions for programming language access; that is, no embedded spaces or control characters, and 32 or fewer characters. The name should be localized because each type description provides names for a particular locale.</summary>
+  </member>
+  <member name="PARAMDATA.vt">
+    <summary>The parameter type. If more than one parameter type is accepted, VT_VARIANT should be specified.</summary>
+  </member>
+</doc>

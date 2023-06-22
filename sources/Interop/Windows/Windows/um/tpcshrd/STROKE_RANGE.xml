@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STROKE_RANGE">
-    <summary>
-      <para>Specifies a range of strokes in the <a href="https://docs.microsoft.com//windows/desktop/tablet/inkdisp-class">InkDisp</a> object.</para>
-    </summary>
+    <summary>Specifies a range of strokes in the <a href="https://docs.microsoft.com//windows/desktop/tablet/inkdisp-class">InkDisp</a> object.</summary>
   </member>
   <member name="STROKE_RANGE.iStrokeBegin">
-    <summary>
-      <para>Index of the first stroke in the range, inclusive.</para>
-    </summary>
+    <summary>Index of the first stroke in the range, inclusive.</summary>
   </member>
   <member name="STROKE_RANGE.iStrokeEnd">
-    <summary>
-      <para>Index of the last stroke in the range, inclusive.</para>
-    </summary>
+    <summary>Index of the last stroke in the range, inclusive.</summary>
   </member>
 </doc>

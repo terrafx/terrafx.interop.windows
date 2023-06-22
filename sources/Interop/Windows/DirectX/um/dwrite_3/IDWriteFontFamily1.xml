@@ -3,62 +3,23 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteFontFamily1.GetFont">
-    <summary>
-      <para>Gets a font given its zero-based index.</para>
-    </summary>
-    <param name="listIndex">
-      <para>Type: <b>UINT32</b></para>
-      <para>Zero-based index of the font in the font list.</para>
-    </param>
-    <param name="font">
-      <para>Type: <b><see cref="IDWriteFont3" />**</b></para>
-      <para>A pointer to a memory block that receives a pointer to a <see cref="IDWriteFont3" /> interface for the newly created font object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteFontFamily1" />
+    <summary>Gets a font given its zero-based index.</summary>
+    <param name="listIndex">Zero-based index of the font in the font list.</param>
+    <param name="font">A pointer to a memory block that receives a pointer to a <see cref="IDWriteFont3" /> interface for the newly created font object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteFontFamily1.GetFontFaceReference">
-    <summary>
-      <para>Gets a font face reference given its zero-based index.</para>
-    </summary>
-    <param name="listIndex">
-      <para>Type: <b>UINT32</b></para>
-      <para>Zero-based index of the font in the font list.</para>
-    </param>
-    <param name="fontFaceReference">
-      <para>Type: <b><see cref="IDWriteFontFaceReference" />**</b></para>
-      <para>A pointer to a memory block that receives a pointer to a <see cref="IDWriteFontFaceReference" /> interface for the newly created font face reference object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteFontFamily1" />
+    <summary>Gets a font face reference given its zero-based index.</summary>
+    <param name="listIndex">Zero-based index of the font in the font list.</param>
+    <param name="fontFaceReference">A pointer to a memory block that receives a pointer to a <see cref="IDWriteFontFaceReference" /> interface for the newly created font face reference object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteFontFamily1.GetFontLocality">
-    <summary>
-      <para>Gets the current location of a font given its zero-based index.</para>
-    </summary>
-    <param name="listIndex">
-      <para>Type: <b>UINT32</b></para>
-      <para>Zero-based index of the font in the font list.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="DWRITE_LOCALITY" /></b></para>
-      <para>Returns a <see cref="DWRITE_LOCALITY" />-typed value that specifies the location of the specified font.</para>
-    </returns>
-    <remarks>
-      <para>For fully local files, the result will always be <b>DWRITE_LOCALITY_LOCAL</b>. For streamed files, the result depends on how much of the file has been downloaded. <see cref="GetFont" /> fails if the locality is <b>DWRITE_LOCALITY_REMOTE</b> and potentially fails if <b>DWRITE_LOCALITY_PARTIAL</b>.</para>
-    </remarks>
-    <seealso cref="IDWriteFontFamily1" />
+    <summary>Gets the current location of a font given its zero-based index.</summary>
+    <param name="listIndex">Zero-based index of the font in the font list.</param>
+    <returns>Returns a <see cref="DWRITE_LOCALITY" />-typed value that specifies the location of the specified font.</returns>
   </member>
   <member name="IDWriteFontFamily1">
-    <summary>
-      <para>Represents a family of related fonts.</para>
-    </summary>
-    <seealso cref="IDWriteFontFamily" />
+    <summary>Represents a family of related fonts.</summary>
   </member>
 </doc>

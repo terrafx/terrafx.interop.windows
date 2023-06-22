@@ -3,121 +3,69 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYMSRV_INDEX_INFO">
-    <summary>
-      <para>Contains symbol server index information.</para>
-    </summary>
-    <seealso cref="SymSrvGetFileIndexInfo" />
+    <summary>Contains symbol server index information.</summary>
   </member>
   <member name="SYMSRV_INDEX_INFO.sizeofstruct">
-    <summary>
-      <para>The size of the structure, in bytes. This member must be set to <code>sizeof(SYMSRV_INDEX_INFO)</code> or <code>sizeof(SYMSRV_INDEX_INFOW)</code>.</para>
-    </summary>
+    <summary>The size of the structure, in bytes. This member must be set to <code>sizeof(SYMSRV_INDEX_INFO)</code> or <code>sizeof(SYMSRV_INDEX_INFOW)</code>.</summary>
   </member>
   <member name="SYMSRV_INDEX_INFO.file">
-    <summary>
-      <para>The name of the .pdb, .dbg, or image file.</para>
-    </summary>
+    <summary>The name of the .pdb, .dbg, or image file.</summary>
   </member>
   <member name="SYMSRV_INDEX_INFO.stripped">
-    <summary>
-      <para>A value that indicates whether the image file is stripped.</para>
-    </summary>
+    <summary>A value that indicates whether the image file is stripped.</summary>
   </member>
   <member name="SYMSRV_INDEX_INFO.timestamp">
-    <summary>
-      <para>The timestamp from the PE header. This member is used only for image files.</para>
-    </summary>
+    <summary>The timestamp from the PE header. This member is used only for image files.</summary>
   </member>
   <member name="SYMSRV_INDEX_INFO.size">
-    <summary>
-      <para>The file size from the PE header. This member is used only for image files.</para>
-    </summary>
+    <summary>The file size from the PE header. This member is used only for image files.</summary>
   </member>
   <member name="SYMSRV_INDEX_INFO.dbgfile">
-    <summary>
-      <para>If the image file is stripped and there is a .dbg file, this member is the path to the .dbg file from the CV record.</para>
-    </summary>
+    <summary>If the image file is stripped and there is a .dbg file, this member is the path to the .dbg file from the CV record.</summary>
   </member>
   <member name="SYMSRV_INDEX_INFO.pdbfile">
-    <summary>
-      <para>The .pdb file from the CV record. This member is used only for image and .dbg files.</para>
-    </summary>
+    <summary>The .pdb file from the CV record. This member is used only for image and .dbg files.</summary>
   </member>
   <member name="SYMSRV_INDEX_INFO.guid">
-    <summary>
-      <para>The GUID of the .pdb file. If there is no GUID available, the signature of the .pdb file is copied into first <b>DWORD</b> of the GUID.</para>
-    </summary>
+    <summary>The GUID of the .pdb file. If there is no GUID available, the signature of the .pdb file is copied into first <b>DWORD</b> of the GUID.</summary>
   </member>
   <member name="SYMSRV_INDEX_INFO.sig">
-    <summary>
-      <para>The signature of the .pdb file (for use with old-style .pdb files). This value can be 0 if it is a new-style .pdb file that uses a GUID-length signature.</para>
-    </summary>
+    <summary>The signature of the .pdb file (for use with old-style .pdb files). This value can be 0 if it is a new-style .pdb file that uses a GUID-length signature.</summary>
   </member>
   <member name="SYMSRV_INDEX_INFO.age">
-    <summary>
-      <para>The age of the .pdb file.</para>
-    </summary>
+    <summary>The age of the .pdb file.</summary>
   </member>
   <member name="SYMSRV_INDEX_INFO">
-    <summary>
-      <para>Contains symbol server index information.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The dbghelp.h header defines SYMSRV_INDEX_INFO as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso cref="SymSrvGetFileIndexInfo" />
+    <summary>Contains symbol server index information.</summary>
   </member>
   <member name="SYMSRV_INDEX_INFO.sizeofstruct">
-    <summary>
-      <para>The size of the structure, in bytes. This member must be set to <code>sizeof(SYMSRV_INDEX_INFO)</code> or <code>sizeof(SYMSRV_INDEX_INFOW)</code>.</para>
-    </summary>
+    <summary>The size of the structure, in bytes. This member must be set to <code>sizeof(SYMSRV_INDEX_INFO)</code> or <code>sizeof(SYMSRV_INDEX_INFOW)</code>.</summary>
   </member>
   <member name="SYMSRV_INDEX_INFO.file">
-    <summary>
-      <para>The name of the .pdb, .dbg, or image file.</para>
-    </summary>
+    <summary>The name of the .pdb, .dbg, or image file.</summary>
   </member>
   <member name="SYMSRV_INDEX_INFO.stripped">
-    <summary>
-      <para>A value that indicates whether the image file is stripped.</para>
-    </summary>
+    <summary>A value that indicates whether the image file is stripped.</summary>
   </member>
   <member name="SYMSRV_INDEX_INFO.timestamp">
-    <summary>
-      <para>The timestamp from the PE header. This member is used only for image files.</para>
-    </summary>
+    <summary>The timestamp from the PE header. This member is used only for image files.</summary>
   </member>
   <member name="SYMSRV_INDEX_INFO.size">
-    <summary>
-      <para>The file size from the PE header. This member is used only for image files.</para>
-    </summary>
+    <summary>The file size from the PE header. This member is used only for image files.</summary>
   </member>
   <member name="SYMSRV_INDEX_INFO.dbgfile">
-    <summary>
-      <para>If the image file is stripped and there is a .dbg file, this member is the path to the .dbg file from the CV record.</para>
-    </summary>
+    <summary>If the image file is stripped and there is a .dbg file, this member is the path to the .dbg file from the CV record.</summary>
   </member>
   <member name="SYMSRV_INDEX_INFO.pdbfile">
-    <summary>
-      <para>The .pdb file from the CV record. This member is used only for image and .dbg files.</para>
-    </summary>
+    <summary>The .pdb file from the CV record. This member is used only for image and .dbg files.</summary>
   </member>
   <member name="SYMSRV_INDEX_INFO.guid">
-    <summary>
-      <para>The GUID of the .pdb file. If there is no GUID available, the signature of the .pdb file is copied into first <b>DWORD</b> of the GUID.</para>
-    </summary>
+    <summary>The GUID of the .pdb file. If there is no GUID available, the signature of the .pdb file is copied into first <b>DWORD</b> of the GUID.</summary>
   </member>
   <member name="SYMSRV_INDEX_INFO.sig">
-    <summary>
-      <para>The signature of the .pdb file (for use with old-style .pdb files). This value can be 0 if it is a new-style .pdb file that uses a GUID-length signature.</para>
-    </summary>
+    <summary>The signature of the .pdb file (for use with old-style .pdb files). This value can be 0 if it is a new-style .pdb file that uses a GUID-length signature.</summary>
   </member>
   <member name="SYMSRV_INDEX_INFO.age">
-    <summary>
-      <para>The age of the .pdb file.</para>
-    </summary>
+    <summary>The age of the .pdb file.</summary>
   </member>
 </doc>

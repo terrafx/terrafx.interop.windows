@@ -9,19 +9,12 @@
     </summary>
   </member>
   <member name="CRYPT_CONTENT_INFO_SEQUENCE_OF_ANY.pszObjId">
-    <summary>
-      <para>Object identifier (OID) specifying the type of data contained in the <b>rgValue</b> array.</para>
-    </summary>
+    <summary>Object identifier (OID) specifying the type of data contained in the <b>rgValue</b> array.</summary>
   </member>
   <member name="CRYPT_CONTENT_INFO_SEQUENCE_OF_ANY.cValue">
-    <summary>
-      <para>Number of elements in the <b>rgValue</b> array.</para>
-    </summary>
+    <summary>Number of elements in the <b>rgValue</b> array.</summary>
   </member>
   <member name="CRYPT_CONTENT_INFO_SEQUENCE_OF_ANY.rgValue">
-    <summary>
-      <para>Array of pointers to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DER_BLOB</a> structures. For more information, see
-<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</a>.</para>
-    </summary>
+    <summary>Array of pointers to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DER_BLOB</a> structures. For more information, see<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</a>.</summary>
   </member>
 </doc>

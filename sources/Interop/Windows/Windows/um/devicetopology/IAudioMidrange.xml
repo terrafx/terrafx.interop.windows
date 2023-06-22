@@ -8,9 +8,5 @@
       <para>The <b>IAudioMidrange</b> interface provides per-channel controls for setting and getting the gain or attenuation level of the midrange frequencies in the audio stream. If a midrange-level hardware control can only attenuate the channels in the audio stream, then the maximum midrange level for any channel is 0 dB. If a midrange-level control can provide gain (amplification), then the maximum midrange level is greater than 0 dB.</para>
       <para>Most Windows audio adapter drivers support the Windows Driver Model (WDM) and use kernel-streaming (KS) properties to represent the hardware control parameters in subunits (referred to as KS nodes). The <b>IAudioMidrange</b> interface provides convenient access to the KSPROPERTY_AUDIO_MID property of a subunit that has a subtype GUID value of KSNODETYPE_TONE. To obtain the subtype GUID of a subunit, call the <see cref="IPart.GetSubType" /> method. For more information about KS properties and KS node types, see the Windows DDK documentation.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/devicetopology-api">DeviceTopology API</seealso>
-    <seealso cref="IPart.Activate" />
-    <seealso cref="IPerChannelDbLevel Interface" />
   </member>
 </doc>

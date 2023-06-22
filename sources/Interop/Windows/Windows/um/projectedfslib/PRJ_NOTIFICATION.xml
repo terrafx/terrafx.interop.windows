@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PRJ_NOTIFICATION">
-    <summary>
-      <para>A notification value specified when sending the <a href="https://docs.microsoft.com/nc-projectedfslib-prj_notification_cb.md">PRJ_NOTIFICATION_CB callback</a>.</para>
-    </summary>
+    <summary>A notification value specified when sending the <a href="https://docs.microsoft.com/nc-projectedfslib-prj_notification_cb.md">PRJ_NOTIFICATION_CB callback</a>.</summary>
   </member>
   <member name="PRJ_NOTIFICATION.PRJ_NOTIFICATION_FILE_OPENED">
     <summary>

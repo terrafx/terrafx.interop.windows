@@ -3,28 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_FLOW_DIRECTION">
-    <summary>
-      <para>Indicates the direction of how lines of text are placed relative to one another.</para>
-    </summary>
+    <summary>Indicates the direction of how lines of text are placed relative to one another.</summary>
   </member>
   <member name="DWRITE_FLOW_DIRECTION.DWRITE_FLOW_DIRECTION_TOP_TO_BOTTOM">
-    <summary>
-      <para>Specifies that text lines are placed from top to bottom.</para>
-    </summary>
+    <summary>Specifies that text lines are placed from top to bottom.</summary>
   </member>
   <member name="DWRITE_FLOW_DIRECTION.DWRITE_FLOW_DIRECTION_BOTTOM_TO_TOP">
-    <summary>
-      <para>Specifies that text lines are placed from bottom to top.</para>
-    </summary>
+    <summary>Specifies that text lines are placed from bottom to top.</summary>
   </member>
   <member name="DWRITE_FLOW_DIRECTION.DWRITE_FLOW_DIRECTION_LEFT_TO_RIGHT">
-    <summary>
-      <para>Specifies that text lines are placed from left to right.</para>
-    </summary>
+    <summary>Specifies that text lines are placed from left to right.</summary>
   </member>
   <member name="DWRITE_FLOW_DIRECTION.DWRITE_FLOW_DIRECTION_RIGHT_TO_LEFT">
-    <summary>
-      <para>Specifies that text lines are placed from right to left.</para>
-    </summary>
+    <summary>Specifies that text lines are placed from right to left.</summary>
   </member>
 </doc>

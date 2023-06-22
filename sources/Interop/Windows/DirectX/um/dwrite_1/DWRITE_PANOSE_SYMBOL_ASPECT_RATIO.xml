@@ -3,59 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO">
-    <summary>
-      <para>The <b>DWRITE_PANOSE_SYMBOL_ASPECT_RATIO</b> enumeration contains values that specify the aspect ratio of symbolic characters.</para>
-    </summary>
-    <seealso cref="DWRITE_PANOSE" />
+    <summary>The <b>DWRITE_PANOSE_SYMBOL_ASPECT_RATIO</b> enumeration contains values that specify the aspect ratio of symbolic characters.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO.DWRITE_PANOSE_SYMBOL_ASPECT_RATIO_ANY">
-    <summary>
-      <para>Any aspect ratio of symbolic characters.</para>
-    </summary>
+    <summary>Any aspect ratio of symbolic characters.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO.DWRITE_PANOSE_SYMBOL_ASPECT_RATIO_NO_FIT">
-    <summary>
-      <para>No fit for aspect ratio of symbolic characters.</para>
-    </summary>
+    <summary>No fit for aspect ratio of symbolic characters.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO.DWRITE_PANOSE_SYMBOL_ASPECT_RATIO_NO_WIDTH">
-    <summary>
-      <para>No width aspect ratio of symbolic characters.</para>
-    </summary>
+    <summary>No width aspect ratio of symbolic characters.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO.DWRITE_PANOSE_SYMBOL_ASPECT_RATIO_EXCEPTIONALLY_WIDE">
-    <summary>
-      <para>Exceptionally wide symbolic characters.</para>
-    </summary>
+    <summary>Exceptionally wide symbolic characters.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO.DWRITE_PANOSE_SYMBOL_ASPECT_RATIO_SUPER_WIDE">
-    <summary>
-      <para>Super wide symbolic characters.</para>
-    </summary>
+    <summary>Super wide symbolic characters.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO.DWRITE_PANOSE_SYMBOL_ASPECT_RATIO_VERY_WIDE">
-    <summary>
-      <para>Very wide symbolic characters.</para>
-    </summary>
+    <summary>Very wide symbolic characters.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO.DWRITE_PANOSE_SYMBOL_ASPECT_RATIO_WIDE">
-    <summary>
-      <para>Wide symbolic characters.</para>
-    </summary>
+    <summary>Wide symbolic characters.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO.DWRITE_PANOSE_SYMBOL_ASPECT_RATIO_NORMAL">
-    <summary>
-      <para>Normal aspect ratio of symbolic characters.</para>
-    </summary>
+    <summary>Normal aspect ratio of symbolic characters.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO.DWRITE_PANOSE_SYMBOL_ASPECT_RATIO_NARROW">
-    <summary>
-      <para>Narrow symbolic characters.</para>
-    </summary>
+    <summary>Narrow symbolic characters.</summary>
   </member>
   <member name="DWRITE_PANOSE_SYMBOL_ASPECT_RATIO.DWRITE_PANOSE_SYMBOL_ASPECT_RATIO_VERY_NARROW">
-    <summary>
-      <para>Very narrow symbolic characters.</para>
-    </summary>
+    <summary>Very narrow symbolic characters.</summary>
   </member>
 </doc>

@@ -3,29 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPersistFolder2.GetCurFolder">
-    <summary>
-      <para>Gets the <see cref="ITEMIDLIST" /> for the folder object.</para>
-    </summary>
-    <param name="ppidl">
-      <para>Type: <b>LPITEMIDLIST*</b></para>
-      <para>The address of an <see cref="ITEMIDLIST" /> pointer. This PIDL represents the absolute location of the folder and must be relative to the desktop. This is typically a copy of the PIDL passed to <see cref="Initialize" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If the folder object has not been initialized, this method returns S_FALSE and <i>ppidl</i> is set to <b>NULL</b>.</para>
-    </remarks>
+    <summary>Gets the <see cref="ITEMIDLIST" /> for the folder object.</summary>
+    <param name="ppidl">The address of an <see cref="ITEMIDLIST" /> pointer. This PIDL represents the absolute location of the folder and must be relative to the desktop. This is typically a copy of the PIDL passed to <see cref="Initialize" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPersistFolder2">
-    <summary>
-      <para>Exposes methods that obtain information from Shell folder objects.</para>
-    </summary>
-    <remarks>
-      <para>This interface also provides the methods of the <see cref="IPersist" />, <see cref="IPersistFolder" /> interfaces, from which it inherits.</para>
-      <h3>When to Implement</h3>
-      <para>When implementing a Shell namespace extension, specifically the <see cref="IShellFolder" /> interface, you need to implement this interface so that the Shell folder object's <see cref="ITEMIDLIST" /> can be retrieved.</para>
-    </remarks>
+    <summary>Exposes methods that obtain information from Shell folder objects.</summary>
   </member>
 </doc>

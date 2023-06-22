@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_TOOLS_VISUALIZATION_HEADER">
-    <summary>
-      <para>Describes the GPU memory layout of an acceleration structure visualization.</para>
-    </summary>
-    <remarks>
-      <para>This structure functions like the inverse of the inputs to an acceleration structure build, focused on the instance or geometry details, depending on the acceleration structure type.</para>
-    </remarks>
+    <summary>Describes the GPU memory layout of an acceleration structure visualization.</summary>
   </member>
   <member name="D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_TOOLS_VISUALIZATION_HEADER.Type">
-    <summary>
-      <para>The type of acceleration structure.</para>
-    </summary>
+    <summary>The type of acceleration structure.</summary>
   </member>
   <member name="D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_TOOLS_VISUALIZATION_HEADER.NumDescs">
-    <summary>
-      <para>The number of descriptions.</para>
-    </summary>
+    <summary>The number of descriptions.</summary>
   </member>
 </doc>

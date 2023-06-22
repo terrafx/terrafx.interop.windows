@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="HARDWARE_COUNTER_TYPE">
-    <summary>
-      <para>Defines the types of hardware counters being profiled.</para>
-    </summary>
-    <seealso cref="HARDWARE_COUNTER_DATA" />
+    <summary>Defines the types of hardware counters being profiled.</summary>
   </member>
   <member name="HARDWARE_COUNTER_TYPE.PMCCounter">
-    <summary>
-      <para>Hardware performance monitoring counters.</para>
-    </summary>
+    <summary>Hardware performance monitoring counters.</summary>
   </member>
   <member name="HARDWARE_COUNTER_TYPE.MaxHardwareCounterType">
-    <summary>
-      <para>The maximum enumeration value for this enumeration.</para>
-    </summary>
+    <summary>The maximum enumeration value for this enumeration.</summary>
   </member>
 </doc>

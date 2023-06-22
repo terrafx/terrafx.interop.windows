@@ -4,56 +4,33 @@
 <doc>
   <member name="IBPCSatelliteTuner.get_DefaultSubChannelTypes">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IBPCSatelliteTuner</b> interface is deprecated.</para>
-      <para>Gets the default sub-channel types.</para>
-    </summary>
-    <param name="plDefaultVideoType">
-      <para>Receives a provider-specific service type for video.</para>
-    </param>
-    <param name="plDefaultAudioType">
-      <para>Receives a provider-specific service type for audio.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso cref="IBPCSatelliteTuner Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IBPCSatelliteTuner</b> interface is deprecated.</div>Gets the default sub-channel types.</summary>
+    <param name="plDefaultVideoType">Receives a provider-specific service type for video.</param>
+    <param name="plDefaultAudioType">Receives a provider-specific service type for audio.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBPCSatelliteTuner.IsTapingPermitted">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IBPCSatelliteTuner</b> interface is deprecated.</para>
-      <para>Queries whether taping is permitted.</para>
-    </summary>
-    <returns>
-      <para>Returns S_OK if taping is permitted or S_FALSE if taping is not permitted.</para>
-    </returns>
-    <seealso cref="IBPCSatelliteTuner Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IBPCSatelliteTuner</b> interface is deprecated.</div>Queries whether taping is permitted.</summary>
+    <returns>Returns S_OK if taping is permitted or S_FALSE if taping is not permitted.</returns>
   </member>
   <member name="IBPCSatelliteTuner.put_DefaultSubChannelTypes">
     <summary>
-      <para>
-        <b>Note</b>  The <code>IBPCSatelliteTuner</code> interface is deprecated.</para>
-      <para>Sets the default sub-channel types.</para>
-    </summary>
-    <param name="lDefaultVideoType">
-      <para>Provider-specific service type for video.</para>
-    </param>
-    <param name="lDefaultAudioType">
-      <para>Provider-specific service type for audio.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso cref="IBPCSatelliteTuner Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <code>IBPCSatelliteTuner</code> interface is deprecated.</div>Sets the default sub-channel types.</summary>
+    <param name="lDefaultVideoType">Provider-specific service type for video.</param>
+    <param name="lDefaultAudioType">Provider-specific service type for audio.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBPCSatelliteTuner">
     <summary>
-      <para>
-        <b>Note</b>  This interface is not implemented and has been deprecated.</para>
-      <para>The <code>IBPCSatelliteTuner</code> interface supports satellite television tuning.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/deprecated-interfaces">Deprecated Interfaces</seealso>
-    <seealso cref="IAMTuner" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  This interface is not implemented and has been deprecated.</div>The <code>IBPCSatelliteTuner</code> interface supports satellite television tuning.</summary>
   </member>
 </doc>

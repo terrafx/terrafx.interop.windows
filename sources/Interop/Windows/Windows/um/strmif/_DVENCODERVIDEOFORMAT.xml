@@ -4,19 +4,14 @@
 <doc>
   <member name="_DVENCODERVIDEOFORMAT">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Indicates the video standard (NTSC or PAL) for digital video (DV) encoding.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso cref="IDVEnc Interface" />
   </member>
   <member name="_DVENCODERVIDEOFORMAT.DVENCODERVIDEOFORMAT_NTSC">
-    <summary>
-      <para>National Television Standards Committee (NTSC)</para>
-    </summary>
+    <summary>National Television Standards Committee (NTSC)</summary>
   </member>
   <member name="_DVENCODERVIDEOFORMAT.DVENCODERVIDEOFORMAT_PAL">
-    <summary>
-      <para>Phase Alternating Line (PAL)</para>
-    </summary>
+    <summary>Phase Alternating Line (PAL)</summary>
   </member>
 </doc>

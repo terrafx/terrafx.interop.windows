@@ -3,28 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICMetadataCreationOptions">
-    <summary>
-      <para>Specifies metadata creation options.</para>
-    </summary>
+    <summary>Specifies metadata creation options.</summary>
   </member>
   <member name="WICMetadataCreationOptions.WICMetadataCreationDefault">
-    <summary>
-      <para>The default metadata creation options. The default value is <b>WICMetadataCreationAllowUnknown</b>.</para>
-    </summary>
+    <summary>The default metadata creation options. The default value is <b>WICMetadataCreationAllowUnknown</b>.</summary>
   </member>
   <member name="WICMetadataCreationOptions.WICMetadataCreationAllowUnknown">
-    <summary>
-      <para>Allow unknown metadata creation.</para>
-    </summary>
+    <summary>Allow unknown metadata creation.</summary>
   </member>
   <member name="WICMetadataCreationOptions.WICMetadataCreationFailUnknown">
-    <summary>
-      <para>Fail on unknown metadata creation.</para>
-    </summary>
+    <summary>Fail on unknown metadata creation.</summary>
   </member>
   <member name="WICMetadataCreationOptions.WICMetadataCreationMask">
-    <summary>
-      <para>The <see cref="WICMetadataCreationOptions" /> mask.</para>
-    </summary>
+    <summary>The <see cref="WICMetadataCreationOptions" /> mask.</summary>
   </member>
 </doc>

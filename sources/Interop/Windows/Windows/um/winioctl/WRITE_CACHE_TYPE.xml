@@ -3,35 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WRITE_CACHE_TYPE">
-    <summary>
-      <para>Specifies the cache type.</para>
-    </summary>
-    <remarks>
-      <para>There are two main types of write cache: <i>write back</i> and <i>write through</i>. With a write-back cache, the device does not copy cache data to nonvolatile media until absolutely necessary. This type of operation improves the performance of write operations. With a write-through cache, the device writes data to the cache and the media in parallel. This type of operation does not improve write performance, but it makes subsequent read operations faster.</para>
-      <para>The <a href="https://docs.microsoft.com/ni-winioctl-ioctl_storage_query_property.md">IOCTL_STORAGE_QUERY_PROPERTY</a> control code reports a <b>WRITE_CACHE_TYPE</b> value in the <see cref="STORAGE_WRITE_CACHE_PROPERTY" /> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/disk-management-enumeration-types">Disk Management Enumeration Types</seealso>
-    <seealso href="https://docs.microsoft.com/ni-winioctl-ioctl_storage_query_property.md">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
-    <seealso cref="STORAGE_WRITE_CACHE_PROPERTY" />
+    <summary>Specifies the cache type.</summary>
   </member>
   <member name="WRITE_CACHE_TYPE.WriteCacheTypeUnknown">
-    <summary>
-      <para>The system cannot report the type of the write cache.</para>
-    </summary>
+    <summary>The system cannot report the type of the write cache.</summary>
   </member>
   <member name="WRITE_CACHE_TYPE.WriteCacheTypeNone">
-    <summary>
-      <para>The device does not have a write cache.</para>
-    </summary>
+    <summary>The device does not have a write cache.</summary>
   </member>
   <member name="WRITE_CACHE_TYPE.WriteCacheTypeWriteBack">
-    <summary>
-      <para>The device has a write-back cache.</para>
-    </summary>
+    <summary>The device has a write-back cache.</summary>
   </member>
   <member name="WRITE_CACHE_TYPE.WriteCacheTypeWriteThrough">
-    <summary>
-      <para>The device has a write-through cache.</para>
-    </summary>
+    <summary>The device has a write-through cache.</summary>
   </member>
 </doc>

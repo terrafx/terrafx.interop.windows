@@ -4,19 +4,14 @@
 <doc>
   <member name="eAVDecAACDownmixMode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies whether an AAC decoder uses standard MPEG-2/MPEG-4 stereo downmix equations. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avdecaacdownmixmode-property">AVDecAACDownmixMode</a> property.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVDecAACDownmixMode.eAVDecAACUseISODownmix">
-    <summary>
-      <para>Use the standard ISO MPEG-2/MPEG-4 downmix equations.</para>
-    </summary>
+    <summary>Use the standard ISO MPEG-2/MPEG-4 downmix equations.</summary>
   </member>
   <member name="eAVDecAACDownmixMode.eAVDecAACUseARIBDownmix">
-    <summary>
-      <para>Use the downmix equations defined by ARIB document STD-B21.</para>
-    </summary>
+    <summary>Use the downmix equations defined by ARIB document STD-B21.</summary>
   </member>
 </doc>

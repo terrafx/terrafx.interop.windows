@@ -3,41 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="COWAIT_FLAGS">
-    <summary>
-      <para>Specifies the behavior of the <see cref="CoWaitForMultipleHandles" /> function.</para>
-    </summary>
-    <seealso cref="CoWaitForMultipleHandles" />
-    <seealso cref="ISynchronize.Wait" />
-    <seealso cref="ISynchronizeContainer.WaitMultiple" />
+    <summary>Specifies the behavior of the <see cref="CoWaitForMultipleHandles" /> function.</summary>
   </member>
   <member name="COWAIT_FLAGS.COWAIT_DEFAULT">
-    <summary>
-      <para>Dispatch calls needed for marshaling without dispatching arbitrary calls.</para>
-    </summary>
+    <summary>Dispatch calls needed for marshaling without dispatching arbitrary calls.</summary>
   </member>
   <member name="COWAIT_FLAGS.COWAIT_WAITALL">
-    <summary>
-      <para>If set, the call to <see cref="CoWaitForMultipleHandles" /> will return S_OK only when all handles associated with the synchronization object have been signaled and an input event has been received, all at the same time.  In this case, the behavior of <b>CoWaitForMultipleHandles</b> corresponds to  the behavior of the <see cref="MsgWaitForMultipleObjectsEx" /> function with the <i>dwFlags</i> parameter set to <b>MWMO_WAITALL</b>. If <b>COWAIT_WAITALL</b> is not set, the call to <b>CoWaitForMultipleHandles</b> will return S_OK as soon as any handle associated with the synchronization object has been signaled, regardless of whether an input event is received.</para>
-    </summary>
+    <summary>If set, the call to <see cref="CoWaitForMultipleHandles" /> will return S_OK only when all handles associated with the synchronization object have been signaled and an input event has been received, all at the same time. In this case, the behavior of <b>CoWaitForMultipleHandles</b> corresponds to the behavior of the <see cref="MsgWaitForMultipleObjectsEx" /> function with the <i>dwFlags</i> parameter set to <b>MWMO_WAITALL</b>. If <b>COWAIT_WAITALL</b> is not set, the call to <b>CoWaitForMultipleHandles</b> will return S_OK as soon as any handle associated with the synchronization object has been signaled, regardless of whether an input event is received.</summary>
   </member>
   <member name="COWAIT_FLAGS.COWAIT_ALERTABLE">
-    <summary>
-      <para>If set, the call to <see cref="CoWaitForMultipleHandles" /> will return S_OK if an asynchronous procedure call (APC) has been queued to the calling thread with a call to the <see cref="QueueUserAPC" /> function, even if no handle has been signaled.</para>
-    </summary>
+    <summary>If set, the call to <see cref="CoWaitForMultipleHandles" /> will return S_OK if an asynchronous procedure call (APC) has been queued to the calling thread with a call to the <see cref="QueueUserAPC" /> function, even if no handle has been signaled.</summary>
   </member>
   <member name="COWAIT_FLAGS.COWAIT_INPUTAVAILABLE">
-    <summary>
-      <para>If set, the call to <see cref="CoWaitForMultipleHandles" /> will return S_OK  if input exists for the queue, even if the input has been seen (but not removed) using a call to another function, such as <see cref="PeekMessage" />.</para>
-    </summary>
+    <summary>If set, the call to <see cref="CoWaitForMultipleHandles" /> will return S_OK if input exists for the queue, even if the input has been seen (but not removed) using a call to another function, such as <see cref="PeekMessage" />.</summary>
   </member>
   <member name="COWAIT_FLAGS.COWAIT_DISPATCH_CALLS">
-    <summary>
-      <para>Dispatch calls from <see cref="CoWaitForMultipleHandles" /> in an ASTA. Default is no call dispatch. This value has no meaning in other apartment types and is ignored.</para>
-    </summary>
+    <summary>Dispatch calls from <see cref="CoWaitForMultipleHandles" /> in an ASTA. Default is no call dispatch. This value has no meaning in other apartment types and is ignored.</summary>
   </member>
   <member name="COWAIT_FLAGS.COWAIT_DISPATCH_WINDOW_MESSAGES">
-    <summary>
-      <para>Enables dispatch of window messages from <see cref="CoWaitForMultipleHandles" /> in an ASTA or STA. Default in ASTA is no window messages dispatched, default in STA is only a small set of special-cased messages dispatched. The value has no meaning in MTA and is ignored.</para>
-    </summary>
+    <summary>Enables dispatch of window messages from <see cref="CoWaitForMultipleHandles" /> in an ASTA or STA. Default in ASTA is no window messages dispatched, default in STA is only a small set of special-cased messages dispatched. The value has no meaning in MTA and is ignored.</summary>
   </member>
 </doc>

@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_CREATE_DEVICE_FLAGS">
-    <summary>
-      <para>Supplies additional device creation options to <see cref="DMLCreateDevice" />. Values can be bitwise OR'd together.</para>
-    </summary>
+    <summary>Supplies additional device creation options to <see cref="DMLCreateDevice" />. Values can be bitwise OR'd together.</summary>
   </member>
   <member name="DML_CREATE_DEVICE_FLAGS.DML_CREATE_DEVICE_FLAG_NONE">
-    <summary>
-      <para>No creation options are specified.</para>
-    </summary>
+    <summary>No creation options are specified.</summary>
   </member>
   <member name="DML_CREATE_DEVICE_FLAGS.DML_CREATE_DEVICE_FLAG_DEBUG">
-    <summary>
-      <para>Enables the DirectML debug layers. To use the debug layers, developer mode must be enabled, and the DirectML debug layers must be installed. If the <b>DML_CREATE_DEVICE_FLAG_DEBUG</b> flag is specified and either condition is not met, then <see cref="DMLCreateDevice" /> returns <b>DXGI_ERROR_SDK_COMPONENT_MISSING</b>.</para>
-    </summary>
+    <summary>Enables the DirectML debug layers. To use the debug layers, developer mode must be enabled, and the DirectML debug layers must be installed. If the <b>DML_CREATE_DEVICE_FLAG_DEBUG</b> flag is specified and either condition is not met, then <see cref="DMLCreateDevice" /> returns <b>DXGI_ERROR_SDK_COMPONENT_MISSING</b>.</summary>
   </member>
 </doc>

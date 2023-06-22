@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFSensorActivitiesReport.GetActivityReport">
-    <summary>
-      <para>Retrieves an <see cref="IMFSensorActivityReport" /> based on the specified index.</para>
-    </summary>
-    <param name="Index">
-      <para>The index of the <see cref="IMFSensorActivityReport" /> to retrieve. This value must be less than the value returned by <see cref="GetCount" />.</para>
-    </param>
-    <param name="sensorActivityReport">
-      <para>A pointer to the  <see cref="IMFSensorActivityReport" /> associated with the specified index.</para>
-    </param>
+    <summary>Retrieves an <see cref="IMFSensorActivityReport" /> based on the specified index.</summary>
+    <param name="Index">The index of the <see cref="IMFSensorActivityReport" /> to retrieve. This value must be less than the value returned by <see cref="GetCount" />.</param>
+    <param name="sensorActivityReport">A pointer to the <see cref="IMFSensorActivityReport" /> associated with the specified index.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -19,51 +13,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>sensorActivityReport</i> parameter is null.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <i>sensorActivityReport</i> parameter is null.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDINDEX</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>Index</i> parameter is not less than value returned by <see cref="GetCount" />.</para>
-          </description>
-        </item>
+          <description>The <i>Index</i> parameter is not less than value returned by <see cref="GetCount" />.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFSensorActivitiesReport" />
-    <seealso cref="IMFSensorActivityReport" />
   </member>
   <member name="IMFSensorActivitiesReport.GetActivityReportByDeviceName">
-    <summary>
-      <para>Retrieves an <see cref="IMFSensorActivityReport" /> based on the specified device name.</para>
-    </summary>
-    <param name="SymbolicName">
-      <para>The symbolic name of the sensor for which the <see cref="IMFSensorActivityReport" /> is retrieved.</para>
-    </param>
-    <param name="sensorActivityReport">
-      <para>A pointer to the  <see cref="IMFSensorActivityReport" /> associated with the sensor with the specified symbolic name.</para>
-    </param>
+    <summary>Retrieves an <see cref="IMFSensorActivityReport" /> based on the specified device name.</summary>
+    <param name="SymbolicName">The symbolic name of the sensor for which the <see cref="IMFSensorActivityReport" /> is retrieved.</param>
+    <param name="sensorActivityReport">A pointer to the <see cref="IMFSensorActivityReport" /> associated with the sensor with the specified symbolic name.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -71,78 +63,84 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>symbolicName</i> parameter is null.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <i>sensorActivityReport</i> parameter is null.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <i>symbolicName</i> parameter is null.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The system is out of memory.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <i>Index</i> parameter is not less than value returned by <see cref="GetCount" />.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <i>sensorActivityReport</i> parameter is null.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NOT_FOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>The system is out of memory.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDINDEX</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>Index</i> parameter is not less than value returned by <see cref="GetCount" />.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NOT_FOUND</b>
-            </para>
-          </description>
-          <description>
-            <para>No sensor with the specified symbolic name was found.</para>
-          </description>
-        </item>
+          <description>No sensor with the specified symbolic name was found.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFSensorActivitiesReport" />
-    <seealso cref="IMFSensorActivityReport" />
   </member>
   <member name="IMFSensorActivitiesReport.GetCount">
-    <summary>
-      <para>Gets the count of <see cref="IMFSensorActivityReport" /> objects that are available to be retrieved.</para>
-    </summary>
-    <param name="pcCount">
-      <para>The count of <see cref="IMFSensorActivityReport" /> objects that are available to be retrieved.</para>
-    </param>
+    <summary>Gets the count of <see cref="IMFSensorActivityReport" /> objects that are available to be retrieved.</summary>
+    <param name="pcCount">The count of <see cref="IMFSensorActivityReport" /> objects that are available to be retrieved.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -150,37 +148,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>pcCount</i> parameter is null.</para>
-          </description>
-        </item>
+          <description>The <i>pcCount</i> parameter is null.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFSensorActivitiesReport" />
-    <seealso cref="IMFSensorActivityReport" />
   </member>
   <member name="IMFSensorActivitiesReport">
-    <summary>
-      <para>Provides access to <see cref="IMFSensorActivityReport" /> objects that describe the current activity of a sensor.</para>
-    </summary>
-    <remarks>
-      <para>Register to receive sensor activities reports by implementing the <see cref="IMFSensorActivitiesReportCallback" /> interface and passing the implementation into <see cref="MFCreateSensorActivityMonitor" />.</para>
-    </remarks>
+    <summary>Provides access to <see cref="IMFSensorActivityReport" /> objects that describe the current activity of a sensor.</summary>
   </member>
 </doc>

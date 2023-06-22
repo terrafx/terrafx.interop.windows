@@ -3,23 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_ITEM_RANGE">
-    <summary>
-      <para>Defines the minimum and maximum number of items that may appear
-when using <see cref="WS_REPEATING_ELEMENT_FIELD_MAPPING" />,
-<b>WS_REPEATING_ELEMENT_CHOICE_FIELD_MAPPING</b>,
-or <b>WS_REPEATING_ANY_ELEMENT_FIELD_MAPPING</b> within
-a <see cref="WS_FIELD_DESCRIPTION" />.  The constraint is only
-enforced during deserialization.</para>
-    </summary>
+    <summary>Defines the minimum and maximum number of items that may appear when using <see cref="WS_REPEATING_ELEMENT_FIELD_MAPPING" />,<b>WS_REPEATING_ELEMENT_CHOICE_FIELD_MAPPING</b>, or <b>WS_REPEATING_ANY_ELEMENT_FIELD_MAPPING</b> within a <see cref="WS_FIELD_DESCRIPTION" />. The constraint is only enforced during deserialization.</summary>
   </member>
   <member name="WS_ITEM_RANGE.minItemCount">
-    <summary>
-      <para>The minimum number of elements that must appear.</para>
-    </summary>
+    <summary>The minimum number of elements that must appear.</summary>
   </member>
   <member name="WS_ITEM_RANGE.maxItemCount">
-    <summary>
-      <para>The maximum number of items that may appear.</para>
-    </summary>
+    <summary>The maximum number of items that may appear.</summary>
   </member>
 </doc>

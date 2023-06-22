@@ -3,106 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteTextLayout1.GetCharacterSpacing">
-    <summary>
-      <para>Gets the spacing between characters.</para>
-    </summary>
-    <param name="currentPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The current text position.</para>
-    </param>
-    <param name="leadingSpacing">
-      <para>Type: <b>FLOAT*</b></para>
-      <para>The spacing before each character, in reading order.</para>
-    </param>
-    <param name="trailingSpacing">
-      <para>Type: <b>FLOAT*</b></para>
-      <para>The spacing after each character, in reading order.</para>
-    </param>
-    <param name="minimumAdvanceWidth">
-      <para>Type: <b>FLOAT*</b></para>
-      <para>The minimum advance of each character, to prevent characters from becoming too thin or zero-width. This must be zero or greater.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" />*</b></para>
-      <para>The position range of the current format.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout1" />
+    <summary>Gets the spacing between characters.</summary>
+    <param name="currentPosition">The current text position.</param>
+    <param name="leadingSpacing">The spacing before each character, in reading order.</param>
+    <param name="trailingSpacing">The spacing after each character, in reading order.</param>
+    <param name="minimumAdvanceWidth">The minimum advance of each character, to prevent characters from becoming too thin or zero-width. This must be zero or greater.</param>
+    <param name="textRange">The position range of the current format.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout1.GetPairKerning">
-    <summary>
-      <para>Gets whether or not pair-kerning is enabled at given position.</para>
-    </summary>
-    <param name="currentPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>The current text position.</para>
-    </param>
-    <param name="isPairKerningEnabled">
-      <para>Type: <b>BOOL*</b></para>
-      <para>The flag that indicates whether text is pair-kerned.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" />*</b></para>
-      <para>The position range of the current format.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout1" />
+    <summary>Gets whether or not pair-kerning is enabled at given position.</summary>
+    <param name="currentPosition">The current text position.</param>
+    <param name="isPairKerningEnabled">The flag that indicates whether text is pair-kerned.</param>
+    <param name="textRange">The position range of the current format.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout1.SetCharacterSpacing">
-    <summary>
-      <para>Sets the spacing between characters.</para>
-    </summary>
-    <param name="leadingSpacing">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The spacing before each character, in reading order.</para>
-    </param>
-    <param name="trailingSpacing">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The spacing after each character, in reading order.</para>
-    </param>
-    <param name="minimumAdvanceWidth">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The minimum advance of each character, to prevent characters from becoming too thin or zero-width. This
-must be zero or greater.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" /></b></para>
-      <para>Text range to which this change applies.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout1" />
+    <summary>Sets the spacing between characters.</summary>
+    <param name="leadingSpacing">The spacing before each character, in reading order.</param>
+    <param name="trailingSpacing">The spacing after each character, in reading order.</param>
+    <param name="minimumAdvanceWidth">The minimum advance of each character, to prevent characters from becoming too thin or zero-width. This must be zero or greater.</param>
+    <param name="textRange">Text range to which this change applies.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout1.SetPairKerning">
-    <summary>
-      <para>Enables or disables pair-kerning on a given text range.</para>
-    </summary>
-    <param name="isPairKerningEnabled">
-      <para>Type: <b>BOOL</b></para>
-      <para>The flag that indicates whether text is pair-kerned.</para>
-    </param>
-    <param name="textRange">
-      <para>Type: <b><see cref="DWRITE_TEXT_RANGE" /></b></para>
-      <para>The text range to which the change applies.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextLayout1" />
+    <summary>Enables or disables pair-kerning on a given text range.</summary>
+    <param name="isPairKerningEnabled">The flag that indicates whether text is pair-kerned.</param>
+    <param name="textRange">The text range to which the change applies.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout1">
-    <summary>
-      <para>Represents a block of text after it has been fully analyzed and formatted.</para>
-    </summary>
-    <seealso cref="IDWriteTextLayout" />
+    <summary>Represents a block of text after it has been fully analyzed and formatted.</summary>
   </member>
 </doc>

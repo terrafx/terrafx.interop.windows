@@ -3,32 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_TEMPLATE_EXT">
-    <summary>
-      <para>The <b>CERT_TEMPLATE_EXT</b> structure is a certificate template.</para>
-    </summary>
+    <summary>The <b>CERT_TEMPLATE_EXT</b> structure is a certificate template.</summary>
   </member>
   <member name="CERT_TEMPLATE_EXT.pszObjId">
     <summary>
-      <para>
-        <b>LPSTR</b> object identifier (OID).</para>
-    </summary>
+      <b>LPSTR</b> object identifier (OID).</summary>
   </member>
   <member name="CERT_TEMPLATE_EXT.dwMajorVersion">
     <summary>
-      <para>
-        <b>DWORD</b> indicating the major version of the template.</para>
-    </summary>
+      <b>DWORD</b> indicating the major version of the template.</summary>
   </member>
   <member name="CERT_TEMPLATE_EXT.fMinorVersion">
     <summary>
-      <para>
-        <b>BOOL</b> flag set to <b>TRUE</b> if there is a minor version number.</para>
-    </summary>
+      <b>BOOL</b> flag set to <b>TRUE</b> if there is a minor version number.</summary>
   </member>
   <member name="CERT_TEMPLATE_EXT.dwMinorVersion">
     <summary>
-      <para>
-        <b>DWORD</b> indicating the minor version of the template.</para>
-    </summary>
+      <b>DWORD</b> indicating the minor version of the template.</summary>
   </member>
 </doc>

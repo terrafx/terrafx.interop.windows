@@ -3,27 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="eAVEncH264PictureType">
-    <summary>
-      <para>Specifies the type of picture that is output by a video encoder.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mfsampleextension-videoencodepicturetype">MFSampleExtension_VideoEncodePictureType</a> sample attribute.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies the type of picture that is output by a video encoder.</summary>
   </member>
   <member name="eAVEncH264PictureType.eAVEncH264PictureType_IDR">
-    <summary>
-      <para>Instantaneous decoding refresh (IDR) picture.</para>
-    </summary>
+    <summary>Instantaneous decoding refresh (IDR) picture.</summary>
   </member>
   <member name="eAVEncH264PictureType.eAVEncH264PictureType_P">
-    <summary>
-      <para>Predictive (B) picture.</para>
-    </summary>
+    <summary>Predictive (B) picture.</summary>
   </member>
   <member name="eAVEncH264PictureType.eAVEncH264PictureType_B">
-    <summary>
-      <para>Bi-predictive (B) picture.</para>
-    </summary>
+    <summary>Bi-predictive (B) picture.</summary>
   </member>
 </doc>

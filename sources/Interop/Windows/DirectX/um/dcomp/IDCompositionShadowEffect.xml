@@ -3,168 +3,61 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDCompositionShadowEffect.SetAlpha">
-    <summary>
-      <para>Sets the alpha value for the effect.</para>
-    </summary>
-    <param name="amount">
-      <para>Type: <b>float</b></para>
-      <para>The alpha value for the effect.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionShadowEffect" />
+    <summary>Sets the alpha value for the effect.</summary>
+    <param name="amount">The alpha value for the effect.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionShadowEffect.SetAlpha">
-    <summary>
-      <para>Sets the alpha value for the effect.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the alpha value for the effect changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionShadowEffect" />
+    <summary>Sets the alpha value for the effect.</summary>
+    <param name="animation">An animation that represents how the alpha value for the effect changes over time. This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionShadowEffect.SetBlue">
-    <summary>
-      <para>Sets the blue value for the color of the shadow.</para>
-    </summary>
-    <param name="amount">
-      <para>Type: <b>float</b></para>
-      <para>The blue value for the color of the shadow.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionShadowEffect" />
+    <summary>Sets the blue value for the color of the shadow.</summary>
+    <param name="amount">The blue value for the color of the shadow.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionShadowEffect.SetBlue">
-    <summary>
-      <para>Sets the blue value for the color of the shadow.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the blue value for the color of the shadow changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionShadowEffect" />
+    <summary>Sets the blue value for the color of the shadow.</summary>
+    <param name="animation">An animation that represents how the blue value for the color of the shadow changes over time. This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionShadowEffect.SetColor">
-    <summary>
-      <para>Sets color of the shadow.</para>
-    </summary>
-    <param name="color">
-      <para>Type: <b>const <see cref="D2D1_VECTOR_4F" /></b></para>
-      <para>The color of the shadow.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionShadowEffect" />
+    <summary>Sets color of the shadow.</summary>
+    <param name="color">The color of the shadow.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionShadowEffect.SetGreen">
-    <summary>
-      <para>Sets the green value for the color of the shadow.</para>
-    </summary>
-    <param name="amount">
-      <para>Type: <b>float</b></para>
-      <para>The green value for the color of the shadow.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionShadowEffect" />
+    <summary>Sets the green value for the color of the shadow.</summary>
+    <param name="amount">The green value for the color of the shadow.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionShadowEffect.SetGreen">
-    <summary>
-      <para>Sets the green value for the color of the shadow.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the green value for the color of the shadow changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionShadowEffect" />
+    <summary>Sets the green value for the color of the shadow.</summary>
+    <param name="animation">An animation that represents how the green value for the color of the shadow changes over time. This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionShadowEffect.SetRed">
-    <summary>
-      <para>Sets the red value for the color of the shadow.</para>
-    </summary>
-    <param name="amount">
-      <para>Type: <b>float</b></para>
-      <para>The red value for the color of the shadow.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionShadowEffect" />
+    <summary>Sets the red value for the color of the shadow.</summary>
+    <param name="amount">The red value for the color of the shadow.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionShadowEffect.SetRed">
-    <summary>
-      <para>Sets the red value for the color of the shadow.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the red value for the color of the shadow changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionShadowEffect" />
+    <summary>Sets the red value for the color of the shadow.</summary>
+    <param name="animation">An animation that represents how the red value for the color of the shadow changes over time. This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionShadowEffect.SetStandardDeviation">
-    <summary>
-      <para>Sets the amount of blur to be applied to the alpha channel of the image.</para>
-    </summary>
-    <param name="amount">
-      <para>Type: <b>float</b></para>
-      <para>The amount of blur to be applied to the alpha channel of the image. You can compute the blur radius of the kernel by multiplying the standard deviation by 3.
-The units of both the standard deviation and blur radius are DIPs.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionShadowEffect" />
+    <summary>Sets the amount of blur to be applied to the alpha channel of the image.</summary>
+    <param name="amount">The amount of blur to be applied to the alpha channel of the image. You can compute the blur radius of the kernel by multiplying the standard deviation by 3. The units of both the standard deviation and blur radius are DIPs.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionShadowEffect.SetStandardDeviation">
-    <summary>
-      <para>Sets the amount of blur to be applied to the alpha channel of the image.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the amount of blur to be applied to the alpha channel of the image changes over time.
-You can compute the blur radius of the kernel by multiplying the standard deviation by 3.
-The units of both the standard deviation and blur radius are DIPs.
-This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionShadowEffect" />
+    <summary>Sets the amount of blur to be applied to the alpha channel of the image.</summary>
+    <param name="animation">An animation that represents how the amount of blur to be applied to the alpha channel of the image changes over time. You can compute the blur radius of the kernel by multiplying the standard deviation by 3. The units of both the standard deviation and blur radius are DIPs.<br />This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionShadowEffect">
-    <summary>
-      <para>The shadow effect is used to generate a shadow from the alpha channel of an image. The shadow is more opaque for higher alpha values and more transparent for lower alpha values.
-You can set the amount of blur and the color of the shadow.</para>
-    </summary>
-    <seealso cref="IDCompositionFilterEffect" />
+    <summary>The shadow effect is used to generate a shadow from the alpha channel of an image. The shadow is more opaque for higher alpha values and more transparent for lower alpha values. You can set the amount of blur and the color of the shadow.</summary>
   </member>
 </doc>

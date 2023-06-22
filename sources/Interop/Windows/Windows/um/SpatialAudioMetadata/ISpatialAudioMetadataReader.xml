@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISpatialAudioMetadataReader.Close">
-    <summary>
-      <para>Completes any necessary operations on the <see cref="SpatialAudioMetadataItems" /> object  and releases the object.</para>
-    </summary>
+    <summary>Completes any necessary operations on the <see cref="SpatialAudioMetadataItems" /> object and releases the object.</summary>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -13,27 +11,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>SPTLAUD_MD_CLNT_E_NO_ITEMS_OPEN</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SPTLAUD_MD_CLNT_E_NO_ITEMS_OPEN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <see cref="ISpatialAudioMetadataItems" /> has not been opened for reading with a call to <see cref="Open" /> or the object has been closed for writing with a call to <see cref="Close" />.</para>
-          </description>
-        </item>
+          <description>The <see cref="ISpatialAudioMetadataItems" /> has not been opened for reading with a call to <see cref="Open" /> or the object has been closed for writing with a call to <see cref="Close" />.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ISpatialAudioMetadataReader" />
   </member>
   <member name="ISpatialAudioMetadataReader.Open">
-    <summary>
-      <para>Opens an <see cref="ISpatialAudioMetadataItems" /> object for reading.</para>
-    </summary>
-    <param name="metadataItems">
-      <para>A pointer to an  <see cref="ISpatialAudioMetadataItems" /> object to be opened for reading</para>
-    </param>
+    <summary>Opens an <see cref="ISpatialAudioMetadataItems" /> object for reading.</summary>
+    <param name="metadataItems">A pointer to an <see cref="ISpatialAudioMetadataItems" /> object to be opened for reading</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -41,40 +36,38 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>SPTLAUD_MD_CLNT_E_ITEMS_ALREADY_OPEN</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SPTLAUD_MD_CLNT_E_ITEMS_ALREADY_OPEN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <b>Open</b> has already been called on the supplied <see cref="ISpatialAudioMetadataItems" /> since the object was created or since the last call to <see cref="Close" />.
-</description>
-        </item>
-        <item>
+            <b>Open</b> has already been called on the supplied <see cref="ISpatialAudioMetadataItems" /> since the object was created or since the last call to <see cref="Close" />.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The provided pointer is not valid.</para>
-          </description>
-        </item>
+          <description>The provided pointer is not valid.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ISpatialAudioMetadataReader" />
   </member>
   <member name="ISpatialAudioMetadataReader.ReadNextItem">
-    <summary>
-      <para>Gets the number of commands and the sample offset for the metadata item being read.</para>
-    </summary>
-    <param name="commandCount">
-      <para>Receives the number of command/value pairs in the metadata item being read.</para>
-    </param>
-    <param name="frameOffset">
-      <para>Gets the frame offset associated with the metadata item being read.</para>
-    </param>
+    <summary>Gets the number of commands and the sample offset for the metadata item being read.</summary>
+    <param name="commandCount">Receives the number of command/value pairs in the metadata item being read.</param>
+    <param name="frameOffset">Gets the frame offset associated with the metadata item being read.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -82,62 +75,51 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>SPTLAUD_MD_CLNT_E_NO_ITEMS_OPEN</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SPTLAUD_MD_CLNT_E_NO_ITEMS_OPEN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <see cref="ISpatialAudioMetadataItems" /> has not been opened for reading with a call to <see cref="Open" /> or the object has been closed for writing with a call to <see cref="Close" />.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <see cref="ISpatialAudioMetadataItems" /> has not been opened for reading with a call to <see cref="Open" /> or the object has been closed for writing with a call to <see cref="Close" />.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SPTLAUD_MD_CLNT_E_NO_MORE_ITEMS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>There are no more metadata items in the frame range specified in the call to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt798194(v=vs.85)">ReadItemCountInFrames</a>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>SPTLAUD_MD_CLNT_E_NO_MORE_ITEMS</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>There are no more metadata items in the frame range specified in the call to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt798194(v=vs.85)">ReadItemCountInFrames</a>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One of the provided pointers is not valid.</para>
-          </description>
-        </item>
+          <description>One of the provided pointers is not valid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Before calling <b>ReadNextItem</b>, you must open the <see cref="ISpatialAudioMetadataReader" /> for reading by calling <see cref="Open" /> after the object is created and after <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/ispatialaudiometadatawriter-close">Close</a> has been called. You must also call <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt798194(v=vs.85)">ReadItemCountInFrames</a> before calling <b>ReadNextItem</b>.</para>
-      <para>The <see cref="ISpatialAudioMetadataReader" /> keeps an internal pointer to the current position within the total range of frames contained by the <see cref="ISpatialAudioMetadataItems" /> with which the reader is associated. Each call to this method causes the pointer to be advanced by the number of frames specified in the <i>readFrameCount</i> parameter.</para>
-      <para>The process for reading commands and the associated values is recursive. After each call to <b>ReadItemCountInFrames</b>, call <b>ReadNextItem</b> to get the number of commands in the next item. After every call to <b>ReadNextItem</b>, call <see cref="ReadNextItemCommand" /> to read each command for the  item. Repeat this process until the entire frame range of the <b>ISpatialAudioMetadataItems</b> has been read.</para>
-    </remarks>
-    <seealso cref="ISpatialAudioMetadataReader" />
   </member>
   <member name="ISpatialAudioMetadataReader.ReadNextItemCommand">
-    <summary>
-      <para>Reads metadata commands and value data for the current item.</para>
-    </summary>
-    <param name="commandID">
-      <para>Receives the command ID for the current command.</para>
-    </param>
-    <param name="valueBuffer">
-      <para>A pointer to a buffer which receives data specific to the command as specified by the
-metadata format definition. The buffer must be at least <i>maxValueBufferLength</i> to ensure all commands can be successfully retrieved.</para>
-    </param>
-    <param name="maxValueBufferLength">
-      <para>The maximum size of a command value.</para>
-    </param>
-    <param name="valueBufferLength">
-      <para>The size, in bytes, of the data written to the  <i>valueBuffer</i> parameter.</para>
-    </param>
+    <summary>Reads metadata commands and value data for the current item.</summary>
+    <param name="commandID">Receives the command ID for the current command.</param>
+    <param name="valueBuffer">A pointer to a buffer which receives data specific to the command as specified by the metadata format definition. The buffer must be at least <i>maxValueBufferLength</i> to ensure all commands can be successfully retrieved.</param>
+    <param name="maxValueBufferLength">The maximum size of a command value.</param>
+    <param name="valueBufferLength">The size, in bytes, of the data written to the <i>valueBuffer</i> parameter.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -145,44 +127,37 @@ metadata format definition. The buffer must be at least <i>maxValueBufferLength<
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>SPTLAUD_MD_CLNT_E_NO_ITEMS_OPEN</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SPTLAUD_MD_CLNT_E_NO_ITEMS_OPEN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <see cref="ISpatialAudioMetadataItems" /> has not been opened for reading with a call to <see cref="Open" /> or the object has been closed for writing with a call to <see cref="Close" />.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <see cref="ISpatialAudioMetadataItems" /> has not been opened for reading with a call to <see cref="Open" /> or the object has been closed for writing with a call to <see cref="Close" />.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One of the provided pointers is not valid.</para>
-          </description>
-        </item>
+          <description>One of the provided pointers is not valid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Before calling <b>ReadNextItem</b>, you must open the <see cref="ISpatialAudioMetadataReader" /> for reading by calling <see cref="Open" /> after the object is created and after <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/ispatialaudiometadatawriter-close">Close</a> has been called. You must also call <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt798194(v=vs.85)">ReadItemCountInFrames</a> and then call <see cref="ReadNextItem" /> before calling <b>ReadNextItem</b>.</para>
-      <para>The <see cref="ISpatialAudioMetadataReader" /> keeps an internal pointer to the current position within the total range of frames contained by the <see cref="ISpatialAudioMetadataItems" /> with which the reader is associated. Each call to this method causes the pointer to be advanced by the number of frames specified in the <i>readFrameCount</i> parameter.</para>
-      <para>The process for reading commands and the associated values is recursive. After each call to <b>ReadItemCountInFrames</b>, call <see cref="ReadNextItem" /> to get the number of commands in the next item. After every call to <b>ReadNextItem</b>, call <b>ReadNextItemCommand</b> to read each command for the  item. Repeat this process until the entire frame range of the <b>ISpatialAudioMetadataItems</b> has been read.</para>
-    </remarks>
-    <seealso cref="ISpatialAudioMetadataReader" />
   </member>
   <member name="ISpatialAudioMetadataReader">
     <summary>
-      <para>Provides methods for extracting
-spatial audio metadata items and item command value pairs from an <see cref="ISpatialAudioMetadataItems" /> object.
-The <b>SpatialAudioMetadataItems</b> object, which is populated using an  <see cref="ISpatialAudioMetadataWriter" /> or <see cref="ISpatialAudioMetadataCopier" />, has a frame count, specified with the <i>frameCount</i> parameter to <see cref="ActivateSpatialAudioMetadataItems" />,
-that represents the valid range of metadata item offsets.  <b>ISpatialAudioMetadataReader</b> enables reading back
-groups of items within a subrange of the total frame count.  The object
-maintains an internal read position, which is advanced by the number of frames specified when read operation is performed.</para>
-      <para>This interface is a part of  Windows Sonic, Microsoft’s audio platform for more immersive audio which includes integrated spatial sound on Xbox and Windows.</para>
+      <para>Provides methods for extracting spatial audio metadata items and item command value pairs from an <see cref="ISpatialAudioMetadataItems" /> object. The <b>SpatialAudioMetadataItems</b> object, which is populated using an <see cref="ISpatialAudioMetadataWriter" /> or <see cref="ISpatialAudioMetadataCopier" />, has a frame count, specified with the <i>frameCount</i> parameter to <see cref="ActivateSpatialAudioMetadataItems" />, that represents the valid range of metadata item offsets. <b>ISpatialAudioMetadataReader</b> enables reading back groups of items within a subrange of the total frame count. The object maintains an internal read position, which is advanced by the number of frames specified when read operation is performed.</para>
+      <para>This interface is a part of Windows Sonic, Microsoft’s audio platform for more immersive audio which includes integrated spatial sound on Xbox and Windows.</para>
     </summary>
   </member>
 </doc>

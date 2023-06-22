@@ -3,60 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11SamplerState.GetDesc">
-    <summary>
-      <para>Gets the description for sampler state that you used to create the sampler-state object.</para>
-    </summary>
-    <param name="pDesc">
-      <para>Type: <b><see cref="D3D11_SAMPLER_DESC" />*</b></para>
-      <para>A pointer to a <see cref="D3D11_SAMPLER_DESC" /> structure that receives a description of the sampler state.</para>
-    </param>
-    <remarks>
-      <para>You use the description for sampler state in a call to the <see cref="ID3D11Device.CreateSamplerState" /> method to create the sampler-state object.</para>
-    </remarks>
-    <seealso cref="ID3D11SamplerState" />
+    <summary>Gets the description for sampler state that you used to create the sampler-state object.</summary>
+    <param name="pDesc">A pointer to a <see cref="D3D11_SAMPLER_DESC" /> structure that receives a description of the sampler state.</param>
   </member>
   <member name="ID3D11SamplerState">
-    <summary>
-      <para>The sampler-state interface holds a description for sampler state that you can bind to any shader stage of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-graphics-pipeline">pipeline</a> for reference by texture sample operations.</para>
-    </summary>
-    <remarks>
-      <para>To create a sampler-state object, call <see cref="ID3D11Device.CreateSamplerState" />.</para>
-      <para>To bind a sampler-state object to any <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-graphics-pipeline">pipeline</a> shader stage, call the following methods:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="ID3D11DeviceContext.VSSetSamplers" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="ID3D11DeviceContext.HSSetSamplers" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="ID3D11DeviceContext.DSSetSamplers" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="ID3D11DeviceContext.GSSetSamplers" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="ID3D11DeviceContext.PSSetSamplers" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="ID3D11DeviceContext.CSSetSamplers" />
-          </description>
-        </item>
-      </list>
-      <para>You can bind the same sampler-state object to multiple shader stages simultaneously.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-interfaces">Core Interfaces</seealso>
-    <seealso cref="ID3D11DeviceChild" />
+    <summary>The sampler-state interface holds a description for sampler state that you can bind to any shader stage of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-graphics-pipeline">pipeline</a> for reference by texture sample operations.</summary>
   </member>
 </doc>

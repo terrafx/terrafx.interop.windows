@@ -3,19 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EXP_SZ_LINK">
-    <summary>
-      <para>Holds an extra data block used by <see cref="IShellLinkDataList" />. It holds expandable environment strings for the icon or target.</para>
-    </summary>
+    <summary>Holds an extra data block used by <see cref="IShellLinkDataList" />. It holds expandable environment strings for the icon or target.</summary>
   </member>
   <member name="EXP_SZ_LINK.cbSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of the <b>EXP_SZ_LINK</b> structure.</para>
-    </summary>
+    <summary>The size of the <b>EXP_SZ_LINK</b> structure.</summary>
   </member>
   <member name="EXP_SZ_LINK.dwSignature">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The structure's signature. It can have one of the following values.</para>
       <h4>EXP_SZ_LINK_SIG</h4>
       <para>Contains the link's target path.</para>
@@ -24,15 +18,9 @@
     </summary>
   </member>
   <member name="EXP_SZ_LINK.szTarget">
-    <summary>
-      <para>Type: <b>__wchar_t[MAX_PATH]</b></para>
-      <para>The null-terminated ANSI string with the path of the target or icon.</para>
-    </summary>
+    <summary>The null-terminated ANSI string with the path of the target or icon.</summary>
   </member>
   <member name="EXP_SZ_LINK.swzTarget">
-    <summary>
-      <para>Type: <b>WCHAR[MAX_PATH]</b></para>
-      <para>The null-terminated Unicode string with the path of the target or icon.</para>
-    </summary>
+    <summary>The null-terminated Unicode string with the path of the target or icon.</summary>
   </member>
 </doc>

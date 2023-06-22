@@ -3,48 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYNCMGR_HANDLER_TYPE">
-    <summary>
-      <para>Specifies the type of a handler. Used by <see cref="ISyncMgrHandlerInfo.GetType" />.</para>
-    </summary>
+    <summary>Specifies the type of a handler. Used by <see cref="ISyncMgrHandlerInfo.GetType" />.</summary>
   </member>
   <member name="SYNCMGR_HANDLER_TYPE.SYNCMGR_HT_UNSPECIFIED">
-    <summary>
-      <para>The handler type is unknown. This value is also used if <see cref="ISyncMgrHandlerInfo.GetType" /> fails.</para>
-    </summary>
+    <summary>The handler type is unknown. This value is also used if <see cref="ISyncMgrHandlerInfo.GetType" /> fails.</summary>
   </member>
   <member name="SYNCMGR_HANDLER_TYPE.SYNCMGR_HT_APPLICATION">
-    <summary>
-      <para>The handler is an application.</para>
-    </summary>
+    <summary>The handler is an application.</summary>
   </member>
   <member name="SYNCMGR_HANDLER_TYPE.SYNCMGR_HT_DEVICE">
-    <summary>
-      <para>The handler syncs with a device such as a phone or PDA.</para>
-    </summary>
+    <summary>The handler syncs with a device such as a phone or PDA.</summary>
   </member>
   <member name="SYNCMGR_HANDLER_TYPE.SYNCMGR_HT_FOLDER">
-    <summary>
-      <para>The handler syncs with local or remote folders.</para>
-    </summary>
+    <summary>The handler syncs with local or remote folders.</summary>
   </member>
   <member name="SYNCMGR_HANDLER_TYPE.SYNCMGR_HT_SERVICE">
-    <summary>
-      <para>The handler syncs with a web service.</para>
-    </summary>
+    <summary>The handler syncs with a web service.</summary>
   </member>
   <member name="SYNCMGR_HANDLER_TYPE.SYNCMGR_HT_COMPUTER">
-    <summary>
-      <para>The handler syncs with a computer.</para>
-    </summary>
+    <summary>The handler syncs with a computer.</summary>
   </member>
   <member name="SYNCMGR_HANDLER_TYPE.SYNCMGR_HT_MIN">
-    <summary>
-      <para>Indicates the minimum <see cref="SYNCMGR_HANDLER_TYPE" /> value.</para>
-    </summary>
+    <summary>Indicates the minimum <see cref="SYNCMGR_HANDLER_TYPE" /> value.</summary>
   </member>
   <member name="SYNCMGR_HANDLER_TYPE.SYNCMGR_HT_MAX">
-    <summary>
-      <para>Indicates the maximum <see cref="SYNCMGR_HANDLER_TYPE" /> value.</para>
-    </summary>
+    <summary>Indicates the maximum <see cref="SYNCMGR_HANDLER_TYPE" /> value.</summary>
   </member>
 </doc>

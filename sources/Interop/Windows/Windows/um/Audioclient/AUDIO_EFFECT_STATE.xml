@@ -3,25 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="AUDIO_EFFECT_STATE">
-    <summary>
-      <para>Specifies the state of an audio effect.</para>
-    </summary>
-    <remarks>
-      <para>Get the state of an audio effect by calling <see cref="IAudioEffectsManager.GetAudioEffects" /> and checking the <i>state</i> field of the returned <see cref="AUDIO_EFFECT" /> structures.</para>
-      <para>Set the state of an audio effect by calling <see cref="IAudioEffectsManager.SetAudioEffectState" />.</para>
-    </remarks>
-    <seealso cref="IAudioEffectsManager.GetAudioEffects" />
-    <seealso cref="IAudioEffectsManager.SetAudioEffectState" />
-    <seealso cref="AUDIO_EFFECT" />
+    <summary>Specifies the state of an audio effect.</summary>
   </member>
   <member name="AUDIO_EFFECT_STATE.AUDIO_EFFECT_STATE_OFF">
-    <summary>
-      <para>The audio effect is off.</para>
-    </summary>
+    <summary>The audio effect is off.</summary>
   </member>
   <member name="AUDIO_EFFECT_STATE.AUDIO_EFFECT_STATE_ON">
-    <summary>
-      <para>The audio effect is on.</para>
-    </summary>
+    <summary>The audio effect is on.</summary>
   </member>
 </doc>

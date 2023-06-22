@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CMSG_KEY_AGREE_KEY_ENCRYPT_INFO">
-    <summary>
-      <para>The <b>CMSG_KEY_AGREE_KEY_ENCRYPT_INFO</b> structure contains the encrypted key for a key agreement recipient of an enveloped message. The <see cref="CMSG_KEY_AGREE_ENCRYPT_INFO" /> structure references this structure.</para>
-    </summary>
+    <summary>The <b>CMSG_KEY_AGREE_KEY_ENCRYPT_INFO</b> structure contains the encrypted key for a key agreement recipient of an enveloped message. The <see cref="CMSG_KEY_AGREE_ENCRYPT_INFO" /> structure references this structure.</summary>
   </member>
   <member name="CMSG_KEY_AGREE_KEY_ENCRYPT_INFO.cbSize">
-    <summary>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="CMSG_KEY_AGREE_KEY_ENCRYPT_INFO.EncryptedKey">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> structure that contains the session key encrypted by the negotiated key of the recipient.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> structure that contains the session key encrypted by the negotiated key of the recipient.</summary>
   </member>
 </doc>

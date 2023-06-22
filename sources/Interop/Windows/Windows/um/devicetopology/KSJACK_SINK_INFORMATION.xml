@@ -3,55 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="KSJACK_SINK_INFORMATION">
-    <summary>
-      <para>The <b>KSJACK_SINK_INFORMATION</b> structure stores information about an audio jack sink.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-structures">Core Audio Structures</seealso>
-    <seealso cref="IKsJackSinkInformation.GetJackSinkInformation" />
+    <summary>The <b>KSJACK_SINK_INFORMATION</b> structure stores information about an audio jack sink.</summary>
   </member>
   <member name="KSJACK_SINK_INFORMATION.ConnType">
-    <summary>
-      <para>Specifies the type of connection. The connection type values are defined in the  <see cref="KSJACK_SINK_CONNECTIONTYPE" /> enumeration.</para>
-    </summary>
+    <summary>Specifies the type of connection. The connection type values are defined in the <see cref="KSJACK_SINK_CONNECTIONTYPE" /> enumeration.</summary>
   </member>
   <member name="KSJACK_SINK_INFORMATION.ManufacturerId">
-    <summary>
-      <para>Specifies the sink manufacturer identifier.</para>
-    </summary>
+    <summary>Specifies the sink manufacturer identifier.</summary>
   </member>
   <member name="KSJACK_SINK_INFORMATION.ProductId">
-    <summary>
-      <para>Specifies the sink product identifier.</para>
-    </summary>
+    <summary>Specifies the sink product identifier.</summary>
   </member>
   <member name="KSJACK_SINK_INFORMATION.AudioLatency">
-    <summary>
-      <para>Specifies the latency of the audio sink.</para>
-    </summary>
+    <summary>Specifies the latency of the audio sink.</summary>
   </member>
   <member name="KSJACK_SINK_INFORMATION.HDCPCapable">
-    <summary>
-      <para>Specifies whether the sink supports High-bandwidth Digital Content Protection (HDCP).</para>
-    </summary>
+    <summary>Specifies whether the sink supports High-bandwidth Digital Content Protection (HDCP).</summary>
   </member>
   <member name="KSJACK_SINK_INFORMATION.AICapable">
-    <summary>
-      <para>Specifies whether the sink supports ACP Packet, ISRC1, or ISRC2.</para>
-    </summary>
+    <summary>Specifies whether the sink supports ACP Packet, ISRC1, or ISRC2.</summary>
   </member>
   <member name="KSJACK_SINK_INFORMATION.SinkDescriptionLength">
-    <summary>
-      <para>Specifies the length of the string in the <b>SinkDescription</b> member.</para>
-    </summary>
+    <summary>Specifies the length of the string in the <b>SinkDescription</b> member.</summary>
   </member>
   <member name="KSJACK_SINK_INFORMATION.SinkDescription">
-    <summary>
-      <para>String containing the monitor sink name. The maximum length is defined by the constant <b>MAX_SINK_DESCRIPTION_NAME_LENGTH</b> (32 wide characters).</para>
-    </summary>
+    <summary>String containing the monitor sink name. The maximum length is defined by the constant <b>MAX_SINK_DESCRIPTION_NAME_LENGTH</b> (32 wide characters).</summary>
   </member>
   <member name="KSJACK_SINK_INFORMATION.PortId">
-    <summary>
-      <para>Specifies the video port identifier in a <see cref="LUID" /> structure.</para>
-    </summary>
+    <summary>Specifies the video port identifier in a <see cref="LUID" /> structure.</summary>
   </member>
 </doc>

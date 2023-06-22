@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DXGI_SWAP_CHAIN_FULLSCREEN_DESC">
-    <summary>
-      <para>Describes full-screen mode for a swap chain.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used by the <see cref="CreateSwapChainForHwnd" /> and <see cref="GetFullscreenDesc" /> methods.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
+    <summary>Describes full-screen mode for a swap chain.</summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_FULLSCREEN_DESC.RefreshRate">
-    <summary>
-      <para>A <see cref="DXGI_RATIONAL" /> structure that describes the refresh rate in hertz.</para>
-    </summary>
+    <summary>A <see cref="DXGI_RATIONAL" /> structure that describes the refresh rate in hertz.</summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_FULLSCREEN_DESC.ScanlineOrdering">
-    <summary>
-      <para>A member of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173067(v=vs.85)">DXGI_MODE_SCANLINE_ORDER</a> enumerated type that describes the scan-line drawing mode.</para>
-    </summary>
+    <summary>A member of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173067(v=vs.85)">DXGI_MODE_SCANLINE_ORDER</a> enumerated type that describes the scan-line drawing mode.</summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_FULLSCREEN_DESC.Scaling">
-    <summary>
-      <para>A member of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173066(v=vs.85)">DXGI_MODE_SCALING</a> enumerated type that describes the scaling mode.</para>
-    </summary>
+    <summary>A member of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173066(v=vs.85)">DXGI_MODE_SCALING</a> enumerated type that describes the scaling mode.</summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_FULLSCREEN_DESC.Windowed">
-    <summary>
-      <para>A Boolean value that specifies whether the swap chain is in windowed mode. <b>TRUE</b> if the swap chain is in windowed mode; otherwise, <b>FALSE</b>.</para>
-    </summary>
+    <summary>A Boolean value that specifies whether the swap chain is in windowed mode. <b>TRUE</b> if the swap chain is in windowed mode; otherwise, <b>FALSE</b>.</summary>
   </member>
 </doc>

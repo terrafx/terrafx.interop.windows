@@ -3,33 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR">
-    <summary>
-      <para>The <b>STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR</b> structure is one of the query result structures returned from an <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> request. This structure describes storage device physical topology.</para>
-    </summary>
+    <summary>The <b>STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR</b> structure is one of the query result structures returned from an <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> request. This structure describes storage device physical topology.</summary>
   </member>
   <member name="STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR.Version">
-    <summary>
-      <para>Contains the size of this structure, in bytes. Set to <code>sizeof(STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR)</code>.</para>
-    </summary>
+    <summary>Contains the size of this structure, in bytes. Set to <code>sizeof(STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR)</code>.</summary>
   </member>
   <member name="STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR.Size">
-    <summary>
-      <para>Specifies the total size of the data, in bytes. Should be &gt;= <code>sizeof(STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR)</code>.</para>
-    </summary>
+    <summary>Specifies the total size of the data, in bytes. Should be &gt;= <code>sizeof(STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR)</code>.</summary>
   </member>
   <member name="STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR.NodeCount">
-    <summary>
-      <para>Specifies the number of nodes.</para>
-    </summary>
+    <summary>Specifies the number of nodes.</summary>
   </member>
   <member name="STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR.Reserved">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
-  <member name="STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR.Node [ANYSIZE_ARRAY]">
-    <summary>
-      <para>A node as specified by a <see cref="STORAGE_PHYSICAL_NODE_DATA" /> structure.</para>
-    </summary>
+  <member name="STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR.Node">
+    <summary>A node as specified by a <see cref="STORAGE_PHYSICAL_NODE_DATA" /> structure.</summary>
   </member>
 </doc>

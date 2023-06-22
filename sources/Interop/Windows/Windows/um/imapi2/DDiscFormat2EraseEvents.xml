@@ -3,33 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DDiscFormat2EraseEvents.Update">
-    <summary>
-      <para>Implement this method to receive progress notification of the current erase operation.</para>
-    </summary>
+    <summary>Implement this method to receive progress notification of the current erase operation.</summary>
     <param name="object">
       <para>The <see cref="IDiscFormat2Erase" /> interface that initiated the erase operation.</para>
       <para>This parameter is a <b>MsftDiscFormat2Erase</b> object in script.</para>
     </param>
-    <param name="elapsedSeconds">
-      <para>Elapsed time, in seconds, of the erase operation.</para>
-    </param>
-    <param name="estimatedTotalSeconds">
-      <para>Estimated time, in seconds, to complete the erase operation.</para>
-    </param>
-    <returns>
-      <para>Return values are ignored.</para>
-    </returns>
-    <remarks>
-      <para>Notifications are sent in response to calling the <see cref="IDiscFormat2Erase.EraseMedia" /> method.</para>
-      <para>Notification is sent every 0.5 or 1.0 seconds depending on the method required to blank the media.</para>
-      <para>Total time estimates for a single erasure can vary as the operation progresses. The drive provides updated information that can affect the projected duration of the erasure.</para>
-    </remarks>
-    <seealso cref="DDiscFormat2EraseEvents" />
+    <param name="elapsedSeconds">Elapsed time, in seconds, of the erase operation.</param>
+    <param name="estimatedTotalSeconds">Estimated time, in seconds, to complete the erase operation.</param>
+    <returns>Return values are ignored.</returns>
   </member>
   <member name="DDiscFormat2EraseEvents">
-    <summary>
-      <para>Implement this interface to receive notifications of the current erase operation.</para>
-    </summary>
-    <seealso cref="IDiscFormat2Erase" />
+    <summary>Implement this interface to receive notifications of the current erase operation.</summary>
   </member>
 </doc>

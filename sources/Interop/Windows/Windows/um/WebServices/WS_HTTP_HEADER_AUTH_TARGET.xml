@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_HTTP_HEADER_AUTH_TARGET">
-    <summary>
-      <para>Defines the target for the HTTP header authentication security binding.</para>
-    </summary>
+    <summary>Defines the target for the HTTP header authentication security binding.</summary>
   </member>
   <member name="WS_HTTP_HEADER_AUTH_TARGET.WS_HTTP_HEADER_AUTH_TARGET_SERVICE">
-    <summary>
-      <para>Indicates that the <see cref="WS_HTTP_HEADER_AUTH_SECURITY_BINDING" /> containing
-this setting authenticates to the server.</para>
-    </summary>
+    <summary>Indicates that the <see cref="WS_HTTP_HEADER_AUTH_SECURITY_BINDING" /> containing this setting authenticates to the server.</summary>
   </member>
   <member name="WS_HTTP_HEADER_AUTH_TARGET.WS_HTTP_HEADER_AUTH_TARGET_PROXY">
-    <summary>
-      <para>Indicates that the <see cref="WS_HTTP_HEADER_AUTH_SECURITY_BINDING" /> containing
-this setting authenticates to the proxy.</para>
-    </summary>
+    <summary>Indicates that the <see cref="WS_HTTP_HEADER_AUTH_SECURITY_BINDING" /> containing this setting authenticates to the proxy.</summary>
   </member>
 </doc>

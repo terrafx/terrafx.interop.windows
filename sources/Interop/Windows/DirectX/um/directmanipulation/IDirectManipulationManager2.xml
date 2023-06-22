@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDirectManipulationManager2.CreateBehavior">
-    <summary>
-      <para>Factory method to create a behavior.</para>
-    </summary>
-    <param name="clsid">
-      <para>CLSID of the behavior. The CLSID specifies the type of behavior.</para>
-    </param>
-    <param name="riid">
-      <para>The IID of the behavior interface to create.</para>
-    </param>
-    <param name="object">
-      <para>The new behavior object that implements the specified interface.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationmanager2">IDirectManipulationManager2</seealso>
+    <summary>Factory method to create a behavior.</summary>
+    <param name="clsid">CLSID of the behavior. The CLSID specifies the type of behavior.</param>
+    <param name="riid">The IID of the behavior interface to create.</param>
+    <param name="object">The new behavior object that implements the specified interface.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationManager2">
     <summary>
       <para>Extends the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationmanager">IDirectManipulationManager</a> interface that provides access to all the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> features and APIs available to the client application.</para>
-      <para>The <b>IDirectManipulationManager2</b> interface adds support for configuration behaviors that can be attached to a viewport.
-<b>Note</b>  To obtain an <b>IDirectManipulationManager2</b> interface pointer, <see cref="QueryInterface" /> on an existing <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationmanager">IDirectManipulationManager</a> interface pointer.</para>
+      <para>The <b>IDirectManipulationManager2</b> interface adds support for configuration behaviors that can be attached to a viewport.</para>
+      <div>
+        <b>Note</b>  To obtain an <b>IDirectManipulationManager2</b> interface pointer, <see cref="QueryInterface" /> on an existing <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationmanager">IDirectManipulationManager</a> interface pointer.</div>
     </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-interfaces">Direct Manipulation Interfaces</seealso>
   </member>
 </doc>

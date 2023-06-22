@@ -3,42 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DXGI_GRAPHICS_PREEMPTION_GRANULARITY">
-    <summary>
-      <para>Identifies the granularity at which the graphics processing unit (GPU) can be preempted from performing its current graphics rendering task.</para>
-    </summary>
-    <remarks>
-      <para>You call the <see cref="IDXGIAdapter2.GetDesc2" /> method to retrieve the granularity level at which the GPU can be preempted from performing its current graphics rendering task. The operating system specifies the graphics granularity level in the  <b>GraphicsPreemptionGranularity</b> member of the <see cref="DXGI_ADAPTER_DESC2" /> structure.</para>
-      <para>The following figure shows granularity of graphics rendering tasks.</para>
-      <para>
-        <img alt="Graphics Rendering Granularity" src="https://docs.microsoft.com/windows/win32/api/dxgi1_2mages/Graphics_Preempt.png" />
-      </para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-enums">DXGI Enumerations</seealso>
-    <seealso cref="DXGI_ADAPTER_DESC2" />
+    <summary>Identifies the granularity at which the graphics processing unit (GPU) can be preempted from performing its current graphics rendering task.</summary>
   </member>
   <member name="DXGI_GRAPHICS_PREEMPTION_GRANULARITY.DXGI_GRAPHICS_PREEMPTION_DMA_BUFFER_BOUNDARY">
-    <summary>
-      <para>Indicates the preemption granularity as a DMA buffer.</para>
-    </summary>
+    <summary>Indicates the preemption granularity as a DMA buffer.</summary>
   </member>
   <member name="DXGI_GRAPHICS_PREEMPTION_GRANULARITY.DXGI_GRAPHICS_PREEMPTION_PRIMITIVE_BOUNDARY">
-    <summary>
-      <para>Indicates the preemption granularity as a graphics primitive. A primitive is a section in a DMA buffer and can be a group of triangles.</para>
-    </summary>
+    <summary>Indicates the preemption granularity as a graphics primitive. A primitive is a section in a DMA buffer and can be a group of triangles.</summary>
   </member>
   <member name="DXGI_GRAPHICS_PREEMPTION_GRANULARITY.DXGI_GRAPHICS_PREEMPTION_TRIANGLE_BOUNDARY">
-    <summary>
-      <para>Indicates the preemption granularity as a triangle. A triangle is a part of a primitive.</para>
-    </summary>
+    <summary>Indicates the preemption granularity as a triangle. A triangle is a part of a primitive.</summary>
   </member>
   <member name="DXGI_GRAPHICS_PREEMPTION_GRANULARITY.DXGI_GRAPHICS_PREEMPTION_PIXEL_BOUNDARY">
-    <summary>
-      <para>Indicates the preemption granularity as a pixel. A pixel is a part of a triangle.</para>
-    </summary>
+    <summary>Indicates the preemption granularity as a pixel. A pixel is a part of a triangle.</summary>
   </member>
   <member name="DXGI_GRAPHICS_PREEMPTION_GRANULARITY.DXGI_GRAPHICS_PREEMPTION_INSTRUCTION_BOUNDARY">
-    <summary>
-      <para>Indicates the preemption granularity as a graphics instruction. A graphics instruction operates on a pixel.</para>
-    </summary>
+    <summary>Indicates the preemption granularity as a graphics instruction. A graphics instruction operates on a pixel.</summary>
   </member>
 </doc>

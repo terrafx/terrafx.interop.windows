@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT">
-    <summary>
-      <para>Provides information about the input streams passed into the <see cref="ID3DVideoContext1.VideoProcessorGetBehaviorHints" /> method.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+    <summary>Provides information about the input streams passed into the <see cref="ID3DVideoContext1.VideoProcessorGetBehaviorHints" /> method.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT.Enable">
-    <summary>
-      <para>A value indicating whether this input stream should be used to compute behavior hints. Set to true if the stream should be used to compute behavior hints; otherwise, set to false.</para>
-    </summary>
+    <summary>A value indicating whether this input stream should be used to compute behavior hints. Set to true if the stream should be used to compute behavior hints; otherwise, set to false.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT.Width">
-    <summary>
-      <para>The width of the input stream.</para>
-    </summary>
+    <summary>The width of the input stream.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT.Height">
-    <summary>
-      <para>The height of the input stream.</para>
-    </summary>
+    <summary>The height of the input stream.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT.Format">
-    <summary>
-      <para>The format of the input stream.</para>
-    </summary>
+    <summary>The format of the input stream.</summary>
   </member>
 </doc>

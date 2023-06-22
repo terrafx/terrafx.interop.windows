@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="POLICY_LSA_SERVER_ROLE">
+    <summary>The <b>POLICY_LSA_SERVER_ROLE</b> enumeration type defines values that indicate the role of an LSA server. The<see cref="LsaQueryInformationPolicy" /> and<see cref="LsaSetInformationPolicy" /> functions use this enumeration type when their <i>InformationClass</i> parameters are set to <b>PolicyLsaServerRoleInformation</b>.</summary>
+  </member>
+  <member name="POLICY_LSA_SERVER_ROLE.PolicyServerRoleBackup">
+    <summary>Indicates a backup LSA server.</summary>
+  </member>
+  <member name="POLICY_LSA_SERVER_ROLE.PolicyServerRolePrimary">
+    <summary>Indicates a primary LSA server, a workstation, or a standalone computer.</summary>
+  </member>
+</doc>

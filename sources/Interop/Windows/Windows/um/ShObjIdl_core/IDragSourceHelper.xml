@@ -3,68 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDragSourceHelper.InitializeFromBitmap">
-    <summary>
-      <para>Initializes the drag-image manager for a windowless control.</para>
-    </summary>
-    <param name="pshdi">
-      <para>Type: <b>LPSHDRAGIMAGE</b></para>
-      <para>The <see cref="SHDRAGIMAGE" /> structure that contains information about the bitmap.</para>
-    </param>
-    <param name="pDataObject">
-      <para>Type: <b><see cref="IDataObject" />*</b></para>
-      <para>A pointer to the data object's <see cref="IDataObject" /> interface.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Because <b>InitializeFromBitmap</b> always performs the RGB multiplication step in calculating the alpha value, you should always pass a bitmap without premultiplied alpha blending. Note that no error will result from passing the method a bitmap with premultiplied alpha blending, but this method will multiply it again, doubling the resulting alpha value.</para>
-    </remarks>
-    <seealso cref="IDragSourceHelper" />
+    <summary>Initializes the drag-image manager for a windowless control.</summary>
+    <param name="pshdi">The <see cref="SHDRAGIMAGE" /> structure that contains information about the bitmap.</param>
+    <param name="pDataObject">A pointer to the data object's <see cref="IDataObject" /> interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDragSourceHelper.InitializeFromWindow">
-    <summary>
-      <para>Initializes the drag-image manager for a control with a window.</para>
-    </summary>
-    <param name="hwnd">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the window that receives the <b>DI_GETDRAGIMAGE</b> message. This value can be <b>NULL</b>.</para>
-    </param>
-    <param name="ppt">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a>*</b></para>
-      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure that specifies the location of the cursor within the drag image. The structure should contain the offset from the upper-left corner of the drag image to the location of the cursor. This value can be <b>NULL</b>.</para>
-    </param>
-    <param name="pDataObject">
-      <para>Type: <b><see cref="IDataObject" />*</b></para>
-      <para>A pointer to the data object's <see cref="IDataObject" /> interface.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <b>DI_GETDRAGIMAGE</b> message allows you to source a drag image from a custom control. It is defined in Shlobj.h and must be registered with <see cref="RegisterWindowMessage" />. When the window specified by <i>hwnd</i> receives the <b>DI_GETDRAGIMAGE</b> message, the <i>lParam</i> value holds a pointer to an <see cref="SHDRAGIMAGE" /> structure. The handler should fill the structure with the drag image bitmap information.</para>
-    </remarks>
-    <seealso cref="IDragSourceHelper" />
+    <summary>Initializes the drag-image manager for a control with a window.</summary>
+    <param name="hwnd">A handle to the window that receives the <b>DI_GETDRAGIMAGE</b> message. This value can be <b>NULL</b>.</param>
+    <param name="ppt">A pointer to a <see cref="POINT" /> structure that specifies the location of the cursor within the drag image. The structure should contain the offset from the upper-left corner of the drag image to the location of the cursor. This value can be <b>NULL</b>.</param>
+    <param name="pDataObject">A pointer to the data object's <see cref="IDataObject" /> interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDragSourceHelper">
-    <summary>
-      <para>Exposed by the Shell to allow an application to specify the image that will be displayed during a Shell drag-and-drop operation.</para>
-    </summary>
-    <remarks>
-      <para>This interface is exposed by the Shell's drag-image manager. It is not implemented by applications.</para>
-      <para>Use this interface to specify the image displayed during a Shell drag-and-drop operation. The <b>IDragSourceHelper</b>,  <see cref="IDropTargetHelper" />, and <see cref="IInitializeWithWindow" /> interfaces are exposed by the drag-image manager object to allow the <see cref="IDropTarget" /> interface to use custom drag images. To use either of these interfaces, you must create an in-process server drag-image manager object by calling <see cref="CoCreateInstance" /> with a class identifier (CLSID) of CLSID_DragDropHelper. Get interface pointers using standard Component Object Model (COM) procedures.</para>
-      <para>The <b>IDragSourceHelper</b> interface provides the following two ways to specify the bitmap to be used as a drag image.</para>
-      <list type="bullet">
-        <item>
-          <description>Controls that have a window can register a DI_GETDRAGIMAGE window message for it and initialize the drag-image manager with <see cref="IDragSourceHelper.InitializeFromWindow" />. When the DI_GETDRAGIMAGE message is received, the handler puts the drag image bitmap information in the <see cref="SHDRAGIMAGE" /> structure that is passed as the message's <i>lParam</i> value.</description>
-        </item>
-        <item>
-          <description>Windowless controls can initialize the drag-image manager with <see cref="IDragSourceHelper.InitializeFromBitmap" />. This method allows an application to simply specify the bitmap.</description>
-        </item>
-      </list>
-      <b>Note</b>   The drag-and-drop helper object calls <see cref="IDataObject.SetData" /> to load private formats—used for cross-process support—into the data object. It later retrieves these formats by calling <see cref="IDataObject.GetData" />. To support the drag-and-drop helper object, the data object's <b>SetData</b> and <b>GetData</b> implementations must be able to accept and return arbitrary private formats.
-<para>For further discussion of Shell drag-and-drop operations, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776905(v=vs.85)">Transferring Shell Data Using Drag-and-Drop or the Clipboard</a>.</para><para><b>Note</b>   Prior to Windows Vista this interface was declared in Shlobj.h.</para></remarks>
+    <summary>Exposed by the Shell to allow an application to specify the image that will be displayed during a Shell drag-and-drop operation.</summary>
   </member>
 </doc>

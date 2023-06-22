@@ -3,16 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STORAGE_OFFLOAD_READ_OUTPUT">
-    <summary>
-      <para>Output structure for the <b>DeviceDsmAction_OffloadRead</b> action of the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_manage_data_set_attributes">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES</a></para>
-      <para>control code.</para>
-    </summary>
-    <seealso cref="DEVICE_DSM_OFFLOAD_READ_PARAMETERS" />
-    <seealso cref="DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DevIO/device-management-structures">Device Management Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_manage_data_set_attributes">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES</seealso>
-    <seealso cref="STORAGE_OFFLOAD_TOKEN" />
+    <summary>Output structure for the <b>DeviceDsmAction_OffloadRead</b> action of the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_manage_data_set_attributes">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES</a>control code.</summary>
   </member>
   <member name="STORAGE_OFFLOAD_READ_OUTPUT.OffloadReadFlags">
     <summary>
@@ -22,50 +13,34 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>STORAGE_OFFLOAD_READ_RANGE_TRUNCATED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The ranges represented by the token is smaller than the ranges specified in the
-<see cref="DEVICE_DATA_SET_RANGE" /> structures passed in the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_manage_data_set_attributes">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES</a></para>
-            <para>control code input buffer. In other words the <b>LengthProtected</b> member is less than
-the sum of all of the <b>LengthInBytes</b> members of the
-<b>DEVICE_DATA_SET_RANGE</b> structures passed.</para>
-          </description>
-        </item>
+          <description>The ranges represented by the token is smaller than the ranges specified in the <see cref="DEVICE_DATA_SET_RANGE" /> structures passed in the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_manage_data_set_attributes">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES</a> control code input buffer. In other words the <b>LengthProtected</b> member is less than the sum of all of the <b>LengthInBytes</b> members of the <b>DEVICE_DATA_SET_RANGE</b> structures passed.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="STORAGE_OFFLOAD_READ_OUTPUT.Reserved">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="STORAGE_OFFLOAD_READ_OUTPUT.LengthProtected">
-    <summary>
-      <para>The total length of the snapshot represented by the token.</para>
-    </summary>
+    <summary>The total length of the snapshot represented by the token.</summary>
   </member>
   <member name="STORAGE_OFFLOAD_READ_OUTPUT.TokenLength">
-    <summary>
-      <para>Length of the token in bytes.</para>
-    </summary>
+    <summary>Length of the token in bytes.</summary>
   </member>
   <member name="STORAGE_OFFLOAD_READ_OUTPUT.Token">
-    <summary>
-      <para>A <see cref="STORAGE_OFFLOAD_TOKEN" /> containing the
-token created.</para>
-    </summary>
+    <summary>A <see cref="STORAGE_OFFLOAD_TOKEN" /> containing the token created.</summary>
   </member>
 </doc>

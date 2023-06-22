@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DebugEventLevel">
+    <summary>Defines constants that specify a debug event level.</summary>
+  </member>
+  <member name="DebugEventLevel.DebugEventLevelFatal">
+    <summary>Specifies the <i>fatal</i> debug event level.</summary>
+  </member>
+  <member name="DebugEventLevel.DebugEventLevelWarning">
+    <summary>Specifies the <i>warning</i> debug event level.</summary>
+  </member>
+</doc>

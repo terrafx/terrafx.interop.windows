@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_TYPOGRAPHIC_FEATURES">
-    <summary>
-      <para>Contains a set of typographic features to be applied during text shaping.</para>
-    </summary>
+    <summary>Contains a set of typographic features to be applied during text shaping.</summary>
   </member>
   <member name="DWRITE_TYPOGRAPHIC_FEATURES.features">
-    <summary>
-      <para>Type: <b><see cref="DWRITE_FONT_FEATURE" />*</b></para>
-      <para>A pointer to a structure that specifies properties used to identify and execute typographic features in the font.</para>
-    </summary>
+    <summary>A pointer to a structure that specifies properties used to identify and execute typographic features in the font.</summary>
   </member>
   <member name="DWRITE_TYPOGRAPHIC_FEATURES.featureCount">
-    <summary>
-      <para>Type: <b>UINT32</b></para>
-      <para>A value that indicates the number of features being applied to a font face.</para>
-    </summary>
+    <summary>A value that indicates the number of features being applied to a font face.</summary>
   </member>
 </doc>

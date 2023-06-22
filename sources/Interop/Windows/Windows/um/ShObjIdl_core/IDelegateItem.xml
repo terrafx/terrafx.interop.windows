@@ -3,15 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDelegateItem">
-    <summary>
-      <para>Used to obtain the immediately underlying representation of an item's path.</para>
-    </summary>
-    <remarks>
-      <para>This interface provides only the methods of the <see cref="IRelatedItem" /> interface, from which it inherits.</para>
-      <h3>When to Implement</h3>
-      <para>An implementation of this interface for system-provided data objects is provided with Windows. Custom data sources that want to expose this information must implement the interface as part of their data object.</para>
-      <h3>When to Use</h3>
-      <para>Use this interface to uncovers a single level of aliasing. For instance, if you have the path of an item in the Documents library, this interface reveals the path of the item in the location that was added to the library. Whether this is the file system path depends on the nature of that original location. For a full recursion to the source item, use <see cref="IIdentityName" />.</para>
-    </remarks>
+    <summary>Used to obtain the immediately underlying representation of an item's path.</summary>
   </member>
 </doc>

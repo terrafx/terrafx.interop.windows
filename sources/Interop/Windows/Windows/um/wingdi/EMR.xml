@@ -3,11 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMR">
-    <summary>
-      <para>The <b>EMR</b> structure provides the base structure for all enhanced metafile records. An enhanced metafile record contains the parameters for a specific GDI function used to create part of a picture in an enhanced format metafile.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <summary>The <b>EMR</b> structure provides the base structure for all enhanced metafile records. An enhanced metafile record contains the parameters for a specific GDI function used to create part of a picture in an enhanced format metafile.</summary>
   </member>
   <member name="EMR.iType">
     <summary>
@@ -128,8 +124,6 @@
     </summary>
   </member>
   <member name="EMR.nSize">
-    <summary>
-      <para>The size of the record, in bytes. This member must be a multiple of four.</para>
-    </summary>
+    <summary>The size of the record, in bytes. This member must be a multiple of four.</summary>
   </member>
 </doc>

@@ -3,21 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IParseDisplayName.ParseDisplayName">
-    <summary>
-      <para>Parses the specified display name and creates a corresponding moniker.</para>
-    </summary>
-    <param name="pbc">
-      <para>A pointer to the bind context to be used in this binding operation. See <see cref="IBindCtx" />.</para>
-    </param>
-    <param name="pszDisplayName">
-      <para>The display name to be parsed.</para>
-    </param>
-    <param name="pchEaten">
-      <para>A pointer to a variable that receives the number of characters in the display name that correspond to the <i>ppmkOut</i> moniker.</para>
-    </param>
-    <param name="ppmkOut">
-      <para>A pointer to an <see cref="IMoniker" /> pointer variable that receives the interface pointer to the resulting moniker. If an error occurs, the implementation sets *<i>ppmkOut</i> to <b>NULL</b>. If *<i>ppmkOut</i> is non-<b>NULL</b>, the implementation must call <see cref="AddRef" />; it is the caller's responsibility to call <see cref="Release" />.</para>
-    </param>
+    <summary>Parses the specified display name and creates a corresponding moniker.</summary>
+    <param name="pbc">A pointer to the bind context to be used in this binding operation. See <see cref="IBindCtx" />.</param>
+    <param name="pszDisplayName">The display name to be parsed.</param>
+    <param name="pchEaten">A pointer to a variable that receives the number of characters in the display name that correspond to the <i>ppmkOut</i> moniker.</param>
+    <param name="ppmkOut">A pointer to an <see cref="IMoniker" /> pointer variable that receives the interface pointer to the resulting moniker. If an error occurs, the implementation sets *<i>ppmkOut</i> to <b>NULL</b>. If *<i>ppmkOut</i> is non-<b>NULL</b>, the implementation must call <see cref="AddRef" />; it is the caller's responsibility to call <see cref="Release" />.</param>
     <returns>
       <para>This method can return the standard return values E_OUTOFMEMORY and E_UNEXPECTED, as well as the following values.</para>
       <list type="table">
@@ -25,58 +15,56 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_E_SYNTAX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>There is a syntax error in the display name. Parsing failed because <i>pszDisplayName</i> could only be partially resolved into a moniker. In this case, *<i>pchEaten</i> has the number of characters that were successfully parsed into a moniker prefix. The parameter <i>ppmkOut</i> should be <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MK_E_SYNTAX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_E_NOOBJECT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The display name does not identify a component in this namespace.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>There is a syntax error in the display name. Parsing failed because <i>pszDisplayName</i> could only be partially resolved into a moniker. In this case, *<i>pchEaten</i> has the number of characters that were successfully parsed into a moniker prefix. The parameter <i>ppmkOut</i> should be <b>NULL</b>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MK_E_NOOBJECT</b>
-            </para>
-          </description>
-          <description>
-            <para>The display name does not identify a component in this namespace.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are not valid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are not valid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>In general, the maximum prefix of <i>pszDisplayName</i> that is syntactically valid and that represents an object should be consumed by this method and converted to a moniker.</para>
-      <para>Typically, this method is called by <see cref="MkParseDisplayName" /> or <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775113(v=vs.85)">MkParseDisplayNameEx</a>. In the initial step of the parsing operation, these functions can retrieve the <see cref="IParseDisplayName" /> interface directly from an instance of a class identified with either the "@ProgID" or "ProgID" notation. Subsequent parsing steps can query for the interface on an intermediate object.</para>
-      <para>The main loops of <see cref="MkParseDisplayName" /> and <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775113(v=vs.85)">MkParseDisplayNameEx</a> find the next moniker piece by calling the equivalent method in the <see cref="IMoniker" /> interface, that is, <see cref="IMoniker.ParseDisplayName" />, on the moniker that it currently holds. In this call to <b>IMoniker.ParseDisplayName</b>, the <b>MkParseDisplayName</b> or <b>MkParseDisplayNameEx</b> function passes <b>NULL</b> in the <i>pmkToLeft</i> parameter. If the moniker currently held is a generic composite, the call to <b>IMoniker.ParseDisplayName</b> is forwarded by that composite onto its last piece, passing the prefix of the composite to the left of the piece in <i>pmkToLeft</i>.</para>
-      <para>Some moniker classes will be able to handle this parsing internally to themselves because they are designed to designate only certain kinds of objects. Others will need to bind to the object that they designate to accomplish the parsing process. As is usual, these objects should not be released by <see cref="IMoniker.ParseDisplayName" /> but instead should be transferred to the bind context via <see cref="IBindCtx.RegisterObjectBound" /> or <see cref="IBindCtx.GetRunningObjectTable" /> followed by <see cref="IRunningObjectTable.Register" /> for release at a later time.</para>
-    </remarks>
-    <seealso cref="IMoniker.ParseDisplayName" />
-    <seealso cref="IParseDisplayName" />
-    <seealso cref="MkParseDisplayName" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775113(v=vs.85)">MkParseDisplayNameEx</seealso>
   </member>
   <member name="IParseDisplayName">
     <summary>
@@ -89,11 +77,6 @@
         <item>
           <description>A script language such as the macro language of a spreadsheet can allow textual references to a component. The language's interpreter needs to have such a reference converted into a moniker in order to execute the macro.</description>
         </item>
-      </list>This interface is not supported for use across machine boundaries.
-</summary>
-    <seealso cref="IMoniker.ParseDisplayName" />
-    <seealso cref="IOleItemContainer" />
-    <seealso cref="MkParseDisplayName" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775113(v=vs.85)">MkParseDisplayNameEx</seealso>
+      </list>This interface is not supported for use across machine boundaries.</summary>
   </member>
 </doc>

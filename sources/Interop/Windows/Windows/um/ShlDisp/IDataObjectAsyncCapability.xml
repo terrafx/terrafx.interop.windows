@@ -3,116 +3,40 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDataObjectAsyncCapability.EndOperation">
-    <summary>
-      <para>Notifies the data object that the asynchronous data extraction has ended.</para>
-    </summary>
-    <param name="hResult">
-      <para>Type: <b>HRESULT</b></para>
-      <para>Indicates the outcome of the data extraction. Set this value to S_OK if successful, or a COM error code otherwise.</para>
-    </param>
-    <param name="pbcReserved">
-      <para>Type: <b><see cref="IBindCtx" />*</b></para>
-      <para>Reserved. Set to <b>nullptr</b>.</para>
-    </param>
-    <param name="dwEffects">
-      <para>Type: <b>DWORD</b></para>
-      <para>A <a href="https://docs.microsoft.com//windows/desktop/com/dropeffect-constants">DROPEFFECT</a> value that indicates the result of an optimized move. This should be the same value that would be passed to the data object as a CFSTR_PERFORMEDDROPEFFECT format with a normal data extraction operation.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>EndOperation</b> retrieves the <see cref="IDataObjectAsyncCapability" /> pointer stored by <see cref="IDataObjectAsyncCapability.SetAsyncMode" /> and passes its parameter values to that interface's <b>IDataObjectAsyncCapability.EndOperation</b> method. <b>EndOperation</b> then releases the <b>IDataObjectAsyncCapability</b> pointer.</para>
-      <para>
-        <b>EndOperation</b> is also responsible for any associated clean-up operations. When finished, <b>EndOperation</b> should notify the drop source through a private interface.</para>
-    </remarks>
-    <seealso cref="IDataObjectAsyncCapability" />
+    <summary>Notifies the data object that the asynchronous data extraction has ended.</summary>
+    <param name="hResult">Indicates the outcome of the data extraction. Set this value to S_OK if successful, or a COM error code otherwise.</param>
+    <param name="pbcReserved">Reserved. Set to <b>nullptr</b>.</param>
+    <param name="dwEffects">A <a href="https://docs.microsoft.com//windows/desktop/com/dropeffect-constants">DROPEFFECT</a> value that indicates the result of an optimized move. This should be the same value that would be passed to the data object as a CFSTR_PERFORMEDDROPEFFECT format with a normal data extraction operation.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDataObjectAsyncCapability.GetAsyncMode">
-    <summary>
-      <para>Called by a drop target to determine whether the data object supports asynchronous data extraction.</para>
-    </summary>
+    <summary>Called by a drop target to determine whether the data object supports asynchronous data extraction.</summary>
     <param name="pfIsOpAsync">
-      <para>Type: <b>BOOL*</b></para>
-      <para>
-        <b>VARIANT_TRUE</b> if an asynchronous operation is supported; otherwise, <b>VARIANT_FALSE</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The purpose of this method is to give the drop target the value of the <see cref="IDataObjectAsyncCapability.SetAsyncMode" /> method's <i>fDoOpAsync</i> parameter. This parameter is set to <b>VARIANT_FALSE</b> by default. If the data object supports asynchronous data extraction, it must call <b>IDataObjectAsyncCapability.SetAsyncMode</b> and set <i>fDoOpAsync</i> to <b>VARIANT_TRUE</b>.</para>
-    </remarks>
-    <seealso cref="IDataObjectAsyncCapability" />
+      <b>VARIANT_TRUE</b> if an asynchronous operation is supported; otherwise, <b>VARIANT_FALSE</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDataObjectAsyncCapability.InOperation">
-    <summary>
-      <para>Called by the drop source to determine whether the target is extracting data asynchronously.</para>
-    </summary>
+    <summary>Called by the drop source to determine whether the target is extracting data asynchronously.</summary>
     <param name="pfInAsyncOp">
-      <para>Type: <b>BOOL*</b></para>
-      <para>
-        <b>VARIANT_TRUE</b> if data extraction is being handled asynchronously; otherwise, <b>VARIANT_FALSE</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is called by the drop source after <see cref="DoDragDrop" /> returns. The <i>pfInAsyncOp</i> parameter should be set to <b>VARIANT_TRUE</b> only if the drop target has called <see cref="IDataObjectAsyncCapability.StartOperation" />.</para>
-    </remarks>
-    <seealso cref="IDataObjectAsyncCapability" />
+      <b>VARIANT_TRUE</b> if data extraction is being handled asynchronously; otherwise, <b>VARIANT_FALSE</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDataObjectAsyncCapability.SetAsyncMode">
-    <summary>
-      <para>Called by a drop source to specify whether the data object supports asynchronous data extraction.</para>
-    </summary>
+    <summary>Called by a drop source to specify whether the data object supports asynchronous data extraction.</summary>
     <param name="fDoOpAsync">
-      <para>Type: <b>BOOL</b></para>
-      <para>
-        <b>VARIANT_TRUE</b> if an asynchronous operation is supported; otherwise, <b>VARIANT_FALSE</b>. The default value is <b>VARIANT_FALSE</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is called by the drop source to indicate that the data object supports asynchronous data extraction. Store the <i>fDoOpAsync</i> for later use by <see cref="IDataObjectAsyncCapability.GetAsyncMode" />. The drop target determines whether asynchronous data extraction is supported by calling <b>IDataObjectAsyncCapability.GetAsyncMode</b> to retrieve the <i>fDoOpAsync</i> value.</para>
-      <para>If <i>fDoOpAsync</i> is set to <b>VARIANT_TRUE</b>, <b>SetAsyncMode</b> must call <see cref="IDataObjectAsyncCapability.AddRef" />, and store the interface pointer for use by <see cref="IDataObjectAsyncCapability.EndOperation" />.</para>
-    </remarks>
-    <seealso cref="IDataObjectAsyncCapability" />
+      <b>VARIANT_TRUE</b> if an asynchronous operation is supported; otherwise, <b>VARIANT_FALSE</b>. The default value is <b>VARIANT_FALSE</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDataObjectAsyncCapability.StartOperation">
-    <summary>
-      <para>Called by a drop target to indicate that asynchronous data extraction is starting.</para>
-    </summary>
-    <param name="pbcReserved">
-      <para>Type: <b><see cref="IBindCtx" />*</b></para>
-      <para>Reserved. Set this value to <b>nullptr</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The drop target calls this method to notify the data object that asynchronous data extraction is starting. The method should store this information so that it can be returned by <see cref="IDataObjectAsyncCapability.InOperation" />. Once <b>StartOperation</b> has been called, the drop target returns the <see cref="IDropTarget.Drop" /> call as it would for normal synchronous data extraction.</para>
-    </remarks>
-    <seealso cref="IDataObjectAsyncCapability" />
+    <summary>Called by a drop target to indicate that asynchronous data extraction is starting.</summary>
+    <param name="pbcReserved">Reserved. Set this value to <b>nullptr</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDataObjectAsyncCapability">
     <summary>
       <para>Enables interfaces that are usually synchronous to function asynchronously.</para>
-      <para>
-        <b>Note</b>  This interface is the current, renamed version of <a href="https://docs.microsoft.com//previous-versions/bb776309(v=vs.85)">IAsyncOperation</a>.</para>
+      <div>
+        <b>Note</b>  This interface is the current, renamed version of <a href="https://docs.microsoft.com//previous-versions/bb776309(v=vs.85)">IAsyncOperation</a>.</div>
     </summary>
-    <remarks>
-      <para>
-        <b>IDataObjectAsyncCapability</b> is an optional interface that is implemented by a data object. It allows the drop target to negotiate with the drop source to extract data from the data object asynchronously.</para>
-      <para>This interface is primarily exported by the data objects used with drag-and-drop and Clipboard operations. Typically, such operations are synchronous. However, if data rendering will be time-consuming, <b>IDataObjectAsyncCapability</b> can be used to allow data extraction to take place on a background thread. See the <i>Dragging and Dropping Shell Objects Asynchronously</i> section of <a href="https://docs.microsoft.com//windows/desktop/shell/datascenarios">Handling Shell Data Transfer Scenarios</a> for a detailed discussion of how to use this interface.</para>
-      <para>Drop sources and targets use this interface when they wish to have a lengthy data extraction process handled by a background thread.</para>
-    </remarks>
   </member>
 </doc>

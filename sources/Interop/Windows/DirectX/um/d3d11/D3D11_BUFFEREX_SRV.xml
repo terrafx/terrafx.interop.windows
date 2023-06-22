@@ -3,30 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_BUFFEREX_SRV">
-    <summary>
-      <para>Describes the elements in a raw buffer resource to use in a shader-resource view.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used by <see cref="D3D11_SHADER_RESOURCE_VIEW_DESC" /> to create a raw view of a buffer.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-structures">Resource Structures</seealso>
+    <summary>Describes the elements in a raw buffer resource to use in a shader-resource view.</summary>
   </member>
   <member name="D3D11_BUFFEREX_SRV.FirstElement">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The index of the first element to be accessed by the view.</para>
-    </summary>
+    <summary>The index of the first element to be accessed by the view.</summary>
   </member>
   <member name="D3D11_BUFFEREX_SRV.NumElements">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of elements in the resource.</para>
-    </summary>
+    <summary>The number of elements in the resource.</summary>
   </member>
   <member name="D3D11_BUFFEREX_SRV.Flags">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>A <see cref="D3D11_BUFFEREX_SRV_FLAG" />-typed value that identifies view options for the buffer. Currently, the only option is to identify a raw view of the buffer. For more info about raw viewing of buffers, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-intro">Raw Views of Buffers</a>.</para>
-    </summary>
+    <summary>A <see cref="D3D11_BUFFEREX_SRV_FLAG" />-typed value that identifies view options for the buffer. Currently, the only option is to identify a raw view of the buffer. For more info about raw viewing of buffers, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-intro">Raw Views of Buffers</a>.</summary>
   </member>
 </doc>

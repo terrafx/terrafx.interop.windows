@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFNetProxyLocatorFactory.CreateProxyLocator">
-    <summary>
-      <para>Creates an <see cref="IMFNetProxyLocator" /> interface proxy locator object based on the protocol name.</para>
-    </summary>
-    <param name="pszProtocol">
-      <para>Null-terminated wide-character string containing the protocol name (for example, RTSP or HTTP).</para>
-    </param>
-    <param name="ppProxyLocator">
-      <para>Receives a pointer to the <see cref="IMFNetProxyLocator" /> interface. The caller must release the interface.</para>
-    </param>
+    <summary>Creates an <see cref="IMFNetProxyLocator" /> interface proxy locator object based on the protocol name.</summary>
+    <param name="pszProtocol">Null-terminated wide-character string containing the protocol name (for example, RTSP or HTTP).</param>
+    <param name="ppProxyLocator">Receives a pointer to the <see cref="IMFNetProxyLocator" /> interface. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -19,26 +13,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFNetProxyLocatorFactory" />
   </member>
   <member name="IMFNetProxyLocatorFactory">
     <summary>
       <para>Creates a proxy locator object, which determines the proxy to use.</para>
       <para>The network source uses this interface to create the proxy locator object. Applications can provide their own implementation of this interface by setting the <a href="https://docs.microsoft.com//windows/desktop/medfound/mfnetsource-proxylocatorfactory-property">MFNETSOURCE_PROXYLOCATORFACTORY</a> property. on the source resolver. If the application does not set this property, the network source uses the default proxy locator provided by Media Foundation.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/how-to-configure-the-proxy-locator">How to Configure the Proxy Locator</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
   </member>
 </doc>

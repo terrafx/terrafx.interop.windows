@@ -3,60 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS">
-    <summary>
-      <para>Specifies the inverse telecine (IVTC) capabilities of a video processor.</para>
-    </summary>
-    <seealso cref="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-enumerations">Direct3D 11 Video Enumerations</seealso>
+    <summary>Specifies the inverse telecine (IVTC) capabilities of a video processor.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS.D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS_32">
-    <summary>
-      <para>The video processor can reverse 3:2 pulldown.</para>
-    </summary>
+    <summary>The video processor can reverse 3:2 pulldown.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS.D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS_22">
-    <summary>
-      <para>The video processor can reverse 2:2 pulldown.</para>
-    </summary>
+    <summary>The video processor can reverse 2:2 pulldown.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS.D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS_2224">
-    <summary>
-      <para>The video processor can reverse 2:2:2:4 pulldown.</para>
-    </summary>
+    <summary>The video processor can reverse 2:2:2:4 pulldown.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS.D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS_2332">
-    <summary>
-      <para>The video processor can reverse 2:3:3:2 pulldown.</para>
-    </summary>
+    <summary>The video processor can reverse 2:3:3:2 pulldown.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS.D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS_32322">
-    <summary>
-      <para>The video processor can reverse 3:2:3:2:2 pulldown.</para>
-    </summary>
+    <summary>The video processor can reverse 3:2:3:2:2 pulldown.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS.D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS_55">
-    <summary>
-      <para>The video processor can reverse 5:5 pulldown.</para>
-    </summary>
+    <summary>The video processor can reverse 5:5 pulldown.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS.D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS_64">
-    <summary>
-      <para>The video processor can reverse 6:4 pulldown.</para>
-    </summary>
+    <summary>The video processor can reverse 6:4 pulldown.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS.D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS_87">
-    <summary>
-      <para>The video processor can reverse 8:7 pulldown.</para>
-    </summary>
+    <summary>The video processor can reverse 8:7 pulldown.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS.D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS_222222222223">
-    <summary>
-      <para>The video processor can reverse 2:2:2:2:2:2:2:2:2:2:2:3 pulldown.</para>
-    </summary>
+    <summary>The video processor can reverse 2:2:2:2:2:2:2:2:2:2:2:3 pulldown.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS.D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS_OTHER">
-    <summary>
-      <para>The video processor can reverse other telecine modes not listed here.</para>
-    </summary>
+    <summary>The video processor can reverse other telecine modes not listed here.</summary>
   </member>
 </doc>

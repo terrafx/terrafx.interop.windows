@@ -3,93 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICDdsEncoder.CreateNewFrame">
-    <summary>
-      <para>Creates a new frame to encode.</para>
-    </summary>
-    <param name="ppIFrameEncode">
-      <para>A pointer to the newly created frame object.</para>
-    </param>
-    <param name="pArrayIndex">
-      <para>Points to the location where the array index is returned.</para>
-    </param>
-    <param name="pMipLevel">
-      <para>Points to the location where the mip level index is returned.</para>
-    </param>
-    <param name="pSliceIndex">
-      <para>Points to the location where the slice index is returned.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This is equivalent to <see cref="IWICBitmapEncoder.CreateNewFrame" />, but returns additional information about the array index, mip level and slice of the newly created frame. In contrast to <b>IWICBitmapEncoder.CreateNewFrame</b>, there is no <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-ipropertybag2-write-proxy">IPropertyBag2</a>* parameter because individual DDS frames do not have separate properties.</para>
-    </remarks>
-    <seealso cref="IWICDdsEncoder" />
-    <seealso cref="WICDdsParameters" />
+    <summary>Creates a new frame to encode.</summary>
+    <param name="ppIFrameEncode">A pointer to the newly created frame object.</param>
+    <param name="pArrayIndex">Points to the location where the array index is returned.</param>
+    <param name="pMipLevel">Points to the location where the mip level index is returned.</param>
+    <param name="pSliceIndex">Points to the location where the slice index is returned.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICDdsEncoder.GetParameters">
-    <summary>
-      <para>Gets DDS-specific data.</para>
-    </summary>
-    <param name="pParameters">
-      <para>Type: <b><see cref="WICDdsParameters" />*</b></para>
-      <para>Points to the structure where the information is returned.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>An application can call <b>GetParameters</b> to obtain the default DDS parameters, modify some or all of them, and then call <see cref="SetParameters" />.</para>
-    </remarks>
-    <seealso cref="IWICDdsEncoder" />
-    <seealso cref="WICDdsParameters" />
+    <summary>Gets DDS-specific data.</summary>
+    <param name="pParameters">Points to the structure where the information is returned.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICDdsEncoder.SetParameters">
-    <summary>
-      <para>Sets DDS-specific data.</para>
-    </summary>
-    <param name="pParameters">
-      <para>Type: <b><see cref="WICDdsParameters" />*</b></para>
-      <para>Points to the structure where the information is described.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>You cannot call this method after you have started to write frame data, for example by calling <see cref="IWICDdsEncoder.CreateNewFrame" />.</para>
-      <para>Setting DDS parameters using this method provides the DDS encoder with information about the expected number of frames and the dimensions and other parameters of each frame. The DDS encoder will fail if you do not set frame data that matches these expectations. For example, if you set <see cref="WICDdsParameters.Width" /> and <b>Height</b> to 32, and <b>MipLevels</b> to 6, the DDS encoder will expect 6 frames with the following dimensions:</para>
-      <list type="bullet">
-        <item>
-          <description>32x32 pixels.</description>
-        </item>
-        <item>
-          <description>16x16 pixels.</description>
-        </item>
-        <item>
-          <description>8x8 pixels.</description>
-        </item>
-        <item>
-          <description>4x4 pixels.</description>
-        </item>
-        <item>
-          <description>2x2 pixels.</description>
-        </item>
-        <item>
-          <description>1x1 pixels.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IWICDdsEncoder" />
-    <seealso cref="WICDdsParameters" />
+    <summary>Sets DDS-specific data.</summary>
+    <param name="pParameters">Points to the structure where the information is described.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICDdsEncoder">
-    <summary>
-      <para>Enables writing DDS format specific information to an encoder.</para>
-    </summary>
-    <remarks>
-      <para>This interface is implemented by the WIC DDS codec. To obtain this interface, create an <see cref="IWICBitmapEncoder" /> using the DDS codec and QueryInterface for <b>IWICDdsEncoder</b>.</para>
-    </remarks>
+    <summary>Enables writing DDS format specific information to an encoder.</summary>
   </member>
 </doc>

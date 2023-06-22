@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TF_PROPERTYVAL">
-    <summary>
-      <para>The <b>TF_PROPERTYVAL</b> structure contains property value data. This structure is used with the <see cref="IEnumTfPropertyValue.Next" /> method.</para>
-    </summary>
-    <seealso cref="IEnumTfPropertyValue.Next " />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/predefined-properties">Predefined Properties
-</seealso>
+    <summary>The <b>TF_PROPERTYVAL</b> structure contains property value data. This structure is used with the <see cref="IEnumTfPropertyValue.Next" /> method.</summary>
   </member>
   <member name="TF_PROPERTYVAL.guidId">
-    <summary>
-      <para>A <b>GUID</b> that identifies the property type. This can be a custom identifier or one of the <a href="https://docs.microsoft.com//windows/desktop/TSF/predefined-properties">predefined property identifiers</a>.</para>
-    </summary>
+    <summary>A <b>GUID</b> that identifies the property type. This can be a custom identifier or one of the <a href="https://docs.microsoft.com//windows/desktop/TSF/predefined-properties">predefined property identifiers</a>.</summary>
   </member>
   <member name="TF_PROPERTYVAL.varValue">
-    <summary>
-      <para>A <b>VARIANT</b> that contains the value of the property specified by <b>guidId</b>. The user must know the type and format of this data.</para>
-    </summary>
+    <summary>A <b>VARIANT</b> that contains the value of the property specified by <b>guidId</b>. The user must know the type and format of this data.</summary>
   </member>
 </doc>

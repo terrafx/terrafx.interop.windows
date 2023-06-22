@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IFileSystemImage.CalculateDiscIdentifier">
-    <summary>
-      <para>Retrieves a string that identifies a disc and the sessions recorded on the disc.</para>
-    </summary>
-    <param name="discIdentifier">
-      <para>String that contains a signature that identifies the disc and the sessions on it. This string is not guaranteed to be unique between discs.</para>
-    </param>
+    <summary>Retrieves a string that identifies a disc and the sessions recorded on the disc.</summary>
+    <param name="discIdentifier">String that contains a signature that identifies the disc and the sessions on it. This string is not guaranteed to be unique between discs.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -16,43 +12,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_MULTISESSION_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_MULTISESSION_NOT_SET</b>
-            </para>
-          </description>
-          <description>
-            <para>MultisessionInterfaces property must be set prior calling this method.</para>
-            <para>Value: 0xC0AAB15D</para>
-          </description>
-        </item>
+          <description>MultisessionInterfaces property must be set prior calling this method.<para>Value: 0xC0AAB15D</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>When layering sessions on a disc, the signature acts as a key that the client can use to ensure the session order, and to distinguish sessions on disc from session images that will be laid on the disc.</para>
-      <para>You must call <see cref="IFileSystemImage.put_MultisessionInterfaces" /> prior to calling <b>CalculateDiscIdentifier</b>.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
   </member>
   <member name="IFileSystemImage.ChooseImageDefaults">
-    <summary>
-      <para>Sets the default file system types and the image size based on the current media.</para>
-    </summary>
-    <param name="discRecorder">
-      <para>An <see cref="IDiscRecorder2" /> the identifies the device that contains the current media.</para>
-    </param>
+    <summary>Sets the default file system types and the image size based on the current media.</summary>
+    <param name="discRecorder">An <see cref="IDiscRecorder2" /> the identifies the device that contains the current media.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -60,61 +49,60 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_IMAPI_RECORDER_MEDIA_INCOMPATIBLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The media is not compatible or of unknown physical format.<para>Value: 0xC0AA0203</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_IMAPI_RECORDER_MEDIA_INCOMPATIBLE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_IMAGE_TOO_BIG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Value specified for FreeMediaBlocks property is too small for estimated image size based on current data. <para>Value: 0xC0AAB121</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The media is not compatible or of unknown physical format.</para>
-            <para>Value: 0xC0AA0203</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_NO_SUPPORTED_FILE_SYSTEM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_IMAGE_TOO_BIG</b>
-            </para>
-          </description>
-          <description>
-            <para>Value specified for FreeMediaBlocks property is too small for estimated image size based on current data.</para>
-            <para>Value: 0xC0AAB121</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_NO_SUPPORTED_FILE_SYSTEM</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified disc does not contain one of the supported file systems.</para>
-            <para>Value: 0xC0AAB151</para>
-          </description>
-        </item>
+          <description>The specified disc does not contain one of the supported file systems.<para>Value: 0xC0AAB151</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFileSystemImage" />
   </member>
   <member name="IFileSystemImage.ChooseImageDefaultsForMediaType">
-    <summary>
-      <para>Sets the default file system types and the image size based on the specified media type.</para>
-    </summary>
-    <param name="value">
-      <para>Identifies the physical media type that will receive the burn image. For possible values, see the <see cref="IMAPI_MEDIA_PHYSICAL_TYPE" /> enumeration type.</para>
-    </param>
+    <summary>Sets the default file system types and the image size based on the specified media type.</summary>
+    <param name="value">Identifies the physical media type that will receive the burn image. For possible values, see the <see cref="IMAPI_MEDIA_PHYSICAL_TYPE" /> enumeration type.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -122,42 +110,37 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_INVALID_PARAM</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_INVALID_PARAM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The value specified for parameter <i>%1!ls!</i> is not valid.<para>Value: 0xC0AAB101</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The value specified for parameter <i>%1!ls!</i> is not valid.</para>
-            <para>Value: 0xC0AAB101</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_IMAGE_TOO_BIG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_IMAGE_TOO_BIG</b>
-            </para>
-          </description>
-          <description>
-            <para>Value specified for FreeMediaBlocks property is too small for estimated image size based on current data.</para>
-            <para>Value: 0xC0AAB121</para>
-          </description>
-        </item>
+          <description>Value specified for FreeMediaBlocks property is too small for estimated image size based on current data. <para>Value: 0xC0AAB121</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFileSystemImage" />
   </member>
   <member name="IFileSystemImage.CreateDirectoryItem">
-    <summary>
-      <para>Create a directory item with the specified name.</para>
-    </summary>
-    <param name="name">
-      <para>String that contains the name of the directory item to create.</para>
-    </param>
-    <param name="newItem">
-      <para>An <see cref="IFsiDirectoryItem" /> interface of the new directory item.  When done, call the <b>IFsiDirectoryItem.Release</b> method to release the interface.</para>
-    </param>
+    <summary>Create a directory item with the specified name.</summary>
+    <param name="name">String that contains the name of the directory item to create.</param>
+    <param name="newItem">An <see cref="IFsiDirectoryItem" /> interface of the new directory item. When done, call the <b>IFsiDirectoryItem.Release</b> method to release the interface.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -165,57 +148,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_INVALID_PARAM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The value specified for parameter <i>%1!ls!</i> is not valid.<para>Value: 0xC0AAB101</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_INVALID_PARAM</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The value specified for parameter <i>%1!ls!</i> is not valid.</para>
-            <para>Value: 0xC0AAB101</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Failed to allocate the required memory.</para>
-            <para>Value: 0x8007000E</para>
-          </description>
-        </item>
+          <description>Failed to allocate the required memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>After setting properties on the <see cref="IFsiDirectoryItem" /> interface, call the <see cref="IFsiDirectoryItem.Add" /> method on the parent directory item to add it to the file system image.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFsiDirectoryItem" />
   </member>
   <member name="IFileSystemImage.CreateFileItem">
-    <summary>
-      <para>Create a file item with the specified name.</para>
-    </summary>
-    <param name="name">
-      <para>String that contains the name of the file item to create.</para>
-    </param>
-    <param name="newItem">
-      <para>An <see cref="IFsiFileItem" /> interface of the new file item.  When done, call the <b>IFsiFileItem.Release</b> method to release the interface.</para>
-    </param>
+    <summary>Create a file item with the specified name.</summary>
+    <param name="name">String that contains the name of the file item to create.</param>
+    <param name="newItem">An <see cref="IFsiFileItem" /> interface of the new file item. When done, call the <b>IFsiFileItem.Release</b> method to release the interface.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -223,51 +198,47 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_INVALID_PARAM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The provided <i>name</i> is not valid.<para>Value: 0xC0AAB101</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_INVALID_PARAM</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The provided <i>name</i>  is not valid.</para>
-            <para>Value: 0xC0AAB101</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Failed to allocate the required memory.</para>
-            <para>Value: 0x8007000E</para>
-          </description>
-        </item>
+          <description>Failed to allocate the required memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>After setting properties on the <see cref="IFsiFileItem" /> interface, call the <see cref="IFsiDirectoryItem.Add" /> method on the parent directory item to add it to the file system image.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFsiFileItem" />
   </member>
   <member name="IFileSystemImage.CreateResultImage">
-    <summary>
-      <para>Create the result object that contains the file system and file data.</para>
-    </summary>
+    <summary>Create the result object that contains the file system and file data.</summary>
     <param name="resultStream">
       <para>An <see cref="IFileSystemImageResult" /> interface of the image result.</para>
       <para>Client applications can stream the image to media or other long-term storage devices, such as disk drives.</para>
@@ -279,50 +250,37 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_INVALID_PARAM</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_INVALID_PARAM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The value specified for parameter <i>%1!ls!</i> is not valid.<para>Value: 0xC0AAB101</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The value specified for parameter <i>%1!ls!</i> is not valid.</para>
-            <para>Value: 0xC0AAB101</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Failed to allocate the required memory.</para>
-            <para>Value: 0x8007000E</para>
-          </description>
-        </item>
+          <description>Failed to allocate the required memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Currently, <b>IFileSystemImage.CreateResultImage</b> will require disc media access as a result of  a previous <see cref="IFileSystemImage.IdentifyFileSystemsOnDisc" /> method call. To resolve this issue, it is recommended that another  <see cref="IFileSystemImage" /> object be created specifically for the <b>IFileSystemImage.IdentifyFileSystemsOnDisc</b> operation.</para>
-      <para>The resulting stream can be saved as an ISO file if the file system is generated in a single session and has a start address of zero.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.get_FileSystemsToCreate" />
-    <seealso cref="IFileSystemImage.put_FileSystemsToCreate" />
-    <seealso cref="IFilesystemImage.ChooseImageDefaults" />
-    <seealso cref="IFilesystemImage.ChooseImageDefaultsForMediaType" />
   </member>
   <member name="IFileSystemImage.Exists">
-    <summary>
-      <para>Checks for the existence of a given file or directory.</para>
-    </summary>
-    <param name="fullPath">
-      <para>String that contains the fully qualified path of the directory or file to check.</para>
-    </param>
-    <param name="itemType">
-      <para>Indicates if the item is a file, a directory, or does not exist. For possible values, see the <see cref="FsiItemType" /> enumeration type.</para>
-    </param>
+    <summary>Checks for the existence of a given file or directory.</summary>
+    <param name="fullPath">String that contains the fully qualified path of the directory or file to check.</param>
+    <param name="itemType">Indicates if the item is a file, a directory, or does not exist. For possible values, see the <see cref="FsiItemType" /> enumeration type.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -330,76 +288,73 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_INVALID_PARAM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The value specified for parameter <i>%1!ls!</i> is not valid.<para>Value: 0xC0AAB101</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_INVALID_PARAM</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_INVALID_PATH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The specified path is not fully qualified. The path must begin with '\\' or '/' to indicate the image root, or the images position within a directory structure.<para>Value: 0xC0AAB110</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The value specified for parameter <i>%1!ls!</i> is not valid.</para>
-            <para>Value: 0xC0AAB101</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_DIR_NOT_FOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The directory '%1!s!' not found in FileSystemImage hierarchy.<para>Value: 0xC0AAB11A</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_INVALID_PATH</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The specified path is not fully qualified. The path must begin with '\' or '/' to indicate the image root, or the images position within a directory structure.</para>
-            <para>Value: 0xC0AAB110</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_DIR_NOT_FOUND</b>
-            </para>
-          </description>
-          <description>
-            <para>The directory '%1!s!' not found in FileSystemImage hierarchy.</para>
-            <para>Value: 0xC0AAB11A</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOINTERFACE</b>
-            </para>
-          </description>
-          <description>
-            <para>The object doesn't support this interface.</para>
-            <para>Value: 0x80004002</para>
-          </description>
-        </item>
+          <description>The object doesn't support this interface.<para>Value: 0x80004002</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="FsiItemType" />
-    <seealso cref="IFileSystemImage" />
   </member>
   <member name="IFileSystemImage.GetDefaultFileSystemForImport">
-    <summary>
-      <para>Retrieves the file system to import by default.</para>
-    </summary>
-    <param name="fileSystems">
-      <para>One or more file system values. For possible values, see the <see cref="FsiFileSystems" /> enumeration type.</para>
-    </param>
-    <param name="importDefault">
-      <para>A single file system value that identifies the default file system.  The value is one of the file systems specified in <i>fileSystems</i></para>
-    </param>
+    <summary>Retrieves the file system to import by default.</summary>
+    <param name="fileSystems">One or more file system values. For possible values, see the <see cref="FsiFileSystems" /> enumeration type.</param>
+    <param name="importDefault">A single file system value that identifies the default file system. The value is one of the file systems specified in <i>fileSystems</i></param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -407,46 +362,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_INVALID_PARAM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_INVALID_PARAM</b>
-            </para>
-          </description>
-          <description>
-            <para>The value specified for parameter <i>%1!ls!</i> is not valid.</para>
-            <para>Value: 0xC0AAB101</para>
-          </description>
-        </item>
+          <description>The value specified for parameter <i>%1!ls!</i> is not valid.<para>Value: 0xC0AAB101</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Use this method to identify the default file system to use with <see cref="IFileSystemImage.ImportFileSystem" />.</para>
-      <para>To identify the supported file systems, call the <see cref="IFileSystemImage.get_FileSystemsSupported" /> method.</para>
-    </remarks>
-    <seealso cref="FsiFileSystems" />
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.ImportFileSystem" />
-    <seealso cref="IFileSystemImage.get_FileSystemsSupported" />
   </member>
   <member name="IFileSystemImage.get_BootImageOptions">
-    <summary>
-      <para>Retrieves the boot image that you want to add to the file system image.</para>
-    </summary>
-    <param name="pVal">
-      <para>An <see cref="IBootOptions" /> interface of the boot image to add to the disc. Is <b>NULL</b> if a boot image has not been specified.</para>
-    </param>
+    <summary>Retrieves the boot image that you want to add to the file system image.</summary>
+    <param name="pVal">An <see cref="IBootOptions" /> interface of the boot image to add to the disc. Is <b>NULL</b> if a boot image has not been specified.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -454,52 +399,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_BOOT_OBJECT_CONFLICT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>A boot object can only be included in an initial disc image.<para>Value: 0xC0AAB149</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_BOOT_OBJECT_CONFLICT</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_BOOT_IMAGE_DATA</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>A boot object can only be included in an initial disc image.</para>
-            <para>Value: 0xC0AAB149</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_BOOT_IMAGE_DATA</b>
-            </para>
-          </description>
-          <description>
-            <para>The boot object could not be added to the image.</para>
-            <para>Value: 0xC0AAB148</para>
-          </description>
-        </item>
+          <description>The boot object could not be added to the image.<para>Value: 0xC0AAB148</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IBootOptions" />
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.put_BootImageOptions" />
   </member>
   <member name="IFileSystemImage.get_ChangePoint">
-    <summary>
-      <para>Retrieves the change point identifier.</para>
-    </summary>
-    <param name="pVal">
-      <para>Change point identifier. The identifier is a count of the changes to the file system image since its inception.</para>
-    </param>
+    <summary>Retrieves the change point identifier.</summary>
+    <param name="pVal">Change point identifier. The identifier is a count of the changes to the file system image since its inception.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -507,34 +448,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>An application can store the value of this property prior to making a change to the file system, then at a later point pass the value to the <see cref="IFileSystemImage.RollbackToChangePoint" /> method to revert changes since that point in development.</para>
-      <para>An application can call the <see cref="IFileSystemImage.LockInChangePoint" /> method to lock the state of  a file system image at any point in its development. Once a lock is set, you cannot call <see cref="RollbackToChangePoint" /> to revert the file system image to its earlier state.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.LockInChangePoint" />
-    <seealso cref="IFileSystemImage.RollbackToChangePoint" />
   </member>
   <member name="IFileSystemImage.get_DirectoryCount">
-    <summary>
-      <para>Retrieves the number of directories in the file system image.</para>
-    </summary>
-    <param name="pVal">
-      <para>Number of directories in the file system image.</para>
-    </param>
+    <summary>Retrieves the number of directories in the file system image.</summary>
+    <param name="pVal">Number of directories in the file system image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -542,28 +473,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFileSystemImage" />
   </member>
   <member name="IFileSystemImage.get_FileCount">
-    <summary>
-      <para>Retrieves the number of files in the file system image.</para>
-    </summary>
-    <param name="pVal">
-      <para>Number of files in the file system image.</para>
-    </param>
+    <summary>Retrieves the number of files in the file system image.</summary>
+    <param name="pVal">Number of files in the file system image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -571,28 +498,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFileSystemImage" />
   </member>
   <member name="IFileSystemImage.get_FileSystemsSupported">
-    <summary>
-      <para>Retrieves the list of file system types that a client can use to build a file system image.</para>
-    </summary>
-    <param name="pVal">
-      <para>One or more file system types that a client can use to build a file system image. For possible values, see the <see cref="FsiFileSystems" /> enumeration type.</para>
-    </param>
+    <summary>Retrieves the list of file system types that a client can use to build a file system image.</summary>
+    <param name="pVal">One or more file system types that a client can use to build a file system image. For possible values, see the <see cref="FsiFileSystems" /> enumeration type.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -600,31 +523,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.GetDefaultFileSystemForImport" />
-    <seealso cref="IFileSystemImage.get_FileSystemsToCreate" />
-    <seealso cref="IFileSystemImage.put_FileSystemsToCreate" />
   </member>
   <member name="IFileSystemImage.get_FileSystemsToCreate">
-    <summary>
-      <para>Retrieves the types of file systems to create when generating the result stream.</para>
-    </summary>
-    <param name="pVal">
-      <para>One or more file system types to create when generating the result stream. For possible values, see the <see cref="FsiFileSystems" /> enumeration type.</para>
-    </param>
+    <summary>Retrieves the types of file systems to create when generating the result stream.</summary>
+    <param name="pVal">One or more file system types to create when generating the result stream. For possible values, see the <see cref="FsiFileSystems" /> enumeration type.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -632,34 +548,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>To specify the file system types, call the <see cref="IFileSystemImage.put_FileSystemsToCreate" /> method. You could also call either <see cref="IFilesystemImage.ChooseImageDefaults" /> or <see cref="IFilesystemImage.ChooseImageDefaultsForMediaType" /> to have IMAPI choose the file system for you.</para>
-      <para>To retrieve a list of supported file system types, call the <see cref="IFileSystemImage.get_FileSystemsSupported" /> method.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.CreateResultImage" />
-    <seealso cref="IFileSystemImage.put_FileSystemsToCreate" />
   </member>
   <member name="IFileSystemImage.get_FreeMediaBlocks">
-    <summary>
-      <para>Retrieves the maximum number of blocks available for the image.</para>
-    </summary>
-    <param name="pVal">
-      <para>Number of blocks to use in creating the file system image.</para>
-    </param>
+    <summary>Retrieves the maximum number of blocks available for the image.</summary>
+    <param name="pVal">Number of blocks to use in creating the file system image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -667,31 +573,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.put_FreeMediaBlocks" />
-    <seealso cref="IFilesystemImage.ChooseImageDefaults" />
-    <seealso cref="IFilesystemImage.ChooseImageDefaultsForMediaType" />
   </member>
   <member name="IFileSystemImage.get_ImportedVolumeName">
-    <summary>
-      <para>Retrieves the volume name provided from an imported file system.</para>
-    </summary>
-    <param name="pVal">
-      <para>String that contains the volume name provided from an imported file system. Is <b>NULL</b> until a file system is imported.</para>
-    </param>
+    <summary>Retrieves the volume name provided from an imported file system.</summary>
+    <param name="pVal">String that contains the volume name provided from an imported file system. Is <b>NULL</b> until a file system is imported.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -699,33 +598,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The imported volume name is provided for user information and is not automatically carried forward to subsequent sessions.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.get_VolumeName" />
-    <seealso cref="IFileSystemImage.put_VolumeName" />
   </member>
   <member name="IFileSystemImage.get_ISO9660InterchangeLevel">
-    <summary>
-      <para>Retrieves the ISO9660 compatibility level to use when creating the result image.</para>
-    </summary>
-    <param name="pVal">
-      <para>Identifies the interchange level of the ISO9660 file system.</para>
-    </param>
+    <summary>Retrieves the ISO9660 compatibility level to use when creating the result image.</summary>
+    <param name="pVal">Identifies the interchange level of the ISO9660 file system.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -733,33 +623,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For a list of supported compatibility levels, call the <see cref="IFileSystemImage.get_ISO9660InterchangeLevelsSupported" /> method.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.get_ISO9660InterchangeLevelsSupported" />
-    <seealso cref="IFileSystemImage.put_ISO9660InterchangeLevel" />
   </member>
   <member name="IFileSystemImage.get_ISO9660InterchangeLevelsSupported">
-    <summary>
-      <para>Retrieves the supported ISO9660 compatibility levels.</para>
-    </summary>
-    <param name="pVal">
-      <para>List of supported ISO9660 compatibility levels. Each item in the list is a VARIANT that identifies one supported interchange level. The variant type is <b>VT_UI4</b>. The <b>ulVal</b> member of the variant contains the compatibility level.</para>
-    </param>
+    <summary>Retrieves the supported ISO9660 compatibility levels.</summary>
+    <param name="pVal">List of supported ISO9660 compatibility levels. Each item in the list is a VARIANT that identifies one supported interchange level. The variant type is <b>VT_UI4</b>. The <b>ulVal</b> member of the variant contains the compatibility level.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -767,30 +648,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.get_ISO9660InterchangeLevel" />
-    <seealso cref="IFileSystemImage.put_ISO9660InterchangeLevel" />
   </member>
   <member name="IFileSystemImage.get_MultisessionInterfaces">
-    <summary>
-      <para>Retrieves the list of multi-session interfaces for the optical media.</para>
-    </summary>
-    <param name="pVal">
-      <para>List of multi-session interfaces for the optical media. Each element of the list is a <b>VARIANT</b> of type <b>VT_Dispatch</b>. Query the <b>pdispVal</b> member of the variant for the <see cref="IMultisession" /> interface.</para>
-    </param>
+    <summary>Retrieves the list of multi-session interfaces for the optical media.</summary>
+    <param name="pVal">List of multi-session interfaces for the optical media. Each element of the list is a <b>VARIANT</b> of type <b>VT_Dispatch</b>. Query the <b>pdispVal</b> member of the variant for the <see cref="IMultisession" /> interface.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -798,43 +673,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Failed to allocate the required memory.</para>
-            <para>Value: 0x8007000E</para>
-          </description>
-        </item>
+          <description>Failed to allocate the required memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Query the <see cref="IMultisession" /> interface for a derived <b>IMultisession</b> interface, for example, the <see cref="IMultisessionSequential" /> interface.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.put_MultisessionInterfaces" />
   </member>
   <member name="IFileSystemImage.get_Root">
-    <summary>
-      <para>Retrieves the root directory item.</para>
-    </summary>
-    <param name="pVal">
-      <para>An <see cref="IFsiDirectoryItem" /> interface of the root directory item.</para>
-    </param>
+    <summary>Retrieves the root directory item.</summary>
+    <param name="pVal">An <see cref="IFsiDirectoryItem" /> interface of the root directory item.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -842,40 +710,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Failed to allocate the required memory.</para>
-            <para>Value: 0x8007000E</para>
-          </description>
-        </item>
+          <description>Failed to allocate the required memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFsiDirectoryItem" />
   </member>
   <member name="IFileSystemImage.get_SessionStartBlock">
-    <summary>
-      <para>Retrieves the starting block address for the recording session.</para>
-    </summary>
-    <param name="pVal">
-      <para>Starting block address for the recording session.</para>
-    </param>
+    <summary>Retrieves the starting block address for the recording session.</summary>
+    <param name="pVal">Starting block address for the recording session.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -883,42 +747,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The session starting block can be set in the following ways:</para>
-      <list type="bullet">
-        <item>
-          <description>Importing a file system automatically sets the session starting block.</description>
-        </item>
-        <item>
-          <description>If the previous session is not imported, the client can call <see cref="IFileSystemImage.put_SessionStartBlock" /> to set this property.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.ImportFileSystem" />
-    <seealso cref="IFileSystemImage.ImportSpecificFileSystem" />
   </member>
   <member name="IFileSystemImage.get_StageFiles">
-    <summary>
-      <para>Indicates if the files being added to the file system image should be staged before the burn.</para>
-    </summary>
+    <summary>Indicates if the files being added to the file system image should be staged before the burn.</summary>
     <param name="pVal">
-      <para>
-        <b>VARIANT_TRUE</b> if the files being added to the file system image are required to be staged in one or more stage files before burning. Otherwise, <b>VARIANT_FALSE</b> is returned if IMAPI is permitted to optimize the image creation process by not staging the files being added to the file system image.</para>
-    </param>
+      <b>VARIANT_TRUE</b> if the files being added to the file system image are required to be staged in one or more stage files before burning. Otherwise, <b>VARIANT_FALSE</b> is returned if IMAPI is permitted to optimize the image creation process by not staging the files being added to the file system image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -926,40 +773,23 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>"Staging" is a process in which an image is created on the hard-drive, containing all files to be burned, prior to the initiation of the  burn operation.</para>
-      <para>Setting this this property to <b>VARIANT_TRUE</b> via <see cref="IFileSystemImage.put_StageFiles" /> will only affect files that are added after the property is set: those files will always be staged. Files that were not staged prior  to a specified property value of   <b>VARIANT_TRUE</b>, will not be staged.</para>
-      <para>By specifying <b>VARIANT_FALSE</b>, the file system image creation process is optimized in two ways:</para>
-      <list type="bullet">
-        <item>
-          <description>Less time is required for image generation</description>
-        </item>
-        <item>
-          <description>Less space is consumed on a local disk by IMAPI</description>
-        </item>
-      </list>
-      <para>However, in order to avoid buffer underrun problems during burning, a certain minimum throughput is required for read operations on non-staged files. In the event that file accessibility or throughput may not meet the requirements of the burner, IMAPI enforces file staging regardless of the specified property value. For example, file staging is enforced for source files from removable storage devices, such as USB Flash Disk.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.put_StageFiles" />
   </member>
   <member name="IFileSystemImage.get_StrictFileSystemCompliance">
-    <summary>
-      <para>Determines the compliance level for creating and developing the file-system image.</para>
-    </summary>
+    <summary>Determines the compliance level for creating and developing the file-system image.</summary>
     <param name="pVal">
       <para>Is VARIANT_TRUE if the file system images are created in strict compliance with applicable standards.</para>
       <para>Is VARIANT_FALSE if the compliance standards are relaxed to be compatible with IMAPI version 1.0.</para>
@@ -971,29 +801,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.put_StrictFileSystemCompliance" />
   </member>
   <member name="IFileSystemImage.get_UDFRevision">
-    <summary>
-      <para>Retrieves the UDF revision level of the imported file system image.</para>
-    </summary>
-    <param name="pVal">
-      <para>UDF revision level of the imported file system image.</para>
-    </param>
+    <summary>Retrieves the UDF revision level of the imported file system image.</summary>
+    <param name="pVal">UDF revision level of the imported file system image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -1001,32 +826,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The value is encoded according to the UDF specification, except the variable size is LONG. For example, revision level 1.02 is represented as 0x102.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.put_UDFRevision" />
   </member>
   <member name="IFileSystemImage.get_UDFRevisionsSupported">
-    <summary>
-      <para>Retrieves a list of supported UDF revision levels.</para>
-    </summary>
-    <param name="pVal">
-      <para>List of supported UDF revision levels. Each element of the list is VARIANT. The variant type is <b>VT_I4</b>. The <b>lVal</b> member of the variant contains the revision level.</para>
-    </param>
+    <summary>Retrieves a list of supported UDF revision levels.</summary>
+    <param name="pVal">List of supported UDF revision levels. Each element of the list is VARIANT. The variant type is <b>VT_I4</b>. The <b>lVal</b> member of the variant contains the revision level.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -1034,33 +851,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The value is encoded according to the UDF specification, except the variable size is LONG. For example, revision level 1.02 is represented as 0x102.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.get_UDFRevision" />
-    <seealso cref="IFileSystemImage.put_UDFRevision" />
   </member>
   <member name="IFileSystemImage.get_UsedBlocks">
-    <summary>
-      <para>Retrieves the number of blocks in use.</para>
-    </summary>
-    <param name="pVal">
-      <para>Estimated number of blocks used in the file-system image.</para>
-    </param>
+    <summary>Retrieves the number of blocks in use.</summary>
+    <param name="pVal">Estimated number of blocks used in the file-system image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -1068,28 +876,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFileSystemImage" />
   </member>
   <member name="IFileSystemImage.get_UseRestrictedCharacterSet">
-    <summary>
-      <para>Determines if the file and directory names use a restricted character.</para>
-    </summary>
-    <param name="pVal">
-      <para>Is VARIANT_TRUE if the file and directory names to add to the file system image must consist of characters that map directly to CP_ANSI (code points 32 through 127). Otherwise, VARIANT_FALSE.</para>
-    </param>
+    <summary>Determines if the file and directory names use a restricted character.</summary>
+    <param name="pVal">Is VARIANT_TRUE if the file and directory names to add to the file system image must consist of characters that map directly to CP_ANSI (code points 32 through 127). Otherwise, VARIANT_FALSE.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -1097,31 +901,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.CreateDirectoryItem" />
-    <seealso cref="IFileSystemImage.CreateFileItem" />
-    <seealso cref="IFileSystemImage.put_UseRestrictedCharacterSet" />
   </member>
   <member name="IFileSystemImage.get_VolumeName">
-    <summary>
-      <para>Retrieves the volume name for this file system image.</para>
-    </summary>
-    <param name="pVal">
-      <para>String that contains the volume name for this file system image.</para>
-    </param>
+    <summary>Retrieves the volume name for this file system image.</summary>
+    <param name="pVal">String that contains the volume name for this file system image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -1129,33 +926,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>To set the volume name, call the <see cref="IFileSystemImage.put_VolumeName" /> method.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.get_ImportedVolumeName" />
-    <seealso cref="IFileSystemImage.put_VolumeName" />
   </member>
   <member name="IFileSystemImage.get_VolumeNameISO9660">
-    <summary>
-      <para>Retrieves the volume name for the ISO9660 system image.</para>
-    </summary>
-    <param name="pVal">
-      <para>String that contains the volume name for the ISO9660 system image.</para>
-    </param>
+    <summary>Retrieves the volume name for the ISO9660 system image.</summary>
+    <param name="pVal">String that contains the volume name for the ISO9660 system image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -1163,31 +951,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.get_VolumeName" />
-    <seealso cref="IFileSystemImage.get_VolumeNameJoliet" />
-    <seealso cref="IFileSystemImage.get_VolumeNameUDF" />
   </member>
   <member name="IFileSystemImage.get_VolumeNameJoliet">
-    <summary>
-      <para>Retrieves the volume name for the Joliet system image.</para>
-    </summary>
-    <param name="pVal">
-      <para>String that contains the volume name for the Joliet system image.</para>
-    </param>
+    <summary>Retrieves the volume name for the Joliet system image.</summary>
+    <param name="pVal">String that contains the volume name for the Joliet system image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -1195,31 +976,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.get_VolumeName" />
-    <seealso cref="IFileSystemImage.get_VolumeNameISO9660" />
-    <seealso cref="IFileSystemImage.get_VolumeNameUDF" />
   </member>
   <member name="IFileSystemImage.get_VolumeNameUDF">
-    <summary>
-      <para>Retrieves the volume name for the UDF system image.</para>
-    </summary>
-    <param name="pVal">
-      <para>String that contains the volume name for the UDF system image.</para>
-    </param>
+    <summary>Retrieves the volume name for the UDF system image.</summary>
+    <param name="pVal">String that contains the volume name for the UDF system image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -1227,31 +1001,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.get_VolumeName" />
-    <seealso cref="IFileSystemImage.get_VolumeNameISO9660" />
-    <seealso cref="IFileSystemImage.get_VolumeNameJoliet" />
   </member>
   <member name="IFileSystemImage.get_WorkingDirectory">
-    <summary>
-      <para>Retrieves the temporary directory in which stash files are built.</para>
-    </summary>
-    <param name="pVal">
-      <para>String that contains the path to the temporary directory.</para>
-    </param>
+    <summary>Retrieves the temporary directory in which stash files are built.</summary>
+    <param name="pVal">String that contains the path to the temporary directory.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -1259,32 +1026,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.put_WorkingDirectory" />
   </member>
   <member name="IFileSystemImage.IdentifyFileSystemsOnDisc">
-    <summary>
-      <para>Retrieves a list of the different types of file systems on the optical media.</para>
-    </summary>
-    <param name="discRecorder">
-      <para>An <see cref="IDiscRecorder2" /> interface that identifies the recording device that contains the media. If this parameter is <b>NULL</b>, the <i>discRecorder</i>  specified in <see cref="IMultisession" /> will be used.</para>
-    </param>
-    <param name="fileSystems">
-      <para>One or more files systems on the disc. For possible values, see <see cref="FsiFileSystems" /> enumeration type.</para>
-    </param>
+    <summary>Retrieves a list of the different types of file systems on the optical media.</summary>
+    <param name="discRecorder">An <see cref="IDiscRecorder2" /> interface that identifies the recording device that contains the media. If this parameter is <b>NULL</b>, the <i>discRecorder</i> specified in <see cref="IMultisession" /> will be used.</param>
+    <param name="fileSystems">One or more files systems on the disc. For possible values, see <see cref="FsiFileSystems" /> enumeration type.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -1292,33 +1052,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Client applications can call <see cref="IFileSystemImage.GetDefaultFileSystemForImport" /> with the value returned by this method to determine the type of file system to import.</para>
-    </remarks>
-    <seealso cref="FsiFileSystems" />
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IMultisession" />
   </member>
   <member name="IFileSystemImage.ImportFileSystem">
-    <summary>
-      <para>Imports the default file system on the current disc.</para>
-    </summary>
-    <param name="importedFileSystem">
-      <para>Identifies the imported file system. For possible values, see the <see cref="FsiFileSystems" /> enumeration type.</para>
-    </param>
+    <summary>Imports the default file system on the current disc.</summary>
+    <param name="importedFileSystem">Identifies the imported file system. For possible values, see the <see cref="FsiFileSystems" /> enumeration type.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -1326,142 +1077,132 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_MULTISESSION_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>MultisessionInterfaces property must be set prior calling this method.<para>Value: 0xC0AAB15D</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_MULTISESSION_NOT_SET</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_EMPTY_DISC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Optical media is empty.<para>Value: 0xC0AAB150</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>MultisessionInterfaces property must be set prior calling this method.</para>
-            <para>Value: 0xC0AAB15D</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_NO_SUPPORTED_FILE_SYSTEM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The specified disc does not contain one of the supported file systems. Value: 0xC0AAB151<div><b>Note</b>   The file systems are likely supported for the operation, but at the low levels, IMAPI2 when calling ImportFileSystem, it has generic exception/error handling and reports back error 0xC0AAB151. If the disc is not acquired for exclusive access or otherwise access denied, this error won't be reported.</div></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_EMPTY_DISC</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_BOOT_OBJECT_CONFLICT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>A boot object can only be included in an initial disc image.<para>Value: 0xC0AAB149</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Optical media is empty.</para>
-            <para>Value: 0xC0AAB150</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Failed to allocate the required memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_NO_SUPPORTED_FILE_SYSTEM</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_IMAGE_TOO_BIG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Value specified for FreeMediaBlocks property is too small for estimated image size based on current data. <para>Value: 0xC0AAB121</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The specified disc does not contain one of the supported file systems.</para>
-            <para>Value: 0xC0AAB151</para>
-            <para>
-              <b>Note</b>
-            </para>
-            <para>The file systems are likely supported for the operation, but at the low levels, IMAPI2 when calling ImportFileSystem, it has generic exception/error handling and reports back error 0xC0AAB151. If the disc is not acquired for exclusive access or otherwise access denied, this error won't be reported.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_INVALID_PARAM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The value specified for parameter <i>%1!ls!</i> is not valid.<para>Value: 0xC0AAB101</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_BOOT_OBJECT_CONFLICT</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_NO_COMPATIBLE_MULTISESSION_TYPE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>IMAPI supports none of the multisession type(s) provided on the current media.<para>Value: 0xC0AAB15C</para><div><b>Note</b>  <see cref="IFileSystemImage.ImportFileSystem" /> method returns this error if there is no media in the recording device.</div></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>A boot object can only be included in an initial disc image.</para>
-            <para>Value: 0xC0AAB149</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_INCOMPATIBLE_PREVIOUS_SESSION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Failed to allocate the required memory.</para>
-            <para>Value: 0x8007000E</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_IMAGE_TOO_BIG</b>
-            </para>
-          </description>
-          <description>
-            <para>Value specified for FreeMediaBlocks property is too small for estimated image size based on current data.</para>
-            <para>Value: 0xC0AAB121</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_INVALID_PARAM</b>
-            </para>
-          </description>
-          <description>
-            <para>The value specified for parameter <i>%1!ls!</i> is not valid.</para>
-            <para>Value: 0xC0AAB101</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_NO_COMPATIBLE_MULTISESSION_TYPE</b>
-            </para>
-          </description>
-          <description>
-            <para>IMAPI supports none of the multisession type(s) provided on the current media.</para>
-            <para>Value: 0xC0AAB15C</para>
-            <para>
-              <b>Note</b>  <see cref="IFileSystemImage.ImportFileSystem" />  method returns this error if there is no media in the recording device.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_INCOMPATIBLE_PREVIOUS_SESSION</b>
-            </para>
-          </description>
-          <description>
-            <para>Operation failed because of incompatible layout of the previous session imported from the medium.</para>
-            <para>Value: 0xC0AAB133</para>
-          </description>
-        </item>
+          <description>Operation failed because of incompatible layout of the previous session imported from the medium.<para>Value: 0xC0AAB133</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>You must call <see cref="IFileSystemImage.put_MultisessionInterfaces" /> prior to calling <b>IFileSystemImage.ImportFileSystem</b>. Additionally, it is recommended that  <see cref="IDiscFormat2.get_MediaHeuristicallyBlank" /> is called before <b>IFileSystemImage.put_MultisessionInterfaces</b> to verify that the media is not blank.</para>
-      <para>If the disc contains more than one file system, only one file system is imported. This method chooses the file system to import in the following order: UDF, Joliet, ISO 9660.  The import includes transferring directories and files to the in-memory file system structure.</para>
-      <para>You may call this method at any time during the construction of the in-memory file system.  If, during import, a file or directory already exists in the in-memory copy, the in-memory version will be retained; the imported file will be discarded.</para>
-      <para>To determine which file system is the default file system for the disc, call the <see cref="IFileSystemImage.GetDefaultFileSystemForImport" /> method.</para>
-      <para>This method only reads the file information. If the item is a file, the file data is copied when calling <see cref="IFsiDirectoryItem.AddFile" />, <see cref="IFsiDirectoryItem.AddTree" />, or <see cref="IFsiDirectoryItem.Add" /> method.</para>
-      <para>This method returns <b>IMAPI_E_NO_SUPPORTED_FILE_SYSTEM</b> if a supported file system is not found in the last session.  Additionally, this method returns <b>IMAPI_E_INCOMPATIBLE_PREVIOUS_SESSION</b> if the layout of the file system  in the last session is incompatible with the layout used by IMAPI for the creation of requested file systems for the result image. For more details see the <see cref="IFileSystemImage.put_FileSystemsToCreate" /> method documentation.</para>
-    </remarks>
-    <seealso cref="FsiFileSystems" />
-    <seealso cref="IFileSystemImage" />
   </member>
   <member name="IFileSystemImage.ImportSpecificFileSystem">
-    <summary>
-      <para>Import a specific file system from disc.</para>
-    </summary>
-    <param name="fileSystemToUse">
-      <para>Identifies the file system to import. For possible values, see the <see cref="FsiFileSystems" /> enumeration type.</para>
-    </param>
+    <summary>Import a specific file system from disc.</summary>
+    <param name="fileSystemToUse">Identifies the file system to import. For possible values, see the <see cref="FsiFileSystems" /> enumeration type.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -1469,123 +1210,119 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_INVALID_PARAM</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_INVALID_PARAM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The value specified for parameter <i>%1!ls!</i> is not valid.<para>Value: 0xC0AAB101</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The value specified for parameter <i>%1!ls!</i> is not valid.</para>
-            <para>Value: 0xC0AAB101</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_MULTISESSION_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>MultisessionInterfaces property must be set prior calling this method.<para>Value: 0xC0AAB15D</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_MULTISESSION_NOT_SET</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_BOOT_OBJECT_CONFLICT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>A boot object can only be included in an initial disc image.<para>Value: 0xC0AAB149</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>MultisessionInterfaces property must be set prior calling this method.</para>
-            <para>Value: 0xC0AAB15D</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_EMPTY_DISC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Optical media is empty.<para>Value: 0xC0AAB150</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_BOOT_OBJECT_CONFLICT</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Failed to allocate the required memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>A boot object can only be included in an initial disc image.</para>
-            <para>Value: 0xC0AAB149</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_NO_COMPATIBLE_MULTISESSION_TYPE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>IMAPI supports none of the multisession type(s) provided on the current media.<para>Value: 0xC0AAB15C</para><div><b>Note</b>  <see cref="IFileSystemImage.ImportFileSystem" /> method returns this error if there is no media in the recording device.</div></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_EMPTY_DISC</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_INCOMPATIBLE_PREVIOUS_SESSION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Operation failed because of incompatible layout of the previous session imported from the medium.<para>Value: 0xC0AAB133</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Optical media is empty.</para>
-            <para>Value: 0xC0AAB150</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_FILE_SYSTEM_NOT_FOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The specified disc does not contain a '%1!ls!' file system.<para>Value: 0xC0AAB152</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_INVALID_PATH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Failed to allocate the required memory.</para>
-            <para>Value: 0x8007000E</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_NO_COMPATIBLE_MULTISESSION_TYPE</b>
-            </para>
-          </description>
-          <description>
-            <para>IMAPI supports none of the multisession type(s) provided on the current media.</para>
-            <para>Value: 0xC0AAB15C</para>
-            <para>
-              <b>Note</b>  <see cref="IFileSystemImage.ImportFileSystem" />  method returns this error if there is no media in the recording device.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_INCOMPATIBLE_PREVIOUS_SESSION</b>
-            </para>
-          </description>
-          <description>
-            <para>Operation failed because of incompatible layout of the previous session imported from the medium.</para>
-            <para>Value: 0xC0AAB133</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_FILE_SYSTEM_NOT_FOUND</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified disc does not contain a '%1!ls!' file system.</para>
-            <para>Value: 0xC0AAB152</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_INVALID_PATH</b>
-            </para>
-          </description>
-          <description>
-            <para>The file system specified for import contains an invalid file name.</para>
-            <para>Value: 0xC0AAB110</para>
-          </description>
-        </item>
+          <description>The file system specified for import contains an invalid file name.<para>Value: 0xC0AAB110</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>You must call <see cref="IFileSystemImage.put_MultisessionInterfaces" /> prior to calling <b>IFileSystemImage.ImportSpecificFileSystem</b>. Additionally, it is recommended that  <see cref="IDiscFormat2.get_MediaHeuristicallyBlank" /> is called before <b>IFileSystemImage.put_MultisessionInterfaces</b> to verify that the media is not blank.</para>
-      <para>You may call this method at any time during the construction of the in-memory file system.  If, during import, a file or directory already exists in the in-memory copy, the in-memory version will be retained; the imported file will be discarded.</para>
-      <para>On re-writable media (DVD+/-RW, DVDRAM, BD-RE), import or burning a second session is not support if the first session has an ISO9660 file system, due to file system limitations.</para>
-      <para>This method only reads the file information. If the item is a file, the file data is copied when calling <see cref="IFsiDirectoryItem.AddFile" />, <see cref="IFsiDirectoryItem.AddTree" />, or <see cref="IFsiDirectoryItem.Add" /> method.</para>
-      <para>this method returns <b>IMAPI_E_INCOMPATIBLE_PREVIOUS_SESSION</b> if the layout of the file system  in the last session is incompatible with the layout used by IMAPI for the creation of requested file systems for the result image. For more details see the <see cref="IFileSystemImage.put_FileSystemsToCreate" /> method documentation.
-If the file system specified by <i>fileSystemToUse</i> has not been found, this method returns <b>IMAPI_E_FILE_SYSTEM_NOT_FOUND</b>.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
   </member>
   <member name="IFileSystemImage.LockInChangePoint">
-    <summary>
-      <para>Locks the file system information at the current change-point level.</para>
-    </summary>
+    <summary>Locks the file system information at the current change-point level.</summary>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -1593,33 +1330,24 @@ If the file system specified by <i>fileSystemToUse</i> has not been found, this 
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_FSI_INTERNAL_ERROR</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_FSI_INTERNAL_ERROR</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Internal error occurred: <i>%1!ls!</i>.</para>
-          </description>
-        </item>
+          <description>Internal error occurred: <i>%1!ls!</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Once the change point is locked, rollback to earlier change points is not permitted.</para>
-      <para>Locking the change point does not change the <see cref="IFileSystemImage.get_ChangePoint" /> property.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.RollbackToChangePoint" />
-    <seealso cref="IFileSystemImage.get_ChangePoint" />
   </member>
   <member name="IFileSystemImage.put_BootImageOptions">
-    <summary>
-      <para>Sets the boot image that you want to add to the file-system image. This method creates a complete copy of the passed-in boot options by copying the stream from the supplied <see cref="IBootOptions" /> interface.</para>
-    </summary>
-    <param name="newVal">
-      <para>An <see cref="IBootOptions" /> interface of the boot image that you want to add to the file-system image. Can be <b>NULL</b>.</para>
-    </param>
+    <summary>Sets the boot image that you want to add to the file-system image. This method creates a complete copy of the passed-in boot options by copying the stream from the supplied <see cref="IBootOptions" /> interface.</summary>
+    <param name="newVal">An <see cref="IBootOptions" /> interface of the boot image that you want to add to the file-system image. Can be <b>NULL</b>.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -1627,44 +1355,36 @@ If the file system specified by <i>fileSystemToUse</i> has not been found, this 
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_BOOT_OBJECT_CONFLICT</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_BOOT_OBJECT_CONFLICT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>A boot object can only be included in an initial disc image.<para>Value: 0xC0AAB149</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>A boot object can only be included in an initial disc image.</para>
-            <para>Value: 0xC0AAB149</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_BOOT_IMAGE_DATA</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_BOOT_IMAGE_DATA</b>
-            </para>
-          </description>
-          <description>
-            <para>The boot object could not be added to the image.</para>
-            <para>Value: 0xC0AAB148</para>
-          </description>
-        </item>
+          <description>The boot object could not be added to the image.<para>Value: 0xC0AAB148</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>You can specify a boot image only if the file system image has no previous sessions. The boot image must start at the first sector of the disc.</para>
-    </remarks>
-    <seealso cref="IBootOptions" />
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.get_BootImageOptions" />
   </member>
   <member name="IFileSystemImage.put_FileSystemsToCreate">
-    <summary>
-      <para>Sets the file systems to create when generating the result stream.</para>
-    </summary>
-    <param name="newVal">
-      <para>One or more file systems to create when generating the result stream. For possible values, see the <see cref="FsiFileSystems" /> enumeration type.</para>
-    </param>
+    <summary>Sets the file systems to create when generating the result stream.</summary>
+    <param name="newVal">One or more file systems to create when generating the result stream. For possible values, see the <see cref="FsiFileSystems" /> enumeration type.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -1672,86 +1392,83 @@ If the file system specified by <i>fileSystemToUse</i> has not been found, this 
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_INVALID_PARAM</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_INVALID_PARAM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The value specified for parameter <i>%1!ls!</i> is not valid.<para>Value: 0xC0AAB101</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The value specified for parameter <i>%1!ls!</i> is not valid.</para>
-            <para>Value: 0xC0AAB101</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_TOO_MANY_DIRS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>This file system image has too many directories for the <i>%1!ls!</i> file system.<para>Value: 0xC0AAB130</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_TOO_MANY_DIRS</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_FILE_SYSTEM_CHANGE_NOT_ALLOWED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>You cannot change the file system specified for creation, because the file system in the imported session and the one in the new session do not match.<para>Value: 0xC0AAB163L</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>This file system image has too many directories for the <i>%1!ls!</i> file system.</para>
-            <para>Value: 0xC0AAB130</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_ISO9660_LEVELS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>ISO9660 is limited to 8 levels of directories.<para>Value: 0xC0AAB131</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_FILE_SYSTEM_CHANGE_NOT_ALLOWED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_INCOMPATIBLE_PREVIOUS_SESSION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>You cannot change the file system specified for creation, because the file system from the imported session and the file system in the current session do not match.<para>Value: 0xC0AAB133</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>You cannot change the file system specified for creation, because the file system in the imported session and the one in the new session do not match.</para>
-            <para>Value: 0xC0AAB163L</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_S_IMAGE_FEATURE_NOT_SUPPORTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_ISO9660_LEVELS</b>
-            </para>
-          </description>
-          <description>
-            <para>ISO9660 is limited to 8 levels of directories.</para>
-            <para>Value: 0xC0AAB131</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_INCOMPATIBLE_PREVIOUS_SESSION</b>
-            </para>
-          </description>
-          <description>
-            <para>You cannot change the file system specified for creation, because the file system from the imported session and the file system in the current session do not match.</para>
-            <para>Value: 0xC0AAB133</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_S_IMAGE_FEATURE_NOT_SUPPORTED</b>
-            </para>
-          </description>
-          <description>
-            <para>This feature is not supported for the current file system revision. The image will be created without this feature.</para>
-            <para>Value: 0x00AAB15FL</para>
-          </description>
-        </item>
+          <description>This feature is not supported for the current file system revision. The image will be created without this feature.<para>Value: 0x00AAB15FL</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method returns <b>IMAPI_E_INCOMPATIBLE_PREVIOUS_SESSION</b> if the previous session was imported  using <see cref="IFileSystemImage.ImportFileSystem" /> or <see cref="IFileSystemImage.ImportSpecificFileSystem" /> and the layout of that session is incompatible with the layout used by IMAPI for the file systems identified by the specified <i>newVal</i> in <b>IFileSystemImage.put_FileSystemToCreate</b>.</para>
-      <para>You can change the file system only when the result stream is not active.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.CreateResultImage" />
-    <seealso cref="IFileSystemImage.get_FileSystemsToCreate" />
   </member>
   <member name="IFileSystemImage.put_FreeMediaBlocks">
-    <summary>
-      <para>Sets the maximum number of blocks available for the image.</para>
-    </summary>
+    <summary>Sets the maximum number of blocks available for the image.</summary>
     <param name="newVal">
       <para>Number of blocks to use in creating the file system image.</para>
       <para>By default, 332,800 blocks are used to create the file system image. This value assumes a capacity of 74 minutes of audio per 650MB disc.</para>
@@ -1764,29 +1481,24 @@ If the file system specified by <i>fileSystemToUse</i> has not been found, this 
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_IMAGE_TOO_BIG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_IMAGE_TOO_BIG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Value specified for FreeMediaBlocks property is too small for estimated image size based on current data.</para>
-            <para>Value: 0xC0AAB121</para>
-          </description>
-        </item>
+          <description>Value specified for FreeMediaBlocks property is too small for estimated image size based on current data. <para>Value: 0xC0AAB121</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.get_FreeMediaBlocks" />
   </member>
   <member name="IFileSystemImage.put_ISO9660InterchangeLevel">
-    <summary>
-      <para>Sets the ISO9660 compatibility level of the file system image.</para>
-    </summary>
-    <param name="newVal">
-      <para>ISO9660 compatibility level of the file system image.</para>
-    </param>
+    <summary>Sets the ISO9660 compatibility level of the file system image.</summary>
+    <param name="newVal">ISO9660 compatibility level of the file system image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -1794,34 +1506,24 @@ If the file system specified by <i>fileSystemToUse</i> has not been found, this 
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_INVALID_PARAM</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_INVALID_PARAM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The value specified for parameter <i>%1!ls!</i> is not valid.</para>
-            <para>Value: 0xC0AAB101</para>
-          </description>
-        </item>
+          <description>The value specified for parameter <i>%1!ls!</i> is not valid.<para>Value: 0xC0AAB101</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>To determine the supported compatibility levels, call the <see cref="IFileSystemImage.get_ISO9660InterchangeLevelsSupported" /> method.</para>
-      <para>This property is meaningful only if you specified FsiFileSystemISO9660 when calling <see cref="IFileSystemImage.put_FileSystemsToCreate" />.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.get_ISO9660InterchangeLevel" />
-    <seealso cref="IFileSystemImage.get_ISO9660InterchangeLevelsSupported" />
   </member>
   <member name="IFileSystemImage.put_MultisessionInterfaces">
-    <summary>
-      <para>Sets the list of multi-session interfaces for the optical media.</para>
-    </summary>
-    <param name="newVal">
-      <para>List of multi-session  interfaces for the optical media. Each element of the list is a VARIANT whose type is <b>VT_DISPATCH</b>. Query the multi-session interface for its <b>IDispatch</b> interface and set the <b>pdispVal</b> member of the variant to the <b>IDispatch</b> interface.</para>
-    </param>
+    <summary>Sets the list of multi-session interfaces for the optical media.</summary>
+    <param name="newVal">List of multi-session interfaces for the optical media. Each element of the list is a VARIANT whose type is <b>VT_DISPATCH</b>. Query the multi-session interface for its <b>IDispatch</b> interface and set the <b>pdispVal</b> member of the variant to the <b>IDispatch</b> interface.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -1829,128 +1531,100 @@ If the file system specified by <i>fileSystemToUse</i> has not been found, this 
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_INCOMPATIBLE_MULTISESSION_TYPE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>IMAPI does not support the multisession type requested.<para>Value: 0xC0AAB15B</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_INCOMPATIBLE_MULTISESSION_TYPE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_IMPORT_MEDIA_NOT_ALLOWED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>IMAPI does not allow multi-session with the current media type.<para>Value: 0xC0AAB159</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>IMAPI does not support the multisession type requested.</para>
-            <para>Value: 0xC0AAB15B</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_NO_COMPATIBLE_MULTISESSION_TYPE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>IMAPI supports none of the multisession type(s) provided on the current media.<para>Value: 0xC0AAB15C</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_IMPORT_MEDIA_NOT_ALLOWED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_BAD_MULTISESSION_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One of multisession parameters cannot be retrieved or has a wrong value.<para>Value: 0xC0AAB162</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>IMAPI does not allow multi-session with the current media type.</para>
-            <para>Value: 0xC0AAB159</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_FSI_INTERNAL_ERROR</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Internal error occurred: %1!ls!.<para>Value: 0xC0AAB100</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_NO_COMPATIBLE_MULTISESSION_TYPE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_IMPORT_SEEK_FAILURE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>IMAPI supports none of the multisession type(s) provided on the current media.</para>
-            <para>Value: 0xC0AAB15C</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_BAD_MULTISESSION_PARAMETER</b>
-            </para>
-          </description>
-          <description>
-            <para>One of multisession parameters cannot be retrieved or has a wrong value.</para>
-            <para>Value: 0xC0AAB162</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_FSI_INTERNAL_ERROR</b>
-            </para>
-          </description>
-          <description>
-            <para>Internal error occurred: %1!ls!.</para>
-            <para>Value: 0xC0AAB100</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_IMPORT_SEEK_FAILURE</b>
-            </para>
-          </description>
-          <description>
-            <para>Cannot seek to block %1!I64d! on source disc. This value is also returned if the optical media is blank.</para>
-            <para>Value: 0xC0AAB156</para>
-          </description>
-        </item>
-      </list>
-      <para>
-        <b>Note</b>  Values returned by the  IUnknown.QueryInterface method may also be returned here.</para>
-    </returns>
-    <remarks>
-      <para>This method validates that the multi-session type is compatible. The method succeeds if either</para>
-      <list type="bullet">
-        <item>
-          <description>The list contains a single derived <see cref="IMultisession" /> interface with <see cref="IMultisession.put_InUse" /> set to VARIANT_TRUE and if the multi-session type is supported on the current media and supported by the <see cref="IFileSystemImage" /> implementation.</description>
-        </item>
-        <item>
-          <description>The list contains no derived <see cref="IMultisession" /> interfaces whose <see cref="IMultisession.put_InUse" /> property is set to VARIANT_TRUE, but contains at least one derived <b>IMultisession</b> that is supported on current media and supported by the <see cref="IFileSystemImage" /> implementation.</description>
-        </item>
-      </list>
-      <para>Unless the media is overwritable (i.e. DVD+/-RW, BD-RE, etc..), this method will fail if the media is blank. Failure will also occur if the list contains more than one <see cref="IMultisession" /> interface whose <see cref="IMultisession.put_InUse" /> property is set to VARIANT_TRUE, or no derived <b>IMultisession</b> interface is supported by the <see cref="IFileSystemImage" /> implementation. Currently, only the <see cref="IMultisessionSequential" /> interface which derives from <b>IMultisession</b> is supported by <b>IFileSystemImage</b> implementation.</para>
-      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/imapi/creating-a-multisession-disc">Creating a Multisession Disc</a>.</para>
-    </remarks>
-    <seealso cref="IDiscFormat2Data.get_MultisessionInterfaces" />
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.get_MultisessionInterfaces" />
-    <seealso cref="IMultisession" />
+          <description>Cannot seek to block %1!I64d! on source disc. This value is also returned if the optical media is blank.<para>Value: 0xC0AAB156</para></description>
+        </listheader>
+      </list> <div><b>Note</b>  Values returned by the IUnknown.QueryInterface method may also be returned here.</div></returns>
   </member>
   <member name="IFileSystemImage.put_SessionStartBlock">
-    <summary>
-      <para>Sets the starting block address for the recording session.</para>
-    </summary>
-    <param name="newVal">
-      <para>Block number of the new recording session.</para>
-    </param>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
-    </returns>
-    <remarks>
-      <para>If the previous session is imported, the session start block cannot be changed manually.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.get_SessionStartBlock" />
+    <summary>Sets the starting block address for the recording session.</summary>
+    <param name="newVal">Block number of the new recording session.</param>
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation.</returns>
   </member>
   <member name="IFileSystemImage.put_StageFiles">
-    <summary>
-      <para>Determines if the files being added to the file system image should be staged before the burn.</para>
-    </summary>
-    <param name="newVal">
-      <para>Set to VARIANT_TRUE to force files added to the file system image to be staged in one or more stage files before burning. Otherwise, set to VARIANT_FALSE if staging is not required and higher performance is desired.</para>
-    </param>
+    <summary>Determines if the files being added to the file system image should be staged before the burn.</summary>
+    <param name="newVal">Set to VARIANT_TRUE to force files added to the file system image to be staged in one or more stage files before burning. Otherwise, set to VARIANT_FALSE if staging is not required and higher performance is desired.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -1958,61 +1632,33 @@ If the file system specified by <i>fileSystemToUse</i> has not been found, this 
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Not implemented.</para>
-            <para>Value: 0x80004001</para>
-          </description>
-        </item>
+          <description>Not implemented.<para>Value: 0x80004001</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>"Staging" is a process in which an image is created on the hard-drive, containing all files to be burned, prior to the initiation of the  burn operation.</para>
-      <para>Setting this this property to <b>VARIANT_TRUE</b> will only affect files that are added after the property is set: those files will always be staged. Files that were not staged prior  to a specified property value of   <b>VARIANT_TRUE</b>, will not be staged.</para>
-      <para>By specifying <b>VARIANT_FALSE</b>, the file system image creation process is optimized in two ways:</para>
-      <list type="bullet">
-        <item>
-          <description>Less time is required for image generation</description>
-        </item>
-        <item>
-          <description>Less space is consumed on a local disk by IMAPI</description>
-        </item>
-      </list>
-      <para>However, in order to avoid buffer underrun problems during burning, a certain minimum throughput is required for read operations on non-staged files. In the event that file accessibility or throughput may not meet the requirements of the burner, IMAPI enforces file staging regardless of the specified property value. For example, file staging is enforced for source files from removable storage devices, such as USB Flash Disk.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.get_StageFiles" />
   </member>
   <member name="IFileSystemImage.put_StrictFileSystemCompliance">
-    <summary>
-      <para>Determines the compliance level for creating and developing the file-system image.</para>
-    </summary>
+    <summary>Determines the compliance level for creating and developing the file-system image.</summary>
     <param name="newVal">
-      <para>Set to VARIANT_TRUE to create the file system images in strict compliance with applicable standards.  You can specify VARIANT_TRUE only when the file system image is empty.</para>
+      <para>Set to VARIANT_TRUE to create the file system images in strict compliance with applicable standards. You can specify VARIANT_TRUE only when the file system image is empty.</para>
       <para>Set to VARIANT_FALSE to relax the compliance standards to be compatible with IMAPI version 1.0.</para>
       <para>The default is VARIANT_FALSE.</para>
     </param>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
-    </returns>
-    <remarks>
-      <para>If this property is VARIANT_TRUE and a method requests an action that violates one of the file system constraints, an exception is thrown.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.get_StrictFileSystemCompliance" />
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation.</returns>
   </member>
   <member name="IFileSystemImage.put_UDFRevision">
-    <summary>
-      <para>Sets the UDF revision level of the file system image.</para>
-    </summary>
-    <param name="newVal">
-      <para>A hexadecimal number representing the UDF revision level.</para>
-    </param>
+    <summary>Sets the UDF revision level of the file system image.</summary>
+    <param name="newVal">A hexadecimal number representing the UDF revision level.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -2020,53 +1666,31 @@ If the file system specified by <i>fileSystemToUse</i> has not been found, this 
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_INVALID_PARAM</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_INVALID_PARAM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The value specified for parameter <i>%1!ls!</i> is not valid.</para>
-            <para>Value: 0xC0AAB101</para>
-          </description>
-        </item>
+          <description>The value specified for parameter <i>%1!ls!</i> is not valid.<para>Value: 0xC0AAB101</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The value is encoded according to the UDF specification, except the variable size is LONG. For example, revision level 1.02 is represented as 0x102.</para>
-      <para>This property is used to specify the UDF revision in a new file system image. If the file system is imported, you cannot call this method to change the UDF revision level.</para>
-      <para>To determine the supported UDF revision levels, call the <see cref="IFileSystemImage.get_UDFRevisionsSupported" /> method.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.get_UDFRevision" />
   </member>
   <member name="IFileSystemImage.put_UseRestrictedCharacterSet">
     <summary>
-      <para>Determines if file and directory names should be restricted to using only CP_ANSI characters. <b>Note</b>  <b>IFileSystemImage.put_UseRestrictedCharacterSet</b> has been deprecated. Implementing this method is not recommended.</para>
+      <para>Determines if file and directory names should be restricted to using only CP_ANSI characters. <div><b>Note</b>  <b>IFileSystemImage.put_UseRestrictedCharacterSet</b> has been deprecated. Implementing this method is not recommended.</div></para>
     </summary>
-    <param name="newVal">
-      <para>Set to VARIANT_TRUE to restrict file and directory names to use only CP_ANSI characters. Otherwise, VARIANT_FALSE. The default is VARIANT_FALSE.</para>
-    </param>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
-    </returns>
-    <remarks>
-      <para>Setting this property does not affect files or directories already in the file system image.</para>
-      <para>You can change the value of this property only when the result stream is not active.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.CreateDirectoryItem" />
-    <seealso cref="IFileSystemImage.CreateFileItem" />
-    <seealso cref="IFileSystemImage.get_UseRestrictedCharacterSet" />
+    <param name="newVal">Set to VARIANT_TRUE to restrict file and directory names to use only CP_ANSI characters. Otherwise, VARIANT_FALSE. The default is VARIANT_FALSE.</param>
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation.</returns>
   </member>
   <member name="IFileSystemImage.put_VolumeName">
-    <summary>
-      <para>Sets the volume name for this file system image.</para>
-    </summary>
-    <param name="newVal">
-      <para>String that contains the volume name for this file system image.</para>
-    </param>
+    <summary>Sets the volume name for this file system image.</summary>
+    <param name="newVal">String that contains the volume name for this file system image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -2074,63 +1698,24 @@ If the file system specified by <i>fileSystemToUse</i> has not been found, this 
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_INVALID_VOLUME_NAME</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_INVALID_VOLUME_NAME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The value specified for parameter <i>%1!ls!</i> is not valid.</para>
-            <para>Value: 0xC0AAB101</para>
-          </description>
-        </item>
+          <description>The value specified for parameter <i>%1!ls!</i> is not valid.<para>Value: 0xC0AAB101</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The string is limited to 15 characters. For ISO 9660 discs, the volume name can use the following characters:</para>
-      <list type="bullet">
-        <item>
-          <description>"A" through "Z"</description>
-        </item>
-        <item>
-          <description>"0" through "9"</description>
-        </item>
-        <item>
-          <description>"_" (underscore)</description>
-        </item>
-      </list>
-      <para>For Joliet and UDF discs, the volume name can use the following characters:</para>
-      <list type="bullet">
-        <item>
-          <description>"a" through "z"</description>
-        </item>
-        <item>
-          <description>"A" through "Z"</description>
-        </item>
-        <item>
-          <description>"0" through "9"</description>
-        </item>
-        <item>
-          <description>"." (period)</description>
-        </item>
-        <item>
-          <description>"_" (underscore)</description>
-        </item>
-      </list>
-      <para>If you do not specify a volume name, a default volume name is generated using the system date and time when the result object is created.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.get_ImportedVolumeName" />
-    <seealso cref="IFileSystemImage.get_VolumeName" />
   </member>
   <member name="IFileSystemImage.put_WorkingDirectory">
-    <summary>
-      <para>Sets the temporary directory in which stash files are built.</para>
-    </summary>
-    <param name="newVal">
-      <para>String that contains the path to the temporary working directory. The default is the current temp directory.</para>
-    </param>
+    <summary>Sets the temporary directory in which stash files are built.</summary>
+    <param name="newVal">String that contains the path to the temporary working directory. The default is the current temp directory.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -2138,56 +1723,48 @@ If the file system specified by <i>fileSystemToUse</i> has not been found, this 
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_INVALID_PARAM</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_INVALID_PARAM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The value specified for parameter <i>%1!ls!</i> is not valid.<para>Value: 0xC0AAB101</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The value specified for parameter <i>%1!ls!</i> is not valid.</para>
-            <para>Value: 0xC0AAB101</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_INVALID_WORKING_DIRECTORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The working directory <i>%1!ls!</i> is not valid.<para>Value: 0xC0AAB140</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_INVALID_WORKING_DIRECTORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_WORKING_DIRECTORY_SPACE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The working directory <i>%1!ls!</i> is not valid.</para>
-            <para>Value: 0xC0AAB140</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_WORKING_DIRECTORY_SPACE</b>
-            </para>
-          </description>
-          <description>
-            <para>Cannot set working directory to <i>%1!ls!</i>. Space available is <i>%2!I64d!</i> bytes, approximately <i>%3!I64d!</i> bytes required.</para>
-            <para>Value: 0xC0AAB141</para>
-          </description>
-        </item>
+          <description>Cannot set working directory to <i>%1!ls!</i>. Space available is <i>%2!I64d!</i> bytes, approximately <i>%3!I64d!</i> bytes required. <para>Value: 0xC0AAB141</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Stash files are the temporary files used to build the file-system image.</para>
-      <para>An exception results if the existing stash files cannot move to the new working directory.</para>
-      <para>You cannot change the working directory if a result stream exists for the file-system image.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.get_WorkingDirectory" />
   </member>
   <member name="IFileSystemImage.RollbackToChangePoint">
-    <summary>
-      <para>Reverts the image back to the specified change point.</para>
-    </summary>
-    <param name="changePoint">
-      <para>Change point that identifies the target state for rollback.</para>
-    </param>
+    <summary>Reverts the image back to the specified change point.</summary>
+    <param name="changePoint">Change point that identifies the target state for rollback.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -2195,45 +1772,36 @@ If the file system specified by <i>fileSystemToUse</i> has not been found, this 
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_TOO_MANY_DIRS</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_TOO_MANY_DIRS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>This file system image has too many directories for the <i>%1!ls!</i> file system.<para>Value: 0xC0AAB130</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>This file system image has too many directories for the <i>%1!ls!</i> file system.</para>
-            <para>Value: 0xC0AAB130</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_ISO9660_LEVELS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_ISO9660_LEVELS</b>
-            </para>
-          </description>
-          <description>
-            <para>ISO9660 is limited to 8 levels of directories.</para>
-            <para>Value: 0xC0AAB131</para>
-          </description>
-        </item>
+          <description>ISO9660 is limited to 8 levels of directories.<para>Value: 0xC0AAB131</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Typically, an application calls the <see cref="IFileSystemImage.get_ChangePoint" /> method and stores the change point value prior to making a change to the file system. If necessary, you can pass the change point value to this method to revert changes since that point in development.</para>
-      <para>An application can call the <see cref="IFileSystemImage.LockInChangePoint" /> method to lock the state of  a file system image at any point in its development. After a lock is set, you cannot call this method to revert the file system image to its earlier state.</para>
-    </remarks>
-    <seealso cref="IFileSystemImage" />
-    <seealso cref="IFileSystemImage.LockInChangePoint" />
-    <seealso cref="IFileSystemImage.get_ChangePoint" />
   </member>
   <member name="IFileSystemImage.SetMaxMediaBlocksFromDevice">
-    <summary>
-      <para>Set maximum number of blocks available based on the capabilities of the recorder.</para>
-    </summary>
-    <param name="discRecorder">
-      <para>An <see cref="IDiscRecorder2" /> interface that identifies the recording device from which you want to set the maximum number of blocks available.</para>
-    </param>
+    <summary>Set maximum number of blocks available based on the capabilities of the recorder.</summary>
+    <param name="discRecorder">An <see cref="IDiscRecorder2" /> interface that identifies the recording device from which you want to set the maximum number of blocks available.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -2241,30 +1809,32 @@ If the file system specified by <i>fileSystemToUse</i> has not been found, this 
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_FSI_INTERNAL_ERROR</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_FSI_INTERNAL_ERROR</b>
-            </para>
-          </description>
-          <description>
-            <para>Internal error occurred: <i>%1!ls!</i>.</para>
-          </description>
-        </item>
+          <description>Internal error occurred: <i>%1!ls!</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFileSystemImage" />
   </member>
   <member name="IFileSystemImage">
     <summary>
@@ -2272,9 +1842,5 @@ If the file system specified by <i>fileSystemToUse</i> has not been found, this 
       <para>The file system directory hierarchy is built by adding directories and files to the root or child directories.</para>
       <para>To create an instance of this interface, call the <b>CoCreateInstance</b> function. Use__uuidof(MsftFileSystemImage) for the class identifier and __uuidof(IFileSystemImage) for the interface identifier.</para>
     </summary>
-    <remarks>
-      <para>To create the <b>CFileSystemImage</b> object in a script, use IMAPI2.MsftFileSystemImage as the program identifier when calling <b>CreateObject</b>.</para>
-    </remarks>
-    <seealso cref="DFileSystemImageEvents" />
   </member>
 </doc>

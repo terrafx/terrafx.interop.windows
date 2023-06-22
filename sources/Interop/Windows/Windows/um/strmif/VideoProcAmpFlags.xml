@@ -4,25 +4,14 @@
 <doc>
   <member name="VideoProcAmpFlags">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>VideoProcAmpFlags</b> enumeration indicates whether a particular video property is controlled manually or automatically.</para>
     </summary>
-    <remarks>
-      <para>The following flags defined in KsMedia.h are equivalent to the values in <b>VideoProcAmpFlags</b>:</para>
-      <code>#define KSPROPERTY_VIDEOPROCAMP_FLAGS_AUTO        0X0001L
-#define KSPROPERTY_VIDEOPROCAMP_FLAGS_MANUAL      0X0002L
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso cref="IAMVideoProcAmp Interface" />
   </member>
   <member name="VideoProcAmpFlags.VideoProcAmp_Flags_Auto">
-    <summary>
-      <para>The setting is controlled automatically.</para>
-    </summary>
+    <summary>The setting is controlled automatically.</summary>
   </member>
   <member name="VideoProcAmpFlags.VideoProcAmp_Flags_Manual">
-    <summary>
-      <para>The setting is controlled manually.</para>
-    </summary>
+    <summary>The setting is controlled manually.</summary>
   </member>
 </doc>

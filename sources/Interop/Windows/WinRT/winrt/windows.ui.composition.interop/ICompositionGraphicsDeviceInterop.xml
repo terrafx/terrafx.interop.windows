@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ICompositionGraphicsDeviceInterop.GetRenderingDevice">
+    <summary>Gets the rendering device.</summary>
+    <param name="value">The retrieved rendering device.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</returns>
+  </member>
+  <member name="ICompositionGraphicsDeviceInterop.SetRenderingDevice">
+    <summary>Sets the rendering device.</summary>
+    <param name="value">The new rendering device.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</returns>
+  </member>
+  <member name="ICompositionGraphicsDeviceInterop">
+    <summary>A native interoperation interface that allows getting and setting the graphics device. This is interface is available in C++ only.</summary>
+  </member>
+</doc>

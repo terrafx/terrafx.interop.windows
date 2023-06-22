@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_XML_READER_PROPERTIES">
-    <summary>
-      <para>A structure that is used to specify a set of <see cref="WS_XML_READER_PROPERTY" />s.</para>
-    </summary>
+    <summary>A structure that is used to specify a set of <see cref="WS_XML_READER_PROPERTY" />s.</summary>
   </member>
   <member name="WS_XML_READER_PROPERTIES.properties">
-    <summary>
-      <para>An array of properties.  The number of elements in the array is specified
-using the propertyCount parameter.  This field may be <b>NULL</b> if the propertyCount
-is 0.</para>
-    </summary>
+    <summary>An array of properties. The number of elements in the array is specified using the propertyCount parameter. This field may be <b>NULL</b> if the propertyCount is 0.</summary>
   </member>
   <member name="WS_XML_READER_PROPERTIES.propertyCount">
-    <summary>
-      <para>The number of elements in the properties array.</para>
-    </summary>
+    <summary>The number of elements in the properties array.</summary>
   </member>
 </doc>

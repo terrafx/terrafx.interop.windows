@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDxcContainerReflection.FindFirstPartKind">
+    <summary>Retrieves the index of the first part that has the specified kind.</summary>
+    <param name="kind">The kind to search for.</param>
+    <param name="pResult">A pointer to the variable in which to receive the index of the matching part.</param>
+    <returns>
+      <b>S_OK</b> on success, or <b>E_NOT_VALID_STATE</b> if a container has not been loaded by using <see cref="Load" />, or <b>HRESULT_FROM_WIN32(ERROR_NOT_FOUND)</b> if there's no part with the specified kind, or another standard <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDxcContainerReflection.GetPartContent">
+    <summary>Retrieves the content of the specified part.</summary>
+    <param name="idx">The index of the part to retrieve.</param>
+    <param name="ppResult">A pointer to the variable in which to receive the result.</param>
+    <returns>
+      <b>S_OK</b> on success, or <b>E_NOT_VALID_STATE</b> if a container has not been loaded by using <see cref="Load" />, or <b>E_BOUND</b> if <i>idx</i> is out of bounds, or another standard <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDxcContainerReflection.GetPartCount">
+    <summary>Retrieves the number of parts in the container.</summary>
+    <param name="pResult">A pointer to the variable in which to receive the result.</param>
+    <returns>
+      <b>S_OK</b> on success, or <b>E_NOT_VALID_STATE</b> if a container has not been loaded by using <see cref="Load" />, or another standard <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDxcContainerReflection.GetPartKind">
+    <summary>Retrieves the kind of the specified part.</summary>
+    <param name="idx">The index of the part to query about.</param>
+    <param name="pResult">A pointer to the variable in which to receive the result.</param>
+    <returns>
+      <b>S_OK</b> on success, or <b>E_NOT_VALID_STATE</b> if a container has not been loaded by using <see cref="Load" />, or <b>E_BOUND</b> if <i>idx</i> is out of bounds, or another standard <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDxcContainerReflection.GetPartReflection">
+    <summary>Retrieves the reflection interface for the specified part.</summary>
+    <param name="idx">The index of the part to search for.</param>
+    <param name="iid">The IID of the interface to retrieve. Use an interface such as <see cref="ID3D12ShaderReflection" />.</param>
+    <param name="ppvObject">A pointer to the variable in which to receive the index of the matching part.</param>
+    <returns>
+      <b>S_OK</b> on success, or <b>E_NOT_VALID_STATE</b> if a container has not been loaded by using <see cref="Load" />, or <b>E_BOUND</b> if <i>idx</i> is out of bounds, or another standard <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDxcContainerReflection.Load">
+    <summary>Chooses the container to perform reflection on.</summary>
+    <param name="pContainer">The container to load. If you pass NULL, then this instance will release any held resources.</param>
+  </member>
+  <member name="IDxcContainerReflection">
+    <summary>
+      <para>Interface representing DxcContainerReflection.</para>
+      <para>To obtain an instance of this interface, call <see cref="DxcCreateInstance" /> with <b>CLSID_DxcContainerReflection</b>.</para>
+    </summary>
+  </member>
+</doc>

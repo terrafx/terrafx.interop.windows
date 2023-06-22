@@ -3,45 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPropertyBag.Read">
-    <summary>
-      <para>Reads the named property into a caller-initialized VARIANT.</para>
-    </summary>
-    <param name="pszPropName">
-      <para>The address of the name of the property to read. This cannot be NULL.</para>
-    </param>
-    <param name="pVar">
-      <para>The address of the caller-initialized VARIANT that receives the property value on output. The function sets the type field and the value field in the VARIANT before it returns. If the caller initialized the <code>pVar-&gt;vt</code> field on entry, the property bag attempts to change its corresponding value to this type. If the caller sets <code>pVar-&gt;vt</code> to VT_EMPTY, the property bag can use whatever type is convenient.</para>
-    </param>
-    <param name="pErrorLog">
-      <para>The address of the caller's error log in which the property bag stores any errors that occur during reads. This can be NULL; in which case, the caller does not receive errors.</para>
-    </param>
-    <returns>
-      <para>An HRESULT</para>
-    </returns>
-    <remarks>
-      <para>The <b>Read</b> method tells the property bag to read the property named in <i>pszPropName</i> to the caller-initialized VARIANT in <i>pVar</i>. Errors are logged in the error log that is pointed to by <i>pErrorLog</i>. When <code>pVar-&gt;vt</code> specifies another object pointer (VT_UNKNOWN), the property bag is responsible for creating and initializing the object described by <i>pszPropName</i>.</para>
-      <para>E_NOTIMPL is not a valid return code, because any object that implements this interface must support the entire functionality of the interface.</para>
-    </remarks>
+    <summary>Reads the named property into a caller-initialized VARIANT.</summary>
+    <param name="pszPropName">The address of the name of the property to read. This cannot be NULL.</param>
+    <param name="pVar">The address of the caller-initialized VARIANT that receives the property value on output. The function sets the type field and the value field in the VARIANT before it returns. If the caller initialized the <code>pVar-&gt;vt</code> field on entry, the property bag attempts to change its corresponding value to this type. If the caller sets <code>pVar-&gt;vt</code> to VT_EMPTY, the property bag can use whatever type is convenient.</param>
+    <param name="pErrorLog">The address of the caller's error log in which the property bag stores any errors that occur during reads. This can be NULL; in which case, the caller does not receive errors.</param>
+    <returns>An HRESULT</returns>
   </member>
   <member name="IPropertyBag.Write">
-    <summary>
-      <para>Save the named property in a caller-initialized VARIANT.</para>
-    </summary>
-    <param name="pszPropName">
-      <para>The address of a string containing the name of the property to write. This cannot be NULL.</para>
-    </param>
-    <param name="pVar">
-      <para>The address of the caller-initialized VARIANT that holds the property value to save. The caller owns this VARIANT, and is responsible for all of its allocations. That is, the property bag does not attempt to free data in the VARIANT.</para>
-    </param>
-    <remarks>
-      <para>The <b>Write</b> method tells the property bag to save the property named with <i>pszPropName</i> by using the type and value in the caller-initialized VARIANT in <i>pVar</i>. In some cases, the caller might be telling the property bag to save another object, for example, when <code>pVar-&gt;vt</code> is VT_UNKNOWN. In such cases, the property bag queries this object pointer for a persistence interface, such as IPersistStream or IPersistPropertyBag, and has that object save its data as well. Usually this results in the property bag having some byte array for this object, which can be saved as encoded text, such as hexadecimal string, MIME, and so on. When the property bag is later used to reinitialize a control, the client that owns the property bag must re-create the object when the caller asks for it, initializing that object with the previously saved bits.</para>
-      <para>This allows efficient persistence operations for Binary Large Object (BLOB) properties, such as a picture, where the owner of the property bag tells the picture object (which is managed as a property in the control that is saved) to save to a specific location. This avoids potential extra copy operations that might be involved with other property-based persistence mechanisms.</para>
-      <para>E_NOTIMPL is not a valid return code, because any object that implements this interface must support the entire functionality of the interface.</para>
-    </remarks>
+    <summary>Save the named property in a caller-initialized VARIANT.</summary>
+    <param name="pszPropName">The address of a string containing the name of the property to write. This cannot be NULL.</param>
+    <param name="pVar">The address of the caller-initialized VARIANT that holds the property value to save. The caller owns this VARIANT, and is responsible for all of its allocations. That is, the property bag does not attempt to free data in the VARIANT.</param>
   </member>
   <member name="IPropertyBag">
-    <summary>
-      <para>Provides an object with a property bag in which the object can save its properties persistently.</para>
-    </summary>
+    <summary>Provides an object with a property bag in which the object can save its properties persistently.</summary>
   </member>
 </doc>

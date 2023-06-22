@@ -3,11 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IViewStateIdentityItem">
-    <summary>
-      <para>Provides a canonical persistence item, an item for which view customizations will be remembered.</para>
-    </summary>
-    <remarks>
-      <para>This interface provides only the methods of the <see cref="IRelatedItem" /> interface, from which it inherits.</para>
-    </remarks>
+    <summary>Provides a canonical persistence item, an item for which view customizations will be remembered.</summary>
   </member>
 </doc>

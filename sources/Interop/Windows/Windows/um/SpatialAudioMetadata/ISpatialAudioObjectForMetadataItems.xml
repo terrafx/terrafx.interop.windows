@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISpatialAudioObjectForMetadataItems.GetSpatialAudioMetadataItems">
-    <summary>
-      <para>Gets a pointer to the <see cref="ISpatialAudioMetadataItems" /> object which stores metadata items for  the  <see cref="ISpatialAudioObjectForMetadataItems" />.</para>
-    </summary>
-    <param name="metadataItems">
-      <para>Receives a pointer to the <see cref="ISpatialAudioMetadataItems" /> associated with the <see cref="ISpatialAudioObjectForMetadataItems" />.</para>
-    </param>
+    <summary>Gets a pointer to the <see cref="ISpatialAudioMetadataItems" /> object which stores metadata items for the <see cref="ISpatialAudioObjectForMetadataItems" />.</summary>
+    <param name="metadataItems">Receives a pointer to the <see cref="ISpatialAudioMetadataItems" /> associated with the <see cref="ISpatialAudioObjectForMetadataItems" />.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -16,32 +12,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The supplied pointer is invalid.</para>
-          </description>
-        </item>
+          <description>The supplied pointer is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The client must free this object when it is no longer being used by calling <see cref="Release" />.</para>
-    </remarks>
-    <seealso cref="ISpatialAudioObjectForMetadataItems" />
   </member>
   <member name="ISpatialAudioObjectForMetadataItems">
     <summary>
-      <para>Used to write spatial audio metadata for applications that require multiple metadata items per buffer with frame-accurate placement.  The data written via this interface must adhere to the format defined by the metadata format specified in the <see cref="SpatialAudioObjectRenderStreamForMetadataActivationParams" /> when the <see cref="ISpatialAudioObjectRenderStreamForMetadata" /> was created.</para>
-      <para>This interface is a part of  Windows Sonic, Microsoft’s audio platform for more immersive audio which includes integrated spatial sound on Xbox and Windows.</para>
+      <para>Used to write spatial audio metadata for applications that require multiple metadata items per buffer with frame-accurate placement. The data written via this interface must adhere to the format defined by the metadata format specified in the <see cref="SpatialAudioObjectRenderStreamForMetadataActivationParams" /> when the <see cref="ISpatialAudioObjectRenderStreamForMetadata" /> was created.</para>
+      <para>This interface is a part of Windows Sonic, Microsoft’s audio platform for more immersive audio which includes integrated spatial sound on Xbox and Windows.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>Note</b>  Many of the methods provided by this interface are implemented in the inherited <see cref="ISpatialAudioObjectBase" /> interface.</para>
-    </remarks>
-    <seealso cref="ISpatialAudioObjectBase" />
   </member>
 </doc>

@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_MEDIA_ENGINE_SEEK_MODE">
-    <summary>
-      <para>Defines values for the media engine seek mode.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is used with the <see cref="MediaEngineEx.SetCurrentTimeEx" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Defines values for the media engine seek mode.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_SEEK_MODE.MF_MEDIA_ENGINE_SEEK_MODE_NORMAL">
-    <summary>
-      <para>Specifies normal seek.</para>
-    </summary>
+    <summary>Specifies normal seek.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_SEEK_MODE.MF_MEDIA_ENGINE_SEEK_MODE_APPROXIMATE">
-    <summary>
-      <para>Specifies an approximate seek.</para>
-    </summary>
+    <summary>Specifies an approximate seek.</summary>
   </member>
 </doc>

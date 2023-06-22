@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_CONSERVATIVE_RASTERIZATION_TIER">
-    <summary>
-      <para>Specifies if the hardware and driver support conservative rasterization and at what tier level.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-enums">Core Enumerations</seealso>
+    <summary>Specifies if the hardware and driver support conservative rasterization and at what tier level.</summary>
   </member>
   <member name="D3D11_CONSERVATIVE_RASTERIZATION_TIER.D3D11_CONSERVATIVE_RASTERIZATION_NOT_SUPPORTED">
-    <summary>
-      <para>Conservative rasterization isn't supported.</para>
-    </summary>
+    <summary>Conservative rasterization isn't supported.</summary>
   </member>
   <member name="D3D11_CONSERVATIVE_RASTERIZATION_TIER.D3D11_CONSERVATIVE_RASTERIZATION_TIER_1">
-    <summary>
-      <para>Tier_1 conservative rasterization is supported.</para>
-    </summary>
+    <summary>Tier_1 conservative rasterization is supported.</summary>
   </member>
   <member name="D3D11_CONSERVATIVE_RASTERIZATION_TIER.D3D11_CONSERVATIVE_RASTERIZATION_TIER_2">
-    <summary>
-      <para>Tier_2 conservative rasterization is supported.</para>
-    </summary>
+    <summary>Tier_2 conservative rasterization is supported.</summary>
   </member>
   <member name="D3D11_CONSERVATIVE_RASTERIZATION_TIER.D3D11_CONSERVATIVE_RASTERIZATION_TIER_3">
-    <summary>
-      <para>Tier_3 conservative rasterization is supported.</para>
-    </summary>
+    <summary>Tier_3 conservative rasterization is supported.</summary>
   </member>
 </doc>

@@ -3,94 +3,54 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRBITBLT">
-    <summary>
-      <para>The <b>EMRBITBLT</b> structure contains members for the <see cref="BitBlt" /> enhanced metafile record. Note that graphics device interface (GDI) converts the device-dependent bitmap into a device-independent bitmap (DIB) before storing it in the metafile record.</para>
-    </summary>
-    <seealso cref="BITMAPINFO" />
-    <seealso cref="BitBlt" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
-    <seealso cref="RGB" />
+    <summary>The <b>EMRBITBLT</b> structure contains members for the <see cref="BitBlt" /> enhanced metafile record. Note that graphics device interface (GDI) converts the device-dependent bitmap into a device-independent bitmap (DIB) before storing it in the metafile record.</summary>
   </member>
   <member name="EMRBITBLT.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMRBITBLT.rclBounds">
-    <summary>
-      <para>Bounding rectangle, in device units.</para>
-    </summary>
+    <summary>Bounding rectangle, in device units.</summary>
   </member>
   <member name="EMRBITBLT.xDest">
-    <summary>
-      <para>Logical x-coordinate of the upper-left corner of the destination rectangle.</para>
-    </summary>
+    <summary>Logical x-coordinate of the upper-left corner of the destination rectangle.</summary>
   </member>
   <member name="EMRBITBLT.yDest">
-    <summary>
-      <para>Logical y-coordinate of the upper-left corner of the destination rectangle.</para>
-    </summary>
+    <summary>Logical y-coordinate of the upper-left corner of the destination rectangle.</summary>
   </member>
   <member name="EMRBITBLT.cxDest">
-    <summary>
-      <para>Logical width of the destination rectangle.</para>
-    </summary>
+    <summary>Logical width of the destination rectangle.</summary>
   </member>
   <member name="EMRBITBLT.cyDest">
-    <summary>
-      <para>Logical height of the destination rectangle.</para>
-    </summary>
+    <summary>Logical height of the destination rectangle.</summary>
   </member>
   <member name="EMRBITBLT.dwRop">
-    <summary>
-      <para>Raster-operation code. These codes define how the color data of the source rectangle is to be combined with the color data of the destination rectangle to achieve the final color.</para>
-    </summary>
+    <summary>Raster-operation code. These codes define how the color data of the source rectangle is to be combined with the color data of the destination rectangle to achieve the final color.</summary>
   </member>
   <member name="EMRBITBLT.xSrc">
-    <summary>
-      <para>Logical x-coordinate of the upper-left corner of the source rectangle.</para>
-    </summary>
+    <summary>Logical x-coordinate of the upper-left corner of the source rectangle.</summary>
   </member>
   <member name="EMRBITBLT.ySrc">
-    <summary>
-      <para>Logical y-coordinate of the upper-left corner of the source rectangle.</para>
-    </summary>
+    <summary>Logical y-coordinate of the upper-left corner of the source rectangle.</summary>
   </member>
   <member name="EMRBITBLT.xformSrc">
-    <summary>
-      <para>World-space to page-space transformation of the source device context.</para>
-    </summary>
+    <summary>World-space to page-space transformation of the source device context.</summary>
   </member>
   <member name="EMRBITBLT.crBkColorSrc">
-    <summary>
-      <para>Background color (the RGB value) of the source device context. To make a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> value, use the <see cref="RGB" /> macro.</para>
-    </summary>
+    <summary>Background color (the RGB value) of the source device context. To make a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> value, use the <see cref="RGB" /> macro.</summary>
   </member>
   <member name="EMRBITBLT.iUsageSrc">
-    <summary>
-      <para>Value of the <b>bmiColors</b> member of the <see cref="BITMAPINFO" /> structure. The <b>iUsageSrc</b> member can be either the DIB_PAL_COLORS or DIB_RGB_COLORS value.</para>
-    </summary>
+    <summary>Value of the <b>bmiColors</b> member of the <see cref="BITMAPINFO" /> structure. The <b>iUsageSrc</b> member can be either the DIB_PAL_COLORS or DIB_RGB_COLORS value.</summary>
   </member>
   <member name="EMRBITBLT.offBmiSrc">
-    <summary>
-      <para>Offset to source <see cref="BITMAPINFO" /> structure.</para>
-    </summary>
+    <summary>Offset to source <see cref="BITMAPINFO" /> structure.</summary>
   </member>
   <member name="EMRBITBLT.cbBmiSrc">
-    <summary>
-      <para>Size of source <see cref="BITMAPINFO" /> structure.</para>
-    </summary>
+    <summary>Size of source <see cref="BITMAPINFO" /> structure.</summary>
   </member>
   <member name="EMRBITBLT.offBitsSrc">
-    <summary>
-      <para>Offset to source bitmap bits.</para>
-    </summary>
+    <summary>Offset to source bitmap bits.</summary>
   </member>
   <member name="EMRBITBLT.cbBitsSrc">
-    <summary>
-      <para>Size of source bitmap bits.</para>
-    </summary>
+    <summary>Size of source bitmap bits.</summary>
   </member>
 </doc>

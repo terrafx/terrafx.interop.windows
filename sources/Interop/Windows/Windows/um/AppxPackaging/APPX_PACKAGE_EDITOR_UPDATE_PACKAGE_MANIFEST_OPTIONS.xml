@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS">
-    <summary>
-      <para>Options for app manifest validation when updating the manifest.</para>
-    </summary>
-    <seealso cref="UpdatePackageManifest" />
+    <summary>Options for app manifest validation when updating the manifest.</summary>
   </member>
   <member name="APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS.APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTION_NONE">
-    <summary>
-      <para>No options.</para>
-    </summary>
+    <summary>No options.</summary>
   </member>
   <member name="APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS.APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTION_SKIP_VALIDATION">
-    <summary>
-      <para>Skip app package manifest validation.</para>
-    </summary>
+    <summary>Skip app package manifest validation.</summary>
   </member>
   <member name="APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS.APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTION_LOCALIZED">
-    <summary>
-      <para>The app package manifest is localized.</para>
-    </summary>
+    <summary>The app package manifest is localized.</summary>
   </member>
 </doc>

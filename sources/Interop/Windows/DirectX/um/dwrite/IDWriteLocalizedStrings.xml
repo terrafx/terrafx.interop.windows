@@ -3,261 +3,43 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteLocalizedStrings.FindLocaleName">
-    <summary>
-      <para>Gets the zero-based index of the locale name/string pair with the specified locale name.</para>
-    </summary>
-    <param name="localeName">
-      <para>Type: <b>const WCHAR*</b></para>
-      <para>A null-terminated array of characters containing the locale name to look for.</para>
-    </param>
-    <param name="index">
-      <para>Type: <b>UINT32*</b></para>
-      <para>The zero-based index of the locale name/string pair. This method initializes <i>index</i> to <b>UINT_MAX</b>.</para>
-    </param>
-    <param name="exists">
-      <para>Type: <b>BOOL*</b></para>
-      <para>When this method returns, contains <b>TRUE</b> if the locale name exists; otherwise, <b>FALSE</b>. This method initializes <i>exists</i> to <b>FALSE</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If the specified locale name does not exist, the return value is <b>S_OK</b>,
-but <i>index</i> is <b>UINT_MAX</b> and <i>exists</i> is <b>FALSE</b>.</para>
-    </returns>
-    <remarks>
-      <para>Note that if the locale name does not exist, the return value is a success and the <i>exists</i> parameter is <b>FALSE</b>. If you are getting the font family name for a font and the specified locale name does not exist, one option is to set the index to 0 as shown below.  There is always at least one locale for a font family.</para>
-      <code>UINT32 index = 0;
-BOOL exists = false;
-
-wchar_t localeName[LOCALE_NAME_MAX_LENGTH];
-
-if (SUCCEEDED(hr))
-{
-    // Get the default locale for this user.
-    int defaultLocaleSuccess = GetUserDefaultLocaleName(localeName, LOCALE_NAME_MAX_LENGTH);
-
-    // If the default locale is returned, find that locale name, otherwise use "en-us".
-    if (defaultLocaleSuccess)
-    {
-        hr = pFamilyNames-&gt;FindLocaleName(localeName, &amp;amp;amp;amp;amp;amp;index, &amp;amp;amp;amp;amp;amp;exists);
-    }
-    if (SUCCEEDED(hr) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; !exists) // if the above find did not find a match, retry with US English
-    {
-        hr = pFamilyNames-&gt;FindLocaleName(L"en-us", &amp;amp;amp;amp;amp;amp;index, &amp;amp;amp;amp;amp;amp;exists);
-    }
-}
-
-// If the specified locale doesn't exist, select the first on the list.
-if (!exists)
-    index = 0;
-
-</code>
-    </remarks>
-    <seealso cref="IDWriteLocalizedStrings" />
+    <summary>Gets the zero-based index of the locale name/string pair with the specified locale name.</summary>
+    <param name="localeName">A null-terminated array of characters containing the locale name to look for.</param>
+    <param name="index">The zero-based index of the locale name/string pair. This method initializes <i>index</i> to <b>UINT_MAX</b>.</param>
+    <param name="exists">When this method returns, contains <b>TRUE</b> if the locale name exists; otherwise, <b>FALSE</b>. This method initializes <i>exists</i> to <b>FALSE</b>.</param>
+    <returns>If the specified locale name does not exist, the return value is <b>S_OK</b>, but <i>index</i> is <b>UINT_MAX</b> and <i>exists</i> is <b>FALSE</b>.</returns>
   </member>
   <member name="IDWriteLocalizedStrings.GetCount">
-    <summary>
-      <para>Gets the number of language/string pairs.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of language/string pairs.</para>
-    </returns>
-    <seealso cref="IDWriteLocalizedStrings" />
+    <summary>Gets the number of language/string pairs.</summary>
+    <returns>The number of language/string pairs.</returns>
   </member>
   <member name="IDWriteLocalizedStrings.GetLocaleName">
-    <summary>
-      <para>Copies the locale name with the specified index to the specified array.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT32</b></para>
-      <para>Zero-based index of the locale name to be retrieved.</para>
-    </param>
-    <param name="localeName">
-      <para>Type: <b>WCHAR*</b></para>
-      <para>When this method returns, contains a character array, which is null-terminated, that receives the locale name from the language/string pair.  The buffer allocated for this array must be at least the size of <i>size</i>, in element count.</para>
-    </param>
-    <param name="size">
-      <para>Type: <b>UINT32</b></para>
-      <para>The size of the array in characters. The size must include space for the terminating
-null character.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteLocalizedStrings" />
+    <summary>Copies the locale name with the specified index to the specified array.</summary>
+    <param name="index">Zero-based index of the locale name to be retrieved.</param>
+    <param name="localeName">When this method returns, contains a character array, which is null-terminated, that receives the locale name from the language/string pair. The buffer allocated for this array must be at least the size of <i>size</i>, in element count.</param>
+    <param name="size">The size of the array in characters. The size must include space for the terminating null character.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteLocalizedStrings.GetLocaleNameLength">
-    <summary>
-      <para>Gets the length in characters (not including the null terminator) of the locale name with the specified index.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT32</b></para>
-      <para>Zero-based index of the locale name to be retrieved.</para>
-    </param>
-    <param name="length">
-      <para>Type: <b>UINT32*</b></para>
-      <para>When this method returns, contains the length in characters of the locale name, not including the null terminator.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteLocalizedStrings" />
+    <summary>Gets the length in characters (not including the null terminator) of the locale name with the specified index.</summary>
+    <param name="index">Zero-based index of the locale name to be retrieved.</param>
+    <param name="length">When this method returns, contains the length in characters of the locale name, not including the null terminator.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteLocalizedStrings.GetString">
-    <summary>
-      <para>Copies the string with the specified index to the specified array.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT32</b></para>
-      <para>The zero-based index of the language/string pair to be examined.</para>
-    </param>
-    <param name="stringBuffer">
-      <para>Type: <b>WCHAR*</b></para>
-      <para>The null terminated array of characters that receives the string from the language/string pair.  The buffer allocated for this array should be at least the size of <i>size</i>. <see cref="GetStringLength" /> can be used to get the size of the array before using this method.</para>
-    </param>
-    <param name="size">
-      <para>Type: <b>UINT32</b></para>
-      <para>The size of the array in characters. The size must include space for the terminating
-null character. <see cref="GetStringLength" /> can be used to get the size of the array before using this method.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The string returned must be allocated by the caller.  You can get the size of the string by using the <see cref="GetStringLength" /> method prior to calling <b>GetString</b>, as shown in the following example.</para>
-      <code>UINT32 length = 0;
-
-// Get the string length.
-if (SUCCEEDED(hr))
-{
-    hr = pFamilyNames-&gt;GetStringLength(index, &amp;amp;amp;amp;amp;amp;length);
-}
-
-// Allocate a string big enough to hold the name.
-wchar_t* name = new (std.nothrow) wchar_t[length+1];
-if (name == NULL)
-{
-    hr = E_OUTOFMEMORY;
-}
-
-// Get the family name.
-if (SUCCEEDED(hr))
-{
-    hr = pFamilyNames-&gt;GetString(index, name, length+1);
-}
-
-</code>
-    </remarks>
-    <seealso cref="IDWriteLocalizedStrings" />
+    <summary>Copies the string with the specified index to the specified array.</summary>
+    <param name="index">The zero-based index of the language/string pair to be examined.</param>
+    <param name="stringBuffer">The null terminated array of characters that receives the string from the language/string pair. The buffer allocated for this array should be at least the size of <i>size</i>. <see cref="GetStringLength" /> can be used to get the size of the array before using this method.</param>
+    <param name="size">The size of the array in characters. The size must include space for the terminating null character. <see cref="GetStringLength" /> can be used to get the size of the array before using this method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteLocalizedStrings.GetStringLength">
-    <summary>
-      <para>Gets the length in characters (not including the null terminator) of the string with the specified index.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT32</b></para>
-      <para>A zero-based index of the language/string pair.</para>
-    </param>
-    <param name="length">
-      <para>Type: <b>UINT32*</b></para>
-      <para>The length in characters of the string, not including the null terminator, from the language/string pair.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Use <b>GetStringLength</b> to get the string length before calling the <see cref="IDWriteLocalizedStrings.GetString" /> method, as shown in the following code.</para>
-      <code>UINT32 length = 0;
-
-// Get the string length.
-if (SUCCEEDED(hr))
-{
-    hr = pFamilyNames-&gt;GetStringLength(index, &amp;amp;amp;amp;amp;amp;length);
-}
-
-// Allocate a string big enough to hold the name.
-wchar_t* name = new (std.nothrow) wchar_t[length+1];
-if (name == NULL)
-{
-    hr = E_OUTOFMEMORY;
-}
-
-// Get the family name.
-if (SUCCEEDED(hr))
-{
-    hr = pFamilyNames-&gt;GetString(index, name, length+1);
-}
-
-</code>
-    </remarks>
-    <seealso cref="IDWriteLocalizedStrings" />
+    <summary>Gets the length in characters (not including the null terminator) of the string with the specified index.</summary>
+    <param name="index">A zero-based index of the language/string pair.</param>
+    <param name="length">The length in characters of the string, not including the null terminator, from the language/string pair.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteLocalizedStrings">
-    <summary>
-      <para>Represents a collection of strings indexed by locale name.</para>
-    </summary>
-    <remarks>
-      <para>The set of strings represented by an <b>IDWriteLocalizedStrings</b> are indexed by a zero based <i>UINT32</i> number that maps to a locale.  The numeric index for a specific locale is retreived by using the <see cref="FindLocaleName" /> method.</para>
-      <para>A common use for the <b>IDWriteLocalizedStrings</b> interface is to hold a list of localized font family names created by using the <see cref="IDWriteFontFamily.GetFamilyNames" /> method.  The following example shows how to get the family name for the "en-us" locale.</para>
-      <code>IDWriteLocalizedStrings* pFamilyNames = NULL;
-
-// Get a list of localized strings for the family name.
-if (SUCCEEDED(hr))
-{
-    hr = pFontFamily-&gt;GetFamilyNames(&amp;amp;amp;amp;amp;amp;pFamilyNames);
-}
-
-UINT32 index = 0;
-BOOL exists = false;
-
-wchar_t localeName[LOCALE_NAME_MAX_LENGTH];
-
-if (SUCCEEDED(hr))
-{
-    // Get the default locale for this user.
-    int defaultLocaleSuccess = GetUserDefaultLocaleName(localeName, LOCALE_NAME_MAX_LENGTH);
-
-    // If the default locale is returned, find that locale name, otherwise use "en-us".
-    if (defaultLocaleSuccess)
-    {
-        hr = pFamilyNames-&gt;FindLocaleName(localeName, &amp;amp;amp;amp;amp;amp;index, &amp;amp;amp;amp;amp;amp;exists);
-    }
-    if (SUCCEEDED(hr) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; !exists) // if the above find did not find a match, retry with US English
-    {
-        hr = pFamilyNames-&gt;FindLocaleName(L"en-us", &amp;amp;amp;amp;amp;amp;index, &amp;amp;amp;amp;amp;amp;exists);
-    }
-}
-
-// If the specified locale doesn't exist, select the first on the list.
-if (!exists)
-    index = 0;
-
-UINT32 length = 0;
-
-// Get the string length.
-if (SUCCEEDED(hr))
-{
-    hr = pFamilyNames-&gt;GetStringLength(index, &amp;amp;amp;amp;amp;amp;length);
-}
-
-// Allocate a string big enough to hold the name.
-wchar_t* name = new (std.nothrow) wchar_t[length+1];
-if (name == NULL)
-{
-    hr = E_OUTOFMEMORY;
-}
-
-// Get the family name.
-if (SUCCEEDED(hr))
-{
-    hr = pFamilyNames-&gt;GetString(index, name, length+1);
-}
-
-</code>
-    </remarks>
+    <summary>Represents a collection of strings indexed by locale name.</summary>
   </member>
 </doc>

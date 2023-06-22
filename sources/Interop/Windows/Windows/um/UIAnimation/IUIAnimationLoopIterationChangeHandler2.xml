@@ -3,31 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IUIAnimationLoopIterationChangeHandler2.OnLoopIterationChanged">
-    <summary>
-      <para>Handles loop iteration change events, which occur when a loop within a storyboard begins a new iteration.</para>
-    </summary>
-    <param name="storyboard">
-      <para>The storyboard to which the loop belongs.</para>
-    </param>
-    <param name="id">
-      <para>The loop ID.</para>
-    </param>
-    <param name="newIterationCount">
-      <para>The iteration count for the latest <see cref="IUIAnimationManager2.Update" />.</para>
-    </param>
-    <param name="oldIterationCount">
-      <para>The iteration count for the previous <see cref="IUIAnimationManager2.Update" />.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <seealso cref="IUIAnimationLoopIterationChangeHandler2" />
+    <summary>Handles loop iteration change events, which occur when a loop within a storyboard begins a new iteration.</summary>
+    <param name="storyboard">The storyboard to which the loop belongs.</param>
+    <param name="id">The loop ID.</param>
+    <param name="newIterationCount">The iteration count for the latest <see cref="IUIAnimationManager2.Update" />.</param>
+    <param name="oldIterationCount">The iteration count for the previous <see cref="IUIAnimationManager2.Update" />.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationLoopIterationChangeHandler2">
-    <summary>
-      <para>Defines a method for handling storyboard loop iteration events.</para>
-    </summary>
-    <seealso cref="IUnknown" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/UIAnimation/storyboard-construction">Storyboard Overview</seealso>
+    <summary>Defines a method for handling storyboard loop iteration events.</summary>
   </member>
 </doc>

@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DROPFILES">
-    <summary>
-      <para>Defines the <a href="https://docs.microsoft.com//windows/desktop/shell/clipboard">CF_HDROP</a> clipboard format. The data that follows is a double null-terminated list of file names.</para>
-    </summary>
+    <summary>Defines the <a href="https://docs.microsoft.com//windows/desktop/shell/clipboard">CF_HDROP</a> clipboard format. The data that follows is a double null-terminated list of file names.</summary>
   </member>
   <member name="DROPFILES.pFiles">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The offset of the file list from the beginning of this structure, in bytes.</para>
-    </summary>
+    <summary>The offset of the file list from the beginning of this structure, in bytes.</summary>
   </member>
   <member name="DROPFILES.pt">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a></b></para>
-      <para>The drop point. The coordinates depend on <b>fNC</b>.</para>
-    </summary>
+    <summary>The drop point. The coordinates depend on <b>fNC</b>.</summary>
   </member>
   <member name="DROPFILES.fNC">
-    <summary>
-      <para>Type: <b>BOOL</b></para>
-      <para>A nonclient area flag. If this member is <b>TRUE</b>, <b>pt</b> specifies the screen coordinates of a point in a window's nonclient area. If it is <b>FALSE</b>, <b>pt</b> specifies the client coordinates of a point in the client area.</para>
-    </summary>
+    <summary>A nonclient area flag. If this member is <b>TRUE</b>, <b>pt</b> specifies the screen coordinates of a point in a window's nonclient area. If it is <b>FALSE</b>, <b>pt</b> specifies the client coordinates of a point in the client area.</summary>
   </member>
   <member name="DROPFILES.fWide">
-    <summary>
-      <para>Type: <b>BOOL</b></para>
-      <para>A value that indicates whether the file contains ANSI or Unicode characters. If the value is zero, the file contains ANSI characters. Otherwise, it contains Unicode characters.</para>
-    </summary>
+    <summary>A value that indicates whether the file contains ANSI or Unicode characters. If the value is zero, the file contains ANSI characters. Otherwise, it contains Unicode characters.</summary>
   </member>
 </doc>

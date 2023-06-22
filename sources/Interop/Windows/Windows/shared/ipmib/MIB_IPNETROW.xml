@@ -3,45 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIB_IPNETROW">
-    <summary>
-      <para>The
-<b>MIB_IPNETROW</b> structure contains information for an Address Resolution Protocol (ARP) table entry for an IPv4 address.</para>
-    </summary>
-    <remarks>
-      <para>On the Windows SDK released for Windows Vista and later, the organization of header files has changed and the <b>MIB_IPNETROW</b> structure is defined in the <i>Ipmib.h</i> header file not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i> which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
-    </remarks>
-    <seealso cref="CreateIpNetEntry" />
-    <seealso cref="DeleteIpNetEntry" />
-    <seealso cref="MIB_IPNETTABLE" />
-    <seealso cref="SetIpNetEntry" />
+    <summary>The<b>MIB_IPNETROW</b> structure contains information for an Address Resolution Protocol (ARP) table entry for an IPv4 address.</summary>
   </member>
   <member name="MIB_IPNETROW.dwIndex">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The index of the adapter.</para>
-    </summary>
+    <summary>The index of the adapter.</summary>
   </member>
   <member name="MIB_IPNETROW.dwPhysAddrLen">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The length, in bytes, of the physical address.</para>
-    </summary>
+    <summary>The length, in bytes, of the physical address.</summary>
   </member>
   <member name="MIB_IPNETROW.bPhysAddr">
-    <summary>
-      <para>Type: <b>BYTE[MAXLEN_PHYSADDR]</b></para>
-      <para>The physical address.</para>
-    </summary>
+    <summary>The physical address.</summary>
   </member>
   <member name="MIB_IPNETROW.dwAddr">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The IPv4 address.</para>
-    </summary>
+    <summary>The IPv4 address.</summary>
   </member>
   <member name="MIB_IPNETROW.dwType">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The type of ARP entry.</para>
       <para>This member can be one of the values from the <b>MIB_IPNET_TYPE</b> enumeration type defined in the <i>Ipmib.h</i> header file included in the Windows SDK released for Windows Vista and later. For use with versions of the earlier Platform SDK, this enumeration is not defined and the constants must be used.</para>
       <list type="table">
@@ -49,120 +26,87 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPNET_TYPE_OTHER</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Other</para>
-          </description>
-        </item>
-        <item>
+          <description>Other</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPNET_TYPE_INVALID</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An invalid ARP type. This can indicate an unreachable or incomplete ARP entry.</para>
-          </description>
-        </item>
-        <item>
+          <description>An invalid ARP type. This can indicate an unreachable or incomplete ARP entry.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPNET_TYPE_DYNAMIC</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A dynamic ARP type.</para>
-          </description>
-        </item>
-        <item>
+          <description>A dynamic ARP type.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPNET_TYPE_STATIC</b>
-                </description>
-              </item>
-              <item>
-                <description>4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A static ARP type.</para>
-          </description>
-        </item>
+          <description>A static ARP type.</description>
+        </listheader>
       </list>
     </summary>
   </member>
-  <member name="MIB_IPNETROW.Type">
-    <summary></summary>
-  </member>
+  <member name="MIB_IPNETROW.Type"></member>
   <member name="MIB_IPNETROW">
-    <summary>
-      <para>The
-<b>MIB_IPNETROW</b> structure contains information for an Address Resolution Protocol (ARP) table entry for an IPv4 address.</para>
-    </summary>
-    <remarks>
-      <para>On the Windows SDK released for Windows Vista and later, the organization of header files has changed and the <b>MIB_IPNETROW</b> structure is defined in the <i>Ipmib.h</i> header file not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i> which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
-    </remarks>
-    <seealso cref="CreateIpNetEntry" />
-    <seealso cref="DeleteIpNetEntry" />
-    <seealso cref="MIB_IPNETTABLE" />
-    <seealso cref="SetIpNetEntry" />
+    <summary>The<b>MIB_IPNETROW</b> structure contains information for an Address Resolution Protocol (ARP) table entry for an IPv4 address.</summary>
   </member>
   <member name="MIB_IPNETROW.dwIndex">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The index of the adapter.</para>
-    </summary>
+    <summary>The index of the adapter.</summary>
   </member>
   <member name="MIB_IPNETROW.dwPhysAddrLen">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The length, in bytes, of the physical address.</para>
-    </summary>
+    <summary>The length, in bytes, of the physical address.</summary>
   </member>
   <member name="MIB_IPNETROW.bPhysAddr">
-    <summary>
-      <para>Type: <b>BYTE[MAXLEN_PHYSADDR]</b></para>
-      <para>The physical address.</para>
-    </summary>
+    <summary>The physical address.</summary>
   </member>
   <member name="MIB_IPNETROW.dwAddr">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The IPv4 address.</para>
-    </summary>
+    <summary>The IPv4 address.</summary>
   </member>
   <member name="MIB_IPNETROW.dwType">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The type of ARP entry.</para>
       <para>This member can be one of the values from the <b>MIB_IPNET_TYPE</b> enumeration type defined in the <i>Ipmib.h</i> header file included in the Windows SDK released for Windows Vista and later. For use with versions of the earlier Platform SDK, this enumeration is not defined and the constants must be used.</para>
       <list type="table">
@@ -170,74 +114,66 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPNET_TYPE_OTHER</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Other</para>
-          </description>
-        </item>
-        <item>
+          <description>Other</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPNET_TYPE_INVALID</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An invalid ARP type. This can indicate an unreachable or incomplete ARP entry.</para>
-          </description>
-        </item>
-        <item>
+          <description>An invalid ARP type. This can indicate an unreachable or incomplete ARP entry.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPNET_TYPE_DYNAMIC</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A dynamic ARP type.</para>
-          </description>
-        </item>
-        <item>
+          <description>A dynamic ARP type.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPNET_TYPE_STATIC</b>
-                </description>
-              </item>
-              <item>
-                <description>4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A static ARP type.</para>
-          </description>
-        </item>
+          <description>A static ARP type.</description>
+        </listheader>
       </list>
     </summary>
   </member>

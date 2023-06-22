@@ -3,115 +3,45 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFMediaEngineEx.ApplyStreamSelections">
-    <summary>
-      <para>Applies the stream selections from previous calls to <see cref="SetStreamSelection" />.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Applies the stream selections from previous calls to <see cref="SetStreamSelection" />.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.CancelTimelineMarkerTimer">
-    <summary>
-      <para>Cancels the next pending timeline marker.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Call this method to cancel the <see cref="IMFMediaEngineEx.SetTimelineMarkerTimer" /> method.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Cancels the next pending timeline marker.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.EnableHorizontalMirrorMode">
-    <summary>
-      <para>Enables or disables mirroring of the video.</para>
-    </summary>
-    <param name="fEnable">
-      <para>If <b>TRUE</b>, the video is mirrored horizontally. Otherwise, the video is displayed normally.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Enables or disables mirroring of the video.</summary>
+    <param name="fEnable">If <b>TRUE</b>, the video is mirrored horizontally. Otherwise, the video is displayed normally.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.EnableTimeUpdateTimer">
-    <summary>
-      <para>Enables or disables the time update timer.</para>
-    </summary>
-    <param name="fEnableTimer">
-      <para>If <b>TRUE</b>, the update timer is enabled. Otherwise, the timer is disabled.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Enables or disables the time update timer.</summary>
+    <param name="fEnableTimer">If <b>TRUE</b>, the update timer is enabled. Otherwise, the timer is disabled.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.EnableWindowlessSwapchainMode">
-    <summary>
-      <para>Enables or disables windowless swap-chain mode.</para>
-    </summary>
-    <param name="fEnable">
-      <para>If <b>TRUE</b>, windowless swap-chain mode is enabled.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>In windowless swap-chain mode, the Media Engine creates a windowless swap chain and presents video frames to the swap chain. To render the video, call <see cref="IMFMediaEngineEx.GetVideoSwapchainHandle" /> to get a handle to the swap chain, and then associate the handle with a Microsoft DirectComposition visual.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Enables or disables windowless swap-chain mode.</summary>
+    <param name="fEnable">If <b>TRUE</b>, windowless swap-chain mode is enabled.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.FrameStep">
-    <summary>
-      <para>Steps forward or backward one frame.</para>
-    </summary>
-    <param name="Forward">
-      <para>Specify <b>TRUE</b> to step forward or <b>FALSE</b> to step backward.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The frame-step direction is independent of the current playback direction.</para>
-      <para>This method completes asynchronously. When the operation completes, the Media Engine sends an <b>MF_MEDIA_ENGINE_EVENT_FRAMESTEPCOMPLETED</b> event and enters the paused state.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Steps forward or backward one frame.</summary>
+    <param name="Forward">Specify <b>TRUE</b> to step forward or <b>FALSE</b> to step backward.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.GetAudioEndpointRole">
-    <summary>
-      <para>Gets the audio device endpoint role used for the next  call to <see cref="SetSource" /> or <see cref="Load" />.</para>
-    </summary>
-    <param name="pRole">
-      <para>Receives the audio endpoint role.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>For information on audio endpoint roles, see <see cref="ERole  enumeration" />.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Gets the audio device endpoint role used for the next call to <see cref="SetSource" /> or <see cref="Load" />.</summary>
+    <param name="pRole">Receives the audio endpoint role.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.GetAudioStreamCategory">
-    <summary>
-      <para>Gets the audio stream category used for the next call to <see cref="SetSource" /> or <see cref="Load" />.</para>
-    </summary>
-    <param name="pCategory">
-      <para>Receives the audio stream category.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>For information on audio stream categories, see <see cref="AUDIO_STREAM_CATEGORY enumeration" />.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Gets the audio stream category used for the next call to <see cref="SetSource" /> or <see cref="Load" />.</summary>
+    <param name="pCategory">Receives the audio stream category.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.GetBalance">
-    <summary>
-      <para>Gets the audio balance.</para>
-    </summary>
+    <summary>Gets the audio balance.</summary>
     <returns>
       <para>Returns the balance. The value can be any number in the following range (inclusive).</para>
       <list type="table">
@@ -119,125 +49,71 @@
           <description>Return value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>-1</para>
+            <list type="bullet">
+              <listheader>
+                <term>-1</term>
+              </listheader>
+            </list>
           </description>
+          <description>The left channel is at full volume; the right channel is silent.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The left channel is at full volume; the right channel is silent.</para>
+            <list type="bullet">
+              <listheader>
+                <term>1</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>1</para>
-          </description>
-          <description>
-            <para>The right channel is at full volume; the left channel is silent.</para>
-          </description>
-        </item>
-      </list>
-      <para>If the value is zero, the left and right channels are at equal volumes. The default value is zero.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEx" />
+          <description>The right channel is at full volume; the left channel is silent.</description>
+        </listheader>
+      </list> <para>If the value is zero, the left and right channels are at equal volumes. The default value is zero.</para></returns>
   </member>
   <member name="IMFMediaEngineEx.GetNumberOfStreams">
-    <summary>
-      <para>Gets the number of streams in the media resource.</para>
-    </summary>
-    <param name="pdwStreamCount">
-      <para>Receives the number of streams.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Gets the number of streams in the media resource.</summary>
+    <param name="pdwStreamCount">Receives the number of streams.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.GetPresentationAttribute">
-    <summary>
-      <para>Gets a presentation attribute from the media resource.</para>
-    </summary>
+    <summary>Gets a presentation attribute from the media resource.</summary>
     <param name="guidMFAttribute">
       <para>The attribute to query.</para>
       <para>For a list of presentation attributes, see <a href="https://docs.microsoft.com//windows/desktop/medfound/presentation-descriptor-attributes">Presentation Descriptor Attributes</a>.</para>
     </param>
-    <param name="pvValue">
-      <para>A pointer to a <see cref="PROPVARIANT" /> that receives the value. The method fills the <b>PROPVARIANT</b> with a copy of the stored value. The caller must free the <b>PROPVARIANT</b> by calling <see cref="PropVariantClear" />.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEx" />
+    <param name="pvValue">A pointer to a <see cref="PROPVARIANT" /> that receives the value. The method fills the <b>PROPVARIANT</b> with a copy of the stored value. The caller must free the <b>PROPVARIANT</b> by calling <see cref="PropVariantClear" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.GetRealTimeMode">
-    <summary>
-      <para>Gets the real time mode used for the next call to <see cref="SetSource" /> or <see cref="Load" />.</para>
-    </summary>
-    <param name="pfEnabled">
-      <para>Receives the real time mode.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Gets the real time mode used for the next call to <see cref="SetSource" /> or <see cref="Load" />.</summary>
+    <param name="pfEnabled">Receives the real time mode.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.GetResourceCharacteristics">
-    <summary>
-      <para>Gets various flags that describe the media resource.</para>
-    </summary>
-    <param name="pCharacteristics">
-      <para>Receives a bitwise <b>OR</b> of zero or more flags from the <see cref="MFMEDIASOURCE_CHARACTERISTICS enumeration" />.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Gets various flags that describe the media resource.</summary>
+    <param name="pCharacteristics">Receives a bitwise <b>OR</b> of zero or more flags from the <see cref="MFMEDIASOURCE_CHARACTERISTICS enumeration" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.GetStatistics">
-    <summary>
-      <para>Gets a playback statistic from the Media Engine.</para>
-    </summary>
-    <param name="StatisticID">
-      <para>A member of the <see cref="MF_MEDIA_ENGINE_STATISTIC" /> enumeration that identifies the statistic to get.</para>
-    </param>
-    <param name="pStatistic">
-      <para>A pointer to a <see cref="PROPVARIANT" /> that receives the statistic. The data type and meaning of this value depends on the value of <i>StatisticID</i>. The caller must free the <b>PROPVARIANT</b> by calling <see cref="PropVariantClear" />.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Gets a playback statistic from the Media Engine.</summary>
+    <param name="StatisticID">A member of the <see cref="MF_MEDIA_ENGINE_STATISTIC" /> enumeration that identifies the statistic to get.</param>
+    <param name="pStatistic">A pointer to a <see cref="PROPVARIANT" /> that receives the statistic. The data type and meaning of this value depends on the value of <i>StatisticID</i>. The caller must free the <b>PROPVARIANT</b> by calling <see cref="PropVariantClear" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.GetStereo3DFramePackingMode">
-    <summary>
-      <para>For stereoscopic 3D video, gets the layout of the two views within a video frame.</para>
-    </summary>
-    <param name="packMode">
-      <para>Receives a member of the <see cref="MF_MEDIA_ENGINE_S3D_PACKING_MODE" /> enumeration.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>For stereoscopic 3D video, gets the layout of the two views within a video frame.</summary>
+    <param name="packMode">Receives a member of the <see cref="MF_MEDIA_ENGINE_S3D_PACKING_MODE" /> enumeration.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.GetStereo3DRenderMode">
-    <summary>
-      <para>For stereoscopic 3D video, queries how the Media Engine renders the 3D video content.</para>
-    </summary>
-    <param name="outputType">
-      <para>Receives a member of the <see cref="MF3DVideoOutputType" /> enumeration.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>For stereoscopic 3D video, queries how the Media Engine renders the 3D video content.</summary>
+    <param name="outputType">Receives a member of the <see cref="MF3DVideoOutputType" /> enumeration.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.GetStreamAttribute">
-    <summary>
-      <para>Gets a stream-level attribute from the media resource.</para>
-    </summary>
-    <param name="dwStreamIndex">
-      <para>The zero-based index of the stream. To get the number of streams, call <see cref="IMFMediaEngineEx.GetNumberOfStreams" />.</para>
-    </param>
+    <summary>Gets a stream-level attribute from the media resource.</summary>
+    <param name="dwStreamIndex">The zero-based index of the stream. To get the number of streams, call <see cref="IMFMediaEngineEx.GetNumberOfStreams" />.</param>
     <param name="guidMFAttribute">
       <para>The attribute to query. Possible values are listed in the following topics:</para>
       <list type="bullet">
@@ -253,21 +129,12 @@
         </item>
       </list>
     </param>
-    <param name="pvValue">
-      <para>A pointer to a <see cref="PROPVARIANT" /> that receives the value. The method fills the <b>PROPVARIANT</b> with a copy of the stored value. Call <see cref="PropVariantClear" /> to free the memory allocated by the method.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEx" />
+    <param name="pvValue">A pointer to a <see cref="PROPVARIANT" /> that receives the value. The method fills the <b>PROPVARIANT</b> with a copy of the stored value. Call <see cref="PropVariantClear" /> to free the memory allocated by the method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.GetStreamSelection">
-    <summary>
-      <para>Queries whether a stream is selected to play.</para>
-    </summary>
-    <param name="dwStreamIndex">
-      <para>The zero-based index of the stream. To get the number of streams, call <see cref="IMFMediaEngineEx.GetNumberOfStreams" />.</para>
-    </param>
+    <summary>Queries whether a stream is selected to play.</summary>
+    <param name="dwStreamIndex">The zero-based index of the stream. To get the number of streams, call <see cref="IMFMediaEngineEx.GetNumberOfStreams" />.</param>
     <param name="pEnabled">
       <para>Receives a Boolean value.</para>
       <list type="table">
@@ -275,64 +142,50 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>
-              <b>TRUE</b>
-            </b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>TRUE</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The stream is selected. During playback, this stream will play.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The stream is selected. During playback, this stream will play.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>FALSE</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>
-              <b>FALSE</b>
-            </b>
-          </description>
-          <description>
-            <para>The stream is not selected. During playback, this stream will not play.</para>
-          </description>
-        </item>
+          <description>The stream is not selected. During playback, this stream will not play.</description>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEx" />
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.GetTimelineMarkerTimer">
-    <summary>
-      <para>Gets the time of the next timeline marker, if any.</para>
-    </summary>
-    <param name="pTimeToFire">
-      <para>Receives the marker time, in seconds. If no marker is set, this parameter receives the value <b>NaN</b>.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Gets the time of the next timeline marker, if any.</summary>
+    <param name="pTimeToFire">Receives the marker time, in seconds. If no marker is set, this parameter receives the value <b>NaN</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.GetVideoSwapchainHandle">
-    <summary>
-      <para>Gets a handle to the windowless swap chain.</para>
-    </summary>
-    <param name="phSwapchain">
-      <para>Receives a handle to the swap chain.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>To enable windowless swap-chain mode, call <see cref="IMFMediaEngineEx.EnableWindowlessSwapchainMode" />.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Gets a handle to the windowless swap chain.</summary>
+    <param name="phSwapchain">Receives a handle to the swap chain.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.InsertAudioEffect">
-    <summary>
-      <para>Inserts an audio effect.</para>
-    </summary>
+    <summary>Inserts an audio effect.</summary>
     <param name="pEffect">
       <para>One of the following:</para>
       <list type="bullet">
@@ -351,26 +204,34 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>
-              <b>TRUE</b>
-            </b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>TRUE</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The effect is optional. If the Media Engine cannot add the effect, it ignores the effect and continues playback.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The effect is optional. If the Media Engine cannot add the effect, it ignores the effect and  continues playback.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>FALSE</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>
-              <b>FALSE</b>
-            </b>
-          </description>
-          <description>
-            <para>The effect is required. If the Media Engine object cannot add the effect, a playback error occurs.</para>
-          </description>
-        </item>
+          <description>The effect is required. If the Media Engine object cannot add the effect, a playback error occurs.</description>
+        </listheader>
       </list>
     </param>
     <returns>
@@ -380,37 +241,35 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
-          </description>
-          <description>
-            <para>The maximum number of audio effects was reached.</para>
-          </description>
-        </item>
+          <description>The maximum number of audio effects was reached.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The effect is applied when the next media resource is loaded.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngineEx" />
   </member>
   <member name="IMFMediaEngineEx.InsertVideoEffect">
-    <summary>
-      <para>Inserts a video effect.</para>
-    </summary>
+    <summary>Inserts a video effect.</summary>
     <param name="pEffect">
       <para>One of the following:</para>
       <list type="bullet">
@@ -429,26 +288,34 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>
-              <b>TRUE</b>
-            </b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>TRUE</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The effect is optional. If the Media Engine cannot add the effect, it ignores the effect and continues playback.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The effect is optional. If the Media Engine cannot add the effect, it ignores the effect and  continues playback.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>FALSE</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>
-              <b>FALSE</b>
-            </b>
-          </description>
-          <description>
-            <para>The effect is required. If the Media Engine object cannot add the effect, a playback error occurs.</para>
-          </description>
-        </item>
+          <description>The effect is required. If the Media Engine object cannot add the effect, a playback error occurs.</description>
+        </listheader>
       </list>
     </param>
     <returns>
@@ -458,114 +325,62 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
-          </description>
-          <description>
-            <para>The maximum number of video effects was reached.</para>
-          </description>
-        </item>
+          <description>The maximum number of video effects was reached.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The effect is applied when the next media resource is loaded.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngineEx" />
   </member>
   <member name="IMFMediaEngineEx.IsPlaybackRateSupported">
-    <summary>
-      <para>Queries whether the Media Engine can play at a specified playback rate.</para>
-    </summary>
-    <param name="rate">
-      <para>The requested playback rate.</para>
-    </param>
-    <returns>
-      <para>Returns <b>TRUE</b> if the playback rate is supported, or <b>FALSE</b> otherwise.</para>
-    </returns>
-    <remarks>
-      <para>Playback rates are expressed as a ratio of the current rate to the normal rate. For example, 1.0 is normal playback speed, 0.5 is half speed, and 2.0 is 2× speed. Positive values mean forward playback, and negative values mean reverse playback.</para>
-      <para>The results of this method can vary depending on the media resource that is currently loaded. Some media formats might support faster playback rates than others. Also, some formats might not support reverse play.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Queries whether the Media Engine can play at a specified playback rate.</summary>
+    <param name="rate">The requested playback rate.</param>
+    <returns>Returns <b>TRUE</b> if the playback rate is supported, or <b>FALSE</b> otherwise.</returns>
   </member>
   <member name="IMFMediaEngineEx.IsProtected">
-    <summary>
-      <para>Queries whether the media resource contains protected content.</para>
-    </summary>
-    <param name="pProtected">
-      <para>Receives the value <b>TRUE</b> if the media resource contains protected content, or <b>FALSE</b> otherwise.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Queries whether the media resource contains protected content.</summary>
+    <param name="pProtected">Receives the value <b>TRUE</b> if the media resource contains protected content, or <b>FALSE</b> otherwise.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.IsStereo3D">
-    <summary>
-      <para>Queries whether the media resource contains stereoscopic 3D video.</para>
-    </summary>
-    <returns>
-      <para>Returns <b>TRUE</b> if the media resource contains 3D video, or <b>FALSE</b> otherwise.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Queries whether the media resource contains stereoscopic 3D video.</summary>
+    <returns>Returns <b>TRUE</b> if the media resource contains 3D video, or <b>FALSE</b> otherwise.</returns>
   </member>
   <member name="IMFMediaEngineEx.RemoveAllEffects">
-    <summary>
-      <para>Removes all audio and video effects.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Call this method to remove all of the effects that were added with the <see cref="InsertAudioEffect" /> and <see cref="InsertVideoEffect" /> methods.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Removes all audio and video effects.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.SetAudioEndpointRole">
-    <summary>
-      <para>Sets the audio device endpoint used for the next call to <see cref="SetSource" /> or <see cref="Load" />.</para>
-    </summary>
-    <param name="role">
-      <para>Specifies the audio end point role.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>For information on audio endpoint roles, see <see cref="ERole  enumeration" />.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Sets the audio device endpoint used for the next call to <see cref="SetSource" /> or <see cref="Load" />.</summary>
+    <param name="role">Specifies the audio end point role.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.SetAudioStreamCategory">
-    <summary>
-      <para>Sets the audio stream category for the next call to  <see cref="SetSource" /> or <see cref="Load" />.</para>
-    </summary>
-    <param name="category"></param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>For information on audio stream categories, see <see cref="AUDIO_STREAM_CATEGORY enumeration" />.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Sets the audio stream category for the next call to <see cref="SetSource" /> or <see cref="Load" />.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.SetBalance">
-    <summary>
-      <para>Sets the audio balance.</para>
-    </summary>
+    <summary>Sets the audio balance.</summary>
     <param name="balance">
       <para>The audio balance. The value can be any number in the following range (inclusive).</para>
       <list type="table">
@@ -573,106 +388,59 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>-1</para>
+            <list type="bullet">
+              <listheader>
+                <term>-1</term>
+              </listheader>
+            </list>
           </description>
+          <description>The left channel is at full volume; the right channel is silent.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The left channel is at full volume; the right channel is silent.</para>
+            <list type="bullet">
+              <listheader>
+                <term>1</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>1</para>
-          </description>
-          <description>
-            <para>The right channel is at full volume; the left channel is silent.</para>
-          </description>
-        </item>
-      </list>
-      <para>If the value is zero, the left and right channels are at equal volumes. The default value is zero.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>When the audio balance changes, the Media Engine sends an <b>MF_MEDIA_ENGINE_EVENT_BALANCECHANGE</b> event. See <see cref="IMFMediaEventNotify.EventNotify" />.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngineEx" />
+          <description>The right channel is at full volume; the left channel is silent.</description>
+        </listheader>
+      </list> <para>If the value is zero, the left and right channels are at equal volumes. The default value is zero.</para></param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.SetCurrentTimeEx">
-    <summary>
-      <para>Seeks to a new playback position using the  specified <see cref="MF_MEDIA_ENGINE_SEEK_MODE" />.</para>
-    </summary>
-    <param name="seekTime">
-      <para>The new playback position, in seconds.</para>
-    </param>
-    <param name="seekMode">
-      <para>Specifies if the seek is a normal seek or an approximate seek.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Seeks to a new playback position using the specified <see cref="MF_MEDIA_ENGINE_SEEK_MODE" />.</summary>
+    <param name="seekTime">The new playback position, in seconds.</param>
+    <param name="seekMode">Specifies if the seek is a normal seek or an approximate seek.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.SetRealTimeMode">
-    <summary>
-      <para>Sets the real time mode used for the next call to  <see cref="SetSource" /> or <see cref="Load" />.</para>
-    </summary>
-    <param name="fEnable">
-      <para>Specifies the real time mode.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Sets the real time mode used for the next call to <see cref="SetSource" /> or <see cref="Load" />.</summary>
+    <param name="fEnable">Specifies the real time mode.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.SetSourceFromByteStream">
-    <summary>
-      <para>Opens a media resource from a byte stream.</para>
-    </summary>
-    <param name="pByteStream">
-      <para>A pointer to the <see cref="IMFByteStream" /> interface of the byte stream.</para>
-    </param>
-    <param name="pURL">
-      <para>The URL of the byte stream.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Opens a media resource from a byte stream.</summary>
+    <param name="pByteStream">A pointer to the <see cref="IMFByteStream" /> interface of the byte stream.</param>
+    <param name="pURL">The URL of the byte stream.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.SetStereo3DFramePackingMode">
-    <summary>
-      <para>For stereoscopic 3D video, sets the layout of the two views within a video frame.</para>
-    </summary>
-    <param name="packMode">
-      <para>A member of the <see cref="MF_MEDIA_ENGINE_S3D_PACKING_MODE" /> enumeration that specifies the layout. The two views can be arranged side-by-side, or top-to-bottom.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>For stereoscopic 3D video, sets the layout of the two views within a video frame.</summary>
+    <param name="packMode">A member of the <see cref="MF_MEDIA_ENGINE_S3D_PACKING_MODE" /> enumeration that specifies the layout. The two views can be arranged side-by-side, or top-to-bottom.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.SetStereo3DRenderMode">
-    <summary>
-      <para>For stereoscopic 3D video, specifies how the Media Engine renders the 3D video content.</para>
-    </summary>
-    <param name="outputType">
-      <para>A member of the <see cref="MF3DVideoOutputType" /> enumeration that specifies the 3D video rendering mode.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>For stereoscopic 3D video, specifies how the Media Engine renders the 3D video content.</summary>
+    <param name="outputType">A member of the <see cref="MF3DVideoOutputType" /> enumeration that specifies the 3D video rendering mode.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.SetStreamSelection">
-    <summary>
-      <para>Selects or deselects a stream for playback.</para>
-    </summary>
-    <param name="dwStreamIndex">
-      <para>The zero-based index of the stream. To get the number of streams, call <see cref="IMFMediaEngineEx.GetNumberOfStreams" />.</para>
-    </param>
+    <summary>Selects or deselects a stream for playback.</summary>
+    <param name="dwStreamIndex">The zero-based index of the stream. To get the number of streams, call <see cref="IMFMediaEngineEx.GetNumberOfStreams" />.</param>
     <param name="Enabled">
       <para>Specifies whether to select or deselect the stream.</para>
       <list type="table">
@@ -680,83 +448,51 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>
-              <b>TRUE</b>
-            </b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>TRUE</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The stream is selected. During playback, this stream will play.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The stream is selected. During playback, this stream will play.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>FALSE</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>
-              <b>FALSE</b>
-            </b>
-          </description>
-          <description>
-            <para>The stream is not selected. During playback, this stream will not play.</para>
-          </description>
-        </item>
+          <description>The stream is not selected. During playback, this stream will not play.</description>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineEx" />
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.SetTimelineMarkerTimer">
-    <summary>
-      <para>Specifies a presentation time when the Media Engine will send a marker event.</para>
-    </summary>
-    <param name="timeToFire">
-      <para>The presentation time for the marker event, in seconds.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>When playback reaches the time specified by <i>timeToFire</i>, the Media Engine sends an <b>MF_MEDIA_ENGINE_EVENT_TIMELINE_MARKER</b> event through the <see cref="IMFMediaEngineNotify.EventNotify" /> method. Calling this method cancels any previous marker that is still pending.</para>
-      <para>If the application seeks past the marker point, the Media Engine cancels the marker and does not send the event.</para>
-      <para>During  forward playback, set <i>timeToFire</i> to a value greater than the current playback position. During reverse playback, set <i>timeToFire</i> to a value less than the playback position.</para>
-      <para>To cancel a marker, call <see cref="IMFMediaEngineEx.CancelTimelineMarkerTimer" />.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Specifies a presentation time when the Media Engine will send a marker event.</summary>
+    <param name="timeToFire">The presentation time for the marker event, in seconds.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx.UpdateVideoStream">
-    <summary>
-      <para>Updates the source rectangle, destination rectangle, and border color for the video.</para>
-    </summary>
-    <param name="pSrc">
-      <para>A pointer to an <see cref="MFVideoNormalizedRect" /> structure that specifies the source rectangle. The source rectangle defines the area of the video frame that is displayed. If this parameter is <b>NULL</b>, the entire video frame is displayed.</para>
-    </param>
-    <param name="pDst">
-      <para>A pointer to a <see cref="RECT" /> structure that specifies the destination rectangle. The destination rectangle defines the area of the window or DirectComposition visual where the video is drawn.</para>
-    </param>
-    <param name="pBorderClr">
-      <para>A pointer to an <see cref="MFARGB" /> structure that specifies the border color.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>In rendering mode, call this method to reposition the video, update the border color, or repaint the video frame. If all of the parameters are <b>NULL</b>, the method repaints the most recent video frame.</para>
-      <para>In frame-server mode, this method has no effect.</para>
-      <para>See <a href="https://docs.microsoft.com//windows/desktop/medfound/video-processor-mft">Video Processor MFT</a> for info regarding source and destination rectangles in the <b>Video Processor MFT</b>.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngineEx" />
+    <summary>Updates the source rectangle, destination rectangle, and border color for the video.</summary>
+    <param name="pSrc">A pointer to an <see cref="MFVideoNormalizedRect" /> structure that specifies the source rectangle. The source rectangle defines the area of the video frame that is displayed. If this parameter is <b>NULL</b>, the entire video frame is displayed.</param>
+    <param name="pDst">A pointer to a <see cref="RECT" /> structure that specifies the destination rectangle. The destination rectangle defines the area of the window or DirectComposition visual where the video is drawn.</param>
+    <param name="pBorderClr">A pointer to an <see cref="MFARGB" /> structure that specifies the border color.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineEx">
-    <summary>
-      <para>Extends the <see cref="IMFMediaEngine" /> interface.</para>
-    </summary>
-    <remarks>
-      <para>The <see cref="IMFMediaEngine" /> interface contains methods that map to the HTML5 media elements. The <b>IMFMediaEngineEx</b> provides additional functionality that does not correspond directly to HTML5.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngine" />
-    <seealso href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/official%20windows%20platform%20sample/windows%208%20app%20samples/%5bc%2b%2b%5d-windows%208%20app%20samples/c%2b%2b/windows%208%20app%20samples/media%20engine%20native%20c%2b%2b%20video%20playback%20sample%20(windows%208)">Media Engine Sample</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Extends the <see cref="IMFMediaEngine" /> interface.</summary>
   </member>
 </doc>

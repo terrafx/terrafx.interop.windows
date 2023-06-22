@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_QUATERNION">
-    <summary>
-      <para>A four dimensional vector, used to represent a rotation.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <summary>A four dimensional vector, used to represent a rotation.</summary>
   </member>
   <member name="MF_QUATERNION.x">
-    <summary>
-      <para>X component of the vector.</para>
-    </summary>
+    <summary>X component of the vector.</summary>
   </member>
   <member name="MF_QUATERNION.y">
-    <summary>
-      <para>Y component of the vector.</para>
-    </summary>
+    <summary>Y component of the vector.</summary>
   </member>
   <member name="MF_QUATERNION.z">
-    <summary>
-      <para>Z component of the vector.</para>
-    </summary>
+    <summary>Z component of the vector.</summary>
   </member>
   <member name="MF_QUATERNION.w">
-    <summary>
-      <para>W component of the vector.</para>
-    </summary>
+    <summary>W component of the vector.</summary>
   </member>
 </doc>

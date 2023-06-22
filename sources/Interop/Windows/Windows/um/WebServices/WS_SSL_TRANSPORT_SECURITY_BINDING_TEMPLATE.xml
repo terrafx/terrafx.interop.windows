@@ -4,27 +4,19 @@
 <doc>
   <member name="WS_SSL_TRANSPORT_SECURITY_BINDING_TEMPLATE">
     <summary>
-      <para>The security binding template for specifying the use of SSL/TLS
-protocol based transport security.</para>
+      <para>The security binding template for specifying the use of SSL/TLS protocol based transport security.</para>
       <para>See also <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" />.</para>
-      <para>This security binding is supported only with the
-<see cref="WS_HTTP_CHANNEL_BINDING" />.</para>
+      <para>This security binding is supported only with the<see cref="WS_HTTP_CHANNEL_BINDING" />.</para>
     </summary>
   </member>
   <member name="WS_SSL_TRANSPORT_SECURITY_BINDING_TEMPLATE.securityBindingProperties">
-    <summary>
-      <para>Application provided security binding properties that cannot be represented in policy.</para>
-    </summary>
+    <summary>Application provided security binding properties that cannot be represented in policy.</summary>
   </member>
   <member name="WS_SSL_TRANSPORT_SECURITY_BINDING_TEMPLATE.localCertCredential">
     <summary>
       <para>The local certificate credential to be used with this security binding.</para>
-      <para>Server side: When SSL is used for transport security with <see cref="WS_HTTP_CHANNEL_BINDING" />, the server certificate must be
-registered by the application using the <a href="https://docs.microsoft.com//windows/win32/http/httpcfg-exe">HttpCfg.exe</a> and this field must be set to <b>NULL</b>.  In all other cases, the
-server SSL certificate must be specified using this field.</para>
-      <para>Client side: If a client certificate is to be used with SSL, it must
-be specified using this field.  If no client certificate is to be
-used, this field must be set to <b>NULL</b>.</para>
+      <para>Server side: When SSL is used for transport security with <see cref="WS_HTTP_CHANNEL_BINDING" />, the server certificate must be registered by the application using the <a href="https://docs.microsoft.com//windows/win32/http/httpcfg-exe">HttpCfg.exe</a> and this field must be set to <b>NULL</b>. In all other cases, the server SSL certificate must be specified using this field.</para>
+      <para>Client side: If a client certificate is to be used with SSL, it must be specified using this field. If no client certificate is to be used, this field must be set to <b>NULL</b>.</para>
     </summary>
   </member>
 </doc>

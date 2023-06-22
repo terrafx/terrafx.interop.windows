@@ -3,14 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EVENTLOG_FULL_INFORMATION">
-    <summary>
-      <para>Indicates whether the event log is full.</para>
-    </summary>
-    <seealso cref="GetEventLogInformation" />
+    <summary>Indicates whether the event log is full.</summary>
   </member>
   <member name="EVENTLOG_FULL_INFORMATION.dwFull">
-    <summary>
-      <para>Indicates whether the event log is full. If the log is full, this member is <b>TRUE</b>. Otherwise, it is <b>FALSE</b>.</para>
-    </summary>
+    <summary>Indicates whether the event log is full. If the log is full, this member is <b>TRUE</b>. Otherwise, it is <b>FALSE</b>.</summary>
   </member>
 </doc>

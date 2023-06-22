@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="INTERFACEDATA">
+    <summary>Describes the object's properties and methods.</summary>
+  </member>
+  <member name="INTERFACEDATA.pmethdata">
+    <summary>An array of METHODDATA structures.</summary>
+  </member>
+  <member name="INTERFACEDATA.cMembers">
+    <summary>The count of members.</summary>
+  </member>
+</doc>

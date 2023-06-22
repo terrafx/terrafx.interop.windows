@@ -3,89 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IFrameworkInputPane.Advise">
-    <summary>
-      <para>Registers the app's input pane handler object to receive notifications on behalf of a window when an event triggers the input pane. This method differs from <see cref="AdviseWithHWND" /> in that it references its window through an object that implements <a href="https://docs.microsoft.com//uwp/api/windows.ui.core.icorewindow">ICoreWindow</a>.</para>
-    </summary>
-    <param name="pWindow">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>A pointer to the window (an object that implements <a href="https://docs.microsoft.com//uwp/api/windows.ui.core.icorewindow">ICoreWindow</a>) for which the handler should listen for input pane events.</para>
-    </param>
-    <param name="pHandler">
-      <para>Type: <b><see cref="IFrameworkInputPaneHandler" />*</b></para>
-      <para>An <see cref="IFrameworkInputPaneHandler" /> interface pointer to the handler instance for this app.</para>
-    </param>
-    <param name="pdwCookie">
-      <para>Type: <b>DWORD*</b></para>
-      <para>A pointer to a value that, when this method returns successfully, receives a cookie for that can be used later to unregister the handler through the <see cref="Unadvise" /> method.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IFrameworkInputPane" />
-    <seealso cref="IFrameworkInputPane.AdviseWithHWND" />
-    <seealso cref="IFrameworkInputPane.Unadvise" />
+    <summary>Registers the app's input pane handler object to receive notifications on behalf of a window when an event triggers the input pane. This method differs from <see cref="AdviseWithHWND" /> in that it references its window through an object that implements <a href="https://docs.microsoft.com//uwp/api/windows.ui.core.icorewindow">ICoreWindow</a>.</summary>
+    <param name="pWindow">A pointer to the window (an object that implements <a href="https://docs.microsoft.com//uwp/api/windows.ui.core.icorewindow">ICoreWindow</a>) for which the handler should listen for input pane events.</param>
+    <param name="pHandler">An <see cref="IFrameworkInputPaneHandler" /> interface pointer to the handler instance for this app.</param>
+    <param name="pdwCookie">A pointer to a value that, when this method returns successfully, receives a cookie for that can be used later to unregister the handler through the <see cref="Unadvise" /> method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFrameworkInputPane.AdviseWithHWND">
-    <summary>
-      <para>Registers the app's input pane handler object to receive notifications on behalf of a window when an event triggers the input pane. This method differs from <see cref="Advise" /> in that it references its window through an <b>HWND</b>.</para>
-    </summary>
-    <param name="hwnd">
-      <para>Type: <b>HWND</b></para>
-      <para>The handle of the window for which the handler should listen for input pane events.</para>
-    </param>
-    <param name="pHandler">
-      <para>Type: <b><see cref="IFrameworkInputPaneHandler" />*</b></para>
-      <para>An <see cref="IFrameworkInputPaneHandler" /> interface pointer to the handler instance for this app.</para>
-    </param>
-    <param name="pdwCookie">
-      <para>Type: <b>DWORD*</b></para>
-      <para>A pointer to a value that, when this method returns successfully, receives a cookie for that can be used later to unregister the handler through the <see cref="Unadvise" /> method.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IFrameworkInputPane" />
-    <seealso cref="IFrameworkInputPane.Advise" />
-    <seealso cref="IFrameworkInputPane.Unadvise" />
+    <summary>Registers the app's input pane handler object to receive notifications on behalf of a window when an event triggers the input pane. This method differs from <see cref="Advise" /> in that it references its window through an <b>HWND</b>.</summary>
+    <param name="hwnd">The handle of the window for which the handler should listen for input pane events.</param>
+    <param name="pHandler">An <see cref="IFrameworkInputPaneHandler" /> interface pointer to the handler instance for this app.</param>
+    <param name="pdwCookie">A pointer to a value that, when this method returns successfully, receives a cookie for that can be used later to unregister the handler through the <see cref="Unadvise" /> method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFrameworkInputPane.Location">
-    <summary>
-      <para>Gets the current location of the input pane.</para>
-    </summary>
-    <param name="prcInputPaneScreenLocation">
-      <para>Type: <b><see cref="RECT" />*</b></para>
-      <para>A pointer to a <see cref="RECT" /> structure that, when this method returns successfully, receives the location of the input pane, in screen coordinates. If the input pane is not visible, this structure receives an empty rectangle.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IFrameworkInputPane" />
+    <summary>Gets the current location of the input pane.</summary>
+    <param name="prcInputPaneScreenLocation">A pointer to a <see cref="RECT" /> structure that, when this method returns successfully, receives the location of the input pane, in screen coordinates. If the input pane is not visible, this structure receives an empty rectangle.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFrameworkInputPane.Unadvise">
-    <summary>
-      <para>Unregisters an app's input pane handler object so that it no longer receives notifications.</para>
-    </summary>
-    <param name="dwCookie">
-      <para>Type: <b>DWORD</b></para>
-      <para>A cookie that identifies the handler. This value was obtained when you registered the handler through the <see cref="Advise" /> method.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IFrameworkInputPane" />
+    <summary>Unregisters an app's input pane handler object so that it no longer receives notifications.</summary>
+    <param name="dwCookie">A cookie that identifies the handler. This value was obtained when you registered the handler through the <see cref="Advise" /> method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFrameworkInputPane">
-    <summary>
-      <para>Provides methods that enable apps to be informed of state changes and location for the input pane. The input pane is a UI element, an on-screen keyboard or handwriting panel, that appears when the user performs an action that requires them to enter information, such as selecting a search box or an entry field in a form. Apps can then adjust their UI so that the input pane does not obscure items that the user might need to access while the input pane is shown.</para>
-    </summary>
-    <remarks>
-      <h3>When to implement</h3>
-      <para>Do not implement this interface; the implementation is supplied with Windows as CLSID_FrameworkInputPane.</para>
-    </remarks>
-    <seealso cref="IUnknown" />
+    <summary>Provides methods that enable apps to be informed of state changes and location for the input pane. The input pane is a UI element, an on-screen keyboard or handwriting panel, that appears when the user performs an action that requires them to enter information, such as selecting a search box or an entry field in a form. Apps can then adjust their UI so that the input pane does not obscure items that the user might need to access while the input pane is shown.</summary>
   </member>
 </doc>

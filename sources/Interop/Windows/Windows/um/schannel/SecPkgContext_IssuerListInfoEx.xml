@@ -11,14 +11,11 @@
   </member>
   <member name="SecPkgContext_IssuerListInfoEx.aIssuers">
     <summary>
-      <para>A pointer to
-an array of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CERT_NAME_BLOB</a> structures that contains a list of the names of CAs that the server trusts.</para>
+      <para>A pointer to an array of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CERT_NAME_BLOB</a> structures that contains a list of the names of CAs that the server trusts.</para>
       <para>When you have finished using the data in this array, free it by calling the <see cref="FreeContextBuffer" /> function.</para>
     </summary>
   </member>
   <member name="SecPkgContext_IssuerListInfoEx.cIssuers">
-    <summary>
-      <para>The number of names in <b>aIssuers</b>.</para>
-    </summary>
+    <summary>The number of names in <b>aIssuers</b>.</summary>
   </member>
 </doc>

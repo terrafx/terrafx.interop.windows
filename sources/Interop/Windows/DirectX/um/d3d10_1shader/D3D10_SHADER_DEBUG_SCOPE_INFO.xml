@@ -3,42 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_SHADER_DEBUG_SCOPE_INFO">
-    <summary>
-      <para>Contains scope data that maps variable names to debug variables.</para>
-    </summary>
-    <remarks>
-      <para>The <b>D3D10_SHADER_DEBUG_SCOPE_INFO</b> structure is used with the <see cref="D3D10_SHADER_DEBUG_INFO" /> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-structures">Shader Structures</seealso>
+    <summary>Contains scope data that maps variable names to debug variables.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_SCOPE_INFO.ScopeType">
-    <summary>
-      <para>Type: <b><see cref="D3D10_SHADER_DEBUG_SCOPETYPE" /></b></para>
-      <para>Specifies the scope type.</para>
-    </summary>
+    <summary>Specifies the scope type.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_SCOPE_INFO.Name">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Offset to the name of scope in the strings list.</para>
-    </summary>
+    <summary>Offset to the name of scope in the strings list.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_SCOPE_INFO.uNameLen">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Length of the string pointed to by <b>Name</b>.</para>
-    </summary>
+    <summary>Length of the string pointed to by <b>Name</b>.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_SCOPE_INFO.uVariables">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of variables.</para>
-    </summary>
+    <summary>Number of variables.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_SCOPE_INFO.VariableData">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Offset an array of UINT values with <b>uVariables</b> members containing the scope variable list.</para>
-    </summary>
+    <summary>Offset an array of UINT values with <b>uVariables</b> members containing the scope variable list.</summary>
   </member>
 </doc>

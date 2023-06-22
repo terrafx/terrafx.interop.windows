@@ -1,0 +1,952 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.NtClose">
+    <summary>Deprecated. Closes the specified handle. <b>NtClose</b> is superseded by <see cref="CloseHandle" />.</summary>
+    <param name="Handle">The handle being closed.</param>
+    <returns>
+      <para>The various NTSTATUS values are defined in NTSTATUS.H, which is distributed with the Windows DDK.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STATUS_SUCCESS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The handle was closed.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.NtCreateFile">
+    <summary>
+      <para>Creates a new file or directory, or opens an existing file, device, directory, or volume.<div><b>Note</b>  Before using this function, please read <a href="https://docs.microsoft.com//windows/desktop/DevNotes/calling-internal-apis">Calling Internal APIs</a>.</div></para>
+      <para>This function is the user-mode equivalent to the <b>ZwCreateFile</b> function documented in the Windows Driver Kit (WDK).</para>
+    </summary>
+    <param name="FileHandle">A pointer to a variable that receives the file handle if the call is successful.</param>
+    <param name="DesiredAccess">
+      <para>The <b>ACCESS_MASK</b> value that expresses the type of access that the caller requires to the file or directory. The set of system-defined <i>DesiredAccess</i> flags determines the following specific access rights for file objects.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DELETE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The file can be deleted.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_READ_DATA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Data can be read from the file.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_READ_ATTRIBUTES</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>FileAttributes</i> flags, described later, can be read.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_READ_EA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Extended attributes associated with the file can be read. This flag is irrelevant to device and intermediate drivers.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>READ_CONTROL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The access control list (ACL) and ownership information associated with the file can be read.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_WRITE_DATA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Data can be written to the file.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_WRITE_ATTRIBUTES</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>FileAttributes</i> flags can be written.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_WRITE_EA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Extended attributes (EAs) associated with the file can be written. This flag is irrelevant to device and intermediate drivers.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_APPEND_DATA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Data can be appended to the file.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WRITE_DAC</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The discretionary access control list (DACL) associated with the file can be written.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WRITE_OWNER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Ownership information associated with the file can be written.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SYNCHRONIZE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The returned <i>FileHandle</i> can be waited on to synchronize with the completion of an I/O operation. If <i>FileHandle</i> was not opened for synchronous I/O, this value is ignored.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_EXECUTE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Data can be read into memory from the file using system paging I/O. This flag is irrelevant for device and intermediate drivers.</description>
+        </listheader>
+      </list> <para>Do not specify <b>FILE_READ_DATA</b>, <b>FILE_WRITE_DATA</b>, <b>FILE_APPEND_DATA</b>, or <b>FILE_EXECUTE</b> when you create or open a directory.</para><para>Callers of <b>NtCreateFile</b> can specify one or a combination of the following, possibly using a bitwise-OR with additional compatible flags from the preceding <i>DesiredAccess</i> flags list, for any file object that does not represent a directory file.</para><list type="table"><listheader><description>Value</description><description>Meaning</description></listheader><listheader><description><list type="bullet"><listheader><term><b>FILE_GENERIC_READ</b></term></listheader></list></description><description><code>STANDARD_RIGHTS_READ | FILE_READ_DATA | FILE_READ_ATTRIBUTES | FILE_READ_EA | SYNCHRONIZE</code></description></listheader><listheader><description><list type="bullet"><listheader><term><b>FILE_GENERIC_WRITE</b></term></listheader></list></description><description><code>STANDARD_RIGHTS_WRITE | FILE_WRITE_DATA | FILE_WRITE_ATTRIBUTES | FILE_WRITE_EA | FILE_APPEND_DATA | SYNCHRONIZE</code></description></listheader><listheader><description><list type="bullet"><listheader><term><b>FILE_GENERIC_EXECUTE</b></term></listheader></list></description><description><code>STANDARD_RIGHTS_EXECUTE | FILE_READ_ATTRIBUTES | FILE_EXECUTE | SYNCHRONIZE</code></description></listheader></list> <para>The <b>FILE_GENERIC_EXECUTE</b> value is irrelevant for device and intermediate drivers.</para><para>The <b>STANDARD_RIGHTS_</b><i>XXX</i> are predefined system values used to enforce security on system objects.</para><para>To open or create a directory file, as also indicated with the <i>CreateOptions</i>parameter, callers of <b>NtCreateFile</b> can specify one or a combination of the following, possibly using a bitwise-OR with one or more compatible flags from the preceding<i>DesiredAccess</i> flags list.</para><list type="table"><listheader><description>Value</description><description>Meaning</description></listheader><listheader><description><list type="bullet"><listheader><term><b>FILE_LIST_DIRECTORY</b></term></listheader></list></description><description>Files in the directory can be listed.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>FILE_TRAVERSE</b></term></listheader></list></description><description>The directory can be traversed: that is, it can be part of the pathname of a file.</description></listheader></list></param>
+    <param name="ObjectAttributes">
+      <para>A pointer to a structure already initialized with<b>InitializeObjectAttributes</b>. Members of this structure for a file object include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ULONG Length</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Specifies the number of bytes of <i>ObjectAttributes</i> data supplied. This value must be at least sizeof(OBJECT_ATTRIBUTES).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HANDLE RootDirectory</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Optionally specifies a handle to a directory obtained by a preceding call to <b>NtCreateFile</b>. If this value is <b>NULL</b>, the <b>ObjectName</b> member must be a fully qualified file specification that includes the full path to the target file. If this value is non-<b>NULL</b>, the <b>ObjectName</b> member specifies a file name relative to this directory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PUNICODE_STRING ObjectName</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Points to a buffered Unicode string that names the file to be created or opened. This value must be a fully qualified file specification or the name of a device object, unless it is the name of a file relative to the directory specified by <b>RootDirectory</b>. For example, \Device\Floppy1\myfile.dat or \??\B:\myfile.dat could be the fully qualified file specification, provided that the floppy driver and overlying file system are already loaded. For more information, see <a href="https://docs.microsoft.com//windows/desktop/FileIO/naming-a-file">File Names, Paths, and Namespaces</a>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ULONG Attributes</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Is a set of flags that controls the file object attributes. This value can be zero or <b>OBJ_CASE_INSENSITIVE</b>, which indicates that name-lookup code should ignore the case of the <b>ObjectName</b> member rather than performing an exact-match search. The value <b>OBJ_INHERIT</b> is irrelevant to device and intermediate drivers.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PSECURITY_DESCRIPTOR SecurityDescriptor</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Optionally specifies a security descriptor to be applied to a file. ACLs specified by such a security descriptor are applied to the file only when it is created. If the value is <b>NULL</b> when a file is created, the ACL placed on the file is file-system-dependent; most file systems propagate some part of such an ACL from the parent directory file combined with the caller's default ACL. Device and intermediate drivers can set this member to <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PSECURITY_QUALITY_OF_SERVICE SecurityQualityOfService</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Specifies the access rights a server should be given to the client's security context. This value is non-<b>NULL</b> only when a connection to a protected server is established, allowing the caller to control which parts of the caller's security context are made available to the server and whether the server is allowed to impersonate the caller.</description>
+        </listheader>
+      </list>
+    </param>
+    <param name="IoStatusBlock">
+      <para>A pointer to a variable that receives the final completion status and information about the requested operation. On return from <b>NtCreateFile</b>, the<b>Information</b> member contains one of the following values:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>FILE_CREATED</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>FILE_OPENED</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>FILE_OVERWRITTEN</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>FILE_SUPERSEDED</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>FILE_EXISTS</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>FILE_DOES_NOT_EXIST</b>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="AllocationSize">The initial allocation size in bytes for the file. A nonzero value has no effect unless the file is being created, overwritten, or superseded.</param>
+    <param name="FileAttributes">The file attributes. Explicitly specified attributes are applied only when the file is created, superseded, or, in some cases, overwritten. By default, this value is a <b>FILE_ATTRIBUTE_NORMAL</b>, which can be overridden by an ORed combination of one or more<b>FILE_ATTRIBUTE_</b><i>xxxx</i> flags, which are defined in Wdm.h and NtDdk.h. For a list of flags that can be used with<b>NtCreateFile</b>, see<b>CreateFile</b>.</param>
+    <param name="ShareAccess">
+      <para>The type of share access that the caller would like to use in the file, as zero, or as one or a combination of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_SHARE_READ</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The file can be opened for read access by other threads' calls to <b>NtCreateFile</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_SHARE_WRITE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The file can be opened for write access by other threads' calls to <b>NtCreateFile</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_SHARE_DELETE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The file can be opened for delete access by other threads' calls to <b>NtCreateFile</b>.</description>
+        </listheader>
+      </list> <para>For more information, see the Windows SDK.</para></param>
+    <param name="CreateDisposition">
+      <para>Specifies what to do, depending on whether the file already exists, as one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_SUPERSEDE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>If the file already exists, replace it with the given file. If it does not, create the given file.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_CREATE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>If the file already exists, fail the request and do not create or open the given file. If it does not, create the given file.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_OPEN</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>If the file already exists, open it instead of creating a new file. If it does not, fail the request and do not create a new file.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_OPEN_IF</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>If the file already exists, open it. If it does not, create the given file.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_OVERWRITE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>If the file already exists, open it and overwrite it. If it does not, fail the request.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_OVERWRITE_IF</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>If the file already exists, open it and overwrite it. If it does not, create the given file.</description>
+        </listheader>
+      </list>
+    </param>
+    <param name="CreateOptions">
+      <para>The options to be applied when creating or opening the file, as a compatible combination of the following flags.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_DIRECTORY_FILE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The file being created or opened is a directory file. With this flag, the <i>CreateDisposition</i> parameter must be set to <b>FILE_CREATE</b>, <b>FILE_OPEN</b>, or <b>FILE_OPEN_IF</b>. With this flag, other compatible <i>CreateOptions</i> flags include only the following: <b>FILE_SYNCHRONOUS_IO_ALERT</b>, <b>FILE_SYNCHRONOUS_IO _NONALERT</b>, <b>FILE_WRITE_THROUGH</b>, <b>FILE_OPEN_FOR_BACKUP_INTENT</b>, and <b>FILE_OPEN_BY_FILE_ID</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_NON_DIRECTORY_FILE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The file being opened must not be a directory file or this call fails. The file object being opened can represent a data file, a logical, virtual, or physical device, or a volume.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_WRITE_THROUGH</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Applications that write data to the file must actually transfer the data into the file before any requested write operation is considered complete. This flag is automatically set if the <i>CreateOptions</i> flag <b>FILE_NO_INTERMEDIATE _BUFFERING</b> is set.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_SEQUENTIAL_ONLY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>All accesses to the file are sequential.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_RANDOM_ACCESS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Accesses to the file can be random, so no sequential read-ahead operations should be performed on the file by FSDs or the system.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_NO_INTERMEDIATE_BUFFERING</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The file cannot be cached or buffered in a driver's internal buffers. This flag is incompatible with the <i>DesiredAccess</i><b>FILE_APPEND_DATA</b> flag.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_SYNCHRONOUS_IO_ALERT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>All operations on the file are performed synchronously. Any wait on behalf of the caller is subject to premature termination from alerts. This flag also causes the I/O system to maintain the file position context. If this flag is set, the <i>DesiredAccess</i><b>SYNCHRONIZE</b> flag also must be set.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_SYNCHRONOUS_IO_NONALERT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>All operations on the file are performed synchronously. Waits in the system to synchronize I/O queuing and completion are not subject to alerts. This flag also causes the I/O system to maintain the file position context. If this flag is set, the <i>DesiredAccess</i><b>SYNCHRONIZE</b> flag also must be set.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_CREATE_TREE_CONNECTION</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Create a tree connection for this file in order to open it over the network. This flag is not used by device and intermediate drivers.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_NO_EA_KNOWLEDGE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>If the extended attributes on an existing file being opened indicate that the caller must understand EAs to properly interpret the file, fail this request because the caller does not understand how to deal with EAs. This flag is irrelevant for device and intermediate drivers.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_OPEN_REPARSE_POINT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Open a file with a reparse point and bypass normal reparse point processing for the file. For more information, see the Remarks section.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_DELETE_ON_CLOSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Delete the file when the last handle to it is passed to <b>NtClose</b>. If this flag is set, the DELETE flag must be set in the <i>DesiredAccess</i> parameter.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_OPEN_BY_FILE_ID</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The file name that is specified by the <i>ObjectAttributes</i> parameter includes the 8-byte file reference number for the file. This number is assigned by and specific to the particular file system. If the file is a reparse point, the file name will also include the name of a device. Note that the FAT file system does not support this flag. This flag is not used by device and intermediate drivers.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_OPEN_FOR_BACKUP_INTENT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The file is being opened for backup intent. Therefore, the system should check for certain access rights and grant the caller the appropriate access to the file before checking the <i>DesiredAccess</i> parameter against the file's security descriptor. This flag not used by device and intermediate drivers.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_RESERVE_OPFILTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>This flag allows an application to request a filter opportunistic lock (<a href="https://www.microsoft.com/?ref=go">oplock</a>) to prevent other applications from getting share violations. If there are already open handles, the create request will fail with <b>STATUS_OPLOCK_NOT_GRANTED</b>. For more information, see the Remarks section.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_OPEN_REQUIRING_OPLOCK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The file is being opened and an opportunistic lock (<a href="https://www.microsoft.com/?ref=go">oplock</a>) on the file is being requested as a single atomic operation. The file system checks for oplocks before it performs the create operation and will fail the create with a return code of <b>STATUS_CANNOT_BREAK_OPLOCK</b> if the result would be to break an existing oplock. For more information, see the Remarks section.<b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This flag is not supported.<para>This flag is supported on the following file systems: NTFS, FAT, and exFAT.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FILE_COMPLETE_IF_OPLOCKED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Complete this operation immediately with an alternate success code of <b>STATUS_OPLOCK_BREAK_IN_PROGRESS</b> if the target file is oplocked, rather than blocking the caller's thread. If the file is <a href="https://www.microsoft.com/?ref=go">oplocked</a>, another caller already has access to the file. This flag is not used by device and intermediate drivers.</description>
+        </listheader>
+      </list>
+    </param>
+    <param name="EaBuffer">
+      <para>Pointer to an EA buffer used to pass extended attributes.</para>
+      <div>
+        <b>Note</b>  Some file systems may not support EA buffers.</div>
+    </param>
+    <param name="EaLength">Length of the EA buffer.</param>
+    <returns>
+      <b>NtCreateFile</b> returns either<b>STATUS_SUCCESS</b> or an appropriate error status. If it returns an error status, the caller can find more information about the cause of the failure by checking the<i>IoStatusBlock</i>. To simplify this check, an application can use the <b>NT_SUCCESS</b>, <b>NT_ERROR</b>, and <b>NT_WARNING</b> macros.</returns>
+  </member>
+  <member name="Windows.NtDeviceIoControlFile">
+    <summary>Deprecated. Builds descriptors for the supplied buffer(s) and passes the untyped data to the device driver associated with the file handle. <b>NtDeviceIoControlFile</b> is superseded by <see cref="DeviceIoControl" />.</summary>
+    <param name="FileHandle">Open file handle to the file or device to which the control information should be given.</param>
+    <param name="Event">A handle to an event to be set to the <code>signaled</code> state when the operation completes. This parameter can be <b>NULL</b>.</param>
+    <param name="ApcRoutine">Procedure to be invoked once the operation completes. This parameter can be <b>NULL</b>. For more information on Asynchronous Procedure Calls (APCs), see <a href="https://docs.microsoft.com//windows/desktop/Sync/asynchronous-procedure-calls">Asynchronous Procedure Calls</a>.</param>
+    <param name="ApcContext">A pointer to pass to <i>ApcRoutine</i> when the operation completes. This parameter is required if an <i>ApcRoutine</i> is specified.</param>
+    <param name="IoStatusBlock">Variable to receive the final completion status and information about the operation. Service calls that return information return the length of the data that is written to the output buffer in the Information field of this variable.</param>
+    <param name="IoControlCode">Code that indicates which device I/O control function is to be executed.</param>
+    <param name="InputBuffer">A pointer to a buffer that contains the information to be given to the target device. This parameter can be <b>NULL</b>. This information is device-dependent.</param>
+    <param name="InputBufferLength">Length of the <i>InputBuffer</i> in bytes. If the buffer is not supplied, then this value is ignored.</param>
+    <param name="OutputBuffer">A pointer to a buffer that is to receive the device-dependent return information from the target device. This parameter can be <b>NULL</b>.</param>
+    <param name="OutputBufferLength">Length of the <i>OutputBuffer</i> in bytes. If the buffer is not supplied, then this value is ignored.</param>
+    <returns>
+      <para>The various NTSTATUS values are defined in NTSTATUS.H, which is distributed with the Windows DDK.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STATUS_SUCCESS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The control operation was properly queued to the I/O system. Once the operation completes, the status can be determined by examining the Status field of the I/O status block.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.NtOpenFile">
+    <summary>
+      <para>Opens an existing file, device, directory, or volume, and returns a handle for the file object.</para>
+      <para>This function is equivalent to the <b>ZwOpenFile</b> function documented in the Windows Driver Kit (WDK).</para>
+    </summary>
+    <param name="FileHandle">A pointer to a handle for the opened file. The driver must close the handle with<b>ZwClose</b> once the handle is no longer in use.</param>
+    <param name="DesiredAccess">The <b>ACCESS_MASK</b> value that expresses the types of file access desired by the caller. For information about the types of access that can be specified, see<b>ZwCreateFile</b> in the WDK.</param>
+    <param name="ObjectAttributes">A pointer to a structure that a caller initializes with<b>InitializeObjectAttributes</b>. If the caller is not running in the system process context, it must set the <b>OBJ_KERNEL_HANDLE</b> attribute for<i>ObjectAttributes</i>. For more information about specifying object attributes, see the <i>CreateOptions</i> parameter of <b>ZwCreateFile</b> in the WDK.</param>
+    <param name="IoStatusBlock">A pointer to a structure that contains information about the requested operation and the final completion status.</param>
+    <param name="ShareAccess">The type of share access for the file. For more information, see<b>ZwCreateFile</b> in the WDK.</param>
+    <param name="OpenOptions">The options to be applied when opening the file. For more information, see<b>ZwCreateFile</b> in the WDK.</param>
+    <returns>
+      <b>NtOpenFile</b> either returns<b>STATUS_SUCCESS</b> or an appropriate error status. If it returns an error status, the caller can find additional information about the cause of the failure by checking the<i>IoStatusBlock</i>.</returns>
+  </member>
+  <member name="Windows.NtWaitForSingleObject">
+    <summary>Deprecated. Waits until the specified object attains a state of<code>signaled</code>. <b>NtWaitForSingleObject</b> is superseded by <see cref="WaitForSingleObject" />.</summary>
+    <param name="Handle">The handle to the wait object.</param>
+    <param name="Alertable">
+      <para>Specifies whether an alert can be delivered when the object is waiting.</para>
+      <h4>TRUE</h4>
+      <para>The alert can be delivered.</para>
+      <h4>FALSE</h4>
+      <para>The alert cannot be delivered.</para>
+    </param>
+    <param name="Timeout">A pointer to an absolute or relative time over which the wait is to occur. Can be null. If a timeout is specified, and the object has not attained a state of <code>signaled</code> when the timeout expires, then the wait is automatically satisfied. If an explicit timeout value of zero is specified, then no wait occurs if the wait cannot be satisfied immediately.</param>
+    <returns>
+      <para>The wait completion status. The various NTSTATUS values are defined in NTSTATUS.H, which is distributed with the Windows DDK.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STATUS_SUCCESS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The specified object satisfied the wait.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STATUS_TIMEOUT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A timeout occurred.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STATUS_ALERTED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The wait was aborted to deliver an alert to the current thread.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STATUS_USER_APC</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The wait was aborted to deliver a user <a href="https://docs.microsoft.com//windows/desktop/Sync/asynchronous-procedure-calls">Asynchronous Procedure Call (APC)</a> to the current thread.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.RtlAnsiStringToUnicodeString">
+    <summary>Converts the specified ANSI source string into a Unicode string.</summary>
+    <param name="DestinationString">A pointer to a <see cref="UNICODE_STRING" /> structure to hold the converted Unicode string. If <i>AllocateDestinationString</i> is <b>TRUE</b>, the routine allocates a new buffer to hold the string data, and updates the <b>Buffer</b> member of <i>DestinationString</i> to point to the new buffer. Otherwise, the routine uses the currently specified buffer to hold the string.</param>
+    <param name="SourceString">A pointer to the <b>ANSI_STRING</b> structure that contains the ANSI string to be converted to Unicode.</param>
+    <param name="AllocateDestinationString">
+      <para>Controls allocation of buffer space for the destination string.</para>
+      <h4>TRUE</h4>
+      <para>Buffer space is allocated for <i>DestinationString</i>. If set to <b>TRUE</b>, the buffer must be deallocated using <see cref="RtlFreeUnicodeString" />.</para>
+      <h4>FALSE</h4>
+      <para>Buffer space is not allocated for <i>DestinationString</i>.</para>
+    </param>
+    <returns>
+      <para>The various NTSTATUS values are defined in NTSTATUS.H, which is distributed with the Windows DDK.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STATUS_SUCCESS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The ANSI string was converted to Unicode. On failure, the routine does not allocate any memory.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.RtlCharToInteger">
+    <summary>Converts a character string to an integer.</summary>
+    <param name="String">
+      <para>A pointer to the string to convert. The format of the string is as follows:</para>
+      <para>[whitespace] [{+ | -}] [0 [{x | o | b}]] [digits]</para>
+    </param>
+    <param name="Base">
+      <b>ULONG</b> that contains the number base to use for the conversion, such as base 10. Only base 2, 8, 10, and 16 are supported.</param>
+    <param name="Value">A pointer to a <b>ULONG</b> that receives the integer that resulted from the conversion.</param>
+    <returns>If the function succeeds, the function returns <b>STATUS_SUCCESS</b>.</returns>
+  </member>
+  <member name="Windows.RtlFreeAnsiString">
+    <summary>Frees the string buffer allocated by <see cref="RtlUnicodeStringToAnsiString" />.</summary>
+    <param name="AnsiString">A pointer to an ANSI string whose buffer was previously allocated by <see cref="RtlUnicodeStringToAnsiString" />.</param>
+  </member>
+  <member name="Windows.RtlFreeOemString">
+    <summary>Frees the string buffer allocated by<see cref="RtlUnicodeStringToOemString" />.</summary>
+    <param name="OemString">Address of the OEM string whose buffer was previously allocated by <see cref="RtlUnicodeStringToOemString" />.</param>
+  </member>
+  <member name="Windows.RtlFreeUnicodeString">
+    <summary>Frees the string buffer allocated by<see cref="RtlAnsiStringToUnicodeString" /> or by <b>RtlUpcaseUnicodeString</b>.</summary>
+    <param name="UnicodeString">A pointer to the Unicode string whose buffer was previously allocated by <see cref="RtlAnsiStringToUnicodeString" />.</param>
+  </member>
+  <member name="Windows.RtlInitString">
+    <summary>Initializes a counted string.</summary>
+    <param name="DestinationString">The counted string to be initialized. The <i>DestinationString</i> is initialized to point to the <i>SourceString</i>. The <b>Length</b> and <b>MaximumLength</b> fields of the <i>DestinationString</i> are initialized to the length of the <i>SourceString</i>.</param>
+    <param name="SourceString">A pointer to a null-terminated string. If the <i>SourceString</i> is not specified, the <b>Length</b> and <b>MaximumLength</b> fields of the <i>DestinationString</i> are initialized to zero.</param>
+  </member>
+  <member name="Windows.RtlInitUnicodeString">
+    <summary>Initializes a counted Unicode string.</summary>
+    <param name="DestinationString">The buffer for a counted Unicode string to be initialized. The length is initialized to zero if the <i>SourceString</i> is not specified.</param>
+    <param name="SourceString">Optional pointer to a null-terminated Unicode string with which to initialize the counted string.</param>
+  </member>
+  <member name="Windows.RtlNtStatusToDosError">
+    <summary>Converts the specified NTSTATUS code to its equivalent system error code.</summary>
+    <param name="Status">The NTSTATUS code to be converted.</param>
+    <returns>The function returns the corresponding <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a>.</returns>
+  </member>
+  <member name="Windows.RtlUnicodeStringToAnsiString">
+    <summary>Converts the specified Unicode source string into an ANSI string.</summary>
+    <param name="DestinationString">A pointer to an <b>ANSI_STRING</b> structure to hold the converted ANSI string. If <i>AllocateDestinationString</i> is <b>TRUE</b>, the routine allocates a new buffer to hold the string data and updates the <b>Buffer</b> member of <i>DestinationString</i> to point to the new buffer. Otherwise, the routine uses the currently specified buffer to hold the string.</param>
+    <param name="SourceString">The <see cref="UNICODE_STRING" /> structure that contains the source string to be converted to ANSI.</param>
+    <param name="AllocateDestinationString">
+      <para>Controls allocation of the buffer space for the <i>DestinationString</i>.</para>
+      <h4>TRUE</h4>
+      <para>Buffer space is allocated for <i>DestinationString</i>. If set to <b>TRUE</b>, the buffer must be deallocated using <see cref="RtlFreeAnsiString" />.</para>
+      <h4>FALSE</h4>
+      <para>Buffer space is not allocated for <i>DestinationString</i>.</para>
+    </param>
+    <returns>
+      <para>The various NTSTATUS values are defined in NTSTATUS.H, which is distributed with the DDK.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STATUS_SUCCESS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The Unicode string was converted to ANSI. Otherwise, no storage was allocated and no conversion was done.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.RtlUnicodeStringToOemString">
+    <summary>Converts the specified Unicode source string into an OEM string. The translation is done with respect to the OEM code page (OCP).</summary>
+    <param name="DestinationString">A pointer to an <see cref="OEM_STRING" /> structure that is contains the OEM equivalent to the Unicode source string. The <b>MaximumLength</b> field is set if <i>AllocateDestinationString</i> is <b>TRUE</b>.</param>
+    <param name="SourceString">A pointer to an <see cref="UNICODE_STRING" /> structure that is to be converted to OEM.</param>
+    <param name="AllocateDestinationString">
+      <para>Controls allocation of the buffer space for the destination string.</para>
+      <h4>TRUE</h4>
+      <para>Buffer space is allocated for <i>DestinationString</i>. If set to <b>TRUE</b>, the buffer must be deallocated using <see cref="RtlFreeOemString" />.</para>
+      <h4>FALSE</h4>
+      <para>Buffer space is not allocated for <i>DestinationString</i>.</para>
+    </param>
+    <returns>
+      <para>The various NTSTATUS values are defined in NTSTATUS.H, which is distributed with the Windows DDK.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STATUS_SUCCESS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The Unicode string was converted to OEM. Otherwise, no storage was allocated, and no conversion was done.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.RtlUnicodeToMultiByteSize">
+    <summary>Determines how many bytes are needed to represent a Unicode string as an ANSI string.</summary>
+    <param name="BytesInMultiByteString">Returns the number of bytes for the ANSI equivalent of the Unicode string pointed to by <i>UnicodeString</i>. This number does not include the terminating <b>NULL</b> character.</param>
+    <param name="UnicodeString">The Unicode source string for which the ANSI length is calculated.</param>
+    <param name="BytesInUnicodeString">The number of bytes in the string pointed to by<i>UnicodeString</i>.</param>
+    <returns>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STATUS_SUCCESS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The count was successful. The various NTSTATUS values are defined in NTSTATUS.H, which is distributed with the Windows DDK.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.RtlUniform">
+    <summary>Generates a uniform random number using D.H. Lehmer's 1948 algorithm.</summary>
+    <param name="Seed">The seed value.</param>
+    <returns>The function returns a random number uniformly distributed over [0..MAXLONG].</returns>
+  </member>
+</doc>

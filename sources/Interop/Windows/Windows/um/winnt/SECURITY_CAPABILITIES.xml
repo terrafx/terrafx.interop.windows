@@ -3,35 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SECURITY_CAPABILITIES">
-    <summary>
-      <para>The <b>SECURITY_CAPABILITIES</b> structure defines the security capabilities of the app container.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SecAuthZ/capability-sid-constants">Capability SID Constants</seealso>
+    <summary>The <b>SECURITY_CAPABILITIES</b> structure defines the security capabilities of the app container.</summary>
   </member>
-  <member name="SECURITY_CAPABILITIES.Capabilities.size_is">
-    <summary></summary>
-  </member>
-  <member name="SECURITY_CAPABILITIES.Capabilities.size_is.CapabilityCount">
-    <summary></summary>
-  </member>
+  <member name="SECURITY_CAPABILITIES.Capabilities.size_is"></member>
+  <member name="SECURITY_CAPABILITIES.Capabilities.size_is.CapabilityCount"></member>
   <member name="SECURITY_CAPABILITIES.AppContainerSid">
-    <summary>
-      <para>The SID of the app container.</para>
-    </summary>
+    <summary>The SID of the app container.</summary>
   </member>
   <member name="SECURITY_CAPABILITIES.Capabilities">
-    <summary>
-      <para>The specific capabilities.</para>
-    </summary>
+    <summary>The specific capabilities.</summary>
   </member>
   <member name="SECURITY_CAPABILITIES.CapabilityCount">
-    <summary>
-      <para>The number of the capabilities.</para>
-    </summary>
+    <summary>The number of the capabilities.</summary>
   </member>
   <member name="SECURITY_CAPABILITIES.Reserved">
-    <summary>
-      <para>This member is reserved. Do not use it.</para>
-    </summary>
+    <summary>This member is reserved. Do not use it.</summary>
   </member>
 </doc>

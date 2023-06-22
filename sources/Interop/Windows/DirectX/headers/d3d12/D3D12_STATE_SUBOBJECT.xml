@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_STATE_SUBOBJECT">
-    <summary>
-      <para>Represents a subobject within a state object description. Use with <see cref="D3D12_STATE_OBJECT_DESC" />.</para>
-    </summary>
+    <summary>Represents a subobject within a state object description. Use with <see cref="D3D12_STATE_OBJECT_DESC" />.</summary>
   </member>
   <member name="D3D12_STATE_SUBOBJECT.Type">
-    <summary>
-      <para>A <see cref="D3D12_STATE_SUBOBJECT_TYPE" /> specifying the type of the state subobject.</para>
-    </summary>
+    <summary>A <see cref="D3D12_STATE_SUBOBJECT_TYPE" /> specifying the type of the state subobject.</summary>
   </member>
   <member name="D3D12_STATE_SUBOBJECT.pDesc">
-    <summary>
-      <para>Pointer to state object description of the type specified in the <i>Type</i> parameter.</para>
-    </summary>
+    <summary>Pointer to state object description of the type specified in the <i>Type</i> parameter.</summary>
   </member>
 </doc>

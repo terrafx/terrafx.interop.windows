@@ -5,35 +5,20 @@
   <member name="DML_ACTIVATION_SHRINK_OPERATOR_DESC">
     <summary>
       <para>Performs the shrink activation function on every element in <i>InputTensor</i>, placing the result into the corresponding element of <i>OutputTensor</i>.</para>
-      <code>f(x) = x - Bias, if x &gt; Threshold
-       x + Bias, if x &lt; -Threshold
-       0,        otherwise
-</code>
+      <code>f(x) = x - Bias, if x &gt; Threshold x + Bias, if x &lt; -Threshold 0, otherwise</code>
       <para>This operator supports in-place execution, meaning that the output tensor is permitted to alias <i>InputTensor</i> during binding.</para>
     </summary>
   </member>
   <member name="DML_ACTIVATION_SHRINK_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The input tensor to read from.</para>
-    </summary>
+    <summary>The input tensor to read from.</summary>
   </member>
   <member name="DML_ACTIVATION_SHRINK_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The output tensor to write the results to.</para>
-    </summary>
+    <summary>The output tensor to write the results to.</summary>
   </member>
   <member name="DML_ACTIVATION_SHRINK_OPERATOR_DESC.Bias">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
-      <para>The value of the bias. A typical default for this value is 0.0.</para>
-    </summary>
+    <summary>The value of the bias. A typical default for this value is 0.0.</summary>
   </member>
   <member name="DML_ACTIVATION_SHRINK_OPERATOR_DESC.Threshold">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
-      <para>The value of the threshold. A typical default for this value is 0.5.</para>
-    </summary>
+    <summary>The value of the threshold. A typical default for this value is 0.5.</summary>
   </member>
 </doc>

@@ -3,35 +3,23 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_CUSTOM_HTTP_PROXY">
-    <summary>
-      <para>A structure that is used to specify the custom proxy for the channel, using
-the <see cref="WS_CHANNEL_PROPERTY_CUSTOM_HTTP_PROXY" />.</para>
-    </summary>
+    <summary>A structure that is used to specify the custom proxy for the channel, using the <see cref="WS_CHANNEL_PROPERTY_CUSTOM_HTTP_PROXY" />.</summary>
   </member>
   <member name="WS_CUSTOM_HTTP_PROXY.servers">
     <summary>
-      <para>A semicolon-separated list of the proxy servers to be used by the channel. Each
-entry must follow the following EBNF.</para>
-      <code>
-&lt;server&gt;[":"&lt;port&gt;]
-</code>
+      <para>A semicolon-separated list of the proxy servers to be used by the channel. Each entry must follow the following EBNF.</para>
+      <code>&lt;server&gt;[":"&lt;port&gt;]</code>
       <list type="bullet">
         <item>
-          <description>server=Address of the server
-</description>
+          <description>server=Address of the server</description>
         </item>
         <item>
-          <description>port=TCP port number
-</description>
+          <description>port=TCP port number</description>
         </item>
       </list>
     </summary>
   </member>
   <member name="WS_CUSTOM_HTTP_PROXY.bypass">
-    <summary>
-      <para>A semicolon separated list of servers which must be bypassed by the proxy.
-The bypass list can contain the string &lt;local&gt; to indicate that
-all local machine servers are bypassed.</para>
-    </summary>
+    <summary>A semicolon separated list of servers which must be bypassed by the proxy. The bypass list can contain the string &lt;local&gt; to indicate that all local machine servers are bypassed.</summary>
   </member>
 </doc>

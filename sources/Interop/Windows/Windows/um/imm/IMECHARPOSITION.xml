@@ -3,39 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMECHARPOSITION">
-    <summary>
-      <para>Contains information about the character position in the composition window.</para>
-    </summary>
-    <remarks>
-      <para>When an application uses IME to draw the composition string, the members of this structure are automatically filled. Applications that draw the composition string themselves, rather than relying on the IME, are responsible for filling all the fields defined in the structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Intl/imr-querycharposition">IMR_QUERYCHARPOSITION</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Intl/input-method-manager">Input Method Manager</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Intl/input-method-manager-structures">Input Method Manager Structures</seealso>
+    <summary>Contains information about the character position in the composition window.</summary>
   </member>
   <member name="IMECHARPOSITION.dwSize">
-    <summary>
-      <para>Size of the structure, in bytes.</para>
-    </summary>
+    <summary>Size of the structure, in bytes.</summary>
   </member>
   <member name="IMECHARPOSITION.dwCharPos">
-    <summary>
-      <para>Character offset in the composition string, in <b>TCHAR</b> values.</para>
-    </summary>
+    <summary>Character offset in the composition string, in <b>TCHAR</b> values.</summary>
   </member>
   <member name="IMECHARPOSITION.pt">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure containing the coordinate of the top left point of requested character in screen coordinates. The top left point is based on the character baseline in any text flow.</para>
-    </summary>
+    <summary>A <see cref="POINT" /> structure containing the coordinate of the top left point of requested character in screen coordinates. The top left point is based on the character baseline in any text flow.</summary>
   </member>
   <member name="IMECHARPOSITION.cLineHeight">
-    <summary>
-      <para>Height of a line that contains the requested character, in pixels.</para>
-    </summary>
+    <summary>Height of a line that contains the requested character, in pixels.</summary>
   </member>
   <member name="IMECHARPOSITION.rcDocument">
-    <summary>
-      <para>A <see cref="RECT" /> structure containing the editable area for text, in screen coordinates, for the application.</para>
-    </summary>
+    <summary>A <see cref="RECT" /> structure containing the editable area for text, in screen coordinates, for the application.</summary>
   </member>
 </doc>

@@ -3,113 +3,41 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICMetadataReader.GetCount">
-    <summary>
-      <para>Gets the number of metadata items within the reader.</para>
-    </summary>
-    <param name="pcCount">
-      <para>Type: <b>UINT*</b></para>
-      <para>Pointer that receives the number of metadata items within the reader.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the number of metadata items within the reader.</summary>
+    <param name="pcCount">Pointer that receives the number of metadata items within the reader.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICMetadataReader.GetEnumerator">
-    <summary>
-      <para>Gets an enumerator of all the metadata items.</para>
-    </summary>
-    <param name="ppIEnumMetadata">
-      <para>Type: <b><see cref="IWICEnumMetadataItem" />**</b></para>
-      <para>Pointer that receives a pointer to the metadata enumerator.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets an enumerator of all the metadata items.</summary>
+    <param name="ppIEnumMetadata">Pointer that receives a pointer to the metadata enumerator.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICMetadataReader.GetMetadataFormat">
-    <summary>
-      <para>Gets the metadata format associated with the reader.</para>
-    </summary>
-    <param name="pguidMetadataFormat">
-      <para>Type: <b>GUID*</b></para>
-      <para>Pointer that receives the metadata format GUID.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the metadata format associated with the reader.</summary>
+    <param name="pguidMetadataFormat">Pointer that receives the metadata format GUID.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICMetadataReader.GetMetadataHandlerInfo">
-    <summary>
-      <para>Gets the metadata handler info associated with the reader.</para>
-    </summary>
-    <param name="ppIHandler">
-      <para>Type: <b><see cref="IWICMetadataHandlerInfo" />**</b></para>
-      <para>Pointer that receives a pointer to the <see cref="IWICMetadataHandlerInfo" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the metadata handler info associated with the reader.</summary>
+    <param name="ppIHandler">Pointer that receives a pointer to the <see cref="IWICMetadataHandlerInfo" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICMetadataReader.GetValue">
-    <summary>
-      <para>Gets the metadata item value.</para>
-    </summary>
-    <param name="pvarSchema">
-      <para>Type: <b>const <see cref="PROPVARIANT" />*</b></para>
-      <para>Pointer to the metadata item's schema property.</para>
-    </param>
-    <param name="pvarId">
-      <para>Type: <b>const <see cref="PROPVARIANT" />*</b></para>
-      <para>Pointer to the metadata item's id.</para>
-    </param>
-    <param name="pvarValue">
-      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
-      <para>Pointer that receives the metadata value.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the metadata item value.</summary>
+    <param name="pvarSchema">Pointer to the metadata item's schema property.</param>
+    <param name="pvarId">Pointer to the metadata item's id.</param>
+    <param name="pvarValue">Pointer that receives the metadata value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICMetadataReader.GetValueByIndex">
-    <summary>
-      <para>Gets the metadata item at the given index.</para>
-    </summary>
-    <param name="nIndex">
-      <para>Type: <b>UINT</b></para>
-      <para>The index of the metadata item to retrieve.</para>
-    </param>
-    <param name="pvarSchema">
-      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
-      <para>Pointer that receives the schema property.</para>
-    </param>
-    <param name="pvarId">
-      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
-      <para>Pointer that receives the id property.</para>
-    </param>
-    <param name="pvarValue">
-      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
-      <para>Pointer that receives the metadata value.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the metadata item at the given index.</summary>
+    <param name="nIndex">The index of the metadata item to retrieve.</param>
+    <param name="pvarSchema">Pointer that receives the schema property.</param>
+    <param name="pvarId">Pointer that receives the id property.</param>
+    <param name="pvarValue">Pointer that receives the metadata value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICMetadataReader">
-    <summary>
-      <para>Exposes methods that provide access to underlining metadata content. This interface is implemented by independent software vendors (ISVs) to create new metadata readers.</para>
-    </summary>
-    <remarks>
-      <para>A metadata reader can be used to access metadata blocks and items within a metadata block instead of using a query reader. To directly access the metadata reader, query a decoder or its frames for the <see cref="IWICMetadataBlockReader" /> interface to enumerate each metadata reader.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadatahandlers">Metadata Extensibility Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadataquerylanguage">Metadata Query Language Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+    <summary>Exposes methods that provide access to underlining metadata content. This interface is implemented by independent software vendors (ISVs) to create new metadata readers.</summary>
   </member>
 </doc>

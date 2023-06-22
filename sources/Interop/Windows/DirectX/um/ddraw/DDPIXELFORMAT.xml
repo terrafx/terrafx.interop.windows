@@ -5,245 +5,146 @@
   <member name="DDPIXELFORMAT">
     <summary>
       <para>The <b>DDPIXELFORMAT</b> structure describes the pixel format of a DirectDrawSurface object for the <see cref="IDirectDrawSurface7.GetPixelFormat" /> method.</para>
-      <para>
-        <b>Note</b>  Rather than use this structure to decode files with the DirectDraw Surface (DDS) file format (.dds), you should use an alternative structure that does not rely on Ddraw.h. For more information about alternative structures for DDS, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddds/dx-graphics-dds">DDS</a>.</para>
+      <div>
+        <b>Note</b>  Rather than use this structure to decode files with the DirectDraw Surface (DDS) file format (.dds), you should use an alternative structure that does not rely on Ddraw.h. For more information about alternative structures for DDS, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddds/dx-graphics-dds">DDS</a>.</div>
     </summary>
-    <remarks>
-      <para>The <b>dwAlphaBitDepth</b> member reflects the bit depth of an alpha-only pixel format (DDPF_ALPHA). For pixel formats that include the alpha component with color components (DDPF_ALPHAPIXELS), the alpha bit depth is obtained by counting the bits in the various mask members. The following code example returns the number of bits set in a given bitmask.</para>
-      <code>WORD GetNumberOfBits( DWORD dwMask )
-{
-    WORD wBits = 0;
-    while( dwMask )
-    {
-        dwMask = dwMask &amp;amp;amp;amp;amp;amp; ( dwMask - 1 );
-        wBits++;
-    }
-    return wBits;
-}
-</code>
-      <para>The unions in <b>DDPIXELFORMAT</b> have been updated to work with compilers that do not support nameless unions. If your compiler does not support nameless unions, define the NONAMELESSUNION token before including the Ddraw.h header file.</para>
-    </remarks>
   </member>
   <member name="DDPIXELFORMAT.dwSize">
-    <summary>
-      <para>Size of the structure, in bytes. This member must be initialized before the structure is used.</para>
-    </summary>
+    <summary>Size of the structure, in bytes. This member must be initialized before the structure is used.</summary>
   </member>
   <member name="DDPIXELFORMAT.dwFlags">
     <summary>
       <para>The following flags to describe optional controls for this structure.</para>
-      <list type="bullet">
-        <item>
-          <description>DDPF_ALPHA - The pixel format describes an alpha-only surface.</description>
-        </item>
-        <item>
-          <description>DDPF_ALPHAPIXELS - The surface has alpha channel information in the pixel format.</description>
-        </item>
-        <item>
-          <description>DDPF_ALPHAPREMULT - The surface uses the premultiplied alpha format. That is, the color components in each pixel are premultiplied by the alpha component.</description>
-        </item>
-        <item>
-          <description>DDPF_BUMPLUMINANCE - The luminance data in the pixel format is valid, and the <b>dwLuminanceBitMask</b> member describes valid luminance bits for a luminance-only or luminance-alpha surface.</description>
-        </item>
-        <item>
-          <description>DDPF_BUMPDUDV - Bump-map data in the pixel format is valid. Bump-map information is in the <b>dwBumpBitCount</b>, <b>dwBumpDuBitMask</b>, <b>dwBumpDvBitMask</b>, and <b>dwBumpLuminanceBitMask</b> members.</description>
-        </item>
-        <item>
-          <description>DDPF_COMPRESSED - The surface accepts pixel data in the specified format and compress it during the write operation.</description>
-        </item>
-        <item>
-          <description>DDPF_D3DFORMAT - Indicates a DirectX 8.0 and later format capability entry in the texture format list. This flag is not exposed to applications and is defined in Ddrawi.h.</description>
-        </item>
-        <item>
-          <description>DDPF_FOURCC - The <b>dwFourCC</b> member is valid and contains a FOURCC code that describes a non-RGB pixel format.</description>
-        </item>
-        <item>
-          <description>DDPF_LUMINANCE - The pixel format describes a luminance-only or luminance-alpha surface.</description>
-        </item>
-        <item>
-          <description>DDPF_PALETTEINDEXED1 - The surface is 1-bit color-indexed.</description>
-        </item>
-        <item>
-          <description>DDPF_PALETTEINDEXED2 - The surface is 2-bit color-indexed.</description>
-        </item>
-        <item>
-          <description>DDPF_PALETTEINDEXED4 - The surface is 4-bit color-indexed.</description>
-        </item>
-        <item>
-          <description>DDPF_PALETTEINDEXED8 - The surface is 8-bit color-indexed.</description>
-        </item>
-        <item>
-          <description>DDPF_PALETTEINDEXEDTO8 - The surface is 1-, 2-, or 4-bit color-indexed to an 8-bit palette.</description>
-        </item>
-        <item>
-          <description>DDPF_RGB - The RGB data in the pixel format structure is valid.</description>
-        </item>
-        <item>
-          <description>DDPF_RGBTOYUV - The surface accepts RGB data and translates it during the write operation to YUV data. The format of the data to be written is contained in the pixel format structure. The DDPF_RGB flag is set.</description>
-        </item>
-        <item>
-          <description>DDPF_STENCILBUFFER - The surface encodes stencil and depth information in each pixel of the z-buffer. This flag can be used only if the DDPF_ZBUFFER flag is also specified.</description>
-        </item>
-        <item>
-          <description>DDPF_YUV - The YUV data in the pixel format structure is valid.</description>
-        </item>
-        <item>
-          <description>DDPF_ZBUFFER - The pixel format describes a z-buffer surface.</description>
-        </item>
-        <item>
-          <description>DDPF_ZPIXELS - The surface contains z information in the pixels.</description>
-        </item>
-      </list>
+      <h4>DDPF_ALPHA</h4>
+      <para>The pixel format describes an alpha-only surface.</para>
+      <h4>DDPF_ALPHAPIXELS</h4>
+      <para>The surface has alpha channel information in the pixel format.</para>
+      <h4>DDPF_ALPHAPREMULT</h4>
+      <para>The surface uses the premultiplied alpha format. That is, the color components in each pixel are premultiplied by the alpha component.</para>
+      <h4>DDPF_BUMPLUMINANCE</h4>
+      <para>The luminance data in the pixel format is valid, and the <b>dwLuminanceBitMask</b> member describes valid luminance bits for a luminance-only or luminance-alpha surface.</para>
+      <h4>DDPF_BUMPDUDV</h4>
+      <para>Bump-map data in the pixel format is valid. Bump-map information is in the <b>dwBumpBitCount</b>, <b>dwBumpDuBitMask</b>, <b>dwBumpDvBitMask</b>, and <b>dwBumpLuminanceBitMask</b> members.</para>
+      <h4>DDPF_COMPRESSED</h4>
+      <para>The surface accepts pixel data in the specified format and compress it during the write operation.</para>
+      <h4>DDPF_D3DFORMAT</h4>
+      <para>Indicates a DirectX 8.0 and later format capability entry in the texture format list. This flag is not exposed to applications and is defined in Ddrawi.h.</para>
+      <h4>DDPF_FOURCC</h4>
+      <para>The <b>dwFourCC</b> member is valid and contains a FOURCC code that describes a non-RGB pixel format.</para>
+      <h4>DDPF_LUMINANCE</h4>
+      <para>The pixel format describes a luminance-only or luminance-alpha surface.</para>
+      <h4>DDPF_PALETTEINDEXED1</h4>
+      <para>The surface is 1-bit color-indexed.</para>
+      <h4>DDPF_PALETTEINDEXED2</h4>
+      <para>The surface is 2-bit color-indexed.</para>
+      <h4>DDPF_PALETTEINDEXED4</h4>
+      <para>The surface is 4-bit color-indexed.</para>
+      <h4>DDPF_PALETTEINDEXED8</h4>
+      <para>The surface is 8-bit color-indexed.</para>
+      <h4>DDPF_PALETTEINDEXEDTO8</h4>
+      <para>The surface is 1-, 2-, or 4-bit color-indexed to an 8-bit palette.</para>
+      <h4>DDPF_RGB</h4>
+      <para>The RGB data in the pixel format structure is valid.</para>
+      <h4>DDPF_RGBTOYUV</h4>
+      <para>The surface accepts RGB data and translates it during the write operation to YUV data. The format of the data to be written is contained in the pixel format structure. The DDPF_RGB flag is set.</para>
+      <h4>DDPF_STENCILBUFFER</h4>
+      <para>The surface encodes stencil and depth information in each pixel of the z-buffer. This flag can be used only if the DDPF_ZBUFFER flag is also specified.</para>
+      <h4>DDPF_YUV</h4>
+      <para>The YUV data in the pixel format structure is valid.</para>
+      <h4>DDPF_ZBUFFER</h4>
+      <para>The pixel format describes a z-buffer surface.</para>
+      <h4>DDPF_ZPIXELS</h4>
+      <para>The surface contains z information in the pixels.</para>
     </summary>
   </member>
   <member name="DDPIXELFORMAT.dwFourCC">
-    <summary>
-      <para>A FourCC code.</para>
-    </summary>
+    <summary>A FourCC code.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwRGBBitCount">
-    <summary>
-      <para>RGB bits per pixel (4, 8, 16, 24, or 32).</para>
-    </summary>
+    <summary>RGB bits per pixel (4, 8, 16, 24, or 32).</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwYUVBitCount">
-    <summary>
-      <para>YUV bits per pixel (4, 8, 16, 24, or 32).</para>
-    </summary>
+    <summary>YUV bits per pixel (4, 8, 16, 24, or 32).</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwZBufferBitDepth">
-    <summary>
-      <para>Z-buffer bit depth (8, 16, 24, or 32).</para>
-    </summary>
+    <summary>Z-buffer bit depth (8, 16, 24, or 32).</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwAlphaBitDepth">
-    <summary>
-      <para>Alpha channel bit depth (1, 2, 4, or 8) for an alpha-only surface (DDPF_ALPHA). For pixel formats that contain alpha information interleaved with color data (DDPF_ALPHAPIXELS), count the bits in the <b>dwRGBAlphaBitMask</b> member to obtain the bit depth of the alpha component. For more information about how to determine alpha bit depth, see Remarks.</para>
-    </summary>
+    <summary>Alpha channel bit depth (1, 2, 4, or 8) for an alpha-only surface (DDPF_ALPHA). For pixel formats that contain alpha information interleaved with color data (DDPF_ALPHAPIXELS), count the bits in the <b>dwRGBAlphaBitMask</b> member to obtain the bit depth of the alpha component. For more information about how to determine alpha bit depth, see Remarks.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwLuminanceBitCount">
-    <summary>
-      <para>Total luminance bits per pixel. This member applies only to luminance-only and luminance-alpha surfaces.</para>
-    </summary>
+    <summary>Total luminance bits per pixel. This member applies only to luminance-only and luminance-alpha surfaces.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwBumpBitCount">
-    <summary>
-      <para>Total bump-map bits per pixel in a bump-map surface.</para>
-    </summary>
+    <summary>Total bump-map bits per pixel in a bump-map surface.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwPrivateFormatBitCount">
-    <summary>
-      <para>Bits per pixel of private driver formats. Only valid in texture format list and if DDPF_D3DFORMAT is set.</para>
-    </summary>
+    <summary>Bits per pixel of private driver formats. Only valid in texture format list and if DDPF_D3DFORMAT is set.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwRBitMask">
-    <summary>
-      <para>Mask for red bits.</para>
-    </summary>
+    <summary>Mask for red bits.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwYBitMask">
-    <summary>
-      <para>Mask for Y bits.</para>
-    </summary>
+    <summary>Mask for Y bits.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwStencilBitDepth">
-    <summary>
-      <para>Bit depth of the stencil buffer. This member specifies how many bits are reserved within each pixel of the z-buffer for stencil information (the total number of z-bits is equal to <b>dwZBufferBitDepth</b> minus <b>dwStencilBitDepth</b>).</para>
-    </summary>
+    <summary>Bit depth of the stencil buffer. This member specifies how many bits are reserved within each pixel of the z-buffer for stencil information (the total number of z-bits is equal to <b>dwZBufferBitDepth</b> minus <b>dwStencilBitDepth</b>).</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwLuminanceBitMask">
-    <summary>
-      <para>Mask for luminance bits.</para>
-    </summary>
+    <summary>Mask for luminance bits.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwBumpDuBitMask">
-    <summary>
-      <para>Mask for bump-map U-delta bits.</para>
-    </summary>
+    <summary>Mask for bump-map U-delta bits.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwOperations">
-    <summary>
-      <para>Flags that specify the operations that can be performed on surfaces with the DDPF_D3DFORMAT pixel format. The flags are defined in Ddrawi.h.</para>
-    </summary>
+    <summary>Flags that specify the operations that can be performed on surfaces with the DDPF_D3DFORMAT pixel format. The flags are defined in Ddrawi.h.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwGBitMask">
-    <summary>
-      <para>Mask for green bits.</para>
-    </summary>
+    <summary>Mask for green bits.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwUBitMask">
-    <summary>
-      <para>Mask for U bits.</para>
-    </summary>
+    <summary>Mask for U bits.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwZBitMask">
-    <summary>
-      <para>Mask for z bits.</para>
-    </summary>
+    <summary>Mask for z bits.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwBumpDvBitMask">
-    <summary>
-      <para>Mask for bump-map V-delta bits.</para>
-    </summary>
+    <summary>Mask for bump-map V-delta bits.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.MultiSampleCaps">
-    <summary>
-      <para>A structure that contains the following two members. This structure is used to specify surfaces that can be used when performing multisample rendering. Each bit in the 16-bit masks indicates support of multisampling with a specific number of samples. For example, bit 0 indicates support of multisampling with only a single sample, bit 1 indicates the support of multisampling with two samples, and so on. The driver can indicate more than one supported level by combining the bits by using a bitwise OR.</para>
-    </summary>
+    <summary>A structure that contains the following two members. This structure is used to specify surfaces that can be used when performing multisample rendering. Each bit in the 16-bit masks indicates support of multisampling with a specific number of samples. For example, bit 0 indicates support of multisampling with only a single sample, bit 1 indicates the support of multisampling with two samples, and so on. The driver can indicate more than one supported level by combining the bits by using a bitwise OR.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.MultiSampleCaps.wFlipMSTypes">
-    <summary>
-      <para>A 16-bit mask for full-screen (flip) mode multisampling.</para>
-    </summary>
+    <summary>A 16-bit mask for full-screen (flip) mode multisampling.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.MultiSampleCaps.wBltMSTypes">
-    <summary>
-      <para>A 16-bit mask for windowed (bit-block transfer) mode multisampling.</para>
-    </summary>
+    <summary>A 16-bit mask for windowed (bit-block transfer) mode multisampling.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwBBitMask">
-    <summary>
-      <para>Mask for blue bits.</para>
-    </summary>
+    <summary>Mask for blue bits.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwVBitMask">
-    <summary>
-      <para>Mask for V bits.</para>
-    </summary>
+    <summary>Mask for V bits.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwStencilBitMask">
-    <summary>
-      <para>Mask for stencil bits within each z-buffer pixel.</para>
-    </summary>
+    <summary>Mask for stencil bits within each z-buffer pixel.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwBumpLuminanceBitMask">
-    <summary>
-      <para>Mask for luminance in a bump-map pixel.</para>
-    </summary>
+    <summary>Mask for luminance in a bump-map pixel.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwRGBAlphaBitMask">
-    <summary>
-      <para>RGB mask for the alpha channel.</para>
-    </summary>
+    <summary>RGB mask for the alpha channel.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwYUVAlphaBitMask">
-    <summary>
-      <para>YUV mask for the alpha channel.</para>
-    </summary>
+    <summary>YUV mask for the alpha channel.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwLuminanceAlphaBitMask">
-    <summary>
-      <para>Luminance mask for the alpha channel.</para>
-    </summary>
+    <summary>Luminance mask for the alpha channel.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwRGBZBitMask">
-    <summary>
-      <para>RGB mask for the z channel.</para>
-    </summary>
+    <summary>RGB mask for the z channel.</summary>
   </member>
   <member name="DDPIXELFORMAT.DUMMYUNIONNAMEN.dwYUVZBitMask">
-    <summary>
-      <para>YUV mask for the z channel.</para>
-    </summary>
+    <summary>YUV mask for the z channel.</summary>
   </member>
 </doc>

@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DIRECTMANIPULATION_SNAPPOINT_TYPE">
-    <summary>
-      <para>Modifies how the final inertia end position is calculated.</para>
-    </summary>
-    <remarks>
-      <para>For <b>DIRECTMANIPULATION_SNAPPOINT_MANDATORY</b> or <b>DIRECTMANIPULATION_SNAPPOINT_OPTIONAL</b> snap points, the snap points are chosen based on the natural ending position of inertia as calculated by the touch interaction engine. For <b>DIRECTMANIPULATION_SNAPPOINT_MANDATORY_SINGLE</b> or <b>DIRECTMANIPULATION_SNAPPOINT_OPTIONAL_SINGLE</b> snap points, the selected snap point depends on where inertia started.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-enumerations">Direct Manipulation Enumerations</seealso>
+    <summary>Modifies how the final inertia end position is calculated.</summary>
   </member>
   <member name="DIRECTMANIPULATION_SNAPPOINT_TYPE.DIRECTMANIPULATION_SNAPPOINT_MANDATORY">
-    <summary>
-      <para>Content always stops at the snap point closest to where inertia would naturally stop along the direction of inertia.</para>
-    </summary>
+    <summary>Content always stops at the snap point closest to where inertia would naturally stop along the direction of inertia.</summary>
   </member>
   <member name="DIRECTMANIPULATION_SNAPPOINT_TYPE.DIRECTMANIPULATION_SNAPPOINT_OPTIONAL">
-    <summary>
-      <para>Content stops at a snap point closest to where inertia would naturally stop along the direction of inertia, depending on how close the snap point is.</para>
-    </summary>
+    <summary>Content stops at a snap point closest to where inertia would naturally stop along the direction of inertia, depending on how close the snap point is.</summary>
   </member>
   <member name="DIRECTMANIPULATION_SNAPPOINT_TYPE.DIRECTMANIPULATION_SNAPPOINT_MANDATORY_SINGLE">
-    <summary>
-      <para>Content always stops at the snap point closest to the release point along the direction of inertia.</para>
-    </summary>
+    <summary>Content always stops at the snap point closest to the release point along the direction of inertia.</summary>
   </member>
   <member name="DIRECTMANIPULATION_SNAPPOINT_TYPE.DIRECTMANIPULATION_SNAPPOINT_OPTIONAL_SINGLE">
-    <summary>
-      <para>Content stops at the next snap point, if the motion starts far from it.</para>
-    </summary>
+    <summary>Content stops at the next snap point, if the motion starts far from it.</summary>
   </member>
 </doc>

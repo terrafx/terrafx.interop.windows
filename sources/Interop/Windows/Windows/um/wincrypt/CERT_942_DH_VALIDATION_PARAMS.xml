@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_942_DH_VALIDATION_PARAMS">
-    <summary>
-      <para>The <b>CERT_X942_DH_VALIDATION_PARAMS</b> structure is optionally pointed to by a member of the <see cref="CERT_X942_DH_PARAMETERS" /> structure and contains additional seed information.</para>
-    </summary>
+    <summary>The <b>CERT_X942_DH_VALIDATION_PARAMS</b> structure is optionally pointed to by a member of the <see cref="CERT_X942_DH_PARAMETERS" /> structure and contains additional seed information.</summary>
   </member>
   <member name="CERT_942_DH_VALIDATION_PARAMS.seed">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_UINT_BLOB</a> that contains an unsigned seed value.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_UINT_BLOB</a> that contains an unsigned seed value.</summary>
   </member>
   <member name="CERT_942_DH_VALIDATION_PARAMS.pgenCounter">
-    <summary>
-      <para>A <b>DWORD</b> counter.</para>
-    </summary>
+    <summary>A <b>DWORD</b> counter.</summary>
   </member>
 </doc>

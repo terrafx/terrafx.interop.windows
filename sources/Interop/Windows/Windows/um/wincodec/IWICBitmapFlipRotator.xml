@@ -3,28 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICBitmapFlipRotator.Initialize">
-    <summary>
-      <para>Initializes the bitmap flip rotator with the provided parameters.</para>
-    </summary>
-    <param name="pISource">
-      <para>Type: <b><see cref="IWICBitmapSource" />*</b></para>
-      <para>The input bitmap source.</para>
-    </param>
-    <param name="options">
-      <para>Type: <b><see cref="WICBitmapTransformOptions" /></b></para>
-      <para>The <see cref="WICBitmapTransformOptions" /> to flip or rotate the image.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Initializes the bitmap flip rotator with the provided parameters.</summary>
+    <param name="pISource">The input bitmap source.</param>
+    <param name="options">The <see cref="WICBitmapTransformOptions" /> to flip or rotate the image.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapFlipRotator">
-    <summary>
-      <para>Exposes methods that produce a flipped (horizontal or vertical) and/or rotated (by 90 degree increments) bitmap source. The flip is done before the rotation.</para>
-    </summary>
-    <remarks>
-      <para>IWICBitmapFipRotator requests data on a per-pixel basis, while WIC codecs provide data on a per-scanline basis. This causes the fliprotator object to exhibit n² behavior if there is no buffering.  This occurs because each pixel in the transformed image requires an entire scanline to be decoded in the file. It is recommended that you buffer the image using <see cref="IWICBitmap" />, or flip/rotate the image using Direct2D.</para>
-    </remarks>
+    <summary>Exposes methods that produce a flipped (horizontal or vertical) and/or rotated (by 90 degree increments) bitmap source. The flip is done before the rotation.</summary>
   </member>
 </doc>

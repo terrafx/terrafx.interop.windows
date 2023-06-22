@@ -3,13 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IFastRundown">
-    <summary>
-      <para>Marks an interface as eligible for fast rundown behavior.</para>
-    </summary>
-    <remarks>
-      <para>A Component Object Model (COM) object implements the <b>IFastRundown</b> marker interface to opt into the fast rundown behavior.</para>
-      <para>All Windows Store app processes, as well as the broker processes RuntimeBroker.exe and PickerHost.exe, apply fast rundown at the process level, which means that all objects in any of these processes are subjected to fast rundown automatically. Desktop processes don't get this behavior by default and must opt in at the process level. Specific objects opt in by implementing the <b>IFastRundown</b> marker interface.</para>
-    </remarks>
-    <seealso cref="IUnknown" />
+    <summary>Marks an interface as eligible for fast rundown behavior.</summary>
   </member>
 </doc>

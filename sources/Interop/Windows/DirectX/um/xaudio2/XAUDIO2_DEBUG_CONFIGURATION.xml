@@ -3,17 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="XAUDIO2_DEBUG_CONFIGURATION">
-    <summary>
-      <para>Contains the new global debug configuration for XAudio2. Used with the <see cref="SetDebugConfiguration" /> function.</para>
-    </summary>
-    <remarks>
-      <para>Debugging messages can be completely turned off by initializing <b>XAUDIO2_DEBUG_CONFIGURATION</b> to all zeroes.</para>
-      <para>
-        <b>Note</b>  For this version of XAudio2, only the <b>XAUDIO2_LOG_ERRORS</b> value is supported on <b>TraceMask</b> or <b>BreakMask</b>. All other members and values are ignored.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/structures">Structures</seealso>
+    <summary>Contains the new global debug configuration for XAudio2. Used with the <see cref="SetDebugConfiguration" /> function.</summary>
   </member>
   <member name="XAUDIO2_DEBUG_CONFIGURATION.TraceMask">
     <summary>
@@ -23,52 +13,46 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>XAUDIO2_LOG_ERRORS</description>
           <description>Log error messages. </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>XAUDIO2_LOG_WARNINGS</description>
-          <description>Log warning messages.
-<b>Note</b>  Enabling XAUDIO2_LOG_WARNINGS also enables XAUDIO2_LOG_ERRORS.
-</description>
-        </item>
-        <item>
+          <description>Log warning messages. 		 <div><b>Note</b>  Enabling XAUDIO2_LOG_WARNINGS also enables XAUDIO2_LOG_ERRORS.</div></description>
+        </listheader>
+        <listheader>
           <description>XAUDIO2_LOG_INFO</description>
           <description>Log informational messages. </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>XAUDIO2_LOG_DETAIL</description>
-          <description>Log detailed informational messages.
-<b>Note</b>  Enabling XAUDIO2_LOG_DETAIL also enables XAUDIO2_LOG_INFO.
-</description>
-        </item>
-        <item>
+          <description>Log detailed informational messages. <div><b>Note</b>  Enabling XAUDIO2_LOG_DETAIL also enables XAUDIO2_LOG_INFO.</div></description>
+        </listheader>
+        <listheader>
           <description>XAUDIO2_LOG_API_CALLS</description>
           <description>Log public API function entries and exits. </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>XAUDIO2_LOG_FUNC_CALLS</description>
-          <description>Log internal function entries and exits.
-<b>Note</b>  Enabling XAUDIO2_LOG_FUNC_CALLS also enables XAUDIO2_LOG_API_CALLS.
-</description>
-        </item>
-        <item>
+          <description>Log internal function entries and exits. 		 <div><b>Note</b>  Enabling XAUDIO2_LOG_FUNC_CALLS also enables XAUDIO2_LOG_API_CALLS.</div></description>
+        </listheader>
+        <listheader>
           <description>XAUDIO2_LOG_TIMING</description>
           <description>Log delays detected and other timing data. </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>XAUDIO2_LOG_LOCKS</description>
           <description>Log usage of critical sections and mutexes. </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>XAUDIO2_LOG_MEMORY</description>
           <description>Log memory heap usage information. </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>XAUDIO2_LOG_STREAMING</description>
           <description>Log audio streaming information. </description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -80,37 +64,27 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>XAUDIO2_LOG_ERRORS</description>
           <description>Break on error messages. </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>XAUDIO2_LOG_WARNINGS</description>
-          <description>Break on warning messages.
-<b>Note</b>  Enabling XAUDIO2_LOG_WARNINGS also enables XAUDIO2_LOG_ERRORS.
-</description>
-        </item>
+          <description>Break on warning messages. <div><b>Note</b>  Enabling XAUDIO2_LOG_WARNINGS also enables XAUDIO2_LOG_ERRORS.</div></description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="XAUDIO2_DEBUG_CONFIGURATION.LogThreadID">
-    <summary>
-      <para>Indicates whether to log the thread ID with each message.</para>
-    </summary>
+    <summary>Indicates whether to log the thread ID with each message.</summary>
   </member>
   <member name="XAUDIO2_DEBUG_CONFIGURATION.LogFileline">
-    <summary>
-      <para>Indicates whether to log source files and line numbers.</para>
-    </summary>
+    <summary>Indicates whether to log source files and line numbers.</summary>
   </member>
   <member name="XAUDIO2_DEBUG_CONFIGURATION.LogFunctionName">
-    <summary>
-      <para>Indicates whether to log function names.</para>
-    </summary>
+    <summary>Indicates whether to log function names.</summary>
   </member>
   <member name="XAUDIO2_DEBUG_CONFIGURATION.LogTiming">
-    <summary>
-      <para>Indicates whether to log message timestamps.</para>
-    </summary>
+    <summary>Indicates whether to log message timestamps.</summary>
   </member>
 </doc>

@@ -3,49 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAGE_COFF_SYMBOLS_HEADER">
-    <summary>
-      <para>Represents the COFF symbols header.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/imagehlp-structures">ImageHlp Structures</seealso>
+    <summary>Represents the COFF symbols header.</summary>
   </member>
   <member name="IMAGE_COFF_SYMBOLS_HEADER.NumberOfSymbols">
-    <summary>
-      <para>The number of symbols.</para>
-    </summary>
+    <summary>The number of symbols.</summary>
   </member>
   <member name="IMAGE_COFF_SYMBOLS_HEADER.LvaToFirstSymbol">
-    <summary>
-      <para>The virtual address of the first symbol.</para>
-    </summary>
+    <summary>The virtual address of the first symbol.</summary>
   </member>
   <member name="IMAGE_COFF_SYMBOLS_HEADER.NumberOfLinenumbers">
-    <summary>
-      <para>The number of line-number entries.</para>
-    </summary>
+    <summary>The number of line-number entries.</summary>
   </member>
   <member name="IMAGE_COFF_SYMBOLS_HEADER.LvaToFirstLinenumber">
-    <summary>
-      <para>The virtual address of the first line-number entry.</para>
-    </summary>
+    <summary>The virtual address of the first line-number entry.</summary>
   </member>
   <member name="IMAGE_COFF_SYMBOLS_HEADER.RvaToFirstByteOfCode">
-    <summary>
-      <para>The relative virtual address of the first byte of code.</para>
-    </summary>
+    <summary>The relative virtual address of the first byte of code.</summary>
   </member>
   <member name="IMAGE_COFF_SYMBOLS_HEADER.RvaToLastByteOfCode">
-    <summary>
-      <para>The relative virtual address of the last byte of code.</para>
-    </summary>
+    <summary>The relative virtual address of the last byte of code.</summary>
   </member>
   <member name="IMAGE_COFF_SYMBOLS_HEADER.RvaToFirstByteOfData">
-    <summary>
-      <para>The relative virtual address of the first byte of data.</para>
-    </summary>
+    <summary>The relative virtual address of the first byte of data.</summary>
   </member>
   <member name="IMAGE_COFF_SYMBOLS_HEADER.RvaToLastByteOfData">
-    <summary>
-      <para>The relative virtual address of the last byte of data.</para>
-    </summary>
+    <summary>The relative virtual address of the last byte of data.</summary>
   </member>
 </doc>

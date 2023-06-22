@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ILanguageExceptionStackBackTrace.GetStackBackTrace">
+    <summary>Retrieves the back stack trace.</summary>
+    <param name="maxFramesToCapture">The maximum number of frames to capture.</param>
+    <param name="stackBackTrace">An array containing the stack back trace; the maximum size is the <i>maxFramesToCapture</i>.</param>
+    <param name="framesCaptured">On success, contains a pointer to the number of frames actually captured.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="ILanguageExceptionStackBackTrace">
+    <summary>Allows projections to provide custom stack trace for that exception.</summary>
+  </member>
+</doc>

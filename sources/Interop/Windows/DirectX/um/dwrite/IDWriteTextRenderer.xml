@@ -3,178 +3,46 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteTextRenderer.DrawGlyphRun">
-    <summary>
-      <para>IDWriteTextLayout.<see cref="Draw" /> calls this function to instruct the client to
-render a run of glyphs.</para>
-    </summary>
-    <param name="clientDrawingContext">
-      <para>Type: <b>void*</b></para>
-      <para>The application-defined drawing context passed to
-<see cref="IDWriteTextLayout.Draw" />.</para>
-    </param>
-    <param name="baselineOriginX">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The pixel location (X-coordinate) at the baseline origin of the glyph run.</para>
-    </param>
-    <param name="baselineOriginY">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The pixel location (Y-coordinate) at the baseline origin of the glyph run.</para>
-    </param>
-    <param name="measuringMode">
-      <para>Type: <b><see cref="DWRITE_MEASURING_MODE" /></b></para>
-      <para>The measuring method for glyphs in the run, used with the other properties to determine the rendering mode.</para>
-    </param>
-    <param name="glyphRun">
-      <para>Type: <b>const <see cref="DWRITE_GLYPH_RUN" />*</b></para>
-      <para>Pointer to the glyph run instance to render.</para>
-    </param>
-    <param name="glyphRunDescription">
-      <para>Type: <b>const <see cref="DWRITE_GLYPH_RUN_DESCRIPTION" />*</b></para>
-      <para>A pointer to the glyph run description instance which contains properties of the characters
-associated with this run.</para>
-    </param>
-    <param name="clientDrawingEffect">
-      <para>Type: <b>IUnknown*</b></para>
-      <para>Application-defined drawing effects for the glyphs to render. Usually this argument represents effects such as the foreground brush filling the interior of text.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <see cref="IDWriteTextLayout.Draw" /> function calls this callback function with all the information about glyphs to render. The application implements this callback by mostly delegating the call to the underlying platform's graphics API such as <a href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-portal">Direct2D</a> to draw glyphs on the drawing context. An application that uses GDI can implement this callback in terms of the <see cref="IDWriteBitmapRenderTarget.DrawGlyphRun" /> method.</para>
-    </remarks>
-    <seealso cref="IDWriteTextRenderer" />
+    <summary>IDWriteTextLayout.<see cref="Draw" /> calls this function to instruct the client to render a run of glyphs.</summary>
+    <param name="clientDrawingContext">The application-defined drawing context passed to<see cref="IDWriteTextLayout.Draw" />.</param>
+    <param name="baselineOriginX">The pixel location (X-coordinate) at the baseline origin of the glyph run.</param>
+    <param name="baselineOriginY">The pixel location (Y-coordinate) at the baseline origin of the glyph run.</param>
+    <param name="measuringMode">The measuring method for glyphs in the run, used with the other properties to determine the rendering mode.</param>
+    <param name="glyphRun">Pointer to the glyph run instance to render.</param>
+    <param name="glyphRunDescription">A pointer to the glyph run description instance which contains properties of the characters associated with this run.</param>
+    <param name="clientDrawingEffect">Application-defined drawing effects for the glyphs to render. Usually this argument represents effects such as the foreground brush filling the interior of text.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextRenderer.DrawInlineObject">
-    <summary>
-      <para>IDWriteTextLayout.<see cref="Draw" /> calls this application callback when it needs to
-draw an inline object.</para>
-    </summary>
-    <param name="clientDrawingContext">
-      <para>Type: <b>void*</b></para>
-      <para>The application-defined drawing context passed to IDWriteTextLayout.<see cref="Draw" />.</para>
-    </param>
-    <param name="originX">
-      <para>Type: <b>FLOAT</b></para>
-      <para>X-coordinate at the top-left corner of the inline object.</para>
-    </param>
-    <param name="originY">
-      <para>Type: <b>FLOAT</b></para>
-      <para>Y-coordinate at the top-left corner of the inline object.</para>
-    </param>
-    <param name="inlineObject">
-      <para>Type: <b><see cref="IDWriteInlineObject" />*</b></para>
-      <para>The application-defined inline object set using <see cref="IDWriteTextFormat" />.<see cref="SetInlineObject" />.</para>
-    </param>
-    <param name="isSideways">
-      <para>Type: <b>BOOL</b></para>
-      <para>A Boolean flag that indicates whether the object's baseline runs alongside the baseline axis of the line.</para>
-    </param>
-    <param name="isRightToLeft">
-      <para>Type: <b>BOOL</b></para>
-      <para>A Boolean flag that indicates whether the object is in a right-to-left context, hinting that the drawing may want to mirror the normal image.</para>
-    </param>
-    <param name="clientDrawingEffect">
-      <para>Type: <b>IUnknown*</b></para>
-      <para>Application-defined drawing effects for the glyphs to render. Usually this argument represents effects such as the foreground brush filling the interior of a line.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextRenderer" />
+    <summary>IDWriteTextLayout.<see cref="Draw" /> calls this application callback when it needs to draw an inline object.</summary>
+    <param name="clientDrawingContext">The application-defined drawing context passed to IDWriteTextLayout.<see cref="Draw" />.</param>
+    <param name="originX">X-coordinate at the top-left corner of the inline object.</param>
+    <param name="originY">Y-coordinate at the top-left corner of the inline object.</param>
+    <param name="inlineObject">The application-defined inline object set using <see cref="IDWriteTextFormat" />.<see cref="SetInlineObject" />.</param>
+    <param name="isSideways">A Boolean flag that indicates whether the object's baseline runs alongside the baseline axis of the line.</param>
+    <param name="isRightToLeft">A Boolean flag that indicates whether the object is in a right-to-left context, hinting that the drawing may want to mirror the normal image.</param>
+    <param name="clientDrawingEffect">Application-defined drawing effects for the glyphs to render. Usually this argument represents effects such as the foreground brush filling the interior of a line.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextRenderer.DrawStrikethrough">
-    <summary>
-      <para>IDWriteTextLayout.<see cref="Draw" /> calls this function to instruct the client to draw
-a strikethrough.</para>
-    </summary>
-    <param name="clientDrawingContext">
-      <para>Type: <b>void*</b></para>
-      <para>The application-defined drawing context passed to
-IDWriteTextLayout.<see cref="Draw" />.</para>
-    </param>
-    <param name="baselineOriginX">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The pixel location (X-coordinate) at the baseline origin of the run where strikethrough applies.</para>
-    </param>
-    <param name="baselineOriginY">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The pixel location (Y-coordinate) at the baseline origin of the run where strikethrough applies.</para>
-    </param>
-    <param name="strikethrough">
-      <para>Type: <b>const <see cref="DWRITE_STRIKETHROUGH" />*</b></para>
-      <para>Pointer to  a structure containing strikethrough logical information.</para>
-    </param>
-    <param name="clientDrawingEffect">
-      <para>Type: <b>IUnknown*</b></para>
-      <para>Application-defined effect to apply to the strikethrough.  Usually this argument represents effects such as the foreground brush filling the interior of a line.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>A single strikethrough can be broken into multiple calls, depending on
-how the formatting changes attributes. Strikethrough is not averaged
-across font sizes/styles changes.
-To get an appropriate starting pixel position, add strikethrough.offset
-to the baseline.
-Like underlines, the x coordinate will always be passed as the left side,
-regardless of text directionality.</para>
-    </remarks>
-    <seealso cref="IDWriteTextRenderer" />
+    <summary>IDWriteTextLayout.<see cref="Draw" /> calls this function to instruct the client to draw a strikethrough.</summary>
+    <param name="clientDrawingContext">The application-defined drawing context passed to IDWriteTextLayout.<see cref="Draw" />.</param>
+    <param name="baselineOriginX">The pixel location (X-coordinate) at the baseline origin of the run where strikethrough applies.</param>
+    <param name="baselineOriginY">The pixel location (Y-coordinate) at the baseline origin of the run where strikethrough applies.</param>
+    <param name="strikethrough">Pointer to a structure containing strikethrough logical information.</param>
+    <param name="clientDrawingEffect">Application-defined effect to apply to the strikethrough. Usually this argument represents effects such as the foreground brush filling the interior of a line.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextRenderer.DrawUnderline">
-    <summary>
-      <para>IDWriteTextLayout.<see cref="Draw" /> calls this function to instruct the client to draw
-an underline.</para>
-    </summary>
-    <param name="clientDrawingContext">
-      <para>Type: <b>void*</b></para>
-      <para>The application-defined drawing context passed to
-IDWriteTextLayout.<see cref="Draw" />.</para>
-    </param>
-    <param name="baselineOriginX">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The pixel location (X-coordinate) at the baseline origin of the run where underline applies.</para>
-    </param>
-    <param name="baselineOriginY">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The pixel location (Y-coordinate) at the baseline origin of the run where underline applies.</para>
-    </param>
-    <param name="underline">
-      <para>Type: <b>const <see cref="DWRITE_UNDERLINE" />*</b></para>
-      <para>Pointer to  a structure containing underline logical information.</para>
-    </param>
-    <param name="clientDrawingEffect">
-      <para>Type: <b>IUnknown*</b></para>
-      <para>Application-defined effect to apply to the underline. Usually this argument represents effects such as the foreground brush filling the interior of a line.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>A single underline can be broken into multiple calls, depending on
-how the formatting changes attributes. If font sizes/styles change
-within an underline, the thickness and offset will be averaged
-weighted according to characters.
-To get an appropriate starting pixel position, add underline.offset
-to the baseline. Otherwise there will be no spacing between the text.
-The x coordinate will always be passed as the left side, regardless
-of text directionality. This simplifies drawing and reduces the
-problem of round-off that could potentially cause gaps or a double
-stamped alpha blend. To avoid alpha overlap, round the end points
-to the nearest device pixel.</para>
-    </remarks>
-    <seealso cref="IDWriteTextRenderer" />
+    <summary>IDWriteTextLayout.<see cref="Draw" /> calls this function to instruct the client to draw an underline.</summary>
+    <param name="clientDrawingContext">The application-defined drawing context passed to IDWriteTextLayout.<see cref="Draw" />.</param>
+    <param name="baselineOriginX">The pixel location (X-coordinate) at the baseline origin of the run where underline applies.</param>
+    <param name="baselineOriginY">The pixel location (Y-coordinate) at the baseline origin of the run where underline applies.</param>
+    <param name="underline">Pointer to a structure containing underline logical information.</param>
+    <param name="clientDrawingEffect">Application-defined effect to apply to the underline. Usually this argument represents effects such as the foreground brush filling the interior of a line.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextRenderer">
-    <summary>
-      <para>Represents a set of application-defined callbacks that perform rendering of text, inline objects, and decorations such as underlines.</para>
-    </summary>
-    <seealso cref="IDWritePixelSnapping" />
+    <summary>Represents a set of application-defined callbacks that perform rendering of text, inline objects, and decorations such as underlines.</summary>
   </member>
 </doc>

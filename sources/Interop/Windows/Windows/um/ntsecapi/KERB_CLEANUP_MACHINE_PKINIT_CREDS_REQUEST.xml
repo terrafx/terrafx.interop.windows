@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_CLEANUP_MACHINE_PKINIT_CREDS_REQUEST">
+    <summary>The 	<b>KERB_CLEANUP_MACHINE_PKINIT_CREDS_REQUEST</b> structure cleans up the PKINIT device credentials from the computer.</summary>
+  </member>
+  <member name="KERB_CLEANUP_MACHINE_PKINIT_CREDS_REQUEST.MessageType">
+    <summary>The type of the message. You should set this to <b>KerbCleanupMachinePkinitCredsMessage</b>.</summary>
+  </member>
+  <member name="KERB_CLEANUP_MACHINE_PKINIT_CREDS_REQUEST.LogonId">
+    <summary>The logon session identifier. You should set this to SYSTEM LUID or NETWORKSERVICE LUID. TCB is required if this field is different from the caller's LUID.</summary>
+  </member>
+</doc>

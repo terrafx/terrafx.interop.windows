@@ -3,16 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_SECURITY_ALGORITHM_PROPERTY_ID">
-    <summary>
-      <para>Identifies the properties representing security algorithm knobs.</para>
-    </summary>
-    <remarks>
-      <para>All properties defined by the keys here have reasonable defaults; so
-specifying them is optional.  In the common case, one should be able
-to create a <see cref="WS_SECURITY_ALGORITHM_SUITE" /> without setting any of
-the properties below.</para>
-      <para>
-        <b>Note</b>  This <b>enum</b> is reserved for future use and currently contains no values.</para>
-    </remarks>
+    <summary>Identifies the properties representing security algorithm knobs.</summary>
   </member>
 </doc>

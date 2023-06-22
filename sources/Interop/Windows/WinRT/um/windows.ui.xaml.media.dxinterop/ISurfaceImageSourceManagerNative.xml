@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISurfaceImageSourceManagerNative.FlushAllSurfacesWithDevice">
+    <summary>Flushes all current GPU work for all <a href="https://docs.microsoft.com//uwp/api/windows.ui.xaml.media.imaging.surfaceimagesource">SurfaceImageSource</a> or <a href="https://docs.microsoft.com//uwp/api/windows.ui.xaml.media.imaging.virtualsurfaceimagesource">VirtualSurfaceImageSource</a> objects associated with the given device.</summary>
+    <param name="device">The device that was used to create <a href="https://docs.microsoft.com//uwp/api/windows.ui.xaml.media.imaging.surfaceimagesource">SurfaceImageSource</a> objects in this process. It must be an <see cref="ID3D11Device" /> or an <see cref="ID2D1Device" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="ISurfaceImageSourceManagerNative">
+    <summary>Enables performing bulk operations across all <a href="https://docs.microsoft.com//uwp/api/windows.ui.xaml.media.imaging.surfaceimagesource">SurfaceImageSource</a> objects created in the same process.</summary>
+  </member>
+</doc>

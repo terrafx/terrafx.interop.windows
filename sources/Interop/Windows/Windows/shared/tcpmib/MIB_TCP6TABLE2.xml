@@ -3,37 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIB_TCP6TABLE2">
-    <summary>
-      <para>The
-<b>MIB_TCP6TABLE2</b> structure contains a table of IPv6 TCP connections on the local computer.</para>
-    </summary>
-    <remarks>
-      <para>The <b>MIB_TCP6TABLE2</b> structure is defined on Windows Vista and later.</para>
-      <para>The <see cref="GetTcp6Table2" /> function retrieves the IPv6 TCP connection table on the local computer and returns this information in a <b>MIB_TCP6TABLE2</b> structure.</para>
-      <para>An array of <see cref="MIB_TCP6ROW2" /> structures are contained in the <b>MIB_TCP6TABLE2</b> structure.</para>
-      <para>The <b>MIB_TCP6TABLE2</b> structure may contain padding for alignment between the <b>dwNumEntries</b> member and the first <see cref="MIB_TCP6ROW2" /> array entry in the <b>table</b> member. Padding for alignment may also be present between the <b>MIB_TCP6ROW2</b> array entries in the <b>table</b> member. Any access to a <b>MIB_TCP6ROW2</b> array entry should assume  padding may exist.</para>
-    </remarks>
-    <seealso cref="GetTcp6Table" />
-    <seealso cref="GetTcp6Table2" />
-    <seealso cref="GetTcpTable" />
-    <seealso cref="GetTcpTable2" />
-    <seealso cref="MIB_TCP6ROW" />
-    <seealso cref="MIB_TCP6ROW2" />
-    <seealso cref="MIB_TCP6TABLE" />
-    <seealso cref="MIB_TCPROW" />
-    <seealso cref="MIB_TCPROW2" />
-    <seealso cref="MIB_TCPTABLE" />
-    <seealso cref="MIB_TCPTABLE2" />
+    <summary>The<b>MIB_TCP6TABLE2</b> structure contains a table of IPv6 TCP connections on the local computer.</summary>
   </member>
   <member name="MIB_TCP6TABLE2.dwNumEntries">
-    <summary>
-      <para>A value that specifies the number of TCP connections in the array.</para>
-    </summary>
+    <summary>A value that specifies the number of TCP connections in the array.</summary>
   </member>
   <member name="MIB_TCP6TABLE2.table">
-    <summary>
-      <para>An array of
-<see cref="MIB_TCP6ROW2" /> structures containing TCP connection entries.</para>
-    </summary>
+    <summary>An array of<see cref="MIB_TCP6ROW2" /> structures containing TCP connection entries.</summary>
   </member>
 </doc>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDxcResult.GetNumOutputs">
+    <summary>Retrieves the number of outputs available in this result.</summary>
+    <returns>The number of outputs available in this result.</returns>
+  </member>
+  <member name="IDxcResult.GetOutput">
+    <summary>Retrieves the specified output.</summary>
+    <param name="dxcOutKind">The kind of output to retrieve.</param>
+    <param name="iid">The interface ID of the output interface.</param>
+    <param name="ppvObject">The address of the pointer that receives a pointer to the output.</param>
+    <param name="ppOutputName">The optional address of the pointer to receive the output name blob, if there is one.</param>
+  </member>
+  <member name="IDxcResult.GetOutputByIndex">
+    <summary>Retrieves the output kind at the specified index.</summary>
+    <param name="Index">The index of the output to query about.</param>
+  </member>
+  <member name="IDxcResult.HasOutput">
+    <summary>Determines whether or not this result has the specified output.</summary>
+    <param name="dxcOutKind">The kind of output to check for.</param>
+  </member>
+  <member name="IDxcResult.PrimaryOutput"></member>
+  <member name="IDxcResult">
+    <summary>Represents the result of a DXC operation. A DXC operation might have multiple outputs, such as a shader object and errors. This interface provides access to the outputs.</summary>
+  </member>
+</doc>

@@ -3,47 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_LINE_METRICS">
-    <summary>
-      <para>Contains information about a formatted line of text.</para>
-    </summary>
+    <summary>Contains information about a formatted line of text.</summary>
   </member>
   <member name="DWRITE_LINE_METRICS.length">
-    <summary>
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of text positions in the text line.
-This includes any trailing whitespace and newline characters.</para>
-    </summary>
+    <summary>The number of text positions in the text line. This includes any trailing whitespace and newline characters.</summary>
   </member>
   <member name="DWRITE_LINE_METRICS.trailingWhitespaceLength">
-    <summary>
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of whitespace positions at the end of the text line.
-Newline sequences are considered whitespace.</para>
-    </summary>
+    <summary>The number of whitespace positions at the end of the text line. Newline sequences are considered whitespace.</summary>
   </member>
   <member name="DWRITE_LINE_METRICS.newlineLength">
-    <summary>
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of characters in the newline sequence at the end of the text line.
-If the count is zero, then the text line was either wrapped or it is the end of the text.</para>
-    </summary>
+    <summary>The number of characters in the newline sequence at the end of the text line. If the count is zero, then the text line was either wrapped or it is the end of the text.</summary>
   </member>
   <member name="DWRITE_LINE_METRICS.height">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The height of the text line.</para>
-    </summary>
+    <summary>The height of the text line.</summary>
   </member>
   <member name="DWRITE_LINE_METRICS.baseline">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The distance from the top of the text line to its baseline.</para>
-    </summary>
+    <summary>The distance from the top of the text line to its baseline.</summary>
   </member>
   <member name="DWRITE_LINE_METRICS.isTrimmed">
-    <summary>
-      <para>Type: <b>BOOL</b></para>
-      <para>The line is trimmed.</para>
-    </summary>
+    <summary>The line is trimmed.</summary>
   </member>
 </doc>

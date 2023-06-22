@@ -3,28 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_MEDIA_ENGINE_PROTECTION_FLAGS">
-    <summary>
-      <para>Contains flags that specify whether the Media Engine will play protected content, and whether the Media Engine will use the <a href="https://docs.microsoft.com//windows/desktop/medfound/protected-media-path">Protected Media Path</a> (PMP).</para>
-    </summary>
-    <remarks>
-      <para>These flags are used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-media-engine-content-protection-flags">MF_MEDIA_ENGINE_CONTENT_PROTECTION_FLAGS</a> attribute.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/protected-media-path">Protected Media Path</seealso>
+    <summary>Contains flags that specify whether the Media Engine will play protected content, and whether the Media Engine will use the <a href="https://docs.microsoft.com//windows/desktop/medfound/protected-media-path">Protected Media Path</a> (PMP).</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_PROTECTION_FLAGS.MF_MEDIA_ENGINE_ENABLE_PROTECTED_CONTENT">
-    <summary>
-      <para>Enable playback of protected content. The Media Engine will not play DRM-protected content unless this flag is set. If you set this flag, also set the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-media-engine-content-protection-manager">MF_MEDIA_ENGINE_CONTENT_PROTECTION_MANAGER</a> attribute.</para>
-    </summary>
+    <summary>Enable playback of protected content. The Media Engine will not play DRM-protected content unless this flag is set. If you set this flag, also set the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-media-engine-content-protection-manager">MF_MEDIA_ENGINE_CONTENT_PROTECTION_MANAGER</a> attribute.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_PROTECTION_FLAGS.MF_MEDIA_ENGINE_USE_PMP_FOR_ALL_CONTENT">
-    <summary>
-      <para>Use the <a href="https://docs.microsoft.com//windows/desktop/medfound/protected-media-path">Protected Media Path</a> (PMP) for all playback, including clear (non-protected) content.</para>
-    </summary>
+    <summary>Use the <a href="https://docs.microsoft.com//windows/desktop/medfound/protected-media-path">Protected Media Path</a> (PMP) for all playback, including clear (non-protected) content.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_PROTECTION_FLAGS.MF_MEDIA_ENGINE_USE_UNPROTECTED_PMP">
-    <summary>
-      <para>Create the PMP inside an unprotected process. You can use this option to play clear content, but not to play protected content.</para>
-    </summary>
+    <summary>Create the PMP inside an unprotected process. You can use this option to play clear content, but not to play protected content.</summary>
   </member>
 </doc>

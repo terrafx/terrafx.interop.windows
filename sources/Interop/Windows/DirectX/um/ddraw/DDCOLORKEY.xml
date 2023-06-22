@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DDCOLORKEY">
-    <summary>
-      <para>The <b>DDCOLORKEY</b> structure describes a source color key, destination color key, or color space. A color key is specified if the low and high range values are the same. This structure is used with the <see cref="IDirectDrawSurface7.GetColorKey" /> and <see cref="IDirectDrawSurface7.SetColorKey" /> methods.</para>
-    </summary>
+    <summary>The <b>DDCOLORKEY</b> structure describes a source color key, destination color key, or color space. A color key is specified if the low and high range values are the same. This structure is used with the <see cref="IDirectDrawSurface7.GetColorKey" /> and <see cref="IDirectDrawSurface7.SetColorKey" /> methods.</summary>
   </member>
   <member name="DDCOLORKEY.dwColorSpaceLowValue">
-    <summary>
-      <para>Low value of the color range that is to be used as the color key.</para>
-    </summary>
+    <summary>Low value of the color range that is to be used as the color key.</summary>
   </member>
   <member name="DDCOLORKEY.dwColorSpaceHighValue">
-    <summary>
-      <para>High value of the color range that is to be used as the color key.</para>
-    </summary>
+    <summary>High value of the color range that is to be used as the color key.</summary>
   </member>
 </doc>

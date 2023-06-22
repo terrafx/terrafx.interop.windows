@@ -7,25 +7,19 @@
       <para>The <b>KSJACK_DESCRIPTION2</b> structure describes an audio jack.</para>
       <para>To get the description of an audio jack of a connector, call <see cref="IKsJackDescription2.GetJackDescription2" />.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-structures">Core Audio Structures</seealso>
-    <seealso cref="IKsJackDescription2" />
   </member>
   <member name="KSJACK_DESCRIPTION2.DeviceStateInfo">
-    <summary>
-      <para>Reserved for future use.</para>
-    </summary>
+    <summary>Reserved for future use.</summary>
   </member>
   <member name="KSJACK_DESCRIPTION2.JackCapabilities">
     <summary>
-      <para>Stores the audio jack's capabilities: jack presence detection capability
-or dynamic format changing capability. The constants that can be stored in this member of the structure are defined in Ksmedia.h as follows:</para>
+      <para>Stores the audio jack's capabilities: jack presence detection capability or dynamic format changing capability. The constants that can be stored in this member of the structure are defined in Ksmedia.h as follows:</para>
       <list type="bullet">
         <item>
-          <description>JACKDESC2_PRESENCE_DETECT_CAPABILITY       (0x00000001)</description>
+          <description>JACKDESC2_PRESENCE_DETECT_CAPABILITY (0x00000001)</description>
         </item>
         <item>
-          <description>JACKDESC2_DYNAMIC_FORMAT_CHANGE_CAPABILITY (0x00000002)
-</description>
+          <description>JACKDESC2_DYNAMIC_FORMAT_CHANGE_CAPABILITY (0x00000002)</description>
         </item>
       </list>
     </summary>

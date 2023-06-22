@@ -3,105 +3,62 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IEnumShellItems.Clone">
-    <summary>
-      <para>Gets a copy of the current enumeration.</para>
-    </summary>
-    <param name="ppenum">
-      <para>Type: <b><see cref="IEnumShellItems" />**</b></para>
-      <para>The address of a pointer that receives a copy of this enumeration.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IEnumShellItems" />
-    <seealso cref="IShellItem" />
+    <summary>Gets a copy of the current enumeration.</summary>
+    <param name="ppenum">The address of a pointer that receives a copy of this enumeration.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IEnumShellItems.Next">
-    <summary>
-      <para>Gets an array of one or more <see cref="IShellItem" /> interfaces from the enumeration.</para>
-    </summary>
-    <param name="celt">
-      <para>Type: <b>ULONG</b></para>
-      <para>The number of elements in the array referenced by the <i>rgelt</i> parameter.</para>
-    </param>
-    <param name="rgelt">
-      <para>Type: <b><see cref="IShellItem" />**</b></para>
-      <para>The address of an array of pointers to <see cref="IShellItem" /> interfaces that receive the enumerated item or items. The calling application is responsible for freeing the <b>IShellItem</b> interfaces by calling the <see cref="IUnknown.Release" /> method.</para>
-    </param>
-    <param name="pceltFetched">
-      <para>Type: <b>ULONG*</b></para>
-      <para>A pointer to a value that receives the number of <see cref="IShellItem" /> interfaces successfully retrieved. The count can be smaller than the value specified in the <i>celt</i> parameter. This parameter can be <b>NULL</b> on entry only if <i>celt</i> is one, because in that case the method can only retrieve one item and return <b>S_OK</b>, or zero items and return <b>S_FALSE</b>.</para>
-    </param>
+    <summary>Gets an array of one or more <see cref="IShellItem" /> interfaces from the enumeration.</summary>
+    <param name="celt">The number of elements in the array referenced by the <i>rgelt</i> parameter.</param>
+    <param name="rgelt">The address of an array of pointers to <see cref="IShellItem" /> interfaces that receive the enumerated item or items. The calling application is responsible for freeing the <b>IShellItem</b> interfaces by calling the <see cref="IUnknown.Release" /> method.</param>
+    <param name="pceltFetched">A pointer to a value that receives the number of <see cref="IShellItem" /> interfaces successfully retrieved. The count can be smaller than the value specified in the <i>celt</i> parameter. This parameter can be <b>NULL</b> on entry only if <i>celt</i> is one, because in that case the method can only retrieve one item and return <b>S_OK</b>, or zero items and return <b>S_FALSE</b>.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method can return one of these values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>if at least <see cref="IShellItem" /> interface was retrieved.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>if at least <see cref="IShellItem" /> interface was retrieved.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>if there are no more <see cref="IShellItem" /> interfaces in the enumeration.</para>
-          </description>
-        </item>
-        <item>
-          <description></description>
-          <description>
-            <para>Returns an  error value if the function fails for any other reason.</para>
-          </description>
-        </item>
+          <description> if there are no more <see cref="IShellItem" /> interfaces in the enumeration.</description>
+        </listheader>
+        <listheader>
+          <description>Returns an error value if the function fails for any other reason.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IEnumShellItems" />
-    <seealso cref="IShellItem" />
   </member>
   <member name="IEnumShellItems.Reset">
-    <summary>
-      <para>Resets the internal count of retrieved <see cref="IShellItem" /> interfaces in the enumeration.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IEnumShellItems" />
-    <seealso cref="IShellItem" />
+    <summary>Resets the internal count of retrieved <see cref="IShellItem" /> interfaces in the enumeration.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IEnumShellItems.Skip">
-    <summary>
-      <para>Skips a given number of <see cref="IShellItem" /> interfaces in the enumeration. Used when retrieving interfaces.</para>
-    </summary>
-    <param name="celt">
-      <para>Type: <b>ULONG</b></para>
-      <para>The number of <see cref="IShellItem" /> interfaces to skip.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IEnumShellItems" />
-    <seealso cref="IShellItem" />
+    <summary>Skips a given number of <see cref="IShellItem" /> interfaces in the enumeration. Used when retrieving interfaces.</summary>
+    <param name="celt">The number of <see cref="IShellItem" /> interfaces to skip.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IEnumShellItems">
-    <summary>
-      <para>Exposes enumeration of <see cref="IShellItem" /> interfaces. This interface is typically obtained by calling the <b>IEnumShellItems</b> method.</para>
-    </summary>
-    <seealso cref="IShellItem" />
+    <summary>Exposes enumeration of <see cref="IShellItem" /> interfaces. This interface is typically obtained by calling the <b>IEnumShellItems</b> method.</summary>
   </member>
 </doc>

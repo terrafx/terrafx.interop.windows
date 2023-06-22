@@ -3,143 +3,84 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PSS_PROCESS_INFORMATION">
-    <summary>
-      <para>Holds process information returned by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-pssquerysnapshot">PssQuerySnapshot</a>.</para>
-    </summary>
-    <remarks>
-      <para>
-        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-pssquerysnapshot">PssQuerySnapshot</a> returns a <b>PSS_PROCESS_INFORMATION</b> structure when the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ne-processsnapshot-pss_query_information_class">PSS_QUERY_INFORMATION_CLASS</a> member that the caller provides it is  <b>PSS_QUERY_PROCESS_INFORMATION</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+    <summary>Holds process information returned by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-pssquerysnapshot">PssQuerySnapshot</a>.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.ExitStatus">
-    <summary>
-      <para>The exit code of the process. If the process has not exited, this is set to <b>STILL_ACTIVE</b> (259).</para>
-    </summary>
+    <summary>The exit code of the process. If the process has not exited, this is set to <b>STILL_ACTIVE</b> (259).</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.PebBaseAddress">
-    <summary>
-      <para>The address to the process environment block (PEB). Reserved for use by the operating system.</para>
-    </summary>
+    <summary>The address to the process environment block (PEB). Reserved for use by the operating system.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.AffinityMask">
-    <summary>
-      <para>The affinity mask of the process.</para>
-    </summary>
+    <summary>The affinity mask of the process.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.BasePriority">
-    <summary>
-      <para>The base priority level of the process.</para>
-    </summary>
+    <summary>The base priority level of the process.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.ProcessId">
-    <summary>
-      <para>The process ID.</para>
-    </summary>
+    <summary>The process ID.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.ParentProcessId">
-    <summary>
-      <para>The parent process ID.</para>
-    </summary>
+    <summary>The parent process ID.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.Flags">
-    <summary>
-      <para>Flags about the process. For more information, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ne-processsnapshot-pss_process_flags">PSS_PROCESS_FLAGS</a>.</para>
-    </summary>
+    <summary>Flags about the process. For more information, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ne-processsnapshot-pss_process_flags">PSS_PROCESS_FLAGS</a>.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.CreateTime">
-    <summary>
-      <para>The time the process was created. For more information, see <see cref="FILETIME" />.</para>
-    </summary>
+    <summary>The time the process was created. For more information, see <see cref="FILETIME" />.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.ExitTime">
-    <summary>
-      <para>If the process exited, the time of the exit. For more information, see <see cref="FILETIME" />.</para>
-    </summary>
+    <summary>If the process exited, the time of the exit. For more information, see <see cref="FILETIME" />.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.KernelTime">
-    <summary>
-      <para>The amount of time the process spent executing in kernel-mode. For more information, see <see cref="FILETIME" />.</para>
-    </summary>
+    <summary>The amount of time the process spent executing in kernel-mode. For more information, see <see cref="FILETIME" />.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.UserTime">
-    <summary>
-      <para>The amount of time the process spent executing in user-mode. For more information, see <see cref="FILETIME" />.</para>
-    </summary>
+    <summary>The amount of time the process spent executing in user-mode. For more information, see <see cref="FILETIME" />.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.PriorityClass">
-    <summary>
-      <para>The priority class.</para>
-    </summary>
+    <summary>The priority class.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.PeakVirtualSize">
-    <summary>
-      <para>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</para>
-    </summary>
+    <summary>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.VirtualSize">
-    <summary>
-      <para>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</para>
-    </summary>
+    <summary>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.PageFaultCount">
-    <summary>
-      <para>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</para>
-    </summary>
+    <summary>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.PeakWorkingSetSize">
-    <summary>
-      <para>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</para>
-    </summary>
+    <summary>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.WorkingSetSize">
-    <summary>
-      <para>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</para>
-    </summary>
+    <summary>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.QuotaPeakPagedPoolUsage">
-    <summary>
-      <para>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</para>
-    </summary>
+    <summary>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.QuotaPagedPoolUsage">
-    <summary>
-      <para>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</para>
-    </summary>
+    <summary>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.QuotaPeakNonPagedPoolUsage">
-    <summary>
-      <para>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</para>
-    </summary>
+    <summary>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.QuotaNonPagedPoolUsage">
-    <summary>
-      <para>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</para>
-    </summary>
+    <summary>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.PagefileUsage">
-    <summary>
-      <para>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</para>
-    </summary>
+    <summary>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.PeakPagefileUsage">
-    <summary>
-      <para>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</para>
-    </summary>
+    <summary>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.PrivateUsage">
-    <summary>
-      <para>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</para>
-    </summary>
+    <summary>A memory usage counter. See the <see cref="GetProcessMemoryInfo" /> function for more information.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.ExecuteFlags">
-    <summary>
-      <para>Reserved for use by the operating system.</para>
-    </summary>
+    <summary>Reserved for use by the operating system.</summary>
   </member>
   <member name="PSS_PROCESS_INFORMATION.ImageFileName">
-    <summary>
-      <para>The full path to the process executable. If the path exceeds the allocated buffer size, it is truncated.</para>
-    </summary>
+    <summary>The full path to the process executable. If the path exceeds the allocated buffer size, it is truncated.</summary>
   </member>
 </doc>

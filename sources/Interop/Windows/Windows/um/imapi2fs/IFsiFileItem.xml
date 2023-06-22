@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IFsiFileItem.get_Data">
-    <summary>
-      <para>Retrieves the data stream of the file's content.</para>
-    </summary>
-    <param name="pVal">
-      <para>An <b>IStream</b> interface of the contents of the file.</para>
-    </param>
+    <summary>Retrieves the data stream of the file's content.</summary>
+    <param name="pVal">An <b>IStream</b> interface of the contents of the file.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -16,43 +12,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Failed to allocate necessary memory.</para>
-            <para>Value: 0x8007000E</para>
-          </description>
-        </item>
+          <description>Failed to allocate necessary memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The contents of the file becomes read-only once the file item is added to file system image.</para>
-    </remarks>
-    <seealso cref="IFsiFileItem" />
-    <seealso cref="IFsiFileItem.put_Data" />
   </member>
   <member name="IFsiFileItem.get_DataSize">
-    <summary>
-      <para>Retrieves the number of bytes in the file.</para>
-    </summary>
-    <param name="pVal">
-      <para>Size, in bytes, of the file.</para>
-    </param>
+    <summary>Retrieves the number of bytes in the file.</summary>
+    <param name="pVal">Size, in bytes, of the file.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -60,30 +49,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFsiFileItem" />
-    <seealso cref="IFsiFileItem.get_DataSize32BitHigh" />
-    <seealso cref="IFsiFileItem.get_DataSize32BitLow" />
   </member>
   <member name="IFsiFileItem.get_DataSize32BitHigh">
-    <summary>
-      <para>Retrieves the most significant 32 bits of the <see cref="IFsiFileItem.get_DataSize" /> property.</para>
-    </summary>
-    <param name="pVal">
-      <para>Most significant 32 bits of the <see cref="IFsiFileItem.get_DataSize" /> property.</para>
-    </param>
+    <summary>Retrieves the most significant 32 bits of the <see cref="IFsiFileItem.get_DataSize" /> property.</summary>
+    <param name="pVal">Most significant 32 bits of the <see cref="IFsiFileItem.get_DataSize" /> property.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -91,32 +74,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This property and <see cref="IFsiFileItem.get_DataSize32BitLow" /> together  provide the size of the file as two 32-bit numbers for languages that do not support 64-bit values, such as VBScript and Visual Basic 6.</para>
-    </remarks>
-    <seealso cref="IFsiFileItem" />
-    <seealso cref="IFsiFileItem.get_DataSize" />
   </member>
   <member name="IFsiFileItem.get_DataSize32BitLow">
-    <summary>
-      <para>Retrieves the least significant 32 bits of the <see cref="IFsiFileItem.get_DataSize" /> property.</para>
-    </summary>
-    <param name="pVal">
-      <para>Least significant 32 bits of the <see cref="IFsiFileItem.get_DataSize" /> property.</para>
-    </param>
+    <summary>Retrieves the least significant 32 bits of the <see cref="IFsiFileItem.get_DataSize" /> property.</summary>
+    <param name="pVal">Least significant 32 bits of the <see cref="IFsiFileItem.get_DataSize" /> property.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -124,32 +99,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This property and <see cref="IFsiFileItem.get_DataSize32BitHigh" /> together  provide the size of the file as two 32-bit numbers for languages that do not support 64-bit values, such as VBScript and Visual Basic 6.</para>
-    </remarks>
-    <seealso cref="IFsiFileItem" />
-    <seealso cref="IFsiFileItem.get_DataSize" />
   </member>
   <member name="IFsiFileItem.put_Data">
-    <summary>
-      <para>Sets the data stream of the file's content.</para>
-    </summary>
-    <param name="newVal">
-      <para>An <b>IStream</b> interface of the content of the file to add to the file system image.</para>
-    </param>
+    <summary>Sets the data stream of the file's content.</summary>
+    <param name="newVal">An <b>IStream</b> interface of the content of the file to add to the file system image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -157,45 +124,37 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_READONLY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_READONLY</b>
-            </para>
-          </description>
-          <description>
-            <para>FileSystemImage object is in read only mode.</para>
-            <para>Value: 0xC0AAB102</para>
-          </description>
-        </item>
+          <description>FileSystemImage object is in read only mode.<para>Value: 0xC0AAB102</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The contents of the file becomes read-only once the file item is added to file system image.</para>
-    </remarks>
-    <seealso cref="IFsiFileItem" />
-    <seealso cref="IFsiFileItem.get_Data" />
   </member>
   <member name="IFsiFileItem">
     <summary>
       <para>Use this interface to identify the file size and data stream of the file contents.</para>
       <para>To get this interface, call the <see cref="IFileSystemImage.CreateFileItem" /> method.</para>
     </summary>
-    <remarks>
-      <para>Data streams for files contained within the file system image are read-only.  File data can only be replaced by overwriting an existing file item.</para>
-      <para>This is an <b>FsiFileItem</b> object in script.</para>
-    </remarks>
-    <seealso cref="IFsiItem" />
   </member>
 </doc>

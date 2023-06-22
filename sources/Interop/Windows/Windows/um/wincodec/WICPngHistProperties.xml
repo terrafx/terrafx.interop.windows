@@ -3,16 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICPngHistProperties">
-    <summary>
-      <para>Specifies the Portable Network Graphics (PNG) hIST chunk metadata properties.</para>
-    </summary>
+    <summary>Specifies the Portable Network Graphics (PNG) hIST chunk metadata properties.</summary>
   </member>
   <member name="WICPngHistProperties.WICPngHistFrequencies">
-    <summary>
-      <para>[VT_VECTOR | VT_UI2] Indicates the approximate usage frequency of each color in the color palette.</para>
-    </summary>
+    <summary>[VT_VECTOR | VT_UI2] Indicates the approximate usage frequency of each color in the color palette.</summary>
   </member>
-  <member name="WICPngHistProperties.WICPngHistProperties_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICPngHistProperties.WICPngHistProperties_FORCE_DWORD"></member>
 </doc>

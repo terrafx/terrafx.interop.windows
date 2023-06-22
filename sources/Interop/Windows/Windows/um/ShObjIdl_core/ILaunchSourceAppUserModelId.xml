@@ -3,23 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ILaunchSourceAppUserModelId.GetAppUserModelId">
-    <summary>
-      <para>Retrieves an <a href="https://docs.microsoft.com//windows/desktop/shell/appids">AppUserModelId</a> from the source application.</para>
-    </summary>
-    <param name="launchingApp">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>Contains a  pointer to a string that contains the <a href="https://docs.microsoft.com//windows/desktop/shell/appids">AppUserModelId</a>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/shell/appids">AppUserModelId</seealso>
-    <seealso cref="ILaunchSourceAppUserModelId" />
+    <summary>Retrieves an <a href="https://docs.microsoft.com//windows/desktop/shell/appids">AppUserModelId</a> from the source application.</summary>
+    <param name="launchingApp">Contains a pointer to a string that contains the <a href="https://docs.microsoft.com//windows/desktop/shell/appids">AppUserModelId</a>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ILaunchSourceAppUserModelId">
-    <summary>
-      <para>Provides a method for retrieving an <a href="https://docs.microsoft.com//windows/desktop/shell/appids">AppUserModelId</a>.</para>
-    </summary>
+    <summary>Provides a method for retrieving an <a href="https://docs.microsoft.com//windows/desktop/shell/appids">AppUserModelId</a>.</summary>
   </member>
 </doc>

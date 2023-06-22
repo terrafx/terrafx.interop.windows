@@ -3,26 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DISK_CACHE_INFORMATION">
-    <summary>
-      <para>Provides information about the disk cache.This structure is used by the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_get_cache_information">IOCTL_DISK_GET_CACHE_INFORMATION</a> and <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_set_cache_information">IOCTL_DISK_SET_CACHE_INFORMATION</a> control codes.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_get_cache_information">IOCTL_DISK_GET_CACHE_INFORMATION</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_set_cache_information">IOCTL_DISK_SET_CACHE_INFORMATION</seealso>
+    <summary>Provides information about the disk cache.This structure is used by the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_get_cache_information">IOCTL_DISK_GET_CACHE_INFORMATION</a> and <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_set_cache_information">IOCTL_DISK_SET_CACHE_INFORMATION</a> control codes.</summary>
   </member>
   <member name="DISK_CACHE_INFORMATION.ParametersSavable">
-    <summary>
-      <para>Indicates whether the device is capable of saving any parameters in nonvolatile storage.</para>
-    </summary>
+    <summary>Indicates whether the device is capable of saving any parameters in nonvolatile storage.</summary>
   </member>
   <member name="DISK_CACHE_INFORMATION.ReadCacheEnabled">
-    <summary>
-      <para>Indicates whether the read cache is enabled.</para>
-    </summary>
+    <summary>Indicates whether the read cache is enabled.</summary>
   </member>
   <member name="DISK_CACHE_INFORMATION.WriteCacheEnabled">
-    <summary>
-      <para>Indicates whether the write cache is enabled.</para>
-    </summary>
+    <summary>Indicates whether the write cache is enabled.</summary>
   </member>
   <member name="DISK_CACHE_INFORMATION.ReadRetentionPriority">
     <summary>
@@ -33,107 +23,79 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>EqualPriority</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No data is held in the cache on a preferential basis.</para>
-          </description>
-        </item>
-        <item>
+          <description>No data is held in the cache on a preferential basis.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>KeepPrefetchedData</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A preference is to be given to prefetched data.</para>
-          </description>
-        </item>
-        <item>
+          <description>A preference is to be given to prefetched data.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>KeepReadData</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A preference is to be given to data cached from a read operation.</para>
-          </description>
-        </item>
+          <description>A preference is to be given to data cached from a read operation.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="DISK_CACHE_INFORMATION.WriteRetentionPriority">
-    <summary>
-      <para>Determines the likelihood of data cached from a write operation remaining in the cache. This data might be given a different priority than data cached under other circumstances, such as from a prefetch operation.</para>
-    </summary>
+    <summary>Determines the likelihood of data cached from a write operation remaining in the cache. This data might be given a different priority than data cached under other circumstances, such as from a prefetch operation.</summary>
   </member>
   <member name="DISK_CACHE_INFORMATION.DisablePrefetchTransferLength">
-    <summary>
-      <para>Disables prefetching. Prefetching might be disabled whenever the number of blocks requested exceeds the value in <i>DisablePrefetchTransferLength</i>. When zero, prefetching is disabled no matter what the size of the block request.</para>
-    </summary>
+    <summary>Disables prefetching. Prefetching might be disabled whenever the number of blocks requested exceeds the value in <i>DisablePrefetchTransferLength</i>. When zero, prefetching is disabled no matter what the size of the block request.</summary>
   </member>
   <member name="DISK_CACHE_INFORMATION.PrefetchScalar">
-    <summary>
-      <para>If this member is  <b>TRUE</b>,  the union is a <b>ScalarPrefetch</b> structure. Otherwise, the union is a <b>BlockPrefetch</b> structure.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the union is a <b>ScalarPrefetch</b> structure. Otherwise, the union is a <b>BlockPrefetch</b> structure.</summary>
   </member>
-  <member name="DISK_CACHE_INFORMATION.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
-  <member name="DISK_CACHE_INFORMATION.DUMMYUNIONNAME.ScalarPrefetch">
-    <summary></summary>
-  </member>
+  <member name="DISK_CACHE_INFORMATION.DUMMYUNIONNAME"></member>
+  <member name="DISK_CACHE_INFORMATION.DUMMYUNIONNAME.ScalarPrefetch"></member>
   <member name="DISK_CACHE_INFORMATION.DUMMYUNIONNAME.ScalarPrefetch.Minimum">
-    <summary>
-      <para>The scalar multiplier of the transfer length of the request. This member is valid  only when <b>PrefetchScalar</b> is <b>TRUE</b>. When <b>PrefetchScalar</b> is <b>TRUE</b>, this value  is multiplied by the transfer length to obtain the minimum amount of data that can be prefetched into the cache on a disk operation.</para>
-    </summary>
+    <summary>The scalar multiplier of the transfer length of the request. This member is valid only when <b>PrefetchScalar</b> is <b>TRUE</b>. When <b>PrefetchScalar</b> is <b>TRUE</b>, this value is multiplied by the transfer length to obtain the minimum amount of data that can be prefetched into the cache on a disk operation.</summary>
   </member>
   <member name="DISK_CACHE_INFORMATION.DUMMYUNIONNAME.ScalarPrefetch.Maximum">
-    <summary>
-      <para>The scalar multiplier of the transfer length of the request. This member is valid only when <b>PrefetchScalar</b> is <b>TRUE</b>. When <b>PrefetchScalar</b> is <b>TRUE</b>, this value  is multiplied by the transfer length to obtain the maximum amount of data that can be prefetched into the cache on a disk operation.</para>
-    </summary>
+    <summary>The scalar multiplier of the transfer length of the request. This member is valid only when <b>PrefetchScalar</b> is <b>TRUE</b>. When <b>PrefetchScalar</b> is <b>TRUE</b>, this value is multiplied by the transfer length to obtain the maximum amount of data that can be prefetched into the cache on a disk operation.</summary>
   </member>
   <member name="DISK_CACHE_INFORMATION.DUMMYUNIONNAME.ScalarPrefetch.MaximumBlocks">
-    <summary>
-      <para>The maximum number of blocks which can be prefetched.</para>
-    </summary>
+    <summary>The maximum number of blocks which can be prefetched.</summary>
   </member>
-  <member name="DISK_CACHE_INFORMATION.DUMMYUNIONNAME.BlockPrefetch">
-    <summary></summary>
-  </member>
+  <member name="DISK_CACHE_INFORMATION.DUMMYUNIONNAME.BlockPrefetch"></member>
   <member name="DISK_CACHE_INFORMATION.DUMMYUNIONNAME.BlockPrefetch.Minimum">
-    <summary>
-      <para>The minimum amount of data that can be prefetched into the cache on a disk operation, as an absolute number of disk blocks. This member is valid only when <b>PrefetchScalar</b> is <b>FALSE</b>.</para>
-    </summary>
+    <summary>The minimum amount of data that can be prefetched into the cache on a disk operation, as an absolute number of disk blocks. This member is valid only when <b>PrefetchScalar</b> is <b>FALSE</b>.</summary>
   </member>
   <member name="DISK_CACHE_INFORMATION.DUMMYUNIONNAME.BlockPrefetch.Maximum">
-    <summary>
-      <para>The maximum amount of data  that can be prefetched into the cache on a disk operation, as an absolute number of disk blocks. This member is valid only when <b>PrefetchScalar</b> is <b>FALSE</b>.</para>
-    </summary>
+    <summary>The maximum amount of data that can be prefetched into the cache on a disk operation, as an absolute number of disk blocks. This member is valid only when <b>PrefetchScalar</b> is <b>FALSE</b>.</summary>
   </member>
 </doc>

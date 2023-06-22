@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY">
-    <summary>
-      <para>Specifies a property for requesting a security token from an issuer.</para>
-    </summary>
+    <summary>Specifies a property for requesting a security token from an issuer.</summary>
   </member>
   <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY.id">
-    <summary>
-      <para>Identifies the <see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY_ID" />.</para>
-    </summary>
+    <summary>Identifies the <see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY_ID" />.</summary>
   </member>
   <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY.value">
-    <summary>
-      <para>A pointer to the value.
-The pointer must have an alignment compatible with the type
-of the property.</para>
-    </summary>
+    <summary>A pointer to the value. The pointer must have an alignment compatible with the type of the property.</summary>
   </member>
   <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY.valueSize">
-    <summary>
-      <para>The size in bytes of the memory pointed to by value.</para>
-    </summary>
+    <summary>The size in bytes of the memory pointed to by value.</summary>
   </member>
 </doc>

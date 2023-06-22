@@ -3,25 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FILE_LEVEL_TRIM_RANGE">
-    <summary>
-      <para>Specifies a range of a file that is to be trimmed.</para>
-    </summary>
-    <remarks>
-      <para>Before the trim operation is passed to the underlying storage system the input ranges are reduced to be
-aligned to page boundaries (4,096 bytes on 32-bit and x64-based editions of Windows, 8,192 bytes on Itanium-Based
-editions of Windows).</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_file_level_trim">FILE_LEVEL_TRIM</seealso>
-    <seealso cref="FILE_LEVEL_TRIM_OUTPUT" />
+    <summary>Specifies a range of a file that is to be trimmed.</summary>
   </member>
   <member name="FILE_LEVEL_TRIM_RANGE.Offset">
-    <summary>
-      <para>Offset, in bytes, from the start of the file for the range to be trimmed.</para>
-    </summary>
+    <summary>Offset, in bytes, from the start of the file for the range to be trimmed.</summary>
   </member>
   <member name="FILE_LEVEL_TRIM_RANGE.Length">
-    <summary>
-      <para>Length, in bytes, for the range to be trimmed.</para>
-    </summary>
+    <summary>Length, in bytes, for the range to be trimmed.</summary>
   </member>
 </doc>

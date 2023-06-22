@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IVisualTreeService2.GetProperty">
+    <summary>Gets the effective value of the specified dependency property.</summary>
+    <param name="object">The dependency object to get the property value from.</param>
+    <param name="propertyIndex">The index of the property to get the value from.</param>
+    <param name="pValue">The effective value of the property.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IVisualTreeService2.GetPropertyIndex">
+    <summary>Gets the property index for the specified property name.</summary>
+    <param name="object">The dependency object to get the property index from.</param>
+    <param name="propertyName">The name of the dependency property for which to get the index.</param>
+    <param name="pPropertyIndex">The index of the specified property.</param>
+    <returns>
+      <para>The possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>No property with <i>propertyName</i> was found, or the property cannot be applied to <i>object</i>.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IVisualTreeService2.RenderTargetBitmap">
+    <summary>Returns an image that represents the object described by handle, or returns an error if the object does not have or cannot provide such an image.</summary>
+    <param name="handle">The handle associated with the visual for which the caller is requesting a bitmap.</param>
+    <param name="options">A flag that specifies whether only the texture associated with the visual should be rendered, or whether the texture and its children should be rendered.</param>
+    <param name="maxPixelWidth">The maximum width, in pixels, of the returned bitmap.</param>
+    <param name="maxPixelHeight">The maximum height, in pixels, of the returned bitmap.</param>
+    <param name="ppBitmapData">The structure containing the requested bitmap information as well as information pertaining to that bitmap.</param>
+    <returns>
+      <para>The possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method succeeded. <i>ppBitmapData</i> will be set to an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xamlom/nn-xamlom-ibitmapdata">IBitmapData</a> containing an image.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The image could not be acquired or converted. <i>ppBitmapData</i> will be set to<b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i> handle</i> does not refer to an object that can return an image, the <i>options</i> value is invalid, or<i>ppBitmapData</i> is <b>NULL</b>.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IVisualTreeService2.ReplaceResource">
+    <summary>Replaces an existing resource with a new one of the same type.</summary>
+    <param name="resourceDictionary">The dictionary that contains the resource to replace.</param>
+    <param name="key">The key of the resource to replace.</param>
+    <param name="newValue">The value to replace the resource with.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IVisualTreeService2">
+    <summary>Represents additional capabilities of an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xamlom/nn-xamlom-ivisualtreeservice">IVisualTreeService</a> object.</summary>
+  </member>
+</doc>

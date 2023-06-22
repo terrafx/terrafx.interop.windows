@@ -3,61 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ICDBurn.Burn">
-    <summary>
-      <para>Instructs data to be copied from the staging area to a writable CD.</para>
-    </summary>
-    <param name="hwnd">
-      <para>Type: <b>HWND</b></para>
-      <para>The handle of the parent window of the UI.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <i>staging area</i> has a default location of %userprofile%\Local Settings\Application Data\Microsoft\CD Burning. Its actual path can be retrieved through <see cref="SHGetFolderPath" />, <see cref="SHGetSpecialFolderPath" />, <see cref="SHGetFolderLocation" />, <see cref="SHGetSpecialFolderLocation" />, or <see cref="SHGetFolderPathAndSubDir" /> by using the CSIDL_CDBURN_AREA value.</para>
-    </remarks>
+    <summary>Instructs data to be copied from the staging area to a writable CD.</summary>
+    <param name="hwnd">The handle of the parent window of the UI.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICDBurn.GetRecorderDriveLetter">
-    <summary>
-      <para>Gets the drive letter of a CD drive that has been marked as write-enabled.</para>
-    </summary>
-    <param name="pszDrive">
-      <para>Type: <b>LPWSTR</b></para>
-      <para>A pointer to a string containing the drive letter, for example "F:".</para>
-    </param>
-    <param name="cch">
-      <para>Type: <b>UINT</b></para>
-      <para>The size of the string, in characters, pointed to by pszDrive. This value will normally be 4. Values larger than 4 are allowed, but the extra characters will be ignored by this method. Values less than 4 will generate an E_INVALIDARG error.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The drive whose letter designation is returned by this method is the drive that has the <b>Enable cd writing on this drive</b> option selected. This option is found on the drive's property sheet. Only one drive on a system can have this option selected.</para>
-      <para>If a recordable CD drive is present but that option has been deselected, the method will return an error code.</para>
-    </remarks>
+    <summary>Gets the drive letter of a CD drive that has been marked as write-enabled.</summary>
+    <param name="pszDrive">A pointer to a string containing the drive letter, for example "F:".</param>
+    <param name="cch">The size of the string, in characters, pointed to by pszDrive. This value will normally be 4. Values larger than 4 are allowed, but the extra characters will be ignored by this method. Values less than 4 will generate an E_INVALIDARG error.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICDBurn.HasRecordableDrive">
-    <summary>
-      <para>Scans the system for a CD drive with write-capability, returning <b>TRUE</b> if one is found.</para>
-    </summary>
-    <param name="pfHasRecorder">
-      <para>Type: <b>BOOL*</b></para>
-      <para>A pointer to a Boolean value containing <b>TRUE</b> if a suitable device is located, <b>FALSE</b> otherwise.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This search does not rely on the state of the <b>Enable cd writing on this drive</b> option found on the drive's property sheet. Instead, the determination is based on IMAPI.</para>
-    </remarks>
+    <summary>Scans the system for a CD drive with write-capability, returning <b>TRUE</b> if one is found.</summary>
+    <param name="pfHasRecorder">A pointer to a Boolean value containing <b>TRUE</b> if a suitable device is located, <b>FALSE</b> otherwise.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICDBurn">
-    <summary>
-      <para>Exposes methods that determine whether a system has hardware for writing to CD, the drive letter of a CD writer device, and programmatically initiate a CD writing session.</para>
-    </summary>
+    <summary>Exposes methods that determine whether a system has hardware for writing to CD, the drive letter of a CD writer device, and programmatically initiate a CD writing session.</summary>
   </member>
 </doc>

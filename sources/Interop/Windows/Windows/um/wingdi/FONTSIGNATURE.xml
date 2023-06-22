@@ -3,23 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FONTSIGNATURE">
-    <summary>
-      <para>Contains information identifying the code pages and Unicode subranges for which a given font provides glyphs.</para>
-    </summary>
-    <remarks>
-      <para>GDI relies on Windows code pages fitting within a 32-bit value. Furthermore, the highest 2 bits within this value are reserved for GDI internal use and may not be assigned to code pages.</para>
-    </remarks>
-    <seealso cref="LOCALESIGNATURE" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Intl/unicode-and-character-set-structures">Unicode and Character Set Structures</seealso>
+    <summary>Contains information identifying the code pages and Unicode subranges for which a given font provides glyphs.</summary>
   </member>
   <member name="FONTSIGNATURE.fsUsb">
-    <summary>
-      <para>A 128-bit Unicode subset bitfield (USB) identifying up to 126 Unicode subranges. Each bit, except the two most significant bits, represents a single subrange. The most significant bit is always 1 and identifies the bitfield as a font signature; the second most significant bit is reserved and must be 0. Unicode subranges are numbered in accordance with the ISO 10646 standard. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Intl/unicode-subset-bitfields">Unicode Subset Bitfields</a>.</para>
-    </summary>
+    <summary>A 128-bit Unicode subset bitfield (USB) identifying up to 126 Unicode subranges. Each bit, except the two most significant bits, represents a single subrange. The most significant bit is always 1 and identifies the bitfield as a font signature; the second most significant bit is reserved and must be 0. Unicode subranges are numbered in accordance with the ISO 10646 standard. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Intl/unicode-subset-bitfields">Unicode Subset Bitfields</a>.</summary>
   </member>
   <member name="FONTSIGNATURE.fsCsb">
-    <summary>
-      <para>A 64-bit, code-page bitfield (CPB) that identifies a specific character set or code page. Code pages are in the lower 32 bits of this bitfield. The high 32 are used for non-Windows code pages. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Intl/code-page-bitfields">Code Page Bitfields</a>.</para>
-    </summary>
+    <summary>A 64-bit, code-page bitfield (CPB) that identifies a specific character set or code page. Code pages are in the lower 32 bits of this bitfield. The high 32 are used for non-Windows code pages. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Intl/code-page-bitfields">Code Page Bitfields</a>.</summary>
   </member>
 </doc>

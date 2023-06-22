@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_BLEND_PROP">
-    <summary>
-      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/blend">Blend effect</a>.</para>
-    </summary>
+    <summary>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/blend">Blend effect</a>.</summary>
   </member>
   <member name="D2D1_BLEND_PROP.D2D1_BLEND_PROP_MODE">
     <summary>
@@ -14,7 +12,5 @@
       <para>The default value is D2D1_BLEND_MODE_MULTIPLY.</para>
     </summary>
   </member>
-  <member name="D2D1_BLEND_PROP.D2D1_BLEND_PROP_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_BLEND_PROP.D2D1_BLEND_PROP_FORCE_DWORD"></member>
 </doc>

@@ -3,26 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PSC_STATE">
-    <summary>
-      <para>Specifies the state of a property. They are set manually by the code that is hosting the in-memory property store cache.</para>
-    </summary>
+    <summary>Specifies the state of a property. They are set manually by the code that is hosting the in-memory property store cache.</summary>
   </member>
   <member name="PSC_STATE.PSC_NORMAL">
-    <summary>
-      <para>The property has not been altered.</para>
-    </summary>
+    <summary>The property has not been altered.</summary>
   </member>
   <member name="PSC_STATE.PSC_NOTINSOURCE">
-    <summary>
-      <para>The requested property does not exist for the file or stream on which the property handler was initialized.</para>
-    </summary>
+    <summary>The requested property does not exist for the file or stream on which the property handler was initialized.</summary>
   </member>
   <member name="PSC_STATE.PSC_DIRTY">
-    <summary>
-      <para>The property has been altered but has not yet been committed to the file or stream.</para>
-    </summary>
+    <summary>The property has been altered but has not yet been committed to the file or stream.</summary>
   </member>
-  <member name="PSC_STATE.PSC_READONLY">
-    <summary></summary>
-  </member>
+  <member name="PSC_STATE.PSC_READONLY"></member>
 </doc>

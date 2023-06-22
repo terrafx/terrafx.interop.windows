@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROCESS_LOOPBACK_MODE">
-    <summary>
-      <para>Specifies the loopback mode for an <see cref="AUDIOCLIENT_ACTIVATION_PARAMS" /> structure passed into a call to <see cref="ActivateAudioInterfaceAsync" />.</para>
-    </summary>
-    <seealso cref="AUDIOCLIENT_ACTIVATION_PARAMS" />
-    <seealso cref="ActivateAudioInterfaceAsync" />
+    <summary>Specifies the loopback mode for an <see cref="AUDIOCLIENT_ACTIVATION_PARAMS" /> structure passed into a call to <see cref="ActivateAudioInterfaceAsync" />.</summary>
   </member>
   <member name="PROCESS_LOOPBACK_MODE.PROCESS_LOOPBACK_MODE_INCLUDE_TARGET_PROCESS_TREE">
-    <summary>
-      <para>Render streams from the specified process and its child processes are included in the activated process loopback stream.</para>
-    </summary>
+    <summary>Render streams from the specified process and its child processes are included in the activated process loopback stream.</summary>
   </member>
   <member name="PROCESS_LOOPBACK_MODE.PROCESS_LOOPBACK_MODE_EXCLUDE_TARGET_PROCESS_TREE">
-    <summary>
-      <para>Render streams from the specified process and its child processes are excluded from the activated process loopback stream.</para>
-    </summary>
+    <summary>Render streams from the specified process and its child processes are excluded from the activated process loopback stream.</summary>
   </member>
 </doc>

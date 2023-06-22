@@ -3,19 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteRenderingParams2.GetGridFitMode">
-    <summary>
-      <para>Gets the grid fitting mode.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="DWRITE_GRID_FIT_MODE" /></b></para>
-      <para>Returns a <see cref="DWRITE_GRID_FIT_MODE" />-typed value for the grid fitting mode.</para>
-    </returns>
-    <seealso cref="IDWriteRenderingParams2" />
+    <summary>Gets the grid fitting mode.</summary>
+    <returns>Returns a <see cref="DWRITE_GRID_FIT_MODE" />-typed value for the grid fitting mode.</returns>
   </member>
   <member name="IDWriteRenderingParams2">
-    <summary>
-      <para>Represents text rendering settings for glyph rasterization and filtering.</para>
-    </summary>
-    <seealso cref="IDWriteRenderingParams1" />
+    <summary>Represents text rendering settings for glyph rasterization and filtering.</summary>
   </member>
 </doc>

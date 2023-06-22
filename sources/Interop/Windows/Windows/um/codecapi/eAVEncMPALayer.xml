@@ -4,24 +4,17 @@
 <doc>
   <member name="eAVEncMPALayer">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies the MPEG audio layer. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencmpalayer-property">AVEncMPALayer</a> property.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVEncMPALayer.eAVEncMPALayer_1">
-    <summary>
-      <para>MPEG Audio Layer-1.</para>
-    </summary>
+    <summary>MPEG Audio Layer-1.</summary>
   </member>
   <member name="eAVEncMPALayer.eAVEncMPALayer_2">
-    <summary>
-      <para>MPEG Audio Layer-2.</para>
-    </summary>
+    <summary>MPEG Audio Layer-2.</summary>
   </member>
   <member name="eAVEncMPALayer.eAVEncMPALayer_3">
-    <summary>
-      <para>MPEG Audio Layer-3.</para>
-    </summary>
+    <summary>MPEG Audio Layer-3.</summary>
   </member>
 </doc>

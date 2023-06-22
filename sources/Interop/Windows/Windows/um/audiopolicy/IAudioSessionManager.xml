@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAudioSessionManager.GetAudioSessionControl">
-    <summary>
-      <para>The <b>GetAudioSessionControl</b> method retrieves an audio session control.</para>
-    </summary>
-    <param name="AudioSessionGuid">
-      <para>Pointer to a session GUID. If the GUID does not identify a session that has been previously opened, the call opens a new but empty session. The Sndvol program does not display a volume-level control for a session unless it contains one or more active streams. If this parameter is <b>NULL</b> or points to the value GUID_NULL, the method assigns the stream to the default session.</para>
-    </param>
-    <param name="StreamFlags">
-      <para>Specifies the status of the flags for the audio stream.</para>
-    </param>
-    <param name="SessionControl">
-      <para>Pointer to a pointer variable into which the method writes a pointer to the <see cref="IAudioSessionControl" /> interface of the audio session control object. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the call fails, <i>*SessionControl</i> is <b>NULL</b>.</para>
-    </param>
+    <summary>The <b>GetAudioSessionControl</b> method retrieves an audio session control.</summary>
+    <param name="AudioSessionGuid">Pointer to a session GUID. If the GUID does not identify a session that has been previously opened, the call opens a new but empty session. The Sndvol program does not display a volume-level control for a session unless it contains one or more active streams. If this parameter is <b>NULL</b> or points to the value GUID_NULL, the method assigns the stream to the default session.</param>
+    <param name="StreamFlags">Specifies the status of the flags for the audio stream.</param>
+    <param name="SessionControl">Pointer to a pointer variable into which the method writes a pointer to the <see cref="IAudioSessionControl" /> interface of the audio session control object. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the call fails, <i>*SessionControl</i> is <b>NULL</b>.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -22,77 +14,74 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>AUDCLNT_E_NOT_INITIALIZED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AUDCLNT_E_NOT_INITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The audio stream has not been successfully initialized.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The audio stream has not been successfully initialized.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AUDCLNT_E_DEVICE_INVALIDATED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The audio endpoint device has been unplugged, or the audio hardware or associated hardware resources have been reconfigured, disabled, removed, or otherwise made unavailable for use.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>AUDCLNT_E_DEVICE_INVALIDATED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AUDCLNT_E_SERVICE_NOT_RUNNING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The Windows audio service is not running.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The audio endpoint device has been unplugged, or the audio hardware or associated hardware resources have been reconfigured, disabled, removed, or otherwise made unavailable for use.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Parameter <i>SessionControl</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>AUDCLNT_E_SERVICE_NOT_RUNNING</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_MEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The Windows audio service is not running.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>Parameter <i>SessionControl</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_MEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Out of memory.</para>
-          </description>
-        </item>
+          <description>Out of memory.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For a code example that calls this method, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/audio-events-for-legacy-audio-applications">Audio Events for Legacy Audio Applications</a>.</para>
-    </remarks>
-    <seealso cref="IAudioSessionControl Interface" />
-    <seealso cref="IAudioSessionManager Interface" />
   </member>
   <member name="IAudioSessionManager.GetSimpleAudioVolume">
-    <summary>
-      <para>The <b>GetSimpleAudioVolume</b> method retrieves a simple audio volume control.</para>
-    </summary>
-    <param name="AudioSessionGuid">
-      <para>Pointer to a session GUID. If the GUID does not identify a session that has been previously opened, the call opens a new but empty session. The Sndvol program does not display a volume-level control for a session unless it contains one or more active streams. If this parameter is <b>NULL</b> or points to the value GUID_NULL, the method assigns the stream to the default session.</para>
-    </param>
-    <param name="StreamFlags">
-      <para>Specifies whether the request is for a cross-process session. Set to <b>TRUE</b> if the session is cross-process. Set to <b>FALSE</b> if the session is not cross-process.</para>
-    </param>
-    <param name="AudioVolume">
-      <para>Pointer to a pointer variable into which the method writes a pointer to the <see cref="ISimpleAudioVolume" /> interface of the audio volume control object. This interface represents the simple audio volume control for the current process. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the <b>Activate</b> call fails, <i>*AudioVolume</i> is <b>NULL</b>.</para>
-    </param>
+    <summary>The <b>GetSimpleAudioVolume</b> method retrieves a simple audio volume control.</summary>
+    <param name="AudioSessionGuid">Pointer to a session GUID. If the GUID does not identify a session that has been previously opened, the call opens a new but empty session. The Sndvol program does not display a volume-level control for a session unless it contains one or more active streams. If this parameter is <b>NULL</b> or points to the value GUID_NULL, the method assigns the stream to the default session.</param>
+    <param name="StreamFlags">Specifies whether the request is for a cross-process session. Set to <b>TRUE</b> if the session is cross-process. Set to <b>FALSE</b> if the session is not cross-process.</param>
+    <param name="AudioVolume">Pointer to a pointer variable into which the method writes a pointer to the <see cref="ISimpleAudioVolume" /> interface of the audio volume control object. This interface represents the simple audio volume control for the current process. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the <b>Activate</b> call fails, <i>*AudioVolume</i> is <b>NULL</b>.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -100,60 +89,68 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>AUDCLNT_E_NOT_INITIALIZED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AUDCLNT_E_NOT_INITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The audio stream has not been successfully initialized.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The audio stream has not been successfully initialized.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AUDCLNT_E_DEVICE_INVALIDATED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The audio endpoint device has been unplugged, or the audio hardware or associated hardware resources have been reconfigured, disabled, removed, or otherwise made unavailable for use.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>AUDCLNT_E_DEVICE_INVALIDATED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AUDCLNT_E_SERVICE_NOT_RUNNING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The Windows audio service is not running.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The audio endpoint device has been unplugged, or the audio hardware or associated hardware resources have been reconfigured, disabled, removed, or otherwise made unavailable for use.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Parameter <i>AudioVolume</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>AUDCLNT_E_SERVICE_NOT_RUNNING</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_MEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The Windows audio service is not running.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>Parameter <i>AudioVolume</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_MEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Out of memory.</para>
-          </description>
-        </item>
+          <description>Out of memory.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IAudioSessionManager Interface" />
-    <seealso cref="ISimpleAudioVolume Interface" />
   </member>
   <member name="IAudioSessionManager">
     <summary>
@@ -163,8 +160,5 @@
       <para>When a client creates an audio stream through a higher-level API, that API typically adds the stream to the default audio session for the client's process (the session that is identified by the session GUID value, GUID_NULL), but the same API might not provide a means for the client to access the controls for that session. In that case, the client can access the controls through the <b>IAudioSessionManager</b> interface.</para>
       <para>For a code example that uses the <b>IAudioSessionManager</b> interface, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/audio-events-for-legacy-audio-applications">Audio Events for Legacy Audio Applications</a>.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
-    <seealso cref="IMMDevice.Activate" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/wasapi">WASAPI</seealso>
   </member>
 </doc>

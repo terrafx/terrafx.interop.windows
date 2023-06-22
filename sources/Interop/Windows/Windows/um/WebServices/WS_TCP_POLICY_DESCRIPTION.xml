@@ -3,13 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_TCP_POLICY_DESCRIPTION">
-    <summary>
-      <para>Describes the policy specifying http channel binding.</para>
-    </summary>
+    <summary>Describes the policy specifying http channel binding.</summary>
   </member>
   <member name="WS_TCP_POLICY_DESCRIPTION.channelProperties">
-    <summary>
-      <para>Template description for the channel properties specified in policy.</para>
-    </summary>
+    <summary>Template description for the channel properties specified in policy.</summary>
   </member>
 </doc>

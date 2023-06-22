@@ -3,15 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SecPkgContext_SupportedSignatures">
-    <summary>
-      <para>Specifies the signature algorithms supported by an Schannel connection.</para>
-    </summary>
-    <seealso cref="QueryContextAttributes (Schannel)" />
+    <summary>Specifies the signature algorithms supported by an Schannel connection.</summary>
   </member>
   <member name="SecPkgContext_SupportedSignatures.cSignatureAndHashAlgorithms">
-    <summary>
-      <para>The number of elements in the <i>pSignatureAndHashAlgorithms</i> array.</para>
-    </summary>
+    <summary>The number of elements in the <i>pSignatureAndHashAlgorithms</i> array.</summary>
   </member>
   <member name="SecPkgContext_SupportedSignatures.pSignatureAndHashAlgorithms">
     <summary>
@@ -22,118 +17,56 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <para>0</para>
-          </description>
-          <description>
-            <para>Anonymous signature algorithm.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>1</para>
-          </description>
-          <description>
-            <para>The RSA signature algorithm.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>2</para>
-          </description>
-          <description>
-            <para>The DSA signature algorithm.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>3</para>
-          </description>
-          <description>
-            <para>The ECDSA signature algorithm.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>255</para>
-          </description>
-          <description>
-            <para>Reserved.</para>
-          </description>
-        </item>
-      </list>
-      <para>The lower byte can be one of the following values that specifies a hash algorithm.</para>
-      <list type="table">
         <listheader>
-          <description>Value</description>
-          <description>Meaning</description>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>0</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Anonymous signature algorithm.</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>0</para>
+            <list type="bullet">
+              <listheader>
+                <term>1</term>
+              </listheader>
+            </list>
           </description>
+          <description>The RSA signature algorithm.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>None.</para>
+            <list type="bullet">
+              <listheader>
+                <term>2</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The DSA signature algorithm.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>1</para>
+            <list type="bullet">
+              <listheader>
+                <term>3</term>
+              </listheader>
+            </list>
           </description>
+          <description>The ECDSA signature algorithm.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The MD5 hash algorithm.</para>
+            <list type="bullet">
+              <listheader>
+                <term>255</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>2</para>
-          </description>
-          <description>
-            <para>The SHA1 hash algorithm.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>3</para>
-          </description>
-          <description>
-            <para>The SHA-224 hash algorithm.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>4</para>
-          </description>
-          <description>
-            <para>The SHA-256 hash algorithm.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>5</para>
-          </description>
-          <description>
-            <para>The SHA-384 hash algorithm.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>6</para>
-          </description>
-          <description>
-            <para>The SHA-512 hash algorithm.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>255</para>
-          </description>
-          <description>
-            <para>Reserved.</para>
-          </description>
-        </item>
-      </list>
-    </summary>
+          <description>Reserved.</description>
+        </listheader>
+      </list> <para>The lower byte can be one of the following values that specifies a hash algorithm.</para><list type="table"><listheader><description>Value</description><description>Meaning</description></listheader><listheader><description><list type="bullet"><listheader><term>0</term></listheader></list></description><description>None.</description></listheader><listheader><description><list type="bullet"><listheader><term>1</term></listheader></list></description><description>The MD5 hash algorithm.</description></listheader><listheader><description><list type="bullet"><listheader><term>2</term></listheader></list></description><description>The SHA1 hash algorithm.</description></listheader><listheader><description><list type="bullet"><listheader><term>3</term></listheader></list></description><description>The SHA-224 hash algorithm.</description></listheader><listheader><description><list type="bullet"><listheader><term>4</term></listheader></list></description><description>The SHA-256 hash algorithm.</description></listheader><listheader><description><list type="bullet"><listheader><term>5</term></listheader></list></description><description>The SHA-384 hash algorithm.</description></listheader><listheader><description><list type="bullet"><listheader><term>6</term></listheader></list></description><description>The SHA-512 hash algorithm.</description></listheader><listheader><description><list type="bullet"><listheader><term>255</term></listheader></list></description><description>Reserved.</description></listheader></list></summary>
   </member>
 </doc>

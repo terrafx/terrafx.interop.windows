@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CALPOLESTR">
-    <summary>
-      <para>Specifies a counted array of strings used to specify the predefined strings that a property can accept.</para>
-    </summary>
-    <seealso cref="IPerPropertyBrowsing.GetPredefinedStrings" />
-    <seealso cref="LPOLESTR" />
+    <summary>Specifies a counted array of strings used to specify the predefined strings that a property can accept.</summary>
   </member>
   <member name="CALPOLESTR.cElems">
-    <summary>
-      <para>The size of the array pointed to by <b>pElems</b>.</para>
-    </summary>
+    <summary>The size of the array pointed to by <b>pElems</b>.</summary>
   </member>
   <member name="CALPOLESTR.pElems">
-    <summary>
-      <para>A pointer to an array of <see cref="LPOLESTR" /> values, each of which corresponds to an allowable value that a particular property can accept. The caller can use these string values in user interface elements, such as drop-down list boxes. This array, as well as the strings in the array, are allocated by the callee using <see cref="CoTaskMemAlloc" /> and is freed by the caller using <see cref="CoTaskMemFree" />.</para>
-    </summary>
+    <summary>A pointer to an array of <see cref="LPOLESTR" /> values, each of which corresponds to an allowable value that a particular property can accept. The caller can use these string values in user interface elements, such as drop-down list boxes. This array, as well as the strings in the array, are allocated by the callee using <see cref="CoTaskMemAlloc" /> and is freed by the caller using <see cref="CoTaskMemFree" />.</summary>
   </member>
 </doc>

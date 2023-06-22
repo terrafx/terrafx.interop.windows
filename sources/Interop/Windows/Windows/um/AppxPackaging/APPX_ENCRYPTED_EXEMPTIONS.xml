@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="APPX_ENCRYPTED_EXEMPTIONS">
-    <summary>
-      <para>Files exempted from Windows app package encryption.</para>
-    </summary>
+    <summary>Files exempted from Windows app package encryption.</summary>
   </member>
   <member name="APPX_ENCRYPTED_EXEMPTIONS.count">
-    <summary>
-      <para>The count of files exempted.</para>
-    </summary>
+    <summary>The count of files exempted.</summary>
   </member>
   <member name="APPX_ENCRYPTED_EXEMPTIONS.plainTextFiles">
-    <summary>
-      <para>Files exempted from encryption.</para>
-    </summary>
+    <summary>Files exempted from encryption.</summary>
   </member>
 </doc>

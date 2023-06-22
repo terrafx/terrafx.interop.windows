@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IRandomAccessStreamFileAccessMode.GetMode">
+    <summary>Retrieves the file access mode that was used when the <a href="https://docs.microsoft.com//uwp/api/windows.storage.storagefile.openasync">StorageFile.OpenAsync</a> method was called to open the random-access byte stream.</summary>
+    <param name="fileAccessMode">The file access mode that was used when the <a href="https://docs.microsoft.com//uwp/api/windows.storage.storagefile.openasync">StorageFile.OpenAsync</a> method was called to open the random-access byte stream. Cast this value as a <a href="https://docs.microsoft.com//uwp/api/Windows.Storage.FileAccessMode">Windows.Storage.FileAccessMode</a> enumeration value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IRandomAccessStreamFileAccessMode">
+    <summary>Provides access to the file access mode that was used when the <a href="https://docs.microsoft.com//uwp/api/windows.storage.storagefile.openasync">StorageFile.OpenAsync</a> method was called to open the random-access byte stream.</summary>
+  </member>
+</doc>

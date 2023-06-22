@@ -3,53 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICBitmapScaler.Initialize">
-    <summary>
-      <para>Initializes the bitmap scaler with the provided parameters.</para>
-    </summary>
-    <param name="pISource">
-      <para>Type: <b><see cref="IWICBitmapSource" />*</b></para>
-      <para>The input bitmap source.</para>
-    </param>
-    <param name="uiWidth">
-      <para>Type: <b>UINT</b></para>
-      <para>The destination width.</para>
-    </param>
-    <param name="uiHeight">
-      <para>Type: <b>UINT</b></para>
-      <para>The destination height.</para>
-    </param>
-    <param name="mode">
-      <para>Type: <b><see cref="WICBitmapInterpolationMode" /></b></para>
-      <para>The <see cref="WICBitmapInterpolationMode" /> to use when scaling.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <see cref="IWICBitmapScaler" /> can't be initialized multiple times. For example, when scaling every frame in a multi-frame image, a new <b>IWICBitmapScaler</b> must be created and initialized for each frame.</para>
-      <h4>Examples</h4>
-      <para>For an example using an <see cref="IWICBitmapScaler" />, see the <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-bitmapsources-howto-scale">How to Scale a Bitmap Source</a> topic.</para>
-    </remarks>
+    <summary>Initializes the bitmap scaler with the provided parameters.</summary>
+    <param name="pISource">The input bitmap source.</param>
+    <param name="uiWidth">The destination width.</param>
+    <param name="uiHeight">The destination height.</param>
+    <param name="mode">The <see cref="WICBitmapInterpolationMode" /> to use when scaling.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapScaler">
-    <summary>
-      <para>Represents a resized version of the input bitmap using a resampling or filtering algorithm.</para>
-    </summary>
-    <remarks>
-      <para>Images can be scaled to larger sizes; however, even with sophisticated scaling algorithms, there is only so much information in the image and artifacts tend to worsen the more you scale up.</para>
-      <para>The scaler will reapply the resampling algorithm every time <see cref="CopyPixels" /> is called.
-If the scaled image is to be animated, the scaled image should be created once and cached in a new bitmap, after which the <b>IWICBitmapScaler</b> may be released.
-In this way the scaling algorithm - which may be computationally expensive relative to drawing - is performed only once and the result displayed many times.</para>
-      <para>The scaler is optimized to use the minimum amount of memory required to scale the image correctly.
-The scaler may be used to produce parts of the image incrementally (banding) by calling <see cref="CopyPixels" /> with different rectangles representing the output bands of the image.
-Resampling typically requires overlapping rectangles from the source image and thus may need to request the same pixels from the source bitmap multiple times.
-Requesting scanlines out-of-order from some image decoders can have a significant performance penalty.
-Because of this reason, the scaler is optimized to handle consecutive horizontal bands of scanlines (rectangle width equal to the bitmap width).
-In this case the accumulator from the previous vertically adjacent rectangle is re-used to avoid duplicate scanline requests from the source.
-This implies that banded output from the scaler may have better performance if the bands are requested sequentially.
-Of course if the scaler is simply used to produce a single rectangle output, this concern is eliminated because the scaler will internally request scanlines in the correct order.</para>
-    </remarks>
+    <summary>Represents a resized version of the input bitmap using a resampling or filtering algorithm.</summary>
   </member>
 </doc>

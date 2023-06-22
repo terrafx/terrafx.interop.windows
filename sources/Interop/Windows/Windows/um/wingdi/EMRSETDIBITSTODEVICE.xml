@@ -3,87 +3,51 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRSETDIBITSTODEVICE">
-    <summary>
-      <para>The <b>EMRSETDIBITSTODEVICE</b> structure contains members for the <see cref="SetDIBitsToDevice" /> enhanced metafile record.</para>
-    </summary>
-    <seealso cref="BITMAPINFO" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
-    <seealso cref="SetDIBitsToDevice" />
+    <summary>The <b>EMRSETDIBITSTODEVICE</b> structure contains members for the <see cref="SetDIBitsToDevice" /> enhanced metafile record.</summary>
   </member>
   <member name="EMRSETDIBITSTODEVICE.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMRSETDIBITSTODEVICE.rclBounds">
-    <summary>
-      <para>Bounding rectangle, in device units.</para>
-    </summary>
+    <summary>Bounding rectangle, in device units.</summary>
   </member>
   <member name="EMRSETDIBITSTODEVICE.xDest">
-    <summary>
-      <para>Logical x-coordinate of the upper-left corner of the destination rectangle.</para>
-    </summary>
+    <summary>Logical x-coordinate of the upper-left corner of the destination rectangle.</summary>
   </member>
   <member name="EMRSETDIBITSTODEVICE.yDest">
-    <summary>
-      <para>Logical y-coordinate of the upper-left corner of the destination rectangle.</para>
-    </summary>
+    <summary>Logical y-coordinate of the upper-left corner of the destination rectangle.</summary>
   </member>
   <member name="EMRSETDIBITSTODEVICE.xSrc">
-    <summary>
-      <para>Logical x-coordinate of the lower-left corner of the source device-independent bitmap (DIB).</para>
-    </summary>
+    <summary>Logical x-coordinate of the lower-left corner of the source device-independent bitmap (DIB).</summary>
   </member>
   <member name="EMRSETDIBITSTODEVICE.ySrc">
-    <summary>
-      <para>Logical y-coordinate of the lower-left corner of the source DIB.</para>
-    </summary>
+    <summary>Logical y-coordinate of the lower-left corner of the source DIB.</summary>
   </member>
   <member name="EMRSETDIBITSTODEVICE.cxSrc">
-    <summary>
-      <para>Width of the source rectangle, in logical units.</para>
-    </summary>
+    <summary>Width of the source rectangle, in logical units.</summary>
   </member>
   <member name="EMRSETDIBITSTODEVICE.cySrc">
-    <summary>
-      <para>Height of the source rectangle, in logical units.</para>
-    </summary>
+    <summary>Height of the source rectangle, in logical units.</summary>
   </member>
   <member name="EMRSETDIBITSTODEVICE.offBmiSrc">
-    <summary>
-      <para>Offset to the source <see cref="BITMAPINFO" /> structure.</para>
-    </summary>
+    <summary>Offset to the source <see cref="BITMAPINFO" /> structure.</summary>
   </member>
   <member name="EMRSETDIBITSTODEVICE.cbBmiSrc">
-    <summary>
-      <para>Size of the source <see cref="BITMAPINFO" /> structure.</para>
-    </summary>
+    <summary>Size of the source <see cref="BITMAPINFO" /> structure.</summary>
   </member>
   <member name="EMRSETDIBITSTODEVICE.offBitsSrc">
-    <summary>
-      <para>Offset to source bitmap bits.</para>
-    </summary>
+    <summary>Offset to source bitmap bits.</summary>
   </member>
   <member name="EMRSETDIBITSTODEVICE.cbBitsSrc">
-    <summary>
-      <para>Size of source bitmap bits.</para>
-    </summary>
+    <summary>Size of source bitmap bits.</summary>
   </member>
   <member name="EMRSETDIBITSTODEVICE.iUsageSrc">
-    <summary>
-      <para>Value of the <b>bmiColors</b> member of the <see cref="BITMAPINFO" /> structure. The <b>iUsageSrc</b> member can be either the DIB_PAL_COLORS or DIB_RGB_COLORS value.</para>
-    </summary>
+    <summary>Value of the <b>bmiColors</b> member of the <see cref="BITMAPINFO" /> structure. The <b>iUsageSrc</b> member can be either the DIB_PAL_COLORS or DIB_RGB_COLORS value.</summary>
   </member>
   <member name="EMRSETDIBITSTODEVICE.iStartScan">
-    <summary>
-      <para>First scan line in the array.</para>
-    </summary>
+    <summary>First scan line in the array.</summary>
   </member>
   <member name="EMRSETDIBITSTODEVICE.cScans">
-    <summary>
-      <para>Number of scan lines.</para>
-    </summary>
+    <summary>Number of scan lines.</summary>
   </member>
 </doc>

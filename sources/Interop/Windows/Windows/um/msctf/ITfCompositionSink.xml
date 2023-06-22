@@ -3,31 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfCompositionSink.OnCompositionTerminated">
-    <summary>
-      <para>Called when a composition is terminated.</para>
-    </summary>
-    <param name="ecWrite">
-      <para>Contains a <a href="https://docs.microsoft.com//windows/desktop/TSF/tfeditcookie">TfEditCookie</a> value that identifies the edit context. This is the same value passed for <i>ecWrite</i> in the call to <see cref="ITfContextComposition.StartComposition" />.</para>
-    </param>
-    <param name="pComposition">
-      <para>Pointer to the <see cref="ITfComposition" /> object terminated.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>There is no required action for the TSF text service when this method is called. The TSF text service can use this notification to revert partially composed text into readable text or erase the composition entirely. The TSF manager will automatically clear the GUID_PROP_COMPOSING property value over the affected text.</para>
-    </remarks>
-    <seealso cref="ITfComposition interface" />
-    <seealso cref="ITfCompositionSink interface" />
-    <seealso cref="ITfContextComposition.StartComposition" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tfeditcookie">TfEditCookie</seealso>
+    <summary>Called when a composition is terminated.</summary>
+    <param name="ecWrite">Contains a <a href="https://docs.microsoft.com//windows/desktop/TSF/tfeditcookie">TfEditCookie</a> value that identifies the edit context. This is the same value passed for <i>ecWrite</i> in the call to <see cref="ITfContextComposition.StartComposition" />.</param>
+    <param name="pComposition">Pointer to the <see cref="ITfComposition" /> object terminated.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITfCompositionSink">
-    <summary>
-      <para>The <b>ITfCompositionSink</b> interface is implemented by a text service to receive a notification when a composition is terminated. This advise sink is installed by passing a pointer to this interface when the composition is started with the <see cref="ITfContextComposition.StartComposition" /> method.</para>
-    </summary>
-    <seealso cref="ITfContextComposition.StartComposition " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfCompositionSink</b> interface is implemented by a text service to receive a notification when a composition is terminated. This advise sink is installed by passing a pointer to this interface when the composition is started with the <see cref="ITfContextComposition.StartComposition" /> method.</summary>
   </member>
 </doc>

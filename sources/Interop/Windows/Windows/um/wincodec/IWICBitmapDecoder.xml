@@ -3,248 +3,75 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICBitmapDecoder.CopyPalette">
-    <summary>
-      <para>Copies the decoder's <see cref="IWICPalette" /> .</para>
-    </summary>
-    <param name="pIPalette">
-      <para>Type: <b><see cref="IWICPalette" />*</b></para>
-      <para>An<see cref="IWICPalette" /> to which the decoder's global palette is to be copied. Use <see cref="CreatePalette" /> to create the destination palette before calling <b>CopyPalette</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>CopyPalette</b> returns a global palette (a palette that applies to all the frames in the image) if there is one; otherwise, it returns WINCODEC_ERR_PALETTEUNAVAILABLE. If an image doesn't have a global palette, it may still have a frame-level palette, which can be retrieved using <see cref="IWICBitmapFrameDecode.CopyPalette" />.</para>
-    </remarks>
+    <summary>Copies the decoder's <see cref="IWICPalette" /> .</summary>
+    <param name="pIPalette">An<see cref="IWICPalette" /> to which the decoder's global palette is to be copied. Use <see cref="CreatePalette" /> to create the destination palette before calling <b>CopyPalette</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapDecoder.GetColorContexts">
-    <summary>
-      <para>Retrieves the <see cref="IWICColorContext" /> objects of the image.</para>
-    </summary>
+    <summary>Retrieves the <see cref="IWICColorContext" /> objects of the image.</summary>
     <param name="cCount">
-      <para>Type: <b>UINT</b></para>
       <para>The number of color contexts to retrieve.</para>
       <para>This value must be the size of, or smaller than, the size available to <i>ppIColorContexts</i>.</para>
     </param>
-    <param name="ppIColorContexts">
-      <para>Type: <b><see cref="IWICColorContext" />**</b></para>
-      <para>A pointer that receives a pointer to the <see cref="IWICColorContext" />.</para>
-    </param>
-    <param name="pcActualCount">
-      <para>Type: <b>UINT*</b></para>
-      <para>A pointer that receives the number of color contexts contained in the image.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <param name="ppIColorContexts">A pointer that receives a pointer to the <see cref="IWICColorContext" />.</param>
+    <param name="pcActualCount">A pointer that receives the number of color contexts contained in the image.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapDecoder.GetContainerFormat">
-    <summary>
-      <para>Retrieves the image's container format.</para>
-    </summary>
-    <param name="pguidContainerFormat">
-      <para>Type: <b>GUID*</b></para>
-      <para>A pointer that receives the image's container format GUID.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IWICBitmapDecoder" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-guids-clsids">WIC GUIDs and CLSIDs</seealso>
+    <summary>Retrieves the image's container format.</summary>
+    <param name="pguidContainerFormat">A pointer that receives the image's container format GUID.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapDecoder.GetDecoderInfo">
-    <summary>
-      <para>Retrieves an <see cref="IWICBitmapDecoderInfo" /> for the image.</para>
-    </summary>
-    <param name="ppIDecoderInfo">
-      <para>Type: <b><see cref="IWICBitmapDecoderInfo" />**</b></para>
-      <para>A pointer that receives a pointer to an <see cref="IWICBitmapDecoderInfo" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Retrieves an <see cref="IWICBitmapDecoderInfo" /> for the image.</summary>
+    <param name="ppIDecoderInfo">A pointer that receives a pointer to an <see cref="IWICBitmapDecoderInfo" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapDecoder.GetFrame">
-    <summary>
-      <para>Retrieves the specified frame of the image.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT</b></para>
-      <para>The particular frame to retrieve.</para>
-    </param>
-    <param name="ppIBitmapFrame">
-      <para>Type: <b><see cref="IWICBitmapFrameDecode" />**</b></para>
-      <para>A pointer that receives a pointer to the <see cref="IWICBitmapFrameDecode" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Retrieves the specified frame of the image.</summary>
+    <param name="index">The particular frame to retrieve.</param>
+    <param name="ppIBitmapFrame">A pointer that receives a pointer to the <see cref="IWICBitmapFrameDecode" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapDecoder.GetFrameCount">
-    <summary>
-      <para>Retrieves the total number of frames in the image.</para>
-    </summary>
-    <param name="pCount">
-      <para>Type: <b>UINT*</b></para>
-      <para>A pointer that receives the total number of frames in the image.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Retrieves the total number of frames in the image.</summary>
+    <param name="pCount">A pointer that receives the total number of frames in the image.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapDecoder.GetMetadataQueryReader">
-    <summary>
-      <para>Retrieves the metadata query reader from the decoder.</para>
-    </summary>
-    <param name="ppIMetadataQueryReader">
-      <para>Type: <b><see cref="IWICMetadataQueryReader" />**</b></para>
-      <para>Receives a pointer to the decoder's <see cref="IWICMetadataQueryReader" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If an image format does not support container-level metadata, this will return <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-error-codes">WINCODEC_ERR_UNSUPPORTEDOPERATION</a>. The only Windows provided image format that supports container-level metadata is GIF. Instead, use <see cref="IWICBitmapFrameDecode.GetMetadataQueryReader" />.</para>
-    </remarks>
-    <seealso cref="IWICBitmapDecoder" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadataquerylanguage">Metadata Query Language Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+    <summary>Retrieves the metadata query reader from the decoder.</summary>
+    <param name="ppIMetadataQueryReader">Receives a pointer to the decoder's <see cref="IWICMetadataQueryReader" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapDecoder.GetPreview">
-    <summary>
-      <para>Retrieves a preview image, if supported.</para>
-    </summary>
-    <param name="ppIBitmapSource">
-      <para>Type: <b><see cref="IWICBitmapSource" />**</b></para>
-      <para>Receives a pointer to the preview bitmap if supported.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Not all formats support previews. Only the native Microsoft Windows Digital Photo (WDP) codec support previews.</para>
-    </remarks>
+    <summary>Retrieves a preview image, if supported.</summary>
+    <param name="ppIBitmapSource">Receives a pointer to the preview bitmap if supported.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapDecoder.GetThumbnail">
-    <summary>
-      <para>Retrieves a bitmap thumbnail of the image, if one exists</para>
-    </summary>
-    <param name="ppIThumbnail">
-      <para>Type: <b><see cref="IWICBitmapSource" />**</b></para>
-      <para>Receives a pointer to the <see cref="IWICBitmapSource" /> of the thumbnail.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The returned thumbnail can be of any size, so the caller should scale the thumbnail to the desired size. The only Windows provided image formats that support thumbnails are JPEG, TIFF, and JPEG-XR. If the thumbnail is not available, this will return <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-error-codes">WINCODEC_ERR_CODECNOTHUMBNAIL</a>.</para>
-    </remarks>
+    <summary>Retrieves a bitmap thumbnail of the image, if one exists</summary>
+    <param name="ppIThumbnail">Receives a pointer to the <see cref="IWICBitmapSource" /> of the thumbnail.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapDecoder.Initialize">
-    <summary>
-      <para>Initializes the decoder with the provided stream.</para>
-    </summary>
+    <summary>Initializes the decoder with the provided stream.</summary>
     <param name="pIStream">
-      <para>Type: <b><see cref="IStream" />*</b></para>
       <para>The stream to use for initialization.</para>
       <para>The stream contains the encoded pixels which are decoded each time the <see cref="CopyPixels" /> method on the <see cref="IWICBitmapFrameDecode" /> interface (see <see cref="GetFrame" />) is invoked.</para>
     </param>
-    <param name="cacheOptions">
-      <para>Type: <b><see cref="WICDecodeOptions" /></b></para>
-      <para>The <see cref="WICDecodeOptions" /> to use for initialization.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <param name="cacheOptions">The <see cref="WICDecodeOptions" /> to use for initialization.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapDecoder.QueryCapability">
-    <summary>
-      <para>Retrieves the capabilities of the decoder based on the specified stream.</para>
-    </summary>
-    <param name="pIStream">
-      <para>Type: <b><see cref="IStream" />*</b></para>
-      <para>The stream to retrieve the decoder capabilities from.</para>
-    </param>
-    <param name="pdwCapability">
-      <para>Type: <b>DWORD*</b></para>
-      <para>The <see cref="WICBitmapDecoderCapabilities" /> of the decoder.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Custom decoder implementations should save the current position of the specified <see cref="IStream" />, read whatever information is necessary in order to determine which capabilities it can provide for the supplied stream, and restore the stream position.</para>
-    </remarks>
+    <summary>Retrieves the capabilities of the decoder based on the specified stream.</summary>
+    <param name="pIStream">The stream to retrieve the decoder capabilities from.</param>
+    <param name="pdwCapability">The <see cref="WICBitmapDecoderCapabilities" /> of the decoder.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapDecoder">
     <summary>
       <para>Exposes methods that represent a decoder.</para>
       <para>The interface provides access to the decoder's properties such as global thumbnails (if supported), frames, and palette.</para>
     </summary>
-    <remarks>
-      <para>There are a number of concrete implementations of this interface representing each of the standard decoders provided by the platform including bitmap (BMP), Portable Network Graphics (PNG), icon (ICO), Joint Photographic Experts Group (JPEG), Graphics Interchange Format (GIF), Tagged Image File Format (TIFF), and Microsoft Windows Digital Photo (WDP). The following table includes the class identifier (CLSID) for each native decoder.</para>
-      <list type="table">
-        <listheader>
-          <description>CLSID Name</description>
-          <description>CLSID</description>
-        </listheader>
-        <item>
-          <description>CLSID_WICBmpDecoder</description>
-          <description>0x6b462062, 0x7cbf, 0x400d, 0x9f, 0xdb, 0x81, 0x3d, 0xd1, 0xf, 0x27, 0x78</description>
-        </item>
-        <item>
-          <description>CLSID_WICGifDecoder</description>
-          <description>0x381dda3c, 0x9ce9, 0x4834, 0xa2, 0x3e, 0x1f, 0x98, 0xf8, 0xfc, 0x52, 0xbe</description>
-        </item>
-        <item>
-          <description>CLSID_WICHeifDecoder</description>
-          <description>0xe9a4a80a, 0x44fe, 0x4de4, 0x89, 0x71, 0x71, 0x50, 0xb1, 0x0a, 0x51, 0x99</description>
-        </item>
-        <item>
-          <description>CLSID_WICIcoDecoder</description>
-          <description>0xc61bfcdf, 0x2e0f, 0x4aad, 0xa8, 0xd7, 0xe0, 0x6b, 0xaf, 0xeb, 0xcd, 0xfe</description>
-        </item>
-        <item>
-          <description>CLSID_WICJpegDecoder</description>
-          <description>0x9456a480, 0xe88b, 0x43ea, 0x9e, 0x73, 0xb, 0x2d, 0x9b, 0x71, 0xb1, 0xca</description>
-        </item>
-        <item>
-          <description>CLSID_WICPngDecoder</description>
-          <description>0x389ea17b, 0x5078, 0x4cde, 0xb6, 0xef, 0x25, 0xc1, 0x51, 0x75, 0xc7, 0x51</description>
-        </item>
-        <item>
-          <description>CLSID_WICTiffDecoder</description>
-          <description>0xb54e85d9, 0xfe23, 0x499f, 0x8b, 0x88, 0x6a, 0xce, 0xa7, 0x13, 0x75, 0x2b</description>
-        </item>
-        <item>
-          <description>CLSID_WICWebpDecoder</description>
-          <description>0x7693e886, 0x51c9, 0x4070, 0x84, 0x19, 0x9f, 0x70, 0X73, 0X8e, 0Xc8, 0Xfa</description>
-        </item>
-        <item>
-          <description>CLSID_WICWmpDecoder</description>
-          <description>0xa26cec36, 0x234c, 0x4950, 0xae, 0x16, 0xe3, 0x4a, 0xac, 0xe7, 0x1d, 0x0d</description>
-        </item>
-      </list>
-      <para>This interface may be sub-classed to provide support for third party codecs as part of the extensibility model. See the <a href="https://docs.microsoft.com//previous-versions/ms771770(v=vs.100)">AITCodec Sample CODEC</a>.</para>
-      <para>Codecs written as TIFF container formats that are not register will decode as a TIFF image. Client applications should check for a zero frame count to determine if the codec is valid.</para>
-      <para>CLSID_WICHeifDecoder operates on HEIF (High Efficiency Image Format) images.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/dotnet/netframework-3.0/ms771770(v=vs.85)">AITCodec Sample CODEC</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-howtowriteacodec">How to Write a WIC-Enabled CODEC</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-guids-clsids">WIC GUIDs and CLSIDs</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-windows-imaging-codec">Windows Imaging Component Overview</seealso>
   </member>
 </doc>

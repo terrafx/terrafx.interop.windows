@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="OCSP_CERT_ID">
-    <summary>
-      <para>The <b>OCSP_CERT_ID</b> structure contains information to identify a certificate in an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">online certificate status protocol</a> (OCSP) request or response. This structure is used in the <see cref="OCSP_REQUEST_ENTRY" /> and <see cref="OCSP_BASIC_RESPONSE_ENTRY" /> structures.</para>
-    </summary>
-    <seealso cref="CERT_INFO" />
-    <seealso cref="CRYPT_ALGORITHM_IDENTIFIER" />
-    <seealso cref="OCSP_BASIC_RESPONSE_ENTRY" />
-    <seealso cref="OCSP_REQUEST_ENTRY" />
+    <summary>The <b>OCSP_CERT_ID</b> structure contains information to identify a certificate in an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">online certificate status protocol</a> (OCSP) request or response. This structure is used in the <see cref="OCSP_REQUEST_ENTRY" /> and <see cref="OCSP_BASIC_RESPONSE_ENTRY" /> structures.</summary>
   </member>
   <member name="OCSP_CERT_ID.HashAlgorithm">
-    <summary>
-      <para>A <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that specifies the algorithm used to create <i>IssuerNameHash</i> and <i>IssuerKeyHash</i>.</para>
-    </summary>
+    <summary>A <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that specifies the algorithm used to create <i>IssuerNameHash</i> and <i>IssuerKeyHash</i>.</summary>
   </member>
   <member name="OCSP_CERT_ID.IssuerNameHash">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_HASH_BLOB</a> that contains a hash of the certificate issuer subject name.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_HASH_BLOB</a> that contains a hash of the certificate issuer subject name.</summary>
   </member>
   <member name="OCSP_CERT_ID.IssuerKeyHash">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_HASH_BLOB</a> that contains a hash of the certificate issuer public key.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_HASH_BLOB</a> that contains a hash of the certificate issuer public key.</summary>
   </member>
   <member name="OCSP_CERT_ID.SerialNumber">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> that contains the serial number of the certificate. For more information, see the <b>SerialNumber</b> member description for <see cref="CERT_INFO" />.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> that contains the serial number of the certificate. For more information, see the <b>SerialNumber</b> member description for <see cref="CERT_INFO" />.</summary>
   </member>
 </doc>

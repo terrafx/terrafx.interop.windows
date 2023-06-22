@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="StringTrimming">
+    <summary>The <b>StringTrimming</b> enumeration specifies how to trim characters from a string so that the string fits into a layout rectangle. The layout rectangle is used to position and size the display string.</summary>
+  </member>
+  <member name="StringTrimming.StringTrimmingNone">
+    <summary>Specifies that no trimming is done.</summary>
+  </member>
+  <member name="StringTrimming.StringTrimmingCharacter">
+    <summary>Specifies that the string is broken at the boundary of the last character that is inside the layout rectangle. This is the default.</summary>
+  </member>
+  <member name="StringTrimming.StringTrimmingWord">
+    <summary>Specifies that the string is broken at the boundary of the last word that is inside the layout rectangle.</summary>
+  </member>
+  <member name="StringTrimming.StringTrimmingEllipsisCharacter">
+    <summary>Specifies that the string is broken at the boundary of the last character that is inside the layout rectangle and an ellipsis (...) is inserted after the character.</summary>
+  </member>
+  <member name="StringTrimming.StringTrimmingEllipsisWord">
+    <summary>Specifies that the string is broken at the boundary of the last word that is inside the layout rectangle and an ellipsis (...) is inserted after the word.</summary>
+  </member>
+  <member name="StringTrimming.StringTrimmingEllipsisPath">
+    <summary>Specifies that the center is removed from the string and replaced by an ellipsis. The algorithm keeps as much of the last portion of the string as possible.</summary>
+  </member>
+</doc>

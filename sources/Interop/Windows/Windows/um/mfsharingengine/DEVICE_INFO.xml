@@ -3,34 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DEVICE_INFO">
-    <summary>
-      <para>Contains information about a media sharing device.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <summary>Contains information about a media sharing device.</summary>
   </member>
   <member name="DEVICE_INFO.pFriendlyDeviceName">
-    <summary>
-      <para>The friendly name of the device.</para>
-    </summary>
+    <summary>The friendly name of the device.</summary>
   </member>
   <member name="DEVICE_INFO.pUniqueDeviceName">
-    <summary>
-      <para>A string that uniquely identifies the device.</para>
-    </summary>
+    <summary>A string that uniquely identifies the device.</summary>
   </member>
   <member name="DEVICE_INFO.pManufacturerName">
-    <summary>
-      <para>The manufacturer name.</para>
-    </summary>
+    <summary>The manufacturer name.</summary>
   </member>
   <member name="DEVICE_INFO.pModelName">
-    <summary>
-      <para>The model name.</para>
-    </summary>
+    <summary>The model name.</summary>
   </member>
   <member name="DEVICE_INFO.pIconURL">
-    <summary>
-      <para>The URL of an icon for the device.</para>
-    </summary>
+    <summary>The URL of an icon for the device.</summary>
   </member>
 </doc>

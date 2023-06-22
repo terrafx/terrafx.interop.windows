@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfFnShowHelp.Show">
-    <summary>
-      <para>Called when the user selects a text service help menu item.</para>
-    </summary>
-    <param name="hwndParent">
-      <para>Handle of the parent window. This value can be <b>NULL</b>.</para>
-    </param>
+    <summary>Called when the user selects a text service help menu item.</summary>
+    <param name="hwndParent">Handle of the parent window. This value can be <b>NULL</b>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,33 +12,22 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The text service should not wait for the help UI to be complete before returning from this method.</para>
-    </remarks>
   </member>
   <member name="ITfFnShowHelp">
-    <summary>
-      <para>The <b>ITfFnShowHelp</b> interface is implemented by a text service to enable the language bar to place a help command for the text service in the language bar help menu.</para>
-    </summary>
-    <remarks>
-      <para>The TSF manager obtains this interface from the text service by calling the text service <see cref="ITfFunctionProvider.GetFunction" /> interface with IID_ITfFnShowHelp.</para>
-      <para>The TSF manager obtains the help menu text by calling the text service's <see cref="ITfFunction.GetDisplayName" />.</para>
-    </remarks>
-    <seealso cref="ITfFunction " />
-    <seealso cref="ITfFunction.GetDisplayName " />
-    <seealso cref="ITfFunctionProvider.GetFunction " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfFnShowHelp</b> interface is implemented by a text service to enable the language bar to place a help command for the text service in the language bar help menu.</summary>
   </member>
 </doc>

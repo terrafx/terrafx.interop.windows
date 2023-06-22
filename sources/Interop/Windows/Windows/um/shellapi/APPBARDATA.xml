@@ -3,41 +3,29 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="APPBARDATA">
-    <summary>
-      <para>Contains information about a system appbar message.</para>
-    </summary>
+    <summary>Contains information about a system appbar message.</summary>
   </member>
   <member name="APPBARDATA.cbSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of the structure, in bytes.</para>
-    </summary>
+    <summary>The size of the structure, in bytes.</summary>
   </member>
   <member name="APPBARDATA.hWnd">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-      <para>The handle to the appbar window. Not all messages use this member. See the individual message page to see if you need to provide an <b>hWind</b> value.</para>
-    </summary>
+    <summary>The handle to the appbar window. Not all messages use this member. See the individual message page to see if you need to provide an <b>hWind</b> value.</summary>
   </member>
   <member name="APPBARDATA.uCallbackMessage">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>An application-defined message identifier. The application uses the specified identifier for notification messages that it sends to the appbar identified by the <b>hWnd</b> member. This member is used when sending the <a href="https://docs.microsoft.com//windows/desktop/shell/abm-new">ABM_NEW</a> message.</para>
-    </summary>
+    <summary>An application-defined message identifier. The application uses the specified identifier for notification messages that it sends to the appbar identified by the <b>hWnd</b> member. This member is used when sending the <a href="https://docs.microsoft.com//windows/desktop/shell/abm-new">ABM_NEW</a> message.</summary>
   </member>
   <member name="APPBARDATA.uEdge">
     <summary>
-      <para>Type: <b>UINT</b></para>
       <para>A value that specifies an edge of the screen. This member is used when sending one of these messages:</para>
       <list type="bullet">
         <item>
           <description>
-            <a href="https://docs.microsoft.com//windows/desktop/shell/conversion-functions-bumper">ABM_GETAUTOHIDEBAR</a>
+            <a href="https://docs.microsoft.com//windows/desktop/shell/abm-getautohidebar">ABM_GETAUTOHIDEBAR</a>
           </description>
         </item>
         <item>
           <description>
-            <a href="https://docs.microsoft.com//windows/desktop/shell/dialogs-bumper">ABM_SETAUTOHIDEBAR</a>
+            <a href="https://docs.microsoft.com//windows/desktop/shell/abm-setautohidebar">ABM_SETAUTOHIDEBAR</a>
           </description>
         </item>
         <item>
@@ -74,7 +62,6 @@
   </member>
   <member name="APPBARDATA.rc">
     <summary>
-      <para>Type: <b><see cref="RECT" /></b></para>
       <para>A <see cref="RECT" /> structure whose use varies depending on the message:</para>
       <list type="bullet">
         <item>
@@ -90,12 +77,11 @@
   </member>
   <member name="APPBARDATA.lParam">
     <summary>
-      <para>Type: <b>LPARAM</b></para>
       <para>A message-dependent value. This member is used with these messages:</para>
       <list type="bullet">
         <item>
           <description>
-            <a href="https://docs.microsoft.com//windows/desktop/shell/dialogs-bumper">ABM_SETAUTOHIDEBAR</a>
+            <a href="https://docs.microsoft.com//windows/desktop/shell/abm-setautohidebar">ABM_SETAUTOHIDEBAR</a>
           </description>
         </item>
         <item>
@@ -105,7 +91,7 @@
         </item>
         <item>
           <description>
-            <a href="https://docs.microsoft.com//windows/desktop/shell/drag-and-drop-handlers-and-custom-clipboard-format-bumper">ABM_SETSTATE</a>
+            <a href="https://docs.microsoft.com//windows/desktop/shell/abm-setstate">ABM_SETSTATE</a>
           </description>
         </item>
       </list>

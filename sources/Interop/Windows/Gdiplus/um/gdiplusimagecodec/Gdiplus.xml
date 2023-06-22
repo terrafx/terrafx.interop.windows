@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Gdiplus.GetImageDecoders">
+    <summary>The <b>GetImageDecoders</b> function gets an array of <a href="https://docs.microsoft.com//previous-versions/ms534466(v=vs.85)">ImageCodecInfo</a> objects that contain information about the available image decoders.</summary>
+    <param name="numDecoders">Integer that specifies the number of available image decoders. Call <see cref="GetImageDecodersSize" /> to determine this number.</param>
+    <param name="size">Integer that specifies the size, in bytes, of the array of<a href="https://docs.microsoft.com//previous-versions/ms534466(v=vs.85)">ImageCodecInfo</a> objects. Call <see cref="GetImageDecodersSize" /> to determine this number.</param>
+    <param name="decoders">Pointer to a buffer that receives the array of<a href="https://docs.microsoft.com//previous-versions/ms534466(v=vs.85)">ImageCodecInfo</a> objects. You must allocate memory for this buffer. Call <see cref="GetImageDecodersSize" /> to determine the size of the required buffer.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the function fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Gdiplus.GetImageDecodersSize">
+    <summary>The <b>GetImageDecodersSize</b> function gets the number of available image decoders and the total size of the array of<a href="https://docs.microsoft.com//previous-versions/ms534466(v=vs.85)">ImageCodecInfo</a> objects that is returned by the <see cref="GetImageDecoders" /> function.</summary>
+    <param name="numDecoders">Pointer to a <b>UINT</b> that receives the number of available image decoders.</param>
+    <param name="size">Pointer to a<b>UINT</b> that receives the total size, in bytes, of the array of<a href="https://docs.microsoft.com//previous-versions/ms534466(v=vs.85)">ImageCodecInfo</a> objects that is returned by the <see cref="GetImageDecoders" /> function.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the function fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Gdiplus.GetImageEncoders">
+    <summary>The <b>GetImageEncoders</b> function gets an array of<a href="https://docs.microsoft.com//previous-versions/ms534466(v=vs.85)">ImageCodecInfo</a> objects that contain information about the available image encoders.</summary>
+    <param name="numEncoders">Integer that specifies the number of available image encoders. Call <see cref="GetImageEncodersSize" /> to determine this number.</param>
+    <param name="size">Integer that specifies the size, in bytes, of the array of<a href="https://docs.microsoft.com//previous-versions/ms534466(v=vs.85)">ImageCodecInfo</a> objects. Call <see cref="GetImageEncodersSize" /> to determine this number.</param>
+    <param name="encoders">Pointer to a buffer that receives the array of<a href="https://docs.microsoft.com//previous-versions/ms534466(v=vs.85)">ImageCodecInfo</a> objects. You must allocate memory for this buffer. Call <see cref="GetImageEncodersSize" /> to determine the size of the required buffer.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the function fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Gdiplus.GetImageEncodersSize">
+    <summary>The <b>GetImageEncodersSize</b> function gets the number of available image encoders and the total size of the array of<a href="https://docs.microsoft.com//previous-versions/ms534466(v=vs.85)">ImageCodecInfo</a> objects that is returned by the <see cref="GetImageEncoders" /> function.</summary>
+    <param name="numEncoders">Pointer to a<b>UINT</b> that receives the number of available image encoders.</param>
+    <param name="size">Pointer to a<b>UINT</b> that receives the total size, in bytes, of the array of<a href="https://docs.microsoft.com//previous-versions/ms534466(v=vs.85)">ImageCodecInfo</a> objects that is returned by <see cref="GetImageEncoders" />.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the function fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+</doc>

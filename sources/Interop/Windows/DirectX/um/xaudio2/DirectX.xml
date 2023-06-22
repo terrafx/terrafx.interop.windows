@@ -3,171 +3,44 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DirectX.XAudio2AmplitudeRatioToDecibels">
-    <summary>
-      <para>Inline function that converts an amplitude ratio value to a decibel value.</para>
-    </summary>
-    <param name="Volume">
-      <para>Floating point value representing the amplitude ratio.</para>
-    </param>
-    <returns>
-      <para>Returns a floating point value that represents the decibel value.</para>
-    </returns>
-    <remarks>
-      <para>You must explicitly define XAUDIO2_HELPER_FUNCTIONS in your build for this function to become available.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/functions">XAudio2.Functions</seealso>
-  </member>
-  <member name="DirectX.XAudio2Create">
-    <summary>
-      <para>Creates a new <b>XAudio2</b> object and returns a pointer to its <see cref="IXAudio2" /> interface.</para>
-    </summary>
-    <param name="ppXAudio2">
-      <para>If the operation is successful, returns a pointer to an <see cref="IXAudio2" /> object.</para>
-    </param>
-    <param name="Flags">
-      <para>Flags that specify the behavior of the <see cref="IXAudio2" /> object. The value of this parameter must be 0.</para>
-    </param>
-    <param name="XAudio2Processor">
-      <para>An <a href="https://docs.microsoft.com//windows/desktop/xaudio2/uint32-xaudio2-processor">XAUDIO2_PROCESSOR</a>-typed value that specifies which CPU to use. If multiple bits are specified, the system will create a separate worker thread for each processor.</para>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/xaudio2/uint32-xaudio2-processor">XAUDIO2_PROCESSOR</a> default value is XAUDIO2_DEFAULT_PROCESSOR.</para>
-      <para>
-        <b>Warning</b> If you specify <a href="https://docs.microsoft.com//windows/desktop/xaudio2/uint32-xaudio2-processor">XAUDIO2_ANY_PROCESSOR</a>, the system will use all of the device's processors and, as noted above, create a worker thread for each processor.</para>
-      <para>
-        <b>Note</b>  Specifying a processor should generally be avoided because it can interfere with the scheduler's ability to schedule threads effectively across processors. Instead, pass the XAUDIO2_DEFAULT_PROCESSOR value (see below).</para>
-      <para>The special XAUDIO2_DEFAULT_PROCESSOR value causes XAudio2 to use its default processor.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful, an error code otherwise. See <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-error-codes">XAudio2 Error Codes</a> for descriptions of XAudio2 specific error codes.</para>
-    </returns>
-    <remarks>
-      <para>The DirectX SDK versions of XAUDIO2 supported a flag <b>XAUDIO2_DEBUG_ENGINE</b> to select between the release and 'checked' version. This flag is not supported or defined in the Windows 8 version of XAUDIO2.</para>
-      <para>
-        <b>Note</b>  No versions of the DirectX SDK contain the xaudio2.lib import library. DirectX SDK versions use COM to create a new <b>XAudio2</b> object.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9);
-Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-      <para>
-        <b>Windows Phone 8.1:</b> This API is supported.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--build-a-basic-audio-processing-graph">How to: Build a Basic Audio Processing Graph</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/functions">XAudio2 Functions</seealso>
+    <summary>Inline function that converts an amplitude ratio value to a decibel value.</summary>
+    <param name="Volume">Floating point value representing the amplitude ratio.</param>
+    <returns>Returns a floating point value that represents the decibel value.</returns>
   </member>
   <member name="DirectX.XAudio2CutoffFrequencyToOnePoleCoefficient">
     <summary>
       <para>Inline function that converts from filter cutoff frequencies expressed in hertz to the filter coefficients used with the <b>Frequency</b> member of the <see cref="XAUDIO2_FILTER_PARAMETERS" /> structure.</para>
       <para>This function applies to LowPassOnePoleFilter and HighPassOnePole filter types only, use <see cref="XAudio2CutoffFrequencyToRadians" /> for state-variable filter types.</para>
     </summary>
-    <param name="CutoffFrequency">
-      <para>The cutoff frequency in hertz. Frequencies greater than <i>SampleRate</i> are clamped to XAUDIO2_MAX_FILTER_FREQUENCY.</para>
-    </param>
-    <param name="SampleRate">
-      <para>The sample rate of the audio data affected by the <see cref="XAUDIO2_FILTER_PARAMETERS" /> structure.</para>
-    </param>
-    <returns>
-      <para>Returns a filter coefficient for use in the <see cref="XAUDIO2_FILTER_PARAMETERS" /> structure.</para>
-    </returns>
-    <remarks>
-      <para>You must explicitly define XAUDIO2_HELPER_FUNCTIONS in your build for this function to become available.</para>
-      <para>The DirectX SDK versions of XAUDIO2 do not support one-pole filters, so this function is not present in those releases.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/functions">XAudio.Functions</seealso>
+    <param name="CutoffFrequency">The cutoff frequency in hertz. Frequencies greater than <i>SampleRate</i> are clamped to XAUDIO2_MAX_FILTER_FREQUENCY.</param>
+    <param name="SampleRate">The sample rate of the audio data affected by the <see cref="XAUDIO2_FILTER_PARAMETERS" /> structure.</param>
+    <returns>Returns a filter coefficient for use in the <see cref="XAUDIO2_FILTER_PARAMETERS" /> structure.</returns>
   </member>
   <member name="DirectX.XAudio2CutoffFrequencyToRadians">
-    <summary>
-      <para>Inline function that converts from filter cutoff frequencies expressed in hertz to the radian frequency values used in the <b>Frequency</b> member of the <see cref="XAUDIO2_FILTER_PARAMETERS" /> structure.</para>
-    </summary>
-    <param name="CutoffFrequency">
-      <para>The cutoff frequency in hertz. Frequencies greater than SampleRate ÷ 6 are clamped to XAUDIO2_MAX_FILTER_FREQUENCY.</para>
-    </param>
-    <param name="SampleRate">
-      <para>The sample rate of the audio data affected by the <see cref="XAUDIO2_FILTER_PARAMETERS" /> structure.</para>
-    </param>
-    <returns>
-      <para>Returns a radian frequency for use in the <see cref="XAUDIO2_FILTER_PARAMETERS" /> structure.</para>
-    </returns>
-    <remarks>
-      <para>You must explicitly define XAUDIO2_HELPER_FUNCTIONS in your build for this function to become available.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/functions">XAudio2 Functions</seealso>
+    <summary>Inline function that converts from filter cutoff frequencies expressed in hertz to the radian frequency values used in the <b>Frequency</b> member of the <see cref="XAUDIO2_FILTER_PARAMETERS" /> structure.</summary>
+    <param name="CutoffFrequency">The cutoff frequency in hertz. Frequencies greater than SampleRate ÷ 6 are clamped to XAUDIO2_MAX_FILTER_FREQUENCY.</param>
+    <param name="SampleRate">The sample rate of the audio data affected by the <see cref="XAUDIO2_FILTER_PARAMETERS" /> structure.</param>
+    <returns>Returns a radian frequency for use in the <see cref="XAUDIO2_FILTER_PARAMETERS" /> structure.</returns>
   </member>
   <member name="DirectX.XAudio2DecibelsToAmplitudeRatio">
-    <summary>
-      <para>Inline function that converts a decibel value to an amplitude ratio value.</para>
-    </summary>
-    <param name="Decibels">
-      <para>Floating point value representing the decibel level.</para>
-    </param>
-    <returns>
-      <para>Returns a floating point value that represents the amplitude ratio.</para>
-    </returns>
-    <remarks>
-      <para>This function can be used to calculate the Volume parameter value passed to the <see cref="IXAudio2Voice.SetVolume" /> function.</para>
-      <para>You must explicitly define XAUDIO2_HELPER_FUNCTIONS in your build for this function to become available.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/functions">XAudio2 Functions</seealso>
+    <summary>Inline function that converts a decibel value to an amplitude ratio value.</summary>
+    <param name="Decibels">Floating point value representing the decibel level.</param>
+    <returns>Returns a floating point value that represents the amplitude ratio.</returns>
   </member>
   <member name="DirectX.XAudio2FrequencyRatioToSemitones">
-    <summary>
-      <para>Inline function that converts a frequency ratio value to a semitone value.</para>
-    </summary>
-    <param name="FrequencyRatio">
-      <para>Floating point value representing the frequency ratio.</para>
-    </param>
-    <returns>
-      <para>Returns a floating point value that represents the semitone.</para>
-    </returns>
-    <remarks>
-      <para>You must explicitly define XAUDIO2_HELPER_FUNCTIONS in your build for this function to become available.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/functions">XAudio2 Functions</seealso>
+    <summary>Inline function that converts a frequency ratio value to a semitone value.</summary>
+    <param name="FrequencyRatio">Floating point value representing the frequency ratio.</param>
+    <returns>Returns a floating point value that represents the semitone.</returns>
   </member>
   <member name="DirectX.XAudio2RadiansToCutoffFrequency">
-    <summary>
-      <para>Inline function that converts from the radian frequencies used in <see cref="XAUDIO2_FILTER_PARAMETERS" /> back to absolute frequencies in hertz.</para>
-    </summary>
-    <param name="Radians">
-      <para>Value of the Frequency member of the <see cref="XAUDIO2_FILTER_PARAMETERS" /> structure.</para>
-    </param>
-    <param name="SampleRate">
-      <para>The sample rate of the audio data affected by the <see cref="XAUDIO2_FILTER_PARAMETERS" /> structure.</para>
-    </param>
-    <returns>
-      <para>Returns a floating-point value that represents the frequency in hertz.</para>
-    </returns>
-    <remarks>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/functions">XAudio2 Functions</seealso>
+    <summary>Inline function that converts from the radian frequencies used in <see cref="XAUDIO2_FILTER_PARAMETERS" /> back to absolute frequencies in hertz.</summary>
+    <param name="Radians">Value of the Frequency member of the <see cref="XAUDIO2_FILTER_PARAMETERS" /> structure.</param>
+    <param name="SampleRate">The sample rate of the audio data affected by the <see cref="XAUDIO2_FILTER_PARAMETERS" /> structure.</param>
+    <returns>Returns a floating-point value that represents the frequency in hertz.</returns>
   </member>
   <member name="DirectX.XAudio2SemitonesToFrequencyRatio">
-    <summary>
-      <para>Inline function that converts a semitone value to a frequency ratio value.</para>
-    </summary>
-    <param name="Semitones">
-      <para>Floating point value representing the semitone value.</para>
-    </param>
-    <returns>
-      <para>Returns a floating point value that represents the frequency ratio.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>XAudio2SemitonesToFrequencyRatio</b> can be used to calculate the Ratio parameter value passed to the function <see cref="IXAudio2SourceVoice.SetFrequencyRatio" />.</para>
-      <para>You must explicitly define XAUDIO2_HELPER_FUNCTIONS in your build for this function to become available.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/functions">XAudio2 Functions</seealso>
+    <summary>Inline function that converts a semitone value to a frequency ratio value.</summary>
+    <param name="Semitones">Floating point value representing the semitone value.</param>
+    <returns>Returns a floating point value that represents the frequency ratio.</returns>
   </member>
 </doc>

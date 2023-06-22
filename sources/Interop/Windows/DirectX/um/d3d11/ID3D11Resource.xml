@@ -3,11 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11Resource.GetEvictionPriority">
-    <summary>
-      <para>Get the eviction priority of a resource.</para>
-    </summary>
+    <summary>Get the eviction priority of a resource.</summary>
     <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>One of the following values, which specifies the eviction priority for the resource:</para>
       <list type="bullet">
         <item>
@@ -27,29 +24,14 @@
         </item>
       </list>
     </returns>
-    <seealso cref="ID3D11Resource" />
   </member>
   <member name="ID3D11Resource.GetType">
-    <summary>
-      <para>Get the type of the resource.</para>
-    </summary>
-    <param name="pResourceDimension">
-      <para>Type: <b><see cref="D3D11_RESOURCE_DIMENSION" />*</b></para>
-      <para>Pointer to the resource type (see <see cref="D3D11_RESOURCE_DIMENSION" />).</para>
-    </param>
-    <remarks>
-      <para>
-        <b>Windows Phone 8:
-</b> This API is supported.</para>
-    </remarks>
-    <seealso cref="ID3D11Resource" />
+    <summary>Get the type of the resource.</summary>
+    <param name="pResourceDimension">Pointer to the resource type (see <see cref="D3D11_RESOURCE_DIMENSION" />).</param>
   </member>
   <member name="ID3D11Resource.SetEvictionPriority">
-    <summary>
-      <para>Set the eviction priority of a resource.</para>
-    </summary>
+    <summary>Set the eviction priority of a resource.</summary>
     <param name="EvictionPriority">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>Eviction priority for the resource, which is one of the following values:</para>
       <list type="bullet">
         <item>
@@ -69,21 +51,8 @@
         </item>
       </list>
     </param>
-    <remarks>
-      <para>Resource priorities determine which resource to evict from video memory when the system has run out of video memory. The resource will not be lost; it will be removed from video memory and placed into system memory, or possibly placed onto the hard drive. The resource will be loaded back into video memory when it is required.</para>
-      <para>A resource that is set to the maximum priority, DXGI_RESOURCE_PRIORITY_MAXIMUM, is only evicted if there is no other way of resolving the incoming memory request. The Windows Display Driver Model (WDDM) tries to split an incoming memory request to its minimum size and evict lower-priority resources before evicting a resource with maximum priority.</para>
-      <para>Changing the priorities of resources should be done carefully. The wrong eviction priorities could be a detriment to performance rather than an improvement.</para>
-    </remarks>
-    <seealso cref="ID3D11Resource" />
   </member>
   <member name="ID3D11Resource">
-    <summary>
-      <para>A resource interface provides common actions on all resources.</para>
-    </summary>
-    <remarks>
-      <para>You don't directly create a resource interface; instead, you create buffers and textures that inherit from a resource interface. For more info,  see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-vertex-how-to">How to: Create a Vertex Buffer</a>, <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-index-how-to">How to: Create an Index Buffer</a>, <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-constant-how-to">How to: Create a Constant Buffer</a>, and <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-textures-create">How to: Create a Texture</a>.</para>
-    </remarks>
-    <seealso cref="ID3D11DeviceChild" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-interfaces">Resource Interfaces</seealso>
+    <summary>A resource interface provides common actions on all resources.</summary>
   </member>
 </doc>

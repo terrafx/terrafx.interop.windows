@@ -3,120 +3,98 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ACCEL">
-    <summary>
-      <para>Defines an accelerator key used in an accelerator table.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/menurc/keyboard-accelerators">Keyboard Accelerators</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/menurc/wm-command">WM_COMMAND</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/menurc/wm-syscommand">WM_SYSCOMMAND</seealso>
+    <summary>Defines an accelerator key used in an accelerator table.</summary>
   </member>
   <member name="ACCEL.fVirt">
     <summary>
-      <para>Type: <b>BYTE</b></para>
       <para>The accelerator behavior. This member can be one or more of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FALT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x10</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x10</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The ALT key must be held down when the accelerator key is pressed.</para>
-          </description>
-        </item>
-        <item>
+          <description>The ALT key must be held down when the accelerator key is pressed.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FCONTROL</b>
-                </description>
-              </item>
-              <item>
-                <description>0x08</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x08</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The CTRL key must be held down when the accelerator key is pressed.</para>
-          </description>
-        </item>
-        <item>
+          <description>The CTRL key must be held down when the accelerator key is pressed.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FNOINVERT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x02</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x02</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No top-level menu item is highlighted when the accelerator is used. If this flag is not specified, a top-level menu item will be highlighted, if possible, when the accelerator is used. This attribute is obsolete and retained only for backward compatibility with resource files designed for 16-bit Windows.</para>
-          </description>
-        </item>
-        <item>
+          <description>No top-level menu item is highlighted when the accelerator is used. If this flag is not specified, a top-level menu item will be highlighted, if possible, when the accelerator is used. This attribute is obsolete and retained only for backward compatibility with resource files designed for 16-bit Windows.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FSHIFT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x04</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x04</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The SHIFT key must be held down when the accelerator key is pressed.</para>
-          </description>
-        </item>
-        <item>
+          <description>The SHIFT key must be held down when the accelerator key is pressed.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FVIRTKEY</b>
-                </description>
-              </item>
-              <item>
-                <description>TRUE</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>TRUE</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The <b>key</b> member specifies a virtual-key code. If this flag is not specified, <b>key</b> is assumed to specify a character code.</para>
-          </description>
-        </item>
+          <description>The <b>key</b> member specifies a virtual-key code. If this flag is not specified, <b>key</b> is assumed to specify a character code.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="ACCEL.key">
-    <summary>
-      <para>Type: <b>WORD</b></para>
-      <para>The accelerator key. This member can be either a <a href="https://docs.microsoft.com//windows/desktop/inputdev/virtual-key-codes">virtual-key code</a> or a character code.</para>
-    </summary>
+    <summary>The accelerator key. This member can be either a <a href="https://docs.microsoft.com//windows/desktop/inputdev/virtual-key-codes">virtual-key code</a> or a character code.</summary>
   </member>
   <member name="ACCEL.cmd">
-    <summary>
-      <para>Type: <b>WORD</b></para>
-      <para>The accelerator identifier. This value is placed in the low-order word of the <i>wParam</i> parameter of the <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-command">WM_COMMAND</a> or <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-syscommand">WM_SYSCOMMAND</a> message when the accelerator is pressed.</para>
-    </summary>
+    <summary>The accelerator identifier. This value is placed in the low-order word of the <i>wParam</i> parameter of the <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-command">WM_COMMAND</a> or <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-syscommand">WM_SYSCOMMAND</a> message when the accelerator is pressed.</summary>
   </member>
 </doc>

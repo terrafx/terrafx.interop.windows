@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRSELECTOBJECT">
-    <summary>
-      <para>The <b>EMRSELECTOBJECT</b> and <b>EMRDELETEOBJECT</b> structures contain members for the <b>SelectObject</b> and <b>DeleteObject</b> enhanced metafile records.</para>
-    </summary>
-    <seealso cref="EMR" />
-    <seealso cref="GetStockObject" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <summary>The <b>EMRSELECTOBJECT</b> and <b>EMRDELETEOBJECT</b> structures contain members for the <b>SelectObject</b> and <b>DeleteObject</b> enhanced metafile records.</summary>
   </member>
   <member name="EMRSELECTOBJECT.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMRSELECTOBJECT.ihObject">
-    <summary>
-      <para>The index of an object in the handle table.</para>
-    </summary>
+    <summary>The index of an object in the handle table.</summary>
   </member>
 </doc>

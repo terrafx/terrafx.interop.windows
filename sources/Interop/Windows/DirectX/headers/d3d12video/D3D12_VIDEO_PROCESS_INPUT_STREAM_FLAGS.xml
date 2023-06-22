@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_PROCESS_INPUT_STREAM_FLAGS">
-    <summary>
-      <para>Specifies flags for video processing input streams. Used by the <see cref="D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS" /> structure.</para>
-    </summary>
+    <summary>Specifies flags for video processing input streams. Used by the <see cref="D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS" /> structure.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_INPUT_STREAM_FLAGS.D3D12_VIDEO_PROCESS_INPUT_STREAM_FLAG_NONE">
-    <summary>
-      <para>No flags specified.</para>
-    </summary>
+    <summary>No flags specified.</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_INPUT_STREAM_FLAGS.D3D12_VIDEO_PROCESS_INPUT_STREAM_FLAG_FRAME_DISCONTINUITY">
-    <summary>
-      <para>Set this flag when not processing frames in order, such as seeking between frames</para>
-    </summary>
+    <summary>Set this flag when not processing frames in order, such as seeking between frames</summary>
   </member>
   <member name="D3D12_VIDEO_PROCESS_INPUT_STREAM_FLAGS.D3D12_VIDEO_PROCESS_INPUT_STREAM_FLAG_FRAME_REPEAT">
-    <summary>
-      <para>Set this flag when applying video process operation to the same set of inputs.</para>
-    </summary>
+    <summary>Set this flag when applying video process operation to the same set of inputs.</summary>
   </member>
 </doc>

@@ -6,28 +6,16 @@
     <summary>
       <para>Generates an identity-like matrix with ones (or other explicit value) on the major diagonal, and zeros everywhere else. The diagonal ones may be shifted (via <i>Offset</i>) where <code>OutputTensor[i, i + Offset]</code> = <i>Value</i>, meaning that an argument of <i>Offset</i> greater than zero shifts all values to the right, and less than zero shifts them to the left. This generator operator is useful for models to avoid storing a large constant tensor. Any leading dimensions before the last two are treated as a batch count, meaning that the tensor is treated as stack of 2D matrices.</para>
       <para>This operator performs the following pseudocode.</para>
-      <code>for each coordinate in OutputTensor
-    OutputTensor[coordinate] = if (coordinate.y + Offset == coordinate.x) then Value else 0
-endfor
-</code>
+      <code>for each coordinate in OutputTensor OutputTensor[coordinate] = if (coordinate.y + Offset == coordinate.x) then Value else 0 endfor</code>
     </summary>
   </member>
   <member name="DML_DIAGONAL_MATRIX_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The tensor to write the results to. The dimensions are <code>{ Batch1, Batch2, OutputHeight, OutputWidth }</code>. The height and width don't need to be square.</para>
-    </summary>
+    <summary>The tensor to write the results to. The dimensions are <code>{ Batch1, Batch2, OutputHeight, OutputWidth }</code>. The height and width don't need to be square.</summary>
   </member>
   <member name="DML_DIAGONAL_MATRIX_OPERATOR_DESC.Offset">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">INT</a></b></para>
-      <para>An offset to shift the diagonal lines of <i>Value</i>, with positive offsets shifting the written value to the right/up (viewing the output as a matrix with the top left as 0,0), and negative offsets to the left/down.</para>
-    </summary>
+    <summary>An offset to shift the diagonal lines of <i>Value</i>, with positive offsets shifting the written value to the right/up (viewing the output as a matrix with the top left as 0,0), and negative offsets to the left/down.</summary>
   </member>
   <member name="DML_DIAGONAL_MATRIX_OPERATOR_DESC.Value">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">FLOAT</a></b></para>
-      <para>A value to fill along the 2D diagonal. The standard value is 1.0. Note that if the <i>DataType</i> of the tensors is not <see cref="DML_TENSOR_DATA_TYPE_FLOAT16" /> or <b>DML_TENSOR_DATA_TYPE_FLOAT32</b>, then the value might be truncated (for example, 10.6 will become 10).</para>
-    </summary>
+    <summary>A value to fill along the 2D diagonal. The standard value is 1.0. Note that if the <i>DataType</i> of the tensors is not <see cref="DML_TENSOR_DATA_TYPE_FLOAT16" /> or <b>DML_TENSOR_DATA_TYPE_FLOAT32</b>, then the value might be truncated (for example, 10.6 will become 10).</summary>
   </member>
 </doc>

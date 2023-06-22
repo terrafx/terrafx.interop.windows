@@ -4,82 +4,35 @@
 <doc>
   <member name="DVD_TIMECODE">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>DVD_TIMECODE</code> structure contains DVD timecode in hours, minutes, seconds, and frames.</para>
     </summary>
-    <remarks>
-      <para>DVD timecode is binary coded decimal (BCD) encoded in the format 0xHhMmSsFf, where:</para>
-      <list type="bullet">
-        <item>
-          <description>H is tens of hours</description>
-        </item>
-        <item>
-          <description>h is hours</description>
-        </item>
-        <item>
-          <description>M is tens of minutes</description>
-        </item>
-        <item>
-          <description>m is minutes</description>
-        </item>
-        <item>
-          <description>S is tens of seconds</description>
-        </item>
-        <item>
-          <description>s is seconds</description>
-        </item>
-        <item>
-          <description>F is tens of frames</description>
-        </item>
-        <item>
-          <description>f is frames</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="DVD_TIMECODE.Hours1">
-    <summary>
-      <para>Hours.</para>
-    </summary>
+    <summary>Hours.</summary>
   </member>
   <member name="DVD_TIMECODE.Hours10">
-    <summary>
-      <para>Tens of hours.</para>
-    </summary>
+    <summary>Tens of hours.</summary>
   </member>
   <member name="DVD_TIMECODE.Minutes1">
-    <summary>
-      <para>Minutes.</para>
-    </summary>
+    <summary>Minutes.</summary>
   </member>
   <member name="DVD_TIMECODE.Minutes10">
-    <summary>
-      <para>Tens of minutes.</para>
-    </summary>
+    <summary>Tens of minutes.</summary>
   </member>
   <member name="DVD_TIMECODE.Seconds1">
-    <summary>
-      <para>Seconds.</para>
-    </summary>
+    <summary>Seconds.</summary>
   </member>
   <member name="DVD_TIMECODE.Seconds10">
-    <summary>
-      <para>Tens of seconds.</para>
-    </summary>
+    <summary>Tens of seconds.</summary>
   </member>
   <member name="DVD_TIMECODE.Frames1">
-    <summary>
-      <para>Frames.</para>
-    </summary>
+    <summary>Frames.</summary>
   </member>
   <member name="DVD_TIMECODE.Frames10">
-    <summary>
-      <para>Tens of frames.</para>
-    </summary>
+    <summary>Tens of frames.</summary>
   </member>
   <member name="DVD_TIMECODE.FrameRateCode">
-    <summary>
-      <para>Frames per second dropped and not dropped as indicated by <see cref="DVD_FRAMERATE" />.</para>
-    </summary>
+    <summary>Frames per second dropped and not dropped as indicated by <see cref="DVD_FRAMERATE" />.</summary>
   </member>
 </doc>

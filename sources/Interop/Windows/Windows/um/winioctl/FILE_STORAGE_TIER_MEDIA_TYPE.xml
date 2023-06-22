@@ -3,29 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FILE_STORAGE_TIER_MEDIA_TYPE">
-    <summary>
-      <para>Specifies the storage media type.</para>
-    </summary>
+    <summary>Specifies the storage media type.</summary>
   </member>
   <member name="FILE_STORAGE_TIER_MEDIA_TYPE.FileStorageTierMediaTypeUnspecified">
-    <summary>
-      <para>Media type is unspecified.</para>
-    </summary>
+    <summary>Media type is unspecified.</summary>
   </member>
   <member name="FILE_STORAGE_TIER_MEDIA_TYPE.FileStorageTierMediaTypeDisk">
-    <summary>
-      <para>Media type is an HDD (hard disk drive).</para>
-    </summary>
+    <summary>Media type is an HDD (hard disk drive).</summary>
   </member>
   <member name="FILE_STORAGE_TIER_MEDIA_TYPE.FileStorageTierMediaTypeSsd">
-    <summary>
-      <para>Media type is an SSD (solid state drive).</para>
-    </summary>
+    <summary>Media type is an SSD (solid state drive).</summary>
   </member>
-  <member name="FILE_STORAGE_TIER_MEDIA_TYPE.FileStorageTierMediaTypeScm">
-    <summary></summary>
-  </member>
-  <member name="FILE_STORAGE_TIER_MEDIA_TYPE.FileStorageTierMediaTypeMax">
-    <summary></summary>
-  </member>
+  <member name="FILE_STORAGE_TIER_MEDIA_TYPE.FileStorageTierMediaTypeScm"></member>
+  <member name="FILE_STORAGE_TIER_MEDIA_TYPE.FileStorageTierMediaTypeMax"></member>
 </doc>

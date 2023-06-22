@@ -3,16 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IInsertItem.InsertItem">
-    <summary>
-      <para>Adds an <see cref="ITEMIDLIST" /> structure to a list of such structures.</para>
-    </summary>
-    <param name="pidl">
-      <para>Type: <b>LPCITEMIDLIST</b></para>
-      <para>A pointer to an <see cref="ITEMIDLIST" /> structure that corresponds to an item in a Shell folder.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Adds an <see cref="ITEMIDLIST" /> structure to a list of such structures.</summary>
+    <param name="pidl">A pointer to an <see cref="ITEMIDLIST" /> structure that corresponds to an item in a Shell folder.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
 </doc>

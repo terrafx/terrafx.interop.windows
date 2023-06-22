@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAGS">
-    <summary>
-      <para>Defines constants that specify protected resource session support.</para>
-    </summary>
+    <summary>Defines constants that specify protected resource session support.</summary>
   </member>
-  <member name="D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAGS.D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAG_NONE (0x0)">
-    <summary>
-      <para>Indicates that protected resource sessions are not supported.</para>
-    </summary>
+  <member name="D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAGS.D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAG_NONE">
+    <summary>Indicates that protected resource sessions are not supported.</summary>
   </member>
-  <member name="D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAGS.D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAG_SUPPORTED (0x1)">
-    <summary>
-      <para>Indicates that protected resource sessions are supported.</para>
-    </summary>
+  <member name="D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAGS.D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAG_SUPPORTED">
+    <summary>Indicates that protected resource sessions are supported.</summary>
   </member>
 </doc>

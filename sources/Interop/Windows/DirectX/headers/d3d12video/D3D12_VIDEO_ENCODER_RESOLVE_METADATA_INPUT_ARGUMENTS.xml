@@ -3,33 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_ENCODER_RESOLVE_METADATA_INPUT_ARGUMENTS">
-    <summary>
-      <para>Represents input arguments for a call to <see cref="ID3D12VideoEncodeCommandList2.ResolveEncoderOutputMetadata" />.</para>
-    </summary>
+    <summary>Represents input arguments for a call to <see cref="ID3D12VideoEncodeCommandList2.ResolveEncoderOutputMetadata" />.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_RESOLVE_METADATA_INPUT_ARGUMENTS.EncoderCodec">
-    <summary>
-      <para>A <see cref="D3D12_VIDEO_ENCODER_CODEC" /> specifying the codec of the associated encode operation.</para>
-    </summary>
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_CODEC" /> specifying the codec of the associated encode operation.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_RESOLVE_METADATA_INPUT_ARGUMENTS.EncoderProfile">
-    <summary>
-      <para>A <see cref="D3D12_VIDEO_ENCODER_PROFILE_DESC" /> specifying the profile for the selected codec in the associated encode operation.</para>
-    </summary>
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_PROFILE_DESC" /> specifying the profile for the selected codec in the associated encode operation.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_RESOLVE_METADATA_INPUT_ARGUMENTS.EncoderInputFormat">
-    <summary>
-      <para>A <see cref="DXGI_FORMAT" /> specifying the input format of the associated encode operation.</para>
-    </summary>
+    <summary>A <see cref="DXGI_FORMAT" /> specifying the input format of the associated encode operation.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_RESOLVE_METADATA_INPUT_ARGUMENTS.EncodedPictureEffectiveResolution">
-    <summary>
-      <para>A <see cref="D3D12_VIDEO_ENCODER_PICTURE_RESOLUTION_DESC" /> structure describing the resolution used for the encoding operation.</para>
-    </summary>
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_PICTURE_RESOLUTION_DESC" /> structure describing the resolution used for the encoding operation.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_RESOLVE_METADATA_INPUT_ARGUMENTS.HWLayoutMetadata">
-    <summary>
-      <para>A <see cref="D3D12_VIDEO_ENCODER_ENCODE_OPERATION_METADATA_BUFFER" /> representing the associated opaque metadata buffer received from <see cref="EncodeFrame" />.</para>
-    </summary>
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_ENCODE_OPERATION_METADATA_BUFFER" /> representing the associated opaque metadata buffer received from <see cref="EncodeFrame" />.</summary>
   </member>
 </doc>

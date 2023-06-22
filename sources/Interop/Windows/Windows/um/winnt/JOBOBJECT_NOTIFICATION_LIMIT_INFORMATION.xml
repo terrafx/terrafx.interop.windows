@@ -3,28 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION">
-    <summary>
-      <para>Contains information about notification limits for a job object. This structure is used by the <see cref="SetInformationJobObject" /> and <see cref="QueryInformationJobObject" /> functions with the <b>JobObjectNotificationLimitInformation</b> information class.</para>
-    </summary>
-    <remarks>
-      <para>When a notification limit is exceeded, the system sends a JOB_OBJECT_MSG_NOTIFICATION_LIMIT message to the I/O completion port associated with the job. Processes in the job continue to run and can continue to allocate memory or transmit read or write bytes beyond the specified limits.</para>
-      <para>When the application monitoring the I/O completion port receives a JOB_OBJECT_MSG_NOTIFICATION_LIMIT message, it must call <see cref="QueryInformationJobObject" /> with the <b>JobObjectLimitViolationInformation</b> information class. Limit violation information is received in a JOBOBJECT_LIMIT_VIOLATION_STRUCTURE that contains information about all notification limits that were exceeded at the time of the query. The system will not send another JOB_OBJECT_MSG_NOTIFICATION_LIMIT message until after   <b>QueryInformationJobObject</b> is called.</para>
-      <para>CPU rate control limits for a job are established in a <see cref="JOBOBJECT_CPU_RATE_CONTROL_INFORMATION" /> structure. The CPU rate control values in the <b>JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION</b> structure specify how much the job can exceed its established CPU rate control limits before notification is sent.</para>
-    </remarks>
-    <seealso cref="JOBOBJECT_CPU_RATE_CONTROL_INFORMATION" />
-    <seealso cref="JOBOBJECT_LIMIT_VIOLATION_INFORMATION" />
-    <seealso cref="QueryInformationJobObject" />
-    <seealso cref="SetInformationJobObject" />
+    <summary>Contains information about notification limits for a job object. This structure is used by the <see cref="SetInformationJobObject" /> and <see cref="QueryInformationJobObject" /> functions with the <b>JobObjectNotificationLimitInformation</b> information class.</summary>
   </member>
   <member name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.IoReadBytesLimit">
-    <summary>
-      <para>If the <i>LimitFlags</i> member specifies JOB_OBJECT_LIMIT_JOB_READ_BYTES, this member is the notification limit for total I/O bytes read by all processes in the job. Otherwise, this member is ignored.</para>
-    </summary>
+    <summary>If the <i>LimitFlags</i> member specifies JOB_OBJECT_LIMIT_JOB_READ_BYTES, this member is the notification limit for total I/O bytes read by all processes in the job. Otherwise, this member is ignored.</summary>
   </member>
   <member name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.IoWriteBytesLimit">
-    <summary>
-      <para>If the <i>LimitFlags</i> parameter specifies JOB_OBJECT_LIMIT_JOB_WRITE_BYTES, this member is the notification limit for total I/O bytes written by all processes in the job. Otherwise, this member is ignored.</para>
-    </summary>
+    <summary>If the <i>LimitFlags</i> parameter specifies JOB_OBJECT_LIMIT_JOB_WRITE_BYTES, this member is the notification limit for total I/O bytes written by all processes in the job. Otherwise, this member is ignored.</summary>
   </member>
   <member name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.PerJobUserTimeLimit">
     <summary>
@@ -41,64 +26,58 @@
   </member>
   <member name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION.RateControlTolerance">
     <summary>
-      <para>If the <i>LimitFlags</i> parameter specifies JOB_OBJECT_LIMIT_RATE_CONTROL, this member specifies the extent to which a job can exceed its CPU rate control limits during the interval specified by the <b>RateControlToleranceInterval</b> member.  Otherwise, this member is ignored.</para>
+      <para>If the <i>LimitFlags</i> parameter specifies JOB_OBJECT_LIMIT_RATE_CONTROL, this member specifies the extent to which a job can exceed its CPU rate control limits during the interval specified by the <b>RateControlToleranceInterval</b> member. Otherwise, this member is ignored.</para>
       <para>This member can be one of the following values. If no value is specified, <b>ToleranceHigh</b> is used.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ToleranceLow</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The job can exceed its CPU rate control limits for 20% of the tolerance interval.</para>
-          </description>
-        </item>
-        <item>
+          <description>The job can exceed its CPU rate control limits for 20% of the tolerance interval.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ToleranceMedium</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The job can exceed its CPU rate control limits for 40% of the tolerance interval.</para>
-          </description>
-        </item>
-        <item>
+          <description>The job can exceed its CPU rate control limits for 40% of the tolerance interval.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ToleranceHigh</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The job can exceed its CPU rate control limits for 60% of the tolerance interval.</para>
-          </description>
-        </item>
+          <description>The job can exceed its CPU rate control limits for 60% of the tolerance interval.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -111,57 +90,51 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ToleranceIntervalShort</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The tolerance interval is 10 seconds.</para>
-          </description>
-        </item>
-        <item>
+          <description>The tolerance interval is 10 seconds.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ToleranceIntervalMedium</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The tolerance interval is one minute.</para>
-          </description>
-        </item>
-        <item>
+          <description>The tolerance interval is one minute.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ToleranceIntervalLong</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The tolerance interval is 10 minutes.</para>
-          </description>
-        </item>
+          <description>The tolerance interval is 10 minutes.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -173,92 +146,81 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>JOB_OBJECT_LIMIT_JOB_MEMORY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000200</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000200</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Establishes the committed memory  limit to the job-wide sum of committed memory for all processes associated with the job. The <b>JobMemoryLimit</b> member contains additional information.</para>
-          </description>
-        </item>
-        <item>
+          <description>Establishes the committed memory limit to the job-wide sum of committed memory for all processes associated with the job. The <b>JobMemoryLimit</b> member contains additional information.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>JOB_OBJECT_LIMIT_JOB_READ_BYTES</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00010000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00010000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Establishes the I/O read bytes limit to the job-wide sum of I/O bytes read by all processes associated with the job. The <b>IoReadBytesLimit</b> member contains more information.</para>
-          </description>
-        </item>
-        <item>
+          <description>Establishes the I/O read bytes limit to the job-wide sum of I/O bytes read by all processes associated with the job. The <b>IoReadBytesLimit</b> member contains more information.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>JOB_OBJECT_LIMIT_JOB_WRITE_BYTES</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00020000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00020000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Establishes the I/O write bytes limit to the job-wide sum of  I/O bytes written by all processes associated with the job. The <b>IoWriteBytesLimit</b> member contains more information.</para>
-          </description>
-        </item>
-        <item>
+          <description>Establishes the I/O write bytes limit to the job-wide sum of I/O bytes written by all processes associated with the job. The <b>IoWriteBytesLimit</b> member contains more information.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>JOB_OBJECT_LIMIT_JOB_TIME</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Establishes the limit for user-mode execution time for the job. The <b>PerJobUserTimeLimit</b> member contains additional information.</para>
-          </description>
-        </item>
-        <item>
+          <description>Establishes the limit for user-mode execution time for the job. The <b>PerJobUserTimeLimit</b> member contains additional information.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>JOB_OBJECT_LIMIT_RATE_CONTROL</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00040000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00040000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Establishes the notification threshold for the CPU rate control limits established for the job. The <b>RateControlTolerance</b> and <b>RateControlToleranceInterval</b> members contain additional information.</para>
-            <para>CPU rate control limits are established by calling <see cref="SetInformationJobObject" /> with the <b>JobObjectCpuRateInformationClass</b> information class.</para>
-          </description>
-        </item>
+          <description>Establishes the notification threshold for the CPU rate control limits established for the job. The <b>RateControlTolerance</b> and <b>RateControlToleranceInterval</b> members contain additional information.<para>CPU rate control limits are established by calling <see cref="SetInformationJobObject" /> with the <b>JobObjectCpuRateInformationClass</b> information class.</para></description>
+        </listheader>
       </list>
     </summary>
   </member>

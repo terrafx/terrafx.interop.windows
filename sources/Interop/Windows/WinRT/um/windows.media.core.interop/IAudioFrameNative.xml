@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAudioFrameNative.GetData">
+    <summary>This method returns an interface that provides access to the audio data.</summary>
+    <param name="riid">The IID of the interface to retrieve.</param>
+    <param name="ppv">When this method returns successfully, contains the interface pointer requested in <i>riid</i> parameter.</param>
+    <returns>Returns S_OK on successful completion. Returns E_NOINTERFACE if the requested interface can't be found.</returns>
+  </member>
+  <member name="IAudioFrameNative">
+    <summary>Represents a frame of audio data.</summary>
+  </member>
+</doc>

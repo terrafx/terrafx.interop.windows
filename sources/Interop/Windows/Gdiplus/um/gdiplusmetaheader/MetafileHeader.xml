@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MetafileHeader.GetBounds">
+    <summary>The <b>MetafileHeader.GetBounds</b> method gets the bounding rectangle for the associated metafile.</summary>
+    <param name="rect">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rect">Rect</a> object that receives the bounding rectangle.</param>
+  </member>
+  <member name="MetafileHeader.GetDpiX">
+    <summary>The <b>MetafileHeader.GetDpiX</b> method gets the horizontal dots per inch of the associated metafile.</summary>
+    <returns>This method returns a real number that indicates the horizontal dots per inch of the associated metafile.</returns>
+  </member>
+  <member name="MetafileHeader.GetDpiY">
+    <summary>The <b>MetafileHeader.GetDpiY</b> method gets the vertical dots per inch of the associated metafile.</summary>
+    <returns>This method returns a real number that specifies the vertical dots per inch of the associated metafile.</returns>
+  </member>
+  <member name="MetafileHeader.GetEmfHeader">
+    <summary>The <b>MetafileHeader.GetEmfHeader</b> method gets an <see cref="ENHMETAHEADER3" /> structure that contains properties of the associated metafile.</summary>
+    <returns>If the associated metafile is in the EMF or EMF+ format, this method returns a pointer to an <see cref="ENHMETAHEADER3" /> structure that contains properties of the associated metafile. If the associated metafile is in the WMF format, this method returns <b>NULL</b>.</returns>
+  </member>
+  <member name="MetafileHeader.GetEmfPlusFlags">
+    <summary>The <b>MetafileHeader.GetEmfPlusFlags</b> method gets a flag that indicates whether the associated metafile was recorded against a video display device context.</summary>
+    <returns>If the associated metafile is in the EMF+ format and was recorded against a video display device context, then this method returns GDIP_EMFPLUSFLAGS_DISPLAY; otherwise, it returns 0. GDIP_EMFPLUSFLAGS_DISPLAY is defined in Gdiplusmetaheader.h.</returns>
+  </member>
+  <member name="MetafileHeader.GetMetafileSize">
+    <summary>The <b>MetafileHeader.GetMetafileSize</b> method gets the size, in bytes, of the metafile.</summary>
+    <returns>This method returns a <b>UINT</b> that specifies the size, in bytes, of the metafile.</returns>
+  </member>
+  <member name="MetafileHeader.GetType">
+    <summary>The <b>MetafileHeader.GetType</b> method gets the type of the associated metafile.</summary>
+    <returns>This method returns an element of the <see cref="MetafileType" /> enumeration that indicates the type of the associated metafile.</returns>
+  </member>
+  <member name="MetafileHeader.GetVersion">
+    <summary>The <b>MetafileHeader.GetVersion</b> method gets the version of the metafile.</summary>
+    <returns>This method returns the version of the metafile. The metafile version indicates whether the metafile is an EMF, EMF+, or WMF metafile. EMF files always have 0x0010000 as the version. EMF+ files currently have 0xdbc01001 as the version. WMF files usually have 0x0300 as the version; however, earlier versions may be 0x0100.</returns>
+  </member>
+  <member name="MetafileHeader.GetWmfHeader">
+    <summary>The <b>MetafileHeader.GetWmfHeader</b> method gets a <see cref="METAHEADER" /> structure that contains properties of the associated metafile.</summary>
+    <returns>If the associated metafile is in the WMF format, this method returns a pointer to a structure that contains properties of the associated metafile. If the associated metafile is in the EMF or EMF+ format, this method returns <b>NULL</b>. The <see cref="METAHEADER" /> structure is defined in Wingdi.h.</returns>
+  </member>
+  <member name="MetafileHeader.IsDisplay">
+    <summary>The <b>MetafileHeader.IsDisplay</b> method determines whether the associated metafile was recorded against a video display device context.</summary>
+    <returns>If the associated metafile is in the EMF+ format and was recorded against a video display device context, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="MetafileHeader.IsEmf">
+    <summary>The <b>MetafileHeader.IsEmf</b> method determines whether the associated metafile is in the EMF format.</summary>
+    <returns>If the associated metafile is in the EMF format, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="MetafileHeader.IsEmfOrEmfPlus">
+    <summary>The <b>MetafileHeader.IsEmfOrEmfPlus</b> method determines whether the associated metafile is in either the EMF or EMF+ format.</summary>
+    <returns>If the associated metafile is in the EMF or EMF+ format, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>. In particular, this method returns <b>FALSE</b> if the associated metafile is in the WMF format.</returns>
+  </member>
+  <member name="MetafileHeader.IsEmfPlus">
+    <summary>The <b>MetafileHeader.IsEmfPlus</b> method determines whether the associated metafile is in the EMF+ format.</summary>
+    <returns>If the associated metafile is in the EMF+ format, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>. In particular, this method returns <b>FALSE</b> if the associated metafile is in the EMF or WMF format.</returns>
+  </member>
+  <member name="MetafileHeader.IsEmfPlusDual">
+    <summary>The <b>MetafileHeader.IsEmfPlusDual</b> method determines whether the associated metafile is in the EMF+ Dual format.</summary>
+    <returns>If the associated metafile is in the EMF+ Dual format, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>. In particular, this method returns <b>FALSE</b> if the associated metafile is in the WMF, EMF, or EMF+ Only format.</returns>
+  </member>
+  <member name="MetafileHeader.IsEmfPlusOnly">
+    <summary>The <b>MetafileHeader.IsEmfPlusOnly</b> method determines whether the associated metafile is in the EMF+ Only format.</summary>
+    <returns>If the associated metafile is in the EMF+ Only format, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>. In particular, this method returns <b>FALSE</b> if the associated metafile is in the WMF, EMF, or EMF+ Dual format.</returns>
+  </member>
+  <member name="MetafileHeader.IsWmf">
+    <summary>The <b>MetafileHeader.IsWmf</b> method determines whether the associated metafile is in the WMF format.</summary>
+    <returns>If the associated metafile is in the WMF format, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>. In particular, this method returns <b>FALSE</b> if the associated metafile is in the EMF or EMF+ format.</returns>
+  </member>
+  <member name="MetafileHeader.IsWmfPlaceable">
+    <summary>The <b>MetafileHeader.IsWmfPlaceable</b> method determines whether the associated metafile is a placeable metafile.</summary>
+    <returns>If the associated metafile is a placeable metafile, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+</doc>

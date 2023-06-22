@@ -3,50 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISuspensionDependencyManager.GroupChildWithParent">
-    <summary>
-      <para>Groups the specified child process with the parent process. This method is no longer supported on Windows 10, version 1809, and later versions.</para>
-    </summary>
-    <param name="childProcessHandle">
-      <para>Type: <b>HANDLE</b></para>
-      <para>The child process to group with the parent process.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ISuspensionDependencyManager" />
+    <summary>Groups the specified child process with the parent process. This method is no longer supported on Windows 10, version 1809, and later versions.</summary>
+    <param name="childProcessHandle">The child process to group with the parent process.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISuspensionDependencyManager.RegisterAsChild">
-    <summary>
-      <para>Registers the specified process as a child. This method is no longer supported on Windows 10, version 1809, and later versions.</para>
-    </summary>
-    <param name="processHandle">
-      <para>Type: <b>HANDLE</b></para>
-      <para>The process to be registered as a child.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ISuspensionDependencyManager" />
+    <summary>Registers the specified process as a child. This method is no longer supported on Windows 10, version 1809, and later versions.</summary>
+    <param name="processHandle">The process to be registered as a child.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISuspensionDependencyManager.UngroupChildFromParent">
-    <summary>
-      <para>Ungroups the specified child process from the parent process. This method is no longer supported on Windows 10, version 1809, and later versions.</para>
-    </summary>
-    <param name="childProcessHandle">
-      <para>Type: <b>HANDLE</b></para>
-      <para>The child process to ungroup from the parent.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ISuspensionDependencyManager" />
+    <summary>Ungroups the specified child process from the parent process. This method is no longer supported on Windows 10, version 1809, and later versions.</summary>
+    <param name="childProcessHandle">The child process to ungroup from the parent.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISuspensionDependencyManager">
-    <summary>
-      <para>Exposes methods to manage dependencies in process suspension scenarios. This interface is no longer supported on Windows 10, version 1809, and later versions.</para>
-    </summary>
+    <summary>Exposes methods to manage dependencies in process suspension scenarios. This interface is no longer supported on Windows 10, version 1809, and later versions.</summary>
   </member>
 </doc>

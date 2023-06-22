@@ -3,50 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STORAGE_PORT_CODE_SET">
-    <summary>
-      <para>Reserved for system use.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/disk-management-enumeration-types">Disk Management Enumeration Types</seealso>
-    <seealso cref="STORAGE_MINIPORT_DESCRIPTOR" />
+    <summary>Reserved for system use.</summary>
   </member>
   <member name="STORAGE_PORT_CODE_SET.StoragePortCodeSetReserved">
-    <summary>
-      <para>Indicates an unknown storage adapter driver type.</para>
-    </summary>
+    <summary>Indicates an unknown storage adapter driver type.</summary>
   </member>
   <member name="STORAGE_PORT_CODE_SET.StoragePortCodeSetStorport">
-    <summary>
-      <para>Storage adapter driver is a Storport-miniport driver.</para>
-    </summary>
+    <summary>Storage adapter driver is a Storport-miniport driver.</summary>
   </member>
   <member name="STORAGE_PORT_CODE_SET.StoragePortCodeSetSCSIport">
-    <summary>
-      <para>Storage adapter driver is a SCSI Port-miniport driver.</para>
-    </summary>
+    <summary>Storage adapter driver is a SCSI Port-miniport driver.</summary>
   </member>
   <member name="STORAGE_PORT_CODE_SET.StoragePortCodeSetSpaceport">
-    <summary>
-      <para>Storage adapter driver is the Spaceport driver.</para>
-    </summary>
+    <summary>Storage adapter driver is the Spaceport driver.</summary>
   </member>
   <member name="STORAGE_PORT_CODE_SET.StoragePortCodeSetATAport">
-    <summary>
-      <para>Storage adapter driver is an ATA-port miniport driver.</para>
-    </summary>
+    <summary>Storage adapter driver is an ATA-port miniport driver.</summary>
   </member>
   <member name="STORAGE_PORT_CODE_SET.StoragePortCodeSetUSBport">
-    <summary>
-      <para>Storage adapter driver is the  USB-storage port driver.</para>
-    </summary>
+    <summary>Storage adapter driver is the USB-storage port driver.</summary>
   </member>
   <member name="STORAGE_PORT_CODE_SET.StoragePortCodeSetSBP2port">
-    <summary>
-      <para>Storage adapter driver is the  SBP2 port driver.</para>
-    </summary>
+    <summary>Storage adapter driver is the SBP2 port driver.</summary>
   </member>
   <member name="STORAGE_PORT_CODE_SET.StoragePortCodeSetSDport">
-    <summary>
-      <para>Storage adapter driver is an SD-port miniport driver.</para>
-    </summary>
+    <summary>Storage adapter driver is an SD-port miniport driver.</summary>
   </member>
 </doc>

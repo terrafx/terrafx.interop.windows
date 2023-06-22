@@ -3,32 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMPGHOTITEM">
-    <summary>
-      <para>Contains information used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/pgn-hotitemchange">PGN_HOTITEMCHANGE</a> notification code.</para>
-    </summary>
+    <summary>Contains information used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/pgn-hotitemchange">PGN_HOTITEMCHANGE</a> notification code.</summary>
   </member>
   <member name="NMPGHOTITEM.hdr">
     <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>
-        <see cref="NMHDR" /> structure that contains additional information about the notification.</para>
-    </summary>
+      <see cref="NMHDR" /> structure that contains additional information about the notification.</summary>
   </member>
   <member name="NMPGHOTITEM.idOld">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Value of type <b>int</b> that specifies the command identifier of the previously highlighted item.</para>
-    </summary>
+    <summary>Value of type <b>int</b> that specifies the command identifier of the previously highlighted item.</summary>
   </member>
   <member name="NMPGHOTITEM.idNew">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Value of type <b>int</b> that specifies the command identifier of the highlighted item.</para>
-    </summary>
+    <summary>Value of type <b>int</b> that specifies the command identifier of the highlighted item.</summary>
   </member>
   <member name="NMPGHOTITEM.dwFlags">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>
         <b>DWORD</b> that contains flags that indicate why the hot item has changed. This can be one or more of the following values.</para>
       <list type="table">
@@ -36,40 +24,28 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>HICF_ENTERING</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>HICF_ENTERING</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If this flag is set, there is no previous hot item and <b>idOld</b> does not contain valid information.</para>
-          </description>
-        </item>
-        <item>
+          <description>If this flag is set, there is no previous hot item and <b>idOld</b> does not contain valid information.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b></b>
-                </description>
-              </item>
-              <item>
-                <description>HICF_LEAVING</description>
-              </item>
+              <listheader></listheader>
+              <listheader>
+                <term>HICF_LEAVING</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If this flag is set, there is no new hot item and <b>idNew</b> does not contain valid information.</para>
-          </description>
-        </item>
+          <description>If this flag is set, there is no new hot item and <b>idNew</b> does not contain valid information.</description>
+        </listheader>
       </list>
     </summary>
   </member>

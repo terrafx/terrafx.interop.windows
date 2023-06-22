@@ -3,17 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRCOLORMATCHTOTARGET">
-    <summary>
-      <para>The <b>EMRCOLORMATCHTOTARGET</b> structure contains members for the <see cref="ColorMatchToTarget" /> enhanced metafile record.</para>
-    </summary>
-    <seealso cref="ColorMatchToTarget" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <summary>The <b>EMRCOLORMATCHTOTARGET</b> structure contains members for the <see cref="ColorMatchToTarget" /> enhanced metafile record.</summary>
   </member>
   <member name="EMRCOLORMATCHTOTARGET.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMRCOLORMATCHTOTARGET.dwAction">
     <summary>
@@ -23,18 +16,18 @@
           <description>Action</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>CS_ENABLE</description>
           <description>Maps colors to the target device's color gamut. This enables color proofing. All subsequent draw commands to the DC will render colors as they would appear on the target device.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>CS_DISABLE</description>
           <description>Disables color proofing.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>CS_DELETE_TRANSFORM</description>
           <description>If color management is enabled for the target profile, disables it and deletes the concatenated transform.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -46,28 +39,20 @@
           <description>Flag</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>COLORMATCHTOTARGET_EMBEDED</description>
           <description>Indicates that a color profile has been embedded in the metafile.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="EMRCOLORMATCHTOTARGET.cbName">
-    <summary>
-      <para>The size of the desired target profile name, in bytes.</para>
-    </summary>
+    <summary>The size of the desired target profile name, in bytes.</summary>
   </member>
   <member name="EMRCOLORMATCHTOTARGET.cbData">
-    <summary>
-      <para>The size of the raw target profile data in bytes, if it is attached.</para>
-    </summary>
+    <summary>The size of the raw target profile data in bytes, if it is attached.</summary>
   </member>
   <member name="EMRCOLORMATCHTOTARGET.Data">
-    <summary>
-      <para>An array containing the target profile name and the raw target profile data.
-The size of the array is <b>cbName</b> + <b>cbData</b>.
-If <b>cbData</b> is nonzero the raw target profile data is attached and follows the target profile name at location <b>Data</b>[<b>cbName</b>].</para>
-    </summary>
+    <summary>An array containing the target profile name and the raw target profile data. The size of the array is <b>cbName</b> + <b>cbData</b>. If <b>cbData</b> is nonzero the raw target profile data is attached and follows the target profile name at location <b>Data</b>[<b>cbName</b>].</summary>
   </member>
 </doc>

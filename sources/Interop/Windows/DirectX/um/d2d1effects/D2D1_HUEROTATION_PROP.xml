@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_HUEROTATION_PROP">
-    <summary>
-      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/hue-rotate">Hue rotate effect</a>.</para>
-    </summary>
+    <summary>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/hue-rotate">Hue rotate effect</a>.</summary>
   </member>
   <member name="D2D1_HUEROTATION_PROP.D2D1_HUEROTATION_PROP_ANGLE">
     <summary>
@@ -14,7 +12,5 @@
       <para>The default is 0.0f.</para>
     </summary>
   </member>
-  <member name="D2D1_HUEROTATION_PROP.D2D1_HUEROTATION_PROP_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_HUEROTATION_PROP.D2D1_HUEROTATION_PROP_FORCE_DWORD"></member>
 </doc>

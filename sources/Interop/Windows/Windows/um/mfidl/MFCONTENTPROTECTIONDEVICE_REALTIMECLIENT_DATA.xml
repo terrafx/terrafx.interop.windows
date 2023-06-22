@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA">
-    <summary>
-      <para>Advises the secure processor of the  Multimedia Class Scheduler service (MMCSS) parameters so that real-time tasks can be scheduled at the expected priority.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <summary>Advises the secure processor of the Multimedia Class Scheduler service (MMCSS) parameters so that real-time tasks can be scheduled at the expected priority.</summary>
   </member>
   <member name="MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA.TaskIndex">
-    <summary>
-      <para>The identifier for the MMCSS task.</para>
-    </summary>
+    <summary>The identifier for the MMCSS task.</summary>
   </member>
   <member name="MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA.ClassName">
-    <summary>
-      <para>The name of the MMCSS task.</para>
-    </summary>
+    <summary>The name of the MMCSS task.</summary>
   </member>
   <member name="MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA.BasePriority">
-    <summary>
-      <para>The base priority of the thread that runs the MMCSS task.</para>
-    </summary>
+    <summary>The base priority of the thread that runs the MMCSS task.</summary>
   </member>
 </doc>

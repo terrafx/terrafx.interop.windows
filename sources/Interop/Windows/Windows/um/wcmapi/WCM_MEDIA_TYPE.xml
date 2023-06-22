@@ -3,38 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WCM_MEDIA_TYPE">
-    <summary>
-      <para>The <b>WCM_MEDIA_TYPE</b> enumerated type specifies the type of media for a connection.</para>
-    </summary>
+    <summary>The <b>WCM_MEDIA_TYPE</b> enumerated type specifies the type of media for a connection.</summary>
   </member>
   <member name="WCM_MEDIA_TYPE.wcm_media_unknown">
-    <summary>
-      <para>Unknown media.</para>
-    </summary>
+    <summary>Unknown media.</summary>
   </member>
   <member name="WCM_MEDIA_TYPE.wcm_media_ethernet">
-    <summary>
-      <para>Ethernet.</para>
-    </summary>
+    <summary>Ethernet.</summary>
   </member>
   <member name="WCM_MEDIA_TYPE.wcm_media_wlan">
-    <summary>
-      <para>WLAN.</para>
-    </summary>
+    <summary>WLAN.</summary>
   </member>
   <member name="WCM_MEDIA_TYPE.wcm_media_mbn">
-    <summary>
-      <para>Mobile broadband.</para>
-    </summary>
+    <summary>Mobile broadband.</summary>
   </member>
   <member name="WCM_MEDIA_TYPE.wcm_media_invalid">
-    <summary>
-      <para>Invalid type.</para>
-    </summary>
+    <summary>Invalid type.</summary>
   </member>
   <member name="WCM_MEDIA_TYPE.wcm_media_max">
-    <summary>
-      <para>Maximum value for testing purposes.</para>
-    </summary>
+    <summary>Maximum value for testing purposes.</summary>
   </member>
 </doc>

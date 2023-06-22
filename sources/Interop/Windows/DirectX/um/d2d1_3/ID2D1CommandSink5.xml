@@ -3,43 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1CommandSink5.BlendImage">
-    <summary>
-      <para>Draws an image to the device context using the specified blend mode.
-Results are equivalent to using Direct2D's built-in <a href="https://docs.microsoft.com//windows/desktop/Direct2D/blend">Blend effect</a>.</para>
-    </summary>
-    <param name="image">
-      <para>Type: <b>ID2D1Image*</b></para>
-      <para>The image to be drawn to the device context.</para>
-    </param>
-    <param name="blendMode">
-      <para>Type: <b>D2D1_BLEND_MODE</b></para>
-      <para>The blend mode to be used. See <a href="https://docs.microsoft.com//windows/desktop/Direct2D/blend">Blend modes</a> for more info.</para>
-    </param>
-    <param name="targetOffset">
-      <para>Type: <b>const D2D1_POINT_2F*</b></para>
-      <para>The offset in the destination space that the image will be rendered to.
-The entire logical extent of the image will be rendered to the corresponding destination.
-If not specified, the destination origin will be (0, 0). The top-left corner of the image will be mapped to the target offset.
-This will not necessarily be the origin. The default value is NULL.</para>
-    </param>
-    <param name="imageRectangle">
-      <para>Type: <b>const D2D1_RECT_F*</b></para>
-      <para>The corresponding rectangle in the image space will be mapped to the given origins when processing the image. The default value is NULL.</para>
-    </param>
-    <param name="interpolationMode">
-      <para>Type: <b>D2D1_INTERPOLATION_MODE</b></para>
-      <para>The interpolation mode that will be used to scale the image if necessary. The default value is D2D1_INTERPOLATION_MODE_LINEAR.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1CommandSink5" />
+    <summary>Draws an image to the device context using the specified blend mode. Results are equivalent to using Direct2D's built-in <a href="https://docs.microsoft.com//windows/desktop/Direct2D/blend">Blend effect</a>.</summary>
+    <param name="image">The image to be drawn to the device context.</param>
+    <param name="blendMode">The blend mode to be used. See <a href="https://docs.microsoft.com//windows/desktop/Direct2D/blend">Blend modes</a> for more info.</param>
+    <param name="targetOffset">The offset in the destination space that the image will be rendered to. The entire logical extent of the image will be rendered to the corresponding destination. If not specified, the destination origin will be (0, 0). The top-left corner of the image will be mapped to the target offset. This will not necessarily be the origin. The default value is NULL.</param>
+    <param name="imageRectangle">The corresponding rectangle in the image space will be mapped to the given origins when processing the image. The default value is NULL.</param>
+    <param name="interpolationMode">The interpolation mode that will be used to scale the image if necessary. The default value is D2D1_INTERPOLATION_MODE_LINEAR.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1CommandSink5">
-    <summary>
-      <para>This interface performs all the same functions as the existing <see cref="ID2D1CommandSink4" /> interface,
-plus it enables access to the <see cref="BlendImage" /> method.</para>
-    </summary>
+    <summary>This interface performs all the same functions as the existing <see cref="ID2D1CommandSink4" /> interface, plus it enables access to the <see cref="BlendImage" /> method.</summary>
   </member>
 </doc>

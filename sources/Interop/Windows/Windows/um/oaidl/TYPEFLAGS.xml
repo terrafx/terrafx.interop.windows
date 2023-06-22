@@ -3,90 +3,51 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TYPEFLAGS">
-    <summary>
-      <para>The type flags.</para>
-    </summary>
-    <remarks>
-      <para>TYPEFLAG_FAPPOBJECT can be used on type descriptions with TypeKind = TKIND_COCLASS, and indicates that the type description specifies an Application object.</para>
-      <para>Members of the Application object are globally accessible. The <see cref="Bind" /> method of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypecomp">ITypeComp</a> instance associated with the library binds to the members of an Application object, just as it does for type descriptions that have TypeKind = TKIND_MODULE.</para>
-      <para>The type description implicitly defines a global variable with the same name and type described by the type description. This variable is also globally accessible. When <see cref="Bind" /> is passed the name of an Application object, a VARDESC is returned, which describes the implicit variable. The ID of the implicitly created variable is always ID_DEFAULTINST.</para>
-      <para>The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-itypeinfo-createinstance">ITypeInfo.CreateInstance</a> function of an Application object type description is called, and then it uses <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-getactiveobject">GetActiveObject</a> to retrieve the Application object. If <b>GetActiveObject</b> fails because the application is not running, then <b>CreateInstance</b> calls <b>CoCreateInstance</b>, which should start the application.</para>
-      <para>When TYPEFLAG_FCANCREATE is set, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-itypeinfo-createinstance">CreateInstance</a> can create an instance of this type. This is true only for component object classes for which a globally unique identifier (GUID) has been specified.</para>
-    </remarks>
+    <summary>The type flags.</summary>
   </member>
   <member name="TYPEFLAGS.TYPEFLAG_FAPPOBJECT">
-    <summary>
-      <para>A type description that describes an Application object.</para>
-    </summary>
+    <summary>A type description that describes an Application object.</summary>
   </member>
   <member name="TYPEFLAGS.TYPEFLAG_FCANCREATE">
-    <summary>
-      <para>Instances of the type can be created by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-itypeinfo-createinstance">ITypeInfo.CreateInstance</a>.</para>
-    </summary>
+    <summary>Instances of the type can be created by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-itypeinfo-createinstance">ITypeInfo.CreateInstance</a>.</summary>
   </member>
   <member name="TYPEFLAGS.TYPEFLAG_FLICENSED">
-    <summary>
-      <para>The type is licensed.</para>
-    </summary>
+    <summary>The type is licensed.</summary>
   </member>
   <member name="TYPEFLAGS.TYPEFLAG_FPREDECLID">
-    <summary>
-      <para>The type is predefined. The client application should automatically create a single instance of the object that has this attribute. The name of the variable that points to the object is the same as the class name of the object.</para>
-    </summary>
+    <summary>The type is predefined. The client application should automatically create a single instance of the object that has this attribute. The name of the variable that points to the object is the same as the class name of the object.</summary>
   </member>
   <member name="TYPEFLAGS.TYPEFLAG_FHIDDEN">
-    <summary>
-      <para>The type should not be displayed to browsers.</para>
-    </summary>
+    <summary>The type should not be displayed to browsers.</summary>
   </member>
   <member name="TYPEFLAGS.TYPEFLAG_FCONTROL">
-    <summary>
-      <para>The type is a control from which other types will be derived, and should not be displayed to users.</para>
-    </summary>
+    <summary>The type is a control from which other types will be derived, and should not be displayed to users.</summary>
   </member>
   <member name="TYPEFLAGS.TYPEFLAG_FDUAL">
-    <summary>
-      <para>The interface supplies both <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a> and VTBL binding.</para>
-    </summary>
+    <summary>The interface supplies both <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a> and VTBL binding.</summary>
   </member>
   <member name="TYPEFLAGS.TYPEFLAG_FNONEXTENSIBLE">
-    <summary>
-      <para>The interface cannot add members at run time.</para>
-    </summary>
+    <summary>The interface cannot add members at run time.</summary>
   </member>
   <member name="TYPEFLAGS.TYPEFLAG_FOLEAUTOMATION">
-    <summary>
-      <para>The types used in the interface are fully compatible with Automation, including VTBL binding support. Setting dual on an interface sets this flag in addition to TYPEFLAG_FDUAL. Not allowed on dispinterfaces.</para>
-    </summary>
+    <summary>The types used in the interface are fully compatible with Automation, including VTBL binding support. Setting dual on an interface sets this flag in addition to TYPEFLAG_FDUAL. Not allowed on dispinterfaces.</summary>
   </member>
   <member name="TYPEFLAGS.TYPEFLAG_FRESTRICTED">
-    <summary>
-      <para>Should not be accessible from macro languages. This flag is intended for system-level types or types that type browsers should not display.</para>
-    </summary>
+    <summary>Should not be accessible from macro languages. This flag is intended for system-level types or types that type browsers should not display.</summary>
   </member>
   <member name="TYPEFLAGS.TYPEFLAG_FAGGREGATABLE">
-    <summary>
-      <para>The class supports aggregation.</para>
-    </summary>
+    <summary>The class supports aggregation.</summary>
   </member>
   <member name="TYPEFLAGS.TYPEFLAG_FREPLACEABLE">
-    <summary>
-      <para>The type is replaceable.</para>
-    </summary>
+    <summary>The type is replaceable.</summary>
   </member>
   <member name="TYPEFLAGS.TYPEFLAG_FDISPATCHABLE">
-    <summary>
-      <para>Indicates that the interface derives from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a>, either directly or indirectly. This flag is computed. There is no Object Description Language for the flag.</para>
-    </summary>
+    <summary>Indicates that the interface derives from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a>, either directly or indirectly. This flag is computed. There is no Object Description Language for the flag.</summary>
   </member>
   <member name="TYPEFLAGS.TYPEFLAG_FREVERSEBIND">
-    <summary>
-      <para>The type has reverse binding.</para>
-    </summary>
+    <summary>The type has reverse binding.</summary>
   </member>
   <member name="TYPEFLAGS.TYPEFLAG_FPROXY">
-    <summary>
-      <para>Interfaces can be marked with this flag to indicate that they will be using a proxy/stub dynamic link library. This flag specifies that the typelib proxy should not be unregistered when the typelib is unregistered.</para>
-    </summary>
+    <summary>Interfaces can be marked with this flag to indicate that they will be using a proxy/stub dynamic link library. This flag specifies that the typelib proxy should not be unregistered when the typelib is unregistered.</summary>
   </member>
 </doc>

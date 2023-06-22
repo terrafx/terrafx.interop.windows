@@ -3,24 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISyncMgrConflictPresenter.PresentConflict">
-    <summary>
-      <para>Presents the conflict to the user.</para>
-    </summary>
-    <param name="pConflict">
-      <para>Type: <b><see cref="ISyncMgrConflict" />*</b></para>
-      <para>Specifies the conflict. See <see cref="ISyncMgrConflict" />.</para>
-    </param>
-    <param name="pResolveInfo">
-      <para>Type: <b><see cref="ISyncMgrConflictResolveInfo" />*</b></para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Presents the conflict to the user.</summary>
+    <param name="pConflict">Specifies the conflict. See <see cref="ISyncMgrConflict" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrConflictPresenter">
-    <summary>
-      <para>Exposes a method that presents a conflict to the user.</para>
-    </summary>
+    <summary>Exposes a method that presents a conflict to the user.</summary>
   </member>
 </doc>

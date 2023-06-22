@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_FEATURE_QUERY_TENSOR_DATA_TYPE_SUPPORT">
-    <summary>
-      <para>Used to query a DirectML device for its support for a particular data type within tensors. See <see cref="IDMLDevice.CheckFeatureSupport" />. The query type is <b>DML_FEATURE_QUERY_TENSOR_DATA_TYPE_SUPPORT</b>, and
-the support data type is <see cref="DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT" />.</para>
-    </summary>
+    <summary>Used to query a DirectML device for its support for a particular data type within tensors. See <see cref="IDMLDevice.CheckFeatureSupport" />. The query type is <b>DML_FEATURE_QUERY_TENSOR_DATA_TYPE_SUPPORT</b>, and the support data type is <see cref="DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT" />.</summary>
   </member>
   <member name="DML_FEATURE_QUERY_TENSOR_DATA_TYPE_SUPPORT.DataType">
-    <summary>
-      <para>Type: <see cref="DML_TENSOR_DATA_TYPE" /></para>
-      <para>The data type about which you're querying for support.</para>
-    </summary>
+    <summary>The data type about which you're querying for support.</summary>
   </member>
 </doc>

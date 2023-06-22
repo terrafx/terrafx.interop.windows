@@ -5,47 +5,30 @@
   <member name="DML_GATHER_OPERATOR_DESC">
     <summary>
       <para>Gathers elements from the input tensor along <b>Axis</b>, using <b>IndicesTensor</b> to remap indices. This operator performs the following pseudocode, where "..." represents a series of coordinates, with the exact behavior determined by the axis and indices dimension count:</para>
-      <code>output[...] = input[..., indices[...], ...]
-</code>
+      <code>output[...] = input[..., indices[...], ...]</code>
     </summary>
   </member>
   <member name="DML_GATHER_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The tensor to read from.</para>
-    </summary>
+    <summary>The tensor to read from.</summary>
   </member>
   <member name="DML_GATHER_OPERATOR_DESC.IndicesTensor">
     <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>A tensor containing the indices. The <i>DimensionCount</i> of this tensor must match <i>InputTensor.DimensionCount</i>.</para>
       <para>Starting with <code>DML_FEATURE_LEVEL_3_0</code>, this operator supports negative index values when using a signed integral type with this tensor. Negative indices are interpreted as being relative to the end of the axis dimension. For example, an index of -1 refers to the last element along that dimension.</para>
     </summary>
   </member>
   <member name="DML_GATHER_OPERATOR_DESC.OutputTensor">
     <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>The tensor to write the results to. The <i>DimensionCount</i> and <i>DataType</i> of this tensor must match <i>InputTensor.DimensionCount</i>. The expected <i>OutputTensor.Sizes</i> are the concatenation of the <i>InputTensor.Sizes</i> leading and trailing segments split at the current <i>Axis</i> with the <i>IndicesTensor.Sizes</i> inserted between.</para>
-      <code>OutputTensor.Sizes = {
-    InputTensor.Sizes[0..Axis],
-    IndicesTensor.Sizes[(IndicesTensor.DimensionCount - IndexDimensions) .. IndicesTensor.DimensionCount],
-    InputTensor.Sizes[(Axis+1) .. InputTensor.DimensionCount]
-}
-</code>
+      <code>OutputTensor.Sizes = { InputTensor.Sizes[0..Axis], IndicesTensor.Sizes[(IndicesTensor.DimensionCount - IndexDimensions) .. IndicesTensor.DimensionCount], InputTensor.Sizes[(Axis+1) .. InputTensor.DimensionCount] }</code>
       <para>The dimensions are right-aligned such that any leading 1 values from the input sizes are cropped which would otherwise overflow the output <i>DimensionCount</i>.</para>
       <para>The number of relevant dimensions in this tensor depends on <i>IndexDimensions</i> and the <i>original rank</i> of <i>InputTensor</i>. The original rank is the number of dimensions prior to any padding with leading ones. The number of relevant dimensions in the output can be computed by the <i>original rank</i> of <i>InputTensor</i> + <i>IndexDimensions</i> - 1. This value must be less than or equal to the <i>DimensionCount</i> of <i>OutputTensor</i>.</para>
     </summary>
   </member>
   <member name="DML_GATHER_OPERATOR_DESC.Axis">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The axis dimension of <i>InputTensor</i> to gather on, ranging <code>[0, *InputTensor.DimensionCount*)</code>.</para>
-    </summary>
+    <summary>The axis dimension of <i>InputTensor</i> to gather on, ranging <code>[0, *InputTensor.DimensionCount*)</code>.</summary>
   </member>
   <member name="DML_GATHER_OPERATOR_DESC.IndexDimensions">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The number of actual index dimensions within the <code>IndicesTensor</code> after ignoring any irrelevant leading ones, ranging [0, <code>IndicesTensor.DimensionCount</code>). For example, given <code>IndicesTensor.Sizes</code> = <code>{ 1, 1, 4, 6 }</code> and <code>IndexDimensions</code> = 3, the actual meaningful indices are <code>{ 1, 4, 6 }</code>.</para>
-    </summary>
+    <summary>The number of actual index dimensions within the <code>IndicesTensor</code> after ignoring any irrelevant leading ones, ranging [0, <code>IndicesTensor.DimensionCount</code>). For example, given <code>IndicesTensor.Sizes</code> = <code>{ 1, 1, 4, 6 }</code> and <code>IndexDimensions</code> = 3, the actual meaningful indices are <code>{ 1, 4, 6 }</code>.</summary>
   </member>
 </doc>

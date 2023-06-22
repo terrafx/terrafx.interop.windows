@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SecPkgContext_KeyingMaterialA">
-    <summary>
-      <para>The <b>SecPkgContext_KeyingMaterial</b> structure  specifies the exportable keying material for the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security context</a>.</para>
-    </summary>
+    <summary>The <b>SecPkgContext_KeyingMaterial</b> structure specifies the exportable keying material for the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security context</a>.</summary>
   </member>
   <member name="SecPkgContext_KeyingMaterialA.cbKeyingMaterial">
-    <summary>
-      <para>The length, in bytes, of the keying material to be exported. Must be greater than zero.</para>
-    </summary>
+    <summary>The length, in bytes, of the keying material to be exported. Must be greater than zero.</summary>
   </member>
   <member name="SecPkgContext_KeyingMaterialA.pbKeyingMaterial">
-    <summary>
-      <para>A pointer to the buffer containing the exported keying material. After use, deallocate the buffer by calling <see cref="FreeContextBuffer" />.</para>
-    </summary>
+    <summary>A pointer to the buffer containing the exported keying material. After use, deallocate the buffer by calling <see cref="FreeContextBuffer" />.</summary>
   </member>
 </doc>

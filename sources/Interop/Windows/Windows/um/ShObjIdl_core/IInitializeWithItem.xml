@@ -3,36 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IInitializeWithItem.Initialize">
-    <summary>
-      <para>Initializes a handler with an <see cref="IShellItem" />.</para>
-    </summary>
-    <param name="psi">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to an <see cref="IShellItem" />.</para>
-    </param>
+    <summary>Initializes a handler with an <see cref="IShellItem" />.</summary>
+    <param name="psi">A pointer to an <see cref="IShellItem" />.</param>
     <param name="grfMode">
-      <para>Type: <b>DWORD</b></para>
       <para>One of the following <a href="https://docs.microsoft.com//windows/desktop/Stg/stgm-constants">STGM</a> values that indicate the access mode for <i>psi</i>.</para>
       <h4>STGM_READ</h4>
       <para>The <see cref="IShellItem" /> is read-only.</para>
       <h4>STGM_READWRITE</h4>
       <para>The <see cref="IShellItem" /> is read/write accessible.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If the <see cref="IShellItem" /> cannot be accessed, this method returns an appropriate error code.</para>
-      <para>A handler instance should be initialized only once in its lifetime. Attempts by the calling application to reinitialize the handler result in the error <code>HRESULT_FROM_WIN32(ERROR_ALREADY_INITIALIZED)</code>.</para>
-    </remarks>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IInitializeWithItem">
-    <summary>
-      <para>Exposes a method used to initialize a handler, such as a property handler, thumbnail handler, or preview handler, with an <see cref="IShellItem" />.</para>
-    </summary>
-    <remarks>
-      <para>Whenever possible, it is recommended that initialization be done through a stream using <see cref="IInitializeWithStream" />. Benefits of this include increased security and stability.</para>
-    </remarks>
+    <summary>Exposes a method used to initialize a handler, such as a property handler, thumbnail handler, or preview handler, with an <see cref="IShellItem" />.</summary>
   </member>
 </doc>

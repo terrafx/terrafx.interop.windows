@@ -3,26 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_PRESENT_OPTIONS">
-    <summary>
-      <para>Describes how a render target behaves when it presents its content. This enumeration allows a bitwise combination of its member values.</para>
-    </summary>
+    <summary>Describes how a render target behaves when it presents its content. This enumeration allows a bitwise combination of its member values.</summary>
   </member>
   <member name="D2D1_PRESENT_OPTIONS.D2D1_PRESENT_OPTIONS_NONE">
-    <summary>
-      <para>The render target waits until the display refreshes to present and discards the frame upon presenting.</para>
-    </summary>
+    <summary>The render target waits until the display refreshes to present and discards the frame upon presenting.</summary>
   </member>
   <member name="D2D1_PRESENT_OPTIONS.D2D1_PRESENT_OPTIONS_RETAIN_CONTENTS">
-    <summary>
-      <para>The render target does not discard the frame upon presenting.</para>
-    </summary>
+    <summary>The render target does not discard the frame upon presenting.</summary>
   </member>
   <member name="D2D1_PRESENT_OPTIONS.D2D1_PRESENT_OPTIONS_IMMEDIATELY">
-    <summary>
-      <para>The render target does not wait until the display refreshes to present.</para>
-    </summary>
+    <summary>The render target does not wait until the display refreshes to present.</summary>
   </member>
-  <member name="D2D1_PRESENT_OPTIONS.D2D1_PRESENT_OPTIONS_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_PRESENT_OPTIONS.D2D1_PRESENT_OPTIONS_FORCE_DWORD"></member>
 </doc>

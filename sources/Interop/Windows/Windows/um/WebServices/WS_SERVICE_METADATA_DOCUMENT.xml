@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_SERVICE_METADATA_DOCUMENT">
-    <summary>
-      <para>Specifies the individual documents that make up the service metadata.</para>
-    </summary>
+    <summary>Specifies the individual documents that make up the service metadata.</summary>
   </member>
   <member name="WS_SERVICE_METADATA_DOCUMENT.content">
-    <summary>
-      <para>A <see cref="WS_XML_STRING" />* representing the specific  XML Schema, WSDL or a Policy document.
-The service model expects this to be valid for the lifetime of the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-service-host">WS_SERVICE_HOST</a>.</para>
-    </summary>
+    <summary>A <see cref="WS_XML_STRING" />* representing the specific XML Schema, WSDL or a Policy document. The service model expects this to be valid for the lifetime of the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-service-host">WS_SERVICE_HOST</a>.</summary>
   </member>
   <member name="WS_SERVICE_METADATA_DOCUMENT.name">
     <summary>
-      <para>The name of the document which will be suffixed to the URL path on which this document is serviced for HTTP GET support
-for metadata retrieval. Note that this can be set to <b>NULL</b> if the application is only using Ws-MetadataExchange 1.1 for servicing
-metadata request.</para>
-      <para>See <see cref="WS_SERVICE_ENDPOINT_PROPERTY_METADATA_EXCHANGE_TYPE" /> service endpoint property to see how to enable HTTP GET support or
-WS-MetadataExchange 1.1 for servicing metadata request.</para>
+      <para>The name of the document which will be suffixed to the URL path on which this document is serviced for HTTP GET support for metadata retrieval. Note that this can be set to <b>NULL</b> if the application is only using Ws-MetadataExchange 1.1 for servicing metadata request.</para>
+      <para>See <see cref="WS_SERVICE_ENDPOINT_PROPERTY_METADATA_EXCHANGE_TYPE" /> service endpoint property to see how to enable HTTP GET support or WS-MetadataExchange 1.1 for servicing metadata request.</para>
     </summary>
   </member>
 </doc>

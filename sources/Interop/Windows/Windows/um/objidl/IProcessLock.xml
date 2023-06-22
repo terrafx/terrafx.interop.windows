@@ -3,21 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IProcessLock.AddRefOnProcess">
-    <summary>
-      <para>Increments the reference count of the process.</para>
-    </summary>
-    <returns>
-      <para>This method returns the new reference count.</para>
-    </returns>
-    <seealso cref="IProcessLock" />
+    <summary>Increments the reference count of the process.</summary>
+    <returns>This method returns the new reference count.</returns>
   </member>
   <member name="IProcessLock.ReleaseRefOnProcess">
-    <summary>
-      <para>Decrements the reference count of the process.</para>
-    </summary>
-    <returns>
-      <para>This method returns the new reference count.</para>
-    </returns>
-    <seealso cref="IProcessLock" />
+    <summary>Decrements the reference count of the process.</summary>
+    <returns>This method returns the new reference count.</returns>
   </member>
 </doc>

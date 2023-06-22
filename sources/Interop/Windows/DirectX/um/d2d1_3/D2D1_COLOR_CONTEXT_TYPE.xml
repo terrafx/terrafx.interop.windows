@@ -3,20 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_COLOR_CONTEXT_TYPE">
-    <summary>
-      <para>Specifies which way a color profile is defined.</para>
-    </summary>
+    <summary>Specifies which way a color profile is defined.</summary>
   </member>
-  <member name="D2D1_COLOR_CONTEXT_TYPE.D2D1_COLOR_CONTEXT_TYPE_ICC">
-    <summary></summary>
-  </member>
-  <member name="D2D1_COLOR_CONTEXT_TYPE.D2D1_COLOR_CONTEXT_TYPE_SIMPLE">
-    <summary></summary>
-  </member>
-  <member name="D2D1_COLOR_CONTEXT_TYPE.D2D1_COLOR_CONTEXT_TYPE_DXGI">
-    <summary></summary>
-  </member>
-  <member name="D2D1_COLOR_CONTEXT_TYPE.D2D1_COLOR_CONTEXT_TYPE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_COLOR_CONTEXT_TYPE.D2D1_COLOR_CONTEXT_TYPE_ICC"></member>
+  <member name="D2D1_COLOR_CONTEXT_TYPE.D2D1_COLOR_CONTEXT_TYPE_SIMPLE"></member>
+  <member name="D2D1_COLOR_CONTEXT_TYPE.D2D1_COLOR_CONTEXT_TYPE_DXGI"></member>
+  <member name="D2D1_COLOR_CONTEXT_TYPE.D2D1_COLOR_CONTEXT_TYPE_FORCE_DWORD"></member>
 </doc>

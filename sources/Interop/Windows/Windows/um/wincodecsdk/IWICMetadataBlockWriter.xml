@@ -3,122 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICMetadataBlockWriter.AddWriter">
-    <summary>
-      <para>Adds a top-level metadata block by adding a <see cref="IWICMetadataWriter" /> for it.</para>
-    </summary>
-    <param name="pIMetadataWriter">
-      <para>Type: <b><see cref="IWICMetadataWriter" />*</b></para>
-      <para>A pointer to the metadata writer to add to the image.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-howtowriteacodec">How to Write a WIC-Enabled CODEC</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-jpegmetadataencoding">How-to: Re-encode a JPEG Image with Metadata</seealso>
-    <seealso cref="IWICMetadataBlockWriter" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+    <summary>Adds a top-level metadata block by adding a <see cref="IWICMetadataWriter" /> for it.</summary>
+    <param name="pIMetadataWriter">A pointer to the metadata writer to add to the image.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICMetadataBlockWriter.GetWriterByIndex">
-    <summary>
-      <para>Retrieves the <see cref="IWICMetadataWriter" /> that resides at the specified index.</para>
-    </summary>
-    <param name="nIndex">
-      <para>Type: <b>UINT</b></para>
-      <para>The index of the metadata writer to be retrieved. This index is zero-based.</para>
-    </param>
-    <param name="ppIMetadataWriter">
-      <para>Type: <b><see cref="IWICMetadataWriter" />**</b></para>
-      <para>When this method returns, contains a pointer to the metadata writer that resides at the specified index.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-howtowriteacodec">How to Write a WIC-Enabled CODEC</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-jpegmetadataencoding">How-to: Re-encode a JPEG Image with Metadata</seealso>
-    <seealso cref="IWICMetadataBlockWriter" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+    <summary>Retrieves the <see cref="IWICMetadataWriter" /> that resides at the specified index.</summary>
+    <param name="nIndex">The index of the metadata writer to be retrieved. This index is zero-based.</param>
+    <param name="ppIMetadataWriter">When this method returns, contains a pointer to the metadata writer that resides at the specified index.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICMetadataBlockWriter.InitializeFromBlockReader">
-    <summary>
-      <para>Initializes an <see cref="IWICMetadataBlockWriter" /> from the given <see cref="IWICMetadataBlockReader" />. This will prepopulate the metadata block writer with all the metadata in the metadata block reader.</para>
-    </summary>
-    <param name="pIMDBlockReader">
-      <para>Type: <b><see cref="IWICMetadataBlockReader" />*</b></para>
-      <para>Pointer to the <see cref="IWICMetadataBlockReader" /> used to initialize the block writer.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-howtowriteacodec">How to Write a WIC-Enabled CODEC</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-jpegmetadataencoding">How-to: Re-encode a JPEG Image with Metadata</seealso>
-    <seealso cref="IWICMetadataBlockWriter" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+    <summary>Initializes an <see cref="IWICMetadataBlockWriter" /> from the given <see cref="IWICMetadataBlockReader" />. This will prepopulate the metadata block writer with all the metadata in the metadata block reader.</summary>
+    <param name="pIMDBlockReader">Pointer to the <see cref="IWICMetadataBlockReader" /> used to initialize the block writer.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICMetadataBlockWriter.RemoveWriterByIndex">
-    <summary>
-      <para>Removes the metadata writer from the specified index location.</para>
-    </summary>
-    <param name="nIndex">
-      <para>Type: <b>UINT</b></para>
-      <para>The index of the metadata writer to remove.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>After removing a metadata writer, remaining metadata writers can be expected to move up to occupy the vacated location. Indexes for remaining metadata items as well as the count will change.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-howtowriteacodec">How to Write a WIC-Enabled CODEC</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-jpegmetadataencoding">How-to: Re-encode a JPEG Image with Metadata</seealso>
-    <seealso cref="IWICMetadataBlockWriter" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+    <summary>Removes the metadata writer from the specified index location.</summary>
+    <param name="nIndex">The index of the metadata writer to remove.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICMetadataBlockWriter.SetWriterByIndex">
-    <summary>
-      <para>Replaces the metadata writer at the specified index location.</para>
-    </summary>
-    <param name="nIndex">
-      <para>Type: <b>UINT</b></para>
-      <para>The index position at which to place the metadata writer. This index is zero-based.</para>
-    </param>
-    <param name="pIMetadataWriter">
-      <para>Type: <b><see cref="IWICMetadataWriter" />*</b></para>
-      <para>A pointer to the <see cref="IWICMetadataWriter" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Typically, the current metadata writer at the specified index will be replaced with the new writer. However, the App0 metadata writer cannot be replaced within a JPEG stream.</para>
-      <para>This function cannot be used to add metadata writers. If no metadata writer exists at the specified index, the function will fail.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-howtowriteacodec">How to Write a WIC-Enabled CODEC</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-jpegmetadataencoding">How-to: Re-encode a JPEG Image with Metadata</seealso>
-    <seealso cref="IWICMetadataBlockWriter" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+    <summary>Replaces the metadata writer at the specified index location.</summary>
+    <param name="nIndex">The index position at which to place the metadata writer. This index is zero-based.</param>
+    <param name="pIMetadataWriter">A pointer to the <see cref="IWICMetadataWriter" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICMetadataBlockWriter">
-    <summary>
-      <para>Exposes methods that enable the encoding of metadata. This interface is implemented by the decoder and its image frames.</para>
-    </summary>
-    <remarks>
-      <para>When the encoder is told to commit, it goes through each metadata writer and serializes the metadata content into the encoding stream.
-If the metadata block contains metadata important to the integrity of the file, such as the image width or height or other intrinsic information about the image, the encoder must set the critical metadata items prior to serializing the metadata.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-howtowriteacodec">How to Write a WIC-Enabled CODEC</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-jpegmetadataencoding">How-to: Re-encode a JPEG Image with Metadata</seealso>
-    <seealso cref="IWICMetadataBlockReader" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+    <summary>Exposes methods that enable the encoding of metadata. This interface is implemented by the decoder and its image frames.</summary>
   </member>
 </doc>

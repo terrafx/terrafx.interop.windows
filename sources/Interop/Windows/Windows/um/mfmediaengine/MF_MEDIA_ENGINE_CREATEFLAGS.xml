@@ -3,39 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_MEDIA_ENGINE_CREATEFLAGS">
-    <summary>
-      <para>Contains flags for the <see cref="IMFMediaEngineClassFactory.CreateInstance" />  method.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Contains flags for the <see cref="IMFMediaEngineClassFactory.CreateInstance" /> method.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_CREATEFLAGS.MF_MEDIA_ENGINE_AUDIOONLY">
-    <summary>
-      <para>The Media Engine will play audio only. It will not play video.</para>
-    </summary>
+    <summary>The Media Engine will play audio only. It will not play video.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_CREATEFLAGS.MF_MEDIA_ENGINE_WAITFORSTABLE_STATE">
-    <summary>
-      <para>The Media Engine's resource loading algorithm waits for the application to signal the thread that loads the resource. For more information, see the remarks for <b>MF_MEDIA_ENGINE_EVENT_NOTIFYSTABLESTATE</b> in the <see cref="MF_MEDIA_ENGINE_EVENT" /> enumeration.</para>
-    </summary>
+    <summary>The Media Engine's resource loading algorithm waits for the application to signal the thread that loads the resource. For more information, see the remarks for <b>MF_MEDIA_ENGINE_EVENT_NOTIFYSTABLESTATE</b> in the <see cref="MF_MEDIA_ENGINE_EVENT" /> enumeration.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_CREATEFLAGS.MF_MEDIA_ENGINE_FORCEMUTE">
-    <summary>
-      <para>Always mute the audio.</para>
-    </summary>
+    <summary>Always mute the audio.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_CREATEFLAGS.MF_MEDIA_ENGINE_REAL_TIME_MODE">
-    <summary>
-      <para>Enable low-latency mode in the rendering pipeline. This can be changed at a later time by calling <see cref="IMFMediaEngineEx.SetRealTimeMode" />.</para>
-    </summary>
+    <summary>Enable low-latency mode in the rendering pipeline. This can be changed at a later time by calling <see cref="IMFMediaEngineEx.SetRealTimeMode" />.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_CREATEFLAGS.MF_MEDIA_ENGINE_DISABLE_LOCAL_PLUGINS">
-    <summary>
-      <para>Disable locally registered media plugins. If this flag is set, the Media Engine will not load decoders or other media plugins that the application registered for the local process.</para>
-    </summary>
+    <summary>Disable locally registered media plugins. If this flag is set, the Media Engine will not load decoders or other media plugins that the application registered for the local process.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_CREATEFLAGS.MF_MEDIA_ENGINE_CREATEFLAGS_MASK">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
 </doc>

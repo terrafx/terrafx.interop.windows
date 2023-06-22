@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_QC_STATEMENT">
-    <summary>
-      <para>The <b>CERT_QC_STATEMENT</b> structure represents a single statement in a sequence of one or more statements for inclusion in a  Qualified Certificate (QC) statements extension. This structure populates the <b>rgStatement</b> member of the <see cref="CERT_QC_STATEMENTS_EXT_INFO" /> structure.</para>
-    </summary>
+    <summary>The <b>CERT_QC_STATEMENT</b> structure represents a single statement in a sequence of one or more statements for inclusion in a Qualified Certificate (QC) statements extension. This structure populates the <b>rgStatement</b> member of the <see cref="CERT_QC_STATEMENTS_EXT_INFO" /> structure.</summary>
   </member>
   <member name="CERT_QC_STATEMENT.pszStatementId">
     <summary>
@@ -16,46 +14,40 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>szOID_QC_EU_COMPLIANCE</b>
-                </description>
-              </item>
-              <item>
-                <description>"0.4.0.1862.1.1"</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>"0.4.0.1862.1.1"</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>European Union</para>
-          </description>
-        </item>
-        <item>
+          <description>European Union</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>szOID_QC_SSCD</b>
-                </description>
-              </item>
-              <item>
-                <description>"0.4.0.1862.1.4"</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>"0.4.0.1862.1.4"</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Secure Signature Creation Device</para>
-          </description>
-        </item>
+          <description>Secure Signature Creation Device</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="CERT_QC_STATEMENT.StatementInfo">
-    <summary>
-      <para>An optional <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> that contains additional information that qualifies the defined statement. The <b>pszStatementId</b> member defines the syntax of this parameter.</para>
-    </summary>
+    <summary>An optional <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> that contains additional information that qualifies the defined statement. The <b>pszStatementId</b> member defines the syntax of this parameter.</summary>
   </member>
 </doc>

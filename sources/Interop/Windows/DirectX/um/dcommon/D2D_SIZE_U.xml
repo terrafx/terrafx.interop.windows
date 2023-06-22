@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D_SIZE_U">
-    <summary>
-      <para>Stores an ordered pair of integers, typically the width and height of a rectangle.</para>
-    </summary>
+    <summary>Stores an ordered pair of integers, typically the width and height of a rectangle.</summary>
   </member>
   <member name="D2D_SIZE_U.width">
-    <summary>
-      <para>Type: <b>UINT32</b></para>
-      <para>The horizontal component of this size.</para>
-    </summary>
+    <summary>The horizontal component of this size.</summary>
   </member>
   <member name="D2D_SIZE_U.height">
-    <summary>
-      <para>Type: <b>UINT32</b></para>
-      <para>The vertical component of this size.</para>
-    </summary>
+    <summary>The vertical component of this size.</summary>
   </member>
 </doc>

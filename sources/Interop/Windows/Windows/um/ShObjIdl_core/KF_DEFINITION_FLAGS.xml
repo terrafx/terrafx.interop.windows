@@ -3,47 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="KF_DEFINITION_FLAGS">
-    <summary>
-      <para>Flags that specify certain known folder behaviors. Used with the <see cref="KNOWNFOLDER_DEFINITION" /> structure.</para>
-    </summary>
-    <remarks>
-      <para>The <b>KF_DEFINITION_FLAGS</b> type is defined in Shobjidl.h as shown here.</para>
-      <code>typedef DWORD KF_DEFINITION_FLAGS;
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
+    <summary>Flags that specify certain known folder behaviors. Used with the <see cref="KNOWNFOLDER_DEFINITION" /> structure.</summary>
   </member>
   <member name="KF_DEFINITION_FLAGS.KFDF_LOCAL_REDIRECT_ONLY">
-    <summary>
-      <para>Prevent a <see cref="per-user" /> known folder from being redirected to a network location. Note that if the known folder has been flagged with KFDF_LOCAL_REDIRECT_ONLY but it is a subfolder of a known folder that is redirected to a network location, this subfolder is redirected also.</para>
-    </summary>
+    <summary>Prevent a <see cref="per-user" /> known folder from being redirected to a network location. Note that if the known folder has been flagged with KFDF_LOCAL_REDIRECT_ONLY but it is a subfolder of a known folder that is redirected to a network location, this subfolder is redirected also.</summary>
   </member>
   <member name="KF_DEFINITION_FLAGS.KFDF_ROAMABLE">
-    <summary>
-      <para>Can be roamed through a PC-to-PC synchronization.</para>
-    </summary>
+    <summary>Can be roamed through a PC-to-PC synchronization.</summary>
   </member>
   <member name="KF_DEFINITION_FLAGS.KFDF_PRECREATE">
-    <summary>
-      <para>Create the folder when the user first logs on. Normally a known folder is not created until it is first called. At that time, an API such as <see cref="SHCreateItemInKnownFolder" /> or <see cref="IKnownFolder.GetShellItem" /> is called with the <see cref="KF_FLAG_CREATE" /> flag. However, some known folders need to exist immediately. An example is those known folders under %USERPROFILE%, which must exist to provide a proper view. In those cases, KFDF_PRECREATE is set and Windows Explorer calls the creation API during its user initialization.</para>
-    </summary>
+    <summary>Create the folder when the user first logs on. Normally a known folder is not created until it is first called. At that time, an API such as <see cref="SHCreateItemInKnownFolder" /> or <see cref="IKnownFolder.GetShellItem" /> is called with the <see cref="KF_FLAG_CREATE" /> flag. However, some known folders need to exist immediately. An example is those known folders under %USERPROFILE%, which must exist to provide a proper view. In those cases, KFDF_PRECREATE is set and Windows Explorer calls the creation API during its user initialization.</summary>
   </member>
   <member name="KF_DEFINITION_FLAGS.KFDF_STREAM">
     <summary>
-      <para>
-        <b>Introduced in Windows 7</b>. The known folder is a file rather than a folder.</para>
-    </summary>
+      <b>Introduced in Windows 7</b>. The known folder is a file rather than a folder.</summary>
   </member>
   <member name="KF_DEFINITION_FLAGS.KFDF_PUBLISHEXPANDEDPATH">
     <summary>
-      <para>
-        <b>Introduced in Windows 7</b>. The full path of the known folder, with any environment variables fully expanded, is stored in the registry under HKEY_CURRENT_USER.</para>
-    </summary>
+      <b>Introduced in Windows 7</b>. The full path of the known folder, with any environment variables fully expanded, is stored in the registry under HKEY_CURRENT_USER.</summary>
   </member>
   <member name="KF_DEFINITION_FLAGS.KFDF_NO_REDIRECT_UI">
     <summary>
-      <para>
-        <b>Introduced in Windows 8.1</b>. Prevent showing the <b>Locations</b> tab in the property dialog of the known folder.</para>
-    </summary>
+      <b>Introduced in Windows 8.1</b>. Prevent showing the <b>Locations</b> tab in the property dialog of the known folder.</summary>
   </member>
 </doc>

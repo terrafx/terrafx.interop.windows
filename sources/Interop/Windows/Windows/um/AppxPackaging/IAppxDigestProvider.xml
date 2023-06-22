@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxDigestProvider.GetDigest">
+    <summary>Retrieves the digest representation of the app packaging object managed by the associated interface.</summary>
+    <param name="digest">Receives a pointer to an LPWSTR containing the digest representation of the app packaging object object managed by the associated interface.</param>
+    <returns>Returns <b>S_OK</b> on success.</returns>
+  </member>
+  <member name="IAppxDigestProvider">
+    <summary>Provides APIs for retrieving the digest string representation of an app packaging object.</summary>
+  </member>
+</doc>

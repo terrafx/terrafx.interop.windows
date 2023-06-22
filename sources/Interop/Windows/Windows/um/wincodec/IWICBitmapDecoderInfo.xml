@@ -3,67 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICBitmapDecoderInfo.CreateInstance">
-    <summary>
-      <para>Creates a new <see cref="IWICBitmapDecoder" /> instance.</para>
-    </summary>
-    <param name="ppIBitmapDecoder">
-      <para>Type: <b><see cref="IWICBitmapDecoder" />**</b></para>
-      <para>A pointer that receives a pointer to a new instance of the <see cref="IWICBitmapDecoder" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Creates a new <see cref="IWICBitmapDecoder" /> instance.</summary>
+    <param name="ppIBitmapDecoder">A pointer that receives a pointer to a new instance of the <see cref="IWICBitmapDecoder" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapDecoderInfo.GetPatterns">
-    <summary>
-      <para>Retrieves the file pattern signatures supported by the decoder.</para>
-    </summary>
-    <param name="cbSizePatterns">
-      <para>Type: <b>UINT</b></para>
-      <para>The array size of the <i>pPatterns</i> array.</para>
-    </param>
-    <param name="pPatterns">
-      <para>Type: <b><see cref="WICBitmapPattern" />*</b></para>
-      <para>Receives a list of <see cref="WICBitmapPattern" /> objects supported by the decoder.</para>
-    </param>
-    <param name="pcPatterns">
-      <para>Type: <b>UINT*</b></para>
-      <para>Receives the number of patterns the decoder supports.</para>
-    </param>
-    <param name="pcbPatternsActual">
-      <para>Type: <b>UINT*</b></para>
-      <para>Receives the actual buffer size needed to retrieve all pattern signatures supported by the decoder.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>To retrieve all pattern signatures, this method should first be called with <i>pPatterns</i> set to <code>NULL</code> to retrieve the actual buffer size needed through <i>pcbPatternsActual</i>.
-Once the needed buffer size is known, allocate a buffer of the needed size and call <b>GetPatterns</b> again with the allocated buffer.</para>
-    </remarks>
+    <summary>Retrieves the file pattern signatures supported by the decoder.</summary>
+    <param name="cbSizePatterns">The array size of the <i>pPatterns</i> array.</param>
+    <param name="pPatterns">Receives a list of <see cref="WICBitmapPattern" /> objects supported by the decoder.</param>
+    <param name="pcPatterns">Receives the number of patterns the decoder supports.</param>
+    <param name="pcbPatternsActual">Receives the actual buffer size needed to retrieve all pattern signatures supported by the decoder.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapDecoderInfo.MatchesPattern">
-    <summary>
-      <para>Retrieves a value that indicates whether the codec recognizes the pattern within a specified stream.</para>
-    </summary>
-    <param name="pIStream">
-      <para>Type: <b><see cref="IStream" />*</b></para>
-      <para>The stream to pattern match within.</para>
-    </param>
-    <param name="pfMatches">
-      <para>Type: <b>BOOL*</b></para>
-      <para>A pointer that receives <b>TRUE</b> if the patterns match; otherwise, <b>FALSE</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Retrieves a value that indicates whether the codec recognizes the pattern within a specified stream.</summary>
+    <param name="pIStream">The stream to pattern match within.</param>
+    <param name="pfMatches">A pointer that receives <b>TRUE</b> if the patterns match; otherwise, <b>FALSE</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapDecoderInfo">
-    <summary>
-      <para>Exposes methods that provide information about a decoder.</para>
-    </summary>
+    <summary>Exposes methods that provide information about a decoder.</summary>
   </member>
 </doc>

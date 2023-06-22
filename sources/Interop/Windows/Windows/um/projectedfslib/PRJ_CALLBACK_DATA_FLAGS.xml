@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PRJ_CALLBACK_DATA_FLAGS">
-    <summary>
-      <para>Flags controlling what is returned in the enumeration.</para>
-    </summary>
+    <summary>Flags controlling what is returned in the enumeration.</summary>
   </member>
   <member name="PRJ_CALLBACK_DATA_FLAGS.PRJ_CB_DATA_FLAG_ENUM_RESTART_SCAN">
-    <summary>
-      <para>Start the scan at the first entry in the directory.</para>
-    </summary>
+    <summary>Start the scan at the first entry in the directory.</summary>
   </member>
   <member name="PRJ_CALLBACK_DATA_FLAGS.PRJ_CB_DATA_FLAG_ENUM_RETURN_SINGLE_ENTRY">
-    <summary>
-      <para>Return only one entry from the enumeration.</para>
-    </summary>
+    <summary>Return only one entry from the enumeration.</summary>
   </member>
 </doc>

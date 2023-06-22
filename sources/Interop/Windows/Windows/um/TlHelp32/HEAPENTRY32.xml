@@ -3,33 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="HEAPENTRY32">
-    <summary>
-      <para>Describes one entry (block) of a heap that is being examined.</para>
-    </summary>
-    <seealso cref="Heap32First" />
-    <seealso cref="Heap32Next" />
+    <summary>Describes one entry (block) of a heap that is being examined.</summary>
   </member>
   <member name="HEAPENTRY32.dwSize">
-    <summary>
-      <para>The size of the structure, in bytes. Before calling the
-<see cref="Heap32First" /> function, set this member to <code>sizeof(HEAPENTRY32)</code>. If you do not initialize <b>dwSize</b>,
-<b>Heap32First</b> fails.</para>
-    </summary>
+    <summary>The size of the structure, in bytes. Before calling the<see cref="Heap32First" /> function, set this member to <code>sizeof(HEAPENTRY32)</code>. If you do not initialize <b>dwSize</b>,<b>Heap32First</b> fails.</summary>
   </member>
   <member name="HEAPENTRY32.hHandle">
-    <summary>
-      <para>A handle to the heap block.</para>
-    </summary>
+    <summary>A handle to the heap block.</summary>
   </member>
   <member name="HEAPENTRY32.dwAddress">
-    <summary>
-      <para>The linear address of the start of the block.</para>
-    </summary>
+    <summary>The linear address of the start of the block.</summary>
   </member>
   <member name="HEAPENTRY32.dwBlockSize">
-    <summary>
-      <para>The size of the heap block, in bytes.</para>
-    </summary>
+    <summary>The size of the heap block, in bytes.</summary>
   </member>
   <member name="HEAPENTRY32.dwFlags">
     <summary>
@@ -39,51 +25,55 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>LF32_FIXED</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LF32_FIXED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The memory block has a fixed (unmovable) location.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The memory block has a fixed (unmovable) location.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LF32_FREE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The memory block is not used.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>LF32_FREE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LF32_MOVEABLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The memory block is not used.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>LF32_MOVEABLE</b>
-          </description>
-          <description>
-            <para>The memory block location can be moved.</para>
-          </description>
-        </item>
+          <description>The memory block location can be moved.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="HEAPENTRY32.dwLockCount">
-    <summary>
-      <para>This member is no longer used and is always set to zero.</para>
-    </summary>
+    <summary>This member is no longer used and is always set to zero.</summary>
   </member>
   <member name="HEAPENTRY32.dwResvd">
-    <summary>
-      <para>Reserved; do not use or alter.</para>
-    </summary>
+    <summary>Reserved; do not use or alter.</summary>
   </member>
   <member name="HEAPENTRY32.th32ProcessID">
-    <summary>
-      <para>The identifier of the process that uses the heap.</para>
-    </summary>
+    <summary>The identifier of the process that uses the heap.</summary>
   </member>
   <member name="HEAPENTRY32.th32HeapID">
-    <summary>
-      <para>The heap identifier. This is not a handle, and has meaning only to the tool help functions.</para>
-    </summary>
+    <summary>The heap identifier. This is not a handle, and has meaning only to the tool help functions.</summary>
   </member>
 </doc>

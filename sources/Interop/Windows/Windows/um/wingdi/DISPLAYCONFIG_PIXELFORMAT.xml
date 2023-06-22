@@ -3,40 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DISPLAYCONFIG_PIXELFORMAT">
-    <summary>
-      <para>The DISPLAYCONFIG_PIXELFORMAT enumeration specifies pixel format in various bits per pixel (BPP) values.</para>
-    </summary>
-    <seealso cref="QueryDisplayConfig" />
-    <seealso cref="SetDisplayConfig" />
+    <summary>The DISPLAYCONFIG_PIXELFORMAT enumeration specifies pixel format in various bits per pixel (BPP) values.</summary>
   </member>
   <member name="DISPLAYCONFIG_PIXELFORMAT.DISPLAYCONFIG_PIXELFORMAT_8BPP">
-    <summary>
-      <para>Indicates 8 BPP format.</para>
-    </summary>
+    <summary>Indicates 8 BPP format.</summary>
   </member>
   <member name="DISPLAYCONFIG_PIXELFORMAT.DISPLAYCONFIG_PIXELFORMAT_16BPP">
-    <summary>
-      <para>Indicates 16 BPP format.</para>
-    </summary>
+    <summary>Indicates 16 BPP format.</summary>
   </member>
   <member name="DISPLAYCONFIG_PIXELFORMAT.DISPLAYCONFIG_PIXELFORMAT_24BPP">
-    <summary>
-      <para>Indicates 24 BPP format.</para>
-    </summary>
+    <summary>Indicates 24 BPP format.</summary>
   </member>
   <member name="DISPLAYCONFIG_PIXELFORMAT.DISPLAYCONFIG_PIXELFORMAT_32BPP">
-    <summary>
-      <para>Indicates 32 BPP format.</para>
-    </summary>
+    <summary>Indicates 32 BPP format.</summary>
   </member>
   <member name="DISPLAYCONFIG_PIXELFORMAT.DISPLAYCONFIG_PIXELFORMAT_NONGDI">
-    <summary>
-      <para>Indicates that the current display is not an 8, 16, 24, or 32 BPP GDI desktop mode. For example, a call to the <see cref="QueryDisplayConfig" /> function returns DISPLAYCONFIG_PIXELFORMAT_NONGDI if a DirectX application previously set the desktop to A2R10G10B10 format. A call to the <see cref="SetDisplayConfig" /> function fails if any pixel formats for active paths are set to DISPLAYCONFIG_PIXELFORMAT_NONGDI.</para>
-    </summary>
+    <summary>Indicates that the current display is not an 8, 16, 24, or 32 BPP GDI desktop mode. For example, a call to the <see cref="QueryDisplayConfig" /> function returns DISPLAYCONFIG_PIXELFORMAT_NONGDI if a DirectX application previously set the desktop to A2R10G10B10 format. A call to the <see cref="SetDisplayConfig" /> function fails if any pixel formats for active paths are set to DISPLAYCONFIG_PIXELFORMAT_NONGDI.</summary>
   </member>
   <member name="DISPLAYCONFIG_PIXELFORMAT.DISPLAYCONFIG_PIXELFORMAT_FORCE_UINT32">
-    <summary>
-      <para>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. You should not use this value.</para>
-    </summary>
+    <summary>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. You should not use this value.</summary>
   </member>
 </doc>

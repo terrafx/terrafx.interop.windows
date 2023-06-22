@@ -3,40 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_BLEND_MODE">
-    <summary>
-      <para>The blend mode used for the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/blend">Blend effect</a>.</para>
-    </summary>
+    <summary>The blend mode used for the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/blend">Blend effect</a>.</summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_MULTIPLY">
     <summary>
       <para>Basic blend formula for alpha only.</para>
-      <para>
-        <img alt="Mathematical formula for a multiply effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_multiply_1.png" />
-      </para>
+      <img alt="Mathematical formula for a multiply effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_multiply_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_SCREEN">
     <summary>
       <para>Basic blend formula for alpha only.</para>
-      <para>
-        <img alt="Mathematical formula for a screen effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_screen_1.png" />
-      </para>
+      <img alt="Mathematical formula for a screen effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_screen_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_DARKEN">
     <summary>
       <para>Basic blend formula for alpha only.</para>
-      <para>
-        <img alt="mathematical formula for a darken effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_darken_1.png" />
-      </para>
+      <img alt="mathematical formula for a darken effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_darken_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_LIGHTEN">
     <summary>
       <para>Basic blend formula for alpha only.</para>
-      <para>
-        <img alt="Mathematical formula for a lighten effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_lighten_1.png" />
-      </para>
+      <img alt="Mathematical formula for a lighten effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_lighten_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_DISSOLVE">
@@ -50,172 +40,128 @@
           <description>A deterministic pseudo-random number generator rand(XY) based on seed coordinate XY, with unbiased distribution of values from [0, 1]</description>
         </item>
       </list>
-      <img alt="Mathematical formula for a dissolve blend effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_dissolve_1.png" />
+      <img alt="Mathematical formula for a dissolve blend effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_dissolve_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_COLOR_BURN">
     <summary>
       <para>Basic blend formulas with <i>f</i>(F<sub>RGB</sub>, B<sub>RGB</sub>) =</para>
-      <para>
-        <img alt="Mathematical formula for a coor burn effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_colorburn_1.png" />
-      </para>
+      <img alt="Mathematical formula for a coor burn effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_colorburn_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_LINEAR_BURN">
     <summary>
       <para>Basic blend formulas with <i>f</i>(F<sub>RGB</sub>, B<sub>RGB</sub>) =</para>
-      <para>
-        <img alt="Mathematical formula for a linear burn effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_linearburn_1.png" />
-      </para>
+      <img alt="Mathematical formula for a linear burn effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_linearburn_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_DARKER_COLOR">
     <summary>
       <para>Basic blend formula for alpha only.</para>
-      <para>
-        <img alt="Mathematical formula for a darken color effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_darkencolor_1.png" />
-      </para>
+      <img alt="Mathematical formula for a darken color effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_darkencolor_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_LIGHTER_COLOR">
     <summary>
       <para>Basic blend formula for alpha only.</para>
-      <para>
-        <img alt="Mathematical formula for a lighter color effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_lightercolor_1.png" />
-      </para>
+      <img alt="Mathematical formula for a lighter color effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_lightercolor_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_COLOR_DODGE">
     <summary>
       <para>Basic blend formulas with <i>f</i>(F<sub>RGB</sub>, B<sub>RGB</sub>) =</para>
-      <para>
-        <img alt="Mathematical formula for a color dodge effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_colordodge_1.png" />
-      </para>
+      <img alt="Mathematical formula for a color dodge effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_colordodge_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_LINEAR_DODGE">
     <summary>
       <para>Basic blend formulas with <i>f</i>(F<sub>RGB</sub>, B<sub>RGB</sub>) =</para>
-      <para>
-        <img alt="Mathematical formula for a linear dodge effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_lineardodge_1.png" />
-      </para>
+      <img alt="Mathematical formula for a linear dodge effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_lineardodge_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_OVERLAY">
     <summary>
       <para>Basic blend formulas with <i>f</i>(F<sub>RGB</sub>, B<sub>RGB</sub>) =</para>
-      <para>
-        <img alt="Mathematical formula for an overlay effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_overlay_1.png" />
-      </para>
+      <img alt="Mathematical formula for an overlay effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_overlay_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_SOFT_LIGHT">
     <summary>
       <para>Basic blend formulas with <i>f</i>(F<sub>RGB</sub>, B<sub>RGB</sub>) =</para>
-      <para>
-        <img alt="Mathematical formula for a soft light effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_softlight_1.png" />
-      </para>
+      <img alt="Mathematical formula for a soft light effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_softlight_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_HARD_LIGHT">
     <summary>
       <para>Basic blend formulas with <i>f</i>(F<sub>RGB</sub>, B<sub>RGB</sub>) =</para>
-      <para>
-        <img alt="Mathematical formula for a hard light effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_hardlight_1.png" />
-      </para>
+      <img alt="Mathematical formula for a hard light effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_hardlight_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_VIVID_LIGHT">
     <summary>
       <para>Basic blend formulas with <i>f</i>(F<sub>RGB</sub>, B<sub>RGB</sub>) =</para>
-      <para>
-        <img alt="Mathematical formula for a vivid light effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_vividlight_1.png" />
-      </para>
+      <img alt="Mathematical formula for a vivid light effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_vividlight_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_LINEAR_LIGHT">
     <summary>
       <para>Basic blend formulas with <i>f</i>(F<sub>RGB</sub>, B<sub>RGB</sub>) =</para>
-      <para>
-        <img alt="Mathematical formula for a linear light effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_linearlight_1.png" />
-      </para>
+      <img alt="Mathematical formula for a linear light effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_linearlight_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_PIN_LIGHT">
     <summary>
       <para>Basic blend formulas with <i>f</i>(F<sub>RGB</sub>, B<sub>RGB</sub>) =</para>
-      <para>
-        <img alt="Mathematical formula for a pin light effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_pinlight_1.png" />
-      </para>
+      <img alt="Mathematical formula for a pin light effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_pinlight_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_HARD_MIX">
     <summary>
       <para>Basic blend formulas with <i>f</i>(F<sub>RGB</sub>, B<sub>RGB</sub>) =</para>
-      <para>
-        <img alt="Mathematical formula for a hard mix effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_hardmix_1.png" />
-      </para>
+      <img alt="Mathematical formula for a hard mix effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_hardmix_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_DIFFERENCE">
-    <summary>
-      <para>Basic blend formulas with <i>f</i>(F<sub>RGB</sub>, B<sub>RGB</sub>) = abs(F<sub>RGB</sub> - B<sub>RGB</sub>)</para>
-    </summary>
+    <summary>Basic blend formulas with <i>f</i>(F<sub>RGB</sub>, B<sub>RGB</sub>) = abs(F<sub>RGB</sub> - B<sub>RGB</sub>)</summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_EXCLUSION">
-    <summary>
-      <para>Basic blend formulas with <i>f</i>(F<sub>RGB</sub>, B<sub>RGB</sub>) = F<sub>RGB</sub> + B<sub>RGB</sub> – 2 * F<sub>RGB</sub> * B<sub>RGB</sub></para>
-    </summary>
+    <summary>Basic blend formulas with <i>f</i>(F<sub>RGB</sub>, B<sub>RGB</sub>) = F<sub>RGB</sub> + B<sub>RGB</sub> – 2 * F<sub>RGB</sub> * B<sub>RGB</sub></summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_HUE">
     <summary>
       <para>Basic blend formula for alpha only.</para>
-      <para>
-        <img alt="Mathematical formula for a hue blend effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_hue_1.png" />
-      </para>
+      <img alt="Mathematical formula for a hue blend effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_hue_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_SATURATION">
     <summary>
       <para>Basic blend formula for alpha only.</para>
-      <para>
-        <img alt="Mathematical formula for a saturation blend effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_saturation_1.png" />
-      </para>
+      <img alt="Mathematical formula for a saturation blend effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_saturation_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_COLOR">
     <summary>
       <para>Basic blend formula for alpha only.</para>
-      <para>
-        <img alt="Mathematical formula for a color blend effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_color_1.png" />
-      </para>
+      <img alt="Mathematical formula for a color blend effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_color_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_LUMINOSITY">
     <summary>
       <para>Basic blend formula for alpha only.</para>
-      <para>
-        <img alt="Mathematical formula for a luminosity blend effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_luminosity_1.png" />
-      </para>
+      <img alt="Mathematical formula for a luminosity blend effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_luminosity_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_SUBTRACT">
     <summary>
       <para>Basic blend formula for alpha only.</para>
-      <para>
-        <img alt="Mathematical formula for a subtract blend effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_subtract_1.png" />
-      </para>
+      <img alt="Mathematical formula for a subtract blend effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_subtract_1.png" />
     </summary>
   </member>
   <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_DIVISION">
     <summary>
       <para>Basic blend formula for alpha only.</para>
-      <para>
-        <img alt="Mathematical formula for a division blend effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effectsmages/blend_mode_division_1.png" />
-      </para>
+      <img alt="Mathematical formula for a division blend effect." src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/blend_mode_division_1.png" />
     </summary>
   </member>
-  <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_FORCE_DWORD"></member>
 </doc>

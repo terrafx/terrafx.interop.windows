@@ -3,27 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CMINVOKECOMMANDINFOEX">
-    <summary>
-      <para>Contains extended information about a shortcut menu command. This structure is an extended version of <see cref="CMINVOKECOMMANDINFO" /> that allows the use of Unicode values.</para>
-    </summary>
-    <remarks>
-      <para>Although the <see cref="IContextMenu.InvokeCommand" /> declaration specifies a <see cref="CMINVOKECOMMANDINFO" /> structure for the <i>pici</i> parameter, it can also accept a <b>CMINVOKECOMMANDINFOEX</b> structure. If you are implementing this method, you must inspect <b>cbSize</b> to determine which structure has been passed.</para>
-      <para>By default, all 16-bit Windows-based applications run as threads in a single, shared VDM. The advantage of running separately is that a crash only terminates the single VDM; any other programs running in distinct VDMs continue to function normally. Also, 16-bit Windows-based applications that are run in separate VDMs have separate input queues. That means that if one application stops responding momentarily, applications in separate VDMs continue to receive input. The disadvantage of running separately is that it takes significantly more memory to do so.</para>
-      <para>
-        <b>CMINVOKECOMMANDINFOEX</b> itself is defined in Shobjidl.h, but you must also include Shellapi.h to have full access to all flags.</para>
-      <para>
-        <b>Note</b>  Prior to Windows Vista, this structure was declared in Shlobj.h.</para>
-    </remarks>
+    <summary>Contains extended information about a shortcut menu command. This structure is an extended version of <see cref="CMINVOKECOMMANDINFO" /> that allows the use of Unicode values.</summary>
   </member>
   <member name="CMINVOKECOMMANDINFOEX.cbSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of this structure, in bytes. This member should be filled in by callers of <see cref="IContextMenu.InvokeCommand" /> and tested by the implementations to know that the structure is a <b>CMINVOKECOMMANDINFOEX</b> structure rather than <see cref="CMINVOKECOMMANDINFO" />.</para>
-    </summary>
+    <summary>The size of this structure, in bytes. This member should be filled in by callers of <see cref="IContextMenu.InvokeCommand" /> and tested by the implementations to know that the structure is a <b>CMINVOKECOMMANDINFOEX</b> structure rather than <see cref="CMINVOKECOMMANDINFO" />.</summary>
   </member>
   <member name="CMINVOKECOMMANDINFOEX.fMask">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>Zero, or one or more of the following flags are set to indicate desired behavior and indicate that other fields in the structure are to be used.</para>
       <h4>CMIC_MASK_HOTKEY</h4>
       <para>The <b>dwHotKey</b> member is valid.</para>
@@ -36,13 +22,13 @@
       <h4>CMIC_MASK_NO_CONSOLE</h4>
       <para>If a shortcut menu handler needs to create a new process, it will normally create a new console. Setting the <b>CMIC_MASK_NO_CONSOLE</b> flag suppresses the creation of a new console.</para>
       <h4>CMIC_MASK_HASLINKNAME</h4>
-      <para>The <b>lpTitle</b> member contains a full path to a shortcut file.  Use in conjunction with <b>CMIC_MASK_HASTITLE</b>.</para>
-      <para>
-        <b>Note</b>  This value is not supported in Windows Vista and later systems.</para>
+      <para>The <b>lpTitle</b> member contains a full path to a shortcut file. Use in conjunction with <b>CMIC_MASK_HASTITLE</b>.</para>
+      <div>
+        <b>Note</b>  This value is not supported in Windows Vista and later systems.</div>
       <h4>CMIC_MASK_HASTITLE</h4>
       <para>The <b>lpTitle</b> member is valid.</para>
-      <para>
-        <b>Note</b>  This value is not supported in Windows Vista and later systems.</para>
+      <div>
+        <b>Note</b>  This value is not supported in Windows Vista and later systems.</div>
       <h4>CMIC_MASK_FLAG_SEP_VDM</h4>
       <para>This flag is valid only when referring to a 16-bit Windows-based application. If set, the application that the shortcut points to runs in a private Virtual DOS Machine (VDM). See Remarks.</para>
       <h4>CMIC_MASK_ASYNCOK</h4>
@@ -51,7 +37,7 @@
       <para>
         <b>Windows Vista and later.</b> The implementation of <see cref="IContextMenu.InvokeCommand" /> should be synchronous, not returning before it is complete. Since this is recommended, calling applications that specify this flag cannot guarantee that this request will be honored if they are not familiar with the implementation of the verb that they are invoking.</para>
       <h4>CMIC_MASK_SHIFT_DOWN</h4>
-      <para>The SHIFT key is pressed.  Use this instead of polling the current state of the keyboard that may have changed since the verb was invoked.</para>
+      <para>The SHIFT key is pressed. Use this instead of polling the current state of the keyboard that may have changed since the verb was invoked.</para>
       <h4>CMIC_MASK_CONTROL_DOWN</h4>
       <para>The CTRL key is pressed. Use this instead of polling the current state of the keyboard that may have changed since the verb was invoked.</para>
       <h4>CMIC_MASK_FLAG_LOG_USAGE</h4>
@@ -63,107 +49,65 @@
     </summary>
   </member>
   <member name="CMINVOKECOMMANDINFOEX.hwnd">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the window that is the owner of the shortcut menu. An extension can also use this handle as the owner of any message boxes or dialog boxes it displays. Callers must specify a legitimate HWND that can be used as the owner window for any UI that may be displayed. Failing to specify an HWND when calling from a UI thread (one with windows already created) will result in reentrancy and possible bugs in the implementation of a <see cref="IContextMenu.InvokeCommand" /> call.</para>
-    </summary>
+    <summary>A handle to the window that is the owner of the shortcut menu. An extension can also use this handle as the owner of any message boxes or dialog boxes it displays. Callers must specify a legitimate HWND that can be used as the owner window for any UI that may be displayed. Failing to specify an HWND when calling from a UI thread (one with windows already created) will result in reentrancy and possible bugs in the implementation of a <see cref="IContextMenu.InvokeCommand" /> call.</summary>
   </member>
   <member name="CMINVOKECOMMANDINFOEX.lpVerb">
     <summary>
-      <para>Type: <b>LPCSTR</b></para>
       <para>The address of a null-terminated string that specifies the language-independent name of the command to carry out. This member is typically a string when a command is being activated by an application. The system provides predefined constant values for the following command strings.</para>
       <list type="table">
         <listheader>
           <description>Constant</description>
           <description>Command string</description>
         </listheader>
-        <item>
+        <listheader>
           <description>CMDSTR_RUNAS</description>
           <description>"RunAs"</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>CMDSTR_PRINT</description>
           <description>"Print"</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>CMDSTR_PREVIEW</description>
           <description>"Preview"</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>CMDSTR_OPEN</description>
           <description>"Open"</description>
-        </item>
-      </list>
-      <para>This is not a fixed set; new canonical verbs can be invented by context menu handlers and applications can invoke them.</para>
-      <para>If a canonical verb exists and a menu handler does not implement the canonical verb, it must return a failure code to enable the next handler to be able to handle this verb. Failing to do this will break functionality in the system including <see cref="ShellExecute" />.</para>
-      <para>Alternatively, rather than a pointer, this parameter can be <see cref="MAKEINTRESOURCE" />(offset) where <i>offset</i> is the menu-identifier offset of the command to carry out. Implementations can use the <see cref="IS_INTRESOURCE" /> macro to detect that this alternative is being employed. The Shell uses this alternative when the user chooses a menu command.</para>
-    </summary>
+        </listheader>
+      </list> <para>This is not a fixed set; new canonical verbs can be invented by context menu handlers and applications can invoke them.</para><para>If a canonical verb exists and a menu handler does not implement the canonical verb, it must return a failure code to enable the next handler to be able to handle this verb. Failing to do this will break functionality in the system including <see cref="ShellExecute" />.</para><para>Alternatively, rather than a pointer, this parameter can be <see cref="MAKEINTRESOURCE" />(offset) where <i>offset</i> is the menu-identifier offset of the command to carry out. Implementations can use the <see cref="IS_INTRESOURCE" /> macro to detect that this alternative is being employed. The Shell uses this alternative when the user chooses a menu command.</para></summary>
   </member>
   <member name="CMINVOKECOMMANDINFOEX.lpParameters">
-    <summary>
-      <para>Type: <b>LPCSTR</b></para>
-      <para>Optional parameters. This member is always <b>NULL</b> for menu items inserted by a Shell extension.</para>
-    </summary>
+    <summary>Optional parameters. This member is always <b>NULL</b> for menu items inserted by a Shell extension.</summary>
   </member>
   <member name="CMINVOKECOMMANDINFOEX.lpDirectory">
-    <summary>
-      <para>Type: <b>LPCSTR</b></para>
-      <para>An optional working directory name. This member is always <b>NULL</b> for menu items inserted by a Shell extension.</para>
-    </summary>
+    <summary>An optional working directory name. This member is always <b>NULL</b> for menu items inserted by a Shell extension.</summary>
   </member>
   <member name="CMINVOKECOMMANDINFOEX.nShow">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>A set of SW_ values to pass to the <see cref="ShowWindow" /> function if the command displays a window or starts an application.</para>
-    </summary>
+    <summary>A set of SW_ values to pass to the <see cref="ShowWindow" /> function if the command displays a window or starts an application.</summary>
   </member>
   <member name="CMINVOKECOMMANDINFOEX.dwHotKey">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>An optional keyboard shortcut to assign to any application activated by the command. If the
-<b>fMask</b> member does not specify <b>CMIC_MASK_HOTKEY</b>, this member is ignored.</para>
-    </summary>
+    <summary>An optional keyboard shortcut to assign to any application activated by the command. If the<b>fMask</b> member does not specify <b>CMIC_MASK_HOTKEY</b>, this member is ignored.</summary>
   </member>
   <member name="CMINVOKECOMMANDINFOEX.hIcon">
-    <summary>
-      <para>Type: <b>HANDLE</b></para>
-      <para>An icon to use for any application activated by the command. If the <b>fMask</b> member does not specify <b>CMIC_MASK_ICON</b>, this member is ignored.</para>
-    </summary>
+    <summary>An icon to use for any application activated by the command. If the <b>fMask</b> member does not specify <b>CMIC_MASK_ICON</b>, this member is ignored.</summary>
   </member>
   <member name="CMINVOKECOMMANDINFOEX.lpTitle">
-    <summary>
-      <para>Type: <b>LPCSTR</b></para>
-      <para>An ASCII title.</para>
-    </summary>
+    <summary>An ASCII title.</summary>
   </member>
   <member name="CMINVOKECOMMANDINFOEX.lpVerbW">
-    <summary>
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A Unicode verb, for those commands that can use it.</para>
-    </summary>
+    <summary>A Unicode verb, for those commands that can use it.</summary>
   </member>
   <member name="CMINVOKECOMMANDINFOEX.lpParametersW">
-    <summary>
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A Unicode parameters, for those commands that can use it.</para>
-    </summary>
+    <summary>A Unicode parameters, for those commands that can use it.</summary>
   </member>
   <member name="CMINVOKECOMMANDINFOEX.lpDirectoryW">
-    <summary>
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A Unicode directory, for those commands that can use it.</para>
-    </summary>
+    <summary>A Unicode directory, for those commands that can use it.</summary>
   </member>
   <member name="CMINVOKECOMMANDINFOEX.lpTitleW">
-    <summary>
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A Unicode title.</para>
-    </summary>
+    <summary>A Unicode title.</summary>
   </member>
   <member name="CMINVOKECOMMANDINFOEX.ptInvoke">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a></b></para>
-      <para>The point where the command is invoked. If the <b>fMask</b> member does not specify <b>CMIC_MASK_PTINVOKE</b>, this member is ignored. This member is not valid prior to Internet Explorer 4.0.</para>
-    </summary>
+    <summary>The point where the command is invoked. If the <b>fMask</b> member does not specify <b>CMIC_MASK_PTINVOKE</b>, this member is ignored. This member is not valid prior to Internet Explorer 4.0.</summary>
   </member>
 </doc>

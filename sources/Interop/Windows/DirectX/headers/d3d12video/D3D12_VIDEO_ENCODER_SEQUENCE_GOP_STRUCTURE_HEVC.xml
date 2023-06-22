@@ -3,14 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE_HEVC">
-    <summary>
-      <para>Represents the GOP structure for HEVC video encoding.</para>
-    </summary>
+    <summary>Represents the GOP structure for HEVC video encoding.</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE_HEVC.GOPLength">
-    <summary>
-      <para>The distance between I-frames in the sequence, or the number of pictures on a GOP. If set to 0, only the first frame will be an I frame (infinite GOP).</para>
-    </summary>
+    <summary>The distance between I-frames in the sequence, or the number of pictures on a GOP. If set to 0, only the first frame will be an I frame (infinite GOP).</summary>
   </member>
   <member name="D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE_HEVC.PPicturePeriod">
     <summary>

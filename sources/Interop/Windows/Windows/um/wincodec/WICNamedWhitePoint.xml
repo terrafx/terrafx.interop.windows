@@ -3,66 +3,40 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICNamedWhitePoint">
-    <summary>
-      <para>Specifies named white balances for raw images.</para>
-    </summary>
+    <summary>Specifies named white balances for raw images.</summary>
   </member>
   <member name="WICNamedWhitePoint.WICWhitePointDefault">
-    <summary>
-      <para>The default white balance.</para>
-    </summary>
+    <summary>The default white balance.</summary>
   </member>
   <member name="WICNamedWhitePoint.WICWhitePointDaylight">
-    <summary>
-      <para>A daylight white balance.</para>
-    </summary>
+    <summary>A daylight white balance.</summary>
   </member>
   <member name="WICNamedWhitePoint.WICWhitePointCloudy">
-    <summary>
-      <para>A cloudy white balance.</para>
-    </summary>
+    <summary>A cloudy white balance.</summary>
   </member>
   <member name="WICNamedWhitePoint.WICWhitePointShade">
-    <summary>
-      <para>A shade white balance.</para>
-    </summary>
+    <summary>A shade white balance.</summary>
   </member>
   <member name="WICNamedWhitePoint.WICWhitePointTungsten">
-    <summary>
-      <para>A tungsten white balance.</para>
-    </summary>
+    <summary>A tungsten white balance.</summary>
   </member>
   <member name="WICNamedWhitePoint.WICWhitePointFluorescent">
-    <summary>
-      <para>A fluorescent white balance.</para>
-    </summary>
+    <summary>A fluorescent white balance.</summary>
   </member>
   <member name="WICNamedWhitePoint.WICWhitePointFlash">
-    <summary>
-      <para>Daylight white balance.</para>
-    </summary>
+    <summary>Daylight white balance.</summary>
   </member>
   <member name="WICNamedWhitePoint.WICWhitePointUnderwater">
-    <summary>
-      <para>A flash white balance.</para>
-    </summary>
+    <summary>A flash white balance.</summary>
   </member>
   <member name="WICNamedWhitePoint.WICWhitePointCustom">
-    <summary>
-      <para>A custom white balance. This is typically used when using a picture (grey-card) as white balance.</para>
-    </summary>
+    <summary>A custom white balance. This is typically used when using a picture (grey-card) as white balance.</summary>
   </member>
   <member name="WICNamedWhitePoint.WICWhitePointAutoWhiteBalance">
-    <summary>
-      <para>An automatic balance.</para>
-    </summary>
+    <summary>An automatic balance.</summary>
   </member>
   <member name="WICNamedWhitePoint.WICWhitePointAsShot">
-    <summary>
-      <para>An "as shot" white balance.</para>
-    </summary>
+    <summary>An "as shot" white balance.</summary>
   </member>
-  <member name="WICNamedWhitePoint.WICNAMEDWHITEPOINT_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICNamedWhitePoint.WICNAMEDWHITEPOINT_FORCE_DWORD"></member>
 </doc>

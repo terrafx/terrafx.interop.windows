@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WinRT.CreateControlInput">
+    <summary>Creates a <a href="https://docs.microsoft.com//uwp/api/windows.ui.core.icoreinputsourcebase">ICoreInputSourceBase</a> object in the caller’s UI thread.</summary>
+    <param name="riid">Interface ID of the object. Must to be set to the UUID for <a href="https://docs.microsoft.com//uwp/api/windows.ui.core.icoreinputsourcebase">ICoreInputSourceBase</a>, which is 9F488807-4580-4BE8-BE68-92A9311713BB.</param>
+    <param name="ppv">Pointer to receive the <a href="https://docs.microsoft.com//uwp/api/windows.ui.core.icoreinputsourcebase">ICoreInputSourceBase</a> object.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="WinRT.CreateControlInputEx">
+    <summary>Creates a <a href="https://docs.microsoft.com//uwp/api/windows.ui.core.icoreinputsourcebase">ICoreInputSourceBase</a> object in a worker thread or the UI thread.</summary>
+    <param name="pCoreWindow">Pointer to the parent <a href="https://msdn.microsoft.com/60b1c8c6-c136-4c4c-8e46-69a792d58ed0">CoreWindow</a> to which the <a href="https://docs.microsoft.com//uwp/api/windows.ui.core.icoreinputsourcebase">ICoreInputSourceBase</a> object will be attached. This parameter can’t be NULL.</param>
+    <param name="riid">Interface ID of the object. Must to be set to the UUID for <a href="https://docs.microsoft.com//uwp/api/windows.ui.core.icoreinputsourcebase">ICoreInputSourceBase</a>, which is 9F488807-4580-4BE8-BE68-92A9311713BB.</param>
+    <param name="ppv">Pointer to receive the <a href="https://docs.microsoft.com//uwp/api/windows.ui.core.icoreinputsourcebase">ICoreInputSourceBase</a> object.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+</doc>

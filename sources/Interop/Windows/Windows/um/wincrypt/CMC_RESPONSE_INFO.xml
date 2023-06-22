@@ -3,44 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CMC_RESPONSE_INFO">
-    <summary>
-      <para>The <b>CMC_RESPONSE_INFO</b> structure provides a means of communicating different pieces of tagged information.</para>
-    </summary>
-    <remarks>
-      <para>All tagged arrays are optional.</para>
-    </remarks>
+    <summary>The <b>CMC_RESPONSE_INFO</b> structure provides a means of communicating different pieces of tagged information.</summary>
   </member>
   <member name="CMC_RESPONSE_INFO.cTaggedAttribute">
-    <summary>
-      <para>Count of the number of elements in the <b>rgTaggedAttribute</b> member array.</para>
-    </summary>
+    <summary>Count of the number of elements in the <b>rgTaggedAttribute</b> member array.</summary>
   </member>
   <member name="CMC_RESPONSE_INFO.rgTaggedAttribute">
-    <summary>
-      <para>Array of
-<see cref="CMC_TAGGED_ATTRIBUTE" /> structures.</para>
-    </summary>
+    <summary>Array of<see cref="CMC_TAGGED_ATTRIBUTE" /> structures.</summary>
   </member>
   <member name="CMC_RESPONSE_INFO.cTaggedContentInfo">
-    <summary>
-      <para>Count of the number of elements in the <b>rgTaggedContentInfo</b> member array.</para>
-    </summary>
+    <summary>Count of the number of elements in the <b>rgTaggedContentInfo</b> member array.</summary>
   </member>
   <member name="CMC_RESPONSE_INFO.rgTaggedContentInfo">
-    <summary>
-      <para>Array of
-<see cref="CMC_TAGGED_CONTENT_INFO" /> structures.</para>
-    </summary>
+    <summary>Array of<see cref="CMC_TAGGED_CONTENT_INFO" /> structures.</summary>
   </member>
   <member name="CMC_RESPONSE_INFO.cTaggedOtherMsg">
-    <summary>
-      <para>Count of the number of elements in the <b>rgTaggedOtherMsg</b> member array.</para>
-    </summary>
+    <summary>Count of the number of elements in the <b>rgTaggedOtherMsg</b> member array.</summary>
   </member>
   <member name="CMC_RESPONSE_INFO.rgTaggedOtherMsg">
-    <summary>
-      <para>Array of
-<see cref="CMC_TAGGED_OTHER_MSG" /> structures.</para>
-    </summary>
+    <summary>Array of<see cref="CMC_TAGGED_OTHER_MSG" /> structures.</summary>
   </member>
 </doc>

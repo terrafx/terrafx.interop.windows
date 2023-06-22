@@ -3,17 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PSINJECTDATA">
-    <summary>
-      <para>The <b>PSINJECTDATA</b> structure is a header for the input buffer used with the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd162830(v=vs.85)">POSTSCRIPT_INJECTION</a> printer escape function.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd162830(v=vs.85)">POSTSCRIPT_INJECTION</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/printdocs/printing-and-print-spooler-structures">Print Spooler API Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/printdocs/printdocs-printing">Printing</seealso>
+    <summary>The <b>PSINJECTDATA</b> structure is a header for the input buffer used with the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd162830(v=vs.85)">POSTSCRIPT_INJECTION</a> printer escape function.</summary>
   </member>
   <member name="PSINJECTDATA.DataBytes">
-    <summary>
-      <para>The number of bytes of raw data to be injected. The raw data begins immediately following this structure. This size does not include the size of the <b>PSINJECTDATA</b> structure.</para>
-    </summary>
+    <summary>The number of bytes of raw data to be injected. The raw data begins immediately following this structure. This size does not include the size of the <b>PSINJECTDATA</b> structure.</summary>
   </member>
   <member name="PSINJECTDATA.InjectionPoint">
     <summary>
@@ -23,141 +16,139 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>PSINJECT_BEGINSTREAM</description>
           <description>Before the first byte of job stream.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_PSADOBE</description>
           <description>Before %!PS-Adobe.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_PAGESATEND</description>
           <description>Replaces driver's %%Pages (atend).</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_PAGES</description>
           <description>Replaces driver's %%Pages nnn.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_DOCNEEDEDRES</description>
           <description>After %%DocumentNeededResources.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_DOCSUPPLIEDRES</description>
           <description>After %%DocumentSuppliedResources.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_PAGEORDER</description>
           <description>Replaces driver's %%PageOrder.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_ORIENTATION</description>
           <description>Replaces driver's %%Orientation.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_BOUNDINGBOX</description>
           <description>Replaces driver's %%BoundingBox.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_DOCUMENTPROCESSCOLORS</description>
           <description>Replaces driver's %%DocumentProcessColors &lt;color&gt;.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_COMMENTS</description>
           <description>Before %%EndComments.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_BEGINDEFAULTS</description>
           <description>After %%BeginDefaults.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_ENDDEFAULTS</description>
           <description>Before %%EndDefaults.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_BEGINPROLOG</description>
           <description>After %%BeginProlog.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_ENDPROLOG</description>
           <description>Before %%EndProlog.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_BEGINSETUP</description>
           <description>After %%BeginSetup.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_ENDSETUP</description>
           <description>Before %%EndSetup.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_TRAILER</description>
           <description>After %%Trailer</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_EOF</description>
           <description>After %%EOF</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_ENDSTREAM</description>
           <description>After the last byte of job stream</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_DOCUMENTPROCESSCOLORSATEND</description>
           <description>Replaces driver's %%DocumentProcessColors (atend)</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <b>Page level injection points</b>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_PAGENUMBER</description>
           <description>Replaces driver's %%Page</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_BEGINPAGESETUP</description>
           <description>After %%BeginPageSetup</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_ENDPAGESETUP</description>
           <description>Before %%EndPageSetup</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_PAGETRAILER</description>
           <description>After %%PageTrailer</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_PLATECOLOR</description>
           <description>Replace driver's %%PlateColor: &lt;color&gt;</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_SHOWPAGE</description>
           <description>Before showpage operator</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_PAGEBBOX</description>
           <description>Replaces driver's %%PageBoundingBox</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_ENDPAGECOMMENTS</description>
           <description>Before %%EndPageComments</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_VMSAVE</description>
           <description>Before save operator</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PSINJECT_VMRESTORE</description>
           <description>After restore operator</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="PSINJECTDATA.PageNumber">
-    <summary>
-      <para>The page number (starting from 1) to which the injection data is applied. Specify zero to apply the injection data to all pages. This member is meaningful only for page level injection points starting from PSINJECT_PAGENUMBER. For other injection points, set <b>PageNumber</b> to zero.</para>
-    </summary>
+    <summary>The page number (starting from 1) to which the injection data is applied. Specify zero to apply the injection data to all pages. This member is meaningful only for page level injection points starting from PSINJECT_PAGENUMBER. For other injection points, set <b>PageNumber</b> to zero.</summary>
   </member>
 </doc>

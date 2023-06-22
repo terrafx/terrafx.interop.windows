@@ -4,59 +4,35 @@
 <doc>
   <member name="REGFILTERPINS">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>REGFILTERPINS</code> structure contains pin information for registering a filter.</para>
     </summary>
-    <remarks>
-      <para>This structure is used in the <see cref="IFilterMapper2" /> interface for filter registration. If you use this structure, set the <b>dwVersion</b> member of the <see cref="REGFILTER2" /> structure to 1. If you need to register a medium or pin category for the pin, use the <see cref="REGFILTERPINS2" /> structure instead. In that case, set the <b>REGFILTER2</b> structure's <b>dwVersion</b> member to 2.</para>
-      <para>The equivalent <b>AMOVIESETUP_PIN</b> type is used in class factory templates (<a href="https://docs.microsoft.com//windows/desktop/DirectShow/cfactorytemplate">CFactoryTemplate</a>).</para>
-      <para>The <b>strName</b>, <b>clsConnectsToFilter</b>, and <b>strConnectsToPin</b> members are obsolete. Their values are not added to the registry.</para>
-      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/how-to-register-directshow-filters">How to Register DirectShow Filters</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="REGFILTERPINS.strName">
-    <summary>
-      <para>Name of the pin. (Obsolete.)</para>
-    </summary>
+    <summary>Name of the pin. (Obsolete.)</summary>
   </member>
   <member name="REGFILTERPINS.bRendered">
-    <summary>
-      <para>If <b>TRUE</b>, the filter renders the input from this pin. (Applies only to input pins. For output pins, the value is always <b>FALSE</b>.)</para>
-    </summary>
+    <summary>If <b>TRUE</b>, the filter renders the input from this pin. (Applies only to input pins. For output pins, the value is always <b>FALSE</b>.)</summary>
   </member>
   <member name="REGFILTERPINS.bOutput">
-    <summary>
-      <para>If <b>TRUE</b>, this pin is an output pin. Otherwise, the pin is an input pin.</para>
-    </summary>
+    <summary>If <b>TRUE</b>, this pin is an output pin. Otherwise, the pin is an input pin.</summary>
   </member>
   <member name="REGFILTERPINS.bZero">
-    <summary>
-      <para>If <b>TRUE</b>, the filter can have zero instances of this pin.</para>
-    </summary>
+    <summary>If <b>TRUE</b>, the filter can have zero instances of this pin.</summary>
   </member>
   <member name="REGFILTERPINS.bMany">
-    <summary>
-      <para>If <b>TRUE</b>, the filter can create more than one instance of this type of pin.</para>
-    </summary>
+    <summary>If <b>TRUE</b>, the filter can create more than one instance of this type of pin.</summary>
   </member>
   <member name="REGFILTERPINS.clsConnectsToFilter">
-    <summary>
-      <para>Class identifier (CLSID) of the filter to which this pin connects. (Obsolete.)</para>
-    </summary>
+    <summary>Class identifier (CLSID) of the filter to which this pin connects. (Obsolete.)</summary>
   </member>
   <member name="REGFILTERPINS.strConnectsToPin">
-    <summary>
-      <para>Name of the pin to which this pin connects. (Obsolete.)</para>
-    </summary>
+    <summary>Name of the pin to which this pin connects. (Obsolete.)</summary>
   </member>
   <member name="REGFILTERPINS.nMediaTypes">
-    <summary>
-      <para>Number of media types supported by this pin.</para>
-    </summary>
+    <summary>Number of media types supported by this pin.</summary>
   </member>
   <member name="REGFILTERPINS.lpMediaType">
-    <summary>
-      <para>Pointer to an array of <see cref="REGPINTYPES" /> structures, of size <b>nMediaTypes</b>.</para>
-    </summary>
+    <summary>Pointer to an array of <see cref="REGPINTYPES" /> structures, of size <b>nMediaTypes</b>.</summary>
   </member>
 </doc>

@@ -5,37 +5,20 @@
   <member name="D3D_INCLUDE_TYPE">
     <summary>
       <para>Values that indicate the location of a shader #include file.</para>
-      <blockquote>
-        <para>[!NOTE]
-For programming with Direct3D 10, this API has a type alias that begins <code>D3D10_</code> instead of <code>D3D_</code>. These Direct3D 10 type aliases are defined in <code>d3d10.h</code>, <code>d3d10misc.h</code>, and <code>d3d10shader.h</code>.</para>
-      </blockquote>
+      <blockquote>[!NOTE] For programming with Direct3D 10, this API has a type alias that begins <code>D3D10_</code> instead of <code>D3D_</code>. These Direct3D 10 type aliases are defined in <code>d3d10.h</code>, <code>d3d10misc.h</code>, and <code>d3d10shader.h</code>.</blockquote>
     </summary>
-    <remarks>
-      <para>You pass a <b>D3D_INCLUDE_TYPE</b>-typed value to the  <i>IncludeType</i> parameter in a call to the  <see cref="ID3DInclude.Open" /> method to indicate the location of the #include file.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-common-enumerations">Common Version Enumerations</seealso>
-    <seealso cref="D3D_INCLUDE_TYPE" />
-    <seealso cref="ID3DInclude.Open" />
   </member>
   <member name="D3D_INCLUDE_TYPE.D3D_INCLUDE_LOCAL">
-    <summary>
-      <para>The local directory.</para>
-    </summary>
+    <summary>The local directory.</summary>
   </member>
   <member name="D3D_INCLUDE_TYPE.D3D_INCLUDE_SYSTEM">
-    <summary>
-      <para>The system directory.</para>
-    </summary>
+    <summary>The system directory.</summary>
   </member>
   <member name="D3D_INCLUDE_TYPE.D3D10_INCLUDE_LOCAL">
-    <summary>
-      <para>The local directory.</para>
-    </summary>
+    <summary>The local directory.</summary>
   </member>
   <member name="D3D_INCLUDE_TYPE.D3D10_INCLUDE_SYSTEM">
-    <summary>
-      <para>The system directory.</para>
-    </summary>
+    <summary>The system directory.</summary>
   </member>
   <member name="D3D_INCLUDE_TYPE.D3D_INCLUDE_FORCE_DWORD">
     <summary>

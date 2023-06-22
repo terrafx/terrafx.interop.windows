@@ -4,28 +4,20 @@
 <doc>
   <member name="Quality">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Quality</code> structure describes a quality message by indicating Flood or Famine in the renderer and specifying the percentage of frames to drop or add to optimize the renderer's performance.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="Quality.Type">
-    <summary>
-      <para>Value from the <see cref="QualityMessageType" /> enumeration, indicating whether the downstream filter needs more or less data.</para>
-    </summary>
+    <summary>Value from the <see cref="QualityMessageType" /> enumeration, indicating whether the downstream filter needs more or less data.</summary>
   </member>
   <member name="Quality.Proportion">
-    <summary>
-      <para>Value that specifies the rate at which DirectShow should continue to send media samples. The base value is 1000, which indicates there should be no change. A percentage increase or decrease from 1000 indicates the percentage of frames to add or drop. If this value is 800, for example, DirectShow will drop 20 percent of the incoming frames to match the renderer's speed.</para>
-    </summary>
+    <summary>Value that specifies the rate at which DirectShow should continue to send media samples. The base value is 1000, which indicates there should be no change. A percentage increase or decrease from 1000 indicates the percentage of frames to add or drop. If this value is 800, for example, DirectShow will drop 20 percent of the incoming frames to match the renderer's speed.</summary>
   </member>
   <member name="Quality.Late">
-    <summary>
-      <para>If a famine exists downstream, this is the amount of time by which the stream is lagging.</para>
-    </summary>
+    <summary>If a famine exists downstream, this is the amount of time by which the stream is lagging.</summary>
   </member>
   <member name="Quality.TimeStamp">
-    <summary>
-      <para>Value that specifies the time when DirectShow created this structure, which is usually the start time on a video sample.</para>
-    </summary>
+    <summary>Value that specifies the time when DirectShow created this structure, which is usually the start time on a video sample.</summary>
   </member>
 </doc>

@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="RGBTRIPLE">
-    <summary>
-      <para>The <b>RGBTRIPLE</b> structure describes a color consisting of relative intensities of red, green, and blue. The <b>bmciColors</b> member of the <see cref="BITMAPCOREINFO" /> structure consists of an array of <b>RGBTRIPLE</b> structures.</para>
-    </summary>
-    <seealso cref="BITMAPCOREINFO" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/bitmap-structures">Bitmap Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/bitmaps">Bitmaps Overview</seealso>
+    <summary>The <b>RGBTRIPLE</b> structure describes a color consisting of relative intensities of red, green, and blue. The <b>bmciColors</b> member of the <see cref="BITMAPCOREINFO" /> structure consists of an array of <b>RGBTRIPLE</b> structures.</summary>
   </member>
   <member name="RGBTRIPLE.rgbtBlue">
-    <summary>
-      <para>The intensity of blue in the color.</para>
-    </summary>
+    <summary>The intensity of blue in the color.</summary>
   </member>
   <member name="RGBTRIPLE.rgbtGreen">
-    <summary>
-      <para>The intensity of green in the color.</para>
-    </summary>
+    <summary>The intensity of green in the color.</summary>
   </member>
   <member name="RGBTRIPLE.rgbtRed">
-    <summary>
-      <para>The intensity of red in the color.</para>
-    </summary>
+    <summary>The intensity of red in the color.</summary>
   </member>
 </doc>

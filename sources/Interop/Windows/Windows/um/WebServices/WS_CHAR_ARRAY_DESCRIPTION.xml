@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_CHAR_ARRAY_DESCRIPTION">
-    <summary>
-      <para>Specifies constraints on the set of values
-which can be deserialized.This type description is used with <see cref="WS_CHAR_ARRAY_TYPE" /> and is optional.</para>
-    </summary>
+    <summary>Specifies constraints on the set of values which can be deserialized.This type description is used with <see cref="WS_CHAR_ARRAY_TYPE" /> and is optional.</summary>
   </member>
   <member name="WS_CHAR_ARRAY_DESCRIPTION.minCharCount">
-    <summary>
-      <para>The minimum number of characters.</para>
-    </summary>
+    <summary>The minimum number of characters.</summary>
   </member>
   <member name="WS_CHAR_ARRAY_DESCRIPTION.maxCharCount">
-    <summary>
-      <para>The maximum number of characters.</para>
-    </summary>
+    <summary>The maximum number of characters.</summary>
   </member>
 </doc>

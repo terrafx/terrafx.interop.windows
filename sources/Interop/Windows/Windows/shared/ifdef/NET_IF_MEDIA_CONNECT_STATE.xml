@@ -3,31 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NET_IF_MEDIA_CONNECT_STATE">
-    <summary>
-      <para>The NET_IF_MEDIA_CONNECT_STATE enumeration type specifies the
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/ndis-network-interfaces2">NDIS network interface</a> connection
-state.</para>
-    </summary>
-    <remarks>
-      <para>The NDIS_MEDIA_CONNECT_STATE enumeration type, used to describe NDIS interface providers in the
-OID_GEN_MEDIA_CONNECT_STATUS_EX OID, is equivalent to this enumeration.</para>
-      <code>typedef NET_IF_MEDIA_CONNECT_STATE NDIS_MEDIA_CONNECT_STATE, *PNDIS_MEDIA_CONNECT_STATE;
-</code>
-    </remarks>
+    <summary>The NET_IF_MEDIA_CONNECT_STATE enumeration type specifies the<a href="https://docs.microsoft.com//windows-hardware/drivers/network/ndis-network-interfaces2">NDIS network interface</a> connection state.</summary>
   </member>
   <member name="NET_IF_MEDIA_CONNECT_STATE.MediaConnectStateUnknown">
-    <summary>
-      <para>The connection state of the interface is unknown.</para>
-    </summary>
+    <summary>The connection state of the interface is unknown.</summary>
   </member>
   <member name="NET_IF_MEDIA_CONNECT_STATE.MediaConnectStateConnected">
-    <summary>
-      <para>The interface is connected to the network.</para>
-    </summary>
+    <summary>The interface is connected to the network.</summary>
   </member>
   <member name="NET_IF_MEDIA_CONNECT_STATE.MediaConnectStateDisconnected">
-    <summary>
-      <para>The interface is not connected to the network.</para>
-    </summary>
+    <summary>The interface is not connected to the network.</summary>
   </member>
 </doc>

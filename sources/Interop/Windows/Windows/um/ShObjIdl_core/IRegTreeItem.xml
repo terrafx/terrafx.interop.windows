@@ -3,41 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IRegTreeItem.GetCheckState">
-    <summary>
-      <para>Gets the state of a check box item in a tree-view control.</para>
-    </summary>
+    <summary>Gets the state of a check box item in a tree-view control.</summary>
     <param name="pbCheck">
-      <para>Type: <b>BOOL*</b></para>
       <para>A pointer to a <b>BOOL</b> that contains the state of the check box.</para>
       <h4>TRUE</h4>
       <para>The check box is checked.</para>
       <h4>FALSE</h4>
       <para>The check box is not checked.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IRegTreeItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/tree-view-controls">Tree-View Controls</seealso>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IRegTreeItem.SetCheckState">
-    <summary>
-      <para>Sets the state of a check box item in a tree-view control.</para>
-    </summary>
+    <summary>Sets the state of a check box item in a tree-view control.</summary>
     <param name="bCheck">
-      <para>Type: <b>BOOL</b></para>
       <para>A <b>BOOL</b> that sets the state of the check box.</para>
       <h4>TRUE</h4>
       <para>The check box is checked.</para>
       <h4>FALSE</h4>
       <para>The check box is not checked.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IRegTreeItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/tree-view-controls">Tree-View Controls</seealso>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
 </doc>

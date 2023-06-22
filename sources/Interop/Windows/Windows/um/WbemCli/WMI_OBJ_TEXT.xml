@@ -3,74 +3,45 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WMI_OBJ_TEXT">
-    <summary>
-      <para>Defines the valid object text formats to be used by
-<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/swbemobjectex-gettext-">SWbemObjectEx.GetText_</a>.</para>
-    </summary>
+    <summary>Defines the valid object text formats to be used by<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/swbemobjectex-gettext-">SWbemObjectEx.GetText_</a>.</summary>
   </member>
   <member name="WMI_OBJ_TEXT.WMI_OBJ_TEXT_CIM_DTD_2_0">
-    <summary>
-      <para>XML format conforming to the DMTF (Distributed Management Task Force) CIM document type definition (DTD) version 2.0.</para>
-    </summary>
+    <summary>XML format conforming to the DMTF (Distributed Management Task Force) CIM document type definition (DTD) version 2.0.</summary>
   </member>
   <member name="WMI_OBJ_TEXT.WMI_OBJ_TEXT_WMI_DTD_2_0">
-    <summary>
-      <para>XML format as defined by the extended WMI version of DMTF CIM DTD version 2.0. Using this value enables WMI-specific extensions, such as embedded objects or scope.</para>
-    </summary>
+    <summary>XML format as defined by the extended WMI version of DMTF CIM DTD version 2.0. Using this value enables WMI-specific extensions, such as embedded objects or scope.</summary>
   </member>
   <member name="WMI_OBJ_TEXT.WMI_OBJ_TEXT_WMI_EXT1">
-    <summary>
-      <para>Deprecated. Do not use.</para>
-    </summary>
+    <summary>Deprecated. Do not use.</summary>
   </member>
   <member name="WMI_OBJ_TEXT.WMI_OBJ_TEXT_WMI_EXT2">
-    <summary>
-      <para>Deprecated. Do not use.</para>
-    </summary>
+    <summary>Deprecated. Do not use.</summary>
   </member>
   <member name="WMI_OBJ_TEXT.WMI_OBJ_TEXT_WMI_EXT3">
-    <summary>
-      <para>Deprecated. Do not use.</para>
-    </summary>
+    <summary>Deprecated. Do not use.</summary>
   </member>
   <member name="WMI_OBJ_TEXT.WMI_OBJ_TEXT_WMI_EXT4">
-    <summary>
-      <para>Deprecated. Do not use.</para>
-    </summary>
+    <summary>Deprecated. Do not use.</summary>
   </member>
   <member name="WMI_OBJ_TEXT.WMI_OBJ_TEXT_WMI_EXT5">
-    <summary>
-      <para>Deprecated. Do not use.</para>
-    </summary>
+    <summary>Deprecated. Do not use.</summary>
   </member>
   <member name="WMI_OBJ_TEXT.WMI_OBJ_TEXT_WMI_EXT6">
-    <summary>
-      <para>Deprecated. Do not use.</para>
-    </summary>
+    <summary>Deprecated. Do not use.</summary>
   </member>
   <member name="WMI_OBJ_TEXT.WMI_OBJ_TEXT_WMI_EXT7">
-    <summary>
-      <para>Deprecated. Do not use.</para>
-    </summary>
+    <summary>Deprecated. Do not use.</summary>
   </member>
   <member name="WMI_OBJ_TEXT.WMI_OBJ_TEXT_WMI_EXT8">
-    <summary>
-      <para>Deprecated. Do not use.</para>
-    </summary>
+    <summary>Deprecated. Do not use.</summary>
   </member>
   <member name="WMI_OBJ_TEXT.WMI_OBJ_TEXT_WMI_EXT9">
-    <summary>
-      <para>Deprecated. Do not use.</para>
-    </summary>
+    <summary>Deprecated. Do not use.</summary>
   </member>
   <member name="WMI_OBJ_TEXT.WMI_OBJ_TEXT_WMI_EXT10">
-    <summary>
-      <para>Deprecated. Do not use.</para>
-    </summary>
+    <summary>Deprecated. Do not use.</summary>
   </member>
   <member name="WMI_OBJ_TEXT.WMI_OBJ_TEXT_LAST">
-    <summary>
-      <para>Deprecated. Do not use.</para>
-    </summary>
+    <summary>Deprecated. Do not use.</summary>
   </member>
 </doc>

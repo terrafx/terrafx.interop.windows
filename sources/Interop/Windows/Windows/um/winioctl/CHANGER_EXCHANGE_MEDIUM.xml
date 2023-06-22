@@ -3,47 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CHANGER_EXCHANGE_MEDIUM">
-    <summary>
-      <para>Contains information the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_changer_exchange_medium">IOCTL_CHANGER_EXCHANGE_MEDIUM</a> control code uses to move a piece of media to a destination, and the piece of media originally in the first destination to a second destination.</para>
-    </summary>
-    <seealso cref="CHANGER_ELEMENT" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_changer_exchange_medium">IOCTL_CHANGER_EXCHANGE_MEDIUM</seealso>
+    <summary>Contains information the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_changer_exchange_medium">IOCTL_CHANGER_EXCHANGE_MEDIUM</a> control code uses to move a piece of media to a destination, and the piece of media originally in the first destination to a second destination.</summary>
   </member>
   <member name="CHANGER_EXCHANGE_MEDIUM.Transport">
-    <summary>
-      <para>A
-<see cref="CHANGER_ELEMENT" /> structure that indicates which transport element to use for the exchange operation. The <b>ElementType</b> member of this structure must be ChangerTransport.</para>
-    </summary>
+    <summary>A<see cref="CHANGER_ELEMENT" /> structure that indicates which transport element to use for the exchange operation. The <b>ElementType</b> member of this structure must be ChangerTransport.</summary>
   </member>
   <member name="CHANGER_EXCHANGE_MEDIUM.Source">
-    <summary>
-      <para>A
-<see cref="CHANGER_ELEMENT" /> structure that indicates the element that contains the media that is to be moved.</para>
-    </summary>
+    <summary>A<see cref="CHANGER_ELEMENT" /> structure that indicates the element that contains the media that is to be moved.</summary>
   </member>
   <member name="CHANGER_EXCHANGE_MEDIUM.Destination1">
-    <summary>
-      <para>A
-<see cref="CHANGER_ELEMENT" /> structure that indicates the element that is the destination of the media originally at <b>Source</b>.</para>
-    </summary>
+    <summary>A<see cref="CHANGER_ELEMENT" /> structure that indicates the element that is the destination of the media originally at <b>Source</b>.</summary>
   </member>
   <member name="CHANGER_EXCHANGE_MEDIUM.Destination2">
-    <summary>
-      <para>A
-<see cref="CHANGER_ELEMENT" /> structure that indicates the element that is the destination of the media originally at <b>Destination1</b>.</para>
-    </summary>
+    <summary>A<see cref="CHANGER_ELEMENT" /> structure that indicates the element that is the destination of the media originally at <b>Destination1</b>.</summary>
   </member>
   <member name="CHANGER_EXCHANGE_MEDIUM.Flip1">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the medium at <b>Destination1</b> should be flipped. Otherwise, it should not. This member is valid only if the <b>Features0</b> member of the
-<see cref="GET_CHANGER_PARAMETERS" /> structure is CHANGER_MEDIUM_FLIP.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the medium at <b>Destination1</b> should be flipped. Otherwise, it should not. This member is valid only if the <b>Features0</b> member of the<see cref="GET_CHANGER_PARAMETERS" /> structure is CHANGER_MEDIUM_FLIP.</summary>
   </member>
   <member name="CHANGER_EXCHANGE_MEDIUM.Flip2">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the medium at <b>Destination2</b> should be flipped. Otherwise, it should not. This member is valid only if the <b>Features0</b> member of the
-<see cref="GET_CHANGER_PARAMETERS" /> structure is CHANGER_MEDIUM_FLIP.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the medium at <b>Destination2</b> should be flipped. Otherwise, it should not. This member is valid only if the <b>Features0</b> member of the<see cref="GET_CHANGER_PARAMETERS" /> structure is CHANGER_MEDIUM_FLIP.</summary>
   </member>
 </doc>

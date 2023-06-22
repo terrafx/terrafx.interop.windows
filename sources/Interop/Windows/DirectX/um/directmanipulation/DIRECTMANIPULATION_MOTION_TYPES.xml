@@ -3,49 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DIRECTMANIPULATION_MOTION_TYPES">
-    <summary>
-      <para>Defines the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> motion type.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-enumerations">Direct Manipulation Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setchaining">SetChaining</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationprimarycontent-setsnapcoordinate">SetSnapCoordinate</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationprimarycontent-setsnapinterval">SetSnapInterval</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationprimarycontent-setsnappoints">SetSnapPoints</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationprimarycontent-setsnaptype">SetSnapType</seealso>
+    <summary>Defines the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> motion type.</summary>
   </member>
   <member name="DIRECTMANIPULATION_MOTION_TYPES.DIRECTMANIPULATION_MOTION_NONE">
-    <summary>
-      <para>None.</para>
-    </summary>
+    <summary>None.</summary>
   </member>
   <member name="DIRECTMANIPULATION_MOTION_TYPES.DIRECTMANIPULATION_MOTION_TRANSLATEX">
-    <summary>
-      <para>Translation in the horizontal axis.</para>
-    </summary>
+    <summary>Translation in the horizontal axis.</summary>
   </member>
   <member name="DIRECTMANIPULATION_MOTION_TYPES.DIRECTMANIPULATION_MOTION_TRANSLATEY">
-    <summary>
-      <para>Translation in the vertical axis.</para>
-    </summary>
+    <summary>Translation in the vertical axis.</summary>
   </member>
   <member name="DIRECTMANIPULATION_MOTION_TYPES.DIRECTMANIPULATION_MOTION_ZOOM">
-    <summary>
-      <para>Zoom.</para>
-    </summary>
+    <summary>Zoom.</summary>
   </member>
   <member name="DIRECTMANIPULATION_MOTION_TYPES.DIRECTMANIPULATION_MOTION_CENTERX">
-    <summary>
-      <para>The horizontal center of the manipulation.</para>
-    </summary>
+    <summary>The horizontal center of the manipulation.</summary>
   </member>
   <member name="DIRECTMANIPULATION_MOTION_TYPES.DIRECTMANIPULATION_MOTION_CENTERY">
-    <summary>
-      <para>The vertical center of the manipulation.</para>
-    </summary>
+    <summary>The vertical center of the manipulation.</summary>
   </member>
   <member name="DIRECTMANIPULATION_MOTION_TYPES.DIRECTMANIPULATION_MOTION_ALL">
-    <summary>
-      <para>All manipulation motion.</para>
-    </summary>
+    <summary>All manipulation motion.</summary>
   </member>
 </doc>

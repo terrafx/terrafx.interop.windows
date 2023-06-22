@@ -3,38 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDXGIFactory5.CheckFeatureSupport">
-    <summary>
-      <para>Used to check for hardware feature support.</para>
-    </summary>
-    <param name="Feature">
-      <para>Type: <b><see cref="DXGI_FEATURE" /></b></para>
-      <para>Specifies one member of  <see cref="DXGI_FEATURE" /> to query support for.</para>
-    </param>
-    <param name="pFeatureSupportData">
-      <para>Type: <b>void*</b></para>
-      <para>Specifies a pointer to a buffer that will be filled with data that describes the feature support.</para>
-    </param>
-    <param name="FeatureSupportDataSize">
-      <para>Type: <b>UINT</b></para>
-      <para>The size, in bytes, of <i>pFeatureSupportData</i>.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <remarks>
-      <para>Refer to the description of <see cref="DXGI_SWAP_CHAIN_FLAG_ALLOW_TEARING" />.</para>
-    </remarks>
-    <seealso cref="IDXGIFactory5" />
+    <summary>Used to check for hardware feature support.</summary>
+    <param name="Feature">Specifies one member of <see cref="DXGI_FEATURE" /> to query support for.</param>
+    <param name="pFeatureSupportData">Specifies a pointer to a buffer that will be filled with data that describes the feature support.</param>
+    <param name="FeatureSupportDataSize">The size, in bytes, of <i>pFeatureSupportData</i>.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="IDXGIFactory5">
-    <summary>
-      <para>This interface enables a single method to support variable refresh rate displays.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IDXGIFactory1" />
-    <seealso cref="IDXGIFactory2" />
-    <seealso cref="IDXGIFactory3" />
-    <seealso cref="IDXGIFactory4" />
+    <summary>This interface enables a single method to support variable refresh rate displays.</summary>
   </member>
 </doc>

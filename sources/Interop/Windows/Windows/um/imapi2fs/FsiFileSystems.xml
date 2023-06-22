@@ -3,34 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FsiFileSystems">
-    <summary>
-      <para>Defines values for recognized file systems.</para>
-    </summary>
-    <seealso cref="IFileSystemImage.IdentifyFileSystemsOnDisc" />
+    <summary>Defines values for recognized file systems.</summary>
   </member>
   <member name="FsiFileSystems.FsiFileSystemNone">
-    <summary>
-      <para>The disc does not contain a recognized file system.</para>
-    </summary>
+    <summary>The disc does not contain a recognized file system.</summary>
   </member>
   <member name="FsiFileSystems.FsiFileSystemISO9660">
-    <summary>
-      <para>Standard CD file system.</para>
-    </summary>
+    <summary>Standard CD file system.</summary>
   </member>
   <member name="FsiFileSystems.FsiFileSystemJoliet">
-    <summary>
-      <para>Joliet file system.</para>
-    </summary>
+    <summary>Joliet file system.</summary>
   </member>
   <member name="FsiFileSystems.FsiFileSystemUDF">
-    <summary>
-      <para>UDF file system.</para>
-    </summary>
+    <summary>UDF file system.</summary>
   </member>
   <member name="FsiFileSystems.FsiFileSystemUnknown">
-    <summary>
-      <para>The disc appears to have a file system, but the layout does not match any of the recognized types.</para>
-    </summary>
+    <summary>The disc appears to have a file system, but the layout does not match any of the recognized types.</summary>
   </member>
 </doc>

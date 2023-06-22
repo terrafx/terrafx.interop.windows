@@ -3,119 +3,69 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRPLGBLT">
-    <summary>
-      <para>The <b>EMRPLGBLT</b> structure contains members for the <see cref="PlgBlt" /> enhanced metafile record. Note that graphics device interface (GDI) converts the device-dependent bitmap into a device-independent bitmap (DIB) before storing it in the metafile record.</para>
-    </summary>
-    <seealso cref="BITMAPINFO" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
-    <seealso cref="PlgBlt" />
-    <seealso cref="RGB" />
+    <summary>The <b>EMRPLGBLT</b> structure contains members for the <see cref="PlgBlt" /> enhanced metafile record. Note that graphics device interface (GDI) converts the device-dependent bitmap into a device-independent bitmap (DIB) before storing it in the metafile record.</summary>
   </member>
   <member name="EMRPLGBLT.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMRPLGBLT.rclBounds">
-    <summary>
-      <para>Bounding rectangle, in device units.</para>
-    </summary>
+    <summary>Bounding rectangle, in device units.</summary>
   </member>
   <member name="EMRPLGBLT.aptlDest">
-    <summary>
-      <para>Array of three points in logical space that identify three corners of the destination parallelogram. The upper-left corner of the source rectangle is mapped to the first point in this array, the upper-right corner to the second point in this array, and the lower-left corner to the third point. The lower-right corner of the source rectangle is mapped to the implicit fourth point in the parallelogram.</para>
-    </summary>
+    <summary>Array of three points in logical space that identify three corners of the destination parallelogram. The upper-left corner of the source rectangle is mapped to the first point in this array, the upper-right corner to the second point in this array, and the lower-left corner to the third point. The lower-right corner of the source rectangle is mapped to the implicit fourth point in the parallelogram.</summary>
   </member>
   <member name="EMRPLGBLT.xSrc">
-    <summary>
-      <para>Logical x-coordinate of the upper-left corner of the source rectangle.</para>
-    </summary>
+    <summary>Logical x-coordinate of the upper-left corner of the source rectangle.</summary>
   </member>
   <member name="EMRPLGBLT.ySrc">
-    <summary>
-      <para>Logical y-coordinate of the upper-left corner of the source rectangle.</para>
-    </summary>
+    <summary>Logical y-coordinate of the upper-left corner of the source rectangle.</summary>
   </member>
   <member name="EMRPLGBLT.cxSrc">
-    <summary>
-      <para>Logical width of the source.</para>
-    </summary>
+    <summary>Logical width of the source.</summary>
   </member>
   <member name="EMRPLGBLT.cySrc">
-    <summary>
-      <para>Logical height of the source.</para>
-    </summary>
+    <summary>Logical height of the source.</summary>
   </member>
   <member name="EMRPLGBLT.xformSrc">
-    <summary>
-      <para>World-space to page-space transformation of the source device context.</para>
-    </summary>
+    <summary>World-space to page-space transformation of the source device context.</summary>
   </member>
   <member name="EMRPLGBLT.crBkColorSrc">
-    <summary>
-      <para>Background color (the RGB value) of the source device context. To make a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> value, use the <see cref="RGB" /> macro.</para>
-    </summary>
+    <summary>Background color (the RGB value) of the source device context. To make a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> value, use the <see cref="RGB" /> macro.</summary>
   </member>
   <member name="EMRPLGBLT.iUsageSrc">
-    <summary>
-      <para>Value of the <b>bmiColors</b> member of the <see cref="BITMAPINFO" /> structure. The <b>iUsageSrc</b> member can be either the DIB_PAL_COLORS or DIB_RGB_COLORS value.</para>
-    </summary>
+    <summary>Value of the <b>bmiColors</b> member of the <see cref="BITMAPINFO" /> structure. The <b>iUsageSrc</b> member can be either the DIB_PAL_COLORS or DIB_RGB_COLORS value.</summary>
   </member>
   <member name="EMRPLGBLT.offBmiSrc">
-    <summary>
-      <para>Offset to source <see cref="BITMAPINFO" /> structure.</para>
-    </summary>
+    <summary>Offset to source <see cref="BITMAPINFO" /> structure.</summary>
   </member>
   <member name="EMRPLGBLT.cbBmiSrc">
-    <summary>
-      <para>Size of source <see cref="BITMAPINFO" /> structure.</para>
-    </summary>
+    <summary>Size of source <see cref="BITMAPINFO" /> structure.</summary>
   </member>
   <member name="EMRPLGBLT.offBitsSrc">
-    <summary>
-      <para>Offset to source bitmap bits.</para>
-    </summary>
+    <summary>Offset to source bitmap bits.</summary>
   </member>
   <member name="EMRPLGBLT.cbBitsSrc">
-    <summary>
-      <para>Size of source bitmap bits.</para>
-    </summary>
+    <summary>Size of source bitmap bits.</summary>
   </member>
   <member name="EMRPLGBLT.xMask">
-    <summary>
-      <para>Horizontal pixel offset into mask bitmap.</para>
-    </summary>
+    <summary>Horizontal pixel offset into mask bitmap.</summary>
   </member>
   <member name="EMRPLGBLT.yMask">
-    <summary>
-      <para>Vertical pixel offset into mask bitmap.</para>
-    </summary>
+    <summary>Vertical pixel offset into mask bitmap.</summary>
   </member>
   <member name="EMRPLGBLT.iUsageMask">
-    <summary>
-      <para>Value of the <b>bmiColors</b> member of the mask <see cref="BITMAPINFO" /> structure.</para>
-    </summary>
+    <summary>Value of the <b>bmiColors</b> member of the mask <see cref="BITMAPINFO" /> structure.</summary>
   </member>
   <member name="EMRPLGBLT.offBmiMask">
-    <summary>
-      <para>Offset to mask <see cref="BITMAPINFO" /> structure.</para>
-    </summary>
+    <summary>Offset to mask <see cref="BITMAPINFO" /> structure.</summary>
   </member>
   <member name="EMRPLGBLT.cbBmiMask">
-    <summary>
-      <para>Size of mask <see cref="BITMAPINFO" /> structure.</para>
-    </summary>
+    <summary>Size of mask <see cref="BITMAPINFO" /> structure.</summary>
   </member>
   <member name="EMRPLGBLT.offBitsMask">
-    <summary>
-      <para>Offset to mask bitmap bits.</para>
-    </summary>
+    <summary>Offset to mask bitmap bits.</summary>
   </member>
   <member name="EMRPLGBLT.cbBitsMask">
-    <summary>
-      <para>Size of mask bitmap bits.</para>
-    </summary>
+    <summary>Size of mask bitmap bits.</summary>
   </member>
 </doc>

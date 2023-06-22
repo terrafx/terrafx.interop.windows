@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.CLIPFORMAT_UserFree">
+    <summary>Frees resources on the server side when called by RPC stub files.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The object.</param>
+  </member>
+  <member name="Windows.CLIPFORMAT_UserFree64">
+    <summary>Frees resources on the server side when called by RPC stub files.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The object.</param>
+  </member>
+  <member name="Windows.CLIPFORMAT_UserMarshal">
+    <summary>Marshals a CLIPFORMAT object into the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.CLIPFORMAT_UserMarshal64">
+    <summary>Marshals a CLIPFORMAT object into the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.CLIPFORMAT_UserSize">
+    <summary>Calculates the wire size of the CLIPFORMAT object and gets its handle and data.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the CLIPFORMAT object to be properly aligned when it will be marshaled to the buffer.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.CLIPFORMAT_UserSize64">
+    <summary>Calculates the wire size of the CLIPFORMAT object and gets its handle and data.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the CLIPFORMAT object to be properly aligned when it will be marshaled to the buffer.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.CLIPFORMAT_UserUnmarshal">
+    <summary>Unmarshals a CLIPFORMAT object from the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.CLIPFORMAT_UserUnmarshal64">
+    <summary>Unmarshals a CLIPFORMAT object from the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HACCEL_UserFree">
+    <summary>Frees resources on the server side when called by RPC stub files.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The object.</param>
+  </member>
+  <member name="Windows.HACCEL_UserFree64">
+    <summary>Frees resources on the server side when called by RPC stub files.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The object.</param>
+  </member>
+  <member name="Windows.HACCEL_UserMarshal">
+    <summary>Marshals a HACCEL into the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HACCEL_UserMarshal64">
+    <summary>Marshals a HACCEL object into the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HACCEL_UserSize">
+    <summary>
+      <para>Calculates the wire size of the HACCEL object and gets its handle and data.</para>
+      <h3>-param unnamedParam1 [in]</h3>
+      <para>The data used by RPC.</para>
+      <h3>-param unnamedParam2 [in]</h3>
+      <para>The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the HACCEL object to be properly aligned when it will be marshaled to the buffer.</para>
+      <h3>-param unnamedParam3 [in]</h3>
+      <para>The object.</para>
+    </summary>
+  </member>
+  <member name="Windows.HACCEL_UserSize64">
+    <summary>Calculates the wire size of the HACCEL object and gets its handle and data.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the HACCEL object to be properly aligned when it will be marshaled to the buffer.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HACCEL_UserUnmarshal">
+    <summary>Unmarshals a HACCEL object from the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HACCEL_UserUnmarshal64">
+    <summary>Unmarshals a HACCEL object from the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HDC_UserFree">
+    <summary>Frees resources on the server side when called by RPC stub files.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The object.</param>
+  </member>
+  <member name="Windows.HDC_UserFree64">
+    <summary>Frees resources on the server side when called by RPC stub files.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The object.</param>
+  </member>
+  <member name="Windows.HDC_UserMarshal">
+    <summary>Marshals a HDC object into the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HDC_UserMarshal64">
+    <summary>Marshals a HDC object into the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HDC_UserSize">
+    <summary>Calculates the wire size of the HDC object and gets its handle and data.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the HDC object to be properly aligned when it will be marshaled to the buffer.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HDC_UserSize64">
+    <summary>Calculates the wire size of the HDC object and gets its handle and data.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the HDC object to be properly aligned when it will be marshaled to the buffer.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HDC_UserUnmarshal">
+    <summary>Unmarshals a HDC object from the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HDC_UserUnmarshal64">
+    <summary>Unmarshals a HDC object from the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HGLOBAL_UserFree">
+    <summary>Frees resources on the server side when called by RPC stub files.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The object.</param>
+  </member>
+  <member name="Windows.HGLOBAL_UserFree64">
+    <summary>Frees resources on the server side when called by RPC stub files.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The object.</param>
+  </member>
+  <member name="Windows.HGLOBAL_UserMarshal">
+    <summary>Marshals a HGLOBAL into the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HGLOBAL_UserMarshal64">
+    <summary>Marshals a HGLOBAL object into the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HGLOBAL_UserSize">
+    <summary>Calculates the wire size of the HGLOBAL object and gets its handle and data.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the HGLOBAL object to be properly aligned when it will be marshaled to the buffer.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HGLOBAL_UserSize64">
+    <summary>Calculates the wire size of the HGLOBAL object and gets its handle and data.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the HGLOBAL object to be properly aligned when it will be marshaled to the buffer.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HGLOBAL_UserUnmarshal">
+    <summary>Unmarshals a HGLOBAL object from the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HGLOBAL_UserUnmarshal64">
+    <summary>Unmarshals a HGLOBAL object from the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HMENU_UserFree">
+    <summary>Frees resources on the server side when called by RPC stub files.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The object.</param>
+  </member>
+  <member name="Windows.HMENU_UserFree64">
+    <summary>Frees resources on the server side when called by RPC stub files.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The object.</param>
+  </member>
+  <member name="Windows.HMENU_UserMarshal">
+    <summary>Marshals a HMENU into the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HMENU_UserMarshal64">
+    <summary>Marshals a HMENU into the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HMENU_UserSize">
+    <summary>Calculates the wire size of the HMENU object and gets its handle and data.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the HMENU object to be properly aligned when it will be marshaled to the buffer.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HMENU_UserSize64">
+    <summary>Calculates the wire size of the HMENU object and gets its handle and data.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the HMENU object to be properly aligned when it will be marshaled to the buffer.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HMENU_UserUnmarshal">
+    <summary>Unmarshals a HMENU object from the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HMENU_UserUnmarshal64">
+    <summary>Unmarshals a HMENU object from the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HWND_UserFree">
+    <summary>Frees resources on the server side when called by RPC stub files.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The object.</param>
+  </member>
+  <member name="Windows.HWND_UserFree64">
+    <summary>Frees resources on the server side when called by RPC stub files.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The object.</param>
+  </member>
+  <member name="Windows.HWND_UserMarshal">
+    <summary>Marshals a HWND object into the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HWND_UserMarshal64">
+    <summary>Marshals a HWND object into the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HWND_UserSize">
+    <summary>Calculates the wire size of the HWND object and gets its handle and data.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the HWND object to be properly aligned when it will be marshaled to the buffer.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HWND_UserSize64">
+    <summary>Calculates the wire size of the HWND object and gets its handle and data.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the HWND object to be properly aligned when it will be marshaled to the buffer.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HWND_UserUnmarshal">
+    <summary>Unmarshals a HWND object from the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HWND_UserUnmarshal64">
+    <summary>Unmarshals a HWND object from the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.STGMEDIUM_UserFree">
+    <summary>Frees resources on the server side when called by RPC stub files.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The object.</param>
+  </member>
+  <member name="Windows.STGMEDIUM_UserFree64">
+    <summary>Frees resources on the server side when called by RPC stub files.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The object.</param>
+  </member>
+  <member name="Windows.STGMEDIUM_UserMarshal">
+    <summary>Marshals a STGMEDIUM object into the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.STGMEDIUM_UserMarshal64">
+    <summary>Marshals a STGMEDIUM object into the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.STGMEDIUM_UserSize">
+    <summary>Calculates the wire size of the STGMEDIUM object and gets its handle and data.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the STGMEDIUM object to be properly aligned when it will be marshaled to the buffer.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.STGMEDIUM_UserSize64">
+    <summary>Calculates the wire size of the STGMEDIUM object and gets its handle and data.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the STGMEDIUM object to be properly aligned when it will be marshaled to the buffer.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.STGMEDIUM_UserUnmarshal">
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.STGMEDIUM_UserUnmarshal64">
+    <summary>Unmarshals a STGMEDIUM object from the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+</doc>

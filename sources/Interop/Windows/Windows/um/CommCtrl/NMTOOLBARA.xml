@@ -3,105 +3,51 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMTOOLBARA">
-    <summary>
-      <para>Contains information used to process toolbar notification codes. This structure supersedes the
-<b>TBNOTIFY</b> structure.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The commctrl.h header defines NMTOOLBAR as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
+    <summary>Contains information used to process toolbar notification codes. This structure supersedes the<b>TBNOTIFY</b> structure.</summary>
   </member>
   <member name="NMTOOLBARA.hdr">
     <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>
-        <see cref="NMHDR" /> structure that contains additional information about the notification.</para>
-    </summary>
+      <see cref="NMHDR" /> structure that contains additional information about the notification.</summary>
   </member>
   <member name="NMTOOLBARA.iItem">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Command identifier of the button associated with the notification code.</para>
-    </summary>
+    <summary>Command identifier of the button associated with the notification code.</summary>
   </member>
   <member name="NMTOOLBARA.tbButton">
     <summary>
-      <para>Type: <b><see cref="TBBUTTON" /></b></para>
-      <para>
-        <see cref="TBBUTTON" /> structure that contains information about the toolbar button associated with the notification code. This member only contains valid information with the <a href="https://docs.microsoft.com//windows/desktop/Controls/tbn-queryinsert">TBN_QUERYINSERT</a> and <a href="https://docs.microsoft.com//windows/desktop/Controls/tbn-querydelete">TBN_QUERYDELETE</a> notification codes.</para>
-    </summary>
+      <see cref="TBBUTTON" /> structure that contains information about the toolbar button associated with the notification code. This member only contains valid information with the <a href="https://docs.microsoft.com//windows/desktop/Controls/tbn-queryinsert">TBN_QUERYINSERT</a> and <a href="https://docs.microsoft.com//windows/desktop/Controls/tbn-querydelete">TBN_QUERYDELETE</a> notification codes.</summary>
   </member>
   <member name="NMTOOLBARA.cchText">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Count of characters in the button text.</para>
-    </summary>
+    <summary>Count of characters in the button text.</summary>
   </member>
   <member name="NMTOOLBARA.pszText">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPTSTR</a></b></para>
-      <para>Address of a character buffer that contains the button text.</para>
-    </summary>
+    <summary>Address of a character buffer that contains the button text.</summary>
   </member>
   <member name="NMTOOLBARA.rcButton">
     <summary>
-      <para>Type: <b><see cref="RECT" /></b></para>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 5.80.</a> A <see cref="RECT" /> structure that defines the area covered by the button.</para>
-    </summary>
+      <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 5.80.</a> A <see cref="RECT" /> structure that defines the area covered by the button.</summary>
   </member>
   <member name="NMTOOLBARA">
-    <summary>
-      <para>Contains information used to process toolbar notification codes. This structure supersedes the
-<b>TBNOTIFY</b> structure.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The commctrl.h header defines NMTOOLBAR as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
+    <summary>Contains information used to process toolbar notification codes. This structure supersedes the<b>TBNOTIFY</b> structure.</summary>
   </member>
   <member name="NMTOOLBARA.hdr">
     <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>
-        <see cref="NMHDR" /> structure that contains additional information about the notification.</para>
-    </summary>
+      <see cref="NMHDR" /> structure that contains additional information about the notification.</summary>
   </member>
   <member name="NMTOOLBARA.iItem">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Command identifier of the button associated with the notification code.</para>
-    </summary>
+    <summary>Command identifier of the button associated with the notification code.</summary>
   </member>
   <member name="NMTOOLBARA.tbButton">
     <summary>
-      <para>Type: <b><see cref="TBBUTTON" /></b></para>
-      <para>
-        <see cref="TBBUTTON" /> structure that contains information about the toolbar button associated with the notification code. This member only contains valid information with the <a href="https://docs.microsoft.com//windows/desktop/Controls/tbn-queryinsert">TBN_QUERYINSERT</a> and <a href="https://docs.microsoft.com//windows/desktop/Controls/tbn-querydelete">TBN_QUERYDELETE</a> notification codes.</para>
-    </summary>
+      <see cref="TBBUTTON" /> structure that contains information about the toolbar button associated with the notification code. This member only contains valid information with the <a href="https://docs.microsoft.com//windows/desktop/Controls/tbn-queryinsert">TBN_QUERYINSERT</a> and <a href="https://docs.microsoft.com//windows/desktop/Controls/tbn-querydelete">TBN_QUERYDELETE</a> notification codes.</summary>
   </member>
   <member name="NMTOOLBARA.cchText">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Count of characters in the button text.</para>
-    </summary>
+    <summary>Count of characters in the button text.</summary>
   </member>
   <member name="NMTOOLBARA.pszText">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPTSTR</a></b></para>
-      <para>Address of a character buffer that contains the button text.</para>
-    </summary>
+    <summary>Address of a character buffer that contains the button text.</summary>
   </member>
   <member name="NMTOOLBARA.rcButton">
     <summary>
-      <para>Type: <b><see cref="RECT" /></b></para>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 5.80.</a> A <see cref="RECT" /> structure that defines the area covered by the button.</para>
-    </summary>
+      <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 5.80.</a> A <see cref="RECT" /> structure that defines the area covered by the button.</summary>
   </member>
 </doc>

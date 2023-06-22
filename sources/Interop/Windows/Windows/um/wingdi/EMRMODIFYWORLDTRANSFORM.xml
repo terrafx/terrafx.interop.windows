@@ -3,28 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRMODIFYWORLDTRANSFORM">
-    <summary>
-      <para>The <b>EMRMODIFYWORLDTRANSFORM</b> structure contains members for the <see cref="ModifyWorldTransform" /> enhanced metafile record.</para>
-    </summary>
-    <seealso cref="EMR" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
-    <seealso cref="ModifyWorldTransform" />
-    <seealso cref="XFORM" />
+    <summary>The <b>EMRMODIFYWORLDTRANSFORM</b> structure contains members for the <see cref="ModifyWorldTransform" /> enhanced metafile record.</summary>
   </member>
   <member name="EMRMODIFYWORLDTRANSFORM.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMRMODIFYWORLDTRANSFORM.xform">
-    <summary>
-      <para>The world-space to page-space transform data.</para>
-    </summary>
+    <summary>The world-space to page-space transform data.</summary>
   </member>
   <member name="EMRMODIFYWORLDTRANSFORM.iMode">
-    <summary>
-      <para>Indicates how the transformation data modifies the current world transformation. This member can be one of the following values: MWT_IDENTITY, MWT_LEFTMULTIPLY, or MWT_RIGHTMULTIPLY.</para>
-    </summary>
+    <summary>Indicates how the transformation data modifies the current world transformation. This member can be one of the following values: MWT_IDENTITY, MWT_LEFTMULTIPLY, or MWT_RIGHTMULTIPLY.</summary>
   </member>
 </doc>

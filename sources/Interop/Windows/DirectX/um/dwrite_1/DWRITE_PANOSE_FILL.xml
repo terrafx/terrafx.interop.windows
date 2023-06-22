@@ -3,49 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_PANOSE_FILL">
-    <summary>
-      <para>The <b>DWRITE_PANOSE_FILL</b> enumeration contains values that specify the type of fill and line treatment.</para>
-    </summary>
-    <seealso cref="DWRITE_PANOSE" />
+    <summary>The <b>DWRITE_PANOSE_FILL</b> enumeration contains values that specify the type of fill and line treatment.</summary>
   </member>
   <member name="DWRITE_PANOSE_FILL.DWRITE_PANOSE_FILL_ANY">
-    <summary>
-      <para>Any fill.</para>
-    </summary>
+    <summary>Any fill.</summary>
   </member>
   <member name="DWRITE_PANOSE_FILL.DWRITE_PANOSE_FILL_NO_FIT">
-    <summary>
-      <para>No fit for fill.</para>
-    </summary>
+    <summary>No fit for fill.</summary>
   </member>
   <member name="DWRITE_PANOSE_FILL.DWRITE_PANOSE_FILL_STANDARD_SOLID_FILL">
-    <summary>
-      <para>The fill is the standard solid fill.</para>
-    </summary>
+    <summary>The fill is the standard solid fill.</summary>
   </member>
   <member name="DWRITE_PANOSE_FILL.DWRITE_PANOSE_FILL_NO_FILL">
-    <summary>
-      <para>No fill.</para>
-    </summary>
+    <summary>No fill.</summary>
   </member>
   <member name="DWRITE_PANOSE_FILL.DWRITE_PANOSE_FILL_PATTERNED_FILL">
-    <summary>
-      <para>The fill is patterned fill.</para>
-    </summary>
+    <summary>The fill is patterned fill.</summary>
   </member>
   <member name="DWRITE_PANOSE_FILL.DWRITE_PANOSE_FILL_COMPLEX_FILL">
-    <summary>
-      <para>The fill is complex fill.</para>
-    </summary>
+    <summary>The fill is complex fill.</summary>
   </member>
   <member name="DWRITE_PANOSE_FILL.DWRITE_PANOSE_FILL_SHAPED_FILL">
-    <summary>
-      <para>The fill is shaped fill.</para>
-    </summary>
+    <summary>The fill is shaped fill.</summary>
   </member>
   <member name="DWRITE_PANOSE_FILL.DWRITE_PANOSE_FILL_DRAWN_DISTRESSED">
-    <summary>
-      <para>The fill is drawn distressed.</para>
-    </summary>
+    <summary>The fill is drawn distressed.</summary>
   </member>
 </doc>

@@ -4,42 +4,26 @@
 <doc>
   <member name="REGFILTER2">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>REGFILTER2</code> structure contains information for registering a filter.</para>
     </summary>
-    <remarks>
-      <para>This structure is passed to the <see cref="IFilterMapper2.RegisterFilter" /> method.</para>
-      <para>If you need to register pin mediums or pin categories, set <b>dwVersion</b> to 2 and use the <see cref="REGFILTERPINS2" /> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="REGFILTER2.dwVersion">
-    <summary>
-      <para>Filter registration format. If the value is 1, the union contains the first unnamed structure. If the value is 2, the union contains the second unnamed structure.</para>
-    </summary>
+    <summary>Filter registration format. If the value is 1, the union contains the first unnamed structure. If the value is 2, the union contains the second unnamed structure.</summary>
   </member>
   <member name="REGFILTER2.dwMerit">
-    <summary>
-      <para>Filter merit. Filters with higher merit are enumerated first. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/merit">Merit</a>.</para>
-    </summary>
+    <summary>Filter merit. Filters with higher merit are enumerated first. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/merit">Merit</a>.</summary>
   </member>
   <member name="REGFILTER2.cPins">
-    <summary>
-      <para>Number of pins. (Defined only if <b>dwVersion</b> is 1.)</para>
-    </summary>
+    <summary>Number of pins. (Defined only if <b>dwVersion</b> is 1.)</summary>
   </member>
   <member name="REGFILTER2.rgPins">
-    <summary>
-      <para>Pointer to an array of <see cref="REGFILTERPINS" /> structures, of size <b>cPins</b>. (Defined only if <b>dwVersion</b> is 1.)</para>
-    </summary>
+    <summary>Pointer to an array of <see cref="REGFILTERPINS" /> structures, of size <b>cPins</b>. (Defined only if <b>dwVersion</b> is 1.)</summary>
   </member>
   <member name="REGFILTER2.cPins2">
-    <summary>
-      <para>Number of pins. (Defined only if <b>dwVersion</b> is 2.)</para>
-    </summary>
+    <summary>Number of pins. (Defined only if <b>dwVersion</b> is 2.)</summary>
   </member>
   <member name="REGFILTER2.rgPins2">
-    <summary>
-      <para>Pointer to an array of <see cref="REGFILTERPINS2" /> structures, of size <b>cPins2</b>. (Defined only if <b>dwVersion</b> is 2.)</para>
-    </summary>
+    <summary>Pointer to an array of <see cref="REGFILTERPINS2" /> structures, of size <b>cPins2</b>. (Defined only if <b>dwVersion</b> is 2.)</summary>
   </member>
 </doc>

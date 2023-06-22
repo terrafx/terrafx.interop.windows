@@ -3,107 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDockingWindow.CloseDW">
-    <summary>
-      <para>Notifies the docking window object that it is about to be removed from the frame. The docking window object should save any persistent information at this time.</para>
-    </summary>
-    <param name="dwReserved">
-      <para>Type: <b>DWORD</b></para>
-      <para>Reserved. This parameter should always be zero.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDeskBand" />
-    <seealso cref="IDockingWindow" />
-    <seealso cref="IDockingWindowFrame" />
-    <seealso cref="IDockingWindowSite" />
+    <summary>Notifies the docking window object that it is about to be removed from the frame. The docking window object should save any persistent information at this time.</summary>
+    <param name="dwReserved">Reserved. This parameter should always be zero.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDockingWindow.ResizeBorderDW">
-    <summary>
-      <para>Notifies the docking window object that the frame's border space has changed. In response to this method, the <see cref="IDockingWindow" /> implementation must call <see cref="SetBorderSpaceDW" />, even if no border space is required or a change is not necessary.</para>
-    </summary>
-    <param name="prcBorder">
-      <para>Type: <b>LPCRECT</b></para>
-      <para>Pointer to a <see cref="RECT" /> structure that contains the frame's available border space.</para>
-    </param>
-    <param name="punkToolbarSite">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>Pointer to the site's <see cref="IUnknown" /> interface. The docking window object should call the <see cref="QueryInterface" /> method for this interface, requesting IID_IDockingWindowSite. The docking window object then uses that interface to negotiate its border space. It is the docking window object's responsibility to release this interface when it is no longer needed.</para>
-    </param>
-    <param name="fReserved">
-      <para>Type: <b>BOOL</b></para>
-      <para>Reserved. This parameter should always be zero.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <i>prcBorder</i> parameter contains the frame's entire available border space. The docking window object should negotiate its border space and then use this information to position itself.</para>
-      <para>For example, if the docking window object requires 25 pixels at the top of the border space, it should negotiate for this through the following steps:</para>
-      <list type="number">
-        <item>
-          <description>Allocate a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/cc136564(v=vs.85)">BORDERWIDTHS</a> structure and set its <b>top</b> member to 25.</description>
-        </item>
-        <item>
-          <description>Call <see cref="RequestBorderSpaceDW" /> to request the space.</description>
-        </item>
-        <item>
-          <description>If the request is approved by <see cref="RequestBorderSpaceDW" />, call <see cref="SetBorderSpaceDW" /> to allocate the space.</description>
-        </item>
-      </list>
-      <para>The docking window object can then position its window at prcBorder-&gt;left and prcBorder-&gt;top. The width of the docking window object's window is determined by subtracting prcBorder-&gt;left from prcBorder-&gt;right. Its height is contained in the <b>top</b> member of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/cc136564(v=vs.85)">BORDERWIDTHS</a> structure.</para>
-    </remarks>
-    <seealso cref="IDeskBand" />
-    <seealso cref="IDockingWindow" />
-    <seealso cref="IDockingWindowFrame" />
-    <seealso cref="IDockingWindowSite" />
+    <summary>Notifies the docking window object that the frame's border space has changed. In response to this method, the <see cref="IDockingWindow" /> implementation must call <see cref="SetBorderSpaceDW" />, even if no border space is required or a change is not necessary.</summary>
+    <param name="prcBorder">Pointer to a <see cref="RECT" /> structure that contains the frame's available border space.</param>
+    <param name="punkToolbarSite">Pointer to the site's <see cref="IUnknown" /> interface. The docking window object should call the <see cref="QueryInterface" /> method for this interface, requesting IID_IDockingWindowSite. The docking window object then uses that interface to negotiate its border space. It is the docking window object's responsibility to release this interface when it is no longer needed.</param>
+    <param name="fReserved">Reserved. This parameter should always be zero.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDockingWindow.ShowDW">
-    <summary>
-      <para>Instructs the docking window object to show or hide itself.</para>
-    </summary>
+    <summary>Instructs the docking window object to show or hide itself.</summary>
     <param name="fShow">
-      <para>Type: <b>BOOL</b></para>
-      <para>
-        <b>TRUE</b> if the docking window object should show its window. <b>FALSE</b> if the docking window object should hide its window and return its border space by calling <see cref="SetBorderSpaceDW" /> with zero values.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDeskBand" />
-    <seealso cref="IDockingWindow" />
-    <seealso cref="IDockingWindowFrame" />
-    <seealso cref="IDockingWindowSite" />
+      <b>TRUE</b> if the docking window object should show its window. <b>FALSE</b> if the docking window object should hide its window and return its border space by calling <see cref="SetBorderSpaceDW" /> with zero values.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDockingWindow">
-    <summary>
-      <para>Exposes methods that notify the docking window object of changes, including showing, hiding, and impending removal. This interface is implemented by window objects that can be docked within the border space of a Windows Explorer window.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>IDockingWindow</b> is derived from <see cref="IOleWindow" />. See the following topics for details on these methods also available to <b>IDockingWindow</b> through that inheritance.</para>
-      <list type="table">
-        <listheader>
-          <description>Additional IDockingWindow Methods</description>
-        </listheader>
-        <item>
-          <description>
-            <see cref="IDockingWindow.GetWindow" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IDockingWindow.ContextSensitiveHelp" />
-          </description>
-        </item>
-      </list>
-      <h3>When to Implement</h3>
-      <para>Implement <b>IDockingWindow</b> when you want to display a window inside a browser frame. This is typically used for user interface windows, such as toolbars.</para>
-      <h3>When to Use</h3>
-      <para>You do not usually use the <b>IDockingWindow</b> interface directly. The Shell browser uses this interface to support docked windows inside the browser frame.</para>
-    </remarks>
+    <summary>Exposes methods that notify the docking window object of changes, including showing, hiding, and impending removal. This interface is implemented by window objects that can be docked within the border space of a Windows Explorer window.</summary>
   </member>
 </doc>

@@ -3,22 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D10EffectPool.AsEffect">
-    <summary>
-      <para>Get the effect that created the effect pool.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="ID3D10Effect" />*</b></para>
-      <para>A pointer to an <see cref="ID3D10Effect Interface" /> interface.</para>
-    </returns>
-    <seealso cref="ID3D10EffectPool Interface" />
+    <summary>Get the effect that created the effect pool.</summary>
+    <returns>A pointer to an <see cref="ID3D10Effect Interface" /> interface.</returns>
   </member>
   <member name="ID3D10EffectPool">
-    <summary>
-      <para>A pool interface represents a common memory space (or pool) for sharing variables between effects.</para>
-    </summary>
-    <remarks>
-      <para>To create an effect pool, call a function like <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3dx10createeffectpoolfromfile">D3DX10CreateEffectPoolFromFile</a>. Effect pools can improve performance by reducing the number of API calls required to make state changes (see <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-effects-performance">Using Effect Pools</a>).</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-interfaces">Effect Interfaces (Direct3D 10)</seealso>
+    <summary>A pool interface represents a common memory space (or pool) for sharing variables between effects.</summary>
   </member>
 </doc>

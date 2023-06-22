@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_TIMED_TEXT_ALIGNMENT">
-    <summary>
-      <para>Specifies how text is aligned in its parent block element.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies how text is aligned in its parent block element.</summary>
   </member>
   <member name="MF_TIMED_TEXT_ALIGNMENT.MF_TIMED_TEXT_ALIGNMENT_START">
-    <summary>
-      <para>Text is aligned at the start of its parent block element.</para>
-    </summary>
+    <summary>Text is aligned at the start of its parent block element.</summary>
   </member>
   <member name="MF_TIMED_TEXT_ALIGNMENT.MF_TIMED_TEXT_ALIGNMENT_END">
-    <summary>
-      <para>Text is aligned at the end of its parent block element.</para>
-    </summary>
+    <summary>Text is aligned at the end of its parent block element.</summary>
   </member>
   <member name="MF_TIMED_TEXT_ALIGNMENT.MF_TIMED_TEXT_ALIGNMENT_CENTER">
-    <summary>
-      <para>Text is aligned in the center of its parent block element.</para>
-    </summary>
+    <summary>Text is aligned in the center of its parent block element.</summary>
   </member>
 </doc>

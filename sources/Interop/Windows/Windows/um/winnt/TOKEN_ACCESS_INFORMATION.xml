@@ -4,49 +4,32 @@
 <doc>
   <member name="TOKEN_ACCESS_INFORMATION">
     <summary>
-      <para>The <b>TOKEN_ACCESS_INFORMATION</b> structure specifies all the information in a token that is necessary to perform an access check.<b>Note</b>  This structure doesn't contain token claim information. Applications that support conditional expression <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control entries</a> (ACEs) should not use this structure for verifying access. For information about access validation support for conditional expressions, see the <see cref="AuthzAccessCheck" /> and <see cref="AccessCheckAndAuditAlarm" /> functions.</para>
+      <para>The <b>TOKEN_ACCESS_INFORMATION</b> structure specifies all the information in a token that is necessary to perform an access check.<div><b>Note</b>  This structure doesn't contain token claim information. Applications that support conditional expression <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control entries</a> (ACEs) should not use this structure for verifying access. For information about access validation support for conditional expressions, see the <see cref="AuthzAccessCheck" /> and <see cref="AccessCheckAndAuditAlarm" /> functions.</div></para>
     </summary>
-    <seealso cref="TOKEN_INFORMATION_CLASS" />
   </member>
   <member name="TOKEN_ACCESS_INFORMATION.SidHash">
-    <summary>
-      <para>A pointer to a <see cref="SID_AND_ATTRIBUTES_HASH" /> structure that specifies a hash of the token's <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID).</para>
-    </summary>
+    <summary>A pointer to a <see cref="SID_AND_ATTRIBUTES_HASH" /> structure that specifies a hash of the token's <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID).</summary>
   </member>
   <member name="TOKEN_ACCESS_INFORMATION.RestrictedSidHash">
-    <summary>
-      <para>A pointer to a <see cref="SID_AND_ATTRIBUTES_HASH" /> structure that specifies a hash of the token's restricted SID.</para>
-    </summary>
+    <summary>A pointer to a <see cref="SID_AND_ATTRIBUTES_HASH" /> structure that specifies a hash of the token's restricted SID.</summary>
   </member>
   <member name="TOKEN_ACCESS_INFORMATION.Privileges">
-    <summary>
-      <para>A pointer to a <see cref="TOKEN_PRIVILEGES" /> structure that specifies information about the token's privileges.</para>
-    </summary>
+    <summary>A pointer to a <see cref="TOKEN_PRIVILEGES" /> structure that specifies information about the token's privileges.</summary>
   </member>
   <member name="TOKEN_ACCESS_INFORMATION.AuthenticationId">
-    <summary>
-      <para>A <see cref="LUID" /> structure that specifies the token's identity.</para>
-    </summary>
+    <summary>A <see cref="LUID" /> structure that specifies the token's identity.</summary>
   </member>
   <member name="TOKEN_ACCESS_INFORMATION.TokenType">
-    <summary>
-      <para>A value of the <see cref="TOKEN_TYPE" /> enumeration that specifies the token's type.</para>
-    </summary>
+    <summary>A value of the <see cref="TOKEN_TYPE" /> enumeration that specifies the token's type.</summary>
   </member>
   <member name="TOKEN_ACCESS_INFORMATION.ImpersonationLevel">
-    <summary>
-      <para>A value of the <see cref="SECURITY_IMPERSONATION_LEVEL" /> enumeration that specifies the token's impersonation level.</para>
-    </summary>
+    <summary>A value of the <see cref="SECURITY_IMPERSONATION_LEVEL" /> enumeration that specifies the token's impersonation level.</summary>
   </member>
   <member name="TOKEN_ACCESS_INFORMATION.MandatoryPolicy">
-    <summary>
-      <para>A <see cref="TOKEN_MANDATORY_POLICY" /> structure that specifies the token's mandatory integrity policy.</para>
-    </summary>
+    <summary>A <see cref="TOKEN_MANDATORY_POLICY" /> structure that specifies the token's mandatory integrity policy.</summary>
   </member>
   <member name="TOKEN_ACCESS_INFORMATION.Flags">
-    <summary>
-      <para>Reserved. Must be set to zero.</para>
-    </summary>
+    <summary>Reserved. Must be set to zero.</summary>
   </member>
   <member name="TOKEN_ACCESS_INFORMATION.AppContainerNumber">
     <summary>
@@ -70,9 +53,7 @@
     </summary>
   </member>
   <member name="TOKEN_ACCESS_INFORMATION.TrustLevelSid">
-    <summary>
-      <para>The protected process trust level of the token.</para>
-    </summary>
+    <summary>The protected process trust level of the token.</summary>
   </member>
   <member name="TOKEN_ACCESS_INFORMATION.SecurityAttributes">
     <summary>

@@ -3,31 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STORAGE_SPEC_VERSION">
-    <summary>
-      <para>Storage specification version.</para>
-    </summary>
+    <summary>Storage specification version.</summary>
   </member>
-  <member name="STORAGE_SPEC_VERSION.DUMMYSTRUCTNAME">
-    <summary></summary>
-  </member>
-  <member name="STORAGE_SPEC_VERSION.DUMMYSTRUCTNAME.MinorVersion">
-    <summary></summary>
-  </member>
-  <member name="STORAGE_SPEC_VERSION.DUMMYSTRUCTNAME.MinorVersion.DUMMYSTRUCTNAME">
-    <summary></summary>
-  </member>
-  <member name="STORAGE_SPEC_VERSION.DUMMYSTRUCTNAME.MinorVersion.DUMMYSTRUCTNAME.SubMinor">
-    <summary></summary>
-  </member>
-  <member name="STORAGE_SPEC_VERSION.DUMMYSTRUCTNAME.MinorVersion.DUMMYSTRUCTNAME.Minor">
-    <summary></summary>
-  </member>
-  <member name="STORAGE_SPEC_VERSION.DUMMYSTRUCTNAME.MinorVersion.AsUshort">
-    <summary></summary>
-  </member>
-  <member name="STORAGE_SPEC_VERSION.DUMMYSTRUCTNAME.MajorVersion">
-    <summary></summary>
-  </member>
+  <member name="STORAGE_SPEC_VERSION.DUMMYSTRUCTNAME"></member>
+  <member name="STORAGE_SPEC_VERSION.DUMMYSTRUCTNAME.MinorVersion"></member>
+  <member name="STORAGE_SPEC_VERSION.DUMMYSTRUCTNAME.MinorVersion.DUMMYSTRUCTNAME"></member>
+  <member name="STORAGE_SPEC_VERSION.DUMMYSTRUCTNAME.MinorVersion.DUMMYSTRUCTNAME.SubMinor"></member>
+  <member name="STORAGE_SPEC_VERSION.DUMMYSTRUCTNAME.MinorVersion.DUMMYSTRUCTNAME.Minor"></member>
+  <member name="STORAGE_SPEC_VERSION.DUMMYSTRUCTNAME.MinorVersion.AsUshort"></member>
+  <member name="STORAGE_SPEC_VERSION.DUMMYSTRUCTNAME.MajorVersion"></member>
   <member name="STORAGE_SPEC_VERSION.AsUlong">
     <summary>
       <h4>- AsUshort</h4>

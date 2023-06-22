@@ -3,30 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="INTERACTION_STATE">
-    <summary>
-      <para>Specifies the state of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-getstateinteractioncontext">GetStateInteractionContext</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/enumerations">Interaction Context Enumerations</seealso>
+    <summary>Specifies the state of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</summary>
   </member>
   <member name="INTERACTION_STATE.INTERACTION_STATE_IDLE">
-    <summary>
-      <para>There are no ongoing interactions and all transitional states (inertia, double tap) are complete. It is safe to reuse the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
-    </summary>
+    <summary>There are no ongoing interactions and all transitional states (inertia, double tap) are complete. It is safe to reuse the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</summary>
   </member>
   <member name="INTERACTION_STATE.INTERACTION_STATE_IN_INTERACTION">
-    <summary>
-      <para>There is an ongoing interaction. One or more contacts are detected, or inertia is in progress.</para>
-    </summary>
+    <summary>There is an ongoing interaction. One or more contacts are detected, or inertia is in progress.</summary>
   </member>
   <member name="INTERACTION_STATE.INTERACTION_STATE_POSSIBLE_DOUBLE_TAP">
-    <summary>
-      <para>All contacts are lifted, but the time threshold for double tap has not been crossed.</para>
-    </summary>
+    <summary>All contacts are lifted, but the time threshold for double tap has not been crossed.</summary>
   </member>
   <member name="INTERACTION_STATE.INTERACTION_STATE_MAX">
-    <summary>
-      <para>Maximum number of interactions exceeded.</para>
-    </summary>
+    <summary>Maximum number of interactions exceeded.</summary>
   </member>
 </doc>

@@ -3,38 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PSS_AUXILIARY_PAGE_ENTRY">
-    <summary>
-      <para>Holds auxiliary page entry information returned by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a>.</para>
-    </summary>
-    <remarks>
-      <para>
-        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a> returns a <b>PSS_AUXILIARY_PAGE_ENTRY</b> structure when the  <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ne-processsnapshot-pss_walk_information_class">PSS_WALK_INFORMATION_CLASS</a> member that the caller provides it is <b>PSS_WALK_AUXILIARY_PAGES</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+    <summary>Holds auxiliary page entry information returned by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a>.</summary>
   </member>
   <member name="PSS_AUXILIARY_PAGE_ENTRY.Address">
-    <summary>
-      <para>The address of the captured auxiliary page, in the context of the captured process.</para>
-    </summary>
+    <summary>The address of the captured auxiliary page, in the context of the captured process.</summary>
   </member>
   <member name="PSS_AUXILIARY_PAGE_ENTRY.BasicInformation">
-    <summary>
-      <para>Basic information about the captured page. See <see cref="MEMORY_BASIC_INFORMATION" /> for more information.</para>
-    </summary>
+    <summary>Basic information about the captured page. See <see cref="MEMORY_BASIC_INFORMATION" /> for more information.</summary>
   </member>
   <member name="PSS_AUXILIARY_PAGE_ENTRY.CaptureTime">
-    <summary>
-      <para>The capture time of the page. For more information, see <see cref="FILETIME" />.</para>
-    </summary>
+    <summary>The capture time of the page. For more information, see <see cref="FILETIME" />.</summary>
   </member>
   <member name="PSS_AUXILIARY_PAGE_ENTRY.PageContents">
-    <summary>
-      <para>A pointer to the contents of the captured page, in the context of the current process. This member may be <b>NULL</b> if page contents were not captured. The pointer is valid for the lifetime of the walk marker passed to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a>.</para>
-    </summary>
+    <summary>A pointer to the contents of the captured page, in the context of the current process. This member may be <b>NULL</b> if page contents were not captured. The pointer is valid for the lifetime of the walk marker passed to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a>.</summary>
   </member>
   <member name="PSS_AUXILIARY_PAGE_ENTRY.PageSize">
-    <summary>
-      <para>The size of the page contents that <b>PageContents</b> points to, in bytes.</para>
-    </summary>
+    <summary>The size of the page contents that <b>PageContents</b> points to, in bytes.</summary>
   </member>
 </doc>

@@ -3,65 +3,71 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DRAGLISTINFO">
-    <summary>
-      <para>Contains information about a drag event. The pointer to <b>DRAGLISTINFO</b> is passed as the
-<i>lParam</i> parameter of the drag list message.</para>
-    </summary>
+    <summary>Contains information about a drag event. The pointer to <b>DRAGLISTINFO</b> is passed as the<i>lParam</i> parameter of the drag list message.</summary>
   </member>
   <member name="DRAGLISTINFO.uNotification">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>The notification code that specifies the type of drag event. This member can be one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>DL_BEGINDRAG</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DL_BEGINDRAG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The user has clicked the left mouse button on a list item.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The user has clicked the left mouse button on a list item.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DL_CANCELDRAG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The user has canceled the drag operation by clicking the right mouse button or pressing the ESC key.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>DL_CANCELDRAG</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DL_DRAGGING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The user has moved the mouse while dragging an item.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The user has canceled the drag operation by clicking the right mouse button or pressing the ESC key.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DL_DROPPED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>DL_DRAGGING</b>
-          </description>
-          <description>
-            <para>The user has moved the mouse while dragging an item.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>DL_DROPPED</b>
-          </description>
-          <description>
-            <para>The user has released the left mouse button, completing a drag operation.</para>
-          </description>
-        </item>
+          <description>The user has released the left mouse button, completing a drag operation.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="DRAGLISTINFO.hWnd">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
-      <para>A handle to the drag list box.</para>
-    </summary>
+    <summary>A handle to the drag list box.</summary>
   </member>
   <member name="DRAGLISTINFO.ptCursor">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a></b></para>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure that contains the current x- and y-coordinates of the mouse cursor.</para>
-    </summary>
+    <summary>A <see cref="POINT" /> structure that contains the current x- and y-coordinates of the mouse cursor.</summary>
   </member>
 </doc>

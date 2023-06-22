@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE">
-    <summary>
-      <para>The <b>CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE</b> structure specifies the fully qualified binary name.</para>
-    </summary>
+    <summary>The <b>CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE</b> structure specifies the fully qualified binary name.</summary>
   </member>
   <member name="CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE.Version">
-    <summary>
-      <para>The version of the fully qualified binary name value.</para>
-    </summary>
+    <summary>The version of the fully qualified binary name value.</summary>
   </member>
   <member name="CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE.Name">
-    <summary>
-      <para>A fully qualified binary name.</para>
-    </summary>
+    <summary>A fully qualified binary name.</summary>
   </member>
 </doc>

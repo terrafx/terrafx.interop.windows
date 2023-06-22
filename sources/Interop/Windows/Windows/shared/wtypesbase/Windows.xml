@@ -3,18 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.OLESTR">
-    <summary>
-      <para>Transforms string literals into Unicode strings.</para>
-    </summary>
-    <param name="str">
-      <para>A string literal.</para>
-    </param>
-    <remarks>
-      <para>This macro is defined as follows:</para>
-      <code>#define OLESTR(str) L##str
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/com/error-handling-in-com">Error Handling</seealso>
+    <summary>Transforms string literals into Unicode strings.</summary>
+    <param name="str">A string literal.</param>
   </member>
 </doc>

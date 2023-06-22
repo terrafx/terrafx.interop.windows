@@ -3,38 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_BUFFER_TENSOR_DESC">
-    <summary>
-      <para>Describes a tensor that will be stored in a Direct3D 12 buffer resource. The corresponding tensor type is <see cref="DML_TENSOR_TYPE_BUFFER" />, and the corresponding binding type is <see cref="DML_BINDING_TYPE_BUFFER" />.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-binding">Binding in DirectML</seealso>
+    <summary>Describes a tensor that will be stored in a Direct3D 12 buffer resource. The corresponding tensor type is <see cref="DML_TENSOR_TYPE_BUFFER" />, and the corresponding binding type is <see cref="DML_BINDING_TYPE_BUFFER" />.</summary>
   </member>
   <member name="DML_BUFFER_TENSOR_DESC.DataType">
-    <summary>
-      <para>Type: <see cref="DML_TENSOR_DATA_TYPE" /></para>
-      <para>The type of the values in the tensor.</para>
-    </summary>
+    <summary>The type of the values in the tensor.</summary>
   </member>
   <member name="DML_BUFFER_TENSOR_DESC.Flags">
-    <summary>
-      <para>Type: <see cref="DML_TENSOR_FLAGS" /></para>
-      <para>Specifies additional options for the tensor.</para>
-    </summary>
+    <summary>Specifies additional options for the tensor.</summary>
   </member>
   <member name="DML_BUFFER_TENSOR_DESC.DimensionCount">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The number of dimensions of the tensor. This member determines the size of the <i>Sizes</i> and <i>Strides</i> arrays (if provided). In DirectML, all buffer tensors must have a <i>DimensionCount</i> of either 4 or 5. Not all operators support a <i>DimensionCount</i> of 5.</para>
-    </summary>
+    <summary>The number of dimensions of the tensor. This member determines the size of the <i>Sizes</i> and <i>Strides</i> arrays (if provided). In DirectML, all buffer tensors must have a <i>DimensionCount</i> of either 4 or 5. Not all operators support a <i>DimensionCount</i> of 5.</summary>
   </member>
   <member name="DML_BUFFER_TENSOR_DESC.Sizes">
-    <summary>
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
-      <para>The size, in elements, of each dimension in the tensor. Specifying a size of zero in any dimension is invalid, and will result in an error. The <i>Sizes</i> member is always specified in the order {N, C, H, W} if <i>DimensionCount</i> is 4, and {N, C, D, H, W} if <i>DimensionCount</i> is 5.</para>
-    </summary>
+    <summary>The size, in elements, of each dimension in the tensor. Specifying a size of zero in any dimension is invalid, and will result in an error. The <i>Sizes</i> member is always specified in the order {N, C, H, W} if <i>DimensionCount</i> is 4, and {N, C, D, H, W} if <i>DimensionCount</i> is 5.</summary>
   </member>
   <member name="DML_BUFFER_TENSOR_DESC.Strides">
     <summary>
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
       <para>Optional. Determines the number of elements (not bytes) to linearly traverse in order to reach the next element in that dimension. For example, a stride of 5 in dimension 1 means that the distance between elements (n) and (n+1) in that dimension is 5 elements when traversing the buffer linearly. The <i>Strides</i> member is always specified in the order {N, C, H, W} if <i>DimensionCount</i> is 4, and {N, C, D, H, W} if <i>DimensionCount</i> is 5.</para>
       <para>
         <i>Strides</i> can be used to express broadcasting (by specifying a stride of 0) as well as padding (for example, by using a stride larger than the physical size of a row, to pad the end of a row).</para>
@@ -43,7 +27,6 @@
   </member>
   <member name="DML_BUFFER_TENSOR_DESC.TotalTensorSizeInBytes">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT64</a></b></para>
       <para>Defines a minimum size in bytes for the buffer that will contain this tensor. <i>TotalTensorSizeInBytes</i> must be at least as large as the minimum implied size given the sizes, strides, and data type of the tensor. You can calculate the minimum implied size by calling the <a href="https://docs.microsoft.com//windows/ai/directml/dml-helper-functions#dmlcalcbuffertensorsize">DMLCalcBufferTensorSize</a> utility free function.</para>
       <para>Providing a <i>TotalTensorSizeInBytes</i> that is larger than the minimum implied size may enable additional optimizations by allowing DirectML to elide bounds checking in some cases if the <i>TotalTensorSizeInBytes</i> defines sufficient padding beyond the end of the tensor data.</para>
       <para>When binding this tensor, the size of the buffer range must be at least as large as the <i>TotalTensorSizeInBytes</i>. For output tensors, this has the additional effect of permitting DirectML to write to any memory within the <i>TotalTensorSizeInBytes</i>. That is, your application mustn't assume that DirectML will preserve any padding bytes inside output tensors that are inside the <i>TotalTensorSizeInBytes</i>.</para>
@@ -52,7 +35,6 @@
   </member>
   <member name="DML_BUFFER_TENSOR_DESC.GuaranteedBaseOffsetAlignment">
     <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
       <para>Optional. Defines a minimum guaranteed alignment in bytes for the base offset of the buffer range that will contain this tensor, or 0 to provide no minimum guaranteed alignment. If specified, this value must be a power of two that is at least as large as the element size.</para>
       <para>When binding this tensor, the offset in bytes of the buffer range from the start of the buffer must be a multiple of the <i>GuaranteedBaseOffsetAlignment</i>, if provided.</para>
       <para>Buffer tensors always have a minimum alignment of 16 bytes. However, providing a larger value for the <i>GuaranteedBaseOffsetAlignment</i> may allow DirectML to achieve better performance, because a larger alignment enables the use of vectorized load/store instructions.</para>

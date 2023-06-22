@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfFnPlayBack.Play">
-    <summary>
-      <para>Causes the audio data for a range of text to be played.</para>
-    </summary>
+    <summary>Causes the audio data for a range of text to be played.</summary>
     <param name="pRange">
       <para>Pointer to an <see cref="ITfRange" /> object that covers the text to play the audio data for. This range object is obtained by calling <see cref="ITfFnPlayBack.QueryRange" />.</para>
       <para>If the range has zero length, the range played is expanded to cover the entire spoken phrase. If the range has a nonzero length, the range played is expanded to include the entire word, or words, that the range partially covers.</para>
@@ -17,55 +15,50 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfFnPlayBack" />
-    <seealso cref="ITfFnPlayBack.QueryRange " />
-    <seealso cref="ITfRange " />
   </member>
   <member name="ITfFnPlayBack.QueryRange">
-    <summary>
-      <para>Obtains the range of text for a word or phrase that contains audio data.</para>
-    </summary>
-    <param name="pRange">
-      <para>Pointer to an <see cref="ITfRange" /> object that covers all or part of the text that contains audio data.</para>
-    </param>
-    <param name="ppNewRange">
-      <para>Pointer to an <see cref="ITfRange" /> pointer that receives a range object that covers all of the text that contains audio data. If there is no audio data for the text covered by <i>pRange</i>, this parameters receives <b>NULL</b>. In this case, the method returns S_OK, so the caller must verify that this parameter is not <b>NULL</b> before using the pointer.</para>
-    </param>
-    <param name="pfPlayable">
-      <para>Pointer to a <b>BOOL</b> that receives zero if none of the text covered by <i>pRange</i> has any audio data or nonzero otherwise.</para>
-    </param>
+    <summary>Obtains the range of text for a word or phrase that contains audio data.</summary>
+    <param name="pRange">Pointer to an <see cref="ITfRange" /> object that covers all or part of the text that contains audio data.</param>
+    <param name="ppNewRange">Pointer to an <see cref="ITfRange" /> pointer that receives a range object that covers all of the text that contains audio data. If there is no audio data for the text covered by <i>pRange</i>, this parameters receives <b>NULL</b>. In this case, the method returns S_OK, so the caller must verify that this parameter is not <b>NULL</b> before using the pointer.</param>
+    <param name="pfPlayable">Pointer to a <b>BOOL</b> that receives zero if none of the text covered by <i>pRange</i> has any audio data or nonzero otherwise.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -73,43 +66,44 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The current implementation of this method is simple. It clones <i>pRange</i>, places the clone in <i>ppNewRange</i>, sets <i>pfPlayable</i> to <b>TRUE</b> and returns S_OK.</para>
-    </remarks>
-    <seealso cref="ITfFnPlayBack" />
-    <seealso cref="ITfRange " />
   </member>
   <member name="ITfFnPlayBack">
     <summary>
@@ -117,8 +111,5 @@
       <para>Each spoken word or phrase has audio data stored with the text. This interface is used to obtain the range that covers the spoken text and to play back the audio data.</para>
       <para>A client obtains an instance of this interface by obtaining the <see cref="ITfFunctionProvider" /> for the SAPI text service and calling <see cref="ITfFunctionProvider.GetFunction" /> with IID_ITfFnPlayBack.</para>
     </summary>
-    <seealso cref="ITfFunctionProvider " />
-    <seealso cref="ITfFunctionProvider.GetFunction " />
-    <seealso cref="IUnknown" />
   </member>
 </doc>

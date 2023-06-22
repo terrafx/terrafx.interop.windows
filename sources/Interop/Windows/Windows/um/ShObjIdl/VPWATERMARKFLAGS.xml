@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="VPWATERMARKFLAGS">
-    <summary>
-      <para>Specifies watermark flags. Used by <see cref="IVisualProperties.SetWatermark" />.</para>
-    </summary>
+    <summary>Specifies watermark flags. Used by <see cref="IVisualProperties.SetWatermark" />.</summary>
   </member>
   <member name="VPWATERMARKFLAGS.VPWF_DEFAULT">
-    <summary>
-      <para>Default Windows XP behavior.</para>
-    </summary>
+    <summary>Default Windows XP behavior.</summary>
   </member>
   <member name="VPWATERMARKFLAGS.VPWF_ALPHABLEND">
-    <summary>
-      <para>Alpha blend the respective bitmap; assumed 24-bit color + 8-bit alpha.</para>
-    </summary>
+    <summary>Alpha blend the respective bitmap; assumed 24-bit color + 8-bit alpha.</summary>
   </member>
 </doc>

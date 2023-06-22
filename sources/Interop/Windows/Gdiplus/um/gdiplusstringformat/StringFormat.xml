@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="StringFormat.Clone">
+    <summary>The <b>StringFormat.Clone</b> method creates a new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object and initializes it with the contents of this<b>StringFormat</b> object.</summary>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object.</returns>
+  </member>
+  <member name="StringFormat.GenericDefault">
+    <summary>The <b>StringFormat.GenericDefault</b> method creates a generic, default<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object.</summary>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object.</returns>
+  </member>
+  <member name="StringFormat.GenericTypographic">
+    <summary>The <b>StringFormat.GenericTypographic</b> method creates a generic, typographic<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object.</summary>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object.</returns>
+  </member>
+  <member name="StringFormat.GetAlignment">
+    <summary>The <b>StringFormat.GetAlignment</b> method gets an element of the <see cref="StringAlignment" /> enumeration that indicates the character alignment of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object in relation to the origin of the layout rectangle. A layout rectangle is used to position the displayed string.</summary>
+    <returns>This method returns an element of the <see cref="StringAlignment" /> enumeration.</returns>
+  </member>
+  <member name="StringFormat.GetDigitSubstitutionLanguage">
+    <summary>The <b>StringFormat.GetDigitSubstitutionLanguage</b> method gets the language that corresponds with the digits that are to be substituted for Western European digits.</summary>
+    <returns>This method returns a 16-bit value that forms a National Language Support (NLS) language identifier. This identifier indicates the language that corresponds with the substitution digits. For example, if this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object uses Arabic substitution digits, then this method will return a value that indicates an Arabic language. An NLS language identifier is constructed by the MAKELANGID macro declared in Winnt.h.</returns>
+  </member>
+  <member name="StringFormat.GetDigitSubstitutionMethod">
+    <summary>The <b>StringFormat.GetDigitSubstitutionMethod</b> method gets an element of the<see cref="StringDigitSubstitute" /> enumeration that indicates the digit substitution method that is used by this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object.</summary>
+    <returns>This method returns an element of the<see cref="StringDigitSubstitute" /> enumeration.</returns>
+  </member>
+  <member name="StringFormat.GetFormatFlags">
+    <summary>The <b>StringFormat.GetFormatFlags</b> method gets the string format flags for this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object.</summary>
+    <returns>This method returns a value that indicates which string format flags are set for this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object. This value can be any combination (the result of a bitwise<b>OR</b> applied to two or more elements) of elements of the <see cref="StringFormatFlags" /> enumeration.</returns>
+  </member>
+  <member name="StringFormat.GetHotkeyPrefix">
+    <summary>The <b>StringFormat.GetHotkeyPrefix</b> method gets an element of the <see cref="HotkeyPrefix" /> enumeration that indicates the type of processing that is performed on a string when a hot key prefix, an ampersand (&amp;), is encountered.</summary>
+    <returns>This method returns an element of the <see cref="HotkeyPrefix" /> enumeration that indicates the type of hot key prefix processing that is performed on a string.</returns>
+  </member>
+  <member name="StringFormat.GetLastStatus">
+    <summary>The <b>StringFormat.GetLastStatus</b> method returns a value that indicates the nature of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object's most recent method failure.</summary>
+    <returns>
+      <para>The <b>StringFormat.GetLastStatus</b> method returns an element of the<see cref="Status" /> enumeration.</para>
+      <para>If no methods invoked on this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object have failed since the previous call to <b>StringFormat.GetLastStatus</b>, then <b>StringFormat.GetLastStatus</b> returns Ok.</para>
+      <para>If at least one method invoked on this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object has failed since the previous call to <b>StringFormat.GetLastStatus</b>, then <b>StringFormat.GetLastStatus</b> returns a value that indicates the nature of the most recent failure.</para>
+    </returns>
+  </member>
+  <member name="StringFormat.GetLineAlignment">
+    <summary>The <b>StringFormat.GetLineAlignment</b> method gets an element of the <see cref="StringAlignment" /> enumeration that indicates the line alignment of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object in relation to the origin of the layout rectangle. The line alignment setting specifies how to align the string vertically in the layout rectangle. The layout rectangle is used to position the displayed string.</summary>
+    <returns>This method returns an element of the <see cref="StringAlignment" /> enumeration.</returns>
+  </member>
+  <member name="StringFormat.GetMeasurableCharacterRangeCount">
+    <summary>The <b>StringFormat.GetMeasurableCharacterRangeCount</b> method gets the number of measurable character ranges that are currently set. The character ranges that are set can be measured in a string by using the<see cref="MeasureCharacterRanges" /> method.</summary>
+    <returns>This method returns an integer that indicates the number of character ranges that can be measured by <see cref="MeasureCharacterRanges" />.</returns>
+  </member>
+  <member name="StringFormat.GetTabStopCount">
+    <summary>The <b>StringFormat.GetTabStopCount</b> method gets the number of tab-stop offsets in this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object.</summary>
+    <returns>This method returns an integer that indicates the number of tab stops in this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object.</returns>
+  </member>
+  <member name="StringFormat.GetTabStops">
+    <summary>The <b>StringFormat.GetTabStops</b> method gets the offsets of the tab stops in this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object.</summary>
+    <param name="count">Integer that specifies the number of tab-stop offsets in the<i>tabStops</i> array.</param>
+    <param name="firstTabOffset">Pointer to a<b>REAL</b> that receives the initial offset position. This initial offset position is relative to the string's origin and the offset of the first tab stop is relative to the initial offset position.</param>
+    <param name="tabStops">Pointer to an array of type<b>REAL</b> that receives the tab-stop offsets. The offset of the first tab stop is the first value in the array, the offset of the second tab stop, the second value in the array, and so on.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="StringFormat.GetTrimming">
+    <summary>The <b>StringFormat.GetTrimming</b> method gets an element of the<see cref="StringTrimming" /> enumeration that indicates the trimming style of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object. The trimming style determines how to trim characters from a string that is too large to fit in the layout rectangle.</summary>
+    <returns>This method returns an element of the<see cref="StringTrimming" /> enumeration.</returns>
+  </member>
+  <member name="StringFormat.SetAlignment">
+    <summary>The <b>StringFormat.SetAlignment</b> method sets the character alignment of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object in relation to the origin of the layout rectangle. A layout rectangle is used to position the displayed string.</summary>
+    <param name="align">Element of the <see cref="StringAlignment" /> enumeration that specifies how a string is aligned in reference to the bounding rectangle.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="StringFormat.SetDigitSubstitution">
+    <summary>The <b>StringFormat.SetDigitSubstitution</b> method sets the digit substitution method and the language that corresponds to the digit substitutes.</summary>
+    <param name="language">Sixteen-bit value that forms a NLS language identifier. The identifier specifies the language associated with the substitute digits. For example, if this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object uses Arabic substitution digits, then this method will return a value that indicates an Arabic language. An NLS language identifier is constructed by the MAKELANGID macro, declared in Winnt.h.</param>
+    <param name="substitute">Element of the<see cref="StringDigitSubstitute" /> enumeration that specifies the digit substitution method to be used.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="StringFormat.SetFormatFlags">
+    <summary>The <b>StringFormat.SetFormatFlags</b> method sets the format flags for this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object. The format flags determine most of the characteristics of a<b>StringFormat</b> object.</summary>
+    <param name="flags">Thirty-two bit value that specifies the format flags that control most of the characteristics of the<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object. The flags are set by applying a bitwise<b>OR</b> to elements of the<see cref="StringFormatFlags" /> enumeration.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="StringFormat.SetHotkeyPrefix">
+    <summary>The <b>StringFormat.SetHotkeyPrefix</b> method sets the type of processing that is performed on a string when the hot key prefix, an ampersand (&amp;), is encountered. The ampersand is called the hot key prefix and can be used to designate certain keys as hot keys.</summary>
+    <param name="hotkeyPrefix">Element of the <see cref="HotkeyPrefix" /> enumeration that specifies how to process the hot key prefix.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="StringFormat.SetLineAlignment">
+    <summary>The <b>StringFormat.SetLineAlignment</b> method sets the line alignment of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object in relation to the origin of the layout rectangle. The line alignment setting specifies how to align the string vertically in the layout rectangle. The layout rectangle is used to position the displayed string.</summary>
+    <param name="align">Element of the <see cref="StringAlignment" /> enumeration that specifies how to align a string in reference to the layout rectangle.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="StringFormat.SetMeasurableCharacterRanges">
+    <summary>The <b>StringFormat.SetMeasurableCharacterRanges</b> method sets a series of character ranges for this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object that, when in a string, can be measured by the <see cref="MeasureCharacterRanges" /> method.</summary>
+    <param name="rangeCount">Integer that specifies the number of character ranges in the<i>ranges</i> array.</param>
+    <param name="ranges">Pointer to an array of<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-characterrange">CharacterRange</a> objects that specify the character ranges to be measured.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="StringFormat.SetTabStops">
+    <summary>The <b>StringFormat.SetTabStops</b> method sets the offsets for tab stops in this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object.</summary>
+    <param name="firstTabOffset">Real number that specifies the initial offset position. This initial offset position is relative to the string's origin and the offset of the first tab stop is relative to the initial offset position.</param>
+    <param name="count">Integer that specifies the number of tab-stop offsets in the<i>tabStops</i> array.</param>
+    <param name="tabStops">Pointer to an array of real numbers that specify the tab-stop offsets. The offset of the first tab stop is the first value in the array, the offset of the second tab stop, the second value in the array, and so on.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="StringFormat.SetTrimming">
+    <summary>The <b>StringFormat.SetTrimming</b> method sets the trimming style for this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object. The trimming style determines how to trim a string so that it fits into the layout rectangle.</summary>
+    <param name="trimming">Element of the <see cref="StringTrimming" /> enumeration that specifies the style of trimming to be performed on the string.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="StringFormat.StringFormat">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object from another <b>StringFormat</b> object.</summary>
+    <param name="source">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object to copy.</param>
+  </member>
+  <member name="StringFormat.StringFormat">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object based on string format flags and a language.</summary>
+    <param name="formatFlags">Optional. Value that specifies the format flags that control most of the characteristics of the <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">StringFormat</a> object. The flags are set by applying a bitwise<b>OR</b> to elements of the <see cref="StringFormatFlags" /> enumeration. The default value is 0 (no flags set).</param>
+    <param name="language">Optional. Sixteen-bit value that specifies the language to use. The default value is LANG_NEUTRAL, which is the user's default language.</param>
+  </member>
+</doc>

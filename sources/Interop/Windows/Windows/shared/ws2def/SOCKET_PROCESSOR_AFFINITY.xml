@@ -3,31 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SOCKET_PROCESSOR_AFFINITY">
-    <summary>
-      <para>The <b>SOCKET_PROCESSOR_AFFINITY</b> structure contains the association between a socket and an RSS processor core and NUMA node..</para>
-    </summary>
-    <remarks>
-      <para>The <b>SOCKET_PROCESSOR_AFFINITY</b>  structure is supported on Windows 8,   and Windows Server 2012, and later versions of the operating system.</para>
-      <para>The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj553482(v=vs.85)">SIO_QUERY_RSS_PROCESSOR_INFO</a></para>
-      <para>IOCTL is used to determine the association between a socket and an RSS processor core and NUMA node. This IOCTL returns a <b>SOCKET_PROCESSOR_AFFINITY</b> structure that contains the processor number and the NUMA node ID.</para>
-    </remarks>
-    <seealso cref="PROCESSOR_NUMBER" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj553482(v=vs.85)">SIO_QUERY_RSS_PROCESSOR_INFO</seealso>
+    <summary>The <b>SOCKET_PROCESSOR_AFFINITY</b> structure contains the association between a socket and an RSS processor core and NUMA node..</summary>
   </member>
   <member name="SOCKET_PROCESSOR_AFFINITY.Processor">
-    <summary>
-      <para>A structure to represent a system wide processor number. This <see cref="PROCESSOR_NUMBER" /> structure contains a
-group number and relative processor number within the group.</para>
-    </summary>
+    <summary>A structure to represent a system wide processor number. This <see cref="PROCESSOR_NUMBER" /> structure contains a group number and relative processor number within the group.</summary>
   </member>
   <member name="SOCKET_PROCESSOR_AFFINITY.NumaNodeId">
-    <summary>
-      <para>The NUMA node ID.</para>
-    </summary>
+    <summary>The NUMA node ID.</summary>
   </member>
   <member name="SOCKET_PROCESSOR_AFFINITY.Reserved">
-    <summary>
-      <para>A value reserved for future use.</para>
-    </summary>
+    <summary>A value reserved for future use.</summary>
   </member>
 </doc>

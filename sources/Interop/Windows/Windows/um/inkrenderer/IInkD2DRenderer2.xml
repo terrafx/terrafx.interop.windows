@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IInkD2DRenderer2.Draw">
+    <summary>Renders the ink stroke to the designated Direct2D device context of the app.</summary>
+    <param name="pD2D1DeviceContext">Pointer to the designated Direct2D device context of the app.</param>
+    <param name="pInkStrokeIterable">Pointer to the collection of ink strokes to render.</param>
+    <param name="highContrastAdjustment">One of the values from the <see cref="INK_HIGH_CONTRAST_ADJUSTMENT enum" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IInkD2DRenderer2">
+    <summary>Enables the rendering of ink strokes onto the designated Direct2D device context of a Universal Windows app, instead of the default <a href="https://docs.microsoft.com//uwp/api/windows.ui.xaml.controls.inkcanvas">InkCanvas</a> control.</summary>
+  </member>
+</doc>

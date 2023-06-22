@@ -3,14 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D12_RAY_FLAGS">
-    <summary>
-      <para>Flags passed to the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/traceray-function">TraceRay</a> function to override transparency, culling, and early-out behavior.</para>
-    </summary>
+    <summary>Flags passed to the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/traceray-function">TraceRay</a> function to override transparency, culling, and early-out behavior.</summary>
   </member>
   <member name="D3D12_RAY_FLAGS.D3D12_RAY_FLAG_NONE">
-    <summary>
-      <para>No options selected.</para>
-    </summary>
+    <summary>No options selected.</summary>
   </member>
   <member name="D3D12_RAY_FLAGS.D3D12_RAY_FLAG_FORCE_OPAQUE">
     <summary>
@@ -19,9 +15,7 @@
     </summary>
   </member>
   <member name="D3D12_RAY_FLAGS.D3D12_RAY_FLAG_FORCE_NON_OPAQUE">
-    <summary>
-      <para>All ray-primitive intersections encountered in a raytrace are treated as non-opaque. So any hit shaders, if present, will be executed regardless of whether or not the hit geometry specifies D3D12_RAYTRACING_GEOMETRY_FLAG_OPAQUE, and regardless of the instance flags on the instance that was hit. This flag is mutually exclusive with RAY_FLAG_FORCE_\OPAQUE, RAY_FLAG_CULL_OPAQUE and RAY_FLAG_CULL_NON_OPAQUE.</para>
-    </summary>
+    <summary>All ray-primitive intersections encountered in a raytrace are treated as non-opaque. So any hit shaders, if present, will be executed regardless of whether or not the hit geometry specifies D3D12_RAYTRACING_GEOMETRY_FLAG_OPAQUE, and regardless of the instance flags on the instance that was hit. This flag is mutually exclusive with RAY_FLAG_FORCE_\OPAQUE, RAY_FLAG_CULL_OPAQUE and RAY_FLAG_CULL_NON_OPAQUE.</summary>
   </member>
   <member name="D3D12_RAY_FLAGS.D3D12_RAY_FLAG_ACCEPT_FIRST_HIT_AND_END_SEARCH">
     <summary>
@@ -32,9 +26,7 @@
     </summary>
   </member>
   <member name="D3D12_RAY_FLAGS.D3D12_RAY_FLAG_SKIP_CLOSEST_HIT_SHADER">
-    <summary>
-      <para>Even if at least one hit has been committed, and the hit group for the closest hit contains a closest hit shader, skip execution of that shader.</para>
-    </summary>
+    <summary>Even if at least one hit has been committed, and the hit group for the closest hit contains a closest hit shader, skip execution of that shader.</summary>
   </member>
   <member name="D3D12_RAY_FLAGS.D3D12_RAY_FLAG_CULL_BACK_FACING_TRIANGLES">
     <summary>

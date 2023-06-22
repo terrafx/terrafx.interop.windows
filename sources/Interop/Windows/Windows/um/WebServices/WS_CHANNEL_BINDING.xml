@@ -3,34 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_CHANNEL_BINDING">
-    <summary>
-      <para>Indicates the protocol stack to use for the channel.</para>
-    </summary>
+    <summary>Indicates the protocol stack to use for the channel.</summary>
   </member>
   <member name="WS_CHANNEL_BINDING.WS_HTTP_CHANNEL_BINDING">
-    <summary>
-      <para>SOAP over HTTP.</para>
-    </summary>
+    <summary>SOAP over HTTP.</summary>
   </member>
   <member name="WS_CHANNEL_BINDING.WS_TCP_CHANNEL_BINDING">
-    <summary>
-      <para>SOAP over TCP.</para>
-    </summary>
+    <summary>SOAP over TCP.</summary>
   </member>
   <member name="WS_CHANNEL_BINDING.WS_UDP_CHANNEL_BINDING">
-    <summary>
-      <para>SOAP over UDP.</para>
-    </summary>
+    <summary>SOAP over UDP.</summary>
   </member>
   <member name="WS_CHANNEL_BINDING.WS_CUSTOM_CHANNEL_BINDING">
-    <summary>
-      <para>A custom channel or listen implementation. For more information, see <see cref="WS_CUSTOM_CHANNEL_CALLBACKS" /> and <see cref="WS_CUSTOM_LISTENER_CALLBACKS" />.</para>
-    </summary>
+    <summary>A custom channel or listen implementation. For more information, see <see cref="WS_CUSTOM_CHANNEL_CALLBACKS" /> and <see cref="WS_CUSTOM_LISTENER_CALLBACKS" />.</summary>
   </member>
   <member name="WS_CHANNEL_BINDING.WS_NAMEDPIPE_CHANNEL_BINDING">
-    <summary>
-      <para>Windows 8 or later:
-SOAP over named pipes.</para>
-    </summary>
+    <summary>Windows 8 or later: SOAP over named pipes.</summary>
   </member>
 </doc>

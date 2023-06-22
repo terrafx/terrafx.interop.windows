@@ -3,27 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_SHADER_CACHE_SUPPORT_FLAGS">
-    <summary>
-      <para>Describes the level of support for shader caching in the current graphics driver.</para>
-    </summary>
-    <remarks>
-      <para>This enum is used by the <see cref="D3D11_FEATURE_DATA_SHADER_CACHE" /> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/direct3d11/d3d11-graphics-reference-d3d11-core-structures">Core structures</seealso>
+    <summary>Describes the level of support for shader caching in the current graphics driver.</summary>
   </member>
   <member name="D3D11_SHADER_CACHE_SUPPORT_FLAGS.D3D11_SHADER_CACHE_SUPPORT_NONE">
-    <summary>
-      <para>Indicates that the driver does not support shader caching.</para>
-    </summary>
+    <summary>Indicates that the driver does not support shader caching.</summary>
   </member>
   <member name="D3D11_SHADER_CACHE_SUPPORT_FLAGS.D3D11_SHADER_CACHE_SUPPORT_AUTOMATIC_INPROC_CACHE">
-    <summary>
-      <para>Indicates that the driver supports an OS-managed shader cache that stores compiled shaders in memory during the current run of the application.</para>
-    </summary>
+    <summary>Indicates that the driver supports an OS-managed shader cache that stores compiled shaders in memory during the current run of the application.</summary>
   </member>
   <member name="D3D11_SHADER_CACHE_SUPPORT_FLAGS.D3D11_SHADER_CACHE_SUPPORT_AUTOMATIC_DISK_CACHE">
-    <summary>
-      <para>Indicates that the driver supports an OS-managed shader cache that stores compiled shaders on disk to accelerate future runs of the application.</para>
-    </summary>
+    <summary>Indicates that the driver supports an OS-managed shader cache that stores compiled shaders on disk to accelerate future runs of the application.</summary>
   </member>
 </doc>

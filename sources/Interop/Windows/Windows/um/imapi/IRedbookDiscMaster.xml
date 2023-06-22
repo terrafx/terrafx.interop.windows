@@ -3,123 +3,51 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IRedbookDiscMaster.AddAudioTrackBlocks">
-    <summary>
-      <para>Adds blocks of audio data to the currently open track. This method can be called repeatedly until there is no space available or the track is full.</para>
-    </summary>
-    <param name="pby">
-      <para>Pointer to an array of track blocks. The format is 44.1 KHz 16-bit stereo RAW audio samples, in the same format as used by WAV in the data section.</para>
-    </param>
-    <param name="cb">
-      <para>Size of the array, in bytes. This count must be a multiple of the audio block size.</para>
-    </param>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
-    </returns>
-    <remarks>
-      <para>After all blocks are added, call the
-<see cref="CloseAudioTrack" /> method to finish the track.</para>
-      <para>If a call to this method would overrun the number of available audio blocks, then the method will return IMAPI_E_DISCFULL and keep as much of the audio data as it can. In contrast, the
-<see cref="IJolietDiscMaster.AddData" /> method does not keep any of the data, so there are no bad files.</para>
-    </remarks>
-    <seealso cref="IRedbookDiscMaster" />
+    <summary>Adds blocks of audio data to the currently open track. This method can be called repeatedly until there is no space available or the track is full.</summary>
+    <param name="pby">Pointer to an array of track blocks. The format is 44.1 KHz 16-bit stereo RAW audio samples, in the same format as used by WAV in the data section.</param>
+    <param name="cb">Size of the array, in bytes. This count must be a multiple of the audio block size.</param>
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</returns>
   </member>
   <member name="IRedbookDiscMaster.CloseAudioTrack">
-    <summary>
-      <para>Closes a currently open audio track. All audio tracks must be closed before the
-<see cref="IDiscMaster.RecordDisc" /> method can be called.</para>
-    </summary>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
-    </returns>
-    <seealso cref="IRedbookDiscMaster" />
+    <summary>Closes a currently open audio track. All audio tracks must be closed before the<see cref="IDiscMaster.RecordDisc" /> method can be called.</summary>
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</returns>
   </member>
   <member name="IRedbookDiscMaster.CreateAudioTrack">
-    <summary>
-      <para>Begins staging a new audio track. It can be called only when there are no open audio tracks in the image.</para>
-    </summary>
+    <summary>Begins staging a new audio track. It can be called only when there are no open audio tracks in the image.</summary>
     <param name="nBlocks">
       <para>Number of audio blocks to be added to this track. You can create up to 99 tracks, and the open track may consume all remaining available audio blocks.</para>
       <para>The <i>nBlocks</i> parameter is advisory only. It does not force the track length to this size.</para>
     </param>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
-    </returns>
-    <remarks>
-      <para>After the track is open, use the
-<see cref="AddAudioTrackBlocks" /> method to add data to the track.</para>
-    </remarks>
-    <seealso cref="IRedbookDiscMaster" />
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</returns>
   </member>
   <member name="IRedbookDiscMaster.GetAudioBlockSize">
-    <summary>
-      <para>Retrieves the size, in bytes, of an audio block.</para>
-    </summary>
-    <param name="pnBlockBytes">
-      <para>Total size, in bytes, of a single audio block.</para>
-    </param>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
-    </returns>
-    <remarks>
-      <para>This method returns 2352.</para>
-    </remarks>
-    <seealso cref="IRedbookDiscMaster" />
+    <summary>Retrieves the size, in bytes, of an audio block.</summary>
+    <param name="pnBlockBytes">Total size, in bytes, of a single audio block.</param>
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</returns>
   </member>
   <member name="IRedbookDiscMaster.GetAvailableAudioTrackBlocks">
-    <summary>
-      <para>Retrieves the current number of blocks that can be added to the track before an additional add will cause a failure for lack of space.</para>
-    </summary>
-    <param name="pnBlocks">
-      <para>Number of audio blocks that can be added to the open track before it must be closed.</para>
-    </param>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
-    </returns>
-    <remarks>
-      <para>This method accounts for gaps associated with open tracks. Additionally, if this method is called when there is no open track, it returns the maximum number of audio blocks that could be added if a new track is created (accounting for gaps, and so on).</para>
-    </remarks>
-    <seealso cref="IRedbookDiscMaster" />
+    <summary>Retrieves the current number of blocks that can be added to the track before an additional add will cause a failure for lack of space.</summary>
+    <param name="pnBlocks">Number of audio blocks that can be added to the open track before it must be closed.</param>
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</returns>
   </member>
   <member name="IRedbookDiscMaster.GetTotalAudioBlocks">
-    <summary>
-      <para>Retrieves the total number of blocks available for staging audio tracks. The total includes all block types, including blocks that may need to be allocated for track gaps.</para>
-    </summary>
-    <param name="pnBlocks">
-      <para>Total number of audio blocks available on a disc.</para>
-    </param>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
-    </returns>
-    <seealso cref="IRedbookDiscMaster" />
+    <summary>Retrieves the total number of blocks available for staging audio tracks. The total includes all block types, including blocks that may need to be allocated for track gaps.</summary>
+    <param name="pnBlocks">Total number of audio blocks available on a disc.</param>
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</returns>
   </member>
   <member name="IRedbookDiscMaster.GetTotalAudioTracks">
-    <summary>
-      <para>Retrieves the total number of tracks that have either been staged or are being staged.</para>
-    </summary>
-    <param name="pnTracks">
-      <para>Total number of closed and open tracks.</para>
-    </param>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
-    </returns>
-    <seealso cref="IRedbookDiscMaster" />
+    <summary>Retrieves the total number of tracks that have either been staged or are being staged.</summary>
+    <param name="pnTracks">Total number of closed and open tracks.</param>
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</returns>
   </member>
   <member name="IRedbookDiscMaster.GetUsedAudioBlocks">
-    <summary>
-      <para>Retrieves the total number of audio blocks in use.</para>
-    </summary>
-    <param name="pnBlocks">
-      <para>Total number of blocks in use, in both closed and open tracks.</para>
-    </param>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
-    </returns>
-    <seealso cref="IRedbookDiscMaster" />
+    <summary>Retrieves the total number of audio blocks in use.</summary>
+    <param name="pnBlocks">Total number of blocks in use, in both closed and open tracks.</param>
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</returns>
   </member>
   <member name="IRedbookDiscMaster">
     <summary>
-      <para>The
-<b>IRedbookDiscMaster</b> interface enables the staging of an audio CD image. It represents one of the formats supported by <b>MSDiscMasterObj</b>, and it allows the creation of multi-track audio discs in Track-at-Once mode (fixed-size audio gaps).</para>
+      <para>The<b>IRedbookDiscMaster</b> interface enables the staging of an audio CD image. It represents one of the formats supported by <b>MSDiscMasterObj</b>, and it allows the creation of multi-track audio discs in Track-at-Once mode (fixed-size audio gaps).</para>
       <para>Tracks are created in the stash file, data is added to them, and then they are closed. Only one track is staged at a time; this is called the <i>open track</i>. The remaining tracks are closed and committed to the image, while the open track has available to it all the blocks that are not in use by closed tracks.</para>
     </summary>
   </member>
